@@ -1,0 +1,7 @@
+LICENSE
+include tccli/services/cdb/v20170320/help.json
+include tccli/services/monitor/v20170312/help.json
+include tccli/services/postgres/v20170312/help.json
+include tccli/services/iot/v20180123/help.json
+include tccli/services/cvm/v20170312/help.json
+include tccli/services/cbs/v20170312/help.json
