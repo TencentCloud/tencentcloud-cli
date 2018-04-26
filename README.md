@@ -189,7 +189,3 @@ tccli cvm DescribeZones --endpoint cvm.ap-guangzhou.tencentcloudapi.com
     }
 ]
 ```
-
-# 旧版CLI
-TCCLI不兼容旧版CLI(QCLOUDCLI)，我们推荐使用TCCLI来完成您的管理工作。
-如果您确定要使用QCLOUDCLI，请访问[github地址](https://github.com/QcloudApi/qcloudcli)下载。
