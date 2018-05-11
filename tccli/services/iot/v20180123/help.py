@@ -34,6 +34,10 @@ INFO = {
     ],
     "desc": "获取数据历史"
   },
+  "AddUser": {
+    "params": [],
+    "desc": "注册用户"
+  },
   "ResetDevice": {
     "params": [
       {
@@ -71,7 +75,7 @@ INFO = {
         "desc": "长度"
       }
     ],
-    "desc": "获取设备列表"
+    "desc": "提供分页查询某个产品Id下设备信息的能力。"
   },
   "AddTopic": {
     "params": [
@@ -97,7 +101,7 @@ INFO = {
         "desc": "长度"
       }
     ],
-    "desc": "获取用户名下的产品列表"
+    "desc": "获取用户在物联网套件所创建的所有产品信息。"
   },
   "DeleteDevice": {
     "params": [
@@ -110,7 +114,7 @@ INFO = {
         "desc": "设备名称"
       }
     ],
-    "desc": "删除设备"
+    "desc": "提供在指定的产品Id下删除一个设备的能力。"
   },
   "AddRule": {
     "params": [
@@ -157,7 +161,7 @@ INFO = {
         "desc": "控制数据（json）"
       }
     ],
-    "desc": "下发设备控制指令"
+    "desc": "提供下发控制指令到指定设备的能力。"
   },
   "GetUser": {
     "params": [],
@@ -171,18 +175,18 @@ INFO = {
       },
       {
         "name": "Description",
-        "desc": "产品类型"
+        "desc": "产品描述"
       },
       {
         "name": "AuthType",
-        "desc": "产品鉴权类型（0：直连，1：Token）"
+        "desc": "产品鉴权类型（0：直连，1：动态令牌），推荐使用动态令牌"
       },
       {
         "name": "DataTemplate",
         "desc": "数据模版（json数组）"
       }
     ],
-    "desc": "新增产品"
+    "desc": "为用户提供创建某型号物联网产品的能力。"
   },
   "UpdateRule": {
     "params": [
@@ -221,10 +225,10 @@ INFO = {
       },
       {
         "name": "Qos",
-        "desc": "Qos"
+        "desc": "Qos(目前QoS支持0与1)"
       }
     ],
-    "desc": "向Topic发布消息"
+    "desc": "提供向指定的Topic发布消息的能力。"
   },
   "GetDeviceStatuses": {
     "params": [
@@ -234,10 +238,10 @@ INFO = {
       },
       {
         "name": "DeviceNames",
-        "desc": "设备名称列表（单次限制1000个）"
+        "desc": "设备名称列表（单次限制1000个设备）"
       }
     ],
-    "desc": "批量获取设备状态"
+    "desc": "批量获取设备的当前状态，状态包括在线、离线或未激活状态。"
   },
   "GetRules": {
     "params": [
@@ -259,9 +263,22 @@ INFO = {
         "desc": "产品Id"
       }
     ],
-    "desc": "删除产品"
+    "desc": "删除用户指定的产品Id对应的信息。"
   },
-  "GetTopic": {
+  "AppAddUser": {
+    "params": [
+      {
+        "name": "UserName",
+        "desc": "用户名"
+      },
+      {
+        "name": "Password",
+        "desc": "密码"
+      }
+    ],
+    "desc": "注册应用用户"
+  },
+  "DeleteTopic": {
     "params": [
       {
         "name": "TopicId",
@@ -272,7 +289,7 @@ INFO = {
         "desc": "产品Id"
       }
     ],
-    "desc": "获取Topic信息"
+    "desc": "删除Topic"
   },
   "GetDevice": {
     "params": [
@@ -285,7 +302,7 @@ INFO = {
         "desc": "设备名称"
       }
     ],
-    "desc": "获取设备信息"
+    "desc": "提供查询某个设备详细信息的能力。"
   },
   "GetDeviceData": {
     "params": [
@@ -367,10 +384,10 @@ INFO = {
       },
       {
         "name": "DeviceName",
-        "desc": "设备名称"
+        "desc": "设备名称，唯一标识某产品下的一个设备"
       }
     ],
-    "desc": "新增设备"
+    "desc": "提供在指定的产品Id下创建一个设备的能力，生成设备名称与设备秘钥。"
   },
   "GetProduct": {
     "params": [
@@ -379,7 +396,7 @@ INFO = {
         "desc": "产品Id"
       }
     ],
-    "desc": "获取产品信息"
+    "desc": "获取产品定义的详细信息，包括产品名称、产品描述，鉴权模式等信息。"
   },
   "UpdateProduct": {
     "params": [
@@ -394,9 +411,13 @@ INFO = {
       {
         "name": "Description",
         "desc": "产品描述"
+      },
+      {
+        "name": "DataTemplate",
+        "desc": "数据模版（json）"
       }
     ],
-    "desc": "更新产品信息"
+    "desc": "提供修改产品信息及数据模板的能力。"
   },
   "ActivateRule": {
     "params": [
@@ -407,7 +428,7 @@ INFO = {
     ],
     "desc": "启用规则"
   },
-  "DeleteTopic": {
+  "GetTopic": {
     "params": [
       {
         "name": "TopicId",
@@ -418,6 +439,6 @@ INFO = {
         "desc": "产品Id"
       }
     ],
-    "desc": "删除Topic"
+    "desc": "获取Topic信息"
   }
 }

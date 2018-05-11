@@ -91,6 +91,38 @@ def doResetDevice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAddUser(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AddUser", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddUserRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AddUser(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doIssueDeviceControl(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -606,10 +638,44 @@ def doDeleteProduct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTopic(argv, arglist):
+def doAppAddUser(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteTopic", g_param[OptionsDefine.Version])
+        show_help("AppAddUser", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "UserName": Utils.try_to_json(argv, "--UserName"),
+        "Password": Utils.try_to_json(argv, "--Password"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppAddUserRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppAddUser(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetTopic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetTopic", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -628,9 +694,9 @@ def doDeleteTopic(argv, arglist):
     client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTopicRequest()
+    model = models.GetTopicRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteTopic(model)
+    rsp = client.GetTopic(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -892,6 +958,7 @@ def doUpdateProduct(argv, arglist):
         "ProductId": Utils.try_to_json(argv, "--ProductId"),
         "Name": Utils.try_to_json(argv, "--Name"),
         "Description": Utils.try_to_json(argv, "--Description"),
+        "DataTemplate": Utils.try_to_json(argv, "--DataTemplate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -950,10 +1017,10 @@ def doActivateRule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetTopic(argv, arglist):
+def doDeleteTopic(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetTopic", g_param[OptionsDefine.Version])
+        show_help("DeleteTopic", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -972,9 +1039,9 @@ def doGetTopic(argv, arglist):
     client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTopicRequest()
+    model = models.DeleteTopicRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetTopic(model)
+    rsp = client.DeleteTopic(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -997,6 +1064,7 @@ MODELS_MAP = {
 ACTION_MAP = {
     "GetDataHistory": doGetDataHistory,
     "ResetDevice": doResetDevice,
+    "AddUser": doAddUser,
     "IssueDeviceControl": doIssueDeviceControl,
     "DeactivateRule": doDeactivateRule,
     "GetDevices": doGetDevices,
@@ -1012,7 +1080,8 @@ ACTION_MAP = {
     "GetDeviceStatuses": doGetDeviceStatuses,
     "GetRules": doGetRules,
     "DeleteProduct": doDeleteProduct,
-    "DeleteTopic": doDeleteTopic,
+    "AppAddUser": doAppAddUser,
+    "GetTopic": doGetTopic,
     "GetDevice": doGetDevice,
     "GetDeviceData": doGetDeviceData,
     "GetRule": doGetRule,
@@ -1022,7 +1091,7 @@ ACTION_MAP = {
     "GetProduct": doGetProduct,
     "UpdateProduct": doUpdateProduct,
     "ActivateRule": doActivateRule,
-    "GetTopic": doGetTopic,
+    "DeleteTopic": doDeleteTopic,
 
 }
 

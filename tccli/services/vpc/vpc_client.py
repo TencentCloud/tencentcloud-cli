@@ -18,6 +18,41 @@ from tccli.services.vpc import v20170312
 from tccli.services.vpc.v20170312 import help as v20170312_help
 
 
+def doModifyServiceTemplateAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyServiceTemplateAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceTemplateId": Utils.try_to_json(argv, "--ServiceTemplateId"),
+        "ServiceTemplateName": Utils.try_to_json(argv, "--ServiceTemplateName"),
+        "Services": Utils.try_to_json(argv, "--Services"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyServiceTemplateAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyServiceTemplateAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doReplaceSecurityGroupPolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -403,6 +438,8 @@ def doCreateVpc(argv, arglist):
         "VpcName": Utils.try_to_json(argv, "--VpcName"),
         "CidrBlock": Utils.try_to_json(argv, "--CidrBlock"),
         "EnableMulticast": Utils.try_to_json(argv, "--EnableMulticast"),
+        "DnsServers": Utils.try_to_json(argv, "--DnsServers"),
+        "DomainName": Utils.try_to_json(argv, "--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -653,41 +690,6 @@ def doAllocateAddresses(argv, arglist):
     model = models.AllocateAddressesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.AllocateAddresses(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyServiceTemplateAttribute(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyServiceTemplateAttribute", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ServiceTemplateId": Utils.try_to_json(argv, "--ServiceTemplateId"),
-        "ServiceTemplateName": Utils.try_to_json(argv, "--ServiceTemplateName"),
-        "Services": Utils.try_to_json(argv, "--Services"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyServiceTemplateAttributeRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyServiceTemplateAttribute(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1745,6 +1747,8 @@ def doModifyVpcAttribute(argv, arglist):
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
         "VpcName": Utils.try_to_json(argv, "--VpcName"),
         "EnableMulticast": Utils.try_to_json(argv, "--EnableMulticast"),
+        "DnsServers": Utils.try_to_json(argv, "--DnsServers"),
+        "DomainName": Utils.try_to_json(argv, "--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2231,6 +2235,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "ModifyServiceTemplateAttribute": doModifyServiceTemplateAttribute,
     "ReplaceSecurityGroupPolicy": doReplaceSecurityGroupPolicy,
     "DeleteServiceTemplate": doDeleteServiceTemplate,
     "ModifyAddressTemplateAttribute": doModifyAddressTemplateAttribute,
@@ -2250,7 +2255,6 @@ ACTION_MAP = {
     "DeleteAddressTemplate": doDeleteAddressTemplate,
     "ModifyAddressAttribute": doModifyAddressAttribute,
     "AllocateAddresses": doAllocateAddresses,
-    "ModifyServiceTemplateAttribute": doModifyServiceTemplateAttribute,
     "UnassignPrivateIpAddresses": doUnassignPrivateIpAddresses,
     "ModifyPrivateIpAddressesAttribute": doModifyPrivateIpAddressesAttribute,
     "DescribeSecurityGroups": doDescribeSecurityGroups,

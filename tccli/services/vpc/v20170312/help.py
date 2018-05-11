@@ -144,6 +144,14 @@ INFO = {
       {
         "name": "EnableMulticast",
         "desc": "是否开启组播。true: 开启, false: 不开启。"
+      },
+      {
+        "name": "DnsServers",
+        "desc": "DNS地址，最多支持4个，第1个默认为主，其余为备"
+      },
+      {
+        "name": "DomainName",
+        "desc": "域名"
       }
     ],
     "desc": "本接口(CreateVpc)用于创建私有网络(VPC)。\n* 用户可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）,如果规划VPC网段请参见VPC网段规划说明。\n* 创建VPC时可同时把子网创建好，创建子网也请规划好子网网段及子网所在可用区，同一个VPC内子网网段不能重叠，不同可用区可以做跨可用区容灾，详见VPC可用区说明。\n* 如果您同时创建了子网，系统会创建一个默认路由表，系统会把子网关联到这个默认路由表。\n* 同一个地域能创建的VPC资源个数也是有限制的，详见 <a href=\"https://cloud.tencent.com/doc/product/215/537\" title=\"VPC使用限制\">VPC使用限制</a>,如果需要扩充请联系在线客服。"
@@ -735,6 +743,14 @@ INFO = {
       {
         "name": "EnableMulticast",
         "desc": "是否开启组播。true: 开启, false: 关闭。"
+      },
+      {
+        "name": "DnsServers",
+        "desc": "DNS地址，最多支持4个，第1个默认为主，其余为备"
+      },
+      {
+        "name": "DomainName",
+        "desc": "域名"
       }
     ],
     "desc": "本接口（ModifyVpcAttribute）用于修改私有网络（VPC）的相关属性。"
