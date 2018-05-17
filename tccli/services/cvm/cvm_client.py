@@ -213,6 +213,7 @@ def doInquiryPriceRunInstances(argv, arglist):
         "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
         "HostName": Utils.try_to_json(argv, "--HostName"),
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
+        "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -746,7 +747,6 @@ def doTerminateInstances(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "DryRun": Utils.try_to_json(argv, "--DryRun"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

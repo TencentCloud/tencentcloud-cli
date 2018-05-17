@@ -12,23 +12,25 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tmt.v20180321 import tmt_client as tmt_client_v20180321
-from tencentcloud.tmt.v20180321 import models as models_v20180321
-from tccli.services.tmt import v20180321
-from tccli.services.tmt.v20180321 import help as v20180321_help
+from tencentcloud.es.v20180416 import es_client as es_client_v20180416
+from tencentcloud.es.v20180416 import models as models_v20180416
+from tccli.services.es import v20180416
+from tccli.services.es.v20180416 import help as v20180416_help
 
 
-def doTextTranslate(argv, arglist):
+def doUpdateInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TextTranslate", g_param[OptionsDefine.Version])
+        show_help("UpdateInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SourceText": Utils.try_to_json(argv, "--SourceText"),
-        "Source": Utils.try_to_json(argv, "--Source"),
-        "Target": Utils.try_to_json(argv, "--Target"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
+        "EsConfig": Utils.try_to_json(argv, "--EsConfig"),
+        "Password": Utils.try_to_json(argv, "--Password"),
+        "EsAcl": Utils.try_to_json(argv, "--EsAcl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -39,12 +41,12 @@ def doTextTranslate(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextTranslateRequest()
+    model = models.UpdateInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TextTranslate(model)
+    rsp = client.UpdateInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -54,19 +56,26 @@ def doTextTranslate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doImageTranslate(argv, arglist):
+def doCreateInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ImageTranslate", g_param[OptionsDefine.Version])
+        show_help("CreateInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SessionUuid": Utils.try_to_json(argv, "--SessionUuid"),
-        "Scene": Utils.try_to_json(argv, "--Scene"),
-        "Data": Utils.try_to_json(argv, "--Data"),
-        "Source": Utils.try_to_json(argv, "--Source"),
-        "Target": Utils.try_to_json(argv, "--Target"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
+        "EsVersion": Utils.try_to_json(argv, "--EsVersion"),
+        "ChargeType": Utils.try_to_json(argv, "--ChargeType"),
+        "ChargePeriod": Utils.try_to_json(argv, "--ChargePeriod"),
+        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
+        "NodeType": Utils.try_to_json(argv, "--NodeType"),
+        "DiskType": Utils.try_to_json(argv, "--DiskType"),
+        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "Password": Utils.try_to_json(argv, "--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,12 +86,12 @@ def doImageTranslate(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImageTranslateRequest()
+    model = models.CreateInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ImageTranslate(model)
+    rsp = client.CreateInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -92,21 +101,20 @@ def doImageTranslate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSpeechTranslate(argv, arglist):
+def doDescribeInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SpeechTranslate", g_param[OptionsDefine.Version])
+        show_help("DescribeInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SessionUuid": Utils.try_to_json(argv, "--SessionUuid"),
-        "Source": Utils.try_to_json(argv, "--Source"),
-        "Target": Utils.try_to_json(argv, "--Target"),
-        "AudioFormat": Utils.try_to_json(argv, "--AudioFormat"),
-        "Seq": Utils.try_to_json(argv, "--Seq"),
-        "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
-        "Data": Utils.try_to_json(argv, "--Data"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InstanceNames": Utils.try_to_json(argv, "--InstanceNames"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderByKey": Utils.try_to_json(argv, "--OrderByKey"),
+        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -117,12 +125,12 @@ def doSpeechTranslate(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SpeechTranslateRequest()
+    model = models.DescribeInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SpeechTranslate(model)
+    rsp = client.DescribeInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -132,15 +140,14 @@ def doSpeechTranslate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLanguageDetect(argv, arglist):
+def doDeleteInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LanguageDetect", g_param[OptionsDefine.Version])
+        show_help("DeleteInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Text": Utils.try_to_json(argv, "--Text"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -151,12 +158,45 @@ def doLanguageDetect(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LanguageDetectRequest()
+    model = models.DeleteInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LanguageDetect(model)
+    rsp = client.DeleteInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRestartInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RestartInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RestartInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RestartInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -167,34 +207,35 @@ def doLanguageDetect(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180321": tmt_client_v20180321,
+    "v20180416": es_client_v20180416,
 
 }
 
 MODELS_MAP = {
-    "v20180321": models_v20180321,
+    "v20180416": models_v20180416,
 
 }
 
 ACTION_MAP = {
-    "TextTranslate": doTextTranslate,
-    "ImageTranslate": doImageTranslate,
-    "SpeechTranslate": doSpeechTranslate,
-    "LanguageDetect": doLanguageDetect,
+    "UpdateInstance": doUpdateInstance,
+    "CreateInstance": doCreateInstance,
+    "DescribeInstances": doDescribeInstances,
+    "DeleteInstance": doDeleteInstance,
+    "RestartInstance": doRestartInstance,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180321.version,
+    v20180416.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180321.version.replace('-', ''): {"help": v20180321_help.INFO,"desc": v20180321_help.DESC},
+     'v' + v20180416.version.replace('-', ''): {"help": v20180416_help.INFO,"desc": v20180416_help.DESC},
 
 }
 
 
-def tmt_action(argv, arglist):
+def es_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -210,7 +251,7 @@ def tmt_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "tmt", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "es", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -231,7 +272,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("tmt", tmt_action)
+    cmd = NiceCommand("es", es_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -290,11 +331,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["tmt"][OptionsDefine.Version]
+            version = config["es"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["tmt"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["es"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -311,7 +352,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tmt", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "es", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -321,7 +362,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["tmt"]["version"]
+        version = profile["es"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

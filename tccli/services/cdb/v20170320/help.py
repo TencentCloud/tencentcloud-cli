@@ -66,7 +66,7 @@ INFO = {
       },
       {
         "name": "BackupMethod",
-        "desc": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。"
+        "desc": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备；默认备份方法为 逻辑冷备。"
       }
     ],
     "desc": "本接口(ModifyBackupConfig)用于修改数据库备份配置信息。"
@@ -143,7 +143,7 @@ INFO = {
     "params": [
       {
         "name": "EngineVersion",
-        "desc": "MySQL版本，值包括：5.5、5.6和5.7，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可创建的实例版本"
+        "desc": "MySQL版本，值包括：5.5、5.6和5.7，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的实例版本"
       },
       {
         "name": "UniqVpcId",
@@ -163,15 +163,15 @@ INFO = {
       },
       {
         "name": "Memory",
-        "desc": "实例内存大小，单位：MB，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可创建的内存规格"
+        "desc": "实例内存大小，单位：MB，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的内存规格"
       },
       {
         "name": "Volume",
-        "desc": "实例硬盘大小，单位：GB，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可创建的硬盘范围"
+        "desc": "实例硬盘大小，单位：GB，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的硬盘范围"
       },
       {
         "name": "Zone",
-        "desc": "可用区信息，该参数缺省时，系统会自动选择一个可用区，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可创建的可用区"
+        "desc": "可用区信息，该参数缺省时，系统会自动选择一个可用区，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的可用区"
       },
       {
         "name": "MasterInstanceId",
@@ -230,7 +230,7 @@ INFO = {
         "desc": "实例名称"
       }
     ],
-    "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。\n\n1. 首先请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口查询可创建的实例规格信息，然后请使用[查询价格（按量计费）](https://cloud.tencent.com/document/api/253/5176)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5、MySQL5.6和MySQL5.7 版本；\n4. 支持创建主实例、灾备实例和只读实例；"
+    "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询价格（按量计费）](https://cloud.tencent.com/document/api/253/5176)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5、MySQL5.6和MySQL5.7 版本；\n4. 支持创建主实例、灾备实例和只读实例；"
   },
   "ModifyDBInstanceName": {
     "params": [
@@ -244,6 +244,10 @@ INFO = {
       }
     ],
     "desc": "本接口(ModifyDBInstanceName)用于修改云数据库实例的名称。"
+  },
+  "DescribeDBZoneConfig": {
+    "params": [],
+    "desc": "本接口(DescribeDBZoneConfig)用于查询可创建的云数据库各地域可售卖的规格配置。"
   },
   "CreateBackup": {
     "params": [
@@ -499,11 +503,11 @@ INFO = {
     "params": [
       {
         "name": "Memory",
-        "desc": "实例内存大小，单位：MB，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可创建的内存规格"
+        "desc": "实例内存大小，单位：MB，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的内存规格"
       },
       {
         "name": "Volume",
-        "desc": "实例硬盘大小，单位：GB，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可创建的硬盘范围"
+        "desc": "实例硬盘大小，单位：GB，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的硬盘范围"
       },
       {
         "name": "Period",
@@ -515,7 +519,7 @@ INFO = {
       },
       {
         "name": "Zone",
-        "desc": "可用区信息，该参数缺省时，系统会自动选择一个可用区，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可创建的可用区"
+        "desc": "可用区信息，该参数缺省时，系统会自动选择一个可用区，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的可用区"
       },
       {
         "name": "UniqVpcId",
@@ -543,7 +547,7 @@ INFO = {
       },
       {
         "name": "EngineVersion",
-        "desc": "MySQL版本，值包括：5.5、5.6和5.7，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可创建的实例版本"
+        "desc": "MySQL版本，值包括：5.5、5.6和5.7，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的实例版本"
       },
       {
         "name": "Password",
@@ -590,7 +594,7 @@ INFO = {
         "desc": "实例名称"
       }
     ],
-    "desc": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。\n\n1. 首先请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口查询可创建的实例规格信息，然后请使用[查询价格（包年包月）](https://cloud.tencent.com/document/api/236/1332)接口查询可创建实例的售卖价格；\n\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n\n3. 支持创建 MySQL5.5 、 MySQL5.6 、 MySQL5.7 版本；\n\n4. 支持创建主实例、只读实例、灾备实例；"
+    "desc": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询价格（包年包月）](https://cloud.tencent.com/document/api/236/1332)接口查询可创建实例的售卖价格；\n\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n\n3. 支持创建 MySQL5.5 、 MySQL5.6 、 MySQL5.7 版本；\n\n4. 支持创建主实例、只读实例、灾备实例；"
   },
   "ModifyDBInstanceSecurityGroups": {
     "params": [
