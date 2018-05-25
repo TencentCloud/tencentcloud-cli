@@ -804,15 +804,6 @@ INFO = {
     ],
     "desc": "本接口 (RenewHosts) 用于续费包年包月CDH实例。\n\n* 只支持操作包年包月实例，否则操作会以特定[错误码](#4.-.E9.94.99.E8.AF.AF.E7.A0.81)返回。\n* 续费时请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。"
   },
-  "StartInstances": {
-    "params": [
-      {
-        "name": "InstanceIds",
-        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。"
-      }
-    ],
-    "desc": "本接口 (StartInstances) 用于启动一个或多个实例。\n\n* 只有状态为`STOPPED`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STARTING`状态；启动实例成功时，实例会进入`RUNNING`状态。\n* 支持批量操作。每次请求批量实例的上限为100。"
-  },
   "DescribeKeyPairs": {
     "params": [
       {
@@ -834,14 +825,14 @@ INFO = {
     ],
     "desc": "本接口 (DescribeKeyPairs) 用于查询密钥对信息。\n\n* 密钥对是通过一种算法生成的一对密钥，在生成的密钥对中，一个向外界公开，称为公钥；另一个用户自己保留，称为私钥。密钥对的公钥内容可以通过这个接口查询，但私钥内容系统不保留。"
   },
-  "QueryMigrateTask": {
+  "StartInstances": {
     "params": [
       {
-        "name": "TaskId",
-        "desc": "任务Id"
+        "name": "InstanceIds",
+        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。"
       }
     ],
-    "desc": "查询迁移任务进度。"
+    "desc": "本接口 (StartInstances) 用于启动一个或多个实例。\n\n* 只有状态为`STOPPED`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STARTING`状态；启动实例成功时，实例会进入`RUNNING`状态。\n* 支持批量操作。每次请求批量实例的上限为100。"
   },
   "DescribeHosts": {
     "params": [
@@ -891,7 +882,7 @@ INFO = {
   },
   "DescribeInternetChargeTypeConfigs": {
     "params": [],
-    "desc": "查询网络计费的类型"
+    "desc": "本接口（DescribeInternetChargeTypeConfigs）用于查询网络的计费类型。"
   },
   "RebootInstances": {
     "params": [

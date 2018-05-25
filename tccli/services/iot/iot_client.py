@@ -406,6 +406,7 @@ def doAddProduct(argv, arglist):
         "Description": Utils.try_to_json(argv, "--Description"),
         "AuthType": Utils.try_to_json(argv, "--AuthType"),
         "DataTemplate": Utils.try_to_json(argv, "--DataTemplate"),
+        "DataProtocol": Utils.try_to_json(argv, "--DataProtocol"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -821,6 +822,7 @@ def doGetDeviceLog(argv, arglist):
         "Size": Utils.try_to_json(argv, "--Size"),
         "Order": Utils.try_to_json(argv, "--Order"),
         "ScrollId": Utils.try_to_json(argv, "--ScrollId"),
+        "Type": Utils.try_to_json(argv, "--Type"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -147,7 +147,7 @@ INFO = {
       },
       {
         "name": "DnsServers",
-        "desc": "DNS地址，最多支持4个，第1个默认为主，其余为备"
+        "desc": "DNS地址，最多支持4个"
       },
       {
         "name": "DomainName",

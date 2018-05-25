@@ -136,6 +136,19 @@ INFO = {
     ],
     "desc": "用于查询计算环境的活动信息"
   },
+  "TerminateComputeNodes": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "计算环境ID"
+      },
+      {
+        "name": "ComputeNodeIds",
+        "desc": "计算节点ID列表"
+      }
+    ],
+    "desc": "用于批量销毁计算节点，不允许重复销毁同一个节点。"
+  },
   "DescribeTaskTemplates": {
     "params": [
       {

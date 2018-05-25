@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "DeviceNames",
-        "desc": "设备名称列表"
+        "desc": "设备名称列表，允许最多一次100台"
       },
       {
         "name": "StartTime",
@@ -32,7 +32,7 @@ INFO = {
         "desc": "查询游标"
       }
     ],
-    "desc": "获取数据历史"
+    "desc": "批量获取设备某一段时间范围的设备上报数据。该接口只允许使用数据模板类型的产品通过REST API方式同步设备上报数据至用户的应用系统。"
   },
   "AddUser": {
     "params": [],
@@ -49,7 +49,7 @@ INFO = {
         "desc": "设备名称"
       }
     ],
-    "desc": "重置设备"
+    "desc": "重置设备操作，将会为设备生成新的证书及清空最新数据，需谨慎操作。"
   },
   "DeactivateRule": {
     "params": [
@@ -88,7 +88,7 @@ INFO = {
         "desc": "Topic名称"
       }
     ],
-    "desc": "新增Topic"
+    "desc": "新增Topic，用于设备或应用发布消息至该Topic或订阅该Topic的消息。"
   },
   "GetProducts": {
     "params": [
@@ -161,7 +161,7 @@ INFO = {
         "desc": "控制数据（json）"
       }
     ],
-    "desc": "提供下发控制指令到指定设备的能力。"
+    "desc": "提供下发控制指令到指定设备的能力，该接口适用于使用数据模板类型的产品。"
   },
   "GetUser": {
     "params": [],
@@ -171,7 +171,7 @@ INFO = {
     "params": [
       {
         "name": "Name",
-        "desc": "产品名称"
+        "desc": "产品名称，同一区域产品名称需唯一，支持中文、英文字母、中划线和下划线，长度不超过31个字符，中文占两个字符"
       },
       {
         "name": "Description",
@@ -179,14 +179,18 @@ INFO = {
       },
       {
         "name": "AuthType",
-        "desc": "产品鉴权类型（0：直连，1：动态令牌），推荐使用动态令牌"
+        "desc": "鉴权模式（1：动态令牌，推荐使用动态令牌）"
       },
       {
         "name": "DataTemplate",
         "desc": "数据模版（json数组）"
+      },
+      {
+        "name": "DataProtocol",
+        "desc": "数据协议（native表示自定义，template表示数据模板，默认值为template）"
       }
     ],
-    "desc": "为用户提供创建某型号物联网产品的能力。"
+    "desc": "本接口(AddProduct)用于创建、定义某款硬件产品。"
   },
   "UpdateRule": {
     "params": [
@@ -228,7 +232,7 @@ INFO = {
         "desc": "Qos(目前QoS支持0与1)"
       }
     ],
-    "desc": "提供向指定的Topic发布消息的能力。"
+    "desc": "提供向指定的Topic发布消息的能力，常用于向设备下发控制指令；该接口只适用于数据协议为“自定义”类型的产品，使用数据模板类型的产品需使用IssueDeviceControl接口"
   },
   "GetDeviceStatuses": {
     "params": [
@@ -315,7 +319,7 @@ INFO = {
         "desc": "设备名称"
       }
     ],
-    "desc": "获取设备数据"
+    "desc": "获取某个设备当前上报到云端的数据，该接口适用于使用数据模板协议的产品。"
   },
   "GetRule": {
     "params": [
@@ -334,7 +338,7 @@ INFO = {
       },
       {
         "name": "DeviceNames",
-        "desc": "设备名称列表"
+        "desc": "设备名称列表，最大支持100台"
       },
       {
         "name": "StartTime",
@@ -355,9 +359,13 @@ INFO = {
       {
         "name": "ScrollId",
         "desc": "查询游标"
+      },
+      {
+        "name": "Type",
+        "desc": "日志类型（comm/status）"
       }
     ],
-    "desc": "获取设备日志"
+    "desc": "批量获取设备与云端的详细通信日志，该接口适用于使用数据模板类型的产品。"
   },
   "GetTopics": {
     "params": [

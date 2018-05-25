@@ -75,7 +75,7 @@ INFO = {
       },
       {
         "name": "DiskSize",
-        "desc": "云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。"
+        "desc": "云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。取值范围： 普通云硬盘:10GB ~ 4000G；高性能云硬盘:50GB ~ 4000GB；SSD云硬盘:100GB ~ 4000GB，步长均为10GB。"
       },
       {
         "name": "ProjectId",
@@ -131,7 +131,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "云服务器实例ID，通过[DescribeInstances](/document/api/213/9388)接口查询。"
+        "desc": "云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。"
       }
     ],
     "desc": "本接口（DescribeInstancesDiskNum）用于查询实例已挂载云硬盘数量。\n\n* 支持批量操作，当传入多个云服务器实例ID，返回结果会分别列出每个云服务器挂载的云硬盘数量。"
@@ -140,11 +140,11 @@ INFO = {
     "params": [
       {
         "name": "DiskType",
-        "desc": "云硬盘类型。取值范围：<br><li>普通云硬盘：CLOUD_BASIC<br><li>高效云盘：CLOUD_PREMIUM<br><li>SSD云硬盘：CLOUD_SSD。"
+        "desc": "云硬盘类型。取值范围：<br><li>普通云硬盘：CLOUD_BASIC<br><li>高性能云硬盘：CLOUD_PREMIUM<br><li>SSD云硬盘：CLOUD_SSD。"
       },
       {
         "name": "DiskSize",
-        "desc": "云硬盘大小，单位为GB。普通云硬盘最小10GB，SSD云硬盘最小100GB，步长均为10GB。"
+        "desc": "云盘大小，取值范围： 普通云硬盘:10GB ~ 4000G；高性能云硬盘:50GB ~ 4000GB；SSD云硬盘:100GB ~ 4000GB，步长均为10GB。"
       },
       {
         "name": "DiskChargeType",
@@ -176,7 +176,7 @@ INFO = {
         "desc": "快照原云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。"
       }
     ],
-    "desc": "本接口（ApplySnapshot）用于回滚快照到原云硬盘。\n\n* 仅支持回滚到原云硬盘上。对于数据盘快照，如果您需要复制快照数据到其它云硬盘上，请使用[CreateDisks](/document/product/362/16312)接口创建新的弹性云盘，将快照数据复制到新购云盘上。 \n* 用于回滚的快照必须处于NORMAL状态。快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。\n* 如果是弹性云盘，则云盘必须处于未挂载状态，云硬盘挂载状态可以通过[DescribeDisks](/document/product/362/16315)接口查询，见Attached字段解释；如果是随云主机一起购买的非弹性云盘，则云主机必须处于关机状态，云主机状态可以通过[DescribeInstancesStatus](/document/api/213/9389)接口查询。"
+    "desc": "本接口（ApplySnapshot）用于回滚快照到原云硬盘。\n\n* 仅支持回滚到原云硬盘上。对于数据盘快照，如果您需要复制快照数据到其它云硬盘上，请使用[CreateDisks](/document/product/362/16312)接口创建新的弹性云盘，将快照数据复制到新购云盘上。 \n* 用于回滚的快照必须处于NORMAL状态。快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。\n* 如果是弹性云盘，则云盘必须处于未挂载状态，云硬盘挂载状态可以通过[DescribeDisks](/document/product/362/16315)接口查询，见Attached字段解释；如果是随云主机一起购买的非弹性云盘，则云主机必须处于关机状态，云主机状态可以通过[DescribeInstancesStatus](/document/product/213/15738)接口查询。"
   },
   "ModifySnapshotAttribute": {
     "params": [
@@ -221,19 +221,19 @@ INFO = {
     "params": [
       {
         "name": "DiskIds",
-        "desc": "按照一个或者多个云硬盘ID查询。云硬盘ID形如：`disk-11112222`，此参数的具体格式可参考API[简介](/document/362/15633)的ids.N一节）。参数不支持同时指定`DiskIds`和`Filters`。"
+        "desc": "按照一个或者多个云硬盘ID查询。云硬盘ID形如：`disk-11112222`，此参数的具体格式可参考API[简介](/document/product/362/15633)的ids.N一节）。参数不支持同时指定`DiskIds`和`Filters`。"
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。参数不支持同时指定`DiskIds`和`Filters`。<br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按云盘类型过滤。 (SYSTEM_DISK：表示系统盘 | DATA_DISK：表示数据盘)<br><li>disk-charge-type - Array of String - 是否必填：否 -（过滤条件）按照云硬盘计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费。)<br><li>portable - Array of Bool - 是否必填：否 -（过滤条件）按是否为弹性云盘过滤。 (TRUE：表示弹性云盘 | FALSE：表示非弹性云盘。)<br><li>project-id - Array of Integer - 是否必填：否 -（过滤条件）按云硬盘所属项目ID过滤。<br><li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照云硬盘ID过滤。云盘ID形如：`disk-11112222`。<br><li>disk-name - Array of String - 是否必填：否 -（过滤条件）按照云盘名称过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：SSD表示SSD云硬盘。)<br><li>disk-state - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(UNATTACHED：未挂载 | ATTACHING：挂载中 | ATTACHED：已挂载 | DETACHING：解挂中 | EXPANDING：扩容中 | ROLLBACKING：回滚中 | TORECYCLE：待回收。)<br><li>instance-id - Array of String - 是否必填：否 -（过滤条件）按照云盘挂载的云主机实例ID过滤。可根据此参数查询挂载在指定云主机下的云硬盘。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按照[可用区](/document/api/213/9452#zone)过滤。<br><li>instance-ip-address - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载云主机的内网或外网IP过滤。<br><li>instance-name - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载的实例名称过滤。"
+        "desc": "过滤条件。参数不支持同时指定`DiskIds`和`Filters`。<br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按云盘类型过滤。 (SYSTEM_DISK：表示系统盘 | DATA_DISK：表示数据盘)<br><li>disk-charge-type - Array of String - 是否必填：否 -（过滤条件）按照云硬盘计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费。)<br><li>portable - Array of Bool - 是否必填：否 -（过滤条件）按是否为弹性云盘过滤。 (TRUE：表示弹性云盘 | FALSE：表示非弹性云盘。)<br><li>project-id - Array of Integer - 是否必填：否 -（过滤条件）按云硬盘所属项目ID过滤。<br><li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照云硬盘ID过滤。云盘ID形如：`disk-11112222`。<br><li>disk-name - Array of String - 是否必填：否 -（过滤条件）按照云盘名称过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：SSD表示SSD云硬盘。)<br><li>disk-state - Array of String - 是否必填：否 -（过滤条件）按照云盘状态过滤。(UNATTACHED：未挂载 | ATTACHING：挂载中 | ATTACHED：已挂载 | DETACHING：解挂中 | EXPANDING：扩容中 | ROLLBACKING：回滚中 | TORECYCLE：待回收。)<br><li>instance-id - Array of String - 是否必填：否 -（过滤条件）按照云盘挂载的云主机实例ID过滤。可根据此参数查询挂载在指定云主机下的云硬盘。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按照[可用区](/document/api/213/9452#zone)过滤。<br><li>instance-ip-address - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载云主机的内网或外网IP过滤。<br><li>instance-name - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载的实例名称过滤。"
       },
       {
         "name": "Offset",
-        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/362/15633)中的相关小节。"
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。"
       },
       {
         "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/362/15633)中的相关小节。"
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。"
       },
       {
         "name": "Order",
@@ -241,7 +241,7 @@ INFO = {
       },
       {
         "name": "OrderField",
-        "desc": "云盘列表排序的依据字段。取值范围：<br><li>CREATETIME：依据云盘的创建时间排序<br><li>DEADLINE：依据云盘的到期时间排序<br>默认按云盘创建时间排序。"
+        "desc": "云盘列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据云盘的创建时间排序<br><li>DEADLINE：依据云盘的到期时间排序<br>默认按云盘创建时间排序。"
       },
       {
         "name": "ReturnBindAutoSnapshotPolicy",
@@ -275,11 +275,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/362/15633)中的相关小节。"
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。"
       },
       {
         "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/362/15633)中的相关小节。"
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。"
       },
       {
         "name": "Order",
@@ -287,7 +287,7 @@ INFO = {
       },
       {
         "name": "OrderField",
-        "desc": "快照列表排序的依据字段。取值范围：<br><li>CREATETIME：依据快照的创建时间排序<br>默认按创建时间排序。"
+        "desc": "快照列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据快照的创建时间排序<br>默认按创建时间排序。"
       }
     ],
     "desc": "本接口（DescribeSnapshots）用于查询快照的详细信息。\n\n* 根据快照ID、创建快照的云硬盘ID、创建快照的云硬盘类型等对结果进行过滤，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n*  如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照列表。"
@@ -300,7 +300,7 @@ INFO = {
       },
       {
         "name": "InstanceId",
-        "desc": "云服务器实例ID。云盘将被挂载到此云服务器上，通过[DescribeInstances](/document/api/213/9388)接口查询。"
+        "desc": "云服务器实例ID。云盘将被挂载到此云服务器上，通过[DescribeInstances](/document/product/213/15728)接口查询。"
       }
     ],
     "desc": "本接口（AttachDisks）用于挂载云硬盘。\n\n* 支持批量操作，将多块云盘挂载到同一云主机。如果多个云盘存在不允许挂载的云盘，则操作不执行，以返回特定的错误码返回。\n* 本接口为异步接口，当挂载云盘的请求成功返回时，表示后台已发起挂载云盘的操作，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHING”变为“ATTACHED”，则为挂载成功。"
@@ -313,10 +313,10 @@ INFO = {
       },
       {
         "name": "DiskSize",
-        "desc": "扩容后的磁盘大小。必须大于当前值，最大值为4000G，步长为10G。"
+        "desc": "云硬盘扩容后的大小，单位为GB，必须大于当前云硬盘大小。取值范围： 普通云硬盘:10GB ~ 4000G；高性能云硬盘:50GB ~ 4000GB；SSD云硬盘:100GB ~ 4000GB，步长均为10GB。"
       }
     ],
-    "desc": "本接口（ResizeDisk）用于扩容云硬盘。\n\n* 只支持扩容弹性云盘。云硬盘类型可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。随云主机创建的云硬盘需通过[ResizeInstanceDisks](/document/product/213/9387)接口扩容。\n* 本接口为异步接口，接口成功返回时，云盘并未立即扩容到指定大小，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态为“EXPANDING”，表示正在扩容中，当状态变为“UNATTACHED”，表示扩容完成。 "
+    "desc": "本接口（ResizeDisk）用于扩容云硬盘。\n\n* 只支持扩容弹性云盘。云硬盘类型可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。随云主机创建的云硬盘需通过[ResizeInstanceDisks](/document/product/213/15731)接口扩容。\n* 本接口为异步接口，接口成功返回时，云盘并未立即扩容到指定大小，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态为“EXPANDING”，表示正在扩容中，当状态变为“UNATTACHED”，表示扩容完成。 "
   },
   "DetachDisks": {
     "params": [
@@ -342,7 +342,7 @@ INFO = {
         "desc": "付费模式。取值范围：<br><li>PREPAID：预付费<br><li>POSTPAID_BY_HOUR：后付费。"
       },
       {
-        "name": "DiskType",
+        "name": "DiskTypes",
         "desc": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘。"
       },
       {
@@ -355,11 +355,11 @@ INFO = {
       },
       {
         "name": "CPU",
-        "desc": "子机CPU核数。"
+        "desc": "实例CPU核数。"
       },
       {
         "name": "Memory",
-        "desc": "子机内存大小。"
+        "desc": "实例内存大小。"
       }
     ],
     "desc": "本接口（DescribeDiskConfigQuota）用于查询云硬盘配额。"

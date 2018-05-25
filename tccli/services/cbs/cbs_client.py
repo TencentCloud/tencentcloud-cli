@@ -103,7 +103,7 @@ def doDescribeDiskConfigQuota(argv, arglist):
         "InquiryType": Utils.try_to_json(argv, "--InquiryType"),
         "Zones": Utils.try_to_json(argv, "--Zones"),
         "DiskChargeType": Utils.try_to_json(argv, "--DiskChargeType"),
-        "DiskType": Utils.try_to_json(argv, "--DiskType"),
+        "DiskTypes": Utils.try_to_json(argv, "--DiskTypes"),
         "DiskUsage": Utils.try_to_json(argv, "--DiskUsage"),
         "InstanceFamilies": Utils.try_to_json(argv, "--InstanceFamilies"),
         "CPU": Utils.try_to_json(argv, "--CPU"),

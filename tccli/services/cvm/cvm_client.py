@@ -1091,39 +1091,6 @@ def doModifyImageAttribute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStartInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("StartInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.StartInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doInquiryPriceResetInstancesType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1642,14 +1609,14 @@ def doDescribeKeyPairs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryMigrateTask(argv, arglist):
+def doStartInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryMigrateTask", g_param[OptionsDefine.Version])
+        show_help("StartInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1663,9 +1630,9 @@ def doQueryMigrateTask(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryMigrateTaskRequest()
+    model = models.StartInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryMigrateTask(model)
+    rsp = client.StartInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1888,7 +1855,6 @@ ACTION_MAP = {
     "CreateImage": doCreateImage,
     "ResetInstancesType": doResetInstancesType,
     "ModifyImageAttribute": doModifyImageAttribute,
-    "StartInstances": doStartInstances,
     "InquiryPriceResetInstancesType": doInquiryPriceResetInstancesType,
     "DescribeRegions": doDescribeRegions,
     "ModifyHostsAttribute": doModifyHostsAttribute,
@@ -1904,7 +1870,7 @@ ACTION_MAP = {
     "ModifyInstancesProject": doModifyInstancesProject,
     "RenewHosts": doRenewHosts,
     "DescribeKeyPairs": doDescribeKeyPairs,
-    "QueryMigrateTask": doQueryMigrateTask,
+    "StartInstances": doStartInstances,
     "DescribeHosts": doDescribeHosts,
     "AllocateHosts": doAllocateHosts,
     "DescribeInternetChargeTypeConfigs": doDescribeInternetChargeTypeConfigs,

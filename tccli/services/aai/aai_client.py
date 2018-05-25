@@ -12,24 +12,28 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.scf.v20180416 import scf_client as scf_client_v20180416
-from tencentcloud.scf.v20180416 import models as models_v20180416
-from tccli.services.scf import v20180416
-from tccli.services.scf.v20180416 import help as v20180416_help
+from tencentcloud.aai.v20180522 import aai_client as aai_client_v20180522
+from tencentcloud.aai.v20180522 import models as models_v20180522
+from tccli.services.aai import v20180522
+from tccli.services.aai.v20180522 import help as v20180522_help
 
 
-def doInvoke(argv, arglist):
+def doSentenceRecognition(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Invoke", g_param[OptionsDefine.Version])
+        show_help("SentenceRecognition", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "InvocationType": Utils.try_to_json(argv, "--InvocationType"),
-        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
-        "ClientContext": Utils.try_to_json(argv, "--ClientContext"),
-        "LogType": Utils.try_to_json(argv, "--LogType"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
+        "EngSerViceType": Utils.try_to_json(argv, "--EngSerViceType"),
+        "SourceType": Utils.try_to_json(argv, "--SourceType"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+        "VoiceFormat": Utils.try_to_json(argv, "--VoiceFormat"),
+        "UsrAudioKey": Utils.try_to_json(argv, "--UsrAudioKey"),
+        "Data": Utils.try_to_json(argv, "--Data"),
+        "DataLen": Utils.try_to_json(argv, "--DataLen"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -40,12 +44,12 @@ def doInvoke(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InvokeRequest()
+    model = models.SentenceRecognitionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Invoke(model)
+    rsp = client.SentenceRecognition(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -56,31 +60,31 @@ def doInvoke(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180416": scf_client_v20180416,
+    "v20180522": aai_client_v20180522,
 
 }
 
 MODELS_MAP = {
-    "v20180416": models_v20180416,
+    "v20180522": models_v20180522,
 
 }
 
 ACTION_MAP = {
-    "Invoke": doInvoke,
+    "SentenceRecognition": doSentenceRecognition,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180416.version,
+    v20180522.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180416.version.replace('-', ''): {"help": v20180416_help.INFO,"desc": v20180416_help.DESC},
+     'v' + v20180522.version.replace('-', ''): {"help": v20180522_help.INFO,"desc": v20180522_help.DESC},
 
 }
 
 
-def scf_action(argv, arglist):
+def aai_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -96,7 +100,7 @@ def scf_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "scf", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "aai", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -117,7 +121,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("scf", scf_action)
+    cmd = NiceCommand("aai", aai_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -176,11 +180,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["scf"][OptionsDefine.Version]
+            version = config["aai"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["scf"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["aai"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -197,7 +201,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "scf", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "aai", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -207,7 +211,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["scf"]["version"]
+        version = profile["aai"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass
