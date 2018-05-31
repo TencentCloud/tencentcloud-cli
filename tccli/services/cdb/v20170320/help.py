@@ -10,6 +10,36 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBInstanceGTID)用于查询云数据库实例是否开通了GTID，不支持版本为5.5以及以下的实例。"
   },
+  "DescribeAccountPrivileges": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "User",
+        "desc": "数据库的账号名称。"
+      },
+      {
+        "name": "Host",
+        "desc": "数据库的账号域名。"
+      }
+    ],
+    "desc": "本接口(DescribeAccountPrivileges)用于查询云数据库账户支持的权限信息。"
+  },
+  "DeleteAccounts": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Accounts",
+        "desc": "云数据库账号。"
+      }
+    ],
+    "desc": "本接口(DeleteAccounts)用于删除云数据库的账户。"
+  },
   "DescribeDBInstanceCharset": {
     "params": [
       {
@@ -40,6 +70,19 @@ INFO = {
       }
     ],
     "desc": "本接口(DeleteBackup)用于删除数据库备份。"
+  },
+  "AssociateSecurityGroups": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组Id。"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID列表，一个或者多个实例Id组成的数组。"
+      }
+    ],
+    "desc": "本接口(AssociateSecurityGroups)用于安全组批量绑定实例。"
   },
   "IsolateDBInstance": {
     "params": [
@@ -287,6 +330,15 @@ INFO = {
     ],
     "desc": "本接口(ModifyDBInstanceVipVport)用于修改云数据库实例的IP和端口号，也可进行基础网络转VPC网络和VPC网络下的子网变更。"
   },
+  "DescribeDBInstanceConfig": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      }
+    ],
+    "desc": "本接口(DescribeDBInstanceConfig)用于云数据库实例的配置信息，包括同步模式，部署模式等。"
+  },
   "DescribeDBInstanceRebootTime": {
     "params": [
       {
@@ -324,6 +376,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名。"
+  },
+  "RestartDBInstances": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      }
+    ],
+    "desc": "本接口(RestartDBInstances)用于重启云数据库实例。\n\n注意：\n1、本接口只支持主实例进行重启操作；\n2、实例状态必须为正常，并且没有其他异步任务在执行中。"
   },
   "DescribeDBInstances": {
     "params": [
@@ -430,6 +491,19 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、访问地址、实例状态等来筛选实例。\n\n1. 不指定任何过滤条件, 则默认返回20条实例记录，单次请求最多支持返回100条实例记录；\n2. 支持查询主实例、灾备实例和只读实例信息列表。"
   },
+  "VerifyRootAccount": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Password",
+        "desc": "实例ROOT账号的密码。"
+      }
+    ],
+    "desc": "本接口(VerifyRootAccount)用于校验云数据库实例的ROOT账号是否有足够的权限进行授权操作。"
+  },
   "DescribeProjectSecurityGroups": {
     "params": [
       {
@@ -439,18 +513,14 @@ INFO = {
     ],
     "desc": "本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。"
   },
-  "AssociateSecurityGroups": {
+  "OpenDBInstanceGTID": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组Id。"
-      },
-      {
-        "name": "InstanceIds",
-        "desc": "实例ID列表，一个或者多个实例Id组成的数组。"
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
       }
     ],
-    "desc": "本接口(AssociateSecurityGroups)用于安全组批量绑定实例。"
+    "desc": "本接口(OpenDBInstanceGTID)用于开启云数据库实例的GTID，只支持版本为5.6以及以上的实例。"
   },
   "DescribeSlowLogs": {
     "params": [
@@ -498,6 +568,23 @@ INFO = {
       }
     ],
     "desc": "本接口(OpenWanService)用于开通实例外网访问"
+  },
+  "DescribeAccounts": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录偏移量，默认值为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次请求返回的数量，默认值为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口(DescribeAccounts)用于查询云数据库的所有账户信息。"
   },
   "CreateDBInstance": {
     "params": [
@@ -596,6 +683,35 @@ INFO = {
     ],
     "desc": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询价格（包年包月）](https://cloud.tencent.com/document/api/236/1332)接口查询可创建实例的售卖价格；\n\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n\n3. 支持创建 MySQL5.5 、 MySQL5.6 、 MySQL5.7 版本；\n\n4. 支持创建主实例、只读实例、灾备实例；"
   },
+  "ModifyAccountPrivileges": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Accounts",
+        "desc": "数据库的账号，包括用户名和域名。"
+      },
+      {
+        "name": "GlobalPrivileges",
+        "desc": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
+      },
+      {
+        "name": "DatabasePrivileges",
+        "desc": "数据库的权限。Privileges权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
+      },
+      {
+        "name": "TablePrivileges",
+        "desc": "数据库中表的权限。Privileges权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。"
+      },
+      {
+        "name": "ColumnPrivileges",
+        "desc": "数据库表中列的权限。Privileges权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。"
+      }
+    ],
+    "desc": "本接口(ModifyAccountPrivileges)用于修改云数据库的账户的权限信息。"
+  },
   "ModifyDBInstanceSecurityGroups": {
     "params": [
       {
@@ -633,6 +749,23 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeDBImportRecords)用于查询云数据库导入任务操作日志。"
+  },
+  "DescribeDBSwitchRecords": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页参数，偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页参数，单次请求数量限制。"
+      }
+    ],
+    "desc": "本接口(DescribeDBSwitchRecords)用于查询云数据库实例切换记录。"
   },
   "SwitchForUpgrade": {
     "params": [
@@ -705,6 +838,23 @@ INFO = {
     ],
     "desc": "本接口(CreateDBImportJob)用于创建云数据库数据导入任务。"
   },
+  "ModifyAccountDescription": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Description",
+        "desc": "数据库账号的备注信息。"
+      },
+      {
+        "name": "Accounts",
+        "desc": "云数据库账号。"
+      }
+    ],
+    "desc": "本接口(ModifyAccountDescription)用于修改云数据库账户的备注信息。"
+  },
   "CloseWanService": {
     "params": [
       {
@@ -740,6 +890,23 @@ INFO = {
     ],
     "desc": "本接口(DescribeBackupDownloadDbTableCode)用于查询备份数据分库分表下载位点。"
   },
+  "ModifyAccountPassword": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "NewPassword",
+        "desc": "数据库账号的新密码。"
+      },
+      {
+        "name": "Accounts",
+        "desc": "云数据库账号。"
+      }
+    ],
+    "desc": "本接口(ModifyAccountPassword)用于修改云数据库账户的密码。"
+  },
   "DescribeBinlogs": {
     "params": [
       {
@@ -756,6 +923,48 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeBinlogs)用于查询云数据库实例的二进制数据。"
+  },
+  "CreateAccounts": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Accounts",
+        "desc": "云数据库账号。"
+      },
+      {
+        "name": "Password",
+        "desc": "新账户的密码。"
+      },
+      {
+        "name": "Description",
+        "desc": "备注信息。"
+      }
+    ],
+    "desc": "本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息。"
+  },
+  "DescribeDatabases": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，最小值为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次请求数量，取值范围：[0-100]。"
+      },
+      {
+        "name": "DatabaseRegexp",
+        "desc": "匹配数据库库名的正则表达式，规则同MySQL官网"
+      }
+    ],
+    "desc": "本接口(DescribeDatabases)用于查询云数据库实例的数据库信息。"
   },
   "DescribeDBSecurityGroups": {
     "params": [

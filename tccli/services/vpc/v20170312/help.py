@@ -1,6 +1,65 @@
 # -*- coding: utf-8 -*-
 DESC = "vpc-2017-03-12"
 INFO = {
+  "DownloadCustomerGatewayConfiguration": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
+      },
+      {
+        "name": "VpnConnectionId",
+        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。"
+      },
+      {
+        "name": "CustomerGatewayVendor",
+        "desc": "对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。"
+      },
+      {
+        "name": "InterfaceName",
+        "desc": "通道接入设备物理接口名称。"
+      }
+    ],
+    "desc": "本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。"
+  },
+  "DescribeAddressTemplateGroups": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>address-template-group-name - String - （过滤条件）IP地址模板集合名称。</li>\n<li>address-template-group-id - String - （过滤条件）IP地址模板实集合例ID，例如：ipmg-mdunqeb6。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "查询IP地址模板集合"
+  },
+  "DescribeCustomerGateways": {
+    "params": [
+      {
+        "name": "CustomerGatewayIds",
+        "desc": "对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeCustomerGateways）用于查询对端网关列表。"
+  },
   "ReplaceSecurityGroupPolicy": {
     "params": [
       {
@@ -23,18 +82,22 @@ INFO = {
     ],
     "desc": "删除协议端口模板"
   },
-  "UnassignPrivateIpAddresses": {
+  "ModifyAddressTemplateAttribute": {
     "params": [
       {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+        "name": "AddressTemplateId",
+        "desc": "IP地址模板实例ID，例如：ipm-mdunqeb6。"
       },
       {
-        "name": "PrivateIpAddresses",
-        "desc": "指定的内网IP信息。"
+        "name": "AddressTemplateName",
+        "desc": "IP地址模板名称。"
+      },
+      {
+        "name": "Addresses",
+        "desc": "地址信息，支持 IP、CIDR、IP 范围。"
       }
     ],
-    "desc": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。"
+    "desc": "修改IP地址模板"
   },
   "DeleteAddressTemplateGroup": {
     "params": [
@@ -54,6 +117,23 @@ INFO = {
     ],
     "desc": "删除协议端口模板集合"
   },
+  "AssignPrivateIpAddresses": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+      },
+      {
+        "name": "PrivateIpAddresses",
+        "desc": "指定的内网IP信息。"
+      },
+      {
+        "name": "SecondaryPrivateIpAddressCount",
+        "desc": "新申请的内网IP地址个数。"
+      }
+    ],
+    "desc": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"https://cloud.tencent.com/document/product/215/6513\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。"
+  },
   "DescribeRouteTables": {
     "params": [
       {
@@ -62,7 +142,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>route-table-name - String - （过滤条件）路由表名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>association.main - Boolean - （过滤条件）是否主路由表。</li>"
+        "desc": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>route-table-name - String - （过滤条件）路由表名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>association.main - String - （过滤条件）是否主路由表。</li>"
       },
       {
         "name": "Offset",
@@ -92,7 +172,7 @@ INFO = {
     "params": [
       {
         "name": "SubnetId",
-        "desc": "子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnetEx接口查询。"
+        "desc": "子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。"
       },
       {
         "name": "RouteTableId",
@@ -100,6 +180,40 @@ INFO = {
       }
     ],
     "desc": "本接口（ReplaceRouteTableAssociation)用于修改子网（Subnet）关联的路由表（RouteTable）。\n* 一个子网只能关联一个路由表。"
+  },
+  "MigrateNetworkInterface": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+      },
+      {
+        "name": "SourceInstanceId",
+        "desc": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。"
+      },
+      {
+        "name": "DestinationInstanceId",
+        "desc": "待迁移的目的CVM实例ID。"
+      }
+    ],
+    "desc": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。"
+  },
+  "DescribeServiceTemplates": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>service-template-name - String - （过滤条件）协议端口模板名称。</li>\n<li>service-template-id - String - （过滤条件）协议端口模板实例ID，例如：ppm-e6dy460g。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "查询协议端口模板"
   },
   "AttachNetworkInterface": {
     "params": [
@@ -190,6 +304,36 @@ INFO = {
     ],
     "desc": "本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。\n注意: 调用本接口是先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。"
   },
+  "ModifyVpnGatewayAttribute": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
+      },
+      {
+        "name": "VpnGatewayName",
+        "desc": "VPN网关名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "VPN网关计费模式，目前只支持预付费（即包年包月）到后付费（即按量计费）的转换。即参数只支持：POSTPAID_BY_HOUR。"
+      }
+    ],
+    "desc": "本接口（ModifyVpnGatewayAttribute）用于修改VPN网关属性。"
+  },
+  "ResetVpnGatewayInternetMaxBandwidth": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。"
+      }
+    ],
+    "desc": "本接口（ResetVpnGatewayInternetMaxBandwidth）调整VPN网关带宽上限。目前支持升级配置，如果是包年包月VPN网关需要在有效期内。"
+  },
   "DeleteVpc": {
     "params": [
       {
@@ -226,22 +370,31 @@ INFO = {
     ],
     "desc": "本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* EIP 是专为动态云计算设计的静态 IP 地址。借助 EIP，您可以快速将 EIP 重新映射到您的另一个实例上，从而屏蔽实例故障。\n* 您的 EIP 与腾讯云账户相关联，而不是与某个实例相关联。在您选择显式释放该地址，或欠费超过七天之前，它会一直与您的腾讯云账户保持关联。\n* 平台对用户每地域能申请的 EIP 最大配额有所限制，可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)，上述配额可通过 DescribeAddressQuota 接口获取。"
   },
-  "ModifyAddressTemplateAttribute": {
+  "UnassignPrivateIpAddresses": {
     "params": [
       {
-        "name": "AddressTemplateId",
-        "desc": "IP地址模板实例ID，例如：ipm-mdunqeb6。"
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
       },
       {
-        "name": "AddressTemplateName",
-        "desc": "IP地址模板名称。"
-      },
-      {
-        "name": "Addresses",
-        "desc": "地址信息，支持 IP、CIDR、IP 范围。"
+        "name": "PrivateIpAddresses",
+        "desc": "指定的内网IP信息。"
       }
     ],
-    "desc": "修改IP地址模板"
+    "desc": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。"
+  },
+  "ModifyCustomerGatewayAttribute": {
+    "params": [
+      {
+        "name": "CustomerGatewayId",
+        "desc": "对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。"
+      },
+      {
+        "name": "CustomerGatewayName",
+        "desc": "对端网关名称，可任意命名，但不得超过60个字符。"
+      }
+    ],
+    "desc": "本接口（ModifyCustomerGatewayAttribute）用于修改对端网关信息。"
   },
   "DescribeSecurityGroupPolicies": {
     "params": [
@@ -251,6 +404,61 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeSecurityGroupPolicies）用于查询安全组规则。"
+  },
+  "DisassociateAddress": {
+    "params": [
+      {
+        "name": "AddressId",
+        "desc": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。"
+      },
+      {
+        "name": "ReallocateNormalPublicIp",
+        "desc": "表示解绑 EIP 之后是否分配普通公网 IP。取值范围：<br><li>TRUE：表示解绑 EIP 之后分配普通公网 IP。<br><li>FALSE：表示解绑 EIP 之后不分配普通公网 IP。<br>默认取值：FALSE。<br><br>只有满足以下条件时才能指定该参数：<br><li> 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。<br><li>解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 [DescribeAddressQuota](https://cloud.tencent.com/document/api/213/1378) 接口获取。"
+      }
+    ],
+    "desc": "本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\n* EIP 如果被封堵，则不能进行解绑定操作。"
+  },
+  "DetachNetworkInterface": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "CVM实例ID。形如：ins-r8hr2upy。"
+      }
+    ],
+    "desc": "本接口（DetachNetworkInterface）用于弹性网卡解绑云主机。"
+  },
+  "ModifyVpnConnectionAttribute": {
+    "params": [
+      {
+        "name": "VpnConnectionId",
+        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。"
+      },
+      {
+        "name": "VpnConnectionName",
+        "desc": "VPN通道名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "PreShareKey",
+        "desc": "预共享密钥。"
+      },
+      {
+        "name": "SecurityPolicyDatabases",
+        "desc": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。"
+      },
+      {
+        "name": "IKEOptionsSpecification",
+        "desc": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自保护机制，用户配置网络安全协议。"
+      },
+      {
+        "name": "IPSECOptionsSpecification",
+        "desc": "IPSec配置，腾讯云提供IPSec安全会话设置。"
+      }
+    ],
+    "desc": "本接口（ModifyVpnConnectionAttribute）用于修改VPN通道。"
   },
   "DescribeSecurityGroups": {
     "params": [
@@ -273,39 +481,65 @@ INFO = {
     ],
     "desc": "本接口（DescribeSecurityGroups）用于查询安全组。"
   },
-  "MigrateNetworkInterface": {
+  "DeleteVpnConnection": {
     "params": [
       {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
       },
       {
-        "name": "SourceInstanceId",
-        "desc": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。"
-      },
-      {
-        "name": "DestinationInstanceId",
-        "desc": "待迁移的目的CVM实例ID。"
+        "name": "VpnConnectionId",
+        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。"
       }
     ],
-    "desc": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。"
+    "desc": "本接口(DeleteVpnConnection)用于删除VPN通道。"
   },
-  "AssignPrivateIpAddresses": {
+  "CreateServiceTemplate": {
     "params": [
       {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+        "name": "ServiceTemplateName",
+        "desc": "协议端口模板名称"
       },
       {
-        "name": "PrivateIpAddresses",
-        "desc": "指定的内网IP信息。"
-      },
-      {
-        "name": "SecondaryPrivateIpAddressCount",
-        "desc": "新申请的内网IP地址个数。"
+        "name": "Services",
+        "desc": "支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。"
       }
     ],
-    "desc": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"https://cloud.tencent.com/document/product/215/6513\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。"
+    "desc": "创建协议端口模板"
+  },
+  "CreateVpnGateway": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
+      },
+      {
+        "name": "VpnGatewayName",
+        "desc": "VPN网关名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。"
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。"
+      }
+    ],
+    "desc": "本接口（CreateVpnGateways）用于创建VPN网关。"
+  },
+  "DeleteVpnGateway": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
+      }
+    ],
+    "desc": "本接口（DeleteVpnGateway）用于删除VPN网关。目前只支持删除运行中的按量计费的IPSEC网关实例。"
   },
   "ModifyPrivateIpAddressesAttribute": {
     "params": [
@@ -320,18 +554,9 @@ INFO = {
     ],
     "desc": "本接口（ModifyPrivateIpAddressesAttribute）用于修改弹性网卡内网IP属性。"
   },
-  "CreateServiceTemplate": {
-    "params": [
-      {
-        "name": "ServiceTemplateName",
-        "desc": "协议端口模板名称"
-      },
-      {
-        "name": "Services",
-        "desc": "支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。"
-      }
-    ],
-    "desc": "创建协议端口模板"
+  "DescribeCustomerGatewayVendors": {
+    "params": [],
+    "desc": "本接口（DescribeCustomerGatewayVendors）用于查询可支持的对端网关厂商信息。"
   },
   "DescribeAddresses": {
     "params": [
@@ -375,53 +600,61 @@ INFO = {
     ],
     "desc": "本接口 (AssociateAddress) 用于将[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）绑定到实例或弹性网卡的指定内网 IP 上。\n* 将 EIP 绑定到实例上，其本质是将 EIP 绑定到实例上主网卡的主内网 IP 上。\n* 将 EIP 绑定到主网卡的主内网IP上，绑定过程会把其上绑定的普通公网 IP 自动解绑并释放。\n* 如果指定网卡的内网 IP 已经绑定了 EIP，则必须先解绑该 EIP，才能再绑定新的。\n* EIP 如果欠费或被封堵，则不能被绑定。\n* 只有状态为 UNBIND 的 EIP 才能够被绑定。"
   },
-  "DeleteRoutes": {
+  "DescribeClassicLinkInstances": {
     "params": [
       {
-        "name": "RouteTableId",
-        "desc": "路由表实例ID。"
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>vpc-id - String - （过滤条件）VPC实例ID。</li>\n<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>"
       },
       {
-        "name": "Routes",
-        "desc": "路由策略对象。"
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
       }
     ],
-    "desc": "本接口(DeleteRoutes)用于对某个路由表批量删除路由策略（Route）。"
+    "desc": "本接口(DescribeClassicLinkInstances)用于私有网络和基础网络设备互通。"
   },
-  "ModifySecurityGroupPolicies": {
+  "DeleteCustomerGateway": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
-      },
-      {
-        "name": "SecurityGroupPolicySet",
-        "desc": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。"
+        "name": "CustomerGatewayId",
+        "desc": "对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。"
       }
     ],
-    "desc": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n* 接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex 。\n* 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略Egress和Ingress。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。"
+    "desc": "本接口（DeleteCustomerGateway）用于删除对端网关。"
   },
-  "DetachClassicLinkVpc": {
+  "InquiryPriceResetVpnGatewayInternetMaxBandwidth": {
     "params": [
       {
-        "name": "VpcId",
-        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
       },
       {
-        "name": "InstanceIds",
-        "desc": "CVM实例ID查询。形如：ins-r8hr2upy。"
+        "name": "InternetMaxBandwidthOut",
+        "desc": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。"
       }
     ],
-    "desc": "本接口(DetachClassicLinkVpc)用于删除私有网络和基础网络设备互通。"
+    "desc": "本接口（InquiryPriceResetVpnGatewayInternetMaxBandwidth）调整VPN网关带宽上限询价。"
   },
-  "DeleteSubnet": {
+  "ModifySubnetAttribute": {
     "params": [
       {
         "name": "SubnetId",
-        "desc": "子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。"
+        "desc": "子网实例ID。形如：subnet-pxir56ns。"
+      },
+      {
+        "name": "SubnetName",
+        "desc": "子网名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "EnableBroadcast",
+        "desc": "子网是否开启广播。"
       }
     ],
-    "desc": "本接口（DeleteSubnet）用于用于删除子网(Subnet)。\n* 删除子网前，请清理该子网下所有资源，包括云主机、负载均衡、云数据、noSql、弹性网卡等资源。"
+    "desc": "本接口（ModifySubnetAttribute）用于修改子网属性。"
   },
   "ModifySecurityGroupAttribute": {
     "params": [
@@ -500,6 +733,23 @@ INFO = {
     ],
     "desc": "查询协议端口模板集合"
   },
+  "InquiryPriceCreateVpnGateway": {
+    "params": [
+      {
+        "name": "InstanceChargeType",
+        "desc": "VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。"
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。"
+      }
+    ],
+    "desc": "本接口（InquiryPriceCreateVpnGateway）用于创建VPN网关询价。"
+  },
   "ModifyServiceTemplateAttribute": {
     "params": [
       {
@@ -530,22 +780,31 @@ INFO = {
     ],
     "desc": "本接口（ModifyRouteTableAttribute）用于修改路由表（RouteTable）属性。"
   },
-  "DescribeClassicLinkInstances": {
+  "ResetVpnConnection": {
     "params": [
       {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li>vpc-id - String - （过滤条件）VPC实例ID。</li>\n<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>"
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量"
+        "name": "VpnConnectionId",
+        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。"
       }
     ],
-    "desc": "本接口(DescribeClassicLinkInstances)用于私有网络和基础网络设备互通。"
+    "desc": "本接口(ResetVpnConnection)用于重置VPN通道。"
+  },
+  "DeleteRoutes": {
+    "params": [
+      {
+        "name": "RouteTableId",
+        "desc": "路由表实例ID。"
+      },
+      {
+        "name": "Routes",
+        "desc": "路由策略对象。"
+      }
+    ],
+    "desc": "本接口(DeleteRoutes)用于对某个路由表批量删除路由策略（Route）。"
   },
   "CreateNetworkInterface": {
     "params": [
@@ -597,18 +856,18 @@ INFO = {
     ],
     "desc": "修改IP地址模板集合"
   },
-  "CreateAddressTemplateGroup": {
+  "ModifySecurityGroupPolicies": {
     "params": [
       {
-        "name": "AddressTemplateGroupName",
-        "desc": "IP地址模版集合名称。"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
       },
       {
-        "name": "AddressTemplateIds",
-        "desc": "IP地址模版实例ID，例如：ipm-mdunqeb6。"
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。"
       }
     ],
-    "desc": "创建IP地址模版集合"
+    "desc": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n* 接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex 。\n* 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略Egress和Ingress。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。"
   },
   "CreateSecurityGroup": {
     "params": [
@@ -640,22 +899,18 @@ INFO = {
     ],
     "desc": "本接口(CreateRoutes)用于创建路由策略。\n* 向指定路由表批量新增路由策略。"
   },
-  "DescribeServiceTemplates": {
+  "CreateAddressTemplate": {
     "params": [
       {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li>service-template-name - String - （过滤条件）协议端口模板名称。</li>\n<li>service-template-id - String - （过滤条件）协议端口模板实例ID，例如：ppm-e6dy460g。</li>"
+        "name": "AddressTemplateName",
+        "desc": "IP地址模版名称"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。"
+        "name": "Addresses",
+        "desc": "地址信息，支持 IP、CIDR、IP 范围。"
       }
     ],
-    "desc": "查询协议端口模板"
+    "desc": "创建IP地址模版"
   },
   "ModifyNetworkInterfaceAttribute": {
     "params": [
@@ -687,35 +942,48 @@ INFO = {
     ],
     "desc": "本接口 (ReleaseAddresses) 用于释放一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 该操作不可逆，释放后 EIP 关联的 IP 地址将不再属于您的名下。\n* 只有状态为 UNBIND 的 EIP 才能进行释放操作。"
   },
-  "DetachNetworkInterface": {
+  "DescribeVpnGateways": {
     "params": [
       {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+        "name": "VpnGatewayIds",
+        "desc": "VPN网关实例ID。形如：vpngw-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnGatewayIds和Filters。"
       },
       {
-        "name": "InstanceId",
-        "desc": "CVM实例ID。形如：ins-r8hr2upy。"
+        "name": "Filters",
+        "desc": "过滤器对象属性"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "请求对象个数"
       }
     ],
-    "desc": "本接口（DetachNetworkInterface）用于弹性网卡解绑云主机。"
+    "desc": "本接口（DescribeVpnGateways）用于查询VPN网关列表。"
   },
-  "ModifySubnetAttribute": {
+  "InquiryPriceRenewVpnGateway": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。"
+      }
+    ],
+    "desc": "本接口（InquiryPriceRenewVpnGateway）用于续费VPN网关询价。目前仅支持IPSEC类型网关的询价。"
+  },
+  "DeleteSubnet": {
     "params": [
       {
         "name": "SubnetId",
-        "desc": "子网实例ID。形如：subnet-pxir56ns。"
-      },
-      {
-        "name": "SubnetName",
-        "desc": "子网名称，最大长度不能超过60个字节。"
-      },
-      {
-        "name": "EnableBroadcast",
-        "desc": "子网是否开启广播。"
+        "desc": "子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。"
       }
     ],
-    "desc": "本接口（ModifySubnetAttribute）用于修改子网属性。"
+    "desc": "本接口（DeleteSubnet）用于用于删除子网(Subnet)。\n* 删除子网前，请清理该子网下所有资源，包括云主机、负载均衡、云数据、noSql、弹性网卡等资源。"
   },
   "CreateServiceTemplateGroup": {
     "params": [
@@ -764,18 +1032,31 @@ INFO = {
     ],
     "desc": "删除路由表"
   },
-  "DisassociateAddress": {
+  "CreateAddressTemplateGroup": {
     "params": [
       {
-        "name": "AddressId",
-        "desc": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。"
+        "name": "AddressTemplateGroupName",
+        "desc": "IP地址模版集合名称。"
       },
       {
-        "name": "ReallocateNormalPublicIp",
-        "desc": "表示解绑 EIP 之后是否分配普通公网 IP。取值范围：<br><li>TRUE：表示解绑 EIP 之后分配普通公网 IP。<br><li>FALSE：表示解绑 EIP 之后不分配普通公网 IP。<br>默认取值：FALSE。<br><br>只有满足以下条件时才能指定该参数：<br><li> 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。<br><li>解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 [DescribeAddressQuota](https://cloud.tencent.com/document/api/213/1378) 接口获取。"
+        "name": "AddressTemplateIds",
+        "desc": "IP地址模版实例ID，例如：ipm-mdunqeb6。"
       }
     ],
-    "desc": "本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\n* EIP 如果被封堵，则不能进行解绑定操作。"
+    "desc": "创建IP地址模版集合"
+  },
+  "CreateCustomerGateway": {
+    "params": [
+      {
+        "name": "CustomerGatewayName",
+        "desc": "对端网关名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "IpAddress",
+        "desc": "对端网关公网IP。"
+      }
+    ],
+    "desc": "本接口（CreateCustomerGateway）用于创建对端网关。"
   },
   "DescribeAddressTemplates": {
     "params": [
@@ -794,18 +1075,42 @@ INFO = {
     ],
     "desc": "查询IP地址模板"
   },
-  "CreateAddressTemplate": {
+  "CreateVpnConnection": {
     "params": [
       {
-        "name": "AddressTemplateName",
-        "desc": "IP地址模版名称"
+        "name": "VpcId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
       },
       {
-        "name": "Addresses",
-        "desc": "地址信息，支持 IP、CIDR、IP 范围。"
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
+      },
+      {
+        "name": "CustomerGatewayId",
+        "desc": "对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。"
+      },
+      {
+        "name": "VpnConnectionName",
+        "desc": "通道名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "PreShareKey",
+        "desc": "预共享密钥。"
+      },
+      {
+        "name": "SecurityPolicyDatabases",
+        "desc": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。"
+      },
+      {
+        "name": "IKEOptionsSpecification",
+        "desc": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自保护机制，用户配置网络安全协议"
+      },
+      {
+        "name": "IPSECOptionsSpecification",
+        "desc": "IPSec配置，腾讯云提供IPSec安全会话设置"
       }
     ],
-    "desc": "创建IP地址模版"
+    "desc": "本接口（CreateVpnConnection）用于创建VPN通道。"
   },
   "ModifyAddressAttribute": {
     "params": [
@@ -820,22 +1125,18 @@ INFO = {
     ],
     "desc": "本接口 (ModifyAddressAttribute) 用于修改[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）的名称。"
   },
-  "DescribeAddressTemplateGroups": {
+  "RenewVpnGateway": {
     "params": [
       {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li>address-template-group-name - String - （过滤条件）IP地址模板集合名称。</li>\n<li>address-template-group-id - String - （过滤条件）IP地址模板实集合例ID，例如：ipmg-mdunqeb6。</li>"
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。"
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费计费模式。"
       }
     ],
-    "desc": "查询IP地址模板集合"
+    "desc": "本接口（RenewVpnGateway）用于预付费（包年包月）VPN网关续费。目前只支持IPSEC网关。"
   },
   "DescribeVpcs": {
     "params": [
@@ -930,6 +1231,40 @@ INFO = {
       }
     ],
     "desc": "本接口（ReplaceRoutes）根据路由策略ID（RouteId）修改指定的路由策略（Route），支持批量修改。"
+  },
+  "DetachClassicLinkVpc": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "CVM实例ID查询。形如：ins-r8hr2upy。"
+      }
+    ],
+    "desc": "本接口(DetachClassicLinkVpc)用于删除私有网络和基础网络设备互通。"
+  },
+  "DescribeVpnConnections": {
+    "params": [
+      {
+        "name": "VpnConnectionIds",
+        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnConnectionIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": " 本接口（DescribeVpnConnections）查询VPN通道列表。"
   },
   "CreateSubnet": {
     "params": [
