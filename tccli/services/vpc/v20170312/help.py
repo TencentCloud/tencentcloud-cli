@@ -1045,6 +1045,15 @@ INFO = {
     ],
     "desc": "创建IP地址模版集合"
   },
+  "DescribeSecurityGroupAssociationStatistics": {
+    "params": [
+      {
+        "name": "SecurityGroupIds",
+        "desc": "安全实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      }
+    ],
+    "desc": "本接口（DescribeSecurityGroupAssociationStatistics）用于查询安全组关联的实例统计。"
+  },
   "CreateCustomerGateway": {
     "params": [
       {

@@ -320,6 +320,7 @@ def doModifyInstancesAttribute(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "SecurityGroups": Utils.try_to_json(argv, "--SecurityGroups"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -415,16 +416,14 @@ def doInquiryPriceResetInstancesInternetMaxBandwidth(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDisassociateInstancesKeyPairs(argv, arglist):
+def doDeleteImages(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DisassociateInstancesKeyPairs", g_param[OptionsDefine.Version])
+        show_help("DeleteImages", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "KeyIds": Utils.try_to_json(argv, "--KeyIds"),
-        "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
+        "ImageIds": Utils.try_to_json(argv, "--ImageIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -438,9 +437,9 @@ def doDisassociateInstancesKeyPairs(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DisassociateInstancesKeyPairsRequest()
+    model = models.DeleteImagesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DisassociateInstancesKeyPairs(model)
+    rsp = client.DeleteImages(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -681,6 +680,8 @@ def doRunInstances(argv, arglist):
         "HostName": Utils.try_to_json(argv, "--HostName"),
         "ActionTimer": Utils.try_to_json(argv, "--ActionTimer"),
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
+        "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
+        "UserData": Utils.try_to_json(argv, "--UserData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -706,14 +707,16 @@ def doRunInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImages(argv, arglist):
+def doDisassociateInstancesKeyPairs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteImages", g_param[OptionsDefine.Version])
+        show_help("DisassociateInstancesKeyPairs", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageIds": Utils.try_to_json(argv, "--ImageIds"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "KeyIds": Utils.try_to_json(argv, "--KeyIds"),
+        "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -727,9 +730,9 @@ def doDeleteImages(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImagesRequest()
+    model = models.DisassociateInstancesKeyPairsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteImages(model)
+    rsp = client.DisassociateInstancesKeyPairs(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1294,74 +1297,6 @@ def doResetInstancesInternetMaxBandwidth(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstanceOperationLogs(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeInstanceOperationLogs", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceOperationLogsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInstanceOperationLogs(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateInstanceVpcConfig(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UpdateInstanceVpcConfig", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "VirtualPrivateCloud": Utils.try_to_json(argv, "--VirtualPrivateCloud"),
-        "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateInstanceVpcConfigRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.UpdateInstanceVpcConfig(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doInquiryPriceRenewInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1869,7 +1804,7 @@ ACTION_MAP = {
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "SyncImages": doSyncImages,
     "InquiryPriceResetInstancesInternetMaxBandwidth": doInquiryPriceResetInstancesInternetMaxBandwidth,
-    "DisassociateInstancesKeyPairs": doDisassociateInstancesKeyPairs,
+    "DeleteImages": doDeleteImages,
     "CreateKeyPair": doCreateKeyPair,
     "DeleteKeyPairs": doDeleteKeyPairs,
     "DescribeInstances": doDescribeInstances,
@@ -1877,7 +1812,7 @@ ACTION_MAP = {
     "DescribeInstanceInternetBandwidthConfigs": doDescribeInstanceInternetBandwidthConfigs,
     "AssociateInstancesKeyPairs": doAssociateInstancesKeyPairs,
     "RunInstances": doRunInstances,
-    "DeleteImages": doDeleteImages,
+    "DisassociateInstancesKeyPairs": doDisassociateInstancesKeyPairs,
     "InquiryPriceResizeInstanceDisks": doInquiryPriceResizeInstanceDisks,
     "TerminateInstances": doTerminateInstances,
     "InquiryPriceResetInstance": doInquiryPriceResetInstance,
@@ -1894,8 +1829,6 @@ ACTION_MAP = {
     "DescribeRegions": doDescribeRegions,
     "DescribeImportImageOs": doDescribeImportImageOs,
     "ResetInstancesInternetMaxBandwidth": doResetInstancesInternetMaxBandwidth,
-    "DescribeInstanceOperationLogs": doDescribeInstanceOperationLogs,
-    "UpdateInstanceVpcConfig": doUpdateInstanceVpcConfig,
     "InquiryPriceRenewInstances": doInquiryPriceRenewInstances,
     "ModifyKeyPairAttribute": doModifyKeyPairAttribute,
     "ImportImage": doImportImage,
