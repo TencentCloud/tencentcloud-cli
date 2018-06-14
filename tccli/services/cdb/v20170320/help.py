@@ -66,7 +66,7 @@ INFO = {
       },
       {
         "name": "BackupId",
-        "desc": "备份任务Id。"
+        "desc": "备份任务ID。该任务ID为[创建云数据库备份](https://cloud.tencent.com/document/api/236/15844)接口返回的任务ID。"
       }
     ],
     "desc": "本接口(DeleteBackup)用于删除数据库备份。"
@@ -313,11 +313,11 @@ INFO = {
       },
       {
         "name": "DstIp",
-        "desc": "目标IP。"
+        "desc": "目标IP。该参数和DstPort参数，两者必传一个。"
       },
       {
         "name": "DstPort",
-        "desc": "目标端口，支持范围为：[1024-65535]。"
+        "desc": "目标端口，支持范围为：[1024-65535]。该参数和DstIp参数，两者必传一个。"
       },
       {
         "name": "UniqVpcId",

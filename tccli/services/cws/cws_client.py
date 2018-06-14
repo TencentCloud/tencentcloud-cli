@@ -138,6 +138,7 @@ def doCreateSites(argv, arglist):
 
     param = {
         "Urls": Utils.try_to_json(argv, "--Urls"),
+        "UserAgent": Utils.try_to_json(argv, "--UserAgent"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -306,6 +307,11 @@ def doModifySiteAttribute(argv, arglist):
     param = {
         "SiteId": Utils.try_to_json(argv, "--SiteId"),
         "Name": Utils.try_to_json(argv, "--Name"),
+        "NeedLogin": Utils.try_to_json(argv, "--NeedLogin"),
+        "LoginCookie": Utils.try_to_json(argv, "--LoginCookie"),
+        "LoginCheckUrl": Utils.try_to_json(argv, "--LoginCheckUrl"),
+        "LoginCheckKw": Utils.try_to_json(argv, "--LoginCheckKw"),
+        "ScanDisallow": Utils.try_to_json(argv, "--ScanDisallow"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

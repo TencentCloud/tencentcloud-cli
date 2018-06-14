@@ -98,6 +98,10 @@ INFO = {
       {
         "name": "Urls",
         "desc": "站点的url列表"
+      },
+      {
+        "name": "UserAgent",
+        "desc": "访问网站的客户端标识"
       }
     ],
     "desc": "本接口（CreateSites）用于新增一个或多个站点。"
@@ -141,6 +145,26 @@ INFO = {
       {
         "name": "Name",
         "desc": "站点名称"
+      },
+      {
+        "name": "NeedLogin",
+        "desc": "网站是否需要登录扫描：0-未知；-1-不需要；1-需要"
+      },
+      {
+        "name": "LoginCookie",
+        "desc": "登录后的cookie"
+      },
+      {
+        "name": "LoginCheckUrl",
+        "desc": "用于测试cookie是否有效的URL"
+      },
+      {
+        "name": "LoginCheckKw",
+        "desc": "用于测试cookie是否有效的关键字"
+      },
+      {
+        "name": "ScanDisallow",
+        "desc": "禁止扫描器扫描的目录关键字"
       }
     ],
     "desc": "本接口 (ModifySiteAttribute) 用于修改站点的属性。"
@@ -233,6 +257,6 @@ INFO = {
   },
   "DescribeSiteQuota": {
     "params": [],
-    "desc": "本接口 (DescribeSiteQuota) 用于查询用户购买的站点总数和已使用数。"
+    "desc": "本接口 (DescribeSiteQuota) 用于查询用户购买的扫描次数总数和已使用数。"
   }
 }
