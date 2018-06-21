@@ -64,52 +64,6 @@ INFO = {
     ],
     "desc": "本接口（ModifyImageSharePermission）用于修改镜像分享信息。\n\n* 分享镜像后，被分享账户可以通过该镜像创建实例。\n* 每个自定义镜像最多可共享给50个账户。\n* 分享镜像无法更改名称，描述，仅可用于创建实例。\n* 只支持分享到对方账户相同地域。\n"
   },
-  "DescribeImageSharePermission": {
-    "params": [
-      {
-        "name": "ImageId",
-        "desc": "需要共享的镜像Id"
-      }
-    ],
-    "desc": "本接口（ModifyImageSharePermission）用于修改镜像分享信息。"
-  },
-  "ImportImage": {
-    "params": [
-      {
-        "name": "Architecture",
-        "desc": "导入镜像的操作系统架构，`x86_64` 或 `i386`"
-      },
-      {
-        "name": "OsType",
-        "desc": "导入镜像的操作系统类型，通过`DescribeImportImageOs`获取"
-      },
-      {
-        "name": "OsVersion",
-        "desc": "导入镜像的操作系统版本，通过`DescribeImportImageOs`获取"
-      },
-      {
-        "name": "ImageUrl",
-        "desc": "导入镜像存放的cos地址"
-      },
-      {
-        "name": "ImageName",
-        "desc": "镜像名称"
-      },
-      {
-        "name": "ImageDescription",
-        "desc": "镜像描述"
-      },
-      {
-        "name": "DryRun",
-        "desc": "只检查参数，不执行任务"
-      },
-      {
-        "name": "Force",
-        "desc": "是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)"
-      }
-    ],
-    "desc": "本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。"
-  },
   "InquiryPriceRunInstances": {
     "params": [
       {
@@ -187,6 +141,69 @@ INFO = {
     ],
     "desc": "本接口(InquiryPriceRunInstances)用于创建实例询价。本接口仅允许针对购买限制范围内的实例配置进行询价, 详见：[创建实例](https://cloud.tencent.com/document/api/213/15730)。"
   },
+  "DescribeImageSharePermission": {
+    "params": [
+      {
+        "name": "ImageId",
+        "desc": "需要共享的镜像Id"
+      }
+    ],
+    "desc": "本接口（DescribeImageSharePermission）用于查询镜像分享信息。"
+  },
+  "ImportImage": {
+    "params": [
+      {
+        "name": "Architecture",
+        "desc": "导入镜像的操作系统架构，`x86_64` 或 `i386`"
+      },
+      {
+        "name": "OsType",
+        "desc": "导入镜像的操作系统类型，通过`DescribeImportImageOs`获取"
+      },
+      {
+        "name": "OsVersion",
+        "desc": "导入镜像的操作系统版本，通过`DescribeImportImageOs`获取"
+      },
+      {
+        "name": "ImageUrl",
+        "desc": "导入镜像存放的cos地址"
+      },
+      {
+        "name": "ImageName",
+        "desc": "镜像名称"
+      },
+      {
+        "name": "ImageDescription",
+        "desc": "镜像描述"
+      },
+      {
+        "name": "DryRun",
+        "desc": "只检查参数，不执行任务"
+      },
+      {
+        "name": "Force",
+        "desc": "是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)"
+      }
+    ],
+    "desc": "本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。"
+  },
+  "ModifyKeyPairAttribute": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。"
+      },
+      {
+        "name": "KeyName",
+        "desc": "修改后的密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。"
+      },
+      {
+        "name": "Description",
+        "desc": "修改后的密钥对描述信息。可任意命名，但不得超过60个字符。"
+      }
+    ],
+    "desc": "本接口 (ModifyKeyPairAttribute) 用于修改密钥对属性。\n\n* 修改密钥对ID所指定的密钥对的名称和描述信息。\n* 密钥对名称不能和已经存在的密钥对的名称重复。\n* 密钥对ID是密钥对的唯一标识，不可修改。"
+  },
   "InquiryPriceRenewInstances": {
     "params": [
       {
@@ -228,23 +245,6 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeImages) 用于查看镜像列表。\n\n* 可以通过指定镜像ID来查询指定镜像的详细信息，或通过设定过滤器来查询满足过滤条件的镜像的详细信息。\n* 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个镜像信息。"
-  },
-  "ModifyKeyPairAttribute": {
-    "params": [
-      {
-        "name": "KeyId",
-        "desc": "密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。"
-      },
-      {
-        "name": "KeyName",
-        "desc": "修改后的密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。"
-      },
-      {
-        "name": "Description",
-        "desc": "修改后的密钥对描述信息。可任意命名，但不得超过60个字符。"
-      }
-    ],
-    "desc": "本接口 (ModifyKeyPairAttribute) 用于修改密钥对属性。\n\n* 修改密钥对ID所指定的密钥对的名称和描述信息。\n* 密钥对名称不能和已经存在的密钥对的名称重复。\n* 密钥对ID是密钥对的唯一标识，不可修改。"
   },
   "ModifyInstancesAttribute": {
     "params": [
@@ -288,22 +288,14 @@ INFO = {
     ],
     "desc": "本接口 (InquiryPriceResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限询价。\n\n* 不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。\n* 对于`BANDWIDTH_PREPAID`计费方式的带宽，需要输入参数`StartTime`和`EndTime`，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR`、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整`BANDWIDTH_POSTPAID_BY_MONTH`计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整`TRAFFIC_POSTPAID_BY_HOUR`和`BANDWIDTH_PACKAGE`计费方式的带宽。"
   },
-  "DisassociateInstancesKeyPairs": {
+  "DeleteImages": {
     "params": [
       {
-        "name": "InstanceIds",
-        "desc": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br><br>可以通过以下方式获取可用的实例ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。<br><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。"
-      },
-      {
-        "name": "KeyIds",
-        "desc": "密钥对ID列表，每次请求批量密钥对的上限为100。密钥对ID形如：`skey-11112222`。<br><br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。"
-      },
-      {
-        "name": "ForceStop",
-        "desc": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br><br>默认取值：FALSE。"
+        "name": "ImageIds",
+        "desc": "准备删除的镜像Id列表"
       }
     ],
-    "desc": "本接口 (DisassociateInstancesKeyPairs) 用于解除实例的密钥绑定关系。\n\n* 只支持[`STOPPED`](https://cloud.tencent.com/document/api/213/9452#INSTANCE_STATE)状态的`Linux`操作系统的实例。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 `SSH` 登录。可以调用 [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/9397) 接口来设置登陆密码。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。"
+    "desc": "本接口（DeleteImages）用于删除一个或多个镜像。\n\n* 当[镜像状态](https://cloud.tencent.com/document/api/213/9452#image_state)为`创建中`和`使用中`时, 不允许删除。镜像状态可以通过[DescribeImages](https://cloud.tencent.com/document/api/213/9418)获取。\n* 每个地域最多只支持创建10个自定义镜像，删除镜像可以释放账户的配额。\n* 当镜像正在被其它账户分享时，不允许删除。"
   },
   "CreateKeyPair": {
     "params": [
@@ -493,14 +485,22 @@ INFO = {
     ],
     "desc": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。\n\n* 实例创建成功后将自动开机启动，[实例状态](/document/api/213/9452#instance_state)变为“运行中”。\n* 预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。\n* 本接口允许购买的实例数量遵循[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)，所创建的实例和官网入口创建的实例共用配额。\n* 本接口为异步接口，当创建请求下发成功后会返回一个实例`ID`列表，此时实例的创建并立即未完成。在此期间实例的状态将会处于“准备中”，可以通过调用 [DescribeInstancesStatus](https://cloud.tencent.com/document/api/213/15738) 接口查询对应实例的状态，来判断生产有没有最终成功。如果实例的状态由“准备中”变为“运行中”，则为创建成功。"
   },
-  "DeleteImages": {
+  "DisassociateInstancesKeyPairs": {
     "params": [
       {
-        "name": "ImageIds",
-        "desc": "准备删除的镜像Id列表"
+        "name": "InstanceIds",
+        "desc": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br><br>可以通过以下方式获取可用的实例ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。<br><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。"
+      },
+      {
+        "name": "KeyIds",
+        "desc": "密钥对ID列表，每次请求批量密钥对的上限为100。密钥对ID形如：`skey-11112222`。<br><br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。"
+      },
+      {
+        "name": "ForceStop",
+        "desc": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br><br>默认取值：FALSE。"
       }
     ],
-    "desc": "本接口（DeleteImages）用于删除一个或多个镜像。\n\n* 当[镜像状态](https://cloud.tencent.com/document/api/213/9452#image_state)为`创建中`和`使用中`时, 不允许删除。镜像状态可以通过[DescribeImages](https://cloud.tencent.com/document/api/213/9418)获取。\n* 每个地域最多只支持创建10个自定义镜像，删除镜像可以释放账户的配额。\n* 当镜像正在被其它账户分享时，不允许删除。"
+    "desc": "本接口 (DisassociateInstancesKeyPairs) 用于解除实例的密钥绑定关系。\n\n* 只支持[`STOPPED`](https://cloud.tencent.com/document/api/213/9452#INSTANCE_STATE)状态的`Linux`操作系统的实例。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 `SSH` 登录。可以调用 [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/9397) 接口来设置登陆密码。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。"
   },
   "InquiryPriceResizeInstanceDisks": {
     "params": [
@@ -632,6 +632,23 @@ INFO = {
     "params": [],
     "desc": "本接口(DescribeImageQuota)用于查询用户帐号的镜像配额。"
   },
+  "DescribeHosts": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>\n<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>\n<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>\n<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>\n<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口 (DescribeHosts) 用于获取一个或多个CDH实例的详细信息。"
+  },
   "ResetInstancesType": {
     "params": [
       {
@@ -725,18 +742,22 @@ INFO = {
     "params": [],
     "desc": "查看可以导入的镜像操作系统信息。"
   },
-  "ModifyInstancesProject": {
+  "ModifyInstancesChargeType": {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。"
+        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。"
       },
       {
-        "name": "ProjectId",
-        "desc": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/doc/api/403/4398)接口创建。后续使用[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)接口查询实例时，项目ID可用于过滤结果。"
+        "name": "InstanceChargeType",
+        "desc": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。"
       }
     ],
-    "desc": "本接口 (ModifyInstancesProject) 用于修改实例所属项目。\n\n* 项目为一个虚拟概念，用户可以在一个账户下面建立多个项目，每个项目中管理不同的资源；将多个不同实例分属到不同项目中，后续使用 [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口查询实例，项目ID可用于过滤结果。\n* 绑定负载均衡的实例不支持修改实例所属项目，请先使用[`DeregisterInstancesFromLoadBalancer`](https://cloud.tencent.com/document/api/214/1258)接口解绑负载均衡。\n* 修改实例所属项目会自动解关联实例原来关联的安全组，修改完成后可能使用[`ModifySecurityGroupsOfInstance`](https://cloud.tencent.com/document/api/213/1367)接口关联安全组。\n* 支持批量操作。每次请求批量实例的上限为100。"
+    "desc": "本接口 (ModifyInstancesChargeType) 用于切换实例的计费模式。\n\n* 只支持从 `POSTPAID_BY_HOUR` 计费模式切换为`PREPAID`计费模式。\n* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例不支持该操作。"
   },
   "SyncImages": {
     "params": [
@@ -791,26 +812,18 @@ INFO = {
     ],
     "desc": "本接口(DescribeZoneInstanceConfigInfos) 获取可用区的机型信息。"
   },
-  "ResetInstancesInternetMaxBandwidth": {
+  "ModifyInstancesProject": {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的 `InstanceId` 获取。 每次请求批量实例的上限为100。"
+        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。"
       },
       {
-        "name": "InternetAccessible",
-        "desc": "公网出带宽配置。不同机型带宽上限范围不一致，具体限制详见带宽限制对账表。暂时只支持 `InternetMaxBandwidthOut` 参数。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "带宽生效的起始时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。起始时间不能早于当前时间。如果起始时间是今天则新设置的带宽立即生效。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。"
-      },
-      {
-        "name": "EndTime",
-        "desc": "带宽生效的终止时间。格式： `YYYY-MM-DD` ，例如：`2016-10-30` 。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过 [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。"
+        "name": "ProjectId",
+        "desc": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/doc/api/403/4398)接口创建。后续使用[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)接口查询实例时，项目ID可用于过滤结果。"
       }
     ],
-    "desc": "本接口 (ResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限。\n\n* 不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。\n* 对于 `BANDWIDTH_PREPAID` 计费方式的带宽，需要输入参数 `StartTime` 和 `EndTime` ，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过 [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397) 接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR` 、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整 `BANDWIDTH_POSTPAID_BY_MONTH` 计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整 `TRAFFIC_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽。"
+    "desc": "本接口 (ModifyInstancesProject) 用于修改实例所属项目。\n\n* 项目为一个虚拟概念，用户可以在一个账户下面建立多个项目，每个项目中管理不同的资源；将多个不同实例分属到不同项目中，后续使用 [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口查询实例，项目ID可用于过滤结果。\n* 绑定负载均衡的实例不支持修改实例所属项目，请先使用[`DeregisterInstancesFromLoadBalancer`](https://cloud.tencent.com/document/api/214/1258)接口解绑负载均衡。\n* 修改实例所属项目会自动解关联实例原来关联的安全组，修改完成后可能使用[`ModifySecurityGroupsOfInstance`](https://cloud.tencent.com/document/api/213/1367)接口关联安全组。\n* 支持批量操作。每次请求批量实例的上限为100。"
   },
   "RenewHosts": {
     "params": [
@@ -855,6 +868,27 @@ INFO = {
     ],
     "desc": "本接口 (StartInstances) 用于启动一个或多个实例。\n\n* 只有状态为`STOPPED`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STARTING`状态；启动实例成功时，实例会进入`RUNNING`状态。\n* 支持批量操作。每次请求批量实例的上限为100。"
   },
+  "ResetInstancesInternetMaxBandwidth": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的 `InstanceId` 获取。 每次请求批量实例的上限为100。"
+      },
+      {
+        "name": "InternetAccessible",
+        "desc": "公网出带宽配置。不同机型带宽上限范围不一致，具体限制详见带宽限制对账表。暂时只支持 `InternetMaxBandwidthOut` 参数。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "带宽生效的起始时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。起始时间不能早于当前时间。如果起始时间是今天则新设置的带宽立即生效。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "带宽生效的终止时间。格式： `YYYY-MM-DD` ，例如：`2016-10-30` 。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过 [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。"
+      }
+    ],
+    "desc": "本接口 (ResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限。\n\n* 不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。\n* 对于 `BANDWIDTH_PREPAID` 计费方式的带宽，需要输入参数 `StartTime` 和 `EndTime` ，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过 [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397) 接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR` 、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整 `BANDWIDTH_POSTPAID_BY_MONTH` 计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整 `TRAFFIC_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽。"
+  },
   "DescribeKeyPairs": {
     "params": [
       {
@@ -876,22 +910,22 @@ INFO = {
     ],
     "desc": "本接口 (DescribeKeyPairs) 用于查询密钥对信息。\n\n* 密钥对是通过一种算法生成的一对密钥，在生成的密钥对中，一个向外界公开，称为公钥；另一个用户自己保留，称为私钥。密钥对的公钥内容可以通过这个接口查询，但私钥内容系统不保留。"
   },
-  "DescribeHosts": {
+  "InquiryPriceModifyInstancesChargeType": {
     "params": [
       {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>\n<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>\n<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>\n<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>\n<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>"
+        "name": "InstanceIds",
+        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
+        "name": "InstanceChargeType",
+        "desc": "实例[计费类型](https://cloud.tencent.com//document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月\n。"
       },
       {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。"
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。"
       }
     ],
-    "desc": "本接口 (DescribeHosts) 用于获取一个或多个CDH实例的详细信息。"
+    "desc": "本接口 (InquiryPriceModifyInstancesChargeType) 用于切换实例的计费模式询价。\n\n* 只支持从 `POSTPAID_BY_HOUR` 计费模式切换为`PREPAID`计费模式。\n* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例不支持该操作。"
   },
   "ModifyDisasterRecoverGroupAttribute": {
     "params": [

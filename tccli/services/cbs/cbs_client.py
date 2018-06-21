@@ -35,6 +35,7 @@ def doCreateDisks(argv, arglist):
         "SnapshotId": Utils.try_to_json(argv, "--SnapshotId"),
         "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
         "Encrypt": Utils.try_to_json(argv, "--Encrypt"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

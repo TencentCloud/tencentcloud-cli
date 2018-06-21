@@ -189,31 +189,16 @@ def doDescribeImageSharePermission(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquiryPriceRunInstances(argv, arglist):
+def doInquiryPriceModifyInstancesChargeType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("InquiryPriceRunInstances", g_param[OptionsDefine.Version])
+        show_help("InquiryPriceModifyInstancesChargeType", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
-        "Placement": Utils.try_to_json(argv, "--Placement"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
-        "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
-        "VirtualPrivateCloud": Utils.try_to_json(argv, "--VirtualPrivateCloud"),
-        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
-        "InstanceCount": Utils.try_to_json(argv, "--InstanceCount"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
-        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
-        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
-        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
-        "HostName": Utils.try_to_json(argv, "--HostName"),
-        "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
-        "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -227,9 +212,9 @@ def doInquiryPriceRunInstances(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InquiryPriceRunInstancesRequest()
+    model = models.InquiryPriceModifyInstancesChargeTypeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.InquiryPriceRunInstances(model)
+    rsp = client.InquiryPriceModifyInstancesChargeType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -302,6 +287,41 @@ def doDescribeImages(argv, arglist):
     model = models.DescribeImagesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeImages(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyKeyPairAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyKeyPairAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyName": Utils.try_to_json(argv, "--KeyName"),
+        "Description": Utils.try_to_json(argv, "--Description"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyKeyPairAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyKeyPairAttribute(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1360,17 +1380,15 @@ def doDescribeImportImageOs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResetInstancesInternetMaxBandwidth(argv, arglist):
+def doModifyInstancesProject(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResetInstancesInternetMaxBandwidth", g_param[OptionsDefine.Version])
+        show_help("ModifyInstancesProject", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1384,9 +1402,9 @@ def doResetInstancesInternetMaxBandwidth(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetInstancesInternetMaxBandwidthRequest()
+    model = models.ModifyInstancesProjectRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResetInstancesInternetMaxBandwidth(model)
+    rsp = client.ModifyInstancesProject(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1431,16 +1449,31 @@ def doInquiryPriceRenewInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyKeyPairAttribute(argv, arglist):
+def doInquiryPriceRunInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyKeyPairAttribute", g_param[OptionsDefine.Version])
+        show_help("InquiryPriceRunInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
-        "KeyName": Utils.try_to_json(argv, "--KeyName"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
+        "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
+        "VirtualPrivateCloud": Utils.try_to_json(argv, "--VirtualPrivateCloud"),
+        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
+        "InstanceCount": Utils.try_to_json(argv, "--InstanceCount"),
+        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
+        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
+        "HostName": Utils.try_to_json(argv, "--HostName"),
+        "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
+        "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1454,9 +1487,9 @@ def doModifyKeyPairAttribute(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyKeyPairAttributeRequest()
+    model = models.InquiryPriceRunInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyKeyPairAttribute(model)
+    rsp = client.InquiryPriceRunInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1606,15 +1639,16 @@ def doDescribeInstanceFamilyConfigs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyInstancesProject(argv, arglist):
+def doModifyInstancesChargeType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyInstancesProject", g_param[OptionsDefine.Version])
+        show_help("ModifyInstancesChargeType", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1628,9 +1662,9 @@ def doModifyInstancesProject(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyInstancesProjectRequest()
+    model = models.ModifyInstancesChargeTypeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyInstancesProject(model)
+    rsp = client.ModifyInstancesChargeType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1734,6 +1768,42 @@ def doStartInstances(argv, arglist):
     model = models.StartInstancesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.StartInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetInstancesInternetMaxBandwidth(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ResetInstancesInternetMaxBandwidth", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetInstancesInternetMaxBandwidthRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ResetInstancesInternetMaxBandwidth(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1967,9 +2037,10 @@ ACTION_MAP = {
     "DescribeInstancesStatus": doDescribeInstancesStatus,
     "ModifyImageSharePermission": doModifyImageSharePermission,
     "DescribeImageSharePermission": doDescribeImageSharePermission,
-    "InquiryPriceRunInstances": doInquiryPriceRunInstances,
+    "InquiryPriceModifyInstancesChargeType": doInquiryPriceModifyInstancesChargeType,
     "ModifyHostsAttribute": doModifyHostsAttribute,
     "DescribeImages": doDescribeImages,
+    "ModifyKeyPairAttribute": doModifyKeyPairAttribute,
     "DescribeZoneInstanceConfigInfos": doDescribeZoneInstanceConfigInfos,
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "SyncImages": doSyncImages,
@@ -2000,17 +2071,18 @@ ACTION_MAP = {
     "DescribeRegions": doDescribeRegions,
     "DeleteDisasterRecoverGroups": doDeleteDisasterRecoverGroups,
     "DescribeImportImageOs": doDescribeImportImageOs,
-    "ResetInstancesInternetMaxBandwidth": doResetInstancesInternetMaxBandwidth,
+    "ModifyInstancesProject": doModifyInstancesProject,
     "InquiryPriceRenewInstances": doInquiryPriceRenewInstances,
-    "ModifyKeyPairAttribute": doModifyKeyPairAttribute,
+    "InquiryPriceRunInstances": doInquiryPriceRunInstances,
     "ImportImage": doImportImage,
     "RenewInstances": doRenewInstances,
     "ModifyDisasterRecoverGroupAttribute": doModifyDisasterRecoverGroupAttribute,
     "DescribeInstanceFamilyConfigs": doDescribeInstanceFamilyConfigs,
-    "ModifyInstancesProject": doModifyInstancesProject,
+    "ModifyInstancesChargeType": doModifyInstancesChargeType,
     "RenewHosts": doRenewHosts,
     "DescribeDisasterRecoverGroups": doDescribeDisasterRecoverGroups,
     "StartInstances": doStartInstances,
+    "ResetInstancesInternetMaxBandwidth": doResetInstancesInternetMaxBandwidth,
     "DescribeKeyPairs": doDescribeKeyPairs,
     "DescribeHosts": doDescribeHosts,
     "AllocateHosts": doAllocateHosts,

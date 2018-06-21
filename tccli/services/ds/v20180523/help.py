@@ -50,7 +50,7 @@ INFO = {
       },
       {
         "name": "ImgUrl",
-        "desc": "签章链接"
+        "desc": "签章链接，图片必须为png格式"
       }
     ],
     "desc": "此接口用于客户电子合同平台增加某用户的印章图片。客户平台可以调用此接口增加某用户的印章图片。"
@@ -134,6 +134,43 @@ INFO = {
       }
     ],
     "desc": "为企业电子合同平台的最终个人用户进行开户。在企业电子合同平台进行操作的个人用户，企业电子合同平台向腾讯云发送个人用户的信息，提交开户命令。腾讯云接到请求后，自动为企业电子合同平台的个人用户生成一张数字证书。"
+  },
+  "SignContractByKeyword": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名"
+      },
+      {
+        "name": "ContractResId",
+        "desc": "合同ID"
+      },
+      {
+        "name": "AccountResId",
+        "desc": "账户ID"
+      },
+      {
+        "name": "AuthorizationTime",
+        "desc": "授权时间，格式为年月日时分秒，例20160801095509"
+      },
+      {
+        "name": "Position",
+        "desc": "授权IP地址"
+      },
+      {
+        "name": "SealResId",
+        "desc": "签章ID"
+      },
+      {
+        "name": "SignKeyword",
+        "desc": "签署关键字，坐标和范围不得超过合同文件边界"
+      }
+    ],
+    "desc": "此接口适用于：客户平台在创建好合同后，由合同签署方对创建的合同内容进行确认，无误后再进行签署。客户平台使用该接口对PDF合同文档按照关键字和坐标进行签署。"
   },
   "DeleteSeal": {
     "params": [
@@ -267,7 +304,7 @@ INFO = {
       },
       {
         "name": "AuthorizationTime",
-        "desc": "授权时间，格式20160801095509"
+        "desc": "授权时间，格式为年月日时分秒，例20160801095509"
       },
       {
         "name": "Position",
