@@ -29,9 +29,9 @@ def doSentenceRecognition(argv, arglist):
         "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
         "EngSerViceType": Utils.try_to_json(argv, "--EngSerViceType"),
         "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "Url": Utils.try_to_json(argv, "--Url"),
         "VoiceFormat": Utils.try_to_json(argv, "--VoiceFormat"),
         "UsrAudioKey": Utils.try_to_json(argv, "--UsrAudioKey"),
+        "Url": Utils.try_to_json(argv, "--Url"),
         "Data": Utils.try_to_json(argv, "--Data"),
         "DataLen": Utils.try_to_json(argv, "--DataLen"),
 
@@ -59,6 +59,47 @@ def doSentenceRecognition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doTextToVoice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TextToVoice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": Utils.try_to_json(argv, "--Text"),
+        "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ModelType": Utils.try_to_json(argv, "--ModelType"),
+        "Volume": Utils.try_to_json(argv, "--Volume"),
+        "Speed": Utils.try_to_json(argv, "--Speed"),
+        "VoiceType": Utils.try_to_json(argv, "--VoiceType"),
+        "PrimaryLanguage": Utils.try_to_json(argv, "--PrimaryLanguage"),
+        "SampleRate": Utils.try_to_json(argv, "--SampleRate"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TextToVoiceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TextToVoice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180522": aai_client_v20180522,
 
@@ -71,6 +112,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "SentenceRecognition": doSentenceRecognition,
+    "TextToVoice": doTextToVoice,
 
 }
 

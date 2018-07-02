@@ -26,11 +26,11 @@ def doCreateDisks(argv, arglist):
 
     param = {
         "DiskType": Utils.try_to_json(argv, "--DiskType"),
+        "DiskChargeType": Utils.try_to_json(argv, "--DiskChargeType"),
+        "Placement": Utils.try_to_json(argv, "--Placement"),
         "DiskName": Utils.try_to_json(argv, "--DiskName"),
         "DiskCount": Utils.try_to_json(argv, "--DiskCount"),
-        "DiskChargeType": Utils.try_to_json(argv, "--DiskChargeType"),
         "DiskChargePrepaid": Utils.try_to_json(argv, "--DiskChargePrepaid"),
-        "Placement": Utils.try_to_json(argv, "--Placement"),
         "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
         "SnapshotId": Utils.try_to_json(argv, "--SnapshotId"),
         "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
@@ -565,6 +565,7 @@ def doAttachDisks(argv, arglist):
     param = {
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "DeleteWithInstance": Utils.try_to_json(argv, "--DeleteWithInstance"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

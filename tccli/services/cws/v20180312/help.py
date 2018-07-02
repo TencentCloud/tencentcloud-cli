@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
 DESC = "cws-2018-03-12"
 INFO = {
+  "CreateVulsReport": {
+    "params": [
+      {
+        "name": "SiteId",
+        "desc": "站点ID"
+      },
+      {
+        "name": "MonitorId",
+        "desc": "监控任务ID"
+      }
+    ],
+    "desc": "本接口 (CreateVulsReport) 用于生成漏洞报告并返回下载链接。"
+  },
   "DescribeVuls": {
     "params": [
       {
@@ -80,19 +93,6 @@ INFO = {
     ],
     "desc": "本接口（CreateSitesScans）用于新增一个或多个站点的单次扫描任务。"
   },
-  "DescribeConfig": {
-    "params": [],
-    "desc": "本接口 (DescribeConfig) 用于查询用户配置的详细信息。"
-  },
-  "CreateVulsMisinformation": {
-    "params": [
-      {
-        "name": "VulIds",
-        "desc": "漏洞ID列表"
-      }
-    ],
-    "desc": "本接口（CreateVulsMisinformation）用于新增一个或多个漏洞误报信息。"
-  },
   "CreateSites": {
     "params": [
       {
@@ -105,6 +105,19 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateSites）用于新增一个或多个站点。"
+  },
+  "CreateVulsMisinformation": {
+    "params": [
+      {
+        "name": "VulIds",
+        "desc": "漏洞ID列表"
+      }
+    ],
+    "desc": "本接口（CreateVulsMisinformation）用于新增一个或多个漏洞误报信息。"
+  },
+  "DescribeConfig": {
+    "params": [],
+    "desc": "本接口 (DescribeConfig) 用于查询用户配置的详细信息。"
   },
   "DescribeSites": {
     "params": [
@@ -178,6 +191,10 @@ INFO = {
     ],
     "desc": "本接口 (ModifyConfigAttribute) 用于修改用户配置的属性。"
   },
+  "DescribeVulsNumberTimeline": {
+    "params": [],
+    "desc": "本接口 (DescribeVulsNumberTimeline) 用于查询漏洞数随时间变化统计信息。"
+  },
   "DescribeMonitors": {
     "params": [
       {
@@ -245,6 +262,10 @@ INFO = {
       }
     ],
     "desc": "本接口 (DeleteSites) 用于删除站点。"
+  },
+  "DescribeVulsNumber": {
+    "params": [],
+    "desc": "本接口 (DescribeVulsNumber) 用于查询用户网站的漏洞总计数量。"
   },
   "VerifySites": {
     "params": [
