@@ -53,20 +53,20 @@ INFO = {
         "desc": "一次请求对应一个SessionId，会原样返回"
       },
       {
-        "name": "ProjectId",
-        "desc": "项目id"
-      },
-      {
         "name": "ModelType",
         "desc": "模型类型，1-默认模型"
       },
       {
         "name": "Volume",
-        "desc": "音量大小，暂仅支持默认值1.0"
+        "desc": "音量大小，暂仅支持默认值1"
       },
       {
         "name": "Speed",
-        "desc": "语速，暂仅支持默认值1.0"
+        "desc": "语速，暂仅支持默认值1"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "用户自定义项目id，默认为0"
       },
       {
         "name": "VoiceType",

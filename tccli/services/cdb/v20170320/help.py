@@ -185,6 +185,18 @@ INFO = {
   "CreateDBInstanceHour": {
     "params": [
       {
+        "name": "GoodsNum",
+        "desc": "实例数量，默认值为1, 最小值1，最大值为100"
+      },
+      {
+        "name": "Memory",
+        "desc": "实例内存大小，单位：MB，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的内存规格"
+      },
+      {
+        "name": "Volume",
+        "desc": "实例硬盘大小，单位：GB，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的硬盘范围"
+      },
+      {
         "name": "EngineVersion",
         "desc": "MySQL版本，值包括：5.5、5.6和5.7，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的实例版本"
       },
@@ -199,18 +211,6 @@ INFO = {
       {
         "name": "ProjectId",
         "desc": "项目ID，不填为默认项目。请使用[查询项目列表](https://cloud.tencent.com/document/product/378/4400)接口获取项目ID"
-      },
-      {
-        "name": "GoodsNum",
-        "desc": "实例数量，默认值为1, 最小值1，最大值为100"
-      },
-      {
-        "name": "Memory",
-        "desc": "实例内存大小，单位：MB，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的内存规格"
-      },
-      {
-        "name": "Volume",
-        "desc": "实例硬盘大小，单位：GB，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口获取可创建的硬盘范围"
       },
       {
         "name": "Zone",
@@ -550,12 +550,12 @@ INFO = {
         "desc": "实例新的密码，密码规则：8-64个字符，至少包含字母、数字、字符（支持的字符：!@#$%^*()）中的两种"
       },
       {
-        "name": "Vport",
-        "desc": "实例的端口"
-      },
-      {
         "name": "Parameters",
         "desc": "实例的参数列表，目前支持设置“character_set_server”、“lower_case_table_names”参数。其中，“character_set_server”参数可选值为[\"utf8\",\"latin1\",\"gbk\",\"utf8mb4\"]；“lower_case_table_names”可选值为[“0”,“1”]"
+      },
+      {
+        "name": "Vport",
+        "desc": "实例的端口"
       }
     ],
     "desc": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等"
@@ -845,12 +845,12 @@ INFO = {
         "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
       },
       {
-        "name": "Description",
-        "desc": "数据库账号的备注信息。"
-      },
-      {
         "name": "Accounts",
         "desc": "云数据库账号。"
+      },
+      {
+        "name": "Description",
+        "desc": "数据库账号的备注信息。"
       }
     ],
     "desc": "本接口(ModifyAccountDescription)用于修改云数据库账户的备注信息。"

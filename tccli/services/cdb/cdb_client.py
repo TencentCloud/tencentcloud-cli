@@ -265,8 +265,8 @@ def doModifyAccountDescription(argv, arglist):
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Description": Utils.try_to_json(argv, "--Description"),
         "Accounts": Utils.try_to_json(argv, "--Accounts"),
+        "Description": Utils.try_to_json(argv, "--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -508,13 +508,13 @@ def doCreateDBInstanceHour(argv, arglist):
         return
 
     param = {
+        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Volume": Utils.try_to_json(argv, "--Volume"),
         "EngineVersion": Utils.try_to_json(argv, "--EngineVersion"),
         "UniqVpcId": Utils.try_to_json(argv, "--UniqVpcId"),
         "UniqSubnetId": Utils.try_to_json(argv, "--UniqSubnetId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
         "Zone": Utils.try_to_json(argv, "--Zone"),
         "MasterInstanceId": Utils.try_to_json(argv, "--MasterInstanceId"),
         "InstanceRole": Utils.try_to_json(argv, "--InstanceRole"),
@@ -1031,8 +1031,8 @@ def doInitDBInstances(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "NewPassword": Utils.try_to_json(argv, "--NewPassword"),
-        "Vport": Utils.try_to_json(argv, "--Vport"),
         "Parameters": Utils.try_to_json(argv, "--Parameters"),
+        "Vport": Utils.try_to_json(argv, "--Vport"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

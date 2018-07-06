@@ -68,10 +68,10 @@ def doTextToVoice(argv, arglist):
     param = {
         "Text": Utils.try_to_json(argv, "--Text"),
         "SessionId": Utils.try_to_json(argv, "--SessionId"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "ModelType": Utils.try_to_json(argv, "--ModelType"),
         "Volume": Utils.try_to_json(argv, "--Volume"),
         "Speed": Utils.try_to_json(argv, "--Speed"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "VoiceType": Utils.try_to_json(argv, "--VoiceType"),
         "PrimaryLanguage": Utils.try_to_json(argv, "--PrimaryLanguage"),
         "SampleRate": Utils.try_to_json(argv, "--SampleRate"),

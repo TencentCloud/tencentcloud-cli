@@ -399,15 +399,13 @@ def doModifyInstancesAttribute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSyncImages(argv, arglist):
+def doDescribeRegions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SyncImages", g_param[OptionsDefine.Version])
+        show_help("DescribeRegions", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageIds": Utils.try_to_json(argv, "--ImageIds"),
-        "DestinationRegions": Utils.try_to_json(argv, "--DestinationRegions"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -421,9 +419,9 @@ def doSyncImages(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SyncImagesRequest()
+    model = models.DescribeRegionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SyncImages(model)
+    rsp = client.DescribeRegions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -676,6 +674,40 @@ def doImportKeyPair(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSyncImages(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SyncImages", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageIds": Utils.try_to_json(argv, "--ImageIds"),
+        "DestinationRegions": Utils.try_to_json(argv, "--DestinationRegions"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SyncImagesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SyncImages(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeInstanceInternetBandwidthConfigs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -751,11 +783,11 @@ def doRunInstances(argv, arglist):
         return
 
     param = {
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "ImageId": Utils.try_to_json(argv, "--ImageId"),
         "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
-        "Placement": Utils.try_to_json(argv, "--Placement"),
         "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "VirtualPrivateCloud": Utils.try_to_json(argv, "--VirtualPrivateCloud"),
@@ -768,6 +800,7 @@ def doRunInstances(argv, arglist):
         "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
         "HostName": Utils.try_to_json(argv, "--HostName"),
         "ActionTimer": Utils.try_to_json(argv, "--ActionTimer"),
+        "DisasterRecoverGroupIds": Utils.try_to_json(argv, "--DisasterRecoverGroupIds"),
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
         "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
         "UserData": Utils.try_to_json(argv, "--UserData"),
@@ -1283,10 +1316,10 @@ def doInquiryPriceResetInstancesType(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRegions(argv, arglist):
+def doDescribeInstanceFamilyConfigs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeRegions", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceFamilyConfigs", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -1303,9 +1336,9 @@ def doDescribeRegions(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRegionsRequest()
+    model = models.DescribeInstanceFamilyConfigsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeRegions(model)
+    rsp = client.DescribeInstanceFamilyConfigs(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1456,11 +1489,11 @@ def doInquiryPriceRunInstances(argv, arglist):
         return
 
     param = {
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "ImageId": Utils.try_to_json(argv, "--ImageId"),
         "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
-        "Placement": Utils.try_to_json(argv, "--Placement"),
         "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "VirtualPrivateCloud": Utils.try_to_json(argv, "--VirtualPrivateCloud"),
@@ -1607,13 +1640,14 @@ def doModifyDisasterRecoverGroupAttribute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstanceFamilyConfigs(argv, arglist):
+def doDescribeInstanceVncUrl(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeInstanceFamilyConfigs", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceVncUrl", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1627,9 +1661,9 @@ def doDescribeInstanceFamilyConfigs(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceFamilyConfigsRequest()
+    model = models.DescribeInstanceVncUrlRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInstanceFamilyConfigs(model)
+    rsp = client.DescribeInstanceVncUrl(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1891,8 +1925,8 @@ def doAllocateHosts(argv, arglist):
         return
 
     param = {
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
         "Placement": Utils.try_to_json(argv, "--Placement"),
+        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
         "HostChargePrepaid": Utils.try_to_json(argv, "--HostChargePrepaid"),
         "HostChargeType": Utils.try_to_json(argv, "--HostChargeType"),
         "HostType": Utils.try_to_json(argv, "--HostType"),
@@ -2043,7 +2077,7 @@ ACTION_MAP = {
     "ModifyKeyPairAttribute": doModifyKeyPairAttribute,
     "DescribeZoneInstanceConfigInfos": doDescribeZoneInstanceConfigInfos,
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
-    "SyncImages": doSyncImages,
+    "DescribeRegions": doDescribeRegions,
     "InquiryPriceResetInstancesInternetMaxBandwidth": doInquiryPriceResetInstancesInternetMaxBandwidth,
     "DisassociateInstancesKeyPairs": doDisassociateInstancesKeyPairs,
     "CreateKeyPair": doCreateKeyPair,
@@ -2051,6 +2085,7 @@ ACTION_MAP = {
     "CreateDisasterRecoverGroup": doCreateDisasterRecoverGroup,
     "DescribeInstances": doDescribeInstances,
     "ImportKeyPair": doImportKeyPair,
+    "SyncImages": doSyncImages,
     "DescribeInstanceInternetBandwidthConfigs": doDescribeInstanceInternetBandwidthConfigs,
     "AssociateInstancesKeyPairs": doAssociateInstancesKeyPairs,
     "RunInstances": doRunInstances,
@@ -2068,7 +2103,7 @@ ACTION_MAP = {
     "ResetInstancesType": doResetInstancesType,
     "ModifyImageAttribute": doModifyImageAttribute,
     "InquiryPriceResetInstancesType": doInquiryPriceResetInstancesType,
-    "DescribeRegions": doDescribeRegions,
+    "DescribeInstanceFamilyConfigs": doDescribeInstanceFamilyConfigs,
     "DeleteDisasterRecoverGroups": doDeleteDisasterRecoverGroups,
     "DescribeImportImageOs": doDescribeImportImageOs,
     "ModifyInstancesProject": doModifyInstancesProject,
@@ -2077,7 +2112,7 @@ ACTION_MAP = {
     "ImportImage": doImportImage,
     "RenewInstances": doRenewInstances,
     "ModifyDisasterRecoverGroupAttribute": doModifyDisasterRecoverGroupAttribute,
-    "DescribeInstanceFamilyConfigs": doDescribeInstanceFamilyConfigs,
+    "DescribeInstanceVncUrl": doDescribeInstanceVncUrl,
     "ModifyInstancesChargeType": doModifyInstancesChargeType,
     "RenewHosts": doRenewHosts,
     "DescribeDisasterRecoverGroups": doDescribeDisasterRecoverGroups,
