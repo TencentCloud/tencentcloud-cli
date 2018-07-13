@@ -217,6 +217,10 @@ INFO = {
       {
         "name": "DryRun",
         "desc": "试运行。"
+      },
+      {
+        "name": "RenewPortableDataDisk",
+        "desc": "是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。"
       }
     ],
     "desc": "本接口 (InquiryPriceRenewInstances) 用于续费包年包月实例询价。\n\n* 只支持查询包年包月实例的续费价格。"
@@ -412,7 +416,7 @@ INFO = {
       },
       {
         "name": "InstanceChargeType",
-        "desc": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享母机付费（基于专用宿主机创建，宿主机部分的资源不收费）<br>默认值：POSTPAID_BY_HOUR。"
+        "desc": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享母机付费（基于专用宿主机创建，宿主机部分的资源不收费）<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。"
       },
       {
         "name": "InstanceChargePrepaid",
@@ -464,7 +468,7 @@ INFO = {
       },
       {
         "name": "HostName",
-        "desc": "云服务器的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：字符长度为[2, 30]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。"
+        "desc": "云服务器的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。"
       },
       {
         "name": "ActionTimer",
@@ -484,7 +488,7 @@ INFO = {
       },
       {
         "name": "UserData",
-        "desc": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526\n)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。"
+        "desc": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。"
       }
     ],
     "desc": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。\n\n* 实例创建成功后将自动开机启动，[实例状态](/document/api/213/9452#instance_state)变为“运行中”。\n* 预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。\n* 本接口允许购买的实例数量遵循[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)，所创建的实例和官网入口创建的实例共用配额。\n* 本接口为异步接口，当创建请求下发成功后会返回一个实例`ID`列表，此时实例的创建并立即未完成。在此期间实例的状态将会处于“准备中”，可以通过调用 [DescribeInstancesStatus](https://cloud.tencent.com/document/api/213/15738) 接口查询对应实例的状态，来判断生产有没有最终成功。如果实例的状态由“准备中”变为“运行中”，则为创建成功。"
@@ -795,6 +799,10 @@ INFO = {
       {
         "name": "InstanceChargePrepaid",
         "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。"
+      },
+      {
+        "name": "RenewPortableDataDisk",
+        "desc": "是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。"
       }
     ],
     "desc": "本接口 (RenewInstances) 用于续费包年包月实例。\n\n* 只支持操作包年包月实例。\n* 续费时请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。"

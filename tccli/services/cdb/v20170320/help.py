@@ -873,23 +873,6 @@ INFO = {
     ],
     "desc": "本接口(StopDBImportJob)用于终止数据导入任务。"
   },
-  "DescribeBackupDownloadDbTableCode": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "开始时间，格式为：2017-07-12 10:29:20。"
-      },
-      {
-        "name": "DatabaseTableList",
-        "desc": "待下载的数据库和数据表列表。"
-      }
-    ],
-    "desc": "本接口(DescribeBackupDownloadDbTableCode)用于查询备份数据分库分表下载位点。"
-  },
   "ModifyAccountPassword": {
     "params": [
       {

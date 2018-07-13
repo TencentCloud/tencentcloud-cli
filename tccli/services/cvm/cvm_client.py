@@ -1457,6 +1457,7 @@ def doInquiryPriceRenewInstances(argv, arglist):
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
         "DryRun": Utils.try_to_json(argv, "--DryRun"),
+        "RenewPortableDataDisk": Utils.try_to_json(argv, "--RenewPortableDataDisk"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1581,6 +1582,7 @@ def doRenewInstances(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
+        "RenewPortableDataDisk": Utils.try_to_json(argv, "--RenewPortableDataDisk"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
