@@ -578,6 +578,7 @@ def doCreateDisasterRecoverGroup(argv, arglist):
     param = {
         "Name": Utils.try_to_json(argv, "--Name"),
         "Type": Utils.try_to_json(argv, "--Type"),
+        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
