@@ -1097,8 +1097,8 @@ def doCreateNetworkInterface(argv, arglist):
     param = {
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
         "NetworkInterfaceName": Utils.try_to_json(argv, "--NetworkInterfaceName"),
-        "NetworkInterfaceDescription": Utils.try_to_json(argv, "--NetworkInterfaceDescription"),
         "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "NetworkInterfaceDescription": Utils.try_to_json(argv, "--NetworkInterfaceDescription"),
         "SecondaryPrivateIpAddressCount": Utils.try_to_json(argv, "--SecondaryPrivateIpAddressCount"),
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
         "PrivateIpAddresses": Utils.try_to_json(argv, "--PrivateIpAddresses"),
@@ -1781,9 +1781,9 @@ def doInquiryPriceCreateVpnGateway(argv, arglist):
         return
 
     param = {
+        "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
         "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
-        "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1884,9 +1884,9 @@ def doCreateSecurityGroup(argv, arglist):
         return
 
     param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "GroupName": Utils.try_to_json(argv, "--GroupName"),
         "GroupDescription": Utils.try_to_json(argv, "--GroupDescription"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2408,8 +2408,8 @@ def doCreateVpnGateway(argv, arglist):
     param = {
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
         "VpnGatewayName": Utils.try_to_json(argv, "--VpnGatewayName"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
+        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
 
     }

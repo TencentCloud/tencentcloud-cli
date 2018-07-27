@@ -12,161 +12,22 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.ms.v20180408 import ms_client as ms_client_v20180408
-from tencentcloud.ms.v20180408 import models as models_v20180408
-from tccli.services.ms import v20180408
-from tccli.services.ms.v20180408 import help as v20180408_help
+from tencentcloud.msp.v20180319 import msp_client as msp_client_v20180319
+from tencentcloud.msp.v20180319 import models as models_v20180319
+from tccli.services.msp import v20180319
+from tccli.services.msp.v20180319 import help as v20180319_help
 
 
-def doCreateScanInstances(argv, arglist):
+def doListMigrationTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateScanInstances", g_param[OptionsDefine.Version])
+        show_help("ListMigrationTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AppInfos": Utils.try_to_json(argv, "--AppInfos"),
-        "ScanInfo": Utils.try_to_json(argv, "--ScanInfo"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateScanInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateScanInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeShieldResult(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeShieldResult", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ItemId": Utils.try_to_json(argv, "--ItemId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShieldResultRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShieldResult(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteScanInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteScanInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "AppSids": Utils.try_to_json(argv, "--AppSids"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteScanInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteScanInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateBindInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateBindInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
-        "AppIconUrl": Utils.try_to_json(argv, "--AppIconUrl"),
-        "AppName": Utils.try_to_json(argv, "--AppName"),
-        "AppPkgName": Utils.try_to_json(argv, "--AppPkgName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateBindInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateBindInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeResourceInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeResourceInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Pids": Utils.try_to_json(argv, "--Pids"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -177,12 +38,12 @@ def doDescribeResourceInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MspClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeResourceInstancesRequest()
+    model = models.ListMigrationTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeResourceInstances(model)
+    rsp = client.ListMigrationTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -192,15 +53,25 @@ def doDescribeResourceInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeScanResults(argv, arglist):
+def doRegisterMigrationTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeScanResults", g_param[OptionsDefine.Version])
+        show_help("RegisterMigrationTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ItemId": Utils.try_to_json(argv, "--ItemId"),
-        "AppMd5s": Utils.try_to_json(argv, "--AppMd5s"),
+        "TaskType": Utils.try_to_json(argv, "--TaskType"),
+        "TaskName": Utils.try_to_json(argv, "--TaskName"),
+        "ServiceSupplier": Utils.try_to_json(argv, "--ServiceSupplier"),
+        "SrcInfo": Utils.try_to_json(argv, "--SrcInfo"),
+        "DstInfo": Utils.try_to_json(argv, "--DstInfo"),
+        "CreateTime": Utils.try_to_json(argv, "--CreateTime"),
+        "UpdateTime": Utils.try_to_json(argv, "--UpdateTime"),
+        "MigrateClass": Utils.try_to_json(argv, "--MigrateClass"),
+        "SrcAccessType": Utils.try_to_json(argv, "--SrcAccessType"),
+        "SrcDatabaseType": Utils.try_to_json(argv, "--SrcDatabaseType"),
+        "DstAccessType": Utils.try_to_json(argv, "--DstAccessType"),
+        "DstDatabaseType": Utils.try_to_json(argv, "--DstDatabaseType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -211,12 +82,12 @@ def doDescribeScanResults(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MspClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeScanResultsRequest()
+    model = models.RegisterMigrationTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeScanResults(model)
+    rsp = client.RegisterMigrationTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -226,15 +97,15 @@ def doDescribeScanResults(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeShieldPlanInstance(argv, arglist):
+def doModifyMigrationTaskStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeShieldPlanInstance", g_param[OptionsDefine.Version])
+        show_help("ModifyMigrationTaskStatus", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
-        "Pid": Utils.try_to_json(argv, "--Pid"),
+        "Status": Utils.try_to_json(argv, "--Status"),
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -245,12 +116,12 @@ def doDescribeShieldPlanInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MspClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShieldPlanInstanceRequest()
+    model = models.ModifyMigrationTaskStatusRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShieldPlanInstance(model)
+    rsp = client.ModifyMigrationTaskStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -260,15 +131,14 @@ def doDescribeShieldPlanInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateShieldInstance(argv, arglist):
+def doDeregisterMigrationTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateShieldInstance", g_param[OptionsDefine.Version])
+        show_help("DeregisterMigrationTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AppInfo": Utils.try_to_json(argv, "--AppInfo"),
-        "ServiceInfo": Utils.try_to_json(argv, "--ServiceInfo"),
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -279,12 +149,12 @@ def doCreateShieldInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MspClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateShieldInstanceRequest()
+    model = models.DeregisterMigrationTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateShieldInstance(model)
+    rsp = client.DeregisterMigrationTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -294,19 +164,82 @@ def doCreateShieldInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeShieldInstances(argv, arglist):
+def doDescribeMigrationTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeShieldInstances", g_param[OptionsDefine.Version])
+        show_help("DescribeMigrationTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MspClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMigrationTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeMigrationTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyMigrationTaskBelongToProject(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyMigrationTaskBelongToProject", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MspClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyMigrationTaskBelongToProjectRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyMigrationTaskBelongToProject(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListMigrationProject(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListMigrationProject", g_param[OptionsDefine.Version])
+        return
+
+    param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "ItemIds": Utils.try_to_json(argv, "--ItemIds"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -317,118 +250,12 @@ def doDescribeShieldInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.MspClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShieldInstancesRequest()
+    model = models.ListMigrationProjectRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShieldInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateShieldPlanInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateShieldPlanInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
-        "PlanName": Utils.try_to_json(argv, "--PlanName"),
-        "PlanInfo": Utils.try_to_json(argv, "--PlanInfo"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateShieldPlanInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateShieldPlanInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeScanInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeScanInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "ItemIds": Utils.try_to_json(argv, "--ItemIds"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeScanInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeScanInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteShieldInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteShieldInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ItemIds": Utils.try_to_json(argv, "--ItemIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteShieldInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteShieldInstances(model)
+    rsp = client.ListMigrationProject(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -439,42 +266,37 @@ def doDeleteShieldInstances(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180408": ms_client_v20180408,
+    "v20180319": msp_client_v20180319,
 
 }
 
 MODELS_MAP = {
-    "v20180408": models_v20180408,
+    "v20180319": models_v20180319,
 
 }
 
 ACTION_MAP = {
-    "CreateScanInstances": doCreateScanInstances,
-    "DescribeShieldResult": doDescribeShieldResult,
-    "DeleteScanInstances": doDeleteScanInstances,
-    "CreateBindInstance": doCreateBindInstance,
-    "DescribeResourceInstances": doDescribeResourceInstances,
-    "DescribeScanResults": doDescribeScanResults,
-    "DescribeShieldPlanInstance": doDescribeShieldPlanInstance,
-    "CreateShieldInstance": doCreateShieldInstance,
-    "DescribeShieldInstances": doDescribeShieldInstances,
-    "CreateShieldPlanInstance": doCreateShieldPlanInstance,
-    "DescribeScanInstances": doDescribeScanInstances,
-    "DeleteShieldInstances": doDeleteShieldInstances,
+    "ListMigrationTask": doListMigrationTask,
+    "RegisterMigrationTask": doRegisterMigrationTask,
+    "ModifyMigrationTaskStatus": doModifyMigrationTaskStatus,
+    "DeregisterMigrationTask": doDeregisterMigrationTask,
+    "DescribeMigrationTask": doDescribeMigrationTask,
+    "ModifyMigrationTaskBelongToProject": doModifyMigrationTaskBelongToProject,
+    "ListMigrationProject": doListMigrationProject,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180408.version,
+    v20180319.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180408.version.replace('-', ''): {"help": v20180408_help.INFO,"desc": v20180408_help.DESC},
+     'v' + v20180319.version.replace('-', ''): {"help": v20180319_help.INFO,"desc": v20180319_help.DESC},
 
 }
 
 
-def ms_action(argv, arglist):
+def msp_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -490,7 +312,7 @@ def ms_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "ms", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "msp", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -511,7 +333,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("ms", ms_action)
+    cmd = NiceCommand("msp", msp_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -570,11 +392,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["ms"][OptionsDefine.Version]
+            version = config["msp"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["ms"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["msp"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -591,7 +413,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ms", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "msp", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -601,7 +423,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["ms"]["version"]
+        version = profile["msp"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

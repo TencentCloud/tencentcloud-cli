@@ -182,6 +182,43 @@ INFO = {
     ],
     "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表。"
   },
+  "DescribeDBPrice": {
+    "params": [
+      {
+        "name": "Zone",
+        "desc": "可用区信息，格式如\"ap-guangzhou-1\""
+      },
+      {
+        "name": "GoodsNum",
+        "desc": "实例数量，默认值为1, 最小值1，最大值为100"
+      },
+      {
+        "name": "Memory",
+        "desc": "实例内存大小，单位：MB"
+      },
+      {
+        "name": "Volume",
+        "desc": "实例硬盘大小，单位：GB"
+      },
+      {
+        "name": "PayType",
+        "desc": "付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费"
+      },
+      {
+        "name": "Period",
+        "desc": "实例时长，单位：月，最小值1，最大值为36；查询按量计费价格时，该字段无效"
+      },
+      {
+        "name": "InstanceRole",
+        "desc": "实例类型，默认为 master，支持值包括：master-表示主实例，ro-表示只读实例，dr-表示灾备实例"
+      },
+      {
+        "name": "ProtectMode",
+        "desc": "数据复制方式，默认为0，支持值包括：0-表示异步复制，1-表示半同步复制，2-表示强同步复制"
+      }
+    ],
+    "desc": "本接口(DescribeDBPrice)用于查询云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。"
+  },
   "CreateDBInstanceHour": {
     "params": [
       {
@@ -402,7 +439,7 @@ INFO = {
       },
       {
         "name": "Status",
-        "desc": "实例状态，可取值：0-创建中，1-运行中，4-删除中，5-隔离中"
+        "desc": "实例状态，可取值：0-创建中，1-运行中，4-隔离中，5-已隔离"
       },
       {
         "name": "Offset",
@@ -410,7 +447,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "单次请求返回的数量，默认值为20，最大值为100"
+        "desc": "单次请求返回的数量，默认值为20，最大值为2000"
       },
       {
         "name": "SecurityGroupId",

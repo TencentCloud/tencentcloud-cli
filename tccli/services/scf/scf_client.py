@@ -30,6 +30,7 @@ def doInvoke(argv, arglist):
         "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
         "ClientContext": Utils.try_to_json(argv, "--ClientContext"),
         "LogType": Utils.try_to_json(argv, "--LogType"),
+        "Namespace": Utils.try_to_json(argv, "--Namespace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -55,6 +56,345 @@ def doInvoke(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetFunction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetFunction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
+        "ShowCode": Utils.try_to_json(argv, "--ShowCode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetFunctionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetFunction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateFunction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateFunction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "Code": Utils.try_to_json(argv, "--Code"),
+        "Handler": Utils.try_to_json(argv, "--Handler"),
+        "Description": Utils.try_to_json(argv, "--Description"),
+        "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
+        "Timeout": Utils.try_to_json(argv, "--Timeout"),
+        "Environment": Utils.try_to_json(argv, "--Environment"),
+        "Runtime": Utils.try_to_json(argv, "--Runtime"),
+        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateFunctionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateFunction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteFunction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteFunction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteFunctionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteFunction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListFunctions(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListFunctions", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Order": Utils.try_to_json(argv, "--Order"),
+        "Orderby": Utils.try_to_json(argv, "--Orderby"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListFunctionsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListFunctions(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTrigger(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateTrigger", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "TriggerName": Utils.try_to_json(argv, "--TriggerName"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "TriggerDesc": Utils.try_to_json(argv, "--TriggerDesc"),
+        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTriggerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateTrigger(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateFunctionConfiguration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateFunctionConfiguration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "Description": Utils.try_to_json(argv, "--Description"),
+        "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
+        "Timeout": Utils.try_to_json(argv, "--Timeout"),
+        "Runtime": Utils.try_to_json(argv, "--Runtime"),
+        "Environment": Utils.try_to_json(argv, "--Environment"),
+        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateFunctionConfigurationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateFunctionConfiguration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteTrigger(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteTrigger", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "TriggerName": Utils.try_to_json(argv, "--TriggerName"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "TriggerDesc": Utils.try_to_json(argv, "--TriggerDesc"),
+        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTriggerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteTrigger(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetFunctionLogs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetFunctionLogs", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Order": Utils.try_to_json(argv, "--Order"),
+        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "Filter": Utils.try_to_json(argv, "--Filter"),
+        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
+        "FunctionRequestId": Utils.try_to_json(argv, "--FunctionRequestId"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetFunctionLogsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetFunctionLogs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateFunctionCode(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateFunctionCode", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Handler": Utils.try_to_json(argv, "--Handler"),
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "CosBucketName": Utils.try_to_json(argv, "--CosBucketName"),
+        "CosObjectName": Utils.try_to_json(argv, "--CosObjectName"),
+        "ZipFile": Utils.try_to_json(argv, "--ZipFile"),
+        "CosBucketRegion": Utils.try_to_json(argv, "--CosBucketRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateFunctionCodeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateFunctionCode(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180416": scf_client_v20180416,
 
@@ -67,6 +407,15 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "Invoke": doInvoke,
+    "GetFunction": doGetFunction,
+    "CreateFunction": doCreateFunction,
+    "DeleteFunction": doDeleteFunction,
+    "ListFunctions": doListFunctions,
+    "CreateTrigger": doCreateTrigger,
+    "UpdateFunctionConfiguration": doUpdateFunctionConfiguration,
+    "DeleteTrigger": doDeleteTrigger,
+    "GetFunctionLogs": doGetFunctionLogs,
+    "UpdateFunctionCode": doUpdateFunctionCode,
 
 }
 

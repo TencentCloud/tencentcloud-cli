@@ -145,6 +145,7 @@ def doModifyDiskAttributes(argv, arglist):
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "DiskName": Utils.try_to_json(argv, "--DiskName"),
         "Portable": Utils.try_to_json(argv, "--Portable"),
+        "DeleteWithInstance": Utils.try_to_json(argv, "--DeleteWithInstance"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

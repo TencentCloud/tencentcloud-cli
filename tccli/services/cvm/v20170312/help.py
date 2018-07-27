@@ -725,10 +725,6 @@ INFO = {
       {
         "name": "StopType",
         "desc": "实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭<br><li>HARD：直接强制关闭<br><li>SOFT：仅软关机<br>默认取值：SOFT。"
-      },
-      {
-        "name": "StoppedMode",
-        "desc": "关机收费模式<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<br>默认取值：KEEP_CHARGING。"
       }
     ],
     "desc": "本接口 (StopInstances) 用于关闭一个或多个实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STOPPING`状态；关闭实例成功时，实例会进入`STOPPED`状态。\n* 支持强制关闭。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。\n* 支持批量操作。每次请求批量实例的上限为100。"

@@ -501,6 +501,42 @@ def doDescribeBackupDatabases(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doInitDBInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InitDBInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "NewPassword": Utils.try_to_json(argv, "--NewPassword"),
+        "Parameters": Utils.try_to_json(argv, "--Parameters"),
+        "Vport": Utils.try_to_json(argv, "--Vport"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InitDBInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InitDBInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateDBInstanceHour(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1022,17 +1058,21 @@ def doDescribeSlowLogs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInitDBInstances(argv, arglist):
+def doDescribeDBPrice(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("InitDBInstances", g_param[OptionsDefine.Version])
+        show_help("DescribeDBPrice", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "NewPassword": Utils.try_to_json(argv, "--NewPassword"),
-        "Parameters": Utils.try_to_json(argv, "--Parameters"),
-        "Vport": Utils.try_to_json(argv, "--Vport"),
+        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Volume": Utils.try_to_json(argv, "--Volume"),
+        "PayType": Utils.try_to_json(argv, "--PayType"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "InstanceRole": Utils.try_to_json(argv, "--InstanceRole"),
+        "ProtectMode": Utils.try_to_json(argv, "--ProtectMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1046,9 +1086,9 @@ def doInitDBInstances(argv, arglist):
     client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InitDBInstancesRequest()
+    model = models.DescribeDBPriceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.InitDBInstances(model)
+    rsp = client.DescribeDBPrice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1808,6 +1848,7 @@ ACTION_MAP = {
     "ModifyDBInstanceProject": doModifyDBInstanceProject,
     "DescribeBackups": doDescribeBackups,
     "DescribeBackupDatabases": doDescribeBackupDatabases,
+    "InitDBInstances": doInitDBInstances,
     "CreateDBInstanceHour": doCreateDBInstanceHour,
     "ModifyDBInstanceName": doModifyDBInstanceName,
     "DescribeDBZoneConfig": doDescribeDBZoneConfig,
@@ -1822,7 +1863,7 @@ ACTION_MAP = {
     "DescribeDBInstanceCharset": doDescribeDBInstanceCharset,
     "AssociateSecurityGroups": doAssociateSecurityGroups,
     "DescribeSlowLogs": doDescribeSlowLogs,
-    "InitDBInstances": doInitDBInstances,
+    "DescribeDBPrice": doDescribeDBPrice,
     "OpenWanService": doOpenWanService,
     "CreateDBInstance": doCreateDBInstance,
     "ModifyAccountPrivileges": doModifyAccountPrivileges,

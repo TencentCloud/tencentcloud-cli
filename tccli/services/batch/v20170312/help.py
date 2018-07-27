@@ -17,12 +17,12 @@ INFO = {
         "desc": "任务模板名称"
       },
       {
-        "name": "TaskTemplateDescription",
-        "desc": "任务模板描述"
-      },
-      {
         "name": "TaskTemplateInfo",
         "desc": "任务模板内容，参数要求与任务一致"
+      },
+      {
+        "name": "TaskTemplateDescription",
+        "desc": "任务模板描述"
       }
     ],
     "desc": "用于创建任务模板"
@@ -75,14 +75,26 @@ INFO = {
     ],
     "desc": "用于创建计算环境"
   },
-  "DeleteComputeEnv": {
+  "DescribeComputeEnvs": {
     "params": [
       {
-        "name": "EnvId",
+        "name": "EnvIds",
         "desc": "计算环境ID"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
       }
     ],
-    "desc": "用于删除计算环境"
+    "desc": "用于查看计算环境列表"
   },
   "TerminateJob": {
     "params": [
@@ -105,6 +117,15 @@ INFO = {
       }
     ],
     "desc": "用于查询指定任务的详细信息，包括任务内部的任务实例信息。"
+  },
+  "DescribeCvmZoneInstanceConfigInfos": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件"
+      }
+    ],
+    "desc": "获取批量计算可用区机型配置信息"
   },
   "DescribeJob": {
     "params": [
@@ -286,26 +307,14 @@ INFO = {
     ],
     "desc": "用于查询若干个作业的概览信息"
   },
-  "DescribeComputeEnvs": {
+  "DeleteComputeEnv": {
     "params": [
       {
-        "name": "EnvIds",
+        "name": "EnvId",
         "desc": "计算环境ID"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量"
       }
     ],
-    "desc": "用于查看计算环境列表"
+    "desc": "用于删除计算环境"
   },
   "ModifyTaskTemplate": {
     "params": [

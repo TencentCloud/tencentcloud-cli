@@ -32,6 +32,56 @@ INFO = {
     ],
     "desc": "删除一个或者多个app扫描信息"
   },
+  "CreateBindInstance": {
+    "params": [
+      {
+        "name": "ResourceId",
+        "desc": "资源id，全局唯一"
+      },
+      {
+        "name": "AppIconUrl",
+        "desc": "app的icon的url"
+      },
+      {
+        "name": "AppName",
+        "desc": "app的名称"
+      },
+      {
+        "name": "AppPkgName",
+        "desc": "app的包名"
+      }
+    ],
+    "desc": "将应用和资源进行绑定"
+  },
+  "DescribeResourceInstances": {
+    "params": [
+      {
+        "name": "Pids",
+        "desc": "资源类别id数组"
+      },
+      {
+        "name": "Filters",
+        "desc": "支持通过资源id，pid进行查询"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "数量限制，默认为20，最大值为100。"
+      },
+      {
+        "name": "OrderField",
+        "desc": "按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "升序（asc）还是降序（desc），默认：desc。"
+      }
+    ],
+    "desc": "获取某个用户的所有资源信息"
+  },
   "DescribeScanResults": {
     "params": [
       {
@@ -44,6 +94,19 @@ INFO = {
       }
     ],
     "desc": "用户通过CreateScanInstances接口提交应用进行风险批量扫描后，用此接口批量获取风险详细信息,包含漏洞信息，广告信息，插件信息和病毒信息"
+  },
+  "DescribeShieldPlanInstance": {
+    "params": [
+      {
+        "name": "ResourceId",
+        "desc": "资源id"
+      },
+      {
+        "name": "Pid",
+        "desc": "服务类别id"
+      }
+    ],
+    "desc": "查询加固策略"
   },
   "CreateShieldInstance": {
     "params": [
@@ -86,6 +149,23 @@ INFO = {
       }
     ],
     "desc": "本接口用于查看app列表。\n可以通过指定任务唯一标识ItemId来查询指定app的详细信息，或通过设定过滤器来查询满足过滤条件的app的详细信息。 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个app信息。\n"
+  },
+  "CreateShieldPlanInstance": {
+    "params": [
+      {
+        "name": "ResourceId",
+        "desc": "资源id"
+      },
+      {
+        "name": "PlanName",
+        "desc": "策略名称"
+      },
+      {
+        "name": "PlanInfo",
+        "desc": "策略具体信息"
+      }
+    ],
+    "desc": "对资源进行策略新增"
   },
   "DescribeScanInstances": {
     "params": [
