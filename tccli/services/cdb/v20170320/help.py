@@ -58,6 +58,15 @@ INFO = {
     ],
     "desc": "本接口(DescribeBackupConfig)用于查询数据库备份配置信息。"
   },
+  "DescribeRollbackRangeTime": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。"
+      }
+    ],
+    "desc": "本接口(DescribeRollbackRangeTime)用于查询云数据库实例可回档的时间范围。"
+  },
   "DeleteBackup": {
     "params": [
       {
@@ -549,6 +558,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。"
+  },
+  "StartBatchRollback": {
+    "params": [
+      {
+        "name": "Instances",
+        "desc": "用于回档的实例详情信息"
+      }
+    ],
+    "desc": "该接口（StartBatchRollback）用于批量回档云数据库实例的库表。"
   },
   "OpenDBInstanceGTID": {
     "params": [
@@ -1069,5 +1087,30 @@ INFO = {
       }
     ],
     "desc": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。"
+  },
+  "DescribeTables": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Database",
+        "desc": "数据库的名称。"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录偏移量，默认值为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次请求返回的数量，默认值为20，最大值为2000。"
+      },
+      {
+        "name": "TableRegexp",
+        "desc": "匹配数据库表名的正则表达式，规则同MySQL官网"
+      }
+    ],
+    "desc": "本接口(DescribeTables)用于查询云数据库实例的数据库表信息。"
   }
 }

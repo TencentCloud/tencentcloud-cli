@@ -190,6 +190,39 @@ def doCreateDBImportJob(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeRollbackRangeTime(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRollbackRangeTime", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRollbackRangeTimeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRollbackRangeTime(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteBackup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -980,6 +1013,39 @@ def doDescribeDBInstanceCharset(argv, arglist):
     model = models.DescribeDBInstanceCharsetRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeDBInstanceCharset(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStartBatchRollback(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StartBatchRollback", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Instances": Utils.try_to_json(argv, "--Instances"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StartBatchRollbackRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StartBatchRollback(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1823,6 +1889,43 @@ def doDisassociateSecurityGroups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTables(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTables", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Database": Utils.try_to_json(argv, "--Database"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "TableRegexp": Utils.try_to_json(argv, "--TableRegexp"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTablesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTables(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20170320": cdb_client_v20170320,
 
@@ -1839,6 +1942,7 @@ ACTION_MAP = {
     "DeleteAccounts": doDeleteAccounts,
     "DescribeProjectSecurityGroups": doDescribeProjectSecurityGroups,
     "CreateDBImportJob": doCreateDBImportJob,
+    "DescribeRollbackRangeTime": doDescribeRollbackRangeTime,
     "DeleteBackup": doDeleteBackup,
     "OpenDBInstanceGTID": doOpenDBInstanceGTID,
     "ModifyAccountDescription": doModifyAccountDescription,
@@ -1861,6 +1965,7 @@ ACTION_MAP = {
     "DescribeDBInstances": doDescribeDBInstances,
     "VerifyRootAccount": doVerifyRootAccount,
     "DescribeDBInstanceCharset": doDescribeDBInstanceCharset,
+    "StartBatchRollback": doStartBatchRollback,
     "AssociateSecurityGroups": doAssociateSecurityGroups,
     "DescribeSlowLogs": doDescribeSlowLogs,
     "DescribeDBPrice": doDescribeDBPrice,
@@ -1884,6 +1989,7 @@ ACTION_MAP = {
     "UpgradeDBInstanceEngineVersion": doUpgradeDBInstanceEngineVersion,
     "UpgradeDBInstance": doUpgradeDBInstance,
     "DisassociateSecurityGroups": doDisassociateSecurityGroups,
+    "DescribeTables": doDescribeTables,
 
 }
 
