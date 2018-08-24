@@ -17,7 +17,7 @@ INFO = {
       },
       {
         "name": "NetworkType",
-        "desc": "网络类型，分别为VPC、BMVPC\nVPC：私有网络\nBMVPC：黑石网络"
+        "desc": "网络类型，分别为VPC、BMVPC，CCN，默认是VPC\nVPC：私有网络\nBMVPC：黑石网络\nCCN：云联网"
       },
       {
         "name": "NetworkRegion",
@@ -41,7 +41,7 @@ INFO = {
       },
       {
         "name": "BgpPeer",
-        "desc": "BgpPeer，用户侧bgp信息，包括asn和AuthKey"
+        "desc": "BgpPeer，用户侧bgp信息，包括Asn和AuthKey"
       },
       {
         "name": "RouteFilterPrefixes",

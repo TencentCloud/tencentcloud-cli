@@ -18,16 +18,16 @@ from tccli.services.partners import v20180321
 from tccli.services.partners.v20180321 import help as v20180321_help
 
 
-def doDescribeRebateInfos(argv, arglist):
+def doAgentPayDeals(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeRebateInfos", g_param[OptionsDefine.Version])
+        show_help("AgentPayDeals", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RebateMonth": Utils.try_to_json(argv, "--RebateMonth"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OwnerUin": Utils.try_to_json(argv, "--OwnerUin"),
+        "AgentPay": Utils.try_to_json(argv, "--AgentPay"),
+        "DealNames": Utils.try_to_json(argv, "--DealNames"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -41,9 +41,9 @@ def doDescribeRebateInfos(argv, arglist):
     client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRebateInfosRequest()
+    model = models.AgentPayDealsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeRebateInfos(model)
+    rsp = client.AgentPayDeals(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -92,6 +92,75 @@ def doDescribeAgentBills(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeRebateInfos(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRebateInfos", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RebateMonth": Utils.try_to_json(argv, "--RebateMonth"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRebateInfosRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRebateInfos(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyClientRemark(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyClientRemark", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClientRemark": Utils.try_to_json(argv, "--ClientRemark"),
+        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyClientRemarkRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyClientRemark(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAgentClients(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -121,6 +190,47 @@ def doDescribeAgentClients(argv, arglist):
     model = models.DescribeAgentClientsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeAgentClients(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAgentAuditedClients(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAgentAuditedClients", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
+        "ClientName": Utils.try_to_json(argv, "--ClientName"),
+        "ClientFlag": Utils.try_to_json(argv, "--ClientFlag"),
+        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "ClientUins": Utils.try_to_json(argv, "--ClientUins"),
+        "HasOverdueBill": Utils.try_to_json(argv, "--HasOverdueBill"),
+        "ClientRemark": Utils.try_to_json(argv, "--ClientRemark"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAgentAuditedClientsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAgentAuditedClients(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -165,40 +275,6 @@ def doAuditApplyClient(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyClientRemark(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyClientRemark", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ClientRemark": Utils.try_to_json(argv, "--ClientRemark"),
-        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyClientRemarkRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyClientRemark(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 CLIENT_MAP = {
     "v20180321": partners_client_v20180321,
 
@@ -210,11 +286,13 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeRebateInfos": doDescribeRebateInfos,
+    "AgentPayDeals": doAgentPayDeals,
     "DescribeAgentBills": doDescribeAgentBills,
-    "DescribeAgentClients": doDescribeAgentClients,
-    "AuditApplyClient": doAuditApplyClient,
+    "DescribeRebateInfos": doDescribeRebateInfos,
     "ModifyClientRemark": doModifyClientRemark,
+    "DescribeAgentClients": doDescribeAgentClients,
+    "DescribeAgentAuditedClients": doDescribeAgentAuditedClients,
+    "AuditApplyClient": doAuditApplyClient,
 
 }
 

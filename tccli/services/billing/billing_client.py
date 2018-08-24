@@ -12,31 +12,23 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.aai.v20180522 import aai_client as aai_client_v20180522
-from tencentcloud.aai.v20180522 import models as models_v20180522
-from tccli.services.aai import v20180522
-from tccli.services.aai.v20180522 import help as v20180522_help
+from tencentcloud.billing.v20180709 import billing_client as billing_client_v20180709
+from tencentcloud.billing.v20180709 import models as models_v20180709
+from tccli.services.billing import v20180709
+from tccli.services.billing.v20180709 import help as v20180709_help
 
 
-def doSimultaneousInterpreting(argv, arglist):
+def doDescribeBillDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SimultaneousInterpreting", g_param[OptionsDefine.Version])
+        show_help("DescribeBillDetail", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
-        "RecEngineModelType": Utils.try_to_json(argv, "--RecEngineModelType"),
-        "Data": Utils.try_to_json(argv, "--Data"),
-        "DataLen": Utils.try_to_json(argv, "--DataLen"),
-        "VoiceId": Utils.try_to_json(argv, "--VoiceId"),
-        "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
-        "VoiceFormat": Utils.try_to_json(argv, "--VoiceFormat"),
-        "OpenTranslate": Utils.try_to_json(argv, "--OpenTranslate"),
-        "SourceLanguage": Utils.try_to_json(argv, "--SourceLanguage"),
-        "TargetLanguage": Utils.try_to_json(argv, "--TargetLanguage"),
-        "Seq": Utils.try_to_json(argv, "--Seq"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "PeriodType": Utils.try_to_json(argv, "--PeriodType"),
+        "Month": Utils.try_to_json(argv, "--Month"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -47,12 +39,12 @@ def doSimultaneousInterpreting(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SimultaneousInterpretingRequest()
+    model = models.DescribeBillDetailRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SimultaneousInterpreting(model)
+    rsp = client.DescribeBillDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -62,22 +54,16 @@ def doSimultaneousInterpreting(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSentenceRecognition(argv, arglist):
+def doPayDeals(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SentenceRecognition", g_param[OptionsDefine.Version])
+        show_help("PayDeals", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
-        "EngSerViceType": Utils.try_to_json(argv, "--EngSerViceType"),
-        "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "VoiceFormat": Utils.try_to_json(argv, "--VoiceFormat"),
-        "UsrAudioKey": Utils.try_to_json(argv, "--UsrAudioKey"),
-        "Url": Utils.try_to_json(argv, "--Url"),
-        "Data": Utils.try_to_json(argv, "--Data"),
-        "DataLen": Utils.try_to_json(argv, "--DataLen"),
+        "OrderIds": Utils.try_to_json(argv, "--OrderIds"),
+        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
+        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -88,12 +74,12 @@ def doSentenceRecognition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SentenceRecognitionRequest()
+    model = models.PayDealsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SentenceRecognition(model)
+    rsp = client.PayDeals(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -103,16 +89,19 @@ def doSentenceRecognition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doChat(argv, arglist):
+def doDescribeDealsByCond(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Chat", g_param[OptionsDefine.Version])
+        show_help("DescribeDealsByCond", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Text": Utils.try_to_json(argv, "--Text"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "User": Utils.try_to_json(argv, "--User"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Status": Utils.try_to_json(argv, "--Status"),
+        "OrderId": Utils.try_to_json(argv, "--OrderId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -123,12 +112,12 @@ def doChat(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ChatRequest()
+    model = models.DescribeDealsByCondRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Chat(model)
+    rsp = client.DescribeDealsByCond(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -138,22 +127,17 @@ def doChat(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTextToVoice(argv, arglist):
+def doDescribeBillResourceSummary(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TextToVoice", g_param[OptionsDefine.Version])
+        show_help("DescribeBillResourceSummary", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Text": Utils.try_to_json(argv, "--Text"),
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
-        "ModelType": Utils.try_to_json(argv, "--ModelType"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "Speed": Utils.try_to_json(argv, "--Speed"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "VoiceType": Utils.try_to_json(argv, "--VoiceType"),
-        "PrimaryLanguage": Utils.try_to_json(argv, "--PrimaryLanguage"),
-        "SampleRate": Utils.try_to_json(argv, "--SampleRate"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "PeriodType": Utils.try_to_json(argv, "--PeriodType"),
+        "Month": Utils.try_to_json(argv, "--Month"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -164,12 +148,12 @@ def doTextToVoice(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextToVoiceRequest()
+    model = models.DescribeBillResourceSummaryRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TextToVoice(model)
+    rsp = client.DescribeBillResourceSummary(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -180,34 +164,34 @@ def doTextToVoice(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180522": aai_client_v20180522,
+    "v20180709": billing_client_v20180709,
 
 }
 
 MODELS_MAP = {
-    "v20180522": models_v20180522,
+    "v20180709": models_v20180709,
 
 }
 
 ACTION_MAP = {
-    "SimultaneousInterpreting": doSimultaneousInterpreting,
-    "SentenceRecognition": doSentenceRecognition,
-    "Chat": doChat,
-    "TextToVoice": doTextToVoice,
+    "DescribeBillDetail": doDescribeBillDetail,
+    "PayDeals": doPayDeals,
+    "DescribeDealsByCond": doDescribeDealsByCond,
+    "DescribeBillResourceSummary": doDescribeBillResourceSummary,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180522.version,
+    v20180709.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180522.version.replace('-', ''): {"help": v20180522_help.INFO,"desc": v20180522_help.DESC},
+     'v' + v20180709.version.replace('-', ''): {"help": v20180709_help.INFO,"desc": v20180709_help.DESC},
 
 }
 
 
-def aai_action(argv, arglist):
+def billing_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -223,7 +207,7 @@ def aai_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "aai", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "billing", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -244,7 +228,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("aai", aai_action)
+    cmd = NiceCommand("billing", billing_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -303,11 +287,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["aai"][OptionsDefine.Version]
+            version = config["billing"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["aai"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["billing"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -324,7 +308,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "aai", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "billing", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -334,7 +318,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["aai"]["version"]
+        version = profile["billing"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass
