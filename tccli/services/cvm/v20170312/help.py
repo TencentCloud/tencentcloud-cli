@@ -92,7 +92,7 @@ INFO = {
       },
       {
         "name": "DataDisks",
-        "desc": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，当前仅支持购买的时候指定一个数据盘。"
+        "desc": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定11块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含10块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。"
       },
       {
         "name": "VirtualPrivateCloud",
@@ -412,7 +412,7 @@ INFO = {
     "params": [
       {
         "name": "Placement",
-        "desc": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，专用宿主机（对于独享母机付费模式的子机创建）等属性。"
+        "desc": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，专用宿主机（对于独享母机付费模式的实例创建）等属性。"
       },
       {
         "name": "ImageId",
@@ -428,7 +428,7 @@ INFO = {
       },
       {
         "name": "InstanceType",
-        "desc": "实例机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的子机创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认机型为S1.SMALL1。<br><li>对于付费模式为CDHPAID的子机创建，该参数以\"CDH_\"为前缀，根据cpu和内存配置生成，具体形式为：CDH_XCXG，例如对于创建cpu为1核，内存为1G大小的专用宿主机的子机，该参数应该为CDH_1C1G。"
+        "desc": "实例机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认机型为S1.SMALL1。<br><li>对于付费模式为CDHPAID的实例创建，该参数以\"CDH_\"为前缀，根据cpu和内存配置生成，具体形式为：CDH_XCXG，例如对于创建cpu为1核，内存为1G大小的专用宿主机的实例，该参数应该为CDH_1C1G。"
       },
       {
         "name": "SystemDisk",
@@ -436,7 +436,7 @@ INFO = {
       },
       {
         "name": "DataDisks",
-        "desc": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，当前仅支持购买的时候指定一个数据盘。"
+        "desc": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定11块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含10块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。"
       },
       {
         "name": "VirtualPrivateCloud",
@@ -495,7 +495,7 @@ INFO = {
         "desc": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。"
       }
     ],
-    "desc": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。\n\n* 实例创建成功后将自动开机启动，[实例状态](/document/api/213/9452#instance_state)变为“运行中”。\n* 预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。\n* 本接口允许购买的实例数量遵循[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)，所创建的实例和官网入口创建的实例共用配额。\n* 本接口为异步接口，当创建请求下发成功后会返回一个实例`ID`列表，此时实例的创建并立即未完成。在此期间实例的状态将会处于“准备中”，可以通过调用 [DescribeInstancesStatus](https://cloud.tencent.com/document/api/213/15738) 接口查询对应实例的状态，来判断生产有没有最终成功。如果实例的状态由“准备中”变为“运行中”，则为创建成功。"
+    "desc": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。\n\n* 实例创建成功后将自动开机启动，[实例状态](/document/api/213/9452#instance_state)变为“运行中”。\n* 预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。\n* 本接口允许购买的实例数量遵循[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)，所创建的实例和官网入口创建的实例共用配额。\n* 本接口为异步接口，当创建请求下发成功后会返回一个实例`ID`列表，此时实例的创建并立即未完成。在此期间实例的状态将会处于“准备中”，可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询对应实例的状态，来判断创建有没有最终成功。如果实例的状态由“准备中”变为“运行中”，则为创建成功。"
   },
   "DisassociateInstancesKeyPairs": {
     "params": [
