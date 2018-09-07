@@ -161,7 +161,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "单次请求返回的数量，默认值为20，最大值为100。"
+        "desc": "分页大小，默认值为20，最小值为1，最大值为100。"
       }
     ],
     "desc": "本接口(DescribeBackups)用于查询云数据库实例的备份数据。"
@@ -186,7 +186,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "分页大小，最大值为2000。"
+        "desc": "分页大小，最小值为1，最大值为2000。"
       }
     ],
     "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表。"
@@ -385,6 +385,19 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBInstanceConfig)用于云数据库实例的配置信息，包括同步模式，部署模式等。"
   },
+  "ModifyAutoRenewFlag": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "实例的ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "AutoRenew",
+        "desc": "自动续费标记，可取值的有：0-不自动续费，1-自动续费。"
+      }
+    ],
+    "desc": "本接口(ModifyAutoRenewFlag)用于修改云数据库实例的自动续费标记。仅支持包年包月的实例设置自动续费标记。"
+  },
   "DescribeDBInstanceRebootTime": {
     "params": [
       {
@@ -418,7 +431,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "分页大小，最大值为2000。"
+        "desc": "分页大小，最小值为1，最大值为2000。"
       }
     ],
     "desc": "本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名。"
@@ -589,7 +602,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "返回记录数量，默认值为20，最大值为100。"
+        "desc": "分页大小，默认值为20，最小值为1，最大值为100。"
       }
     ],
     "desc": "本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。"
@@ -636,7 +649,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "单次请求返回的数量，默认值为20，最大值为100。"
+        "desc": "单次请求返回的数量，默认值为20，最小值为1，最大值为100。"
       }
     ],
     "desc": "本接口(DescribeAccounts)用于查询云数据库的所有账户信息。"
@@ -813,11 +826,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "分页参数，偏移量。"
+        "desc": "分页偏移量。"
       },
       {
         "name": "Limit",
-        "desc": "分页参数，单次请求数量限制。"
+        "desc": "分页大小，默认值为50，最小值为1，最大值为2000。"
       }
     ],
     "desc": "本接口(DescribeDBSwitchRecords)用于查询云数据库实例切换记录。"
@@ -957,7 +970,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "单次请求返回的数量，默认值为20，最大值为100。"
+        "desc": "分页大小，默认值为20，最小值为1，最大值为100。"
       }
     ],
     "desc": "本接口(DescribeBinlogs)用于查询云数据库实例的二进制数据。"
