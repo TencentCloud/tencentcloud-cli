@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "DirectConnectTunnelName",
-        "desc": "专线通道名称"
+        "desc": "专用通道名称"
       },
       {
         "name": "DirectConnectOwnerAccount",
@@ -60,17 +60,17 @@ INFO = {
         "desc": "CustomerAddress，用户侧互联 IP"
       }
     ],
-    "desc": "用于创建专线通道的接口"
+    "desc": "用于创建专用通道的接口"
   },
   "DescribeDirectConnectTunnels": {
     "params": [
       {
         "name": "Filters",
-        "desc": "过滤条件:\n参数不支持同时指定DirectConnectTunnelIds和Filters。\n<li> direct-connect-tunnel-name, 专线通道名称。</li>\n<li> direct-connect-tunnel-id, 专线通道实例ID，如dcx-abcdefgh。</li>\n<li>direct-connect-id, 物理专线实例ID，如，dc-abcdefgh。</li>"
+        "desc": "过滤条件:\n参数不支持同时指定DirectConnectTunnelIds和Filters。\n<li> direct-connect-tunnel-name, 专用通道名称。</li>\n<li> direct-connect-tunnel-id, 专用通道实例ID，如dcx-abcdefgh。</li>\n<li>direct-connect-id, 物理专线实例ID，如，dc-abcdefgh。</li>"
       },
       {
         "name": "DirectConnectTunnelIds",
-        "desc": "专线通道 ID数组"
+        "desc": "专用通道 ID数组"
       },
       {
         "name": "Offset",
@@ -81,25 +81,25 @@ INFO = {
         "desc": "返回数量，默认为20，最大值为100"
       }
     ],
-    "desc": "用于查询专线通道列表。"
+    "desc": "用于查询专用通道列表。"
   },
   "AcceptDirectConnectTunnel": {
     "params": [
       {
         "name": "DirectConnectTunnelId",
-        "desc": "物理专线拥有者接受共享专线通道申请"
+        "desc": "物理专线拥有者接受共享专用通道申请"
       }
     ],
-    "desc": "接受专线通道申请"
+    "desc": "接受专用通道申请"
   },
   "DeleteDirectConnectTunnel": {
     "params": [
       {
         "name": "DirectConnectTunnelId",
-        "desc": "专线通道ID"
+        "desc": "专用通道ID"
       }
     ],
-    "desc": "删除专线通道"
+    "desc": "删除专用通道"
   },
   "RejectDirectConnectTunnel": {
     "params": [
@@ -108,17 +108,17 @@ INFO = {
         "desc": "无"
       }
     ],
-    "desc": "拒绝专线通道申请"
+    "desc": "拒绝专用通道申请"
   },
   "ModifyDirectConnectTunnelAttribute": {
     "params": [
       {
         "name": "DirectConnectTunnelId",
-        "desc": "专线通道ID"
+        "desc": "专用通道ID"
       },
       {
         "name": "DirectConnectTunnelName",
-        "desc": "专线通道名称"
+        "desc": "专用通道名称"
       },
       {
         "name": "BgpPeer",
@@ -138,9 +138,9 @@ INFO = {
       },
       {
         "name": "Bandwidth",
-        "desc": "专线通道带宽值，单位为M。"
+        "desc": "专用通道带宽值，单位为M。"
       }
     ],
-    "desc": "修改专线通道属性"
+    "desc": "修改专用通道属性"
   }
 }

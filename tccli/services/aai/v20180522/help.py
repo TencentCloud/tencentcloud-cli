@@ -62,11 +62,11 @@ INFO = {
       },
       {
         "name": "SubServiceType",
-        "desc": "子服务类型。0：离线语音识别。1：实时流式识别，2，一句话识别。"
+        "desc": "子服务类型。2，一句话识别。"
       },
       {
         "name": "EngSerViceType",
-        "desc": "引擎类型。8k：电话 8k 通用模型；16k：16k 通用模型。"
+        "desc": "引擎类型。8k：电话 8k 通用模型；16k：16k 通用模型。只支持单声道音频识别。"
       },
       {
         "name": "SourceType",
@@ -86,7 +86,7 @@ INFO = {
       },
       {
         "name": "Data",
-        "desc": "语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode())。音频数据要小于900k。"
+        "desc": "语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于900k。"
       },
       {
         "name": "DataLen",

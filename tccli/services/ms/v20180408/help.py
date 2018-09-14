@@ -32,6 +32,27 @@ INFO = {
     ],
     "desc": "删除一个或者多个app扫描信息"
   },
+  "CreateResourceInstances": {
+    "params": [
+      {
+        "name": "Pid",
+        "desc": "资源类型id。"
+      },
+      {
+        "name": "TimeUnit",
+        "desc": "时间单位，取值为d，m，y，分别表示天，月，年。"
+      },
+      {
+        "name": "TimeSpan",
+        "desc": "时间数量。"
+      },
+      {
+        "name": "ResourceNum",
+        "desc": "资源数量。"
+      }
+    ],
+    "desc": "用户可以使用该接口自建资源，只支持白名单用户"
+  },
   "CreateBindInstance": {
     "params": [
       {
