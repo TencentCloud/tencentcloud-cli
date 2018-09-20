@@ -26,13 +26,14 @@ def doCreateModel(argv, arglist):
 
     param = {
         "Name": Utils.try_to_json(argv, "--Name"),
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
         "Model": Utils.try_to_json(argv, "--Model"),
         "Description": Utils.try_to_json(argv, "--Description"),
+        "Cluster": Utils.try_to_json(argv, "--Cluster"),
         "RuntimeVersion": Utils.try_to_json(argv, "--RuntimeVersion"),
         "Replicas": Utils.try_to_json(argv, "--Replicas"),
         "Expose": Utils.try_to_json(argv, "--Expose"),
         "ServType": Utils.try_to_json(argv, "--ServType"),
+        "RuntimeConf": Utils.try_to_json(argv, "--RuntimeConf"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -113,6 +114,7 @@ def doCreateJob(argv, arglist):
         "WorkerCount": Utils.try_to_json(argv, "--WorkerCount"),
         "ParameterServerCount": Utils.try_to_json(argv, "--ParameterServerCount"),
         "Debug": Utils.try_to_json(argv, "--Debug"),
+        "RuntimeConf": Utils.try_to_json(argv, "--RuntimeConf"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -147,6 +149,7 @@ def doDescribeModel(argv, arglist):
     param = {
         "Name": Utils.try_to_json(argv, "--Name"),
         "Cluster": Utils.try_to_json(argv, "--Cluster"),
+        "ServType": Utils.try_to_json(argv, "--ServType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -220,6 +223,7 @@ def doListModels(argv, arglist):
         "Cluster": Utils.try_to_json(argv, "--Cluster"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
+        "ServType": Utils.try_to_json(argv, "--ServType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -288,6 +292,7 @@ def doDeleteModel(argv, arglist):
     param = {
         "Name": Utils.try_to_json(argv, "--Name"),
         "Cluster": Utils.try_to_json(argv, "--Cluster"),
+        "ServType": Utils.try_to_json(argv, "--ServType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

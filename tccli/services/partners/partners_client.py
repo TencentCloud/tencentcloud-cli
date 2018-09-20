@@ -92,6 +92,40 @@ def doDescribeAgentBills(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAgentTransferMoney(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AgentTransferMoney", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
+        "Amount": Utils.try_to_json(argv, "--Amount"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AgentTransferMoneyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AgentTransferMoney(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeRebateInfos(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -199,6 +233,39 @@ def doDescribeAgentClients(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeClientBalance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeClientBalance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClientBalanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeClientBalance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAgentAuditedClients(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -288,9 +355,11 @@ MODELS_MAP = {
 ACTION_MAP = {
     "AgentPayDeals": doAgentPayDeals,
     "DescribeAgentBills": doDescribeAgentBills,
+    "AgentTransferMoney": doAgentTransferMoney,
     "DescribeRebateInfos": doDescribeRebateInfos,
     "ModifyClientRemark": doModifyClientRemark,
     "DescribeAgentClients": doDescribeAgentClients,
+    "DescribeClientBalance": doDescribeClientBalance,
     "DescribeAgentAuditedClients": doDescribeAgentAuditedClients,
     "AuditApplyClient": doAuditApplyClient,
 

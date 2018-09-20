@@ -12,26 +12,26 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.dcdb.v20180411 import dcdb_client as dcdb_client_v20180411
-from tencentcloud.dcdb.v20180411 import models as models_v20180411
-from tccli.services.dcdb import v20180411
-from tccli.services.dcdb.v20180411 import help as v20180411_help
+from tencentcloud.sqlserver.v20180328 import sqlserver_client as sqlserver_client_v20180328
+from tencentcloud.sqlserver.v20180328 import models as models_v20180328
+from tccli.services.sqlserver import v20180328
+from tccli.services.sqlserver.v20180328 import help as v20180328_help
 
 
-def doDescribeAccountPrivileges(argv, arglist):
+def doModifyMigration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeAccountPrivileges", g_param[OptionsDefine.Version])
+        show_help("ModifyMigration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "DbName": Utils.try_to_json(argv, "--DbName"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "Object": Utils.try_to_json(argv, "--Object"),
-        "ColName": Utils.try_to_json(argv, "--ColName"),
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
+        "MigrateName": Utils.try_to_json(argv, "--MigrateName"),
+        "MigrateType": Utils.try_to_json(argv, "--MigrateType"),
+        "SourceType": Utils.try_to_json(argv, "--SourceType"),
+        "Source": Utils.try_to_json(argv, "--Source"),
+        "Target": Utils.try_to_json(argv, "--Target"),
+        "MigrateDBSet": Utils.try_to_json(argv, "--MigrateDBSet"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -42,12 +42,12 @@ def doDescribeAccountPrivileges(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAccountPrivilegesRequest()
+    model = models.ModifyMigrationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAccountPrivileges(model)
+    rsp = client.ModifyMigration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -75,7 +75,7 @@ def doDescribeOrders(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeOrdersRequest()
@@ -90,92 +90,18 @@ def doDescribeOrders(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDatabaseObjects(argv, arglist):
+def doDescribeBackups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDatabaseObjects", g_param[OptionsDefine.Version])
+        show_help("DescribeBackups", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "DbName": Utils.try_to_json(argv, "--DbName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDatabaseObjectsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDatabaseObjects(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeShardSpec(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeShardSpec", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShardSpecRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShardSpec(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDCDBInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDCDBInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "SearchName": Utils.try_to_json(argv, "--SearchName"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
-        "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
-        "IsFilterVpc": Utils.try_to_json(argv, "--IsFilterVpc"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
-        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "ExclusterType": Utils.try_to_json(argv, "--ExclusterType"),
-        "IsFilterExcluster": Utils.try_to_json(argv, "--IsFilterExcluster"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -186,12 +112,12 @@ def doDescribeDCDBInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDCDBInstancesRequest()
+    model = models.DescribeBackupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDCDBInstances(model)
+    rsp = client.DescribeBackups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -201,17 +127,15 @@ def doDescribeDCDBInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAccountDescription(argv, arglist):
+def doModifyAccountPrivilege(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyAccountDescription", g_param[OptionsDefine.Version])
+        show_help("ModifyAccountPrivilege", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "Accounts": Utils.try_to_json(argv, "--Accounts"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -222,12 +146,12 @@ def doModifyAccountDescription(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAccountDescriptionRequest()
+    model = models.ModifyAccountPrivilegeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyAccountDescription(model)
+    rsp = client.ModifyAccountPrivilege(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -245,9 +169,7 @@ def doResetAccountPassword(argv, arglist):
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "Accounts": Utils.try_to_json(argv, "--Accounts"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -258,7 +180,7 @@ def doResetAccountPassword(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ResetAccountPasswordRequest()
@@ -273,20 +195,55 @@ def doResetAccountPassword(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDCDBPrice(argv, arglist):
+def doModifyDBName(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDCDBPrice", g_param[OptionsDefine.Version])
+        show_help("ModifyDBName", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "OldDBName": Utils.try_to_json(argv, "--OldDBName"),
+        "NewDBName": Utils.try_to_json(argv, "--NewDBName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDBNameRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDBName(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquiryPriceCreateDBInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquiryPriceCreateDBInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Zone": Utils.try_to_json(argv, "--Zone"),
-        "Count": Utils.try_to_json(argv, "--Count"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Storage": Utils.try_to_json(argv, "--Storage"),
+        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "Period": Utils.try_to_json(argv, "--Period"),
-        "ShardNodeCount": Utils.try_to_json(argv, "--ShardNodeCount"),
-        "ShardMemory": Utils.try_to_json(argv, "--ShardMemory"),
-        "ShardStorage": Utils.try_to_json(argv, "--ShardStorage"),
-        "ShardCount": Utils.try_to_json(argv, "--ShardCount"),
+        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
+        "DBVersion": Utils.try_to_json(argv, "--DBVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -297,12 +254,12 @@ def doDescribeDCDBPrice(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDCDBPriceRequest()
+    model = models.InquiryPriceCreateDBInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDCDBPrice(model)
+    rsp = client.InquiryPriceCreateDBInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -312,15 +269,52 @@ def doDescribeDCDBPrice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDBParameters(argv, arglist):
+def doModifyDBInstanceProject(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyDBParameters", g_param[OptionsDefine.Version])
+        show_help("ModifyDBInstanceProject", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDBInstanceProjectRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDBInstanceProject(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSlowlogs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSlowlogs", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Params": Utils.try_to_json(argv, "--Params"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -331,153 +325,12 @@ def doModifyDBParameters(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDBParametersRequest()
+    model = models.DescribeSlowlogsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDBParameters(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDCDBSaleInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDCDBSaleInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDCDBSaleInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDCDBSaleInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doOpenDBExtranetAccess(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("OpenDBExtranetAccess", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.OpenDBExtranetAccessRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.OpenDBExtranetAccess(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGrantAccountPrivileges(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GrantAccountPrivileges", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "DbName": Utils.try_to_json(argv, "--DbName"),
-        "Privileges": Utils.try_to_json(argv, "--Privileges"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "Object": Utils.try_to_json(argv, "--Object"),
-        "ColName": Utils.try_to_json(argv, "--ColName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GrantAccountPrivilegesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.GrantAccountPrivileges(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doRenewDCDBInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("RenewDCDBInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
-        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenewDCDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.RenewDCDBInstance(model)
+    rsp = client.DescribeSlowlogs(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -495,8 +348,7 @@ def doDeleteAccount(argv, arglist):
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
+        "UserNames": Utils.try_to_json(argv, "--UserNames"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -507,7 +359,7 @@ def doDeleteAccount(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteAccountRequest()
@@ -522,10 +374,115 @@ def doDeleteAccount(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDBParameters(argv, arglist):
+def doDescribeFlowStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDBParameters", g_param[OptionsDefine.Version])
+        show_help("DescribeFlowStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FlowId": Utils.try_to_json(argv, "--FlowId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeFlowStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeFlowStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyAccountRemark(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyAccountRemark", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Accounts": Utils.try_to_json(argv, "--Accounts"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAccountRemarkRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyAccountRemark(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMigrations(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeMigrations", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "StatusSet": Utils.try_to_json(argv, "--StatusSet"),
+        "MigrateName": Utils.try_to_json(argv, "--MigrateName"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMigrationsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeMigrations(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRestartDBInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RestartDBInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -540,12 +497,12 @@ def doDescribeDBParameters(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBParametersRequest()
+    model = models.RestartDBInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDBParameters(model)
+    rsp = client.RestartDBInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -555,15 +512,94 @@ def doDescribeDBParameters(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDBInstancesProject(argv, arglist):
+def doModifyDBInstanceName(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyDBInstancesProject", g_param[OptionsDefine.Version])
+        show_help("ModifyDBInstanceName", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDBInstanceNameRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDBInstanceName(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateBackup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateBackup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Strategy": Utils.try_to_json(argv, "--Strategy"),
+        "DBNames": Utils.try_to_json(argv, "--DBNames"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateBackupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateBackup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateDBInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateDBInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Storage": Utils.try_to_json(argv, "--Storage"),
+        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
+        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+        "DBVersion": Utils.try_to_json(argv, "--DBVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -574,12 +610,12 @@ def doModifyDBInstancesProject(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDBInstancesProjectRequest()
+    model = models.CreateDBInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDBInstancesProject(model)
+    rsp = client.CreateDBInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -589,16 +625,17 @@ def doModifyDBInstancesProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDBLogFiles(argv, arglist):
+def doRollbackInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDBLogFiles", g_param[OptionsDefine.Version])
+        show_help("RollbackInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "ShardId": Utils.try_to_json(argv, "--ShardId"),
         "Type": Utils.try_to_json(argv, "--Type"),
+        "DBs": Utils.try_to_json(argv, "--DBs"),
+        "Time": Utils.try_to_json(argv, "--Time"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -609,12 +646,12 @@ def doDescribeDBLogFiles(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBLogFilesRequest()
+    model = models.RollbackInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDBLogFiles(model)
+    rsp = client.RollbackInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -624,14 +661,16 @@ def doDescribeDBLogFiles(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDBSyncMode(argv, arglist):
+def doDescribeDBs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDBSyncMode", g_param[OptionsDefine.Version])
+        show_help("DescribeDBs", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -642,12 +681,151 @@ def doDescribeDBSyncMode(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBSyncModeRequest()
+    model = models.DescribeDBsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDBSyncMode(model)
+    rsp = client.DescribeDBs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDBInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDBInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "Status": Utils.try_to_json(argv, "--Status"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDBInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDBInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeZones(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeZones", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeZonesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeZones(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDBRemark(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDBRemark", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "DBRemarks": Utils.try_to_json(argv, "--DBRemarks"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDBRemarkRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDBRemark(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRenewDBInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RenewDBInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
+        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RenewDBInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RenewDBInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -665,12 +843,7 @@ def doCreateAccount(argv, arglist):
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "ReadOnly": Utils.try_to_json(argv, "--ReadOnly"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "DelayThresh": Utils.try_to_json(argv, "--DelayThresh"),
+        "Accounts": Utils.try_to_json(argv, "--Accounts"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -681,7 +854,7 @@ def doCreateAccount(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateAccountRequest()
@@ -696,20 +869,16 @@ def doCreateAccount(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpgradeDCDBInstance(argv, arglist):
+def doInquiryPriceUpgradeDBInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpgradeDCDBInstance", g_param[OptionsDefine.Version])
+        show_help("InquiryPriceUpgradeDBInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UpgradeType": Utils.try_to_json(argv, "--UpgradeType"),
-        "AddShardConfig": Utils.try_to_json(argv, "--AddShardConfig"),
-        "ExpandShardConfig": Utils.try_to_json(argv, "--ExpandShardConfig"),
-        "SplitShardConfig": Utils.try_to_json(argv, "--SplitShardConfig"),
-        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
-        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Storage": Utils.try_to_json(argv, "--Storage"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -720,12 +889,12 @@ def doUpgradeDCDBInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeDCDBInstanceRequest()
+    model = models.InquiryPriceUpgradeDBInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpgradeDCDBInstance(model)
+    rsp = client.InquiryPriceUpgradeDBInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -735,15 +904,19 @@ def doUpgradeDCDBInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDBSyncMode(argv, arglist):
+def doCreateMigration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyDBSyncMode", g_param[OptionsDefine.Version])
+        show_help("CreateMigration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "SyncMode": Utils.try_to_json(argv, "--SyncMode"),
+        "MigrateName": Utils.try_to_json(argv, "--MigrateName"),
+        "MigrateType": Utils.try_to_json(argv, "--MigrateType"),
+        "SourceType": Utils.try_to_json(argv, "--SourceType"),
+        "Source": Utils.try_to_json(argv, "--Source"),
+        "Target": Utils.try_to_json(argv, "--Target"),
+        "MigrateDBSet": Utils.try_to_json(argv, "--MigrateDBSet"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -754,12 +927,12 @@ def doModifyDBSyncMode(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDBSyncModeRequest()
+    model = models.CreateMigrationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDBSyncMode(model)
+    rsp = client.CreateMigration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -769,14 +942,13 @@ def doModifyDBSyncMode(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCloseDBExtranetAccess(argv, arglist):
+def doDescribeRegions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CloseDBExtranetAccess", g_param[OptionsDefine.Version])
+        show_help("DescribeRegions", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -787,12 +959,80 @@ def doCloseDBExtranetAccess(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CloseDBExtranetAccessRequest()
+    model = models.DescribeRegionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CloseDBExtranetAccess(model)
+    rsp = client.DescribeRegions(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquiryPriceRenewDBInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquiryPriceRenewDBInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquiryPriceRenewDBInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InquiryPriceRenewDBInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteMigration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteMigration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteMigrationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteMigration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -810,6 +1050,8 @@ def doDescribeAccounts(argv, arglist):
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -820,7 +1062,7 @@ def doDescribeAccounts(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAccountsRequest()
@@ -835,20 +1077,15 @@ def doDescribeAccounts(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCopyAccountPrivileges(argv, arglist):
+def doDescribeRollbackTime(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CopyAccountPrivileges", g_param[OptionsDefine.Version])
+        show_help("DescribeRollbackTime", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "SrcUserName": Utils.try_to_json(argv, "--SrcUserName"),
-        "SrcHost": Utils.try_to_json(argv, "--SrcHost"),
-        "DstUserName": Utils.try_to_json(argv, "--DstUserName"),
-        "DstHost": Utils.try_to_json(argv, "--DstHost"),
-        "SrcReadOnly": Utils.try_to_json(argv, "--SrcReadOnly"),
-        "DstReadOnly": Utils.try_to_json(argv, "--DstReadOnly"),
+        "DBs": Utils.try_to_json(argv, "--DBs"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -859,12 +1096,12 @@ def doCopyAccountPrivileges(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CopyAccountPrivilegesRequest()
+    model = models.DescribeRollbackTimeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CopyAccountPrivileges(model)
+    rsp = client.DescribeRollbackTime(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -874,19 +1111,15 @@ def doCopyAccountPrivileges(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDCDBShards(argv, arglist):
+def doCreateDB(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDCDBShards", g_param[OptionsDefine.Version])
+        show_help("CreateDB", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "ShardInstanceIds": Utils.try_to_json(argv, "--ShardInstanceIds"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
-        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "DBs": Utils.try_to_json(argv, "--DBs"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -897,12 +1130,12 @@ def doDescribeDCDBShards(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDCDBShardsRequest()
+    model = models.CreateDBRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDCDBShards(model)
+    rsp = client.CreateDB(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -912,24 +1145,117 @@ def doDescribeDCDBShards(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDCDBInstance(argv, arglist):
+def doDeleteDB(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateDCDBInstance", g_param[OptionsDefine.Version])
+        show_help("DeleteDB", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Zones": Utils.try_to_json(argv, "--Zones"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "ShardMemory": Utils.try_to_json(argv, "--ShardMemory"),
-        "ShardStorage": Utils.try_to_json(argv, "--ShardStorage"),
-        "ShardNodeCount": Utils.try_to_json(argv, "--ShardNodeCount"),
-        "ShardCount": Utils.try_to_json(argv, "--ShardCount"),
-        "Count": Utils.try_to_json(argv, "--Count"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "DbVersionId": Utils.try_to_json(argv, "--DbVersionId"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Names": Utils.try_to_json(argv, "--Names"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDBRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteDB(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMigrationDetail(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeMigrationDetail", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMigrationDetailRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeMigrationDetail(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRestoreInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RestoreInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "BackupId": Utils.try_to_json(argv, "--BackupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RestoreInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RestoreInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpgradeDBInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpgradeDBInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Storage": Utils.try_to_json(argv, "--Storage"),
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
 
@@ -942,12 +1268,12 @@ def doCreateDCDBInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDCDBInstanceRequest()
+    model = models.UpgradeDBInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateDCDBInstance(model)
+    rsp = client.UpgradeDBInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -957,14 +1283,14 @@ def doCreateDCDBInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDatabases(argv, arglist):
+def doRunMigration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDatabases", g_param[OptionsDefine.Version])
+        show_help("RunMigration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -975,12 +1301,12 @@ def doDescribeDatabases(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDatabasesRequest()
+    model = models.RunMigrationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDatabases(model)
+    rsp = client.RunMigration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -990,16 +1316,14 @@ def doDescribeDatabases(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDatabaseTable(argv, arglist):
+def doDescribeProductConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDatabaseTable", g_param[OptionsDefine.Version])
+        show_help("DescribeProductConfig", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "DbName": Utils.try_to_json(argv, "--DbName"),
-        "Table": Utils.try_to_json(argv, "--Table"),
+        "Zone": Utils.try_to_json(argv, "--Zone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1010,12 +1334,12 @@ def doDescribeDatabaseTable(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDatabaseTableRequest()
+    model = models.DescribeProductConfigRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDatabaseTable(model)
+    rsp = client.DescribeProductConfig(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1025,18 +1349,14 @@ def doDescribeDatabaseTable(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDCDBUpgradePrice(argv, arglist):
+def doModifyDBInstanceRenewFlag(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDCDBUpgradePrice", g_param[OptionsDefine.Version])
+        show_help("ModifyDBInstanceRenewFlag", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UpgradeType": Utils.try_to_json(argv, "--UpgradeType"),
-        "AddShardConfig": Utils.try_to_json(argv, "--AddShardConfig"),
-        "ExpandShardConfig": Utils.try_to_json(argv, "--ExpandShardConfig"),
-        "SplitShardConfig": Utils.try_to_json(argv, "--SplitShardConfig"),
+        "RenewFlags": Utils.try_to_json(argv, "--RenewFlags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1047,80 +1367,12 @@ def doDescribeDCDBUpgradePrice(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDCDBUpgradePriceRequest()
+    model = models.ModifyDBInstanceRenewFlagRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDCDBUpgradePrice(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doInitDCDBInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("InitDCDBInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "Params": Utils.try_to_json(argv, "--Params"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InitDCDBInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.InitDCDBInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDCDBRenewalPrice(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDCDBRenewalPrice", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DcdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDCDBRenewalPriceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDCDBRenewalPrice(model)
+    rsp = client.ModifyDBInstanceRenewFlag(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1131,61 +1383,69 @@ def doDescribeDCDBRenewalPrice(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180411": dcdb_client_v20180411,
+    "v20180328": sqlserver_client_v20180328,
 
 }
 
 MODELS_MAP = {
-    "v20180411": models_v20180411,
+    "v20180328": models_v20180328,
 
 }
 
 ACTION_MAP = {
-    "DescribeAccountPrivileges": doDescribeAccountPrivileges,
+    "ModifyMigration": doModifyMigration,
     "DescribeOrders": doDescribeOrders,
-    "DescribeDatabaseObjects": doDescribeDatabaseObjects,
-    "DescribeShardSpec": doDescribeShardSpec,
-    "DescribeDCDBInstances": doDescribeDCDBInstances,
-    "ModifyAccountDescription": doModifyAccountDescription,
+    "DescribeBackups": doDescribeBackups,
+    "ModifyAccountPrivilege": doModifyAccountPrivilege,
     "ResetAccountPassword": doResetAccountPassword,
-    "DescribeDCDBPrice": doDescribeDCDBPrice,
-    "ModifyDBParameters": doModifyDBParameters,
-    "DescribeDCDBSaleInfo": doDescribeDCDBSaleInfo,
-    "OpenDBExtranetAccess": doOpenDBExtranetAccess,
-    "GrantAccountPrivileges": doGrantAccountPrivileges,
-    "RenewDCDBInstance": doRenewDCDBInstance,
+    "ModifyDBName": doModifyDBName,
+    "InquiryPriceCreateDBInstances": doInquiryPriceCreateDBInstances,
+    "ModifyDBInstanceProject": doModifyDBInstanceProject,
+    "DescribeSlowlogs": doDescribeSlowlogs,
     "DeleteAccount": doDeleteAccount,
-    "DescribeDBParameters": doDescribeDBParameters,
-    "ModifyDBInstancesProject": doModifyDBInstancesProject,
-    "DescribeDBLogFiles": doDescribeDBLogFiles,
-    "DescribeDBSyncMode": doDescribeDBSyncMode,
+    "DescribeFlowStatus": doDescribeFlowStatus,
+    "ModifyAccountRemark": doModifyAccountRemark,
+    "DescribeMigrations": doDescribeMigrations,
+    "RestartDBInstance": doRestartDBInstance,
+    "ModifyDBInstanceName": doModifyDBInstanceName,
+    "CreateBackup": doCreateBackup,
+    "CreateDBInstances": doCreateDBInstances,
+    "RollbackInstance": doRollbackInstance,
+    "DescribeDBs": doDescribeDBs,
+    "DescribeDBInstances": doDescribeDBInstances,
+    "DescribeZones": doDescribeZones,
+    "ModifyDBRemark": doModifyDBRemark,
+    "RenewDBInstance": doRenewDBInstance,
     "CreateAccount": doCreateAccount,
-    "UpgradeDCDBInstance": doUpgradeDCDBInstance,
-    "ModifyDBSyncMode": doModifyDBSyncMode,
-    "CloseDBExtranetAccess": doCloseDBExtranetAccess,
+    "InquiryPriceUpgradeDBInstance": doInquiryPriceUpgradeDBInstance,
+    "CreateMigration": doCreateMigration,
+    "DescribeRegions": doDescribeRegions,
+    "InquiryPriceRenewDBInstance": doInquiryPriceRenewDBInstance,
+    "DeleteMigration": doDeleteMigration,
     "DescribeAccounts": doDescribeAccounts,
-    "CopyAccountPrivileges": doCopyAccountPrivileges,
-    "DescribeDCDBShards": doDescribeDCDBShards,
-    "CreateDCDBInstance": doCreateDCDBInstance,
-    "DescribeDatabases": doDescribeDatabases,
-    "DescribeDatabaseTable": doDescribeDatabaseTable,
-    "DescribeDCDBUpgradePrice": doDescribeDCDBUpgradePrice,
-    "InitDCDBInstances": doInitDCDBInstances,
-    "DescribeDCDBRenewalPrice": doDescribeDCDBRenewalPrice,
+    "DescribeRollbackTime": doDescribeRollbackTime,
+    "CreateDB": doCreateDB,
+    "DeleteDB": doDeleteDB,
+    "DescribeMigrationDetail": doDescribeMigrationDetail,
+    "RestoreInstance": doRestoreInstance,
+    "UpgradeDBInstance": doUpgradeDBInstance,
+    "RunMigration": doRunMigration,
+    "DescribeProductConfig": doDescribeProductConfig,
+    "ModifyDBInstanceRenewFlag": doModifyDBInstanceRenewFlag,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180411.version,
+    v20180328.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180411.version.replace('-', ''): {"help": v20180411_help.INFO,"desc": v20180411_help.DESC},
+     'v' + v20180328.version.replace('-', ''): {"help": v20180328_help.INFO,"desc": v20180328_help.DESC},
 
 }
 
 
-def dcdb_action(argv, arglist):
+def sqlserver_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -1201,7 +1461,7 @@ def dcdb_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "dcdb", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "sqlserver", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -1222,7 +1482,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("dcdb", dcdb_action)
+    cmd = NiceCommand("sqlserver", sqlserver_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -1281,11 +1541,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["dcdb"][OptionsDefine.Version]
+            version = config["sqlserver"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["dcdb"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["sqlserver"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -1302,7 +1562,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "dcdb", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "sqlserver", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -1312,7 +1572,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["dcdb"]["version"]
+        version = profile["sqlserver"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

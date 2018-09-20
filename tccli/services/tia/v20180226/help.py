@@ -8,10 +8,6 @@ INFO = {
         "desc": "模型名称"
       },
       {
-        "name": "Cluster",
-        "desc": "指定集群的名称"
-      },
-      {
         "name": "Model",
         "desc": "要部署模型的路径名"
       },
@@ -20,20 +16,28 @@ INFO = {
         "desc": "关于模型的描述"
       },
       {
+        "name": "Cluster",
+        "desc": "指定集群的名称（集群模式下必填）"
+      },
+      {
         "name": "RuntimeVersion",
         "desc": "运行环境镜像的标签"
       },
       {
         "name": "Replicas",
-        "desc": "要部署的模型副本数目"
+        "desc": "要部署的模型副本数目（集群模式下选填）"
       },
       {
         "name": "Expose",
-        "desc": "暴露外网或内网，默认暴露外网"
+        "desc": "暴露外网或内网，默认暴露外网（集群模式下选填）"
       },
       {
         "name": "ServType",
-        "desc": "要部署模型的机器配置"
+        "desc": "部署模式（无服务器函数模式/集群模式）"
+      },
+      {
+        "name": "RuntimeConf",
+        "desc": "部署模型的其他配置信息"
       }
     ],
     "desc": "在指定的集群上部署一个模型，用以提供服务。"
@@ -108,6 +112,10 @@ INFO = {
       {
         "name": "Debug",
         "desc": "启动debug mode，默认为false"
+      },
+      {
+        "name": "RuntimeConf",
+        "desc": "运行任务的其他配置信息"
       }
     ],
     "desc": "创建训练任务"
@@ -121,6 +129,10 @@ INFO = {
       {
         "name": "Cluster",
         "desc": "模型所在集群名称"
+      },
+      {
+        "name": "ServType",
+        "desc": "模型类型"
       }
     ],
     "desc": "描述Model"
@@ -138,6 +150,10 @@ INFO = {
       {
         "name": "Offset",
         "desc": "分页参数，起始位置"
+      },
+      {
+        "name": "ServType",
+        "desc": "模型类型"
       }
     ],
     "desc": "列举某个指定集群上运行的模型。"
@@ -166,7 +182,7 @@ INFO = {
       },
       {
         "name": "Context",
-        "desc": "加载更多使用，透传上次返回的context值，获取后续的日志内容"
+        "desc": "加载更多使用，透传上次返回的context值，获取后续的日志内容，使用context翻页最多能获取10000条日志"
       }
     ],
     "desc": "查询日志"
@@ -193,6 +209,10 @@ INFO = {
       {
         "name": "Cluster",
         "desc": "要删除的模型所在的集群名称"
+      },
+      {
+        "name": "ServType",
+        "desc": "模型类型"
       }
     ],
     "desc": "删除一个指定的Model"

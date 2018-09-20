@@ -18,6 +18,46 @@ from tccli.services.youmall import v20180228
 from tccli.services.youmall.v20180228 import help as v20180228_help
 
 
+def doDescribeCameraPerson(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCameraPerson", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "CameraId": Utils.try_to_json(argv, "--CameraId"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "PosId": Utils.try_to_json(argv, "--PosId"),
+        "Num": Utils.try_to_json(argv, "--Num"),
+        "IsNeedPic": Utils.try_to_json(argv, "--IsNeedPic"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCameraPersonRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCameraPerson(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePersonInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -30,6 +70,7 @@ def doDescribePersonInfo(argv, arglist):
         "StartPersonId": Utils.try_to_json(argv, "--StartPersonId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -46,40 +87,6 @@ def doDescribePersonInfo(argv, arglist):
     model = models.DescribePersonInfoRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePersonInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeShopInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeShopInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShopInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShopInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -127,6 +134,152 @@ def doDescribeShopHourTrafficInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeHistoryNetworkInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeHistoryNetworkInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Time": Utils.try_to_json(argv, "--Time"),
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "StartDay": Utils.try_to_json(argv, "--StartDay"),
+        "EndDay": Utils.try_to_json(argv, "--EndDay"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHistoryNetworkInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeHistoryNetworkInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeNetworkInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeNetworkInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Time": Utils.try_to_json(argv, "--Time"),
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeNetworkInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeNetworkInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeFaceIdByTempId(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeFaceIdByTempId", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "TempId": Utils.try_to_json(argv, "--TempId"),
+        "CameraId": Utils.try_to_json(argv, "--CameraId"),
+        "PosId": Utils.try_to_json(argv, "--PosId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeFaceIdByTempIdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeFaceIdByTempId(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyPersonTagInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyPersonTagInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyPersonTagInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyPersonTagInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeZoneTrafficInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -165,17 +318,13 @@ def doDescribeZoneTrafficInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeShopTrafficInfo(argv, arglist):
+def doDescribeShopInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeShopTrafficInfo", g_param[OptionsDefine.Version])
+        show_help("DescribeShopInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -191,9 +340,9 @@ def doDescribeShopTrafficInfo(argv, arglist):
     client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShopTrafficInfoRequest()
+    model = models.DescribeShopInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShopTrafficInfo(model)
+    rsp = client.DescribeShopInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -252,6 +401,7 @@ def doDescribePersonVisitInfo(argv, arglist):
         "EndDate": Utils.try_to_json(argv, "--EndDate"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -277,6 +427,44 @@ def doDescribePersonVisitInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeShopTrafficInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeShopTrafficInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "StartDate": Utils.try_to_json(argv, "--StartDate"),
+        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeShopTrafficInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeShopTrafficInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180228": youmall_client_v20180228,
 
@@ -288,13 +476,18 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeCameraPerson": doDescribeCameraPerson,
     "DescribePersonInfo": doDescribePersonInfo,
-    "DescribeShopInfo": doDescribeShopInfo,
     "DescribeShopHourTrafficInfo": doDescribeShopHourTrafficInfo,
+    "DescribeHistoryNetworkInfo": doDescribeHistoryNetworkInfo,
+    "DescribeNetworkInfo": doDescribeNetworkInfo,
+    "DescribeFaceIdByTempId": doDescribeFaceIdByTempId,
+    "ModifyPersonTagInfo": doModifyPersonTagInfo,
     "DescribeZoneTrafficInfo": doDescribeZoneTrafficInfo,
-    "DescribeShopTrafficInfo": doDescribeShopTrafficInfo,
+    "DescribeShopInfo": doDescribeShopInfo,
     "RegisterCallback": doRegisterCallback,
     "DescribePersonVisitInfo": doDescribePersonVisitInfo,
+    "DescribeShopTrafficInfo": doDescribeShopTrafficInfo,
 
 }
 

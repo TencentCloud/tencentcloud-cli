@@ -68,6 +68,7 @@ def doTransmitOralProcess(argv, arglist):
         "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
         "UserVoiceData": Utils.try_to_json(argv, "--UserVoiceData"),
         "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

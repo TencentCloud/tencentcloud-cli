@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "数量"
+        "desc": "数量，最大值为100"
       },
       {
         "name": "PeriodType",
@@ -22,6 +22,10 @@ INFO = {
     ],
     "desc": "查询账单明细数据"
   },
+  "DescribeAccountBalance": {
+    "params": [],
+    "desc": "获取云账户余额信息。"
+  },
   "DescribeBillResourceSummary": {
     "params": [
       {
@@ -30,7 +34,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "数量"
+        "desc": "数量，最大值为1000"
       },
       {
         "name": "PeriodType",

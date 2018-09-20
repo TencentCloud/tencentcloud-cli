@@ -51,6 +51,10 @@ INFO = {
       {
         "name": "SessionId",
         "desc": "语音段唯一标识，一个完整语音一个SessionId"
+      },
+      {
+        "name": "SoeAppId",
+        "desc": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，需要结合[控制台](https://console.cloud.tencent.com/soe)使用。"
       }
     ],
     "desc": "传输音频数据，必须在完成发音评估初始化接口之后调用，且SessonId要与初始化接口保持一致。分片传输时，尽量保证SeqId顺序传输。当使用mp3格式时目前仅支持16k采样率16bit单声道编码方式。"

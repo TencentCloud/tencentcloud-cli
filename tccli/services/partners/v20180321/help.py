@@ -51,6 +51,19 @@ INFO = {
     ],
     "desc": "代理商可查询自己及名下代客所有业务明细"
   },
+  "AgentTransferMoney": {
+    "params": [
+      {
+        "name": "ClientUin",
+        "desc": "客户账号ID"
+      },
+      {
+        "name": "Amount",
+        "desc": "转账金额，单位分"
+      }
+    ],
+    "desc": "为合作伙伴提供转账给客户能力。仅支持合作伙伴为自己名下客户转账。"
+  },
   "DescribeRebateInfos": {
     "params": [
       {
@@ -109,6 +122,15 @@ INFO = {
       }
     ],
     "desc": "代理商可查询自己名下待审核客户列表"
+  },
+  "DescribeClientBalance": {
+    "params": [
+      {
+        "name": "ClientUin",
+        "desc": "客户(代客)账号ID"
+      }
+    ],
+    "desc": "为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额"
   },
   "DescribeAgentAuditedClients": {
     "params": [
