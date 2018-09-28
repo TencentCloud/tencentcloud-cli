@@ -39,6 +39,10 @@ INFO = {
       {
         "name": "Limit",
         "desc": "分页大小，当前页面中显示的最大数量，值范围 10-250。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件"
       }
     ],
     "desc": "本接口（DescribeProducts）用于列出产品列表。"
@@ -94,6 +98,10 @@ INFO = {
       {
         "name": "Imei",
         "desc": "IMEI，当产品是NB-IoT产品时，此字段必填"
+      },
+      {
+        "name": "LoraDevEui",
+        "desc": "LoRa设备的DevEui，当创建LoRa时，此字段必填"
       }
     ],
     "desc": "本接口（CreateDevice）用于新建一个物联网通信设备。"
@@ -269,7 +277,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "分页的大小，数值范围 10-250"
+        "desc": "分页的大小，数值范围 10-100"
       },
       {
         "name": "FirmwareVersion",

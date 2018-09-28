@@ -330,15 +330,16 @@ def doModifyDBParameters(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyLogFileRetentionPeriod(argv, arglist):
+def doDescribeSqlLogs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyLogFileRetentionPeriod", g_param[OptionsDefine.Version])
+        show_help("DescribeSqlLogs", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Days": Utils.try_to_json(argv, "--Days"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -352,9 +353,9 @@ def doModifyLogFileRetentionPeriod(argv, arglist):
     client = mod.MariadbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyLogFileRetentionPeriodRequest()
+    model = models.DescribeSqlLogsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyLogFileRetentionPeriod(model)
+    rsp = client.DescribeSqlLogs(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -482,10 +483,10 @@ def doGrantAccountPrivileges(argv, arglist):
         "UserName": Utils.try_to_json(argv, "--UserName"),
         "Host": Utils.try_to_json(argv, "--Host"),
         "DbName": Utils.try_to_json(argv, "--DbName"),
+        "Privileges": Utils.try_to_json(argv, "--Privileges"),
         "Type": Utils.try_to_json(argv, "--Type"),
         "Object": Utils.try_to_json(argv, "--Object"),
         "ColName": Utils.try_to_json(argv, "--ColName"),
-        "Privileges": Utils.try_to_json(argv, "--Privileges"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -733,6 +734,8 @@ def doDescribeDBInstances(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "OriginSerialIds": Utils.try_to_json(argv, "--OriginSerialIds"),
+        "IsFilterExcluster": Utils.try_to_json(argv, "--IsFilterExcluster"),
+        "ExclusterType": Utils.try_to_json(argv, "--ExclusterType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1089,9 +1092,9 @@ def doCopyAccountPrivileges(argv, arglist):
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
         "SrcUserName": Utils.try_to_json(argv, "--SrcUserName"),
         "SrcHost": Utils.try_to_json(argv, "--SrcHost"),
-        "SrcReadOnly": Utils.try_to_json(argv, "--SrcReadOnly"),
         "DstUserName": Utils.try_to_json(argv, "--DstUserName"),
         "DstHost": Utils.try_to_json(argv, "--DstHost"),
+        "SrcReadOnly": Utils.try_to_json(argv, "--SrcReadOnly"),
         "DstReadOnly": Utils.try_to_json(argv, "--DstReadOnly"),
 
     }
@@ -1147,6 +1150,44 @@ def doDescribePrice(argv, arglist):
     model = models.DescribePriceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePrice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCloneAccount(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CloneAccount", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "SrcUser": Utils.try_to_json(argv, "--SrcUser"),
+        "SrcHost": Utils.try_to_json(argv, "--SrcHost"),
+        "DstUser": Utils.try_to_json(argv, "--DstUser"),
+        "DstHost": Utils.try_to_json(argv, "--DstHost"),
+        "DstDesc": Utils.try_to_json(argv, "--DstDesc"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MariadbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CloneAccountRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CloneAccount(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1296,6 +1337,40 @@ def doDescribeDBResourceUsage(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyLogFileRetentionPeriod(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyLogFileRetentionPeriod", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Days": Utils.try_to_json(argv, "--Days"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MariadbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyLogFileRetentionPeriodRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyLogFileRetentionPeriod(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20170312": mariadb_client_v20170312,
 
@@ -1316,7 +1391,7 @@ ACTION_MAP = {
     "DescribeDBResourceUsageDetails": doDescribeDBResourceUsageDetails,
     "ResetAccountPassword": doResetAccountPassword,
     "ModifyDBParameters": doModifyDBParameters,
-    "ModifyLogFileRetentionPeriod": doModifyLogFileRetentionPeriod,
+    "DescribeSqlLogs": doDescribeSqlLogs,
     "DescribeDBSlowLogs": doDescribeDBSlowLogs,
     "DescribeFlow": doDescribeFlow,
     "ModifyDBInstanceName": doModifyDBInstanceName,
@@ -1339,10 +1414,12 @@ ACTION_MAP = {
     "DescribeAccounts": doDescribeAccounts,
     "CopyAccountPrivileges": doCopyAccountPrivileges,
     "DescribePrice": doDescribePrice,
+    "CloneAccount": doCloneAccount,
     "UpgradeDBInstance": doUpgradeDBInstance,
     "DescribeDBPerformance": doDescribeDBPerformance,
     "DescribeLogFileRetentionPeriod": doDescribeLogFileRetentionPeriod,
     "DescribeDBResourceUsage": doDescribeDBResourceUsage,
+    "ModifyLogFileRetentionPeriod": doModifyLogFileRetentionPeriod,
 
 }
 

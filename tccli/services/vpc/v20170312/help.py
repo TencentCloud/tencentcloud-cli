@@ -150,6 +150,10 @@ INFO = {
       {
         "name": "InstanceChargePrepaid",
         "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。"
+      },
+      {
+        "name": "Zone",
+        "desc": "可用区，如：ap-guangzhou-2。"
       }
     ],
     "desc": "本接口（CreateVpnGateways）用于创建VPN网关。"
@@ -174,16 +178,20 @@ INFO = {
   "DescribeCcnAttachedInstances": {
     "params": [
       {
-        "name": "CcnId",
-        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
-      },
-      {
         "name": "Offset",
         "desc": "偏移量"
       },
       {
         "name": "Limit",
         "desc": "返回数量"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>instance-type - String -（过滤条件）关联实例类型。</li>\n<li>instance-region - String -（过滤条件）关联实例所属地域。</li>\n<li>instance-id - String -（过滤条件）关联实例实例ID。</li>"
+      },
+      {
+        "name": "CcnId",
+        "desc": "云联网实例ID"
       }
     ],
     "desc": "本接口（DescribeCcnAttachedInstances）用于查询云联网实例下已关联的网络实例。"
@@ -293,7 +301,7 @@ INFO = {
         "desc": "返回数量"
       }
     ],
-    "desc": "本接口(DescribeClassicLinkInstances)用于私有网络和基础网络设备互通。"
+    "desc": "本接口(DescribeClassicLinkInstances)用于查询私有网络和基础网络设备互通列表。"
   },
   "CreateVpnConnection": {
     "params": [
@@ -439,6 +447,19 @@ INFO = {
     ],
     "desc": "本接口（DeleteDirectConnectGatewayCcnRoutes）用于删除专线网关的云联网路由（IDC网段）"
   },
+  "RejectAttachCcnInstances": {
+    "params": [
+      {
+        "name": "CcnId",
+        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
+      },
+      {
+        "name": "Instances",
+        "desc": "拒绝关联实例列表。"
+      }
+    ],
+    "desc": "本接口（RejectAttachCcnInstances）用于跨账号关联实例时，云联网所有者拒绝关联操作。\n"
+  },
   "MigrateNetworkInterface": {
     "params": [
       {
@@ -535,6 +556,19 @@ INFO = {
       }
     ],
     "desc": "修改IP地址模板"
+  },
+  "AcceptAttachCcnInstances": {
+    "params": [
+      {
+        "name": "CcnId",
+        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
+      },
+      {
+        "name": "Instances",
+        "desc": "接受关联实例列表。"
+      }
+    ],
+    "desc": "本接口（AcceptAttachCcnInstances）用于跨账号关联实例时，云联网所有者接受并同意关联操作。"
   },
   "DeleteServiceTemplateGroup": {
     "params": [
@@ -635,6 +669,10 @@ INFO = {
       {
         "name": "Instances",
         "desc": "关联网络实例列表"
+      },
+      {
+        "name": "CcnUin",
+        "desc": "CCN所属UIN（根账号），默认当前账号所属UIN"
       }
     ],
     "desc": "本接口（AttachCcnInstances）用于将网络实例加载到云联网实例中，网络实例包括VPC和专线网关。<br />\n每个云联网能够关联的网络实例个数是有限的，详请参考产品文档。如果需要扩充请联系在线客服。"
@@ -689,7 +727,7 @@ INFO = {
         "desc": "CVM实例ID"
       }
     ],
-    "desc": "本接口(AttachClassicLinkVpc)用于私有网络和基础网络设备互通。\n* 私有网络和基础网络设备必须在同一个地域。\n* 私有网络和基础网络的区别详见vpc产品文档-<a href=\"https://cloud.tencent.com/document/product/215/535#2.-.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E4.B8.8E.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C\">私有网络与基础网络</a>。"
+    "desc": "本接口(AttachClassicLinkVpc)用于创建私有网络和基础网络设备互通。\n* 私有网络和基础网络设备必须在同一个地域。\n* 私有网络和基础网络的区别详见vpc产品文档-<a href=\"https://cloud.tencent.com/document/product/215/535#2.-.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E4.B8.8E.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C\">私有网络与基础网络</a>。"
   },
   "DescribeDirectConnectGatewayCcnRoutes": {
     "params": [
@@ -1197,7 +1235,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤器对象属性"
+        "desc": "过滤条件，参数不支持同时指定VpnGatewayIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>\n<li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>\n<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。</li>\n<li>public-ip-address- String - （过滤条件）公网IP。</li>\n<li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>"
       },
       {
         "name": "Offset",
@@ -1518,6 +1556,15 @@ INFO = {
     ],
     "desc": "本接口（DeleteSecurityGroup）用于删除安全组（SecurityGroup）。\n* 只有当前账号下的安全组允许被删除。\n* 安全组实例ID如果在其他安全组的规则中被引用，则无法直接删除。这种情况下，需要先进行规则修改，再删除安全组。\n* 删除的安全组无法再找回，请谨慎调用。"
   },
+  "ReleaseAddresses": {
+    "params": [
+      {
+        "name": "AddressIds",
+        "desc": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。"
+      }
+    ],
+    "desc": "本接口 (ReleaseAddresses) 用于释放一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 该操作不可逆，释放后 EIP 关联的 IP 地址将不再属于您的名下。\n* 只有状态为 UNBIND 的 EIP 才能进行释放操作。"
+  },
   "ModifyRouteTableAttribute": {
     "params": [
       {
@@ -1548,14 +1595,22 @@ INFO = {
     "params": [],
     "desc": "接口用于查询账户在当前地域的带宽包上限数量以及使用数量"
   },
-  "ReleaseAddresses": {
+  "ResetAttachCcnInstances": {
     "params": [
       {
-        "name": "AddressIds",
-        "desc": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。"
+        "name": "CcnId",
+        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
+      },
+      {
+        "name": "CcnUin",
+        "desc": "CCN所属UIN（根账号）。"
+      },
+      {
+        "name": "Instances",
+        "desc": "重新申请关联网络实例列表。"
       }
     ],
-    "desc": "本接口 (ReleaseAddresses) 用于释放一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 该操作不可逆，释放后 EIP 关联的 IP 地址将不再属于您的名下。\n* 只有状态为 UNBIND 的 EIP 才能进行释放操作。"
+    "desc": "本接口（ResetAttachCcnInstances）用于跨账号关联实例申请过期时，重新申请关联操作。"
   },
   "DescribeBandwidthPackages": {
     "params": [

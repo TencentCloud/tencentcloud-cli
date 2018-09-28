@@ -141,6 +141,19 @@ INFO = {
     ],
     "desc": "本接口(ModifyDBParameters)用于修改数据库参数。"
   },
+  "ModifyLogFileRetentionPeriod": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，形如：tdsql-ow728lmc。"
+      },
+      {
+        "name": "Days",
+        "desc": "保存的天数,不能超过30"
+      }
+    ],
+    "desc": "本接口(ModifyLogFileRetentionPeriod)用于修改数据库备份日志保存天数。"
+  },
   "DescribeDBPerformanceDetails": {
     "params": [
       {
@@ -199,6 +212,10 @@ INFO = {
         "desc": "数据库名。如果为 \\*，表示设置全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数"
       },
       {
+        "name": "Privileges",
+        "desc": "全局权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER，SHOW DATABASES \n库权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER \n表/视图权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE VIEW，SHOW VIEW，TRIGGER \n存储过程/函数权限： ALTER ROUTINE，EXECUTE \n字段权限： INSERT，REFERENCES，SELECT，UPDATE"
+      },
+      {
         "name": "Type",
         "desc": "类型,可以填入 table 、 view 、 proc 、 func 和 \\*。当 DbName 为具体数据库名，Type为 \\* 时，表示设置该数据库权限（即db.\\*），此时忽略 Object 参数"
       },
@@ -209,10 +226,6 @@ INFO = {
       {
         "name": "ColName",
         "desc": "当 Type=table 时，ColName 为 \\* 表示对表授权，如果为具体字段名，表示对字段授权"
-      },
-      {
-        "name": "Privileges",
-        "desc": "全局权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER，SHOW DATABASES \n库权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER \n表/视图权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE VIEW，SHOW VIEW，TRIGGER \n存储过程/函数权限： ALTER ROUTINE，EXECUTE \n字段权限： INSERT，REFERENCES，SELECT，UPDATE"
       }
     ],
     "desc": "本接口（GrantAccountPrivileges）用于给云数据库账号赋权。\n注意：相同用户名，不同Host是不同的账号。"
@@ -256,18 +269,22 @@ INFO = {
     ],
     "desc": "本接口（ModifyDBInstancesProject）用于修改云数据库实例所属项目。"
   },
-  "ModifyLogFileRetentionPeriod": {
+  "DescribeSqlLogs": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例 ID，形如：tdsql-ow728lmc。"
+        "desc": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。"
       },
       {
-        "name": "Days",
-        "desc": "保存的天数,不能超过30"
+        "name": "Offset",
+        "desc": "SQL日志偏移。"
+      },
+      {
+        "name": "Limit",
+        "desc": "拉取数量（0-1000，为0时拉取总数信息）。"
       }
     ],
-    "desc": "本接口(ModifyLogFileRetentionPeriod)用于修改数据库备份日志保存天数。"
+    "desc": "本接口（DescribeSqlLogs）用于获取实例SQL日志。"
   },
   "ModifyDBInstanceName": {
     "params": [
@@ -306,7 +323,7 @@ INFO = {
       },
       {
         "name": "IsFilterVpc",
-        "desc": "是否根据 VPC 网络来搜索，0 为否，1 为是"
+        "desc": "是否根据 VPC 网络来搜索"
       },
       {
         "name": "VpcId",
@@ -335,6 +352,14 @@ INFO = {
       {
         "name": "OriginSerialIds",
         "desc": "按 OriginSerialId 查询"
+      },
+      {
+        "name": "IsFilterExcluster",
+        "desc": "标识是否使用ExclusterType字段, false不使用，true使用"
+      },
+      {
+        "name": "ExclusterType",
+        "desc": "1非独享集群，2独享集群， 0全部"
       }
     ],
     "desc": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回20条实例记录，单次请求最多支持返回100条实例记录。"
@@ -568,16 +593,16 @@ INFO = {
         "desc": "源用户允许的访问 host"
       },
       {
-        "name": "SrcReadOnly",
-        "desc": "源账号的 ReadOnly 属性"
-      },
-      {
         "name": "DstUserName",
         "desc": "目的用户名"
       },
       {
         "name": "DstHost",
         "desc": "目的用户允许的访问 host"
+      },
+      {
+        "name": "SrcReadOnly",
+        "desc": "源账号的 ReadOnly 属性"
       },
       {
         "name": "DstReadOnly",
@@ -614,6 +639,35 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribePrice）用于在购买实例前，查询实例的价格。"
+  },
+  "CloneAccount": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "SrcUser",
+        "desc": "源用户账户名"
+      },
+      {
+        "name": "SrcHost",
+        "desc": "源用户HOST"
+      },
+      {
+        "name": "DstUser",
+        "desc": "目的用户账户名"
+      },
+      {
+        "name": "DstHost",
+        "desc": "目的用户HOST"
+      },
+      {
+        "name": "DstDesc",
+        "desc": "目的用户账户描述"
+      }
+    ],
+    "desc": "本接口（CloneAccount）用于克隆实例账户。"
   },
   "UpgradeDBInstance": {
     "params": [

@@ -136,6 +136,7 @@ def doCreateDevice(argv, arglist):
         "DefinedPsk": Utils.try_to_json(argv, "--DefinedPsk"),
         "Isp": Utils.try_to_json(argv, "--Isp"),
         "Imei": Utils.try_to_json(argv, "--Imei"),
+        "LoraDevEui": Utils.try_to_json(argv, "--LoraDevEui"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -207,6 +208,7 @@ def doDescribeProducts(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

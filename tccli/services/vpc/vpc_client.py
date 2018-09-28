@@ -375,9 +375,10 @@ def doDescribeCcnAttachedInstances(argv, arglist):
         return
 
     param = {
-        "CcnId": Utils.try_to_json(argv, "--CcnId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "CcnId": Utils.try_to_json(argv, "--CcnId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -920,6 +921,40 @@ def doDeleteDirectConnectGatewayCcnRoutes(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRejectAttachCcnInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RejectAttachCcnInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CcnId": Utils.try_to_json(argv, "--CcnId"),
+        "Instances": Utils.try_to_json(argv, "--Instances"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RejectAttachCcnInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RejectAttachCcnInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteSecurityGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1096,6 +1131,40 @@ def doModifyAddressTemplateAttribute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAcceptAttachCcnInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AcceptAttachCcnInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CcnId": Utils.try_to_json(argv, "--CcnId"),
+        "Instances": Utils.try_to_json(argv, "--Instances"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AcceptAttachCcnInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AcceptAttachCcnInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteServiceTemplateGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1154,6 +1223,41 @@ def doDisassociateAddress(argv, arglist):
     model = models.DisassociateAddressRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DisassociateAddress(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetAttachCcnInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ResetAttachCcnInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CcnId": Utils.try_to_json(argv, "--CcnId"),
+        "CcnUin": Utils.try_to_json(argv, "--CcnUin"),
+        "Instances": Utils.try_to_json(argv, "--Instances"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetAttachCcnInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ResetAttachCcnInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1312,6 +1416,7 @@ def doAttachCcnInstances(argv, arglist):
     param = {
         "CcnId": Utils.try_to_json(argv, "--CcnId"),
         "Instances": Utils.try_to_json(argv, "--Instances"),
+        "CcnUin": Utils.try_to_json(argv, "--CcnUin"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3201,6 +3306,7 @@ def doCreateVpnGateway(argv, arglist):
         "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
         "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
+        "Zone": Utils.try_to_json(argv, "--Zone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -4023,13 +4129,16 @@ ACTION_MAP = {
     "DescribeVpcs": doDescribeVpcs,
     "InquiryPriceResetVpnGatewayInternetMaxBandwidth": doInquiryPriceResetVpnGatewayInternetMaxBandwidth,
     "DeleteDirectConnectGatewayCcnRoutes": doDeleteDirectConnectGatewayCcnRoutes,
+    "RejectAttachCcnInstances": doRejectAttachCcnInstances,
     "DeleteSecurityGroup": doDeleteSecurityGroup,
     "ModifyAddressesBandwidth": doModifyAddressesBandwidth,
     "DescribeVpnConnections": doDescribeVpnConnections,
     "CreateSubnet": doCreateSubnet,
     "ModifyAddressTemplateAttribute": doModifyAddressTemplateAttribute,
+    "AcceptAttachCcnInstances": doAcceptAttachCcnInstances,
     "DeleteServiceTemplateGroup": doDeleteServiceTemplateGroup,
     "DisassociateAddress": doDisassociateAddress,
+    "ResetAttachCcnInstances": doResetAttachCcnInstances,
     "CreateVpc": doCreateVpc,
     "AddBandwidthPackageResources": doAddBandwidthPackageResources,
     "AllocateAddresses": doAllocateAddresses,

@@ -60,87 +60,26 @@ INFO = {
     "params": [],
     "desc": "查询可创建的分布式数据库可售卖的分片规格配置。"
   },
-  "DescribeDCDBUpgradePrice": {
+  "ModifyAccountDescription": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。"
+        "desc": "实例 ID，形如：dcdbt-ow728lmc。"
       },
       {
-        "name": "UpgradeType",
-        "desc": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>"
+        "name": "UserName",
+        "desc": "登录用户名。"
       },
       {
-        "name": "AddShardConfig",
-        "desc": "新增分片配置，当UpgradeType为ADD时生效。"
+        "name": "Host",
+        "desc": "用户允许的访问 host，用户名+host唯一确定一个账号。"
       },
       {
-        "name": "ExpandShardConfig",
-        "desc": "扩容分片配置，当UpgradeType为EXPAND时生效。"
-      },
-      {
-        "name": "SplitShardConfig",
-        "desc": "切分分片配置，当UpgradeType为SPLIT时生效。"
+        "name": "Description",
+        "desc": "新的账号备注，长度 0~256。"
       }
     ],
-    "desc": "本接口（DescribeDCDBUpgradePrice）用于查询升级分布式数据库实例价格。"
-  },
-  "DescribeDCDBInstances": {
-    "params": [
-      {
-        "name": "InstanceIds",
-        "desc": "按照一个或者多个实例 ID 查询。实例 ID 形如：dcdbt-2t4cf98d"
-      },
-      {
-        "name": "SearchName",
-        "desc": "搜索的字段名，当前支持的值有：instancename、vip、all。传 instancename 表示按实例名进行搜索；传 vip 表示按内网IP进行搜索；传 all 将会按实例ID、实例名和内网IP进行搜索。"
-      },
-      {
-        "name": "SearchKey",
-        "desc": "搜索的关键字，支持模糊搜索。多个关键字使用换行符（'\\n'）分割。"
-      },
-      {
-        "name": "ProjectIds",
-        "desc": "按项目 ID 查询"
-      },
-      {
-        "name": "IsFilterVpc",
-        "desc": "是否根据 VPC 网络来搜索"
-      },
-      {
-        "name": "VpcId",
-        "desc": "私有网络 ID， IsFilterVpc 为 1 时有效"
-      },
-      {
-        "name": "SubnetId",
-        "desc": "私有网络的子网 ID， IsFilterVpc 为 1 时有效"
-      },
-      {
-        "name": "OrderBy",
-        "desc": "排序字段， projectId， createtime， instancename 三者之一"
-      },
-      {
-        "name": "OrderByType",
-        "desc": "排序类型， desc 或者 asc"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为 0"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为 10，最大值为 100。"
-      },
-      {
-        "name": "ExclusterType",
-        "desc": "1非独享集群，2独享集群， 0全部"
-      },
-      {
-        "name": "IsFilterExcluster",
-        "desc": "标识是否使用ExclusterType字段, false不使用，true使用"
-      }
-    ],
-    "desc": "查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回10条实例记录，单次请求最多支持返回100条实例记录。"
+    "desc": "本接口（ModifyAccountDescription）用于修改云数据库账号备注。\n注意：相同用户名，不同Host是不同的账号。"
   },
   "ResetAccountPassword": {
     "params": [
@@ -222,14 +161,91 @@ INFO = {
     ],
     "desc": "本接口（OpenDBExtranetAccess）用于开通云数据库实例的外网访问。开通外网访问后，您可通过外网域名和端口访问实例，可使用查询实例列表接口获取外网域名和端口信息。"
   },
-  "DescribeAccounts": {
+  "CloneAccount": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例ID，形如：dcdbt-ow728lmc。"
+        "desc": "实例ID"
+      },
+      {
+        "name": "SrcUser",
+        "desc": "源用户账户名"
+      },
+      {
+        "name": "SrcHost",
+        "desc": "源用户HOST"
+      },
+      {
+        "name": "DstUser",
+        "desc": "目的用户账户名"
+      },
+      {
+        "name": "DstHost",
+        "desc": "目的用户HOST"
+      },
+      {
+        "name": "DstDesc",
+        "desc": "目的用户账户描述"
       }
     ],
-    "desc": "本接口（DescribeAccounts）用于查询指定云数据库实例的账号列表。"
+    "desc": "本接口（CloneAccount）用于克隆实例账户。"
+  },
+  "DescribeDCDBInstances": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "按照一个或者多个实例 ID 查询。实例 ID 形如：dcdbt-2t4cf98d"
+      },
+      {
+        "name": "SearchName",
+        "desc": "搜索的字段名，当前支持的值有：instancename、vip、all。传 instancename 表示按实例名进行搜索；传 vip 表示按内网IP进行搜索；传 all 将会按实例ID、实例名和内网IP进行搜索。"
+      },
+      {
+        "name": "SearchKey",
+        "desc": "搜索的关键字，支持模糊搜索。多个关键字使用换行符（'\\n'）分割。"
+      },
+      {
+        "name": "ProjectIds",
+        "desc": "按项目 ID 查询"
+      },
+      {
+        "name": "IsFilterVpc",
+        "desc": "是否根据 VPC 网络来搜索"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络 ID， IsFilterVpc 为 1 时有效"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "私有网络的子网 ID， IsFilterVpc 为 1 时有效"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "排序字段， projectId， createtime， instancename 三者之一"
+      },
+      {
+        "name": "OrderByType",
+        "desc": "排序类型， desc 或者 asc"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为 0"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为 10，最大值为 100。"
+      },
+      {
+        "name": "ExclusterType",
+        "desc": "1非独享集群，2独享集群， 0全部"
+      },
+      {
+        "name": "IsFilterExcluster",
+        "desc": "标识是否使用ExclusterType字段, false不使用，true使用"
+      }
+    ],
+    "desc": "查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回10条实例记录，单次请求最多支持返回100条实例记录。"
   },
   "GrantAccountPrivileges": {
     "params": [
@@ -327,6 +343,23 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyDBInstancesProject）用于修改云数据库实例所属项目。"
+  },
+  "DescribeSqlLogs": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。"
+      },
+      {
+        "name": "Offset",
+        "desc": "SQL日志偏移。"
+      },
+      {
+        "name": "Limit",
+        "desc": "拉取数量（0-1000，为0时拉取总数信息）。"
+      }
+    ],
+    "desc": "本接口（DescribeSqlLogs）用于获取实例SQL日志。"
   },
   "DescribeDBLogFiles": {
     "params": [
@@ -442,26 +475,14 @@ INFO = {
     ],
     "desc": "本接口(CloseDBExtranetAccess)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问，查询实例列表接口将不返回对应实例的外网域名和端口信息。"
   },
-  "ModifyAccountDescription": {
+  "DescribeAccounts": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例 ID，形如：dcdbt-ow728lmc。"
-      },
-      {
-        "name": "UserName",
-        "desc": "登录用户名。"
-      },
-      {
-        "name": "Host",
-        "desc": "用户允许的访问 host，用户名+host唯一确定一个账号。"
-      },
-      {
-        "name": "Description",
-        "desc": "新的账号备注，长度 0~256。"
+        "desc": "实例ID，形如：dcdbt-ow728lmc。"
       }
     ],
-    "desc": "本接口（ModifyAccountDescription）用于修改云数据库账号备注。\n注意：相同用户名，不同Host是不同的账号。"
+    "desc": "本接口（DescribeAccounts）用于查询指定云数据库实例的账号列表。"
   },
   "CopyAccountPrivileges": {
     "params": [
@@ -607,6 +628,31 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeDatabaseObjects）用于查询云数据库实例的表信息。"
+  },
+  "DescribeDCDBUpgradePrice": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。"
+      },
+      {
+        "name": "UpgradeType",
+        "desc": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>"
+      },
+      {
+        "name": "AddShardConfig",
+        "desc": "新增分片配置，当UpgradeType为ADD时生效。"
+      },
+      {
+        "name": "ExpandShardConfig",
+        "desc": "扩容分片配置，当UpgradeType为EXPAND时生效。"
+      },
+      {
+        "name": "SplitShardConfig",
+        "desc": "切分分片配置，当UpgradeType为SPLIT时生效。"
+      }
+    ],
+    "desc": "本接口（DescribeDCDBUpgradePrice）用于查询升级分布式数据库实例价格。"
   },
   "InitDCDBInstances": {
     "params": [
