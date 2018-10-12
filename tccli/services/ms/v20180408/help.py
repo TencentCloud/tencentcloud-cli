@@ -36,7 +36,7 @@ INFO = {
     "params": [
       {
         "name": "Pid",
-        "desc": "资源类型id。"
+        "desc": "资源类型id。13624：加固专业版。"
       },
       {
         "name": "TimeUnit",
@@ -78,7 +78,7 @@ INFO = {
     "params": [
       {
         "name": "Pids",
-        "desc": "资源类别id数组"
+        "desc": "资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。"
       },
       {
         "name": "Filters",

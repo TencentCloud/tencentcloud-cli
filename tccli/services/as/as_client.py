@@ -12,27 +12,173 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.youmall.v20180228 import youmall_client as youmall_client_v20180228
-from tencentcloud.youmall.v20180228 import models as models_v20180228
-from tccli.services.youmall import v20180228
-from tccli.services.youmall.v20180228 import help as v20180228_help
+from tencentcloud.as.v20180419 import as_client as as_client_v20180419
+from tencentcloud.as.v20180419 import models as models_v20180419
+from tccli.services.as import v20180419
+from tccli.services.as.v20180419 import help as v20180419_help
 
 
-def doDescribeCameraPerson(argv, arglist):
+def doRemoveInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeCameraPerson", g_param[OptionsDefine.Version])
+        show_help("RemoveInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "CameraId": Utils.try_to_json(argv, "--CameraId"),
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RemoveInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RemoveInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateAutoScalingGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateAutoScalingGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
+        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ForwardLoadBalancers": Utils.try_to_json(argv, "--ForwardLoadBalancers"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
+        "Zones": Utils.try_to_json(argv, "--Zones"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateAutoScalingGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateAutoScalingGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteScheduledAction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteScheduledAction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ScheduledActionId": Utils.try_to_json(argv, "--ScheduledActionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteScheduledActionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteScheduledAction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDetachInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DetachInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetachInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DetachInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateScheduledAction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateScheduledAction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "ScheduledActionName": Utils.try_to_json(argv, "--ScheduledActionName"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "PosId": Utils.try_to_json(argv, "--PosId"),
-        "Num": Utils.try_to_json(argv, "--Num"),
-        "IsNeedPic": Utils.try_to_json(argv, "--IsNeedPic"),
+        "Recurrence": Utils.try_to_json(argv, "--Recurrence"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -43,12 +189,12 @@ def doDescribeCameraPerson(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCameraPersonRequest()
+    model = models.CreateScheduledActionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCameraPerson(model)
+    rsp = client.CreateScheduledAction(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -58,18 +204,21 @@ def doDescribeCameraPerson(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateFacePicture(argv, arglist):
+def doModifyScheduledAction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateFacePicture", g_param[OptionsDefine.Version])
+        show_help("ModifyScheduledAction", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "PersonType": Utils.try_to_json(argv, "--PersonType"),
-        "Picture": Utils.try_to_json(argv, "--Picture"),
-        "PictureName": Utils.try_to_json(argv, "--PictureName"),
+        "ScheduledActionId": Utils.try_to_json(argv, "--ScheduledActionId"),
+        "ScheduledActionName": Utils.try_to_json(argv, "--ScheduledActionName"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Recurrence": Utils.try_to_json(argv, "--Recurrence"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -80,12 +229,12 @@ def doCreateFacePicture(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateFacePictureRequest()
+    model = models.ModifyScheduledActionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateFacePicture(model)
+    rsp = client.ModifyScheduledAction(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -95,17 +244,135 @@ def doCreateFacePicture(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeShopHourTrafficInfo(argv, arglist):
+def doCreateLaunchConfiguration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeShopHourTrafficInfo", g_param[OptionsDefine.Version])
+        show_help("CreateLaunchConfiguration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "LaunchConfigurationName": Utils.try_to_json(argv, "--LaunchConfigurationName"),
+        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
+        "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
+        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
+        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
+        "UserData": Utils.try_to_json(argv, "--UserData"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateLaunchConfigurationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateLaunchConfiguration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyAutoScalingGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyAutoScalingGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
+        "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "Zones": Utils.try_to_json(argv, "--Zones"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAutoScalingGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyAutoScalingGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doEnableAutoScalingGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("EnableAutoScalingGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EnableAutoScalingGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.EnableAutoScalingGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAutoScalingInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAutoScalingInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -118,12 +385,12 @@ def doDescribeShopHourTrafficInfo(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShopHourTrafficInfoRequest()
+    model = models.DescribeAutoScalingInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShopHourTrafficInfo(model)
+    rsp = client.DescribeAutoScalingInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -133,55 +400,15 @@ def doDescribeShopHourTrafficInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAccount(argv, arglist):
+def doDescribeAutoScalingGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateAccount", g_param[OptionsDefine.Version])
+        show_help("DescribeAutoScalingGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "ShopCode": Utils.try_to_json(argv, "--ShopCode"),
-        "Remark": Utils.try_to_json(argv, "--Remark"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAccountRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateAccount(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeHistoryNetworkInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeHistoryNetworkInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Time": Utils.try_to_json(argv, "--Time"),
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDay": Utils.try_to_json(argv, "--StartDay"),
-        "EndDay": Utils.try_to_json(argv, "--EndDay"),
+        "AutoScalingGroupIds": Utils.try_to_json(argv, "--AutoScalingGroupIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -194,12 +421,12 @@ def doDescribeHistoryNetworkInfo(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeHistoryNetworkInfoRequest()
+    model = models.DescribeAutoScalingGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeHistoryNetworkInfo(model)
+    rsp = client.DescribeAutoScalingGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -209,236 +436,15 @@ def doDescribeHistoryNetworkInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeNetworkInfo(argv, arglist):
+def doDescribeScheduledActions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeNetworkInfo", g_param[OptionsDefine.Version])
+        show_help("DescribeScheduledActions", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Time": Utils.try_to_json(argv, "--Time"),
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeNetworkInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeNetworkInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeFaceIdByTempId(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeFaceIdByTempId", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "TempId": Utils.try_to_json(argv, "--TempId"),
-        "CameraId": Utils.try_to_json(argv, "--CameraId"),
-        "PosId": Utils.try_to_json(argv, "--PosId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeFaceIdByTempIdRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeFaceIdByTempId(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribePersonInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribePersonInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartPersonId": Utils.try_to_json(argv, "--StartPersonId"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePersonInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribePersonInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeZoneFlowDailyByZoneId(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeZoneFlowDailyByZoneId", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZoneFlowDailyByZoneIdRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZoneFlowDailyByZoneId(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyPersonTagInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyPersonTagInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyPersonTagInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyPersonTagInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeZoneFlowGenderInfoByZoneId(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeZoneFlowGenderInfoByZoneId", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZoneFlowGenderInfoByZoneIdRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZoneFlowGenderInfoByZoneId(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeZoneTrafficInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeZoneTrafficInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "ScheduledActionIds": Utils.try_to_json(argv, "--ScheduledActionIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -451,12 +457,12 @@ def doDescribeZoneTrafficInfo(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZoneTrafficInfoRequest()
+    model = models.DescribeScheduledActionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZoneTrafficInfo(model)
+    rsp = client.DescribeScheduledActions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -466,18 +472,14 @@ def doDescribeZoneTrafficInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeZoneFlowHourlyByZoneId(argv, arglist):
+def doDeleteAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeZoneFlowHourlyByZoneId", g_param[OptionsDefine.Version])
+        show_help("DeleteAutoScalingGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -488,12 +490,12 @@ def doDescribeZoneFlowHourlyByZoneId(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZoneFlowHourlyByZoneIdRequest()
+    model = models.DeleteAutoScalingGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZoneFlowHourlyByZoneId(model)
+    rsp = client.DeleteAutoScalingGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -503,15 +505,83 @@ def doDescribeZoneFlowHourlyByZoneId(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeShopInfo(argv, arglist):
+def doDeleteLaunchConfiguration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeShopInfo", g_param[OptionsDefine.Version])
+        show_help("DeleteLaunchConfiguration", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteLaunchConfigurationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteLaunchConfiguration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisableAutoScalingGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisableAutoScalingGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisableAutoScalingGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisableAutoScalingGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLaunchConfigurations(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeLaunchConfigurations", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LaunchConfigurationIds": Utils.try_to_json(argv, "--LaunchConfigurationIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -522,12 +592,12 @@ def doDescribeShopInfo(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShopInfoRequest()
+    model = models.DescribeLaunchConfigurationsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShopInfo(model)
+    rsp = client.DescribeLaunchConfigurations(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -537,18 +607,13 @@ def doDescribeShopInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeZoneFlowAgeInfoByZoneId(argv, arglist):
+def doDescribeAccountLimits(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeZoneFlowAgeInfoByZoneId", g_param[OptionsDefine.Version])
+        show_help("DescribeAccountLimits", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -559,12 +624,12 @@ def doDescribeZoneFlowAgeInfoByZoneId(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZoneFlowAgeInfoByZoneIdRequest()
+    model = models.DescribeAccountLimitsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZoneFlowAgeInfoByZoneId(model)
+    rsp = client.DescribeAccountLimits(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -574,17 +639,15 @@ def doDescribeZoneFlowAgeInfoByZoneId(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRegisterCallback(argv, arglist):
+def doAttachInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RegisterCallback", g_param[OptionsDefine.Version])
+        show_help("AttachInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "BackUrl": Utils.try_to_json(argv, "--BackUrl"),
-        "Time": Utils.try_to_json(argv, "--Time"),
-        "NeedFacePic": Utils.try_to_json(argv, "--NeedFacePic"),
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -595,12 +658,12 @@ def doRegisterCallback(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RegisterCallbackRequest()
+    model = models.AttachInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RegisterCallback(model)
+    rsp = client.AttachInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -610,18 +673,15 @@ def doRegisterCallback(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeZoneFlowGenderAvrStayTimeByZoneId(argv, arglist):
+def doModifyDesiredCapacity(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeZoneFlowGenderAvrStayTimeByZoneId", g_param[OptionsDefine.Version])
+        show_help("ModifyDesiredCapacity", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -632,163 +692,12 @@ def doDescribeZoneFlowGenderAvrStayTimeByZoneId(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZoneFlowGenderAvrStayTimeByZoneIdRequest()
+    model = models.ModifyDesiredCapacityRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZoneFlowGenderAvrStayTimeByZoneId(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTrajectoryData(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeTrajectoryData", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Gender": Utils.try_to_json(argv, "--Gender"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTrajectoryDataRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTrajectoryData(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeZoneFlowAndStayTime(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeZoneFlowAndStayTime", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZoneFlowAndStayTimeRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZoneFlowAndStayTime(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribePersonVisitInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribePersonVisitInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePersonVisitInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribePersonVisitInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeShopTrafficInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeShopTrafficInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShopTrafficInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeShopTrafficInfo(model)
+    rsp = client.ModifyDesiredCapacity(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -799,51 +708,49 @@ def doDescribeShopTrafficInfo(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180228": youmall_client_v20180228,
+    "v20180419": as_client_v20180419,
 
 }
 
 MODELS_MAP = {
-    "v20180228": models_v20180228,
+    "v20180419": models_v20180419,
 
 }
 
 ACTION_MAP = {
-    "DescribeCameraPerson": doDescribeCameraPerson,
-    "CreateFacePicture": doCreateFacePicture,
-    "DescribeShopHourTrafficInfo": doDescribeShopHourTrafficInfo,
-    "CreateAccount": doCreateAccount,
-    "DescribeHistoryNetworkInfo": doDescribeHistoryNetworkInfo,
-    "DescribeNetworkInfo": doDescribeNetworkInfo,
-    "DescribeFaceIdByTempId": doDescribeFaceIdByTempId,
-    "DescribePersonInfo": doDescribePersonInfo,
-    "DescribeZoneFlowDailyByZoneId": doDescribeZoneFlowDailyByZoneId,
-    "ModifyPersonTagInfo": doModifyPersonTagInfo,
-    "DescribeZoneFlowGenderInfoByZoneId": doDescribeZoneFlowGenderInfoByZoneId,
-    "DescribeZoneTrafficInfo": doDescribeZoneTrafficInfo,
-    "DescribeZoneFlowHourlyByZoneId": doDescribeZoneFlowHourlyByZoneId,
-    "DescribeShopInfo": doDescribeShopInfo,
-    "DescribeZoneFlowAgeInfoByZoneId": doDescribeZoneFlowAgeInfoByZoneId,
-    "RegisterCallback": doRegisterCallback,
-    "DescribeZoneFlowGenderAvrStayTimeByZoneId": doDescribeZoneFlowGenderAvrStayTimeByZoneId,
-    "DescribeTrajectoryData": doDescribeTrajectoryData,
-    "DescribeZoneFlowAndStayTime": doDescribeZoneFlowAndStayTime,
-    "DescribePersonVisitInfo": doDescribePersonVisitInfo,
-    "DescribeShopTrafficInfo": doDescribeShopTrafficInfo,
+    "RemoveInstances": doRemoveInstances,
+    "CreateAutoScalingGroup": doCreateAutoScalingGroup,
+    "DeleteScheduledAction": doDeleteScheduledAction,
+    "DetachInstances": doDetachInstances,
+    "CreateScheduledAction": doCreateScheduledAction,
+    "ModifyScheduledAction": doModifyScheduledAction,
+    "CreateLaunchConfiguration": doCreateLaunchConfiguration,
+    "ModifyAutoScalingGroup": doModifyAutoScalingGroup,
+    "EnableAutoScalingGroup": doEnableAutoScalingGroup,
+    "DescribeAutoScalingInstances": doDescribeAutoScalingInstances,
+    "DescribeAutoScalingGroups": doDescribeAutoScalingGroups,
+    "DescribeScheduledActions": doDescribeScheduledActions,
+    "DeleteAutoScalingGroup": doDeleteAutoScalingGroup,
+    "DeleteLaunchConfiguration": doDeleteLaunchConfiguration,
+    "DisableAutoScalingGroup": doDisableAutoScalingGroup,
+    "DescribeLaunchConfigurations": doDescribeLaunchConfigurations,
+    "DescribeAccountLimits": doDescribeAccountLimits,
+    "AttachInstances": doAttachInstances,
+    "ModifyDesiredCapacity": doModifyDesiredCapacity,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180228.version,
+    v20180419.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180228.version.replace('-', ''): {"help": v20180228_help.INFO,"desc": v20180228_help.DESC},
+     'v' + v20180419.version.replace('-', ''): {"help": v20180419_help.INFO,"desc": v20180419_help.DESC},
 
 }
 
 
-def youmall_action(argv, arglist):
+def as_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -859,7 +766,7 @@ def youmall_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "youmall", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "as", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -880,7 +787,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("youmall", youmall_action)
+    cmd = NiceCommand("as", as_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -939,11 +846,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["youmall"][OptionsDefine.Version]
+            version = config["as"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["youmall"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["as"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -960,7 +867,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "youmall", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "as", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -970,7 +877,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["youmall"]["version"]
+        version = profile["as"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

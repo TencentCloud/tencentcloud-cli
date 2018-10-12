@@ -166,6 +166,15 @@ INFO = {
     ],
     "desc": "本接口(DescribeBackups)用于查询云数据库实例的备份数据。"
   },
+  "DescribeAsyncRequestInfo": {
+    "params": [
+      {
+        "name": "AsyncRequestId",
+        "desc": "异步任务的请求ID。"
+      }
+    ],
+    "desc": "本接口(DescribeAsyncRequestInfo)用于查询云数据库实例异步任务的执行结果。"
+  },
   "DescribeBackupDatabases": {
     "params": [
       {
@@ -284,7 +293,7 @@ INFO = {
       },
       {
         "name": "ParamList",
-        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过[查询参数列表](/document/product/236/6369)查询支持设置的参数"
+        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment_increment&ParamList.0.Value=1。可通过[查询参数列表](/document/product/236/6369)查询支持设置的参数"
       },
       {
         "name": "ProtectMode",
@@ -304,7 +313,7 @@ INFO = {
       },
       {
         "name": "SecurityGroup",
-        "desc": "安全组参数"
+        "desc": "安全组参数，可使用[查询项目安全组信息](https://cloud.tencent.com/document/api/236/15850)接口查询某个项目的安全组详情"
       },
       {
         "name": "RoGroup",
@@ -312,7 +321,7 @@ INFO = {
       },
       {
         "name": "AutoRenewFlag",
-        "desc": "自动续费标记，值为0或1"
+        "desc": "自动续费标记，值为0或1。购买按量计费实例该字段无意义"
       },
       {
         "name": "InstanceName",
@@ -517,11 +526,11 @@ INFO = {
       },
       {
         "name": "WithSecurityGroup",
-        "desc": "是否包含安全组信息"
+        "desc": "是否包含安全组信息，可取值：0-不包含，1-包含"
       },
       {
         "name": "WithExCluster",
-        "desc": "是否包含独享集群信息"
+        "desc": "是否包含独享集群信息，可取值：0-不包含，1-包含"
       },
       {
         "name": "ExClusterId",
@@ -537,15 +546,15 @@ INFO = {
       },
       {
         "name": "WithDr",
-        "desc": "是否包含灾备实例"
+        "desc": "是否包含灾备实例，可取值：0-不包含，1-包含"
       },
       {
         "name": "WithRo",
-        "desc": "是否包含只读实例"
+        "desc": "是否包含只读实例，可取值：0-不包含，1-包含"
       },
       {
         "name": "WithMaster",
-        "desc": "是否包含主实例"
+        "desc": "是否包含主实例，可取值：0-不包含，1-包含"
       }
     ],
     "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、访问地址、实例状态等来筛选实例。\n\n1. 不指定任何过滤条件, 则默认返回20条实例记录，单次请求最多支持返回100条实例记录；\n2. 支持查询主实例、灾备实例和只读实例信息列表。"
@@ -738,7 +747,7 @@ INFO = {
       },
       {
         "name": "SecurityGroup",
-        "desc": "安全组参数"
+        "desc": "安全组参数，可使用[查询项目安全组信息](https://cloud.tencent.com/document/api/236/15850)接口查询某个项目的安全组详情"
       },
       {
         "name": "RoGroup",
@@ -1026,22 +1035,14 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。"
   },
-  "UpgradeDBInstanceEngineVersion": {
+  "DescribeInstanceParams": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值"
-      },
-      {
-        "name": "EngineVersion",
-        "desc": "主实例数据库引擎版本，支持值包括：5.6和5.7"
-      },
-      {
-        "name": "WaitSwitch",
-        "desc": "切换访问新实例的方式，默认为0，升级主实例时，可指定该参数，升级只读实例或者灾备实例时指定该参数无意义，支持值包括：0-立刻切换，1-时间窗切换；当该值为1时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口[切换访问新实例](https://cloud.tencent.com/document/api/403/4392)触发该流程"
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值"
       }
     ],
-    "desc": "本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例。"
+    "desc": "该接口（DescribeInstanceParams）用于查询实例的参数列表。"
   },
   "UpgradeDBInstance": {
     "params": [
@@ -1087,6 +1088,23 @@ INFO = {
       }
     ],
     "desc": "本接口(UpgradeDBInstance)用于升级云数据库实例，实例类型支持主实例、灾备实例和只读实例"
+  },
+  "UpgradeDBInstanceEngineVersion": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值"
+      },
+      {
+        "name": "EngineVersion",
+        "desc": "主实例数据库引擎版本，支持值包括：5.6和5.7"
+      },
+      {
+        "name": "WaitSwitch",
+        "desc": "切换访问新实例的方式，默认为0，升级主实例时，可指定该参数，升级只读实例或者灾备实例时指定该参数无意义，支持值包括：0-立刻切换，1-时间窗切换；当该值为1时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口[切换访问新实例](https://cloud.tencent.com/document/api/403/4392)触发该流程"
+      }
+    ],
+    "desc": "本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例。"
   },
   "DisassociateSecurityGroups": {
     "params": [

@@ -497,6 +497,39 @@ def doDescribeBackups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAsyncRequestInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAsyncRequestInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AsyncRequestId": Utils.try_to_json(argv, "--AsyncRequestId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAsyncRequestInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAsyncRequestInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeBackupDatabases(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1812,16 +1845,14 @@ def doDescribeDBSecurityGroups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpgradeDBInstanceEngineVersion(argv, arglist):
+def doDescribeInstanceParams(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpgradeDBInstanceEngineVersion", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceParams", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "EngineVersion": Utils.try_to_json(argv, "--EngineVersion"),
-        "WaitSwitch": Utils.try_to_json(argv, "--WaitSwitch"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1835,9 +1866,9 @@ def doUpgradeDBInstanceEngineVersion(argv, arglist):
     client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeDBInstanceEngineVersionRequest()
+    model = models.DescribeInstanceParamsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpgradeDBInstanceEngineVersion(model)
+    rsp = client.DescribeInstanceParams(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1880,6 +1911,41 @@ def doUpgradeDBInstance(argv, arglist):
     model = models.UpgradeDBInstanceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UpgradeDBInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpgradeDBInstanceEngineVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpgradeDBInstanceEngineVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "EngineVersion": Utils.try_to_json(argv, "--EngineVersion"),
+        "WaitSwitch": Utils.try_to_json(argv, "--WaitSwitch"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeDBInstanceEngineVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpgradeDBInstanceEngineVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1985,6 +2051,7 @@ ACTION_MAP = {
     "ModifyInstanceParam": doModifyInstanceParam,
     "ModifyDBInstanceProject": doModifyDBInstanceProject,
     "DescribeBackups": doDescribeBackups,
+    "DescribeAsyncRequestInfo": doDescribeAsyncRequestInfo,
     "DescribeBackupDatabases": doDescribeBackupDatabases,
     "InitDBInstances": doInitDBInstances,
     "CreateDBInstanceHour": doCreateDBInstanceHour,
@@ -2021,8 +2088,9 @@ ACTION_MAP = {
     "DescribeDatabases": doDescribeDatabases,
     "CreateAccounts": doCreateAccounts,
     "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
-    "UpgradeDBInstanceEngineVersion": doUpgradeDBInstanceEngineVersion,
+    "DescribeInstanceParams": doDescribeInstanceParams,
     "UpgradeDBInstance": doUpgradeDBInstance,
+    "UpgradeDBInstanceEngineVersion": doUpgradeDBInstanceEngineVersion,
     "DisassociateSecurityGroups": doDisassociateSecurityGroups,
     "DescribeTables": doDescribeTables,
 

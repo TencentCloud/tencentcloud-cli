@@ -275,7 +275,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。"
+        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。"
       },
       {
         "name": "InternetAccessible",
@@ -530,6 +530,23 @@ INFO = {
       }
     ],
     "desc": "本接口 (InquiryPriceResizeInstanceDisks) 用于扩容实例的数据盘询价。\n\n* 目前只支持扩容随实例购买的数据盘询价，且[数据盘类型](/document/api/213/9452#block_device)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口扩容数据盘询价。* 仅支持包年包月实例随机器购买的数据盘。* 目前只支持扩容一块数据盘询价。"
+  },
+  "ModifyInstancesVpcAttribute": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "待操作的实例ID数组。可通过[`DescribeInstances`](document/api/213/9388)接口返回值中的`InstanceId`获取。"
+      },
+      {
+        "name": "VirtualPrivateCloud",
+        "desc": "私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。不指定`PrivateIpAddresses`时随机分配私有网络子网IP。"
+      },
+      {
+        "name": "ForceStop",
+        "desc": "是否对运行中的实例选择强制关机。默认为TRUE。"
+      }
+    ],
+    "desc": "本接口(ModifyInstancesVpcAttribute)用于修改实例vpc属性，如私有网络ip。\n* 此操作默认会关闭实例，完成后再启动。\n* 当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。执行此操作前请确保指定的实例上没有绑定[弹性网卡](https://cloud.tencent.com/document/product/576)和[负载均衡](https://cloud.tencent.com/document/product/214)。"
   },
   "InquiryPriceResetInstance": {
     "params": [
@@ -893,7 +910,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的 `InstanceId` 获取。 每次请求批量实例的上限为100。"
+        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的 `InstanceId` 获取。 每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。"
       },
       {
         "name": "InternetAccessible",

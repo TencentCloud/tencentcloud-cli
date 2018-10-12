@@ -140,19 +140,6 @@ INFO = {
     ],
     "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品。"
   },
-  "GetDeviceShadow": {
-    "params": [
-      {
-        "name": "ProductID",
-        "desc": "产品 ID"
-      },
-      {
-        "name": "DeviceName",
-        "desc": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}"
-      }
-    ],
-    "desc": "本接口（GetDeviceShadow）用于查询虚拟设备信息。"
-  },
   "UpdateDeviceShadow": {
     "params": [
       {

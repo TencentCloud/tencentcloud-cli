@@ -38,34 +38,30 @@ INFO = {
     ],
     "desc": "通过指定设备ID和指定时段，获取该时段内中收银台摄像设备抓取到顾客头像及身份ID"
   },
-  "DescribePersonInfo": {
+  "CreateFacePicture": {
     "params": [
       {
         "name": "CompanyId",
-        "desc": "公司ID"
+        "desc": "集团ID"
       },
       {
         "name": "ShopId",
-        "desc": "门店ID"
+        "desc": "店铺ID"
       },
       {
-        "name": "StartPersonId",
-        "desc": "起始ID，第一次拉取时StartPersonId传0，后续送入的值为上一页最后一条数据项的PersonId"
+        "name": "PersonType",
+        "desc": "人物类型（0表示普通顾客，1 白名单，2 表示黑名单）"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit"
+        "name": "Picture",
+        "desc": "图片BASE编码"
       },
       {
-        "name": "Limit",
-        "desc": "Limit:每页的数据项，最大100，超过100会被强制指定为100"
-      },
-      {
-        "name": "PictureExpires",
-        "desc": "图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）"
+        "name": "PictureName",
+        "desc": "图片名称"
       }
     ],
-    "desc": "指定门店获取所有顾客详情列表，包含客户ID、图片、年龄、性别"
+    "desc": "上传人脸图片"
   },
   "DescribeFaceIdByTempId": {
     "params": [
@@ -91,6 +87,31 @@ INFO = {
       }
     ],
     "desc": "通过DescribeCameraPerson接口上报的收银台身份ID查询顾客的FaceID。查询最佳时间为收银台上报的次日1点后。"
+  },
+  "CreateAccount": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "Name",
+        "desc": "账号名；需要是手机号"
+      },
+      {
+        "name": "Password",
+        "desc": "密码；需要是(`~!@#$%^&*()_+=-）中的至少两种且八位以上"
+      },
+      {
+        "name": "ShopCode",
+        "desc": "客户门店编码"
+      },
+      {
+        "name": "Remark",
+        "desc": "备注说明; 30个字符以内"
+      }
+    ],
+    "desc": "创建集团门店管理员账号"
   },
   "DescribeHistoryNetworkInfo": {
     "params": [
@@ -171,65 +192,6 @@ INFO = {
     ],
     "desc": "按小时提供查询日期范围内门店的每天每小时累计客流人数数据，支持的时间范围：过去365天，含当天。"
   },
-  "ModifyPersonTagInfo": {
-    "params": [
-      {
-        "name": "CompanyId",
-        "desc": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取"
-      },
-      {
-        "name": "ShopId",
-        "desc": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取，为0则拉取集团全部店铺当前"
-      },
-      {
-        "name": "Tags",
-        "desc": "需要设置的顾客信息，批量设置最大为10个"
-      }
-    ],
-    "desc": "标记到店顾客的身份类型，例如黑名单、白名单等\n"
-  },
-  "DescribeZoneTrafficInfo": {
-    "params": [
-      {
-        "name": "CompanyId",
-        "desc": "公司ID"
-      },
-      {
-        "name": "ShopId",
-        "desc": "店铺ID"
-      },
-      {
-        "name": "StartDate",
-        "desc": "开始日期，格式yyyy-MM-dd"
-      },
-      {
-        "name": "EndDate",
-        "desc": "结束日期，格式yyyy-MM-dd"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit"
-      },
-      {
-        "name": "Limit",
-        "desc": "Limit:每页的数据项，最大100，超过100会被强制指定为100"
-      }
-    ],
-    "desc": "按天提供查询日期范围内，客户指定门店下的所有区域（优Mall部署时已配置区域）的累计客流人次和平均停留时间。支持的时间范围：过去365天，含当天。"
-  },
-  "DescribeShopInfo": {
-    "params": [
-      {
-        "name": "Offset",
-        "desc": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit"
-      },
-      {
-        "name": "Limit",
-        "desc": "Limit:每页的数据项，最大100，超过100会被强制指定为100"
-      }
-    ],
-    "desc": "根据客户身份标识获取客户下所有的门店信息列表"
-  },
   "DescribePersonVisitInfo": {
     "params": [
       {
@@ -262,6 +224,269 @@ INFO = {
       }
     ],
     "desc": "获取门店指定时间范围内的所有用户到访信息记录，支持的时间范围：过去365天，含当天。"
+  },
+  "DescribePersonInfo": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "公司ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "门店ID"
+      },
+      {
+        "name": "StartPersonId",
+        "desc": "起始ID，第一次拉取时StartPersonId传0，后续送入的值为上一页最后一条数据项的PersonId"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit"
+      },
+      {
+        "name": "Limit",
+        "desc": "Limit:每页的数据项，最大100，超过100会被强制指定为100"
+      },
+      {
+        "name": "PictureExpires",
+        "desc": "图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）"
+      }
+    ],
+    "desc": "指定门店获取所有顾客详情列表，包含客户ID、图片、年龄、性别"
+  },
+  "DescribeZoneFlowDailyByZoneId": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "ZoneId",
+        "desc": "区域ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      }
+    ],
+    "desc": "获取指定区域每日客流量"
+  },
+  "ModifyPersonTagInfo": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取"
+      },
+      {
+        "name": "ShopId",
+        "desc": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取，为0则拉取集团全部店铺当前"
+      },
+      {
+        "name": "Tags",
+        "desc": "需要设置的顾客信息，批量设置最大为10个"
+      }
+    ],
+    "desc": "标记到店顾客的身份类型，例如黑名单、白名单等\n"
+  },
+  "DescribeZoneFlowGenderInfoByZoneId": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "ZoneId",
+        "desc": "区域ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      }
+    ],
+    "desc": "获取指定区域性别占比"
+  },
+  "DescribeZoneTrafficInfo": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "公司ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit"
+      },
+      {
+        "name": "Limit",
+        "desc": "Limit:每页的数据项，最大100，超过100会被强制指定为100"
+      }
+    ],
+    "desc": "按天提供查询日期范围内，客户指定门店下的所有区域（优Mall部署时已配置区域）的累计客流人次和平均停留时间。支持的时间范围：过去365天，含当天。"
+  },
+  "DescribeZoneFlowHourlyByZoneId": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "ZoneId",
+        "desc": "区域ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      }
+    ],
+    "desc": "获取指定区域分时客流量"
+  },
+  "DescribeShopInfo": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit"
+      },
+      {
+        "name": "Limit",
+        "desc": "Limit:每页的数据项，最大100，超过100会被强制指定为100"
+      }
+    ],
+    "desc": "根据客户身份标识获取客户下所有的门店信息列表"
+  },
+  "DescribeZoneFlowAgeInfoByZoneId": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "ZoneId",
+        "desc": "区域ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      }
+    ],
+    "desc": "获取指定区域人流各年龄占比"
+  },
+  "DescribeZoneFlowGenderAvrStayTimeByZoneId": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "ZoneId",
+        "desc": "区域ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      }
+    ],
+    "desc": "获取指定区域不同年龄段男女平均停留时间"
+  },
+  "DescribeTrajectoryData": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "Limit",
+        "desc": "限制返回数据的最大条数，最大 400（负数代为 400）"
+      },
+      {
+        "name": "Gender",
+        "desc": "顾客性别顾虑，0是男，1是女，其它代表不分性别"
+      }
+    ],
+    "desc": "获取动线轨迹信息"
+  },
+  "DescribeZoneFlowAndStayTime": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      }
+    ],
+    "desc": "获取区域人流和停留时间"
   },
   "RegisterCallback": {
     "params": [
