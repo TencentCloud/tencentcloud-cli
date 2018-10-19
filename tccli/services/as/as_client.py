@@ -262,6 +262,8 @@ def doCreateLaunchConfiguration(argv, arglist):
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
         "UserData": Utils.try_to_json(argv, "--UserData"),
+        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

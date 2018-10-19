@@ -299,6 +299,9 @@ def doDescribeTask(argv, arglist):
     param = {
         "JobId": Utils.try_to_json(argv, "--JobId"),
         "TaskName": Utils.try_to_json(argv, "--TaskName"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

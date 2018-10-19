@@ -114,6 +114,18 @@ INFO = {
       {
         "name": "TaskName",
         "desc": "任务名称"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量。默认取值100，最大取值1000。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，详情如下：\n<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>"
       }
     ],
     "desc": "用于查询指定任务的详细信息，包括任务内部的任务实例信息。"
@@ -140,7 +152,7 @@ INFO = {
     "params": [
       {
         "name": "EnvId",
-        "desc": "u8ba1u7b97u73afu5883ID"
+        "desc": "计算环境ID"
       },
       {
         "name": "Offset",

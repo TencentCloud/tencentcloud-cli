@@ -166,6 +166,14 @@ INFO = {
       {
         "name": "UserData",
         "desc": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。\n<br><li>POSTPAID_BY_HOUR：按小时后付费\n<br><li>SPOTPAID：竞价付费"
+      },
+      {
+        "name": "InstanceMarketOptions",
+        "desc": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。"
       }
     ],
     "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置无法编辑更改。如需使用新的启动配置，只能重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"

@@ -91,13 +91,16 @@ def doResetDevice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAddUser(argv, arglist):
+def doGetDeviceStatistics(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AddUser", g_param[OptionsDefine.Version])
+        show_help("GetDeviceStatistics", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "Products": Utils.try_to_json(argv, "--Products"),
+        "StartDate": Utils.try_to_json(argv, "--StartDate"),
+        "EndDate": Utils.try_to_json(argv, "--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -111,9 +114,43 @@ def doAddUser(argv, arglist):
     client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AddUserRequest()
+    model = models.GetDeviceStatisticsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AddUser(model)
+    rsp = client.GetDeviceStatistics(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAppSecureAddDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppSecureAddDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "DeviceSignature": Utils.try_to_json(argv, "--DeviceSignature"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppSecureAddDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppSecureAddDevice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -133,6 +170,7 @@ def doIssueDeviceControl(argv, arglist):
         "ProductId": Utils.try_to_json(argv, "--ProductId"),
         "DeviceName": Utils.try_to_json(argv, "--DeviceName"),
         "ControlData": Utils.try_to_json(argv, "--ControlData"),
+        "Metadata": Utils.try_to_json(argv, "--Metadata"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -149,6 +187,46 @@ def doIssueDeviceControl(argv, arglist):
     model = models.IssueDeviceControlRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.IssueDeviceControl(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetDebugLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetDebugLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Size": Utils.try_to_json(argv, "--Size"),
+        "Order": Utils.try_to_json(argv, "--Order"),
+        "ScrollId": Utils.try_to_json(argv, "--ScrollId"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetDebugLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetDebugLog(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -201,6 +279,7 @@ def doGetDevices(argv, arglist):
         "ProductId": Utils.try_to_json(argv, "--ProductId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Length": Utils.try_to_json(argv, "--Length"),
+        "Keyword": Utils.try_to_json(argv, "--Keyword"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -260,6 +339,40 @@ def doAddTopic(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAppGetDeviceStatuses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppGetDeviceStatuses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "DeviceIds": Utils.try_to_json(argv, "--DeviceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppGetDeviceStatusesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppGetDeviceStatuses(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetProducts(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -294,6 +407,75 @@ def doGetProducts(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAppGetToken(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppGetToken", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "UserName": Utils.try_to_json(argv, "--UserName"),
+        "Password": Utils.try_to_json(argv, "--Password"),
+        "Expire": Utils.try_to_json(argv, "--Expire"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppGetTokenRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppGetToken(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAppUpdateUser(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppUpdateUser", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "NickName": Utils.try_to_json(argv, "--NickName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppUpdateUserRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppUpdateUser(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAddRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -305,6 +487,7 @@ def doAddRule(argv, arglist):
         "Description": Utils.try_to_json(argv, "--Description"),
         "Query": Utils.try_to_json(argv, "--Query"),
         "Actions": Utils.try_to_json(argv, "--Actions"),
+        "DataType": Utils.try_to_json(argv, "--DataType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -321,6 +504,75 @@ def doAddRule(argv, arglist):
     model = models.AddRuleRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.AddRule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnassociateSubDeviceFromGatewayProduct(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnassociateSubDeviceFromGatewayProduct", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SubDeviceProductId": Utils.try_to_json(argv, "--SubDeviceProductId"),
+        "GatewayProductId": Utils.try_to_json(argv, "--GatewayProductId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnassociateSubDeviceFromGatewayProductRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnassociateSubDeviceFromGatewayProduct(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetDeviceSignatures(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetDeviceSignatures", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
+        "Expire": Utils.try_to_json(argv, "--Expire"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetDeviceSignaturesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetDeviceSignatures(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -363,38 +615,6 @@ def doDeleteRule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetUser(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GetUser", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetUserRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.GetUser(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doAddProduct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -404,9 +624,11 @@ def doAddProduct(argv, arglist):
     param = {
         "Name": Utils.try_to_json(argv, "--Name"),
         "Description": Utils.try_to_json(argv, "--Description"),
-        "AuthType": Utils.try_to_json(argv, "--AuthType"),
         "DataTemplate": Utils.try_to_json(argv, "--DataTemplate"),
         "DataProtocol": Utils.try_to_json(argv, "--DataProtocol"),
+        "AuthType": Utils.try_to_json(argv, "--AuthType"),
+        "CommProtocol": Utils.try_to_json(argv, "--CommProtocol"),
+        "DeviceType": Utils.try_to_json(argv, "--DeviceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -513,6 +735,7 @@ def doUpdateRule(argv, arglist):
         "Description": Utils.try_to_json(argv, "--Description"),
         "Query": Utils.try_to_json(argv, "--Query"),
         "Actions": Utils.try_to_json(argv, "--Actions"),
+        "DataType": Utils.try_to_json(argv, "--DataType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -529,6 +752,41 @@ def doUpdateRule(argv, arglist):
     model = models.UpdateRuleRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UpdateRule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAppDeleteDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppDeleteDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceName": Utils.try_to_json(argv, "--DeviceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppDeleteDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppDeleteDevice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -639,6 +897,72 @@ def doDeleteProduct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAppGetUser(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppGetUser", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppGetUserRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppGetUser(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAppGetDevices(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppGetDevices", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppGetDevicesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppGetDevices(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAppAddUser(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -664,6 +988,79 @@ def doAppAddUser(argv, arglist):
     model = models.AppAddUserRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.AppAddUser(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateProduct(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateProduct", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Description": Utils.try_to_json(argv, "--Description"),
+        "DataTemplate": Utils.try_to_json(argv, "--DataTemplate"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateProductRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateProduct(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAppIssueDeviceControl(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppIssueDeviceControl", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceName": Utils.try_to_json(argv, "--DeviceName"),
+        "ControlData": Utils.try_to_json(argv, "--ControlData"),
+        "Metadata": Utils.try_to_json(argv, "--Metadata"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppIssueDeviceControlRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppIssueDeviceControl(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -707,6 +1104,41 @@ def doGetTopic(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAppGetDeviceData(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppGetDeviceData", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceName": Utils.try_to_json(argv, "--DeviceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppGetDeviceDataRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppGetDeviceData(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetDevice(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -732,6 +1164,41 @@ def doGetDevice(argv, arglist):
     model = models.GetDeviceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAppGetDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppGetDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceName": Utils.try_to_json(argv, "--DeviceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppGetDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppGetDevice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -950,17 +1417,16 @@ def doGetProduct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateProduct(argv, arglist):
+def doAppResetPassword(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateProduct", g_param[OptionsDefine.Version])
+        show_help("AppResetPassword", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": Utils.try_to_json(argv, "--ProductId"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "DataTemplate": Utils.try_to_json(argv, "--DataTemplate"),
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "OldPassword": Utils.try_to_json(argv, "--OldPassword"),
+        "NewPassword": Utils.try_to_json(argv, "--NewPassword"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -974,9 +1440,9 @@ def doUpdateProduct(argv, arglist):
     client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateProductRequest()
+    model = models.AppResetPasswordRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateProduct(model)
+    rsp = client.AppResetPassword(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1010,6 +1476,40 @@ def doActivateRule(argv, arglist):
     model = models.ActivateRuleRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ActivateRule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAssociateSubDeviceToGatewayProduct(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AssociateSubDeviceToGatewayProduct", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SubDeviceProductId": Utils.try_to_json(argv, "--SubDeviceProductId"),
+        "GatewayProductId": Utils.try_to_json(argv, "--GatewayProductId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssociateSubDeviceToGatewayProductRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AssociateSubDeviceToGatewayProduct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1053,6 +1553,42 @@ def doDeleteTopic(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAppUpdateDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AppUpdateDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessToken": Utils.try_to_json(argv, "--AccessToken"),
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceName": Utils.try_to_json(argv, "--DeviceName"),
+        "AliasName": Utils.try_to_json(argv, "--AliasName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AppUpdateDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AppUpdateDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180123": iot_client_v20180123,
 
@@ -1066,34 +1602,49 @@ MODELS_MAP = {
 ACTION_MAP = {
     "GetDataHistory": doGetDataHistory,
     "ResetDevice": doResetDevice,
-    "AddUser": doAddUser,
+    "GetDeviceStatistics": doGetDeviceStatistics,
+    "AppSecureAddDevice": doAppSecureAddDevice,
     "IssueDeviceControl": doIssueDeviceControl,
+    "GetDebugLog": doGetDebugLog,
     "DeactivateRule": doDeactivateRule,
     "GetDevices": doGetDevices,
     "AddTopic": doAddTopic,
+    "AppGetDeviceStatuses": doAppGetDeviceStatuses,
     "GetProducts": doGetProducts,
+    "AppGetToken": doAppGetToken,
+    "AppUpdateUser": doAppUpdateUser,
     "AddRule": doAddRule,
+    "UnassociateSubDeviceFromGatewayProduct": doUnassociateSubDeviceFromGatewayProduct,
+    "GetDeviceSignatures": doGetDeviceSignatures,
     "DeleteRule": doDeleteRule,
-    "GetUser": doGetUser,
     "AddProduct": doAddProduct,
     "DeleteDevice": doDeleteDevice,
     "PublishMsg": doPublishMsg,
     "UpdateRule": doUpdateRule,
+    "AppDeleteDevice": doAppDeleteDevice,
     "GetDeviceStatuses": doGetDeviceStatuses,
     "GetRules": doGetRules,
     "DeleteProduct": doDeleteProduct,
+    "AppGetUser": doAppGetUser,
+    "AppGetDevices": doAppGetDevices,
     "AppAddUser": doAppAddUser,
+    "UpdateProduct": doUpdateProduct,
+    "AppIssueDeviceControl": doAppIssueDeviceControl,
     "GetTopic": doGetTopic,
+    "AppGetDeviceData": doAppGetDeviceData,
     "GetDevice": doGetDevice,
+    "AppGetDevice": doAppGetDevice,
     "GetDeviceData": doGetDeviceData,
     "GetRule": doGetRule,
     "GetDeviceLog": doGetDeviceLog,
     "GetTopics": doGetTopics,
     "AddDevice": doAddDevice,
     "GetProduct": doGetProduct,
-    "UpdateProduct": doUpdateProduct,
+    "AppResetPassword": doAppResetPassword,
     "ActivateRule": doActivateRule,
+    "AssociateSubDeviceToGatewayProduct": doAssociateSubDeviceToGatewayProduct,
     "DeleteTopic": doDeleteTopic,
+    "AppUpdateDevice": doAppUpdateDevice,
 
 }
 
