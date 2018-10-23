@@ -12,10 +12,10 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.as.v20180419 import as_client as as_client_v20180419
-from tencentcloud.as.v20180419 import models as models_v20180419
-from tccli.services.as import v20180419
-from tccli.services.as.v20180419 import help as v20180419_help
+from tencentcloud.autoscaling.v20180419 import autoscaling_client as autoscaling_client_v20180419
+from tencentcloud.autoscaling.v20180419 import models as models_v20180419
+from tccli.services.autoscaling import v20180419
+from tccli.services.autoscaling.v20180419 import help as v20180419_help
 
 
 def doRemoveInstances(argv, arglist):
@@ -37,7 +37,7 @@ def doRemoveInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.RemoveInstancesRequest()
@@ -82,7 +82,7 @@ def doCreateAutoScalingGroup(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateAutoScalingGroupRequest()
@@ -115,7 +115,7 @@ def doDeleteScheduledAction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteScheduledActionRequest()
@@ -149,7 +149,7 @@ def doDetachInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DetachInstancesRequest()
@@ -189,7 +189,7 @@ def doCreateScheduledAction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateScheduledActionRequest()
@@ -229,7 +229,7 @@ def doModifyScheduledAction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyScheduledActionRequest()
@@ -274,7 +274,7 @@ def doCreateLaunchConfiguration(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateLaunchConfigurationRequest()
@@ -318,7 +318,7 @@ def doModifyAutoScalingGroup(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyAutoScalingGroupRequest()
@@ -351,7 +351,7 @@ def doEnableAutoScalingGroup(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.EnableAutoScalingGroupRequest()
@@ -387,7 +387,7 @@ def doDescribeAutoScalingInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAutoScalingInstancesRequest()
@@ -423,7 +423,7 @@ def doDescribeAutoScalingGroups(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAutoScalingGroupsRequest()
@@ -459,7 +459,7 @@ def doDescribeScheduledActions(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeScheduledActionsRequest()
@@ -492,7 +492,7 @@ def doDeleteAutoScalingGroup(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteAutoScalingGroupRequest()
@@ -525,7 +525,7 @@ def doDeleteLaunchConfiguration(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteLaunchConfigurationRequest()
@@ -558,7 +558,7 @@ def doDisableAutoScalingGroup(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DisableAutoScalingGroupRequest()
@@ -594,7 +594,7 @@ def doDescribeLaunchConfigurations(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeLaunchConfigurationsRequest()
@@ -626,7 +626,7 @@ def doDescribeAccountLimits(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAccountLimitsRequest()
@@ -660,7 +660,7 @@ def doAttachInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.AttachInstancesRequest()
@@ -694,7 +694,7 @@ def doModifyDesiredCapacity(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyDesiredCapacityRequest()
@@ -710,7 +710,7 @@ def doModifyDesiredCapacity(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180419": as_client_v20180419,
+    "v20180419": autoscaling_client_v20180419,
 
 }
 
@@ -752,7 +752,7 @@ AVAILABLE_VERSIONS = {
 }
 
 
-def as_action(argv, arglist):
+def autoscaling_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -768,7 +768,7 @@ def as_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "as", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "autoscaling", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -789,7 +789,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("as", as_action)
+    cmd = NiceCommand("autoscaling", autoscaling_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -848,11 +848,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["as"][OptionsDefine.Version]
+            version = config["autoscaling"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["as"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["autoscaling"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -869,7 +869,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "as", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "autoscaling", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -879,7 +879,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["as"]["version"]
+        version = profile["autoscaling"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

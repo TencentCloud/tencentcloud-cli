@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-DESC = "as-2018-04-19"
+DESC = "autoscaling-2018-04-19"
 INFO = {
   "CreateAutoScalingGroup": {
     "params": [

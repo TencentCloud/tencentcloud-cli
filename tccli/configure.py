@@ -36,7 +36,7 @@ class Configure(object):
 
     def _dump_json_msg(self, filename, data):
         with open(filename, "w") as f:
-            json.dump(data, f, indent=2, separators=(',', ': '), ensure_ascii=False)
+            json.dump(data, f, indent=2, separators=(',', ': '), ensure_ascii=False, sort_keys=True)
 
     def _profile_existed(self, profile_name):
         file_path = os.path.join(self.cli_path, profile_name)
@@ -57,10 +57,16 @@ class Configure(object):
                 conf[k] = data[k]
             if name.endswith(".configure"):
                 for mod in self.service_list:
-                    if mod in conf:
+                    # we have to check autoscaling because we did it wrong in 3.0.30.1
+                    # consider remove it in 3.1.x
+                    if mod in conf and mod != 'autoscaling':
                         continue
                     conf[mod] = {}
                     conf[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
+                    # we have to do this because as is a keyword in python
+                    # as has been changed to autoscaling only in python sdk & cli
+                    if mod == 'autoscaling':
+                        conf[mod]["endpoint"] = "as.tencentcloudapi.com"
                     module = Services.dynamic_load_module(mod)
                     version = sorted(module.AVAILABLE_VERSION_LIST)[-1]
                     conf[mod]["version"] = version
