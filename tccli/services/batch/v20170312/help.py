@@ -238,9 +238,21 @@ INFO = {
       {
         "name": "DesiredComputeNodeCount",
         "desc": "计算节点期望个数"
+      },
+      {
+        "name": "EnvName",
+        "desc": "计算环境名称"
+      },
+      {
+        "name": "EnvDescription",
+        "desc": "计算环境描述"
+      },
+      {
+        "name": "EnvData",
+        "desc": "计算环境属性数据"
       }
     ],
-    "desc": "用于修改计算环境的期望节点数量"
+    "desc": "用于修改计算环境属性"
   },
   "DescribeJobSubmitInfo": {
     "params": [

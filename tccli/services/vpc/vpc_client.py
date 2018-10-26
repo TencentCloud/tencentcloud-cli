@@ -206,6 +206,7 @@ def doCreateBandwidthPackage(argv, arglist):
         "ChargeType": Utils.try_to_json(argv, "--ChargeType"),
         "BandwidthPackageName": Utils.try_to_json(argv, "--BandwidthPackageName"),
         "BandwidthPackageCount": Utils.try_to_json(argv, "--BandwidthPackageCount"),
+        "InternetMaxBandwidth": Utils.try_to_json(argv, "--InternetMaxBandwidth"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -474,7 +474,7 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "记录偏移量，默认值为0"
+        "desc": "偏移量，默认值为0"
       },
       {
         "name": "Limit",
@@ -518,19 +518,19 @@ INFO = {
       },
       {
         "name": "OrderBy",
-        "desc": "排序的字段，目前支持：\"InstanceId\", \"InstanceName\", \"CreateTime\", \"DeadlineTime\""
+        "desc": "返回结果集排序的字段，目前支持：\"InstanceId\", \"InstanceName\", \"CreateTime\", \"DeadlineTime\""
       },
       {
         "name": "OrderDirection",
-        "desc": "排序方式，目前支持：\"ASC\"或者\"DESC\""
+        "desc": "返回结果集排序方式，目前支持：\"ASC\"或者\"DESC\""
       },
       {
         "name": "WithSecurityGroup",
-        "desc": "是否包含安全组信息，可取值：0-不包含，1-包含"
+        "desc": "是否包含安全组详细信息，可取值：0-不包含，1-包含"
       },
       {
         "name": "WithExCluster",
-        "desc": "是否包含独享集群信息，可取值：0-不包含，1-包含"
+        "desc": "是否包含独享集群详细信息，可取值：0-不包含，1-包含"
       },
       {
         "name": "ExClusterId",
@@ -557,7 +557,7 @@ INFO = {
         "desc": "是否包含主实例，可取值：0-不包含，1-包含"
       }
     ],
-    "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、访问地址、实例状态等来筛选实例。\n\n1. 不指定任何过滤条件, 则默认返回20条实例记录，单次请求最多支持返回100条实例记录；\n2. 支持查询主实例、灾备实例和只读实例信息列表。"
+    "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、访问地址、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。"
   },
   "VerifyRootAccount": {
     "params": [
@@ -571,6 +571,19 @@ INFO = {
       }
     ],
     "desc": "本接口(VerifyRootAccount)用于校验云数据库实例的ROOT账号是否有足够的权限进行授权操作。"
+  },
+  "RenewDBInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "待续费的实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)"
+      },
+      {
+        "name": "TimeSpan",
+        "desc": "续费时长，单位：月，可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]"
+      }
+    ],
+    "desc": "本接口(RenewDBInstance)用于续费云数据库实例，仅支持付费模式为包年包月的实例。按量计费实例不需要续费。"
   },
   "DescribeProjectSecurityGroups": {
     "params": [
@@ -898,7 +911,7 @@ INFO = {
       },
       {
         "name": "FileName",
-        "desc": "文件名称。"
+        "desc": "文件名称。该文件是指用户已上传到腾讯云的文件。"
       },
       {
         "name": "User",
@@ -913,7 +926,7 @@ INFO = {
         "desc": "导入的目标数据库名，不传表示不指定数据库。"
       }
     ],
-    "desc": "本接口(CreateDBImportJob)用于创建云数据库数据导入任务。"
+    "desc": "本接口(CreateDBImportJob)用于创建云数据库数据导入任务。\n\n注意，用户进行数据导入任务的文件，必须提前上传到腾讯云。用户可在控制台进行文件导入，也可使用[上传导入文件](https://cloud.tencent.com/document/api/236/8595)进行文件导入。"
   },
   "ModifyAccountDescription": {
     "params": [
@@ -1043,6 +1056,23 @@ INFO = {
       }
     ],
     "desc": "该接口（DescribeInstanceParams）用于查询实例的参数列表。"
+  },
+  "DescribeUploadedFiles": {
+    "params": [
+      {
+        "name": "Path",
+        "desc": "文件路径。该字段应填用户主账号的OwnerUin信息。"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录偏移量，默认值为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次请求返回的数量，默认值为20。"
+      }
+    ],
+    "desc": "本接口(DescribeUploadedFiles)用于查询用户导入的SQL文件列表。"
   },
   "UpgradeDBInstance": {
     "params": [

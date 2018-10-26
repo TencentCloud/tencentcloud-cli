@@ -1056,6 +1056,40 @@ def doVerifyRootAccount(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRenewDBInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RenewDBInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RenewDBInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RenewDBInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDBInstanceCharset(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1878,6 +1912,41 @@ def doDescribeInstanceParams(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeUploadedFiles(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeUploadedFiles", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Path": Utils.try_to_json(argv, "--Path"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeUploadedFilesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeUploadedFiles(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doUpgradeDBInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2066,6 +2135,7 @@ ACTION_MAP = {
     "RestartDBInstances": doRestartDBInstances,
     "DescribeDBInstances": doDescribeDBInstances,
     "VerifyRootAccount": doVerifyRootAccount,
+    "RenewDBInstance": doRenewDBInstance,
     "DescribeDBInstanceCharset": doDescribeDBInstanceCharset,
     "StartBatchRollback": doStartBatchRollback,
     "AssociateSecurityGroups": doAssociateSecurityGroups,
@@ -2089,6 +2159,7 @@ ACTION_MAP = {
     "CreateAccounts": doCreateAccounts,
     "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
     "DescribeInstanceParams": doDescribeInstanceParams,
+    "DescribeUploadedFiles": doDescribeUploadedFiles,
     "UpgradeDBInstance": doUpgradeDBInstance,
     "UpgradeDBInstanceEngineVersion": doUpgradeDBInstanceEngineVersion,
     "DisassociateSecurityGroups": doDisassociateSecurityGroups,

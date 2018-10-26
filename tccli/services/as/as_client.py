@@ -12,240 +12,20 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.cbs.v20170312 import cbs_client as cbs_client_v20170312
-from tencentcloud.cbs.v20170312 import models as models_v20170312
-from tccli.services.cbs import v20170312
-from tccli.services.cbs.v20170312 import help as v20170312_help
+from tencentcloud.as.v20180419 import as_client as as_client_v20180419
+from tencentcloud.as.v20180419 import models as models_v20180419
+from tccli.services.as import v20180419
+from tccli.services.as.v20180419 import help as v20180419_help
 
 
-def doCreateDisks(argv, arglist):
+def doRemoveInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateDisks", g_param[OptionsDefine.Version])
+        show_help("RemoveInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DiskType": Utils.try_to_json(argv, "--DiskType"),
-        "DiskChargeType": Utils.try_to_json(argv, "--DiskChargeType"),
-        "Placement": Utils.try_to_json(argv, "--Placement"),
-        "DiskName": Utils.try_to_json(argv, "--DiskName"),
-        "DiskCount": Utils.try_to_json(argv, "--DiskCount"),
-        "DiskChargePrepaid": Utils.try_to_json(argv, "--DiskChargePrepaid"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "SnapshotId": Utils.try_to_json(argv, "--SnapshotId"),
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
-        "Encrypt": Utils.try_to_json(argv, "--Encrypt"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
-        "DeleteWithInstance": Utils.try_to_json(argv, "--DeleteWithInstance"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDisksRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateDisks(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDetachDisks(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DetachDisks", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetachDisksRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DetachDisks(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDiskConfigQuota(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDiskConfigQuota", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InquiryType": Utils.try_to_json(argv, "--InquiryType"),
-        "Zones": Utils.try_to_json(argv, "--Zones"),
-        "DiskChargeType": Utils.try_to_json(argv, "--DiskChargeType"),
-        "DiskTypes": Utils.try_to_json(argv, "--DiskTypes"),
-        "DiskUsage": Utils.try_to_json(argv, "--DiskUsage"),
-        "InstanceFamilies": Utils.try_to_json(argv, "--InstanceFamilies"),
-        "CPU": Utils.try_to_json(argv, "--CPU"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDiskConfigQuotaRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDiskConfigQuota(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyDiskAttributes(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyDiskAttributes", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "DiskName": Utils.try_to_json(argv, "--DiskName"),
-        "Portable": Utils.try_to_json(argv, "--Portable"),
-        "DeleteWithInstance": Utils.try_to_json(argv, "--DeleteWithInstance"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDiskAttributesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDiskAttributes(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteSnapshots(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteSnapshots", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "SnapshotIds": Utils.try_to_json(argv, "--SnapshotIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteSnapshotsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteSnapshots(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doRenewDisk(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("RenewDisk", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "DiskChargePrepaid": Utils.try_to_json(argv, "--DiskChargePrepaid"),
-        "DiskId": Utils.try_to_json(argv, "--DiskId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenewDiskRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.RenewDisk(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeInstancesDiskNum(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeInstancesDiskNum", g_param[OptionsDefine.Version])
-        return
-
-    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
@@ -257,12 +37,12 @@ def doDescribeInstancesDiskNum(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstancesDiskNumRequest()
+    model = models.RemoveInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInstancesDiskNum(model)
+    rsp = client.RemoveInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -272,19 +52,26 @@ def doDescribeInstancesDiskNum(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquiryPriceCreateDisks(argv, arglist):
+def doCreateAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("InquiryPriceCreateDisks", g_param[OptionsDefine.Version])
+        show_help("CreateAutoScalingGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DiskType": Utils.try_to_json(argv, "--DiskType"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "DiskChargeType": Utils.try_to_json(argv, "--DiskChargeType"),
-        "DiskChargePrepaid": Utils.try_to_json(argv, "--DiskChargePrepaid"),
-        "DiskCount": Utils.try_to_json(argv, "--DiskCount"),
+        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
+        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ForwardLoadBalancers": Utils.try_to_json(argv, "--ForwardLoadBalancers"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
+        "Zones": Utils.try_to_json(argv, "--Zones"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -295,12 +82,12 @@ def doInquiryPriceCreateDisks(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InquiryPriceCreateDisksRequest()
+    model = models.CreateAutoScalingGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.InquiryPriceCreateDisks(model)
+    rsp = client.CreateAutoScalingGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -310,16 +97,173 @@ def doInquiryPriceCreateDisks(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquiryPriceResizeDisk(argv, arglist):
+def doDeleteScheduledAction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("InquiryPriceResizeDisk", g_param[OptionsDefine.Version])
+        show_help("DeleteScheduledAction", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DiskId": Utils.try_to_json(argv, "--DiskId"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
+        "ScheduledActionId": Utils.try_to_json(argv, "--ScheduledActionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteScheduledActionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteScheduledAction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDetachInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DetachInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetachInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DetachInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateScheduledAction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateScheduledAction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "ScheduledActionName": Utils.try_to_json(argv, "--ScheduledActionName"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Recurrence": Utils.try_to_json(argv, "--Recurrence"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateScheduledActionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateScheduledAction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyScheduledAction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyScheduledAction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ScheduledActionId": Utils.try_to_json(argv, "--ScheduledActionId"),
+        "ScheduledActionName": Utils.try_to_json(argv, "--ScheduledActionName"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Recurrence": Utils.try_to_json(argv, "--Recurrence"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyScheduledActionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyScheduledAction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateLaunchConfiguration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateLaunchConfiguration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LaunchConfigurationName": Utils.try_to_json(argv, "--LaunchConfigurationName"),
+        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "ImageId": Utils.try_to_json(argv, "--ImageId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
+        "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
+        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
+        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
+        "UserData": Utils.try_to_json(argv, "--UserData"),
+        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -330,12 +274,12 @@ def doInquiryPriceResizeDisk(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InquiryPriceResizeDiskRequest()
+    model = models.CreateLaunchConfigurationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.InquiryPriceResizeDisk(model)
+    rsp = client.CreateLaunchConfiguration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -345,15 +289,25 @@ def doInquiryPriceResizeDisk(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doApplySnapshot(argv, arglist):
+def doModifyAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ApplySnapshot", g_param[OptionsDefine.Version])
+        show_help("ModifyAutoScalingGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SnapshotId": Utils.try_to_json(argv, "--SnapshotId"),
-        "DiskId": Utils.try_to_json(argv, "--DiskId"),
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
+        "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "Zones": Utils.try_to_json(argv, "--Zones"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -364,12 +318,12 @@ def doApplySnapshot(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplySnapshotRequest()
+    model = models.ModifyAutoScalingGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ApplySnapshot(model)
+    rsp = client.ModifyAutoScalingGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -379,14 +333,14 @@ def doApplySnapshot(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDiskOperationLogs(argv, arglist):
+def doEnableAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDiskOperationLogs", g_param[OptionsDefine.Version])
+        show_help("EnableAutoScalingGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -397,12 +351,12 @@ def doDescribeDiskOperationLogs(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDiskOperationLogsRequest()
+    model = models.EnableAutoScalingGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDiskOperationLogs(model)
+    rsp = client.EnableAutoScalingGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -412,88 +366,17 @@ def doDescribeDiskOperationLogs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySnapshotAttribute(argv, arglist):
+def doDescribeAutoScalingInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifySnapshotAttribute", g_param[OptionsDefine.Version])
+        show_help("DescribeAutoScalingInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SnapshotId": Utils.try_to_json(argv, "--SnapshotId"),
-        "SnapshotName": Utils.try_to_json(argv, "--SnapshotName"),
-        "IsPermanent": Utils.try_to_json(argv, "--IsPermanent"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySnapshotAttributeRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifySnapshotAttribute(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTerminateDisks(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TerminateDisks", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateDisksRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TerminateDisks(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDisks(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDisks", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Order": Utils.try_to_json(argv, "--Order"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "ReturnBindAutoSnapshotPolicy": Utils.try_to_json(argv, "--ReturnBindAutoSnapshotPolicy"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -504,12 +387,12 @@ def doDescribeDisks(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDisksRequest()
+    model = models.DescribeAutoScalingInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDisks(model)
+    rsp = client.DescribeAutoScalingInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -519,15 +402,17 @@ def doDescribeDisks(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDisksRenewFlag(argv, arglist):
+def doDescribeAutoScalingGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyDisksRenewFlag", g_param[OptionsDefine.Version])
+        show_help("DescribeAutoScalingGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
+        "AutoScalingGroupIds": Utils.try_to_json(argv, "--AutoScalingGroupIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -538,12 +423,12 @@ def doModifyDisksRenewFlag(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDisksRenewFlagRequest()
+    model = models.DescribeAutoScalingGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDisksRenewFlag(model)
+    rsp = client.DescribeAutoScalingGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -553,19 +438,17 @@ def doModifyDisksRenewFlag(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSnapshots(argv, arglist):
+def doDescribeScheduledActions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeSnapshots", g_param[OptionsDefine.Version])
+        show_help("DescribeScheduledActions", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SnapshotIds": Utils.try_to_json(argv, "--SnapshotIds"),
+        "ScheduledActionIds": Utils.try_to_json(argv, "--ScheduledActionIds"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Order": Utils.try_to_json(argv, "--Order"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -576,12 +459,12 @@ def doDescribeSnapshots(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSnapshotsRequest()
+    model = models.DescribeScheduledActionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSnapshots(model)
+    rsp = client.DescribeScheduledActions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -591,16 +474,14 @@ def doDescribeSnapshots(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAttachDisks(argv, arglist):
+def doDeleteAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AttachDisks", g_param[OptionsDefine.Version])
+        show_help("DeleteAutoScalingGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "DeleteWithInstance": Utils.try_to_json(argv, "--DeleteWithInstance"),
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -611,12 +492,12 @@ def doAttachDisks(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AttachDisksRequest()
+    model = models.DeleteAutoScalingGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AttachDisks(model)
+    rsp = client.DeleteAutoScalingGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -626,15 +507,14 @@ def doAttachDisks(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResizeDisk(argv, arglist):
+def doDeleteLaunchConfiguration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResizeDisk", g_param[OptionsDefine.Version])
+        show_help("DeleteLaunchConfiguration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DiskId": Utils.try_to_json(argv, "--DiskId"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
+        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -645,12 +525,12 @@ def doResizeDisk(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResizeDiskRequest()
+    model = models.DeleteLaunchConfigurationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResizeDisk(model)
+    rsp = client.DeleteLaunchConfiguration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -660,15 +540,14 @@ def doResizeDisk(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateSnapshot(argv, arglist):
+def doDisableAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateSnapshot", g_param[OptionsDefine.Version])
+        show_help("DisableAutoScalingGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DiskId": Utils.try_to_json(argv, "--DiskId"),
-        "SnapshotName": Utils.try_to_json(argv, "--SnapshotName"),
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -679,12 +558,12 @@ def doCreateSnapshot(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateSnapshotRequest()
+    model = models.DisableAutoScalingGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateSnapshot(model)
+    rsp = client.DisableAutoScalingGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -694,17 +573,17 @@ def doCreateSnapshot(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquiryPriceRenewDisks(argv, arglist):
+def doDescribeLaunchConfigurations(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("InquiryPriceRenewDisks", g_param[OptionsDefine.Version])
+        show_help("DescribeLaunchConfigurations", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-        "DiskChargePrepaids": Utils.try_to_json(argv, "--DiskChargePrepaids"),
-        "NewDeadline": Utils.try_to_json(argv, "--NewDeadline"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "LaunchConfigurationIds": Utils.try_to_json(argv, "--LaunchConfigurationIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -715,12 +594,112 @@ def doInquiryPriceRenewDisks(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InquiryPriceRenewDisksRequest()
+    model = models.DescribeLaunchConfigurationsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.InquiryPriceRenewDisks(model)
+    rsp = client.DescribeLaunchConfigurations(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAccountLimits(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAccountLimits", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAccountLimitsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAccountLimits(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAttachInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AttachInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AttachInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AttachInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDesiredCapacity(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDesiredCapacity", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDesiredCapacityRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDesiredCapacity(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -731,50 +710,49 @@ def doInquiryPriceRenewDisks(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20170312": cbs_client_v20170312,
+    "v20180419": as_client_v20180419,
 
 }
 
 MODELS_MAP = {
-    "v20170312": models_v20170312,
+    "v20180419": models_v20180419,
 
 }
 
 ACTION_MAP = {
-    "CreateDisks": doCreateDisks,
-    "DetachDisks": doDetachDisks,
-    "DescribeDiskConfigQuota": doDescribeDiskConfigQuota,
-    "ModifyDiskAttributes": doModifyDiskAttributes,
-    "DeleteSnapshots": doDeleteSnapshots,
-    "RenewDisk": doRenewDisk,
-    "DescribeInstancesDiskNum": doDescribeInstancesDiskNum,
-    "InquiryPriceCreateDisks": doInquiryPriceCreateDisks,
-    "InquiryPriceResizeDisk": doInquiryPriceResizeDisk,
-    "ApplySnapshot": doApplySnapshot,
-    "DescribeDiskOperationLogs": doDescribeDiskOperationLogs,
-    "ModifySnapshotAttribute": doModifySnapshotAttribute,
-    "TerminateDisks": doTerminateDisks,
-    "DescribeDisks": doDescribeDisks,
-    "ModifyDisksRenewFlag": doModifyDisksRenewFlag,
-    "DescribeSnapshots": doDescribeSnapshots,
-    "AttachDisks": doAttachDisks,
-    "ResizeDisk": doResizeDisk,
-    "CreateSnapshot": doCreateSnapshot,
-    "InquiryPriceRenewDisks": doInquiryPriceRenewDisks,
+    "RemoveInstances": doRemoveInstances,
+    "CreateAutoScalingGroup": doCreateAutoScalingGroup,
+    "DeleteScheduledAction": doDeleteScheduledAction,
+    "DetachInstances": doDetachInstances,
+    "CreateScheduledAction": doCreateScheduledAction,
+    "ModifyScheduledAction": doModifyScheduledAction,
+    "CreateLaunchConfiguration": doCreateLaunchConfiguration,
+    "ModifyAutoScalingGroup": doModifyAutoScalingGroup,
+    "EnableAutoScalingGroup": doEnableAutoScalingGroup,
+    "DescribeAutoScalingInstances": doDescribeAutoScalingInstances,
+    "DescribeAutoScalingGroups": doDescribeAutoScalingGroups,
+    "DescribeScheduledActions": doDescribeScheduledActions,
+    "DeleteAutoScalingGroup": doDeleteAutoScalingGroup,
+    "DeleteLaunchConfiguration": doDeleteLaunchConfiguration,
+    "DisableAutoScalingGroup": doDisableAutoScalingGroup,
+    "DescribeLaunchConfigurations": doDescribeLaunchConfigurations,
+    "DescribeAccountLimits": doDescribeAccountLimits,
+    "AttachInstances": doAttachInstances,
+    "ModifyDesiredCapacity": doModifyDesiredCapacity,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20170312.version,
+    v20180419.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20170312.version.replace('-', ''): {"help": v20170312_help.INFO,"desc": v20170312_help.DESC},
+     'v' + v20180419.version.replace('-', ''): {"help": v20180419_help.INFO,"desc": v20180419_help.DESC},
 
 }
 
 
-def cbs_action(argv, arglist):
+def as_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -790,7 +768,7 @@ def cbs_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "cbs", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "as", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -811,7 +789,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("cbs", cbs_action)
+    cmd = NiceCommand("as", as_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -870,11 +848,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["cbs"][OptionsDefine.Version]
+            version = config["as"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["cbs"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["as"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -891,7 +869,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cbs", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "as", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -901,7 +879,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["cbs"]["version"]
+        version = profile["as"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

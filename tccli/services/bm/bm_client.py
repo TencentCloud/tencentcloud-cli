@@ -18,15 +18,16 @@ from tccli.services.bm import v20180423
 from tccli.services.bm.v20180423 import help as v20180423_help
 
 
-def doRepairTaskControl(argv, arglist):
+def doUnbindPsaTag(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RepairTaskControl", g_param[OptionsDefine.Version])
+        show_help("UnbindPsaTag", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-        "Operate": Utils.try_to_json(argv, "--Operate"),
+        "PsaId": Utils.try_to_json(argv, "--PsaId"),
+        "TagKey": Utils.try_to_json(argv, "--TagKey"),
+        "TagValue": Utils.try_to_json(argv, "--TagValue"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -40,9 +41,220 @@ def doRepairTaskControl(argv, arglist):
     client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RepairTaskControlRequest()
+    model = models.UnbindPsaTagRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RepairTaskControl(model)
+    rsp = client.UnbindPsaTag(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyPsaRegulation(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyPsaRegulation", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PsaId": Utils.try_to_json(argv, "--PsaId"),
+        "PsaName": Utils.try_to_json(argv, "--PsaName"),
+        "RepairLimit": Utils.try_to_json(argv, "--RepairLimit"),
+        "PsaDescription": Utils.try_to_json(argv, "--PsaDescription"),
+        "TaskTypeIds": Utils.try_to_json(argv, "--TaskTypeIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyPsaRegulationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyPsaRegulation(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePsaRegulations(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePsaRegulations", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "PsaIds": Utils.try_to_json(argv, "--PsaIds"),
+        "PsaNames": Utils.try_to_json(argv, "--PsaNames"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "Order": Utils.try_to_json(argv, "--Order"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePsaRegulationsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePsaRegulations(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeRepairTaskConstant(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRepairTaskConstant", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRepairTaskConstantRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRepairTaskConstant(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doBindPsaTag(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("BindPsaTag", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PsaId": Utils.try_to_json(argv, "--PsaId"),
+        "TagKey": Utils.try_to_json(argv, "--TagKey"),
+        "TagValue": Utils.try_to_json(argv, "--TagValue"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BindPsaTagRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.BindPsaTag(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskOperationLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskOperationLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "Order": Utils.try_to_json(argv, "--Order"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskOperationLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskOperationLog(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeletePsaRegulation(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeletePsaRegulation", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PsaId": Utils.try_to_json(argv, "--PsaId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeletePsaRegulationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeletePsaRegulation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -95,13 +307,15 @@ def doDescribeTaskInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRepairTaskConstant(argv, arglist):
+def doRepairTaskControl(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeRepairTaskConstant", g_param[OptionsDefine.Version])
+        show_help("RepairTaskControl", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "Operate": Utils.try_to_json(argv, "--Operate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -115,9 +329,9 @@ def doDescribeRepairTaskConstant(argv, arglist):
     client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRepairTaskConstantRequest()
+    model = models.RepairTaskControlRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeRepairTaskConstant(model)
+    rsp = client.RepairTaskControl(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -127,16 +341,17 @@ def doDescribeRepairTaskConstant(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTaskOperationLog(argv, arglist):
+def doCreatePsaRegulation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTaskOperationLog", g_param[OptionsDefine.Version])
+        show_help("CreatePsaRegulation", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "Order": Utils.try_to_json(argv, "--Order"),
+        "PsaName": Utils.try_to_json(argv, "--PsaName"),
+        "TaskTypeIds": Utils.try_to_json(argv, "--TaskTypeIds"),
+        "RepairLimit": Utils.try_to_json(argv, "--RepairLimit"),
+        "PsaDescription": Utils.try_to_json(argv, "--PsaDescription"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -150,9 +365,9 @@ def doDescribeTaskOperationLog(argv, arglist):
     client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskOperationLogRequest()
+    model = models.CreatePsaRegulationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskOperationLog(model)
+    rsp = client.CreatePsaRegulation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -173,10 +388,16 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "RepairTaskControl": doRepairTaskControl,
-    "DescribeTaskInfo": doDescribeTaskInfo,
+    "UnbindPsaTag": doUnbindPsaTag,
+    "ModifyPsaRegulation": doModifyPsaRegulation,
+    "DescribePsaRegulations": doDescribePsaRegulations,
     "DescribeRepairTaskConstant": doDescribeRepairTaskConstant,
+    "BindPsaTag": doBindPsaTag,
     "DescribeTaskOperationLog": doDescribeTaskOperationLog,
+    "DeletePsaRegulation": doDeletePsaRegulation,
+    "DescribeTaskInfo": doDescribeTaskInfo,
+    "RepairTaskControl": doRepairTaskControl,
+    "CreatePsaRegulation": doCreatePsaRegulation,
 
 }
 

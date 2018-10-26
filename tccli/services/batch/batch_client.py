@@ -575,6 +575,9 @@ def doModifyComputeEnv(argv, arglist):
     param = {
         "EnvId": Utils.try_to_json(argv, "--EnvId"),
         "DesiredComputeNodeCount": Utils.try_to_json(argv, "--DesiredComputeNodeCount"),
+        "EnvName": Utils.try_to_json(argv, "--EnvName"),
+        "EnvDescription": Utils.try_to_json(argv, "--EnvDescription"),
+        "EnvData": Utils.try_to_json(argv, "--EnvData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
