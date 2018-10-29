@@ -30,6 +30,8 @@ def doInitOralProcess(argv, arglist):
         "WorkMode": Utils.try_to_json(argv, "--WorkMode"),
         "EvalMode": Utils.try_to_json(argv, "--EvalMode"),
         "ScoreCoeff": Utils.try_to_json(argv, "--ScoreCoeff"),
+        "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
+        "IsLongLifeSession": Utils.try_to_json(argv, "--IsLongLifeSession"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -69,6 +71,7 @@ def doTransmitOralProcess(argv, arglist):
         "UserVoiceData": Utils.try_to_json(argv, "--UserVoiceData"),
         "SessionId": Utils.try_to_json(argv, "--SessionId"),
         "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
+        "IsLongLifeSession": Utils.try_to_json(argv, "--IsLongLifeSession"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
