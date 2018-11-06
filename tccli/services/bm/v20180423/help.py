@@ -18,6 +18,47 @@ INFO = {
     ],
     "desc": "解除标签与预授权规则的绑定"
   },
+  "CreateSpotDevice": {
+    "params": [
+      {
+        "name": "Zone",
+        "desc": "可用区名称。如ap-guangzhou-bls-1, 通过DescribeRegions获取"
+      },
+      {
+        "name": "ComputeType",
+        "desc": "计算单元类型"
+      },
+      {
+        "name": "OsTypeId",
+        "desc": "操作系统类型ID"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网ID"
+      },
+      {
+        "name": "GoodsNum",
+        "desc": "购买的计算单元个数"
+      },
+      {
+        "name": "SpotStrategy",
+        "desc": "出价策略。可取值为SpotWithPriceLimit和SpotAsPriceGo。SpotWithPriceLimit，用户设置价格上限，需要传SpotPriceLimit参数， 如果市场价高于用户的指定价格，则购买不成功;  SpotAsPriceGo 是随市场价的策略。"
+      },
+      {
+        "name": "SpotPriceLimit",
+        "desc": "用户设置的价格。当为SpotWithPriceLimit竞价策略时有效"
+      },
+      {
+        "name": "Passwd",
+        "desc": "设置竞价实例密码。可选参数，没有指定会生成随机密码"
+      }
+    ],
+    "desc": "创建黑石竞价实例"
+  },
   "ModifyPsaRegulation": {
     "params": [
       {
@@ -76,6 +117,83 @@ INFO = {
     ],
     "desc": "获取预授权规则列表"
   },
+  "DescribeDevices": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
+      },
+      {
+        "name": "DeviceClassCode",
+        "desc": "机型ID，通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/17602)查询"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "设备ID数组"
+      },
+      {
+        "name": "WanIps",
+        "desc": "外网IP数组"
+      },
+      {
+        "name": "LanIps",
+        "desc": "内网IP数组"
+      },
+      {
+        "name": "Alias",
+        "desc": "设备名称"
+      },
+      {
+        "name": "VagueIp",
+        "desc": "模糊IP查询"
+      },
+      {
+        "name": "DeadlineStartTime",
+        "desc": "设备到期时间查询的起始时间"
+      },
+      {
+        "name": "DeadlineEndTime",
+        "desc": "设备到期时间查询的结束时间"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "自动续费标志 0:不自动续费，1:自动续费"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络唯一ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网唯一ID"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签列表"
+      },
+      {
+        "name": "DeviceType",
+        "desc": "设备类型，取值有: compute(计算型), standard(标准型), storage(存储型) 等"
+      },
+      {
+        "name": "IsLuckyDevice",
+        "desc": "竞价实例机器的过滤。如果未指定此参数，则不做过滤。0: 查询非竞价实例的机器; 1: 查询竞价实例的机器。"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段"
+      },
+      {
+        "name": "Order",
+        "desc": "排序方式，取值：0:增序(默认)，1:降序"
+      }
+    ],
+    "desc": "查询物理服务器，可以按照实例，业务IP等过滤"
+  },
   "DescribeRepairTaskConstant": {
     "params": [],
     "desc": "维修任务配置获取"
@@ -122,6 +240,23 @@ INFO = {
       }
     ],
     "desc": "删除预授权规则"
+  },
+  "CreateUserCmd": {
+    "params": [
+      {
+        "name": "Alias",
+        "desc": "用户自定义脚本的名称"
+      },
+      {
+        "name": "OsType",
+        "desc": "命令适用的操作系统类型，取值linux或xserver"
+      },
+      {
+        "name": "Content",
+        "desc": "脚本内容，必须经过base64编码"
+      }
+    ],
+    "desc": "创建自定义脚本"
   },
   "DescribeTaskInfo": {
     "params": [

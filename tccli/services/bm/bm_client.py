@@ -53,6 +53,47 @@ def doUnbindPsaTag(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateSpotDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateSpotDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "ComputeType": Utils.try_to_json(argv, "--ComputeType"),
+        "OsTypeId": Utils.try_to_json(argv, "--OsTypeId"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
+        "SpotStrategy": Utils.try_to_json(argv, "--SpotStrategy"),
+        "SpotPriceLimit": Utils.try_to_json(argv, "--SpotPriceLimit"),
+        "Passwd": Utils.try_to_json(argv, "--Passwd"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateSpotDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateSpotDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyPsaRegulation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -120,6 +161,56 @@ def doDescribePsaRegulations(argv, arglist):
     model = models.DescribePsaRegulationsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePsaRegulations(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDevices(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDevices", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "DeviceClassCode": Utils.try_to_json(argv, "--DeviceClassCode"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "WanIps": Utils.try_to_json(argv, "--WanIps"),
+        "LanIps": Utils.try_to_json(argv, "--LanIps"),
+        "Alias": Utils.try_to_json(argv, "--Alias"),
+        "VagueIp": Utils.try_to_json(argv, "--VagueIp"),
+        "DeadlineStartTime": Utils.try_to_json(argv, "--DeadlineStartTime"),
+        "DeadlineEndTime": Utils.try_to_json(argv, "--DeadlineEndTime"),
+        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "DeviceType": Utils.try_to_json(argv, "--DeviceType"),
+        "IsLuckyDevice": Utils.try_to_json(argv, "--IsLuckyDevice"),
+        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "Order": Utils.try_to_json(argv, "--Order"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDevicesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDevices(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -264,6 +355,41 @@ def doDeletePsaRegulation(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateUserCmd(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateUserCmd", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Alias": Utils.try_to_json(argv, "--Alias"),
+        "OsType": Utils.try_to_json(argv, "--OsType"),
+        "Content": Utils.try_to_json(argv, "--Content"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateUserCmdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateUserCmd(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeTaskInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -389,12 +515,15 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "UnbindPsaTag": doUnbindPsaTag,
+    "CreateSpotDevice": doCreateSpotDevice,
     "ModifyPsaRegulation": doModifyPsaRegulation,
     "DescribePsaRegulations": doDescribePsaRegulations,
+    "DescribeDevices": doDescribeDevices,
     "DescribeRepairTaskConstant": doDescribeRepairTaskConstant,
     "BindPsaTag": doBindPsaTag,
     "DescribeTaskOperationLog": doDescribeTaskOperationLog,
     "DeletePsaRegulation": doDeletePsaRegulation,
+    "CreateUserCmd": doCreateUserCmd,
     "DescribeTaskInfo": doDescribeTaskInfo,
     "RepairTaskControl": doRepairTaskControl,
     "CreatePsaRegulation": doCreatePsaRegulation,
