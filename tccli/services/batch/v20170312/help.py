@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 DESC = "batch-2017-03-12"
 INFO = {
-  "DescribeComputeEnv": {
+  "DescribeCvmZoneInstanceConfigInfos": {
     "params": [
       {
-        "name": "EnvId",
-        "desc": "计算环境ID"
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>\n<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。</li>\n<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 ( POSTPAID_BY_HOUR：表示后付费，即按量计费机型 | SPOTPAID：表示竞价付费机型。 )  </li>"
       }
     ],
-    "desc": "用于查询计算环境的详细信息"
+    "desc": "获取批量计算可用区机型配置信息"
   },
   "CreateTaskTemplate": {
     "params": [
@@ -53,7 +53,7 @@ INFO = {
     "params": [
       {
         "name": "Filters",
-        "desc": "过滤条件"
+        "desc": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>"
       }
     ],
     "desc": "查看可用的CVM机型配置信息"
@@ -83,7 +83,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件"
+        "desc": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>"
       },
       {
         "name": "Offset",
@@ -95,6 +95,31 @@ INFO = {
       }
     ],
     "desc": "用于查看计算环境列表"
+  },
+  "DescribeTaskLogs": {
+    "params": [
+      {
+        "name": "JobId",
+        "desc": "作业ID"
+      },
+      {
+        "name": "TaskName",
+        "desc": "任务名称"
+      },
+      {
+        "name": "TaskInstanceIndexes",
+        "desc": "任务实例集合"
+      },
+      {
+        "name": "Offset",
+        "desc": "起始任务实例"
+      },
+      {
+        "name": "Limit",
+        "desc": "最大任务实例数"
+      }
+    ],
+    "desc": "用于获取任务多个实例标准输出和标准错误日志。"
   },
   "TerminateJob": {
     "params": [
@@ -130,14 +155,14 @@ INFO = {
     ],
     "desc": "用于查询指定任务的详细信息，包括任务内部的任务实例信息。"
   },
-  "DescribeCvmZoneInstanceConfigInfos": {
+  "DescribeComputeEnv": {
     "params": [
       {
-        "name": "Filters",
-        "desc": "过滤条件"
+        "name": "EnvId",
+        "desc": "计算环境ID"
       }
     ],
-    "desc": "获取批量计算可用区机型配置信息"
+    "desc": "用于查询计算环境的详细信息"
   },
   "DescribeJob": {
     "params": [
@@ -164,7 +189,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件"
+        "desc": "过滤条件\n<li> compute-node-id - String - 是否必填：否 -（过滤条件）按照计算节点ID过滤。</li>"
       }
     ],
     "desc": "用于查询计算环境的活动信息"
@@ -190,7 +215,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件"
+        "desc": "过滤条件\n<li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>"
       },
       {
         "name": "Offset",
@@ -318,7 +343,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件"
+        "desc": "过滤条件\n<li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>\n<li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>\n<li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>"
       },
       {
         "name": "Offset",

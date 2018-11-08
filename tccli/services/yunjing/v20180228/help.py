@@ -14,14 +14,69 @@ INFO = {
     ],
     "desc": "本接口(TrustMalwares)将被识别木马文件设为信任。"
   },
-  "RecoverMalwares": {
+  "DescribeComponentStatistics": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\nComponentName - String - 是否必填：否 - 组件名称"
+      }
+    ],
+    "desc": "本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。"
+  },
+  "DescribeHistoryAccounts": {
+    "params": [
+      {
+        "name": "Uuid",
+        "desc": "云镜客户端唯一Uuid。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号名</li>"
+      }
+    ],
+    "desc": "本接口 (DescribeHistoryAccounts) 用于获取帐号变更历史列表数据。"
+  },
+  "DeleteMalwares": {
     "params": [
       {
         "name": "Ids",
-        "desc": "木马Id数组,单次最大删除不能超过200条"
+        "desc": "木马记录ID数组"
       }
     ],
-    "desc": "本接口（RecoverMalwares）用于批量恢复已经被隔离的木马文件。"
+    "desc": "本接口 (DeleteMalwares) 用于删除木马记录。"
+  },
+  "DescribeWeeklyReportBruteAttacks": {
+    "params": [
+      {
+        "name": "BeginDate",
+        "desc": "专业周报开始时间。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      }
+    ],
+    "desc": "本接口 (DescribeWeeklyReportBruteAttacks) 用于获取专业周报密码破解数据。"
   },
   "DescribeBruteAttacks": {
     "params": [
@@ -44,6 +99,23 @@ INFO = {
     ],
     "desc": "本接口{DescribeBruteAttacks}用于获取暴力破解事件列表。"
   },
+  "DescribeWeeklyReportVuls": {
+    "params": [
+      {
+        "name": "BeginDate",
+        "desc": "专业版周报开始时间。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      }
+    ],
+    "desc": "本接口 (DescribeWeeklyReportVuls) 用于专业版周报漏洞数据。\n"
+  },
   "UntrustMalwares": {
     "params": [
       {
@@ -52,6 +124,57 @@ INFO = {
       }
     ],
     "desc": "本接口（UntrustMalwares）用于取消信任木马文件。"
+  },
+  "DescribeMachines": {
+    "params": [
+      {
+        "name": "MachineType",
+        "desc": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>"
+      },
+      {
+        "name": "MachineRegion",
+        "desc": "机器所属地域。如：ap-guangzhou，ap-shanghai"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询"
+      }
+    ],
+    "desc": "本接口 (DescribeMachines) 用于获取区域主机列表。"
+  },
+  "DescribeWeeklyReportMalwares": {
+    "params": [
+      {
+        "name": "BeginDate",
+        "desc": "专业周报开始时间。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      }
+    ],
+    "desc": "本接口 (DescribeWeeklyReportMalwares) 用于获取专业周报木马数据。"
+  },
+  "DescribeComponentInfo": {
+    "params": [
+      {
+        "name": "ComponentId",
+        "desc": "组件ID。"
+      }
+    ],
+    "desc": "本接口 (DescribeComponentInfo) 用于获取组件信息数据。"
   },
   "DescribeVulInfo": {
     "params": [
@@ -75,11 +198,24 @@ INFO = {
     ],
     "desc": "本接口（DeleteUsualLoginPlaces）用于删除常用登录地。"
   },
-  "DescribeVuls": {
+  "DeleteNonlocalLoginPlaces": {
     "params": [
       {
-        "name": "VulType",
-        "desc": "漏洞类型。\n<li>WEB：Web应用漏洞</li>\n<li>SYSTEM：系统组件漏洞</li>\n<li>BASELINE：安全基线</li>"
+        "name": "Ids",
+        "desc": "异地登录事件Id数组。"
+      }
+    ],
+    "desc": "本接口 (DeleteNonlocalLoginPlaces) 用于删除异地登录记录。"
+  },
+  "DescribeOpenPorts": {
+    "params": [
+      {
+        "name": "Uuid",
+        "desc": "云镜客户端唯一Uuid。Port和Uuid必填其一，使用Uuid表示，查询该主机列表信息。"
+      },
+      {
+        "name": "Port",
+        "desc": "开放端口号。Port和Uuid必填其一，使用Port表示查询该端口的列表信息。"
       },
       {
         "name": "Limit",
@@ -91,10 +227,10 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | FIXED：已修复）\n\nStatus过滤条件值只能取其一，不能是“或”逻辑。"
+        "desc": "过滤条件。\n<li>Port - Uint64 - 是否必填：否 - 端口号</li>\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>"
       }
     ],
-    "desc": "本接口 (DescribeVuls) 用于获取漏洞列表数据。"
+    "desc": "本接口 (DescribeOpenPorts) 用于获取端口列表数据。\n"
   },
   "MisAlarmNonlocalLoginPlaces": {
     "params": [
@@ -127,15 +263,6 @@ INFO = {
     ],
     "desc": "本接口（SeparateMalwares）用于隔离木马。"
   },
-  "DeleteMalwares": {
-    "params": [
-      {
-        "name": "Ids",
-        "desc": "木马记录ID数组"
-      }
-    ],
-    "desc": "本接口 (DeleteMalwares) 用于删除木马记录。"
-  },
   "DescribeNonlocalLoginPlaces": {
     "params": [
       {
@@ -166,6 +293,15 @@ INFO = {
     ],
     "desc": "本接口（DeleteMachine）用于卸载云镜客户端。"
   },
+  "DescribeProcessTaskStatus": {
+    "params": [
+      {
+        "name": "Uuid",
+        "desc": "云镜客户端唯一Uuid。"
+      }
+    ],
+    "desc": "本接口 (DescribeProcessTaskStatus) 用于获取实时拉取进程任务状态。"
+  },
   "DescribeOverviewStatistics": {
     "params": [],
     "desc": "本接口用于（DescribeOverviewStatistics）获取概览统计数据。"
@@ -178,6 +314,45 @@ INFO = {
       }
     ],
     "desc": "此接口（DescribeUsualLoginPlaces）用于查询常用登录地。"
+  },
+  "DescribeProcessStatistics": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>ProcessName - String - 是否必填：否 - 进程名</li>"
+      }
+    ],
+    "desc": "本接口 (DescribeProcessStatistics) 用于获取进程统计列表数据。"
+  },
+  "DescribeWeeklyReportInfo": {
+    "params": [
+      {
+        "name": "BeginDate",
+        "desc": "专业周报开始时间。"
+      }
+    ],
+    "desc": "本接口 (DescribeWeeklyReportInfo) 用于获取专业周报详情数据。"
+  },
+  "DescribeSecurityDynamics": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      }
+    ],
+    "desc": "本接口 (DescribeSecurityDynamics) 用于获取安全事件消息数据。"
   },
   "RescanImpactedHost": {
     "params": [
@@ -218,14 +393,134 @@ INFO = {
     ],
     "desc": "本接口 (ModifyAutoOpenProVersionConfig) 用于设置新增主机自动开通专业版配置。"
   },
-  "DeleteNonlocalLoginPlaces": {
+  "DescribeSecurityTrends": {
+    "params": [
+      {
+        "name": "BeginDate",
+        "desc": "开始时间。"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束时间。"
+      }
+    ],
+    "desc": "本接口 (DescribeSecurityTrends) 用于获取安全事件统计数据。"
+  },
+  "RecoverMalwares": {
     "params": [
       {
         "name": "Ids",
-        "desc": "异地登录事件Id数组。"
+        "desc": "木马Id数组,单次最大删除不能超过200条"
       }
     ],
-    "desc": "本接口 (DeleteNonlocalLoginPlaces) 用于删除异地登录记录。"
+    "desc": "本接口（RecoverMalwares）用于批量恢复已经被隔离的木马文件。"
+  },
+  "CloseProVersion": {
+    "params": [
+      {
+        "name": "Quuid",
+        "desc": "主机唯一标识Uuid。\n黑石的InstanceId，CVM的Uuid"
+      }
+    ],
+    "desc": "本接口 (CloseProVersion) 用于关闭专业版。"
+  },
+  "DescribeWeeklyReportNonlocalLoginPlaces": {
+    "params": [
+      {
+        "name": "BeginDate",
+        "desc": "专业周报开始时间。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      }
+    ],
+    "desc": "本接口 (DescribeWeeklyReportNonlocalLoginPlaces) 用于获取专业周报异地登录数据。"
+  },
+  "DescribeAccounts": {
+    "params": [
+      {
+        "name": "Uuid",
+        "desc": "云镜客户端唯一Uuid。Username和Uuid必填其一，使用Uuid表示，查询该主机下列表信息。"
+      },
+      {
+        "name": "Username",
+        "desc": "云镜客户端唯一Uuid。Username和Uuid必填其一，使用Username表示，查询该用户名下列表信息。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号名</li>\n<li>Privilege - String - 是否必填：否 - 帐号类型（ORDINARY: 普通帐号 | SUPPER: 超级管理员帐号）</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>"
+      }
+    ],
+    "desc": "本接口 (DescribeAccounts) 用于获取帐号列表数据。"
+  },
+  "DescribeVuls": {
+    "params": [
+      {
+        "name": "VulType",
+        "desc": "漏洞类型。\n<li>WEB：Web应用漏洞</li>\n<li>SYSTEM：系统组件漏洞</li>\n<li>BASELINE：安全基线</li>"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | FIXED：已修复）\n\nStatus过滤条件值只能取其一，不能是“或”逻辑。"
+      }
+    ],
+    "desc": "本接口 (DescribeVuls) 用于获取漏洞列表数据。"
+  },
+  "DescribeWeeklyReports": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      }
+    ],
+    "desc": "本接口 (DescribeWeeklyReports) 用于获取周报列表数据。"
+  },
+  "DescribeProVersionInfo": {
+    "params": [],
+    "desc": "本接口 (DescribeProVersionInfo) 用于获取专业版信息。"
+  },
+  "IgnoreImpactedHosts": {
+    "params": [
+      {
+        "name": "Ids",
+        "desc": "漏洞ID数组。"
+      }
+    ],
+    "desc": "本接口 (IngoreImpactedHosts) 用于忽略漏洞。"
+  },
+  "DeleteBruteAttacks": {
+    "params": [
+      {
+        "name": "Ids",
+        "desc": "暴力破解事件Id数组。"
+      }
+    ],
+    "desc": "本接口 (DeleteBruteAttacks) 用于删除暴力破解记录。"
   },
   "DescribeAgentVuls": {
     "params": [
@@ -252,36 +547,31 @@ INFO = {
     ],
     "desc": "本接口 (DescribeAgentVuls) 用于获取主机的漏洞列表。"
   },
-  "DeleteBruteAttacks": {
+  "DescribeAccountStatistics": {
     "params": [
       {
-        "name": "Ids",
-        "desc": "暴力破解事件Id数组。"
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号用户名</li>"
       }
     ],
-    "desc": "本接口 (DeleteBruteAttacks) 用于删除暴力破解记录。"
+    "desc": "本接口 (DescribeAccountStatistics) 用于获取帐号统计列表数据。"
   },
-  "DescribeProVersionInfo": {
-    "params": [],
-    "desc": "本接口 (DescribeProVersionInfo) 用于获取专业版信息。"
-  },
-  "IgnoreImpactedHosts": {
+  "CreateProcessTask": {
     "params": [
       {
-        "name": "Ids",
-        "desc": "漏洞ID数组。"
+        "name": "Uuid",
+        "desc": "云镜客户端唯一Uuid。"
       }
     ],
-    "desc": "本接口 (IngoreImpactedHosts) 用于忽略漏洞。"
-  },
-  "CloseProVersion": {
-    "params": [
-      {
-        "name": "Quuid",
-        "desc": "主机唯一标识Uuid。\n黑石的InstanceId，CVM的Uuid"
-      }
-    ],
-    "desc": "本接口 (CloseProVersion) 用于关闭专业版。"
+    "desc": "本接口 (CreateProcessTask) 用于创建实时拉取进程任务。"
   },
   "DescribeMachineInfo": {
     "params": [
@@ -296,16 +586,8 @@ INFO = {
     "params": [],
     "desc": "本接口 (DescribeAlarmAttribute) 用于获取告警设置。"
   },
-  "DescribeMachines": {
+  "DescribeOpenPortStatistics": {
     "params": [
-      {
-        "name": "MachineType",
-        "desc": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>"
-      },
-      {
-        "name": "MachineRegion",
-        "desc": "机器所属地域。如：ap-guangzhou，ap-shanghai"
-      },
       {
         "name": "Limit",
         "desc": "返回数量，默认为10，最大值为100。"
@@ -316,10 +598,10 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询"
+        "desc": "过滤条件。\n<li>Port - Uint64 - 是否必填：否 - 端口号</li>"
       }
     ],
-    "desc": "本接口 (DescribeMachines) 用于获取区域主机列表。"
+    "desc": "本接口 (DescribeOpenPortStatistics) 用于获取端口统计列表。"
   },
   "CreateUsualLoginPlaces": {
     "params": [
@@ -333,6 +615,56 @@ INFO = {
       }
     ],
     "desc": "此接口（CreateUsualLoginPlaces）用于添加常用登录地。"
+  },
+  "DescribeComponents": {
+    "params": [
+      {
+        "name": "Uuid",
+        "desc": "云镜客户端唯一Uuid。Uuid和ComponentId必填其一，使用Uuid表示，查询该主机列表信息。"
+      },
+      {
+        "name": "ComponentId",
+        "desc": "组件ID。Uuid和ComponentId必填其一，使用ComponentId表示，查询该组件列表信息。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>ComponentVersion - String - 是否必填：否 - 组件版本号</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>"
+      }
+    ],
+    "desc": "本接口 (DescribeComponents) 用于获取组件列表数据。"
+  },
+  "DescribeProcesses": {
+    "params": [
+      {
+        "name": "Uuid",
+        "desc": "云镜客户端唯一Uuid。Uuid和ProcessName必填其一，使用Uuid表示，查询该主机列表信息。"
+      },
+      {
+        "name": "ProcessName",
+        "desc": "进程名。Uuid和ProcessName必填其一，使用ProcessName表示，查询该进程列表信息。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>"
+      }
+    ],
+    "desc": "本接口 (DescribeProcesses) 用于获取进程列表数据。"
   },
   "DescribeMalwares": {
     "params": [

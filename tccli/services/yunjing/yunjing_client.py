@@ -116,6 +116,77 @@ def doRecoverMalwares(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeComponentStatistics(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeComponentStatistics", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeComponentStatisticsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeComponentStatistics(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeHistoryAccounts(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeHistoryAccounts", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHistoryAccountsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeHistoryAccounts(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteMalwares(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -140,6 +211,41 @@ def doDeleteMalwares(argv, arglist):
     model = models.DeleteMalwaresRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteMalwares(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWeeklyReportBruteAttacks(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWeeklyReportBruteAttacks", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWeeklyReportBruteAttacksRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWeeklyReportBruteAttacks(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -185,6 +291,41 @@ def doDescribeBruteAttacks(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWeeklyReportVuls(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWeeklyReportVuls", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWeeklyReportVulsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWeeklyReportVuls(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doUntrustMalwares(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -209,6 +350,74 @@ def doUntrustMalwares(argv, arglist):
     model = models.UntrustMalwaresRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UntrustMalwares(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWeeklyReportMalwares(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWeeklyReportMalwares", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWeeklyReportMalwaresRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWeeklyReportMalwares(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeComponentInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeComponentInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ComponentId": Utils.try_to_json(argv, "--ComponentId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeComponentInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeComponentInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -318,6 +527,43 @@ def doDeleteNonlocalLoginPlaces(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeOpenPorts(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeOpenPorts", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Port": Utils.try_to_json(argv, "--Port"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeOpenPortsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeOpenPorts(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doMisAlarmNonlocalLoginPlaces(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -351,15 +597,16 @@ def doMisAlarmNonlocalLoginPlaces(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAlarmAttribute(argv, arglist):
+def doDescribeOpenPortStatistics(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyAlarmAttribute", g_param[OptionsDefine.Version])
+        show_help("DescribeOpenPortStatistics", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Attribute": Utils.try_to_json(argv, "--Attribute"),
-        "Value": Utils.try_to_json(argv, "--Value"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -373,9 +620,9 @@ def doModifyAlarmAttribute(argv, arglist):
     client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAlarmAttributeRequest()
+    model = models.DescribeOpenPortStatisticsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyAlarmAttribute(model)
+    rsp = client.DescribeOpenPortStatistics(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -487,6 +734,39 @@ def doDeleteMachine(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeProcessTaskStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeProcessTaskStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeProcessTaskStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeProcessTaskStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeOverviewStatistics(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -543,6 +823,108 @@ def doDescribeUsualLoginPlaces(argv, arglist):
     model = models.DescribeUsualLoginPlacesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeUsualLoginPlaces(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeProcessStatistics(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeProcessStatistics", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeProcessStatisticsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeProcessStatistics(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWeeklyReportInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWeeklyReportInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWeeklyReportInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWeeklyReportInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSecurityDynamics(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSecurityDynamics", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityDynamicsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSecurityDynamics(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -654,17 +1036,15 @@ def doModifyAutoOpenProVersionConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVuls(argv, arglist):
+def doDescribeSecurityTrends(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeVuls", g_param[OptionsDefine.Version])
+        show_help("DescribeSecurityTrends", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VulType": Utils.try_to_json(argv, "--VulType"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "EndDate": Utils.try_to_json(argv, "--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -678,9 +1058,9 @@ def doDescribeVuls(argv, arglist):
     client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVulsRequest()
+    model = models.DescribeSecurityTrendsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeVuls(model)
+    rsp = client.DescribeSecurityTrends(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -727,14 +1107,14 @@ def doDescribeAgentVuls(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCloseProVersion(argv, arglist):
+def doDeleteBruteAttacks(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CloseProVersion", g_param[OptionsDefine.Version])
+        show_help("DeleteBruteAttacks", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Quuid": Utils.try_to_json(argv, "--Quuid"),
+        "Ids": Utils.try_to_json(argv, "--Ids"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -748,9 +1128,151 @@ def doCloseProVersion(argv, arglist):
     client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CloseProVersionRequest()
+    model = models.DeleteBruteAttacksRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CloseProVersion(model)
+    rsp = client.DeleteBruteAttacks(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWeeklyReportNonlocalLoginPlaces(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWeeklyReportNonlocalLoginPlaces", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWeeklyReportNonlocalLoginPlacesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWeeklyReportNonlocalLoginPlaces(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAccounts(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAccounts", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Username": Utils.try_to_json(argv, "--Username"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAccountsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAccounts(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVuls(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVuls", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VulType": Utils.try_to_json(argv, "--VulType"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVulsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVuls(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWeeklyReports(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWeeklyReports", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWeeklyReportsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWeeklyReports(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -825,14 +1347,14 @@ def doIgnoreImpactedHosts(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteBruteAttacks(argv, arglist):
+def doCloseProVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteBruteAttacks", g_param[OptionsDefine.Version])
+        show_help("CloseProVersion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Ids": Utils.try_to_json(argv, "--Ids"),
+        "Quuid": Utils.try_to_json(argv, "--Quuid"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -846,9 +1368,111 @@ def doDeleteBruteAttacks(argv, arglist):
     client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteBruteAttacksRequest()
+    model = models.CloseProVersionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteBruteAttacks(model)
+    rsp = client.CloseProVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAccountStatistics(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAccountStatistics", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAccountStatisticsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAccountStatistics(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateProcessTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateProcessTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateProcessTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateProcessTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyAlarmAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyAlarmAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Attribute": Utils.try_to_json(argv, "--Attribute"),
+        "Value": Utils.try_to_json(argv, "--Value"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAlarmAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyAlarmAttribute(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -994,6 +1618,80 @@ def doCreateUsualLoginPlaces(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeComponents(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeComponents", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "ComponentId": Utils.try_to_json(argv, "--ComponentId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeComponentsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeComponents(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeProcesses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeProcesses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "ProcessName": Utils.try_to_json(argv, "--ProcessName"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YunjingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeProcessesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeProcesses(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeMalwares(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1044,32 +1742,52 @@ ACTION_MAP = {
     "DescribeVulScanResult": doDescribeVulScanResult,
     "TrustMalwares": doTrustMalwares,
     "RecoverMalwares": doRecoverMalwares,
+    "DescribeComponentStatistics": doDescribeComponentStatistics,
+    "DescribeHistoryAccounts": doDescribeHistoryAccounts,
     "DeleteMalwares": doDeleteMalwares,
+    "DescribeWeeklyReportBruteAttacks": doDescribeWeeklyReportBruteAttacks,
     "DescribeBruteAttacks": doDescribeBruteAttacks,
+    "DescribeWeeklyReportVuls": doDescribeWeeklyReportVuls,
     "UntrustMalwares": doUntrustMalwares,
+    "DescribeWeeklyReportMalwares": doDescribeWeeklyReportMalwares,
+    "DescribeComponentInfo": doDescribeComponentInfo,
     "DescribeVulInfo": doDescribeVulInfo,
     "DeleteUsualLoginPlaces": doDeleteUsualLoginPlaces,
     "DeleteNonlocalLoginPlaces": doDeleteNonlocalLoginPlaces,
+    "DescribeOpenPorts": doDescribeOpenPorts,
     "MisAlarmNonlocalLoginPlaces": doMisAlarmNonlocalLoginPlaces,
-    "ModifyAlarmAttribute": doModifyAlarmAttribute,
+    "DescribeOpenPortStatistics": doDescribeOpenPortStatistics,
     "SeparateMalwares": doSeparateMalwares,
     "DescribeNonlocalLoginPlaces": doDescribeNonlocalLoginPlaces,
     "DeleteMachine": doDeleteMachine,
+    "DescribeProcessTaskStatus": doDescribeProcessTaskStatus,
     "DescribeOverviewStatistics": doDescribeOverviewStatistics,
     "DescribeUsualLoginPlaces": doDescribeUsualLoginPlaces,
+    "DescribeProcessStatistics": doDescribeProcessStatistics,
+    "DescribeWeeklyReportInfo": doDescribeWeeklyReportInfo,
+    "DescribeSecurityDynamics": doDescribeSecurityDynamics,
     "RescanImpactedHost": doRescanImpactedHost,
     "DescribeImpactedHosts": doDescribeImpactedHosts,
     "ModifyAutoOpenProVersionConfig": doModifyAutoOpenProVersionConfig,
-    "DescribeVuls": doDescribeVuls,
+    "DescribeSecurityTrends": doDescribeSecurityTrends,
     "DescribeAgentVuls": doDescribeAgentVuls,
-    "CloseProVersion": doCloseProVersion,
+    "DeleteBruteAttacks": doDeleteBruteAttacks,
+    "DescribeWeeklyReportNonlocalLoginPlaces": doDescribeWeeklyReportNonlocalLoginPlaces,
+    "DescribeAccounts": doDescribeAccounts,
+    "DescribeVuls": doDescribeVuls,
+    "DescribeWeeklyReports": doDescribeWeeklyReports,
     "DescribeProVersionInfo": doDescribeProVersionInfo,
     "IgnoreImpactedHosts": doIgnoreImpactedHosts,
-    "DeleteBruteAttacks": doDeleteBruteAttacks,
+    "CloseProVersion": doCloseProVersion,
+    "DescribeAccountStatistics": doDescribeAccountStatistics,
+    "CreateProcessTask": doCreateProcessTask,
+    "ModifyAlarmAttribute": doModifyAlarmAttribute,
     "DescribeMachineInfo": doDescribeMachineInfo,
     "DescribeAlarmAttribute": doDescribeAlarmAttribute,
     "DescribeMachines": doDescribeMachines,
     "CreateUsualLoginPlaces": doCreateUsualLoginPlaces,
+    "DescribeComponents": doDescribeComponents,
+    "DescribeProcesses": doDescribeProcesses,
     "DescribeMalwares": doDescribeMalwares,
 
 }
