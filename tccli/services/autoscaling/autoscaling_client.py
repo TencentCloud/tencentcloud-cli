@@ -72,6 +72,7 @@ def doCreateAutoScalingGroup(argv, arglist):
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
         "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
         "Zones": Utils.try_to_json(argv, "--Zones"),
+        "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,9 +253,9 @@ def doCreateLaunchConfiguration(argv, arglist):
 
     param = {
         "LaunchConfigurationName": Utils.try_to_json(argv, "--LaunchConfigurationName"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
         "ImageId": Utils.try_to_json(argv, "--ImageId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
@@ -264,6 +265,7 @@ def doCreateLaunchConfiguration(argv, arglist):
         "UserData": Utils.try_to_json(argv, "--UserData"),
         "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
         "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
+        "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -308,6 +310,7 @@ def doModifyAutoScalingGroup(argv, arglist):
         "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
         "Zones": Utils.try_to_json(argv, "--Zones"),
+        "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

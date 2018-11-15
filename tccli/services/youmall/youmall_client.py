@@ -71,6 +71,7 @@ def doDescribePersonInfo(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
+        "PersonType": Utils.try_to_json(argv, "--PersonType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -162,6 +163,42 @@ def doDescribeZoneFlowAgeInfoByZoneId(argv, arglist):
     model = models.DescribeZoneFlowAgeInfoByZoneIdRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeZoneFlowAgeInfoByZoneId(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRegisterCallback(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RegisterCallback", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "BackUrl": Utils.try_to_json(argv, "--BackUrl"),
+        "Time": Utils.try_to_json(argv, "--Time"),
+        "NeedFacePic": Utils.try_to_json(argv, "--NeedFacePic"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RegisterCallbackRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RegisterCallback(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -476,6 +513,7 @@ def doCreateFacePicture(argv, arglist):
         "PersonType": Utils.try_to_json(argv, "--PersonType"),
         "Picture": Utils.try_to_json(argv, "--Picture"),
         "PictureName": Utils.try_to_json(argv, "--PictureName"),
+        "IsForceUpload": Utils.try_to_json(argv, "--IsForceUpload"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -756,17 +794,18 @@ def doDescribePerson(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRegisterCallback(argv, arglist):
+def doModifyPersonType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RegisterCallback", g_param[OptionsDefine.Version])
+        show_help("ModifyPersonType", g_param[OptionsDefine.Version])
         return
 
     param = {
         "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "BackUrl": Utils.try_to_json(argv, "--BackUrl"),
-        "Time": Utils.try_to_json(argv, "--Time"),
-        "NeedFacePic": Utils.try_to_json(argv, "--NeedFacePic"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonType": Utils.try_to_json(argv, "--PersonType"),
+        "PersonSubType": Utils.try_to_json(argv, "--PersonSubType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -780,9 +819,9 @@ def doRegisterCallback(argv, arglist):
     client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RegisterCallbackRequest()
+    model = models.ModifyPersonTypeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RegisterCallback(model)
+    rsp = client.ModifyPersonType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -857,6 +896,41 @@ def doDescribeNetworkInfo(argv, arglist):
     model = models.DescribeNetworkInfoRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeNetworkInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeletePersonFeature(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeletePersonFeature", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeletePersonFeatureRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeletePersonFeature(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1027,6 +1101,7 @@ ACTION_MAP = {
     "DescribePersonInfo": doDescribePersonInfo,
     "DescribeZoneTrafficInfo": doDescribeZoneTrafficInfo,
     "DescribeZoneFlowAgeInfoByZoneId": doDescribeZoneFlowAgeInfoByZoneId,
+    "RegisterCallback": doRegisterCallback,
     "DescribeZoneFlowGenderAvrStayTimeByZoneId": doDescribeZoneFlowGenderAvrStayTimeByZoneId,
     "DescribeZoneFlowAndStayTime": doDescribeZoneFlowAndStayTime,
     "DescribePersonVisitInfo": doDescribePersonVisitInfo,
@@ -1043,9 +1118,10 @@ ACTION_MAP = {
     "DescribePersonArrivedMall": doDescribePersonArrivedMall,
     "DescribeClusterPersonArrivedMall": doDescribeClusterPersonArrivedMall,
     "DescribePerson": doDescribePerson,
-    "RegisterCallback": doRegisterCallback,
+    "ModifyPersonType": doModifyPersonType,
     "DescribeHistoryNetworkInfo": doDescribeHistoryNetworkInfo,
     "DescribeNetworkInfo": doDescribeNetworkInfo,
+    "DeletePersonFeature": doDeletePersonFeature,
     "ModifyPersonTagInfo": doModifyPersonTagInfo,
     "DescribeZoneFlowGenderInfoByZoneId": doDescribeZoneFlowGenderInfoByZoneId,
     "DescribeClusterPersonTrace": doDescribeClusterPersonTrace,

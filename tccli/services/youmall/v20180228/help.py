@@ -63,9 +63,38 @@ INFO = {
       {
         "name": "PictureExpires",
         "desc": "图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）"
+      },
+      {
+        "name": "PersonType",
+        "desc": "身份类型(0表示普通顾客，1 白名单，2 表示黑名单）"
       }
     ],
     "desc": "指定门店获取所有顾客详情列表，包含客户ID、图片、年龄、性别"
+  },
+  "DescribeZoneFlowAgeInfoByZoneId": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID"
+      },
+      {
+        "name": "ZoneId",
+        "desc": "区域ID"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
+      }
+    ],
+    "desc": "获取指定区域人流各年龄占比"
   },
   "DescribeZoneTrafficInfo": {
     "params": [
@@ -96,7 +125,7 @@ INFO = {
     ],
     "desc": "按天提供查询日期范围内，客户指定门店下的所有区域（优Mall部署时已配置区域）的累计客流人次和平均停留时间。支持的时间范围：过去365天，含当天。"
   },
-  "DescribeZoneFlowAgeInfoByZoneId": {
+  "ModifyPersonType": {
     "params": [
       {
         "name": "CompanyId",
@@ -104,22 +133,22 @@ INFO = {
       },
       {
         "name": "ShopId",
-        "desc": "店铺ID"
+        "desc": "门店ID"
       },
       {
-        "name": "ZoneId",
-        "desc": "区域ID"
+        "name": "PersonId",
+        "desc": "顾客ID"
       },
       {
-        "name": "StartDate",
-        "desc": "开始日期，格式yyyy-MM-dd"
+        "name": "PersonType",
+        "desc": "身份类型(0表示普通顾客，1 白名单，2 表示黑名单）"
       },
       {
-        "name": "EndDate",
-        "desc": "结束日期，格式yyyy-MM-dd"
+        "name": "PersonSubType",
+        "desc": "身份子类型:\nPersonType=0时(普通顾客)，0普通顾客\nPersonType=1时(白名单)，0店员，1商场人员，2其他类型人员，3区域经理，4注册用户，5VIP用户\nPersonType=2时(黑名单)，0普通黑名单，1小偷)"
       }
     ],
-    "desc": "获取指定区域人流各年龄占比"
+    "desc": "修改顾客身份类型接口"
   },
   "CreateAccount": {
     "params": [
@@ -313,6 +342,10 @@ INFO = {
       {
         "name": "PictureName",
         "desc": "图片名称"
+      },
+      {
+        "name": "IsForceUpload",
+        "desc": "是否强制更新：为ture时会为用户创建一个新的指定PersonType的身份;目前这个参数已废弃，可不传"
       }
     ],
     "desc": "通过上传指定规格的人脸图片，创建黑名单用户或者白名单用户。"
@@ -575,6 +608,23 @@ INFO = {
       }
     ],
     "desc": "返回当前门店最新网络状态数据"
+  },
+  "DeletePersonFeature": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "公司ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "门店ID"
+      },
+      {
+        "name": "PersonId",
+        "desc": "顾客ID"
+      }
+    ],
+    "desc": "删除顾客特征，仅支持删除黑名单或者白名单用户特征。"
   },
   "ModifyPersonTagInfo": {
     "params": [

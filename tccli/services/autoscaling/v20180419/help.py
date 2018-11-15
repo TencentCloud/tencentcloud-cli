@@ -54,6 +54,10 @@ INFO = {
       {
         "name": "Zones",
         "desc": "可用区列表，基础网络场景下必须指定可用区"
+      },
+      {
+        "name": "RetryPolicy",
+        "desc": "重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。在连续失败超过一定次数（25次）后不再重试。"
       }
     ],
     "desc": "本接口（CreateAutoScalingGroup）用于创建伸缩组"
@@ -128,10 +132,6 @@ INFO = {
         "desc": "启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。"
       },
       {
-        "name": "InstanceType",
-        "desc": "实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。"
-      },
-      {
         "name": "ImageId",
         "desc": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>"
       },
@@ -140,12 +140,16 @@ INFO = {
         "desc": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的`projectId`字段来获取。不填为默认项目。"
       },
       {
+        "name": "InstanceType",
+        "desc": "实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。\n`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。"
+      },
+      {
         "name": "SystemDisk",
         "desc": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。"
       },
       {
         "name": "DataDisks",
-        "desc": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，当前仅支持购买的时候指定一个数据盘。"
+        "desc": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。"
       },
       {
         "name": "InternetAccessible",
@@ -174,6 +178,10 @@ INFO = {
       {
         "name": "InstanceMarketOptions",
         "desc": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。"
+      },
+      {
+        "name": "InstanceTypes",
+        "desc": "实例机型列表，不同实例机型指定了不同的资源规格，最多支持5中实例机型。\n`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。"
       }
     ],
     "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置无法编辑更改。如需使用新的启动配置，只能重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"
@@ -227,6 +235,10 @@ INFO = {
       {
         "name": "Zones",
         "desc": "可用区列表"
+      },
+      {
+        "name": "RetryPolicy",
+        "desc": "重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。在连续失败超过一定次数（25次）后不再重试。"
       }
     ],
     "desc": "本接口（ModifyAutoScalingGroup）用于修改伸缩组。"
@@ -272,7 +284,7 @@ INFO = {
         "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
       }
     ],
-    "desc": "本接口（DescribeAutoScalingGroups）用于查询伸缩组信息。"
+    "desc": "本接口（DescribeAutoScalingGroups）用于查询伸缩组信息。\n\n* 可以根据伸缩组ID、伸缩组名称或者启动配置ID等信息来查询伸缩组的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的伸缩组。"
   },
   "ModifyScheduledAction": {
     "params": [
@@ -348,7 +360,7 @@ INFO = {
         "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
       }
     ],
-    "desc": "本接口（DescribeLaunchConfigurations）用于查询启动配置的信息。"
+    "desc": "本接口（DescribeLaunchConfigurations）用于查询启动配置的信息。\n\n* 可以根据启动配置ID、启动配置名称等信息来查询启动配置的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的启动配置。"
   },
   "DisableAutoScalingGroup": {
     "params": [
@@ -378,7 +390,7 @@ INFO = {
         "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
       }
     ],
-    "desc": "本接口（DescribeAutoScalingInstances）用于查询弹性伸缩关联实例的信息。\n\n"
+    "desc": "本接口（DescribeAutoScalingInstances）用于查询弹性伸缩关联实例的信息。\n\n* 可以根据实例ID、伸缩组ID等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。"
   },
   "DescribeScheduledActions": {
     "params": [
@@ -388,7 +400,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n* scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。\n* scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。\n* auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。"
+        "desc": "过滤条件。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>"
       },
       {
         "name": "Offset",
@@ -399,7 +411,7 @@ INFO = {
         "desc": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
       }
     ],
-    "desc": "本接口 (DescribeScheduledActions) 用于查询一个或多个定时任务的详细信息。\n\n* 可以根据定时任务ID、定时任务名称或者伸缩组ID等信息来查询定时任务的详细信息。过滤信息详细请见过滤器Filter。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的定时任务。"
+    "desc": "本接口 (DescribeScheduledActions) 用于查询一个或多个定时任务的详细信息。\n\n* 可以根据定时任务ID、定时任务名称或者伸缩组ID等信息来查询定时任务的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的定时任务。"
   },
   "AttachInstances": {
     "params": [
