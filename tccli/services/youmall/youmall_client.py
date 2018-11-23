@@ -290,11 +290,13 @@ def doDescribePersonVisitInfo(argv, arglist):
     param = {
         "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "StartDate": Utils.try_to_json(argv, "--StartDate"),
+        "EndDate": Utils.try_to_json(argv, "--EndDate"),
         "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
+        "StartDateTime": Utils.try_to_json(argv, "--StartDateTime"),
+        "EndDateTime": Utils.try_to_json(argv, "--EndDateTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -403,6 +405,7 @@ def doDescribeFaceIdByTempId(argv, arglist):
         "TempId": Utils.try_to_json(argv, "--TempId"),
         "CameraId": Utils.try_to_json(argv, "--CameraId"),
         "PosId": Utils.try_to_json(argv, "--PosId"),
+        "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

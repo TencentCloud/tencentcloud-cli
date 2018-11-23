@@ -74,6 +74,19 @@ INFO = {
     ],
     "desc": "将应用和资源进行绑定"
   },
+  "CreateCosSecKeyInstance": {
+    "params": [
+      {
+        "name": "CosRegion",
+        "desc": "地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。"
+      },
+      {
+        "name": "Duration",
+        "desc": "密钥有效时间，默认为1小时。"
+      }
+    ],
+    "desc": "获取云COS文件存储临时密钥，密钥仅限于临时上传文件，有访问限制和时效性。"
+  },
   "DescribeResourceInstances": {
     "params": [
       {

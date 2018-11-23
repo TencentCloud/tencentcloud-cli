@@ -38,7 +38,7 @@ INFO = {
     "params": [
       {
         "name": "SeqId",
-        "desc": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1时切为非流式模式时无意义。"
+        "desc": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。"
       },
       {
         "name": "IsEnd",

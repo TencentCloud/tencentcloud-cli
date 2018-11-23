@@ -1221,6 +1221,7 @@ def doCreateImage(argv, arglist):
         "ForcePoweroff": Utils.try_to_json(argv, "--ForcePoweroff"),
         "Sysprep": Utils.try_to_json(argv, "--Sysprep"),
         "Reboot": Utils.try_to_json(argv, "--Reboot"),
+        "DryRun": Utils.try_to_json(argv, "--DryRun"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

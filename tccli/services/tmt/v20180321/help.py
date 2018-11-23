@@ -5,7 +5,7 @@ INFO = {
     "params": [
       {
         "name": "SourceText",
-        "desc": "待翻译的文本，文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败"
+        "desc": "待翻译的文本，文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本会翻译失败"
       },
       {
         "name": "Source",
@@ -79,7 +79,7 @@ INFO = {
       },
       {
         "name": "Data",
-        "desc": "语音分片内容的base64字符串"
+        "desc": "语音分片内容的base64字符串，音频内容应含有效并可识别的文本"
       },
       {
         "name": "ProjectId",

@@ -395,14 +395,14 @@ INFO = {
       },
       {
         "name": "PrivateIpAddresses",
-        "desc": "指定的内网IP信息。"
+        "desc": "指定的内网IP信息，单次最多指定10个。"
       },
       {
         "name": "SecondaryPrivateIpAddressCount",
-        "desc": "新申请的内网IP地址个数。"
+        "desc": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。"
       }
     ],
-    "desc": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"https://cloud.tencent.com/document/product/215/6513\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。"
+    "desc": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。"
   },
   "DescribeVpcs": {
     "params": [
@@ -464,22 +464,14 @@ INFO = {
     ],
     "desc": "本接口（RejectAttachCcnInstances）用于跨账号关联实例时，云联网所有者拒绝关联操作。\n"
   },
-  "MigrateNetworkInterface": {
+  "DeleteSecurityGroup": {
     "params": [
       {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
-      },
-      {
-        "name": "SourceInstanceId",
-        "desc": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。"
-      },
-      {
-        "name": "DestinationInstanceId",
-        "desc": "待迁移的目的CVM实例ID。"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
       }
     ],
-    "desc": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。"
+    "desc": "本接口（DeleteSecurityGroup）用于删除安全组（SecurityGroup）。\n* 只有当前账号下的安全组允许被删除。\n* 安全组实例ID如果在其他安全组的规则中被引用，则无法直接删除。这种情况下，需要先进行规则修改，再删除安全组。\n* 删除的安全组无法再找回，请谨慎调用。"
   },
   "ModifyAddressesBandwidth": {
     "params": [
@@ -651,18 +643,9 @@ INFO = {
     ],
     "desc": "本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* EIP 是专为动态云计算设计的静态 IP 地址。借助 EIP，您可以快速将 EIP 重新映射到您的另一个实例上，从而屏蔽实例故障。\n* 您的 EIP 与腾讯云账户相关联，而不是与某个实例相关联。在您选择显式释放该地址，或欠费超过七天之前，它会一直与您的腾讯云账户保持关联。\n* 平台对用户每地域能申请的 EIP 最大配额有所限制，可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)，上述配额可通过 DescribeAddressQuota 接口获取。"
   },
-  "RenewVpnGateway": {
-    "params": [
-      {
-        "name": "VpnGatewayId",
-        "desc": "VPN网关实例ID。"
-      },
-      {
-        "name": "InstanceChargePrepaid",
-        "desc": "预付费计费模式。"
-      }
-    ],
-    "desc": "本接口（RenewVpnGateway）用于预付费（包年包月）VPN网关续费。目前只支持IPSEC网关。"
+  "DescribeAccountAttributes": {
+    "params": [],
+    "desc": "本接口（DescribeAccountAttributes）用于查询用户账号私有属性。"
   },
   "AttachCcnInstances": {
     "params": [
@@ -733,11 +716,32 @@ INFO = {
     ],
     "desc": "本接口(AttachClassicLinkVpc)用于创建私有网络和基础网络设备互通。\n* 私有网络和基础网络设备必须在同一个地域。\n* 私有网络和基础网络的区别详见vpc产品文档-<a href=\"https://cloud.tencent.com/document/product/215/535#2.-.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E4.B8.8E.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C\">私有网络与基础网络</a>。"
   },
+  "DeleteDirectConnectGateway": {
+    "params": [
+      {
+        "name": "DirectConnectGatewayId",
+        "desc": "专线网关唯一`ID`，形如：`dcg-9o233uri`。"
+      }
+    ],
+    "desc": "本接口（DeleteDirectConnectGateway）用于删除专线网关。\n<li>如果是 NAT 网关，删除专线网关后，NAT 规则以及 ACL 策略都被清理了。</li>\n<li>删除专线网关后，系统会删除路由表中跟该专线网关相关的路由策略。</li>\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口"
+  },
   "DescribeDirectConnectGatewayCcnRoutes": {
     "params": [
       {
         "name": "DirectConnectGatewayId",
-        "desc": "专线网关ID，形如：dcg-prpqlmg1"
+        "desc": "专线网关ID，形如：`dcg-prpqlmg1`。"
+      },
+      {
+        "name": "CcnRouteType",
+        "desc": "云联网路由学习类型，可选值：\n<li>`BGP` - 自动学习。</li>\n<li>`STATIC` - 静态，即用户配置，默认值。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量。"
       }
     ],
     "desc": "本接口（DescribeDirectConnectGatewayCcnRoutes）用于查询专线网关的云联网路由（IDC网段）"
@@ -762,7 +766,7 @@ INFO = {
       },
       {
         "name": "SecondaryPrivateIpAddressCount",
-        "desc": "新申请的内网IP地址个数。"
+        "desc": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。"
       },
       {
         "name": "SecurityGroupIds",
@@ -770,10 +774,10 @@ INFO = {
       },
       {
         "name": "PrivateIpAddresses",
-        "desc": "指定内网IP信息。"
+        "desc": "指定的内网IP信息，单次最多指定10个。"
       }
     ],
-    "desc": "本接口（CreateNetworkInterface）用于创建弹性网卡。\n* 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。\n* 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。\n* 创建弹性网卡同时可以绑定已有安全组。"
+    "desc": "本接口（CreateNetworkInterface）用于创建弹性网卡。\n* 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。\n* 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 创建弹性网卡同时可以绑定已有安全组。"
   },
   "DeleteBandwidthPackage": {
     "params": [
@@ -814,18 +818,14 @@ INFO = {
     ],
     "desc": "本接口（DeleteCcn）用于删除云联网。\n* 删除后，云联网关联的所有实例间路由将被删除，网络将会中断，请务必确认\n* 删除云联网是不可逆的操作，请谨慎处理。\n"
   },
-  "ResetVpnConnection": {
+  "HaVipDisassociateAddressIp": {
     "params": [
       {
-        "name": "VpnGatewayId",
-        "desc": "VPN网关实例ID。"
-      },
-      {
-        "name": "VpnConnectionId",
-        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。"
+        "name": "HaVipId",
+        "desc": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。必须是已绑定`EIP`的`HAVIP`。"
       }
     ],
-    "desc": "本接口(ResetVpnConnection)用于重置VPN通道。"
+    "desc": "本接口（HaVipDisassociateAddressIp）用于将高可用虚拟IP（HAVIP）已绑定的弹性公网IP（EIP）解除绑定<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口"
   },
   "DetachNetworkInterface": {
     "params": [
@@ -926,7 +926,7 @@ INFO = {
       },
       {
         "name": "PrivateIpAddresses",
-        "desc": "指定的内网IP信息。"
+        "desc": "指定的内网IP信息，单次最多指定10个。"
       }
     ],
     "desc": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。"
@@ -1086,18 +1086,22 @@ INFO = {
     ],
     "desc": "本接口(DeleteRoutes)用于对某个路由表批量删除路由策略（Route）。"
   },
-  "ModifySecurityGroupPolicies": {
+  "ModifyDirectConnectGatewayAttribute": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "name": "DirectConnectGatewayId",
+        "desc": "专线网关唯一`ID`，形如：`dcg-9o233uri`。"
       },
       {
-        "name": "SecurityGroupPolicySet",
-        "desc": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。"
+        "name": "DirectConnectGatewayName",
+        "desc": "专线网关名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "CcnRouteType",
+        "desc": "云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。"
       }
     ],
-    "desc": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n* 接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex 。\n* 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略Egress和Ingress。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。"
+    "desc": "本接口（ModifyDirectConnectGatewayAttribute）用于修改专线网关属性\n"
   },
   "ModifySubnetAttribute": {
     "params": [
@@ -1167,6 +1171,19 @@ INFO = {
     ],
     "desc": "本接口（InquiryPriceCreateVpnGateway）用于创建VPN网关询价。"
   },
+  "ResetVpnConnection": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
+      },
+      {
+        "name": "VpnConnectionId",
+        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。"
+      }
+    ],
+    "desc": "本接口(ResetVpnConnection)用于重置VPN通道。"
+  },
   "CreateCustomerGateway": {
     "params": [
       {
@@ -1180,18 +1197,18 @@ INFO = {
     ],
     "desc": "本接口（CreateCustomerGateway）用于创建对端网关。"
   },
-  "CreateAddressTemplateGroup": {
+  "ModifySecurityGroupPolicies": {
     "params": [
       {
-        "name": "AddressTemplateGroupName",
-        "desc": "IP地址模版集合名称。"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
       },
       {
-        "name": "AddressTemplateIds",
-        "desc": "IP地址模版实例ID，例如：ipm-mdunqeb6。"
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。"
       }
     ],
-    "desc": "创建IP地址模版集合"
+    "desc": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n* 接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex 。\n* 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略Egress和Ingress。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。"
   },
   "CreateSecurityGroup": {
     "params": [
@@ -1261,9 +1278,39 @@ INFO = {
     ],
     "desc": "删除路由表"
   },
-  "DescribeAccountAttributes": {
-    "params": [],
-    "desc": "本接口（DescribeAccountAttributes）用于查询用户账号私有属性。"
+  "DescribeDirectConnectGateways": {
+    "params": [
+      {
+        "name": "DirectConnectGatewayIds",
+        "desc": "专线网关唯一`ID`，形如：`dcg-9o233uri`。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定`DirectConnectGatewayIds`和`Filters`。\n<li>direct-connect-gateway-id - String - 专线网关唯一`ID`，形如：`dcg-9o233uri`。</li>\n<li>direct-connect-gateway-name - String - 专线网关名称，默认模糊查询。</li>\n<li>direct-connect-gateway-ip - String - 专线网关`IP`。</li>\n<li>gateway-type - String - 网关类型，可选值：`NORMAL`（普通型）、`NAT`（NAT型）。</li>\n<li>network-type- String - 网络类型，可选值：`VPC`（私有网络类型）、`CCN`（云联网类型）。</li>\n<li>ccn-id - String - 专线网关所在私有网络`ID`。</li>\n<li>vpc-id - String - 专线网关所在云联网`ID`。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量。"
+      }
+    ],
+    "desc": "本接口（DescribeDirectConnectGateways）用于查询专线网关。"
+  },
+  "RenewVpnGateway": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费计费模式。"
+      }
+    ],
+    "desc": "本接口（RenewVpnGateway）用于预付费（包年包月）VPN网关续费。目前只支持IPSEC网关。"
   },
   "MigratePrivateIpAddress": {
     "params": [
@@ -1298,6 +1345,49 @@ INFO = {
       }
     ],
     "desc": "查询协议端口模板"
+  },
+  "HaVipAssociateAddressIp": {
+    "params": [
+      {
+        "name": "HaVipId",
+        "desc": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。必须是没有绑定`EIP`的`HAVIP`"
+      },
+      {
+        "name": "AddressIp",
+        "desc": "弹性公网`IP`。必须是没有绑定`HAVIP`的`EIP`"
+      }
+    ],
+    "desc": "本接口（HaVipAssociateAddressIp）用于高可用虚拟IP（HAVIP）绑定弹性公网IP（EIP）<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口"
+  },
+  "DescribeHaVips": {
+    "params": [
+      {
+        "name": "HaVipIds",
+        "desc": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。\n<li>havip-id - String - `HAVIP`唯一`ID`，形如：`havip-9o233uri`。</li>\n<li>havip-name - String - `HAVIP`名称。</li>\n<li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li>\n<li>subnet-id - String - `HAVIP`所在子网`ID`。</li>\n<li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
+      }
+    ],
+    "desc": "本接口（DescribeHaVips）用于查询高可用虚拟IP（HAVIP）列表。"
+  },
+  "DeleteHaVip": {
+    "params": [
+      {
+        "name": "HaVipId",
+        "desc": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。"
+      }
+    ],
+    "desc": "本接口（DeleteHaVip）用于删除高可用虚拟IP（HAVIP）<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口"
   },
   "ModifyBandwidthPackageAttribute": {
     "params": [
@@ -1551,14 +1641,43 @@ INFO = {
     ],
     "desc": "本接口（SetCcnRegionBandwidthLimits）用于设置云联网（CCN）各地域出带宽上限，该接口只能设置已关联网络实例包含的地域的出带宽上限"
   },
-  "DeleteSecurityGroup": {
+  "CreateHaVip": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "name": "VpcId",
+        "desc": "`HAVIP`所在私有网络`ID`。"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "`HAVIP`所在子网`ID`。"
+      },
+      {
+        "name": "HaVipName",
+        "desc": "`HAVIP`名称。"
+      },
+      {
+        "name": "Vip",
+        "desc": "指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。"
       }
     ],
-    "desc": "本接口（DeleteSecurityGroup）用于删除安全组（SecurityGroup）。\n* 只有当前账号下的安全组允许被删除。\n* 安全组实例ID如果在其他安全组的规则中被引用，则无法直接删除。这种情况下，需要先进行规则修改，再删除安全组。\n* 删除的安全组无法再找回，请谨慎调用。"
+    "desc": "本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）"
+  },
+  "MigrateNetworkInterface": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+      },
+      {
+        "name": "SourceInstanceId",
+        "desc": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。"
+      },
+      {
+        "name": "DestinationInstanceId",
+        "desc": "待迁移的目的CVM实例ID。"
+      }
+    ],
+    "desc": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。"
   },
   "ReleaseAddresses": {
     "params": [
@@ -1598,6 +1717,19 @@ INFO = {
   "DescribeBandwidthPackageQuota": {
     "params": [],
     "desc": "接口用于查询账户在当前地域的带宽包上限数量以及使用数量"
+  },
+  "ModifyHaVipAttribute": {
+    "params": [
+      {
+        "name": "HaVipId",
+        "desc": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。"
+      },
+      {
+        "name": "HaVipName",
+        "desc": "`HAVIP`名称，可任意命名，但不得超过60个字符。"
+      }
+    ],
+    "desc": "本接口（ModifyHaVipAttribute）用于修改高可用虚拟IP（HAVIP）属性"
   },
   "ResetAttachCcnInstances": {
     "params": [
@@ -1666,6 +1798,19 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyCcnAttribute）用于修改云联网（CCN）的相关属性。"
+  },
+  "CreateAddressTemplateGroup": {
+    "params": [
+      {
+        "name": "AddressTemplateGroupName",
+        "desc": "IP地址模版集合名称。"
+      },
+      {
+        "name": "AddressTemplateIds",
+        "desc": "IP地址模版实例ID，例如：ipm-mdunqeb6。"
+      }
+    ],
+    "desc": "创建IP地址模版集合"
   },
   "DescribeSecurityGroupAssociationStatistics": {
     "params": [

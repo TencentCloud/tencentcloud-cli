@@ -207,14 +207,6 @@ INFO = {
         "desc": "门店ID"
       },
       {
-        "name": "StartDate",
-        "desc": "开始日期，格式yyyy-MM-dd"
-      },
-      {
-        "name": "EndDate",
-        "desc": "结束日期，格式yyyy-MM-dd"
-      },
-      {
         "name": "Offset",
         "desc": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit"
       },
@@ -223,8 +215,24 @@ INFO = {
         "desc": "Limit:每页的数据项，最大100，超过100会被强制指定为100"
       },
       {
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd，已废弃，请使用StartDateTime"
+      },
+      {
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd，已废弃，请使用EndDateTime"
+      },
+      {
         "name": "PictureExpires",
         "desc": "图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）"
+      },
+      {
+        "name": "StartDateTime",
+        "desc": "开始时间，格式yyyy-MM-dd HH:mm:ss"
+      },
+      {
+        "name": "EndDateTime",
+        "desc": "结束时间，格式yyyy-MM-dd HH:mm:ss"
       }
     ],
     "desc": "获取门店指定时间范围内的所有用户到访信息记录，支持的时间范围：过去365天，含当天。"
@@ -288,6 +296,10 @@ INFO = {
       {
         "name": "PosId",
         "desc": "pos机id"
+      },
+      {
+        "name": "PictureExpires",
+        "desc": "图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）"
       }
     ],
     "desc": "通过DescribeCameraPerson接口上报的收银台身份ID查询顾客的FaceID。查询最佳时间为收银台上报的次日1点后。"

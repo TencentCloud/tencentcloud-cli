@@ -126,6 +126,27 @@ INFO = {
     ],
     "desc": "修改播放鉴权key"
   },
+  "AddDelayLiveStream": {
+    "params": [
+      {
+        "name": "AppName",
+        "desc": "应用名称。"
+      },
+      {
+        "name": "DomainName",
+        "desc": "您的加速域名。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
+      },
+      {
+        "name": "DelayTime",
+        "desc": "延播时间，单位：秒，上限：600秒。"
+      }
+    ],
+    "desc": "对流设置延播"
+  },
   "SetLiveWatermarkStatus": {
     "params": [
       {
@@ -148,15 +169,6 @@ INFO = {
     ],
     "desc": "查询拉流配置"
   },
-  "GetLiveDrmLicense": {
-    "params": [
-      {
-        "name": "DrmLicenseInfo",
-        "desc": "DRMlicense信息。"
-      }
-    ],
-    "desc": "获取直播DRM的license"
-  },
   "DeleteLiveRecord": {
     "params": [
       {
@@ -169,27 +181,6 @@ INFO = {
       }
     ],
     "desc": "用于删除录制任务"
-  },
-  "AddDelayLiveStream": {
-    "params": [
-      {
-        "name": "AppName",
-        "desc": "应用名称。"
-      },
-      {
-        "name": "DomainName",
-        "desc": "您的加速域名。"
-      },
-      {
-        "name": "StreamName",
-        "desc": "流名称。"
-      },
-      {
-        "name": "DelayTime",
-        "desc": "延播时间，单位：秒，上限：600秒。"
-      }
-    ],
-    "desc": "对流设置延播"
   },
   "ModifyLivePushAuthKey": {
     "params": [
@@ -215,6 +206,23 @@ INFO = {
       }
     ],
     "desc": "修改直播推流鉴权key"
+  },
+  "DescribeLiveStreamState": {
+    "params": [
+      {
+        "name": "AppName",
+        "desc": "应用名称。"
+      },
+      {
+        "name": "DomainName",
+        "desc": "您的加速域名。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
+      }
+    ],
+    "desc": "返回直播中、无推流或者禁播等状态"
   },
   "DescribeLiveStreamOnlineInfo": {
     "params": [
@@ -275,53 +283,18 @@ INFO = {
     ],
     "desc": "返回已经推过流的流列表"
   },
-  "GetVodDrmLicense": {
+  "ModifyPullStreamStatus": {
     "params": [
       {
-        "name": "DrmLicenseInfo",
-        "desc": "Drmlicense信息。"
-      }
-    ],
-    "desc": "获取点播DRM的license"
-  },
-  "StartDrmEncryption": {
-    "params": [
-      {
-        "name": "DrmEncryptInfo",
-        "desc": "Drm加密所需要的信息。"
-      }
-    ],
-    "desc": "该接口用于Drm加密请求"
-  },
-  "DescribeLiveStreamState": {
-    "params": [
-      {
-        "name": "AppName",
-        "desc": "应用名称。"
+        "name": "ConfigIds",
+        "desc": "配置id列表。"
       },
       {
-        "name": "DomainName",
-        "desc": "您的加速域名。"
-      },
-      {
-        "name": "StreamName",
-        "desc": "流名称。"
+        "name": "Status",
+        "desc": "目标状态。0无效，2正在运行，4暂停。"
       }
     ],
-    "desc": "返回直播中、无推流或者禁播等状态"
-  },
-  "DescribeDrmEncryptKeys": {
-    "params": [
-      {
-        "name": "DrmGetKeyPara",
-        "desc": "获取key所需要的参数。"
-      },
-      {
-        "name": "RsaSignature",
-        "desc": "base64 编码的DrmGetKeyPara参数数字签名。"
-      }
-    ],
-    "desc": "Drm获取加密key"
+    "desc": "修改直播拉流配置状态"
   },
   "DeleteLiveWatermark": {
     "params": [
@@ -419,23 +392,10 @@ INFO = {
       },
       {
         "name": "ResumeTime",
-        "desc": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n\nUTC 时间，格式：2018-08-08T17:37:00Z。"
+        "desc": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：默认禁播90天，且最长支持禁播90天。"
       }
     ],
     "desc": "禁止某条流的推送，可以预设某个时刻将流恢复。"
-  },
-  "ModifyPullStreamStatus": {
-    "params": [
-      {
-        "name": "ConfigIds",
-        "desc": "配置id列表。"
-      },
-      {
-        "name": "Status",
-        "desc": "目标状态。0无效，2正在运行，4暂停。"
-      }
-    ],
-    "desc": "修改直播拉流配置状态"
   },
   "ResumeLiveStream": {
     "params": [
@@ -483,7 +443,7 @@ INFO = {
       },
       {
         "name": "ToUrl",
-        "desc": "目的Url。"
+        "desc": "目的Url，目前限制该目标地址为腾讯域名。"
       },
       {
         "name": "AreaId",

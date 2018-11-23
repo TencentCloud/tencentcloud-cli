@@ -956,14 +956,16 @@ def doRejectAttachCcnInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteSecurityGroup(argv, arglist):
+def doMigrateNetworkInterface(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteSecurityGroup", g_param[OptionsDefine.Version])
+        show_help("MigrateNetworkInterface", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SecurityGroupId": Utils.try_to_json(argv, "--SecurityGroupId"),
+        "NetworkInterfaceId": Utils.try_to_json(argv, "--NetworkInterfaceId"),
+        "SourceInstanceId": Utils.try_to_json(argv, "--SourceInstanceId"),
+        "DestinationInstanceId": Utils.try_to_json(argv, "--DestinationInstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -977,9 +979,9 @@ def doDeleteSecurityGroup(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteSecurityGroupRequest()
+    model = models.MigrateNetworkInterfaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteSecurityGroup(model)
+    rsp = client.MigrateNetworkInterface(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1579,6 +1581,39 @@ def doAttachClassicLinkVpc(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteDirectConnectGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteDirectConnectGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DirectConnectGatewayId": Utils.try_to_json(argv, "--DirectConnectGatewayId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDirectConnectGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteDirectConnectGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDirectConnectGatewayCcnRoutes(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1587,6 +1622,9 @@ def doDescribeDirectConnectGatewayCcnRoutes(argv, arglist):
 
     param = {
         "DirectConnectGatewayId": Utils.try_to_json(argv, "--DirectConnectGatewayId"),
+        "CcnRouteType": Utils.try_to_json(argv, "--CcnRouteType"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1684,6 +1722,40 @@ def doDeleteBandwidthPackage(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifySecurityGroupPolicies(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySecurityGroupPolicies", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupId": Utils.try_to_json(argv, "--SecurityGroupId"),
+        "SecurityGroupPolicySet": Utils.try_to_json(argv, "--SecurityGroupPolicySet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySecurityGroupPoliciesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySecurityGroupPolicies(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeCcns(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1753,15 +1825,14 @@ def doDeleteCcn(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResetVpnConnection(argv, arglist):
+def doHaVipDisassociateAddressIp(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResetVpnConnection", g_param[OptionsDefine.Version])
+        show_help("HaVipDisassociateAddressIp", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VpnGatewayId": Utils.try_to_json(argv, "--VpnGatewayId"),
-        "VpnConnectionId": Utils.try_to_json(argv, "--VpnConnectionId"),
+        "HaVipId": Utils.try_to_json(argv, "--HaVipId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1775,9 +1846,9 @@ def doResetVpnConnection(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetVpnConnectionRequest()
+    model = models.HaVipDisassociateAddressIpRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResetVpnConnection(model)
+    rsp = client.HaVipDisassociateAddressIp(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2431,15 +2502,16 @@ def doDeleteRoutes(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySecurityGroupPolicies(argv, arglist):
+def doModifyDirectConnectGatewayAttribute(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifySecurityGroupPolicies", g_param[OptionsDefine.Version])
+        show_help("ModifyDirectConnectGatewayAttribute", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SecurityGroupId": Utils.try_to_json(argv, "--SecurityGroupId"),
-        "SecurityGroupPolicySet": Utils.try_to_json(argv, "--SecurityGroupPolicySet"),
+        "DirectConnectGatewayId": Utils.try_to_json(argv, "--DirectConnectGatewayId"),
+        "DirectConnectGatewayName": Utils.try_to_json(argv, "--DirectConnectGatewayName"),
+        "CcnRouteType": Utils.try_to_json(argv, "--CcnRouteType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2453,9 +2525,9 @@ def doModifySecurityGroupPolicies(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySecurityGroupPoliciesRequest()
+    model = models.ModifyDirectConnectGatewayAttributeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifySecurityGroupPolicies(model)
+    rsp = client.ModifyDirectConnectGatewayAttribute(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2596,6 +2668,40 @@ def doInquiryPriceCreateVpnGateway(argv, arglist):
     model = models.InquiryPriceCreateVpnGatewayRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.InquiryPriceCreateVpnGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetVpnConnection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ResetVpnConnection", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpnGatewayId": Utils.try_to_json(argv, "--VpnGatewayId"),
+        "VpnConnectionId": Utils.try_to_json(argv, "--VpnConnectionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetVpnConnectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ResetVpnConnection(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2847,6 +2953,42 @@ def doDeleteRouteTable(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDirectConnectGateways(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDirectConnectGateways", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DirectConnectGatewayIds": Utils.try_to_json(argv, "--DirectConnectGatewayIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDirectConnectGatewaysRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDirectConnectGateways(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAccountAttributes(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2940,6 +3082,109 @@ def doDescribeServiceTemplates(argv, arglist):
     model = models.DescribeServiceTemplatesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeServiceTemplates(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doHaVipAssociateAddressIp(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("HaVipAssociateAddressIp", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "HaVipId": Utils.try_to_json(argv, "--HaVipId"),
+        "AddressIp": Utils.try_to_json(argv, "--AddressIp"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.HaVipAssociateAddressIpRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.HaVipAssociateAddressIp(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeHaVips(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeHaVips", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "HaVipIds": Utils.try_to_json(argv, "--HaVipIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHaVipsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeHaVips(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteHaVip(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteHaVip", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "HaVipId": Utils.try_to_json(argv, "--HaVipId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteHaVipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteHaVip(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3538,16 +3783,17 @@ def doSetCcnRegionBandwidthLimits(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMigrateNetworkInterface(argv, arglist):
+def doCreateHaVip(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("MigrateNetworkInterface", g_param[OptionsDefine.Version])
+        show_help("CreateHaVip", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "NetworkInterfaceId": Utils.try_to_json(argv, "--NetworkInterfaceId"),
-        "SourceInstanceId": Utils.try_to_json(argv, "--SourceInstanceId"),
-        "DestinationInstanceId": Utils.try_to_json(argv, "--DestinationInstanceId"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "HaVipName": Utils.try_to_json(argv, "--HaVipName"),
+        "Vip": Utils.try_to_json(argv, "--Vip"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3561,9 +3807,42 @@ def doMigrateNetworkInterface(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MigrateNetworkInterfaceRequest()
+    model = models.CreateHaVipRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.MigrateNetworkInterface(model)
+    rsp = client.CreateHaVip(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteSecurityGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteSecurityGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupId": Utils.try_to_json(argv, "--SecurityGroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSecurityGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteSecurityGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3664,6 +3943,40 @@ def doDescribeBandwidthPackageQuota(argv, arglist):
     model = models.DescribeBandwidthPackageQuotaRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeBandwidthPackageQuota(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyHaVipAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyHaVipAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "HaVipId": Utils.try_to_json(argv, "--HaVipId"),
+        "HaVipName": Utils.try_to_json(argv, "--HaVipName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyHaVipAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyHaVipAttribute(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -4131,7 +4444,7 @@ ACTION_MAP = {
     "InquiryPriceResetVpnGatewayInternetMaxBandwidth": doInquiryPriceResetVpnGatewayInternetMaxBandwidth,
     "DeleteDirectConnectGatewayCcnRoutes": doDeleteDirectConnectGatewayCcnRoutes,
     "RejectAttachCcnInstances": doRejectAttachCcnInstances,
-    "DeleteSecurityGroup": doDeleteSecurityGroup,
+    "MigrateNetworkInterface": doMigrateNetworkInterface,
     "ModifyAddressesBandwidth": doModifyAddressesBandwidth,
     "DescribeVpnConnections": doDescribeVpnConnections,
     "CreateSubnet": doCreateSubnet,
@@ -4149,12 +4462,14 @@ ACTION_MAP = {
     "DeleteCustomerGateway": doDeleteCustomerGateway,
     "DeleteSubnet": doDeleteSubnet,
     "AttachClassicLinkVpc": doAttachClassicLinkVpc,
+    "DeleteDirectConnectGateway": doDeleteDirectConnectGateway,
     "DescribeDirectConnectGatewayCcnRoutes": doDescribeDirectConnectGatewayCcnRoutes,
     "CreateNetworkInterface": doCreateNetworkInterface,
     "DeleteBandwidthPackage": doDeleteBandwidthPackage,
+    "ModifySecurityGroupPolicies": doModifySecurityGroupPolicies,
     "DescribeCcns": doDescribeCcns,
     "DeleteCcn": doDeleteCcn,
-    "ResetVpnConnection": doResetVpnConnection,
+    "HaVipDisassociateAddressIp": doHaVipDisassociateAddressIp,
     "DetachNetworkInterface": doDetachNetworkInterface,
     "DeleteNetworkInterface": doDeleteNetworkInterface,
     "ReplaceRoutes": doReplaceRoutes,
@@ -4174,11 +4489,12 @@ ACTION_MAP = {
     "DeleteVpnGateway": doDeleteVpnGateway,
     "CreateServiceTemplate": doCreateServiceTemplate,
     "DeleteRoutes": doDeleteRoutes,
-    "ModifySecurityGroupPolicies": doModifySecurityGroupPolicies,
+    "ModifyDirectConnectGatewayAttribute": doModifyDirectConnectGatewayAttribute,
     "ModifySubnetAttribute": doModifySubnetAttribute,
     "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
     "DisableCcnRoutes": doDisableCcnRoutes,
     "InquiryPriceCreateVpnGateway": doInquiryPriceCreateVpnGateway,
+    "ResetVpnConnection": doResetVpnConnection,
     "CreateCustomerGateway": doCreateCustomerGateway,
     "CreateAddressTemplateGroup": doCreateAddressTemplateGroup,
     "CreateAddressTemplate": doCreateAddressTemplate,
@@ -4186,9 +4502,13 @@ ACTION_MAP = {
     "ModifyNetworkInterfaceAttribute": doModifyNetworkInterfaceAttribute,
     "DescribeVpnGateways": doDescribeVpnGateways,
     "DeleteRouteTable": doDeleteRouteTable,
+    "DescribeDirectConnectGateways": doDescribeDirectConnectGateways,
     "DescribeAccountAttributes": doDescribeAccountAttributes,
     "MigratePrivateIpAddress": doMigratePrivateIpAddress,
     "DescribeServiceTemplates": doDescribeServiceTemplates,
+    "HaVipAssociateAddressIp": doHaVipAssociateAddressIp,
+    "DescribeHaVips": doDescribeHaVips,
+    "DeleteHaVip": doDeleteHaVip,
     "ModifyBandwidthPackageAttribute": doModifyBandwidthPackageAttribute,
     "DescribeAddressQuota": doDescribeAddressQuota,
     "ModifyVpnGatewayAttribute": doModifyVpnGatewayAttribute,
@@ -4206,10 +4526,12 @@ ACTION_MAP = {
     "TransformAddress": doTransformAddress,
     "EnableRoutes": doEnableRoutes,
     "SetCcnRegionBandwidthLimits": doSetCcnRegionBandwidthLimits,
-    "MigrateNetworkInterface": doMigrateNetworkInterface,
+    "CreateHaVip": doCreateHaVip,
+    "DeleteSecurityGroup": doDeleteSecurityGroup,
     "ModifyRouteTableAttribute": doModifyRouteTableAttribute,
     "CreateRoutes": doCreateRoutes,
     "DescribeBandwidthPackageQuota": doDescribeBandwidthPackageQuota,
+    "ModifyHaVipAttribute": doModifyHaVipAttribute,
     "ReleaseAddresses": doReleaseAddresses,
     "DescribeBandwidthPackages": doDescribeBandwidthPackages,
     "CreateServiceTemplateGroup": doCreateServiceTemplateGroup,

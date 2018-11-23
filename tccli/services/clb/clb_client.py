@@ -12,21 +12,23 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.redis.v20180412 import redis_client as redis_client_v20180412
-from tencentcloud.redis.v20180412 import models as models_v20180412
-from tccli.services.redis import v20180412
-from tccli.services.redis.v20180412 import help as v20180412_help
+from tencentcloud.clb.v20180317 import clb_client as clb_client_v20180317
+from tencentcloud.clb.v20180317 import models as models_v20180317
+from tccli.services.clb import v20180317
+from tccli.services.clb.v20180317 import help as v20180317_help
 
 
-def doResetPassword(argv, arglist):
+def doDescribeTargets(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResetPassword", g_param[OptionsDefine.Version])
+        show_help("DescribeTargets", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
+        "Protocol": Utils.try_to_json(argv, "--Protocol"),
+        "Port": Utils.try_to_json(argv, "--Port"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -37,12 +39,12 @@ def doResetPassword(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetPasswordRequest()
+    model = models.DescribeTargetsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResetPassword(model)
+    rsp = client.DescribeTargets(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -52,15 +54,19 @@ def doResetPassword(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpgradeInstance(argv, arglist):
+def doRegisterTargets(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpgradeInstance", g_param[OptionsDefine.Version])
+        show_help("RegisterTargets", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "MemSize": Utils.try_to_json(argv, "--MemSize"),
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "Targets": Utils.try_to_json(argv, "--Targets"),
+        "LocationId": Utils.try_to_json(argv, "--LocationId"),
+        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "Url": Utils.try_to_json(argv, "--Url"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -71,12 +77,12 @@ def doUpgradeInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeInstanceRequest()
+    model = models.RegisterTargetsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpgradeInstance(model)
+    rsp = client.RegisterTargets(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -86,15 +92,22 @@ def doUpgradeInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRenewInstance(argv, arglist):
+def doCreateListener(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RenewInstance", g_param[OptionsDefine.Version])
+        show_help("CreateListener", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "Ports": Utils.try_to_json(argv, "--Ports"),
+        "Protocol": Utils.try_to_json(argv, "--Protocol"),
+        "ListenerNames": Utils.try_to_json(argv, "--ListenerNames"),
+        "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
+        "Certificate": Utils.try_to_json(argv, "--Certificate"),
+        "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
+        "Scheduler": Utils.try_to_json(argv, "--Scheduler"),
+        "SniSwitch": Utils.try_to_json(argv, "--SniSwitch"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -105,12 +118,12 @@ def doRenewInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenewInstanceRequest()
+    model = models.CreateListenerRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RenewInstance(model)
+    rsp = client.CreateListener(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -120,24 +133,20 @@ def doRenewInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstances(argv, arglist):
+def doModifyTargetWeight(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeInstances", g_param[OptionsDefine.Version])
+        show_help("ModifyTargetWeight", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
-        "OrderType": Utils.try_to_json(argv, "--OrderType"),
-        "VpcIds": Utils.try_to_json(argv, "--VpcIds"),
-        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
-        "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
-        "RegionIds": Utils.try_to_json(argv, "--RegionIds"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "Weight": Utils.try_to_json(argv, "--Weight"),
+        "LocationId": Utils.try_to_json(argv, "--LocationId"),
+        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+        "Targets": Utils.try_to_json(argv, "--Targets"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -148,12 +157,12 @@ def doDescribeInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstancesRequest()
+    model = models.ModifyTargetWeightRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInstances(model)
+    rsp = client.ModifyTargetWeight(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -163,15 +172,20 @@ def doDescribeInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doManualBackupInstance(argv, arglist):
+def doModifyListener(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ManualBackupInstance", g_param[OptionsDefine.Version])
+        show_help("ModifyListener", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Remark": Utils.try_to_json(argv, "--Remark"),
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "ListenerName": Utils.try_to_json(argv, "--ListenerName"),
+        "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
+        "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
+        "Certificate": Utils.try_to_json(argv, "--Certificate"),
+        "Scheduler": Utils.try_to_json(argv, "--Scheduler"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -182,12 +196,12 @@ def doManualBackupInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ManualBackupInstanceRequest()
+    model = models.ModifyListenerRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ManualBackupInstance(model)
+    rsp = client.ModifyListener(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -197,16 +211,14 @@ def doManualBackupInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModfiyInstancePassword(argv, arglist):
+def doDeleteLoadBalancer(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModfiyInstancePassword", g_param[OptionsDefine.Version])
+        show_help("DeleteLoadBalancer", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "OldPassword": Utils.try_to_json(argv, "--OldPassword"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -217,12 +229,12 @@ def doModfiyInstancePassword(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModfiyInstancePasswordRequest()
+    model = models.DeleteLoadBalancerRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModfiyInstancePassword(model)
+    rsp = client.DeleteLoadBalancer(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -232,14 +244,15 @@ def doModfiyInstancePassword(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAutoBackupConfig(argv, arglist):
+def doModifyLoadBalancerAttributes(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeAutoBackupConfig", g_param[OptionsDefine.Version])
+        show_help("ModifyLoadBalancerAttributes", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerName": Utils.try_to_json(argv, "--LoadBalancerName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -250,12 +263,12 @@ def doDescribeAutoBackupConfig(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAutoBackupConfigRequest()
+    model = models.ModifyLoadBalancerAttributesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAutoBackupConfig(model)
+    rsp = client.ModifyLoadBalancerAttributes(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -265,147 +278,10 @@ def doDescribeAutoBackupConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doClearInstance(argv, arglist):
+def doDescribeTaskStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ClearInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ClearInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ClearInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeInstanceBackups(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeInstanceBackups", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Status": Utils.try_to_json(argv, "--Status"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceBackupsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInstanceBackups(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeInstanceDealDetail(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeInstanceDealDetail", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "DealIds": Utils.try_to_json(argv, "--DealIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceDealDetailRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInstanceDealDetail(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeProductInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeProductInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeProductInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeProductInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTaskInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeTaskInfo", g_param[OptionsDefine.Version])
+        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -420,12 +296,12 @@ def doDescribeTaskInfo(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskInfoRequest()
+    model = models.DescribeTaskStatusRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskInfo(model)
+    rsp = client.DescribeTaskStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -435,17 +311,18 @@ def doDescribeTaskInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAutoBackupConfig(argv, arglist):
+def doDeleteRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyAutoBackupConfig", g_param[OptionsDefine.Version])
+        show_help("DeleteRule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "WeekDays": Utils.try_to_json(argv, "--WeekDays"),
-        "TimePeriod": Utils.try_to_json(argv, "--TimePeriod"),
-        "AutoBackupType": Utils.try_to_json(argv, "--AutoBackupType"),
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LocationIds": Utils.try_to_json(argv, "--LocationIds"),
+        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "Url": Utils.try_to_json(argv, "--Url"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -456,12 +333,12 @@ def doModifyAutoBackupConfig(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAutoBackupConfigRequest()
+    model = models.DeleteRuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyAutoBackupConfig(model)
+    rsp = client.DeleteRule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -471,26 +348,238 @@ def doModifyAutoBackupConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateInstances(argv, arglist):
+def doDeleteListener(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateInstances", g_param[OptionsDefine.Version])
+        show_help("DeleteListener", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "TypeId": Utils.try_to_json(argv, "--TypeId"),
-        "MemSize": Utils.try_to_json(argv, "--MemSize"),
-        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "BillingMode": Utils.try_to_json(argv, "--BillingMode"),
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteListenerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteListener(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTargetPort(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTargetPort", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "Targets": Utils.try_to_json(argv, "--Targets"),
+        "NewPort": Utils.try_to_json(argv, "--NewPort"),
+        "LocationId": Utils.try_to_json(argv, "--LocationId"),
+        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTargetPortRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyTargetPort(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyRule(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyRule", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LocationId": Utils.try_to_json(argv, "--LocationId"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+        "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
+        "Scheduler": Utils.try_to_json(argv, "--Scheduler"),
+        "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyRuleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyRule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateRule(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateRule", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "Rules": Utils.try_to_json(argv, "--Rules"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRuleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateRule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDomain(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDomain", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "NewDomain": Utils.try_to_json(argv, "--NewDomain"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDomainRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDomain(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeListeners(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeListeners", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
+        "Protocol": Utils.try_to_json(argv, "--Protocol"),
+        "Port": Utils.try_to_json(argv, "--Port"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeListenersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeListeners(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateLoadBalancer(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateLoadBalancer", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerType": Utils.try_to_json(argv, "--LoadBalancerType"),
+        "Forward": Utils.try_to_json(argv, "--Forward"),
+        "LoadBalancerName": Utils.try_to_json(argv, "--LoadBalancerName"),
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
         "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
-        "SecurityGroupIdList": Utils.try_to_json(argv, "--SecurityGroupIdList"),
-        "VPort": Utils.try_to_json(argv, "--VPort"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -501,12 +590,97 @@ def doCreateInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateInstancesRequest()
+    model = models.CreateLoadBalancerRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateInstances(model)
+    rsp = client.CreateLoadBalancer(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLoadBalancers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeLoadBalancers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
+        "LoadBalancerType": Utils.try_to_json(argv, "--LoadBalancerType"),
+        "Forward": Utils.try_to_json(argv, "--Forward"),
+        "LoadBalancerName": Utils.try_to_json(argv, "--LoadBalancerName"),
+        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "LoadBalancerVips": Utils.try_to_json(argv, "--LoadBalancerVips"),
+        "BackendPublicIps": Utils.try_to_json(argv, "--BackendPublicIps"),
+        "BackendPrivateIps": Utils.try_to_json(argv, "--BackendPrivateIps"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "OrderType": Utils.try_to_json(argv, "--OrderType"),
+        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "WithRs": Utils.try_to_json(argv, "--WithRs"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLoadBalancersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeLoadBalancers(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeregisterTargets(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeregisterTargets", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "Targets": Utils.try_to_json(argv, "--Targets"),
+        "LocationId": Utils.try_to_json(argv, "--LocationId"),
+        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeregisterTargetsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeregisterTargets(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -517,44 +691,48 @@ def doCreateInstances(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180412": redis_client_v20180412,
+    "v20180317": clb_client_v20180317,
 
 }
 
 MODELS_MAP = {
-    "v20180412": models_v20180412,
+    "v20180317": models_v20180317,
 
 }
 
 ACTION_MAP = {
-    "ResetPassword": doResetPassword,
-    "UpgradeInstance": doUpgradeInstance,
-    "RenewInstance": doRenewInstance,
-    "DescribeInstances": doDescribeInstances,
-    "ManualBackupInstance": doManualBackupInstance,
-    "ModfiyInstancePassword": doModfiyInstancePassword,
-    "DescribeAutoBackupConfig": doDescribeAutoBackupConfig,
-    "ClearInstance": doClearInstance,
-    "DescribeInstanceBackups": doDescribeInstanceBackups,
-    "DescribeInstanceDealDetail": doDescribeInstanceDealDetail,
-    "DescribeProductInfo": doDescribeProductInfo,
-    "DescribeTaskInfo": doDescribeTaskInfo,
-    "ModifyAutoBackupConfig": doModifyAutoBackupConfig,
-    "CreateInstances": doCreateInstances,
+    "DescribeTargets": doDescribeTargets,
+    "RegisterTargets": doRegisterTargets,
+    "CreateListener": doCreateListener,
+    "ModifyTargetWeight": doModifyTargetWeight,
+    "ModifyListener": doModifyListener,
+    "DeleteLoadBalancer": doDeleteLoadBalancer,
+    "ModifyLoadBalancerAttributes": doModifyLoadBalancerAttributes,
+    "DescribeTaskStatus": doDescribeTaskStatus,
+    "DeleteRule": doDeleteRule,
+    "DeleteListener": doDeleteListener,
+    "ModifyTargetPort": doModifyTargetPort,
+    "ModifyRule": doModifyRule,
+    "CreateRule": doCreateRule,
+    "ModifyDomain": doModifyDomain,
+    "DescribeListeners": doDescribeListeners,
+    "CreateLoadBalancer": doCreateLoadBalancer,
+    "DescribeLoadBalancers": doDescribeLoadBalancers,
+    "DeregisterTargets": doDeregisterTargets,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180412.version,
+    v20180317.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180412.version.replace('-', ''): {"help": v20180412_help.INFO,"desc": v20180412_help.DESC},
+     'v' + v20180317.version.replace('-', ''): {"help": v20180317_help.INFO,"desc": v20180317_help.DESC},
 
 }
 
 
-def redis_action(argv, arglist):
+def clb_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -570,7 +748,7 @@ def redis_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "redis", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "clb", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -591,7 +769,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("redis", redis_action)
+    cmd = NiceCommand("clb", clb_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -650,11 +828,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["redis"][OptionsDefine.Version]
+            version = config["clb"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["redis"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["clb"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -671,7 +849,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "redis", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "clb", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -681,7 +859,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["redis"]["version"]
+        version = profile["clb"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

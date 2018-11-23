@@ -133,6 +133,15 @@ INFO = {
     ],
     "desc": "创建redis实例"
   },
+  "DescribeTaskInfo": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "任务ID"
+      }
+    ],
+    "desc": "用于查询任务结果"
+  },
   "DescribeAutoBackupConfig": {
     "params": [
       {
@@ -183,6 +192,19 @@ INFO = {
       }
     ],
     "desc": "查询 CRS 实例备份列表"
+  },
+  "DescribeInstanceDealDetail": {
+    "params": [
+      {
+        "name": "DealIds",
+        "desc": "订单ID数组"
+      }
+    ],
+    "desc": "查询订单信息"
+  },
+  "DescribeProductInfo": {
+    "params": [],
+    "desc": "本接口查询指定可用区和实例类型下 Redis 的售卖规格， 如果用户不在购买白名单中，将不能查询该可用区或该类型的售卖规格详情。申请购买某地域白名单可以提交工单"
   },
   "RenewInstance": {
     "params": [

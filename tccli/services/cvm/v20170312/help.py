@@ -26,6 +26,10 @@ INFO = {
       {
         "name": "Reboot",
         "desc": "实例处于运行中时，是否允许关机执行制作镜像任务。"
+      },
+      {
+        "name": "DryRun",
+        "desc": "DryRun"
       }
     ],
     "desc": "本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。"
@@ -412,7 +416,7 @@ INFO = {
     "params": [
       {
         "name": "Placement",
-        "desc": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，专用宿主机（对于独享母机付费模式的实例创建）等属性。"
+        "desc": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。"
       },
       {
         "name": "ImageId",
@@ -420,7 +424,7 @@ INFO = {
       },
       {
         "name": "InstanceChargeType",
-        "desc": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享母机付费（基于专用宿主机创建，宿主机部分的资源不收费）<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。"
+        "desc": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。"
       },
       {
         "name": "InstanceChargePrepaid",
@@ -448,7 +452,7 @@ INFO = {
       },
       {
         "name": "InstanceCount",
-        "desc": "购买实例数量。取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。"
+        "desc": "购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。"
       },
       {
         "name": "InstanceName",
@@ -460,7 +464,7 @@ INFO = {
       },
       {
         "name": "SecurityGroupIds",
-        "desc": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则默认不绑定安全组。"
+        "desc": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。"
       },
       {
         "name": "EnhancedService",
