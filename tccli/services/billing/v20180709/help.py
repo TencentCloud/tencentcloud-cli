@@ -18,6 +18,14 @@ INFO = {
       {
         "name": "Month",
         "desc": "月份，格式为yyyy-mm"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "周期开始时间，格式为Y-m-d H:i:s，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传"
+      },
+      {
+        "name": "EndTime",
+        "desc": "周期结束时间，格式为Y-m-d H:i:s，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传"
       }
     ],
     "desc": "查询账单明细数据"

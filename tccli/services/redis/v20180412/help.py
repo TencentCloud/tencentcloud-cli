@@ -5,11 +5,19 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "升级的实例Id"
+        "desc": "实例Id"
       },
       {
         "name": "MemSize",
-        "desc": "规格 单位 MB"
+        "desc": "分片大小 单位 MB"
+      },
+      {
+        "name": "RedisShardNum",
+        "desc": "分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
+      },
+      {
+        "name": "RedisReplicasNum",
+        "desc": "副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
       }
     ],
     "desc": "升级实例"
@@ -18,7 +26,7 @@ INFO = {
     "params": [
       {
         "name": "Limit",
-        "desc": "实例列表大小"
+        "desc": "实例列表的大小，参数默认值20"
       },
       {
         "name": "Offset",
@@ -26,7 +34,7 @@ INFO = {
       },
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例Id，如：crs-6ubhgouj"
       },
       {
         "name": "OrderBy",
@@ -38,11 +46,11 @@ INFO = {
       },
       {
         "name": "VpcIds",
-        "desc": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络"
+        "desc": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：47525"
       },
       {
         "name": "SubnetIds",
-        "desc": "子网ID数组，数组下标从0开始"
+        "desc": "子网ID数组，数组下标从0开始，如：56854"
       },
       {
         "name": "ProjectIds",
@@ -53,12 +61,20 @@ INFO = {
         "desc": "查找实例的ID。"
       },
       {
-        "name": "RegionIds",
-        "desc": "查询的Region的列表。"
-      },
-      {
         "name": "InstanceName",
         "desc": "实例名称"
+      },
+      {
+        "name": "UniqVpcIds",
+        "desc": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk"
+      },
+      {
+        "name": "UniqSubnetIds",
+        "desc": "子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2"
+      },
+      {
+        "name": "RegionIds",
+        "desc": "地域ID，已经弃用，可通过公共参数Region查询对应地域"
       }
     ],
     "desc": "查询Redis实例列表"
@@ -84,7 +100,7 @@ INFO = {
       },
       {
         "name": "TypeId",
-        "desc": "实例类型：2 – 主从版，5-单机版"
+        "desc": "实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，7 – Redis4.0集群版，"
       },
       {
         "name": "MemSize",
@@ -108,11 +124,11 @@ INFO = {
       },
       {
         "name": "VpcId",
-        "desc": "私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表 查询"
+        "desc": "私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk"
       },
       {
         "name": "SubnetId",
-        "desc": "基础网络下， subnetId无效； vpc子网下，取值以查询查询子网列表"
+        "desc": "基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2"
       },
       {
         "name": "ProjectId",
@@ -129,6 +145,18 @@ INFO = {
       {
         "name": "VPort",
         "desc": "用户自定义的端口 不填则默认为6379"
+      },
+      {
+        "name": "RedisShardNum",
+        "desc": "实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
+      },
+      {
+        "name": "RedisReplicasNum",
+        "desc": "实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
+      },
+      {
+        "name": "ReplicasReadonly",
+        "desc": "是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
       }
     ],
     "desc": "创建redis实例"
@@ -155,7 +183,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例id"
+        "desc": "实例Id"
       },
       {
         "name": "Password",
@@ -172,7 +200,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "实例列表大小"
+        "desc": "实例列表大小，默认大小20"
       },
       {
         "name": "Offset",

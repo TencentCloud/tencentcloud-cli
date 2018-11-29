@@ -53,16 +53,22 @@ def doDownloadReport(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTaskStatus(argv, arglist):
+def doDescribeRecords(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
+        show_help("DescribeRecords", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Module": Utils.try_to_json(argv, "--Module"),
         "Operation": Utils.try_to_json(argv, "--Operation"),
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "AccountNum": Utils.try_to_json(argv, "--AccountNum"),
+        "CalledPhone": Utils.try_to_json(argv, "--CalledPhone"),
+        "StartBizDate": Utils.try_to_json(argv, "--StartBizDate"),
+        "EndBizDate": Utils.try_to_json(argv, "--EndBizDate"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -76,9 +82,9 @@ def doDescribeTaskStatus(argv, arglist):
     client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskStatusRequest()
+    model = models.DescribeRecordsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskStatus(model)
+    rsp = client.DescribeRecords(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -125,6 +131,114 @@ def doUploadFile(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTaskStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": Utils.try_to_json(argv, "--Module"),
+        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUploadDataFile(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UploadDataFile", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": Utils.try_to_json(argv, "--Module"),
+        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "FileName": Utils.try_to_json(argv, "--FileName"),
+        "UploadModel": Utils.try_to_json(argv, "--UploadModel"),
+        "File": Utils.try_to_json(argv, "--File"),
+        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UploadDataFileRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UploadDataFile(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doApplyBlackList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ApplyBlackList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": Utils.try_to_json(argv, "--Module"),
+        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "BlackList": Utils.try_to_json(argv, "--BlackList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ApplyBlackListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ApplyBlackList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180321": cr_client_v20180321,
 
@@ -137,8 +251,11 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DownloadReport": doDownloadReport,
-    "DescribeTaskStatus": doDescribeTaskStatus,
+    "DescribeRecords": doDescribeRecords,
     "UploadFile": doUploadFile,
+    "DescribeTaskStatus": doDescribeTaskStatus,
+    "UploadDataFile": doUploadDataFile,
+    "ApplyBlackList": doApplyBlackList,
 
 }
 

@@ -61,6 +61,8 @@ def doUpgradeInstance(argv, arglist):
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
         "MemSize": Utils.try_to_json(argv, "--MemSize"),
+        "RedisShardNum": Utils.try_to_json(argv, "--RedisShardNum"),
+        "RedisReplicasNum": Utils.try_to_json(argv, "--RedisReplicasNum"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -136,8 +138,10 @@ def doDescribeInstances(argv, arglist):
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
         "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
         "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
-        "RegionIds": Utils.try_to_json(argv, "--RegionIds"),
         "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "UniqVpcIds": Utils.try_to_json(argv, "--UniqVpcIds"),
+        "UniqSubnetIds": Utils.try_to_json(argv, "--UniqSubnetIds"),
+        "RegionIds": Utils.try_to_json(argv, "--RegionIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -491,6 +495,9 @@ def doCreateInstances(argv, arglist):
         "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
         "SecurityGroupIdList": Utils.try_to_json(argv, "--SecurityGroupIdList"),
         "VPort": Utils.try_to_json(argv, "--VPort"),
+        "RedisShardNum": Utils.try_to_json(argv, "--RedisShardNum"),
+        "RedisReplicasNum": Utils.try_to_json(argv, "--RedisReplicasNum"),
+        "ReplicasReadonly": Utils.try_to_json(argv, "--ReplicasReadonly"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

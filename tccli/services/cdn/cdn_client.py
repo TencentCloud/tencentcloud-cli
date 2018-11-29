@@ -12,130 +12,27 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.billing.v20180709 import billing_client as billing_client_v20180709
-from tencentcloud.billing.v20180709 import models as models_v20180709
-from tccli.services.billing import v20180709
-from tccli.services.billing.v20180709 import help as v20180709_help
+from tencentcloud.cdn.v20180606 import cdn_client as cdn_client_v20180606
+from tencentcloud.cdn.v20180606 import models as models_v20180606
+from tccli.services.cdn import v20180606
+from tccli.services.cdn.v20180606 import help as v20180606_help
 
 
-def doDescribeBillDetail(argv, arglist):
+def doListTopData(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeBillDetail", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PeriodType": Utils.try_to_json(argv, "--PeriodType"),
-        "Month": Utils.try_to_json(argv, "--Month"),
-        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBillDetailRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeBillDetail(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeAccountBalance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeAccountBalance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAccountBalanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAccountBalance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doPayDeals(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("PayDeals", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "OrderIds": Utils.try_to_json(argv, "--OrderIds"),
-        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
-        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PayDealsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.PayDeals(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDealsByCond(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDealsByCond", g_param[OptionsDefine.Version])
+        show_help("ListTopData", g_param[OptionsDefine.Version])
         return
 
     param = {
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Status": Utils.try_to_json(argv, "--Status"),
-        "OrderId": Utils.try_to_json(argv, "--OrderId"),
+        "Metric": Utils.try_to_json(argv, "--Metric"),
+        "Filter": Utils.try_to_json(argv, "--Filter"),
+        "Domains": Utils.try_to_json(argv, "--Domains"),
+        "Project": Utils.try_to_json(argv, "--Project"),
+        "Detail": Utils.try_to_json(argv, "--Detail"),
+        "Code": Utils.try_to_json(argv, "--Code"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -146,12 +43,12 @@ def doDescribeDealsByCond(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDealsByCondRequest()
+    model = models.ListTopDataRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDealsByCond(model)
+    rsp = client.ListTopData(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -161,17 +58,20 @@ def doDescribeDealsByCond(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBillResourceSummary(argv, arglist):
+def doDescribeOriginData(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeBillResourceSummary", g_param[OptionsDefine.Version])
+        show_help("DescribeOriginData", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PeriodType": Utils.try_to_json(argv, "--PeriodType"),
-        "Month": Utils.try_to_json(argv, "--Month"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Metric": Utils.try_to_json(argv, "--Metric"),
+        "Domains": Utils.try_to_json(argv, "--Domains"),
+        "Project": Utils.try_to_json(argv, "--Project"),
+        "Interval": Utils.try_to_json(argv, "--Interval"),
+        "Detail": Utils.try_to_json(argv, "--Detail"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -182,12 +82,92 @@ def doDescribeBillResourceSummary(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBillResourceSummaryRequest()
+    model = models.DescribeOriginDataRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeBillResourceSummary(model)
+    rsp = client.DescribeOriginData(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeIpVisit(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeIpVisit", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Domains": Utils.try_to_json(argv, "--Domains"),
+        "Project": Utils.try_to_json(argv, "--Project"),
+        "Interval": Utils.try_to_json(argv, "--Interval"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeIpVisitRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeIpVisit(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCdnData(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCdnData", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Metric": Utils.try_to_json(argv, "--Metric"),
+        "Domains": Utils.try_to_json(argv, "--Domains"),
+        "Project": Utils.try_to_json(argv, "--Project"),
+        "Interval": Utils.try_to_json(argv, "--Interval"),
+        "Detail": Utils.try_to_json(argv, "--Detail"),
+        "Isp": Utils.try_to_json(argv, "--Isp"),
+        "District": Utils.try_to_json(argv, "--District"),
+        "Protocol": Utils.try_to_json(argv, "--Protocol"),
+        "DataSource": Utils.try_to_json(argv, "--DataSource"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCdnDataRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCdnData(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -198,35 +178,34 @@ def doDescribeBillResourceSummary(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180709": billing_client_v20180709,
+    "v20180606": cdn_client_v20180606,
 
 }
 
 MODELS_MAP = {
-    "v20180709": models_v20180709,
+    "v20180606": models_v20180606,
 
 }
 
 ACTION_MAP = {
-    "DescribeBillDetail": doDescribeBillDetail,
-    "DescribeAccountBalance": doDescribeAccountBalance,
-    "PayDeals": doPayDeals,
-    "DescribeDealsByCond": doDescribeDealsByCond,
-    "DescribeBillResourceSummary": doDescribeBillResourceSummary,
+    "ListTopData": doListTopData,
+    "DescribeOriginData": doDescribeOriginData,
+    "DescribeIpVisit": doDescribeIpVisit,
+    "DescribeCdnData": doDescribeCdnData,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180709.version,
+    v20180606.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180709.version.replace('-', ''): {"help": v20180709_help.INFO,"desc": v20180709_help.DESC},
+     'v' + v20180606.version.replace('-', ''): {"help": v20180606_help.INFO,"desc": v20180606_help.DESC},
 
 }
 
 
-def billing_action(argv, arglist):
+def cdn_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -242,7 +221,7 @@ def billing_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "billing", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "cdn", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -263,7 +242,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("billing", billing_action)
+    cmd = NiceCommand("cdn", cdn_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -322,11 +301,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["billing"][OptionsDefine.Version]
+            version = config["cdn"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["billing"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["cdn"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -343,7 +322,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "billing", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cdn", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -353,7 +332,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["billing"]["version"]
+        version = profile["cdn"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass
