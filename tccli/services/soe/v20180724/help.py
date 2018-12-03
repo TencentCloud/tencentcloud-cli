@@ -25,11 +25,15 @@ INFO = {
       },
       {
         "name": "SoeAppId",
-        "desc": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，需要结合[控制台](https://console.cloud.tencent.com/soe)使用。"
+        "desc": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。"
       },
       {
         "name": "IsLongLifeSession",
         "desc": "长效session标识，当该参数为1时，session的持续时间为300s，但会一定程度上影响第一个数据包的返回速度，且TransmitOralProcess必须同时为1才可生效。"
+      },
+      {
+        "name": "StorageMode",
+        "desc": "音频存储模式，0：不存储，1：存储到公共对象存储"
       }
     ],
     "desc": "初始化发音评估过程，每一轮评估前进行调用。语音输入模式分为流式模式和非流式模式，流式模式支持数据分片传输，可以加快评估响应速度。评估模式分为词模式和句子模式，词模式会标注每个音节的详细信息；句子模式会有完整度和流利度的评估。"
@@ -54,7 +58,7 @@ INFO = {
       },
       {
         "name": "UserVoiceData",
-        "desc": "当前数据包数据, 流式模式下数据包大小可以按需设置，数据包大小必须 >= 4K，编码格式要求为BASE64。"
+        "desc": "当前数据包数据, 流式模式下数据包大小可以按需设置，数据包大小必须 >= 4K，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。"
       },
       {
         "name": "SessionId",
@@ -62,7 +66,7 @@ INFO = {
       },
       {
         "name": "SoeAppId",
-        "desc": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，需要结合[控制台](https://console.cloud.tencent.com/soe)使用。"
+        "desc": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。"
       },
       {
         "name": "IsLongLifeSession",

@@ -12,27 +12,25 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.soe.v20180724 import soe_client as soe_client_v20180724
-from tencentcloud.soe.v20180724 import models as models_v20180724
-from tccli.services.soe import v20180724
-from tccli.services.soe.v20180724 import help as v20180724_help
+from tencentcloud.facefusion.v20181201 import facefusion_client as facefusion_client_v20181201
+from tencentcloud.facefusion.v20181201 import models as models_v20181201
+from tccli.services.facefusion import v20181201
+from tccli.services.facefusion.v20181201 import help as v20181201_help
 
 
-def doInitOralProcess(argv, arglist):
+def doFaceFusion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("InitOralProcess", g_param[OptionsDefine.Version])
+        show_help("FaceFusion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
-        "RefText": Utils.try_to_json(argv, "--RefText"),
-        "WorkMode": Utils.try_to_json(argv, "--WorkMode"),
-        "EvalMode": Utils.try_to_json(argv, "--EvalMode"),
-        "ScoreCoeff": Utils.try_to_json(argv, "--ScoreCoeff"),
-        "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
-        "IsLongLifeSession": Utils.try_to_json(argv, "--IsLongLifeSession"),
-        "StorageMode": Utils.try_to_json(argv, "--StorageMode"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ModelId": Utils.try_to_json(argv, "--ModelId"),
+        "Image": Utils.try_to_json(argv, "--Image"),
+        "RspImgType": Utils.try_to_json(argv, "--RspImgType"),
+        "PornDetect": Utils.try_to_json(argv, "--PornDetect"),
+        "CelebrityIdentify": Utils.try_to_json(argv, "--CelebrityIdentify"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -43,52 +41,12 @@ def doInitOralProcess(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SoeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.FacefusionClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InitOralProcessRequest()
+    model = models.FaceFusionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.InitOralProcess(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTransmitOralProcess(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TransmitOralProcess", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "SeqId": Utils.try_to_json(argv, "--SeqId"),
-        "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
-        "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
-        "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
-        "UserVoiceData": Utils.try_to_json(argv, "--UserVoiceData"),
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
-        "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
-        "IsLongLifeSession": Utils.try_to_json(argv, "--IsLongLifeSession"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SoeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TransmitOralProcessRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TransmitOralProcess(model)
+    rsp = client.FaceFusion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -99,32 +57,31 @@ def doTransmitOralProcess(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180724": soe_client_v20180724,
+    "v20181201": facefusion_client_v20181201,
 
 }
 
 MODELS_MAP = {
-    "v20180724": models_v20180724,
+    "v20181201": models_v20181201,
 
 }
 
 ACTION_MAP = {
-    "InitOralProcess": doInitOralProcess,
-    "TransmitOralProcess": doTransmitOralProcess,
+    "FaceFusion": doFaceFusion,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180724.version,
+    v20181201.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180724.version.replace('-', ''): {"help": v20180724_help.INFO,"desc": v20180724_help.DESC},
+     'v' + v20181201.version.replace('-', ''): {"help": v20181201_help.INFO,"desc": v20181201_help.DESC},
 
 }
 
 
-def soe_action(argv, arglist):
+def facefusion_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -140,7 +97,7 @@ def soe_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "soe", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "facefusion", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -161,7 +118,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("soe", soe_action)
+    cmd = NiceCommand("facefusion", facefusion_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -220,11 +177,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["soe"][OptionsDefine.Version]
+            version = config["facefusion"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["soe"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["facefusion"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -241,7 +198,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "soe", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "facefusion", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -251,7 +208,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["soe"]["version"]
+        version = profile["facefusion"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass
