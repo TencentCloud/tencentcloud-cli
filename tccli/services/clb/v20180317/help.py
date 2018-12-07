@@ -401,7 +401,7 @@ INFO = {
       },
       {
         "name": "Forward",
-        "desc": "1：应用型，0：传统型，-1：全部类型。"
+        "desc": "1：应用型，0：传统型。"
       },
       {
         "name": "LoadBalancerName",

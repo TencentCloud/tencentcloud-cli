@@ -49,7 +49,7 @@ INFO = {
       },
       {
         "name": "TerminationPolicies",
-        "desc": "销毁策略，目前长度上限为1"
+        "desc": "销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。\n<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。\n<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。"
       },
       {
         "name": "Zones",
@@ -58,6 +58,10 @@ INFO = {
       {
         "name": "RetryPolicy",
         "desc": "重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。在连续失败超过一定次数（25次）后不再重试。"
+      },
+      {
+        "name": "ZonesCheckPolicy",
+        "desc": "可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。\n\n可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。\n如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。"
       }
     ],
     "desc": "本接口（CreateAutoScalingGroup）用于创建伸缩组"
@@ -87,6 +91,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DettachInstances）用于从伸缩组移出 CVM 实例，本接口不会被销毁实例。"
+  },
+  "ModifyDesiredCapacity": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      },
+      {
+        "name": "DesiredCapacity",
+        "desc": "期望实例数"
+      }
+    ],
+    "desc": "本接口（ModifyDesiredCapacity）用于修改指定伸缩组的期望实例数"
   },
   "CreateScheduledAction": {
     "params": [
@@ -182,6 +199,10 @@ INFO = {
       {
         "name": "InstanceTypes",
         "desc": "实例机型列表，不同实例机型指定了不同的资源规格，最多支持5中实例机型。\n`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。"
+      },
+      {
+        "name": "InstanceTypesCheckPolicy",
+        "desc": "实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。"
       }
     ],
     "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置无法编辑更改。如需使用新的启动配置，只能重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"
@@ -226,7 +247,7 @@ INFO = {
       },
       {
         "name": "TerminationPolicies",
-        "desc": "销毁策略，目前长度上限为1"
+        "desc": "销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE。\n<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。\n<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。"
       },
       {
         "name": "VpcId",
@@ -239,6 +260,10 @@ INFO = {
       {
         "name": "RetryPolicy",
         "desc": "重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。在连续失败超过一定次数（25次）后不再重试。"
+      },
+      {
+        "name": "ZonesCheckPolicy",
+        "desc": "可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。在伸缩组实际变更资源相关字段时（启动配置、可用区、子网）发挥作用。\n<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。\n\n可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。\n如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。"
       }
     ],
     "desc": "本接口（ModifyAutoScalingGroup）用于修改伸缩组。"
@@ -426,17 +451,29 @@ INFO = {
     ],
     "desc": "本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。\n"
   },
-  "ModifyDesiredCapacity": {
+  "ModifyLaunchConfigurationAttributes": {
     "params": [
       {
-        "name": "AutoScalingGroupId",
-        "desc": "伸缩组ID"
+        "name": "LaunchConfigurationId",
+        "desc": "启动配置ID"
       },
       {
-        "name": "DesiredCapacity",
-        "desc": "期望实例数"
+        "name": "ImageId",
+        "desc": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>"
+      },
+      {
+        "name": "InstanceTypes",
+        "desc": "实例类型列表，不同实例机型指定了不同的资源规格，最多支持5中实例机型。\n启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。"
+      },
+      {
+        "name": "InstanceTypesCheckPolicy",
+        "desc": "实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。"
+      },
+      {
+        "name": "LaunchConfigurationName",
+        "desc": "启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。"
       }
     ],
-    "desc": "本接口（ModifyDesiredCapacity）用于修改指定伸缩组的期望实例数"
+    "desc": "本接口（ModifyLaunchConfigurationAttributes）用于修改启动配置部分属性。\n\n* 修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。\n* 本接口支持修改部分简单类型。"
   }
 }

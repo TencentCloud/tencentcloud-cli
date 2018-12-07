@@ -1215,12 +1215,14 @@ def doCreateImage(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
         "ImageName": Utils.try_to_json(argv, "--ImageName"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
         "ImageDescription": Utils.try_to_json(argv, "--ImageDescription"),
         "ForcePoweroff": Utils.try_to_json(argv, "--ForcePoweroff"),
         "Sysprep": Utils.try_to_json(argv, "--Sysprep"),
         "Reboot": Utils.try_to_json(argv, "--Reboot"),
+        "DataDiskIds": Utils.try_to_json(argv, "--DataDiskIds"),
+        "SnapshotIds": Utils.try_to_json(argv, "--SnapshotIds"),
         "DryRun": Utils.try_to_json(argv, "--DryRun"),
 
     }
@@ -1238,6 +1240,40 @@ def doCreateImage(argv, arglist):
     model = models.CreateImageRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateImage(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAssociateSecurityGroups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AssociateSecurityGroups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssociateSecurityGroupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AssociateSecurityGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2093,6 +2129,40 @@ def doDescribeInstanceTypeConfigs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDisassociateSecurityGroups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisassociateSecurityGroups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisassociateSecurityGroupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisassociateSecurityGroups(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20170312": cvm_client_v20170312,
 
@@ -2139,6 +2209,7 @@ ACTION_MAP = {
     "ResizeInstanceDisks": doResizeInstanceDisks,
     "DescribeZones": doDescribeZones,
     "CreateImage": doCreateImage,
+    "AssociateSecurityGroups": doAssociateSecurityGroups,
     "ResetInstancesType": doResetInstancesType,
     "ModifyImageAttribute": doModifyImageAttribute,
     "InquiryPriceResetInstancesType": doInquiryPriceResetInstancesType,
@@ -2163,6 +2234,7 @@ ACTION_MAP = {
     "DescribeInternetChargeTypeConfigs": doDescribeInternetChargeTypeConfigs,
     "RebootInstances": doRebootInstances,
     "DescribeInstanceTypeConfigs": doDescribeInstanceTypeConfigs,
+    "DisassociateSecurityGroups": doDisassociateSecurityGroups,
 
 }
 

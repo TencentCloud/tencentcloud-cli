@@ -198,17 +198,14 @@ def doStopLiveRecord(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyLivePlayAuthKey(argv, arglist):
+def doDeleteLiveWatermark(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyLivePlayAuthKey", g_param[OptionsDefine.Version])
+        show_help("DeleteLiveWatermark", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DomainName": Utils.try_to_json(argv, "--DomainName"),
-        "Enable": Utils.try_to_json(argv, "--Enable"),
-        "AuthKey": Utils.try_to_json(argv, "--AuthKey"),
-        "AuthDelta": Utils.try_to_json(argv, "--AuthDelta"),
+        "WatermarkId": Utils.try_to_json(argv, "--WatermarkId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -222,9 +219,9 @@ def doModifyLivePlayAuthKey(argv, arglist):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyLivePlayAuthKeyRequest()
+    model = models.DeleteLiveWatermarkRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyLivePlayAuthKey(model)
+    rsp = client.DeleteLiveWatermark(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -584,14 +581,18 @@ def doModifyPullStreamStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteLiveWatermark(argv, arglist):
+def doModifyLivePlayAuthKey(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteLiveWatermark", g_param[OptionsDefine.Version])
+        show_help("ModifyLivePlayAuthKey", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "WatermarkId": Utils.try_to_json(argv, "--WatermarkId"),
+        "DomainName": Utils.try_to_json(argv, "--DomainName"),
+        "Enable": Utils.try_to_json(argv, "--Enable"),
+        "AuthKey": Utils.try_to_json(argv, "--AuthKey"),
+        "AuthDelta": Utils.try_to_json(argv, "--AuthDelta"),
+        "AuthBackKey": Utils.try_to_json(argv, "--AuthBackKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -605,9 +606,9 @@ def doDeleteLiveWatermark(argv, arglist):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteLiveWatermarkRequest()
+    model = models.ModifyLivePlayAuthKeyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteLiveWatermark(model)
+    rsp = client.ModifyLivePlayAuthKey(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -652,20 +653,16 @@ def doResumeDelayLiveStream(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyPullStreamConfig(argv, arglist):
+def doResumeLiveStream(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyPullStreamConfig", g_param[OptionsDefine.Version])
+        show_help("ResumeLiveStream", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ConfigId": Utils.try_to_json(argv, "--ConfigId"),
-        "FromUrl": Utils.try_to_json(argv, "--FromUrl"),
-        "ToUrl": Utils.try_to_json(argv, "--ToUrl"),
-        "AreaId": Utils.try_to_json(argv, "--AreaId"),
-        "IspId": Utils.try_to_json(argv, "--IspId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "AppName": Utils.try_to_json(argv, "--AppName"),
+        "DomainName": Utils.try_to_json(argv, "--DomainName"),
+        "StreamName": Utils.try_to_json(argv, "--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -679,9 +676,9 @@ def doModifyPullStreamConfig(argv, arglist):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyPullStreamConfigRequest()
+    model = models.ResumeLiveStreamRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyPullStreamConfig(model)
+    rsp = client.ResumeLiveStream(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -763,16 +760,20 @@ def doForbidLiveStream(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResumeLiveStream(argv, arglist):
+def doModifyPullStreamConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResumeLiveStream", g_param[OptionsDefine.Version])
+        show_help("ModifyPullStreamConfig", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AppName": Utils.try_to_json(argv, "--AppName"),
-        "DomainName": Utils.try_to_json(argv, "--DomainName"),
-        "StreamName": Utils.try_to_json(argv, "--StreamName"),
+        "ConfigId": Utils.try_to_json(argv, "--ConfigId"),
+        "FromUrl": Utils.try_to_json(argv, "--FromUrl"),
+        "ToUrl": Utils.try_to_json(argv, "--ToUrl"),
+        "AreaId": Utils.try_to_json(argv, "--AreaId"),
+        "IspId": Utils.try_to_json(argv, "--IspId"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -786,9 +787,9 @@ def doResumeLiveStream(argv, arglist):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResumeLiveStreamRequest()
+    model = models.ModifyPullStreamConfigRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResumeLiveStream(model)
+    rsp = client.ModifyPullStreamConfig(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -905,6 +906,39 @@ def doDescribeLivePushAuthKey(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeletePullStreamConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeletePullStreamConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ConfigId": Utils.try_to_json(argv, "--ConfigId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeletePullStreamConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeletePullStreamConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180801": live_client_v20180801,
 
@@ -921,7 +955,7 @@ ACTION_MAP = {
     "CreateLiveRecord": doCreateLiveRecord,
     "UpdateLiveWatermark": doUpdateLiveWatermark,
     "StopLiveRecord": doStopLiveRecord,
-    "ModifyLivePlayAuthKey": doModifyLivePlayAuthKey,
+    "DeleteLiveWatermark": doDeleteLiveWatermark,
     "SetLiveWatermarkStatus": doSetLiveWatermarkStatus,
     "ModifyLivePushAuthKey": doModifyLivePushAuthKey,
     "DescribePullStreamConfigs": doDescribePullStreamConfigs,
@@ -932,15 +966,16 @@ ACTION_MAP = {
     "DescribeLivePlayAuthKey": doDescribeLivePlayAuthKey,
     "DescribeLiveStreamPublishedList": doDescribeLiveStreamPublishedList,
     "ModifyPullStreamStatus": doModifyPullStreamStatus,
-    "DeleteLiveWatermark": doDeleteLiveWatermark,
+    "ModifyLivePlayAuthKey": doModifyLivePlayAuthKey,
     "ResumeDelayLiveStream": doResumeDelayLiveStream,
-    "ModifyPullStreamConfig": doModifyPullStreamConfig,
+    "ResumeLiveStream": doResumeLiveStream,
     "AddLiveWatermark": doAddLiveWatermark,
     "ForbidLiveStream": doForbidLiveStream,
-    "ResumeLiveStream": doResumeLiveStream,
+    "ModifyPullStreamConfig": doModifyPullStreamConfig,
     "DescribeLiveStreamOnlineList": doDescribeLiveStreamOnlineList,
     "CreatePullStreamConfig": doCreatePullStreamConfig,
     "DescribeLivePushAuthKey": doDescribeLivePushAuthKey,
+    "DeletePullStreamConfig": doDeletePullStreamConfig,
 
 }
 

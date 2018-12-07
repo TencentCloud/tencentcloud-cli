@@ -71,6 +71,19 @@ INFO = {
     ],
     "desc": "DescribeOriginData 用于查询 CDN 实时回源监控数据，支持以下指标查询：\n\n+ 回源流量（单位为 byte）\n+ 回源带宽（单位为 bps）\n+ 回源请求数（单位为 次）\n+ 回源失败请求数（单位为 次）\n+ 回源失败率（单位为 %，小数点后保留两位）\n+ 回源状态码 2XX 汇总及各 2 开头回源状态码明细（单位为 个）\n+ 回源状态码 3XX 汇总及各 3 开头回源状态码明细（单位为 个）\n+ 回源状态码 4XX 汇总及各 4 开头回源状态码明细（单位为 个）\n+ 回源状态码 5XX 汇总及各 5 开头回源状态码明细（单位为 个）"
   },
+  "DescribeMapInfo": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "映射查询类别：\nips：运营商映射查询\ndistrict：省份映射查询"
+      }
+    ],
+    "desc": "DescribeMapInfo 用于查询省份对应的 ID，运营商对应的 ID 信息。"
+  },
+  "DescribePayType": {
+    "params": [],
+    "desc": "DescribePayType 用于查询用户的计费类型，计费周期等信息。"
+  },
   "DescribeIpVisit": {
     "params": [
       {

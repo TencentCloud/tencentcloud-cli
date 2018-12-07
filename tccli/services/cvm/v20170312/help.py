@@ -4,12 +4,12 @@ INFO = {
   "CreateImage": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "需要制作镜像的实例ID"
-      },
-      {
         "name": "ImageName",
         "desc": "镜像名称"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "需要制作镜像的实例ID"
       },
       {
         "name": "ImageDescription",
@@ -26,6 +26,14 @@ INFO = {
       {
         "name": "Reboot",
         "desc": "实例处于运行中时，是否允许关机执行制作镜像任务。"
+      },
+      {
+        "name": "DataDiskIds",
+        "desc": "实例需要制作镜像的数据盘Id"
+      },
+      {
+        "name": "SnapshotIds",
+        "desc": "需要制作镜像的快照Id,必须包含一个系统盘快照"
       },
       {
         "name": "DryRun",
@@ -407,7 +415,7 @@ INFO = {
       },
       {
         "name": "ForceStop",
-        "desc": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br>默认取值：FALSE。"
+        "desc": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再绑定密钥。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br>默认取值：FALSE。"
       }
     ],
     "desc": "本接口 (AssociateInstancesKeyPairs) 用于将密钥绑定到实例上。\n\n* 将密钥的公钥写入到实例的`SSH`配置当中，用户就可以通过该密钥的私钥来登录实例。\n* 如果实例原来绑定过密钥，那么原来的密钥将失效。\n* 如果实例原来是通过密码登录，绑定密钥后无法使用密码登录。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。"
@@ -513,7 +521,7 @@ INFO = {
       },
       {
         "name": "ForceStop",
-        "desc": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br><br>默认取值：FALSE。"
+        "desc": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再解绑密钥。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br><br>默认取值：FALSE。"
       }
     ],
     "desc": "本接口 (DisassociateInstancesKeyPairs) 用于解除实例的密钥绑定关系。\n\n* 只支持[`STOPPED`](https://cloud.tencent.com/document/api/213/9452#INSTANCE_STATE)状态的`Linux`操作系统的实例。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 `SSH` 登录。可以调用 [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/9397) 接口来设置登陆密码。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。"
@@ -665,22 +673,18 @@ INFO = {
     "params": [],
     "desc": "本接口(DescribeImageQuota)用于查询用户帐号的镜像配额。"
   },
-  "DescribeHosts": {
+  "AssociateSecurityGroups": {
     "params": [
       {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>\n<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>\n<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>\n<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>\n<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>"
+        "name": "SecurityGroupIds",
+        "desc": "要绑定的`安全组ID`，类似sg-efil73jd，支持绑定多个安全组。"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。"
+        "name": "InstanceIds",
+        "desc": "被绑定的`实例ID`，类似ins-lesecurk，只支持指定单个实例。"
       }
     ],
-    "desc": "本接口 (DescribeHosts) 用于获取一个或多个CDH实例的详细信息。"
+    "desc": "本接口 (AssociateSecurityGroups) 用于绑定安全组到指定实例。"
   },
   "ResetInstancesType": {
     "params": [
@@ -1008,6 +1012,19 @@ INFO = {
     ],
     "desc": "本接口 (DescribeInstanceTypeConfigs) 用于查询实例机型配置。\n\n* 可以根据`zone`、`instance-family`来查询实例机型配置。过滤条件详见过滤器`Filter`。\n* 如果参数为空，返回指定地域的所有实例机型配置。"
   },
+  "DisassociateSecurityGroups": {
+    "params": [
+      {
+        "name": "SecurityGroupIds",
+        "desc": "要解绑的`安全组ID`，类似sg-efil73jd，支持解绑多个安全组。"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "被解绑的`实例ID`，类似ins-lesecurk 。"
+      }
+    ],
+    "desc": "本接口 (DisassociateSecurityGroups) 用于解绑实例的指定安全组。"
+  },
   "AllocateHosts": {
     "params": [
       {
@@ -1036,5 +1053,22 @@ INFO = {
       }
     ],
     "desc": "本接口 (AllocateHosts) 用于创建一个或多个指定配置的CDH实例。\n* 当HostChargeType为PREPAID时，必须指定HostChargePrepaid参数。"
+  },
+  "DescribeHosts": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>\n<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>\n<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>\n<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>\n<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口 (DescribeHosts) 用于获取一个或多个CDH实例的详细信息。"
   }
 }

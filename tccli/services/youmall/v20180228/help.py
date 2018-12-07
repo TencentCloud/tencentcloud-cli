@@ -71,31 +71,6 @@ INFO = {
     ],
     "desc": "指定门店获取所有顾客详情列表，包含客户ID、图片、年龄、性别"
   },
-  "DescribeZoneFlowAgeInfoByZoneId": {
-    "params": [
-      {
-        "name": "CompanyId",
-        "desc": "集团ID"
-      },
-      {
-        "name": "ShopId",
-        "desc": "店铺ID"
-      },
-      {
-        "name": "ZoneId",
-        "desc": "区域ID"
-      },
-      {
-        "name": "StartDate",
-        "desc": "开始日期，格式yyyy-MM-dd"
-      },
-      {
-        "name": "EndDate",
-        "desc": "结束日期，格式yyyy-MM-dd"
-      }
-    ],
-    "desc": "获取指定区域人流各年龄占比"
-  },
   "DescribeZoneTrafficInfo": {
     "params": [
       {
@@ -125,7 +100,7 @@ INFO = {
     ],
     "desc": "按天提供查询日期范围内，客户指定门店下的所有区域（优Mall部署时已配置区域）的累计客流人次和平均停留时间。支持的时间范围：过去365天，含当天。"
   },
-  "ModifyPersonType": {
+  "DescribeZoneFlowAgeInfoByZoneId": {
     "params": [
       {
         "name": "CompanyId",
@@ -133,22 +108,22 @@ INFO = {
       },
       {
         "name": "ShopId",
-        "desc": "门店ID"
+        "desc": "店铺ID"
       },
       {
-        "name": "PersonId",
-        "desc": "顾客ID"
+        "name": "ZoneId",
+        "desc": "区域ID"
       },
       {
-        "name": "PersonType",
-        "desc": "身份类型(0表示普通顾客，1 白名单，2 表示黑名单）"
+        "name": "StartDate",
+        "desc": "开始日期，格式yyyy-MM-dd"
       },
       {
-        "name": "PersonSubType",
-        "desc": "身份子类型:\nPersonType=0时(普通顾客)，0普通顾客\nPersonType=1时(白名单)，0店员，1商场人员，2其他类型人员，3区域经理，4注册用户，5VIP用户\nPersonType=2时(黑名单)，0普通黑名单，1小偷)"
+        "name": "EndDate",
+        "desc": "结束日期，格式yyyy-MM-dd"
       }
     ],
-    "desc": "修改顾客身份类型接口"
+    "desc": "获取指定区域人流各年龄占比"
   },
   "CreateAccount": {
     "params": [
@@ -333,6 +308,23 @@ INFO = {
     ],
     "desc": "按天提供查询日期范围内门店的单日累计客流人数，支持的时间范围：过去365天，含当天。"
   },
+  "DescribePersonInfoByFacePicture": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取"
+      },
+      {
+        "name": "ShopId",
+        "desc": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取"
+      },
+      {
+        "name": "Picture",
+        "desc": "人脸图片BASE编码"
+      }
+    ],
+    "desc": "通过上传人脸图片检索系统face id、顾客身份信息及底图"
+  },
   "CreateFacePicture": {
     "params": [
       {
@@ -340,12 +332,8 @@ INFO = {
         "desc": "集团ID"
       },
       {
-        "name": "ShopId",
-        "desc": "店铺ID"
-      },
-      {
         "name": "PersonType",
-        "desc": "人物类型（0表示普通顾客，1 白名单，2 表示黑名单）"
+        "desc": "人物类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）"
       },
       {
         "name": "Picture",
@@ -354,6 +342,10 @@ INFO = {
       {
         "name": "PictureName",
         "desc": "图片名称"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID，如果不填表示操作集团身份库"
       },
       {
         "name": "IsForceUpload",
@@ -511,6 +503,31 @@ INFO = {
       }
     ],
     "desc": "输出开始时间到结束时间段内的进出场数据。不做按天聚合的情况下，每次进出场，产生一条进出场数据。\n\n"
+  },
+  "ModifyPersonType": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "ShopId",
+        "desc": "门店ID"
+      },
+      {
+        "name": "PersonId",
+        "desc": "顾客ID"
+      },
+      {
+        "name": "PersonType",
+        "desc": "身份类型(0表示普通顾客，1 白名单，2 表示黑名单）"
+      },
+      {
+        "name": "PersonSubType",
+        "desc": "身份子类型:\nPersonType=0时(普通顾客)，0普通顾客\nPersonType=1时(白名单)，0店员，1商场人员，2其他类型人员，3区域经理，4注册用户，5VIP用户\nPersonType=2时(黑名单)，0普通黑名单，1小偷)"
+      }
+    ],
+    "desc": "修改顾客身份类型接口"
   },
   "DescribeClusterPersonArrivedMall": {
     "params": [

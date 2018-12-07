@@ -167,6 +167,44 @@ INFO = {
     ],
     "desc": "本接口 (DescribeWeeklyReportMalwares) 用于获取专业周报木马数据。"
   },
+  "OpenProVersionPrepaid": {
+    "params": [
+      {
+        "name": "ChargePrepaid",
+        "desc": "购买相关参数。"
+      },
+      {
+        "name": "Machines",
+        "desc": "需要开通专业版主机信息数组。"
+      }
+    ],
+    "desc": "本接口 (OpenProVersionPrepaid) 用于开通专业版(包年包月)。"
+  },
+  "DescribeProcesses": {
+    "params": [
+      {
+        "name": "Uuid",
+        "desc": "云镜客户端唯一Uuid。Uuid和ProcessName必填其一，使用Uuid表示，查询该主机列表信息。"
+      },
+      {
+        "name": "ProcessName",
+        "desc": "进程名。Uuid和ProcessName必填其一，使用ProcessName表示，查询该进程列表信息。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>"
+      }
+    ],
+    "desc": "本接口 (DescribeProcesses) 用于获取进程列表数据。"
+  },
   "DescribeComponentInfo": {
     "params": [
       {
@@ -241,18 +279,43 @@ INFO = {
     ],
     "desc": "本接口{MisAlarmNonlocalLoginPlaces}将设置当前地点为常用登录地。"
   },
-  "ModifyAlarmAttribute": {
+  "ModifyProVersionRenewFlag": {
     "params": [
       {
-        "name": "Attribute",
-        "desc": "告警项目。\n<li>Offline：防护软件离线</li>\n<li>Malware：发现木马文件</li>\n<li>NonlocalLogin：发现异地登录行为</li>\n<li>CrackSuccess：被暴力破解成功</li>"
+        "name": "RenewFlag",
+        "desc": "自动续费标识。取值范围：\n<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>\n<li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>"
       },
       {
-        "name": "Value",
-        "desc": "告警项目属性。\n<li>CLOSE：关闭</li>\n<li>OPEN：打开</li>"
+        "name": "Quuid",
+        "desc": "主机唯一ID，对应CVM的uuid、BM的instanceId。"
       }
     ],
-    "desc": "本接口（ModifyAlarmAttribute）用于修改告警设置。"
+    "desc": "本接口 (ModifyProVersionRenewFlag) 用于修改专业版包年包月续费标识。"
+  },
+  "DescribeMaliciousRequests": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为10，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | TRUSTED：已信任 | UN_TRUSTED：已取消信任）</li>\n<li>Domain - String - 是否必填：否 - 恶意请求的域名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>"
+      },
+      {
+        "name": "Uuid",
+        "desc": "云镜客户端唯一UUID。"
+      }
+    ],
+    "desc": "本接口 (DescribeMaliciousRequests) 用于获取恶意请求数据。"
+  },
+  "ExportMaliciousRequests": {
+    "params": [],
+    "desc": "本接口 (ExportMaliciousRequests) 用于导出下载恶意请求文件。"
   },
   "SeparateMalwares": {
     "params": [
@@ -306,6 +369,15 @@ INFO = {
     "params": [],
     "desc": "本接口用于（DescribeOverviewStatistics）获取概览统计数据。"
   },
+  "UntrustMaliciousRequest": {
+    "params": [
+      {
+        "name": "Id",
+        "desc": "受信任记录ID。"
+      }
+    ],
+    "desc": "本接口 (UntrustMaliciousRequest) 用于取消信任恶意请求。"
+  },
   "DescribeUsualLoginPlaces": {
     "params": [
       {
@@ -353,6 +425,15 @@ INFO = {
       }
     ],
     "desc": "本接口 (DescribeSecurityDynamics) 用于获取安全事件消息数据。"
+  },
+  "DeleteMaliciousRequests": {
+    "params": [
+      {
+        "name": "Ids",
+        "desc": "恶意请求记录ID数组，最大100条。"
+      }
+    ],
+    "desc": "本接口 (DeleteMaliciousRequests) 用于删除恶意请求记录。"
   },
   "RescanImpactedHost": {
     "params": [
@@ -573,6 +654,19 @@ INFO = {
     ],
     "desc": "本接口 (CreateProcessTask) 用于创建实时拉取进程任务。"
   },
+  "ModifyAlarmAttribute": {
+    "params": [
+      {
+        "name": "Attribute",
+        "desc": "告警项目。\n<li>Offline：防护软件离线</li>\n<li>Malware：发现木马文件</li>\n<li>NonlocalLogin：发现异地登录行为</li>\n<li>CrackSuccess：被暴力破解成功</li>"
+      },
+      {
+        "name": "Value",
+        "desc": "告警项目属性。\n<li>CLOSE：关闭</li>\n<li>OPEN：打开</li>"
+      }
+    ],
+    "desc": "本接口（ModifyAlarmAttribute）用于修改告警设置。"
+  },
   "DescribeMachineInfo": {
     "params": [
       {
@@ -641,30 +735,40 @@ INFO = {
     ],
     "desc": "本接口 (DescribeComponents) 用于获取组件列表数据。"
   },
-  "DescribeProcesses": {
+  "RenewProVersion": {
     "params": [
       {
-        "name": "Uuid",
-        "desc": "云镜客户端唯一Uuid。Uuid和ProcessName必填其一，使用Uuid表示，查询该主机列表信息。"
+        "name": "ChargePrepaid",
+        "desc": "购买相关参数。"
       },
       {
-        "name": "ProcessName",
-        "desc": "进程名。Uuid和ProcessName必填其一，使用ProcessName表示，查询该进程列表信息。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为10，最大值为100。"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>"
+        "name": "Quuid",
+        "desc": "主机唯一ID，对应CVM的uuid、BM的InstanceId。"
       }
     ],
-    "desc": "本接口 (DescribeProcesses) 用于获取进程列表数据。"
+    "desc": "本接口 (RenewProVersion) 用于续费专业版(包年包月)。"
+  },
+  "InquiryPriceOpenProVersionPrepaid": {
+    "params": [
+      {
+        "name": "ChargePrepaid",
+        "desc": "预付费模式(包年包月)参数设置。"
+      },
+      {
+        "name": "Machines",
+        "desc": "需要开通专业版机器列表数组。"
+      }
+    ],
+    "desc": "本接口 (InquiryPriceOpenProVersionPrepaid) 用于开通专业版询价(预付费)。"
+  },
+  "TrustMaliciousRequest": {
+    "params": [
+      {
+        "name": "Id",
+        "desc": "恶意请求记录ID。"
+      }
+    ],
+    "desc": "本接口 (TrustMaliciousRequest) 用于恶意请求添加信任。"
   },
   "DescribeMalwares": {
     "params": [

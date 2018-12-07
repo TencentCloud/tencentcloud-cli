@@ -431,16 +431,18 @@ def doDescribeFaceIdByTempId(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePersonTraceDetail(argv, arglist):
+def doDescribeZoneFlowGenderInfoByZoneId(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribePersonTraceDetail", g_param[OptionsDefine.Version])
+        show_help("DescribeZoneFlowGenderInfoByZoneId", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MallId": Utils.try_to_json(argv, "--MallId"),
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "TraceId": Utils.try_to_json(argv, "--TraceId"),
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
+        "StartDate": Utils.try_to_json(argv, "--StartDate"),
+        "EndDate": Utils.try_to_json(argv, "--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -454,9 +456,9 @@ def doDescribePersonTraceDetail(argv, arglist):
     client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePersonTraceDetailRequest()
+    model = models.DescribeZoneFlowGenderInfoByZoneIdRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribePersonTraceDetail(model)
+    rsp = client.DescribeZoneFlowGenderInfoByZoneId(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -504,6 +506,41 @@ def doDescribeShopTrafficInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePersonInfoByFacePicture(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePersonInfoByFacePicture", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
+        "Picture": Utils.try_to_json(argv, "--Picture"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePersonInfoByFacePictureRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePersonInfoByFacePicture(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateFacePicture(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -512,10 +549,10 @@ def doCreateFacePicture(argv, arglist):
 
     param = {
         "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "PersonType": Utils.try_to_json(argv, "--PersonType"),
         "Picture": Utils.try_to_json(argv, "--Picture"),
         "PictureName": Utils.try_to_json(argv, "--PictureName"),
+        "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "IsForceUpload": Utils.try_to_json(argv, "--IsForceUpload"),
 
     }
@@ -762,16 +799,16 @@ def doDescribeClusterPersonArrivedMall(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePerson(argv, arglist):
+def doDescribePersonTraceDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribePerson", g_param[OptionsDefine.Version])
+        show_help("DescribePersonTraceDetail", g_param[OptionsDefine.Version])
         return
 
     param = {
         "MallId": Utils.try_to_json(argv, "--MallId"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "TraceId": Utils.try_to_json(argv, "--TraceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -785,9 +822,9 @@ def doDescribePerson(argv, arglist):
     client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePersonRequest()
+    model = models.DescribePersonTraceDetailRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribePerson(model)
+    rsp = client.DescribePersonTraceDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -978,18 +1015,16 @@ def doModifyPersonTagInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeZoneFlowGenderInfoByZoneId(argv, arglist):
+def doDescribePerson(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeZoneFlowGenderInfoByZoneId", g_param[OptionsDefine.Version])
+        show_help("DescribePerson", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CompanyId": Utils.try_to_json(argv, "--CompanyId"),
-        "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "MallId": Utils.try_to_json(argv, "--MallId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1003,9 +1038,9 @@ def doDescribeZoneFlowGenderInfoByZoneId(argv, arglist):
     client = mod.YoumallClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZoneFlowGenderInfoByZoneIdRequest()
+    model = models.DescribePersonRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZoneFlowGenderInfoByZoneId(model)
+    rsp = client.DescribePerson(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1111,8 +1146,9 @@ ACTION_MAP = {
     "DescribeZoneFlowHourlyByZoneId": doDescribeZoneFlowHourlyByZoneId,
     "DescribeShopInfo": doDescribeShopInfo,
     "DescribeFaceIdByTempId": doDescribeFaceIdByTempId,
-    "DescribePersonTraceDetail": doDescribePersonTraceDetail,
+    "DescribeZoneFlowGenderInfoByZoneId": doDescribeZoneFlowGenderInfoByZoneId,
     "DescribeShopTrafficInfo": doDescribeShopTrafficInfo,
+    "DescribePersonInfoByFacePicture": doDescribePersonInfoByFacePicture,
     "CreateFacePicture": doCreateFacePicture,
     "CreateAccount": doCreateAccount,
     "DescribeShopHourTrafficInfo": doDescribeShopHourTrafficInfo,
@@ -1120,13 +1156,13 @@ ACTION_MAP = {
     "DescribeZoneFlowDailyByZoneId": doDescribeZoneFlowDailyByZoneId,
     "DescribePersonArrivedMall": doDescribePersonArrivedMall,
     "DescribeClusterPersonArrivedMall": doDescribeClusterPersonArrivedMall,
-    "DescribePerson": doDescribePerson,
+    "DescribePersonTraceDetail": doDescribePersonTraceDetail,
     "ModifyPersonType": doModifyPersonType,
     "DescribeHistoryNetworkInfo": doDescribeHistoryNetworkInfo,
     "DescribeNetworkInfo": doDescribeNetworkInfo,
     "DeletePersonFeature": doDeletePersonFeature,
     "ModifyPersonTagInfo": doModifyPersonTagInfo,
-    "DescribeZoneFlowGenderInfoByZoneId": doDescribeZoneFlowGenderInfoByZoneId,
+    "DescribePerson": doDescribePerson,
     "DescribeClusterPersonTrace": doDescribeClusterPersonTrace,
     "DescribeTrajectoryData": doDescribeTrajectoryData,
 

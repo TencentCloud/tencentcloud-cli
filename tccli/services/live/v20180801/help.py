@@ -122,6 +122,10 @@ INFO = {
       {
         "name": "AuthDelta",
         "desc": "有效时间，单位：秒。"
+      },
+      {
+        "name": "AuthBackKey",
+        "desc": "鉴权backkey。"
       }
     ],
     "desc": "修改播放鉴权key"
@@ -322,38 +326,22 @@ INFO = {
     ],
     "desc": "恢复延迟播放设置"
   },
-  "ModifyPullStreamConfig": {
+  "ResumeLiveStream": {
     "params": [
       {
-        "name": "ConfigId",
-        "desc": "配置id。"
+        "name": "AppName",
+        "desc": "应用名称。"
       },
       {
-        "name": "FromUrl",
-        "desc": "源Url。"
+        "name": "DomainName",
+        "desc": "您的加速域名。"
       },
       {
-        "name": "ToUrl",
-        "desc": "目的Url。"
-      },
-      {
-        "name": "AreaId",
-        "desc": "区域id,1-深圳,2-上海，3-天津,4-香港。如有改动，需同时传入IspId。"
-      },
-      {
-        "name": "IspId",
-        "desc": "运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "开始时间。"
-      },
-      {
-        "name": "EndTime",
-        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。"
+        "name": "StreamName",
+        "desc": "流名称。"
       }
     ],
-    "desc": "更新拉流配置"
+    "desc": "恢复某条流的推送。"
   },
   "AddLiveWatermark": {
     "params": [
@@ -397,22 +385,38 @@ INFO = {
     ],
     "desc": "禁止某条流的推送，可以预设某个时刻将流恢复。"
   },
-  "ResumeLiveStream": {
+  "ModifyPullStreamConfig": {
     "params": [
       {
-        "name": "AppName",
-        "desc": "应用名称。"
+        "name": "ConfigId",
+        "desc": "配置id。"
       },
       {
-        "name": "DomainName",
-        "desc": "您的加速域名。"
+        "name": "FromUrl",
+        "desc": "源Url。"
       },
       {
-        "name": "StreamName",
-        "desc": "流名称。"
+        "name": "ToUrl",
+        "desc": "目的Url。"
+      },
+      {
+        "name": "AreaId",
+        "desc": "区域id,1-深圳,2-上海，3-天津,4-香港。如有改动，需同时传入IspId。"
+      },
+      {
+        "name": "IspId",
+        "desc": "运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。"
       }
     ],
-    "desc": "恢复某条流的推送。"
+    "desc": "更新拉流配置"
   },
   "DescribeLiveStreamOnlineList": {
     "params": [
@@ -472,5 +476,14 @@ INFO = {
       }
     ],
     "desc": "查询直播推流鉴权key"
+  },
+  "DeletePullStreamConfig": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "配置id。"
+      }
+    ],
+    "desc": "删除直播拉流配置"
   }
 }
