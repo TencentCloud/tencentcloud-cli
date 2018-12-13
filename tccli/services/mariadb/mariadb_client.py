@@ -880,6 +880,7 @@ def doCreateAccount(argv, arglist):
         "Password": Utils.try_to_json(argv, "--Password"),
         "ReadOnly": Utils.try_to_json(argv, "--ReadOnly"),
         "Description": Utils.try_to_json(argv, "--Description"),
+        "DelayThresh": Utils.try_to_json(argv, "--DelayThresh"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

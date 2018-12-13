@@ -33,6 +33,8 @@ def doInitOralProcess(argv, arglist):
         "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
         "IsLongLifeSession": Utils.try_to_json(argv, "--IsLongLifeSession"),
         "StorageMode": Utils.try_to_json(argv, "--StorageMode"),
+        "SentenceInfoEnabled": Utils.try_to_json(argv, "--SentenceInfoEnabled"),
+        "ServerType": Utils.try_to_json(argv, "--ServerType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

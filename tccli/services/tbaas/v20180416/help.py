@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "Operation",
-        "desc": "操作名，固定地段：query"
+        "desc": "操作名，固定字段：query"
       },
       {
         "name": "ClusterId",
@@ -46,7 +46,7 @@ INFO = {
       },
       {
         "name": "Operation",
-        "desc": "操作名，固定地段：invoke"
+        "desc": "操作名，固定字段：query_txid"
       },
       {
         "name": "ClusterId",
@@ -79,7 +79,7 @@ INFO = {
       },
       {
         "name": "Operation",
-        "desc": "操作名，固定地段：invoke"
+        "desc": "操作名，固定字段：invoke"
       },
       {
         "name": "ClusterId",
