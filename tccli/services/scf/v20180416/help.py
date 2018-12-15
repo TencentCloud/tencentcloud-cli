@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+FUNCTION_CONFIGURATION_ENVIRONMENT = u'函数的环境变量。例子：\'{"Variables":[{"Value":"Bar","Key":"Foo"}]}\''
+
 DESC = "scf-2018-04-16"
 INFO = {
   "Invoke": {
@@ -130,7 +132,7 @@ INFO = {
       },
       {
         "name": "Environment",
-        "desc": "函数的环境变量"
+        "desc": FUNCTION_CONFIGURATION_ENVIRONMENT,
       },
       {
         "name": "VpcConfig",
@@ -192,7 +194,7 @@ INFO = {
       },
       {
         "name": "Code",
-        "desc": "函数的代码. 注意：不能同时指定Cos与ZipFile"
+        "desc": "函数的代码. 注意：不能同时指定Cos与ZipFile。例子：'{\"ZipCode\":\"Some Base64 encoded string.\"}'。详细请参考：https://cloud.tencent.com/document/api/583/17244#Code"
       },
       {
         "name": "Handler",
@@ -212,7 +214,7 @@ INFO = {
       },
       {
         "name": "Environment",
-        "desc": "函数的环境变量"
+        "desc": FUNCTION_CONFIGURATION_ENVIRONMENT
       },
       {
         "name": "Runtime",
