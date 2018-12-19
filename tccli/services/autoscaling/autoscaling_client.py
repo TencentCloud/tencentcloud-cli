@@ -52,6 +52,52 @@ def doRemoveInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyAutoScalingGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyAutoScalingGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
+        "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
+        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
+        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "Zones": Utils.try_to_json(argv, "--Zones"),
+        "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
+        "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAutoScalingGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyAutoScalingGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -330,27 +376,17 @@ def doCreateLaunchConfiguration(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAutoScalingGroup(argv, arglist):
+def doDescribeAutoScalingActivities(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyAutoScalingGroup", g_param[OptionsDefine.Version])
+        show_help("DescribeAutoScalingActivities", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
-        "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
-        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
-        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
-        "MinSize": Utils.try_to_json(argv, "--MinSize"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
-        "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "Zones": Utils.try_to_json(argv, "--Zones"),
-        "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
-        "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
+        "ActivityIds": Utils.try_to_json(argv, "--ActivityIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -364,9 +400,9 @@ def doModifyAutoScalingGroup(argv, arglist):
     client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAutoScalingGroupRequest()
+    model = models.DescribeAutoScalingActivitiesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyAutoScalingGroup(model)
+    rsp = client.DescribeAutoScalingActivities(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -764,6 +800,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "RemoveInstances": doRemoveInstances,
+    "ModifyAutoScalingGroup": doModifyAutoScalingGroup,
     "CreateAutoScalingGroup": doCreateAutoScalingGroup,
     "DeleteScheduledAction": doDeleteScheduledAction,
     "ModifyLaunchConfigurationAttributes": doModifyLaunchConfigurationAttributes,
@@ -771,7 +808,7 @@ ACTION_MAP = {
     "CreateScheduledAction": doCreateScheduledAction,
     "ModifyScheduledAction": doModifyScheduledAction,
     "CreateLaunchConfiguration": doCreateLaunchConfiguration,
-    "ModifyAutoScalingGroup": doModifyAutoScalingGroup,
+    "DescribeAutoScalingActivities": doDescribeAutoScalingActivities,
     "EnableAutoScalingGroup": doEnableAutoScalingGroup,
     "DescribeAutoScalingInstances": doDescribeAutoScalingInstances,
     "DescribeAutoScalingGroups": doDescribeAutoScalingGroups,
