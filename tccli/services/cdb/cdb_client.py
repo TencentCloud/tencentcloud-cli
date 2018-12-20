@@ -632,6 +632,7 @@ def doCreateDBInstanceHour(argv, arglist):
         "RoGroup": Utils.try_to_json(argv, "--RoGroup"),
         "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
         "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1328,6 +1329,7 @@ def doCreateDBInstance(argv, arglist):
         "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
         "RoGroup": Utils.try_to_json(argv, "--RoGroup"),
         "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

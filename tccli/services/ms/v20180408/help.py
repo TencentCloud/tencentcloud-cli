@@ -201,6 +201,10 @@ INFO = {
     ],
     "desc": "对资源进行策略新增"
   },
+  "DescribeUserBaseInfoInstance": {
+    "params": [],
+    "desc": "获取用户基础信息"
+  },
   "DescribeScanInstances": {
     "params": [
       {

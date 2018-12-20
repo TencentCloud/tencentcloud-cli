@@ -64,18 +64,14 @@ INFO = {
     ],
     "desc": "本接口（DescribeDeviceShadow）用于查询虚拟设备信息。"
   },
-  "DescribeDevice": {
+  "EnableTopicRule": {
     "params": [
       {
-        "name": "ProductID",
-        "desc": "产品ID"
-      },
-      {
-        "name": "DeviceName",
-        "desc": "产品名"
+        "name": "RuleName",
+        "desc": "规则名称"
       }
     ],
-    "desc": "本接口（DescribeDevice）用于查看设备信息"
+    "desc": "本接口（EnableTopicRule）用于启用规则"
   },
   "CreateMultiDevice": {
     "params": [
@@ -120,6 +116,27 @@ INFO = {
       }
     ],
     "desc": "本接口（DisableTopicRule）用于禁用规则"
+  },
+  "CreateTopicPolicy": {
+    "params": [
+      {
+        "name": "ProductID",
+        "desc": "产品ID"
+      },
+      {
+        "name": "TopicName",
+        "desc": "Topic名称"
+      },
+      {
+        "name": "Privilege",
+        "desc": "Topic权限，1发布，2订阅，3订阅和发布"
+      },
+      {
+        "name": "BrokerSubscribe",
+        "desc": "代理订阅信息"
+      }
+    ],
+    "desc": "本接口（CreateTopicPolicy）用于创建一个Topic"
   },
   "CreateProduct": {
     "params": [
@@ -294,6 +311,31 @@ INFO = {
     ],
     "desc": "本接口（DescribeMultiDevices）用于查询批量创建设备的执行结果。"
   },
+  "UpdateTopicPolicy": {
+    "params": [
+      {
+        "name": "ProductID",
+        "desc": "产品ID"
+      },
+      {
+        "name": "TopicName",
+        "desc": "更新前Topic名"
+      },
+      {
+        "name": "NewTopicName",
+        "desc": "更新后Topic名"
+      },
+      {
+        "name": "Privilege",
+        "desc": "Topic权限"
+      },
+      {
+        "name": "BrokerSubscribe",
+        "desc": "代理订阅信息"
+      }
+    ],
+    "desc": "本接口（UpdateTopicPolicy）用于更新Topic信息"
+  },
   "DescribeDevices": {
     "params": [
       {
@@ -349,14 +391,18 @@ INFO = {
     ],
     "desc": "本接口（DescribeMultiDevTask）用于查询批量创建设备任务的执行状态。"
   },
-  "EnableTopicRule": {
+  "DescribeDevice": {
     "params": [
       {
-        "name": "RuleName",
-        "desc": "规则名称"
+        "name": "ProductID",
+        "desc": "产品ID"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "产品名"
       }
     ],
-    "desc": "本接口（EnableTopicRule）用于启用规则"
+    "desc": "本接口（DescribeDevice）用于查看设备信息"
   },
   "DeleteTopicRule": {
     "params": [

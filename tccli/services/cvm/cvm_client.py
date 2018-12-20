@@ -60,6 +60,7 @@ def doStopInstances(argv, arglist):
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
         "StopType": Utils.try_to_json(argv, "--StopType"),
+        "StoppedMode": Utils.try_to_json(argv, "--StoppedMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

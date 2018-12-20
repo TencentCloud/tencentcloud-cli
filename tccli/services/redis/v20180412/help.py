@@ -179,6 +179,27 @@ INFO = {
     ],
     "desc": "获取备份配置"
   },
+  "ModifyAutoBackupConfig": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "WeekDays",
+        "desc": "日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday"
+      },
+      {
+        "name": "TimePeriod",
+        "desc": "时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00"
+      },
+      {
+        "name": "AutoBackupType",
+        "desc": "自动备份类型： 1 “定时回档”"
+      }
+    ],
+    "desc": "设置自动备份时间"
+  },
   "ClearInstance": {
     "params": [
       {
@@ -264,26 +285,22 @@ INFO = {
     ],
     "desc": "修改redis密码"
   },
-  "ModifyAutoBackupConfig": {
+  "ModifyInstance": {
     "params": [
       {
+        "name": "Operation",
+        "desc": "修改实例操作，如填写：rename（表示实例重命名）"
+      },
+      {
         "name": "InstanceId",
-        "desc": "实例ID"
+        "desc": "实例Id"
       },
       {
-        "name": "WeekDays",
-        "desc": "日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday"
-      },
-      {
-        "name": "TimePeriod",
-        "desc": "时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00"
-      },
-      {
-        "name": "AutoBackupType",
-        "desc": "自动备份类型： 1 “定时回档”"
+        "name": "InstanceName",
+        "desc": "实例的新名称"
       }
     ],
-    "desc": "设置自动备份时间"
+    "desc": "修改实例相关信息（目前支持：实例重命名）"
   },
   "ResetPassword": {
     "params": [

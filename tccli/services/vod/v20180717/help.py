@@ -27,6 +27,59 @@ INFO = {
     ],
     "desc": "1. 该接口可以获取多个视频的多种信息，包括：\n    1. 基础信息（basicInfo）：包括视频名称、大小、时长、封面图片等。\n    2. 元信息（metaData）：包括视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后，动图相关信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后，相关截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图之后，雪碧图的相关信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，各个截图的信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的各个打点信息。\n2. 可以指定回包只返回部分信息。"
   },
+  "SearchMedia": {
+    "params": [
+      {
+        "name": "Text",
+        "desc": "搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签集合，匹配集合中任意元素。\n<li>单个标签长度限制：8 个字符</li>\n<li>数组长度限制：10</li>"
+      },
+      {
+        "name": "ClassIds",
+        "desc": "分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。数组长度限制：10。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "创建时间的开始时间\n<li>大于等于开始时间</li>\n<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>"
+      },
+      {
+        "name": "EndTime",
+        "desc": "创建时间的结束时间\n<li>小于结束时间</li>\n<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>"
+      },
+      {
+        "name": "SourceType",
+        "desc": "媒体文件来源"
+      },
+      {
+        "name": "StreamId",
+        "desc": "推流[直播码](https://cloud.tencent.com/document/product/267/5959)"
+      },
+      {
+        "name": "Vid",
+        "desc": "直播录制文件的唯一标识"
+      },
+      {
+        "name": "Sort",
+        "desc": "排序方式\n<li>Sort.Field 可选值：CreateTime</li>\n<li>指定 Text 搜索时，将根据匹配度排序，该字段无效</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量\n<li>默认值：0</li>\n<li>取值范围：Offset + Limit 不超过5000</li>"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "搜索媒体信息，支持文本模糊搜索及条件过滤。\n<li>该接口单次请求最多返回100条数据。</li>\n<li>搜索结果超过 5000条，不再支持分页查询超过 5000 部分的数据。</li>"
+  },
   "ModifyClass": {
     "params": [
       {

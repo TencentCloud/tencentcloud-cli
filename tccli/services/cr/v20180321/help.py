@@ -96,7 +96,7 @@ INFO = {
       },
       {
         "name": "TaskId",
-        "desc": "任务ID"
+        "desc": "任务ID，形如abc-a0b1c2xyz"
       }
     ],
     "desc": "客户调用该接口查看任务执行状态。输入任务ID，输出任务执行状态或者结果"
@@ -121,14 +121,14 @@ INFO = {
       },
       {
         "name": "File",
-        "desc": "文件，文件与文件地址上传只可选用一种，使用 Content-Type: multipart/form-data 协议来上传二进制流文件。"
+        "desc": "文件，文件与文件地址上传只可选用一种，必须使用multipart/form-data协议来上传二进制流文件，建议使用xlsx格式，大小不超过5MB。"
       },
       {
         "name": "FileUrl",
-        "desc": "文件上传地址"
+        "desc": "文件上传地址，文件与文件地址上传只可选用一种，大小不超过50MB。"
       }
     ],
-    "desc": "客户通过调用该接口上传需催收文档或还款文档，接口返回任务ID。"
+    "desc": "客户通过调用该接口上传需催收文档或还款文档，接口返回数据任务ID，支持xlsx、xls、csv、zip格式，文档大小不超过50MB。"
   },
   "ApplyBlackList": {
     "params": [

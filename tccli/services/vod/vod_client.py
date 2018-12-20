@@ -86,6 +86,50 @@ def doDescribeMediaInfos(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSearchMedia(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SearchMedia", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": Utils.try_to_json(argv, "--Text"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "ClassIds": Utils.try_to_json(argv, "--ClassIds"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "SourceType": Utils.try_to_json(argv, "--SourceType"),
+        "StreamId": Utils.try_to_json(argv, "--StreamId"),
+        "Vid": Utils.try_to_json(argv, "--Vid"),
+        "Sort": Utils.try_to_json(argv, "--Sort"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchMediaRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SearchMedia(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyClass(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -357,6 +401,7 @@ MODELS_MAP = {
 ACTION_MAP = {
     "CommitUpload": doCommitUpload,
     "DescribeMediaInfos": doDescribeMediaInfos,
+    "SearchMedia": doSearchMedia,
     "ModifyClass": doModifyClass,
     "DeleteClass": doDeleteClass,
     "ModifyMediaInfo": doModifyMediaInfo,
