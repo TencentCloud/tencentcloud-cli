@@ -132,6 +132,73 @@ def doDescribePsaRegulations(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyDeviceAutoRenewFlag(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDeviceAutoRenewFlag", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDeviceAutoRenewFlagRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDeviceAutoRenewFlag(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doOfflineDevices(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("OfflineDevices", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.OfflineDevicesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.OfflineDevices(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRunUserCmd(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -232,6 +299,38 @@ def doCreatePsaRegulation(argv, arglist):
     model = models.CreatePsaRegulationRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreatePsaRegulation(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDeviceClass(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDeviceClass", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeviceClassRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDeviceClass(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -489,6 +588,77 @@ def doRebootDevices(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeOsInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeOsInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DeviceClassCode": Utils.try_to_json(argv, "--DeviceClassCode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeOsInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeOsInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDevicePosition(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDevicePosition", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "Alias": Utils.try_to_json(argv, "--Alias"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDevicePositionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDevicePosition(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeUserCmdTaskInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -706,14 +876,15 @@ def doCreateSpotDevice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDeviceAliases(argv, arglist):
+def doResetDevicePassword(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyDeviceAliases", g_param[OptionsDefine.Version])
+        show_help("ResetDevicePassword", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DeviceAliases": Utils.try_to_json(argv, "--DeviceAliases"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "Password": Utils.try_to_json(argv, "--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -727,9 +898,88 @@ def doModifyDeviceAliases(argv, arglist):
     client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDeviceAliasesRequest()
+    model = models.ResetDevicePasswordRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDeviceAliases(model)
+    rsp = client.ResetDevicePassword(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDeviceInventory(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDeviceInventory", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "DeviceClassCode": Utils.try_to_json(argv, "--DeviceClassCode"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "CpuId": Utils.try_to_json(argv, "--CpuId"),
+        "DiskType": Utils.try_to_json(argv, "--DiskType"),
+        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
+        "DiskNum": Utils.try_to_json(argv, "--DiskNum"),
+        "Mem": Utils.try_to_json(argv, "--Mem"),
+        "HaveRaidCard": Utils.try_to_json(argv, "--HaveRaidCard"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeviceInventoryRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDeviceInventory(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDeviceOperationLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDeviceOperationLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeviceOperationLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDeviceOperationLog(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -855,15 +1105,15 @@ def doDescribeRepairTaskConstant(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResetDevicePassword(argv, arglist):
+def doSetOutBandVpnAuthPassword(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResetDevicePassword", g_param[OptionsDefine.Version])
+        show_help("SetOutBandVpnAuthPassword", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "Password": Utils.try_to_json(argv, "--Password"),
+        "Operate": Utils.try_to_json(argv, "--Operate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -877,9 +1127,42 @@ def doResetDevicePassword(argv, arglist):
     client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetDevicePasswordRequest()
+    model = models.SetOutBandVpnAuthPasswordRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResetDevicePassword(model)
+    rsp = client.SetOutBandVpnAuthPassword(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDeviceAliases(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDeviceAliases", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DeviceAliases": Utils.try_to_json(argv, "--DeviceAliases"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDeviceAliasesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDeviceAliases(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -903,9 +1186,12 @@ ACTION_MAP = {
     "DescribeUserCmds": doDescribeUserCmds,
     "ModifyPsaRegulation": doModifyPsaRegulation,
     "DescribePsaRegulations": doDescribePsaRegulations,
+    "ModifyDeviceAutoRenewFlag": doModifyDeviceAutoRenewFlag,
+    "OfflineDevices": doOfflineDevices,
     "RunUserCmd": doRunUserCmd,
     "DescribeUserCmdTasks": doDescribeUserCmdTasks,
     "CreatePsaRegulation": doCreatePsaRegulation,
+    "DescribeDeviceClass": doDescribeDeviceClass,
     "ModifyUserCmd": doModifyUserCmd,
     "DeleteUserCmds": doDeleteUserCmds,
     "BindPsaTag": doBindPsaTag,
@@ -913,17 +1199,22 @@ ACTION_MAP = {
     "CreateUserCmd": doCreateUserCmd,
     "DescribeTaskInfo": doDescribeTaskInfo,
     "RebootDevices": doRebootDevices,
+    "DescribeOsInfo": doDescribeOsInfo,
+    "DescribeDevicePosition": doDescribeDevicePosition,
     "DescribeUserCmdTaskInfo": doDescribeUserCmdTaskInfo,
     "DescribeDevicePriceInfo": doDescribeDevicePriceInfo,
     "DescribeTaskOperationLog": doDescribeTaskOperationLog,
     "ModifyPayModePre2Post": doModifyPayModePre2Post,
     "UnbindPsaTag": doUnbindPsaTag,
     "CreateSpotDevice": doCreateSpotDevice,
-    "ModifyDeviceAliases": doModifyDeviceAliases,
+    "ResetDevicePassword": doResetDevicePassword,
+    "DescribeDeviceInventory": doDescribeDeviceInventory,
+    "DescribeDeviceOperationLog": doDescribeDeviceOperationLog,
     "RepairTaskControl": doRepairTaskControl,
     "DescribeDevices": doDescribeDevices,
     "DescribeRepairTaskConstant": doDescribeRepairTaskConstant,
-    "ResetDevicePassword": doResetDevicePassword,
+    "SetOutBandVpnAuthPassword": doSetOutBandVpnAuthPassword,
+    "ModifyDeviceAliases": doModifyDeviceAliases,
 
 }
 

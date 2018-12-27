@@ -198,14 +198,14 @@ INFO = {
       },
       {
         "name": "InstanceTypes",
-        "desc": "实例机型列表，不同实例机型指定了不同的资源规格，最多支持5中实例机型。\n`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。"
+        "desc": "实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。\n`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。"
       },
       {
         "name": "InstanceTypesCheckPolicy",
         "desc": "实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。"
       }
     ],
-    "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置无法编辑更改。如需使用新的启动配置，只能重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"
+    "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置，可以通过 `ModifyLaunchConfigurationAttributes` 修改少量字段。如需使用新的启动配置，建议重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"
   },
   "ModifyAutoScalingGroup": {
     "params": [
@@ -382,7 +382,7 @@ INFO = {
     "params": [
       {
         "name": "LaunchConfigurationIds",
-        "desc": "按照一个或者多个启动配置ID查询。启动配置ID形如：`asc-ouy1ax38`。每次请求的上限为100。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。"
+        "desc": "按照一个或者多个启动配置ID查询。启动配置ID形如：`asc-ouy1ax38`。每次请求的上限为100。参数不支持同时指定`LaunchConfigurationIds`和`Filters`"
       },
       {
         "name": "Filters",
@@ -421,7 +421,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "待查询的云主机（CVM）实例ID。参数不支持同时指定InstanceIds和Filters。"
+        "desc": "待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。"
       },
       {
         "name": "Filters",
@@ -484,7 +484,7 @@ INFO = {
       },
       {
         "name": "InstanceTypes",
-        "desc": "实例类型列表，不同实例机型指定了不同的资源规格，最多支持5中实例机型。\n启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。"
+        "desc": "实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。\n启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。"
       },
       {
         "name": "InstanceTypesCheckPolicy",

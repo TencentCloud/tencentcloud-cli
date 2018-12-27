@@ -380,6 +380,7 @@ def doAddDelayLiveStream(argv, arglist):
         "DomainName": Utils.try_to_json(argv, "--DomainName"),
         "StreamName": Utils.try_to_json(argv, "--StreamName"),
         "DelayTime": Utils.try_to_json(argv, "--DelayTime"),
+        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

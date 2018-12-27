@@ -93,7 +93,7 @@ INFO = {
         "desc": "数据长度，当 SourceType 值为1时必须填写，为0可不写（此数据长度为数据未进行base64编码时的数据长度）。"
       }
     ],
-    "desc": "识别60s内的短语音，当音频放在请求body中传输时整个请求大小不能超过1M，当音频以url方式传输时，音频时长不可超过60s。所有请求参数放在post的body中采用x-www-form-urlencoded（数据转换成一个字串（name1=value1&name2=value2…）进行urlencode后）编码传输。"
+    "desc": "识别60s内的短语音，当音频放在请求body中传输时整个请求大小不能超过1M，当音频以url方式传输时，音频时长不可超过60s。所有请求参数放在post的body中采用x-www-form-urlencoded（数据转换成一个字串（name1=value1&name2=value2…）进行urlencode后）编码传输。先暂只支持中文普通话识别，支持识别8k(16k)的16bit的mp3或者wav音频。"
   },
   "Chat": {
     "params": [
@@ -144,7 +144,7 @@ INFO = {
       },
       {
         "name": "PrimaryLanguage",
-        "desc": "主语言类型<li>1-中文(包括粤语)，最大100字符</li><li>2-英文，最大支持400字符</li>"
+        "desc": "主语言类型<li>1-中文，最大100个汉字（标点符号算一个汉子）</li><li>2-英文，最大支持400个字母（标点符号算一个字母）</li>"
       },
       {
         "name": "SampleRate",

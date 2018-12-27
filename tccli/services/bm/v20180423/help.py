@@ -88,6 +88,28 @@ INFO = {
     ],
     "desc": "获取预授权规则列表"
   },
+  "ModifyDeviceAutoRenewFlag": {
+    "params": [
+      {
+        "name": "AutoRenewFlag",
+        "desc": "自动续费标志位。0: 不自动续费; 1: 自动续费"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "需要修改的设备ID列表"
+      }
+    ],
+    "desc": "修改物理机服务器自动续费标志"
+  },
+  "OfflineDevices": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "需要退还的物理机ID列表"
+      }
+    ],
+    "desc": "用于销毁可退还的服务器"
+  },
   "RunUserCmd": {
     "params": [
       {
@@ -154,6 +176,10 @@ INFO = {
       }
     ],
     "desc": "创建预授权规则"
+  },
+  "DescribeDeviceClass": {
+    "params": [],
+    "desc": "获取获取设备类型"
   },
   "ModifyUserCmd": {
     "params": [
@@ -286,6 +312,44 @@ INFO = {
     ],
     "desc": "重启机器"
   },
+  "DescribeOsInfo": {
+    "params": [
+      {
+        "name": "DeviceClassCode",
+        "desc": "设备类型代号。 可以从DescribeDeviceClass查询设备类型列表"
+      }
+    ],
+    "desc": "查询指定机型所支持的操作系统"
+  },
+  "DescribeDevicePosition": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "数量限制"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网ID"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID列表"
+      },
+      {
+        "name": "Alias",
+        "desc": "实例别名"
+      }
+    ],
+    "desc": "查询服务器所在的位置，如机架，上联交换机等信息"
+  },
   "DescribeUserCmdTaskInfo": {
     "params": [
       {
@@ -416,18 +480,84 @@ INFO = {
     ],
     "desc": "创建黑石竞价实例"
   },
-  "ResetDevicePassword": {
+  "ModifyDeviceAliases": {
     "params": [
       {
-        "name": "InstanceIds",
-        "desc": "需要重置密码的服务器ID列表"
-      },
-      {
-        "name": "Password",
-        "desc": "新密码"
+        "name": "DeviceAliases",
+        "desc": "需要改名的设备与别名列表"
       }
     ],
-    "desc": "重置服务器密码"
+    "desc": "修改服务器名称"
+  },
+  "DescribeDeviceInventory": {
+    "params": [
+      {
+        "name": "Zone",
+        "desc": "可用区"
+      },
+      {
+        "name": "DeviceClassCode",
+        "desc": "设备型号"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网ID"
+      },
+      {
+        "name": "CpuId",
+        "desc": "CpuId，自定义机型时需传入"
+      },
+      {
+        "name": "DiskType",
+        "desc": "硬盘类型，自定义机型时需传入"
+      },
+      {
+        "name": "DiskSize",
+        "desc": "单块硬盘大小，自定义机型时需传入"
+      },
+      {
+        "name": "DiskNum",
+        "desc": "硬盘数量，自定义机型时需传入"
+      },
+      {
+        "name": "Mem",
+        "desc": "内存总大小，自定义机型时需传入"
+      },
+      {
+        "name": "HaveRaidCard",
+        "desc": "是否支持raid，自定义机型时需传入"
+      }
+    ],
+    "desc": "查询设备库存"
+  },
+  "DescribeDeviceOperationLog": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "设备实例ID"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始日期"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束日期"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
+      }
+    ],
+    "desc": "查询设备操作日志， 如设备重启，重装，设置密码等操作"
   },
   "RepairTaskControl": {
     "params": [
@@ -523,13 +653,30 @@ INFO = {
     "params": [],
     "desc": "维修任务配置获取"
   },
-  "ModifyDeviceAliases": {
+  "SetOutBandVpnAuthPassword": {
     "params": [
       {
-        "name": "DeviceAliases",
-        "desc": "需要改名的设备与别名列表"
+        "name": "Password",
+        "desc": "设置的Vpn认证密码"
+      },
+      {
+        "name": "Operate",
+        "desc": "操作字段，取值为：create（创建）或update（修改）"
       }
     ],
-    "desc": "修改服务器名称"
+    "desc": "设置带外VPN认证用户密码"
+  },
+  "ResetDevicePassword": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "需要重置密码的服务器ID列表"
+      },
+      {
+        "name": "Password",
+        "desc": "新密码"
+      }
+    ],
+    "desc": "重置服务器密码"
   }
 }
