@@ -160,7 +160,7 @@ INFO = {
         "desc": "可用区，如：ap-guangzhou-2。"
       }
     ],
-    "desc": "本接口（CreateVpnGateways）用于创建VPN网关。"
+    "desc": "本接口（CreateVpnGateway）用于创建VPN网关。"
   },
   "ModifyServiceTemplateGroupAttribute": {
     "params": [

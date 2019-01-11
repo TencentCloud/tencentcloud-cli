@@ -524,7 +524,7 @@ INFO = {
       },
       {
         "name": "PersonSubType",
-        "desc": "身份子类型:\nPersonType=0时(普通顾客)，0普通顾客\nPersonType=1时(白名单)，0店员，1商场人员，2其他类型人员，3区域经理，4注册用户，5VIP用户\nPersonType=2时(黑名单)，0普通黑名单，1小偷)"
+        "desc": "身份子类型:\nPersonType=0时(普通顾客)，0普通顾客\nPersonType=1时(白名单)，0店员，1商场人员，2其他类型人员，3区域经理，4注册会员，5VIP用户\nPersonType=2时(黑名单)，0普通黑名单，1小偷)"
       }
     ],
     "desc": "修改顾客身份类型接口"
@@ -587,6 +587,35 @@ INFO = {
       }
     ],
     "desc": "调用本接口在优Mall中注册自己集团的到店通知回调接口地址，接口协议为HTTP或HTTPS。注册后，若集团有特殊身份（例如老客）到店通知，优Mall后台将主动将到店信息push给该接口"
+  },
+  "ModifyPersonFeatureInfo": {
+    "params": [
+      {
+        "name": "CompanyId",
+        "desc": "集团ID"
+      },
+      {
+        "name": "PersonId",
+        "desc": "需要修改的顾客id"
+      },
+      {
+        "name": "Picture",
+        "desc": "图片BASE编码"
+      },
+      {
+        "name": "PictureName",
+        "desc": "图片名称（尽量不要重复）"
+      },
+      {
+        "name": "PersonType",
+        "desc": "人物类型，仅能操作黑白名单顾客（1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）"
+      },
+      {
+        "name": "ShopId",
+        "desc": "店铺ID，如果不填表示操作集团身份库"
+      }
+    ],
+    "desc": "支持修改黑白名单类型的顾客特征"
   },
   "DescribeHistoryNetworkInfo": {
     "params": [
