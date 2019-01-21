@@ -399,7 +399,7 @@ INFO = {
       },
       {
         "name": "DeviceName",
-        "desc": "产品名"
+        "desc": "设备名"
       }
     ],
     "desc": "本接口（DescribeDevice）用于查看设备信息"

@@ -35,6 +35,7 @@ def doInitOralProcess(argv, arglist):
         "StorageMode": Utils.try_to_json(argv, "--StorageMode"),
         "SentenceInfoEnabled": Utils.try_to_json(argv, "--SentenceInfoEnabled"),
         "ServerType": Utils.try_to_json(argv, "--ServerType"),
+        "IsAsync": Utils.try_to_json(argv, "--IsAsync"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -75,6 +76,7 @@ def doTransmitOralProcess(argv, arglist):
         "SessionId": Utils.try_to_json(argv, "--SessionId"),
         "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
         "IsLongLifeSession": Utils.try_to_json(argv, "--IsLongLifeSession"),
+        "IsQuery": Utils.try_to_json(argv, "--IsQuery"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -100,6 +102,54 @@ def doTransmitOralProcess(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doTransmitOralProcessWithInit(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TransmitOralProcessWithInit", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SeqId": Utils.try_to_json(argv, "--SeqId"),
+        "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
+        "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
+        "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
+        "UserVoiceData": Utils.try_to_json(argv, "--UserVoiceData"),
+        "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "RefText": Utils.try_to_json(argv, "--RefText"),
+        "WorkMode": Utils.try_to_json(argv, "--WorkMode"),
+        "EvalMode": Utils.try_to_json(argv, "--EvalMode"),
+        "ScoreCoeff": Utils.try_to_json(argv, "--ScoreCoeff"),
+        "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
+        "StorageMode": Utils.try_to_json(argv, "--StorageMode"),
+        "SentenceInfoEnabled": Utils.try_to_json(argv, "--SentenceInfoEnabled"),
+        "ServerType": Utils.try_to_json(argv, "--ServerType"),
+        "IsAsync": Utils.try_to_json(argv, "--IsAsync"),
+        "IsQuery": Utils.try_to_json(argv, "--IsQuery"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SoeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TransmitOralProcessWithInitRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TransmitOralProcessWithInit(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180724": soe_client_v20180724,
 
@@ -113,6 +163,7 @@ MODELS_MAP = {
 ACTION_MAP = {
     "InitOralProcess": doInitOralProcess,
     "TransmitOralProcess": doTransmitOralProcess,
+    "TransmitOralProcessWithInit": doTransmitOralProcessWithInit,
 
 }
 

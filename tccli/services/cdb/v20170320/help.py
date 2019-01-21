@@ -67,6 +67,10 @@ INFO = {
     ],
     "desc": "本接口(DescribeRollbackRangeTime)用于查询云数据库实例可回档的时间范围。"
   },
+  "DescribeParamTemplates": {
+    "params": [],
+    "desc": "该接口（DescribeParamTemplates）查询参数模板列表。"
+  },
   "DeleteBackup": {
     "params": [
       {
@@ -92,6 +96,27 @@ INFO = {
       }
     ],
     "desc": "本接口(AssociateSecurityGroups)用于安全组批量绑定实例。"
+  },
+  "CreateAccounts": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Accounts",
+        "desc": "云数据库账号。"
+      },
+      {
+        "name": "Password",
+        "desc": "新账户的密码。"
+      },
+      {
+        "name": "Description",
+        "desc": "备注信息。"
+      }
+    ],
+    "desc": "本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息。"
   },
   "IsolateDBInstance": {
     "params": [
@@ -149,6 +174,23 @@ INFO = {
     ],
     "desc": "本接口(ModifyDBInstanceProject)用于修改云数据库实例的所属项目。"
   },
+  "ModifyInstanceTag": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "ReplaceTags",
+        "desc": "要增加或修改的标签"
+      },
+      {
+        "name": "DeleteTags",
+        "desc": "要删除的标签"
+      }
+    ],
+    "desc": "可以对实例标签进行添加、修改或者删除"
+  },
   "DescribeBackups": {
     "params": [
       {
@@ -175,30 +217,30 @@ INFO = {
     ],
     "desc": "本接口(DescribeAsyncRequestInfo)用于查询云数据库实例异步任务的执行结果。"
   },
-  "DescribeBackupDatabases": {
+  "CreateParamTemplate": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。"
+        "name": "Name",
+        "desc": "参数模板名称。"
       },
       {
-        "name": "StartTime",
-        "desc": "开始时间，格式为：2017-07-12 10:29:20。"
+        "name": "Description",
+        "desc": "参数模板描述。"
       },
       {
-        "name": "SearchDatabase",
-        "desc": "要查询的数据库名前缀。"
+        "name": "EngineVersion",
+        "desc": "mysql版本。"
       },
       {
-        "name": "Offset",
-        "desc": "分页偏移量。"
+        "name": "TemplateId",
+        "desc": "源参数模板ID。"
       },
       {
-        "name": "Limit",
-        "desc": "分页大小，最小值为1，最大值为2000。"
+        "name": "ParamList",
+        "desc": "参数列表。"
       }
     ],
-    "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表。"
+    "desc": "该接口（CreateParamTemplate）用于创建参数模板。"
   },
   "DescribeDBPrice": {
     "params": [
@@ -333,6 +375,15 @@ INFO = {
       }
     ],
     "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。当该实例的Status为1，且TaskStatus为0，表示实例已经发货成功。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询价格（按量计费）](https://cloud.tencent.com/document/api/253/5176)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5、MySQL5.6和MySQL5.7 版本；\n4. 支持创建主实例、灾备实例和只读实例；"
+  },
+  "DescribeDefaultParams": {
+    "params": [
+      {
+        "name": "EngineVersion",
+        "desc": "mysql版本，目前支持[\"5.1\", \"5.5\", \"5.6\", \"5.7\"]"
+      }
+    ],
+    "desc": "该接口（DescribeDefaultParams）用于查询默认的可设置参数列表。"
   },
   "ModifyDBInstanceName": {
     "params": [
@@ -633,6 +684,31 @@ INFO = {
     ],
     "desc": "本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。"
   },
+  "InquiryPriceUpgradeInstances": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值"
+      },
+      {
+        "name": "Memory",
+        "desc": "升级后的内存大小，单位：MB，为保证传入 Memory 值有效，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可升级的内存规格"
+      },
+      {
+        "name": "Volume",
+        "desc": "升级后的硬盘大小，单位：GB，为保证传入 Volume 值有效，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可升级的硬盘范围"
+      },
+      {
+        "name": "Cpu",
+        "desc": "升级后的核心数目，单位：核，为保证传入 CPU 值有效，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可升级的核心数目，当未指定该值时，将按照 Memory 大小补全一个默认值"
+      },
+      {
+        "name": "ProtectMode",
+        "desc": "数据复制方式，支持值包括：0-异步复制，1-半同步复制，2-强同步复制，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义"
+      }
+    ],
+    "desc": "本接口(InquiryPriceUpgradeInstances)用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。"
+  },
   "InitDBInstances": {
     "params": [
       {
@@ -654,14 +730,47 @@ INFO = {
     ],
     "desc": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等"
   },
-  "OpenWanService": {
+  "DescribeDeviceMonitorInfo": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值"
+        "desc": "实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Count",
+        "desc": "返回当天最近Count个5分钟粒度的监控数据。最小值1，最大值288，不传该参数默认返回当天所有5分钟粒度监控数据。"
       }
     ],
-    "desc": "本接口(OpenWanService)用于开通实例外网访问"
+    "desc": "本接口（DescribeDeviceMonitorInfo）用于查询云数据库物理机当天的监控信息，暂只支持内存488G、硬盘6T的实例查询。"
+  },
+  "ModifyAccountPrivileges": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Accounts",
+        "desc": "数据库的账号，包括用户名和域名。"
+      },
+      {
+        "name": "GlobalPrivileges",
+        "desc": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
+      },
+      {
+        "name": "DatabasePrivileges",
+        "desc": "数据库的权限。Privileges权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
+      },
+      {
+        "name": "TablePrivileges",
+        "desc": "数据库中表的权限。Privileges权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。"
+      },
+      {
+        "name": "ColumnPrivileges",
+        "desc": "数据库表中列的权限。Privileges权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。"
+      }
+    ],
+    "desc": "本接口(ModifyAccountPrivileges)用于修改云数据库的账户的权限信息。"
   },
   "DescribeAccounts": {
     "params": [
@@ -781,34 +890,26 @@ INFO = {
     ],
     "desc": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。当该实例的Status为1，且TaskStatus为0，表示实例已经发货成功。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询价格（包年包月）](https://cloud.tencent.com/document/api/236/1332)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5 、 MySQL5.6 、 MySQL5.7 版本；\n4. 支持创建主实例、只读实例、灾备实例；"
   },
-  "ModifyAccountPrivileges": {
+  "ModifyParamTemplate": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+        "name": "TemplateId",
+        "desc": "模板Id。"
       },
       {
-        "name": "Accounts",
-        "desc": "数据库的账号，包括用户名和域名。"
+        "name": "Name",
+        "desc": "模板名称。"
       },
       {
-        "name": "GlobalPrivileges",
-        "desc": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
+        "name": "Description",
+        "desc": "模板描述。"
       },
       {
-        "name": "DatabasePrivileges",
-        "desc": "数据库的权限。Privileges权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
-      },
-      {
-        "name": "TablePrivileges",
-        "desc": "数据库中表的权限。Privileges权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。"
-      },
-      {
-        "name": "ColumnPrivileges",
-        "desc": "数据库表中列的权限。Privileges权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。"
+        "name": "ParamList",
+        "desc": "参数列表。"
       }
     ],
-    "desc": "本接口(ModifyAccountPrivileges)用于修改云数据库的账户的权限信息。"
+    "desc": "该接口（ModifyParamTemplate）用于修改参数模板。"
   },
   "ModifyDBInstanceSecurityGroups": {
     "params": [
@@ -1005,26 +1106,22 @@ INFO = {
     ],
     "desc": "本接口(DescribeBinlogs)用于查询云数据库实例的二进制数据。"
   },
-  "CreateAccounts": {
+  "DescribeTagsOfInstanceIds": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+        "name": "InstanceIds",
+        "desc": "实例列表"
       },
       {
-        "name": "Accounts",
-        "desc": "云数据库账号。"
+        "name": "Offset",
+        "desc": "偏移量"
       },
       {
-        "name": "Password",
-        "desc": "新账户的密码。"
-      },
-      {
-        "name": "Description",
-        "desc": "备注信息。"
+        "name": "Limit",
+        "desc": "每页返回多少个标签"
       }
     ],
-    "desc": "本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息。"
+    "desc": "获取实例绑定的标签"
   },
   "DescribeDatabases": {
     "params": [
@@ -1081,6 +1178,32 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeUploadedFiles)用于查询用户导入的SQL文件列表。"
+  },
+  "OpenWanService": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值"
+      }
+    ],
+    "desc": "本接口(OpenWanService)用于开通实例外网访问。\n\n注意，实例开通外网访问之前，需要先将实例进行[实例初始化](https://cloud.tencent.com/document/api/236/15873)操作。"
+  },
+  "DescribeInstanceParamRecords": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小。"
+      }
+    ],
+    "desc": "该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。"
   },
   "UpgradeDBInstance": {
     "params": [
@@ -1144,6 +1267,15 @@ INFO = {
     ],
     "desc": "本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例。"
   },
+  "DescribeParamTemplateInfo": {
+    "params": [
+      {
+        "name": "TemplateId",
+        "desc": "参数模板Id。"
+      }
+    ],
+    "desc": "该接口（DescribeParamTemplateInfo）用于查询参数模板详情。"
+  },
   "DisassociateSecurityGroups": {
     "params": [
       {
@@ -1156,6 +1288,31 @@ INFO = {
       }
     ],
     "desc": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。"
+  },
+  "DescribeBackupDatabases": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间，格式为：2017-07-12 10:29:20。"
+      },
+      {
+        "name": "SearchDatabase",
+        "desc": "要查询的数据库名前缀。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小，最小值为1，最大值为2000。"
+      }
+    ],
+    "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表。"
   },
   "DescribeTables": {
     "params": [

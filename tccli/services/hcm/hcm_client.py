@@ -27,6 +27,8 @@ def doEvaluation(argv, arglist):
     param = {
         "SessionId": Utils.try_to_json(argv, "--SessionId"),
         "Image": Utils.try_to_json(argv, "--Image"),
+        "HcmAppid": Utils.try_to_json(argv, "--HcmAppid"),
+        "Url": Utils.try_to_json(argv, "--Url"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
