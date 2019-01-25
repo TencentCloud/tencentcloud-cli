@@ -196,6 +196,14 @@ INFO = {
       {
         "name": "CcnId",
         "desc": "云联网实例ID"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方法。顺序：`ASC`，倒序：`DESC`。"
       }
     ],
     "desc": "本接口（DescribeCcnAttachedInstances）用于查询云联网实例下已关联的网络实例。"
@@ -344,18 +352,14 @@ INFO = {
     ],
     "desc": "本接口（CreateVpnConnection）用于创建VPN通道。"
   },
-  "CreateDirectConnectGatewayCcnRoutes": {
+  "DeleteRouteTable": {
     "params": [
       {
-        "name": "DirectConnectGatewayId",
-        "desc": "专线网关ID，形如：dcg-prpqlmg1"
-      },
-      {
-        "name": "Routes",
-        "desc": "需要连通的IDC网段列表"
+        "name": "RouteTableId",
+        "desc": "路由表实例ID，例如：rtb-azd4dt1c。"
       }
     ],
-    "desc": "本接口（CreateDirectConnectGatewayCcnRoutes）用于创建专线网关的云联网路由（IDC网段）"
+    "desc": "删除路由表"
   },
   "RemoveBandwidthPackageResources": {
     "params": [
@@ -588,18 +592,26 @@ INFO = {
     ],
     "desc": "删除协议端口模板集合"
   },
-  "DisassociateAddress": {
+  "DescribeIp6Translators": {
     "params": [
       {
-        "name": "AddressId",
-        "desc": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。"
+        "name": "Ip6TranslatorIds",
+        "desc": "IPV6转换实例唯一ID数组，形如ip6-xxxxxxxx"
       },
       {
-        "name": "ReallocateNormalPublicIp",
-        "desc": "表示解绑 EIP 之后是否分配普通公网 IP。取值范围：<br><li>TRUE：表示解绑 EIP 之后分配普通公网 IP。<br><li>FALSE：表示解绑 EIP 之后不分配普通公网 IP。<br>默认取值：FALSE。<br><br>只有满足以下条件时才能指定该参数：<br><li> 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。<br><li>解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 [DescribeAddressQuota](https://cloud.tencent.com/document/api/213/1378) 接口获取。"
+        "name": "Filters",
+        "desc": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`Ip6TranslatorIds`和`Filters`。详细的过滤条件如下：\n<li> ip6-translator-id - String - 是否必填：否 - （过滤条件）按照IPV6转换实例的唯一ID过滤,形如ip6-xxxxxxx。</li>\n<li> ip6-translator-vip6 - String - 是否必填：否 - （过滤条件）按照IPV6地址过滤。不支持模糊过滤。</li>\n<li> ip6-translator-name - String - 是否必填：否 - （过滤条件）按照IPV6转换实例名称过滤。不支持模糊过滤。</li>\n<li> ip6-translator-status - String - 是否必填：否 - （过滤条件）按照IPV6转换实例的状态过滤。状态取值范围为\"CREATING\",\"RUNNING\",\"DELETING\",\"MODIFYING\""
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。"
       }
     ],
-    "desc": "本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 支持CVM实例，弹性网卡上的EIP解绑\n* 不支持NAT上的EIP解绑。NAT上的EIP解绑请参考[EipUnBindNatGateway](https://cloud.tencent.com/document/product/215/4092)\n* 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\n* EIP 如果被封堵，则不能进行解绑定操作。"
+    "desc": "1. 该接口用于查询账户下的IPV6转换实例及其绑定的转换规则信息\n2. 支持过滤查询"
   },
   "CreateVpc": {
     "params": [
@@ -625,6 +637,31 @@ INFO = {
       }
     ],
     "desc": "本接口(CreateVpc)用于创建私有网络(VPC)。\n* 用户可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）,如果规划VPC网段请参见VPC网段规划说明。\n* 同一个地域能创建的VPC资源个数也是有限制的，详见 <a href=\"https://cloud.tencent.com/doc/product/215/537\" title=\"VPC使用限制\">VPC使用限制</a>,如果需要扩充请联系在线客服。"
+  },
+  "ModifyIp6Rule": {
+    "params": [
+      {
+        "name": "Ip6TranslatorId",
+        "desc": "IPV6转换实例唯一ID，形如ip6-xxxxxxxx"
+      },
+      {
+        "name": "Ip6RuleId",
+        "desc": "IPV6转换规则唯一ID，形如rule6-xxxxxxxx"
+      },
+      {
+        "name": "Ip6RuleName",
+        "desc": "IPV6转换规则修改后的名称"
+      },
+      {
+        "name": "Vip",
+        "desc": "IPV6转换规则修改后的IPV4地址"
+      },
+      {
+        "name": "Vport",
+        "desc": "IPV6转换规则修改后的IPV4端口号"
+      }
+    ],
+    "desc": "该接口用于修改IPV6转换规则，当前仅支持修改转换规则名称，IPV4地址和IPV4端口号"
   },
   "AddBandwidthPackageResources": {
     "params": [
@@ -822,6 +859,15 @@ INFO = {
     ],
     "desc": "本接口（DescribeCcns）用于查询云联网（CCN）列表。"
   },
+  "DeleteIp6Translators": {
+    "params": [
+      {
+        "name": "Ip6TranslatorIds",
+        "desc": "待释放的IPV6转换实例的唯一ID，形如‘ip6-xxxxxxxx’"
+      }
+    ],
+    "desc": "1. 该接口用于释放IPV6转换实例，支持批量。\n2.  如果IPV6转换实例建立有转换规则，会一并删除。"
+  },
   "DeleteCcn": {
     "params": [
       {
@@ -922,6 +968,23 @@ INFO = {
     ],
     "desc": "本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。"
   },
+  "AddIp6Rules": {
+    "params": [
+      {
+        "name": "Ip6TranslatorId",
+        "desc": "IPV6转换实例唯一ID，形如ip6-xxxxxxxx"
+      },
+      {
+        "name": "Ip6RuleInfos",
+        "desc": "IPV6转换规则信息"
+      },
+      {
+        "name": "Ip6RuleName",
+        "desc": "IPV6转换规则名称"
+      }
+    ],
+    "desc": "1. 该接口用于在转换实例下添加IPV6转换规则。\n2. 支持在同一个转换实例下批量添加转换规则，一个账户在一个地域最多50个。\n3. 一个完整的转换规则包括vip6:vport6:protocol:vip:vport，其中vip6:vport6:protocol必须是唯一。"
+  },
   "DeleteServiceTemplate": {
     "params": [
       {
@@ -985,6 +1048,23 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeCcnRoutes）用于查询已加入云联网（CCN）的路由"
+  },
+  "CreateIp6Translators": {
+    "params": [
+      {
+        "name": "Ip6TranslatorName",
+        "desc": "转换实例名称"
+      },
+      {
+        "name": "Ip6TranslatorCount",
+        "desc": "创建转换实例数量，默认是1个"
+      },
+      {
+        "name": "Ip6InternetServiceProvider",
+        "desc": "转换实例运营商属性，可取\"CMCC\",\"CTCC\",\"CUCC\",\"BGP\""
+      }
+    ],
+    "desc": "1. 该接口用于创建IPV6转换IPV4实例，支持批量\n2. 同一个账户在在一个地域最多允许创建10个转换实例"
   },
   "CreateDefaultVpc": {
     "params": [
@@ -1282,14 +1362,44 @@ INFO = {
     ],
     "desc": "本接口（DescribeVpnGateways）用于查询VPN网关列表。"
   },
-  "DeleteRouteTable": {
+  "CreateDirectConnectGatewayCcnRoutes": {
     "params": [
       {
-        "name": "RouteTableId",
-        "desc": "路由表实例ID，例如：rtb-azd4dt1c。"
+        "name": "DirectConnectGatewayId",
+        "desc": "专线网关ID，形如：dcg-prpqlmg1"
+      },
+      {
+        "name": "Routes",
+        "desc": "需要连通的IDC网段列表"
       }
     ],
-    "desc": "删除路由表"
+    "desc": "本接口（CreateDirectConnectGatewayCcnRoutes）用于创建专线网关的云联网路由（IDC网段）"
+  },
+  "DisassociateAddress": {
+    "params": [
+      {
+        "name": "AddressId",
+        "desc": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。"
+      },
+      {
+        "name": "ReallocateNormalPublicIp",
+        "desc": "表示解绑 EIP 之后是否分配普通公网 IP。取值范围：<br><li>TRUE：表示解绑 EIP 之后分配普通公网 IP。<br><li>FALSE：表示解绑 EIP 之后不分配普通公网 IP。<br>默认取值：FALSE。<br><br>只有满足以下条件时才能指定该参数：<br><li> 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。<br><li>解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 [DescribeAddressQuota](https://cloud.tencent.com/document/api/213/1378) 接口获取。"
+      }
+    ],
+    "desc": "本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 支持CVM实例，弹性网卡上的EIP解绑\n* 不支持NAT上的EIP解绑。NAT上的EIP解绑请参考[EipUnBindNatGateway](https://cloud.tencent.com/document/product/215/4092)\n* 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\n* EIP 如果被封堵，则不能进行解绑定操作。"
+  },
+  "DescribeVpcPrivateIpAddresses": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。"
+      },
+      {
+        "name": "PrivateIpAddresses",
+        "desc": "内网`IP`地址列表，批量查询单次请求最多支持`10`个。"
+      }
+    ],
+    "desc": "本接口（DescribeVpcPrivateIpAddresses）用于查询VPC内网IP信息。<br />\n只能查询已使用的IP信息，当查询未使用的IP时，本接口不会报错，但不会出现在返回结果里。"
   },
   "DescribeDirectConnectGateways": {
     "params": [
@@ -1311,6 +1421,15 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeDirectConnectGateways）用于查询专线网关。"
+  },
+  "DescribeSecurityGroupAssociationStatistics": {
+    "params": [
+      {
+        "name": "SecurityGroupIds",
+        "desc": "安全实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      }
+    ],
+    "desc": "本接口（DescribeSecurityGroupAssociationStatistics）用于查询安全组关联的实例统计。"
   },
   "RenewVpnGateway": {
     "params": [
@@ -1371,6 +1490,19 @@ INFO = {
       }
     ],
     "desc": "本接口（HaVipAssociateAddressIp）用于高可用虚拟IP（HAVIP）绑定弹性公网IP（EIP）<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口"
+  },
+  "RemoveIp6Rules": {
+    "params": [
+      {
+        "name": "Ip6TranslatorId",
+        "desc": "IPV6转换规则所属的转换实例唯一ID，形如ip6-xxxxxxxx"
+      },
+      {
+        "name": "Ip6RuleIds",
+        "desc": "待删除IPV6转换规则，形如rule6-xxxxxxxx"
+      }
+    ],
+    "desc": "1. 该接口用于删除IPV6转换规则\n2. 支持批量删除同一个转换实例下的多个转换规则"
   },
   "DescribeHaVips": {
     "params": [
@@ -1829,14 +1961,18 @@ INFO = {
     ],
     "desc": "创建IP地址模版集合"
   },
-  "DescribeSecurityGroupAssociationStatistics": {
+  "ModifyIp6Translator": {
     "params": [
       {
-        "name": "SecurityGroupIds",
-        "desc": "安全实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "name": "Ip6TranslatorId",
+        "desc": "IPV6转换实例唯一ID，形如ip6-xxxxxxxxx"
+      },
+      {
+        "name": "Ip6TranslatorName",
+        "desc": "IPV6转换实例修改名称"
       }
     ],
-    "desc": "本接口（DescribeSecurityGroupAssociationStatistics）用于查询安全组关联的实例统计。"
+    "desc": "该接口用于修改IP6转换实例属性，当前仅支持修改实例名称。"
   },
   "DescribeAddressTemplates": {
     "params": [
@@ -1944,5 +2080,14 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyVpcAttribute）用于修改私有网络（VPC）的相关属性。"
+  },
+  "DescribeIp6TranslatorQuota": {
+    "params": [
+      {
+        "name": "Ip6TranslatorIds",
+        "desc": "待查询IPV6转换实例的唯一ID列表，形如ip6-xxxxxxxx"
+      }
+    ],
+    "desc": "查询账户在指定地域IPV6转换实例和规则的配额"
   }
 }

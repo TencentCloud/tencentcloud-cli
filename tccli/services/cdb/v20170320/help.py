@@ -191,6 +191,15 @@ INFO = {
     ],
     "desc": "可以对实例标签进行添加、修改或者删除"
   },
+  "DeleteParamTemplate": {
+    "params": [
+      {
+        "name": "TemplateId",
+        "desc": "参数模板ID。"
+      }
+    ],
+    "desc": "该接口（DeleteParamTemplate）用于删除参数模板。"
+  },
   "DescribeBackups": {
     "params": [
       {
@@ -216,6 +225,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeAsyncRequestInfo)用于查询云数据库实例异步任务的执行结果。"
+  },
+  "CloseWanService": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+      }
+    ],
+    "desc": "本接口(CloseWanService)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问。"
   },
   "CreateParamTemplate": {
     "params": [
@@ -246,7 +264,7 @@ INFO = {
     "params": [
       {
         "name": "Zone",
-        "desc": "可用区信息，格式如\"ap-guangzhou-1\""
+        "desc": "可用区信息，格式如\"ap-guangzhou-2\"。具体能设置的值请通过<a href=\"https://cloud.tencent.com/document/api/236/17229\">DescribeDBZoneConfig</a>接口查询。"
       },
       {
         "name": "GoodsNum",
@@ -277,7 +295,7 @@ INFO = {
         "desc": "数据复制方式，默认为0，支持值包括：0-表示异步复制，1-表示半同步复制，2-表示强同步复制"
       }
     ],
-    "desc": "本接口(DescribeDBPrice)用于查询云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。"
+    "desc": "本接口(DescribeDBPrice)用于查询云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。\n\n注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照<a href=\"https://cloud.tencent.com/document/api/236/15832\">服务地址</a>文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com"
   },
   "CreateDBInstanceHour": {
     "params": [
@@ -1054,14 +1072,14 @@ INFO = {
     ],
     "desc": "本接口(ModifyAccountDescription)用于修改云数据库账户的备注信息。"
   },
-  "CloseWanService": {
+  "DescribeSupportedPrivileges": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
       }
     ],
-    "desc": "本接口(CloseWanService)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问。"
+    "desc": "本接口(DescribeSupportedPrivileges)用于查询云数据库的支持的权限信息，包括全局权限，数据库权限，表权限以及列权限。"
   },
   "StopDBImportJob": {
     "params": [

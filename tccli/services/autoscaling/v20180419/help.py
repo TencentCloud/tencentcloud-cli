@@ -66,6 +66,28 @@ INFO = {
     ],
     "desc": "本接口（CreateAutoScalingGroup）用于创建伸缩组"
   },
+  "DeleteAutoScalingGroup": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      }
+    ],
+    "desc": "本接口（DeleteAutoScalingGroup）用于删除指定伸缩组，删除前提是伸缩组内无实例且当前未在执行伸缩活动。"
+  },
+  "AttachInstances": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "CVM实例ID列表"
+      }
+    ],
+    "desc": "本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。\n"
+  },
   "DeleteScheduledAction": {
     "params": [
       {
@@ -74,10 +96,6 @@ INFO = {
       }
     ],
     "desc": "本接口（DeleteScheduledAction）用于删除特定的定时任务。"
-  },
-  "DescribeAccountLimits": {
-    "params": [],
-    "desc": "本接口（DescribeAccountLimits）用于查询用户账户在弹性伸缩中的资源限制。"
   },
   "DetachInstances": {
     "params": [
@@ -91,19 +109,6 @@ INFO = {
       }
     ],
     "desc": "本接口（DettachInstances）用于从伸缩组移出 CVM 实例，本接口不会被销毁实例。"
-  },
-  "ModifyDesiredCapacity": {
-    "params": [
-      {
-        "name": "AutoScalingGroupId",
-        "desc": "伸缩组ID"
-      },
-      {
-        "name": "DesiredCapacity",
-        "desc": "期望实例数"
-      }
-    ],
-    "desc": "本接口（ModifyDesiredCapacity）用于修改指定伸缩组的期望实例数"
   },
   "CreateScheduledAction": {
     "params": [
@@ -141,6 +146,49 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateScheduledAction）用于创建定时任务。"
+  },
+  "RemoveInstances": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "CVM实例ID列表"
+      }
+    ],
+    "desc": "本接口（RemoveInstances）用于从伸缩组删除 CVM 实例。根据当前的产品逻辑，如果实例由弹性伸缩自动创建，则实例会被销毁；如果实例系创建后加入伸缩组的，则会从伸缩组中移除，保留实例。"
+  },
+  "ModifyLoadBalancers": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      },
+      {
+        "name": "LoadBalancerIds",
+        "desc": "传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+      },
+      {
+        "name": "ForwardLoadBalancers",
+        "desc": "应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+      }
+    ],
+    "desc": "本接口（ModifyLoadBalancers）用于修改伸缩组的负载均衡器。\n\n* 本接口用于为伸缩组指定新的负载均衡器配置，采用“完全覆盖”风格，无论之前配置如何，统一按照接口参数配置为新的负载均衡器。\n* 如果要为伸缩组清空负载均衡器，则在调用本接口时仅指定伸缩组ID，不指定具体负载均衡器。\n* 本接口会立即修改伸缩组的负载均衡器，并生成一个伸缩活动，异步修改存量实例的负载均衡器。"
+  },
+  "ModifyDesiredCapacity": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      },
+      {
+        "name": "DesiredCapacity",
+        "desc": "期望实例数"
+      }
+    ],
+    "desc": "本接口（ModifyDesiredCapacity）用于修改指定伸缩组的期望实例数"
   },
   "CreateLaunchConfiguration": {
     "params": [
@@ -268,6 +316,66 @@ INFO = {
     ],
     "desc": "本接口（ModifyAutoScalingGroup）用于修改伸缩组。"
   },
+  "DescribeLaunchConfigurations": {
+    "params": [
+      {
+        "name": "LaunchConfigurationIds",
+        "desc": "按照一个或者多个启动配置ID查询。启动配置ID形如：`asc-ouy1ax38`。每次请求的上限为100。参数不支持同时指定`LaunchConfigurationIds`和`Filters`"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "本接口（DescribeLaunchConfigurations）用于查询启动配置的信息。\n\n* 可以根据启动配置ID、启动配置名称等信息来查询启动配置的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的启动配置。"
+  },
+  "DisableAutoScalingGroup": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      }
+    ],
+    "desc": "本接口（DisableAutoScalingGroup）用于停用指定伸缩组。"
+  },
+  "DescribeAutoScalingInstances": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "本接口（DescribeAutoScalingInstances）用于查询弹性伸缩关联实例的信息。\n\n* 可以根据实例ID、伸缩组ID等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。"
+  },
+  "DeleteLaunchConfiguration": {
+    "params": [
+      {
+        "name": "LaunchConfigurationId",
+        "desc": "需要删除的启动配置ID。"
+      }
+    ],
+    "desc": "本接口（DeleteLaunchConfiguration）用于删除启动配置。\n\n* 若启动配置在伸缩组中属于生效状态，则该启动配置不允许删除。\n"
+  },
   "EnableAutoScalingGroup": {
     "params": [
       {
@@ -277,18 +385,9 @@ INFO = {
     ],
     "desc": "本接口（EnableAutoScalingGroup）用于启用指定伸缩组。"
   },
-  "RemoveInstances": {
-    "params": [
-      {
-        "name": "AutoScalingGroupId",
-        "desc": "伸缩组ID"
-      },
-      {
-        "name": "InstanceIds",
-        "desc": "CVM实例ID列表"
-      }
-    ],
-    "desc": "本接口（RemoveInstances）用于从伸缩组删除 CVM 实例。根据当前的产品逻辑，如果实例由弹性伸缩自动创建，则实例会被销毁；如果实例系创建后加入伸缩组的，则会从伸缩组中移除，保留实例。"
+  "DescribeAccountLimits": {
+    "params": [],
+    "desc": "本接口（DescribeAccountLimits）用于查询用户账户在弹性伸缩中的资源限制。"
   },
   "DescribeAutoScalingGroups": {
     "params": [
@@ -348,15 +447,6 @@ INFO = {
     ],
     "desc": "本接口（ModifyScheduledAction）用于修改定时任务。"
   },
-  "DeleteAutoScalingGroup": {
-    "params": [
-      {
-        "name": "AutoScalingGroupId",
-        "desc": "伸缩组ID"
-      }
-    ],
-    "desc": "本接口（DeleteAutoScalingGroup）用于删除指定伸缩组，删除前提是伸缩组内无实例且当前未在执行伸缩活动。"
-  },
   "DescribeAutoScalingActivities": {
     "params": [
       {
@@ -365,7 +455,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>\n<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例）</li>\n<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。"
+        "desc": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>\n<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>\n<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。"
       },
       {
         "name": "Limit",
@@ -377,66 +467,6 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeAutoScalingActivities）用于查询伸缩组的伸缩活动记录。"
-  },
-  "DescribeLaunchConfigurations": {
-    "params": [
-      {
-        "name": "LaunchConfigurationIds",
-        "desc": "按照一个或者多个启动配置ID查询。启动配置ID形如：`asc-ouy1ax38`。每次请求的上限为100。参数不支持同时指定`LaunchConfigurationIds`和`Filters`"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      }
-    ],
-    "desc": "本接口（DescribeLaunchConfigurations）用于查询启动配置的信息。\n\n* 可以根据启动配置ID、启动配置名称等信息来查询启动配置的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的启动配置。"
-  },
-  "DeleteLaunchConfiguration": {
-    "params": [
-      {
-        "name": "LaunchConfigurationId",
-        "desc": "需要删除的启动配置ID。"
-      }
-    ],
-    "desc": "本接口（DeleteLaunchConfiguration）用于删除启动配置。\n\n* 若启动配置在伸缩组中属于生效状态，则该启动配置不允许删除。\n"
-  },
-  "DisableAutoScalingGroup": {
-    "params": [
-      {
-        "name": "AutoScalingGroupId",
-        "desc": "伸缩组ID"
-      }
-    ],
-    "desc": "本接口（DisableAutoScalingGroup）用于停用指定伸缩组。"
-  },
-  "DescribeAutoScalingInstances": {
-    "params": [
-      {
-        "name": "InstanceIds",
-        "desc": "待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      }
-    ],
-    "desc": "本接口（DescribeAutoScalingInstances）用于查询弹性伸缩关联实例的信息。\n\n* 可以根据实例ID、伸缩组ID等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。"
   },
   "DescribeScheduledActions": {
     "params": [
@@ -459,19 +489,6 @@ INFO = {
     ],
     "desc": "本接口 (DescribeScheduledActions) 用于查询一个或多个定时任务的详细信息。\n\n* 可以根据定时任务ID、定时任务名称或者伸缩组ID等信息来查询定时任务的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的定时任务。"
   },
-  "AttachInstances": {
-    "params": [
-      {
-        "name": "AutoScalingGroupId",
-        "desc": "伸缩组ID"
-      },
-      {
-        "name": "InstanceIds",
-        "desc": "CVM实例ID列表"
-      }
-    ],
-    "desc": "本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。\n"
-  },
   "ModifyLaunchConfigurationAttributes": {
     "params": [
       {
@@ -493,6 +510,10 @@ INFO = {
       {
         "name": "LaunchConfigurationName",
         "desc": "启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。"
+      },
+      {
+        "name": "UserData",
+        "desc": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串''"
       }
     ],
     "desc": "本接口（ModifyLaunchConfigurationAttributes）用于修改启动配置部分属性。\n\n* 修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。\n* 本接口支持修改部分简单类型。"

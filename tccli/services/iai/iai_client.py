@@ -12,34 +12,21 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.autoscaling.v20180419 import autoscaling_client as autoscaling_client_v20180419
-from tencentcloud.autoscaling.v20180419 import models as models_v20180419
-from tccli.services.autoscaling import v20180419
-from tccli.services.autoscaling.v20180419 import help as v20180419_help
+from tencentcloud.iai.v20180301 import iai_client as iai_client_v20180301
+from tencentcloud.iai.v20180301 import models as models_v20180301
+from tccli.services.iai import v20180301
+from tccli.services.iai.v20180301 import help as v20180301_help
 
 
-def doCreateAutoScalingGroup(argv, arglist):
+def doDeletePersonFromGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateAutoScalingGroup", g_param[OptionsDefine.Version])
+        show_help("DeletePersonFromGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
-        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
-        "MinSize": Utils.try_to_json(argv, "--MinSize"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
-        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "ForwardLoadBalancers": Utils.try_to_json(argv, "--ForwardLoadBalancers"),
-        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
-        "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
-        "Zones": Utils.try_to_json(argv, "--Zones"),
-        "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
-        "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -50,12 +37,12 @@ def doCreateAutoScalingGroup(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAutoScalingGroupRequest()
+    model = models.DeletePersonFromGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateAutoScalingGroup(model)
+    rsp = client.DeletePersonFromGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -65,14 +52,17 @@ def doCreateAutoScalingGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAutoScalingGroup(argv, arglist):
+def doCreateGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteAutoScalingGroup", g_param[OptionsDefine.Version])
+        show_help("CreateGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupExDescriptions": Utils.try_to_json(argv, "--GroupExDescriptions"),
+        "Tag": Utils.try_to_json(argv, "--Tag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -83,12 +73,12 @@ def doDeleteAutoScalingGroup(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAutoScalingGroupRequest()
+    model = models.CreateGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteAutoScalingGroup(model)
+    rsp = client.CreateGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -98,15 +88,14 @@ def doDeleteAutoScalingGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAttachInstances(argv, arglist):
+def doGetPersonBaseInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AttachInstances", g_param[OptionsDefine.Version])
+        show_help("GetPersonBaseInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -117,12 +106,12 @@ def doAttachInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AttachInstancesRequest()
+    model = models.GetPersonBaseInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AttachInstances(model)
+    rsp = client.GetPersonBaseInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -132,14 +121,15 @@ def doAttachInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteScheduledAction(argv, arglist):
+def doDetectLiveFace(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteScheduledAction", g_param[OptionsDefine.Version])
+        show_help("DetectLiveFace", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ScheduledActionId": Utils.try_to_json(argv, "--ScheduledActionId"),
+        "Image": Utils.try_to_json(argv, "--Image"),
+        "Url": Utils.try_to_json(argv, "--Url"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -150,12 +140,12 @@ def doDeleteScheduledAction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteScheduledActionRequest()
+    model = models.DetectLiveFaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteScheduledAction(model)
+    rsp = client.DetectLiveFace(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -165,15 +155,16 @@ def doDeleteScheduledAction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDetachInstances(argv, arglist):
+def doCreateFace(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DetachInstances", g_param[OptionsDefine.Version])
+        show_help("CreateFace", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "Images": Utils.try_to_json(argv, "--Images"),
+        "Urls": Utils.try_to_json(argv, "--Urls"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -184,12 +175,12 @@ def doDetachInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetachInstancesRequest()
+    model = models.CreateFaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DetachInstances(model)
+    rsp = client.CreateFace(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -199,21 +190,14 @@ def doDetachInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateScheduledAction(argv, arglist):
+def doGetPersonListNum(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateScheduledAction", g_param[OptionsDefine.Version])
+        show_help("GetPersonListNum", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "ScheduledActionName": Utils.try_to_json(argv, "--ScheduledActionName"),
-        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
-        "MinSize": Utils.try_to_json(argv, "--MinSize"),
-        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Recurrence": Utils.try_to_json(argv, "--Recurrence"),
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -224,12 +208,12 @@ def doCreateScheduledAction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateScheduledActionRequest()
+    model = models.GetPersonListNumRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateScheduledAction(model)
+    rsp = client.GetPersonListNum(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -239,211 +223,14 @@ def doCreateScheduledAction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRemoveInstances(argv, arglist):
+def doGetPersonGroupInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RemoveInstances", g_param[OptionsDefine.Version])
+        show_help("GetPersonGroupInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RemoveInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.RemoveInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyLoadBalancers(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyLoadBalancers", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
-        "ForwardLoadBalancers": Utils.try_to_json(argv, "--ForwardLoadBalancers"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyLoadBalancersRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyLoadBalancers(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyDesiredCapacity(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyDesiredCapacity", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDesiredCapacityRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDesiredCapacity(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateLaunchConfiguration(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateLaunchConfiguration", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "LaunchConfigurationName": Utils.try_to_json(argv, "--LaunchConfigurationName"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
-        "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
-        "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
-        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
-        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
-        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
-        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "UserData": Utils.try_to_json(argv, "--UserData"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
-        "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
-        "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
-        "InstanceTypesCheckPolicy": Utils.try_to_json(argv, "--InstanceTypesCheckPolicy"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateLaunchConfigurationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateLaunchConfiguration(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyAutoScalingGroup(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyAutoScalingGroup", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
-        "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
-        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
-        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
-        "MinSize": Utils.try_to_json(argv, "--MinSize"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
-        "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "Zones": Utils.try_to_json(argv, "--Zones"),
-        "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
-        "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAutoScalingGroupRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyAutoScalingGroup(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeAutoScalingInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeAutoScalingInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -456,12 +243,12 @@ def doDescribeAutoScalingInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAutoScalingInstancesRequest()
+    model = models.GetPersonGroupInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAutoScalingInstances(model)
+    rsp = client.GetPersonGroupInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -471,14 +258,16 @@ def doDescribeAutoScalingInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDisableAutoScalingGroup(argv, arglist):
+def doAnalyzeFace(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DisableAutoScalingGroup", g_param[OptionsDefine.Version])
+        show_help("AnalyzeFace", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "Mode": Utils.try_to_json(argv, "--Mode"),
+        "Image": Utils.try_to_json(argv, "--Image"),
+        "Url": Utils.try_to_json(argv, "--Url"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -489,12 +278,12 @@ def doDisableAutoScalingGroup(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DisableAutoScalingGroupRequest()
+    model = models.AnalyzeFaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DisableAutoScalingGroup(model)
+    rsp = client.AnalyzeFace(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -504,151 +293,337 @@ def doDisableAutoScalingGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLaunchConfigurations(argv, arglist):
+def doModifyPersonBaseInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeLaunchConfigurations", g_param[OptionsDefine.Version])
+        show_help("ModifyPersonBaseInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LaunchConfigurationIds": Utils.try_to_json(argv, "--LaunchConfigurationIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonName": Utils.try_to_json(argv, "--PersonName"),
+        "Gender": Utils.try_to_json(argv, "--Gender"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyPersonBaseInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyPersonBaseInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCopyPerson(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CopyPerson", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CopyPersonRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CopyPerson(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doVerifyFace(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VerifyFace", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "Image": Utils.try_to_json(argv, "--Image"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VerifyFaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VerifyFace(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeletePerson(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeletePerson", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeletePersonRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeletePerson(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "GroupExDescriptionInfos": Utils.try_to_json(argv, "--GroupExDescriptionInfos"),
+        "Tag": Utils.try_to_json(argv, "--Tag"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreatePerson(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreatePerson", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "PersonName": Utils.try_to_json(argv, "--PersonName"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "Gender": Utils.try_to_json(argv, "--Gender"),
+        "PersonExDescriptionInfos": Utils.try_to_json(argv, "--PersonExDescriptionInfos"),
+        "Image": Utils.try_to_json(argv, "--Image"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreatePersonRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreatePerson(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSearchFaces(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SearchFaces", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
+        "Image": Utils.try_to_json(argv, "--Image"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+        "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
+        "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
+        "MaxPersonNum": Utils.try_to_json(argv, "--MaxPersonNum"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchFacesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SearchFaces(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDetectFace(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DetectFace", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
+        "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
+        "Image": Utils.try_to_json(argv, "--Image"),
+        "Url": Utils.try_to_json(argv, "--Url"),
+        "NeedFaceAttributes": Utils.try_to_json(argv, "--NeedFaceAttributes"),
+        "NeedQualityDetection": Utils.try_to_json(argv, "--NeedQualityDetection"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetectFaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DetectFace(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetPersonList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetPersonList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLaunchConfigurationsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeLaunchConfigurations(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteLaunchConfiguration(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteLaunchConfiguration", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteLaunchConfigurationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteLaunchConfiguration(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doEnableAutoScalingGroup(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("EnableAutoScalingGroup", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EnableAutoScalingGroupRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.EnableAutoScalingGroup(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeAccountLimits(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeAccountLimits", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAccountLimitsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAccountLimits(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeAutoScalingGroups(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeAutoScalingGroups", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "AutoScalingGroupIds": Utils.try_to_json(argv, "--AutoScalingGroupIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -659,12 +634,12 @@ def doDescribeAutoScalingGroups(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAutoScalingGroupsRequest()
+    model = models.GetPersonListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAutoScalingGroups(model)
+    rsp = client.GetPersonList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -674,21 +649,16 @@ def doDescribeAutoScalingGroups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyScheduledAction(argv, arglist):
+def doModifyPersonGroupInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyScheduledAction", g_param[OptionsDefine.Version])
+        show_help("ModifyPersonGroupInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ScheduledActionId": Utils.try_to_json(argv, "--ScheduledActionId"),
-        "ScheduledActionName": Utils.try_to_json(argv, "--ScheduledActionName"),
-        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
-        "MinSize": Utils.try_to_json(argv, "--MinSize"),
-        "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Recurrence": Utils.try_to_json(argv, "--Recurrence"),
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonExDescriptionInfos": Utils.try_to_json(argv, "--PersonExDescriptionInfos"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -699,12 +669,12 @@ def doModifyScheduledAction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyScheduledActionRequest()
+    model = models.ModifyPersonGroupInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyScheduledAction(model)
+    rsp = client.ModifyPersonGroupInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -714,17 +684,17 @@ def doModifyScheduledAction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAutoScalingActivities(argv, arglist):
+def doCompareFace(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeAutoScalingActivities", g_param[OptionsDefine.Version])
+        show_help("CompareFace", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ActivityIds": Utils.try_to_json(argv, "--ActivityIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "ImageA": Utils.try_to_json(argv, "--ImageA"),
+        "ImageB": Utils.try_to_json(argv, "--ImageB"),
+        "UrlA": Utils.try_to_json(argv, "--UrlA"),
+        "UrlB": Utils.try_to_json(argv, "--UrlB"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -735,12 +705,12 @@ def doDescribeAutoScalingActivities(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAutoScalingActivitiesRequest()
+    model = models.CompareFaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAutoScalingActivities(model)
+    rsp = client.CompareFace(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -750,15 +720,13 @@ def doDescribeAutoScalingActivities(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeScheduledActions(argv, arglist):
+def doGetGroupList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeScheduledActions", g_param[OptionsDefine.Version])
+        show_help("GetGroupList", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ScheduledActionIds": Utils.try_to_json(argv, "--ScheduledActionIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -771,12 +739,12 @@ def doDescribeScheduledActions(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeScheduledActionsRequest()
+    model = models.GetGroupListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeScheduledActions(model)
+    rsp = client.GetGroupList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -786,19 +754,15 @@ def doDescribeScheduledActions(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyLaunchConfigurationAttributes(argv, arglist):
+def doDeleteFace(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyLaunchConfigurationAttributes", g_param[OptionsDefine.Version])
+        show_help("DeleteFace", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
-        "InstanceTypesCheckPolicy": Utils.try_to_json(argv, "--InstanceTypesCheckPolicy"),
-        "LaunchConfigurationName": Utils.try_to_json(argv, "--LaunchConfigurationName"),
-        "UserData": Utils.try_to_json(argv, "--UserData"),
+        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "FaceIds": Utils.try_to_json(argv, "--FaceIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -809,12 +773,12 @@ def doModifyLaunchConfigurationAttributes(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyLaunchConfigurationAttributesRequest()
+    model = models.DeleteFaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyLaunchConfigurationAttributes(model)
+    rsp = client.DeleteFace(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -825,52 +789,52 @@ def doModifyLaunchConfigurationAttributes(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180419": autoscaling_client_v20180419,
+    "v20180301": iai_client_v20180301,
 
 }
 
 MODELS_MAP = {
-    "v20180419": models_v20180419,
+    "v20180301": models_v20180301,
 
 }
 
 ACTION_MAP = {
-    "CreateAutoScalingGroup": doCreateAutoScalingGroup,
-    "DeleteAutoScalingGroup": doDeleteAutoScalingGroup,
-    "AttachInstances": doAttachInstances,
-    "DeleteScheduledAction": doDeleteScheduledAction,
-    "DetachInstances": doDetachInstances,
-    "CreateScheduledAction": doCreateScheduledAction,
-    "RemoveInstances": doRemoveInstances,
-    "ModifyLoadBalancers": doModifyLoadBalancers,
-    "ModifyDesiredCapacity": doModifyDesiredCapacity,
-    "CreateLaunchConfiguration": doCreateLaunchConfiguration,
-    "ModifyAutoScalingGroup": doModifyAutoScalingGroup,
-    "DescribeAutoScalingInstances": doDescribeAutoScalingInstances,
-    "DisableAutoScalingGroup": doDisableAutoScalingGroup,
-    "DescribeLaunchConfigurations": doDescribeLaunchConfigurations,
-    "DeleteLaunchConfiguration": doDeleteLaunchConfiguration,
-    "EnableAutoScalingGroup": doEnableAutoScalingGroup,
-    "DescribeAccountLimits": doDescribeAccountLimits,
-    "DescribeAutoScalingGroups": doDescribeAutoScalingGroups,
-    "ModifyScheduledAction": doModifyScheduledAction,
-    "DescribeAutoScalingActivities": doDescribeAutoScalingActivities,
-    "DescribeScheduledActions": doDescribeScheduledActions,
-    "ModifyLaunchConfigurationAttributes": doModifyLaunchConfigurationAttributes,
+    "DeletePersonFromGroup": doDeletePersonFromGroup,
+    "CreateGroup": doCreateGroup,
+    "GetPersonBaseInfo": doGetPersonBaseInfo,
+    "DetectLiveFace": doDetectLiveFace,
+    "CreateFace": doCreateFace,
+    "GetPersonListNum": doGetPersonListNum,
+    "GetPersonGroupInfo": doGetPersonGroupInfo,
+    "AnalyzeFace": doAnalyzeFace,
+    "ModifyPersonBaseInfo": doModifyPersonBaseInfo,
+    "CopyPerson": doCopyPerson,
+    "VerifyFace": doVerifyFace,
+    "DeleteGroup": doDeleteGroup,
+    "DeletePerson": doDeletePerson,
+    "ModifyGroup": doModifyGroup,
+    "CreatePerson": doCreatePerson,
+    "SearchFaces": doSearchFaces,
+    "DetectFace": doDetectFace,
+    "GetPersonList": doGetPersonList,
+    "ModifyPersonGroupInfo": doModifyPersonGroupInfo,
+    "CompareFace": doCompareFace,
+    "GetGroupList": doGetGroupList,
+    "DeleteFace": doDeleteFace,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180419.version,
+    v20180301.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180419.version.replace('-', ''): {"help": v20180419_help.INFO,"desc": v20180419_help.DESC},
+     'v' + v20180301.version.replace('-', ''): {"help": v20180301_help.INFO,"desc": v20180301_help.DESC},
 
 }
 
 
-def autoscaling_action(argv, arglist):
+def iai_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -886,7 +850,7 @@ def autoscaling_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "autoscaling", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "iai", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -907,7 +871,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("autoscaling", autoscaling_action)
+    cmd = NiceCommand("iai", iai_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -966,11 +930,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["autoscaling"][OptionsDefine.Version]
+            version = config["iai"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["autoscaling"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["iai"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -987,7 +951,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "autoscaling", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "iai", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -997,7 +961,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["autoscaling"]["version"]
+        version = profile["iai"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass
