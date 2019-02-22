@@ -103,7 +103,7 @@ INFO = {
         "desc": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。"
       }
     ],
-    "desc": "本接口（RenewDisk）用于续费云硬盘。\n\n* 只支持预付费的云硬盘。云硬盘类型可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中DiskChargeType字段解释。\n* 支持与挂载实例一起续费的场景，需要在[DiskChargePrepaid](/document/product/362/15669#DiskChargePrepaid)参数中指定CurInstanceDeadline，此时会按对齐到子机续费后的到期时间来续费。\n* 续费时请确保账户余额充足。可通过[DescribeAccountBalance](/document/product/378/4397)接口查询账户余额。"
+    "desc": "本接口（RenewDisk）用于续费云硬盘。\n\n* 只支持预付费的云硬盘。云硬盘类型可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中DiskChargeType字段解释。\n* 支持与挂载实例一起续费的场景，需要在[DiskChargePrepaid](/document/product/362/15669#DiskChargePrepaid)参数中指定CurInstanceDeadline，此时会按对齐到子机续费后的到期时间来续费。"
   },
   "ModifyDiskAttributes": {
     "params": [
@@ -126,9 +126,13 @@ INFO = {
       {
         "name": "DeleteWithInstance",
         "desc": "成功挂载到云主机后该云硬盘是否随云主机销毁，TRUE表示随云主机销毁，FALSE表示不随云主机销毁。仅支持按量计费云硬盘数据盘。"
+      },
+      {
+        "name": "DiskType",
+        "desc": "变更云盘类型时，可传入该参数，表示变更的目标类型，取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘。<br>当前不支持批量变更类型，即传入DiskType时，DiskIds仅支持传入一块云盘；<br>变更云盘类型时不支持同时变更其他属性。"
       }
     ],
-    "desc": "本接口（ModifyDiskAttributes）用于修改云硬盘属性。\n \n* 只支持修改弹性云盘的项目ID。随云主机创建的云硬盘项目ID与云主机联动。可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。\n* “云硬盘名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行云盘管理操作的依据。\n* 支持批量操作，如果传入多个云盘ID，则所有云盘修改为同一属性。如果存在不允许操作的云盘，则操作不执行，以特定错误码返回。"
+    "desc": "* 只支持修改弹性云盘的项目ID。随云主机创建的云硬盘项目ID与云主机联动。可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。\n* “云硬盘名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行云盘管理操作的依据。\n* 支持批量操作，如果传入多个云盘ID，则所有云盘修改为同一属性。如果存在不允许操作的云盘，则操作不执行，以特定错误码返回。\n* 支持修改弹性云盘的云盘类型，不支持非弹性云盘（[DescribeDisks](/document/product/362/16315)接口的返回字段Portable为true表示弹性云盘），且当前仅支持云盘类型升级，不支持降级，具体如下:\n    * CLOUD_BASIC变更为CLOUD_PREMIUM；\n    * CLOUD_BASIC变更为CLOUD_SSD；\n    * CLOUD_PREMIUM变更为CLOUD_SSD。\n* 云盘处于“迁移中”不影响正常的读写以及读写速率，在云盘容量较大的情况下，整个迁移任务耗时较长，目前不支持任务成功发起后取消任务。"
   },
   "DeleteSnapshots": {
     "params": [

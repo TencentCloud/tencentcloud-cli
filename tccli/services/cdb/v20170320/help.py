@@ -353,7 +353,7 @@ INFO = {
       },
       {
         "name": "ParamList",
-        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment_increment&ParamList.0.Value=1。可通过[查询参数列表](/document/product/236/6369)查询支持设置的参数"
+        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过[查询实例的可设置参数列表](https://cloud.tencent.com/document/api/236/20411)查询支持设置的参数"
       },
       {
         "name": "ProtectMode",
@@ -392,7 +392,7 @@ INFO = {
         "desc": "实例标签"
       }
     ],
-    "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。当该实例的Status为1，且TaskStatus为0，表示实例已经发货成功。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询价格（按量计费）](https://cloud.tencent.com/document/api/253/5176)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5、MySQL5.6和MySQL5.7 版本；\n4. 支持创建主实例、灾备实例和只读实例；"
+    "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。当该实例的Status为1，且TaskStatus为0，表示实例已经发货成功。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询数据库价格](https://cloud.tencent.com/document/api/236/18566)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5、MySQL5.6和MySQL5.7 版本；\n4. 支持创建主实例、灾备实例和只读实例；"
   },
   "DescribeDefaultParams": {
     "params": [
@@ -710,15 +710,15 @@ INFO = {
       },
       {
         "name": "Memory",
-        "desc": "升级后的内存大小，单位：MB，为保证传入 Memory 值有效，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可升级的内存规格"
+        "desc": "升级后的内存大小，单位：MB，为保证传入 Memory 值有效，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229)接口获取可升级的内存规格"
       },
       {
         "name": "Volume",
-        "desc": "升级后的硬盘大小，单位：GB，为保证传入 Volume 值有效，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可升级的硬盘范围"
+        "desc": "升级后的硬盘大小，单位：GB，为保证传入 Volume 值有效，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229)接口获取可升级的硬盘范围"
       },
       {
         "name": "Cpu",
-        "desc": "升级后的核心数目，单位：核，为保证传入 CPU 值有效，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可升级的核心数目，当未指定该值时，将按照 Memory 大小补全一个默认值"
+        "desc": "升级后的核心数目，单位：核，为保证传入 CPU 值有效，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229)接口获取可升级的核心数目，当未指定该值时，将按照 Memory 大小补全一个默认值"
       },
       {
         "name": "ProtectMode",
@@ -875,7 +875,7 @@ INFO = {
       },
       {
         "name": "ParamList",
-        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过[查询参数列表](/document/product/236/6369)查询支持设置的参数"
+        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过[查询实例的可设置参数列表](https://cloud.tencent.com/document/api/236/20411)查询支持设置的参数"
       },
       {
         "name": "BackupZone",
@@ -906,7 +906,7 @@ INFO = {
         "desc": "实例要绑定的标签"
       }
     ],
-    "desc": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。当该实例的Status为1，且TaskStatus为0，表示实例已经发货成功。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询价格（包年包月）](https://cloud.tencent.com/document/api/236/1332)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5 、 MySQL5.6 、 MySQL5.7 版本；\n4. 支持创建主实例、只读实例、灾备实例；"
+    "desc": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。当该实例的Status为1，且TaskStatus为0，表示实例已经发货成功。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询数据库价格](https://cloud.tencent.com/document/api/236/18566)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5 、 MySQL5.6 、 MySQL5.7 版本；\n4. 支持创建主实例、只读实例、灾备实例；"
   },
   "ModifyParamTemplate": {
     "params": [
@@ -1053,7 +1053,7 @@ INFO = {
         "desc": "导入的目标数据库名，不传表示不指定数据库。"
       }
     ],
-    "desc": "本接口(CreateDBImportJob)用于创建云数据库数据导入任务。\n\n注意，用户进行数据导入任务的文件，必须提前上传到腾讯云。用户可在控制台进行文件导入，也可使用[上传导入文件](https://cloud.tencent.com/document/api/236/8595)进行文件导入。"
+    "desc": "本接口(CreateDBImportJob)用于创建云数据库数据导入任务。\n\n注意，用户进行数据导入任务的文件，必须提前上传到腾讯云。用户须在控制台进行文件导入。"
   },
   "ModifyAccountDescription": {
     "params": [
@@ -1231,11 +1231,11 @@ INFO = {
       },
       {
         "name": "Memory",
-        "desc": "升级后的内存大小，单位：MB，为保证传入 Memory 值有效，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可升级的内存规格"
+        "desc": "升级后的内存大小，单位：MB，为保证传入 Memory 值有效，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229)接口获取可升级的内存规格"
       },
       {
         "name": "Volume",
-        "desc": "升级后的硬盘大小，单位：GB，为保证传入 Volume 值有效，请使用[查询可创建规格（支持可用区、配置自定义）](https://cloud.tencent.com/document/api/253/6109)接口获取可升级的硬盘范围"
+        "desc": "升级后的硬盘大小，单位：GB，为保证传入 Volume 值有效，请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229)接口获取可升级的硬盘范围"
       },
       {
         "name": "ProtectMode",
@@ -1247,7 +1247,7 @@ INFO = {
       },
       {
         "name": "SlaveZone",
-        "desc": "备库1的可用区信息，默认为实例的Zone，升级主实例为多可用区部署时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过<a href='/document/product/236/6921' title='查询云数据库可售卖规格'>查询云数据库可售卖规格</a>查询支持的可用区"
+        "desc": "备库1的可用区信息，默认和实例的Zone参数一致，升级主实例为多可用区部署时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过[获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229)接口查询支持的可用区"
       },
       {
         "name": "EngineVersion",
@@ -1255,7 +1255,7 @@ INFO = {
       },
       {
         "name": "WaitSwitch",
-        "desc": "切换访问新实例的方式，默认为0，升级主实例时，可指定该参数，升级只读实例或者灾备实例时指定该参数无意义，支持值包括：0-立刻切换，1-时间窗切换；当该值为1时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口[切换访问新实例](https://cloud.tencent.com/document/api/403/4392)触发该流程"
+        "desc": "切换访问新实例的方式，默认为0，升级主实例时，可指定该参数，升级只读实例或者灾备实例时指定该参数无意义，支持值包括：0-立刻切换，1-时间窗切换；当该值为1时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口[切换访问新实例](https://cloud.tencent.com/document/product/236/15864)触发该流程"
       },
       {
         "name": "BackupZone",
@@ -1280,7 +1280,7 @@ INFO = {
       },
       {
         "name": "WaitSwitch",
-        "desc": "切换访问新实例的方式，默认为0，升级主实例时，可指定该参数，升级只读实例或者灾备实例时指定该参数无意义，支持值包括：0-立刻切换，1-时间窗切换；当该值为1时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口[切换访问新实例](https://cloud.tencent.com/document/api/403/4392)触发该流程"
+        "desc": "切换访问新实例的方式，默认为0，升级主实例时，可指定该参数，升级只读实例或者灾备实例时指定该参数无意义，支持值包括：0-立刻切换，1-时间窗切换；当该值为1时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口[切换访问新实例](https://cloud.tencent.com/document/product/236/15864)触发该流程"
       }
     ],
     "desc": "本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例。"

@@ -13,19 +13,19 @@ INFO = {
       },
       {
         "name": "PeriodType",
-        "desc": "周期类型，byPayTime按扣费周期/byUsedTime按计费周期"
+        "desc": "周期类型，byPayTime按扣费周期/byUsedTime按计费周期。需要与费用中心该月份账单的周期保持一致。"
       },
       {
         "name": "Month",
-        "desc": "月份，格式为yyyy-mm"
+        "desc": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。"
       },
       {
         "name": "BeginTime",
-        "desc": "周期开始时间，格式为Y-m-d H:i:s，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传"
+        "desc": "周期开始时间，格式为Y-m-d H:i:s，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。"
       },
       {
         "name": "EndTime",
-        "desc": "周期结束时间，格式为Y-m-d H:i:s，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传"
+        "desc": "周期结束时间，格式为Y-m-d H:i:s，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。"
       }
     ],
     "desc": "查询账单明细数据"
@@ -46,11 +46,11 @@ INFO = {
       },
       {
         "name": "PeriodType",
-        "desc": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期"
+        "desc": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。"
       },
       {
         "name": "Month",
-        "desc": "月份，格式为yyyy-mm"
+        "desc": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。"
       }
     ],
     "desc": "查询账单资源汇总数据"

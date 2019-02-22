@@ -88,18 +88,22 @@ INFO = {
     ],
     "desc": "获取预授权规则列表"
   },
-  "ModifyDeviceAutoRenewFlag": {
+  "DescribeTaskOperationLog": {
     "params": [
       {
-        "name": "AutoRenewFlag",
-        "desc": "自动续费标志位。0: 不自动续费; 1: 自动续费"
+        "name": "TaskId",
+        "desc": "维修任务ID"
       },
       {
-        "name": "InstanceIds",
-        "desc": "需要修改的设备ID列表"
+        "name": "OrderField",
+        "desc": "排序字段，目前支持：OperationTime"
+      },
+      {
+        "name": "Order",
+        "desc": "排序方式 0:递增(默认) 1:递减"
       }
     ],
-    "desc": "修改物理机服务器自动续费标志"
+    "desc": "获取维修任务操作日志"
   },
   "OfflineDevices": {
     "params": [
@@ -109,6 +113,15 @@ INFO = {
       }
     ],
     "desc": "用于销毁可退还的服务器"
+  },
+  "DescribeOsInfo": {
+    "params": [
+      {
+        "name": "DeviceClassCode",
+        "desc": "设备类型代号。 可以从DescribeDeviceClass查询设备类型列表"
+      }
+    ],
+    "desc": "查询指定机型所支持的操作系统"
   },
   "RunUserCmd": {
     "params": [
@@ -134,6 +147,15 @@ INFO = {
       }
     ],
     "desc": "运行自定义脚本"
+  },
+  "DescribeCustomImageProcess": {
+    "params": [
+      {
+        "name": "ImageId",
+        "desc": "镜像ID"
+      }
+    ],
+    "desc": "查询自定义镜像制作进度"
   },
   "DescribeUserCmdTasks": {
     "params": [
@@ -181,6 +203,155 @@ INFO = {
     "params": [],
     "desc": "获取获取设备类型"
   },
+  "BuyDevices": {
+    "params": [
+      {
+        "name": "Zone",
+        "desc": "可用区ID。通过接口[查询地域以及可用区(DescribeRegions)](https://cloud.tencent.com/document/api/386/6634)获取可用区信息"
+      },
+      {
+        "name": "OsTypeId",
+        "desc": "部署服务器的操作系统ID。通过接口[查询操作系统信息(DescribeOsInfo)](https://cloud.tencent.com/document/api/386/31964)获取操作系统信息"
+      },
+      {
+        "name": "RaidId",
+        "desc": "RAID类型ID。通过接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/api/386/7370)获取RAID信息"
+      },
+      {
+        "name": "GoodsCount",
+        "desc": "购买数量"
+      },
+      {
+        "name": "VpcId",
+        "desc": "购买至私有网络ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "购买至子网ID"
+      },
+      {
+        "name": "DeviceClassCode",
+        "desc": "购买的机型ID。通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/6636)获取机型信息"
+      },
+      {
+        "name": "TimeUnit",
+        "desc": "购买时长单位，取值：M(月) D(天)"
+      },
+      {
+        "name": "TimeSpan",
+        "desc": "购买时长"
+      },
+      {
+        "name": "NeedSecurityAgent",
+        "desc": "是否安装安全Agent，取值：1(安装) 0(不安装)，默认取值0"
+      },
+      {
+        "name": "NeedMonitorAgent",
+        "desc": "是否安装监控Agent，取值：1(安装) 0(不安装)，默认取值0"
+      },
+      {
+        "name": "NeedEMRAgent",
+        "desc": "是否安装EMR Agent，取值：1(安装) 0(不安装)，默认取值0"
+      },
+      {
+        "name": "NeedEMRSoftware",
+        "desc": "是否安装EMR软件包，取值：1(安装) 0(不安装)，默认取值0"
+      },
+      {
+        "name": "ApplyEip",
+        "desc": "是否分配弹性公网IP，取值：1(分配) 0(不分配)，默认取值0"
+      },
+      {
+        "name": "EipPayMode",
+        "desc": "弹性公网IP计费模式，取值：Flow(按流量计费) Bandwidth(按带宽计费)，默认取值Flow"
+      },
+      {
+        "name": "EipBandwidth",
+        "desc": "弹性公网IP带宽限制，单位Mb"
+      },
+      {
+        "name": "IsZoning",
+        "desc": "数据盘是否格式化，取值：1(格式化) 0(不格式化)，默认取值为1"
+      },
+      {
+        "name": "CpmPayMode",
+        "desc": "物理机计费模式，取值：1(预付费) 2(后付费)，默认取值为1"
+      },
+      {
+        "name": "ImageId",
+        "desc": "自定义镜像ID，取值生效时用自定义镜像部署物理机"
+      },
+      {
+        "name": "Password",
+        "desc": "设置Linux root或Windows Administrator的密码"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "自动续费标志位，取值：1(自动续费) 0(不自动续费)，默认取值0"
+      },
+      {
+        "name": "SysRootSpace",
+        "desc": "系统盘根分区大小，单位为G，默认取值10G。通过接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/api/386/7370)获取根分区信息"
+      },
+      {
+        "name": "SysSwaporuefiSpace",
+        "desc": "系统盘swap分区或/boot/efi分区的大小，单位为G。若是uefi启动的机器，分区为/boot/efi，且此值是默认是2G。 普通机器为swap分区，可以不指定此分区。 机型是否是uefi启动，参见接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/6636)"
+      },
+      {
+        "name": "SysUsrlocalSpace",
+        "desc": "/usr/local分区大小，单位为G"
+      },
+      {
+        "name": "SysDataSpace",
+        "desc": "/data分区大小，单位为G。如果系统盘还有剩余大小，会分配给/data分区。（特殊情况：如果剩余空间不足10G，并且没有指定/data分区，则剩余空间会分配给Root分区）"
+      },
+      {
+        "name": "HyperThreading",
+        "desc": "是否开启超线程，取值：1(开启) 0(关闭)，默认取值1"
+      },
+      {
+        "name": "LanIps",
+        "desc": "指定的内网IP列表，不指定时自动分配"
+      },
+      {
+        "name": "Aliases",
+        "desc": "设备名称列表"
+      },
+      {
+        "name": "CpuId",
+        "desc": "CPU型号ID，自定义机型需要传入，取值：\n<br/><li>1: E5-2620v3 (6核) &#42; 2</li><li>2: E5-2680v4 (14核) &#42; 2</li><li>3: E5-2670v3 (12核) &#42; 2</li><li>4: E5-2620v4 (8核) &#42; 2</li><li>5: 4110 (8核) &#42; 2</li><li>6: 6133 (20核) &#42; 2</li><br/>"
+      },
+      {
+        "name": "ContainRaidCard",
+        "desc": "是否有RAID卡，取值：1(有) 0(无)，自定义机型需要传入"
+      },
+      {
+        "name": "MemSize",
+        "desc": "内存大小，单位为G，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/10968)返回值"
+      },
+      {
+        "name": "SystemDiskTypeId",
+        "desc": "系统盘ID，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/10968)返回值"
+      },
+      {
+        "name": "SystemDiskCount",
+        "desc": "系统盘数量，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/10968)返回值"
+      },
+      {
+        "name": "DataDiskTypeId",
+        "desc": "数据盘ID，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/10968)返回值"
+      },
+      {
+        "name": "DataDiskCount",
+        "desc": "数据盘数量，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/10968)返回值"
+      },
+      {
+        "name": "Tags",
+        "desc": "绑定的标签列表"
+      }
+    ],
+    "desc": "购买黑石物理机"
+  },
   "ModifyUserCmd": {
     "params": [
       {
@@ -227,6 +398,15 @@ INFO = {
       }
     ],
     "desc": "为预授权规则绑定标签"
+  },
+  "DeleteCustomImages": {
+    "params": [
+      {
+        "name": "ImageIds",
+        "desc": "准备删除的镜像ID列表"
+      }
+    ],
+    "desc": "删除自定义镜像<br>\n正用于部署或重装中的镜像被删除后，镜像文件将保留一段时间，直到部署或重装结束"
   },
   "DeletePsaRegulation": {
     "params": [
@@ -312,14 +492,56 @@ INFO = {
     ],
     "desc": "重启机器"
   },
-  "DescribeOsInfo": {
+  "ModifyLanIp": {
     "params": [
       {
-        "name": "DeviceClassCode",
-        "desc": "设备类型代号。 可以从DescribeDeviceClass查询设备类型列表"
+        "name": "InstanceId",
+        "desc": "物理机ID"
+      },
+      {
+        "name": "VpcId",
+        "desc": "指定新VPC"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "指定新子网"
+      },
+      {
+        "name": "LanIp",
+        "desc": "指定新内网IP"
+      },
+      {
+        "name": "RebootDevice",
+        "desc": "是否需要重启机器，取值 1(需要) 0(不需要)，默认取值0"
       }
     ],
-    "desc": "查询指定机型所支持的操作系统"
+    "desc": "修改物理机内网IP（不重装系统）"
+  },
+  "DescribeOperationResult": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "异步任务ID"
+      }
+    ],
+    "desc": "获取异步操作状态的完成状态"
+  },
+  "ModifyCustomImageAttribute": {
+    "params": [
+      {
+        "name": "ImageId",
+        "desc": "镜像ID"
+      },
+      {
+        "name": "ImageName",
+        "desc": "设置新的镜像名"
+      },
+      {
+        "name": "ImageDescription",
+        "desc": "设置新的镜像描述"
+      }
+    ],
+    "desc": "用于修改自定义镜像名或描述"
   },
   "DescribeDevicePosition": {
     "params": [
@@ -349,6 +571,19 @@ INFO = {
       }
     ],
     "desc": "查询服务器所在的位置，如机架，上联交换机等信息"
+  },
+  "DescribeDeviceClassPartition": {
+    "params": [
+      {
+        "name": "DeviceClassCode",
+        "desc": "设备类型代号。代号通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/17602)查询。标准机型需要传入此参数"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "需要查询自定义机型RAID信息时，传入自定义机型实例ID。InstanceId存在时DeviceClassCode失效"
+      }
+    ],
+    "desc": "查询机型支持的RAID方式， 并返回系统盘的分区和逻辑盘的列表"
   },
   "DescribeUserCmdTaskInfo": {
     "params": [
@@ -396,22 +631,18 @@ INFO = {
     ],
     "desc": "查询服务器价格信息，支持设备的批量查找，支持标准机型和弹性机型的混合查找"
   },
-  "DescribeTaskOperationLog": {
+  "ModifyDeviceAutoRenewFlag": {
     "params": [
       {
-        "name": "TaskId",
-        "desc": "维修任务ID"
+        "name": "AutoRenewFlag",
+        "desc": "自动续费标志位。0: 不自动续费; 1: 自动续费"
       },
       {
-        "name": "OrderField",
-        "desc": "排序字段，目前支持：OperationTime"
-      },
-      {
-        "name": "Order",
-        "desc": "排序方式 0:递增(默认) 1:递减"
+        "name": "InstanceIds",
+        "desc": "需要修改的设备ID列表"
       }
     ],
-    "desc": "获取维修任务操作日志"
+    "desc": "修改物理机服务器自动续费标志"
   },
   "ModifyPayModePre2Post": {
     "params": [
@@ -447,7 +678,7 @@ INFO = {
       },
       {
         "name": "ComputeType",
-        "desc": "计算单元类型"
+        "desc": "计算单元类型, 如v3.c2.medium，更详细的ComputeType参考[竞价实例产品文档](https://cloud.tencent.com/document/product/386/30256)"
       },
       {
         "name": "OsTypeId",
@@ -480,14 +711,18 @@ INFO = {
     ],
     "desc": "创建黑石竞价实例"
   },
-  "ModifyDeviceAliases": {
+  "ResetDevicePassword": {
     "params": [
       {
-        "name": "DeviceAliases",
-        "desc": "需要改名的设备与别名列表"
+        "name": "InstanceIds",
+        "desc": "需要重置密码的服务器ID列表"
+      },
+      {
+        "name": "Password",
+        "desc": "新密码"
       }
     ],
-    "desc": "修改服务器名称"
+    "desc": "重置服务器密码"
   },
   "DescribeDeviceInventory": {
     "params": [
@@ -584,7 +819,7 @@ INFO = {
       },
       {
         "name": "DeviceClassCode",
-        "desc": "机型ID，通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/17602)查询"
+        "desc": "机型ID，通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/31968)查询"
       },
       {
         "name": "InstanceIds",
@@ -666,17 +901,81 @@ INFO = {
     ],
     "desc": "设置带外VPN认证用户密码"
   },
-  "ResetDevicePassword": {
+  "DescribeCustomImages": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "数量限制"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段，仅支持CreateTime"
+      },
+      {
+        "name": "Order",
+        "desc": "排序方式 0:递增(默认) 1:递减"
+      },
+      {
+        "name": "ImageId",
+        "desc": "按ImageId查找指定镜像信息，ImageId字段存在时其他字段失效"
+      },
+      {
+        "name": "SearchKey",
+        "desc": "模糊查询过滤，可以查询镜像ID或镜像名"
+      },
+      {
+        "name": "ImageStatus",
+        "desc": "<ul>\n镜像状态过滤列表，有效取值为：\n<li>1：制作中</li>\n<li>2：制作失败</li>\n<li>3：正常</li>\n<li>4：删除中</li>\n</ul>"
+      }
+    ],
+    "desc": "查看自定义镜像列表"
+  },
+  "DescribeDevicePartition": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "物理机ID"
+      }
+    ],
+    "desc": "获取物理机的分区格式"
+  },
+  "ShutdownDevices": {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "需要重置密码的服务器ID列表"
-      },
-      {
-        "name": "Password",
-        "desc": "新密码"
+        "desc": "需要关闭的设备ID列表"
       }
     ],
-    "desc": "重置服务器密码"
+    "desc": "关闭服务器"
+  },
+  "ModifyDeviceAliases": {
+    "params": [
+      {
+        "name": "DeviceAliases",
+        "desc": "需要改名的设备与别名列表"
+      }
+    ],
+    "desc": "修改服务器名称"
+  },
+  "CreateCustomImage": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "用于制作镜像的物理机ID"
+      },
+      {
+        "name": "ImageName",
+        "desc": "镜像别名"
+      },
+      {
+        "name": "ImageDescription",
+        "desc": "镜像描述"
+      }
+    ],
+    "desc": "创建自定义镜像<br>\n每个AppId在每个可用区最多保留20个自定义镜像"
   }
 }

@@ -88,34 +88,34 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "录制开始时间。非精彩视频录制，必须设置该字段。中国标准时间，需要URLEncode。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。"
+        "desc": "录制开始时间。中国标准时间，需要URLEncode。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。\n定时录制模式，必须设置该字段；实时视频录制模式，忽略该字段。"
       },
       {
         "name": "EndTime",
-        "desc": "录制结束时间。非精彩视频录制，必须设置该字段。中国标准时间，需要URLEncode。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。如果通过Highlight参数，设置录制为精彩视频录制，结束时间不应超过当前时间+30分钟，如果结束时间超过当前时间+30分钟或小于当前时间，则实际结束时间为当前时间+30分钟。"
+        "desc": "录制结束时间。中国标准时间，需要URLEncode。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。\n定时录制模式，必须设置该字段；实时录制模式，为可选字段。如果通过Highlight参数，设置录制为实时视频录制模式，其设置的结束时间不应超过当前时间+30分钟，如果设置的结束时间超过当前时间+30分钟或者小于当前时间或者不设置该参数，则实际结束时间为当前时间+30分钟。"
       },
       {
         "name": "RecordType",
-        "desc": "录制类型。不区分大小写。\n“video” : 音视频录制【默认】。\n“audio” : 纯音频录制。"
+        "desc": "录制类型。\n“video” : 音视频录制【默认】。\n“audio” : 纯音频录制。\n在定时录制模式或实时视频录制模式下，该参数均有效，不区分大小写。"
       },
       {
         "name": "FileFormat",
-        "desc": "录制文件格式。不区分大小写。其值为：\n“flv”,“hls”,”mp4”,“aac”,”mp3”，默认“flv”。"
+        "desc": "录制文件格式。其值为：\n“flv”,“hls”,”mp4”,“aac”,”mp3”，默认“flv”。\n在定时录制模式或实时视频录制模式下，该参数均有效，不区分大小写。"
       },
       {
         "name": "Highlight",
-        "desc": "开启精彩视频录制标志；0：不开启精彩视频录制【默认】；1：开启精彩视频录制。"
+        "desc": "开启实时视频录制模式标志。0：不开启实时视频录制模式，即采用定时录制模式【默认】；1：开启实时视频录制模式。"
       },
       {
         "name": "MixStream",
-        "desc": "开启A+B=C混流C流录制标志。0：不开启A+B=C混流C流录制【默认】；1：开启A+B=C混流C流录制。"
+        "desc": "开启A+B=C混流C流录制标志。0：不开启A+B=C混流C流录制【默认】；1：开启A+B=C混流C流录制。\n在定时录制模式或实时视频录制模式下，该参数均有效。"
       },
       {
         "name": "StreamParam",
-        "desc": "录制流参数。当前支持以下参数：\nrecord_interval - 录制分片时长，单位 秒，1800 - 7200\nstorage_time - 录制文件存储时长，单位 秒\neg. record_interval=3600&storage_time=7200\n注：参数需要url encode。"
+        "desc": "录制流参数。当前支持以下参数：\nrecord_interval - 录制分片时长，单位 秒，1800 - 7200\nstorage_time - 录制文件存储时长，单位 秒\neg. record_interval=3600&storage_time=2592000\n注：参数需要url encode。\n在定时录制模式或实时视频录制模式下，该参数均有效。"
       }
     ],
-    "desc": "- 使用前提\n  1. 录制文件存放于点播平台，所以用户如需使用录制功能，需首先自行开通点播服务。\n  2. 录制文件存放后相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，具体请参考 [对应文档](https://cloud.tencent.com/document/product/266/2838)。\n\n- 模式说明\n  该接口支持两种录制模式：\n  1. 定时录制模式。\n    需要传入开始时间与结束时间，录制任务根据时间自动开始与结束。\n  2. 实时视频录制模式。\n    忽略传入的开始时间，在录制任务创建后立即开始录制，录制时长支持最大为30分钟，如果传入的结束时间与当前时间差大于30分钟，则按30分钟计算，实时视频录制主要用于录制精彩视频场景，时长建议控制在5分钟以内。\n\n- 注意事项\n  1. 调用接口超时设置应大于3秒，小于3秒重试以及频繁调用都有可能产生重复录制任务。"
+    "desc": "- 使用前提\n  1. 录制文件存放于点播平台，所以用户如需使用录制功能，需首先自行开通点播服务。\n  2. 录制文件存放后相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，具体请参考 [对应文档](https://cloud.tencent.com/document/product/266/2838)。\n\n- 模式说明\n  该接口支持两种录制模式：\n  1. 定时录制模式【默认模式】。\n    需要传入开始时间与结束时间，录制任务根据时间自动开始与结束。\n  2. 实时视频录制模式。\n    忽略传入的开始时间，在录制任务创建后立即开始录制，录制时长支持最大为30分钟，如果传入的结束时间与当前时间差大于30分钟，则按30分钟计算，实时视频录制主要用于录制精彩视频场景，时长建议控制在5分钟以内。\n\n- 注意事项\n  1. 调用接口超时设置应大于3秒，小于3秒重试以及频繁调用都有可能产生重复录制任务。"
   },
   "UpdateLiveWatermark": {
     "params": [
@@ -243,9 +243,59 @@ INFO = {
     ],
     "desc": "创建水印规则"
   },
-  "DescribeLiveWatermarkRules": {
-    "params": [],
-    "desc": "获取水印规则列表"
+  "DeleteLiveCallbackTemplate": {
+    "params": [
+      {
+        "name": "TemplateId",
+        "desc": "模板Id。"
+      }
+    ],
+    "desc": "删除回调模板"
+  },
+  "DescribeLiveStreamEventList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始时间。 \nUTC 格式，例如：2018-12-29T19:00:00Z。\n支持查询60天内的历史记录。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间。\nUTC 格式，例如：2018-12-29T20:00:00Z。\n不超过当前时间，且和起始时间相差不得超过30天。"
+      },
+      {
+        "name": "AppName",
+        "desc": "应用名称。"
+      },
+      {
+        "name": "DomainName",
+        "desc": "推流域名。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称，不支持通配符（*）查询，默认模糊匹配。\n可使用IsStrict字段改为精确查询。"
+      },
+      {
+        "name": "PageNum",
+        "desc": "取得第几页。\n默认值：1。\n注： 目前只支持10000条内的查询。"
+      },
+      {
+        "name": "PageSize",
+        "desc": "分页大小。\n最大值：100。\n取值范围：1~100 之前的任意整数。\n默认值：10。\n注： 目前只支持10000条内的查询。"
+      },
+      {
+        "name": "IsFilter",
+        "desc": "是否过滤，默认不过滤。\n0：不进行任何过滤。\n1：过滤掉开播失败的，只返回开播成功的。"
+      },
+      {
+        "name": "IsStrict",
+        "desc": "是否精确查询，默认模糊匹配。\n0：模糊匹配。\n1：精确查询。\n注：使用StreamName时该参数生效。"
+      },
+      {
+        "name": "IsAsc",
+        "desc": "是否按结束时间正序显示，默认逆序。\n0：逆序。\n1：正序。"
+      }
+    ],
+    "desc": "查询推断流事件"
   },
   "DescribeLiveTranscodeTemplate": {
     "params": [
@@ -278,22 +328,9 @@ INFO = {
     ],
     "desc": "用于删除录制任务"
   },
-  "CreateLiveCallbackRule": {
-    "params": [
-      {
-        "name": "DomainName",
-        "desc": "推流域名。"
-      },
-      {
-        "name": "AppName",
-        "desc": "推流路径。"
-      },
-      {
-        "name": "TemplateId",
-        "desc": "模板ID"
-      }
-    ],
-    "desc": "创建回调规则"
+  "DescribeLiveRecordTemplates": {
+    "params": [],
+    "desc": "获取录制模板列表"
   },
   "CreateLiveSnapshotRule": {
     "params": [
@@ -550,6 +587,19 @@ INFO = {
     ],
     "desc": "获取单个录制模板"
   },
+  "DescribeLiveForbidStreamList": {
+    "params": [
+      {
+        "name": "PageNum",
+        "desc": "取得第几页，默认1。"
+      },
+      {
+        "name": "PageSize",
+        "desc": "每页大小，最大100。 \n取值：1~100之前的任意整数。\n默认值：10。"
+      }
+    ],
+    "desc": "获取禁推流列表"
+  },
   "CreateLiveRecordRule": {
     "params": [
       {
@@ -614,22 +664,22 @@ INFO = {
     ],
     "desc": "删除截图模板"
   },
-  "DescribeLiveStreamState": {
+  "CreateLiveCallbackRule": {
     "params": [
       {
-        "name": "AppName",
-        "desc": "应用名称。"
-      },
-      {
         "name": "DomainName",
-        "desc": "您的推流域名。"
+        "desc": "推流域名。"
       },
       {
-        "name": "StreamName",
-        "desc": "流名称。"
+        "name": "AppName",
+        "desc": "推流路径。"
+      },
+      {
+        "name": "TemplateId",
+        "desc": "模板ID"
       }
     ],
-    "desc": "返回直播中、无推流或者禁播等状态"
+    "desc": "创建回调规则"
   },
   "DeleteLiveRecordTemplate": {
     "params": [
@@ -798,10 +848,6 @@ INFO = {
     ],
     "desc": "恢复延迟播放设置"
   },
-  "DescribeLiveRecordTemplates": {
-    "params": [],
-    "desc": "获取录制模板列表"
-  },
   "DescribeLiveDomainCert": {
     "params": [
       {
@@ -937,6 +983,10 @@ INFO = {
       }
     ],
     "desc": "创建回调模板"
+  },
+  "DescribeLiveTranscodeRules": {
+    "params": [],
+    "desc": "获取转码规则列表"
   },
   "SetLiveWatermarkStatus": {
     "params": [
@@ -1123,14 +1173,22 @@ INFO = {
     ],
     "desc": "修改回调模板"
   },
-  "DeleteLiveCallbackTemplate": {
+  "DescribeLiveStreamState": {
     "params": [
       {
-        "name": "TemplateId",
-        "desc": "模板Id。"
+        "name": "AppName",
+        "desc": "应用名称。"
+      },
+      {
+        "name": "DomainName",
+        "desc": "您的推流域名。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
       }
     ],
-    "desc": "删除回调模板"
+    "desc": "返回直播中、无推流或者禁播等状态"
   },
   "DeleteLiveCert": {
     "params": [
@@ -1197,9 +1255,9 @@ INFO = {
     ],
     "desc": "删除直播拉流配置"
   },
-  "DescribeLiveTranscodeRules": {
+  "DescribeLiveWatermarkRules": {
     "params": [],
-    "desc": "获取转码规则列表"
+    "desc": "获取水印规则列表"
   },
   "CreateLiveRecordTemplate": {
     "params": [

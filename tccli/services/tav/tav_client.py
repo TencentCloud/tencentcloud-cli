@@ -12,25 +12,21 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tke.v20180525 import tke_client as tke_client_v20180525
-from tencentcloud.tke.v20180525 import models as models_v20180525
-from tccli.services.tke import v20180525
-from tccli.services.tke.v20180525 import help as v20180525_help
+from tencentcloud.tav.v20190118 import tav_client as tav_client_v20190118
+from tencentcloud.tav.v20190118 import models as models_v20190118
+from tccli.services.tav import v20190118
+from tccli.services.tav.v20190118 import help as v20190118_help
 
 
-def doAddExistedInstances(argv, arglist):
+def doGetScanResult(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AddExistedInstances", g_param[OptionsDefine.Version])
+        show_help("GetScanResult", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
-        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
-        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "Key": Utils.try_to_json(argv, "--Key"),
+        "Md5": Utils.try_to_json(argv, "--Md5"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -41,12 +37,12 @@ def doAddExistedInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TavClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AddExistedInstancesRequest()
+    model = models.GetScanResultRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AddExistedInstances(model)
+    rsp = client.GetScanResult(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -56,17 +52,17 @@ def doAddExistedInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusters(argv, arglist):
+def doScanFileHash(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeClusters", g_param[OptionsDefine.Version])
+        show_help("ScanFileHash", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClusterIds": Utils.try_to_json(argv, "--ClusterIds"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Key": Utils.try_to_json(argv, "--Key"),
+        "Md5s": Utils.try_to_json(argv, "--Md5s"),
+        "WithCategory": Utils.try_to_json(argv, "--WithCategory"),
+        "SensitiveLevel": Utils.try_to_json(argv, "--SensitiveLevel"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,12 +73,12 @@ def doDescribeClusters(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TavClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClustersRequest()
+    model = models.ScanFileHashRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClusters(model)
+    rsp = client.ScanFileHash(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -92,16 +88,14 @@ def doDescribeClusters(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteClusterInstances(argv, arglist):
+def doGetLocalEngine(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteClusterInstances", g_param[OptionsDefine.Version])
+        show_help("GetLocalEngine", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceDeleteMode": Utils.try_to_json(argv, "--InstanceDeleteMode"),
+        "Key": Utils.try_to_json(argv, "--Key"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -112,12 +106,12 @@ def doDeleteClusterInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TavClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterInstancesRequest()
+    model = models.GetLocalEngineRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteClusterInstances(model)
+    rsp = client.GetLocalEngine(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -127,17 +121,16 @@ def doDeleteClusterInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusterInstances(argv, arglist):
+def doScanFile(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeClusterInstances", g_param[OptionsDefine.Version])
+        show_help("ScanFile", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "Key": Utils.try_to_json(argv, "--Key"),
+        "Sample": Utils.try_to_json(argv, "--Sample"),
+        "Md5": Utils.try_to_json(argv, "--Md5"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -148,12 +141,12 @@ def doDescribeClusterInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TavClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClusterInstancesRequest()
+    model = models.ScanFileRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClusterInstances(model)
+    rsp = client.ScanFile(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -164,34 +157,34 @@ def doDescribeClusterInstances(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180525": tke_client_v20180525,
+    "v20190118": tav_client_v20190118,
 
 }
 
 MODELS_MAP = {
-    "v20180525": models_v20180525,
+    "v20190118": models_v20190118,
 
 }
 
 ACTION_MAP = {
-    "AddExistedInstances": doAddExistedInstances,
-    "DescribeClusters": doDescribeClusters,
-    "DeleteClusterInstances": doDeleteClusterInstances,
-    "DescribeClusterInstances": doDescribeClusterInstances,
+    "GetScanResult": doGetScanResult,
+    "ScanFileHash": doScanFileHash,
+    "GetLocalEngine": doGetLocalEngine,
+    "ScanFile": doScanFile,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180525.version,
+    v20190118.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180525.version.replace('-', ''): {"help": v20180525_help.INFO,"desc": v20180525_help.DESC},
+     'v' + v20190118.version.replace('-', ''): {"help": v20190118_help.INFO,"desc": v20190118_help.DESC},
 
 }
 
 
-def tke_action(argv, arglist):
+def tav_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -207,7 +200,7 @@ def tke_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "tke", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "tav", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -228,7 +221,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("tke", tke_action)
+    cmd = NiceCommand("tav", tav_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -287,11 +280,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["tke"][OptionsDefine.Version]
+            version = config["tav"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["tke"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["tav"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -308,7 +301,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tke", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tav", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -318,7 +311,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["tke"]["version"]
+        version = profile["tav"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

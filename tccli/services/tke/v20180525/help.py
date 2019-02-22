@@ -43,6 +43,10 @@ INFO = {
       {
         "name": "Limit",
         "desc": "最大输出条数，默认20"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件,当前只支持按照单个条件ClusterName进行过滤"
       }
     ],
     "desc": "查询集群列表"

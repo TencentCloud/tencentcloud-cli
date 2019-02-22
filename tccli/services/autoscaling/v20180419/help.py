@@ -66,6 +66,60 @@ INFO = {
     ],
     "desc": "本接口（CreateAutoScalingGroup）用于创建伸缩组"
   },
+  "ModifyScalingPolicy": {
+    "params": [
+      {
+        "name": "AutoScalingPolicyId",
+        "desc": "告警策略ID。"
+      },
+      {
+        "name": "ScalingPolicyName",
+        "desc": "告警策略名称。"
+      },
+      {
+        "name": "AdjustmentType",
+        "desc": "告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>"
+      },
+      {
+        "name": "AdjustmentValue",
+        "desc": "告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。"
+      },
+      {
+        "name": "Cooldown",
+        "desc": "冷却时间，单位为秒。"
+      },
+      {
+        "name": "MetricAlarm",
+        "desc": "告警监控指标。"
+      },
+      {
+        "name": "NotificationUserGroupIds",
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。\n如果需要清空通知用户组，需要在列表中传入特定字符串 \"NULL\"。"
+      }
+    ],
+    "desc": "本接口（ModifyScalingPolicy）用于修改告警触发策略。"
+  },
+  "DescribeNotificationConfigurations": {
+    "params": [
+      {
+        "name": "AutoScalingNotificationIds",
+        "desc": "按照一个或者多个通知ID查询。实例ID形如：asn-2sestqbr。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingNotificationIds`和`Filters`。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> auto-scaling-notification-id - String - 是否必填：否 -（过滤条件）按照通知ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingNotificationIds`和`Filters`。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "本接口 (DescribeNotificationConfigurations) 用于查询一个或多个通知的详细信息。\n\n可以根据通知ID、伸缩组ID等信息来查询通知的详细信息。过滤信息详细请见过滤器`Filter`。\n如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的通知。"
+  },
   "DeleteAutoScalingGroup": {
     "params": [
       {
@@ -87,6 +141,27 @@ INFO = {
       }
     ],
     "desc": "本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。\n"
+  },
+  "DescribeScalingPolicies": {
+    "params": [
+      {
+        "name": "AutoScalingPolicyIds",
+        "desc": "按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> scaling-group-id - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "本接口（DescribeScalingPolicies）用于查询告警触发策略。"
   },
   "DeleteScheduledAction": {
     "params": [
@@ -160,6 +235,15 @@ INFO = {
     ],
     "desc": "本接口（RemoveInstances）用于从伸缩组删除 CVM 实例。根据当前的产品逻辑，如果实例由弹性伸缩自动创建，则实例会被销毁；如果实例系创建后加入伸缩组的，则会从伸缩组中移除，保留实例。"
   },
+  "DeleteScalingPolicy": {
+    "params": [
+      {
+        "name": "AutoScalingPolicyId",
+        "desc": "待删除的告警策略ID。"
+      }
+    ],
+    "desc": "本接口（DeleteScalingPolicy）用于删除告警触发策略。"
+  },
   "ModifyLoadBalancers": {
     "params": [
       {
@@ -189,6 +273,40 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyDesiredCapacity）用于修改指定伸缩组的期望实例数"
+  },
+  "SetInstancesProtection": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID。"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID。"
+      },
+      {
+        "name": "ProtectedFromScaleIn",
+        "desc": "实例是否需要移出保护。"
+      }
+    ],
+    "desc": "本接口（SetInstancesProtection）用于设置实例移除保护。\n子机设置为移除保护之后，当发生不健康替换、报警策略、期望值变更等触发缩容时，将不对此子机缩容操作。"
+  },
+  "ModifyNotificationConfiguration": {
+    "params": [
+      {
+        "name": "AutoScalingNotificationId",
+        "desc": "待修改的通知ID。"
+      },
+      {
+        "name": "NotificationTypes",
+        "desc": "通知类型，即为需要订阅的通知类型集合，取值范围如下：\n<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>\n<li>SCALE_OUT_FAILED：扩容失败</li>\n<li>SCALE_IN_SUCCESSFUL：缩容成功</li>\n<li>SCALE_IN_FAILED：缩容失败</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>"
+      },
+      {
+        "name": "NotificationUserGroupIds",
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。"
+      }
+    ],
+    "desc": "本接口（ModifyNotificationConfiguration）用于修改通知。"
   },
   "CreateLaunchConfiguration": {
     "params": [
@@ -316,6 +434,23 @@ INFO = {
     ],
     "desc": "本接口（ModifyAutoScalingGroup）用于修改伸缩组。"
   },
+  "CreateNotificationConfiguration": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID。"
+      },
+      {
+        "name": "NotificationTypes",
+        "desc": "通知类型，即为需要订阅的通知类型集合，取值范围如下：\n<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>\n<li>SCALE_OUT_FAILED：扩容失败</li>\n<li>SCALE_IN_SUCCESSFUL：缩容成功</li>\n<li>SCALE_IN_FAILED：缩容失败</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>"
+      },
+      {
+        "name": "NotificationUserGroupIds",
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。"
+      }
+    ],
+    "desc": "本接口（CreateNotificationConfiguration）用于创建通知。"
+  },
   "DescribeLaunchConfigurations": {
     "params": [
       {
@@ -367,6 +502,39 @@ INFO = {
     ],
     "desc": "本接口（DescribeAutoScalingInstances）用于查询弹性伸缩关联实例的信息。\n\n* 可以根据实例ID、伸缩组ID等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。"
   },
+  "CreateScalingPolicy": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID。"
+      },
+      {
+        "name": "ScalingPolicyName",
+        "desc": "告警触发策略名称。"
+      },
+      {
+        "name": "AdjustmentType",
+        "desc": "告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>"
+      },
+      {
+        "name": "AdjustmentValue",
+        "desc": "告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。"
+      },
+      {
+        "name": "MetricAlarm",
+        "desc": "告警监控指标。"
+      },
+      {
+        "name": "Cooldown",
+        "desc": "冷却时间，单位为秒。默认冷却时间300秒。"
+      },
+      {
+        "name": "NotificationUserGroupIds",
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。"
+      }
+    ],
+    "desc": "本接口（CreateScalingPolicy）用于创建告警触发策略。"
+  },
   "DeleteLaunchConfiguration": {
     "params": [
       {
@@ -385,9 +553,26 @@ INFO = {
     ],
     "desc": "本接口（EnableAutoScalingGroup）用于启用指定伸缩组。"
   },
-  "DescribeAccountLimits": {
-    "params": [],
-    "desc": "本接口（DescribeAccountLimits）用于查询用户账户在弹性伸缩中的资源限制。"
+  "DescribeScheduledActions": {
+    "params": [
+      {
+        "name": "ScheduledActionIds",
+        "desc": "按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "本接口 (DescribeScheduledActions) 用于查询一个或多个定时任务的详细信息。\n\n* 可以根据定时任务ID、定时任务名称或者伸缩组ID等信息来查询定时任务的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的定时任务。"
   },
   "DescribeAutoScalingGroups": {
     "params": [
@@ -464,30 +649,30 @@ INFO = {
       {
         "name": "Offset",
         "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "伸缩活动最晚的结束时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。"
       }
     ],
     "desc": "本接口（DescribeAutoScalingActivities）用于查询伸缩组的伸缩活动记录。"
   },
-  "DescribeScheduledActions": {
+  "DeleteNotificationConfiguration": {
     "params": [
       {
-        "name": "ScheduledActionIds",
-        "desc": "按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+        "name": "AutoScalingNotificationId",
+        "desc": "待删除的通知ID。"
       }
     ],
-    "desc": "本接口 (DescribeScheduledActions) 用于查询一个或多个定时任务的详细信息。\n\n* 可以根据定时任务ID、定时任务名称或者伸缩组ID等信息来查询定时任务的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的定时任务。"
+    "desc": "本接口（DeleteNotificationConfiguration）用于删除特定的通知。"
+  },
+  "DescribeAccountLimits": {
+    "params": [],
+    "desc": "本接口（DescribeAccountLimits）用于查询用户账户在弹性伸缩中的资源限制。"
   },
   "ModifyLaunchConfigurationAttributes": {
     "params": [
@@ -513,7 +698,7 @@ INFO = {
       },
       {
         "name": "UserData",
-        "desc": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串''"
+        "desc": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串"
       }
     ],
     "desc": "本接口（ModifyLaunchConfigurationAttributes）用于修改启动配置部分属性。\n\n* 修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。\n* 本接口支持修改部分简单类型。"

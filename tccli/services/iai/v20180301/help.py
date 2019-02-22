@@ -55,7 +55,7 @@ INFO = {
         "desc": "图片的 Url 。图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n（图片的宽高比请接近 3:4，不符合宽高比的图片返回的分值不具备参考意义） \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       }
     ],
-    "desc": "用于对用户上传的静态图片进行人脸活体检测。与动态活体检测的区别是：静态活体检测中，用户不需要通过唇语或摇头眨眼等动作来识别。\n\n静态活体检测仅用于对防攻击要求不高的场景，如果对活体检测有更高安全性要求，请使用[人脸核身·云智慧眼](https://cloud.tencent.com/product/faceid)产品。"
+    "desc": "用于对用户上传的静态图片进行人脸活体检测。与动态活体检测的区别是：静态活体检测中，用户不需要通过唇语或摇头眨眼等动作来识别。\n\n静态活体检测适用于手机自拍的场景，或对防攻击要求不高的场景。如果对活体检测有更高安全性要求，请使用[人脸核身·云智慧眼](https://cloud.tencent.com/product/faceid)产品。\n\n>     \n- 图片的宽高比请接近3：4，不符合宽高比的图片返回的分值不具备参考意义。本接口适用于类手机自拍场景，非类手机自拍照返回的分值不具备参考意义。"
   },
   "CreateFace": {
     "params": [
@@ -65,11 +65,11 @@ INFO = {
       },
       {
         "name": "Images",
-        "desc": "图片 base64 数据。人员人脸总数量不可超过5张。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "图片 base64 数据。人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       },
       {
         "name": "Urls",
-        "desc": "图片的 Url、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n人员人脸总数量不可超过5张。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "图片的 Url、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       }
     ],
     "desc": "将一组人脸图片添加到一个人员中。一个人员最多允许包含 5 张图片。若该人员存在多个人员库中，所有人员库中该人员图片均会增加。\n>\n- 增加人脸完成后，生效时间一般不超过 1 秒，极端情况最多不超过 5 秒，之后您可以进行[人脸搜索](https://cloud.tencent.com/document/product/867/32798)或[人脸验证](https://cloud.tencent.com/document/product/867/32806)。"
@@ -155,11 +155,11 @@ INFO = {
       },
       {
         "name": "Image",
-        "desc": "图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "图片 base64 数据。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       },
       {
         "name": "Url",
-        "desc": "图片的 Url 。 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "图片的 Url 。 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       }
     ],
     "desc": "给定一张人脸图片和一个 PersonId，判断图片中的人和 PersonId 对应的人是否为同一人。PersonId 请参考[人员库管理相关接口](https://cloud.tencent.com/document/product/867/32794)。 和[人脸比对](https://cloud.tencent.com/document/product/867/32802)接口不同的是，[人脸验证](https://cloud.tencent.com/document/product/867/32806)用于判断 “此人是否是此人”，“此人”的信息已存于人员库中，“此人”可能存在多张人脸图片；而[人脸比对](https://cloud.tencent.com/document/product/867/32802)用于判断两张人脸的相似度。"
@@ -227,11 +227,11 @@ INFO = {
       },
       {
         "name": "Image",
-        "desc": "图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "图片 base64 数据。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       },
       {
         "name": "Url",
-        "desc": "图片的 Url、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "图片的 Url、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       }
     ],
     "desc": "创建人员，添加人脸、姓名、性别及其他相关信息。\n>\n- 创建人员完成后，生效时间一般不超过 1 秒，极端情况最多不超过 5 秒，之后您可以进行[人脸搜索](https://cloud.tencent.com/document/product/867/32798)或[人脸验证](https://cloud.tencent.com/document/product/867/32806)。"
@@ -332,19 +332,19 @@ INFO = {
     "params": [
       {
         "name": "ImageA",
-        "desc": "A 图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "A 图片 base64 数据。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       },
       {
         "name": "ImageB",
-        "desc": "B 图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "B 图片 base64 数据。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       },
       {
         "name": "UrlA",
-        "desc": "A 图片的 Url 。A 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "A 图片的 Url 。A 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       },
       {
         "name": "UrlB",
-        "desc": "B 图片的 Url 。B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+        "desc": "B 图片的 Url 。B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
       }
     ],
     "desc": "对两张图片中的人脸进行相似度比对，返回人脸相似度分数。\n\n若您需要判断 “此人是否是某人”，即验证某张图片中的人是否是已知身份的某人，如常见的人脸登录场景，建议使用[人脸验证](https://cloud.tencent.com/document/product/867/32806)接口。\n\n若您需要判断图片中人脸的具体身份信息，如是否是身份证上对应的人，建议使用[人脸核身·云智慧眼](https://cloud.tencent.com/product/facein)产品。"

@@ -80,6 +80,19 @@ INFO = {
     ],
     "desc": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与公安权威库的证件照是否属于同一个人。"
   },
+  "IdCardVerification": {
+    "params": [
+      {
+        "name": "IdCard",
+        "desc": "身份证号"
+      },
+      {
+        "name": "Name",
+        "desc": "姓名"
+      }
+    ],
+    "desc": "传入姓名和身份证号，校验两者的真实性和一致性。"
+  },
   "ImageRecognition": {
     "params": [
       {

@@ -65,6 +65,81 @@ def doCreateAutoScalingGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyScalingPolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyScalingPolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingPolicyId": Utils.try_to_json(argv, "--AutoScalingPolicyId"),
+        "ScalingPolicyName": Utils.try_to_json(argv, "--ScalingPolicyName"),
+        "AdjustmentType": Utils.try_to_json(argv, "--AdjustmentType"),
+        "AdjustmentValue": Utils.try_to_json(argv, "--AdjustmentValue"),
+        "Cooldown": Utils.try_to_json(argv, "--Cooldown"),
+        "MetricAlarm": Utils.try_to_json(argv, "--MetricAlarm"),
+        "NotificationUserGroupIds": Utils.try_to_json(argv, "--NotificationUserGroupIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyScalingPolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyScalingPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeNotificationConfigurations(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeNotificationConfigurations", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingNotificationIds": Utils.try_to_json(argv, "--AutoScalingNotificationIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeNotificationConfigurationsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeNotificationConfigurations(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -123,6 +198,42 @@ def doAttachInstances(argv, arglist):
     model = models.AttachInstancesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.AttachInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeScalingPolicies(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeScalingPolicies", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingPolicyIds": Utils.try_to_json(argv, "--AutoScalingPolicyIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeScalingPoliciesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeScalingPolicies(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -273,6 +384,39 @@ def doRemoveInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteScalingPolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteScalingPolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingPolicyId": Utils.try_to_json(argv, "--AutoScalingPolicyId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteScalingPolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteScalingPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyLoadBalancers(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -333,6 +477,76 @@ def doModifyDesiredCapacity(argv, arglist):
     model = models.ModifyDesiredCapacityRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyDesiredCapacity(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSetInstancesProtection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SetInstancesProtection", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "ProtectedFromScaleIn": Utils.try_to_json(argv, "--ProtectedFromScaleIn"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetInstancesProtectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SetInstancesProtection(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyNotificationConfiguration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyNotificationConfiguration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingNotificationId": Utils.try_to_json(argv, "--AutoScalingNotificationId"),
+        "NotificationTypes": Utils.try_to_json(argv, "--NotificationTypes"),
+        "NotificationUserGroupIds": Utils.try_to_json(argv, "--NotificationUserGroupIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyNotificationConfigurationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyNotificationConfiguration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -426,6 +640,41 @@ def doModifyAutoScalingGroup(argv, arglist):
     model = models.ModifyAutoScalingGroupRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyAutoScalingGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateNotificationConfiguration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateNotificationConfiguration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "NotificationTypes": Utils.try_to_json(argv, "--NotificationTypes"),
+        "NotificationUserGroupIds": Utils.try_to_json(argv, "--NotificationUserGroupIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateNotificationConfigurationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateNotificationConfiguration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -531,6 +780,45 @@ def doDescribeLaunchConfigurations(argv, arglist):
     model = models.DescribeLaunchConfigurationsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeLaunchConfigurations(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateScalingPolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateScalingPolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "ScalingPolicyName": Utils.try_to_json(argv, "--ScalingPolicyName"),
+        "AdjustmentType": Utils.try_to_json(argv, "--AdjustmentType"),
+        "AdjustmentValue": Utils.try_to_json(argv, "--AdjustmentValue"),
+        "MetricAlarm": Utils.try_to_json(argv, "--MetricAlarm"),
+        "Cooldown": Utils.try_to_json(argv, "--Cooldown"),
+        "NotificationUserGroupIds": Utils.try_to_json(argv, "--NotificationUserGroupIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateScalingPolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateScalingPolicy(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -725,6 +1013,8 @@ def doDescribeAutoScalingActivities(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -741,6 +1031,39 @@ def doDescribeAutoScalingActivities(argv, arglist):
     model = models.DescribeAutoScalingActivitiesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeAutoScalingActivities(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteNotificationConfiguration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteNotificationConfiguration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingNotificationId": Utils.try_to_json(argv, "--AutoScalingNotificationId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteNotificationConfigurationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteNotificationConfiguration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -836,25 +1159,34 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateAutoScalingGroup": doCreateAutoScalingGroup,
+    "ModifyScalingPolicy": doModifyScalingPolicy,
+    "DescribeNotificationConfigurations": doDescribeNotificationConfigurations,
     "DeleteAutoScalingGroup": doDeleteAutoScalingGroup,
     "AttachInstances": doAttachInstances,
+    "DescribeScalingPolicies": doDescribeScalingPolicies,
     "DeleteScheduledAction": doDeleteScheduledAction,
     "DetachInstances": doDetachInstances,
     "CreateScheduledAction": doCreateScheduledAction,
     "RemoveInstances": doRemoveInstances,
+    "DeleteScalingPolicy": doDeleteScalingPolicy,
     "ModifyLoadBalancers": doModifyLoadBalancers,
     "ModifyDesiredCapacity": doModifyDesiredCapacity,
+    "SetInstancesProtection": doSetInstancesProtection,
+    "ModifyNotificationConfiguration": doModifyNotificationConfiguration,
     "CreateLaunchConfiguration": doCreateLaunchConfiguration,
     "ModifyAutoScalingGroup": doModifyAutoScalingGroup,
+    "CreateNotificationConfiguration": doCreateNotificationConfiguration,
     "DescribeAutoScalingInstances": doDescribeAutoScalingInstances,
     "DisableAutoScalingGroup": doDisableAutoScalingGroup,
     "DescribeLaunchConfigurations": doDescribeLaunchConfigurations,
+    "CreateScalingPolicy": doCreateScalingPolicy,
     "DeleteLaunchConfiguration": doDeleteLaunchConfiguration,
     "EnableAutoScalingGroup": doEnableAutoScalingGroup,
     "DescribeAccountLimits": doDescribeAccountLimits,
     "DescribeAutoScalingGroups": doDescribeAutoScalingGroups,
     "ModifyScheduledAction": doModifyScheduledAction,
     "DescribeAutoScalingActivities": doDescribeAutoScalingActivities,
+    "DeleteNotificationConfiguration": doDeleteNotificationConfiguration,
     "DescribeScheduledActions": doDescribeScheduledActions,
     "ModifyLaunchConfigurationAttributes": doModifyLaunchConfigurationAttributes,
 
