@@ -28,15 +28,6 @@ def doGetFederationToken(argv, arglist):
         "Name": Utils.try_to_json(argv, "--Name"),
         "Policy": Utils.try_to_json(argv, "--Policy"),
         "DurationSeconds": Utils.try_to_json(argv, "--DurationSeconds"),
-        "OpenUin": Utils.try_to_json(argv, "--OpenUin"),
-        "OpenOwnerUin": Utils.try_to_json(argv, "--OpenOwnerUin"),
-        "Ua": Utils.try_to_json(argv, "--Ua"),
-        "Mfa": Utils.try_to_json(argv, "--Mfa"),
-        "InterfaceName": Utils.try_to_json(argv, "--InterfaceName"),
-        "ExtraInfo": Utils.try_to_json(argv, "--ExtraInfo"),
-        "ThUin": Utils.try_to_json(argv, "--ThUin"),
-        "ThOwnerUin": Utils.try_to_json(argv, "--ThOwnerUin"),
-        "CodeMode": Utils.try_to_json(argv, "--CodeMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

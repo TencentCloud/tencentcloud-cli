@@ -69,6 +69,7 @@ def doDescribeRecords(argv, arglist):
         "EndBizDate": Utils.try_to_json(argv, "--EndBizDate"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "InstId": Utils.try_to_json(argv, "--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -179,6 +180,7 @@ def doUploadDataFile(argv, arglist):
         "UploadModel": Utils.try_to_json(argv, "--UploadModel"),
         "File": Utils.try_to_json(argv, "--File"),
         "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
+        "InstId": Utils.try_to_json(argv, "--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -214,6 +216,7 @@ def doApplyBlackList(argv, arglist):
         "Module": Utils.try_to_json(argv, "--Module"),
         "Operation": Utils.try_to_json(argv, "--Operation"),
         "BlackList": Utils.try_to_json(argv, "--BlackList"),
+        "InstId": Utils.try_to_json(argv, "--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

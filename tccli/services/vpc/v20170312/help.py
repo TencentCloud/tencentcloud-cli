@@ -234,6 +234,47 @@ INFO = {
     ],
     "desc": "本接口（DescribeSecurityGroupPolicies）用于查询安全组规则。"
   },
+  "DescribeGatewayFlowMonitorDetail": {
+    "params": [
+      {
+        "name": "TimePoint",
+        "desc": "时间点。表示要查询这分钟内的明细。如：`2019-02-28 18:15:20`，将查询 `18:15` 这一分钟内的明细。"
+      },
+      {
+        "name": "VpnId",
+        "desc": "VPN网关实例ID，形如：`vpn-ltjahce6`。"
+      },
+      {
+        "name": "DirectConnectGatewayId",
+        "desc": "专线网关实例ID，形如：`dcg-ltjahce6`。"
+      },
+      {
+        "name": "PeeringConnectionId",
+        "desc": "对等连接实例ID，形如：`pcx-ltjahce6`。"
+      },
+      {
+        "name": "NatId",
+        "desc": "NAT网关实例ID，形如：`nat-ltjahce6`。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量。"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方法。顺序：`ASC`，倒序：`DESC`。"
+      }
+    ],
+    "desc": "本接口（DescribeGatewayFlowMonitorDetail）用于查询网关流量监控明细。\n* 只支持单个网关实例查询。即入参 `VpnId` `DirectConnectGatewayId` `PeeringConnectionId` `NatId` 最多只支持传一个，且必须传一个。\n* 如果网关有流量，但调用本接口没有返回数据，请在控制台对应网关详情页确认是否开启网关流量监控。"
+  },
   "DeleteVpnConnection": {
     "params": [
       {
@@ -1729,7 +1770,7 @@ INFO = {
       },
       {
         "name": "NetworkInstanceId",
-        "desc": "<li>NetworkType 为 VPC 时，这里传值为私有网络实例ID</li>\n<li>NetworkType 为 NAT 时，这里传值为云联网实例ID</li>"
+        "desc": "<li>NetworkType 为 VPC 时，这里传值为私有网络实例ID</li>\n<li>NetworkType 为 CCN 时，这里传值为云联网实例ID</li>"
       },
       {
         "name": "GatewayType",

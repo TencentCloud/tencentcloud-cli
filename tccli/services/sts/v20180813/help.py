@@ -14,45 +14,9 @@ INFO = {
       {
         "name": "DurationSeconds",
         "desc": "指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒"
-      },
-      {
-        "name": "OpenUin",
-        "desc": "兼容uin名单"
-      },
-      {
-        "name": "OpenOwnerUin",
-        "desc": "兼容OwnerUin名单"
-      },
-      {
-        "name": "Ua",
-        "desc": "ua"
-      },
-      {
-        "name": "Mfa",
-        "desc": "mfa"
-      },
-      {
-        "name": "InterfaceName",
-        "desc": "interfaceName"
-      },
-      {
-        "name": "ExtraInfo",
-        "desc": "extraInfo"
-      },
-      {
-        "name": "ThUin",
-        "desc": "thUin"
-      },
-      {
-        "name": "ThOwnerUin",
-        "desc": "thOwnerUin"
-      },
-      {
-        "name": "CodeMode",
-        "desc": "codeMode"
       }
     ],
-    "desc": "获取临时证书"
+    "desc": "获取联合身份临时访问凭证"
   },
   "AssumeRole": {
     "params": [

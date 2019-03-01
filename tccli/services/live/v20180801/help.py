@@ -41,7 +41,7 @@ INFO = {
         "desc": "指定已有的模板Id。"
       }
     ],
-    "desc": "创建转码规则"
+    "desc": "创建转码规则，需要先调用[CreateLiveTranscodeTemplate](/document/product/267/32646)接口创建转码模板，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。"
   },
   "DescribeLiveSnapshotTemplates": {
     "params": [],
@@ -238,10 +238,10 @@ INFO = {
       },
       {
         "name": "TemplateId",
-        "desc": "水印Id。"
+        "desc": "水印Id，即调用[AddLiveWatermark](/document/product/267/30154)接口返回的WatermarkId。"
       }
     ],
-    "desc": "创建水印规则"
+    "desc": "创建水印规则，需要先调用[AddLiveWatermark](/document/product/267/30154)接口添加水印，将返回的水印id绑定到流使用。"
   },
   "DeleteLiveCallbackTemplate": {
     "params": [
@@ -351,7 +351,7 @@ INFO = {
         "desc": "模板Id。"
       }
     ],
-    "desc": "创建截图规则"
+    "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
   },
   "ModifyLivePushAuthKey": {
     "params": [
@@ -619,7 +619,7 @@ INFO = {
         "desc": "模板Id。"
       }
     ],
-    "desc": "创建录制规则"
+    "desc": "创建录制规则，需要先调用[CreateLiveRecordTemplate](/document/product/267/32614)接口创建录制模板，将返回的模板id绑定到流使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。"
   },
   "DeleteLiveWatermarkRule": {
     "params": [
@@ -679,7 +679,7 @@ INFO = {
         "desc": "模板ID"
       }
     ],
-    "desc": "创建回调规则"
+    "desc": "创建回调规则，需要先调用[CreateLiveCallbackTemplate](/document/product/267/32637)接口创建回调模板，将返回的模板id绑定到域名/路径进行使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。"
   },
   "DeleteLiveRecordTemplate": {
     "params": [
@@ -928,7 +928,7 @@ INFO = {
         "desc": "是否不超过原始帧率，0：否，1：是。默认0。"
       }
     ],
-    "desc": "创建转码模板"
+    "desc": "创建转码模板，成功返回模板id后，需要调用[CreateLiveTranscodeRule](/document/product/267/32647)接口，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。"
   },
   "ResumeLiveStream": {
     "params": [
@@ -963,26 +963,26 @@ INFO = {
       },
       {
         "name": "StreamBeginNotifyUrl",
-        "desc": "开播回调URL。"
+        "desc": "开播回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       },
       {
         "name": "StreamEndNotifyUrl",
-        "desc": "断流回调URL。"
+        "desc": "断流回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       },
       {
         "name": "RecordNotifyUrl",
-        "desc": "录制回调URL。"
+        "desc": "录制回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       },
       {
         "name": "SnapshotNotifyUrl",
-        "desc": "截图回调URL。"
+        "desc": "截图回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       },
       {
         "name": "PornCensorshipNotifyUrl",
-        "desc": "鉴黄回调URL。"
+        "desc": "鉴黄回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32741)。"
       }
     ],
-    "desc": "创建回调模板"
+    "desc": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板id绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。"
   },
   "DescribeLiveTranscodeRules": {
     "params": [],
@@ -1100,7 +1100,7 @@ INFO = {
         "desc": "显示位置,Y轴偏移。"
       }
     ],
-    "desc": "添加水印"
+    "desc": "添加水印，成功返回水印id后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印id绑定到流使用。"
   },
   "DescribeLiveCallbackTemplate": {
     "params": [
@@ -1286,7 +1286,7 @@ INFO = {
         "desc": "Aac录制参数，开启Aac录制时设置。"
       }
     ],
-    "desc": "创建录制模板"
+    "desc": "创建录制模板，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。"
   },
   "DescribeLiveCert": {
     "params": [
@@ -1336,7 +1336,7 @@ INFO = {
         "desc": "是否开启鉴黄，0：不开启，1：开启。默认：0."
       }
     ],
-    "desc": "创建截图模板"
+    "desc": "创建截图模板，成功返回模板id后，需要调用[CreateLiveSnapshotRule](/document/product/267/32625)接口，将模板id绑定到流使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
   },
   "DescribeLiveSnapshotTemplate": {
     "params": [
