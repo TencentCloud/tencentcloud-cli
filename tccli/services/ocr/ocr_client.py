@@ -12,31 +12,23 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.es.v20180416 import es_client as es_client_v20180416
-from tencentcloud.es.v20180416 import models as models_v20180416
-from tccli.services.es import v20180416
-from tccli.services.es.v20180416 import help as v20180416_help
+from tencentcloud.ocr.v20181119 import ocr_client as ocr_client_v20181119
+from tencentcloud.ocr.v20181119 import models as models_v20181119
+from tccli.services.ocr import v20181119
+from tccli.services.ocr.v20181119 import help as v20181119_help
 
 
-def doUpdateInstance(argv, arglist):
+def doIDCardOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateInstance", g_param[OptionsDefine.Version])
+        show_help("IDCardOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "EsConfig": Utils.try_to_json(argv, "--EsConfig"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "EsAcl": Utils.try_to_json(argv, "--EsAcl"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "NodeType": Utils.try_to_json(argv, "--NodeType"),
-        "MasterNodeNum": Utils.try_to_json(argv, "--MasterNodeNum"),
-        "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
-        "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
-        "ForceRestart": Utils.try_to_json(argv, "--ForceRestart"),
+        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
+        "CardSide": Utils.try_to_json(argv, "--CardSide"),
+        "Config": Utils.try_to_json(argv, "--Config"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -47,12 +39,12 @@ def doUpdateInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateInstanceRequest()
+    model = models.IDCardOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateInstance(model)
+    rsp = client.IDCardOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -62,33 +54,15 @@ def doUpdateInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateInstance(argv, arglist):
+def doGeneralFastOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateInstance", g_param[OptionsDefine.Version])
+        show_help("GeneralFastOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "EsVersion": Utils.try_to_json(argv, "--EsVersion"),
-        "NodeType": Utils.try_to_json(argv, "--NodeType"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
-        "ChargeType": Utils.try_to_json(argv, "--ChargeType"),
-        "ChargePeriod": Utils.try_to_json(argv, "--ChargePeriod"),
-        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
-        "DiskType": Utils.try_to_json(argv, "--DiskType"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
-        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
-        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
-        "EnableDedicatedMaster": Utils.try_to_json(argv, "--EnableDedicatedMaster"),
-        "MasterNodeNum": Utils.try_to_json(argv, "--MasterNodeNum"),
-        "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
-        "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
+        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -99,12 +73,12 @@ def doCreateInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateInstanceRequest()
+    model = models.GeneralFastOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateInstance(model)
+    rsp = client.GeneralFastOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -114,20 +88,15 @@ def doCreateInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstances(argv, arglist):
+def doGeneralBasicOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeInstances", g_param[OptionsDefine.Version])
+        show_help("GeneralBasicOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceNames": Utils.try_to_json(argv, "--InstanceNames"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderByKey": Utils.try_to_json(argv, "--OrderByKey"),
-        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -138,79 +107,12 @@ def doDescribeInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstancesRequest()
+    model = models.GeneralBasicOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doRestartInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("RestartInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "ForceRestart": Utils.try_to_json(argv, "--ForceRestart"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RestartInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.RestartInstance(model)
+    rsp = client.GeneralBasicOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -221,35 +123,33 @@ def doRestartInstance(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180416": es_client_v20180416,
+    "v20181119": ocr_client_v20181119,
 
 }
 
 MODELS_MAP = {
-    "v20180416": models_v20180416,
+    "v20181119": models_v20181119,
 
 }
 
 ACTION_MAP = {
-    "UpdateInstance": doUpdateInstance,
-    "CreateInstance": doCreateInstance,
-    "DescribeInstances": doDescribeInstances,
-    "DeleteInstance": doDeleteInstance,
-    "RestartInstance": doRestartInstance,
+    "IDCardOCR": doIDCardOCR,
+    "GeneralFastOCR": doGeneralFastOCR,
+    "GeneralBasicOCR": doGeneralBasicOCR,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180416.version,
+    v20181119.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180416.version.replace('-', ''): {"help": v20180416_help.INFO,"desc": v20180416_help.DESC},
+     'v' + v20181119.version.replace('-', ''): {"help": v20181119_help.INFO,"desc": v20181119_help.DESC},
 
 }
 
 
-def es_action(argv, arglist):
+def ocr_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -265,7 +165,7 @@ def es_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "es", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "ocr", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -286,7 +186,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("es", es_action)
+    cmd = NiceCommand("ocr", ocr_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -345,11 +245,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["es"][OptionsDefine.Version]
+            version = config["ocr"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["es"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["ocr"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -366,7 +266,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "es", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ocr", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -376,7 +276,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["es"]["version"]
+        version = profile["ocr"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

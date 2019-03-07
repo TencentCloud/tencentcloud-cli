@@ -306,7 +306,7 @@ INFO = {
       },
       {
         "name": "Protocol",
-        "desc": "监听器协议：HTTP | HTTPS | TCP | TCP_SSL"
+        "desc": "监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）"
       },
       {
         "name": "ListenerNames",

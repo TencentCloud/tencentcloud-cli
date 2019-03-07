@@ -99,6 +99,22 @@ INFO = {
       {
         "name": "VoucherIds",
         "desc": "代金券ID列表，目前仅支持指定一张代金券"
+      },
+      {
+        "name": "EnableDedicatedMaster",
+        "desc": "是否创建专用主节点"
+      },
+      {
+        "name": "MasterNodeNum",
+        "desc": "专用主节点个数"
+      },
+      {
+        "name": "MasterNodeType",
+        "desc": "专用主节点类型"
+      },
+      {
+        "name": "MasterNodeDiskSize",
+        "desc": "专用主节点磁盘大小"
       }
     ],
     "desc": "创建指定规格的ES集群实例"
@@ -136,9 +152,25 @@ INFO = {
       {
         "name": "NodeType",
         "desc": "节点规格: \nES.S1.SMALL2: 1 核 2G\nES.S1.MEDIUM4: 2 核 4G \nES.S1.MEDIUM8: 2 核 8G \nES.S1.LARGE16: 4 核 16G \nES.S1.2XLARGE32: 8 核 32G \nES.S1.4XLARGE64: 16 核 64G"
+      },
+      {
+        "name": "MasterNodeNum",
+        "desc": "专用主节点个数"
+      },
+      {
+        "name": "MasterNodeType",
+        "desc": "专用主节点规格"
+      },
+      {
+        "name": "MasterNodeDiskSize",
+        "desc": "专用主节点磁盘大小"
+      },
+      {
+        "name": "ForceRestart",
+        "desc": "更新配置时是否强制重启"
       }
     ],
-    "desc": "对已存在的集群进行扩缩容，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作 "
+    "desc": "对已存在的集群进行扩缩容，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作"
   },
   "DeleteInstance": {
     "params": [
@@ -154,6 +186,10 @@ INFO = {
       {
         "name": "InstanceId",
         "desc": "要重启的实例ID"
+      },
+      {
+        "name": "ForceRestart",
+        "desc": "是否强制重启"
       }
     ],
     "desc": "重启ES集群实例(用于系统版本更新等操作) "
