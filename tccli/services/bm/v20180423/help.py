@@ -112,7 +112,7 @@ INFO = {
         "desc": "需要退还的物理机ID列表"
       }
     ],
-    "desc": "用于销毁可退还的服务器"
+    "desc": "销毁黑石物理机实例：可以销毁物理机列表中的竞价实例，或回收站列表中所有计费模式的实例"
   },
   "DescribeOsInfo": {
     "params": [
@@ -156,6 +156,10 @@ INFO = {
       }
     ],
     "desc": "查询自定义镜像制作进度"
+  },
+  "DescribeHardwareSpecification": {
+    "params": [],
+    "desc": "查询自定义机型部件信息，包括CpuId对应的型号，DiskTypeId对应的磁盘类型"
   },
   "DescribeUserCmdTasks": {
     "params": [
@@ -382,6 +386,19 @@ INFO = {
     ],
     "desc": "删除自定义脚本"
   },
+  "DescribeHostedDeviceOutBandInfo": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "托管设备的唯一ID数组,数组个数不超过20"
+      },
+      {
+        "name": "Zone",
+        "desc": "可用区ID"
+      }
+    ],
+    "desc": "查询托管设备带外信息"
+  },
   "BindPsaTag": {
     "params": [
       {
@@ -585,6 +602,15 @@ INFO = {
     ],
     "desc": "查询机型支持的RAID方式， 并返回系统盘的分区和逻辑盘的列表"
   },
+  "DescribeRegions": {
+    "params": [
+      {
+        "name": "RegionId",
+        "desc": "地域整型ID，目前黑石可用地域包括：8-北京，4-上海，1-广州， 19-重庆"
+      }
+    ],
+    "desc": "查询地域以及可用区"
+  },
   "DescribeUserCmdTaskInfo": {
     "params": [
       {
@@ -630,6 +656,15 @@ INFO = {
       }
     ],
     "desc": "查询服务器价格信息，支持设备的批量查找，支持标准机型和弹性机型的混合查找"
+  },
+  "ReturnDevices": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "需要退还的物理机ID列表"
+      }
+    ],
+    "desc": "退回物理机至回收站，支持批量退还不同计费模式的物理机（包括预付费、后付费、预付费转后付费）"
   },
   "ModifyDeviceAutoRenewFlag": {
     "params": [
@@ -884,6 +919,15 @@ INFO = {
     ],
     "desc": "查询物理服务器，可以按照实例，业务IP等过滤"
   },
+  "DescribeDeviceHardwareInfo": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "设备 ID 列表"
+      }
+    ],
+    "desc": "查询设备硬件配置信息，如 CPU 型号，内存大小，磁盘大小和数量"
+  },
   "DescribeRepairTaskConstant": {
     "params": [],
     "desc": "维修任务配置获取"
@@ -896,7 +940,7 @@ INFO = {
       },
       {
         "name": "Operate",
-        "desc": "操作字段，取值为：create（创建）或update（修改）"
+        "desc": "操作字段，取值为：Create（创建）或Update（修改）"
       }
     ],
     "desc": "设置带外VPN认证用户密码"
@@ -933,6 +977,15 @@ INFO = {
       }
     ],
     "desc": "查看自定义镜像列表"
+  },
+  "RecoverDevices": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "需要恢复的物理机ID列表"
+      }
+    ],
+    "desc": "恢复回收站中的物理机（仅限后付费的物理机）"
   },
   "DescribeDevicePartition": {
     "params": [

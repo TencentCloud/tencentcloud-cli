@@ -209,7 +209,7 @@ INFO = {
       },
       {
         "name": "DbName",
-        "desc": "数据库名。如果为 \\*，表示设置全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数"
+        "desc": "数据库名。如果为 \\*，表示设置全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数。当DbName不为\\*时，需要传入参 Type。"
       },
       {
         "name": "Privileges",

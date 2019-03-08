@@ -246,6 +246,7 @@ def doCreateLiveCallbackTemplate(argv, arglist):
         "RecordNotifyUrl": Utils.try_to_json(argv, "--RecordNotifyUrl"),
         "SnapshotNotifyUrl": Utils.try_to_json(argv, "--SnapshotNotifyUrl"),
         "PornCensorshipNotifyUrl": Utils.try_to_json(argv, "--PornCensorshipNotifyUrl"),
+        "CallbackKey": Utils.try_to_json(argv, "--CallbackKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -358,6 +359,7 @@ def doModifyLiveCallbackTemplate(argv, arglist):
         "RecordNotifyUrl": Utils.try_to_json(argv, "--RecordNotifyUrl"),
         "SnapshotNotifyUrl": Utils.try_to_json(argv, "--SnapshotNotifyUrl"),
         "PornCensorshipNotifyUrl": Utils.try_to_json(argv, "--PornCensorshipNotifyUrl"),
+        "CallbackKey": Utils.try_to_json(argv, "--CallbackKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -980,6 +980,10 @@ INFO = {
       {
         "name": "PornCensorshipNotifyUrl",
         "desc": "鉴黄回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32741)。"
+      },
+      {
+        "name": "CallbackKey",
+        "desc": "回调key，回调URL公用，鉴权回调说明详见回调格式文档"
       }
     ],
     "desc": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板id绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。"
@@ -1127,7 +1131,7 @@ INFO = {
       },
       {
         "name": "PageSize",
-        "desc": "每页大小，最大100。 \n取值：1~100之前的任意整数。\n默认值：10。"
+        "desc": "每页大小，最大100。 \n取值：10~100之间的任意整数。\n默认值：10。"
       },
       {
         "name": "StreamName",
@@ -1169,6 +1173,10 @@ INFO = {
       {
         "name": "PornCensorshipNotifyUrl",
         "desc": "鉴黄回调URL。"
+      },
+      {
+        "name": "CallbackKey",
+        "desc": "回调key，回调URL公用，鉴权回调说明详见回调格式文档"
       }
     ],
     "desc": "修改回调模板"
