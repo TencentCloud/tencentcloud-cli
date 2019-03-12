@@ -169,6 +169,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "限制数目"
+      },
+      {
+        "name": "ClientType",
+        "desc": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/空"
+      },
+      {
+        "name": "ProjectType",
+        "desc": "项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空"
       }
     ],
     "desc": "查询已审核客户列表"
