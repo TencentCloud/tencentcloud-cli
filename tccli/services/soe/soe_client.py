@@ -36,6 +36,7 @@ def doInitOralProcess(argv, arglist):
         "SentenceInfoEnabled": Utils.try_to_json(argv, "--SentenceInfoEnabled"),
         "ServerType": Utils.try_to_json(argv, "--ServerType"),
         "IsAsync": Utils.try_to_json(argv, "--IsAsync"),
+        "TextMode": Utils.try_to_json(argv, "--TextMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -125,6 +126,7 @@ def doTransmitOralProcessWithInit(argv, arglist):
         "ServerType": Utils.try_to_json(argv, "--ServerType"),
         "IsAsync": Utils.try_to_json(argv, "--IsAsync"),
         "IsQuery": Utils.try_to_json(argv, "--IsQuery"),
+        "TextMode": Utils.try_to_json(argv, "--TextMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

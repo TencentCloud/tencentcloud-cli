@@ -107,6 +107,7 @@ def doSpeechTranslate(argv, arglist):
         "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
         "Data": Utils.try_to_json(argv, "--Data"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "Mode": Utils.try_to_json(argv, "--Mode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

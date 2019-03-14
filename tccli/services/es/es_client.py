@@ -18,25 +18,18 @@ from tccli.services.es import v20180416
 from tccli.services.es.v20180416 import help as v20180416_help
 
 
-def doUpdateInstance(argv, arglist):
+def doDescribeInstanceOperations(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateInstance", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceOperations", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "EsConfig": Utils.try_to_json(argv, "--EsConfig"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "EsAcl": Utils.try_to_json(argv, "--EsAcl"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "NodeType": Utils.try_to_json(argv, "--NodeType"),
-        "MasterNodeNum": Utils.try_to_json(argv, "--MasterNodeNum"),
-        "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
-        "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
-        "ForceRestart": Utils.try_to_json(argv, "--ForceRestart"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -50,61 +43,9 @@ def doUpdateInstance(argv, arglist):
     client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateInstanceRequest()
+    model = models.DescribeInstanceOperationsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "EsVersion": Utils.try_to_json(argv, "--EsVersion"),
-        "NodeType": Utils.try_to_json(argv, "--NodeType"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
-        "ChargeType": Utils.try_to_json(argv, "--ChargeType"),
-        "ChargePeriod": Utils.try_to_json(argv, "--ChargePeriod"),
-        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
-        "DiskType": Utils.try_to_json(argv, "--DiskType"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
-        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
-        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
-        "EnableDedicatedMaster": Utils.try_to_json(argv, "--EnableDedicatedMaster"),
-        "MasterNodeNum": Utils.try_to_json(argv, "--MasterNodeNum"),
-        "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
-        "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateInstance(model)
+    rsp = client.DescribeInstanceOperations(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -144,6 +85,104 @@ def doDescribeInstances(argv, arglist):
     model = models.DescribeInstancesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
+        "EsVersion": Utils.try_to_json(argv, "--EsVersion"),
+        "NodeType": Utils.try_to_json(argv, "--NodeType"),
+        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "Password": Utils.try_to_json(argv, "--Password"),
+        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "ChargeType": Utils.try_to_json(argv, "--ChargeType"),
+        "ChargePeriod": Utils.try_to_json(argv, "--ChargePeriod"),
+        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
+        "DiskType": Utils.try_to_json(argv, "--DiskType"),
+        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
+        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+        "EnableDedicatedMaster": Utils.try_to_json(argv, "--EnableDedicatedMaster"),
+        "MasterNodeNum": Utils.try_to_json(argv, "--MasterNodeNum"),
+        "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
+        "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
+        "ClusterNameInConf": Utils.try_to_json(argv, "--ClusterNameInConf"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
+        "EsConfig": Utils.try_to_json(argv, "--EsConfig"),
+        "Password": Utils.try_to_json(argv, "--Password"),
+        "EsAcl": Utils.try_to_json(argv, "--EsAcl"),
+        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
+        "NodeType": Utils.try_to_json(argv, "--NodeType"),
+        "MasterNodeNum": Utils.try_to_json(argv, "--MasterNodeNum"),
+        "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
+        "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
+        "ForceRestart": Utils.try_to_json(argv, "--ForceRestart"),
+        "CosBackup": Utils.try_to_json(argv, "--CosBackup"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -220,6 +259,46 @@ def doRestartInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeInstanceLogs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceLogs", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "LogType": Utils.try_to_json(argv, "--LogType"),
+        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceLogsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceLogs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180416": es_client_v20180416,
 
@@ -231,11 +310,13 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "UpdateInstance": doUpdateInstance,
-    "CreateInstance": doCreateInstance,
+    "DescribeInstanceOperations": doDescribeInstanceOperations,
     "DescribeInstances": doDescribeInstances,
+    "CreateInstance": doCreateInstance,
+    "UpdateInstance": doUpdateInstance,
     "DeleteInstance": doDeleteInstance,
     "RestartInstance": doRestartInstance,
+    "DescribeInstanceLogs": doDescribeInstanceLogs,
 
 }
 

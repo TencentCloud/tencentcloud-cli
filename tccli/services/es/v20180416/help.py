@@ -1,6 +1,31 @@
 # -*- coding: utf-8 -*-
 DESC = "es-2018-04-16"
 INFO = {
+  "DescribeInstanceOperations": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "集群实例ID"
+      },
+      {
+        "name": "StartTime",
+        "desc": "起始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页起始值"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小"
+      }
+    ],
+    "desc": "查询实例指定条件下的操作记录"
+  },
   "DescribeInstances": {
     "params": [
       {
@@ -46,7 +71,7 @@ INFO = {
       },
       {
         "name": "EsVersion",
-        "desc": "实例版本,当前只支持5.6.4"
+        "desc": "实例版本,支持\"5.6.4\"、\"6.4.3\""
       },
       {
         "name": "NodeType",
@@ -86,7 +111,7 @@ INFO = {
       },
       {
         "name": "DiskType",
-        "desc": "节点存储类型,取值范围:  \nLOCAL_BASIC: 本地硬盘  \nLOCAL_SSD: 本地SSD硬盘，默认值  \nCLOUD_BASIC: 普通云硬盘  \nCLOUD_PREMIUM: 高硬能云硬盘  \nCLOUD_SSD: SSD云硬盘"
+        "desc": "节点存储类型,取值范围:    \nCLOUD_PREMIUM: 高硬能云硬盘  \nCLOUD_SSD: SSD云硬盘"
       },
       {
         "name": "TimeUnit",
@@ -110,11 +135,15 @@ INFO = {
       },
       {
         "name": "MasterNodeType",
-        "desc": "专用主节点类型"
+        "desc": "专用主节点类型，与NodeType支持的规格相同"
       },
       {
         "name": "MasterNodeDiskSize",
-        "desc": "专用主节点磁盘大小"
+        "desc": "专用主节点磁盘大小，单位GB（系统默认配置50GB，暂不支持自定义）"
+      },
+      {
+        "name": "ClusterNameInConf",
+        "desc": "配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）"
       }
     ],
     "desc": "创建指定规格的ES集群实例"
@@ -135,7 +164,7 @@ INFO = {
       },
       {
         "name": "EsConfig",
-        "desc": "修改后的配置项, JSON格式字符串"
+        "desc": "修改后的配置项, JSON格式字符串。当前仅支持以下配置项：\naction.destructive_requires_name\nindices.fielddata.cache.size\nindices.query.bool.max_clause_count"
       },
       {
         "name": "Password",
@@ -159,18 +188,22 @@ INFO = {
       },
       {
         "name": "MasterNodeType",
-        "desc": "专用主节点规格"
+        "desc": "专用主节点规格，与NodeType支持的规格相同"
       },
       {
         "name": "MasterNodeDiskSize",
-        "desc": "专用主节点磁盘大小"
+        "desc": "专用主节点磁盘大小， 单位GB（系统默认配置为50GB,暂不支持自定义）"
       },
       {
         "name": "ForceRestart",
         "desc": "更新配置时是否强制重启"
+      },
+      {
+        "name": "CosBackup",
+        "desc": "COS自动备份信息"
       }
     ],
-    "desc": "对已存在的集群进行扩缩容，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作"
+    "desc": "对集群进行扩缩容，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：<br>\n  InstanceName：修改实例名称(仅用于标识实例)<br>\n  NodeNum：集群数据节点横向扩缩容<br>\n  NodeType, DiskSize：集群数据节点纵向扩缩容<br>\n  MasterNodeNum: 集群专用主节点横向扩缩容<br>\n  MasterNodeType, MasterNodeDiskSize: 集群专用主节点纵向扩缩容<br>\n  EsConfig：修改集群配置<br>\n  Password：修改集群密码<br>\n  EsAcl：修改Kibana密码<br>\n  CosBackUp: 设置集群COS自动备份信息<br>\n以上参数组合只能传递一种，多传或少传均会导致请求失败<br>"
   },
   "DeleteInstance": {
     "params": [
@@ -193,5 +226,42 @@ INFO = {
       }
     ],
     "desc": "重启ES集群实例(用于系统版本更新等操作) "
+  },
+  "DescribeInstanceLogs": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "集群实例ID"
+      },
+      {
+        "name": "LogType",
+        "desc": "日志类型"
+      },
+      {
+        "name": "SearchKey",
+        "desc": "搜索词"
+      },
+      {
+        "name": "StartTime",
+        "desc": "日志开始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "日志结束时间"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页起始值"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小"
+      },
+      {
+        "name": "OrderByType",
+        "desc": "时间排序方式"
+      }
+    ],
+    "desc": "查询用户该地域下符合条件的ES集群的日志"
   }
 }

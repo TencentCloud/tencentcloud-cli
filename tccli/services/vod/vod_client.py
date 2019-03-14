@@ -18,6 +18,122 @@ from tccli.services.vod import v20180717
 from tccli.services.vod.v20180717 import help as v20180717_help
 
 
+def doConfirmEvents(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ConfirmEvents", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EventHandles": Utils.try_to_json(argv, "--EventHandles"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ConfirmEventsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ConfirmEvents(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doApplyUpload(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ApplyUpload", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MediaType": Utils.try_to_json(argv, "--MediaType"),
+        "MediaName": Utils.try_to_json(argv, "--MediaName"),
+        "CoverType": Utils.try_to_json(argv, "--CoverType"),
+        "Procedure": Utils.try_to_json(argv, "--Procedure"),
+        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
+        "StorageRegion": Utils.try_to_json(argv, "--StorageRegion"),
+        "ClassId": Utils.try_to_json(argv, "--ClassId"),
+        "SourceContext": Utils.try_to_json(argv, "--SourceContext"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ApplyUploadRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ApplyUpload(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTranscodeTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTranscodeTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Definition": Utils.try_to_json(argv, "--Definition"),
+        "Container": Utils.try_to_json(argv, "--Container"),
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "RemoveVideo": Utils.try_to_json(argv, "--RemoveVideo"),
+        "RemoveAudio": Utils.try_to_json(argv, "--RemoveAudio"),
+        "VideoTemplate": Utils.try_to_json(argv, "--VideoTemplate"),
+        "AudioTemplate": Utils.try_to_json(argv, "--AudioTemplate"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTranscodeTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyTranscodeTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCommitUpload(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -111,78 +227,6 @@ def doPullEvents(argv, arglist):
     model = models.PullEventsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.PullEvents(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTasks(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeTasks", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Status": Utils.try_to_json(argv, "--Status"),
-        "FileId": Utils.try_to_json(argv, "--FileId"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "ScrollToken": Utils.try_to_json(argv, "--ScrollToken"),
-        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTasksRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTasks(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSimpleHlsClip(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SimpleHlsClip", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Url": Utils.try_to_json(argv, "--Url"),
-        "StartTimeOffset": Utils.try_to_json(argv, "--StartTimeOffset"),
-        "EndTimeOffset": Utils.try_to_json(argv, "--EndTimeOffset"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SimpleHlsClipRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SimpleHlsClip(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -315,6 +359,149 @@ def doSearchMedia(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteWatermarkTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteWatermarkTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Definition": Utils.try_to_json(argv, "--Definition"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteWatermarkTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteWatermarkTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteTranscodeTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteTranscodeTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Definition": Utils.try_to_json(argv, "--Definition"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTranscodeTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteTranscodeTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskDetail(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskDetail", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskDetailRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskDetail(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyWatermarkTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyWatermarkTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Definition": Utils.try_to_json(argv, "--Definition"),
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "CoordinateOrigin": Utils.try_to_json(argv, "--CoordinateOrigin"),
+        "XPos": Utils.try_to_json(argv, "--XPos"),
+        "YPos": Utils.try_to_json(argv, "--YPos"),
+        "ImageTemplate": Utils.try_to_json(argv, "--ImageTemplate"),
+        "TextTemplate": Utils.try_to_json(argv, "--TextTemplate"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyWatermarkTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyWatermarkTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doProcessMedia(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -347,6 +534,82 @@ def doProcessMedia(argv, arglist):
     model = models.ProcessMediaRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ProcessMedia(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateWatermarkTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateWatermarkTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "CoordinateOrigin": Utils.try_to_json(argv, "--CoordinateOrigin"),
+        "XPos": Utils.try_to_json(argv, "--XPos"),
+        "YPos": Utils.try_to_json(argv, "--YPos"),
+        "ImageTemplate": Utils.try_to_json(argv, "--ImageTemplate"),
+        "TextTemplate": Utils.try_to_json(argv, "--TextTemplate"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateWatermarkTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateWatermarkTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSimpleHlsClip(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SimpleHlsClip", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Url": Utils.try_to_json(argv, "--Url"),
+        "StartTimeOffset": Utils.try_to_json(argv, "--StartTimeOffset"),
+        "EndTimeOffset": Utils.try_to_json(argv, "--EndTimeOffset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SimpleHlsClipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SimpleHlsClip(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -391,14 +654,15 @@ def doModifyClass(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTaskDetail(argv, arglist):
+def doDeleteMedia(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTaskDetail", g_param[OptionsDefine.Version])
+        show_help("DeleteMedia", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "FileId": Utils.try_to_json(argv, "--FileId"),
+        "DeleteParts": Utils.try_to_json(argv, "--DeleteParts"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -413,9 +677,121 @@ def doDescribeTaskDetail(argv, arglist):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskDetailRequest()
+    model = models.DeleteMediaRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskDetail(model)
+    rsp = client.DeleteMedia(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTasks(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTasks", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Status": Utils.try_to_json(argv, "--Status"),
+        "FileId": Utils.try_to_json(argv, "--FileId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "ScrollToken": Utils.try_to_json(argv, "--ScrollToken"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTasksRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTasks(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateClass(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateClass", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ParentId": Utils.try_to_json(argv, "--ParentId"),
+        "ClassName": Utils.try_to_json(argv, "--ClassName"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClassRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateClass(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTranscodeTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateTranscodeTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Container": Utils.try_to_json(argv, "--Container"),
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "RemoveVideo": Utils.try_to_json(argv, "--RemoveVideo"),
+        "RemoveAudio": Utils.try_to_json(argv, "--RemoveAudio"),
+        "VideoTemplate": Utils.try_to_json(argv, "--VideoTemplate"),
+        "AudioTemplate": Utils.try_to_json(argv, "--AudioTemplate"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTranscodeTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateTranscodeTemplate(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -504,40 +880,6 @@ def doModifyMediaInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doConfirmEvents(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ConfirmEvents", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "EventHandles": Utils.try_to_json(argv, "--EventHandles"),
-        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ConfirmEventsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ConfirmEvents(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeAllClass(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -571,15 +913,17 @@ def doDescribeAllClass(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteMedia(argv, arglist):
+def doDescribeWatermarkTemplates(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteMedia", g_param[OptionsDefine.Version])
+        show_help("DescribeWatermarkTemplates", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FileId": Utils.try_to_json(argv, "--FileId"),
-        "DeleteParts": Utils.try_to_json(argv, "--DeleteParts"),
+        "Definitions": Utils.try_to_json(argv, "--Definitions"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -594,9 +938,9 @@ def doDeleteMedia(argv, arglist):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteMediaRequest()
+    model = models.DescribeWatermarkTemplatesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteMedia(model)
+    rsp = client.DescribeWatermarkTemplates(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -606,21 +950,18 @@ def doDeleteMedia(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doApplyUpload(argv, arglist):
+def doDescribeTranscodeTemplates(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ApplyUpload", g_param[OptionsDefine.Version])
+        show_help("DescribeTranscodeTemplates", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MediaType": Utils.try_to_json(argv, "--MediaType"),
-        "MediaName": Utils.try_to_json(argv, "--MediaName"),
-        "CoverType": Utils.try_to_json(argv, "--CoverType"),
-        "Procedure": Utils.try_to_json(argv, "--Procedure"),
-        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
-        "StorageRegion": Utils.try_to_json(argv, "--StorageRegion"),
-        "ClassId": Utils.try_to_json(argv, "--ClassId"),
-        "SourceContext": Utils.try_to_json(argv, "--SourceContext"),
+        "Definitions": Utils.try_to_json(argv, "--Definitions"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "ContainerType": Utils.try_to_json(argv, "--ContainerType"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -635,44 +976,9 @@ def doApplyUpload(argv, arglist):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplyUploadRequest()
+    model = models.DescribeTranscodeTemplatesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ApplyUpload(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateClass(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateClass", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ParentId": Utils.try_to_json(argv, "--ParentId"),
-        "ClassName": Utils.try_to_json(argv, "--ClassName"),
-        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClassRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateClass(model)
+    rsp = client.DescribeTranscodeTemplates(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -693,24 +999,32 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "ConfirmEvents": doConfirmEvents,
+    "ApplyUpload": doApplyUpload,
+    "ModifyTranscodeTemplate": doModifyTranscodeTemplate,
     "CommitUpload": doCommitUpload,
     "DescribeMediaInfos": doDescribeMediaInfos,
     "PullEvents": doPullEvents,
-    "DescribeTasks": doDescribeTasks,
-    "SimpleHlsClip": doSimpleHlsClip,
     "LiveRealTimeClip": doLiveRealTimeClip,
     "ProcessMediaByUrl": doProcessMediaByUrl,
     "SearchMedia": doSearchMedia,
-    "ProcessMedia": doProcessMedia,
-    "ModifyClass": doModifyClass,
+    "DeleteWatermarkTemplate": doDeleteWatermarkTemplate,
+    "DeleteTranscodeTemplate": doDeleteTranscodeTemplate,
     "DescribeTaskDetail": doDescribeTaskDetail,
+    "ModifyWatermarkTemplate": doModifyWatermarkTemplate,
+    "ProcessMedia": doProcessMedia,
+    "CreateWatermarkTemplate": doCreateWatermarkTemplate,
+    "SimpleHlsClip": doSimpleHlsClip,
+    "ModifyClass": doModifyClass,
+    "DeleteMedia": doDeleteMedia,
+    "DescribeTasks": doDescribeTasks,
+    "CreateClass": doCreateClass,
+    "CreateTranscodeTemplate": doCreateTranscodeTemplate,
     "DeleteClass": doDeleteClass,
     "ModifyMediaInfo": doModifyMediaInfo,
-    "ConfirmEvents": doConfirmEvents,
     "DescribeAllClass": doDescribeAllClass,
-    "DeleteMedia": doDeleteMedia,
-    "ApplyUpload": doApplyUpload,
-    "CreateClass": doCreateClass,
+    "DescribeWatermarkTemplates": doDescribeWatermarkTemplates,
+    "DescribeTranscodeTemplates": doDescribeTranscodeTemplates,
 
 }
 

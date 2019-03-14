@@ -150,7 +150,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> scaling-group-id - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。"
+        "desc": "过滤条件。\n<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。"
       },
       {
         "name": "Limit",
@@ -183,7 +183,7 @@ INFO = {
         "desc": "CVM实例ID列表"
       }
     ],
-    "desc": "本接口（DettachInstances）用于从伸缩组移出 CVM 实例，本接口不会被销毁实例。"
+    "desc": "本接口（DetachInstances）用于从伸缩组移出 CVM 实例，本接口不会销毁实例。"
   },
   "CreateScheduledAction": {
     "params": [
