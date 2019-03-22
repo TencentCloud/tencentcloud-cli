@@ -14,9 +14,13 @@ INFO = {
       {
         "name": "ReportDate",
         "desc": "报告日期"
+      },
+      {
+        "name": "InstId",
+        "desc": "实例ID，不传默认为系统分配的初始实例。"
       }
     ],
-    "desc": "用于下载当日催收结果报表，当日23:00后，可获取当日催收结果。"
+    "desc": "用于下载当日催收和回访结果报表。当日23:00后，可获取当日催收结果，次日00:30后，可获取昨日回访结果。"
   },
   "DescribeRecords": {
     "params": [
@@ -88,6 +92,35 @@ INFO = {
     ],
     "desc": "客户通过调用该接口上传需催收文档，格式需为excel格式。接口返回任务ID。"
   },
+  "DescribeCreditResult": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作"
+      },
+      {
+        "name": "InstId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "ProductId",
+        "desc": "产品ID，形如P******。"
+      },
+      {
+        "name": "CaseId",
+        "desc": "信审任务ID"
+      },
+      {
+        "name": "RequestDate",
+        "desc": "请求日期"
+      }
+    ],
+    "desc": "根据信审任务ID和请求日期，获取相关信审结果。"
+  },
   "DescribeTaskStatus": {
     "params": [
       {
@@ -158,5 +191,38 @@ INFO = {
       }
     ],
     "desc": "加入黑名单的客户，将停止拨打。用于：\n将客户进行黑名单的增加和移除，用于对某些客户阶段性停催。\n"
+  },
+  "ApplyCreditAudit": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作"
+      },
+      {
+        "name": "InstId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "ProductId",
+        "desc": "产品ID，形如P******。"
+      },
+      {
+        "name": "CaseId",
+        "desc": "信审任务ID，同一天内，同一InstId下，同一CaseId只能调用一次。"
+      },
+      {
+        "name": "CallbackUrl",
+        "desc": "回调地址"
+      },
+      {
+        "name": "Data",
+        "desc": "JSON格式的业务字段。"
+      }
+    ],
+    "desc": "提交信审外呼申请，返回当次请求日期。"
   }
 }

@@ -40,6 +40,15 @@ INFO = {
     ],
     "desc": "本接口(DeleteAccounts)用于删除云数据库的账户。"
   },
+  "DescribeTimeWindow": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      }
+    ],
+    "desc": "本接口(DescribeTimeWindow)用于查询云数据库实例的维护时间窗口。"
+  },
   "DescribeDBInstanceCharset": {
     "params": [
       {
@@ -117,6 +126,43 @@ INFO = {
       }
     ],
     "desc": "本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息。"
+  },
+  "AddTimeWindow": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Monday",
+        "desc": "星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；下同。"
+      },
+      {
+        "name": "Tuesday",
+        "desc": "星期二的可维护时间窗口。"
+      },
+      {
+        "name": "Wednesday",
+        "desc": "星期三的可维护时间窗口。"
+      },
+      {
+        "name": "Thursday",
+        "desc": "星期四的可维护时间窗口。"
+      },
+      {
+        "name": "Friday",
+        "desc": "星期五的可维护时间窗口。"
+      },
+      {
+        "name": "Saturday",
+        "desc": "星期六的可维护时间窗口。"
+      },
+      {
+        "name": "Sunday",
+        "desc": "星期日的可维护时间窗口。"
+      }
+    ],
+    "desc": "本接口(AddTimeWindow)用于添加云数据库实例的维护时间窗口，以指定实例在哪些时间段可以自动执行切换访问操作。"
   },
   "IsolateDBInstance": {
     "params": [
@@ -394,14 +440,22 @@ INFO = {
     ],
     "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872)接口查询该实例的详细信息。当该实例的Status为1，且TaskStatus为0，表示实例已经发货成功。\n\n1. 首先请使用[获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229)接口查询可创建的实例规格信息，然后请使用[查询数据库价格](https://cloud.tencent.com/document/api/236/18566)接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL5.5、MySQL5.6和MySQL5.7 版本；\n4. 支持创建主实例、灾备实例和只读实例；\n5. 当入参指定Port或ParamList时，该实例会进行初始化操作；"
   },
-  "DescribeDefaultParams": {
+  "ModifyTimeWindow": {
     "params": [
       {
-        "name": "EngineVersion",
-        "desc": "mysql版本，目前支持[\"5.1\", \"5.5\", \"5.6\", \"5.7\"]"
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "TimeRanges",
+        "desc": "修改后的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起止时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；起止时间范围为：[00:00, 24:00]。"
+      },
+      {
+        "name": "Weekdays",
+        "desc": "指定修改哪一天的客户时间段，可能的取值为：monday, tuesday, wednesday, thursday, friday, saturday, sunday。如果不指定该值或者为空，则默认一周七天都修改。"
       }
     ],
-    "desc": "该接口（DescribeDefaultParams）用于查询默认的可设置参数列表。"
+    "desc": "本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。"
   },
   "ModifyDBInstanceName": {
     "params": [
@@ -644,6 +698,15 @@ INFO = {
       }
     ],
     "desc": "本接口(VerifyRootAccount)用于校验云数据库实例的ROOT账号是否有足够的权限进行授权操作。"
+  },
+  "DescribeDefaultParams": {
+    "params": [
+      {
+        "name": "EngineVersion",
+        "desc": "mysql版本，目前支持[\"5.1\", \"5.5\", \"5.6\", \"5.7\"]"
+      }
+    ],
+    "desc": "该接口（DescribeDefaultParams）用于查询默认的可设置参数列表。"
   },
   "RenewDBInstance": {
     "params": [
@@ -1307,30 +1370,14 @@ INFO = {
     ],
     "desc": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。"
   },
-  "DescribeBackupDatabases": {
+  "DeleteTimeWindow": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "开始时间，格式为：2017-07-12 10:29:20。"
-      },
-      {
-        "name": "SearchDatabase",
-        "desc": "要查询的数据库名前缀。"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页偏移量。"
-      },
-      {
-        "name": "Limit",
-        "desc": "分页大小，最小值为1，最大值为2000。"
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
       }
     ],
-    "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表。"
+    "desc": "本接口(DeleteTimeWindow)用于删除云数据库实例的维护时间窗口。删除实例维护时间窗口之后，默认的维护时间窗为 03:00-04:00，即当选择在维护时间窗口内切换访问新实例时，默认会在03:00-04:00点进行切换访问新实例。"
   },
   "DescribeTables": {
     "params": [
@@ -1356,5 +1403,30 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeTables)用于查询云数据库实例的数据库表信息。"
+  },
+  "DescribeBackupDatabases": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间，格式为：2017-07-12 10:29:20。"
+      },
+      {
+        "name": "SearchDatabase",
+        "desc": "要查询的数据库名前缀。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小，最小值为1，最大值为2000。"
+      }
+    ],
+    "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表。"
   }
 }

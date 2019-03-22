@@ -30,15 +30,6 @@ INFO = {
     ],
     "desc": "该接口用于运行函数。"
   },
-  "DeleteFunction": {
-    "params": [
-      {
-        "name": "FunctionName",
-        "desc": "要删除的函数名称"
-      }
-    ],
-    "desc": "该接口根据传入参数删除函数。"
-  },
   "GetFunction": {
     "params": [
       {
@@ -55,6 +46,64 @@ INFO = {
       }
     ],
     "desc": "该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。"
+  },
+  "CreateFunction": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60"
+      },
+      {
+        "name": "Code",
+        "desc": "函数的代码. 注意：不能同时指定Cos与ZipFile"
+      },
+      {
+        "name": "Handler",
+        "desc": "函数处理方法名称，名称格式支持 \"文件名称.方法名称\" 形式，文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符"
+      },
+      {
+        "name": "Description",
+        "desc": "函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文"
+      },
+      {
+        "name": "MemorySize",
+        "desc": "函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯"
+      },
+      {
+        "name": "Timeout",
+        "desc": "函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒"
+      },
+      {
+        "name": "Environment",
+        "desc": "函数的环境变量"
+      },
+      {
+        "name": "Runtime",
+        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7"
+      },
+      {
+        "name": "VpcConfig",
+        "desc": "函数的私有网络配置"
+      },
+      {
+        "name": "ClsLogsetId",
+        "desc": "函数日志投递到的CLS LogsetID"
+      },
+      {
+        "name": "ClsTopicId",
+        "desc": "函数日志投递到的CLS TopicID"
+      }
+    ],
+    "desc": "该接口根据传入参数创建新的函数。"
+  },
+  "DeleteFunction": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "要删除的函数名称"
+      }
+    ],
+    "desc": "该接口根据传入参数删除函数。"
   },
   "ListFunctions": {
     "params": [
@@ -77,6 +126,14 @@ INFO = {
       {
         "name": "SearchKey",
         "desc": "支持FunctionName模糊匹配"
+      },
+      {
+        "name": "Description",
+        "desc": "函数描述，支持模糊搜索"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。"
       }
     ],
     "desc": "该接口根据传入的查询参数返回相关函数信息。"
@@ -93,7 +150,7 @@ INFO = {
       },
       {
         "name": "Type",
-        "desc": "触发器类型，目前支持 cos 、cmq、 timers、 ckafka类型"
+        "desc": "触发器类型，目前支持 cos 、cmq、 timer、 ckafka类型"
       },
       {
         "name": "TriggerDesc",
@@ -102,9 +159,42 @@ INFO = {
       {
         "name": "Qualifier",
         "desc": "函数的版本"
+      },
+      {
+        "name": "Enable",
+        "desc": "触发器的初始是能状态 OPEN表示开启 CLOSE表示关闭"
       }
     ],
     "desc": "该接口根据参数输入设置新的触发方式。"
+  },
+  "CopyFunction": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数名"
+      },
+      {
+        "name": "NewFunctionName",
+        "desc": "新函数的名称"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间，默认为default"
+      },
+      {
+        "name": "TargetNamespace",
+        "desc": "将函数复制到的命名空间，默认为default"
+      },
+      {
+        "name": "Description",
+        "desc": "函数描述"
+      },
+      {
+        "name": "TargetRegion",
+        "desc": "要将函数复制到的地域，不填则默认为当前地域"
+      }
+    ],
+    "desc": "复制一个函数，可以选择将复制出的新函数放置在同一个namespace或另一个namespace。\n注：本接口**不会**复制函数的以下对象或属性：\n1. 函数的触发器\n2. 除了$LATEST以外的其它版本\n3. 函数配置的日志投递到的CLS目标\n\n如有需要，您可以在复制后手动修改新函数。"
   },
   "UpdateFunctionConfiguration": {
     "params": [
@@ -155,11 +245,11 @@ INFO = {
       },
       {
         "name": "Order",
-        "desc": "以升序还是降序的方式对日志进行排序，可选值 desc和 acs"
+        "desc": "以升序还是降序的方式对日志进行排序，可选值 desc和 asc"
       },
       {
         "name": "OrderBy",
-        "desc": "根据某个字段排序日志,支持以下字段：startTime、functionName、requestId、duration和 memUsage"
+        "desc": "根据某个字段排序日志,支持以下字段：function_name, duration, mem_usage, start_time"
       },
       {
         "name": "Filter",
@@ -182,48 +272,7 @@ INFO = {
         "desc": "查询的具体日期，例如：2017-05-16 20:59:59，只能与startTime相差一天之内"
       }
     ],
-    "desc": "该接口根据设置的日志查询条件返回函数日志。"
-  },
-  "CreateFunction": {
-    "params": [
-      {
-        "name": "FunctionName",
-        "desc": "创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60"
-      },
-      {
-        "name": "Code",
-        "desc": "函数的代码. 注意：不能同时指定Cos与ZipFile"
-      },
-      {
-        "name": "Handler",
-        "desc": "函数处理方法名称，名称格式支持 \"文件名称.方法名称\" 形式，文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符"
-      },
-      {
-        "name": "Description",
-        "desc": "函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文"
-      },
-      {
-        "name": "MemorySize",
-        "desc": "函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯"
-      },
-      {
-        "name": "Timeout",
-        "desc": "函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒"
-      },
-      {
-        "name": "Environment",
-        "desc": "函数的环境变量"
-      },
-      {
-        "name": "Runtime",
-        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7"
-      },
-      {
-        "name": "VpcConfig",
-        "desc": "函数的私有网络配置"
-      }
-    ],
-    "desc": "该接口根据传入参数创建新的函数。"
+    "desc": "该接口根据指定的日志查询条件返回函数运行日志。"
   },
   "DeleteTrigger": {
     "params": [
@@ -274,7 +323,7 @@ INFO = {
       },
       {
         "name": "CosBucketRegion",
-        "desc": "对象存储的地域，地域为北京时需要传入ap-beijing,北京一区时需要传递ap-beijing-1，其他的地域不需要传递。"
+        "desc": "对象存储的地域，注：北京分为ap-beijing和ap-beijing-1"
       }
     ],
     "desc": "该接口根据传入参数更新函数代码。"

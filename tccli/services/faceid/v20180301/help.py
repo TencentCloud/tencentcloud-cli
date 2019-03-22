@@ -51,6 +51,23 @@ INFO = {
     ],
     "desc": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。"
   },
+  "BankCardVerification": {
+    "params": [
+      {
+        "name": "IdCard",
+        "desc": "身份证号"
+      },
+      {
+        "name": "Name",
+        "desc": "姓名"
+      },
+      {
+        "name": "BankCard",
+        "desc": "银行卡"
+      }
+    ],
+    "desc": "银行卡核验"
+  },
   "LivenessRecognition": {
     "params": [
       {

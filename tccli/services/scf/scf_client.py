@@ -56,6 +56,39 @@ def doInvoke(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteFunction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteFunction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteFunctionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteFunction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetFunction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -91,80 +124,6 @@ def doGetFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateFunction(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateFunction", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "Code": Utils.try_to_json(argv, "--Code"),
-        "Handler": Utils.try_to_json(argv, "--Handler"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
-        "Timeout": Utils.try_to_json(argv, "--Timeout"),
-        "Environment": Utils.try_to_json(argv, "--Environment"),
-        "Runtime": Utils.try_to_json(argv, "--Runtime"),
-        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateFunctionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateFunction(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteFunction(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteFunction", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteFunctionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteFunction(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doListFunctions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -177,6 +136,8 @@ def doListFunctions(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+        "Description": Utils.try_to_json(argv, "--Description"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -193,43 +154,6 @@ def doListFunctions(argv, arglist):
     model = models.ListFunctionsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ListFunctions(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateTrigger(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateTrigger", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "TriggerName": Utils.try_to_json(argv, "--TriggerName"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "TriggerDesc": Utils.try_to_json(argv, "--TriggerDesc"),
-        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTriggerRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateTrigger(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -278,10 +202,10 @@ def doUpdateFunctionConfiguration(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTrigger(argv, arglist):
+def doCreateTrigger(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteTrigger", g_param[OptionsDefine.Version])
+        show_help("CreateTrigger", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -290,6 +214,7 @@ def doDeleteTrigger(argv, arglist):
         "Type": Utils.try_to_json(argv, "--Type"),
         "TriggerDesc": Utils.try_to_json(argv, "--TriggerDesc"),
         "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
+        "Enable": Utils.try_to_json(argv, "--Enable"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -303,9 +228,47 @@ def doDeleteTrigger(argv, arglist):
     client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTriggerRequest()
+    model = models.CreateTriggerRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteTrigger(model)
+    rsp = client.CreateTrigger(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCopyFunction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CopyFunction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "NewFunctionName": Utils.try_to_json(argv, "--NewFunctionName"),
+        "Namespace": Utils.try_to_json(argv, "--Namespace"),
+        "TargetNamespace": Utils.try_to_json(argv, "--TargetNamespace"),
+        "Description": Utils.try_to_json(argv, "--Description"),
+        "TargetRegion": Utils.try_to_json(argv, "--TargetRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CopyFunctionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CopyFunction(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -348,6 +311,86 @@ def doGetFunctionLogs(argv, arglist):
     model = models.GetFunctionLogsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetFunctionLogs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteTrigger(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteTrigger", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "TriggerName": Utils.try_to_json(argv, "--TriggerName"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "TriggerDesc": Utils.try_to_json(argv, "--TriggerDesc"),
+        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTriggerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteTrigger(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateFunction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateFunction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "Code": Utils.try_to_json(argv, "--Code"),
+        "Handler": Utils.try_to_json(argv, "--Handler"),
+        "Description": Utils.try_to_json(argv, "--Description"),
+        "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
+        "Timeout": Utils.try_to_json(argv, "--Timeout"),
+        "Environment": Utils.try_to_json(argv, "--Environment"),
+        "Runtime": Utils.try_to_json(argv, "--Runtime"),
+        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
+        "ClsLogsetId": Utils.try_to_json(argv, "--ClsLogsetId"),
+        "ClsTopicId": Utils.try_to_json(argv, "--ClsTopicId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateFunctionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateFunction(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -407,14 +450,15 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "Invoke": doInvoke,
-    "GetFunction": doGetFunction,
-    "CreateFunction": doCreateFunction,
     "DeleteFunction": doDeleteFunction,
+    "GetFunction": doGetFunction,
     "ListFunctions": doListFunctions,
-    "CreateTrigger": doCreateTrigger,
     "UpdateFunctionConfiguration": doUpdateFunctionConfiguration,
-    "DeleteTrigger": doDeleteTrigger,
+    "CreateTrigger": doCreateTrigger,
+    "CopyFunction": doCopyFunction,
     "GetFunctionLogs": doGetFunctionLogs,
+    "DeleteTrigger": doDeleteTrigger,
+    "CreateFunction": doCreateFunction,
     "UpdateFunctionCode": doUpdateFunctionCode,
 
 }

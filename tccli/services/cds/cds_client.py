@@ -12,23 +12,19 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.cr.v20180321 import cr_client as cr_client_v20180321
-from tencentcloud.cr.v20180321 import models as models_v20180321
-from tccli.services.cr import v20180321
-from tccli.services.cr.v20180321 import help as v20180321_help
+from tencentcloud.cds.v20180420 import cds_client as cds_client_v20180420
+from tencentcloud.cds.v20180420 import models as models_v20180420
+from tccli.services.cds import v20180420
+from tccli.services.cds.v20180420 import help as v20180420_help
 
 
-def doDownloadReport(argv, arglist):
+def doDescribeDbauditInstanceType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DownloadReport", g_param[OptionsDefine.Version])
+        show_help("DescribeDbauditInstanceType", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ReportDate": Utils.try_to_json(argv, "--ReportDate"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -39,12 +35,12 @@ def doDownloadReport(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DownloadReportRequest()
+    model = models.DescribeDbauditInstanceTypeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DownloadReport(model)
+    rsp = client.DescribeDbauditInstanceType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -54,23 +50,50 @@ def doDownloadReport(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRecords(argv, arglist):
+def doModifyDbauditInstancesRenewFlag(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeRecords", g_param[OptionsDefine.Version])
+        show_help("ModifyDbauditInstancesRenewFlag", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ProductId": Utils.try_to_json(argv, "--ProductId"),
-        "AccountNum": Utils.try_to_json(argv, "--AccountNum"),
-        "CalledPhone": Utils.try_to_json(argv, "--CalledPhone"),
-        "StartBizDate": Utils.try_to_json(argv, "--StartBizDate"),
-        "EndBizDate": Utils.try_to_json(argv, "--EndBizDate"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDbauditInstancesRenewFlagRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDbauditInstancesRenewFlag(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDbauditInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDbauditInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SearchRegion": Utils.try_to_json(argv, "--SearchRegion"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -81,12 +104,12 @@ def doDescribeRecords(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRecordsRequest()
+    model = models.DescribeDbauditInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeRecords(model)
+    rsp = client.DescribeDbauditInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -96,19 +119,18 @@ def doDescribeRecords(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCreditResult(argv, arglist):
+def doInquiryPriceDbauditInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeCreditResult", g_param[OptionsDefine.Version])
+        show_help("InquiryPriceDbauditInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
-        "ProductId": Utils.try_to_json(argv, "--ProductId"),
-        "CaseId": Utils.try_to_json(argv, "--CaseId"),
-        "RequestDate": Utils.try_to_json(argv, "--RequestDate"),
+        "InstanceVersion": Utils.try_to_json(argv, "--InstanceVersion"),
+        "InquiryType": Utils.try_to_json(argv, "--InquiryType"),
+        "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
+        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "ServiceRegion": Utils.try_to_json(argv, "--ServiceRegion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -119,12 +141,12 @@ def doDescribeCreditResult(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCreditResultRequest()
+    model = models.InquiryPriceDbauditInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCreditResult(model)
+    rsp = client.InquiryPriceDbauditInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -134,18 +156,13 @@ def doDescribeCreditResult(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUploadFile(argv, arglist):
+def doDescribeDbauditUsedRegions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UploadFile", g_param[OptionsDefine.Version])
+        show_help("DescribeDbauditUsedRegions", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
-        "FileName": Utils.try_to_json(argv, "--FileName"),
-        "FileDate": Utils.try_to_json(argv, "--FileDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -156,161 +173,12 @@ def doUploadFile(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UploadFileRequest()
+    model = models.DescribeDbauditUsedRegionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UploadFile(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTaskStatus(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskStatusRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskStatus(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUploadDataFile(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UploadDataFile", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "FileName": Utils.try_to_json(argv, "--FileName"),
-        "UploadModel": Utils.try_to_json(argv, "--UploadModel"),
-        "File": Utils.try_to_json(argv, "--File"),
-        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UploadDataFileRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.UploadDataFile(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doApplyBlackList(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ApplyBlackList", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "BlackList": Utils.try_to_json(argv, "--BlackList"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplyBlackListRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ApplyBlackList(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doApplyCreditAudit(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ApplyCreditAudit", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
-        "ProductId": Utils.try_to_json(argv, "--ProductId"),
-        "CaseId": Utils.try_to_json(argv, "--CaseId"),
-        "CallbackUrl": Utils.try_to_json(argv, "--CallbackUrl"),
-        "Data": Utils.try_to_json(argv, "--Data"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplyCreditAuditRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ApplyCreditAudit(model)
+    rsp = client.DescribeDbauditUsedRegions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -321,38 +189,35 @@ def doApplyCreditAudit(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180321": cr_client_v20180321,
+    "v20180420": cds_client_v20180420,
 
 }
 
 MODELS_MAP = {
-    "v20180321": models_v20180321,
+    "v20180420": models_v20180420,
 
 }
 
 ACTION_MAP = {
-    "DownloadReport": doDownloadReport,
-    "DescribeRecords": doDescribeRecords,
-    "DescribeCreditResult": doDescribeCreditResult,
-    "UploadFile": doUploadFile,
-    "DescribeTaskStatus": doDescribeTaskStatus,
-    "UploadDataFile": doUploadDataFile,
-    "ApplyBlackList": doApplyBlackList,
-    "ApplyCreditAudit": doApplyCreditAudit,
+    "DescribeDbauditInstanceType": doDescribeDbauditInstanceType,
+    "ModifyDbauditInstancesRenewFlag": doModifyDbauditInstancesRenewFlag,
+    "DescribeDbauditInstances": doDescribeDbauditInstances,
+    "InquiryPriceDbauditInstance": doInquiryPriceDbauditInstance,
+    "DescribeDbauditUsedRegions": doDescribeDbauditUsedRegions,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180321.version,
+    v20180420.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180321.version.replace('-', ''): {"help": v20180321_help.INFO,"desc": v20180321_help.DESC},
+     'v' + v20180420.version.replace('-', ''): {"help": v20180420_help.INFO,"desc": v20180420_help.DESC},
 
 }
 
 
-def cr_action(argv, arglist):
+def cds_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -368,7 +233,7 @@ def cr_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "cr", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "cds", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -389,7 +254,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("cr", cr_action)
+    cmd = NiceCommand("cds", cds_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -448,11 +313,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["cr"][OptionsDefine.Version]
+            version = config["cds"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["cr"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["cds"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -469,7 +334,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cr", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cds", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -479,7 +344,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["cr"]["version"]
+        version = profile["cds"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

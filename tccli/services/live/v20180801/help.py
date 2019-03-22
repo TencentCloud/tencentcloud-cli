@@ -22,6 +22,15 @@ INFO = {
     ],
     "desc": "断开推流连接，但可以重新推流"
   },
+  "ForbidLiveDomain": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "停用的直播域名"
+      }
+    ],
+    "desc": "停用使用某个直播域名"
+  },
   "CreateLiveTranscodeRule": {
     "params": [
       {
@@ -46,31 +55,6 @@ INFO = {
   "DescribeLiveSnapshotTemplates": {
     "params": [],
     "desc": "获取截图模板列表"
-  },
-  "ModifyLivePlayAuthKey": {
-    "params": [
-      {
-        "name": "DomainName",
-        "desc": "域名。"
-      },
-      {
-        "name": "Enable",
-        "desc": "是否启用，0：关闭，1：启用。"
-      },
-      {
-        "name": "AuthKey",
-        "desc": "鉴权key。"
-      },
-      {
-        "name": "AuthDelta",
-        "desc": "有效时间，单位：秒。"
-      },
-      {
-        "name": "AuthBackKey",
-        "desc": "鉴权backkey。"
-      }
-    ],
-    "desc": "修改播放鉴权key"
   },
   "CreateLiveRecord": {
     "params": [
@@ -197,30 +181,34 @@ INFO = {
     ],
     "desc": "修改录制模板配置"
   },
-  "AddDelayLiveStream": {
+  "CreatePullStreamConfig": {
     "params": [
       {
-        "name": "AppName",
-        "desc": "应用名称。"
+        "name": "FromUrl",
+        "desc": "源Url。"
       },
       {
-        "name": "DomainName",
-        "desc": "您的加速域名。"
+        "name": "ToUrl",
+        "desc": "目的Url，目前限制该目标地址为腾讯域名。"
       },
       {
-        "name": "StreamName",
-        "desc": "流名称。"
+        "name": "AreaId",
+        "desc": "区域id,1-深圳,2-上海，3-天津,4-香港。"
       },
       {
-        "name": "DelayTime",
-        "desc": "延播时间，单位：秒，上限：600秒。"
+        "name": "IspId",
+        "desc": "运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。"
       },
       {
-        "name": "ExpireTime",
-        "desc": "延播设置的过期时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：默认7天后过期，且最长支持7天内生效。"
+        "name": "StartTime",
+        "desc": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。"
       }
     ],
-    "desc": "对流设置延播时间\n注意：如果在推流前设置延播，需要提前5分钟设置。\n"
+    "desc": "添加拉流配置，目前限制添加10条任务。"
   },
   "CreateLiveWatermarkRule": {
     "params": [
@@ -243,14 +231,30 @@ INFO = {
     ],
     "desc": "创建水印规则，需要先调用[AddLiveWatermark](/document/product/267/30154)接口添加水印，将返回的水印id绑定到流使用。"
   },
-  "DeleteLiveCallbackTemplate": {
+  "ModifyLivePushAuthKey": {
     "params": [
       {
-        "name": "TemplateId",
-        "desc": "模板Id。"
+        "name": "DomainName",
+        "desc": "推流域名。"
+      },
+      {
+        "name": "Enable",
+        "desc": "是否启用，0：关闭，1：启用。"
+      },
+      {
+        "name": "MasterAuthKey",
+        "desc": "主鉴权key。"
+      },
+      {
+        "name": "BackupAuthKey",
+        "desc": "备鉴权key。"
+      },
+      {
+        "name": "AuthDelta",
+        "desc": "有效时间，单位：秒。"
       }
     ],
-    "desc": "删除回调模板"
+    "desc": "修改直播推流鉴权key"
   },
   "DescribeLiveStreamEventList": {
     "params": [
@@ -353,39 +357,55 @@ INFO = {
     ],
     "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
   },
-  "ModifyLivePushAuthKey": {
+  "AddDelayLiveStream": {
     "params": [
       {
+        "name": "AppName",
+        "desc": "应用名称。"
+      },
+      {
         "name": "DomainName",
+        "desc": "您的加速域名。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
+      },
+      {
+        "name": "DelayTime",
+        "desc": "延播时间，单位：秒，上限：600秒。"
+      },
+      {
+        "name": "ExpireTime",
+        "desc": "延播设置的过期时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：默认7天后过期，且最长支持7天内生效。"
+      }
+    ],
+    "desc": "对流设置延播时间\n注意：如果在推流前设置延播，需要提前5分钟设置。\n"
+  },
+  "DescribeLiveTranscodeDetailInfo": {
+    "params": [
+      {
+        "name": "DayTime",
+        "desc": "起始时间，北京时间，\n格式：yyyymmdd。\n注意：当前只支持查询近30天内某天的详细数据。"
+      },
+      {
+        "name": "PushDomain",
         "desc": "推流域名。"
       },
       {
-        "name": "Enable",
-        "desc": "是否启用，0：关闭，1：启用。"
+        "name": "StreamName",
+        "desc": "流名称。"
       },
       {
-        "name": "MasterAuthKey",
-        "desc": "主鉴权key。"
+        "name": "PageNum",
+        "desc": "页数，默认1，\n不超过100页。"
       },
       {
-        "name": "BackupAuthKey",
-        "desc": "备鉴权key。"
-      },
-      {
-        "name": "AuthDelta",
-        "desc": "有效时间，单位：秒。"
+        "name": "PageSize",
+        "desc": "每页个数，默认20，\n范围：[10,1000]。"
       }
     ],
-    "desc": "修改直播推流鉴权key"
-  },
-  "UnBindLiveDomainCert": {
-    "params": [
-      {
-        "name": "DomainName",
-        "desc": "播放域名。"
-      }
-    ],
-    "desc": "解绑域名证书"
+    "desc": "支持查询某天的转码详细信息。\n注意：当前只支持查询近30天内某天的详细数据。"
   },
   "DescribeLiveSnapshotRules": {
     "params": [],
@@ -502,26 +522,18 @@ INFO = {
     ],
     "desc": "删除截图规则"
   },
-  "DescribeLiveStreamOnlineInfo": {
+  "DeleteLiveDomainStrategy": {
     "params": [
       {
-        "name": "PageNum",
-        "desc": "取得第几页。\n默认值：1。"
+        "name": "PushDomainName",
+        "desc": "推流域名。"
       },
       {
-        "name": "PageSize",
-        "desc": "分页大小。\n最大值：100。\n取值范围：1~100 之前的任意整数。\n默认值：10。"
-      },
-      {
-        "name": "Status",
-        "desc": "0:未开始推流 1:正在推流"
-      },
-      {
-        "name": "StreamName",
-        "desc": "流名称。"
+        "name": "PlayDomainName",
+        "desc": "播放域名。"
       }
     ],
-    "desc": "查询在线推流信息列表"
+    "desc": "该接口用于删除已新增的播放和推流域名映射关系"
   },
   "DescribeLiveWatermarks": {
     "params": [],
@@ -540,34 +552,32 @@ INFO = {
     ],
     "desc": "删除转码模板"
   },
-  "CreatePullStreamConfig": {
+  "DeleteLiveSnapshotTemplate": {
     "params": [
       {
-        "name": "FromUrl",
-        "desc": "源Url。"
-      },
-      {
-        "name": "ToUrl",
-        "desc": "目的Url，目前限制该目标地址为腾讯域名。"
-      },
-      {
-        "name": "AreaId",
-        "desc": "区域id,1-深圳,2-上海，3-天津,4-香港。"
-      },
-      {
-        "name": "IspId",
-        "desc": "运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。"
-      },
-      {
-        "name": "EndTime",
-        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。"
+        "name": "TemplateId",
+        "desc": "模板Id。"
       }
     ],
-    "desc": "添加拉流配置，目前限制添加10条任务。"
+    "desc": "删除截图模板"
+  },
+  "DeleteLiveCallbackTemplate": {
+    "params": [
+      {
+        "name": "TemplateId",
+        "desc": "模板Id。"
+      }
+    ],
+    "desc": "删除回调模板"
+  },
+  "DescribeLivePushAuthKey": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "推流域名。"
+      }
+    ],
+    "desc": "查询直播推流鉴权key"
   },
   "DescribeLivePlayAuthKey": {
     "params": [
@@ -655,14 +665,40 @@ INFO = {
     ],
     "desc": "删除录制规则"
   },
-  "DeleteLiveSnapshotTemplate": {
+  "DescribeLiveDomain": {
     "params": [
       {
-        "name": "TemplateId",
-        "desc": "模板Id。"
+        "name": "DomainName",
+        "desc": "域名。"
       }
     ],
-    "desc": "删除截图模板"
+    "desc": "查询直播域名信息"
+  },
+  "AddLiveDomain": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "域名名称"
+      },
+      {
+        "name": "DomainType",
+        "desc": "域名类型。0-推流域名，1-播放域名"
+      },
+      {
+        "name": "PlayType",
+        "desc": "拉流域名类型。1-国内；2-全球；3-境外"
+      }
+    ],
+    "desc": "添加域名，一次只能提交一个域名。域名必须已备案。"
+  },
+  "EnableLiveDomain": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "待启用的直播域名"
+      }
+    ],
+    "desc": "启用状态为停用的直播域名"
   },
   "CreateLiveCallbackRule": {
     "params": [
@@ -710,6 +746,23 @@ INFO = {
   "DescribeLiveCallbackRules": {
     "params": [],
     "desc": "获取回调规则列表"
+  },
+  "DescribeLiveTranscodeRules": {
+    "params": [],
+    "desc": "获取转码规则列表"
+  },
+  "SetLiveWatermarkStatus": {
+    "params": [
+      {
+        "name": "WatermarkId",
+        "desc": "水印ID。"
+      },
+      {
+        "name": "Status",
+        "desc": "状态。0：停用，1:启用"
+      }
+    ],
+    "desc": "设置水印是否启用"
   },
   "ModifyLiveCert": {
     "params": [
@@ -769,6 +822,48 @@ INFO = {
     ],
     "desc": "返回已经推过流的流列表"
   },
+  "ModifyLivePlayAuthKey": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "域名。"
+      },
+      {
+        "name": "Enable",
+        "desc": "是否启用，0：关闭，1：启用。"
+      },
+      {
+        "name": "AuthKey",
+        "desc": "鉴权key。"
+      },
+      {
+        "name": "AuthDelta",
+        "desc": "有效时间，单位：秒。"
+      },
+      {
+        "name": "AuthBackKey",
+        "desc": "鉴权backkey。"
+      }
+    ],
+    "desc": "修改播放鉴权key"
+  },
+  "ModifyLiveDomainCert": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "播放域名。"
+      },
+      {
+        "name": "CertId",
+        "desc": "证书Id。"
+      },
+      {
+        "name": "Status",
+        "desc": "状态，0：关闭  1：打开。"
+      }
+    ],
+    "desc": "修改域名和证书绑定信息"
+  },
   "ModifyLiveSnapshotTemplate": {
     "params": [
       {
@@ -814,22 +909,18 @@ INFO = {
     ],
     "desc": "修改截图模板配置"
   },
-  "ModifyLiveDomainCert": {
+  "DeleteLiveCallbackRule": {
     "params": [
       {
         "name": "DomainName",
-        "desc": "播放域名。"
+        "desc": "推流域名。"
       },
       {
-        "name": "CertId",
-        "desc": "证书Id。"
-      },
-      {
-        "name": "Status",
-        "desc": "状态，0：关闭  1：打开。"
+        "name": "AppName",
+        "desc": "推流路径。"
       }
     ],
-    "desc": "修改域名和证书绑定信息"
+    "desc": "删除回调规则"
   },
   "ResumeDelayLiveStream": {
     "params": [
@@ -869,11 +960,11 @@ INFO = {
       },
       {
         "name": "Vcodec",
-        "desc": "视频编码：\nh264/h265。默认h264"
+        "desc": "视频编码：h264/h265，默认h264。\n注意：当前该参数未生效，待后续支持！"
       },
       {
         "name": "Acodec",
-        "desc": "音频编码：\naac/mp3。默认原始音频格式"
+        "desc": "音频编码：aac，默认原始音频格式。\n注意：当前该参数未生效，待后续支持！"
       },
       {
         "name": "AudioBitrate",
@@ -889,11 +980,11 @@ INFO = {
       },
       {
         "name": "NeedVideo",
-        "desc": "是否保留视频，0：否，1：是。默认1。"
+        "desc": "是否保留视频，0：否，1：是。默认1。\n注意：当前该参数未生效，待后续支持！"
       },
       {
         "name": "NeedAudio",
-        "desc": "是否保留音频，0：否，1：是。默认1。"
+        "desc": "是否保留音频，0：否，1：是。默认1。\n注意：当前该参数未生效，待后续支持！"
       },
       {
         "name": "Height",
@@ -988,22 +1079,56 @@ INFO = {
     ],
     "desc": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板id绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。"
   },
-  "DescribeLiveTranscodeRules": {
-    "params": [],
-    "desc": "获取转码规则列表"
-  },
-  "SetLiveWatermarkStatus": {
+  "DescribeLiveStreamOnlineInfo": {
     "params": [
       {
-        "name": "WatermarkId",
-        "desc": "水印ID。"
+        "name": "PageNum",
+        "desc": "取得第几页。\n默认值：1。"
+      },
+      {
+        "name": "PageSize",
+        "desc": "分页大小。\n最大值：100。\n取值范围：1~100 之前的任意整数。\n默认值：10。"
       },
       {
         "name": "Status",
-        "desc": "状态。0：停用，1:启用"
+        "desc": "0:未开始推流 1:正在推流"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
       }
     ],
-    "desc": "设置水印是否启用"
+    "desc": "查询在线推流信息列表"
+  },
+  "DescribeLiveDomains": {
+    "params": [
+      {
+        "name": "DomainStatus",
+        "desc": "域名状态过滤。0-停用，1-启用"
+      },
+      {
+        "name": "DomainType",
+        "desc": "域名类型过滤。0-推流，1-播放"
+      },
+      {
+        "name": "PageSize",
+        "desc": "分页大小，范围：10~100。默认10"
+      },
+      {
+        "name": "PageNum",
+        "desc": "取第几页，范围：1~100000。默认1"
+      }
+    ],
+    "desc": "根据域名状态、类型等信息查询用户的域名信息"
+  },
+  "UnBindLiveDomainCert": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "播放域名。"
+      }
+    ],
+    "desc": "解绑域名证书"
   },
   "ForbidLiveStream": {
     "params": [
@@ -1039,18 +1164,18 @@ INFO = {
     ],
     "desc": "修改直播拉流配置状态"
   },
-  "DeleteLiveCallbackRule": {
+  "ModifyLivePlayDomain": {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。"
+        "desc": "播放域名。"
       },
       {
-        "name": "AppName",
-        "desc": "推流路径。"
+        "name": "PlayType",
+        "desc": "拉流域名类型。1-国内；2-全球；3-境外"
       }
     ],
-    "desc": "删除回调规则"
+    "desc": "修改播放域名信息"
   },
   "ModifyPullStreamConfig": {
     "params": [
@@ -1115,6 +1240,19 @@ INFO = {
     ],
     "desc": "获取单个回调模板"
   },
+  "CreateLiveDomainStrategy": {
+    "params": [
+      {
+        "name": "PushDomainName",
+        "desc": "推流域名。"
+      },
+      {
+        "name": "PlayDomainName",
+        "desc": "播放域名。"
+      }
+    ],
+    "desc": "该接口用于新增直播推流和播放的域名映射"
+  },
   "DescribeLiveStreamOnlineList": {
     "params": [
       {
@@ -1139,6 +1277,28 @@ INFO = {
       }
     ],
     "desc": "返回正在直播中的流列表"
+  },
+  "DescribeLiveDomainStrategys": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "查询某个域名的鉴权规则"
+      }
+    ],
+    "desc": "该接口用于查询已有域名策略"
+  },
+  "DeleteLiveDomain": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "要删除的域名"
+      },
+      {
+        "name": "DomainType",
+        "desc": "类型。0-推流，1-播放"
+      }
+    ],
+    "desc": "删除已添加的直播域名"
   },
   "ModifyLiveCallbackTemplate": {
     "params": [
@@ -1245,14 +1405,26 @@ INFO = {
     ],
     "desc": "添加证书"
   },
-  "DescribeLivePushAuthKey": {
+  "DescribeStreamPlayInfoList": {
     "params": [
       {
-        "name": "DomainName",
-        "desc": "推流域名。"
+        "name": "StartTime",
+        "desc": "开始时间，北京时间，\n当前时间 和 开始时间 间隔不超过30天。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，北京时间，\n结束时间 和 开始时间  必须在同一天内。"
+      },
+      {
+        "name": "PlayDomain",
+        "desc": "播放域名，\n若不填，则为查询所有播放域名的在线流数据。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称，精确匹配。\n若不填，则为查询总体播放数据。"
       }
     ],
-    "desc": "查询直播推流鉴权key"
+    "desc": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。"
   },
   "DeletePullStreamConfig": {
     "params": [
