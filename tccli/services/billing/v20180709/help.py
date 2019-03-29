@@ -1,6 +1,35 @@
 # -*- coding: utf-8 -*-
 DESC = "billing-2018-07-09"
 INFO = {
+  "DescribeAccountBalance": {
+    "params": [],
+    "desc": "获取云账户余额信息。"
+  },
+  "DescribeDosageDetailByDate": {
+    "params": [
+      {
+        "name": "StartDate",
+        "desc": "查询账单开始日期，如 2019-01-01"
+      },
+      {
+        "name": "EndDate",
+        "desc": "查询账单结束日期，如 2019-01-01"
+      },
+      {
+        "name": "ProductCode",
+        "desc": "视频业务：\n10194   互动直播-核心机房           :\n10195   互动直播-边缘机房\n\ncdn业务：\n10180：CDN静态加速流量(国内)\n10181：CDN静态加速带宽(国内)\n10182：CDN静态加速普通流量\n10183：CDN静态加速普通带宽\n10231：CDN静态加速流量(海外)\n10232：CDN静态加速带宽(海外)\n\n100967：弹性公网IP-按流量计费\n101065：公网负载均衡-按流量计费"
+      },
+      {
+        "name": "Domain",
+        "desc": "查询域名 例如 www.qq.com\n非CDN业务查询时可以设置为空"
+      },
+      {
+        "name": "InstanceID",
+        "desc": "1、如果为空，则返回EIP或CLB所有实例的明细；\n2、如果传入实例名，则返回该实例明细"
+      }
+    ],
+    "desc": "按日期获取产品用量明细"
+  },
   "DescribeBillDetail": {
     "params": [
       {
@@ -30,31 +59,6 @@ INFO = {
     ],
     "desc": "查询账单明细数据"
   },
-  "DescribeAccountBalance": {
-    "params": [],
-    "desc": "获取云账户余额信息。"
-  },
-  "DescribeBillResourceSummary": {
-    "params": [
-      {
-        "name": "Offset",
-        "desc": "偏移量"
-      },
-      {
-        "name": "Limit",
-        "desc": "数量，最大值为1000"
-      },
-      {
-        "name": "PeriodType",
-        "desc": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。"
-      },
-      {
-        "name": "Month",
-        "desc": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。"
-      }
-    ],
-    "desc": "查询账单资源汇总数据"
-  },
   "DescribeDealsByCond": {
     "params": [
       {
@@ -83,6 +87,27 @@ INFO = {
       }
     ],
     "desc": "查询订单"
+  },
+  "DescribeBillResourceSummary": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "数量，最大值为1000"
+      },
+      {
+        "name": "PeriodType",
+        "desc": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。"
+      },
+      {
+        "name": "Month",
+        "desc": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。"
+      }
+    ],
+    "desc": "查询账单资源汇总数据"
   },
   "PayDeals": {
     "params": [

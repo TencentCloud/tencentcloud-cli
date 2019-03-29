@@ -18,44 +18,6 @@ from tccli.services.billing import v20180709
 from tccli.services.billing.v20180709 import help as v20180709_help
 
 
-def doDescribeBillDetail(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeBillDetail", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PeriodType": Utils.try_to_json(argv, "--PeriodType"),
-        "Month": Utils.try_to_json(argv, "--Month"),
-        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBillDetailRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeBillDetail(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeAccountBalance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -88,16 +50,18 @@ def doDescribeAccountBalance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doPayDeals(argv, arglist):
+def doDescribeDosageDetailByDate(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("PayDeals", g_param[OptionsDefine.Version])
+        show_help("DescribeDosageDetailByDate", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "OrderIds": Utils.try_to_json(argv, "--OrderIds"),
-        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
-        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+        "StartDate": Utils.try_to_json(argv, "--StartDate"),
+        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "ProductCode": Utils.try_to_json(argv, "--ProductCode"),
+        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "InstanceID": Utils.try_to_json(argv, "--InstanceID"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -111,9 +75,47 @@ def doPayDeals(argv, arglist):
     client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PayDealsRequest()
+    model = models.DescribeDosageDetailByDateRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.PayDeals(model)
+    rsp = client.DescribeDosageDetailByDate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBillDetail(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeBillDetail", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "PeriodType": Utils.try_to_json(argv, "--PeriodType"),
+        "Month": Utils.try_to_json(argv, "--Month"),
+        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBillDetailRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeBillDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -197,6 +199,41 @@ def doDescribeBillResourceSummary(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doPayDeals(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PayDeals", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "OrderIds": Utils.try_to_json(argv, "--OrderIds"),
+        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
+        "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PayDealsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PayDeals(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180709": billing_client_v20180709,
 
@@ -208,11 +245,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeBillDetail": doDescribeBillDetail,
     "DescribeAccountBalance": doDescribeAccountBalance,
-    "PayDeals": doPayDeals,
+    "DescribeDosageDetailByDate": doDescribeDosageDetailByDate,
+    "DescribeBillDetail": doDescribeBillDetail,
     "DescribeDealsByCond": doDescribeDealsByCond,
     "DescribeBillResourceSummary": doDescribeBillResourceSummary,
+    "PayDeals": doPayDeals,
 
 }
 

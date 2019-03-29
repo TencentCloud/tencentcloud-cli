@@ -18,7 +18,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。"
+        "desc": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。\n<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>\n<li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>\n<li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>"
       },
       {
         "name": "Offset",
@@ -59,7 +59,7 @@ INFO = {
         "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "查询协议端口模板集合"
+    "desc": "本接口（DescribeServiceTemplateGroups）用于查询协议端口模板集合"
   },
   "DescribeRouteTables": {
     "params": [
@@ -295,7 +295,7 @@ INFO = {
         "desc": "IP地址模板集合实例ID，例如：ipmg-90cex8mq。"
       }
     ],
-    "desc": "删除IP地址模板集合"
+    "desc": "本接口（DeleteAddressTemplateGroup）用于删除IP地址模板集合"
   },
   "DescribeCustomerGatewayVendors": {
     "params": [],
@@ -337,7 +337,7 @@ INFO = {
         "desc": "支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。"
       }
     ],
-    "desc": "修改协议端口模板"
+    "desc": "本接口（ModifyServiceTemplateAttribute）用于修改协议端口模板"
   },
   "DescribeClassicLinkInstances": {
     "params": [
@@ -550,7 +550,7 @@ INFO = {
         "desc": "包月带宽结束时间"
       }
     ],
-    "desc": "接口用于调整[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)(简称EIP)带宽，包括后付费EIP, 预付费EIP和带宽包EIP"
+    "desc": "本接口（ModifyAddressesBandwidth）用于调整[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)(简称EIP)带宽，包括后付费EIP, 预付费EIP和带宽包EIP"
   },
   "DescribeVpnConnections": {
     "params": [
@@ -560,7 +560,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。"
+        "desc": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>\n<li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>\n<li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>\n<li>vpn-connection-name - String - 通道名称，形如：`test-vpn`。</li>\n<li>vpn-connection-id - String - 通道实例ID，形如：`vpnx-5p7vkch8\"`。</li>"
       },
       {
         "name": "Offset",
@@ -609,7 +609,7 @@ INFO = {
         "desc": "地址信息，支持 IP、CIDR、IP 范围。"
       }
     ],
-    "desc": "修改IP地址模板"
+    "desc": "本接口（ModifyAddressTemplateAttribute）用于修改IP地址模板"
   },
   "AcceptAttachCcnInstances": {
     "params": [
@@ -631,7 +631,7 @@ INFO = {
         "desc": "协议端口模板集合实例ID，例如：ppmg-n17uxvve。"
       }
     ],
-    "desc": "删除协议端口模板集合"
+    "desc": "本接口（DeleteServiceTemplateGroup）用于删除协议端口模板集合"
   },
   "DescribeIp6Translators": {
     "params": [
@@ -1033,7 +1033,7 @@ INFO = {
         "desc": "协议端口模板实例ID，例如：ppm-e6dy460g。"
       }
     ],
-    "desc": "删除协议端口模板"
+    "desc": "本接口（DeleteServiceTemplate）用于删除协议端口模板"
   },
   "UnassignPrivateIpAddresses": {
     "params": [
@@ -1063,7 +1063,7 @@ INFO = {
         "desc": "IP地址模板实例ID， 例如：ipm-mdunqeb6。"
       }
     ],
-    "desc": "修改IP地址模板集合"
+    "desc": "本接口（ModifyAddressTemplateGroupAttribute）用于修改IP地址模板集合"
   },
   "DescribeCcnRoutes": {
     "params": [
@@ -1183,7 +1183,7 @@ INFO = {
         "desc": "IP地址模板实例ID，例如：ipm-09o5m8kc。"
       }
     ],
-    "desc": "删除IP地址模板"
+    "desc": "本接口（DeleteAddressTemplate）用于删除IP地址模板"
   },
   "DeleteVpnGateway": {
     "params": [
@@ -1205,7 +1205,7 @@ INFO = {
         "desc": "支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。"
       }
     ],
-    "desc": "创建协议端口模板"
+    "desc": "本接口（CreateServiceTemplate）用于创建协议端口模板"
   },
   "DeleteRoutes": {
     "params": [
@@ -1517,7 +1517,7 @@ INFO = {
         "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "查询协议端口模板"
+    "desc": "本接口（DescribeServiceTemplates）用于查询协议端口模板"
   },
   "HaVipAssociateAddressIp": {
     "params": [
@@ -1970,7 +1970,7 @@ INFO = {
         "desc": "协议端口模板实例ID，例如：ppm-4dw6agho。"
       }
     ],
-    "desc": "创建协议端口模板集合"
+    "desc": "本接口（CreateServiceTemplateGroup）用于创建协议端口模板集合"
   },
   "ModifyCcnAttribute": {
     "params": [
@@ -2000,7 +2000,7 @@ INFO = {
         "desc": "IP地址模版实例ID，例如：ipm-mdunqeb6。"
       }
     ],
-    "desc": "创建IP地址模版集合"
+    "desc": "本接口（CreateAddressTemplateGroup）用于创建IP地址模版集合"
   },
   "ModifyIp6Translator": {
     "params": [
@@ -2030,7 +2030,7 @@ INFO = {
         "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "查询IP地址模板"
+    "desc": "本接口（DescribeAddressTemplates）用于查询IP地址模板"
   },
   "CreateAddressTemplate": {
     "params": [
@@ -2043,7 +2043,7 @@ INFO = {
         "desc": "地址信息，支持 IP、CIDR、IP 范围。"
       }
     ],
-    "desc": "创建IP地址模版"
+    "desc": "本接口（CreateAddressTemplate）用于创建IP地址模版"
   },
   "ModifyAddressAttribute": {
     "params": [
@@ -2073,7 +2073,7 @@ INFO = {
         "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "查询IP地址模板集合"
+    "desc": "本接口（DescribeAddressTemplateGroups）用于查询IP地址模板集合"
   },
   "TransformAddress": {
     "params": [

@@ -154,7 +154,7 @@ INFO = {
       },
       {
         "name": "UploadModel",
-        "desc": "上传类型，不填默认催收文件，催收文件为data，还款文件为repay。"
+        "desc": "<p>上传类型，不填默认催收文件，取值范围：</p><ul style=\"margin-bottom:0px;\"><li>data：催收文件</li><li>repay：还款文件</li><li>callback：回访文件</li></ul>"
       },
       {
         "name": "File",
@@ -169,7 +169,7 @@ INFO = {
         "desc": "实例ID，不传默认为系统分配的初始实例。"
       }
     ],
-    "desc": "该接口包含上传：\n1、入催文件 — 用于每天入催文件的上传；\n2、还款文件 — 实时上传当前已还款客户，用于还款客户的实时停催；\n接口返回数据任务ID，支持xlsx、xls、csv、zip格式，文档大小不超过50MB。"
+    "desc": "<p>该接口包含上传下列文件：</p>\n<ol style=\"margin-bottom:10px;\">\n  <li>入催文件：用于每天入催文件的上传</li>\n  <li>回访文件：用于每天贷中回访文件的上传</li>\n  <li>还款文件：实时上传当前已还款客户，用于还款客户的实时停催</li>\n</ol>\n接口返回数据任务ID，支持xlsx、xls、csv、zip格式，文档大小不超过50MB。"
   },
   "ApplyBlackList": {
     "params": [
