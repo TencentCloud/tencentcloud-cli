@@ -1,5 +1,7 @@
 # 命令行工具简介
 欢迎使用腾讯云命令行工具(TCCLI)，TCCLI是管理腾讯云资源的统一工具。通过腾讯云命令行工具，您可以快速轻松的调用腾讯云 API来管理您的腾讯云资源。您还可以基于腾讯云的命令行工具来做自动化和脚本处理，能够以更多样的方式进行组合和重用。
+
+*Read this in other languages: [English](README.en.md)*
 # 安装TCCLI
 1. 安装 Python 环境和 Pip 工具，安装命令行工具前请确保您的系统已经安装了 Python 环境和 Pip 工具。**注意python版本必须为2.7及以上版本**,更多内容请参考[python主页](https://www.python.org/)和[pip主页](https://pypi.org/project/pip/)。
 2. TCCLI依赖于TencentCloudApi Python SDK，**如果TencentCloudApi Python SDK的版本号小于要安装TCCLI版本号，在安装TCCLI时会自动升级TencentCloudApi Python SDK**。
