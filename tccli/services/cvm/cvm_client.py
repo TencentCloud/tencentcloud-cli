@@ -1363,7 +1363,6 @@ def doInquiryPriceResetInstancesType(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
-        "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

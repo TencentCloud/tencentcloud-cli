@@ -464,7 +464,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateName",
-        "desc": "模板名称。非空的字符串"
+        "desc": "模板名称。非空的字符串。"
       },
       {
         "name": "CosAppId",
@@ -488,15 +488,15 @@ INFO = {
       },
       {
         "name": "Width",
-        "desc": "截图宽度。默认：0（原始高）"
+        "desc": "截图宽度。默认：0（原始宽）。"
       },
       {
         "name": "Height",
-        "desc": "截图高度。默认：0（原始宽）"
+        "desc": "截图高度。默认：0（原始高）。"
       },
       {
         "name": "PornFlag",
-        "desc": "是否开启鉴黄，0：不开启，1：开启。默认：0."
+        "desc": "是否开启鉴黄，0：不开启，1：开启。默认：0。"
       }
     ],
     "desc": "创建截图模板，成功返回模板id后，需要调用[CreateLiveSnapshotRule](/document/product/267/32625)接口，将模板id绑定到流使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
@@ -1116,6 +1116,23 @@ INFO = {
     ],
     "desc": "支持查询某天的转码详细信息。\n注意：当前只支持查询近30天内某天的详细数据。"
   },
+  "DescribeLogDownloadList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "开始时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。\n注意：结束时间 - 开始时间 <=7天。"
+      },
+      {
+        "name": "PlayDomains",
+        "desc": "域名列表。"
+      }
+    ],
+    "desc": "批量获取日志URL。"
+  },
   "DescribeLiveStreamOnlineInfo": {
     "params": [
       {
@@ -1191,7 +1208,7 @@ INFO = {
       },
       {
         "name": "TemplateId",
-        "desc": "模板ID"
+        "desc": "模板ID。"
       }
     ],
     "desc": "创建回调规则，需要先调用[CreateLiveCallbackTemplate](/document/product/267/32637)接口创建回调模板，将返回的模板id绑定到域名/路径进行使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。"
@@ -1433,7 +1450,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板ID。"
       }
     ],
     "desc": "删除录制模板"
@@ -1446,7 +1463,7 @@ INFO = {
       },
       {
         "name": "VideoBitrate",
-        "desc": "视频码率。"
+        "desc": "视频码率。范围：100-8000。"
       },
       {
         "name": "Vcodec",
@@ -1458,7 +1475,7 @@ INFO = {
       },
       {
         "name": "AudioBitrate",
-        "desc": "音频码率：默认0。0-500"
+        "desc": "音频码率：默认0。0-500。"
       },
       {
         "name": "Description",
@@ -1466,7 +1483,7 @@ INFO = {
       },
       {
         "name": "Width",
-        "desc": "款，默认0。"
+        "desc": "宽，默认0。"
       },
       {
         "name": "NeedVideo",
