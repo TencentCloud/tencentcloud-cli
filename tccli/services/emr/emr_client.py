@@ -18,6 +18,156 @@ from tccli.services.emr import v20190103
 from tccli.services.emr.v20190103 import help as v20190103_help
 
 
+def doTerminateTasks(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TerminateTasks", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TerminateTasksRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TerminateTasks(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTerminateInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TerminateInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TerminateInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TerminateInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "VPCSettings": Utils.try_to_json(argv, "--VPCSettings"),
+        "Software": Utils.try_to_json(argv, "--Software"),
+        "ResourceSpec": Utils.try_to_json(argv, "--ResourceSpec"),
+        "SupportHA": Utils.try_to_json(argv, "--SupportHA"),
+        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
+        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
+        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
+        "COSSettings": Utils.try_to_json(argv, "--COSSettings"),
+        "SgId": Utils.try_to_json(argv, "--SgId"),
+        "PreExecutedFileSettings": Utils.try_to_json(argv, "--PreExecutedFileSettings"),
+        "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doInquiryPriceCreateInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -59,6 +209,86 @@ def doInquiryPriceCreateInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doInquiryPriceScaleOutInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquiryPriceScaleOutInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
+        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
+        "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "CoreCount": Utils.try_to_json(argv, "--CoreCount"),
+        "TaskCount": Utils.try_to_json(argv, "--TaskCount"),
+        "Currency": Utils.try_to_json(argv, "--Currency"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquiryPriceScaleOutInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InquiryPriceScaleOutInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doScaleOutInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ScaleOutInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
+        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "PreExecutedFileSettings": Utils.try_to_json(argv, "--PreExecutedFileSettings"),
+        "TaskCount": Utils.try_to_json(argv, "--TaskCount"),
+        "CoreCount": Utils.try_to_json(argv, "--CoreCount"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ScaleOutInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ScaleOutInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20190103": emr_client_v20190103,
 
@@ -70,7 +300,13 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "TerminateTasks": doTerminateTasks,
+    "DescribeInstances": doDescribeInstances,
+    "TerminateInstance": doTerminateInstance,
+    "CreateInstance": doCreateInstance,
     "InquiryPriceCreateInstance": doInquiryPriceCreateInstance,
+    "InquiryPriceScaleOutInstance": doInquiryPriceScaleOutInstance,
+    "ScaleOutInstance": doScaleOutInstance,
 
 }
 

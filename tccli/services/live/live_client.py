@@ -538,6 +538,7 @@ def doDescribeLiveRecordTemplates(argv, arglist):
         return
 
     param = {
+        "IsDelayLive": Utils.try_to_json(argv, "--IsDelayLive"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1430,6 +1431,7 @@ def doDescribeLiveDomains(argv, arglist):
         "DomainType": Utils.try_to_json(argv, "--DomainType"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
+        "IsDelayLive": Utils.try_to_json(argv, "--IsDelayLive"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2442,6 +2444,7 @@ def doAddLiveDomain(argv, arglist):
         "DomainName": Utils.try_to_json(argv, "--DomainName"),
         "DomainType": Utils.try_to_json(argv, "--DomainType"),
         "PlayType": Utils.try_to_json(argv, "--PlayType"),
+        "IsDelayLive": Utils.try_to_json(argv, "--IsDelayLive"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2581,6 +2584,7 @@ def doCreateLiveRecordTemplate(argv, arglist):
         "HlsParam": Utils.try_to_json(argv, "--HlsParam"),
         "Mp4Param": Utils.try_to_json(argv, "--Mp4Param"),
         "AacParam": Utils.try_to_json(argv, "--AacParam"),
+        "IsDelayLive": Utils.try_to_json(argv, "--IsDelayLive"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

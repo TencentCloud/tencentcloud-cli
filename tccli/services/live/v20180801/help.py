@@ -330,7 +330,12 @@ INFO = {
     "desc": "修改直播拉流配置状态"
   },
   "DescribeLiveRecordTemplates": {
-    "params": [],
+    "params": [
+      {
+        "name": "IsDelayLive",
+        "desc": "是否属于慢直播模板"
+      }
+    ],
     "desc": "获取录制模板列表"
   },
   "ModifyLiveDomainCert": {
@@ -809,6 +814,10 @@ INFO = {
       {
         "name": "PageNum",
         "desc": "取第几页，范围：1~100000。默认1"
+      },
+      {
+        "name": "IsDelayLive",
+        "desc": "0 普通直播 1慢直播 默认0"
       }
     ],
     "desc": "根据域名状态、类型等信息查询用户的域名信息"
@@ -1194,7 +1203,7 @@ INFO = {
         "desc": "域名。"
       }
     ],
-    "desc": "查询直播域名信息"
+    "desc": "查询直播域名信息。"
   },
   "CreateLiveCallbackRule": {
     "params": [
@@ -1276,15 +1285,19 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "域名名称"
+        "desc": "域名名称。"
       },
       {
         "name": "DomainType",
-        "desc": "域名类型。0-推流域名，1-播放域名"
+        "desc": "域名类型，\n0：推流域名，\n1：播放域名。"
       },
       {
         "name": "PlayType",
-        "desc": "拉流域名类型。1-国内；2-全球；3-境外"
+        "desc": "拉流域名类型：\n1：国内，\n2：全球，\n3：境外。"
+      },
+      {
+        "name": "IsDelayLive",
+        "desc": "默认 0 ：普通直播，\n1：慢直播。"
       }
     ],
     "desc": "添加域名，一次只能提交一个域名。域名必须已备案。"
@@ -1348,6 +1361,10 @@ INFO = {
       {
         "name": "AacParam",
         "desc": "Aac录制参数，开启Aac录制时设置。"
+      },
+      {
+        "name": "IsDelayLive",
+        "desc": "0：普通直播，\n1：慢直播。"
       }
     ],
     "desc": "创建录制模板，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。"
