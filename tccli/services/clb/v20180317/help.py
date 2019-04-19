@@ -13,7 +13,7 @@ INFO = {
       },
       {
         "name": "Targets",
-        "desc": "要注册的后端机器列表"
+        "desc": "要注册的后端机器列表，数组长度最大支持20"
       },
       {
         "name": "LocationId",
@@ -269,6 +269,10 @@ INFO = {
       {
         "name": "WithRs",
         "desc": "查询的负载均衡是否绑定后端服务器，0：没有绑定云服务器，1：绑定云服务器，-1：查询全部。"
+      },
+      {
+        "name": "VpcId",
+        "desc": "负载均衡实例所属网络，如 vpc-bhqkbhdx"
       }
     ],
     "desc": "查询负载均衡实例列表\n"
@@ -489,7 +493,7 @@ INFO = {
       },
       {
         "name": "Targets",
-        "desc": "要解绑的后端机器列表"
+        "desc": "要解绑的后端机器列表，数组长度最大支持20"
       },
       {
         "name": "LocationId",
@@ -527,6 +531,19 @@ INFO = {
       }
     ],
     "desc": "DescribeClassicalLBByInstanceId用于通过后端实例ID获取传统型负载均衡ID列表"
+  },
+  "BatchModifyTargetWeight": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
+      },
+      {
+        "name": "ModifyList",
+        "desc": "要批量修改权重的列表"
+      }
+    ],
+    "desc": "BatchModifyTargetWeight接口用于批量修改监听器绑定的后端机器的转发权重，当前接口只支持应用型HTTP/HTTPS监听器。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "CreateLoadBalancer": {
     "params": [

@@ -720,6 +720,19 @@ INFO = {
     ],
     "desc": "本接口（ModifyImageAttribute）用于修改镜像属性。\n\n* 已分享的镜像无法修改属性。"
   },
+  "DescribeInstancesOperationLimit": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "按照一个或者多个实例ID查询，可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)API返回值中的InstanceId获取。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的id.N一节）。每次请求的实例的上限为100。"
+      },
+      {
+        "name": "Operation",
+        "desc": "实例操作。\n<li> INSTANCE_DEGRADE：实例降配操作</li>"
+      }
+    ],
+    "desc": "本接口（DescribeInstancesOperationLimit）用于查询实例操作限制。\n\n* 目前支持调整配置操作限制次数查询。"
+  },
   "InquiryPriceResetInstancesType": {
     "params": [
       {
@@ -1050,6 +1063,10 @@ INFO = {
       {
         "name": "HostCount",
         "desc": "购买CDH实例数量。"
+      },
+      {
+        "name": "TagSpecification",
+        "desc": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例。"
       }
     ],
     "desc": "本接口 (AllocateHosts) 用于创建一个或多个指定配置的CDH实例。\n* 当HostChargeType为PREPAID时，必须指定HostChargePrepaid参数。"
