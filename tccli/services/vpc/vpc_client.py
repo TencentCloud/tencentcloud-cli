@@ -266,15 +266,14 @@ def doCreateRouteTable(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReplaceRouteTableAssociation(argv, arglist):
+def doAssignIpv6CidrBlock(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ReplaceRouteTableAssociation", g_param[OptionsDefine.Version])
+        show_help("AssignIpv6CidrBlock", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "RouteTableId": Utils.try_to_json(argv, "--RouteTableId"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -288,9 +287,9 @@ def doReplaceRouteTableAssociation(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReplaceRouteTableAssociationRequest()
+    model = models.AssignIpv6CidrBlockRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ReplaceRouteTableAssociation(model)
+    rsp = client.AssignIpv6CidrBlock(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -508,6 +507,40 @@ def doDescribeGatewayFlowMonitorDetail(argv, arglist):
     model = models.DescribeGatewayFlowMonitorDetailRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeGatewayFlowMonitorDetail(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnassignIpv6Addresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnassignIpv6Addresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NetworkInterfaceId": Utils.try_to_json(argv, "--NetworkInterfaceId"),
+        "Ipv6Addresses": Utils.try_to_json(argv, "--Ipv6Addresses"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnassignIpv6AddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnassignIpv6Addresses(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -886,6 +919,40 @@ def doCreateSubnets(argv, arglist):
     model = models.CreateSubnetsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateSubnets(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReplaceRouteTableAssociation(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ReplaceRouteTableAssociation", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "RouteTableId": Utils.try_to_json(argv, "--RouteTableId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReplaceRouteTableAssociationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ReplaceRouteTableAssociation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1459,6 +1526,40 @@ def doAddBandwidthPackageResources(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAssignIpv6SubnetCidrBlock(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AssignIpv6SubnetCidrBlock", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "Ipv6SubnetCidrBlocks": Utils.try_to_json(argv, "--Ipv6SubnetCidrBlocks"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssignIpv6SubnetCidrBlockRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AssignIpv6SubnetCidrBlock(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAllocateAddresses(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1483,6 +1584,42 @@ def doAllocateAddresses(argv, arglist):
     model = models.AllocateAddressesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.AllocateAddresses(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVpcIpv6Addresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpcIpv6Addresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "Ipv6Addresses": Utils.try_to_json(argv, "--Ipv6Addresses"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVpcIpv6AddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVpcIpv6Addresses(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2099,6 +2236,40 @@ def doReplaceRoutes(argv, arglist):
     model = models.ReplaceRoutesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ReplaceRoutes(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnassignIpv6SubnetCidrBlock(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnassignIpv6SubnetCidrBlock", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "Ipv6SubnetCidrBlocks": Utils.try_to_json(argv, "--Ipv6SubnetCidrBlocks"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnassignIpv6SubnetCidrBlockRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnassignIpv6SubnetCidrBlock(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3206,6 +3377,40 @@ def doDisassociateAddress(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyIpv6AddressesAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyIpv6AddressesAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NetworkInterfaceId": Utils.try_to_json(argv, "--NetworkInterfaceId"),
+        "Ipv6Addresses": Utils.try_to_json(argv, "--Ipv6Addresses"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyIpv6AddressesAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyIpv6AddressesAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDirectConnectGateways(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -3308,6 +3513,41 @@ def doDescribeAccountAttributes(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAssignIpv6Addresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AssignIpv6Addresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NetworkInterfaceId": Utils.try_to_json(argv, "--NetworkInterfaceId"),
+        "Ipv6Addresses": Utils.try_to_json(argv, "--Ipv6Addresses"),
+        "Ipv6AddressCount": Utils.try_to_json(argv, "--Ipv6AddressCount"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssignIpv6AddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AssignIpv6Addresses(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doMigratePrivateIpAddress(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -3369,6 +3609,40 @@ def doDescribeServiceTemplates(argv, arglist):
     model = models.DescribeServiceTemplatesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeServiceTemplates(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnassignIpv6CidrBlock(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnassignIpv6CidrBlock", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "Ipv6CidrBlock": Utils.try_to_json(argv, "--Ipv6CidrBlock"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnassignIpv6CidrBlockRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnassignIpv6CidrBlock(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -4813,13 +5087,14 @@ ACTION_MAP = {
     "DescribeRouteTables": doDescribeRouteTables,
     "CreateBandwidthPackage": doCreateBandwidthPackage,
     "CreateRouteTable": doCreateRouteTable,
-    "ReplaceRouteTableAssociation": doReplaceRouteTableAssociation,
+    "AssignIpv6CidrBlock": doAssignIpv6CidrBlock,
     "EnableCcnRoutes": doEnableCcnRoutes,
     "ModifyServiceTemplateGroupAttribute": doModifyServiceTemplateGroupAttribute,
     "DescribeCcnAttachedInstances": doDescribeCcnAttachedInstances,
     "ResetRoutes": doResetRoutes,
     "ModifyPrivateIpAddressesAttribute": doModifyPrivateIpAddressesAttribute,
     "DescribeGatewayFlowMonitorDetail": doDescribeGatewayFlowMonitorDetail,
+    "UnassignIpv6Addresses": doUnassignIpv6Addresses,
     "DeleteVpnConnection": doDeleteVpnConnection,
     "ModifyAddressTemplateGroupAttribute": doModifyAddressTemplateGroupAttribute,
     "DescribeCustomerGatewayVendors": doDescribeCustomerGatewayVendors,
@@ -4831,6 +5106,7 @@ ACTION_MAP = {
     "InquiryPriceRenewVpnGateway": doInquiryPriceRenewVpnGateway,
     "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
     "CreateSubnets": doCreateSubnets,
+    "ReplaceRouteTableAssociation": doReplaceRouteTableAssociation,
     "DescribeVpcs": doDescribeVpcs,
     "InquiryPriceResetVpnGatewayInternetMaxBandwidth": doInquiryPriceResetVpnGatewayInternetMaxBandwidth,
     "DeleteDirectConnectGatewayCcnRoutes": doDeleteDirectConnectGatewayCcnRoutes,
@@ -4847,7 +5123,9 @@ ACTION_MAP = {
     "CreateVpc": doCreateVpc,
     "ModifyIp6Rule": doModifyIp6Rule,
     "AddBandwidthPackageResources": doAddBandwidthPackageResources,
+    "AssignIpv6SubnetCidrBlock": doAssignIpv6SubnetCidrBlock,
     "AllocateAddresses": doAllocateAddresses,
+    "DescribeVpcIpv6Addresses": doDescribeVpcIpv6Addresses,
     "RenewVpnGateway": doRenewVpnGateway,
     "AttachCcnInstances": doAttachCcnInstances,
     "AssociateAddress": doAssociateAddress,
@@ -4866,6 +5144,7 @@ ACTION_MAP = {
     "DetachNetworkInterface": doDetachNetworkInterface,
     "DeleteNetworkInterface": doDeleteNetworkInterface,
     "ReplaceRoutes": doReplaceRoutes,
+    "UnassignIpv6SubnetCidrBlock": doUnassignIpv6SubnetCidrBlock,
     "DescribeRouteConflicts": doDescribeRouteConflicts,
     "DisableRoutes": doDisableRoutes,
     "DescribeCcnRegionBandwidthLimits": doDescribeCcnRegionBandwidthLimits,
@@ -4898,11 +5177,14 @@ ACTION_MAP = {
     "DescribeVpnGateways": doDescribeVpnGateways,
     "DeleteRouteTable": doDeleteRouteTable,
     "DisassociateAddress": doDisassociateAddress,
+    "ModifyIpv6AddressesAttribute": doModifyIpv6AddressesAttribute,
     "DescribeDirectConnectGateways": doDescribeDirectConnectGateways,
     "ModifyIp6Translator": doModifyIp6Translator,
     "DescribeAccountAttributes": doDescribeAccountAttributes,
+    "AssignIpv6Addresses": doAssignIpv6Addresses,
     "MigratePrivateIpAddress": doMigratePrivateIpAddress,
     "DescribeServiceTemplates": doDescribeServiceTemplates,
+    "UnassignIpv6CidrBlock": doUnassignIpv6CidrBlock,
     "HaVipAssociateAddressIp": doHaVipAssociateAddressIp,
     "RemoveIp6Rules": doRemoveIp6Rules,
     "DescribeHaVips": doDescribeHaVips,

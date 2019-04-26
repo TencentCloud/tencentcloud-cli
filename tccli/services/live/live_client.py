@@ -1722,6 +1722,7 @@ def doDescribeStreamPlayInfoList(argv, arglist):
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
         "PlayDomain": Utils.try_to_json(argv, "--PlayDomain"),
         "StreamName": Utils.try_to_json(argv, "--StreamName"),
+        "AppName": Utils.try_to_json(argv, "--AppName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2478,9 +2479,9 @@ def doCreateLiveRecordRule(argv, arglist):
 
     param = {
         "DomainName": Utils.try_to_json(argv, "--DomainName"),
+        "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
         "AppName": Utils.try_to_json(argv, "--AppName"),
         "StreamName": Utils.try_to_json(argv, "--StreamName"),
-        "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2585,6 +2586,7 @@ def doCreateLiveRecordTemplate(argv, arglist):
         "Mp4Param": Utils.try_to_json(argv, "--Mp4Param"),
         "AacParam": Utils.try_to_json(argv, "--AacParam"),
         "IsDelayLive": Utils.try_to_json(argv, "--IsDelayLive"),
+        "HlsSpecialParam": Utils.try_to_json(argv, "--HlsSpecialParam"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

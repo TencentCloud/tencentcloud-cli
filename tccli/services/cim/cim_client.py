@@ -12,28 +12,19 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tbaas.v20180416 import tbaas_client as tbaas_client_v20180416
-from tencentcloud.tbaas.v20180416 import models as models_v20180416
-from tccli.services.tbaas import v20180416
-from tccli.services.tbaas.v20180416 import help as v20180416_help
+from tencentcloud.cim.v20190318 import cim_client as cim_client_v20190318
+from tencentcloud.cim.v20190318 import models as models_v20190318
+from tccli.services.cim import v20190318
+from tccli.services.cim.v20190318 import help as v20190318_help
 
 
-def doQuery(argv, arglist):
+def doDescribeSdkAppid(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Query", g_param[OptionsDefine.Version])
+        show_help("DescribeSdkAppid", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "ChaincodeName": Utils.try_to_json(argv, "--ChaincodeName"),
-        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
-        "Peers": Utils.try_to_json(argv, "--Peers"),
-        "FuncName": Utils.try_to_json(argv, "--FuncName"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "Args": Utils.try_to_json(argv, "--Args"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -44,94 +35,12 @@ def doQuery(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CimClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryRequest()
+    model = models.DescribeSdkAppidRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Query(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetInvokeTx(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GetInvokeTx", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
-        "PeerName": Utils.try_to_json(argv, "--PeerName"),
-        "PeerGroup": Utils.try_to_json(argv, "--PeerGroup"),
-        "TxId": Utils.try_to_json(argv, "--TxId"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetInvokeTxRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.GetInvokeTx(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doInvoke(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("Invoke", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "ChaincodeName": Utils.try_to_json(argv, "--ChaincodeName"),
-        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
-        "Peers": Utils.try_to_json(argv, "--Peers"),
-        "FuncName": Utils.try_to_json(argv, "--FuncName"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "Args": Utils.try_to_json(argv, "--Args"),
-        "AsyncFlag": Utils.try_to_json(argv, "--AsyncFlag"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InvokeRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.Invoke(model)
+    rsp = client.DescribeSdkAppid(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -142,33 +51,31 @@ def doInvoke(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180416": tbaas_client_v20180416,
+    "v20190318": cim_client_v20190318,
 
 }
 
 MODELS_MAP = {
-    "v20180416": models_v20180416,
+    "v20190318": models_v20190318,
 
 }
 
 ACTION_MAP = {
-    "Query": doQuery,
-    "GetInvokeTx": doGetInvokeTx,
-    "Invoke": doInvoke,
+    "DescribeSdkAppid": doDescribeSdkAppid,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180416.version,
+    v20190318.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180416.version.replace('-', ''): {"help": v20180416_help.INFO,"desc": v20180416_help.DESC},
+     'v' + v20190318.version.replace('-', ''): {"help": v20190318_help.INFO,"desc": v20190318_help.DESC},
 
 }
 
 
-def tbaas_action(argv, arglist):
+def cim_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -184,7 +91,7 @@ def tbaas_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "tbaas", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "cim", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -205,7 +112,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("tbaas", tbaas_action)
+    cmd = NiceCommand("cim", cim_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -264,11 +171,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["tbaas"][OptionsDefine.Version]
+            version = config["cim"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["tbaas"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["cim"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -285,7 +192,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tbaas", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cim", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -295,7 +202,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["tbaas"]["version"]
+        version = profile["cim"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

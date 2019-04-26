@@ -18,6 +18,40 @@ from tccli.services.vod import v20180717
 from tccli.services.vod.v20180717 import help as v20180717_help
 
 
+def doDeleteAIAnalysisTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteAIAnalysisTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Definition": Utils.try_to_json(argv, "--Definition"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteAIAnalysisTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteAIAnalysisTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doConfirmEvents(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -194,6 +228,42 @@ def doDescribeMediaInfos(argv, arglist):
     model = models.DescribeMediaInfosRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeMediaInfos(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAIAnalysisTemplates(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAIAnalysisTemplates", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Definitions": Utils.try_to_json(argv, "--Definitions"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAIAnalysisTemplatesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAIAnalysisTemplates(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -496,6 +566,46 @@ def doModifyWatermarkTemplate(argv, arglist):
     model = models.ModifyWatermarkTemplateRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyWatermarkTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyAIAnalysisTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyAIAnalysisTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Definition": Utils.try_to_json(argv, "--Definition"),
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "ClassificationConfigure": Utils.try_to_json(argv, "--ClassificationConfigure"),
+        "TagConfigure": Utils.try_to_json(argv, "--TagConfigure"),
+        "CoverConfigure": Utils.try_to_json(argv, "--CoverConfigure"),
+        "FrameTagConfigure": Utils.try_to_json(argv, "--FrameTagConfigure"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAIAnalysisTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyAIAnalysisTemplate(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1026,6 +1136,45 @@ def doModifyMediaInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateAIAnalysisTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateAIAnalysisTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "ClassificationConfigure": Utils.try_to_json(argv, "--ClassificationConfigure"),
+        "TagConfigure": Utils.try_to_json(argv, "--TagConfigure"),
+        "CoverConfigure": Utils.try_to_json(argv, "--CoverConfigure"),
+        "FrameTagConfigure": Utils.try_to_json(argv, "--FrameTagConfigure"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateAIAnalysisTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateAIAnalysisTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAllClass(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1149,11 +1298,13 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DeleteAIAnalysisTemplate": doDeleteAIAnalysisTemplate,
     "ConfirmEvents": doConfirmEvents,
     "ApplyUpload": doApplyUpload,
     "ModifyTranscodeTemplate": doModifyTranscodeTemplate,
     "CommitUpload": doCommitUpload,
     "DescribeMediaInfos": doDescribeMediaInfos,
+    "DescribeAIAnalysisTemplates": doDescribeAIAnalysisTemplates,
     "PullEvents": doPullEvents,
     "LiveRealTimeClip": doLiveRealTimeClip,
     "ProcessMediaByUrl": doProcessMediaByUrl,
@@ -1162,6 +1313,7 @@ ACTION_MAP = {
     "DeleteTranscodeTemplate": doDeleteTranscodeTemplate,
     "DescribeTaskDetail": doDescribeTaskDetail,
     "ModifyWatermarkTemplate": doModifyWatermarkTemplate,
+    "ModifyAIAnalysisTemplate": doModifyAIAnalysisTemplate,
     "DeleteProcedureTemplate": doDeleteProcedureTemplate,
     "DescribeProcedureTemplates": doDescribeProcedureTemplates,
     "DescribeTranscodeTemplates": doDescribeTranscodeTemplates,
@@ -1176,6 +1328,7 @@ ACTION_MAP = {
     "ProcessMedia": doProcessMedia,
     "DeleteClass": doDeleteClass,
     "ModifyMediaInfo": doModifyMediaInfo,
+    "CreateAIAnalysisTemplate": doCreateAIAnalysisTemplate,
     "DescribeAllClass": doDescribeAllClass,
     "DescribeWatermarkTemplates": doDescribeWatermarkTemplates,
     "CreateWatermarkTemplate": doCreateWatermarkTemplate,

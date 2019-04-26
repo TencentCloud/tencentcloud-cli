@@ -129,6 +129,76 @@ INFO = {
     ],
     "desc": "本接口（DeleteAutoScalingGroup）用于删除指定伸缩组，删除前提是伸缩组内无实例且当前未在执行伸缩活动。"
   },
+  "CreatePaiInstance": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "PAI实例的域名。"
+      },
+      {
+        "name": "InternetAccessible",
+        "desc": "公网带宽相关信息设置。"
+      },
+      {
+        "name": "InitScript",
+        "desc": "启动脚本的base64编码字符串。"
+      },
+      {
+        "name": "Zones",
+        "desc": "可用区列表。"
+      },
+      {
+        "name": "VpcId",
+        "desc": "VpcId。"
+      },
+      {
+        "name": "SubnetIds",
+        "desc": "子网列表。"
+      },
+      {
+        "name": "InstanceName",
+        "desc": "实例显示名称。"
+      },
+      {
+        "name": "InstanceTypes",
+        "desc": "实例机型列表。"
+      },
+      {
+        "name": "LoginSettings",
+        "desc": "实例登录设置。"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "实例计费类型。"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。"
+      }
+    ],
+    "desc": "本接口 (CreatePaiInstance) 用于创建一个指定配置的PAI实例。"
+  },
+  "DescribeLaunchConfigurations": {
+    "params": [
+      {
+        "name": "LaunchConfigurationIds",
+        "desc": "按照一个或者多个启动配置ID查询。启动配置ID形如：`asc-ouy1ax38`。每次请求的上限为100。参数不支持同时指定`LaunchConfigurationIds`和`Filters`"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "本接口（DescribeLaunchConfigurations）用于查询启动配置的信息。\n\n* 可以根据启动配置ID、启动配置名称等信息来查询启动配置的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的启动配置。"
+  },
   "AttachInstances": {
     "params": [
       {
@@ -243,6 +313,27 @@ INFO = {
       }
     ],
     "desc": "本接口（DeleteScalingPolicy）用于删除告警触发策略。"
+  },
+  "CompleteLifecycleAction": {
+    "params": [
+      {
+        "name": "LifecycleHookId",
+        "desc": "生命周期挂钩ID"
+      },
+      {
+        "name": "LifecycleActionResult",
+        "desc": "生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个"
+      },
+      {
+        "name": "LifecycleActionToken",
+        "desc": "“InstanceId”和“LifecycleActionToken”必须填充其中一个"
+      }
+    ],
+    "desc": "本接口（CompleteLifecycleAction）用于完成生命周期动作。\n\n* 用户通过调用本接口，指定一个具体的生命周期挂钩的结果（“CONITNUE”或者“ABANDON”）。如果一直不调用本接口，则生命周期挂钩会在超时后按照“DefaultResult”进行处理。\n"
   },
   "ModifyLoadBalancers": {
     "params": [
@@ -369,6 +460,10 @@ INFO = {
       {
         "name": "InstanceTypesCheckPolicy",
         "desc": "实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。"
+      },
+      {
+        "name": "InstanceTags",
+        "desc": "标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。"
       }
     ],
     "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置，可以通过 `ModifyLaunchConfigurationAttributes` 修改少量字段。如需使用新的启动配置，建议重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"
@@ -451,36 +546,6 @@ INFO = {
     ],
     "desc": "本接口（CreateNotificationConfiguration）用于创建通知。"
   },
-  "DescribeLaunchConfigurations": {
-    "params": [
-      {
-        "name": "LaunchConfigurationIds",
-        "desc": "按照一个或者多个启动配置ID查询。启动配置ID形如：`asc-ouy1ax38`。每次请求的上限为100。参数不支持同时指定`LaunchConfigurationIds`和`Filters`"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      }
-    ],
-    "desc": "本接口（DescribeLaunchConfigurations）用于查询启动配置的信息。\n\n* 可以根据启动配置ID、启动配置名称等信息来查询启动配置的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的启动配置。"
-  },
-  "DisableAutoScalingGroup": {
-    "params": [
-      {
-        "name": "AutoScalingGroupId",
-        "desc": "伸缩组ID"
-      }
-    ],
-    "desc": "本接口（DisableAutoScalingGroup）用于停用指定伸缩组。"
-  },
   "DescribeAutoScalingInstances": {
     "params": [
       {
@@ -501,6 +566,111 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeAutoScalingInstances）用于查询弹性伸缩关联实例的信息。\n\n* 可以根据实例ID、伸缩组ID等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。"
+  },
+  "CreateLifecycleHook": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      },
+      {
+        "name": "LifecycleHookName",
+        "desc": "生命周期挂钩名称"
+      },
+      {
+        "name": "LifecycleTransition",
+        "desc": "进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”"
+      },
+      {
+        "name": "DefaultResult",
+        "desc": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”"
+      },
+      {
+        "name": "HeartbeatTimeout",
+        "desc": "生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒"
+      },
+      {
+        "name": "NotificationMetadata",
+        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为''"
+      },
+      {
+        "name": "NotificationTarget",
+        "desc": "通知目标"
+      }
+    ],
+    "desc": "本接口（CreateLifecycleHook）用于创建生命周期挂钩。\n\n* 您可以为生命周期挂钩配置消息通知，弹性伸缩会通知您的CMQ消息队列，通知内容形如：\n\n```\n{\n\t\"Service\": \"Tencent Cloud Auto Scaling\",\n\t\"Time\": \"2019-03-14T10:15:11Z\",\n\t\"AppId\": \"1251783334\",\n\t\"ActivityId\": \"asa-fznnvrja\",\n\t\"AutoScalingGroupId\": \"asg-rrrrtttt\",\n\t\"LifecycleHookId\": \"ash-xxxxyyyy\",\n\t\"LifecycleHookName\": \"my-hook\",\n\t\"LifecycleActionToken\": \"3080e1c9-0efe-4dd7-ad3b-90cd6618298f\",\n\t\"InstanceId\": \"ins-aaaabbbb\",\n\t\"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n\t\"NotificationMetadata\": \"\"\n}\n```"
+  },
+  "UpgradeLifecycleHook": {
+    "params": [
+      {
+        "name": "LifecycleHookId",
+        "desc": "生命周期挂钩ID"
+      },
+      {
+        "name": "LifecycleHookName",
+        "desc": "生命周期挂钩名称"
+      },
+      {
+        "name": "LifecycleTransition",
+        "desc": "进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”"
+      },
+      {
+        "name": "DefaultResult",
+        "desc": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”"
+      },
+      {
+        "name": "HeartbeatTimeout",
+        "desc": "生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒"
+      },
+      {
+        "name": "NotificationMetadata",
+        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为''"
+      },
+      {
+        "name": "NotificationTarget",
+        "desc": "通知目标"
+      }
+    ],
+    "desc": "本接口（UpgradeLifecycleHook）用于升级生命周期挂钩。\n\n* 本接口用于升级生命周期挂钩，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。\n"
+  },
+  "DisableAutoScalingGroup": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      }
+    ],
+    "desc": "本接口（DisableAutoScalingGroup）用于停用指定伸缩组。"
+  },
+  "PreviewPaiDomainName": {
+    "params": [
+      {
+        "name": "DomainNameType",
+        "desc": "域名类型"
+      }
+    ],
+    "desc": "本接口（PreviewPaiDomainName）用于预览PAI实例域名。\n"
+  },
+  "DescribePaiInstances": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "依据PAI实例的实例ID进行查询。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      }
+    ],
+    "desc": "本接口（DescribePaiInstances）用于查询PAI实例信息。\n\n* 可以根据实例ID、实例域名等信息来查询PAI实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的PAI实例。"
   },
   "CreateScalingPolicy": {
     "params": [
@@ -544,6 +714,36 @@ INFO = {
     ],
     "desc": "本接口（DeleteLaunchConfiguration）用于删除启动配置。\n\n* 若启动配置在伸缩组中属于生效状态，则该启动配置不允许删除。\n"
   },
+  "DeleteLifecycleHook": {
+    "params": [
+      {
+        "name": "LifecycleHookId",
+        "desc": "生命周期挂钩ID"
+      }
+    ],
+    "desc": "本接口（DeleteLifecycleHook）用于删除生命周期挂钩。"
+  },
+  "DescribeLifecycleHooks": {
+    "params": [
+      {
+        "name": "LifecycleHookIds",
+        "desc": "按照一个或者多个生命周期挂钩ID查询。生命周期挂钩ID形如：`ash-8azjzxcl`。每次请求的上限为100。参数不支持同时指定`LifecycleHookIds`和`Filters`。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>\n<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n过滤条件。\n<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>\n<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LifecycleHookIds `和`Filters`。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "本接口（DescribeLifecycleHooks）用于查询生命周期挂钩信息。\n\n* 可以根据伸缩组ID、生命周期挂钩ID或者生命周期挂钩名称等信息来查询生命周期挂钩的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的生命周期挂钩。"
+  },
   "EnableAutoScalingGroup": {
     "params": [
       {
@@ -553,32 +753,15 @@ INFO = {
     ],
     "desc": "本接口（EnableAutoScalingGroup）用于启用指定伸缩组。"
   },
-  "DescribeScheduledActions": {
-    "params": [
-      {
-        "name": "ScheduledActionIds",
-        "desc": "按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
-      }
-    ],
-    "desc": "本接口 (DescribeScheduledActions) 用于查询一个或多个定时任务的详细信息。\n\n* 可以根据定时任务ID、定时任务名称或者伸缩组ID等信息来查询定时任务的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的定时任务。"
+  "DescribeAccountLimits": {
+    "params": [],
+    "desc": "本接口（DescribeAccountLimits）用于查询用户账户在弹性伸缩中的资源限制。"
   },
   "DescribeAutoScalingGroups": {
     "params": [
       {
         "name": "AutoScalingGroupIds",
-        "desc": "按照一个或者多个伸缩组ID查询。伸缩组ID形如：`asg-nkdwoui0`。每次请求的上限为100。参数不支持同时指定`AutoScalingGroups`和`Filters`。"
+        "desc": "按照一个或者多个伸缩组ID查询。伸缩组ID形如：`asg-nkdwoui0`。每次请求的上限为100。参数不支持同时指定`AutoScalingGroupIds`和`Filters`。"
       },
       {
         "name": "Filters",
@@ -670,9 +853,26 @@ INFO = {
     ],
     "desc": "本接口（DeleteNotificationConfiguration）用于删除特定的通知。"
   },
-  "DescribeAccountLimits": {
-    "params": [],
-    "desc": "本接口（DescribeAccountLimits）用于查询用户账户在弹性伸缩中的资源限制。"
+  "DescribeScheduledActions": {
+    "params": [
+      {
+        "name": "ScheduledActionIds",
+        "desc": "按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "本接口 (DescribeScheduledActions) 用于查询一个或多个定时任务的详细信息。\n\n* 可以根据定时任务ID、定时任务名称或者伸缩组ID等信息来查询定时任务的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的定时任务。"
   },
   "ModifyLaunchConfigurationAttributes": {
     "params": [

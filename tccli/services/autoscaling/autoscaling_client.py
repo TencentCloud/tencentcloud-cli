@@ -65,6 +65,39 @@ def doCreateAutoScalingGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doPreviewPaiDomainName(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PreviewPaiDomainName", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DomainNameType": Utils.try_to_json(argv, "--DomainNameType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PreviewPaiDomainNameRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PreviewPaiDomainName(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyScalingPolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -164,6 +197,49 @@ def doDeleteAutoScalingGroup(argv, arglist):
     model = models.DeleteAutoScalingGroupRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteAutoScalingGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreatePaiInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreatePaiInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DomainName": Utils.try_to_json(argv, "--DomainName"),
+        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
+        "InitScript": Utils.try_to_json(argv, "--InitScript"),
+        "Zones": Utils.try_to_json(argv, "--Zones"),
+        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
+        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
+        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreatePaiInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreatePaiInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -417,6 +493,42 @@ def doDeleteScalingPolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCompleteLifecycleAction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CompleteLifecycleAction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LifecycleHookId": Utils.try_to_json(argv, "--LifecycleHookId"),
+        "LifecycleActionResult": Utils.try_to_json(argv, "--LifecycleActionResult"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "LifecycleActionToken": Utils.try_to_json(argv, "--LifecycleActionToken"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CompleteLifecycleActionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CompleteLifecycleAction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyLoadBalancers(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -578,6 +690,7 @@ def doCreateLaunchConfiguration(argv, arglist):
         "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
         "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
         "InstanceTypesCheckPolicy": Utils.try_to_json(argv, "--InstanceTypesCheckPolicy"),
+        "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -720,6 +833,84 @@ def doDescribeAutoScalingInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateLifecycleHook(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateLifecycleHook", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "LifecycleHookName": Utils.try_to_json(argv, "--LifecycleHookName"),
+        "LifecycleTransition": Utils.try_to_json(argv, "--LifecycleTransition"),
+        "DefaultResult": Utils.try_to_json(argv, "--DefaultResult"),
+        "HeartbeatTimeout": Utils.try_to_json(argv, "--HeartbeatTimeout"),
+        "NotificationMetadata": Utils.try_to_json(argv, "--NotificationMetadata"),
+        "NotificationTarget": Utils.try_to_json(argv, "--NotificationTarget"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateLifecycleHookRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateLifecycleHook(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpgradeLifecycleHook(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpgradeLifecycleHook", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LifecycleHookId": Utils.try_to_json(argv, "--LifecycleHookId"),
+        "LifecycleHookName": Utils.try_to_json(argv, "--LifecycleHookName"),
+        "LifecycleTransition": Utils.try_to_json(argv, "--LifecycleTransition"),
+        "DefaultResult": Utils.try_to_json(argv, "--DefaultResult"),
+        "HeartbeatTimeout": Utils.try_to_json(argv, "--HeartbeatTimeout"),
+        "NotificationMetadata": Utils.try_to_json(argv, "--NotificationMetadata"),
+        "NotificationTarget": Utils.try_to_json(argv, "--NotificationTarget"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeLifecycleHookRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpgradeLifecycleHook(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDisableAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -780,6 +971,42 @@ def doDescribeLaunchConfigurations(argv, arglist):
     model = models.DescribeLaunchConfigurationsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeLaunchConfigurations(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePaiInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePaiInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePaiInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePaiInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -861,6 +1088,75 @@ def doDeleteLaunchConfiguration(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteLifecycleHook(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteLifecycleHook", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LifecycleHookId": Utils.try_to_json(argv, "--LifecycleHookId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteLifecycleHookRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteLifecycleHook(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLifecycleHooks(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeLifecycleHooks", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LifecycleHookIds": Utils.try_to_json(argv, "--LifecycleHookIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLifecycleHooksRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeLifecycleHooks(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doEnableAutoScalingGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -894,13 +1190,17 @@ def doEnableAutoScalingGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAccountLimits(argv, arglist):
+def doDescribeScheduledActions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeAccountLimits", g_param[OptionsDefine.Version])
+        show_help("DescribeScheduledActions", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "ScheduledActionIds": Utils.try_to_json(argv, "--ScheduledActionIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -914,9 +1214,9 @@ def doDescribeAccountLimits(argv, arglist):
     client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAccountLimitsRequest()
+    model = models.DescribeScheduledActionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAccountLimits(model)
+    rsp = client.DescribeScheduledActions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1073,17 +1373,13 @@ def doDeleteNotificationConfiguration(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeScheduledActions(argv, arglist):
+def doDescribeAccountLimits(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeScheduledActions", g_param[OptionsDefine.Version])
+        show_help("DescribeAccountLimits", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ScheduledActionIds": Utils.try_to_json(argv, "--ScheduledActionIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1097,9 +1393,9 @@ def doDescribeScheduledActions(argv, arglist):
     client = mod.AutoscalingClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeScheduledActionsRequest()
+    model = models.DescribeAccountLimitsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeScheduledActions(model)
+    rsp = client.DescribeAccountLimits(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1159,9 +1455,11 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateAutoScalingGroup": doCreateAutoScalingGroup,
+    "PreviewPaiDomainName": doPreviewPaiDomainName,
     "ModifyScalingPolicy": doModifyScalingPolicy,
     "DescribeNotificationConfigurations": doDescribeNotificationConfigurations,
     "DeleteAutoScalingGroup": doDeleteAutoScalingGroup,
+    "CreatePaiInstance": doCreatePaiInstance,
     "AttachInstances": doAttachInstances,
     "DescribeScalingPolicies": doDescribeScalingPolicies,
     "DeleteScheduledAction": doDeleteScheduledAction,
@@ -1169,6 +1467,7 @@ ACTION_MAP = {
     "CreateScheduledAction": doCreateScheduledAction,
     "RemoveInstances": doRemoveInstances,
     "DeleteScalingPolicy": doDeleteScalingPolicy,
+    "CompleteLifecycleAction": doCompleteLifecycleAction,
     "ModifyLoadBalancers": doModifyLoadBalancers,
     "ModifyDesiredCapacity": doModifyDesiredCapacity,
     "SetInstancesProtection": doSetInstancesProtection,
@@ -1177,17 +1476,22 @@ ACTION_MAP = {
     "ModifyAutoScalingGroup": doModifyAutoScalingGroup,
     "CreateNotificationConfiguration": doCreateNotificationConfiguration,
     "DescribeAutoScalingInstances": doDescribeAutoScalingInstances,
+    "CreateLifecycleHook": doCreateLifecycleHook,
+    "UpgradeLifecycleHook": doUpgradeLifecycleHook,
     "DisableAutoScalingGroup": doDisableAutoScalingGroup,
     "DescribeLaunchConfigurations": doDescribeLaunchConfigurations,
+    "DescribePaiInstances": doDescribePaiInstances,
     "CreateScalingPolicy": doCreateScalingPolicy,
     "DeleteLaunchConfiguration": doDeleteLaunchConfiguration,
+    "DeleteLifecycleHook": doDeleteLifecycleHook,
+    "DescribeLifecycleHooks": doDescribeLifecycleHooks,
     "EnableAutoScalingGroup": doEnableAutoScalingGroup,
-    "DescribeAccountLimits": doDescribeAccountLimits,
+    "DescribeScheduledActions": doDescribeScheduledActions,
     "DescribeAutoScalingGroups": doDescribeAutoScalingGroups,
     "ModifyScheduledAction": doModifyScheduledAction,
     "DescribeAutoScalingActivities": doDescribeAutoScalingActivities,
     "DeleteNotificationConfiguration": doDeleteNotificationConfiguration,
-    "DescribeScheduledActions": doDescribeScheduledActions,
+    "DescribeAccountLimits": doDescribeAccountLimits,
     "ModifyLaunchConfigurationAttributes": doModifyLaunchConfigurationAttributes,
 
 }

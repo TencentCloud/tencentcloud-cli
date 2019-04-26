@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
 DESC = "vod-2018-07-17"
 INFO = {
+  "DeleteAIAnalysisTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "视频内容分析模板唯一标识。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "删除用户自定义视频内容分析模板。\n\n注意：模板 ID 为 10000 以下的为系统预置模板，不允许删除。"
+  },
   "ConfirmEvents": {
     "params": [
       {
@@ -126,6 +139,27 @@ INFO = {
     ],
     "desc": "1. 该接口可以获取多个视频的多种信息，包括：\n    1. 基础信息（basicInfo）：包括视频名称、大小、时长、封面图片等。\n    2. 元信息（metaData）：包括视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后，动图相关信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后，相关截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图之后，雪碧图的相关信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，各个截图的信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的各个打点信息。\n2. 可以指定回包只返回部分信息。"
   },
+  "DescribeAIAnalysisTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "视频内容分析模板唯一标识过滤条件，数组长度限制：10。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "根据视频内容分析模板唯一标识，获取视频内容分析模板详情列表。返回结果包含符合条件的所有用户自定义视频内容分析模板及[系统预置视频内容分析模板]"
+  },
   "PullEvents": {
     "params": [
       {
@@ -133,7 +167,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "* 该接口用于从点播服务端获取事件通知，详见[服务端事件通知](https://cloud.tencent.com/document/product/266/7829)；\n* 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；\n* 请求最多挂起 5 秒，建议请求方将超时时间设置为 10 秒；\n* 若该接口有事件返回，调用方必须再调用[确认事件通知]接口，确认事件通知已经处理，否则该事件通知后续会再次被拉取到。"
+    "desc": "* 该接口用于从点播服务端获取事件通知，详见[服务端事件通知](https://cloud.tencent.com/document/product/266/7829)；\n* 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；\n* 请求最多挂起 5 秒，建议请求方将超时时间设置为 10 秒；\n* 若该接口有事件返回，调用方必须再调用[确认事件通知](https://cloud.tencent.com/document/product/266/33434)接口，确认事件通知已经处理，否则该事件通知后续会再次被拉取到。"
   },
   "LiveRealTimeClip": {
     "params": [
@@ -325,11 +359,11 @@ INFO = {
       },
       {
         "name": "XPos",
-        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Left 为视频宽度指定百分比的位置，如 10% 表示 Left 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Left 为视频宽度指定像素的位置，如 100px 表示 Left 为 100 像素。</li>"
+        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>"
       },
       {
         "name": "YPos",
-        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Top 为视频高度指定百分比的位置，如 10% 表示 Top 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Top 为视频高度指定像素的位置，如 100px 表示 Top 为 100 像素。</li>"
+        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>"
       },
       {
         "name": "ImageTemplate",
@@ -349,6 +383,43 @@ INFO = {
       }
     ],
     "desc": "修改用户自定义水印模板，水印类型不允许修改。"
+  },
+  "ModifyAIAnalysisTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "视频内容分析模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "视频内容分析模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容分析模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "ClassificationConfigure",
+        "desc": "智能分类任务控制参数。"
+      },
+      {
+        "name": "TagConfigure",
+        "desc": "智能标签任务控制参数。"
+      },
+      {
+        "name": "CoverConfigure",
+        "desc": "智能封面任务控制参数。"
+      },
+      {
+        "name": "FrameTagConfigure",
+        "desc": "智能按帧标签任务控制参数。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "修改用户自定义视频内容分析模板。\n\n注意：模板 ID 10000 以下的为系统预置模板，不允许修改。"
   },
   "DeleteProcedureTemplate": {
     "params": [
@@ -712,6 +783,39 @@ INFO = {
     ],
     "desc": "修改媒体文件的属性，包括分类、名称、描述、标签、过期时间、打点信息、视频封面等。"
   },
+  "CreateAIAnalysisTemplate": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "视频内容分析模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容分析模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "ClassificationConfigure",
+        "desc": "智能分类任务控制参数。"
+      },
+      {
+        "name": "TagConfigure",
+        "desc": "智能标签任务控制参数。"
+      },
+      {
+        "name": "CoverConfigure",
+        "desc": "智能封面任务控制参数。"
+      },
+      {
+        "name": "FrameTagConfigure",
+        "desc": "智能按帧标签任务控制参数。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建用户自定义视频内容分析模板，数量上限：50。"
+  },
   "DescribeAllClass": {
     "params": [
       {
@@ -766,11 +870,11 @@ INFO = {
       },
       {
         "name": "XPos",
-        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Left 为视频宽度指定百分比的位置，如 10% 表示 Left 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Left 为视频宽度指定像素的位置，如 100px 表示 Left 为 100 像素。</li>\n默认值：0px。"
+        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。"
       },
       {
         "name": "YPos",
-        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Top 为视频高度指定百分比的位置，如 10% 表示 Top 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Top 为视频高度指定像素的位置，如 100px 表示 Top 为 100 像素。</li>\n默认值：0px。"
+        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。"
       },
       {
         "name": "ImageTemplate",

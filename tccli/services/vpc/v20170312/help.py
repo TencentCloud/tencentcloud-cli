@@ -120,18 +120,14 @@ INFO = {
     ],
     "desc": "本接口(CreateRouteTable)用于创建路由表。\n* 创建了VPC后，系统会创建一个默认路由表，所有新建的子网都会关联到默认路由表。默认情况下您可以直接使用默认路由表来管理您的路由策略。当您的路由策略较多时，您可以调用创建路由表接口创建更多路由表管理您的路由策略。"
   },
-  "ReplaceRouteTableAssociation": {
+  "AssignIpv6CidrBlock": {
     "params": [
       {
-        "name": "SubnetId",
-        "desc": "子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。"
-      },
-      {
-        "name": "RouteTableId",
-        "desc": "路由表实例ID，例如：rtb-azd4dt1c。"
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。"
       }
     ],
-    "desc": "本接口（ReplaceRouteTableAssociation)用于修改子网（Subnet）关联的路由表（RouteTable）。\n* 一个子网只能关联一个路由表。"
+    "desc": "本接口（AssignIpv6CidrBlock）用于分配IPv6网段。\n* 使用本接口前，你需要已有VPC实例，如果没有可通过接口<a href=\"https://cloud.tencent.com/document/api/215/15774\" title=\"CreateVpc\" target=\"_blank\">CreateVpc</a>创建。\n* 每个VPC只能申请一个IPv6网段"
   },
   "CreateVpnGateway": {
     "params": [
@@ -274,6 +270,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeGatewayFlowMonitorDetail）用于查询网关流量监控明细。\n* 只支持单个网关实例查询。即入参 `VpnId` `DirectConnectGatewayId` `PeeringConnectionId` `NatId` 最多只支持传一个，且必须传一个。\n* 如果网关有流量，但调用本接口没有返回数据，请在控制台对应网关详情页确认是否开启网关流量监控。"
+  },
+  "UnassignIpv6Addresses": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。"
+      },
+      {
+        "name": "Ipv6Addresses",
+        "desc": "指定的`IPv6`地址列表，单次最多指定10个。"
+      }
+    ],
+    "desc": "本接口（UnassignIpv6Addresses）用于释放弹性网卡`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口。"
   },
   "DeleteVpnConnection": {
     "params": [
@@ -461,6 +470,19 @@ INFO = {
       }
     ],
     "desc": "本接口(CreateSubnets)用于批量创建子网。\n* 创建子网前必须创建好 VPC。\n* 子网创建成功后，子网网段不能修改。子网网段必须在VPC网段内，可以和VPC网段相同（VPC有且只有一个子网时），建议子网网段在VPC网段内，预留网段给其他子网使用。\n* 你可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）。\n* 同一个VPC内，多个子网的网段不能重叠。\n* 子网创建后会自动关联到默认路由表。"
+  },
+  "ReplaceRouteTableAssociation": {
+    "params": [
+      {
+        "name": "SubnetId",
+        "desc": "子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。"
+      },
+      {
+        "name": "RouteTableId",
+        "desc": "路由表实例ID，例如：rtb-azd4dt1c。"
+      }
+    ],
+    "desc": "本接口（ReplaceRouteTableAssociation)用于修改子网（Subnet）关联的路由表（RouteTable）。\n* 一个子网只能关联一个路由表。"
   },
   "DescribeVpcs": {
     "params": [
@@ -725,6 +747,19 @@ INFO = {
     ],
     "desc": "接口用于添加带宽包资源，包括[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)和[负载均衡](https://cloud.tencent.com/document/product/214/517)等"
   },
+  "AssignIpv6SubnetCidrBlock": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。"
+      },
+      {
+        "name": "Ipv6SubnetCidrBlocks",
+        "desc": "分配 `IPv6` 子网段列表。"
+      }
+    ],
+    "desc": "本接口（AssignIpv6SubnetCidrBlock）用于分配IPv6子网段。\n* 给子网分配 `IPv6` 网段，要求子网所属 `VPC` 已获得 `IPv6` 网段。如果尚未分配，请先通过接口 `AssignIpv6CidrBlock` 给子网所属 `VPC` 分配一个 `IPv6` 网段。否则无法分配 `IPv6` 子网段。\n* 每个子网只能分配一个IPv6网段。"
+  },
   "AllocateAddresses": {
     "params": [
       {
@@ -733,6 +768,27 @@ INFO = {
       }
     ],
     "desc": "本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* EIP 是专为动态云计算设计的静态 IP 地址。借助 EIP，您可以快速将 EIP 重新映射到您的另一个实例上，从而屏蔽实例故障。\n* 您的 EIP 与腾讯云账户相关联，而不是与某个实例相关联。在您选择显式释放该地址，或欠费超过七天之前，它会一直与您的腾讯云账户保持关联。\n* 平台对用户每地域能申请的 EIP 最大配额有所限制，可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)，上述配额可通过 DescribeAddressQuota 接口获取。"
+  },
+  "DescribeVpcIpv6Addresses": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。"
+      },
+      {
+        "name": "Ipv6Addresses",
+        "desc": "`IP`地址列表，批量查询单次请求最多支持`10`个。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量。"
+      }
+    ],
+    "desc": "本接口（DescribeVpcIpv6Addresses）用于查询 `VPC` `IPv6` 信息。\n只能查询已使用的`IPv6`信息，当查询未使用的IP时，本接口不会报错，但不会出现在返回结果里。"
   },
   "DescribeAccountAttributes": {
     "params": [],
@@ -961,6 +1017,19 @@ INFO = {
       }
     ],
     "desc": "本接口（ReplaceRoutes）根据路由策略ID（RouteId）修改指定的路由策略（Route），支持批量修改。"
+  },
+  "UnassignIpv6SubnetCidrBlock": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。"
+      },
+      {
+        "name": "Ipv6SubnetCidrBlocks",
+        "desc": "`IPv6` 子网段列表。"
+      }
+    ],
+    "desc": "本接口（UnassignIpv6SubnetCidrBlock）用于释放IPv6子网段。<br />\n子网段如果还有IP占用且未回收，则子网段无法释放。"
   },
   "DescribeRouteConflicts": {
     "params": [
@@ -1442,6 +1511,19 @@ INFO = {
     ],
     "desc": "本接口（DescribeVpcPrivateIpAddresses）用于查询VPC内网IP信息。<br />\n只能查询已使用的IP信息，当查询未使用的IP时，本接口不会报错，但不会出现在返回结果里。"
   },
+  "ModifyIpv6AddressesAttribute": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。"
+      },
+      {
+        "name": "Ipv6Addresses",
+        "desc": "指定的内网IPv6`地址信息。"
+      }
+    ],
+    "desc": "本接口（ModifyIpv6AddressesAttribute）用于修改弹性网卡内网IPv6地址属性。"
+  },
   "DescribeDirectConnectGateways": {
     "params": [
       {
@@ -1485,6 +1567,23 @@ INFO = {
     ],
     "desc": "本接口（RenewVpnGateway）用于预付费（包年包月）VPN网关续费。目前只支持IPSEC网关。"
   },
+  "AssignIpv6Addresses": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。"
+      },
+      {
+        "name": "Ipv6Addresses",
+        "desc": "指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。"
+      },
+      {
+        "name": "Ipv6AddressCount",
+        "desc": "自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配数。与入参`Ipv6Addresses`合并计算配额。"
+      }
+    ],
+    "desc": "本接口（AssignIpv6Addresses）用于弹性网卡申请`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定`IPv6`地址申请，地址类型不能为主`IP`，`IPv6`地址暂时只支持作为辅助`IP`。\n* 地址必须要在弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助`IPv6`地址，接口会在弹性网卡所在子网段内返回指定数量的辅助`IPv6`地址。"
+  },
   "MigratePrivateIpAddress": {
     "params": [
       {
@@ -1518,6 +1617,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeServiceTemplates）用于查询协议端口模板"
+  },
+  "UnassignIpv6CidrBlock": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。"
+      },
+      {
+        "name": "Ipv6CidrBlock",
+        "desc": "`IPv6`网段。形如：`3402:4e00:20:1000::/56`"
+      }
+    ],
+    "desc": "本接口（UnassignIpv6CidrBlock）用于释放IPv6网段。<br />\n网段如果还有IP占用且未回收，则网段无法释放。"
   },
   "HaVipAssociateAddressIp": {
     "params": [
@@ -1639,7 +1751,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）vpc的cidr。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>"
+        "desc": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>"
       },
       {
         "name": "Offset",

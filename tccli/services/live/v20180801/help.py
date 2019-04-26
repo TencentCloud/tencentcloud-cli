@@ -612,7 +612,7 @@ INFO = {
         "desc": "延播设置的过期时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：默认7天后过期，且最长支持7天内生效。"
       }
     ],
-    "desc": "对流设置延播时间\n注意：如果在推流前设置延播，需要提前5分钟设置。\n"
+    "desc": "对流设置延播时间\n注意：如果在推流前设置延播，需要提前5分钟设置。\n目前该接口只支持流粒度的，域名及应用粒度功能支持当前开发中。\n"
   },
   "DescribeStreamDayPlayInfoList": {
     "params": [
@@ -981,11 +981,11 @@ INFO = {
     "params": [
       {
         "name": "StartTime",
-        "desc": "开始时间，北京时间，\n当前时间 和 开始时间 间隔不超过30天。"
+        "desc": "开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，\n当前时间 和 开始时间 间隔不超过30天。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，北京时间，\n结束时间 和 开始时间  必须在同一天内。"
+        "desc": "结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，\n结束时间 和 开始时间  必须在同一天内。"
       },
       {
         "name": "PlayDomain",
@@ -994,6 +994,10 @@ INFO = {
       {
         "name": "StreamName",
         "desc": "流名称，精确匹配。\n若不填，则为查询总体播放数据。"
+      },
+      {
+        "name": "AppName",
+        "desc": "播放路径，精确匹配，不支持。\n若不填，则为查询总体播放数据。"
       }
     ],
     "desc": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。"
@@ -1309,16 +1313,16 @@ INFO = {
         "desc": "推流域名。"
       },
       {
+        "name": "TemplateId",
+        "desc": "模板Id。"
+      },
+      {
         "name": "AppName",
         "desc": "推流路径。"
       },
       {
         "name": "StreamName",
-        "desc": "流名称。"
-      },
-      {
-        "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "流名称。\n注：如果本参数设置为非空字符串，规则将只对此推流起作用。"
       }
     ],
     "desc": "创建录制规则，需要先调用[CreateLiveRecordTemplate](/document/product/267/32614)接口创建录制模板，将返回的模板id绑定到流使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。"
@@ -1365,6 +1369,10 @@ INFO = {
       {
         "name": "IsDelayLive",
         "desc": "0：普通直播，\n1：慢直播。"
+      },
+      {
+        "name": "HlsSpecialParam",
+        "desc": "HLS专属录制参数。"
       }
     ],
     "desc": "创建录制模板，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。"
