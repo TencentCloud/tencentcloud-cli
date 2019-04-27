@@ -12,23 +12,22 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.ocr.v20181119 import ocr_client as ocr_client_v20181119
-from tencentcloud.ocr.v20181119 import models as models_v20181119
-from tccli.services.ocr import v20181119
-from tccli.services.ocr.v20181119 import help as v20181119_help
+from tencentcloud.cms.v20190321 import cms_client as cms_client_v20190321
+from tencentcloud.cms.v20190321 import models as models_v20190321
+from tccli.services.cms import v20190321
+from tccli.services.cms.v20190321 import help as v20190321_help
 
 
-def doIDCardOCR(argv, arglist):
+def doDescribeModerationOverview(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("IDCardOCR", g_param[OptionsDefine.Version])
+        show_help("DescribeModerationOverview", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "CardSide": Utils.try_to_json(argv, "--CardSide"),
-        "Config": Utils.try_to_json(argv, "--Config"),
+        "Date": Utils.try_to_json(argv, "--Date"),
+        "ServiceTypes": Utils.try_to_json(argv, "--ServiceTypes"),
+        "Channels": Utils.try_to_json(argv, "--Channels"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -39,12 +38,12 @@ def doIDCardOCR(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.IDCardOCRRequest()
+    model = models.DescribeModerationOverviewRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.IDCardOCR(model)
+    rsp = client.DescribeModerationOverview(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -54,15 +53,17 @@ def doIDCardOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGeneralFastOCR(argv, arglist):
+def doAudioModeration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GeneralFastOCR", g_param[OptionsDefine.Version])
+        show_help("AudioModeration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
+        "CallbackUrl": Utils.try_to_json(argv, "--CallbackUrl"),
+        "FileContent": Utils.try_to_json(argv, "--FileContent"),
+        "FileMD5": Utils.try_to_json(argv, "--FileMD5"),
+        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -73,12 +74,12 @@ def doGeneralFastOCR(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GeneralFastOCRRequest()
+    model = models.AudioModerationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GeneralFastOCR(model)
+    rsp = client.AudioModeration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -88,16 +89,14 @@ def doGeneralFastOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGeneralBasicOCR(argv, arglist):
+def doTextModeration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GeneralBasicOCR", g_param[OptionsDefine.Version])
+        show_help("TextModeration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "Scene": Utils.try_to_json(argv, "--Scene"),
+        "Content": Utils.try_to_json(argv, "--Content"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -108,12 +107,83 @@ def doGeneralBasicOCR(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GeneralBasicOCRRequest()
+    model = models.TextModerationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GeneralBasicOCR(model)
+    rsp = client.TextModeration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doImageModeration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ImageModeration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileContent": Utils.try_to_json(argv, "--FileContent"),
+        "FileMD5": Utils.try_to_json(argv, "--FileMD5"),
+        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ImageModerationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ImageModeration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doVideoModeration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VideoModeration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CallbackUrl": Utils.try_to_json(argv, "--CallbackUrl"),
+        "FileMD5": Utils.try_to_json(argv, "--FileMD5"),
+        "FileContent": Utils.try_to_json(argv, "--FileContent"),
+        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VideoModerationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VideoModeration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -124,33 +194,35 @@ def doGeneralBasicOCR(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20181119": ocr_client_v20181119,
+    "v20190321": cms_client_v20190321,
 
 }
 
 MODELS_MAP = {
-    "v20181119": models_v20181119,
+    "v20190321": models_v20190321,
 
 }
 
 ACTION_MAP = {
-    "IDCardOCR": doIDCardOCR,
-    "GeneralFastOCR": doGeneralFastOCR,
-    "GeneralBasicOCR": doGeneralBasicOCR,
+    "DescribeModerationOverview": doDescribeModerationOverview,
+    "AudioModeration": doAudioModeration,
+    "TextModeration": doTextModeration,
+    "ImageModeration": doImageModeration,
+    "VideoModeration": doVideoModeration,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20181119.version,
+    v20190321.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20181119.version.replace('-', ''): {"help": v20181119_help.INFO,"desc": v20181119_help.DESC},
+     'v' + v20190321.version.replace('-', ''): {"help": v20190321_help.INFO,"desc": v20190321_help.DESC},
 
 }
 
 
-def ocr_action(argv, arglist):
+def cms_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -166,7 +238,7 @@ def ocr_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "ocr", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "cms", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -187,7 +259,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("ocr", ocr_action)
+    cmd = NiceCommand("cms", cms_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -246,11 +318,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["ocr"][OptionsDefine.Version]
+            version = config["cms"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["ocr"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["cms"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -267,7 +339,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ocr", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cms", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -277,7 +349,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["ocr"]["version"]
+        version = profile["cms"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

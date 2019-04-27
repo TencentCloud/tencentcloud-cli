@@ -12,57 +12,24 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.ocr.v20181119 import ocr_client as ocr_client_v20181119
-from tencentcloud.ocr.v20181119 import models as models_v20181119
-from tccli.services.ocr import v20181119
-from tccli.services.ocr.v20181119 import help as v20181119_help
+from tencentcloud.ticm.v20181127 import ticm_client as ticm_client_v20181127
+from tencentcloud.ticm.v20181127 import models as models_v20181127
+from tccli.services.ticm import v20181127
+from tccli.services.ticm.v20181127 import help as v20181127_help
 
 
-def doIDCardOCR(argv, arglist):
+def doImageModeration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("IDCardOCR", g_param[OptionsDefine.Version])
+        show_help("ImageModeration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "Scenes": Utils.try_to_json(argv, "--Scenes"),
         "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "CardSide": Utils.try_to_json(argv, "--CardSide"),
         "Config": Utils.try_to_json(argv, "--Config"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.IDCardOCRRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.IDCardOCR(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGeneralFastOCR(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GeneralFastOCR", g_param[OptionsDefine.Version])
-        return
-
-    param = {
+        "Extra": Utils.try_to_json(argv, "--Extra"),
         "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -73,47 +40,12 @@ def doGeneralFastOCR(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TicmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GeneralFastOCRRequest()
+    model = models.ImageModerationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GeneralFastOCR(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGeneralBasicOCR(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GeneralBasicOCR", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "Scene": Utils.try_to_json(argv, "--Scene"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GeneralBasicOCRRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.GeneralBasicOCR(model)
+    rsp = client.ImageModeration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -124,33 +56,31 @@ def doGeneralBasicOCR(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20181119": ocr_client_v20181119,
+    "v20181127": ticm_client_v20181127,
 
 }
 
 MODELS_MAP = {
-    "v20181119": models_v20181119,
+    "v20181127": models_v20181127,
 
 }
 
 ACTION_MAP = {
-    "IDCardOCR": doIDCardOCR,
-    "GeneralFastOCR": doGeneralFastOCR,
-    "GeneralBasicOCR": doGeneralBasicOCR,
+    "ImageModeration": doImageModeration,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20181119.version,
+    v20181127.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20181119.version.replace('-', ''): {"help": v20181119_help.INFO,"desc": v20181119_help.DESC},
+     'v' + v20181127.version.replace('-', ''): {"help": v20181127_help.INFO,"desc": v20181127_help.DESC},
 
 }
 
 
-def ocr_action(argv, arglist):
+def ticm_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -166,7 +96,7 @@ def ocr_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "ocr", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "ticm", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -187,7 +117,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("ocr", ocr_action)
+    cmd = NiceCommand("ticm", ticm_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -246,11 +176,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["ocr"][OptionsDefine.Version]
+            version = config["ticm"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["ocr"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["ticm"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -267,7 +197,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ocr", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ticm", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -277,7 +207,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["ocr"]["version"]
+        version = profile["ticm"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass
