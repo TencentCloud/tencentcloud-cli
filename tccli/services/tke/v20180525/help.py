@@ -51,22 +51,38 @@ INFO = {
     ],
     "desc": "查询集群列表"
   },
-  "DeleteClusterInstances": {
+  "CreateCluster": {
     "params": [
       {
-        "name": "ClusterId",
-        "desc": "集群ID"
+        "name": "ClusterCIDRSettings",
+        "desc": "集群容器网络配置信息"
       },
       {
-        "name": "InstanceIds",
-        "desc": "主机InstanceId列表"
+        "name": "ClusterType",
+        "desc": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。"
       },
       {
-        "name": "InstanceDeleteMode",
-        "desc": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）"
+        "name": "RunInstancesForNode",
+        "desc": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。"
+      },
+      {
+        "name": "ClusterBasicSettings",
+        "desc": "集群的基本配置信息"
+      },
+      {
+        "name": "ClusterAdvancedSettings",
+        "desc": "集群高级配置信息"
+      },
+      {
+        "name": "InstanceAdvancedSettings",
+        "desc": "节点高级配置信息"
+      },
+      {
+        "name": "ExistedInstancesForNode",
+        "desc": "已存在实例的配置信息"
       }
     ],
-    "desc": "删除集群中的实例"
+    "desc": "创建集群"
   },
   "DescribeClusterInstances": {
     "params": [
@@ -88,5 +104,22 @@ INFO = {
       }
     ],
     "desc": " 查询集群下节点实例信息 "
+  },
+  "DeleteClusterInstances": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "主机InstanceId列表"
+      },
+      {
+        "name": "InstanceDeleteMode",
+        "desc": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）"
+      }
+    ],
+    "desc": "删除集群中的实例"
   }
 }

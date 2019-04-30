@@ -157,6 +157,15 @@ INFO = {
     ],
     "desc": "查询自定义镜像制作进度"
   },
+  "StartDevices": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "需要开机的设备ID列表"
+      }
+    ],
+    "desc": "开启服务器"
+  },
   "DescribeHardwareSpecification": {
     "params": [],
     "desc": "查询自定义机型部件信息，包括CpuId对应的型号，DiskTypeId对应的磁盘类型"
@@ -352,6 +361,10 @@ INFO = {
       {
         "name": "Tags",
         "desc": "绑定的标签列表"
+      },
+      {
+        "name": "FileSystem",
+        "desc": "指定数据盘的文件系统格式，当前支持 EXT4和XFS选项， 默认为EXT4。 参数适用于数据盘和Linux， 且在IsZoning为1时生效"
       }
     ],
     "desc": "购买黑石物理机"

@@ -12,25 +12,23 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tke.v20180525 import tke_client as tke_client_v20180525
-from tencentcloud.tke.v20180525 import models as models_v20180525
-from tccli.services.tke import v20180525
-from tccli.services.tke.v20180525 import help as v20180525_help
+from tencentcloud.tbp.v20190311 import tbp_client as tbp_client_v20190311
+from tencentcloud.tbp.v20190311 import models as models_v20190311
+from tccli.services.tbp import v20190311
+from tccli.services.tbp.v20190311 import help as v20190311_help
 
 
-def doAddExistedInstances(argv, arglist):
+def doReset(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AddExistedInstances", g_param[OptionsDefine.Version])
+        show_help("Reset", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
-        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
-        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "BotId": Utils.try_to_json(argv, "--BotId"),
+        "UserId": Utils.try_to_json(argv, "--UserId"),
+        "BotVersion": Utils.try_to_json(argv, "--BotVersion"),
+        "BotEnv": Utils.try_to_json(argv, "--BotEnv"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -41,12 +39,12 @@ def doAddExistedInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TbpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AddExistedInstancesRequest()
+    model = models.ResetRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AddExistedInstances(model)
+    rsp = client.Reset(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -56,17 +54,25 @@ def doAddExistedInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusterInstances(argv, arglist):
+def doPostText(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeClusterInstances", g_param[OptionsDefine.Version])
+        show_help("PostText", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "BotId": Utils.try_to_json(argv, "--BotId"),
+        "InputText": Utils.try_to_json(argv, "--InputText"),
+        "UserId": Utils.try_to_json(argv, "--UserId"),
+        "BotVersion": Utils.try_to_json(argv, "--BotVersion"),
+        "SessionAttributes": Utils.try_to_json(argv, "--SessionAttributes"),
+        "NeedTts": Utils.try_to_json(argv, "--NeedTts"),
+        "Volume": Utils.try_to_json(argv, "--Volume"),
+        "Speed": Utils.try_to_json(argv, "--Speed"),
+        "VoiceType": Utils.try_to_json(argv, "--VoiceType"),
+        "SampleRate": Utils.try_to_json(argv, "--SampleRate"),
+        "BotEnv": Utils.try_to_json(argv, "--BotEnv"),
+        "TtsVoiceFormat": Utils.try_to_json(argv, "--TtsVoiceFormat"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,12 +83,12 @@ def doDescribeClusterInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TbpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClusterInstancesRequest()
+    model = models.PostTextRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClusterInstances(model)
+    rsp = client.PostText(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -92,17 +98,31 @@ def doDescribeClusterInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusters(argv, arglist):
+def doPostAudio(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeClusters", g_param[OptionsDefine.Version])
+        show_help("PostAudio", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClusterIds": Utils.try_to_json(argv, "--ClusterIds"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "BotId": Utils.try_to_json(argv, "--BotId"),
+        "EngineModelType": Utils.try_to_json(argv, "--EngineModelType"),
+        "AsrVoiceFormat": Utils.try_to_json(argv, "--AsrVoiceFormat"),
+        "VoiceId": Utils.try_to_json(argv, "--VoiceId"),
+        "Seq": Utils.try_to_json(argv, "--Seq"),
+        "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
+        "WaveData": Utils.try_to_json(argv, "--WaveData"),
+        "UserId": Utils.try_to_json(argv, "--UserId"),
+        "BotVersion": Utils.try_to_json(argv, "--BotVersion"),
+        "ResultTextFormat": Utils.try_to_json(argv, "--ResultTextFormat"),
+        "SessionAttributes": Utils.try_to_json(argv, "--SessionAttributes"),
+        "NeedTts": Utils.try_to_json(argv, "--NeedTts"),
+        "Volume": Utils.try_to_json(argv, "--Volume"),
+        "Speed": Utils.try_to_json(argv, "--Speed"),
+        "VoiceType": Utils.try_to_json(argv, "--VoiceType"),
+        "SampleRate": Utils.try_to_json(argv, "--SampleRate"),
+        "BotEnv": Utils.try_to_json(argv, "--BotEnv"),
+        "TtsVoiceFormat": Utils.try_to_json(argv, "--TtsVoiceFormat"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -113,86 +133,12 @@ def doDescribeClusters(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TbpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClustersRequest()
+    model = models.PostAudioRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClusters(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteClusterInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteClusterInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceDeleteMode": Utils.try_to_json(argv, "--InstanceDeleteMode"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteClusterInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateCluster(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateCluster", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ClusterCIDRSettings": Utils.try_to_json(argv, "--ClusterCIDRSettings"),
-        "ClusterType": Utils.try_to_json(argv, "--ClusterType"),
-        "RunInstancesForNode": Utils.try_to_json(argv, "--RunInstancesForNode"),
-        "ClusterBasicSettings": Utils.try_to_json(argv, "--ClusterBasicSettings"),
-        "ClusterAdvancedSettings": Utils.try_to_json(argv, "--ClusterAdvancedSettings"),
-        "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
-        "ExistedInstancesForNode": Utils.try_to_json(argv, "--ExistedInstancesForNode"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateCluster(model)
+    rsp = client.PostAudio(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -203,35 +149,33 @@ def doCreateCluster(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180525": tke_client_v20180525,
+    "v20190311": tbp_client_v20190311,
 
 }
 
 MODELS_MAP = {
-    "v20180525": models_v20180525,
+    "v20190311": models_v20190311,
 
 }
 
 ACTION_MAP = {
-    "AddExistedInstances": doAddExistedInstances,
-    "DescribeClusterInstances": doDescribeClusterInstances,
-    "DescribeClusters": doDescribeClusters,
-    "DeleteClusterInstances": doDeleteClusterInstances,
-    "CreateCluster": doCreateCluster,
+    "Reset": doReset,
+    "PostText": doPostText,
+    "PostAudio": doPostAudio,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180525.version,
+    v20190311.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180525.version.replace('-', ''): {"help": v20180525_help.INFO,"desc": v20180525_help.DESC},
+     'v' + v20190311.version.replace('-', ''): {"help": v20190311_help.INFO,"desc": v20190311_help.DESC},
 
 }
 
 
-def tke_action(argv, arglist):
+def tbp_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -247,7 +191,7 @@ def tke_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "tke", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "tbp", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -268,7 +212,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("tke", tke_action)
+    cmd = NiceCommand("tbp", tbp_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -327,11 +271,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["tke"][OptionsDefine.Version]
+            version = config["tbp"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["tke"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["tbp"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -348,7 +292,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tke", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tbp", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -358,7 +302,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["tke"]["version"]
+        version = profile["tbp"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass
