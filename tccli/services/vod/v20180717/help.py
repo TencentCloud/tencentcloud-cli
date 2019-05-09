@@ -1,6 +1,93 @@
 # -*- coding: utf-8 -*-
 DESC = "vod-2018-07-17"
 INFO = {
+  "DescribeAIRecognitionTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "视频内容识别模板唯一标识过滤条件，数组长度限制：10。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：50。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "根据视频内容识别模板唯一标识，获取视频内容识别模板详情列表。返回结果包含符合条件的所有用户自定义视频内容识别模板及[系统预置视频内容识别模板]"
+  },
+  "CreateContentReviewTemplate": {
+    "params": [
+      {
+        "name": "ReviewWallSwitch",
+        "desc": "审核结果是否进入审核墙（对审核结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>"
+      },
+      {
+        "name": "Name",
+        "desc": "内容审核模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "内容审核模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "PornConfigure",
+        "desc": "鉴黄控制参数。"
+      },
+      {
+        "name": "TerrorismConfigure",
+        "desc": "鉴恐控制参数。"
+      },
+      {
+        "name": "PoliticalConfigure",
+        "desc": "鉴政控制参数。"
+      },
+      {
+        "name": "UserDefineConfigure",
+        "desc": "用户自定义内容审核控制参数。"
+      },
+      {
+        "name": "ScreenshotInterval",
+        "desc": "截帧间隔，单位为秒。当不填时，默认截帧间隔为 1 秒，最小值为 0.5 秒。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建用户自定义视频内容审核模板，数量上限：50。"
+  },
+  "EditMedia": {
+    "params": [
+      {
+        "name": "InputType",
+        "desc": "输入视频的类型，可以取的值为  File，Stream 两种。"
+      },
+      {
+        "name": "FileInfos",
+        "desc": "输入的视频文件信息，当 InputType 为 File 时必填。"
+      },
+      {
+        "name": "StreamInfos",
+        "desc": "输入的流信息，当 InputType 为 Stream 时必填。"
+      },
+      {
+        "name": "ProcedureName",
+        "desc": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "对视频进行编辑（剪辑、拼接等），生成一个新的点播视频。编辑的功能包括：\n\n1. 对点播中的一个文件进行剪辑，生成一个新的视频；\n2. 对点播中的多个文件进行拼接，生成一个新的视频；\n3. 对点播中的多个文件进行剪辑，然后再拼接，生成一个新的视频；\n4. 对点播中的一个流，直接生成一个新的视频；\n5. 对点播中的一个流进行剪辑，生成一个新的视频；\n6. 对点播中的多个流进行拼接，生成一个新的视频；\n7. 对点播中的多个流进行剪辑，然后拼接，生成一个新的视频。\n\n对于生成的新视频，还可以指定生成后的视频是否要执行任务流。"
+  },
   "DeleteAIAnalysisTemplate": {
     "params": [
       {
@@ -46,6 +133,10 @@ INFO = {
         "desc": "视频内容分析类型任务参数。"
       },
       {
+        "name": "AiRecognitionTask",
+        "desc": "视频内容识别类型任务参数。"
+      },
+      {
         "name": "TasksPriority",
         "desc": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。"
       },
@@ -66,7 +157,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "对来源为 URL 的音视频媒体发起处理任务，功能包括：\n\n1. 智能内容审核（鉴黄、鉴恐、鉴政）；\n2. 智能内容分析（标签、分类、封面）。"
+    "desc": "对来源为 URL 的音视频媒体发起处理任务，功能包括：\n\n1. 智能内容审核（鉴黄、鉴恐、鉴政）；\n2. 智能内容分析（标签、分类、封面、按帧标签）；\n3. 智能内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。"
   },
   "ModifyTranscodeTemplate": {
     "params": [
@@ -108,6 +199,27 @@ INFO = {
       }
     ],
     "desc": "修改用户自定义转码模板信息。"
+  },
+  "DescribeContentReviewTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "内容审核模板唯一标识过滤条件，数组长度限制：50。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：50。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板]。"
   },
   "CommitUpload": {
     "params": [
@@ -204,7 +316,60 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "直播即时剪辑，是指在直播过程中（即直播尚未结束时），客户可以在过往直播内容中选择一段，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。\n\n腾讯云点播支持两种即时剪辑模式：\n- 剪辑固化：将剪辑出来的视频保存成独立的视频，拥有独立 FileId；适用于将精彩片段**长久保存**的场景；\n- 剪辑不固化：剪辑得到的视频附属于直播录制文件，没有独立 FileId；适用于将精彩片段**临时分享**的场景。\n\n注意：\n- 使用直播即时剪辑功能的前提是：目标直播流开启了[时移回看](https://cloud.tencent.com/document/product/267/32742#.E5.BC.80.E9.80.9A.E6.AD.A5.E9.AA.A4)功能。\n- 直播即时剪辑是基于直播录制生成的 m3u8 文件进行的，故而其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。\n\n\n### 剪辑固化\n所谓剪辑固化，是指将剪辑出来的视频是保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始直播录制视频影响（即使原始录制视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。\n\n举例如下：一场完整的足球比赛，直播录制出来的原始视频可能长达 2 个小时，客户出于节省成本的目的可以对这个视频存储 2 个月，但对于直播即时剪辑的「精彩时刻」视频却可以指定存储更长时间，同时可以单独对「精彩时刻」视频进行转码、微信发布等额外的点播操作，这时候可以选择直播即时剪辑并且固化的方案。\n\n剪辑固化的优势在于其生命周期与原始录制视频相互独立，可以独立管理、长久保存。\n\n### 剪辑不固化\n所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与直播录制视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与直播录制的完整视频有效期是一致的。一旦直播录制出来的视频被删除，也会导致该片段无法播放。\n\n剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（比如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。\n\n剪辑不固化的优势在于其剪辑操作十分“轻量化”，不会产生额外的存储开销。但其不足之处在于生命周期与原始录制视频相同，且无法进一步进行转码等视频处理。"
+    "desc": "直播即时剪辑，是指在直播过程中（即直播尚未结束时），客户可以在过往直播内容中选择一段，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。\n\n腾讯云点播支持两种即时剪辑模式：\n- 剪辑固化：将剪辑出来的视频保存成独立的视频，拥有独立 FileId；适用于将精彩片段**长久保存**的场景；\n- 剪辑不固化：剪辑得到的视频附属于直播录制文件，没有独立 FileId；适用于将精彩片段**临时分享**的场景。\n\n注意：\n- 使用直播即时剪辑功能的前提是：目标直播流开启了[时移回看](https://cloud.tencent.com/document/product/267/32742)功能。\n- 直播即时剪辑是基于直播录制生成的 m3u8 文件进行的，故而其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。\n\n\n### 剪辑固化\n所谓剪辑固化，是指将剪辑出来的视频是保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始直播录制视频影响（即使原始录制视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。\n\n举例如下：一场完整的足球比赛，直播录制出来的原始视频可能长达 2 个小时，客户出于节省成本的目的可以对这个视频存储 2 个月，但对于直播即时剪辑的「精彩时刻」视频却可以指定存储更长时间，同时可以单独对「精彩时刻」视频进行转码、微信发布等额外的点播操作，这时候可以选择直播即时剪辑并且固化的方案。\n\n剪辑固化的优势在于其生命周期与原始录制视频相互独立，可以独立管理、长久保存。\n\n### 剪辑不固化\n所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与直播录制视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与直播录制的完整视频有效期是一致的。一旦直播录制出来的视频被删除，也会导致该片段无法播放。\n\n剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（比如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。\n\n剪辑不固化的优势在于其剪辑操作十分“轻量化”，不会产生额外的存储开销。但其不足之处在于生命周期与原始录制视频相同，且无法进一步进行转码等视频处理。"
+  },
+  "ModifyAIRecognitionTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "视频内容识别模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "视频内容识别模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容识别模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "HeadTailConfigure",
+        "desc": "视频片头片尾识别控制参数。"
+      },
+      {
+        "name": "FaceConfigure",
+        "desc": "人脸识别控制参数。"
+      },
+      {
+        "name": "OcrFullTextConfigure",
+        "desc": "文本全文识别控制参数。"
+      },
+      {
+        "name": "OcrWordsConfigure",
+        "desc": "文本关键词识别控制参数。"
+      },
+      {
+        "name": "AsrFullTextConfigure",
+        "desc": "语音全文识别控制参数。"
+      },
+      {
+        "name": "AsrWordsConfigure",
+        "desc": "语音关键词识别控制参数。"
+      },
+      {
+        "name": "ObjectConfigure",
+        "desc": "物体识别控制参数。"
+      },
+      {
+        "name": "ScreenshotInterval",
+        "desc": "截帧间隔，单位为秒，最小值为 0.5 秒。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "修改用户自定义视频内容识别模板。"
   },
   "ApplyUpload": {
     "params": [
@@ -245,7 +410,40 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "* 该接口用于申请媒体文件（和封面文件）的上传，获取文件上传到腾讯云点播的元信息（包括上传路径、上传签名等），用于后续上传接口。\n* 上传流程请参考[服务端上传综述](https://cloud.tencent.com/document/product/266/9759#.E4.B8.8A.E4.BC.A0.E6.B5.81.E7.A8.8B)。"
+    "desc": "* 该接口用于申请媒体文件（和封面文件）的上传，获取文件上传到腾讯云点播的元信息（包括上传路径、上传签名等），用于后续上传接口。\n* 上传流程请参考[服务端上传综述](https://cloud.tencent.com/document/product/266/9759)。"
+  },
+  "ProcessMediaByProcedure": {
+    "params": [
+      {
+        "name": "FileId",
+        "desc": "媒体文件 ID。"
+      },
+      {
+        "name": "ProcedureName",
+        "desc": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字。"
+      },
+      {
+        "name": "TasksPriority",
+        "desc": "任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。"
+      },
+      {
+        "name": "TasksNotifyMode",
+        "desc": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。"
+      },
+      {
+        "name": "SessionContext",
+        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 250 个字符。"
+      },
+      {
+        "name": "SessionId",
+        "desc": "用于去重的识别码，如果一天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "使用任务流模板，对点播中的视频发起处理任务。\n有两种方式创建任务流模板：\n1. 在控制台上创建和修改任务流模板；\n2. 通过任务流模板接口创建任务流模板。"
   },
   "SearchMedia": {
     "params": [
@@ -313,6 +511,19 @@ INFO = {
     ],
     "desc": "删除用户自定义水印模板。"
   },
+  "DeletePersonSample": {
+    "params": [
+      {
+        "name": "PersonId",
+        "desc": "人物 ID。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "该接口用于根据人物 ID，删除人物样本。"
+  },
   "DeleteTranscodeTemplate": {
     "params": [
       {
@@ -338,6 +549,35 @@ INFO = {
       }
     ],
     "desc": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。"
+  },
+  "DescribeWordSamples": {
+    "params": [
+      {
+        "name": "Usages",
+        "desc": "<b>关键词应用场景过滤条件，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n可多选，元素间关系为 or，即关键词的应用场景包含该字段集合中任意元素的记录，均符合该条件。"
+      },
+      {
+        "name": "Keywords",
+        "desc": "关键词过滤条件，数组长度限制：100 个词。"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签过滤条件，数组长度限制：20 个词。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：100，最大值：100。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "该接口用于根据应用场景、关键词、标签，分页查询关键词样本信息。"
   },
   "ModifyWatermarkTemplate": {
     "params": [
@@ -383,6 +623,19 @@ INFO = {
       }
     ],
     "desc": "修改用户自定义水印模板，水印类型不允许修改。"
+  },
+  "DeleteWordSamples": {
+    "params": [
+      {
+        "name": "Keywords",
+        "desc": "关键词，数组长度限制：100 个词。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "该接口用于批量删除关键词样本。"
   },
   "ModifyAIAnalysisTemplate": {
     "params": [
@@ -455,19 +708,68 @@ INFO = {
     ],
     "desc": "根据任务流模板名字，获取任务流模板详情列表。"
   },
-  "DescribeTranscodeTemplates": {
+  "CreateWatermarkTemplate": {
     "params": [
       {
-        "name": "Definitions",
-        "desc": "转码模板唯一标识过滤条件，数组长度限制：100。"
+        "name": "Type",
+        "desc": "水印类型，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>"
       },
+      {
+        "name": "Name",
+        "desc": "水印模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "CoordinateOrigin",
+        "desc": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>\n默认值：TopLeft。目前，当 Type 为 image，该字段仅支持 TopLeft。"
+      },
+      {
+        "name": "XPos",
+        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。"
+      },
+      {
+        "name": "YPos",
+        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。"
+      },
+      {
+        "name": "ImageTemplate",
+        "desc": "图片水印模板，当 Type 为 image，该字段必填。当 Type 为 text，该字段无效。"
+      },
+      {
+        "name": "TextTemplate",
+        "desc": "文字水印模板，当 Type 为 text，该字段必填。当 Type 为 image，该字段无效。"
+      },
+      {
+        "name": "SvgTemplate",
+        "desc": "SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建用户自定义水印模板，数量上限：1000。"
+  },
+  "DescribePersonSamples": {
+    "params": [
       {
         "name": "Type",
-        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+        "desc": "拉取的人物类型，可选值：\n<li>UserDefine：用户自定义人物库；</li>\n<li>Default：系统默认人物库。</li>\n\n默认值：UserDefine，拉取用户自定义人物库人物。\n说明：如果是拉取系统默认人物库，只能使用人物名字或者人物 ID + 人物名字的方式进行拉取，且人脸图片只返回一张。"
       },
       {
-        "name": "ContainerType",
-        "desc": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>"
+        "name": "PersonIds",
+        "desc": "人物 ID，数组长度限制：100。"
+      },
+      {
+        "name": "Names",
+        "desc": "人物名称，数组长度限制：20。"
+      },
+      {
+        "name": "Tags",
+        "desc": "人物标签，数组长度限制：20。"
       },
       {
         "name": "Offset",
@@ -475,14 +777,27 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：100。"
+        "desc": "返回记录条数，默认值：100，最大值：100。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/11701#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。"
+    "desc": "该接口用于查询人物样本信息，支持根据人物 ID、名称、标签，分页查询。"
+  },
+  "DeleteAIRecognitionTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "视频内容识别模板唯一标识。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "删除用户自定义视频内容识别模板。"
   },
   "SimpleHlsClip": {
     "params": [
@@ -589,6 +904,72 @@ INFO = {
     ],
     "desc": "* 该接口用于查询任务列表；\n* 当列表数据比较多时，单次接口调用无法拉取整个列表，可通过 ScrollToken 参数，分批拉取；\n* 只能查询到最近三天（72 小时）内的任务。"
   },
+  "CreateTranscodeTemplate": {
+    "params": [
+      {
+        "name": "Container",
+        "desc": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。"
+      },
+      {
+        "name": "Name",
+        "desc": "转码模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "RemoveVideo",
+        "desc": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。"
+      },
+      {
+        "name": "RemoveAudio",
+        "desc": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。"
+      },
+      {
+        "name": "VideoTemplate",
+        "desc": "视频流配置参数，当 RemoveVideo 为 0，该字段必填。"
+      },
+      {
+        "name": "AudioTemplate",
+        "desc": "音频流配置参数，当 RemoveAudio 为 0，该字段必填。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建用户自定义转码模板，数量上限：1000。"
+  },
+  "CreatePersonSample": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "人物名称，长度限制：20 个字符。"
+      },
+      {
+        "name": "FaceContents",
+        "desc": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。"
+      },
+      {
+        "name": "Usages",
+        "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
+      },
+      {
+        "name": "Description",
+        "desc": "人物描述，长度限制：1024 个字符。"
+      },
+      {
+        "name": "Tags",
+        "desc": "人物标签\n<li>数组长度限制：20 个标签；</li>\n<li>单个标签长度限制：128 个字符。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "该接口用于创建人物样本，用于通过人脸识别等技术，进行内容识别、内容审核等视频处理。"
+  },
   "ResetProcedureTemplate": {
     "params": [
       {
@@ -635,42 +1016,113 @@ INFO = {
     ],
     "desc": "* 用于对媒体进行分类管理；\n* 该接口不影响既有媒体的分类，如需修改媒体分类，请调用[修改媒体文件属性](/document/product/266/31762)接口。\n* 分类层次不可超过 4 层。\n* 每个分类的子类数量不可超过 500 个。"
   },
-  "CreateTranscodeTemplate": {
+  "ModifyPersonSample": {
     "params": [
       {
-        "name": "Container",
-        "desc": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。"
+        "name": "PersonId",
+        "desc": "人物 ID。"
       },
       {
         "name": "Name",
-        "desc": "转码模板名称，长度限制：64 个字符。"
+        "desc": "名称，长度限制：128 个字符。"
       },
       {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
+        "name": "Description",
+        "desc": "描述，长度限制：1024 个字符。"
       },
       {
-        "name": "RemoveVideo",
-        "desc": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。"
+        "name": "Usages",
+        "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
       },
       {
-        "name": "RemoveAudio",
-        "desc": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。"
+        "name": "FaceOperationInfo",
+        "desc": "人脸操作信息。"
       },
       {
-        "name": "VideoTemplate",
-        "desc": "视频流配置参数，当 RemoveVideo 为 0，该字段必填。"
-      },
-      {
-        "name": "AudioTemplate",
-        "desc": "音频流配置参数，当 RemoveAudio 为 0，该字段必填。"
+        "name": "TagOperationInfo",
+        "desc": "标签操作信息。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "创建用户自定义转码模板，数量上限：1000。"
+    "desc": "该接口用于根据人物 ID，修改人物样本信息，包括名称、描述的修改，以及人脸、标签的添加、删除、重置操作。人脸删除操作需保证至少剩余 1 张图片，否则，请使用重置操作。"
+  },
+  "CreateWordSamples": {
+    "params": [
+      {
+        "name": "Usages",
+        "desc": "<b>关键词应用场景，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n7. All：通过光学字符识别技术、语音识别技术，进行内容识别、内容审核，等价于 1+2+3+4。"
+      },
+      {
+        "name": "Words",
+        "desc": "关键词，数组长度限制：100。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "该接口用于批量创建关键词样本，样本用于通过OCR、ASR技术，进行内容审核、内容识别等视频处理。关键词样本不可重复创建，如需变更，可先删除后，重新创建。"
+  },
+  "DeleteContentReviewTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "内容审核模板唯一标识。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "删除用户自定义视频内容审核模板。"
+  },
+  "ModifyContentReviewTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "内容审核模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "内容审核模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "内容审核模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "PornConfigure",
+        "desc": "鉴黄控制参数。"
+      },
+      {
+        "name": "TerrorismConfigure",
+        "desc": "鉴恐控制参数。"
+      },
+      {
+        "name": "PoliticalConfigure",
+        "desc": "鉴政控制参数。"
+      },
+      {
+        "name": "UserDefineConfigure",
+        "desc": "用户自定义内容审核控制参数。"
+      },
+      {
+        "name": "ScreenshotInterval",
+        "desc": "截帧间隔，单位为秒，最小值为 0.5 秒。"
+      },
+      {
+        "name": "ReviewWallSwitch",
+        "desc": "审核结果是否进入审核墙（对审核结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "修改用户自定义视频内容审核模板。"
   },
   "ProcessMedia": {
     "params": [
@@ -689,6 +1141,10 @@ INFO = {
       {
         "name": "AiAnalysisTask",
         "desc": "视频内容分析类型任务参数。"
+      },
+      {
+        "name": "AiRecognitionTask",
+        "desc": "视频内容识别类型任务参数。"
       },
       {
         "name": "TasksPriority",
@@ -711,7 +1167,77 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 智能内容审核（鉴黄、鉴恐、鉴政）；\n9. 智能内容分析（标签、分类、封面）。"
+    "desc": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 智能内容审核（鉴黄、鉴恐、鉴政）；\n9. 智能内容分析（标签、分类、封面、按帧标签）；\n10. 智能内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。"
+  },
+  "CreateAIRecognitionTemplate": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "视频内容识别模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容识别模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "HeadTailConfigure",
+        "desc": "视频片头片尾识别控制参数。"
+      },
+      {
+        "name": "FaceConfigure",
+        "desc": "人脸识别控制参数。"
+      },
+      {
+        "name": "OcrFullTextConfigure",
+        "desc": "文本全文识别控制参数。"
+      },
+      {
+        "name": "OcrWordsConfigure",
+        "desc": "文本关键词识别控制参数。"
+      },
+      {
+        "name": "AsrFullTextConfigure",
+        "desc": "语音全文识别控制参数。"
+      },
+      {
+        "name": "AsrWordsConfigure",
+        "desc": "语音关键词识别控制参数。"
+      },
+      {
+        "name": "ObjectConfigure",
+        "desc": "物体识别控制参数。"
+      },
+      {
+        "name": "ScreenshotInterval",
+        "desc": "截帧间隔，单位为秒。当不填时，默认截帧间隔为 1 秒，最小值为 0.5 秒。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建用户自定义视频内容识别模板，数量上限：50。"
+  },
+  "ModifyWordSample": {
+    "params": [
+      {
+        "name": "Keyword",
+        "desc": "关键词，长度限制：128 个字符。"
+      },
+      {
+        "name": "Usages",
+        "desc": "<b>关键词应用场景，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n7. All：通过光学字符识别技术、语音识别技术，进行内容识别、内容审核，等价于 1+2+3+4。"
+      },
+      {
+        "name": "TagOperationInfo",
+        "desc": "标签操作信息。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "该接口用于修改关键词的应用场景、标签，关键词本身不可修改，如需修改，可删除重建。"
   },
   "DeleteClass": {
     "params": [
@@ -850,49 +1376,33 @@ INFO = {
     ],
     "desc": "查询用户自定义水印模板，支持根据条件，分页查询。"
   },
-  "CreateWatermarkTemplate": {
+  "DescribeTranscodeTemplates": {
     "params": [
       {
+        "name": "Definitions",
+        "desc": "转码模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
         "name": "Type",
-        "desc": "水印类型，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>"
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
       },
       {
-        "name": "Name",
-        "desc": "水印模板名称，长度限制：64 个字符。"
+        "name": "ContainerType",
+        "desc": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>"
       },
       {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
       },
       {
-        "name": "CoordinateOrigin",
-        "desc": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>\n默认值：TopLeft。目前，当 Type 为 image，该字段仅支持 TopLeft。"
-      },
-      {
-        "name": "XPos",
-        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。"
-      },
-      {
-        "name": "YPos",
-        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。"
-      },
-      {
-        "name": "ImageTemplate",
-        "desc": "图片水印模板，当 Type 为 image，该字段必填。当 Type 为 text，该字段无效。"
-      },
-      {
-        "name": "TextTemplate",
-        "desc": "文字水印模板，当 Type 为 text，该字段必填。当 Type 为 image，该字段无效。"
-      },
-      {
-        "name": "SvgTemplate",
-        "desc": "SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。"
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "创建用户自定义水印模板，数量上限：1000。"
+    "desc": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。"
   }
 }

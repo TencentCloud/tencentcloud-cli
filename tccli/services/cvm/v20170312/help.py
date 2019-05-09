@@ -556,6 +556,10 @@ INFO = {
       {
         "name": "ForceStop",
         "desc": "是否对运行中的实例选择强制关机。默认为TRUE。"
+      },
+      {
+        "name": "ReserveHostName",
+        "desc": "是否保留主机名。默认为FALSE。"
       }
     ],
     "desc": "本接口(ModifyInstancesVpcAttribute)用于修改实例vpc属性，如私有网络ip。\n* 此操作默认会关闭实例，完成后再启动。\n* 当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。执行此操作前请确保指定的实例上没有绑定[弹性网卡](https://cloud.tencent.com/document/product/576)和[负载均衡](https://cloud.tencent.com/document/product/214)。"
@@ -631,7 +635,7 @@ INFO = {
       },
       {
         "name": "ImageId",
-        "desc": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/9418) ，取返回信息中的`ImageId`字段。</li>"
+        "desc": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/9418) ，取返回信息中的`ImageId`字段。</li>\n<br>默认取值：默认使用当前镜像。"
       },
       {
         "name": "SystemDisk",
@@ -644,6 +648,10 @@ INFO = {
       {
         "name": "EnhancedService",
         "desc": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。"
+      },
+      {
+        "name": "HostName",
+        "desc": "重装系统时，可以指定修改实例的HostName。"
       }
     ],
     "desc": "本接口 (ResetInstance) 用于重装指定实例上的操作系统。\n\n* 如果指定了`ImageId`参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* `Linux`和`Windows`系统互相切换时，该实例系统盘`ID`将发生变化，系统盘关联快照将无法回滚、恢复数据。\n* 密码不指定将会通过站内信下发随机密码。\n* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换。\n* 目前不支持海外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换。"
@@ -836,7 +844,7 @@ INFO = {
       },
       {
         "name": "InstanceChargePrepaid",
-        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。"
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。"
       },
       {
         "name": "RenewPortableDataDisk",

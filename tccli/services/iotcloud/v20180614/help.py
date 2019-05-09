@@ -51,6 +51,40 @@ INFO = {
     ],
     "desc": "本接口（ReplaceTopicRule）用于修改替换规则"
   },
+  "DeleteLoraDevice": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "设备所属产品id"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      }
+    ],
+    "desc": "删除lora类型的设备"
+  },
+  "DescribeMultiDevices": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品 ID，创建产品时腾讯云为用户分配全局唯一的 ID"
+      },
+      {
+        "name": "TaskId",
+        "desc": "任务 ID，由批量创建设备接口返回"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小，每页返回的设备个数"
+      }
+    ],
+    "desc": "本接口（DescribeMultiDevices）用于查询批量创建设备的执行结果。"
+  },
   "DescribeDeviceShadow": {
     "params": [
       {
@@ -64,14 +98,18 @@ INFO = {
     ],
     "desc": "本接口（DescribeDeviceShadow）用于查询虚拟设备信息。"
   },
-  "EnableTopicRule": {
+  "DescribeDevice": {
     "params": [
       {
-        "name": "RuleName",
-        "desc": "规则名称"
+        "name": "ProductID",
+        "desc": "产品ID"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名"
       }
     ],
-    "desc": "本接口（EnableTopicRule）用于启用规则"
+    "desc": "本接口（DescribeDevice）用于查看设备信息"
   },
   "CreateMultiDevice": {
     "params": [
@@ -98,15 +136,6 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateTopicRule）用于创建一个规则"
-  },
-  "CancelTask": {
-    "params": [
-      {
-        "name": "Id",
-        "desc": "任务 ID"
-      }
-    ],
-    "desc": "本接口（CancelTask）用于取消一个未被调度的任务。"
   },
   "DisableTopicRule": {
     "params": [
@@ -172,6 +201,19 @@ INFO = {
     ],
     "desc": "本接口（DescribeProducts）用于列出产品列表。"
   },
+  "DescribeLoraDevice": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品id"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      }
+    ],
+    "desc": "获取lora类型设备的详细信息"
+  },
   "DescribeTask": {
     "params": [
       {
@@ -197,6 +239,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DeleteDevice）用于删除物联网通信设备。"
+  },
+  "DeleteProduct": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "需要删除的产品 ID"
+      },
+      {
+        "name": "Skey",
+        "desc": "删除LoRa产品需要skey"
+      }
+    ],
+    "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品。"
   },
   "CreateDevice": {
     "params": [
@@ -235,6 +290,10 @@ INFO = {
       {
         "name": "Skey",
         "desc": "创建LoRa设备需要skey"
+      },
+      {
+        "name": "LoraAppKey",
+        "desc": "LoRa设备的AppKey"
       }
     ],
     "desc": "本接口（CreateDevice）用于新建一个物联网通信设备。"
@@ -259,23 +318,19 @@ INFO = {
       },
       {
         "name": "Qos",
-        "desc": "服务质量等级，取值为0， 1"
+        "desc": "服务质量等级，取值为0或1"
       }
     ],
     "desc": "本接口（PublishMessage）用于向某个主题发消息。"
   },
-  "DeleteProduct": {
+  "CancelTask": {
     "params": [
       {
-        "name": "ProductId",
-        "desc": "需要删除的产品 ID"
-      },
-      {
-        "name": "Skey",
-        "desc": "删除LoRa产品需要skey"
+        "name": "Id",
+        "desc": "任务 ID"
       }
     ],
-    "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品。"
+    "desc": "本接口（CancelTask）用于取消一个未被调度的任务。"
   },
   "DescribeTasks": {
     "params": [
@@ -290,26 +345,84 @@ INFO = {
     ],
     "desc": "本接口（DescribeTasks）用于查询已创建的任务列表，任务保留一个月"
   },
-  "DescribeMultiDevices": {
+  "PublishToDevice": {
     "params": [
       {
         "name": "ProductId",
-        "desc": "产品 ID，创建产品时腾讯云为用户分配全局唯一的 ID"
+        "desc": "产品id"
       },
       {
-        "name": "TaskId",
-        "desc": "任务 ID，由批量创建设备接口返回"
+        "name": "DeviceName",
+        "desc": "设备名称"
       },
       {
-        "name": "Offset",
-        "desc": "分页偏移"
+        "name": "Port",
+        "desc": "LoRa 端口"
       },
       {
-        "name": "Limit",
-        "desc": "分页大小，每页返回的设备个数"
+        "name": "Payload",
+        "desc": "消息内容"
       }
     ],
-    "desc": "本接口（DescribeMultiDevices）用于查询批量创建设备的执行结果。"
+    "desc": "服务器端下发消息给lora类型的设备"
+  },
+  "PublishAsDevice": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品id"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      },
+      {
+        "name": "Port",
+        "desc": "LoRa 设备端口"
+      },
+      {
+        "name": "Payload",
+        "desc": "消息内容"
+      }
+    ],
+    "desc": "模拟lora类型的设备端向服务器端发送消息"
+  },
+  "CreateLoraDevice": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品 ID ，创建产品时腾讯云为用户分配全局唯一的 ID"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      },
+      {
+        "name": "DeviceType",
+        "desc": "设备类型 ，目前支持A、B、C三种"
+      },
+      {
+        "name": "AppEui",
+        "desc": "LoRa应用UUID"
+      },
+      {
+        "name": "DeviceEui",
+        "desc": "LoRa设备UUID"
+      },
+      {
+        "name": "AppKey",
+        "desc": "LoRa应用密钥"
+      },
+      {
+        "name": "AuthKey",
+        "desc": "LoRa设备验证密钥"
+      },
+      {
+        "name": "Memo",
+        "desc": "设备备注"
+      }
+    ],
+    "desc": "创建lora类型的设备"
   },
   "UpdateTopicPolicy": {
     "params": [
@@ -391,18 +504,14 @@ INFO = {
     ],
     "desc": "本接口（DescribeMultiDevTask）用于查询批量创建设备任务的执行状态。"
   },
-  "DescribeDevice": {
+  "EnableTopicRule": {
     "params": [
       {
-        "name": "ProductID",
-        "desc": "产品ID"
-      },
-      {
-        "name": "DeviceName",
-        "desc": "设备名"
+        "name": "RuleName",
+        "desc": "规则名称"
       }
     ],
-    "desc": "本接口（DescribeDevice）用于查看设备信息"
+    "desc": "本接口（EnableTopicRule）用于启用规则"
   },
   "DeleteTopicRule": {
     "params": [

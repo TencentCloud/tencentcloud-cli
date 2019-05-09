@@ -1,6 +1,55 @@
 # -*- coding: utf-8 -*-
 DESC = "dc-2018-04-10"
 INFO = {
+  "ModifyDirectConnectAttribute": {
+    "params": [
+      {
+        "name": "DirectConnectId",
+        "desc": "物理专线的ID。"
+      },
+      {
+        "name": "DirectConnectName",
+        "desc": "物理专线名称。"
+      },
+      {
+        "name": "CircuitCode",
+        "desc": "运营商或者服务商为物理专线提供的电路编码。"
+      },
+      {
+        "name": "Vlan",
+        "desc": "物理专线调试VLAN。"
+      },
+      {
+        "name": "TencentAddress",
+        "desc": "物理专线调试腾讯侧互联 IP。"
+      },
+      {
+        "name": "CustomerAddress",
+        "desc": "物理专线调试用户侧互联 IP。"
+      },
+      {
+        "name": "CustomerName",
+        "desc": "物理专线申请者姓名。默认从账户体系获取。"
+      },
+      {
+        "name": "CustomerContactMail",
+        "desc": "物理专线申请者联系邮箱。默认从账户体系获取。"
+      },
+      {
+        "name": "CustomerContactNumber",
+        "desc": "物理专线申请者联系号码。默认从账户体系获取。"
+      },
+      {
+        "name": "FaultReportContactPerson",
+        "desc": "报障联系人。"
+      },
+      {
+        "name": "FaultReportContactNumber",
+        "desc": "报障联系电话。"
+      }
+    ],
+    "desc": "修改物理专线的属性。"
+  },
   "CreateDirectConnectTunnel": {
     "params": [
       {
@@ -62,6 +111,102 @@ INFO = {
     ],
     "desc": "用于创建专用通道的接口"
   },
+  "DeleteDirectConnect": {
+    "params": [
+      {
+        "name": "DirectConnectId",
+        "desc": "物理专线的ID。"
+      }
+    ],
+    "desc": "删除物理专线。\n只能删除处于状态的物理专线。"
+  },
+  "AcceptDirectConnectTunnel": {
+    "params": [
+      {
+        "name": "DirectConnectTunnelId",
+        "desc": "物理专线拥有者接受共享专用通道申请"
+      }
+    ],
+    "desc": "接受专用通道申请"
+  },
+  "DeleteDirectConnectTunnel": {
+    "params": [
+      {
+        "name": "DirectConnectTunnelId",
+        "desc": "专用通道ID"
+      }
+    ],
+    "desc": "删除专用通道"
+  },
+  "CreateDirectConnect": {
+    "params": [
+      {
+        "name": "DirectConnectName",
+        "desc": "物理专线的名称。"
+      },
+      {
+        "name": "AccessPointId",
+        "desc": "物理专线所在的接入点。\n您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。"
+      },
+      {
+        "name": "LineOperator",
+        "desc": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。"
+      },
+      {
+        "name": "Location",
+        "desc": "本地数据中心的地理位置。"
+      },
+      {
+        "name": "PortType",
+        "desc": "物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。"
+      },
+      {
+        "name": "CircuitCode",
+        "desc": "运营商或者服务商为物理专线提供的电路编码。"
+      },
+      {
+        "name": "Bandwidth",
+        "desc": "物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。"
+      },
+      {
+        "name": "RedundantDirectConnectId",
+        "desc": "冗余物理专线的ID。"
+      },
+      {
+        "name": "Vlan",
+        "desc": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。"
+      },
+      {
+        "name": "TencentAddress",
+        "desc": "物理专线调试腾讯侧互联 IP。默认自动分配。"
+      },
+      {
+        "name": "CustomerAddress",
+        "desc": "物理专线调试用户侧互联 IP。默认自动分配。"
+      },
+      {
+        "name": "CustomerName",
+        "desc": "物理专线申请者姓名。默认从账户体系获取。"
+      },
+      {
+        "name": "CustomerContactMail",
+        "desc": "物理专线申请者联系邮箱。默认从账户体系获取。"
+      },
+      {
+        "name": "CustomerContactNumber",
+        "desc": "物理专线申请者联系号码。默认从账户体系获取。"
+      },
+      {
+        "name": "FaultReportContactPerson",
+        "desc": "报障联系人。"
+      },
+      {
+        "name": "FaultReportContactNumber",
+        "desc": "报障联系电话。"
+      }
+    ],
+    "desc": "申请物理专线接入。\n调用该接口时，请注意：\n账号要进行实名认证，否则不允许申请物理专线；\n若账户下存在欠费状态的物理专线，则不能申请更多的物理专线。"
+  },
   "DescribeDirectConnectTunnels": {
     "params": [
       {
@@ -83,23 +228,22 @@ INFO = {
     ],
     "desc": "用于查询专用通道列表。"
   },
-  "AcceptDirectConnectTunnel": {
+  "DescribeAccessPoints": {
     "params": [
       {
-        "name": "DirectConnectTunnelId",
-        "desc": "物理专线拥有者接受共享专用通道申请"
-      }
-    ],
-    "desc": "接受专用通道申请"
-  },
-  "DeleteDirectConnectTunnel": {
-    "params": [
+        "name": "RegionId",
+        "desc": "接入点所在的地域。使用DescribeRegions查询\n\n您可以通过调用 DescribeRegions接口获取地域ID。"
+      },
       {
-        "name": "DirectConnectTunnelId",
-        "desc": "专用通道ID"
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "删除专用通道"
+    "desc": "查询物理专线接入点\n"
   },
   "RejectDirectConnectTunnel": {
     "params": [
@@ -109,6 +253,27 @@ INFO = {
       }
     ],
     "desc": "拒绝专用通道申请"
+  },
+  "DescribeDirectConnects": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件:"
+      },
+      {
+        "name": "DirectConnectIds",
+        "desc": "物理专线 ID数组"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100"
+      }
+    ],
+    "desc": "查询物理专线列表。"
   },
   "ModifyDirectConnectTunnelAttribute": {
     "params": [

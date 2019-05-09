@@ -5,11 +5,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名ContractMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名CreateContractByUpload"
       },
       {
         "name": "SignInfos",
@@ -24,12 +24,16 @@ INFO = {
         "desc": "合同名称"
       },
       {
+        "name": "Initiator",
+        "desc": "合同发起方帐号ID"
+      },
+      {
         "name": "Remarks",
         "desc": "备注"
       },
       {
-        "name": "Initiator",
-        "desc": "合同发起方帐号ID"
+        "name": "ExpireTime",
+        "desc": "过期时间"
       }
     ],
     "desc": "此接口适用于：客户平台通过上传PDF文件作为合同，以备未来进行签署。接口返回任务号，可调用DescribeTaskStatus接口查看任务执行结果。"
@@ -38,11 +42,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名SealMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名CreateSeal"
       },
       {
         "name": "AccountResId",
@@ -51,6 +55,10 @@ INFO = {
       {
         "name": "ImgUrl",
         "desc": "签章链接，图片必须为png格式"
+      },
+      {
+        "name": "ImgData",
+        "desc": "图片数据，base64编码"
       }
     ],
     "desc": "此接口用于客户电子合同平台增加某用户的印章图片。客户平台可以调用此接口增加某用户的印章图片。"
@@ -59,28 +67,28 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名ContractMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名DownloadContract"
       },
       {
         "name": "ContractResId",
         "desc": "合同ID"
       }
     ],
-    "desc": "下载合同接口。调用该接口可以下载签署中和签署完成的接口。接口返回任务号，可调用DescribeTaskStatus接口查看任务执行结果。"
+    "desc": "下载合同接口。调用该接口可以下载签署中和签署完成的合同。接口返回任务号，可调用DescribeTaskStatus接口查看任务执行结果。"
   },
   "DeleteAccount": {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名AccountMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名DeleteAccount"
       },
       {
         "name": "AccountList",
@@ -93,11 +101,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名CommonMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名DescribeTaskStatus"
       },
       {
         "name": "TaskId",
@@ -110,11 +118,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名AccountMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名CreatePersonalAccount"
       },
       {
         "name": "Name",
@@ -139,11 +147,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名ContractMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名SignContractByKeyword"
       },
       {
         "name": "ContractResId",
@@ -162,12 +170,20 @@ INFO = {
         "desc": "授权IP地址"
       },
       {
+        "name": "SignKeyword",
+        "desc": "签署关键字，偏移坐标原点为关键字中心"
+      },
+      {
         "name": "SealResId",
         "desc": "签章ID"
       },
       {
-        "name": "SignKeyword",
-        "desc": "签署关键字，坐标和范围不得超过合同文件边界"
+        "name": "CertType",
+        "desc": "选用证书类型：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1"
+      },
+      {
+        "name": "ImageData",
+        "desc": "签名图片，base64编码"
       }
     ],
     "desc": "此接口适用于：客户平台在创建好合同后，由合同签署方对创建的合同内容进行确认，无误后再进行签署。客户平台使用该接口对PDF合同文档按照关键字和坐标进行签署。"
@@ -176,11 +192,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名SealMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名DeleteSeal"
       },
       {
         "name": "AccountResId",
@@ -197,11 +213,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名AccountMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名CreateEnterpriseAccount"
       },
       {
         "name": "Name",
@@ -217,7 +233,7 @@ INFO = {
       },
       {
         "name": "MobilePhone",
-        "desc": "企业联系电话"
+        "desc": "企业联系人手机号"
       },
       {
         "name": "TransactorName",
@@ -236,17 +252,17 @@ INFO = {
         "desc": "经办人手机号"
       }
     ],
-    "desc": "为企业电子合同平台的最终企业用户进行开户。在企业电子合同平台进行操作的企业用户，企业电子合同平台向腾讯云发送个人用户的信息，提交开户命令。腾讯云接到请求后，自动为企业电子合同平台的企业用户生成一张数字证书。"
+    "desc": "为企业电子合同平台的最终企业用户进行开户。在企业电子合同平台进行操作的企业用户，企业电子合同平台向腾讯云发送企业用户的信息，提交开户命令。腾讯云接到请求后，自动为企业电子合同平台的企业用户生成一张数字证书。"
   },
   "SendVcode": {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名VerifyCode"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名SendVcode"
       },
       {
         "name": "ContractResId",
@@ -257,17 +273,17 @@ INFO = {
         "desc": "帐号ID"
       }
     ],
-    "desc": "发送验证码接口。此接口用于：企业电子合同平台需要腾讯云发送验证码对其用户进行验证时调用，腾讯云将向其用户联系手机(企业电子合同平台为用户开户时通过接口传入)发送验证码，以验证码授权方式签署合同。企业电子合同平台可以选择签署合同时不校验验证码（需线下沟通）。用户验证工作由企业电子合同平台自身完成。"
+    "desc": "发送验证码接口。此接口用于：企业电子合同平台需要腾讯云发送验证码对其用户进行验证时调用，腾讯云将向其用户联系手机(企业电子合同平台为用户开户时通过接口传入)发送验证码，以验证码授权方式签署合同。用户验证工作由企业电子合同平台自身完成。"
   },
   "CheckVcode": {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名VerifyCode"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名CheckVcode"
       },
       {
         "name": "AccountResId",
@@ -288,11 +304,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名ContractMng"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名SignContractByCoordinate"
       },
       {
         "name": "ContractResId",
@@ -312,11 +328,19 @@ INFO = {
       },
       {
         "name": "SignLocations",
-        "desc": "签署坐标，坐标不得超过合同文件边界"
+        "desc": "签署坐标，坐标原点在文件左下角，坐标单位为磅，坐标不得超过合同文件边界"
       },
       {
         "name": "SealResId",
         "desc": "印章ID"
+      },
+      {
+        "name": "CertType",
+        "desc": "选用证书类型：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1"
+      },
+      {
+        "name": "ImageData",
+        "desc": "签名图片，base64编码"
       }
     ],
     "desc": "此接口适用于：客户平台在创建好合同后，由合同签署方对创建的合同内容进行确认，无误后再进行签署。客户平台使用该接口提供详细的PDF文档签名坐标进行签署。"

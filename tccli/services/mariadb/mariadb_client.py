@@ -235,6 +235,7 @@ def doDescribeDBResourceUsageDetails(argv, arglist):
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "MetricName": Utils.try_to_json(argv, "--MetricName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -380,6 +381,7 @@ def doDescribeDBSlowLogs(argv, arglist):
         "Db": Utils.try_to_json(argv, "--Db"),
         "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
         "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "Slave": Utils.try_to_json(argv, "--Slave"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -624,6 +626,7 @@ def doDescribeDBPerformanceDetails(argv, arglist):
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "MetricName": Utils.try_to_json(argv, "--MetricName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -736,6 +739,7 @@ def doDescribeDBInstances(argv, arglist):
         "OriginSerialIds": Utils.try_to_json(argv, "--OriginSerialIds"),
         "IsFilterExcluster": Utils.try_to_json(argv, "--IsFilterExcluster"),
         "ExclusterType": Utils.try_to_json(argv, "--ExclusterType"),
+        "ExclusterIds": Utils.try_to_json(argv, "--ExclusterIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1245,6 +1249,7 @@ def doDescribeDBPerformance(argv, arglist):
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "MetricName": Utils.try_to_json(argv, "--MetricName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1313,6 +1318,7 @@ def doDescribeDBResourceUsage(argv, arglist):
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "MetricName": Utils.try_to_json(argv, "--MetricName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

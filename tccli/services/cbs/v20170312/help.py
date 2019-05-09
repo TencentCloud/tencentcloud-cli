@@ -187,7 +187,7 @@ INFO = {
       },
       {
         "name": "DiskChargeType",
-        "desc": "云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br>各类型价格请参考云硬盘[价格总览](/document/product/362/2413)。"
+        "desc": "云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDCPAID：独享集群付费<br>各类型价格请参考云硬盘[价格总览](/document/product/362/2413)。"
       },
       {
         "name": "Placement",
@@ -227,7 +227,11 @@ INFO = {
       },
       {
         "name": "DeleteWithInstance",
-        "desc": "可选参数，不传该参数则仅执行挂载操作。传入True时，新创建的云盘将设置为随云主机销毁模式，仅对按量计费云硬盘有效。"
+        "desc": "可选参数。传入True时，新创建的云盘将设置为随云主机销毁模式，仅对按量计费云硬盘有效。"
+      },
+      {
+        "name": "Shareable",
+        "desc": "可选参数，默认为False。传入True时，云盘将创建为共享型云盘。"
       }
     ],
     "desc": "本接口（CreateDisks）用于创建云硬盘。\n\n* 预付费云盘的购买会预先扣除本次云盘购买所需金额，在调用本接口前请确保账户余额充足。\n* 本接口支持传入数据盘快照来创建云盘，实现将快照数据复制到新购云盘上。\n* 本接口为异步接口，当创建请求下发成功后会返回一个新建的云盘ID列表，此时云盘的创建并未立即完成。可以通过调用[DescribeDisks](/document/product/362/16315)接口根据DiskId查询对应云盘，如果能查到云盘，且状态为'UNATTACHED'或'ATTACHED'，则表示创建成功。"

@@ -103,6 +103,10 @@ INFO = {
       {
         "name": "EndTime",
         "desc": "结束日期，格式yyyy-mm-dd"
+      },
+      {
+        "name": "MetricName",
+        "desc": "拉取的指标名称，支持的值为：data_disk_available,binlog_disk_available,mem_available,cpu_usage_rate"
       }
     ],
     "desc": "本接口(DescribeDBResourceUsageDetails)用于查看数据库实例当前性能数据。"
@@ -167,6 +171,10 @@ INFO = {
       {
         "name": "EndTime",
         "desc": "结束日期，格式yyyy-mm-dd"
+      },
+      {
+        "name": "MetricName",
+        "desc": "拉取的指标名，支持的值为：long_query,select_total,update_total,insert_total,delete_total,mem_hit_rate,disk_iops,conn_active,is_master_switched,slave_delay"
       }
     ],
     "desc": "本接口(DescribeDBPerformanceDetails)用于查看实例性能数据详情。"
@@ -281,7 +289,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "拉取数量（0-1000，为0时拉取总数信息）。"
+        "desc": "拉取数量（0-10000，为0时拉取总数信息）。"
       }
     ],
     "desc": "本接口（DescribeSqlLogs）用于获取实例SQL日志。"
@@ -359,7 +367,11 @@ INFO = {
       },
       {
         "name": "ExclusterType",
-        "desc": "1非独享集群，2独享集群， 0全部"
+        "desc": "实例所属独享集群类型。取值范围：1-非独享集群，2-独享集群， 0-全部"
+      },
+      {
+        "name": "ExclusterIds",
+        "desc": "按独享集群Id过滤实例，独享集群Id形如dbdc-4ih6uct9"
       }
     ],
     "desc": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回20条实例记录，单次请求最多支持返回100条实例记录。"
@@ -438,11 +450,11 @@ INFO = {
       },
       {
         "name": "VpcId",
-        "desc": "虚拟私有网络 ID，不传或传 0 表示创建为基础网络"
+        "desc": "虚拟私有网络 ID，不传表示创建为基础网络"
       },
       {
         "name": "SubnetId",
-        "desc": "虚拟私有网络子网 ID，VpcId 不为0时必填"
+        "desc": "虚拟私有网络子网 ID，VpcId 不为空时必填"
       },
       {
         "name": "ProjectId",
@@ -450,7 +462,7 @@ INFO = {
       },
       {
         "name": "DbVersionId",
-        "desc": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17"
+        "desc": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。如果不传的话，默认为 Mariadb 10.1.9。"
       }
     ],
     "desc": "本接口（CreateDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长和数量等信息创建云数据库实例。"
@@ -505,7 +517,7 @@ INFO = {
       },
       {
         "name": "Params",
-        "desc": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步）。"
+        "desc": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步）。"
       }
     ],
     "desc": "本接口(InitDBInstances)用于初始化云数据库实例，包括设置默认字符集、表名大小写敏感等。"
@@ -560,6 +572,10 @@ INFO = {
       {
         "name": "OrderByType",
         "desc": "排序类型，desc或者asc"
+      },
+      {
+        "name": "Slave",
+        "desc": "是否查询从机的慢查询，0-主机; 1-从机"
       }
     ],
     "desc": "本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。"
@@ -711,6 +727,10 @@ INFO = {
       {
         "name": "EndTime",
         "desc": "结束日期，格式yyyy-mm-dd"
+      },
+      {
+        "name": "MetricName",
+        "desc": "拉取的指标名，支持的值为：long_query,select_total,update_total,insert_total,delete_total,mem_hit_rate,disk_iops,conn_active,is_master_switched,slave_delay"
       }
     ],
     "desc": "本接口(DescribeDBPerformance)用于查看数据库实例当前性能数据。"
@@ -737,6 +757,10 @@ INFO = {
       {
         "name": "EndTime",
         "desc": "结束日期，格式yyyy-mm-dd"
+      },
+      {
+        "name": "MetricName",
+        "desc": "拉取的指标名称，支持的值为：data_disk_available,binlog_disk_available,mem_available,cpu_usage_rate"
       }
     ],
     "desc": "本接口(DescribeDBResourceUsage)用于查看数据库实例资源的使用情况。"

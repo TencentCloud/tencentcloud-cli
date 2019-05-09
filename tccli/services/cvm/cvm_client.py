@@ -941,6 +941,7 @@ def doModifyInstancesVpcAttribute(argv, arglist):
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "VirtualPrivateCloud": Utils.try_to_json(argv, "--VirtualPrivateCloud"),
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
+        "ReserveHostName": Utils.try_to_json(argv, "--ReserveHostName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1117,6 +1118,7 @@ def doResetInstance(argv, arglist):
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
+        "HostName": Utils.try_to_json(argv, "--HostName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

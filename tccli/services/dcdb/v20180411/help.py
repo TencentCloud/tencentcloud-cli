@@ -356,7 +356,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "拉取数量（0-1000，为0时拉取总数信息）。"
+        "desc": "拉取数量（0-10000，为0时拉取总数信息）。"
       }
     ],
     "desc": "本接口（DescribeSqlLogs）用于获取实例SQL日志。"
@@ -599,7 +599,7 @@ INFO = {
       },
       {
         "name": "DbVersionId",
-        "desc": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17"
+        "desc": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。\n10.0.10 - Mariadb 10.0.10；\n10.1.9 - Mariadb 10.1.9；\n5.7.17 - Percona 5.7.17。\n如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。"
       },
       {
         "name": "AutoVoucher",
@@ -662,7 +662,7 @@ INFO = {
       },
       {
         "name": "Params",
-        "desc": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步）。"
+        "desc": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步）。"
       }
     ],
     "desc": "本接口(InitDCDBInstances)用于初始化云数据库实例，包括设置默认字符集、表名大小写敏感等。"

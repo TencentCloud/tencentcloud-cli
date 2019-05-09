@@ -30,8 +30,9 @@ def doCreateContractByUpload(argv, arglist):
         "SignInfos": Utils.try_to_json(argv, "--SignInfos"),
         "ContractFile": Utils.try_to_json(argv, "--ContractFile"),
         "ContractName": Utils.try_to_json(argv, "--ContractName"),
-        "Remarks": Utils.try_to_json(argv, "--Remarks"),
         "Initiator": Utils.try_to_json(argv, "--Initiator"),
+        "Remarks": Utils.try_to_json(argv, "--Remarks"),
+        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -68,6 +69,7 @@ def doCreateSeal(argv, arglist):
         "Operation": Utils.try_to_json(argv, "--Operation"),
         "AccountResId": Utils.try_to_json(argv, "--AccountResId"),
         "ImgUrl": Utils.try_to_json(argv, "--ImgUrl"),
+        "ImgData": Utils.try_to_json(argv, "--ImgData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -249,8 +251,10 @@ def doSignContractByKeyword(argv, arglist):
         "AccountResId": Utils.try_to_json(argv, "--AccountResId"),
         "AuthorizationTime": Utils.try_to_json(argv, "--AuthorizationTime"),
         "Position": Utils.try_to_json(argv, "--Position"),
-        "SealResId": Utils.try_to_json(argv, "--SealResId"),
         "SignKeyword": Utils.try_to_json(argv, "--SignKeyword"),
+        "SealResId": Utils.try_to_json(argv, "--SealResId"),
+        "CertType": Utils.try_to_json(argv, "--CertType"),
+        "ImageData": Utils.try_to_json(argv, "--ImageData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -442,6 +446,8 @@ def doSignContractByCoordinate(argv, arglist):
         "Position": Utils.try_to_json(argv, "--Position"),
         "SignLocations": Utils.try_to_json(argv, "--SignLocations"),
         "SealResId": Utils.try_to_json(argv, "--SealResId"),
+        "CertType": Utils.try_to_json(argv, "--CertType"),
+        "ImageData": Utils.try_to_json(argv, "--ImageData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

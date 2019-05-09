@@ -139,6 +139,8 @@ def doUpdateLiveWatermark(argv, arglist):
         "XPosition": Utils.try_to_json(argv, "--XPosition"),
         "YPosition": Utils.try_to_json(argv, "--YPosition"),
         "WatermarkName": Utils.try_to_json(argv, "--WatermarkName"),
+        "Width": Utils.try_to_json(argv, "--Width"),
+        "Height": Utils.try_to_json(argv, "--Height"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -220,6 +222,7 @@ def doModifyLiveRecordTemplate(argv, arglist):
         "HlsParam": Utils.try_to_json(argv, "--HlsParam"),
         "Mp4Param": Utils.try_to_json(argv, "--Mp4Param"),
         "AacParam": Utils.try_to_json(argv, "--AacParam"),
+        "HlsSpecialParam": Utils.try_to_json(argv, "--HlsSpecialParam"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -678,6 +681,8 @@ def doAddLiveWatermark(argv, arglist):
         "WatermarkName": Utils.try_to_json(argv, "--WatermarkName"),
         "XPosition": Utils.try_to_json(argv, "--XPosition"),
         "YPosition": Utils.try_to_json(argv, "--YPosition"),
+        "Width": Utils.try_to_json(argv, "--Width"),
+        "Height": Utils.try_to_json(argv, "--Height"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

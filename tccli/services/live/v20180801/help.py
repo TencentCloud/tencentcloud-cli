@@ -88,6 +88,14 @@ INFO = {
       {
         "name": "WatermarkName",
         "desc": "水印名称。"
+      },
+      {
+        "name": "Width",
+        "desc": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。"
+      },
+      {
+        "name": "Height",
+        "desc": "水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。"
       }
     ],
     "desc": "更新水印"
@@ -166,6 +174,10 @@ INFO = {
       {
         "name": "AacParam",
         "desc": "Aac录制参数，开启Aac录制时设置。"
+      },
+      {
+        "name": "HlsSpecialParam",
+        "desc": "HLS录制定制参数"
       }
     ],
     "desc": "修改录制模板配置"
@@ -398,6 +410,14 @@ INFO = {
       {
         "name": "YPosition",
         "desc": "显示位置,Y轴偏移。"
+      },
+      {
+        "name": "Width",
+        "desc": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。"
+      },
+      {
+        "name": "Height",
+        "desc": "水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。"
       }
     ],
     "desc": "添加水印，成功返回水印id后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印id绑定到流使用。"
