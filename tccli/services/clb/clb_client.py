@@ -56,6 +56,40 @@ def doRegisterTargets(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSetLoadBalancerSecurityGroups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SetLoadBalancerSecurityGroups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "SecurityGroups": Utils.try_to_json(argv, "--SecurityGroups"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetLoadBalancerSecurityGroupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SetLoadBalancerSecurityGroups(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeClassicalLBListeners(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -153,6 +187,41 @@ def doCreateRule(argv, arglist):
     model = models.CreateRuleRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateRule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAutoRewrite(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AutoRewrite", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "Domains": Utils.try_to_json(argv, "--Domains"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AutoRewriteRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AutoRewrite(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -431,6 +500,7 @@ def doDescribeLoadBalancers(argv, arglist):
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "WithRs": Utils.try_to_json(argv, "--WithRs"),
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -644,6 +714,42 @@ def doModifyRule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteRewrite(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteRewrite", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "SourceListenerId": Utils.try_to_json(argv, "--SourceListenerId"),
+        "TargetListenerId": Utils.try_to_json(argv, "--TargetListenerId"),
+        "RewriteInfos": Utils.try_to_json(argv, "--RewriteInfos"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteRewriteRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteRewrite(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeTargets(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -705,6 +811,41 @@ def doRegisterTargetsWithClassicalLB(argv, arglist):
     model = models.RegisterTargetsWithClassicalLBRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.RegisterTargetsWithClassicalLB(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeRewrite(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRewrite", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "SourceListenerIds": Utils.try_to_json(argv, "--SourceListenerIds"),
+        "SourceLocationIds": Utils.try_to_json(argv, "--SourceLocationIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRewriteRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRewrite(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -800,6 +941,7 @@ def doModifyLoadBalancerAttributes(argv, arglist):
     param = {
         "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
         "LoadBalancerName": Utils.try_to_json(argv, "--LoadBalancerName"),
+        "TargetRegionInfo": Utils.try_to_json(argv, "--TargetRegionInfo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -892,6 +1034,39 @@ def doBatchModifyTargetWeight(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTargetHealth(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTargetHealth", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTargetHealthRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTargetHealth(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateLoadBalancer(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -930,6 +1105,42 @@ def doCreateLoadBalancer(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doManualRewrite(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ManualRewrite", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "SourceListenerId": Utils.try_to_json(argv, "--SourceListenerId"),
+        "TargetListenerId": Utils.try_to_json(argv, "--TargetListenerId"),
+        "RewriteInfos": Utils.try_to_json(argv, "--RewriteInfos"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ManualRewriteRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ManualRewrite(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180317": clb_client_v20180317,
 
@@ -942,9 +1153,11 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "RegisterTargets": doRegisterTargets,
+    "SetLoadBalancerSecurityGroups": doSetLoadBalancerSecurityGroups,
     "DescribeClassicalLBListeners": doDescribeClassicalLBListeners,
     "DeleteListener": doDeleteListener,
     "CreateRule": doCreateRule,
+    "AutoRewrite": doAutoRewrite,
     "ModifyDomain": doModifyDomain,
     "DescribeClassicalLBTargets": doDescribeClassicalLBTargets,
     "DeregisterTargetsFromClassicalLB": doDeregisterTargetsFromClassicalLB,
@@ -958,14 +1171,18 @@ ACTION_MAP = {
     "ModifyTargetWeight": doModifyTargetWeight,
     "DescribeTaskStatus": doDescribeTaskStatus,
     "ModifyRule": doModifyRule,
+    "DeleteRewrite": doDeleteRewrite,
     "DescribeTargets": doDescribeTargets,
     "RegisterTargetsWithClassicalLB": doRegisterTargetsWithClassicalLB,
+    "DescribeRewrite": doDescribeRewrite,
     "ModifyTargetPort": doModifyTargetPort,
     "DeregisterTargets": doDeregisterTargets,
     "ModifyLoadBalancerAttributes": doModifyLoadBalancerAttributes,
     "DescribeClassicalLBByInstanceId": doDescribeClassicalLBByInstanceId,
     "BatchModifyTargetWeight": doBatchModifyTargetWeight,
+    "DescribeTargetHealth": doDescribeTargetHealth,
     "CreateLoadBalancer": doCreateLoadBalancer,
+    "ManualRewrite": doManualRewrite,
 
 }
 

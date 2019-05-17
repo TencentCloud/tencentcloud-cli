@@ -575,7 +575,7 @@ INFO = {
       },
       {
         "name": "LifecycleHookName",
-        "desc": "生命周期挂钩名称"
+        "desc": "生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超128个字节。"
       },
       {
         "name": "LifecycleTransition",
@@ -591,7 +591,7 @@ INFO = {
       },
       {
         "name": "NotificationMetadata",
-        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为''"
+        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。"
       },
       {
         "name": "NotificationTarget",

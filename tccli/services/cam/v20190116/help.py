@@ -256,7 +256,7 @@ INFO = {
     "params": [
       {
         "name": "Info",
-        "desc": "添加的子用户 ID 和用户组 ID 关联关系"
+        "desc": "添加的子用户 UID 和用户组 ID 关联关系"
       }
     ],
     "desc": "用户加入到用户组"

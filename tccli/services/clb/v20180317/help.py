@@ -30,6 +30,19 @@ INFO = {
     ],
     "desc": "RegisterTargets 接口用来将一台或多台后端机器注册到应用型负载均衡的监听器，对于四层监听器（TCP、UDP），只需指定监听器ID即可，对于七层监听器（HTTP、HTTPS），还需通过LocationId或者Domain+Url指定转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
+  "SetLoadBalancerSecurityGroups": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
+      },
+      {
+        "name": "SecurityGroups",
+        "desc": "安全组ID构成的数组，一个负载均衡实例最多关联50个安全组，如果要解绑所有安全组，可不传此参数。"
+      }
+    ],
+    "desc": "SetLoadBalancerSecurityGroups 接口支持对一个负载均衡实例执行设置（绑定、解绑）安全组操作，查询一个负载均衡实例目前已绑定的安全组，可使用 DescribeLoadBalancers 接口。\n绑定操作时，入参需要传入负载均衡实例要绑定的所有安全组（已绑定的+新增绑定的）。\n解绑操作时，入参需要传入负载均衡实例执行解绑后所绑定的所有安全组；如果要解绑所有安全组，可传入空数组。"
+  },
   "DescribeClassicalLBListeners": {
     "params": [
       {
@@ -84,6 +97,23 @@ INFO = {
       }
     ],
     "desc": "CreateRule 接口用于在一个已存在的应用型负载均衡七层监听器下创建转发规则，七层监听器中，后端机器必须绑定到规则上而非监听器上。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+  },
+  "AutoRewrite": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例ID"
+      },
+      {
+        "name": "ListenerId",
+        "desc": "监听器ID"
+      },
+      {
+        "name": "Domains",
+        "desc": "需要重定向的域名"
+      }
+    ],
+    "desc": "系统自动为已存在的HTTPS:443监听器创建HTTP监听器进行转发，默认使用80端口。创建成功后可以通过HTTP:80地址自动跳转为HTTPS:443地址进行访问。"
   },
   "ModifyDomain": {
     "params": [
@@ -272,7 +302,11 @@ INFO = {
       },
       {
         "name": "VpcId",
-        "desc": "负载均衡实例所属网络，如 vpc-bhqkbhdx"
+        "desc": "负载均衡实例所属私有网络，如 vpc-bhqkbhdx，\n基础网络不支持通过VpcId查询。"
+      },
+      {
+        "name": "SecurityGroup",
+        "desc": "安全组ID，如 sg-m1cc9123"
       }
     ],
     "desc": "查询负载均衡实例列表\n"
@@ -414,6 +448,15 @@ INFO = {
     ],
     "desc": "ModifyRule 接口用来修改应用型负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
+  "DescribeTargetHealth": {
+    "params": [
+      {
+        "name": "LoadBalancerIds",
+        "desc": "要查询的负载均衡实例 ID列表"
+      }
+    ],
+    "desc": "DescribeTargetHealth 接口用来获取应用型负载均衡后端的健康检查结果。"
+  },
   "DescribeTargets": {
     "params": [
       {
@@ -434,6 +477,23 @@ INFO = {
       }
     ],
     "desc": "DescribeTargets 接口用来查询应用型负载均衡实例的某些监听器后端绑定的机器列表。"
+  },
+  "DescribeRewrite": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例ID"
+      },
+      {
+        "name": "SourceListenerIds",
+        "desc": "负载均衡监听器ID数组"
+      },
+      {
+        "name": "SourceLocationIds",
+        "desc": "负载均衡转发规则的ID数组"
+      }
+    ],
+    "desc": "DescribeRewrite 接口可根据负载均衡实例ID，查询一个负载均衡实例下转发规则的重定向关系。如果不指定监听器ID或转发规则ID，则返回该负载均衡实例下的所有重定向关系。"
   },
   "RegisterTargetsWithClassicalLB": {
     "params": [
@@ -519,9 +579,13 @@ INFO = {
       {
         "name": "LoadBalancerName",
         "desc": "负载均衡实例名称"
+      },
+      {
+        "name": "TargetRegionInfo",
+        "desc": "负载均衡绑定的后端服务的地域信息"
       }
     ],
-    "desc": "修改负载均衡实例的属性，目前仅用于修改负载均衡实例的名称。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "修改负载均衡实例的属性，支持修改负载均衡实例的名称、设置负载均衡的跨域属性。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "DescribeClassicalLBByInstanceId": {
     "params": [
@@ -544,6 +608,27 @@ INFO = {
       }
     ],
     "desc": "BatchModifyTargetWeight接口用于批量修改监听器绑定的后端机器的转发权重，当前接口只支持应用型HTTP/HTTPS监听器。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+  },
+  "DeleteRewrite": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例ID"
+      },
+      {
+        "name": "SourceListenerId",
+        "desc": "源监听器ID"
+      },
+      {
+        "name": "TargetListenerId",
+        "desc": "目标监听器ID"
+      },
+      {
+        "name": "RewriteInfos",
+        "desc": "转发规则之间的重定向关系"
+      }
+    ],
+    "desc": "DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。"
   },
   "CreateLoadBalancer": {
     "params": [
@@ -573,5 +658,26 @@ INFO = {
       }
     ],
     "desc": "CreateLoadBalancer 接口用来创建负载均衡实例。为了使用负载均衡服务，您必须要购买一个或者多个负载均衡实例。通过成功调用该接口，会返回负载均衡实例的唯一 ID。用户可以购买的负载均衡实例类型分为：公网（应用型）、内网（应用型）。可以参考产品说明的产品类型。\n本接口成功返回后，可使用查询负载均衡实例列表接口DescribeLoadBalancers查询负载均衡实例的状态，以确定是否创建成功。"
+  },
+  "ManualRewrite": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例ID"
+      },
+      {
+        "name": "SourceListenerId",
+        "desc": "源监听器ID"
+      },
+      {
+        "name": "TargetListenerId",
+        "desc": "目标监听器ID"
+      },
+      {
+        "name": "RewriteInfos",
+        "desc": "转发规则之间的重定向关系"
+      }
+    ],
+    "desc": "用户手动配置原访问地址和重定向地址，系统自动将原访问地址的请求重定向至对应路径的目的地址。同一域名下可以配置多条路径作为重定向策略，实现http/https之间请求的自动跳转。"
   }
 }

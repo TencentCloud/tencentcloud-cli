@@ -108,7 +108,7 @@ INFO = {
       },
       {
         "name": "LoginSettings",
-        "desc": "登陆配置"
+        "desc": "登录配置"
       },
       {
         "name": "ClientToken",
@@ -129,6 +129,10 @@ INFO = {
       {
         "name": "AutoRenew",
         "desc": "自动续费"
+      },
+      {
+        "name": "NeedMasterWan",
+        "desc": "是否需要外网Ip。支持填NEED_MASTER_WAN，不支持使用NOT_NEED_MASTER_WAN，默认使用NEED_MASTER_WAN"
       }
     ],
     "desc": "创建EMR实例"

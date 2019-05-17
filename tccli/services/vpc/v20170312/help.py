@@ -44,6 +44,39 @@ INFO = {
     ],
     "desc": "本接口（ReplaceSecurityGroupPolicy）用于替换单条安全组规则（SecurityGroupPolicy）。\n单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。"
   },
+  "CreateFlowLog": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "私用网络ID或者统一ID，建议使用统一ID"
+      },
+      {
+        "name": "FlowLogName",
+        "desc": "流日志实例名字"
+      },
+      {
+        "name": "ResourceType",
+        "desc": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "资源唯一ID"
+      },
+      {
+        "name": "TrafficType",
+        "desc": "流日志采集类型，ACCEPT|REJECT|ALL"
+      },
+      {
+        "name": "CloudLogId",
+        "desc": "流日志存储ID"
+      },
+      {
+        "name": "FlowLogDescription",
+        "desc": "流日志实例描述"
+      }
+    ],
+    "desc": "本接口（CreateFlowLog）用于创建流日志"
+  },
   "DescribeServiceTemplateGroups": {
     "params": [
       {
@@ -107,6 +140,19 @@ INFO = {
     ],
     "desc": "接口支持创建[设备带宽包](https://cloud.tencent.com/document/product/684/15246#.E8.AE.BE.E5.A4.87.E5.B8.A6.E5.AE.BD.E5.8C.85)和[ip带宽包](https://cloud.tencent.com/document/product/684/15246#ip-.E5.B8.A6.E5.AE.BD.E5.8C.85)"
   },
+  "DeleteFlowLog": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "私用网络ID或者统一ID，建议使用统一ID"
+      },
+      {
+        "name": "FlowLogId",
+        "desc": "流日志唯一ID"
+      }
+    ],
+    "desc": "本接口（DeleteFlowLog）用于删除流日志"
+  },
   "CreateRouteTable": {
     "params": [
       {
@@ -157,6 +203,27 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateVpnGateway）用于创建VPN网关。"
+  },
+  "ModifyFlowLogAttribute": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "私用网络ID或者统一ID，建议使用统一ID"
+      },
+      {
+        "name": "FlowLogId",
+        "desc": "流日志唯一ID"
+      },
+      {
+        "name": "FlowLogName",
+        "desc": "流日志实例名字"
+      },
+      {
+        "name": "FlowLogDescription",
+        "desc": "流日志实例描述"
+      }
+    ],
+    "desc": "本接口（ModifyFlowLogAttribute）用于修改流日志属性"
   },
   "ModifyServiceTemplateGroupAttribute": {
     "params": [
@@ -863,6 +930,59 @@ INFO = {
     ],
     "desc": "本接口(AttachClassicLinkVpc)用于创建私有网络和基础网络设备互通。\n* 私有网络和基础网络设备必须在同一个地域。\n* 私有网络和基础网络的区别详见vpc产品文档-<a href=\"https://cloud.tencent.com/document/product/215/535#2.-.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E4.B8.8E.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C\">私有网络与基础网络</a>。"
   },
+  "DescribeFlowLogs": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "私用网络ID或者统一ID，建议使用统一ID"
+      },
+      {
+        "name": "FlowLogId",
+        "desc": "流日志唯一ID"
+      },
+      {
+        "name": "FlowLogName",
+        "desc": "流日志实例名字"
+      },
+      {
+        "name": "ResourceType",
+        "desc": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "资源唯一ID"
+      },
+      {
+        "name": "TrafficType",
+        "desc": "流日志采集类型，ACCEPT|REJECT|ALL"
+      },
+      {
+        "name": "CloudLogId",
+        "desc": "流日志存储ID"
+      },
+      {
+        "name": "CloudLogState",
+        "desc": "流日志存储ID状态"
+      },
+      {
+        "name": "OrderField",
+        "desc": "按某个字段排序,支持字段：flowLogName,createTime，默认按createTime"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "升序（asc）还是降序（desc）,默认：desc"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页行数，默认为10"
+      }
+    ],
+    "desc": "本接口（DescribeFlowLogs）用于查询获取流日志集合"
+  },
   "DeleteDirectConnectGateway": {
     "params": [
       {
@@ -1004,6 +1124,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云主机时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。"
+  },
+  "DescribeFlowLog": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "私用网络ID或者统一ID，建议使用统一ID"
+      },
+      {
+        "name": "FlowLogId",
+        "desc": "流日志唯一ID"
+      }
+    ],
+    "desc": "本接口（DescribeFlowLog）用于查询流日志实例信息"
   },
   "ReplaceRoutes": {
     "params": [
@@ -1289,22 +1422,18 @@ INFO = {
     ],
     "desc": "本接口(DeleteRoutes)用于对某个路由表批量删除路由策略（Route）。"
   },
-  "ModifyDirectConnectGatewayAttribute": {
+  "ModifySecurityGroupPolicies": {
     "params": [
       {
-        "name": "DirectConnectGatewayId",
-        "desc": "专线网关唯一`ID`，形如：`dcg-9o233uri`。"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
       },
       {
-        "name": "DirectConnectGatewayName",
-        "desc": "专线网关名称，可任意命名，但不得超过60个字符。"
-      },
-      {
-        "name": "CcnRouteType",
-        "desc": "云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。"
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。"
       }
     ],
-    "desc": "本接口（ModifyDirectConnectGatewayAttribute）用于修改专线网关属性\n"
+    "desc": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n* 接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex 。\n* 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略Egress和Ingress。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。"
   },
   "ModifySubnetAttribute": {
     "params": [
@@ -1400,18 +1529,22 @@ INFO = {
     ],
     "desc": "本接口（CreateCustomerGateway）用于创建对端网关。"
   },
-  "ModifySecurityGroupPolicies": {
+  "ModifyDirectConnectGatewayAttribute": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "name": "DirectConnectGatewayId",
+        "desc": "专线网关唯一`ID`，形如：`dcg-9o233uri`。"
       },
       {
-        "name": "SecurityGroupPolicySet",
-        "desc": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。"
+        "name": "DirectConnectGatewayName",
+        "desc": "专线网关名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "CcnRouteType",
+        "desc": "云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。"
       }
     ],
-    "desc": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n* 接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex 。\n* 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略Egress和Ingress。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。"
+    "desc": "本接口（ModifyDirectConnectGatewayAttribute）用于修改专线网关属性\n"
   },
   "CreateSecurityGroup": {
     "params": [
