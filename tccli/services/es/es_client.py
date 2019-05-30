@@ -122,6 +122,9 @@ def doCreateInstance(argv, arglist):
         "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
         "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
         "ClusterNameInConf": Utils.try_to_json(argv, "--ClusterNameInConf"),
+        "DeployMode": Utils.try_to_json(argv, "--DeployMode"),
+        "MultiZoneInfo": Utils.try_to_json(argv, "--MultiZoneInfo"),
+        "LicenseType": Utils.try_to_json(argv, "--LicenseType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

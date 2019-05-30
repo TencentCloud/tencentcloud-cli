@@ -150,7 +150,7 @@ INFO = {
     "params": [
       {
         "name": "ProductID",
-        "desc": "产品ID"
+        "desc": "产品自身id"
       },
       {
         "name": "TopicName",
@@ -162,7 +162,7 @@ INFO = {
       },
       {
         "name": "BrokerSubscribe",
-        "desc": "代理订阅信息"
+        "desc": "代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的id和设备信息。"
       }
     ],
     "desc": "本接口（CreateTopicPolicy）用于创建一个Topic"
@@ -183,6 +183,19 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateProduct）用于创建一个新的物联网通信产品"
+  },
+  "DescribeDeviceClientKey": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "所属产品的Id"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      }
+    ],
+    "desc": "获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次"
   },
   "DescribeProducts": {
     "params": [
@@ -331,6 +344,19 @@ INFO = {
       }
     ],
     "desc": "本接口（CancelTask）用于取消一个未被调度的任务。"
+  },
+  "ResetDeviceState": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品Id"
+      },
+      {
+        "name": "DeviceNames",
+        "desc": "设备名称"
+      }
+    ],
+    "desc": "重置设备的连接状态"
   },
   "DescribeTasks": {
     "params": [

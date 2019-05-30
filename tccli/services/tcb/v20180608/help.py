@@ -13,7 +13,7 @@ INFO = {
       },
       {
         "name": "AclTag",
-        "desc": "权限标签。取值范围：\n<li> READONLY ： 公有读，私有写 </li>\n<li> PRIVATE  ：私有读写 </li>\n<li> ADMINWRITE ： 仅管理员可写 </li>\n<li> ADMINONLY ： 仅管理员可操作 </li>"
+        "desc": "权限标签。取值范围：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>"
       }
     ],
     "desc": "修改数据库权限"
@@ -35,7 +35,7 @@ INFO = {
     "params": [
       {
         "name": "EnvId",
-        "desc": "环境唯一标识"
+        "desc": "环境ID"
       },
       {
         "name": "Alias",

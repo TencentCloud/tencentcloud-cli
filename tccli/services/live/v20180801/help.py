@@ -13,7 +13,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       }
     ],
     "desc": "断开推流连接，但可以重新推流"
@@ -30,7 +30,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流App名。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "DomainName",
@@ -190,7 +190,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
       },
       {
         "name": "StreamName",
@@ -215,7 +215,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "DomainName",
@@ -246,7 +246,7 @@ INFO = {
         "desc": "是否按结束时间正序显示，默认逆序。\n0：逆序。\n1：正序。"
       }
     ],
-    "desc": "查询推断流事件"
+    "desc": "用于查询推断流事件。\n\n注意：该接口可通过使用IsFilter进行过滤，返回推流历史记录。"
   },
   "DescribePullStreamConfigs": {
     "params": [
@@ -371,11 +371,11 @@ INFO = {
     "params": [
       {
         "name": "AppName",
-        "desc": "应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
       },
       {
         "name": "DomainName",
-        "desc": "您的加速域名。"
+        "desc": "推流域名。"
       },
       {
         "name": "StreamName",
@@ -447,7 +447,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
       }
     ],
     "desc": "删除回调规则"
@@ -534,7 +534,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "PageNum",
@@ -546,7 +546,7 @@ INFO = {
       },
       {
         "name": "StreamName",
-        "desc": "流名称，精确查询。"
+        "desc": "流名称，用于精确查询。"
       }
     ],
     "desc": "返回正在直播中的流列表"
@@ -613,11 +613,11 @@ INFO = {
     "params": [
       {
         "name": "AppName",
-        "desc": "应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
       },
       {
         "name": "DomainName",
-        "desc": "您的加速域名。"
+        "desc": "推流域名。"
       },
       {
         "name": "StreamName",
@@ -745,19 +745,19 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配"
+        "desc": "推流域名。\n域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径。域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "StreamName",
-        "desc": "流名称。域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配"
+        "desc": "流名称。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "TemplateId",
-        "desc": "模板ID域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配"
+        "desc": "模板ID。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
       }
     ],
     "desc": "删除转码规则"
@@ -892,7 +892,7 @@ INFO = {
     "params": [
       {
         "name": "AppName",
-        "desc": "应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "DomainName",
@@ -1017,7 +1017,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "播放路径，精确匹配，不支持。\n若不填，则为查询总体播放数据。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。精确匹配，不支持。\n若不填，则为查询总体播放数据。"
       }
     ],
     "desc": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。"
@@ -1207,7 +1207,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "直播流所属应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "PageNum",
@@ -1237,7 +1237,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
       },
       {
         "name": "TemplateId",
@@ -1271,15 +1271,15 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配"
+        "desc": "推流域名。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径。域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "StreamName",
-        "desc": "流名称。域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配"
+        "desc": "流名称。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
       }
     ],
     "desc": "删除录制规则"
@@ -1288,7 +1288,7 @@ INFO = {
     "params": [
       {
         "name": "AppName",
-        "desc": "应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "DomainName",
@@ -1338,7 +1338,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "StreamName",
@@ -1410,11 +1410,11 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。"
+        "desc": "播放域名。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "StreamName",
@@ -1442,7 +1442,7 @@ INFO = {
         "desc": "任务ID，全局唯一标识录制任务。"
       }
     ],
-    "desc": "用于删除录制任务"
+    "desc": "用于删除录制任务。"
   },
   "CreateLiveSnapshotRule": {
     "params": [
@@ -1451,16 +1451,16 @@ INFO = {
         "desc": "推流域名。"
       },
       {
+        "name": "TemplateId",
+        "desc": "模板Id。"
+      },
+      {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "StreamName",
-        "desc": "流名称。"
-      },
-      {
-        "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "流名称。\n注：如果本参数设置为非空字符串，规则将只对此推流起作用。"
       }
     ],
     "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
@@ -1478,7 +1478,7 @@ INFO = {
     "params": [
       {
         "name": "AppName",
-        "desc": "应用名称。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "DomainName",
@@ -1581,7 +1581,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "StreamName",
@@ -1626,7 +1626,7 @@ INFO = {
         "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。"
       }
     ],
-    "desc": "添加拉流配置，目前限制添加10条任务。"
+    "desc": "创建临时拉流转推任务，目前限制添加10条任务。\n\n注意：该接口用于创建临时拉流转推任务，\n拉流源地址即FromUrl 可以是腾讯或非腾讯数据源，\n但转推目标地址即ToUrl 目前限制为已注册的腾讯直播域名。"
   },
   "DescribeLiveStreamPushInfoList": {
     "params": [
@@ -1636,7 +1636,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
       },
       {
         "name": "PageNum",

@@ -18,6 +18,47 @@ from tccli.services.partners import v20180321
 from tccli.services.partners.v20180321 import help as v20180321_help
 
 
+def doDescribeAgentDealsCache(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAgentDealsCache", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "CreatTimeRangeStart": Utils.try_to_json(argv, "--CreatTimeRangeStart"),
+        "CreatTimeRangeEnd": Utils.try_to_json(argv, "--CreatTimeRangeEnd"),
+        "Order": Utils.try_to_json(argv, "--Order"),
+        "Status": Utils.try_to_json(argv, "--Status"),
+        "OwnerUins": Utils.try_to_json(argv, "--OwnerUins"),
+        "DealNames": Utils.try_to_json(argv, "--DealNames"),
+        "PayerMode": Utils.try_to_json(argv, "--PayerMode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAgentDealsCacheRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAgentDealsCache(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAgentPayDeals(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -161,6 +202,43 @@ def doDescribeRebateInfos(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSalesmans(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSalesmans", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SalesName": Utils.try_to_json(argv, "--SalesName"),
+        "SalesUin": Utils.try_to_json(argv, "--SalesUin"),
+        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSalesmansRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSalesmans(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyClientRemark(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -186,6 +264,46 @@ def doModifyClientRemark(argv, arglist):
     model = models.ModifyClientRemarkRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyClientRemark(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAgentPayDeals(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAgentPayDeals", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "CreatTimeRangeStart": Utils.try_to_json(argv, "--CreatTimeRangeStart"),
+        "CreatTimeRangeEnd": Utils.try_to_json(argv, "--CreatTimeRangeEnd"),
+        "Order": Utils.try_to_json(argv, "--Order"),
+        "Status": Utils.try_to_json(argv, "--Status"),
+        "OwnerUins": Utils.try_to_json(argv, "--OwnerUins"),
+        "DealNames": Utils.try_to_json(argv, "--DealNames"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.PartnersClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAgentPayDealsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAgentPayDeals(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -284,6 +402,8 @@ def doDescribeAgentAuditedClients(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "ClientType": Utils.try_to_json(argv, "--ClientType"),
         "ProjectType": Utils.try_to_json(argv, "--ProjectType"),
+        "SalesUin": Utils.try_to_json(argv, "--SalesUin"),
+        "SalesName": Utils.try_to_json(argv, "--SalesName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -355,11 +475,14 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeAgentDealsCache": doDescribeAgentDealsCache,
     "AgentPayDeals": doAgentPayDeals,
     "DescribeAgentBills": doDescribeAgentBills,
     "AgentTransferMoney": doAgentTransferMoney,
     "DescribeRebateInfos": doDescribeRebateInfos,
+    "DescribeSalesmans": doDescribeSalesmans,
     "ModifyClientRemark": doModifyClientRemark,
+    "DescribeAgentPayDeals": doDescribeAgentPayDeals,
     "DescribeAgentClients": doDescribeAgentClients,
     "DescribeClientBalance": doDescribeClientBalance,
     "DescribeAgentAuditedClients": doDescribeAgentAuditedClients,

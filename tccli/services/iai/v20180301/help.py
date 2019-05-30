@@ -269,7 +269,7 @@ INFO = {
     "params": [
       {
         "name": "MaxFaceNum",
-        "desc": "最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为30。 \n此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。"
+        "desc": "最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为120。 \n此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。"
       },
       {
         "name": "MinFaceSize",
@@ -289,7 +289,7 @@ INFO = {
       },
       {
         "name": "NeedQualityDetection",
-        "desc": "是否开启质量检测。0 为关闭，1 为开启。默认为 0。 \n非 1 值均视为不进行质量检测。  \n建议：人脸入库操作建议开启此功能。"
+        "desc": "是否开启质量检测。0 为关闭，1 为开启。默认为 0。 \n非 1 值均视为不进行质量检测。\n最多返回面积最大的 5 张人脸质量分信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  \n建议：人脸入库操作建议开启此功能。"
       }
     ],
     "desc": "检测给定图片中的人脸（Face）的位置、相应的面部属性和人脸质量信息，位置包括 (x，y，w，h)，面部属性包括性别（gender）、年龄（age）、表情（expression）、魅力（beauty）、眼镜（glass）、发型（hair）、口罩（mask）和姿态 (pitch，roll，yaw)，人脸质量信息包括整体质量分（score）、模糊分（sharpness）、光照分（brightness）和五官遮挡分（completeness）。\n\n \n其中，人脸质量信息主要用于评价输入的人脸图片的质量。在使用人脸识别服务时，建议您对输入的人脸图片进行质量检测，提升后续业务处理的效果。该功能的应用场景包括：\n\n1） 人员库[创建人员](https://cloud.tencent.com/document/product/867/32793)/[增加人脸](https://cloud.tencent.com/document/product/867/32795)：保证人员人脸信息的质量，便于后续的业务处理。\n\n2） [人脸搜索](https://cloud.tencent.com/document/product/867/32798)：保证输入的图片质量，快速准确匹配到对应的人员。\n\n3） [人脸验证](https://cloud.tencent.com/document/product/867/32806)：保证人脸信息的质量，避免明明是本人却认证不通过的情况。\n\n4） [人脸融合](https://cloud.tencent.com/product/facefusion)：保证上传的人脸质量，人脸融合的效果更好。\n\n"

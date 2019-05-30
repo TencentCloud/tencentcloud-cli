@@ -12,25 +12,21 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.hcm.v20181106 import hcm_client as hcm_client_v20181106
-from tencentcloud.hcm.v20181106 import models as models_v20181106
-from tccli.services.hcm import v20181106
-from tccli.services.hcm.v20181106 import help as v20181106_help
+from tencentcloud.ecc.v20181213 import ecc_client as ecc_client_v20181213
+from tencentcloud.ecc.v20181213 import models as models_v20181213
+from tccli.services.ecc import v20181213
+from tccli.services.ecc.v20181213 import help as v20181213_help
 
 
-def doEvaluation(argv, arglist):
+def doEHOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Evaluation", g_param[OptionsDefine.Version])
+        show_help("EHOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
         "Image": Utils.try_to_json(argv, "--Image"),
-        "HcmAppid": Utils.try_to_json(argv, "--HcmAppid"),
-        "Url": Utils.try_to_json(argv, "--Url"),
-        "SupportHorizontalImage": Utils.try_to_json(argv, "--SupportHorizontalImage"),
-        "RejectNonArithmeticImage": Utils.try_to_json(argv, "--RejectNonArithmeticImage"),
+        "InputType": Utils.try_to_json(argv, "--InputType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -41,12 +37,50 @@ def doEvaluation(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.HcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EccClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EvaluationRequest()
+    model = models.EHOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Evaluation(model)
+    rsp = client.EHOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doECC(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ECC", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Content": Utils.try_to_json(argv, "--Content"),
+        "Title": Utils.try_to_json(argv, "--Title"),
+        "Grade": Utils.try_to_json(argv, "--Grade"),
+        "Outline": Utils.try_to_json(argv, "--Outline"),
+        "ModelSubject": Utils.try_to_json(argv, "--ModelSubject"),
+        "ModelContent": Utils.try_to_json(argv, "--ModelContent"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ECCRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ECC(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -57,31 +91,32 @@ def doEvaluation(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20181106": hcm_client_v20181106,
+    "v20181213": ecc_client_v20181213,
 
 }
 
 MODELS_MAP = {
-    "v20181106": models_v20181106,
+    "v20181213": models_v20181213,
 
 }
 
 ACTION_MAP = {
-    "Evaluation": doEvaluation,
+    "EHOCR": doEHOCR,
+    "ECC": doECC,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20181106.version,
+    v20181213.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20181106.version.replace('-', ''): {"help": v20181106_help.INFO,"desc": v20181106_help.DESC},
+     'v' + v20181213.version.replace('-', ''): {"help": v20181213_help.INFO,"desc": v20181213_help.DESC},
 
 }
 
 
-def hcm_action(argv, arglist):
+def ecc_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -97,7 +132,7 @@ def hcm_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "hcm", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "ecc", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -118,7 +153,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("hcm", hcm_action)
+    cmd = NiceCommand("ecc", ecc_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -177,11 +212,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["hcm"][OptionsDefine.Version]
+            version = config["ecc"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["hcm"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["ecc"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -198,7 +233,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "hcm", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ecc", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -208,7 +243,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["hcm"]["version"]
+        version = profile["ecc"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

@@ -178,6 +178,75 @@ INFO = {
     ],
     "desc": "本接口 (CreatePaiInstance) 用于创建一个指定配置的PAI实例。"
   },
+  "UpgradeLaunchConfiguration": {
+    "params": [
+      {
+        "name": "LaunchConfigurationId",
+        "desc": "启动配置ID。"
+      },
+      {
+        "name": "ImageId",
+        "desc": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>"
+      },
+      {
+        "name": "InstanceTypes",
+        "desc": "实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。"
+      },
+      {
+        "name": "LaunchConfigurationName",
+        "desc": "启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。"
+      },
+      {
+        "name": "DataDisks",
+        "desc": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。"
+      },
+      {
+        "name": "EnhancedService",
+        "desc": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。\n<br><li>POSTPAID_BY_HOUR：按小时后付费\n<br><li>SPOTPAID：竞价付费"
+      },
+      {
+        "name": "InstanceMarketOptions",
+        "desc": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。"
+      },
+      {
+        "name": "InstanceTypesCheckPolicy",
+        "desc": "实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。"
+      },
+      {
+        "name": "InternetAccessible",
+        "desc": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。"
+      },
+      {
+        "name": "LoginSettings",
+        "desc": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的`projectId`字段来获取。不填为默认项目。"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。若不指定该参数，则默认不绑定安全组。"
+      },
+      {
+        "name": "SystemDisk",
+        "desc": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。"
+      },
+      {
+        "name": "UserData",
+        "desc": "经过 Base64 编码后的自定义数据，最大长度不超过16KB。"
+      },
+      {
+        "name": "InstanceTags",
+        "desc": "标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。"
+      }
+    ],
+    "desc": "本接口（UpgradeLaunchConfiguration）用于升级启动配置。\n\n* 本接口用于升级启动配置，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。"
+  },
   "DescribeLaunchConfigurations": {
     "params": [
       {

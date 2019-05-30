@@ -1,6 +1,47 @@
 # -*- coding: utf-8 -*-
 DESC = "partners-2018-03-21"
 INFO = {
+  "DescribeAgentDealsCache": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "限制数目"
+      },
+      {
+        "name": "CreatTimeRangeStart",
+        "desc": "下单时间范围起始点"
+      },
+      {
+        "name": "CreatTimeRangeEnd",
+        "desc": "下单时间范围终止点"
+      },
+      {
+        "name": "Order",
+        "desc": "0:下单时间降序；其他：下单时间升序"
+      },
+      {
+        "name": "Status",
+        "desc": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)"
+      },
+      {
+        "name": "OwnerUins",
+        "desc": "下单人账号ID列表"
+      },
+      {
+        "name": "DealNames",
+        "desc": "订单号列表"
+      },
+      {
+        "name": "PayerMode",
+        "desc": "支付方式，0：自付；1：代付"
+      }
+    ],
+    "desc": "供超大型代理商（代客数量>=3000 ）拉取缓存的全量客户订单。"
+  },
   "AgentPayDeals": {
     "params": [
       {
@@ -81,6 +122,31 @@ INFO = {
     ],
     "desc": "代理商可查询自己名下全部返佣信息"
   },
+  "DescribeSalesmans": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "限制数目"
+      },
+      {
+        "name": "SalesName",
+        "desc": "业务员姓名(模糊查询)"
+      },
+      {
+        "name": "SalesUin",
+        "desc": "业务员ID"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "ASC/DESC， 不区分大小写，按创建通过时间排序"
+      }
+    ],
+    "desc": "代理商查询名下业务员列表信息"
+  },
   "ModifyClientRemark": {
     "params": [
       {
@@ -93,6 +159,43 @@ INFO = {
       }
     ],
     "desc": "代理商可以对名下客户添加备注、修改备注"
+  },
+  "DescribeAgentPayDeals": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "限制数目"
+      },
+      {
+        "name": "CreatTimeRangeStart",
+        "desc": "下单时间范围起始点"
+      },
+      {
+        "name": "CreatTimeRangeEnd",
+        "desc": "下单时间范围终止点"
+      },
+      {
+        "name": "Order",
+        "desc": "0:下单时间降序；其他：下单时间升序"
+      },
+      {
+        "name": "Status",
+        "desc": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)"
+      },
+      {
+        "name": "OwnerUins",
+        "desc": "下单人账号ID列表"
+      },
+      {
+        "name": "DealNames",
+        "desc": "订单号列表"
+      }
+    ],
+    "desc": "可以查询代理商代付的所有订单"
   },
   "DescribeAgentClients": {
     "params": [
@@ -177,6 +280,14 @@ INFO = {
       {
         "name": "ProjectType",
         "desc": "项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空"
+      },
+      {
+        "name": "SalesUin",
+        "desc": "业务员ID"
+      },
+      {
+        "name": "SalesName",
+        "desc": "业务员姓名（模糊查询）"
       }
     ],
     "desc": "查询已审核客户列表"

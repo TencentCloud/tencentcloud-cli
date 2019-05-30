@@ -18,10 +18,10 @@ from tccli.services.tbaas import v20180416
 from tccli.services.tbaas.v20180416 import help as v20180416_help
 
 
-def doQuery(argv, arglist):
+def doInvoke(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Query", g_param[OptionsDefine.Version])
+        show_help("Invoke", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -34,6 +34,7 @@ def doQuery(argv, arglist):
         "FuncName": Utils.try_to_json(argv, "--FuncName"),
         "GroupName": Utils.try_to_json(argv, "--GroupName"),
         "Args": Utils.try_to_json(argv, "--Args"),
+        "AsyncFlag": Utils.try_to_json(argv, "--AsyncFlag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -47,9 +48,46 @@ def doQuery(argv, arglist):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryRequest()
+    model = models.InvokeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Query(model)
+    rsp = client.Invoke(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetClusterSummary(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetClusterSummary", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": Utils.try_to_json(argv, "--Module"),
+        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetClusterSummaryRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetClusterSummary(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -99,23 +137,22 @@ def doGetInvokeTx(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInvoke(argv, arglist):
+def doGetBlockList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Invoke", g_param[OptionsDefine.Version])
+        show_help("GetBlockList", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Module": Utils.try_to_json(argv, "--Module"),
         "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "ChaincodeName": Utils.try_to_json(argv, "--ChaincodeName"),
+        "ChannelId": Utils.try_to_json(argv, "--ChannelId"),
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
         "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
-        "Peers": Utils.try_to_json(argv, "--Peers"),
-        "FuncName": Utils.try_to_json(argv, "--FuncName"),
         "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "Args": Utils.try_to_json(argv, "--Args"),
-        "AsyncFlag": Utils.try_to_json(argv, "--AsyncFlag"),
+        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -129,9 +166,92 @@ def doInvoke(argv, arglist):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InvokeRequest()
+    model = models.GetBlockListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Invoke(model)
+    rsp = client.GetBlockList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQuery(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("Query", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": Utils.try_to_json(argv, "--Module"),
+        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ChaincodeName": Utils.try_to_json(argv, "--ChaincodeName"),
+        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
+        "Peers": Utils.try_to_json(argv, "--Peers"),
+        "FuncName": Utils.try_to_json(argv, "--FuncName"),
+        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "Args": Utils.try_to_json(argv, "--Args"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.Query(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetLatesdTransactionList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetLatesdTransactionList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": Utils.try_to_json(argv, "--Module"),
+        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "ChannelId": Utils.try_to_json(argv, "--ChannelId"),
+        "LatestBlockNumber": Utils.try_to_json(argv, "--LatestBlockNumber"),
+        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
+        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetLatesdTransactionListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetLatesdTransactionList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -152,9 +272,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "Query": doQuery,
-    "GetInvokeTx": doGetInvokeTx,
     "Invoke": doInvoke,
+    "GetClusterSummary": doGetClusterSummary,
+    "GetInvokeTx": doGetInvokeTx,
+    "GetBlockList": doGetBlockList,
+    "Query": doQuery,
+    "GetLatesdTransactionList": doGetLatesdTransactionList,
 
 }
 

@@ -399,7 +399,7 @@ INFO = {
       },
       {
         "name": "ParamList",
-        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过[查询实例的可设置参数列表](https://cloud.tencent.com/document/api/236/20411)查询支持设置的参数"
+        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过[查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662)查询支持设置的参数"
       },
       {
         "name": "ProtectMode",
@@ -574,7 +574,7 @@ INFO = {
         "desc": "分页大小，最小值为1，最大值为2000。"
       }
     ],
-    "desc": "本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名。"
+    "desc": "本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (将废弃)。"
   },
   "RestartDBInstances": {
     "params": [
@@ -942,7 +942,7 @@ INFO = {
       },
       {
         "name": "ParamList",
-        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过[查询实例的可设置参数列表](https://cloud.tencent.com/document/api/236/20411)查询支持设置的参数"
+        "desc": "参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过[查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662)查询支持设置的参数"
       },
       {
         "name": "BackupZone",
@@ -1165,7 +1165,7 @@ INFO = {
       },
       {
         "name": "NewPassword",
-        "desc": "数据库账号的新密码。"
+        "desc": "数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。"
       },
       {
         "name": "Accounts",
@@ -1431,6 +1431,6 @@ INFO = {
         "desc": "分页大小，最小值为1，最大值为2000。"
       }
     ],
-    "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表。"
+    "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表 (将废弃)。"
   }
 }

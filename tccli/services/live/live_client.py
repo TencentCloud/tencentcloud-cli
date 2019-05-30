@@ -2760,9 +2760,9 @@ def doCreateLiveSnapshotRule(argv, arglist):
 
     param = {
         "DomainName": Utils.try_to_json(argv, "--DomainName"),
+        "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
         "AppName": Utils.try_to_json(argv, "--AppName"),
         "StreamName": Utils.try_to_json(argv, "--StreamName"),
-        "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -388,7 +388,6 @@ def doCreateDisks(argv, arglist):
         "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
         "Encrypt": Utils.try_to_json(argv, "--Encrypt"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
-        "DeleteWithInstance": Utils.try_to_json(argv, "--DeleteWithInstance"),
         "Shareable": Utils.try_to_json(argv, "--Shareable"),
 
     }
@@ -914,6 +913,7 @@ def doDetachDisks(argv, arglist):
 
     param = {
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
+        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

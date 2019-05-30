@@ -438,6 +438,40 @@ def doCreateProduct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDeviceClientKey(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDeviceClientKey", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceName": Utils.try_to_json(argv, "--DeviceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeviceClientKeyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDeviceClientKey(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeProducts(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -679,6 +713,40 @@ def doDeleteProduct(argv, arglist):
     model = models.DeleteProductRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteProduct(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetDeviceState(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ResetDeviceState", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
+        "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetDeviceStateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ResetDeviceState(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1063,6 +1131,7 @@ ACTION_MAP = {
     "UpdateDeviceShadow": doUpdateDeviceShadow,
     "CreateTopicPolicy": doCreateTopicPolicy,
     "CreateProduct": doCreateProduct,
+    "DescribeDeviceClientKey": doDescribeDeviceClientKey,
     "DescribeProducts": doDescribeProducts,
     "DescribeLoraDevice": doDescribeLoraDevice,
     "DescribeTask": doDescribeTask,
@@ -1070,6 +1139,7 @@ ACTION_MAP = {
     "CreateDevice": doCreateDevice,
     "PublishMessage": doPublishMessage,
     "DeleteProduct": doDeleteProduct,
+    "ResetDeviceState": doResetDeviceState,
     "DescribeTasks": doDescribeTasks,
     "DescribeMultiDevices": doDescribeMultiDevices,
     "PublishAsDevice": doPublishAsDevice,
