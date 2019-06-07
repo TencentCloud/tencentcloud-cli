@@ -18,7 +18,7 @@ INFO = {
     "params": [
       {
         "name": "Key",
-        "desc": "要查询的域名"
+        "desc": "要查询的IP"
       },
       {
         "name": "Option",

@@ -64,9 +64,34 @@ INFO = {
       {
         "name": "BankCard",
         "desc": "银行卡"
+      },
+      {
+        "name": "CertType",
+        "desc": "证件类型（不填默认0）\n0 身份证\n1 军官证\n2 护照\n3 港澳证\n4 台胞证\n5 警官证\n6 士兵证\n7 其它证件"
       }
     ],
     "desc": "银行卡核验"
+  },
+  "Liveness": {
+    "params": [
+      {
+        "name": "VideoBase64",
+        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过5M，支持mp4、avi、flv格式。"
+      },
+      {
+        "name": "LivenessType",
+        "desc": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。"
+      },
+      {
+        "name": "ValidateData",
+        "desc": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：不需要传递此参数。"
+      },
+      {
+        "name": "Optional",
+        "desc": "本接口不需要传递此参数。"
+      }
+    ],
+    "desc": "活体检测"
   },
   "LivenessRecognition": {
     "params": [
@@ -135,7 +160,7 @@ INFO = {
     "params": [
       {
         "name": "RuleId",
-        "desc": "用于细分客户使用场景，由腾讯侧在线下对接时分配。"
+        "desc": "用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。"
       },
       {
         "name": "TerminalType",
@@ -162,6 +187,6 @@ INFO = {
         "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
       }
     ],
-    "desc": "每次开始核身前，需先调用本接口获取BizToken，用来串联核身流程，在核身完成后，用于获取验证结果信息。"
+    "desc": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。"
   }
 }

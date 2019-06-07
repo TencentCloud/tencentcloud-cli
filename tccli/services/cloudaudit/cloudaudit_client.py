@@ -12,22 +12,20 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.faceid.v20180301 import faceid_client as faceid_client_v20180301
-from tencentcloud.faceid.v20180301 import models as models_v20180301
-from tccli.services.faceid import v20180301
-from tccli.services.faceid.v20180301 import help as v20180301_help
+from tencentcloud.cloudaudit.v20190319 import cloudaudit_client as cloudaudit_client_v20190319
+from tencentcloud.cloudaudit.v20190319 import models as models_v20190319
+from tccli.services.cloudaudit import v20190319
+from tccli.services.cloudaudit.v20190319 import help as v20190319_help
 
 
-def doGetDetectInfo(argv, arglist):
+def doStartLogging(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetDetectInfo", g_param[OptionsDefine.Version])
+        show_help("StartLogging", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BizToken": Utils.try_to_json(argv, "--BizToken"),
-        "RuleId": Utils.try_to_json(argv, "--RuleId"),
-        "InfoType": Utils.try_to_json(argv, "--InfoType"),
+        "AuditName": Utils.try_to_json(argv, "--AuditName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -38,12 +36,12 @@ def doGetDetectInfo(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetDetectInfoRequest()
+    model = models.StartLoggingRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetDetectInfo(model)
+    rsp = client.StartLogging(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -53,13 +51,14 @@ def doGetDetectInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetLiveCode(argv, arglist):
+def doGetAttributeKey(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetLiveCode", g_param[OptionsDefine.Version])
+        show_help("GetAttributeKey", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "WebsiteType": Utils.try_to_json(argv, "--WebsiteType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -70,12 +69,12 @@ def doGetLiveCode(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetLiveCodeRequest()
+    model = models.GetAttributeKeyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetLiveCode(model)
+    rsp = client.GetAttributeKey(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -85,13 +84,14 @@ def doGetLiveCode(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetActionSequence(argv, arglist):
+def doListCmqEnableRegion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetActionSequence", g_param[OptionsDefine.Version])
+        show_help("ListCmqEnableRegion", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "WebsiteType": Utils.try_to_json(argv, "--WebsiteType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -102,12 +102,12 @@ def doGetActionSequence(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetActionSequenceRequest()
+    model = models.ListCmqEnableRegionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetActionSequence(model)
+    rsp = client.ListCmqEnableRegion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -117,18 +117,14 @@ def doGetActionSequence(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLivenessCompare(argv, arglist):
+def doDeleteAudit(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LivenessCompare", g_param[OptionsDefine.Version])
+        show_help("DeleteAudit", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "VideoBase64": Utils.try_to_json(argv, "--VideoBase64"),
-        "LivenessType": Utils.try_to_json(argv, "--LivenessType"),
-        "ValidateData": Utils.try_to_json(argv, "--ValidateData"),
-        "Optional": Utils.try_to_json(argv, "--Optional"),
+        "AuditName": Utils.try_to_json(argv, "--AuditName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -139,12 +135,12 @@ def doLivenessCompare(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LivenessCompareRequest()
+    model = models.DeleteAuditRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LivenessCompare(model)
+    rsp = client.DeleteAudit(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -154,17 +150,14 @@ def doLivenessCompare(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBankCardVerification(argv, arglist):
+def doStopLogging(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("BankCardVerification", g_param[OptionsDefine.Version])
+        show_help("StopLogging", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "BankCard": Utils.try_to_json(argv, "--BankCard"),
-        "CertType": Utils.try_to_json(argv, "--CertType"),
+        "AuditName": Utils.try_to_json(argv, "--AuditName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -175,12 +168,12 @@ def doBankCardVerification(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BankCardVerificationRequest()
+    model = models.StopLoggingRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.BankCardVerification(model)
+    rsp = client.StopLogging(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -190,17 +183,13 @@ def doBankCardVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLiveness(argv, arglist):
+def doInquireAuditCredit(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Liveness", g_param[OptionsDefine.Version])
+        show_help("InquireAuditCredit", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VideoBase64": Utils.try_to_json(argv, "--VideoBase64"),
-        "LivenessType": Utils.try_to_json(argv, "--LivenessType"),
-        "ValidateData": Utils.try_to_json(argv, "--ValidateData"),
-        "Optional": Utils.try_to_json(argv, "--Optional"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -211,12 +200,12 @@ def doLiveness(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LivenessRequest()
+    model = models.InquireAuditCreditRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Liveness(model)
+    rsp = client.InquireAuditCredit(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -226,19 +215,23 @@ def doLiveness(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLivenessRecognition(argv, arglist):
+def doUpdateAudit(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LivenessRecognition", g_param[OptionsDefine.Version])
+        show_help("UpdateAudit", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "VideoBase64": Utils.try_to_json(argv, "--VideoBase64"),
-        "LivenessType": Utils.try_to_json(argv, "--LivenessType"),
-        "ValidateData": Utils.try_to_json(argv, "--ValidateData"),
-        "Optional": Utils.try_to_json(argv, "--Optional"),
+        "AuditName": Utils.try_to_json(argv, "--AuditName"),
+        "CmqQueueName": Utils.try_to_json(argv, "--CmqQueueName"),
+        "CmqRegion": Utils.try_to_json(argv, "--CmqRegion"),
+        "CosBucketName": Utils.try_to_json(argv, "--CosBucketName"),
+        "CosRegion": Utils.try_to_json(argv, "--CosRegion"),
+        "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
+        "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
+        "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
+        "LogFilePrefix": Utils.try_to_json(argv, "--LogFilePrefix"),
+        "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -249,12 +242,12 @@ def doLivenessRecognition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LivenessRecognitionRequest()
+    model = models.UpdateAuditRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LivenessRecognition(model)
+    rsp = client.UpdateAudit(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -264,15 +257,14 @@ def doLivenessRecognition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doIdCardVerification(argv, arglist):
+def doDescribeAudit(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("IdCardVerification", g_param[OptionsDefine.Version])
+        show_help("DescribeAudit", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "AuditName": Utils.try_to_json(argv, "--AuditName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -283,12 +275,12 @@ def doIdCardVerification(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.IdCardVerificationRequest()
+    model = models.DescribeAuditRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.IdCardVerification(model)
+    rsp = client.DescribeAudit(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -298,17 +290,23 @@ def doIdCardVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doImageRecognition(argv, arglist):
+def doCreateAudit(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ImageRecognition", g_param[OptionsDefine.Version])
+        show_help("CreateAudit", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "Optional": Utils.try_to_json(argv, "--Optional"),
+        "AuditName": Utils.try_to_json(argv, "--AuditName"),
+        "CosBucketName": Utils.try_to_json(argv, "--CosBucketName"),
+        "CosRegion": Utils.try_to_json(argv, "--CosRegion"),
+        "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
+        "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
+        "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
+        "CmqQueueName": Utils.try_to_json(argv, "--CmqQueueName"),
+        "CmqRegion": Utils.try_to_json(argv, "--CmqRegion"),
+        "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
+        "LogFilePrefix": Utils.try_to_json(argv, "--LogFilePrefix"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -319,12 +317,12 @@ def doImageRecognition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImageRecognitionRequest()
+    model = models.CreateAuditRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ImageRecognition(model)
+    rsp = client.CreateAudit(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -334,20 +332,14 @@ def doImageRecognition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDetectAuth(argv, arglist):
+def doListCosEnableRegion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DetectAuth", g_param[OptionsDefine.Version])
+        show_help("ListCosEnableRegion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RuleId": Utils.try_to_json(argv, "--RuleId"),
-        "TerminalType": Utils.try_to_json(argv, "--TerminalType"),
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "RedirectUrl": Utils.try_to_json(argv, "--RedirectUrl"),
-        "Extra": Utils.try_to_json(argv, "--Extra"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "WebsiteType": Utils.try_to_json(argv, "--WebsiteType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -358,12 +350,82 @@ def doDetectAuth(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetectAuthRequest()
+    model = models.ListCosEnableRegionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DetectAuth(model)
+    rsp = client.ListCosEnableRegion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doLookUpEvents(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("LookUpEvents", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "LookupAttributes": Utils.try_to_json(argv, "--LookupAttributes"),
+        "IsApiV3": Utils.try_to_json(argv, "--IsApiV3"),
+        "MaxResults": Utils.try_to_json(argv, "--MaxResults"),
+        "NextToken": Utils.try_to_json(argv, "--NextToken"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.LookUpEventsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.LookUpEvents(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListAudits(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListAudits", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListAuditsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListAudits(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -374,40 +436,42 @@ def doDetectAuth(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180301": faceid_client_v20180301,
+    "v20190319": cloudaudit_client_v20190319,
 
 }
 
 MODELS_MAP = {
-    "v20180301": models_v20180301,
+    "v20190319": models_v20190319,
 
 }
 
 ACTION_MAP = {
-    "GetDetectInfo": doGetDetectInfo,
-    "GetLiveCode": doGetLiveCode,
-    "GetActionSequence": doGetActionSequence,
-    "LivenessCompare": doLivenessCompare,
-    "BankCardVerification": doBankCardVerification,
-    "Liveness": doLiveness,
-    "LivenessRecognition": doLivenessRecognition,
-    "IdCardVerification": doIdCardVerification,
-    "ImageRecognition": doImageRecognition,
-    "DetectAuth": doDetectAuth,
+    "StartLogging": doStartLogging,
+    "GetAttributeKey": doGetAttributeKey,
+    "ListCmqEnableRegion": doListCmqEnableRegion,
+    "DeleteAudit": doDeleteAudit,
+    "StopLogging": doStopLogging,
+    "InquireAuditCredit": doInquireAuditCredit,
+    "UpdateAudit": doUpdateAudit,
+    "DescribeAudit": doDescribeAudit,
+    "CreateAudit": doCreateAudit,
+    "ListCosEnableRegion": doListCosEnableRegion,
+    "LookUpEvents": doLookUpEvents,
+    "ListAudits": doListAudits,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180301.version,
+    v20190319.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180301.version.replace('-', ''): {"help": v20180301_help.INFO,"desc": v20180301_help.DESC},
+     'v' + v20190319.version.replace('-', ''): {"help": v20190319_help.INFO,"desc": v20190319_help.DESC},
 
 }
 
 
-def faceid_action(argv, arglist):
+def cloudaudit_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -423,7 +487,7 @@ def faceid_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "faceid", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "cloudaudit", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -444,7 +508,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("faceid", faceid_action)
+    cmd = NiceCommand("cloudaudit", cloudaudit_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -503,11 +567,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["faceid"][OptionsDefine.Version]
+            version = config["cloudaudit"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["faceid"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["cloudaudit"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -524,7 +588,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "faceid", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cloudaudit", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -534,7 +598,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["faceid"]["version"]
+        version = profile["cloudaudit"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

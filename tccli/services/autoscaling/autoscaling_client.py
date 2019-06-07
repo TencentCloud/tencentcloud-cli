@@ -40,6 +40,7 @@ def doCreateAutoScalingGroup(argv, arglist):
         "Zones": Utils.try_to_json(argv, "--Zones"),
         "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
         "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

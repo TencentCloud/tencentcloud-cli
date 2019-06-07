@@ -54,6 +54,48 @@ def doDescribeAIRecognitionTemplates(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyContentReviewTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyContentReviewTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Definition": Utils.try_to_json(argv, "--Definition"),
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "PornConfigure": Utils.try_to_json(argv, "--PornConfigure"),
+        "TerrorismConfigure": Utils.try_to_json(argv, "--TerrorismConfigure"),
+        "PoliticalConfigure": Utils.try_to_json(argv, "--PoliticalConfigure"),
+        "UserDefineConfigure": Utils.try_to_json(argv, "--UserDefineConfigure"),
+        "ScreenshotInterval": Utils.try_to_json(argv, "--ScreenshotInterval"),
+        "ReviewWallSwitch": Utils.try_to_json(argv, "--ReviewWallSwitch"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyContentReviewTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyContentReviewTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateContentReviewTemplate(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -846,6 +888,41 @@ def doDescribeTaskDetail(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeReviewDetails(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeReviewDetails", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeReviewDetailsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeReviewDetails(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeWordSamples(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1590,23 +1667,16 @@ def doCreateTranscodeTemplate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyContentReviewTemplate(argv, arglist):
+def doComposeMedia(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyContentReviewTemplate", g_param[OptionsDefine.Version])
+        show_help("ComposeMedia", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Definition": Utils.try_to_json(argv, "--Definition"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
-        "PornConfigure": Utils.try_to_json(argv, "--PornConfigure"),
-        "TerrorismConfigure": Utils.try_to_json(argv, "--TerrorismConfigure"),
-        "PoliticalConfigure": Utils.try_to_json(argv, "--PoliticalConfigure"),
-        "UserDefineConfigure": Utils.try_to_json(argv, "--UserDefineConfigure"),
-        "ScreenshotInterval": Utils.try_to_json(argv, "--ScreenshotInterval"),
-        "ReviewWallSwitch": Utils.try_to_json(argv, "--ReviewWallSwitch"),
-        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "Tracks": Utils.try_to_json(argv, "--Tracks"),
+        "Output": Utils.try_to_json(argv, "--Output"),
+        "Canvas": Utils.try_to_json(argv, "--Canvas"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1620,9 +1690,9 @@ def doModifyContentReviewTemplate(argv, arglist):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyContentReviewTemplateRequest()
+    model = models.ComposeMediaRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyContentReviewTemplate(model)
+    rsp = client.ComposeMedia(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1980,6 +2050,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeAIRecognitionTemplates": doDescribeAIRecognitionTemplates,
+    "ModifyContentReviewTemplate": doModifyContentReviewTemplate,
     "CreateContentReviewTemplate": doCreateContentReviewTemplate,
     "ModifyMediaInfo": doModifyMediaInfo,
     "EditMedia": doEditMedia,
@@ -2001,6 +2072,7 @@ ACTION_MAP = {
     "DeletePersonSample": doDeletePersonSample,
     "DeleteTranscodeTemplate": doDeleteTranscodeTemplate,
     "DescribeTaskDetail": doDescribeTaskDetail,
+    "DescribeReviewDetails": doDescribeReviewDetails,
     "DescribeWordSamples": doDescribeWordSamples,
     "ModifyWatermarkTemplate": doModifyWatermarkTemplate,
     "DeleteWordSamples": doDeleteWordSamples,
@@ -2021,7 +2093,7 @@ ACTION_MAP = {
     "CreateClass": doCreateClass,
     "ModifyPersonSample": doModifyPersonSample,
     "CreateTranscodeTemplate": doCreateTranscodeTemplate,
-    "ModifyContentReviewTemplate": doModifyContentReviewTemplate,
+    "ComposeMedia": doComposeMedia,
     "ProcessMedia": doProcessMedia,
     "CreateAIRecognitionTemplate": doCreateAIRecognitionTemplate,
     "ModifyWordSample": doModifyWordSample,

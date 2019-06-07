@@ -54,19 +54,19 @@ INFO = {
       },
       {
         "name": "SrcAccessType",
-        "desc": "源实例接入类型"
+        "desc": "源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)"
       },
       {
         "name": "SrcDatabaseType",
-        "desc": "源实例数据库类型"
+        "desc": "源实例数据库类型，数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一"
       },
       {
         "name": "DstAccessType",
-        "desc": "目标实例接入类型"
+        "desc": "目标实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)"
       },
       {
         "name": "DstDatabaseType",
-        "desc": "目标实例数据库类型"
+        "desc": "目标实例数据库类型,数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一"
       }
     ],
     "desc": "注册迁移任务"
@@ -75,11 +75,11 @@ INFO = {
     "params": [
       {
         "name": "Status",
-        "desc": "任务状态"
+        "desc": "任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败"
       },
       {
         "name": "TaskId",
-        "desc": "任务ID"
+        "desc": "任务ID，例如msp-jitoh33n"
       }
     ],
     "desc": "更新迁移任务状态"
@@ -97,7 +97,7 @@ INFO = {
     "params": [
       {
         "name": "TaskId",
-        "desc": "任务ID"
+        "desc": "任务ID，例如msp-jitoh33n"
       }
     ],
     "desc": "获取指定迁移任务详情"
@@ -106,11 +106,11 @@ INFO = {
     "params": [
       {
         "name": "TaskId",
-        "desc": "任务ID"
+        "desc": "任务ID，例如msp-jitoh33n"
       },
       {
         "name": "ProjectId",
-        "desc": "项目ID"
+        "desc": "项目ID，例如10005"
       }
     ],
     "desc": "更改迁移任务所属项目"
