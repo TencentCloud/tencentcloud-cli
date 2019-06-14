@@ -99,6 +99,35 @@ INFO = {
     ],
     "desc": "本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识，支持批量修改。"
   },
+  "ModifyAutoSnapshotPolicyAttribute": {
+    "params": [
+      {
+        "name": "AutoSnapshotPolicyId",
+        "desc": "定期快照策略ID。"
+      },
+      {
+        "name": "Policy",
+        "desc": "定期快照的执行策略。"
+      },
+      {
+        "name": "AutoSnapshotPolicyName",
+        "desc": "要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。"
+      },
+      {
+        "name": "IsActivated",
+        "desc": "是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。"
+      },
+      {
+        "name": "IsPermanent",
+        "desc": "通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。"
+      },
+      {
+        "name": "RetentionDays",
+        "desc": "通过该定期快照策略创建的快照保留天数，该参数不可与`IsPermanent`参数冲突，即若定期快照策略设置为永久保留，`RetentionDays`应置0。"
+      }
+    ],
+    "desc": "本接口（ModifyAutoSnapshotPolicyAttribute）用于修改定期快照策略属性。\n\n* 可通过该接口修改定期快照策略的执行策略、名称、是否激活等属性。\n* 修改保留天数时必须保证不与是否永久保留属性冲突，否则整个操作失败，以特定的错误码返回。"
+  },
   "InquiryPriceCreateDisks": {
     "params": [
       {

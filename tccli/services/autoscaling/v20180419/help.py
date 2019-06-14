@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
 DESC = "autoscaling-2018-04-19"
 INFO = {
+  "ExecuteScalingPolicy": {
+    "params": [
+      {
+        "name": "AutoScalingPolicyId",
+        "desc": "告警伸缩策略ID"
+      },
+      {
+        "name": "HonorCooldown",
+        "desc": "是否检查伸缩组活动处于冷却时间内，默认值为false"
+      }
+    ],
+    "desc": "本接口（ExecuteScalingPolicy）用于执行伸缩策略。\n\n* 可以根据伸缩策略ID执行伸缩策略。\n* 伸缩策略所属伸缩组处于伸缩活动时，会拒绝执行伸缩策略。"
+  },
   "CreateAutoScalingGroup": {
     "params": [
       {

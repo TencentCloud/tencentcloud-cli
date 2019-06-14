@@ -12,20 +12,21 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.cloudaudit.v20190319 import cloudaudit_client as cloudaudit_client_v20190319
-from tencentcloud.cloudaudit.v20190319 import models as models_v20190319
-from tccli.services.cloudaudit import v20190319
-from tccli.services.cloudaudit.v20190319 import help as v20190319_help
+from tencentcloud.nlp.v20190408 import nlp_client as nlp_client_v20190408
+from tencentcloud.nlp.v20190408 import models as models_v20190408
+from tccli.services.nlp import v20190408
+from tccli.services.nlp.v20190408 import help as v20190408_help
 
 
-def doStartLogging(argv, arglist):
+def doWordSimilarity(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("StartLogging", g_param[OptionsDefine.Version])
+        show_help("WordSimilarity", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AuditName": Utils.try_to_json(argv, "--AuditName"),
+        "SrcWord": Utils.try_to_json(argv, "--SrcWord"),
+        "TargetWord": Utils.try_to_json(argv, "--TargetWord"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -36,12 +37,12 @@ def doStartLogging(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartLoggingRequest()
+    model = models.WordSimilarityRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.StartLogging(model)
+    rsp = client.WordSimilarity(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -51,14 +52,15 @@ def doStartLogging(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetAttributeKey(argv, arglist):
+def doSentenceSimilarity(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetAttributeKey", g_param[OptionsDefine.Version])
+        show_help("SentenceSimilarity", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "WebsiteType": Utils.try_to_json(argv, "--WebsiteType"),
+        "SrcText": Utils.try_to_json(argv, "--SrcText"),
+        "TargetText": Utils.try_to_json(argv, "--TargetText"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -69,12 +71,12 @@ def doGetAttributeKey(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetAttributeKeyRequest()
+    model = models.SentenceSimilarityRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetAttributeKey(model)
+    rsp = client.SentenceSimilarity(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -84,14 +86,15 @@ def doGetAttributeKey(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListCmqEnableRegion(argv, arglist):
+def doTextClassification(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ListCmqEnableRegion", g_param[OptionsDefine.Version])
+        show_help("TextClassification", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "WebsiteType": Utils.try_to_json(argv, "--WebsiteType"),
+        "Text": Utils.try_to_json(argv, "--Text"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -102,12 +105,12 @@ def doListCmqEnableRegion(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListCmqEnableRegionRequest()
+    model = models.TextClassificationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ListCmqEnableRegion(model)
+    rsp = client.TextClassification(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -117,14 +120,15 @@ def doListCmqEnableRegion(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAudit(argv, arglist):
+def doLexicalAnalysis(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteAudit", g_param[OptionsDefine.Version])
+        show_help("LexicalAnalysis", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AuditName": Utils.try_to_json(argv, "--AuditName"),
+        "Text": Utils.try_to_json(argv, "--Text"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -135,12 +139,12 @@ def doDeleteAudit(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAuditRequest()
+    model = models.LexicalAnalysisRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteAudit(model)
+    rsp = client.LexicalAnalysis(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -150,14 +154,14 @@ def doDeleteAudit(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopLogging(argv, arglist):
+def doSensitiveWordsRecognition(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("StopLogging", g_param[OptionsDefine.Version])
+        show_help("SensitiveWordsRecognition", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AuditName": Utils.try_to_json(argv, "--AuditName"),
+        "Text": Utils.try_to_json(argv, "--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -168,12 +172,12 @@ def doStopLogging(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopLoggingRequest()
+    model = models.SensitiveWordsRecognitionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.StopLogging(model)
+    rsp = client.SensitiveWordsRecognition(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -183,13 +187,14 @@ def doStopLogging(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquireAuditCredit(argv, arglist):
+def doDependencyParsing(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("InquireAuditCredit", g_param[OptionsDefine.Version])
+        show_help("DependencyParsing", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "Text": Utils.try_to_json(argv, "--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -200,12 +205,12 @@ def doInquireAuditCredit(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InquireAuditCreditRequest()
+    model = models.DependencyParsingRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.InquireAuditCredit(model)
+    rsp = client.DependencyParsing(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -215,23 +220,15 @@ def doInquireAuditCredit(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateAudit(argv, arglist):
+def doSentimentAnalysis(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateAudit", g_param[OptionsDefine.Version])
+        show_help("SentimentAnalysis", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AuditName": Utils.try_to_json(argv, "--AuditName"),
-        "CmqQueueName": Utils.try_to_json(argv, "--CmqQueueName"),
-        "CmqRegion": Utils.try_to_json(argv, "--CmqRegion"),
-        "CosBucketName": Utils.try_to_json(argv, "--CosBucketName"),
-        "CosRegion": Utils.try_to_json(argv, "--CosRegion"),
-        "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
-        "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
-        "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
-        "LogFilePrefix": Utils.try_to_json(argv, "--LogFilePrefix"),
-        "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
+        "Text": Utils.try_to_json(argv, "--Text"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -242,12 +239,12 @@ def doUpdateAudit(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateAuditRequest()
+    model = models.SentimentAnalysisRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateAudit(model)
+    rsp = client.SentimentAnalysis(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -257,14 +254,14 @@ def doUpdateAudit(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAudit(argv, arglist):
+def doWordEmbedding(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeAudit", g_param[OptionsDefine.Version])
+        show_help("WordEmbedding", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AuditName": Utils.try_to_json(argv, "--AuditName"),
+        "Text": Utils.try_to_json(argv, "--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -275,12 +272,12 @@ def doDescribeAudit(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAuditRequest()
+    model = models.WordEmbeddingRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAudit(model)
+    rsp = client.WordEmbedding(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -290,23 +287,14 @@ def doDescribeAudit(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAudit(argv, arglist):
+def doTextCorrection(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateAudit", g_param[OptionsDefine.Version])
+        show_help("TextCorrection", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AuditName": Utils.try_to_json(argv, "--AuditName"),
-        "CosBucketName": Utils.try_to_json(argv, "--CosBucketName"),
-        "CosRegion": Utils.try_to_json(argv, "--CosRegion"),
-        "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
-        "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
-        "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
-        "CmqQueueName": Utils.try_to_json(argv, "--CmqQueueName"),
-        "CmqRegion": Utils.try_to_json(argv, "--CmqRegion"),
-        "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
-        "LogFilePrefix": Utils.try_to_json(argv, "--LogFilePrefix"),
+        "Text": Utils.try_to_json(argv, "--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -317,12 +305,12 @@ def doCreateAudit(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAuditRequest()
+    model = models.TextCorrectionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateAudit(model)
+    rsp = client.TextCorrection(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -332,14 +320,14 @@ def doCreateAudit(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListCosEnableRegion(argv, arglist):
+def doContentApproval(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ListCosEnableRegion", g_param[OptionsDefine.Version])
+        show_help("ContentApproval", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "WebsiteType": Utils.try_to_json(argv, "--WebsiteType"),
+        "Text": Utils.try_to_json(argv, "--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -350,12 +338,12 @@ def doListCosEnableRegion(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListCosEnableRegionRequest()
+    model = models.ContentApprovalRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ListCosEnableRegion(model)
+    rsp = client.ContentApproval(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -365,18 +353,14 @@ def doListCosEnableRegion(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLookUpEvents(argv, arglist):
+def doKeywordsExtraction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LookUpEvents", g_param[OptionsDefine.Version])
+        show_help("KeywordsExtraction", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "LookupAttributes": Utils.try_to_json(argv, "--LookupAttributes"),
-        "MaxResults": Utils.try_to_json(argv, "--MaxResults"),
-        "NextToken": Utils.try_to_json(argv, "--NextToken"),
+        "Text": Utils.try_to_json(argv, "--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -387,12 +371,12 @@ def doLookUpEvents(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LookUpEventsRequest()
+    model = models.KeywordsExtractionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LookUpEvents(model)
+    rsp = client.KeywordsExtraction(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -402,13 +386,14 @@ def doLookUpEvents(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListAudits(argv, arglist):
+def doSentenceEmbedding(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ListAudits", g_param[OptionsDefine.Version])
+        show_help("SentenceEmbedding", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "Text": Utils.try_to_json(argv, "--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -419,12 +404,80 @@ def doListAudits(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListAuditsRequest()
+    model = models.SentenceEmbeddingRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ListAudits(model)
+    rsp = client.SentenceEmbedding(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSimilarWords(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SimilarWords", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": Utils.try_to_json(argv, "--Text"),
+        "WordNumber": Utils.try_to_json(argv, "--WordNumber"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SimilarWordsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SimilarWords(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAutoSummarization(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AutoSummarization", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": Utils.try_to_json(argv, "--Text"),
+        "Length": Utils.try_to_json(argv, "--Length"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AutoSummarizationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AutoSummarization(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -435,42 +488,44 @@ def doListAudits(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190319": cloudaudit_client_v20190319,
+    "v20190408": nlp_client_v20190408,
 
 }
 
 MODELS_MAP = {
-    "v20190319": models_v20190319,
+    "v20190408": models_v20190408,
 
 }
 
 ACTION_MAP = {
-    "StartLogging": doStartLogging,
-    "GetAttributeKey": doGetAttributeKey,
-    "ListCmqEnableRegion": doListCmqEnableRegion,
-    "DeleteAudit": doDeleteAudit,
-    "StopLogging": doStopLogging,
-    "InquireAuditCredit": doInquireAuditCredit,
-    "UpdateAudit": doUpdateAudit,
-    "DescribeAudit": doDescribeAudit,
-    "CreateAudit": doCreateAudit,
-    "ListCosEnableRegion": doListCosEnableRegion,
-    "LookUpEvents": doLookUpEvents,
-    "ListAudits": doListAudits,
+    "WordSimilarity": doWordSimilarity,
+    "SentenceSimilarity": doSentenceSimilarity,
+    "TextClassification": doTextClassification,
+    "LexicalAnalysis": doLexicalAnalysis,
+    "SensitiveWordsRecognition": doSensitiveWordsRecognition,
+    "DependencyParsing": doDependencyParsing,
+    "SentimentAnalysis": doSentimentAnalysis,
+    "WordEmbedding": doWordEmbedding,
+    "TextCorrection": doTextCorrection,
+    "ContentApproval": doContentApproval,
+    "KeywordsExtraction": doKeywordsExtraction,
+    "SentenceEmbedding": doSentenceEmbedding,
+    "SimilarWords": doSimilarWords,
+    "AutoSummarization": doAutoSummarization,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190319.version,
+    v20190408.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190319.version.replace('-', ''): {"help": v20190319_help.INFO,"desc": v20190319_help.DESC},
+     'v' + v20190408.version.replace('-', ''): {"help": v20190408_help.INFO,"desc": v20190408_help.DESC},
 
 }
 
 
-def cloudaudit_action(argv, arglist):
+def nlp_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -486,7 +541,7 @@ def cloudaudit_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "cloudaudit", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "nlp", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -507,7 +562,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("cloudaudit", cloudaudit_action)
+    cmd = NiceCommand("nlp", nlp_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -566,11 +621,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["cloudaudit"][OptionsDefine.Version]
+            version = config["nlp"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["cloudaudit"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["nlp"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -587,7 +642,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cloudaudit", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "nlp", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -597,7 +652,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["cloudaudit"]["version"]
+        version = profile["nlp"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

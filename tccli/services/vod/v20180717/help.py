@@ -896,6 +896,19 @@ INFO = {
     ],
     "desc": "创建用户自定义的任务流模板，模板上限：50。"
   },
+  "PushUrlCache": {
+    "params": [
+      {
+        "name": "Urls",
+        "desc": "预热的 URL 列表，单次最多指定20个 URL。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "1. 预热指定的 URL 列表。\n2. URL 的域名必须已在云点播中注册。\n3. 单次请求最多指定20个 URL。"
+  },
   "DeleteMedia": {
     "params": [
       {
@@ -1032,6 +1045,31 @@ INFO = {
       }
     ],
     "desc": "重新设置已存在的任务流模板的任务内容"
+  },
+  "DescribeWatermarkTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "水印模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "水印类型过滤条件，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "查询用户自定义水印模板，支持根据条件，分页查询。"
   },
   "CreateClass": {
     "params": [
@@ -1385,30 +1423,22 @@ INFO = {
     ],
     "desc": "* 获得用户的所有分类信息。"
   },
-  "DescribeWatermarkTemplates": {
+  "ExecuteFunction": {
     "params": [
       {
-        "name": "Definitions",
-        "desc": "水印模板唯一标识过滤条件，数组长度限制：100。"
+        "name": "FunctionName",
+        "desc": "调用后端接口名称。"
       },
       {
-        "name": "Type",
-        "desc": "水印类型过滤条件，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页偏移量，默认值：0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>"
+        "name": "FunctionArg",
+        "desc": "接口参数，具体参数格式调用时与后端协调。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "查询用户自定义水印模板，支持根据条件，分页查询。"
+    "desc": "本接口仅用于定制开发的特殊场景，除非云点播客服人员主动告知您需要使用本接口，其它情况请勿调用。"
   },
   "DescribeTranscodeTemplates": {
     "params": [

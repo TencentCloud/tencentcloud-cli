@@ -12,23 +12,24 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tbp.v20190311 import tbp_client as tbp_client_v20190311
-from tencentcloud.tbp.v20190311 import models as models_v20190311
-from tccli.services.tbp import v20190311
-from tccli.services.tbp.v20190311 import help as v20190311_help
+from tencentcloud.tiia.v20190529 import tiia_client as tiia_client_v20190529
+from tencentcloud.tiia.v20190529 import models as models_v20190529
+from tccli.services.tiia import v20190529
+from tccli.services.tiia.v20190529 import help as v20190529_help
 
 
-def doReset(argv, arglist):
+def doImageModeration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Reset", g_param[OptionsDefine.Version])
+        show_help("ImageModeration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BotId": Utils.try_to_json(argv, "--BotId"),
-        "UserId": Utils.try_to_json(argv, "--UserId"),
-        "BotVersion": Utils.try_to_json(argv, "--BotVersion"),
-        "BotEnv": Utils.try_to_json(argv, "--BotEnv"),
+        "Scenes": Utils.try_to_json(argv, "--Scenes"),
+        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
+        "Config": Utils.try_to_json(argv, "--Config"),
+        "Extra": Utils.try_to_json(argv, "--Extra"),
+        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -39,12 +40,12 @@ def doReset(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetRequest()
+    model = models.ImageModerationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Reset(model)
+    rsp = client.ImageModeration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -54,25 +55,15 @@ def doReset(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doPostText(argv, arglist):
+def doDetectLabel(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("PostText", g_param[OptionsDefine.Version])
+        show_help("DetectLabel", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BotId": Utils.try_to_json(argv, "--BotId"),
-        "InputText": Utils.try_to_json(argv, "--InputText"),
-        "UserId": Utils.try_to_json(argv, "--UserId"),
-        "BotVersion": Utils.try_to_json(argv, "--BotVersion"),
-        "SessionAttributes": Utils.try_to_json(argv, "--SessionAttributes"),
-        "NeedTts": Utils.try_to_json(argv, "--NeedTts"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "Speed": Utils.try_to_json(argv, "--Speed"),
-        "VoiceType": Utils.try_to_json(argv, "--VoiceType"),
-        "SampleRate": Utils.try_to_json(argv, "--SampleRate"),
-        "BotEnv": Utils.try_to_json(argv, "--BotEnv"),
-        "TtsVoiceFormat": Utils.try_to_json(argv, "--TtsVoiceFormat"),
+        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
+        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -83,12 +74,12 @@ def doPostText(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PostTextRequest()
+    model = models.DetectLabelRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.PostText(model)
+    rsp = client.DetectLabel(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -99,32 +90,32 @@ def doPostText(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190311": tbp_client_v20190311,
+    "v20190529": tiia_client_v20190529,
 
 }
 
 MODELS_MAP = {
-    "v20190311": models_v20190311,
+    "v20190529": models_v20190529,
 
 }
 
 ACTION_MAP = {
-    "Reset": doReset,
-    "PostText": doPostText,
+    "ImageModeration": doImageModeration,
+    "DetectLabel": doDetectLabel,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190311.version,
+    v20190529.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190311.version.replace('-', ''): {"help": v20190311_help.INFO,"desc": v20190311_help.DESC},
+     'v' + v20190529.version.replace('-', ''): {"help": v20190529_help.INFO,"desc": v20190529_help.DESC},
 
 }
 
 
-def tbp_action(argv, arglist):
+def tiia_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -140,7 +131,7 @@ def tbp_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "tbp", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "tiia", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -161,7 +152,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("tbp", tbp_action)
+    cmd = NiceCommand("tiia", tiia_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -220,11 +211,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["tbp"][OptionsDefine.Version]
+            version = config["tiia"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["tbp"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["tiia"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -241,7 +232,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tbp", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tiia", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -251,7 +242,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["tbp"]["version"]
+        version = profile["tiia"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

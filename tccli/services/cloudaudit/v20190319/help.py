@@ -144,7 +144,7 @@ INFO = {
       },
       {
         "name": "LogFilePrefix",
-        "desc": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。可以不填，默认以账号ID做为日志前缀。"
+        "desc": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。可以不填，默认以账号ID作为日志前缀。"
       }
     ],
     "desc": "创建跟踪集"
@@ -171,10 +171,6 @@ INFO = {
       {
         "name": "LookupAttributes",
         "desc": "检索条件"
-      },
-      {
-        "name": "IsApiV3",
-        "desc": "是否调用新的查询接口"
       },
       {
         "name": "MaxResults",

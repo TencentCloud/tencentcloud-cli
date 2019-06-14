@@ -75,7 +75,7 @@ INFO = {
     "params": [
       {
         "name": "Name",
-        "desc": "映射查询类别：\nips：运营商映射查询\ndistrict：省份映射查询"
+        "desc": "映射查询类别：\nisp：运营商映射查询\ndistrict：省份映射查询"
       }
     ],
     "desc": "DescribeMapInfo 用于查询省份对应的 ID，运营商对应的 ID 信息。"
