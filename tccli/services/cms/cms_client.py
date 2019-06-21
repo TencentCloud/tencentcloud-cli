@@ -53,6 +53,110 @@ def doDescribeModerationOverview(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteTextSample(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteTextSample", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Ids": Utils.try_to_json(argv, "--Ids"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTextSampleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteTextSample(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTextSample(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateTextSample", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Contents": Utils.try_to_json(argv, "--Contents"),
+        "EvilType": Utils.try_to_json(argv, "--EvilType"),
+        "Label": Utils.try_to_json(argv, "--Label"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTextSampleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateTextSample(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doVideoModeration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VideoModeration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CallbackUrl": Utils.try_to_json(argv, "--CallbackUrl"),
+        "FileMD5": Utils.try_to_json(argv, "--FileMD5"),
+        "FileContent": Utils.try_to_json(argv, "--FileContent"),
+        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VideoModerationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VideoModeration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAudioModeration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -80,6 +184,43 @@ def doAudioModeration(argv, arglist):
     model = models.AudioModerationRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.AudioModeration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTextSample(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTextSample", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTextSampleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTextSample(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -157,42 +298,6 @@ def doImageModeration(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doVideoModeration(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("VideoModeration", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CallbackUrl": Utils.try_to_json(argv, "--CallbackUrl"),
-        "FileMD5": Utils.try_to_json(argv, "--FileMD5"),
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
-        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.VideoModerationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.VideoModeration(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 CLIENT_MAP = {
     "v20190321": cms_client_v20190321,
 
@@ -205,10 +310,13 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeModerationOverview": doDescribeModerationOverview,
+    "DeleteTextSample": doDeleteTextSample,
+    "CreateTextSample": doCreateTextSample,
+    "VideoModeration": doVideoModeration,
     "AudioModeration": doAudioModeration,
+    "DescribeTextSample": doDescribeTextSample,
     "TextModeration": doTextModeration,
     "ImageModeration": doImageModeration,
-    "VideoModeration": doVideoModeration,
 
 }
 

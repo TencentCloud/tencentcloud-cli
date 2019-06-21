@@ -12,54 +12,10 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.aai.v20180522 import aai_client as aai_client_v20180522
-from tencentcloud.aai.v20180522 import models as models_v20180522
-from tccli.services.aai import v20180522
-from tccli.services.aai.v20180522 import help as v20180522_help
-
-
-def doSimultaneousInterpreting(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SimultaneousInterpreting", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
-        "RecEngineModelType": Utils.try_to_json(argv, "--RecEngineModelType"),
-        "Data": Utils.try_to_json(argv, "--Data"),
-        "DataLen": Utils.try_to_json(argv, "--DataLen"),
-        "VoiceId": Utils.try_to_json(argv, "--VoiceId"),
-        "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
-        "VoiceFormat": Utils.try_to_json(argv, "--VoiceFormat"),
-        "OpenTranslate": Utils.try_to_json(argv, "--OpenTranslate"),
-        "SourceLanguage": Utils.try_to_json(argv, "--SourceLanguage"),
-        "TargetLanguage": Utils.try_to_json(argv, "--TargetLanguage"),
-        "Seq": Utils.try_to_json(argv, "--Seq"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SimultaneousInterpretingRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SimultaneousInterpreting(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+from tencentcloud.asr.v20190614 import asr_client as asr_client_v20190614
+from tencentcloud.asr.v20190614 import models as models_v20190614
+from tccli.services.asr import v20190614
+from tccli.services.asr.v20190614 import help as v20190614_help
 
 
 def doSentenceRecognition(argv, arglist):
@@ -88,7 +44,7 @@ def doSentenceRecognition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.SentenceRecognitionRequest()
@@ -103,112 +59,32 @@ def doSentenceRecognition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doChat(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("Chat", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Text": Utils.try_to_json(argv, "--Text"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "User": Utils.try_to_json(argv, "--User"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ChatRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.Chat(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTextToVoice(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TextToVoice", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Text": Utils.try_to_json(argv, "--Text"),
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
-        "ModelType": Utils.try_to_json(argv, "--ModelType"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "Speed": Utils.try_to_json(argv, "--Speed"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "VoiceType": Utils.try_to_json(argv, "--VoiceType"),
-        "PrimaryLanguage": Utils.try_to_json(argv, "--PrimaryLanguage"),
-        "SampleRate": Utils.try_to_json(argv, "--SampleRate"),
-        "Codec": Utils.try_to_json(argv, "--Codec"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AaiClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextToVoiceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TextToVoice(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 CLIENT_MAP = {
-    "v20180522": aai_client_v20180522,
+    "v20190614": asr_client_v20190614,
 
 }
 
 MODELS_MAP = {
-    "v20180522": models_v20180522,
+    "v20190614": models_v20190614,
 
 }
 
 ACTION_MAP = {
-    "SimultaneousInterpreting": doSimultaneousInterpreting,
     "SentenceRecognition": doSentenceRecognition,
-    "Chat": doChat,
-    "TextToVoice": doTextToVoice,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180522.version,
+    v20190614.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180522.version.replace('-', ''): {"help": v20180522_help.INFO,"desc": v20180522_help.DESC},
+     'v' + v20190614.version.replace('-', ''): {"help": v20190614_help.INFO,"desc": v20190614_help.DESC},
 
 }
 
 
-def aai_action(argv, arglist):
+def asr_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -224,7 +100,7 @@ def aai_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "aai", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "asr", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -245,7 +121,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("aai", aai_action)
+    cmd = NiceCommand("asr", asr_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -304,11 +180,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["aai"][OptionsDefine.Version]
+            version = config["asr"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["aai"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["asr"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -325,7 +201,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "aai", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "asr", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -335,7 +211,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["aai"]["version"]
+        version = profile["asr"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

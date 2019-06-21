@@ -62,6 +62,47 @@ def doInitOralProcess(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doKeywordEvaluate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("KeywordEvaluate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SeqId": Utils.try_to_json(argv, "--SeqId"),
+        "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
+        "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
+        "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
+        "UserVoiceData": Utils.try_to_json(argv, "--UserVoiceData"),
+        "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "Keywords": Utils.try_to_json(argv, "--Keywords"),
+        "SoeAppId": Utils.try_to_json(argv, "--SoeAppId"),
+        "IsQuery": Utils.try_to_json(argv, "--IsQuery"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SoeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.KeywordEvaluateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.KeywordEvaluate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doTransmitOralProcess(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -164,6 +205,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "InitOralProcess": doInitOralProcess,
+    "KeywordEvaluate": doKeywordEvaluate,
     "TransmitOralProcess": doTransmitOralProcess,
     "TransmitOralProcessWithInit": doTransmitOralProcessWithInit,
 

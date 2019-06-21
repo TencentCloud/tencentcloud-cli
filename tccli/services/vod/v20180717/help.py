@@ -131,6 +131,51 @@ INFO = {
     ],
     "desc": "* 开发者调用拉取事件通知，获取到事件后，必须调用该接口来确认消息已经收到；\n* 开发者获取到事件句柄后，等待确认的有效时间为 30 秒，超出 30 秒会报参数错误（4000）；\n* 更多参考[服务端事件通知](https://cloud.tencent.com/document/product/266/7829)。"
   },
+  "PullUpload": {
+    "params": [
+      {
+        "name": "MediaUrl",
+        "desc": "要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。\n<li>URL 里文件名需要包括扩展名, 比如 ```https://xxxx.mp4``` ，扩展名为 mp4，支持的扩展名详见[文件类型](https://cloud.tencent.com/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。</li>"
+      },
+      {
+        "name": "MediaName",
+        "desc": "媒体名称。"
+      },
+      {
+        "name": "CoverUrl",
+        "desc": "要拉取的视频封面 URL。\n<li>URL 里文件名需要包括扩展名, 比如 ```https://xxxx.jpg``` ，扩展名为 jpg，支持的扩展名详见[封面类型](https://cloud.tencent.com/document/product/266/9760#.E5.B0.81.E9.9D.A2.E7.B1.BB.E5.9E.8B)。</li>"
+      },
+      {
+        "name": "Procedure",
+        "desc": "媒体后续任务操作，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。"
+      },
+      {
+        "name": "ExpireTime",
+        "desc": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+      },
+      {
+        "name": "StorageRegion",
+        "desc": "指定上传园区，仅适用于对上传地域有特殊需求的用户。目前支持的园区：\n<li>ap-chongqing：重庆园区，</li>\n<li>ap-beijing：北京园区，</li>\n<li>ap-shanghai：上海园区。</li>"
+      },
+      {
+        "name": "ClassId",
+        "desc": "分类ID，用于对媒体进行分类管理，可通过[创建分类](https://cloud.tencent.com/document/product/266/7812)接口，创建分类，获得分类 ID。"
+      },
+      {
+        "name": "SessionContext",
+        "desc": "来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
+      },
+      {
+        "name": "SessionId",
+        "desc": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "该接口用于将一个网络上的视频拉取到云点播平台。"
+  },
   "ProcessMediaByUrl": {
     "params": [
       {
@@ -296,7 +341,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "* 该接口用于从点播服务端获取事件通知，详见[服务端事件通知](https://cloud.tencent.com/document/product/266/7829)；\n* 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；\n* 请求最多挂起 5 秒，建议请求方将超时时间设置为 10 秒；\n* 若该接口有事件返回，调用方必须再调用[确认事件通知](https://cloud.tencent.com/document/product/266/33434)接口，确认事件通知已经处理，否则该事件通知后续会再次被拉取到。"
+    "desc": "* 该接口用于业务服务器以[可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83)的方式获取事件通知；\n* 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；\n* 请求最多挂起 5 秒，建议请求方将超时时间设置为 10 秒；\n* 若该接口有事件返回，调用方必须再调用[确认事件通知](https://cloud.tencent.com/document/product/266/33434)接口，确认事件通知已经处理，否则该事件通知后续会再次被拉取到。"
   },
   "LiveRealTimeClip": {
     "params": [
@@ -575,14 +620,14 @@ INFO = {
       },
       {
         "name": "EndTime",
-        "desc": "结束日期，需大于开始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "结束日期，需大于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。\n\n1. 可以查询最近 90 天内的转码时长统计数据。\n2. 查询时间跨度不超过 60 天。"
+    "desc": "该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。\n\n1. 可以查询最近90天内的视频内容审核时长统计数据。\n2. 查询时间跨度不超过60天。"
   },
   "DescribeWordSamples": {
     "params": [

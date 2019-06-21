@@ -13,7 +13,7 @@ INFO = {
       },
       {
         "name": "Metric",
-        "desc": "排序对象，支持以下几种形式：\nUrl：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request（白名单功能）\nPath：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request\nDistrict：省份排序，支持的 Filter 为 flux、request\nIsp：运营商排序，支持的 Filter 为 flux、request\nHost：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计\noriginHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体\b回源状态码统计"
+        "desc": "排序对象，支持以下几种形式：\nUrl：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request\nPath：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）\nDistrict：省份排序，支持的 Filter 为 flux、request\nIsp：运营商排序，支持的 Filter 为 flux、request\nHost：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计\noriginHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计"
       },
       {
         "name": "Filter",

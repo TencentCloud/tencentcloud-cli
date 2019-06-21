@@ -18,52 +18,31 @@ INFO = {
     ],
     "desc": "根据日期，渠道和服务类型查询识别结果概览数据"
   },
-  "AudioModeration": {
+  "DeleteTextSample": {
     "params": [
       {
-        "name": "CallbackUrl",
-        "desc": "回调url"
-      },
-      {
-        "name": "FileContent",
-        "desc": "音频内容的base64"
-      },
-      {
-        "name": "FileMD5",
-        "desc": "音频文件的MD5值"
-      },
-      {
-        "name": "FileUrl",
-        "desc": "音频内容Url ，其中FileUrl和FileContent二选一"
+        "name": "Ids",
+        "desc": "唯一标识数组，目前暂时只支持单个删除"
       }
     ],
-    "desc": "音频内容检测（Audio Moderation, AM）服务使用了波形分析、声纹分析等技术，能识别涉黄、涉政、涉恐等违规音频，同时支持用户配置音频黑库，打击自定义的违规内容。\n\n通过API直接上传音频即可进行检测，对于高危部分直接屏蔽，可疑部分人工复审，从而节省审核人力，释放业务风险。"
+    "desc": "删除文字样本库，暂时只支持单个删除"
   },
-  "TextModeration": {
+  "CreateTextSample": {
     "params": [
       {
-        "name": "Content",
-        "desc": "文本内容Base64编码"
-      }
-    ],
-    "desc": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。\n通过API接口，能检测内容的危险等级，对于高危部分直接过滤，可疑部分人工复审，从而节省审核人力，释放业务风险。"
-  },
-  "ImageModeration": {
-    "params": [
-      {
-        "name": "FileContent",
-        "desc": "文件内容 Base64,与FileUrl必须二填一"
+        "name": "Contents",
+        "desc": "关键词数组"
       },
       {
-        "name": "FileMD5",
-        "desc": "文件MD5值"
+        "name": "EvilType",
+        "desc": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n24001：暴恐\n21000：综合\n20105：广告引流"
       },
       {
-        "name": "FileUrl",
-        "desc": "文件地址"
+        "name": "Label",
+        "desc": "样本类型\n1：黑库\n2：白库"
       }
     ],
-    "desc": "图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别涉黄、涉恐、涉政、涉毒等有害内容，同时支持用户配置图片黑名单，打击自定义的违规图片。\n通过API获取检测的标签及置信度，可直接采信高置信度的结果，人工复审低置信度的结果，从而降低人工成本，提高审核效率。"
+    "desc": "新增文本类型样本库"
   },
   "VideoModeration": {
     "params": [
@@ -84,6 +63,78 @@ INFO = {
         "desc": "视频内容Url,其中FileUrl与FileContent二选一"
       }
     ],
-    "desc": "视频内容检测（Video Moderation, VM）服务能识别涉黄、涉政、涉恐等违规视频，同时支持用户配置视频黑库，打击自定义的违规内容。\n通过API直接上传视频即可进行检测，对于高危部分直接过滤，可疑部分人工复审，从而节省审核人力，释放业务风险。"
+    "desc": "视频内容检测（Video Moderation, VM）服务能识别涉黄、涉政、涉恐等违规视频，同时支持用户配置视频黑库，打击自定义的违规内容。"
+  },
+  "AudioModeration": {
+    "params": [
+      {
+        "name": "CallbackUrl",
+        "desc": "回调url"
+      },
+      {
+        "name": "FileContent",
+        "desc": "音频内容的base64"
+      },
+      {
+        "name": "FileMD5",
+        "desc": "音频文件的MD5值"
+      },
+      {
+        "name": "FileUrl",
+        "desc": "音频内容Url ，其中FileUrl和FileContent二选一"
+      }
+    ],
+    "desc": "音频内容检测（Audio Moderation, AM）服务使用了波形分析、声纹分析等技术，能识别涉黄、涉政、涉恐等违规音频，同时支持用户配置音频黑库，打击自定义的违规内容。"
+  },
+  "DescribeTextSample": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "支持通过标签值进行筛选"
+      },
+      {
+        "name": "Limit",
+        "desc": "数量限制，默认为20，最大值为100"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "升序（asc）还是降序（desc），默认：desc"
+      },
+      {
+        "name": "OrderField",
+        "desc": "按某个字段排序，目前仅支持CreatedAt排序"
+      }
+    ],
+    "desc": "支持批量查询文字样本库"
+  },
+  "TextModeration": {
+    "params": [
+      {
+        "name": "Content",
+        "desc": "文本内容Base64编码"
+      }
+    ],
+    "desc": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。"
+  },
+  "ImageModeration": {
+    "params": [
+      {
+        "name": "FileContent",
+        "desc": "文件内容 Base64,与FileUrl必须二填一"
+      },
+      {
+        "name": "FileMD5",
+        "desc": "文件MD5值"
+      },
+      {
+        "name": "FileUrl",
+        "desc": "文件地址"
+      }
+    ],
+    "desc": "图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别涉黄、涉恐、涉政、涉毒等有害内容，同时支持用户配置图片黑名单，打击自定义的违规图片。"
   }
 }

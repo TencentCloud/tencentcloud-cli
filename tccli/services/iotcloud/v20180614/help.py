@@ -179,7 +179,7 @@ INFO = {
       },
       {
         "name": "Skey",
-        "desc": "创建LoRa产品需要的Skey"
+        "desc": "创建CLAA产品时，需要Skey"
       }
     ],
     "desc": "本接口（CreateProduct）用于创建一个新的物联网通信产品"

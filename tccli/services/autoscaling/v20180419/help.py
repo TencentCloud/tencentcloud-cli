@@ -46,7 +46,7 @@ INFO = {
       },
       {
         "name": "LoadBalancerIds",
-        "desc": "传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+        "desc": "传统负载均衡器ID列表，目前长度上限为5，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
       },
       {
         "name": "ProjectId",
@@ -54,7 +54,7 @@ INFO = {
       },
       {
         "name": "ForwardLoadBalancers",
-        "desc": "应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+        "desc": "应用型负载均衡器列表，目前长度上限为5，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
       },
       {
         "name": "SubnetIds",
@@ -429,11 +429,11 @@ INFO = {
       },
       {
         "name": "LoadBalancerIds",
-        "desc": "传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+        "desc": "传统负载均衡器ID列表，目前长度上限为5，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
       },
       {
         "name": "ForwardLoadBalancers",
-        "desc": "应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+        "desc": "应用型负载均衡器列表，目前长度上限为5，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
       }
     ],
     "desc": "本接口（ModifyLoadBalancers）用于修改伸缩组的负载均衡器。\n\n* 本接口用于为伸缩组指定新的负载均衡器配置，采用“完全覆盖”风格，无论之前配置如何，统一按照接口参数配置为新的负载均衡器。\n* 如果要为伸缩组清空负载均衡器，则在调用本接口时仅指定伸缩组ID，不指定具体负载均衡器。\n* 本接口会立即修改伸缩组的负载均衡器，并生成一个伸缩活动，异步修改存量实例的负载均衡器。"

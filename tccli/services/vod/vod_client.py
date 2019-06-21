@@ -543,6 +543,41 @@ def doPullEvents(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSimpleHlsClip(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SimpleHlsClip", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Url": Utils.try_to_json(argv, "--Url"),
+        "StartTimeOffset": Utils.try_to_json(argv, "--StartTimeOffset"),
+        "EndTimeOffset": Utils.try_to_json(argv, "--EndTimeOffset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SimpleHlsClipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SimpleHlsClip(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doLiveRealTimeClip(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1262,16 +1297,23 @@ def doDeleteAIRecognitionTemplate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSimpleHlsClip(argv, arglist):
+def doPullUpload(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SimpleHlsClip", g_param[OptionsDefine.Version])
+        show_help("PullUpload", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Url": Utils.try_to_json(argv, "--Url"),
-        "StartTimeOffset": Utils.try_to_json(argv, "--StartTimeOffset"),
-        "EndTimeOffset": Utils.try_to_json(argv, "--EndTimeOffset"),
+        "MediaUrl": Utils.try_to_json(argv, "--MediaUrl"),
+        "MediaName": Utils.try_to_json(argv, "--MediaName"),
+        "CoverUrl": Utils.try_to_json(argv, "--CoverUrl"),
+        "Procedure": Utils.try_to_json(argv, "--Procedure"),
+        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
+        "StorageRegion": Utils.try_to_json(argv, "--StorageRegion"),
+        "ClassId": Utils.try_to_json(argv, "--ClassId"),
+        "SessionContext": Utils.try_to_json(argv, "--SessionContext"),
+        "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1285,9 +1327,9 @@ def doSimpleHlsClip(argv, arglist):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SimpleHlsClipRequest()
+    model = models.PullUploadRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SimpleHlsClip(model)
+    rsp = client.PullUpload(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2132,6 +2174,7 @@ ACTION_MAP = {
     "DescribeMediaInfos": doDescribeMediaInfos,
     "DescribeAIAnalysisTemplates": doDescribeAIAnalysisTemplates,
     "PullEvents": doPullEvents,
+    "SimpleHlsClip": doSimpleHlsClip,
     "LiveRealTimeClip": doLiveRealTimeClip,
     "ModifyAIRecognitionTemplate": doModifyAIRecognitionTemplate,
     "ProcessMediaByUrl": doProcessMediaByUrl,
@@ -2151,7 +2194,7 @@ ACTION_MAP = {
     "CreateWatermarkTemplate": doCreateWatermarkTemplate,
     "DescribePersonSamples": doDescribePersonSamples,
     "DeleteAIRecognitionTemplate": doDeleteAIRecognitionTemplate,
-    "SimpleHlsClip": doSimpleHlsClip,
+    "PullUpload": doPullUpload,
     "ModifyClass": doModifyClass,
     "CreateProcedureTemplate": doCreateProcedureTemplate,
     "PushUrlCache": doPushUrlCache,
