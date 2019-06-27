@@ -2173,6 +2173,8 @@ def doDescribeCcns(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

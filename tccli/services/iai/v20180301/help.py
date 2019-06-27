@@ -252,7 +252,7 @@ INFO = {
       },
       {
         "name": "MaxFaceNum",
-        "desc": "最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。 \nMaxFaceNum用于，当待识别图片包含多张人脸时，要搜索的人脸数量。 \n当 MaxFaceNum 不为1时，设MaxFaceNum=M，则实际上是 M:N 的人脸搜索。"
+        "desc": "最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。 \nMaxFaceNum用于，当待识别图片包含多张人脸时，要搜索的人脸数量。 \n当 MaxFaceNum 不为1时，设MaxFaceNum=M，则实际上是 M:N 的人脸搜索（N为待搜索的人脸数）。"
       },
       {
         "name": "MinFaceSize",

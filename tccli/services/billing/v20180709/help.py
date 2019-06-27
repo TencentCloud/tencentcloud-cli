@@ -55,6 +55,10 @@ INFO = {
       {
         "name": "EndTime",
         "desc": "周期结束时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。"
+      },
+      {
+        "name": "NeedRecordNum",
+        "desc": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要"
       }
     ],
     "desc": "查询账单明细数据"
@@ -88,6 +92,23 @@ INFO = {
     ],
     "desc": "查询订单"
   },
+  "DescribeBillSummaryByPayMode": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59"
+      }
+    ],
+    "desc": "获取按付费模式汇总费用分布"
+  },
   "DescribeBillResourceSummary": {
     "params": [
       {
@@ -111,7 +132,58 @@ INFO = {
         "desc": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要"
       }
     ],
-    "desc": "查询账单资源汇总数据"
+    "desc": "查询账单资源汇总数据 "
+  },
+  "DescribeBillSummaryByRegion": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59"
+      }
+    ],
+    "desc": "获取按地域汇总费用分布"
+  },
+  "DescribeBillSummaryByProject": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59"
+      }
+    ],
+    "desc": "获取按项目汇总费用分布"
+  },
+  "DescribeBillSummaryByProduct": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59"
+      }
+    ],
+    "desc": "获取产品汇总费用分布"
   },
   "PayDeals": {
     "params": [

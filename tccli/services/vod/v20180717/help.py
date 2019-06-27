@@ -35,6 +35,10 @@ INFO = {
       {
         "name": "Canvas",
         "desc": "制作视频文件时使用的画布。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
     "desc": "该接口用于制作媒体文件，可以\n\n1. 对一个媒体文件进行剪辑，生成一个新的媒体文件；\n2. 对多个媒体文件进行裁剪拼接，生成一个新的媒体文件；\n3. 对多个媒体文件的媒体流进行裁剪拼接，生成一个新的媒体文件；"
@@ -143,7 +147,7 @@ INFO = {
       },
       {
         "name": "CoverUrl",
-        "desc": "要拉取的视频封面 URL。\n<li>URL 里文件名需要包括扩展名, 比如 ```https://xxxx.jpg``` ，扩展名为 jpg，支持的扩展名详见[封面类型](https://cloud.tencent.com/document/product/266/9760#.E5.B0.81.E9.9D.A2.E7.B1.BB.E5.9E.8B)。</li>"
+        "desc": "要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。"
       },
       {
         "name": "Procedure",

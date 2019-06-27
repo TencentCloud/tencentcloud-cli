@@ -1788,6 +1788,7 @@ def doComposeMedia(argv, arglist):
         "Tracks": Utils.try_to_json(argv, "--Tracks"),
         "Output": Utils.try_to_json(argv, "--Output"),
         "Canvas": Utils.try_to_json(argv, "--Canvas"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -1072,6 +1072,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段。支持：`CcnId` `CcnName` `CreateTime` `State` `QosLevel`"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方法。顺序：`ASC`，倒序：`DESC`。"
       }
     ],
     "desc": "本接口（DescribeCcns）用于查询云联网（CCN）列表。"

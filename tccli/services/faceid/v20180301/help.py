@@ -122,6 +122,19 @@ INFO = {
     ],
     "desc": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与公安权威库的证件照是否属于同一个人。"
   },
+  "BankCard2EVerification": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "姓名"
+      },
+      {
+        "name": "BankCard",
+        "desc": "银行卡"
+      }
+    ],
+    "desc": "银行卡二要素核验"
+  },
   "IdCardVerification": {
     "params": [
       {
@@ -134,6 +147,31 @@ INFO = {
       }
     ],
     "desc": "传入姓名和身份证号，校验两者的真实性和一致性。"
+  },
+  "BankCard4EVerification": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "姓名"
+      },
+      {
+        "name": "BankCard",
+        "desc": "银行卡"
+      },
+      {
+        "name": "Phone",
+        "desc": "手机号码"
+      },
+      {
+        "name": "IdCard",
+        "desc": "身份证号码"
+      },
+      {
+        "name": "CertType",
+        "desc": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。（不填默认0）\n0 身份证\n1 军官证\n2 护照\n3 港澳证\n4 台胞证\n5 警官证\n6 士兵证\n7 其它证件"
+      }
+    ],
+    "desc": "银行卡四要素核验"
   },
   "ImageRecognition": {
     "params": [
