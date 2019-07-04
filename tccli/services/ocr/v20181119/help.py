@@ -43,7 +43,7 @@ INFO = {
       },
       {
         "name": "Config",
-        "desc": "可选字段，根据需要选择是否请求对应字段。\n目前包含的字段为：\nCropIdCard，身份证照片裁剪，bool 类型，\nCropPortrait，人像照片裁剪，bool 类型，\nCopyWarn，复印件告警，bool 类型，\nReshootWarn，翻拍告警，bool 类型。\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CropIdCard\":true,\"CropPortrait\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CropIdCard\":true,\"CropPortrait\":true}"
+        "desc": "可选字段，根据需要选择是否请求对应字段。\n目前包含的字段为：\nCropIdCard，身份证照片裁剪，bool 类型，\nCropPortrait，人像照片裁剪，bool 类型，\nCopyWarn，复印件告警，bool 类型，\nBorderCheckWarn，遮挡告警，bool 类型，\nReshootWarn，翻拍告警，bool 类型。\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CropIdCard\":true,\"CropPortrait\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CropIdCard\":true,\"CropPortrait\":true}"
       }
     ],
     "desc": "本接口支持二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限；具备身份证照片、人像照片的裁剪功能和翻拍件、复印件的识别告警功能。"

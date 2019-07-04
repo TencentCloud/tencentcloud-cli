@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 DESC = "kms-2019-01-18"
 INFO = {
+  "CancelKeyDeletion": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "需要被取消删除的CMK的唯一标志"
+      }
+    ],
+    "desc": "取消CMK的计划删除操作"
+  },
   "GetKeyRotationStatus": {
     "params": [
       {
@@ -54,11 +63,24 @@ INFO = {
     ],
     "desc": "该接口用于批量启用CMK。"
   },
+  "ScheduleKeyDeletion": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "CMK的唯一标志"
+      },
+      {
+        "name": "PendingWindowInDays",
+        "desc": "计划删除时间区间[7,30]"
+      }
+    ],
+    "desc": "CMK计划删除接口，用于指定CMK删除的时间，可选时间区间为[7,30]天"
+  },
   "CreateKey": {
     "params": [
       {
         "name": "Alias",
-        "desc": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字符或数字的组合"
+        "desc": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合。以 kms- 作为前缀的用于云产品使用，Alias 不可重复。"
       },
       {
         "name": "Description",
@@ -79,7 +101,7 @@ INFO = {
     "params": [
       {
         "name": "Alias",
-        "desc": "新的别名，1-64个字符或数字的组合"
+        "desc": "新的别名，1-60个字符或数字的组合"
       },
       {
         "name": "KeyId",
@@ -162,7 +184,7 @@ INFO = {
       },
       {
         "name": "KeySpec",
-        "desc": "指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。默认为AES_256"
+        "desc": "指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。"
       },
       {
         "name": "NumberOfBytes",
@@ -233,7 +255,7 @@ INFO = {
       },
       {
         "name": "KeyState",
-        "desc": "根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK"
+        "desc": "根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3表示查询PendingDelete CMK(处于计划删除状态的Key)"
       },
       {
         "name": "SearchKeyAlias",

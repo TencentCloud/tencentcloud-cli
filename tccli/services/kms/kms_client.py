@@ -18,6 +18,39 @@ from tccli.services.kms import v20190118
 from tccli.services.kms.v20190118 import help as v20190118_help
 
 
+def doCancelKeyDeletion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CancelKeyDeletion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelKeyDeletionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CancelKeyDeletion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetKeyRotationStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -143,6 +176,40 @@ def doEnableKeyRotation(argv, arglist):
     model = models.EnableKeyRotationRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.EnableKeyRotation(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doScheduleKeyDeletion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ScheduleKeyDeletion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "PendingWindowInDays": Utils.try_to_json(argv, "--PendingWindowInDays"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ScheduleKeyDeletionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ScheduleKeyDeletion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -676,10 +743,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "CancelKeyDeletion": doCancelKeyDeletion,
     "GetKeyRotationStatus": doGetKeyRotationStatus,
     "EnableKey": doEnableKey,
     "Encrypt": doEncrypt,
     "EnableKeyRotation": doEnableKeyRotation,
+    "ScheduleKeyDeletion": doScheduleKeyDeletion,
     "CreateKey": doCreateKey,
     "ReEncrypt": doReEncrypt,
     "UpdateAlias": doUpdateAlias,

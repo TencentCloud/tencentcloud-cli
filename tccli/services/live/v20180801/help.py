@@ -178,6 +178,10 @@ INFO = {
       {
         "name": "HlsSpecialParam",
         "desc": "HLS录制定制参数"
+      },
+      {
+        "name": "Mp3Param",
+        "desc": "Mp3录制参数，开启Mp3录制时设置。"
       }
     ],
     "desc": "修改录制模板配置"
@@ -257,6 +261,23 @@ INFO = {
     ],
     "desc": "查询拉流配置"
   },
+  "DescribeHttpStatusInfoList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\nStartTime不能为3个月前。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
+      },
+      {
+        "name": "PlayDomains",
+        "desc": "播放域名列表。"
+      }
+    ],
+    "desc": "查询某段时间内5分钟粒度的各播放http状态码的个数。\n备注：数据延迟1小时，如10:00-10:59点的数据12点才能查到。"
+  },
   "DescribeProvinceIspPlayInfoList": {
     "params": [
       {
@@ -315,6 +336,31 @@ INFO = {
     ],
     "desc": "修改直播推流鉴权key"
   },
+  "DescribeStreamPushInfoList": {
+    "params": [
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，最大时间跨度支持6小时，支持最近6天数据查询。"
+      },
+      {
+        "name": "PushDomain",
+        "desc": "推流域名。"
+      },
+      {
+        "name": "AppName",
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
+      }
+    ],
+    "desc": "查询流id的上行推流质量数据，包括音视频的帧率，码率，流逝时间，编码格式等。"
+  },
   "DescribeLiveSnapshotRules": {
     "params": [],
     "desc": "获取截图规则列表"
@@ -327,6 +373,35 @@ INFO = {
       }
     ],
     "desc": "删除转码模板"
+  },
+  "DescribeTopClientIpSumInfoList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,4小时]，支持最近1天数据查询。"
+      },
+      {
+        "name": "PlayDomains",
+        "desc": "播放域名，默认为不填，表示求总体数据。"
+      },
+      {
+        "name": "PageNum",
+        "desc": "页号，\n范围是[1,1000]，\n默认值是1。"
+      },
+      {
+        "name": "PageSize",
+        "desc": "每页个数，范围是[1,1000]，\n默认值是20。"
+      },
+      {
+        "name": "OrderParam",
+        "desc": "排序指标，可选值包括”TotalRequest”，”FailedRequest”,“TotalFlux”。"
+      }
+    ],
+    "desc": "查询某段时间top n客户端ip汇总信息（暂支持top 1000）"
   },
   "ModifyPullStreamStatus": {
     "params": [
@@ -367,22 +442,38 @@ INFO = {
     ],
     "desc": "修改域名和证书绑定信息"
   },
-  "ResumeDelayLiveStream": {
+  "DescribeVisitTopSumInfoList": {
     "params": [
       {
-        "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
+        "name": "StartTime",
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
       },
       {
-        "name": "DomainName",
-        "desc": "推流域名。"
+        "name": "EndTime",
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,4小时]，支持最近1天数据查询。"
       },
       {
-        "name": "StreamName",
-        "desc": "流名称。"
+        "name": "TopIndex",
+        "desc": "峰值指标，可选值包括”Domain”，”StreamId”。"
+      },
+      {
+        "name": "PlayDomains",
+        "desc": "播放域名，默认为不填，表示求总体数据。"
+      },
+      {
+        "name": "PageNum",
+        "desc": "页号，\n范围是[1,1000]，\n默认值是1。"
+      },
+      {
+        "name": "PageSize",
+        "desc": "每页个数，范围是[1,1000]，\n默认值是20。"
+      },
+      {
+        "name": "OrderParam",
+        "desc": "排序指标，可选值包括” AvgFluxPerSecond”，”TotalRequest”（默认）,“TotalFlux”。"
       }
     ],
-    "desc": "恢复延迟播放设置"
+    "desc": "查询某时间段top n的域名或流id信息（暂支持top 1000）。"
   },
   "DescribeLiveDomainCert": {
     "params": [
@@ -609,6 +700,31 @@ INFO = {
     ],
     "desc": "设置水印是否启用"
   },
+  "DescribePlayErrorCodeSumInfoList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始时间点，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间点，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
+      },
+      {
+        "name": "PlayDomains",
+        "desc": "播放域名列表，不填表示总体数据。"
+      },
+      {
+        "name": "PageNum",
+        "desc": "页数，\n范围[1,1000]，\n默认值：1。"
+      },
+      {
+        "name": "PageSize",
+        "desc": "每页个数，\n范围：[1,1000]，\n默认值： 20。"
+      }
+    ],
+    "desc": "查询下行播放错误码信息。"
+  },
   "AddDelayLiveStream": {
     "params": [
       {
@@ -762,9 +878,22 @@ INFO = {
     ],
     "desc": "删除转码规则"
   },
-  "DescribeLiveCerts": {
-    "params": [],
-    "desc": "获取证书信息列表"
+  "DeleteLiveSnapshotRule": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "推流域名。"
+      },
+      {
+        "name": "AppName",
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
+      }
+    ],
+    "desc": "删除截图规则"
   },
   "DescribeLiveForbidStreamList": {
     "params": [
@@ -980,7 +1109,7 @@ INFO = {
       },
       {
         "name": "StatType",
-        "desc": "统计的类型，可选值包括”Province”，”Isp”"
+        "desc": "统计的类型，可选值包括”Province”，”Isp”。"
       },
       {
         "name": "PlayDomains",
@@ -988,11 +1117,11 @@ INFO = {
       },
       {
         "name": "PageNum",
-        "desc": "页号，\n范围是[1,1000]，\n默认值是1"
+        "desc": "页号，\n范围是[1,1000]，\n默认值是1。"
       },
       {
         "name": "PageSize",
-        "desc": "每页个数，范围是[1,1000]，\n默认值是20"
+        "desc": "每页个数，范围是[1,1000]，\n默认值是20。"
       }
     ],
     "desc": "查询某段时间内每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
@@ -1017,10 +1146,10 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。精确匹配，不支持。\n若不填，则为查询总体播放数据。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。精确匹配，不支持。\n若不填，则为查询总体播放数据。\n注意：按AppName查询，需要联系客服同学提单支持。"
       }
     ],
-    "desc": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。"
+    "desc": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。\n注意：按AppName查询，需要联系客服同学提单支持。"
   },
   "CreateLiveCert": {
     "params": [
@@ -1191,6 +1320,10 @@ INFO = {
     "params": [],
     "desc": "获取录制规则列表"
   },
+  "DescribeLiveDelayInfoList": {
+    "params": [],
+    "desc": "获取直播延播列表。"
+  },
   "DescribeLiveStreamPublishedList": {
     "params": [
       {
@@ -1267,6 +1400,31 @@ INFO = {
     "params": [],
     "desc": "获取回调规则列表"
   },
+  "DescribePlayErrorCodeDetailInfoList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
+      },
+      {
+        "name": "Granularity",
+        "desc": "查询粒度：\n1-1分钟粒度。"
+      },
+      {
+        "name": "StatType",
+        "desc": "是，可选值包括”4xx”,”5xx”，支持”4xx,5xx”等这种混合模式。"
+      },
+      {
+        "name": "PlayDomains",
+        "desc": "播放域名列表。"
+      }
+    ],
+    "desc": "查询下行播放错误码信息，某段时间内1分钟粒度的各http错误码出现的次数，包括4xx，5xx。\n\n"
+  },
   "DeleteLiveRecordRule": {
     "params": [
       {
@@ -1325,6 +1483,15 @@ INFO = {
       }
     ],
     "desc": "添加域名，一次只能提交一个域名。域名必须已备案。"
+  },
+  "DescribeLiveDomainPlayInfoList": {
+    "params": [
+      {
+        "name": "PlayDomains",
+        "desc": "播放域名列表。"
+      }
+    ],
+    "desc": "查询实时的域名维度下行播放数据。"
   },
   "CreateLiveRecordRule": {
     "params": [
@@ -1393,9 +1560,38 @@ INFO = {
       {
         "name": "HlsSpecialParam",
         "desc": "HLS专属录制参数。"
+      },
+      {
+        "name": "Mp3Param",
+        "desc": "Mp3录制参数，开启Mp3录制时设置。"
       }
     ],
     "desc": "创建录制模板，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。"
+  },
+  "DescribeBillBandwidthAndFluxList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过31天。"
+      },
+      {
+        "name": "PlayDomains",
+        "desc": "直播播放域名，若不填，表示总体数据。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "国内还是国外，若不填，表示国内+国外。"
+      },
+      {
+        "name": "Granularity",
+        "desc": "数据粒度，支持如下粒度：\n5：5分钟粒度，默认值（跨度不支持超过1天）；\n60：1小时粒度（跨度不支持超过一个月）；\n1440：天粒度（跨度不支持超过一个月）。"
+      }
+    ],
+    "desc": "直播计费带宽和流量数据查询。"
   },
   "ForbidLiveDomain": {
     "params": [
@@ -1465,6 +1661,35 @@ INFO = {
     ],
     "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
   },
+  "DescribeGroupProIspPlayInfoList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
+      },
+      {
+        "name": "PlayDomains",
+        "desc": "播放域名，默认为不填，表示求总体数据。"
+      },
+      {
+        "name": "ProvinceNames",
+        "desc": "省份列表，默认不填，则返回各省份的数据。"
+      },
+      {
+        "name": "IspNames",
+        "desc": "运营商列表，默认不填，则返回个运营商的数据。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
+      }
+    ],
+    "desc": "查询按省份和运营商分组的下行播放数据。"
+  },
   "DescribeLivePlayAuthKey": {
     "params": [
       {
@@ -1472,7 +1697,7 @@ INFO = {
         "desc": "域名。"
       }
     ],
-    "desc": "查询播放鉴权key"
+    "desc": "查询播放鉴权key。"
   },
   "DescribeLiveStreamState": {
     "params": [
@@ -1499,6 +1724,23 @@ INFO = {
       }
     ],
     "desc": "删除录制模板"
+  },
+  "ResumeDelayLiveStream": {
+    "params": [
+      {
+        "name": "AppName",
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
+      },
+      {
+        "name": "DomainName",
+        "desc": "推流域名。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
+      }
+    ],
+    "desc": "恢复延迟播放设置"
   },
   "CreateLiveTranscodeTemplate": {
     "params": [
@@ -1573,22 +1815,9 @@ INFO = {
     ],
     "desc": "创建转码模板，成功返回模板id后，需要调用[CreateLiveTranscodeRule](/document/product/267/32647)接口，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。"
   },
-  "DeleteLiveSnapshotRule": {
-    "params": [
-      {
-        "name": "DomainName",
-        "desc": "推流域名。"
-      },
-      {
-        "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
-      },
-      {
-        "name": "StreamName",
-        "desc": "流名称。"
-      }
-    ],
-    "desc": "删除截图规则"
+  "DescribeLiveCerts": {
+    "params": [],
+    "desc": "获取证书信息列表"
   },
   "EnableLiveDomain": {
     "params": [

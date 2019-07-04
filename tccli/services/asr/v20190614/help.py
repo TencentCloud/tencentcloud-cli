@@ -29,17 +29,17 @@ INFO = {
       },
       {
         "name": "Url",
-        "desc": "语音 URL，公网可下载。当 SourceType 值为 0 时须填写该字段，为 1 时不填；URL 的长度大于 0，小于 2048，需进行urlencode编码。音频时间长度要小于60s。"
+        "desc": "语音 URL，公网可下载。当 SourceType 值为 0（语音 URL上传） 时须填写该字段，为 1 时不填；URL 的长度大于 0，小于 2048，需进行urlencode编码。音频时间长度要小于60s。"
       },
       {
         "name": "Data",
-        "desc": "语音数据，当SourceType 值为1时必须填写，当SourceType 值为0可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于600kB。"
+        "desc": "语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于600KB。"
       },
       {
         "name": "DataLen",
-        "desc": "数据长度，当 SourceType 值为1时必须填写，当 SourceType 值为0可不写（此数据长度为数据未进行base64编码时的数据长度）。"
+        "desc": "数据长度，单位为字节。当 SourceType 值为1（本地语音数据上传）时必须填写，当 SourceType 值为0（语音 URL上传）可不写（此数据长度为数据未进行base64编码时的数据长度）。"
       }
     ],
-    "desc": "识别60s内的短语音。当音频文件通过请求中body内容上传时，请求大小不能超过600KB；当音频以url方式传输时，音频时长不可超过60s。所有请求参数放在POST请求的body中，编码类型采用采用x-www-form-urlencoded，参数进行urlencode编码后传输。现暂只支持中文普通话识别，支持识别8k16bit和16k16bit的mp3或者wav音频。"
+    "desc": "本接口用于对60秒之内的短音频文件进行识别，支持本地语音文件上传和语音URL上传两种请求方式。\n\n当音频文件通过请求中body内容上传时，请求大小不能超过600KB；当音频以url方式传输时，音频时长不可超过60s。\n\n所有请求参数放在POST请求的body中，编码类型采用x-www-form-urlencoded，参数进行urlencode编码后传输。\n\n现暂只支持中文普通话和带有一定方言口音的中文普通话识别，支持识别8k16bit和16k16bit的mp3或者wav格式的单声道音频。\n"
   }
 }

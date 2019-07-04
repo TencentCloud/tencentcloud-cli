@@ -24,7 +24,7 @@ INFO = {
         "desc": "限制数目\t, 默认10, 最大100"
       }
     ],
-    "desc": "根据日期查询识别结果列表，按分页反回"
+    "desc": "根据日期查询识别结果列表"
   },
   "VoiceFilter": {
     "params": [
@@ -53,6 +53,6 @@ INFO = {
         "desc": "用户id"
       }
     ],
-    "desc": "本接口用于识别涉黄、涉政、涉恐等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}"
+    "desc": "本接口用于识别涉黄、涉政等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType表示过滤类型，1：政治，2：色情"
   }
 }

@@ -525,6 +525,27 @@ INFO = {
     ],
     "desc": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。"
   },
+  "DescribeNatGateways": {
+    "params": [
+      {
+        "name": "NatGatewayIds",
+        "desc": "NAT网关统一 ID，形如：`nat-123xx454`。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。\n<li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>\n<li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>\n<li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeNatGateways）用于查询 NAT 网关。"
+  },
   "CreateSubnets": {
     "params": [
       {

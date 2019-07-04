@@ -159,7 +159,7 @@ INFO = {
       },
       {
         "name": "StorageRegion",
-        "desc": "指定上传园区，仅适用于对上传地域有特殊需求的用户。目前支持的园区：\n<li>ap-chongqing：重庆园区，</li>\n<li>ap-beijing：北京园区，</li>\n<li>ap-shanghai：上海园区。</li>"
+        "desc": "指定上传园区，目前支持的园区：\n<li>ap-chongqing：重庆园区，</li>\n<li>ap-beijing：北京园区，</li>\n<li>ap-shanghai：上海园区。</li>\n注意：不填此参数默认上传至重庆园区。"
       },
       {
         "name": "ClassId",
@@ -868,6 +868,23 @@ INFO = {
       }
     ],
     "desc": "该接口用于查询人物样本信息，支持根据人物 ID、名称、标签，分页查询。"
+  },
+  "WeChatMiniProgramPublish": {
+    "params": [
+      {
+        "name": "FileId",
+        "desc": "媒体文件 ID。"
+      },
+      {
+        "name": "SourceDefinition",
+        "desc": "发布视频所对应的转码模板 ID，为0代表原始视频。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "将点播视频发布到微信小程序，供微信小程序播放器播放。"
   },
   "DeleteAIRecognitionTemplate": {
     "params": [
