@@ -75,6 +75,7 @@ def doCreateAutoScalingGroup(argv, arglist):
         "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
         "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
+        "ServiceSettings": Utils.try_to_json(argv, "--ServiceSettings"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -307,6 +308,7 @@ def doUpgradeLaunchConfiguration(argv, arglist):
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "UserData": Utils.try_to_json(argv, "--UserData"),
         "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
+        "CamRoleName": Utils.try_to_json(argv, "--CamRoleName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -774,6 +776,7 @@ def doCreateLaunchConfiguration(argv, arglist):
         "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
         "InstanceTypesCheckPolicy": Utils.try_to_json(argv, "--InstanceTypesCheckPolicy"),
         "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
+        "CamRoleName": Utils.try_to_json(argv, "--CamRoleName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -820,6 +823,7 @@ def doModifyAutoScalingGroup(argv, arglist):
         "Zones": Utils.try_to_json(argv, "--Zones"),
         "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
         "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
+        "ServiceSettings": Utils.try_to_json(argv, "--ServiceSettings"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

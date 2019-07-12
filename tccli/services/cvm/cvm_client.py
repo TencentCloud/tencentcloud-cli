@@ -2108,6 +2108,7 @@ def doRebootInstances(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "ForceReboot": Utils.try_to_json(argv, "--ForceReboot"),
+        "StopType": Utils.try_to_json(argv, "--StopType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -38,11 +38,11 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "录制开始时间。中国标准时间，需要URLEncode。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。\n定时录制模式，必须设置该字段；实时视频录制模式，忽略该字段。"
+        "desc": "录制开始时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。\n定时录制模式，必须设置该字段；实时视频录制模式，忽略该字段。"
       },
       {
         "name": "EndTime",
-        "desc": "录制结束时间。中国标准时间，需要URLEncode。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。\n定时录制模式，必须设置该字段；实时录制模式，为可选字段。如果通过Highlight参数，设置录制为实时视频录制模式，其设置的结束时间不应超过当前时间+30分钟，如果设置的结束时间超过当前时间+30分钟或者小于当前时间或者不设置该参数，则实际结束时间为当前时间+30分钟。"
+        "desc": "录制结束时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。\n定时录制模式，必须设置该字段；实时录制模式，为可选字段。如果通过Highlight参数，设置录制为实时视频录制模式，其设置的结束时间不应超过当前时间+30分钟，如果设置的结束时间超过当前时间+30分钟或者小于当前时间或者不设置该参数，则实际结束时间为当前时间+30分钟。"
       },
       {
         "name": "RecordType",
@@ -50,15 +50,15 @@ INFO = {
       },
       {
         "name": "FileFormat",
-        "desc": "录制文件格式。其值为：\n“flv”,“hls”,”mp4”,“aac”,”mp3”，默认“flv”。\n在定时录制模式或实时视频录制模式下，该参数均有效，不区分大小写。"
+        "desc": "录制文件格式。其值为：\n“flv”【默认】,“hls”,”mp4”,“aac”,”mp3”。\n在定时录制模式或实时视频录制模式下，该参数均有效，不区分大小写。"
       },
       {
         "name": "Highlight",
-        "desc": "开启实时视频录制模式标志。0：不开启实时视频录制模式，即采用定时录制模式【默认】；1：开启实时视频录制模式。"
+        "desc": "开启实时视频录制模式标志。\n0：不开启实时视频录制模式，即定时录制模式【默认】。见[示例一](#.E7.A4.BA.E4.BE.8B1-.E5.88.9B.E5.BB.BA.E5.AE.9A.E6.97.B6.E5.BD.95.E5.88.B6.E4.BB.BB.E5.8A.A1)。\n1：开启实时视频录制模式。见[示例二](#.E7.A4.BA.E4.BE.8B2-.E5.88.9B.E5.BB.BA.E5.AE.9E.E6.97.B6.E5.BD.95.E5.88.B6.E4.BB.BB.E5.8A.A1)。"
       },
       {
         "name": "MixStream",
-        "desc": "开启A+B=C混流C流录制标志。0：不开启A+B=C混流C流录制【默认】；1：开启A+B=C混流C流录制。\n在定时录制模式或实时视频录制模式下，该参数均有效。"
+        "desc": "开启A+B=C混流C流录制标志。\n0：不开启A+B=C混流C流录制【默认】。\n1：开启A+B=C混流C流录制。\n在定时录制模式或实时视频录制模式下，该参数均有效。"
       },
       {
         "name": "StreamParam",
@@ -600,7 +600,7 @@ INFO = {
       },
       {
         "name": "SnapshotInterval",
-        "desc": "截图间隔，单位s，默认10s。"
+        "desc": "截图间隔，单位s，默认10s。\n范围： 10s ~ 600s。"
       },
       {
         "name": "Width",
@@ -686,19 +686,6 @@ INFO = {
       }
     ],
     "desc": "删除水印"
-  },
-  "SetLiveWatermarkStatus": {
-    "params": [
-      {
-        "name": "WatermarkId",
-        "desc": "水印ID。"
-      },
-      {
-        "name": "Status",
-        "desc": "状态。0：停用，1:启用"
-      }
-    ],
-    "desc": "设置水印是否启用"
   },
   "DescribePlayErrorCodeSumInfoList": {
     "params": [
@@ -1097,34 +1084,34 @@ INFO = {
     ],
     "desc": "修改回调模板"
   },
-  "DescribeProIspPlaySumInfoList": {
+  "DescribeGroupProIspPlayInfoList": {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
-      },
-      {
-        "name": "StatType",
-        "desc": "统计的类型，可选值包括”Province”，”Isp”。"
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
       },
       {
         "name": "PlayDomains",
-        "desc": "不填则为总体数据。"
+        "desc": "播放域名，默认为不填，表示求总体数据。"
       },
       {
-        "name": "PageNum",
-        "desc": "页号，\n范围是[1,1000]，\n默认值是1。"
+        "name": "ProvinceNames",
+        "desc": "省份列表，默认不填，则返回各省份的数据。"
       },
       {
-        "name": "PageSize",
-        "desc": "每页个数，范围是[1,1000]，\n默认值是20。"
+        "name": "IspNames",
+        "desc": "运营商列表，默认不填，则返回个运营商的数据。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
       }
     ],
-    "desc": "查询某段时间内每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
+    "desc": "查询按省份和运营商分组的下行播放数据。"
   },
   "DescribeStreamPlayInfoList": {
     "params": [
@@ -1661,34 +1648,34 @@ INFO = {
     ],
     "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
   },
-  "DescribeGroupProIspPlayInfoList": {
+  "DescribeProIspPlaySumInfoList": {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
+        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
+        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
+      },
+      {
+        "name": "StatType",
+        "desc": "统计的类型，可选值包括”Province”，”Isp”。"
       },
       {
         "name": "PlayDomains",
-        "desc": "播放域名，默认为不填，表示求总体数据。"
+        "desc": "不填则为总体数据。"
       },
       {
-        "name": "ProvinceNames",
-        "desc": "省份列表，默认不填，则返回各省份的数据。"
+        "name": "PageNum",
+        "desc": "页号，\n范围是[1,1000]，\n默认值是1。"
       },
       {
-        "name": "IspNames",
-        "desc": "运营商列表，默认不填，则返回个运营商的数据。"
-      },
-      {
-        "name": "MainlandOrOversea",
-        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
+        "name": "PageSize",
+        "desc": "每页个数，范围是[1,1000]，\n默认值是20。"
       }
     ],
-    "desc": "查询按省份和运营商分组的下行播放数据。"
+    "desc": "查询某段时间内每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
   },
   "DescribeLivePlayAuthKey": {
     "params": [

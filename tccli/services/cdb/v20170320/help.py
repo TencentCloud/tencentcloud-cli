@@ -171,7 +171,7 @@ INFO = {
         "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
       }
     ],
-    "desc": "本接口(IsolateDBInstance)用于销毁云数据库实例，销毁之后不能通过IP和端口访问数据库，按量计费实例销毁后直接下线。"
+    "desc": "本接口(IsolateDBInstance)用于隔离云数据库实例，隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行冲正。"
   },
   "ModifyBackupConfig": {
     "params": [
@@ -293,11 +293,11 @@ INFO = {
       },
       {
         "name": "EngineVersion",
-        "desc": "mysql版本。"
+        "desc": "MySQL 版本号。"
       },
       {
         "name": "TemplateId",
-        "desc": "源参数模板ID。"
+        "desc": "源参数模板 ID。"
       },
       {
         "name": "ParamList",
@@ -613,7 +613,7 @@ INFO = {
       },
       {
         "name": "SecurityGroupId",
-        "desc": "安全组 ID。"
+        "desc": "安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。"
       },
       {
         "name": "PayTypes",
@@ -657,7 +657,7 @@ INFO = {
       },
       {
         "name": "WithSecurityGroup",
-        "desc": "是否包含安全组详细信息，可取值：0 - 不包含，1 - 包含。"
+        "desc": "是否以安全组 ID 为过滤条件。"
       },
       {
         "name": "WithExCluster",
@@ -1228,6 +1228,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeDatabases)用于查询云数据库实例的数据库信息。"
+  },
+  "OfflineIsolatedInstances": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      }
+    ],
+    "desc": "本接口(OfflineIsolatedInstances)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态，即通过 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询到 Status 值为 5 的实例。\n\n该接口为异步操作，部分资源的回收可能存在延迟。您可以通过使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口，指定实例 InstanceId 和状态 Status 为 [5,6,7] 进行查询，若返回实例为空，则实例资源已全部释放。\n\n注意，实例下线后，相关资源和数据将无法找回，请谨慎操作。"
   },
   "DescribeDBSecurityGroups": {
     "params": [

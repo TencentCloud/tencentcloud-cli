@@ -161,6 +161,41 @@ def doDeleteListener(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSetSecurityGroupForLoadbalancers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SetSecurityGroupForLoadbalancers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
+        "OperationType": Utils.try_to_json(argv, "--OperationType"),
+        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetSecurityGroupForLoadbalancersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SetSecurityGroupForLoadbalancers(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -501,6 +536,7 @@ def doDescribeLoadBalancers(argv, arglist):
         "WithRs": Utils.try_to_json(argv, "--WithRs"),
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
         "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
+        "MasterZone": Utils.try_to_json(argv, "--MasterZone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -689,6 +725,7 @@ def doModifyRule(argv, arglist):
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
         "Scheduler": Utils.try_to_json(argv, "--Scheduler"),
         "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
+        "ForwardType": Utils.try_to_json(argv, "--ForwardType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1080,6 +1117,13 @@ def doCreateLoadBalancer(argv, arglist):
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
         "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "AddressIPVersion": Utils.try_to_json(argv, "--AddressIPVersion"),
+        "Number": Utils.try_to_json(argv, "--Number"),
+        "MasterZoneId": Utils.try_to_json(argv, "--MasterZoneId"),
+        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
+        "AnycastZone": Utils.try_to_json(argv, "--AnycastZone"),
+        "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
+        "VipIsp": Utils.try_to_json(argv, "--VipIsp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1156,6 +1200,7 @@ ACTION_MAP = {
     "SetLoadBalancerSecurityGroups": doSetLoadBalancerSecurityGroups,
     "DescribeClassicalLBListeners": doDescribeClassicalLBListeners,
     "DeleteListener": doDeleteListener,
+    "SetSecurityGroupForLoadbalancers": doSetSecurityGroupForLoadbalancers,
     "CreateRule": doCreateRule,
     "AutoRewrite": doAutoRewrite,
     "ModifyDomain": doModifyDomain,

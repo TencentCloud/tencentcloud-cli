@@ -70,7 +70,7 @@ INFO = {
       },
       {
         "name": "RetryPolicy",
-        "desc": "重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。"
+        "desc": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。"
       },
       {
         "name": "ZonesCheckPolicy",
@@ -79,6 +79,10 @@ INFO = {
       {
         "name": "Tags",
         "desc": "标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例，"
+      },
+      {
+        "name": "ServiceSettings",
+        "desc": "服务设置，包括云监控不健康替换等服务设置。"
       }
     ],
     "desc": "本接口（CreateAutoScalingGroup）用于创建伸缩组"
@@ -260,6 +264,10 @@ INFO = {
       {
         "name": "InstanceTags",
         "desc": "标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。"
+      },
+      {
+        "name": "CamRoleName",
+        "desc": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。"
       }
     ],
     "desc": "本接口（UpgradeLaunchConfiguration）用于升级启动配置。\n\n* 本接口用于升级启动配置，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。\n* 升级修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。"
@@ -550,6 +558,10 @@ INFO = {
       {
         "name": "InstanceTags",
         "desc": "标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。"
+      },
+      {
+        "name": "CamRoleName",
+        "desc": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。"
       }
     ],
     "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置，可以通过 `ModifyLaunchConfigurationAttributes` 修改少量字段。如需使用新的启动配置，建议重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"
@@ -606,11 +618,15 @@ INFO = {
       },
       {
         "name": "RetryPolicy",
-        "desc": "重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。"
+        "desc": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。"
       },
       {
         "name": "ZonesCheckPolicy",
         "desc": "可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。在伸缩组实际变更资源相关字段时（启动配置、可用区、子网）发挥作用。\n<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。\n\n可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。\n如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。"
+      },
+      {
+        "name": "ServiceSettings",
+        "desc": "服务设置，包括云监控不健康替换等服务设置。"
       }
     ],
     "desc": "本接口（ModifyAutoScalingGroup）用于修改伸缩组。"

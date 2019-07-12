@@ -1,11 +1,24 @@
 # -*- coding: utf-8 -*-
 DESC = "gme-2018-07-11"
 INFO = {
+  "DescribeFilterResult": {
+    "params": [
+      {
+        "name": "BizId",
+        "desc": "应用ID"
+      },
+      {
+        "name": "FileId",
+        "desc": "文件ID"
+      }
+    ],
+    "desc": "根据应用ID和文件ID查询识别结果"
+  },
   "DescribeFilterResultList": {
     "params": [
       {
         "name": "BizId",
-        "desc": "应用id"
+        "desc": "应用ID"
       },
       {
         "name": "StartDate",
@@ -30,11 +43,11 @@ INFO = {
     "params": [
       {
         "name": "BizId",
-        "desc": "应用id"
+        "desc": "应用ID，创建应用得到的AppID: https://console.cloud.tencent.com/gamegme"
       },
       {
         "name": "FileId",
-        "desc": "文件id，表示文件唯一id"
+        "desc": "文件ID，表示文件唯一id"
       },
       {
         "name": "FileName",
@@ -42,7 +55,7 @@ INFO = {
       },
       {
         "name": "FileUrl",
-        "desc": "文件内容url，FileUrl和FileContent二选一"
+        "desc": "文件url，urlencode编码，FileUrl和FileContent二选一"
       },
       {
         "name": "FileContent",
@@ -50,7 +63,7 @@ INFO = {
       },
       {
         "name": "OpenId",
-        "desc": "用户id"
+        "desc": "用户ID"
       }
     ],
     "desc": "本接口用于识别涉黄、涉政等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType表示过滤类型，1：政治，2：色情"
