@@ -51,9 +51,55 @@ INFO = {
     ],
     "desc": "查询SAML身份提供商详情"
   },
+  "CreateRole": {
+    "params": [
+      {
+        "name": "RoleName",
+        "desc": "角色名称"
+      },
+      {
+        "name": "PolicyDocument",
+        "desc": "策略文档"
+      },
+      {
+        "name": "Description",
+        "desc": "角色描述"
+      },
+      {
+        "name": "ConsoleLogin",
+        "desc": "是否允许登录"
+      }
+    ],
+    "desc": "本接口（CreateRole）用于创建角色。"
+  },
   "ListUsers": {
     "params": [],
     "desc": "拉取子用户"
+  },
+  "ListAttachedRolePolicies": {
+    "params": [
+      {
+        "name": "Page",
+        "desc": "页码，从 1 开始"
+      },
+      {
+        "name": "Rp",
+        "desc": "每页行数，不能大于200"
+      },
+      {
+        "name": "RoleId",
+        "desc": "角色 ID。用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名。用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "PolicyType",
+        "desc": "按策略类型过滤，User表示仅查询自定义策略，QCS表示仅查询预设策略"
+      }
+    ],
+    "desc": "本接口（ListAttachedRolePolicies）用于获取角色绑定的策略列表。"
   },
   "DeletePolicy": {
     "params": [
@@ -77,6 +123,23 @@ INFO = {
     ],
     "desc": "创建用户组"
   },
+  "DetachRolePolicy": {
+    "params": [
+      {
+        "name": "PolicyId",
+        "desc": "策略ID"
+      },
+      {
+        "name": "DetachRoleId",
+        "desc": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一"
+      },
+      {
+        "name": "DetachRoleName",
+        "desc": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一"
+      }
+    ],
+    "desc": "本接口（DetachRolePolicy）用于解除绑定角色的策略。"
+  },
   "GetPolicy": {
     "params": [
       {
@@ -86,31 +149,31 @@ INFO = {
     ],
     "desc": "本接口（GetPolicy）可用于查询查看策略详情。"
   },
-  "CreateSAMLProvider": {
+  "ListAttachedGroupPolicies": {
     "params": [
       {
-        "name": "Name",
-        "desc": "SAML身份提供商名称"
+        "name": "TargetGroupId",
+        "desc": "用户组 id"
       },
       {
-        "name": "Description",
-        "desc": "SAML身份提供商描述"
+        "name": "Page",
+        "desc": "页码，默认值是 1，从 1 开始"
       },
       {
-        "name": "SAMLMetadataDocument",
-        "desc": "SAML身份提供商Base64编码的元数据文档"
+        "name": "Rp",
+        "desc": "每页大小，默认值是 20"
       }
     ],
-    "desc": "创建SAML身份提供商"
+    "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
   },
-  "DeleteSAMLProvider": {
+  "ConsumeCustomMFAToken": {
     "params": [
       {
-        "name": "Name",
-        "desc": "SAML身份提供商名称"
+        "name": "MFAToken",
+        "desc": "自定义多因子验证Token"
       }
     ],
-    "desc": "删除SAML身份提供商"
+    "desc": "验证自定义多因子Token"
   },
   "UpdateUser": {
     "params": [
@@ -149,6 +212,45 @@ INFO = {
     ],
     "desc": "更新子用户"
   },
+  "DescribeRoleList": {
+    "params": [
+      {
+        "name": "Page",
+        "desc": "页码，从1开始"
+      },
+      {
+        "name": "Rp",
+        "desc": "每页行数，不能大于200"
+      }
+    ],
+    "desc": "本接口（DescribeRoleList）用于获取账号下的角色列表。"
+  },
+  "UpdateSAMLProvider": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "SAML身份提供商名称"
+      },
+      {
+        "name": "Description",
+        "desc": "SAML身份提供商描述"
+      },
+      {
+        "name": "SAMLMetadataDocument",
+        "desc": "SAML身份提供商Base64编码的元数据文档"
+      }
+    ],
+    "desc": "更新SAML身份提供商信息"
+  },
+  "GetCustomMFATokenInfo": {
+    "params": [
+      {
+        "name": "MFAToken",
+        "desc": "自定义多因子验证Token"
+      }
+    ],
+    "desc": "获取自定义多因子Token关联信息"
+  },
   "DeleteGroup": {
     "params": [
       {
@@ -157,6 +259,19 @@ INFO = {
       }
     ],
     "desc": "删除用户组"
+  },
+  "DeleteRole": {
+    "params": [
+      {
+        "name": "RoleId",
+        "desc": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      }
+    ],
+    "desc": "本接口（DeleteRole）用于删除指定角色。"
   },
   "GetUser": {
     "params": [
@@ -180,22 +295,22 @@ INFO = {
     ],
     "desc": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。"
   },
-  "ListAttachedGroupPolicies": {
+  "CreateSAMLProvider": {
     "params": [
       {
-        "name": "TargetGroupId",
-        "desc": "用户组 id"
+        "name": "Name",
+        "desc": "SAML身份提供商名称"
       },
       {
-        "name": "Page",
-        "desc": "页码，默认值是 1，从 1 开始"
+        "name": "Description",
+        "desc": "SAML身份提供商描述"
       },
       {
-        "name": "Rp",
-        "desc": "每页大小，默认值是 20"
+        "name": "SAMLMetadataDocument",
+        "desc": "SAML身份提供商Base64编码的元数据文档"
       }
     ],
-    "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
+    "desc": "创建SAML身份提供商"
   },
   "ListGroupsForUser": {
     "params": [
@@ -214,43 +329,32 @@ INFO = {
     ],
     "desc": "列出用户关联的用户组"
   },
-  "ListEntitiesForPolicy": {
+  "DeleteSAMLProvider": {
     "params": [
       {
-        "name": "PolicyId",
-        "desc": "策略 id"
-      },
-      {
-        "name": "Page",
-        "desc": "页码，默认值是 1，从 1 开始"
-      },
-      {
-        "name": "Rp",
-        "desc": "每页大小，默认值是 20"
-      },
-      {
-        "name": "EntityFilter",
-        "desc": "可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'"
+        "name": "Name",
+        "desc": "SAML身份提供商名称"
       }
     ],
-    "desc": "本接口（ListEntitiesForPolicy）可用于查询策略关联的实体列表。"
+    "desc": "删除SAML身份提供商"
   },
-  "ListGroups": {
+  "GetGroup": {
     "params": [
       {
-        "name": "Page",
-        "desc": "页码。默认为1。"
-      },
-      {
-        "name": "Rp",
-        "desc": "每页数量。默认为20。"
-      },
-      {
-        "name": "Keyword",
-        "desc": "按用户组名称匹配。"
+        "name": "GroupId",
+        "desc": "用户组 ID"
       }
     ],
-    "desc": "查询用户组列表"
+    "desc": "查询用户组详情"
+  },
+  "DeleteUser": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "子用户用户名"
+      }
+    ],
+    "desc": "删除子用户"
   },
   "AddUserToGroup": {
     "params": [
@@ -261,22 +365,30 @@ INFO = {
     ],
     "desc": "用户加入到用户组"
   },
-  "UpdateSAMLProvider": {
+  "SetFlag": {
     "params": [
       {
-        "name": "Name",
-        "desc": "SAML身份提供商名称"
+        "name": "OpUin",
+        "desc": "设置用户的uin"
       },
       {
-        "name": "Description",
-        "desc": "SAML身份提供商描述"
+        "name": "LoginFlag",
+        "desc": "登录设置"
       },
       {
-        "name": "SAMLMetadataDocument",
-        "desc": "SAML身份提供商Base64编码的元数据文档"
+        "name": "ActionFlag",
+        "desc": "敏感操作设置"
+      },
+      {
+        "name": "OffsiteFlag",
+        "desc": "异地登录设置"
+      },
+      {
+        "name": "NeedResetMfa",
+        "desc": "是否需要充值mfa"
       }
     ],
-    "desc": "更新SAML身份提供商信息"
+    "desc": "设置用户的登录，敏感操作，异步登录设置"
   },
   "UpdatePolicy": {
     "params": [
@@ -299,6 +411,36 @@ INFO = {
     ],
     "desc": "本接口（UpdatePolicy ）可用于更新策略。"
   },
+  "GetRole": {
+    "params": [
+      {
+        "name": "RoleId",
+        "desc": "角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      }
+    ],
+    "desc": "本接口（GetRole）用于获取指定角色的详细信息。"
+  },
+  "UpdateRoleDescription": {
+    "params": [
+      {
+        "name": "Description",
+        "desc": "角色描述"
+      },
+      {
+        "name": "RoleId",
+        "desc": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      }
+    ],
+    "desc": "本接口（UpdateRoleDescription）用于修改角色的描述信息。"
+  },
   "ListAttachedUserPolicies": {
     "params": [
       {
@@ -316,27 +458,39 @@ INFO = {
     ],
     "desc": "本接口（ListAttachedUserPolicies）可用于查询子账号关联的策略列表。"
   },
-  "DeleteUser": {
+  "ListGroups": {
     "params": [
       {
-        "name": "Name",
-        "desc": "子用户用户名"
+        "name": "Page",
+        "desc": "页码。默认为1。"
+      },
+      {
+        "name": "Rp",
+        "desc": "每页数量。默认为20。"
+      },
+      {
+        "name": "Keyword",
+        "desc": "按用户组名称匹配。"
       }
     ],
-    "desc": "删除子用户"
+    "desc": "查询用户组列表"
   },
-  "DetachGroupPolicy": {
+  "AttachRolePolicy": {
     "params": [
       {
         "name": "PolicyId",
-        "desc": "策略 id"
+        "desc": "策略ID"
       },
       {
-        "name": "DetachGroupId",
-        "desc": "用户组 id"
+        "name": "AttachRoleId",
+        "desc": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一"
+      },
+      {
+        "name": "AttachRoleName",
+        "desc": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一"
       }
     ],
-    "desc": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。"
+    "desc": "本接口（AttachRolePolicy）用于绑定策略到角色。"
   },
   "RemoveUserFromGroup": {
     "params": [
@@ -381,14 +535,26 @@ INFO = {
     ],
     "desc": "本接口（AttachUserPolicy）可用于绑定到用户的策略。"
   },
-  "GetGroup": {
+  "ListEntitiesForPolicy": {
     "params": [
       {
-        "name": "GroupId",
-        "desc": "用户组 ID"
+        "name": "PolicyId",
+        "desc": "策略 id"
+      },
+      {
+        "name": "Page",
+        "desc": "页码，默认值是 1，从 1 开始"
+      },
+      {
+        "name": "Rp",
+        "desc": "每页大小，默认值是 20"
+      },
+      {
+        "name": "EntityFilter",
+        "desc": "可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'"
       }
     ],
-    "desc": "查询用户组详情"
+    "desc": "本接口（ListEntitiesForPolicy）可用于查询策略关联的实体列表。"
   },
   "UpdateGroup": {
     "params": [
@@ -407,6 +573,23 @@ INFO = {
     ],
     "desc": "更新用户组"
   },
+  "UpdateAssumeRolePolicy": {
+    "params": [
+      {
+        "name": "PolicyDocument",
+        "desc": "策略文档"
+      },
+      {
+        "name": "RoleId",
+        "desc": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      }
+    ],
+    "desc": "本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。"
+  },
   "CreatePolicy": {
     "params": [
       {
@@ -423,6 +606,19 @@ INFO = {
       }
     ],
     "desc": "本接口（CreatePolicy）可用于创建策略。"
+  },
+  "DetachGroupPolicy": {
+    "params": [
+      {
+        "name": "PolicyId",
+        "desc": "策略 id"
+      },
+      {
+        "name": "DetachGroupId",
+        "desc": "用户组 id"
+      }
+    ],
+    "desc": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。"
   },
   "DetachUserPolicy": {
     "params": [
