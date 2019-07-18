@@ -1,9 +1,23 @@
 # -*- coding: utf-8 -*-
 DESC = "iottid-2019-04-11"
 INFO = {
-  "DescribePermission": {
-    "params": [],
-    "desc": "查询企业用户TID平台控制台权限"
+  "AuthTestTid": {
+    "params": [
+      {
+        "name": "Data",
+        "desc": "设备端SDK填入测试TID参数后生成的加密数据串"
+      }
+    ],
+    "desc": "单向认证测试TID"
+  },
+  "VerifyChipBurnInfo": {
+    "params": [
+      {
+        "name": "Data",
+        "desc": "验证数据"
+      }
+    ],
+    "desc": "下载控制台验证芯片烧录信息，保证TID与中心信息一致"
   },
   "DeliverTids": {
     "params": [
@@ -30,6 +44,10 @@ INFO = {
       }
     ],
     "desc": "安全芯片TID烧录回执"
+  },
+  "DescribePermission": {
+    "params": [],
+    "desc": "查询企业用户TID平台控制台权限"
   },
   "DeliverTidNotify": {
     "params": [

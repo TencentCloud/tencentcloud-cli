@@ -197,7 +197,7 @@ INFO = {
         "desc": "是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)"
       }
     ],
-    "desc": "本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。"
+    "desc": "本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。 "
   },
   "ModifyKeyPairAttribute": {
     "params": [

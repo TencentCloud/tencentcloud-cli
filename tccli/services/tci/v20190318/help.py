@@ -30,19 +30,15 @@ INFO = {
       },
       {
         "name": "VoiceFileType",
-        "desc": "语音文件类型 1:raw, 2:wav, 3:mp3（三种格式目前仅支持16k采样率16bit）"
+        "desc": "语音文件类型 1:raw, 2:wav, 3:mp3，10:视频（三种音频格式目前仅支持16k采样率16bit）"
       },
       {
         "name": "Functions",
         "desc": "功能开关列表，表示是否需要打开相应的功能，返回相应的信息"
       },
       {
-        "name": "ClassId",
-        "desc": "课堂标识符"
-      },
-      {
-        "name": "Identity",
-        "desc": "身份，1：老师 2：学生"
+        "name": "FileType",
+        "desc": "视频文件类型，默认点播，直播天 live_url"
       },
       {
         "name": "VocabLibNameList",
@@ -222,6 +218,39 @@ INFO = {
     ],
     "desc": "拉取人员列表"
   },
+  "SubmitConversationTask": {
+    "params": [
+      {
+        "name": "Lang",
+        "desc": "音频源的语言，默认0为英文，1为中文"
+      },
+      {
+        "name": "VoiceEncodeType",
+        "desc": "语音编码类型 1:pcm"
+      },
+      {
+        "name": "VoiceFileType",
+        "desc": "语音文件类型 1:raw, 2:wav, 3:mp3（三种格式目前仅支持16k采样率16bit）"
+      },
+      {
+        "name": "Functions",
+        "desc": "功能开关列表，表示是否需要打开相应的功能，返回相应的信息"
+      },
+      {
+        "name": "StudentUrl",
+        "desc": "学生音频流"
+      },
+      {
+        "name": "TeacherUrl",
+        "desc": "教师音频流"
+      },
+      {
+        "name": "VocabLibNameList",
+        "desc": "识别词库名列表，评估过程使用这些词汇库中的词汇进行词汇使用行为分析"
+      }
+    ],
+    "desc": "对话任务分析接口"
+  },
   "DescribeHighlightResult": {
     "params": [
       {
@@ -274,42 +303,46 @@ INFO = {
     ],
     "desc": "用于取消已经提交的任务"
   },
-  "SubmitImageTask": {
+  "SubmitHighlights": {
     "params": [
       {
+        "name": "Functions",
+        "desc": "表情配置开关项。"
+      },
+      {
         "name": "FileContent",
-        "desc": "输入分析对象内容"
+        "desc": "视频url。"
       },
       {
         "name": "FileType",
-        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址"
+        "desc": "视频类型及来源，目前只支持点播类型：\"vod_url\"。"
       },
       {
-        "name": "Functions",
-        "desc": "任务控制选项"
-      },
-      {
-        "name": "LightStandardSet",
-        "desc": "光照标准列表"
+        "name": "LibIds",
+        "desc": "需要检索的人脸合集库，不在库中的人脸将不参与精彩集锦。"
       },
       {
         "name": "FrameInterval",
-        "desc": "抽帧的时间间隔，单位毫秒，默认值1000。"
+        "desc": "视频处理的抽帧间隔，单位毫秒。建议留空。"
       },
       {
-        "name": "LibrarySet",
-        "desc": "查询人员库列表"
+        "name": "KeywordsLanguage",
+        "desc": "关键词语言类型，0为英文，1为中文。"
+      },
+      {
+        "name": "KeywordsStrings",
+        "desc": "关键词数组，当且仅当Funtions中的EnableKeywordWonderfulTime为true时有意义，匹配相应的关键字。"
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "最大的视频长度，单位毫秒，默认值为两小时"
+        "desc": "处理视频的总时长，单位毫秒。该值为0或未设置时，默认值两小时生效；当该值大于视频实际时长时，视频实际时长生效；当该值小于视频实际时长时，该值生效；当获取视频实际时长失败时，若该值设置则生效，否则默认值生效。建议留空。"
       },
       {
         "name": "SimThreshold",
-        "desc": "人脸识别中的相似度阈值，默认值为0.89"
+        "desc": "人脸检索的相似度阈值，默认值0.89。建议留空。"
       }
     ],
-    "desc": "提交图像分析任务"
+    "desc": "发起视频生成精彩集锦接口。该接口可以通过客户传入的课程音频数据及相关策略（如微笑抽取，专注抽取等），自动生成一堂课程的精彩集锦。需要通过QueryHighlightResult接口获取生成结果。"
   },
   "DescribeVocabLib": {
     "params": [],
@@ -369,6 +402,43 @@ INFO = {
     ],
     "desc": "提交人员考勤任务"
   },
+  "CreatePerson": {
+    "params": [
+      {
+        "name": "LibraryId",
+        "desc": "人员库唯一标识符"
+      },
+      {
+        "name": "PersonName",
+        "desc": "人员名称"
+      },
+      {
+        "name": "JobNumber",
+        "desc": "人员工作号码"
+      },
+      {
+        "name": "Mail",
+        "desc": "人员邮箱"
+      },
+      {
+        "name": "Male",
+        "desc": "人员性别，0：未知 1：男性，2：女性"
+      },
+      {
+        "name": "PersonId",
+        "desc": "自定义人员 ID，注意不能使用 tci_person_ 前缀"
+      },
+      {
+        "name": "PhoneNumber",
+        "desc": "人员电话号码"
+      },
+      {
+        "name": "StudentNumber",
+        "desc": "人员学生号码"
+      }
+    ],
+    "desc": "创建人员"
+  },
   "DescribeConversationTask": {
     "params": [
       {
@@ -416,46 +486,42 @@ INFO = {
     ],
     "desc": "拉取任务详情"
   },
-  "SubmitHighlights": {
+  "SubmitImageTask": {
     "params": [
       {
-        "name": "Functions",
-        "desc": "表情配置开关项。"
-      },
-      {
         "name": "FileContent",
-        "desc": "视频url。"
+        "desc": "输入分析对象内容"
       },
       {
         "name": "FileType",
-        "desc": "视频类型及来源，目前只支持点播类型：\"vod_url\"。"
+        "desc": "输入分析对象类型，picture：二进制图片的 base64 编码字符串，picture_url:图片地址，vod_url：视频地址，live_url：直播地址"
       },
       {
-        "name": "LibIds",
-        "desc": "需要检索的人脸合集库，不在库中的人脸将不参与精彩集锦。"
+        "name": "Functions",
+        "desc": "任务控制选项"
+      },
+      {
+        "name": "LightStandardSet",
+        "desc": "光照标准列表"
       },
       {
         "name": "FrameInterval",
-        "desc": "视频处理的抽帧间隔，单位毫秒。建议留空。"
+        "desc": "抽帧的时间间隔，单位毫秒，默认值1000，保留字段，当前不支持填写。"
       },
       {
-        "name": "KeywordsLanguage",
-        "desc": "关键词语言类型，0为英文，1为中文。"
-      },
-      {
-        "name": "KeywordsStrings",
-        "desc": "关键词数组，当且仅当Funtions中的EnableKeywordWonderfulTime为true时有意义，匹配相应的关键字。"
+        "name": "LibrarySet",
+        "desc": "查询人员库列表"
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "处理视频的总时长，单位毫秒。该值为0或未设置时，默认值两小时生效；当该值大于视频实际时长时，视频实际时长生效；当该值小于视频实际时长时，该值生效；当获取视频实际时长失败时，若该值设置则生效，否则默认值生效。建议留空。"
+        "desc": "最大的视频长度，单位毫秒，默认值为两小时"
       },
       {
         "name": "SimThreshold",
-        "desc": "人脸检索的相似度阈值，默认值0.89。建议留空。"
+        "desc": "人脸识别中的相似度阈值，默认值为0.89，保留字段，当前不支持填写。"
       }
     ],
-    "desc": "发起视频生成精彩集锦接口。该接口可以通过客户传入的课程音频数据及相关策略（如微笑抽取，专注抽取等），自动生成一堂课程的精彩集锦。需要通过QueryHighlightResult接口获取生成结果。"
+    "desc": "提交图像分析任务"
   },
   "DescribeAttendanceResult": {
     "params": [

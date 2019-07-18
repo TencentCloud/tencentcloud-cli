@@ -30,11 +30,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量, 默认0"
+        "desc": "偏移量，默认值为0。"
       },
       {
         "name": "Limit",
-        "desc": "限制数目\t, 默认10, 最大100"
+        "desc": "返回数量，默认值为10，最大值为100。"
       }
     ],
     "desc": "根据日期查询识别结果列表"
@@ -43,11 +43,11 @@ INFO = {
     "params": [
       {
         "name": "BizId",
-        "desc": "应用ID，创建应用得到的AppID: https://console.cloud.tencent.com/gamegme"
+        "desc": "应用ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID"
       },
       {
         "name": "FileId",
-        "desc": "文件ID，表示文件唯一id"
+        "desc": "文件ID，表示文件唯一ID"
       },
       {
         "name": "FileName",
@@ -66,6 +66,6 @@ INFO = {
         "desc": "用户ID"
       }
     ],
-    "desc": "本接口用于识别涉黄、涉政等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType表示过滤类型，1：政治，2：色情"
+    "desc": "本接口用于识别涉黄、涉政等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType表示过滤类型，1：政治，2：色情，3：谩骂"
   }
 }

@@ -287,6 +287,38 @@ def doConfirmEvents(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSubAppIds(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSubAppIds", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSubAppIdsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSubAppIds(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doApplyUpload(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1146,6 +1178,41 @@ def doDeleteProcedureTemplate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifySubAppIdInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySubAppIdInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "Name": Utils.try_to_json(argv, "--Name"),
+        "Description": Utils.try_to_json(argv, "--Description"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySubAppIdInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySubAppIdInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeProcedureTemplates(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1734,6 +1801,40 @@ def doCreateClass(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifySubAppIdStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySubAppIdStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "Status": Utils.try_to_json(argv, "--Status"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySubAppIdStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySubAppIdStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyPersonSample(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2203,6 +2304,7 @@ ACTION_MAP = {
     "EditMedia": doEditMedia,
     "DeleteAIAnalysisTemplate": doDeleteAIAnalysisTemplate,
     "ConfirmEvents": doConfirmEvents,
+    "DescribeSubAppIds": doDescribeSubAppIds,
     "ApplyUpload": doApplyUpload,
     "ModifyTranscodeTemplate": doModifyTranscodeTemplate,
     "DescribeContentReviewTemplates": doDescribeContentReviewTemplates,
@@ -2226,6 +2328,7 @@ ACTION_MAP = {
     "DeleteWordSamples": doDeleteWordSamples,
     "ModifyAIAnalysisTemplate": doModifyAIAnalysisTemplate,
     "DeleteProcedureTemplate": doDeleteProcedureTemplate,
+    "ModifySubAppIdInfo": doModifySubAppIdInfo,
     "DescribeProcedureTemplates": doDescribeProcedureTemplates,
     "CreateWatermarkTemplate": doCreateWatermarkTemplate,
     "DescribePersonSamples": doDescribePersonSamples,
@@ -2242,6 +2345,7 @@ ACTION_MAP = {
     "ResetProcedureTemplate": doResetProcedureTemplate,
     "ExecuteFunction": doExecuteFunction,
     "CreateClass": doCreateClass,
+    "ModifySubAppIdStatus": doModifySubAppIdStatus,
     "ModifyPersonSample": doModifyPersonSample,
     "CreateTranscodeTemplate": doCreateTranscodeTemplate,
     "ComposeMedia": doComposeMedia,

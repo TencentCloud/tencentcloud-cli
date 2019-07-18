@@ -18,6 +18,81 @@ from tccli.services.drm import v20181115
 from tccli.services.drm.v20181115 import help as v20181115_help
 
 
+def doStartEncryption(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StartEncryption", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CosEndPoint": Utils.try_to_json(argv, "--CosEndPoint"),
+        "CosSecretId": Utils.try_to_json(argv, "--CosSecretId"),
+        "CosSecretKey": Utils.try_to_json(argv, "--CosSecretKey"),
+        "DrmType": Utils.try_to_json(argv, "--DrmType"),
+        "SourceObject": Utils.try_to_json(argv, "--SourceObject"),
+        "OutputObjects": Utils.try_to_json(argv, "--OutputObjects"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DrmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StartEncryptionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StartEncryption(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAddFairPlayPem(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AddFairPlayPem", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Pem": Utils.try_to_json(argv, "--Pem"),
+        "Ask": Utils.try_to_json(argv, "--Ask"),
+        "PemDecryptKey": Utils.try_to_json(argv, "--PemDecryptKey"),
+        "BailorId": Utils.try_to_json(argv, "--BailorId"),
+        "Priority": Utils.try_to_json(argv, "--Priority"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DrmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddFairPlayPemRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AddFairPlayPem(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateLicense(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -55,19 +130,19 @@ def doCreateLicense(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStartEncryption(argv, arglist):
+def doModifyFairPlayPem(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("StartEncryption", g_param[OptionsDefine.Version])
+        show_help("ModifyFairPlayPem", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CosEndPoint": Utils.try_to_json(argv, "--CosEndPoint"),
-        "CosSecretId": Utils.try_to_json(argv, "--CosSecretId"),
-        "CosSecretKey": Utils.try_to_json(argv, "--CosSecretKey"),
-        "DrmType": Utils.try_to_json(argv, "--DrmType"),
-        "SourceObject": Utils.try_to_json(argv, "--SourceObject"),
-        "OutputObjects": Utils.try_to_json(argv, "--OutputObjects"),
+        "Pem": Utils.try_to_json(argv, "--Pem"),
+        "Ask": Utils.try_to_json(argv, "--Ask"),
+        "FairPlayPemId": Utils.try_to_json(argv, "--FairPlayPemId"),
+        "PemDecryptKey": Utils.try_to_json(argv, "--PemDecryptKey"),
+        "BailorId": Utils.try_to_json(argv, "--BailorId"),
+        "Priority": Utils.try_to_json(argv, "--Priority"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -81,9 +156,9 @@ def doStartEncryption(argv, arglist):
     client = mod.DrmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartEncryptionRequest()
+    model = models.ModifyFairPlayPemRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.StartEncryption(model)
+    rsp = client.ModifyFairPlayPem(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -130,6 +205,74 @@ def doDescribeKeys(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteFairPlayPem(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteFairPlayPem", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BailorId": Utils.try_to_json(argv, "--BailorId"),
+        "FairPlayPemId": Utils.try_to_json(argv, "--FairPlayPemId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DrmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteFairPlayPemRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteFairPlayPem(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeFairPlayPem(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeFairPlayPem", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BailorId": Utils.try_to_json(argv, "--BailorId"),
+        "FairPlayPemId": Utils.try_to_json(argv, "--FairPlayPemId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DrmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeFairPlayPemRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeFairPlayPem(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20181115": drm_client_v20181115,
 
@@ -141,9 +284,13 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "CreateLicense": doCreateLicense,
     "StartEncryption": doStartEncryption,
+    "AddFairPlayPem": doAddFairPlayPem,
+    "CreateLicense": doCreateLicense,
+    "ModifyFairPlayPem": doModifyFairPlayPem,
     "DescribeKeys": doDescribeKeys,
+    "DeleteFairPlayPem": doDeleteFairPlayPem,
+    "DescribeFairPlayPem": doDescribeFairPlayPem,
 
 }
 

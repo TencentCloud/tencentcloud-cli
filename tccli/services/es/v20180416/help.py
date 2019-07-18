@@ -103,11 +103,11 @@ INFO = {
       },
       {
         "name": "ChargePeriod",
-        "desc": "包年包月购买时长（单位由参数TimeUint决定）"
+        "desc": "包年包月购买时长（单位由参数TimeUnit决定）"
       },
       {
         "name": "RenewFlag",
-        "desc": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用于默认不自动续费，SVIP用户自动续费"
+        "desc": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费"
       },
       {
         "name": "DiskType",
@@ -159,6 +159,48 @@ INFO = {
       }
     ],
     "desc": "创建指定规格的ES集群实例"
+  },
+  "UpgradeInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "EsVersion",
+        "desc": "目标ES版本"
+      },
+      {
+        "name": "CheckOnly",
+        "desc": "是否只做升级检查，默认值为false"
+      },
+      {
+        "name": "LicenseType",
+        "desc": "目标商业特性版本：<li>oss 开源版</li><li>basic 基础版</li>当前仅在5.6.4升级6.x版本时使用，默认值为basic"
+      }
+    ],
+    "desc": "升级ES集群版本"
+  },
+  "UpgradeLicense": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "LicenseType",
+        "desc": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum"
+      },
+      {
+        "name": "AutoVoucher",
+        "desc": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0"
+      },
+      {
+        "name": "VoucherIds",
+        "desc": "代金券ID列表（目前仅支持指定一张代金券）"
+      }
+    ],
+    "desc": "升级ES商业特性"
   },
   "UpdateInstance": {
     "params": [

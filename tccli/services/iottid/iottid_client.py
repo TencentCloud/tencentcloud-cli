@@ -18,13 +18,14 @@ from tccli.services.iottid import v20190411
 from tccli.services.iottid.v20190411 import help as v20190411_help
 
 
-def doDescribePermission(argv, arglist):
+def doAuthTestTid(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribePermission", g_param[OptionsDefine.Version])
+        show_help("AuthTestTid", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "Data": Utils.try_to_json(argv, "--Data"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -38,9 +39,42 @@ def doDescribePermission(argv, arglist):
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePermissionRequest()
+    model = models.AuthTestTidRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribePermission(model)
+    rsp = client.AuthTestTid(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doVerifyChipBurnInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VerifyChipBurnInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Data": Utils.try_to_json(argv, "--Data"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VerifyChipBurnInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VerifyChipBurnInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -109,6 +143,38 @@ def doBurnTidNotify(argv, arglist):
     model = models.BurnTidNotifyRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.BurnTidNotify(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePermission(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePermission", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePermissionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePermission(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -197,9 +263,11 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribePermission": doDescribePermission,
+    "AuthTestTid": doAuthTestTid,
+    "VerifyChipBurnInfo": doVerifyChipBurnInfo,
     "DeliverTids": doDeliverTids,
     "BurnTidNotify": doBurnTidNotify,
+    "DescribePermission": doDescribePermission,
     "DeliverTidNotify": doDeliverTidNotify,
     "DownloadTids": doDownloadTids,
 

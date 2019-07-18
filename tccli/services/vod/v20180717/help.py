@@ -135,6 +135,10 @@ INFO = {
     ],
     "desc": "* 开发者调用拉取事件通知，获取到事件后，必须调用该接口来确认消息已经收到；\n* 开发者获取到事件句柄后，等待确认的有效时间为 30 秒，超出 30 秒会报参数错误（4000）；\n* 更多参考[服务端事件通知](https://cloud.tencent.com/document/product/266/7829)。"
   },
+  "DescribeSubAppIds": {
+    "params": [],
+    "desc": "该接口用于获取当前账号有权限的子应用列表，包含主应用。若尚未开通子应用功能，接口将返回 \n FailedOperation。"
+  },
   "PullUpload": {
     "params": [
       {
@@ -308,14 +312,14 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：\n<li>basicInfo（视频基础信息）。</li>\n<li>metaData（视频元信息）。</li>\n<li>transcodeInfo（视频转码结果信息）。</li>\n<li>animatedGraphicsInfo（视频转动图结果信息）。</li>\n<li>imageSpriteInfo（视频雪碧图信息）。</li>\n<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>\n<li>sampleSnapshotInfo（采样截图信息）。</li>\n<li>keyFrameDescInfo（打点信息）。</li>\n<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>"
+        "desc": "指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：\n<li>basicInfo（视频基础信息）。</li>\n<li>metaData（视频元信息）。</li>\n<li>transcodeInfo（视频转码结果信息）。</li>\n<li>animatedGraphicsInfo（视频转动图结果信息）。</li>\n<li>imageSpriteInfo（视频雪碧图信息）。</li>\n<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>\n<li>sampleSnapshotInfo（采样截图信息）。</li>\n<li>keyFrameDescInfo（打点信息）。</li>\n<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>\n<li>miniProgramReviewInfo（小程序审核信息）。</li>"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "1. 该接口可以获取多个视频的多种信息，包括：\n    1. 基础信息（basicInfo）：包括视频名称、大小、时长、封面图片等。\n    2. 元信息（metaData）：包括视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后，动图相关信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后，相关截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图之后，雪碧图的相关信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，各个截图的信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的各个打点信息。\n    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。\n2. 可以指定回包只返回部分信息。"
+    "desc": "1. 该接口可以获取多个视频的多种信息，包括：\n    1. 基础信息（basicInfo）：包括视频名称、分类、播放地址、封面图片等。\n    2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后，动图相关信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后，相关截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图之后，雪碧图的相关信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，各个截图的信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的各个打点信息。\n    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。\n2. 可以指定回包只返回部分信息。"
   },
   "DescribeAIAnalysisTemplates": {
     "params": [
@@ -770,6 +774,23 @@ INFO = {
     ],
     "desc": "删除指定名字的任务流模板"
   },
+  "ModifySubAppIdInfo": {
+    "params": [
+      {
+        "name": "SubAppId",
+        "desc": "子应用 ID。"
+      },
+      {
+        "name": "Name",
+        "desc": "子应用名称，长度限制：40个字符。"
+      },
+      {
+        "name": "Description",
+        "desc": "子应用简介，长度限制： 300个字符。"
+      }
+    ],
+    "desc": "该接口用于修改子应用信息，但不允许修改主应用信息。"
+  },
   "DescribeProcedureTemplates": {
     "params": [
       {
@@ -1153,6 +1174,19 @@ INFO = {
       }
     ],
     "desc": "* 用于对媒体进行分类管理；\n* 该接口不影响既有媒体的分类，如需修改媒体分类，请调用[修改媒体文件属性](/document/product/266/31762)接口。\n* 分类层次不可超过 4 层。\n* 每个分类的子类数量不可超过 500 个。"
+  },
+  "ModifySubAppIdStatus": {
+    "params": [
+      {
+        "name": "SubAppId",
+        "desc": "子应用 ID。"
+      },
+      {
+        "name": "Status",
+        "desc": "子应用状态，取值范围：\n<li>On：启用</li>\n<li>Off：停用</li>"
+      }
+    ],
+    "desc": "该接口用于启用、停用子应用。被停用的子应用将封停对应域名，并限制控制台访问。"
   },
   "ModifyPersonSample": {
     "params": [

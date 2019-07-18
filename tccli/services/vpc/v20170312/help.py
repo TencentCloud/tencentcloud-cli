@@ -77,6 +77,19 @@ INFO = {
     ],
     "desc": "本接口（CreateFlowLog）用于创建流日志"
   },
+  "DescribeTaskResult": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "异步任务ID"
+      },
+      {
+        "name": "DealName",
+        "desc": "计费订单号"
+      }
+    ],
+    "desc": "查询EIP异步任务执行结果"
+  },
   "DescribeServiceTemplateGroups": {
     "params": [
       {
@@ -102,7 +115,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>route-table-name - String - （过滤条件）路由表名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>association.main - String - （过滤条件）是否主路由表。</li>"
+        "desc": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>route-table-name - String - （过滤条件）路由表名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>association.main - String - （过滤条件）是否主路由表。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>"
       },
       {
         "name": "Offset",
@@ -580,7 +593,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-name - String - （过滤条件）VPC实例名称。</li>\n<li>is-default - String - （过滤条件）是否默认VPC。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）vpc的cidr。</li>"
+        "desc": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-name - String - （过滤条件）VPC实例名称。</li>\n<li>is-default - String - （过滤条件）是否默认VPC。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）vpc的cidr。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>"
       },
       {
         "name": "Offset",
@@ -1913,7 +1926,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>"
+        "desc": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>"
       },
       {
         "name": "Offset",
