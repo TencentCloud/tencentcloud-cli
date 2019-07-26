@@ -2566,6 +2566,7 @@ def doDescribeLiveStreamPublishedList(argv, arglist):
         "AppName": Utils.try_to_json(argv, "--AppName"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
+        "StreamName": Utils.try_to_json(argv, "--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

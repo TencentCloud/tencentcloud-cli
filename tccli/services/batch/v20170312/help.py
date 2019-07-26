@@ -230,7 +230,7 @@ INFO = {
   },
   "DescribeInstanceCategories": {
     "params": [],
-    "desc": "目前对CVM现有实例族划分为四类，每一类包含若干实例族。该接口用于查询实例分类信息。"
+    "desc": "目前对CVM现有实例族分类，每一类包含若干实例族。该接口用于查询实例分类信息。"
   },
   "DeleteTaskTemplates": {
     "params": [

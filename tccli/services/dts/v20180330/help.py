@@ -26,7 +26,7 @@ INFO = {
         "desc": "数据迁移任务ID"
       }
     ],
-    "desc": "非定时任务会在调用后立即开始迁移，定时任务则会开始倒计时。\n调用此接口前，请务必先校验数据迁移任务通过。"
+    "desc": "本接口（StartMigrationJob）用于启动迁移任务。非定时迁移任务会在调用后立即开始迁移，定时任务则会开始倒计时。\n调用此接口前，请务必先使用CreateMigrateCheckJob校验数据迁移任务，并通过DescribeMigrateJobs接口查询到任务状态为校验通过（status=4）时，才能启动数据迁移任务。"
   },
   "DeleteSyncJob": {
     "params": [
@@ -120,11 +120,11 @@ INFO = {
       },
       {
         "name": "SrcDatabaseType",
-        "desc": "源实例数据库类型:mysql,redis,mongodb"
+        "desc": "源实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona。不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。"
       },
       {
         "name": "SrcAccessType",
-        "desc": "源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)"
+        "desc": "源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)"
       },
       {
         "name": "SrcInfo",
@@ -132,11 +132,11 @@ INFO = {
       },
       {
         "name": "DstDatabaseType",
-        "desc": "目标实例数据库类型,mysql,redis,mongodb"
+        "desc": "目标实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona。不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。"
       },
       {
         "name": "DstAccessType",
-        "desc": "目标实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例). 目前只支持cdb."
+        "desc": "目标实例接入类型，目前支持：cdb（腾讯云数据库实例）"
       },
       {
         "name": "DstInfo",
@@ -144,10 +144,10 @@ INFO = {
       },
       {
         "name": "DatabaseInfo",
-        "desc": "需要迁移的源数据库表信息，用json格式的字符串描述。\n对于database-table两级结构的数据库：\n[{Database:db1,Table:[table1,table2]},{Database:db2}]\n对于database-schema-table三级结构：\n[{Database:db1,Schema:s1\nTable:[table1,table2]},{Database:db1,Schema:s2\nTable:[table1,table2]},{Database:db2,Schema:s1\nTable:[table1,table2]},{Database:db3},{Database:db4\nSchema:s1}]"
+        "desc": "需要迁移的源数据库表信息，用json格式的字符串描述。当MigrateOption.MigrateObject配置为2（指定库表迁移）时必填。\n对于database-table两级结构的数据库：\n[{Database:db1,Table:[table1,table2]},{Database:db2}]\n对于database-schema-table三级结构：\n[{Database:db1,Schema:s1\nTable:[table1,table2]},{Database:db1,Schema:s2\nTable:[table1,table2]},{Database:db2,Schema:s1\nTable:[table1,table2]},{Database:db3},{Database:db4\nSchema:s1}]"
       }
     ],
-    "desc": "本接口用于创建数据迁移任务。\n\n如果是金融区链路, 请使用域名: dts.ap-shenzhen-fsi.tencentcloudapi.com"
+    "desc": "本接口（CreateMigrateJob）用于创建数据迁移任务。\n\n如果是金融区链路, 请使用域名: dts.ap-shenzhen-fsi.tencentcloudapi.com"
   },
   "ModifySyncJob": {
     "params": [
@@ -177,7 +177,7 @@ INFO = {
         "desc": "数据迁移任务ID"
       }
     ],
-    "desc": "删除数据迁移任务. 正在校验和正在迁移的任务不允许删除"
+    "desc": "本接口（DeleteMigrationJob）用于删除数据迁移任务。当通过DescribeMigrateJobs接口查询到任务的状态为：检验中（status=3）、运行中（status=7）、准备完成（status=8）、撤销中（status=11）或者完成中（status=12）时，不允许删除任务。"
   },
   "DescribeMigrateCheckJob": {
     "params": [
@@ -236,7 +236,7 @@ INFO = {
         "desc": "数据迁移任务ID"
       }
     ],
-    "desc": "撤销数据迁移任务.\n在迁移过程中允许调用该接口撤销迁移, 撤销迁移的任务会失败."
+    "desc": "本接口（StopMigrateJob）用于撤销数据迁移任务。\n在迁移过程中允许调用该接口撤销迁移, 撤销迁移的任务会失败。通过DescribeMigrateJobs接口查询到任务状态为运行中（status=7）或准备完成（status=8）时，才能撤销数据迁移任务。"
   },
   "CompleteMigrateJob": {
     "params": [
@@ -245,7 +245,7 @@ INFO = {
         "desc": "数据迁移任务ID"
       }
     ],
-    "desc": "完成数据迁移任务.\n选择采用增量迁移方式的任务, 需要在迁移进度进入准备完成阶段后, 调用本接口, 停止迁移增量数据.\n只有当正在迁移的任务, 进入了准备完成阶段, 才能调用本接口完成迁移."
+    "desc": "本接口（CompleteMigrateJob）用于完成数据迁移任务。\n选择采用增量迁移方式的任务, 需要在迁移进度进入准备完成阶段后, 调用本接口, 停止迁移增量数据。\n通过DescribeMigrateJobs接口查询到任务的状态为准备完成（status=8）时，此时可以调用本接口完成迁移任务。\n"
   },
   "ModifyMigrateJob": {
     "params": [
@@ -282,7 +282,7 @@ INFO = {
         "desc": "当选择'指定库表'迁移的时候, 需要设置待迁移的源数据库表信息,用符合json数组格式的字符串描述, 如下所例。\n\n对于database-table两级结构的数据库：\n[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]\n对于database-schema-table三级结构：\n[{\"Database\":\"db1\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db1\",\"Schema\":\"s2\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db3\"},{\"Database\":\"db4\",\"Schema\":\"s1\"}]\n\n如果是'整个实例'的迁移模式,不需设置该字段"
       }
     ],
-    "desc": "修改数据迁移任务. \n当迁移任务处于下述状态时, 允许调用本接口: 迁移创建中, 创建完成, 校验成功, 校验失败, 迁移失败. \n源实例和目标实例类型不允许修改, 目标实例地域不允许修改。\n\n如果是金融区链路, 请使用域名: dts.ap-shenzhen-fsi.tencentcloudapi.com"
+    "desc": "本接口（ModifyMigrateJob）用于修改数据迁移任务。\n当迁移任务处于下述状态时，允许调用本接口修改迁移任务：迁移创建中（status=1）、 校验成功(status=4)、校验失败(status=5)、迁移失败(status=10)。但源实例、目标实例类型和目标实例地域不允许修改。\n\n如果是金融区链路, 请使用域名: dts.ap-shenzhen-fsi.tencentcloudapi.com"
   },
   "StartSyncJob": {
     "params": [

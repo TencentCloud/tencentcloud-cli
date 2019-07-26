@@ -648,11 +648,11 @@ def doModifyTargetWeight(argv, arglist):
     param = {
         "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
         "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
-        "Weight": Utils.try_to_json(argv, "--Weight"),
         "LocationId": Utils.try_to_json(argv, "--LocationId"),
         "Domain": Utils.try_to_json(argv, "--Domain"),
         "Url": Utils.try_to_json(argv, "--Url"),
         "Targets": Utils.try_to_json(argv, "--Targets"),
+        "Weight": Utils.try_to_json(argv, "--Weight"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1123,7 +1123,7 @@ def doCreateLoadBalancer(argv, arglist):
         "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
         "AnycastZone": Utils.try_to_json(argv, "--AnycastZone"),
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
-        "VipIsp": Utils.try_to_json(argv, "--VipIsp"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

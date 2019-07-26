@@ -181,7 +181,7 @@ INFO = {
       },
       {
         "name": "ExpireDays",
-        "desc": "备份过期时间，单位为天，最小值为7天，最大值为732天。"
+        "desc": "备份文件的保留时间，单位为天。最小值为7天，最大值为732天。"
       },
       {
         "name": "StartTime",
@@ -190,6 +190,10 @@ INFO = {
       {
         "name": "BackupMethod",
         "desc": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备；默认备份方法为 逻辑冷备。"
+      },
+      {
+        "name": "BinlogExpireDays",
+        "desc": "binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。"
       }
     ],
     "desc": "本接口(ModifyBackupConfig)用于修改数据库备份配置信息。"

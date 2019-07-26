@@ -250,7 +250,7 @@ INFO = {
         "desc": "是否按结束时间正序显示，默认逆序。\n0：逆序。\n1：正序。"
       }
     ],
-    "desc": "用于查询推断流事件。\n\n注意：该接口可通过使用IsFilter进行过滤，返回推流历史记录。"
+    "desc": "用于查询推断流事件。<br>\n\n注意：该接口可通过使用IsFilter进行过滤，返回推流历史记录。"
   },
   "DescribePullStreamConfigs": {
     "params": [
@@ -1315,19 +1315,19 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "您的域名。"
+        "desc": "您的推流域名。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间。\nUTC 格式，例如：2016-06-30T19:00:00Z。\n不超过当前时间。"
+        "desc": "结束时间。\nUTC 格式，例如：2016-06-30T19:00:00Z。\n不超过当前时间。\n注意：EndTime和StartTime相差不可超过30天。"
       },
       {
         "name": "StartTime",
-        "desc": "起始时间。 \nUTC 格式，例如：2016-06-29T19:00:00Z。\n和当前时间相隔不超过7天。"
+        "desc": "起始时间。 \nUTC 格式，例如：2016-06-29T19:00:00Z。\n最长支持查询60天内数据。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。"
       },
       {
         "name": "PageNum",
@@ -1336,9 +1336,13 @@ INFO = {
       {
         "name": "PageSize",
         "desc": "分页大小。\n最大值：100。\n取值范围：1~100 之前的任意整数。\n默认值：10。"
+      },
+      {
+        "name": "StreamName",
+        "desc": "流名称，支持模糊匹配。"
       }
     ],
-    "desc": "返回已经推过流的流列表"
+    "desc": "返回已经推过流的流列表。<br>\n注意：分页最多支持查询1万条记录，可通过调整查询时间范围来获取更多数据。"
   },
   "DescribeLiveDomain": {
     "params": [
@@ -1819,7 +1823,7 @@ INFO = {
     "params": [
       {
         "name": "FromUrl",
-        "desc": "源Url。"
+        "desc": "源Url。目前可支持直播流及点播文件。"
       },
       {
         "name": "ToUrl",

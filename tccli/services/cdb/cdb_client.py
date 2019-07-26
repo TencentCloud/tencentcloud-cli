@@ -511,6 +511,7 @@ def doModifyBackupConfig(argv, arglist):
         "ExpireDays": Utils.try_to_json(argv, "--ExpireDays"),
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "BackupMethod": Utils.try_to_json(argv, "--BackupMethod"),
+        "BinlogExpireDays": Utils.try_to_json(argv, "--BinlogExpireDays"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

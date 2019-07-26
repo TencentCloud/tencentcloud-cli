@@ -148,7 +148,7 @@ INFO = {
       },
       {
         "name": "NewDomain",
-        "desc": "新域名，\t长度限制为：1-80。有三种使用格式：非正则表达式格式，通配符格式，正则表达式格式。非正则表达式格式只能使用字母、数字、‘-’、‘.’。通配符格式的使用 ‘*’ 只能在开头或者结尾。正则表达式以'~'开头。"
+        "desc": "新域名，\t长度限制为：1-120。有三种使用格式：非正则表达式格式，通配符格式，正则表达式格式。非正则表达式格式只能使用字母、数字、‘-’、‘.’。通配符格式的使用 ‘*’ 只能在开头或者结尾。正则表达式以'~'开头。"
       }
     ],
     "desc": "ModifyDomain接口用来修改负载均衡七层监听器下的域名。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
@@ -405,10 +405,6 @@ INFO = {
         "desc": "负载均衡监听器 ID"
       },
       {
-        "name": "Weight",
-        "desc": "后端云服务器新的转发权重，取值范围：0~100。"
-      },
-      {
         "name": "LocationId",
         "desc": "转发规则的ID，当绑定机器到七层转发规则时，必须提供此参数或Domain+Url两者之一"
       },
@@ -422,10 +418,14 @@ INFO = {
       },
       {
         "name": "Targets",
-        "desc": "要修改权重的后端机器列表"
+        "desc": "要修改权重的后端服务列表"
+      },
+      {
+        "name": "Weight",
+        "desc": "后端服务服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。"
       }
     ],
-    "desc": "ModifyTargetWeight 接口用于修改监听器绑定的后端机器的转发权重。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "ModifyTargetWeight 接口用于修改负载均衡绑定的后端服务的转发权重。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "DescribeTaskStatus": {
     "params": [
@@ -498,10 +498,10 @@ INFO = {
       },
       {
         "name": "Port",
-        "desc": "负载均衡监听器端口"
+        "desc": "监听器端口"
       }
     ],
-    "desc": "DescribeTargets 接口用来查询应用型负载均衡实例的某些监听器后端绑定的机器列表。"
+    "desc": "DescribeTargets 接口用来查询负载均衡实例的某些监听器绑定的后端服务列表。"
   },
   "DescribeRewrite": {
     "params": [
@@ -545,15 +545,15 @@ INFO = {
       },
       {
         "name": "Targets",
-        "desc": "要修改端口的后端机器列表"
+        "desc": "要修改端口的后端服务列表"
       },
       {
         "name": "NewPort",
-        "desc": "后端机器绑定到监听器的新端口"
+        "desc": "后端服务绑定到监听器或转发规则的新端口"
       },
       {
         "name": "LocationId",
-        "desc": "转发规则的ID"
+        "desc": "转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一"
       },
       {
         "name": "Domain",
@@ -564,7 +564,7 @@ INFO = {
         "desc": "目标规则的URL，提供LocationId参数时本参数不生效"
       }
     ],
-    "desc": "ModifyTargetPort接口用于修改监听器绑定的后端云服务器的端口。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "ModifyTargetPort接口用于修改监听器绑定的后端服务的端口。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "DeregisterTargets": {
     "params": [
@@ -578,7 +578,7 @@ INFO = {
       },
       {
         "name": "Targets",
-        "desc": "要解绑的后端机器列表，数组长度最大支持20"
+        "desc": "要解绑的后端服务列表，数组长度最大支持20"
       },
       {
         "name": "LocationId",
@@ -593,7 +593,7 @@ INFO = {
         "desc": "目标规则的URL，提供LocationId参数时本参数不生效"
       }
     ],
-    "desc": "DeregisterTargets 接口用来将一台或多台后端机器从应用型负载均衡的监听器上解绑，对于四层监听器（TCP、UDP），只需指定监听器ID即可，对于七层监听器（HTTP、HTTPS），还需通过LocationId或者Domain+Url指定转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "DeregisterTargets 接口用来将一台或多台后端服务从负载均衡的监听器或转发规则上解绑，对于四层监听器，只需指定监听器ID即可，对于七层监听器，还需通过LocationId或Domain+Url指定转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "ModifyLoadBalancerAttributes": {
     "params": [
@@ -683,34 +683,34 @@ INFO = {
       },
       {
         "name": "AddressIPVersion",
-        "desc": "IP版本，IPV4 | IPV6，默认值 IPV4。"
+        "desc": "仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。"
       },
       {
         "name": "Number",
-        "desc": "创建负载均衡的个数"
+        "desc": "创建负载均衡的个数，默认值 1。"
       },
       {
         "name": "MasterZoneId",
-        "desc": "设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区"
+        "desc": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。"
       },
       {
         "name": "ZoneId",
-        "desc": "可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1"
+        "desc": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1"
       },
       {
         "name": "AnycastZone",
-        "desc": "Anycast的发布域，可取 ZONE_A 或 ZONE_B"
+        "desc": "仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。"
       },
       {
         "name": "InternetAccessible",
-        "desc": "负载均衡的网络计费方式，此参数仅对带宽上移用户生效"
+        "desc": "仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。"
       },
       {
-        "name": "VipIsp",
-        "desc": "CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。"
+        "name": "Tags",
+        "desc": "购买负载均衡同时，给负载均衡打上标签"
       }
     ],
-    "desc": "CreateLoadBalancer 接口用来创建负载均衡实例。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。"
+    "desc": "CreateLoadBalancer 接口用来创建负载均衡实例。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾【如需使用，请提交工单（ https://console.cloud.tencent.com/workorder/category ）申请】；(2)目前只有北京、上海、广州支持IPv6；\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。"
   },
   "ManualRewrite": {
     "params": [
