@@ -192,7 +192,9 @@ def doEditMedia(argv, arglist):
         "InputType": Utils.try_to_json(argv, "--InputType"),
         "FileInfos": Utils.try_to_json(argv, "--FileInfos"),
         "StreamInfos": Utils.try_to_json(argv, "--StreamInfos"),
+        "Definition": Utils.try_to_json(argv, "--Definition"),
         "ProcedureName": Utils.try_to_json(argv, "--ProcedureName"),
+        "OutputConfig": Utils.try_to_json(argv, "--OutputConfig"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -661,6 +663,7 @@ def doModifyAIRecognitionTemplate(argv, arglist):
         "Name": Utils.try_to_json(argv, "--Name"),
         "Comment": Utils.try_to_json(argv, "--Comment"),
         "HeadTailConfigure": Utils.try_to_json(argv, "--HeadTailConfigure"),
+        "SegmentConfigure": Utils.try_to_json(argv, "--SegmentConfigure"),
         "FaceConfigure": Utils.try_to_json(argv, "--FaceConfigure"),
         "OcrFullTextConfigure": Utils.try_to_json(argv, "--OcrFullTextConfigure"),
         "OcrWordsConfigure": Utils.try_to_json(argv, "--OcrWordsConfigure"),
@@ -2002,6 +2005,7 @@ def doCreateAIRecognitionTemplate(argv, arglist):
         "Name": Utils.try_to_json(argv, "--Name"),
         "Comment": Utils.try_to_json(argv, "--Comment"),
         "HeadTailConfigure": Utils.try_to_json(argv, "--HeadTailConfigure"),
+        "SegmentConfigure": Utils.try_to_json(argv, "--SegmentConfigure"),
         "FaceConfigure": Utils.try_to_json(argv, "--FaceConfigure"),
         "OcrFullTextConfigure": Utils.try_to_json(argv, "--OcrFullTextConfigure"),
         "OcrWordsConfigure": Utils.try_to_json(argv, "--OcrWordsConfigure"),

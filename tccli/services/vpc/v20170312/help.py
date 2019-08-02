@@ -77,6 +77,23 @@ INFO = {
     ],
     "desc": "本接口（CreateFlowLog）用于创建流日志"
   },
+  "ModifyNatGatewayAttribute": {
+    "params": [
+      {
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
+      },
+      {
+        "name": "NatGatewayName",
+        "desc": "NAT网关的名称，形如：`test_nat`。"
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "NAT网关最大外网出带宽(单位:Mbps)。"
+      }
+    ],
+    "desc": "本接口（ModifyNatGatewayAttribute）用于修改NAT网关的属性。"
+  },
   "DescribeTaskResult": {
     "params": [
       {
@@ -188,34 +205,26 @@ INFO = {
     ],
     "desc": "本接口（AssignIpv6CidrBlock）用于分配IPv6网段。\n* 使用本接口前，你需要已有VPC实例，如果没有可通过接口<a href=\"https://cloud.tencent.com/document/api/215/15774\" title=\"CreateVpc\" target=\"_blank\">CreateVpc</a>创建。\n* 每个VPC只能申请一个IPv6网段"
   },
-  "CreateVpnGateway": {
+  "DescribeNatGatewayDestinationIpPortTranslationNatRules": {
     "params": [
       {
-        "name": "VpcId",
-        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
+        "name": "NatGatewayIds",
+        "desc": "NAT网关ID。"
       },
       {
-        "name": "VpnGatewayName",
-        "desc": "VPN网关名称，最大长度不能超过60个字节。"
+        "name": "Filters",
+        "desc": "过滤条件:\n参数不支持同时指定NatGatewayIds和Filters。\n<li> nat-gateway-id，NAT网关的ID，如`nat-0yi4hekt`</li>\n<li> vpc-id，私有网络VPC的ID，如`vpc-0yi4hekt`</li>\n<li> public-ip-address， 弹性IP，如`139.199.232.238`。</li>\n<li>public-port， 公网端口。</li>\n<li>private-ip-address， 内网IP，如`10.0.0.1`。</li>\n<li>private-port， 内网端口。</li>\n<li>description，规则描述。</li>"
       },
       {
-        "name": "InternetMaxBandwidthOut",
-        "desc": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps"
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
       },
       {
-        "name": "InstanceChargeType",
-        "desc": "VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。"
-      },
-      {
-        "name": "InstanceChargePrepaid",
-        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。"
-      },
-      {
-        "name": "Zone",
-        "desc": "可用区，如：ap-guangzhou-2。"
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "本接口（CreateVpnGateway）用于创建VPN网关。"
+    "desc": "本接口（DescribeNatGatewayDestinationIpPortTranslationNatRules）用于查询NAT网关端口转发规则对象数组。"
   },
   "ModifyFlowLogAttribute": {
     "params": [
@@ -301,6 +310,19 @@ INFO = {
     ],
     "desc": "本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。<br />\n注意: 调用本接口是先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。"
   },
+  "DisassociateNatGatewayAddress": {
+    "params": [
+      {
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
+      },
+      {
+        "name": "PublicIpAddresses",
+        "desc": "绑定NAT网关的弹性IP数组。"
+      }
+    ],
+    "desc": "本接口（DisassociateNatGatewayAddress）用于NAT网关解绑弹性IP。"
+  },
   "DescribeSecurityGroupPolicies": {
     "params": [
       {
@@ -377,14 +399,22 @@ INFO = {
     ],
     "desc": "本接口(DeleteVpnConnection)用于删除VPN通道。"
   },
-  "DeleteAddressTemplateGroup": {
+  "ModifyAddressTemplateGroupAttribute": {
     "params": [
       {
         "name": "AddressTemplateGroupId",
-        "desc": "IP地址模板集合实例ID，例如：ipmg-90cex8mq。"
+        "desc": "IP地址模板集合实例ID，例如：ipmg-2uw6ujo6。"
+      },
+      {
+        "name": "AddressTemplateGroupName",
+        "desc": "IP地址模板集合名称。"
+      },
+      {
+        "name": "AddressTemplateIds",
+        "desc": "IP地址模板实例ID， 例如：ipm-mdunqeb6。"
       }
     ],
-    "desc": "本接口（DeleteAddressTemplateGroup）用于删除IP地址模板集合"
+    "desc": "本接口（ModifyAddressTemplateGroupAttribute）用于修改IP地址模板集合"
   },
   "DescribeCustomerGatewayVendors": {
     "params": [],
@@ -411,6 +441,23 @@ INFO = {
     ],
     "desc": "本接口 (DescribeAddresses) 用于查询一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）的详细信息。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的 EIP。"
   },
+  "DescribeClassicLinkInstances": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>vpc-id - String - （过滤条件）VPC实例ID。</li>\n<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
+      }
+    ],
+    "desc": "本接口(DescribeClassicLinkInstances)用于查询私有网络和基础网络设备互通列表。"
+  },
   "ModifyServiceTemplateAttribute": {
     "params": [
       {
@@ -428,22 +475,26 @@ INFO = {
     ],
     "desc": "本接口（ModifyServiceTemplateAttribute）用于修改协议端口模板"
   },
-  "DescribeClassicLinkInstances": {
+  "AssociateNatGatewayAddress": {
     "params": [
       {
-        "name": "Filters",
-        "desc": "过滤条件。\n<li>vpc-id - String - （过滤条件）VPC实例ID。</li>\n<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>"
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量"
+        "name": "AddressCount",
+        "desc": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP, 其中AddressCount和PublicAddresses至少传递一个。"
       },
       {
-        "name": "Limit",
-        "desc": "返回数量"
+        "name": "PublicIpAddresses",
+        "desc": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。。"
+      },
+      {
+        "name": "Zone",
+        "desc": "弹性IP可以区，自动分配弹性IP时传递。"
       }
     ],
-    "desc": "本接口(DescribeClassicLinkInstances)用于查询私有网络和基础网络设备互通列表。"
+    "desc": "本接口(AssociateNatGatewayAddress)用于NAT网关绑定弹性IP（EIP）。"
   },
   "CreateVpnConnection": {
     "params": [
@@ -777,6 +828,19 @@ INFO = {
     ],
     "desc": "1. 该接口用于查询账户下的IPV6转换实例及其绑定的转换规则信息\n2. 支持过滤查询"
   },
+  "DeleteSecurityGroupPolicies": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      },
+      {
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。"
+      }
+    ],
+    "desc": "本接口（DeleteSecurityGroupPolicies）用于用于删除安全组规则（SecurityGroupPolicy）。\n* SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。"
+  },
   "CreateVpc": {
     "params": [
       {
@@ -866,6 +930,18 @@ INFO = {
       {
         "name": "AddressCount",
         "desc": "申请 EIP 数量，默认值为1。"
+      },
+      {
+        "name": "InternetServiceProvider",
+        "desc": "运营商名称，可选值[BGP|CTCC|CMCC|CUCC]，默认BGP。"
+      },
+      {
+        "name": "AddressType",
+        "desc": "EIP类型，EIP|AnycastEIP，默认EIP。"
+      },
+      {
+        "name": "AnycastZone",
+        "desc": "Anycast发布域，ANYCAST_ZONE_A|ANYCAST_ZONE_B，默认为当前地域可选的任一发布域。"
       }
     ],
     "desc": "本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* EIP 是专为动态云计算设计的静态 IP 地址。借助 EIP，您可以快速将 EIP 重新映射到您的另一个实例上，从而屏蔽实例故障。\n* 您的 EIP 与腾讯云账户相关联，而不是与某个实例相关联。在您选择显式释放该地址，或欠费超过七天之前，它会一直与您的腾讯云账户保持关联。\n* 平台对用户每地域能申请的 EIP 最大配额有所限制，可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)，上述配额可通过 DescribeAddressQuota 接口获取。"
@@ -1167,6 +1243,19 @@ INFO = {
     ],
     "desc": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云主机时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。"
   },
+  "CreateNatGatewayDestinationIpPortTranslationNatRule": {
+    "params": [
+      {
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
+      },
+      {
+        "name": "DestinationIpPortTranslationNatRules",
+        "desc": "NAT网关的端口转换规则。"
+      }
+    ],
+    "desc": "本接口(CreateNatGatewayDestinationIpPortTranslationNatRule)用于创建NAT网关端口转发规则。"
+  },
   "DescribeFlowLog": {
     "params": [
       {
@@ -1193,18 +1282,14 @@ INFO = {
     ],
     "desc": "本接口（ReplaceRoutes）根据路由策略ID（RouteId）修改指定的路由策略（Route），支持批量修改。"
   },
-  "UnassignIpv6SubnetCidrBlock": {
+  "DeleteNatGateway": {
     "params": [
       {
-        "name": "VpcId",
-        "desc": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。"
-      },
-      {
-        "name": "Ipv6SubnetCidrBlocks",
-        "desc": "`IPv6` 子网段列表。"
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
       }
     ],
-    "desc": "本接口（UnassignIpv6SubnetCidrBlock）用于释放IPv6子网段。<br />\n子网段如果还有IP占用且未回收，则子网段无法释放。"
+    "desc": "本接口（DeleteNatGateway）用于删除NAT网关。\n删除 NAT 网关后，系统会自动删除路由表中包含此 NAT 网关的路由项，同时也会解绑弹性公网IP（EIP）。"
   },
   "DescribeRouteConflicts": {
     "params": [
@@ -1292,22 +1377,14 @@ INFO = {
     ],
     "desc": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。"
   },
-  "ModifyAddressTemplateGroupAttribute": {
+  "DeleteAddressTemplateGroup": {
     "params": [
       {
         "name": "AddressTemplateGroupId",
-        "desc": "IP地址模板集合实例ID，例如：ipmg-2uw6ujo6。"
-      },
-      {
-        "name": "AddressTemplateGroupName",
-        "desc": "IP地址模板集合名称。"
-      },
-      {
-        "name": "AddressTemplateIds",
-        "desc": "IP地址模板实例ID， 例如：ipm-mdunqeb6。"
+        "desc": "IP地址模板集合实例ID，例如：ipmg-90cex8mq。"
       }
     ],
-    "desc": "本接口（ModifyAddressTemplateGroupAttribute）用于修改IP地址模板集合"
+    "desc": "本接口（DeleteAddressTemplateGroup）用于删除IP地址模板集合"
   },
   "DescribeCcnRoutes": {
     "params": [
@@ -1390,18 +1467,38 @@ INFO = {
     ],
     "desc": "本接口（ReplaceDirectConnectGatewayCcnRoutes）根据路由ID（RouteId）修改指定的路由（Route），支持批量修改。"
   },
-  "DeleteSecurityGroupPolicies": {
+  "CreateNatGateway": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "name": "NatGatewayName",
+        "desc": "NAT网关名称"
       },
       {
-        "name": "SecurityGroupPolicySet",
-        "desc": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。"
+        "name": "VpcId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。"
+      },
+      {
+        "name": "MaxConcurrentConnection",
+        "desc": "NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。"
+      },
+      {
+        "name": "AddressCount",
+        "desc": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。"
+      },
+      {
+        "name": "PublicIpAddresses",
+        "desc": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。"
+      },
+      {
+        "name": "Zone",
+        "desc": "可用区，形如：`ap-guangzhou-1`。"
       }
     ],
-    "desc": "本接口（DeleteSecurityGroupPolicies）用于用于删除安全组规则（SecurityGroupPolicy）。\n* SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。"
+    "desc": "本接口(CreateNatGateway)用于创建NAT网关。"
   },
   "ModifySecurityGroupAttribute": {
     "params": [
@@ -1502,7 +1599,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>"
+        "desc": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址。</li>"
       },
       {
         "name": "Offset",
@@ -1806,6 +1903,23 @@ INFO = {
     ],
     "desc": "本接口（UnassignIpv6CidrBlock）用于释放IPv6网段。<br />\n网段如果还有IP占用且未回收，则网段无法释放。"
   },
+  "ModifyNatGatewayDestinationIpPortTranslationNatRule": {
+    "params": [
+      {
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
+      },
+      {
+        "name": "SourceNatRule",
+        "desc": "源NAT网关的端口转换规则。"
+      },
+      {
+        "name": "DestinationNatRule",
+        "desc": "目的NAT网关的端口转换规则。"
+      }
+    ],
+    "desc": "本接口（ModifyNatGatewayDestinationIpPortTranslationNatRule）用于修改NAT网关端口转发规则。"
+  },
   "HaVipAssociateAddressIp": {
     "params": [
       {
@@ -2019,18 +2133,34 @@ INFO = {
     ],
     "desc": "本接口（DescribeSecurityGroups）用于查询安全组。"
   },
-  "EnableCcnRoutes": {
+  "CreateVpnGateway": {
     "params": [
       {
-        "name": "CcnId",
-        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
+        "name": "VpcId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
       },
       {
-        "name": "RouteIds",
-        "desc": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。"
+        "name": "VpnGatewayName",
+        "desc": "VPN网关名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。"
+      },
+      {
+        "name": "Zone",
+        "desc": "可用区，如：ap-guangzhou-2。"
       }
     ],
-    "desc": "本接口（EnableCcnRoutes）用于启用已经加入云联网（CCN）的路由。<br />\n本接口会校验启用后，是否与已有路由冲突，如果冲突，则无法启用，失败处理。路由冲突时，需要先禁用与之冲突的路由，才能启用该路由。"
+    "desc": "本接口（CreateVpnGateway）用于创建VPN网关。"
   },
   "ModifyPrivateIpAddressesAttribute": {
     "params": [
@@ -2165,6 +2295,19 @@ INFO = {
     ],
     "desc": "本接口 (ReleaseAddresses) 用于释放一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 该操作不可逆，释放后 EIP 关联的 IP 地址将不再属于您的名下。\n* 只有状态为 UNBIND 的 EIP 才能进行释放操作。"
   },
+  "EnableCcnRoutes": {
+    "params": [
+      {
+        "name": "CcnId",
+        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
+      },
+      {
+        "name": "RouteIds",
+        "desc": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。"
+      }
+    ],
+    "desc": "本接口（EnableCcnRoutes）用于启用已经加入云联网（CCN）的路由。<br />\n本接口会校验启用后，是否与已有路由冲突，如果冲突，则无法启用，失败处理。路由冲突时，需要先禁用与之冲突的路由，才能启用该路由。"
+  },
   "ModifyRouteTableAttribute": {
     "params": [
       {
@@ -2177,6 +2320,19 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyRouteTableAttribute）用于修改路由表（RouteTable）属性。"
+  },
+  "DeleteNatGatewayDestinationIpPortTranslationNatRule": {
+    "params": [
+      {
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
+      },
+      {
+        "name": "DestinationIpPortTranslationNatRules",
+        "desc": "NAT网关的端口转换规则。"
+      }
+    ],
+    "desc": "本接口（DeleteNatGatewayDestinationIpPortTranslationNatRule）用于删除NAT网关端口转发规则。"
   },
   "CreateRoutes": {
     "params": [
@@ -2302,6 +2458,19 @@ INFO = {
     ],
     "desc": "该接口用于修改IP6转换实例属性，当前仅支持修改实例名称。"
   },
+  "UnassignIpv6SubnetCidrBlock": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。"
+      },
+      {
+        "name": "Ipv6SubnetCidrBlocks",
+        "desc": "`IPv6` 子网段列表。"
+      }
+    ],
+    "desc": "本接口（UnassignIpv6SubnetCidrBlock）用于释放IPv6子网段。<br />\n子网段如果还有IP占用且未回收，则子网段无法释放。"
+  },
   "DescribeAddressTemplates": {
     "params": [
       {
@@ -2383,6 +2552,19 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateSecurityGroupPolicies）用于创建安全组规则（SecurityGroupPolicy）。\n\n* Version安全组规则版本号，用户每次更新安全规则版本会自动加1，防止你更新的路由规则已过期，不填不考虑冲突。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受，即Protocol字段不是TCP或UDP时，Protocol和Port排他关系，不允许同时输入，否则会接口报错。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。\n* 一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。"
+  },
+  "ResetNatGatewayConnection": {
+    "params": [
+      {
+        "name": "NatGatewayId",
+        "desc": "NAT网关ID。"
+      },
+      {
+        "name": "MaxConcurrentConnection",
+        "desc": "NAT网关并发连接上限，形如：1000000、3000000、10000000。"
+      }
+    ],
+    "desc": "本接口（ResetNatGatewayConnection）用来NAT网关并发连接上限。"
   },
   "ModifyVpcAttribute": {
     "params": [

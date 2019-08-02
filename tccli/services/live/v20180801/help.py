@@ -108,23 +108,23 @@ INFO = {
       },
       {
         "name": "TemplateName",
-        "desc": "模板名称。"
+        "desc": "模板名称。\n长度上限：255字节。"
       },
       {
         "name": "Description",
-        "desc": "描述信息。"
+        "desc": "描述信息。\n长度上限：1024字节。"
       },
       {
         "name": "SnapshotInterval",
-        "desc": "截图时间间隔"
+        "desc": "截图间隔，单位s，默认10s。\n范围： 5s ~ 600s。"
       },
       {
         "name": "Width",
-        "desc": "截图宽度。"
+        "desc": "截图宽度。默认：0（原始宽）。"
       },
       {
         "name": "Height",
-        "desc": "截图高度。"
+        "desc": "截图高度。默认：0（原始高）。"
       },
       {
         "name": "PornFlag",
@@ -580,7 +580,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateName",
-        "desc": "模板名称。非空的字符串。"
+        "desc": "模板名称，非空的字符串。\n长度上限：255字节。"
       },
       {
         "name": "CosAppId",
@@ -596,7 +596,7 @@ INFO = {
       },
       {
         "name": "Description",
-        "desc": "描述信息。"
+        "desc": "描述信息。\n长度上限：1024字节。"
       },
       {
         "name": "SnapshotInterval",
@@ -971,11 +971,11 @@ INFO = {
     "params": [
       {
         "name": "TemplateName",
-        "desc": "模板名称。非空的字符串"
+        "desc": "模板名称，非空的字符串。\n长度上限：255字节。"
       },
       {
         "name": "Description",
-        "desc": "描述信息。"
+        "desc": "描述信息。\n长度上限：1024字节。"
       },
       {
         "name": "StreamBeginNotifyUrl",
@@ -1466,11 +1466,11 @@ INFO = {
       },
       {
         "name": "PlayType",
-        "desc": "拉流域名类型：\n1：国内，\n2：全球，\n3：境外。"
+        "desc": "拉流域名类型：\n1：国内，\n2：全球，\n3：境外。\n默认值：1。"
       },
       {
         "name": "IsDelayLive",
-        "desc": "默认 0 ：普通直播，\n1：慢直播。"
+        "desc": "是否是慢直播：\n0： 普通直播，\n1 ：慢直播 。\n默认值： 0。"
       }
     ],
     "desc": "添加域名，一次只能提交一个域名。域名必须已备案。"
@@ -1575,11 +1575,11 @@ INFO = {
       },
       {
         "name": "MainlandOrOversea",
-        "desc": "国内还是国外，若不填，表示国内+国外。"
+        "desc": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据。\n默认：查询国内+国外的数据。"
       },
       {
         "name": "Granularity",
-        "desc": "数据粒度，支持如下粒度：\n5：5分钟粒度，默认值（跨度不支持超过1天）；\n60：1小时粒度（跨度不支持超过一个月）；\n1440：天粒度（跨度不支持超过一个月）。"
+        "desc": "数据粒度，支持如下粒度：\n5：5分钟粒度，（跨度不支持超过1天），\n60：1小时粒度（跨度不支持超过一个月），\n1440：天粒度（跨度不支持超过一个月）。\n默认值：5。"
       }
     ],
     "desc": "直播计费带宽和流量数据查询。"
@@ -1588,10 +1588,10 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "停用的直播域名"
+        "desc": "待停用的直播域名。"
       }
     ],
-    "desc": "停用使用某个直播域名"
+    "desc": "停止使用某个直播域名。"
   },
   "CreateLiveTranscodeRule": {
     "params": [
@@ -1831,11 +1831,11 @@ INFO = {
       },
       {
         "name": "AreaId",
-        "desc": "区域id,1-深圳,2-上海，3-天津,4-香港。"
+        "desc": "区域id：\n1-深圳，\n2-上海，\n3-天津，\n4-香港。"
       },
       {
         "name": "IspId",
-        "desc": "运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。"
+        "desc": "运营商id：\n1-电信，\n2-移动，\n3-联通，\n4-其他。\n注：AreaId为4的时候,IspId只能为其他。"
       },
       {
         "name": "StartTime",

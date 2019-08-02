@@ -268,6 +268,7 @@ def doAnalyzeFace(argv, arglist):
         "Mode": Utils.try_to_json(argv, "--Mode"),
         "Image": Utils.try_to_json(argv, "--Image"),
         "Url": Utils.try_to_json(argv, "--Url"),
+        "FaceModelVersion": Utils.try_to_json(argv, "--FaceModelVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -551,6 +552,7 @@ def doSearchFaces(argv, arglist):
         "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
         "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
         "MaxPersonNum": Utils.try_to_json(argv, "--MaxPersonNum"),
+        "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

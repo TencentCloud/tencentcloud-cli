@@ -5,7 +5,7 @@ INFO = {
     "params": [
       {
         "name": "Definitions",
-        "desc": "视频内容识别模板唯一标识过滤条件，数组长度限制：10。"
+        "desc": "视频内容识别模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
         "name": "Offset",
@@ -13,14 +13,14 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：50。"
+        "desc": "返回记录条数，默认值：10，最大值：100。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据视频内容识别模板唯一标识，获取视频内容识别模板详情列表。返回结果包含符合条件的所有用户自定义视频内容识别模板及[系统预置视频内容识别模板]"
+    "desc": "根据视频内容识别模板唯一标识，获取视频内容识别模板详情列表。返回结果包含符合条件的所有用户自定义视频内容识别模板及[系统预置视频内容识别模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF)。"
   },
   "ComposeMedia": {
     "params": [
@@ -99,8 +99,16 @@ INFO = {
         "desc": "输入的流信息，当 InputType 为 Stream 时必填。"
       },
       {
+        "name": "Definition",
+        "desc": "编辑模板 ID，取值有 10，20，不填代表使用 10 模板。\n<li>10：拼接时，以分辨率最高的输入为基准；</li>\n<li>20：拼接时，以码率最高的输入为基准；</li>"
+      },
+      {
         "name": "ProcedureName",
         "desc": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。"
+      },
+      {
+        "name": "OutputConfig",
+        "desc": "编辑后生成的文件配置。"
       },
       {
         "name": "SubAppId",
@@ -133,7 +141,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "* 开发者调用拉取事件通知，获取到事件后，必须调用该接口来确认消息已经收到；\n* 开发者获取到事件句柄后，等待确认的有效时间为 30 秒，超出 30 秒会报参数错误（4000）；\n* 更多参考[服务端事件通知](https://cloud.tencent.com/document/product/266/7829)。"
+    "desc": "* 开发者调用拉取事件通知，获取到事件后，必须调用该接口来确认消息已经收到；\n* 开发者获取到事件句柄后，等待确认的有效时间为 30 秒，超出 30 秒会报参数错误（4000）；\n* 更多参考事件通知的[可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83)。"
   },
   "DescribeSubAppIds": {
     "params": [],
@@ -163,7 +171,7 @@ INFO = {
       },
       {
         "name": "StorageRegion",
-        "desc": "指定上传园区，目前支持的园区：\n<li>ap-chongqing：重庆园区，</li>\n<li>ap-beijing：北京园区，</li>\n<li>ap-shanghai：上海园区。</li>\n注意：不填此参数默认上传至重庆园区。"
+        "desc": "指定上传园区，仅适用于对上传地域有特殊需求的用户（目前仅支持北京、上海和重庆园区）。"
       },
       {
         "name": "ClassId",
@@ -274,7 +282,7 @@ INFO = {
     "params": [
       {
         "name": "Definitions",
-        "desc": "内容审核模板唯一标识过滤条件，数组长度限制：50。"
+        "desc": "内容审核模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
         "name": "Offset",
@@ -282,14 +290,14 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：50。"
+        "desc": "返回记录条数，默认值：10，最大值：100。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板]。"
+    "desc": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。"
   },
   "CommitUpload": {
     "params": [
@@ -325,7 +333,7 @@ INFO = {
     "params": [
       {
         "name": "Definitions",
-        "desc": "视频内容分析模板唯一标识过滤条件，数组长度限制：10。"
+        "desc": "视频内容分析模板唯一标识过滤条件，数组长度最大值：100。"
       },
       {
         "name": "Offset",
@@ -340,7 +348,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据视频内容分析模板唯一标识，获取视频内容分析模板详情列表。返回结果包含符合条件的所有用户自定义视频内容分析模板及[系统预置视频内容分析模板]"
+    "desc": "根据视频内容分析模板唯一标识，获取视频内容分析模板详情列表。返回结果包含符合条件的所有用户自定义视频内容分析模板及[系统预置视频内容分析模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.88.86.E6.9E.90.E6.A8.A1.E6.9D.BF)。"
   },
   "PullEvents": {
     "params": [
@@ -405,6 +413,10 @@ INFO = {
       {
         "name": "HeadTailConfigure",
         "desc": "视频片头片尾识别控制参数。"
+      },
+      {
+        "name": "SegmentConfigure",
+        "desc": "视频拆条识别控制参数。"
       },
       {
         "name": "FaceConfigure",
@@ -480,7 +492,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "* 该接口用于申请媒体文件（和封面文件）的上传，获取文件上传到腾讯云点播的元信息（包括上传路径、上传签名等），用于后续上传接口。\n* 上传流程请参考[服务端上传综述](https://cloud.tencent.com/document/product/266/9759)。"
+    "desc": "* 该接口用于申请媒体文件（和封面文件）的上传，获取文件上传到云点播的元信息（包括上传路径、上传签名等），用于后续上传接口。\n* 上传流程请参考[服务端上传综述](https://cloud.tencent.com/document/product/266/9759)。"
   },
   "ProcessMediaByProcedure": {
     "params": [
@@ -702,7 +714,7 @@ INFO = {
       },
       {
         "name": "SvgTemplate",
-        "desc": "SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。"
+        "desc": "SVG 水印模板，该字段仅对 SVG 水印模板有效。"
       },
       {
         "name": "SubAppId",
@@ -1354,6 +1366,10 @@ INFO = {
       {
         "name": "HeadTailConfigure",
         "desc": "视频片头片尾识别控制参数。"
+      },
+      {
+        "name": "SegmentConfigure",
+        "desc": "视频拆条识别控制参数。"
       },
       {
         "name": "FaceConfigure",

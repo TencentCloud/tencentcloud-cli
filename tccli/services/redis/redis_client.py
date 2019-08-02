@@ -167,8 +167,8 @@ def doRestoreInstance(argv, arglist):
 
     param = {
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "Password": Utils.try_to_json(argv, "--Password"),
         "BackupId": Utils.try_to_json(argv, "--BackupId"),
+        "Password": Utils.try_to_json(argv, "--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -287,8 +287,9 @@ def doResetPassword(argv, arglist):
         return
 
     param = {
-        "Password": Utils.try_to_json(argv, "--Password"),
         "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "Password": Utils.try_to_json(argv, "--Password"),
+        "NoAuth": Utils.try_to_json(argv, "--NoAuth"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -429,8 +430,8 @@ def doCreateInstances(argv, arglist):
         "MemSize": Utils.try_to_json(argv, "--MemSize"),
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
         "Period": Utils.try_to_json(argv, "--Period"),
-        "Password": Utils.try_to_json(argv, "--Password"),
         "BillingMode": Utils.try_to_json(argv, "--BillingMode"),
+        "Password": Utils.try_to_json(argv, "--Password"),
         "VpcId": Utils.try_to_json(argv, "--VpcId"),
         "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
@@ -441,6 +442,7 @@ def doCreateInstances(argv, arglist):
         "RedisReplicasNum": Utils.try_to_json(argv, "--RedisReplicasNum"),
         "ReplicasReadonly": Utils.try_to_json(argv, "--ReplicasReadonly"),
         "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "NoAuth": Utils.try_to_json(argv, "--NoAuth"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

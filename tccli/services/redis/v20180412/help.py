@@ -67,12 +67,16 @@ INFO = {
   "ResetPassword": {
     "params": [
       {
-        "name": "Password",
-        "desc": "重置的密码"
-      },
-      {
         "name": "InstanceId",
         "desc": "Redis实例ID"
+      },
+      {
+        "name": "Password",
+        "desc": "重置的密码（切换为免密实例时，可不传；其他情况必传）"
+      },
+      {
+        "name": "NoAuth",
+        "desc": "是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false"
       }
     ],
     "desc": "重置密码"
@@ -235,7 +239,7 @@ INFO = {
       },
       {
         "name": "Password",
-        "desc": "redis的实例密码"
+        "desc": "redis的实例密码（免密实例不需要传密码，非免密实例必传）"
       }
     ],
     "desc": "清空Redis实例的实例数据。"
@@ -373,12 +377,12 @@ INFO = {
         "desc": "待操作的实例ID，可通过 DescribeRedis 接口返回值中的 redisId 获取。"
       },
       {
-        "name": "Password",
-        "desc": "实例密码，恢复实例时，需要校验实例密码"
-      },
-      {
         "name": "BackupId",
         "desc": "备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取"
+      },
+      {
+        "name": "Password",
+        "desc": "实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）"
       }
     ],
     "desc": "恢复 CRS 实例"
@@ -404,7 +408,7 @@ INFO = {
       },
       {
         "name": "TypeId",
-        "desc": "实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，7 – Redis4.0集群版，"
+        "desc": "实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，"
       },
       {
         "name": "MemSize",
@@ -419,12 +423,12 @@ INFO = {
         "desc": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]"
       },
       {
-        "name": "Password",
-        "desc": "实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种"
-      },
-      {
         "name": "BillingMode",
         "desc": "付费方式:0-按量计费，1-包年包月。"
+      },
+      {
+        "name": "Password",
+        "desc": "实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）"
       },
       {
         "name": "VpcId",
@@ -452,7 +456,7 @@ INFO = {
       },
       {
         "name": "RedisShardNum",
-        "desc": "实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
+        "desc": "实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写"
       },
       {
         "name": "RedisReplicasNum",
@@ -465,6 +469,10 @@ INFO = {
       {
         "name": "InstanceName",
         "desc": "实例名称"
+      },
+      {
+        "name": "NoAuth",
+        "desc": "是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例"
       }
     ],
     "desc": "创建redis实例"
@@ -493,7 +501,7 @@ INFO = {
         "desc": "备份Id，通过DescribeInstanceBackups接口可查"
       }
     ],
-    "desc": "查询备份Rdb下载地址"
+    "desc": "查询备份Rdb下载地址(接口灰度中，需要加白名单使用)"
   },
   "DestroyPostpaidInstance": {
     "params": [
