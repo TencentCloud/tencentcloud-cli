@@ -840,6 +840,10 @@ INFO = {
       {
         "name": "FpsToOrig",
         "desc": "是否不超过原始帧率。0：否，1：是。默认0。"
+      },
+      {
+        "name": "AdaptBitratePercent",
+        "desc": "急速高清相比VideoBitrate少多少码率，0.1到0.5"
       }
     ],
     "desc": "修改转码模板配置"
@@ -1802,6 +1806,14 @@ INFO = {
       {
         "name": "FpsToOrig",
         "desc": "是否不超过原始帧率，0：否，1：是。默认0。"
+      },
+      {
+        "name": "AiTransCode",
+        "desc": "是否是急速高清模板，0：否，1：是。默认0。"
+      },
+      {
+        "name": "AdaptBitratePercent",
+        "desc": "急速高清相比VideoBitrate少多少码率，0.1到0.5"
       }
     ],
     "desc": "创建转码模板，成功返回模板id后，需要调用[CreateLiveTranscodeRule](/document/product/267/32647)接口，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。"

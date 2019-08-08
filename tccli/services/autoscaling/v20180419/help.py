@@ -381,7 +381,7 @@ INFO = {
       },
       {
         "name": "Recurrence",
-        "desc": "定时任务的重复方式。为标准[Cron](https://zh.wikipedia.org/wiki/Cron)格式<br><br>此参数与`EndTime`需要同时指定。"
+        "desc": "定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。"
       }
     ],
     "desc": "本接口（CreateScheduledAction）用于创建定时任务。"
@@ -549,7 +549,7 @@ INFO = {
       },
       {
         "name": "InstanceTypes",
-        "desc": "实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。\n`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。"
+        "desc": "实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。\n`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。"
       },
       {
         "name": "InstanceTypesCheckPolicy",
@@ -912,7 +912,7 @@ INFO = {
       },
       {
         "name": "Recurrence",
-        "desc": "定时任务的重复方式。为标准[Cron](https://zh.wikipedia.org/wiki/Cron)格式<br>此参数与`EndTime`需要同时指定。"
+        "desc": "定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。"
       }
     ],
     "desc": "本接口（ModifyScheduledAction）用于修改定时任务。"

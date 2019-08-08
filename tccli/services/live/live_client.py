@@ -1342,6 +1342,7 @@ def doModifyLiveTranscodeTemplate(argv, arglist):
         "BitrateToOrig": Utils.try_to_json(argv, "--BitrateToOrig"),
         "HeightToOrig": Utils.try_to_json(argv, "--HeightToOrig"),
         "FpsToOrig": Utils.try_to_json(argv, "--FpsToOrig"),
+        "AdaptBitratePercent": Utils.try_to_json(argv, "--AdaptBitratePercent"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3245,6 +3246,8 @@ def doCreateLiveTranscodeTemplate(argv, arglist):
         "BitrateToOrig": Utils.try_to_json(argv, "--BitrateToOrig"),
         "HeightToOrig": Utils.try_to_json(argv, "--HeightToOrig"),
         "FpsToOrig": Utils.try_to_json(argv, "--FpsToOrig"),
+        "AiTransCode": Utils.try_to_json(argv, "--AiTransCode"),
+        "AdaptBitratePercent": Utils.try_to_json(argv, "--AdaptBitratePercent"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

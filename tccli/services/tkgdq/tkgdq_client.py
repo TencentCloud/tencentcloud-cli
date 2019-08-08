@@ -12,21 +12,20 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tiia.v20190529 import tiia_client as tiia_client_v20190529
-from tencentcloud.tiia.v20190529 import models as models_v20190529
-from tccli.services.tiia import v20190529
-from tccli.services.tiia.v20190529 import help as v20190529_help
+from tencentcloud.tkgdq.v20190411 import tkgdq_client as tkgdq_client_v20190411
+from tencentcloud.tkgdq.v20190411 import models as models_v20190411
+from tccli.services.tkgdq import v20190411
+from tccli.services.tkgdq.v20190411 import help as v20190411_help
 
 
-def doRecognizeCar(argv, arglist):
+def doDescribeEntity(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RecognizeCar", g_param[OptionsDefine.Version])
+        show_help("DescribeEntity", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
+        "EntityName": Utils.try_to_json(argv, "--EntityName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -37,12 +36,12 @@ def doRecognizeCar(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TkgdqClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RecognizeCarRequest()
+    model = models.DescribeEntityRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RecognizeCar(model)
+    rsp = client.DescribeEntity(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -52,15 +51,14 @@ def doRecognizeCar(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDetectLabel(argv, arglist):
+def doDescribeTriple(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DetectLabel", g_param[OptionsDefine.Version])
+        show_help("DescribeTriple", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "TripleCondition": Utils.try_to_json(argv, "--TripleCondition"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -71,12 +69,12 @@ def doDetectLabel(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TkgdqClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetectLabelRequest()
+    model = models.DescribeTripleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DetectLabel(model)
+    rsp = client.DescribeTriple(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -86,15 +84,15 @@ def doDetectLabel(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAssessQuality(argv, arglist):
+def doDescribeRelation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AssessQuality", g_param[OptionsDefine.Version])
+        show_help("DescribeRelation", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "LeftEntityName": Utils.try_to_json(argv, "--LeftEntityName"),
+        "RightEntityName": Utils.try_to_json(argv, "--RightEntityName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -105,151 +103,12 @@ def doAssessQuality(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TkgdqClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AssessQualityRequest()
+    model = models.DescribeRelationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AssessQuality(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDetectProduct(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DetectProduct", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetectProductRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DetectProduct(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doImageModeration(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ImageModeration", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Scenes": Utils.try_to_json(argv, "--Scenes"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "Config": Utils.try_to_json(argv, "--Config"),
-        "Extra": Utils.try_to_json(argv, "--Extra"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImageModerationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ImageModeration(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doEnhanceImage(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("EnhanceImage", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EnhanceImageRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.EnhanceImage(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDetectCelebrity(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DetectCelebrity", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TiiaClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetectCelebrityRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DetectCelebrity(model)
+    rsp = client.DescribeRelation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -260,37 +119,33 @@ def doDetectCelebrity(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190529": tiia_client_v20190529,
+    "v20190411": tkgdq_client_v20190411,
 
 }
 
 MODELS_MAP = {
-    "v20190529": models_v20190529,
+    "v20190411": models_v20190411,
 
 }
 
 ACTION_MAP = {
-    "RecognizeCar": doRecognizeCar,
-    "DetectLabel": doDetectLabel,
-    "AssessQuality": doAssessQuality,
-    "DetectProduct": doDetectProduct,
-    "ImageModeration": doImageModeration,
-    "EnhanceImage": doEnhanceImage,
-    "DetectCelebrity": doDetectCelebrity,
+    "DescribeEntity": doDescribeEntity,
+    "DescribeTriple": doDescribeTriple,
+    "DescribeRelation": doDescribeRelation,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190529.version,
+    v20190411.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190529.version.replace('-', ''): {"help": v20190529_help.INFO,"desc": v20190529_help.DESC},
+     'v' + v20190411.version.replace('-', ''): {"help": v20190411_help.INFO,"desc": v20190411_help.DESC},
 
 }
 
 
-def tiia_action(argv, arglist):
+def tkgdq_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -306,7 +161,7 @@ def tiia_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "tiia", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "tkgdq", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -327,7 +182,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("tiia", tiia_action)
+    cmd = NiceCommand("tkgdq", tkgdq_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -386,11 +241,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["tiia"][OptionsDefine.Version]
+            version = config["tkgdq"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["tiia"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["tkgdq"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -407,7 +262,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tiia", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tkgdq", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -417,7 +272,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["tiia"]["version"]
+        version = profile["tkgdq"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

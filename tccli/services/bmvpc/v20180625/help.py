@@ -364,22 +364,31 @@ INFO = {
     ],
     "desc": "本接口（ModifyCustomerGatewayAttribute）用于修改对端网关信息。"
   },
-  "CreateHostedInterface": {
+  "DeleteRoutePolicy": {
     "params": [
       {
-        "name": "InstanceIds",
-        "desc": "托管机器唯一ID 数组"
+        "name": "RouteTableId",
+        "desc": "路由表ID"
       },
       {
-        "name": "VpcId",
-        "desc": "私有网络ID或者私有网络统一ID，建议使用统一ID"
-      },
-      {
-        "name": "SubnetId",
-        "desc": "子网ID或者子网统一ID，建议使用统一ID"
+        "name": "RoutePolicyId",
+        "desc": "路由表策略ID"
       }
     ],
-    "desc": "本接口（CreateHostedInterface）用于黑石托管机器加入带VLANID不为5的子网。\n\n1) 不能加入vlanId 为5的子网，只能加入VLANID范围为2000-2999的子网。\n2) 每台托管机器最多可以加入20个子网。\n3) 每次调用最多能支持传入10台托管机器。"
+    "desc": "删除黑石路由表路由规则"
+  },
+  "CreateVirtualSubnetWithVlan": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "系统分配的私有网络ID，例如：vpc-kd7d06of"
+      },
+      {
+        "name": "SubnetSet",
+        "desc": "子网信息"
+      }
+    ],
+    "desc": "创建黑石虚拟子网， 虚拟子网用于在黑石上创建虚拟网络，与黑石子网要做好规划。虚拟子网会分配2000-2999的VlanId。"
   },
   "ModifyVpnConnectionAttribute": {
     "params": [
@@ -542,6 +551,23 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeSubnets）用于查询黑石子网列表。"
+  },
+  "CreateCustomerGateway": {
+    "params": [
+      {
+        "name": "CustomerGatewayName",
+        "desc": "对端网关名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "IpAddress",
+        "desc": "对端网关公网IP。"
+      },
+      {
+        "name": "Zone",
+        "desc": "可用区ID"
+      }
+    ],
+    "desc": "本接口（CreateCustomerGateway）用于创建对端网关。"
   },
   "DeleteNatGateway": {
     "params": [
@@ -724,6 +750,27 @@ INFO = {
     ],
     "desc": "本接口(ResetVpnConnection)用于重置VPN通道。"
   },
+  "DescribeVpnGateways": {
+    "params": [
+      {
+        "name": "VpnGatewayIds",
+        "desc": "VPN网关实例ID。形如：bmvpngw-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnGatewayIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定VpnGatewayIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>state - String - （过滤条件 VPN状态：creating，available，createfailed，changing，changefailed，deleting，deletefailed。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>\n<li>vpngw-name - String - （过滤条件）vpn网关名称。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "请求对象个数"
+      }
+    ],
+    "desc": "本接口（DescribeVpnGateways）用于查询VPN网关列表。"
+  },
   "ModifySubnetAttribute": {
     "params": [
       {
@@ -809,18 +856,22 @@ INFO = {
     ],
     "desc": "本接口（DescribeVpcQuota）用于查询用户VPC相关配额限制。"
   },
-  "DeleteRoutePolicy": {
+  "CreateHostedInterface": {
     "params": [
       {
-        "name": "RouteTableId",
-        "desc": "路由表ID"
+        "name": "InstanceIds",
+        "desc": "托管机器唯一ID 数组"
       },
       {
-        "name": "RoutePolicyId",
-        "desc": "路由表策略ID"
+        "name": "VpcId",
+        "desc": "私有网络ID或者私有网络统一ID，建议使用统一ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网ID或者子网统一ID，建议使用统一ID"
       }
     ],
-    "desc": "删除黑石路由表路由规则"
+    "desc": "本接口（CreateHostedInterface）用于黑石托管机器加入带VLANID不为5的子网。\n\n1) 不能加入vlanId 为5的子网，只能加入VLANID范围为2000-2999的子网。\n2) 每台托管机器最多可以加入20个子网。\n3) 每次调用最多能支持传入10台托管机器。"
   },
   "DescribeSubnetByHostedDevice": {
     "params": [
@@ -842,6 +893,27 @@ INFO = {
       }
     ],
     "desc": "托管可以加入物理机子网，虚拟子网，DOCKER子网，通过此接口可以查询托管加入的子网。"
+  },
+  "DescribeVpcPeerConnections": {
+    "params": [
+      {
+        "name": "VpcPeerConnectionIds",
+        "desc": "对等连接实例ID"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpcPeerConnectionIds和Filters。\n过滤条件，参数不支持同时指定VpcPeerConnectionIds和Filters。\n<li>peer-name - String - （过滤条件）对等连接名称。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "获取对等连接列表"
   },
   "DescribeVpcResource": {
     "params": [
@@ -920,18 +992,26 @@ INFO = {
     ],
     "desc": "可用于将子网的部分IP绑定到NAT网关"
   },
-  "CreateVirtualSubnetWithVlan": {
+  "DescribeVpnConnections": {
     "params": [
       {
-        "name": "VpcId",
-        "desc": "系统分配的私有网络ID，例如：vpc-kd7d06of"
+        "name": "VpnConnectionIds",
+        "desc": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnConnectionIds和Filters。"
       },
       {
-        "name": "SubnetSet",
-        "desc": "子网信息"
+        "name": "Filters",
+        "desc": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>state - String - （过滤条件 VPN状态：creating，available，createfailed，changing，changefailed，deleting，deletefailed。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "创建黑石虚拟子网， 虚拟子网用于在黑石上创建虚拟网络，与黑石子网要做好规划。虚拟子网会分配2000-2999的VlanId。"
+    "desc": " 本接口（DescribeVpnConnections）查询VPN通道列表。"
   },
   "CreateSubnet": {
     "params": [
