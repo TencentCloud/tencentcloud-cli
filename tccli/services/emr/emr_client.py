@@ -144,6 +144,7 @@ def doCreateInstance(argv, arglist):
         "PreExecutedFileSettings": Utils.try_to_json(argv, "--PreExecutedFileSettings"),
         "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
         "NeedMasterWan": Utils.try_to_json(argv, "--NeedMasterWan"),
+        "RemoteLoginAtCreate": Utils.try_to_json(argv, "--RemoteLoginAtCreate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -133,6 +133,10 @@ INFO = {
       {
         "name": "NeedMasterWan",
         "desc": "是否需要外网Ip。支持填NEED_MASTER_WAN，不支持使用NOT_NEED_MASTER_WAN，默认使用NEED_MASTER_WAN"
+      },
+      {
+        "name": "RemoteLoginAtCreate",
+        "desc": "是否需要开启外网远程登录，即22号端口，在SgId不为空时，该选项无效"
       }
     ],
     "desc": "创建EMR实例"
