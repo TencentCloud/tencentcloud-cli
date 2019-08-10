@@ -57,7 +57,7 @@ def doModifyDbauditInstancesRenewFlag(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
 
     }
@@ -91,7 +91,7 @@ def doDescribeDbauditInstances(argv, arglist):
         return
 
     param = {
-        "SearchRegion": Utils.try_to_json(argv, "--SearchRegion"),
+        "SearchRegion": argv["--SearchRegion"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -126,11 +126,11 @@ def doInquiryPriceDbauditInstance(argv, arglist):
         return
 
     param = {
-        "InstanceVersion": Utils.try_to_json(argv, "--InstanceVersion"),
-        "InquiryType": Utils.try_to_json(argv, "--InquiryType"),
+        "InstanceVersion": argv["--InstanceVersion"],
+        "InquiryType": argv["--InquiryType"],
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
-        "ServiceRegion": Utils.try_to_json(argv, "--ServiceRegion"),
+        "TimeUnit": argv["--TimeUnit"],
+        "ServiceRegion": argv["--ServiceRegion"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

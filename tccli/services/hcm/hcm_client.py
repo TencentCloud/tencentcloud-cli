@@ -25,10 +25,10 @@ def doEvaluation(argv, arglist):
         return
 
     param = {
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
-        "Image": Utils.try_to_json(argv, "--Image"),
-        "HcmAppid": Utils.try_to_json(argv, "--HcmAppid"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "SessionId": argv["--SessionId"],
+        "Image": argv["--Image"],
+        "HcmAppid": argv["--HcmAppid"],
+        "Url": argv["--Url"],
         "SupportHorizontalImage": Utils.try_to_json(argv, "--SupportHorizontalImage"),
         "RejectNonArithmeticImage": Utils.try_to_json(argv, "--RejectNonArithmeticImage"),
 

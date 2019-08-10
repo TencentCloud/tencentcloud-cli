@@ -25,10 +25,10 @@ def doStartEncryption(argv, arglist):
         return
 
     param = {
-        "CosEndPoint": Utils.try_to_json(argv, "--CosEndPoint"),
-        "CosSecretId": Utils.try_to_json(argv, "--CosSecretId"),
-        "CosSecretKey": Utils.try_to_json(argv, "--CosSecretKey"),
-        "DrmType": Utils.try_to_json(argv, "--DrmType"),
+        "CosEndPoint": argv["--CosEndPoint"],
+        "CosSecretId": argv["--CosSecretId"],
+        "CosSecretKey": argv["--CosSecretKey"],
+        "DrmType": argv["--DrmType"],
         "SourceObject": Utils.try_to_json(argv, "--SourceObject"),
         "OutputObjects": Utils.try_to_json(argv, "--OutputObjects"),
 
@@ -63,9 +63,9 @@ def doAddFairPlayPem(argv, arglist):
         return
 
     param = {
-        "Pem": Utils.try_to_json(argv, "--Pem"),
-        "Ask": Utils.try_to_json(argv, "--Ask"),
-        "PemDecryptKey": Utils.try_to_json(argv, "--PemDecryptKey"),
+        "Pem": argv["--Pem"],
+        "Ask": argv["--Ask"],
+        "PemDecryptKey": argv["--PemDecryptKey"],
         "BailorId": Utils.try_to_json(argv, "--BailorId"),
         "Priority": Utils.try_to_json(argv, "--Priority"),
 
@@ -100,9 +100,9 @@ def doCreateLicense(argv, arglist):
         return
 
     param = {
-        "DrmType": Utils.try_to_json(argv, "--DrmType"),
-        "LicenseRequest": Utils.try_to_json(argv, "--LicenseRequest"),
-        "ContentType": Utils.try_to_json(argv, "--ContentType"),
+        "DrmType": argv["--DrmType"],
+        "LicenseRequest": argv["--LicenseRequest"],
+        "ContentType": argv["--ContentType"],
         "Tracks": Utils.try_to_json(argv, "--Tracks"),
         "PlaybackPolicy": Utils.try_to_json(argv, "--PlaybackPolicy"),
 
@@ -137,10 +137,10 @@ def doModifyFairPlayPem(argv, arglist):
         return
 
     param = {
-        "Pem": Utils.try_to_json(argv, "--Pem"),
-        "Ask": Utils.try_to_json(argv, "--Ask"),
+        "Pem": argv["--Pem"],
+        "Ask": argv["--Ask"],
         "FairPlayPemId": Utils.try_to_json(argv, "--FairPlayPemId"),
-        "PemDecryptKey": Utils.try_to_json(argv, "--PemDecryptKey"),
+        "PemDecryptKey": argv["--PemDecryptKey"],
         "BailorId": Utils.try_to_json(argv, "--BailorId"),
         "Priority": Utils.try_to_json(argv, "--Priority"),
 
@@ -175,11 +175,11 @@ def doDescribeKeys(argv, arglist):
         return
 
     param = {
-        "DrmType": Utils.try_to_json(argv, "--DrmType"),
+        "DrmType": argv["--DrmType"],
         "Tracks": Utils.try_to_json(argv, "--Tracks"),
-        "ContentType": Utils.try_to_json(argv, "--ContentType"),
-        "RsaPublicKey": Utils.try_to_json(argv, "--RsaPublicKey"),
-        "ContentId": Utils.try_to_json(argv, "--ContentId"),
+        "ContentType": argv["--ContentType"],
+        "RsaPublicKey": argv["--RsaPublicKey"],
+        "ContentId": argv["--ContentId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

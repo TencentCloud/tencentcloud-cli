@@ -60,11 +60,11 @@ def doCreateContainerInstance(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
-        "RestartPolicy": Utils.try_to_json(argv, "--RestartPolicy"),
+        "Zone": argv["--Zone"],
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
+        "InstanceName": argv["--InstanceName"],
+        "RestartPolicy": argv["--RestartPolicy"],
         "Containers": Utils.try_to_json(argv, "--Containers"),
 
     }
@@ -98,7 +98,7 @@ def doInquiryPriceCreateCis(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
         "Cpu": Utils.try_to_json(argv, "--Cpu"),
         "Memory": Utils.try_to_json(argv, "--Memory"),
 
@@ -133,7 +133,7 @@ def doDescribeContainerInstance(argv, arglist):
         return
 
     param = {
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceName": argv["--InstanceName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -166,7 +166,7 @@ def doDescribeContainerInstanceEvents(argv, arglist):
         return
 
     param = {
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceName": argv["--InstanceName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -199,7 +199,7 @@ def doDeleteContainerInstance(argv, arglist):
         return
 
     param = {
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceName": argv["--InstanceName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -232,10 +232,10 @@ def doDescribeContainerLog(argv, arglist):
         return
 
     param = {
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
-        "ContainerName": Utils.try_to_json(argv, "--ContainerName"),
+        "InstanceName": argv["--InstanceName"],
+        "ContainerName": argv["--ContainerName"],
         "Tail": Utils.try_to_json(argv, "--Tail"),
-        "SinceTime": Utils.try_to_json(argv, "--SinceTime"),
+        "SinceTime": argv["--SinceTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

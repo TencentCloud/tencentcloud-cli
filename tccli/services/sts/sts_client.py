@@ -25,8 +25,8 @@ def doGetFederationToken(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Policy": Utils.try_to_json(argv, "--Policy"),
+        "Name": argv["--Name"],
+        "Policy": argv["--Policy"],
         "DurationSeconds": Utils.try_to_json(argv, "--DurationSeconds"),
 
     }
@@ -60,10 +60,10 @@ def doAssumeRoleWithSAML(argv, arglist):
         return
 
     param = {
-        "SAMLAssertion": Utils.try_to_json(argv, "--SAMLAssertion"),
-        "PrincipalArn": Utils.try_to_json(argv, "--PrincipalArn"),
-        "RoleArn": Utils.try_to_json(argv, "--RoleArn"),
-        "RoleSessionName": Utils.try_to_json(argv, "--RoleSessionName"),
+        "SAMLAssertion": argv["--SAMLAssertion"],
+        "PrincipalArn": argv["--PrincipalArn"],
+        "RoleArn": argv["--RoleArn"],
+        "RoleSessionName": argv["--RoleSessionName"],
         "DurationSeconds": Utils.try_to_json(argv, "--DurationSeconds"),
 
     }
@@ -97,10 +97,10 @@ def doAssumeRole(argv, arglist):
         return
 
     param = {
-        "RoleArn": Utils.try_to_json(argv, "--RoleArn"),
-        "RoleSessionName": Utils.try_to_json(argv, "--RoleSessionName"),
+        "RoleArn": argv["--RoleArn"],
+        "RoleSessionName": argv["--RoleSessionName"],
         "DurationSeconds": Utils.try_to_json(argv, "--DurationSeconds"),
-        "Policy": Utils.try_to_json(argv, "--Policy"),
+        "Policy": argv["--Policy"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

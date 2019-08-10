@@ -25,7 +25,7 @@ def doCancelKeyDeletion(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -58,7 +58,7 @@ def doGetKeyRotationStatus(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -91,7 +91,7 @@ def doEnableKey(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -124,9 +124,9 @@ def doEncrypt(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
-        "Plaintext": Utils.try_to_json(argv, "--Plaintext"),
-        "EncryptionContext": Utils.try_to_json(argv, "--EncryptionContext"),
+        "KeyId": argv["--KeyId"],
+        "Plaintext": argv["--Plaintext"],
+        "EncryptionContext": argv["--EncryptionContext"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -159,7 +159,7 @@ def doEnableKeyRotation(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -192,7 +192,7 @@ def doScheduleKeyDeletion(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyId": argv["--KeyId"],
         "PendingWindowInDays": Utils.try_to_json(argv, "--PendingWindowInDays"),
 
     }
@@ -226,9 +226,9 @@ def doCreateKey(argv, arglist):
         return
 
     param = {
-        "Alias": Utils.try_to_json(argv, "--Alias"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "KeyUsage": Utils.try_to_json(argv, "--KeyUsage"),
+        "Alias": argv["--Alias"],
+        "Description": argv["--Description"],
+        "KeyUsage": argv["--KeyUsage"],
         "Type": Utils.try_to_json(argv, "--Type"),
 
     }
@@ -262,10 +262,10 @@ def doReEncrypt(argv, arglist):
         return
 
     param = {
-        "CiphertextBlob": Utils.try_to_json(argv, "--CiphertextBlob"),
-        "DestinationKeyId": Utils.try_to_json(argv, "--DestinationKeyId"),
-        "SourceEncryptionContext": Utils.try_to_json(argv, "--SourceEncryptionContext"),
-        "DestinationEncryptionContext": Utils.try_to_json(argv, "--DestinationEncryptionContext"),
+        "CiphertextBlob": argv["--CiphertextBlob"],
+        "DestinationKeyId": argv["--DestinationKeyId"],
+        "SourceEncryptionContext": argv["--SourceEncryptionContext"],
+        "DestinationEncryptionContext": argv["--DestinationEncryptionContext"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -298,8 +298,8 @@ def doUpdateAlias(argv, arglist):
         return
 
     param = {
-        "Alias": Utils.try_to_json(argv, "--Alias"),
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "Alias": argv["--Alias"],
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -365,8 +365,8 @@ def doDecrypt(argv, arglist):
         return
 
     param = {
-        "CiphertextBlob": Utils.try_to_json(argv, "--CiphertextBlob"),
-        "EncryptionContext": Utils.try_to_json(argv, "--EncryptionContext"),
+        "CiphertextBlob": argv["--CiphertextBlob"],
+        "EncryptionContext": argv["--EncryptionContext"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -432,8 +432,8 @@ def doUpdateKeyDescription(argv, arglist):
         return
 
     param = {
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "Description": argv["--Description"],
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -466,7 +466,7 @@ def doDisableKey(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -499,7 +499,7 @@ def doDisableKeyRotation(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -564,10 +564,10 @@ def doGenerateDataKey(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
-        "KeySpec": Utils.try_to_json(argv, "--KeySpec"),
+        "KeyId": argv["--KeyId"],
+        "KeySpec": argv["--KeySpec"],
         "NumberOfBytes": Utils.try_to_json(argv, "--NumberOfBytes"),
-        "EncryptionContext": Utils.try_to_json(argv, "--EncryptionContext"),
+        "EncryptionContext": argv["--EncryptionContext"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -600,7 +600,7 @@ def doDescribeKey(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "KeyId": argv["--KeyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -673,7 +673,7 @@ def doListKeyDetail(argv, arglist):
         "Role": Utils.try_to_json(argv, "--Role"),
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "KeyState": Utils.try_to_json(argv, "--KeyState"),
-        "SearchKeyAlias": Utils.try_to_json(argv, "--SearchKeyAlias"),
+        "SearchKeyAlias": argv["--SearchKeyAlias"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

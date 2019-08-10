@@ -58,10 +58,10 @@ def doDescribeDBBackups(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
         "Type": Utils.try_to_json(argv, "--Type"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -96,9 +96,9 @@ def doResetAccountPassword(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "DBInstanceId": argv["--DBInstanceId"],
+        "UserName": argv["--UserName"],
+        "Password": argv["--Password"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -131,10 +131,10 @@ def doDescribeDBErrlogs(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "DatabaseName": Utils.try_to_json(argv, "--DatabaseName"),
+        "DBInstanceId": argv["--DBInstanceId"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "DatabaseName": argv["--DatabaseName"],
         "SearchKeys": Utils.try_to_json(argv, "--SearchKeys"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
@@ -170,7 +170,7 @@ def doRestartDBInstance(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -203,13 +203,13 @@ def doInquiryPriceCreateDBInstances(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
-        "SpecCode": Utils.try_to_json(argv, "--SpecCode"),
+        "Zone": argv["--Zone"],
+        "SpecCode": argv["--SpecCode"],
         "Storage": Utils.try_to_json(argv, "--Storage"),
         "InstanceCount": Utils.try_to_json(argv, "--InstanceCount"),
         "Period": Utils.try_to_json(argv, "--Period"),
         "Pid": Utils.try_to_json(argv, "--Pid"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargeType": argv["--InstanceChargeType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -242,7 +242,7 @@ def doOpenDBExtranetAccess(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -276,7 +276,7 @@ def doModifyDBInstancesProject(argv, arglist):
 
     param = {
         "DBInstanceIdSet": Utils.try_to_json(argv, "--DBInstanceIdSet"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ProjectId": argv["--ProjectId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -309,9 +309,9 @@ def doModifyAccountRemark(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Remark": Utils.try_to_json(argv, "--Remark"),
+        "DBInstanceId": argv["--DBInstanceId"],
+        "UserName": argv["--UserName"],
+        "Remark": argv["--Remark"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -344,9 +344,9 @@ def doDescribeDBXlogs(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "DBInstanceId": argv["--DBInstanceId"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -415,7 +415,7 @@ def doDescribeDBInstanceAttribute(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -448,8 +448,8 @@ def doModifyDBInstanceName(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "DBInstanceId": argv["--DBInstanceId"],
+        "InstanceName": argv["--InstanceName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -482,18 +482,18 @@ def doCreateDBInstances(argv, arglist):
         return
 
     param = {
-        "SpecCode": Utils.try_to_json(argv, "--SpecCode"),
-        "DBVersion": Utils.try_to_json(argv, "--DBVersion"),
+        "SpecCode": argv["--SpecCode"],
+        "DBVersion": argv["--DBVersion"],
         "Storage": Utils.try_to_json(argv, "--Storage"),
         "InstanceCount": Utils.try_to_json(argv, "--InstanceCount"),
         "Period": Utils.try_to_json(argv, "--Period"),
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargeType": argv["--InstanceChargeType"],
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -526,7 +526,7 @@ def doRenewInstance(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
         "Period": Utils.try_to_json(argv, "--Period"),
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
@@ -630,9 +630,9 @@ def doInitDBInstances(argv, arglist):
 
     param = {
         "DBInstanceIdSet": Utils.try_to_json(argv, "--DBInstanceIdSet"),
-        "AdminName": Utils.try_to_json(argv, "--AdminName"),
-        "AdminPassword": Utils.try_to_json(argv, "--AdminPassword"),
-        "Charset": Utils.try_to_json(argv, "--Charset"),
+        "AdminName": argv["--AdminName"],
+        "AdminPassword": argv["--AdminPassword"],
+        "Charset": argv["--Charset"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -667,8 +667,8 @@ def doInquiryPriceUpgradeDBInstance(argv, arglist):
     param = {
         "Storage": Utils.try_to_json(argv, "--Storage"),
         "Memory": Utils.try_to_json(argv, "--Memory"),
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "DBInstanceId": argv["--DBInstanceId"],
+        "InstanceChargeType": argv["--InstanceChargeType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -733,7 +733,7 @@ def doInquiryPriceRenewDBInstance(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
         "Period": Utils.try_to_json(argv, "--Period"),
 
     }
@@ -767,7 +767,7 @@ def doCloseDBExtranetAccess(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -800,11 +800,11 @@ def doDescribeAccounts(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
-        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "OrderBy": argv["--OrderBy"],
+        "OrderByType": argv["--OrderByType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -839,7 +839,7 @@ def doUpgradeDBInstance(argv, arglist):
     param = {
         "Memory": Utils.try_to_json(argv, "--Memory"),
         "Storage": Utils.try_to_json(argv, "--Storage"),
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
+        "DBInstanceId": argv["--DBInstanceId"],
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
 
@@ -874,7 +874,7 @@ def doDescribeProductConfig(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -907,12 +907,12 @@ def doDescribeDBSlowlogs(argv, arglist):
         return
 
     param = {
-        "DBInstanceId": Utils.try_to_json(argv, "--DBInstanceId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "DatabaseName": Utils.try_to_json(argv, "--DatabaseName"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
-        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "DBInstanceId": argv["--DBInstanceId"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "DatabaseName": argv["--DatabaseName"],
+        "OrderBy": argv["--OrderBy"],
+        "OrderByType": argv["--OrderByType"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 

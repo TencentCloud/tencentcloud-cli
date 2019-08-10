@@ -25,14 +25,14 @@ def doCreateModel(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Model": Utils.try_to_json(argv, "--Model"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
-        "RuntimeVersion": Utils.try_to_json(argv, "--RuntimeVersion"),
+        "Name": argv["--Name"],
+        "Model": argv["--Model"],
+        "Description": argv["--Description"],
+        "Cluster": argv["--Cluster"],
+        "RuntimeVersion": argv["--RuntimeVersion"],
         "Replicas": Utils.try_to_json(argv, "--Replicas"),
-        "Expose": Utils.try_to_json(argv, "--Expose"),
-        "ServType": Utils.try_to_json(argv, "--ServType"),
+        "Expose": argv["--Expose"],
+        "ServType": argv["--ServType"],
         "RuntimeConf": Utils.try_to_json(argv, "--RuntimeConf"),
 
     }
@@ -66,7 +66,7 @@ def doListJobs(argv, arglist):
         return
 
     param = {
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
+        "Cluster": argv["--Cluster"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -101,16 +101,16 @@ def doCreateJob(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
-        "RuntimeVersion": Utils.try_to_json(argv, "--RuntimeVersion"),
+        "Name": argv["--Name"],
+        "Cluster": argv["--Cluster"],
+        "RuntimeVersion": argv["--RuntimeVersion"],
         "PackageDir": Utils.try_to_json(argv, "--PackageDir"),
         "Command": Utils.try_to_json(argv, "--Command"),
         "Args": Utils.try_to_json(argv, "--Args"),
-        "ScaleTier": Utils.try_to_json(argv, "--ScaleTier"),
-        "MasterType": Utils.try_to_json(argv, "--MasterType"),
-        "WorkerType": Utils.try_to_json(argv, "--WorkerType"),
-        "ParameterServerType": Utils.try_to_json(argv, "--ParameterServerType"),
+        "ScaleTier": argv["--ScaleTier"],
+        "MasterType": argv["--MasterType"],
+        "WorkerType": argv["--WorkerType"],
+        "ParameterServerType": argv["--ParameterServerType"],
         "WorkerCount": Utils.try_to_json(argv, "--WorkerCount"),
         "ParameterServerCount": Utils.try_to_json(argv, "--ParameterServerCount"),
         "Debug": Utils.try_to_json(argv, "--Debug"),
@@ -147,9 +147,9 @@ def doDescribeModel(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
-        "ServType": Utils.try_to_json(argv, "--ServType"),
+        "Name": argv["--Name"],
+        "Cluster": argv["--Cluster"],
+        "ServType": argv["--ServType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -182,12 +182,12 @@ def doQueryLogs(argv, arglist):
         return
 
     param = {
-        "JobName": Utils.try_to_json(argv, "--JobName"),
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "JobName": argv["--JobName"],
+        "Cluster": argv["--Cluster"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Context": Utils.try_to_json(argv, "--Context"),
+        "Context": argv["--Context"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -220,10 +220,10 @@ def doListModels(argv, arglist):
         return
 
     param = {
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
+        "Cluster": argv["--Cluster"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "ServType": Utils.try_to_json(argv, "--ServType"),
+        "ServType": argv["--ServType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -256,8 +256,8 @@ def doDeleteJob(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
+        "Name": argv["--Name"],
+        "Cluster": argv["--Cluster"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -290,9 +290,9 @@ def doDeleteModel(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
-        "ServType": Utils.try_to_json(argv, "--ServType"),
+        "Name": argv["--Name"],
+        "Cluster": argv["--Cluster"],
+        "ServType": argv["--ServType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -325,8 +325,8 @@ def doDescribeJob(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
+        "Name": argv["--Name"],
+        "Cluster": argv["--Cluster"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -359,8 +359,8 @@ def doInstallAgent(argv, arglist):
         return
 
     param = {
-        "Cluster": Utils.try_to_json(argv, "--Cluster"),
-        "TiaVersion": Utils.try_to_json(argv, "--TiaVersion"),
+        "Cluster": argv["--Cluster"],
+        "TiaVersion": argv["--TiaVersion"],
         "Update": Utils.try_to_json(argv, "--Update"),
 
     }

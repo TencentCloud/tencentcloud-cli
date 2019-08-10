@@ -59,7 +59,7 @@ def doTerminateDBInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -95,16 +95,16 @@ def doCreateDBInstance(argv, arglist):
         "SecondaryNum": Utils.try_to_json(argv, "--SecondaryNum"),
         "Memory": Utils.try_to_json(argv, "--Memory"),
         "Volume": Utils.try_to_json(argv, "--Volume"),
-        "MongoVersion": Utils.try_to_json(argv, "--MongoVersion"),
-        "MachineCode": Utils.try_to_json(argv, "--MachineCode"),
+        "MongoVersion": argv["--MongoVersion"],
+        "MachineCode": argv["--MachineCode"],
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "Password": argv["--Password"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
-        "UniqVpcId": Utils.try_to_json(argv, "--UniqVpcId"),
-        "UniqSubnetId": Utils.try_to_json(argv, "--UniqSubnetId"),
+        "UniqVpcId": argv["--UniqVpcId"],
+        "UniqSubnetId": argv["--UniqSubnetId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -141,15 +141,15 @@ def doCreateDBInstanceHour(argv, arglist):
         "Volume": Utils.try_to_json(argv, "--Volume"),
         "ReplicateSetNum": Utils.try_to_json(argv, "--ReplicateSetNum"),
         "SecondaryNum": Utils.try_to_json(argv, "--SecondaryNum"),
-        "EngineVersion": Utils.try_to_json(argv, "--EngineVersion"),
-        "Machine": Utils.try_to_json(argv, "--Machine"),
+        "EngineVersion": argv["--EngineVersion"],
+        "Machine": argv["--Machine"],
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Zone": Utils.try_to_json(argv, "--Zone"),
-        "InstanceRole": Utils.try_to_json(argv, "--InstanceRole"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "Zone": argv["--Zone"],
+        "InstanceRole": argv["--InstanceRole"],
+        "InstanceType": argv["--InstanceType"],
         "Encrypt": Utils.try_to_json(argv, "--Encrypt"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
 
@@ -184,9 +184,9 @@ def doDescribeSlowLog(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "InstanceId": argv["--InstanceId"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "SlowMS": Utils.try_to_json(argv, "--SlowMS"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -222,8 +222,8 @@ def doRenameInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "NewName": Utils.try_to_json(argv, "--NewName"),
+        "InstanceId": argv["--InstanceId"],
+        "NewName": argv["--NewName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -256,7 +256,7 @@ def doUpgradeDBInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "Memory": Utils.try_to_json(argv, "--Memory"),
         "Volume": Utils.try_to_json(argv, "--Volume"),
         "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
@@ -326,7 +326,7 @@ def doDescribeSpecInfo(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -359,9 +359,9 @@ def doSetPassword(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "InstanceId": argv["--InstanceId"],
+        "UserName": argv["--UserName"],
+        "Password": argv["--Password"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -394,7 +394,7 @@ def doUpgradeDBInstanceHour(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "Memory": Utils.try_to_json(argv, "--Memory"),
         "Volume": Utils.try_to_json(argv, "--Volume"),
         "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
@@ -434,13 +434,13 @@ def doDescribeDBInstances(argv, arglist):
         "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
         "ClusterType": Utils.try_to_json(argv, "--ClusterType"),
         "Status": Utils.try_to_json(argv, "--Status"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "PayMode": Utils.try_to_json(argv, "--PayMode"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
-        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "OrderBy": argv["--OrderBy"],
+        "OrderByType": argv["--OrderByType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

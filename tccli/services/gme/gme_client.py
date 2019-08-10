@@ -26,7 +26,7 @@ def doDescribeFilterResult(argv, arglist):
 
     param = {
         "BizId": Utils.try_to_json(argv, "--BizId"),
-        "FileId": Utils.try_to_json(argv, "--FileId"),
+        "FileId": argv["--FileId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -60,8 +60,8 @@ def doDescribeFilterResultList(argv, arglist):
 
     param = {
         "BizId": Utils.try_to_json(argv, "--BizId"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "StartDate": argv["--StartDate"],
+        "EndDate": argv["--EndDate"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -97,11 +97,11 @@ def doVoiceFilter(argv, arglist):
 
     param = {
         "BizId": Utils.try_to_json(argv, "--BizId"),
-        "FileId": Utils.try_to_json(argv, "--FileId"),
-        "FileName": Utils.try_to_json(argv, "--FileName"),
-        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
-        "OpenId": Utils.try_to_json(argv, "--OpenId"),
+        "FileId": argv["--FileId"],
+        "FileName": argv["--FileName"],
+        "FileUrl": argv["--FileUrl"],
+        "FileContent": argv["--FileContent"],
+        "OpenId": argv["--OpenId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -25,8 +25,8 @@ def doDeletePersonFromGroup(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "PersonId": argv["--PersonId"],
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,10 +59,10 @@ def doCreateGroup(argv, arglist):
         return
 
     param = {
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupName": argv["--GroupName"],
+        "GroupId": argv["--GroupId"],
         "GroupExDescriptions": Utils.try_to_json(argv, "--GroupExDescriptions"),
-        "Tag": Utils.try_to_json(argv, "--Tag"),
+        "Tag": argv["--Tag"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -95,7 +95,7 @@ def doGetPersonBaseInfo(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonId": argv["--PersonId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -128,8 +128,8 @@ def doDetectLiveFace(argv, arglist):
         return
 
     param = {
-        "Image": Utils.try_to_json(argv, "--Image"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "Image": argv["--Image"],
+        "Url": argv["--Url"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -162,7 +162,7 @@ def doCreateFace(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonId": argv["--PersonId"],
         "Images": Utils.try_to_json(argv, "--Images"),
         "Urls": Utils.try_to_json(argv, "--Urls"),
 
@@ -197,7 +197,7 @@ def doGetPersonListNum(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -230,7 +230,7 @@ def doGetPersonGroupInfo(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonId": argv["--PersonId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -266,9 +266,9 @@ def doAnalyzeFace(argv, arglist):
 
     param = {
         "Mode": Utils.try_to_json(argv, "--Mode"),
-        "Image": Utils.try_to_json(argv, "--Image"),
-        "Url": Utils.try_to_json(argv, "--Url"),
-        "FaceModelVersion": Utils.try_to_json(argv, "--FaceModelVersion"),
+        "Image": argv["--Image"],
+        "Url": argv["--Url"],
+        "FaceModelVersion": argv["--FaceModelVersion"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -301,8 +301,8 @@ def doModifyPersonBaseInfo(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "PersonName": Utils.try_to_json(argv, "--PersonName"),
+        "PersonId": argv["--PersonId"],
+        "PersonName": argv["--PersonName"],
         "Gender": Utils.try_to_json(argv, "--Gender"),
 
     }
@@ -336,7 +336,7 @@ def doCopyPerson(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonId": argv["--PersonId"],
         "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
 
     }
@@ -370,9 +370,9 @@ def doVerifyFace(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "Image": Utils.try_to_json(argv, "--Image"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "PersonId": argv["--PersonId"],
+        "Image": argv["--Image"],
+        "Url": argv["--Url"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -405,7 +405,7 @@ def doDeleteGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -438,7 +438,7 @@ def doDeletePerson(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonId": argv["--PersonId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -471,10 +471,10 @@ def doModifyGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "GroupId": argv["--GroupId"],
+        "GroupName": argv["--GroupName"],
         "GroupExDescriptionInfos": Utils.try_to_json(argv, "--GroupExDescriptionInfos"),
-        "Tag": Utils.try_to_json(argv, "--Tag"),
+        "Tag": argv["--Tag"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -507,13 +507,13 @@ def doCreatePerson(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "PersonName": Utils.try_to_json(argv, "--PersonName"),
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "GroupId": argv["--GroupId"],
+        "PersonName": argv["--PersonName"],
+        "PersonId": argv["--PersonId"],
         "Gender": Utils.try_to_json(argv, "--Gender"),
         "PersonExDescriptionInfos": Utils.try_to_json(argv, "--PersonExDescriptionInfos"),
-        "Image": Utils.try_to_json(argv, "--Image"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "Image": argv["--Image"],
+        "Url": argv["--Url"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -547,8 +547,8 @@ def doSearchFaces(argv, arglist):
 
     param = {
         "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
-        "Image": Utils.try_to_json(argv, "--Image"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "Image": argv["--Image"],
+        "Url": argv["--Url"],
         "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
         "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
         "MaxPersonNum": Utils.try_to_json(argv, "--MaxPersonNum"),
@@ -587,8 +587,8 @@ def doDetectFace(argv, arglist):
     param = {
         "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
         "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
-        "Image": Utils.try_to_json(argv, "--Image"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "Image": argv["--Image"],
+        "Url": argv["--Url"],
         "NeedFaceAttributes": Utils.try_to_json(argv, "--NeedFaceAttributes"),
         "NeedQualityDetection": Utils.try_to_json(argv, "--NeedQualityDetection"),
 
@@ -623,7 +623,7 @@ def doGetPersonList(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -658,8 +658,8 @@ def doModifyPersonGroupInfo(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "GroupId": argv["--GroupId"],
+        "PersonId": argv["--PersonId"],
         "PersonExDescriptionInfos": Utils.try_to_json(argv, "--PersonExDescriptionInfos"),
 
     }
@@ -693,10 +693,10 @@ def doCompareFace(argv, arglist):
         return
 
     param = {
-        "ImageA": Utils.try_to_json(argv, "--ImageA"),
-        "ImageB": Utils.try_to_json(argv, "--ImageB"),
-        "UrlA": Utils.try_to_json(argv, "--UrlA"),
-        "UrlB": Utils.try_to_json(argv, "--UrlB"),
+        "ImageA": argv["--ImageA"],
+        "ImageB": argv["--ImageB"],
+        "UrlA": argv["--UrlA"],
+        "UrlB": argv["--UrlB"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -763,7 +763,7 @@ def doDeleteFace(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonId": argv["--PersonId"],
         "FaceIds": Utils.try_to_json(argv, "--FaceIds"),
 
     }

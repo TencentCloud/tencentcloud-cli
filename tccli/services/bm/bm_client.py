@@ -27,10 +27,10 @@ def doDescribeUserCmds(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
-        "CmdId": Utils.try_to_json(argv, "--CmdId"),
+        "SearchKey": argv["--SearchKey"],
+        "CmdId": argv["--CmdId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -63,10 +63,10 @@ def doModifyPsaRegulation(argv, arglist):
         return
 
     param = {
-        "PsaId": Utils.try_to_json(argv, "--PsaId"),
-        "PsaName": Utils.try_to_json(argv, "--PsaName"),
+        "PsaId": argv["--PsaId"],
+        "PsaName": argv["--PsaName"],
         "RepairLimit": Utils.try_to_json(argv, "--RepairLimit"),
-        "PsaDescription": Utils.try_to_json(argv, "--PsaDescription"),
+        "PsaDescription": argv["--PsaDescription"],
         "TaskTypeIds": Utils.try_to_json(argv, "--TaskTypeIds"),
 
     }
@@ -105,7 +105,7 @@ def doDescribePsaRegulations(argv, arglist):
         "PsaIds": Utils.try_to_json(argv, "--PsaIds"),
         "PsaNames": Utils.try_to_json(argv, "--PsaNames"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
 
     }
@@ -206,10 +206,10 @@ def doModifyLanIp(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "LanIp": Utils.try_to_json(argv, "--LanIp"),
+        "InstanceId": argv["--InstanceId"],
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
+        "LanIp": argv["--LanIp"],
         "RebootDevice": Utils.try_to_json(argv, "--RebootDevice"),
 
     }
@@ -243,11 +243,11 @@ def doRunUserCmd(argv, arglist):
         return
 
     param = {
-        "CmdId": Utils.try_to_json(argv, "--CmdId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "CmdId": argv["--CmdId"],
+        "UserName": argv["--UserName"],
+        "Password": argv["--Password"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "CmdParam": Utils.try_to_json(argv, "--CmdParam"),
+        "CmdParam": argv["--CmdParam"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -280,7 +280,7 @@ def doDescribeCustomImageProcess(argv, arglist):
         return
 
     param = {
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "ImageId": argv["--ImageId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -381,7 +381,7 @@ def doDescribeUserCmdTasks(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
 
     }
@@ -415,10 +415,10 @@ def doCreatePsaRegulation(argv, arglist):
         return
 
     param = {
-        "PsaName": Utils.try_to_json(argv, "--PsaName"),
+        "PsaName": argv["--PsaName"],
         "TaskTypeIds": Utils.try_to_json(argv, "--TaskTypeIds"),
         "RepairLimit": Utils.try_to_json(argv, "--RepairLimit"),
-        "PsaDescription": Utils.try_to_json(argv, "--PsaDescription"),
+        "PsaDescription": argv["--PsaDescription"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -483,26 +483,26 @@ def doBuyDevices(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
         "OsTypeId": Utils.try_to_json(argv, "--OsTypeId"),
         "RaidId": Utils.try_to_json(argv, "--RaidId"),
         "GoodsCount": Utils.try_to_json(argv, "--GoodsCount"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "DeviceClassCode": Utils.try_to_json(argv, "--DeviceClassCode"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
+        "DeviceClassCode": argv["--DeviceClassCode"],
+        "TimeUnit": argv["--TimeUnit"],
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
         "NeedSecurityAgent": Utils.try_to_json(argv, "--NeedSecurityAgent"),
         "NeedMonitorAgent": Utils.try_to_json(argv, "--NeedMonitorAgent"),
         "NeedEMRAgent": Utils.try_to_json(argv, "--NeedEMRAgent"),
         "NeedEMRSoftware": Utils.try_to_json(argv, "--NeedEMRSoftware"),
         "ApplyEip": Utils.try_to_json(argv, "--ApplyEip"),
-        "EipPayMode": Utils.try_to_json(argv, "--EipPayMode"),
+        "EipPayMode": argv["--EipPayMode"],
         "EipBandwidth": Utils.try_to_json(argv, "--EipBandwidth"),
         "IsZoning": Utils.try_to_json(argv, "--IsZoning"),
         "CpmPayMode": Utils.try_to_json(argv, "--CpmPayMode"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "ImageId": argv["--ImageId"],
+        "Password": argv["--Password"],
         "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
         "SysRootSpace": Utils.try_to_json(argv, "--SysRootSpace"),
         "SysSwaporuefiSpace": Utils.try_to_json(argv, "--SysSwaporuefiSpace"),
@@ -519,7 +519,7 @@ def doBuyDevices(argv, arglist):
         "DataDiskTypeId": Utils.try_to_json(argv, "--DataDiskTypeId"),
         "DataDiskCount": Utils.try_to_json(argv, "--DataDiskCount"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
-        "FileSystem": Utils.try_to_json(argv, "--FileSystem"),
+        "FileSystem": argv["--FileSystem"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -552,10 +552,10 @@ def doModifyUserCmd(argv, arglist):
         return
 
     param = {
-        "CmdId": Utils.try_to_json(argv, "--CmdId"),
-        "Alias": Utils.try_to_json(argv, "--Alias"),
-        "OsType": Utils.try_to_json(argv, "--OsType"),
-        "Content": Utils.try_to_json(argv, "--Content"),
+        "CmdId": argv["--CmdId"],
+        "Alias": argv["--Alias"],
+        "OsType": argv["--OsType"],
+        "Content": argv["--Content"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -622,7 +622,7 @@ def doDescribeHostedDeviceOutBandInfo(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -655,9 +655,9 @@ def doBindPsaTag(argv, arglist):
         return
 
     param = {
-        "PsaId": Utils.try_to_json(argv, "--PsaId"),
-        "TagKey": Utils.try_to_json(argv, "--TagKey"),
-        "TagValue": Utils.try_to_json(argv, "--TagValue"),
+        "PsaId": argv["--PsaId"],
+        "TagKey": argv["--TagKey"],
+        "TagValue": argv["--TagValue"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -723,7 +723,7 @@ def doDeletePsaRegulation(argv, arglist):
         return
 
     param = {
-        "PsaId": Utils.try_to_json(argv, "--PsaId"),
+        "PsaId": argv["--PsaId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -756,9 +756,9 @@ def doCreateUserCmd(argv, arglist):
         return
 
     param = {
-        "Alias": Utils.try_to_json(argv, "--Alias"),
-        "OsType": Utils.try_to_json(argv, "--OsType"),
-        "Content": Utils.try_to_json(argv, "--Content"),
+        "Alias": argv["--Alias"],
+        "OsType": argv["--OsType"],
+        "Content": argv["--Content"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -856,7 +856,7 @@ def doDescribeOsInfo(argv, arglist):
         return
 
     param = {
-        "DeviceClassCode": Utils.try_to_json(argv, "--DeviceClassCode"),
+        "DeviceClassCode": argv["--DeviceClassCode"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -922,9 +922,9 @@ def doModifyCustomImageAttribute(argv, arglist):
         return
 
     param = {
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "ImageName": Utils.try_to_json(argv, "--ImageName"),
-        "ImageDescription": Utils.try_to_json(argv, "--ImageDescription"),
+        "ImageId": argv["--ImageId"],
+        "ImageName": argv["--ImageName"],
+        "ImageDescription": argv["--ImageDescription"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -959,10 +959,10 @@ def doDescribeDevicePosition(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "Alias": Utils.try_to_json(argv, "--Alias"),
+        "Alias": argv["--Alias"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1028,12 +1028,12 @@ def doDescribeUserCmdTaskInfo(argv, arglist):
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "TaskId": argv["--TaskId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+        "SearchKey": argv["--SearchKey"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1067,7 +1067,7 @@ def doDescribeDevicePriceInfo(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "TimeUnit": argv["--TimeUnit"],
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
 
     }
@@ -1134,8 +1134,8 @@ def doDescribeTaskOperationLog(argv, arglist):
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "TaskId": argv["--TaskId"],
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
 
     }
@@ -1202,9 +1202,9 @@ def doUnbindPsaTag(argv, arglist):
         return
 
     param = {
-        "PsaId": Utils.try_to_json(argv, "--PsaId"),
-        "TagKey": Utils.try_to_json(argv, "--TagKey"),
-        "TagValue": Utils.try_to_json(argv, "--TagValue"),
+        "PsaId": argv["--PsaId"],
+        "TagKey": argv["--TagKey"],
+        "TagValue": argv["--TagValue"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1237,15 +1237,15 @@ def doCreateSpotDevice(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
-        "ComputeType": Utils.try_to_json(argv, "--ComputeType"),
+        "Zone": argv["--Zone"],
+        "ComputeType": argv["--ComputeType"],
         "OsTypeId": Utils.try_to_json(argv, "--OsTypeId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "SpotStrategy": Utils.try_to_json(argv, "--SpotStrategy"),
+        "SpotStrategy": argv["--SpotStrategy"],
         "SpotPriceLimit": Utils.try_to_json(argv, "--SpotPriceLimit"),
-        "Passwd": Utils.try_to_json(argv, "--Passwd"),
+        "Passwd": argv["--Passwd"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1311,12 +1311,12 @@ def doDescribeDeviceInventory(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
-        "DeviceClassCode": Utils.try_to_json(argv, "--DeviceClassCode"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "Zone": argv["--Zone"],
+        "DeviceClassCode": argv["--DeviceClassCode"],
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "CpuId": Utils.try_to_json(argv, "--CpuId"),
-        "DiskType": Utils.try_to_json(argv, "--DiskType"),
+        "DiskType": argv["--DiskType"],
         "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
         "DiskNum": Utils.try_to_json(argv, "--DiskNum"),
         "Mem": Utils.try_to_json(argv, "--Mem"),
@@ -1353,9 +1353,9 @@ def doDescribeDeviceOperationLog(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "InstanceId": argv["--InstanceId"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -1392,10 +1392,10 @@ def doDescribeTaskInfo(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "StartDate": argv["--StartDate"],
+        "EndDate": argv["--EndDate"],
         "TaskStatus": Utils.try_to_json(argv, "--TaskStatus"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
         "TaskIds": Utils.try_to_json(argv, "--TaskIds"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
@@ -1433,8 +1433,8 @@ def doRepairTaskControl(argv, arglist):
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-        "Operate": Utils.try_to_json(argv, "--Operate"),
+        "TaskId": argv["--TaskId"],
+        "Operate": argv["--Operate"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1469,21 +1469,21 @@ def doDescribeDevices(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "DeviceClassCode": Utils.try_to_json(argv, "--DeviceClassCode"),
+        "DeviceClassCode": argv["--DeviceClassCode"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "WanIps": Utils.try_to_json(argv, "--WanIps"),
         "LanIps": Utils.try_to_json(argv, "--LanIps"),
-        "Alias": Utils.try_to_json(argv, "--Alias"),
-        "VagueIp": Utils.try_to_json(argv, "--VagueIp"),
-        "DeadlineStartTime": Utils.try_to_json(argv, "--DeadlineStartTime"),
-        "DeadlineEndTime": Utils.try_to_json(argv, "--DeadlineEndTime"),
+        "Alias": argv["--Alias"],
+        "VagueIp": argv["--VagueIp"],
+        "DeadlineStartTime": argv["--DeadlineStartTime"],
+        "DeadlineEndTime": argv["--DeadlineEndTime"],
         "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "Tags": Utils.try_to_json(argv, "--Tags"),
-        "DeviceType": Utils.try_to_json(argv, "--DeviceType"),
+        "DeviceType": argv["--DeviceType"],
         "IsLuckyDevice": Utils.try_to_json(argv, "--IsLuckyDevice"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
 
     }
@@ -1549,8 +1549,8 @@ def doSetOutBandVpnAuthPassword(argv, arglist):
         return
 
     param = {
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "Operate": Utils.try_to_json(argv, "--Operate"),
+        "Password": argv["--Password"],
+        "Operate": argv["--Operate"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1585,10 +1585,10 @@ def doDescribeCustomImages(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+        "ImageId": argv["--ImageId"],
+        "SearchKey": argv["--SearchKey"],
         "ImageStatus": Utils.try_to_json(argv, "--ImageStatus"),
 
     }
@@ -1655,7 +1655,7 @@ def doDescribeDevicePartition(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1722,7 +1722,7 @@ def doResetDevicePassword(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "Password": argv["--Password"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1755,8 +1755,8 @@ def doDescribeDeviceClassPartition(argv, arglist):
         return
 
     param = {
-        "DeviceClassCode": Utils.try_to_json(argv, "--DeviceClassCode"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "DeviceClassCode": argv["--DeviceClassCode"],
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1789,9 +1789,9 @@ def doCreateCustomImage(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "ImageName": Utils.try_to_json(argv, "--ImageName"),
-        "ImageDescription": Utils.try_to_json(argv, "--ImageDescription"),
+        "InstanceId": argv["--InstanceId"],
+        "ImageName": argv["--ImageName"],
+        "ImageDescription": argv["--ImageDescription"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

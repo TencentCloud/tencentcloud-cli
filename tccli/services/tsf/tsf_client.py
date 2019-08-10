@@ -26,10 +26,10 @@ def doDescribeSimpleApplications(argv, arglist):
 
     param = {
         "ApplicationIdList": Utils.try_to_json(argv, "--ApplicationIdList"),
-        "ApplicationType": Utils.try_to_json(argv, "--ApplicationType"),
+        "ApplicationType": argv["--ApplicationType"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "MicroserviceType": Utils.try_to_json(argv, "--MicroserviceType"),
+        "MicroserviceType": argv["--MicroserviceType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -62,11 +62,11 @@ def doCreateGroup(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "GroupDesc": Utils.try_to_json(argv, "--GroupDesc"),
+        "ApplicationId": argv["--ApplicationId"],
+        "NamespaceId": argv["--NamespaceId"],
+        "GroupName": argv["--GroupName"],
+        "ClusterId": argv["--ClusterId"],
+        "GroupDesc": argv["--GroupDesc"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -99,13 +99,13 @@ def doCreateCluster(argv, arglist):
         return
 
     param = {
-        "ClusterName": Utils.try_to_json(argv, "--ClusterName"),
-        "ClusterType": Utils.try_to_json(argv, "--ClusterType"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "ClusterCIDR": Utils.try_to_json(argv, "--ClusterCIDR"),
-        "ClusterDesc": Utils.try_to_json(argv, "--ClusterDesc"),
-        "TsfRegionId": Utils.try_to_json(argv, "--TsfRegionId"),
-        "TsfZoneId": Utils.try_to_json(argv, "--TsfZoneId"),
+        "ClusterName": argv["--ClusterName"],
+        "ClusterType": argv["--ClusterType"],
+        "VpcId": argv["--VpcId"],
+        "ClusterCIDR": argv["--ClusterCIDR"],
+        "ClusterDesc": argv["--ClusterDesc"],
+        "TsfRegionId": argv["--TsfRegionId"],
+        "TsfZoneId": argv["--TsfZoneId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -138,9 +138,9 @@ def doDescribePkgs(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "SearchWord": Utils.try_to_json(argv, "--SearchWord"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "ApplicationId": argv["--ApplicationId"],
+        "SearchWord": argv["--SearchWord"],
+        "OrderBy": argv["--OrderBy"],
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -176,7 +176,7 @@ def doModifyContainerReplicas(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
         "InstanceNum": Utils.try_to_json(argv, "--InstanceNum"),
 
     }
@@ -210,7 +210,7 @@ def doStartContainerGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -244,10 +244,10 @@ def doDescribeSimpleNamespaces(argv, arglist):
 
     param = {
         "NamespaceIdList": Utils.try_to_json(argv, "--NamespaceIdList"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ClusterId": argv["--ClusterId"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
+        "NamespaceId": argv["--NamespaceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -280,18 +280,18 @@ def doDeployContainerGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "Server": Utils.try_to_json(argv, "--Server"),
-        "TagName": Utils.try_to_json(argv, "--TagName"),
+        "GroupId": argv["--GroupId"],
+        "Server": argv["--Server"],
+        "TagName": argv["--TagName"],
         "InstanceNum": Utils.try_to_json(argv, "--InstanceNum"),
-        "Reponame": Utils.try_to_json(argv, "--Reponame"),
-        "CpuLimit": Utils.try_to_json(argv, "--CpuLimit"),
-        "MemLimit": Utils.try_to_json(argv, "--MemLimit"),
-        "JvmOpts": Utils.try_to_json(argv, "--JvmOpts"),
-        "CpuRequest": Utils.try_to_json(argv, "--CpuRequest"),
-        "MemRequest": Utils.try_to_json(argv, "--MemRequest"),
+        "Reponame": argv["--Reponame"],
+        "CpuLimit": argv["--CpuLimit"],
+        "MemLimit": argv["--MemLimit"],
+        "JvmOpts": argv["--JvmOpts"],
+        "CpuRequest": argv["--CpuRequest"],
+        "MemRequest": argv["--MemRequest"],
         "DoNotStart": Utils.try_to_json(argv, "--DoNotStart"),
-        "RepoName": Utils.try_to_json(argv, "--RepoName"),
+        "RepoName": argv["--RepoName"],
         "UpdateType": Utils.try_to_json(argv, "--UpdateType"),
         "UpdateIvl": Utils.try_to_json(argv, "--UpdateIvl"),
 
@@ -326,9 +326,9 @@ def doCreateNamespace(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "NamespaceName": Utils.try_to_json(argv, "--NamespaceName"),
-        "NamespaceDesc": Utils.try_to_json(argv, "--NamespaceDesc"),
+        "ClusterId": argv["--ClusterId"],
+        "NamespaceName": argv["--NamespaceName"],
+        "NamespaceDesc": argv["--NamespaceDesc"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -361,7 +361,7 @@ def doDeleteApplication(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
+        "ApplicationId": argv["--ApplicationId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -394,7 +394,7 @@ def doDeleteMicroservice(argv, arglist):
         return
 
     param = {
-        "MicroserviceId": Utils.try_to_json(argv, "--MicroserviceId"),
+        "MicroserviceId": argv["--MicroserviceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -427,7 +427,7 @@ def doRemoveInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ClusterId": argv["--ClusterId"],
         "InstanceIdList": Utils.try_to_json(argv, "--InstanceIdList"),
 
     }
@@ -461,8 +461,8 @@ def doDeleteNamespace(argv, arglist):
         return
 
     param = {
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "NamespaceId": argv["--NamespaceId"],
+        "ClusterId": argv["--ClusterId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -495,9 +495,9 @@ def doDescribeGroupInstances(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "SearchWord": Utils.try_to_json(argv, "--SearchWord"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "GroupId": argv["--GroupId"],
+        "SearchWord": argv["--SearchWord"],
+        "OrderBy": argv["--OrderBy"],
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -533,9 +533,9 @@ def doDeployGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "PkgId": Utils.try_to_json(argv, "--PkgId"),
-        "StartupParameters": Utils.try_to_json(argv, "--StartupParameters"),
+        "GroupId": argv["--GroupId"],
+        "PkgId": argv["--PkgId"],
+        "StartupParameters": argv["--StartupParameters"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -568,7 +568,7 @@ def doDeletePkgs(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
+        "ApplicationId": argv["--ApplicationId"],
         "PkgIds": Utils.try_to_json(argv, "--PkgIds"),
 
     }
@@ -602,9 +602,9 @@ def doCreateMicroservice(argv, arglist):
         return
 
     param = {
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
-        "MicroserviceName": Utils.try_to_json(argv, "--MicroserviceName"),
-        "MicroserviceDesc": Utils.try_to_json(argv, "--MicroserviceDesc"),
+        "NamespaceId": argv["--NamespaceId"],
+        "MicroserviceName": argv["--MicroserviceName"],
+        "MicroserviceDesc": argv["--MicroserviceDesc"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -637,9 +637,9 @@ def doDescribeMicroservices(argv, arglist):
         return
 
     param = {
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
-        "SearchWord": Utils.try_to_json(argv, "--SearchWord"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "NamespaceId": argv["--NamespaceId"],
+        "SearchWord": argv["--SearchWord"],
+        "OrderBy": argv["--OrderBy"],
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -675,7 +675,7 @@ def doDeleteGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -708,7 +708,7 @@ def doDescribeGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -741,7 +741,7 @@ def doExpandGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
         "InstanceIdList": Utils.try_to_json(argv, "--InstanceIdList"),
 
     }
@@ -775,7 +775,7 @@ def doDescribeContainerGroupDetail(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -808,7 +808,7 @@ def doDeleteContainerGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -841,8 +841,8 @@ def doModifyMicroservice(argv, arglist):
         return
 
     param = {
-        "MicroserviceId": Utils.try_to_json(argv, "--MicroserviceId"),
-        "MicroserviceDesc": Utils.try_to_json(argv, "--MicroserviceDesc"),
+        "MicroserviceId": argv["--MicroserviceId"],
+        "MicroserviceDesc": argv["--MicroserviceDesc"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -875,7 +875,7 @@ def doDescribeImageTags(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
+        "ApplicationId": argv["--ApplicationId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "QueryImageIdFlag": Utils.try_to_json(argv, "--QueryImageIdFlag"),
@@ -911,10 +911,10 @@ def doModifyUploadInfo(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "PkgId": Utils.try_to_json(argv, "--PkgId"),
+        "ApplicationId": argv["--ApplicationId"],
+        "PkgId": argv["--PkgId"],
         "Result": Utils.try_to_json(argv, "--Result"),
-        "Md5": Utils.try_to_json(argv, "--Md5"),
+        "Md5": argv["--Md5"],
         "Size": Utils.try_to_json(argv, "--Size"),
 
     }
@@ -948,7 +948,7 @@ def doShrinkInstances(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
         "InstanceIdList": Utils.try_to_json(argv, "--InstanceIdList"),
 
     }
@@ -982,7 +982,7 @@ def doDescribeApplicationAttribute(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
+        "ApplicationId": argv["--ApplicationId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1016,7 +1016,7 @@ def doDescribeSimpleClusters(argv, arglist):
 
     param = {
         "ClusterIdList": Utils.try_to_json(argv, "--ClusterIdList"),
-        "ClusterType": Utils.try_to_json(argv, "--ClusterType"),
+        "ClusterType": argv["--ClusterType"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -1051,20 +1051,20 @@ def doCreateContainGroup(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "ApplicationId": argv["--ApplicationId"],
+        "NamespaceId": argv["--NamespaceId"],
+        "GroupName": argv["--GroupName"],
         "InstanceNum": Utils.try_to_json(argv, "--InstanceNum"),
         "AccessType": Utils.try_to_json(argv, "--AccessType"),
         "ProtocolPorts": Utils.try_to_json(argv, "--ProtocolPorts"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "CpuLimit": Utils.try_to_json(argv, "--CpuLimit"),
-        "MemLimit": Utils.try_to_json(argv, "--MemLimit"),
-        "GroupComment": Utils.try_to_json(argv, "--GroupComment"),
+        "ClusterId": argv["--ClusterId"],
+        "CpuLimit": argv["--CpuLimit"],
+        "MemLimit": argv["--MemLimit"],
+        "GroupComment": argv["--GroupComment"],
         "UpdateType": Utils.try_to_json(argv, "--UpdateType"),
         "UpdateIvl": Utils.try_to_json(argv, "--UpdateIvl"),
-        "CpuRequest": Utils.try_to_json(argv, "--CpuRequest"),
-        "MemRequest": Utils.try_to_json(argv, "--MemRequest"),
+        "CpuRequest": argv["--CpuRequest"],
+        "MemRequest": argv["--MemRequest"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1097,14 +1097,14 @@ def doDescribeGroups(argv, arglist):
         return
 
     param = {
-        "SearchWord": Utils.try_to_json(argv, "--SearchWord"),
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "SearchWord": argv["--SearchWord"],
+        "ApplicationId": argv["--ApplicationId"],
+        "OrderBy": argv["--OrderBy"],
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "NamespaceId": argv["--NamespaceId"],
+        "ClusterId": argv["--ClusterId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1137,7 +1137,7 @@ def doModifyContainerGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
         "AccessType": Utils.try_to_json(argv, "--AccessType"),
         "ProtocolPorts": Utils.try_to_json(argv, "--ProtocolPorts"),
         "UpdateType": Utils.try_to_json(argv, "--UpdateType"),
@@ -1174,7 +1174,7 @@ def doShrinkGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1207,11 +1207,11 @@ def doDescribeUploadInfo(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "PkgName": Utils.try_to_json(argv, "--PkgName"),
-        "PkgVersion": Utils.try_to_json(argv, "--PkgVersion"),
-        "PkgType": Utils.try_to_json(argv, "--PkgType"),
-        "PkgDesc": Utils.try_to_json(argv, "--PkgDesc"),
+        "ApplicationId": argv["--ApplicationId"],
+        "PkgName": argv["--PkgName"],
+        "PkgVersion": argv["--PkgVersion"],
+        "PkgType": argv["--PkgType"],
+        "PkgDesc": argv["--PkgDesc"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1244,14 +1244,14 @@ def doDescribeContainerGroups(argv, arglist):
         return
 
     param = {
-        "SearchWord": Utils.try_to_json(argv, "--SearchWord"),
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "SearchWord": argv["--SearchWord"],
+        "ApplicationId": argv["--ApplicationId"],
+        "OrderBy": argv["--OrderBy"],
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
+        "ClusterId": argv["--ClusterId"],
+        "NamespaceId": argv["--NamespaceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1317,9 +1317,9 @@ def doDescribeClusterInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "SearchWord": Utils.try_to_json(argv, "--SearchWord"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "ClusterId": argv["--ClusterId"],
+        "SearchWord": argv["--SearchWord"],
+        "OrderBy": argv["--OrderBy"],
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -1355,11 +1355,11 @@ def doCreateApplication(argv, arglist):
         return
 
     param = {
-        "ApplicationName": Utils.try_to_json(argv, "--ApplicationName"),
-        "ApplicationType": Utils.try_to_json(argv, "--ApplicationType"),
-        "ApplicationDesc": Utils.try_to_json(argv, "--ApplicationDesc"),
-        "ApplicationLogConfig": Utils.try_to_json(argv, "--ApplicationLogConfig"),
-        "MicroserviceType": Utils.try_to_json(argv, "--MicroserviceType"),
+        "ApplicationName": argv["--ApplicationName"],
+        "ApplicationType": argv["--ApplicationType"],
+        "ApplicationDesc": argv["--ApplicationDesc"],
+        "ApplicationLogConfig": argv["--ApplicationLogConfig"],
+        "MicroserviceType": argv["--MicroserviceType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1392,7 +1392,7 @@ def doStopGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1425,8 +1425,8 @@ def doDescribeDownloadInfo(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "PkgId": Utils.try_to_json(argv, "--PkgId"),
+        "ApplicationId": argv["--ApplicationId"],
+        "PkgId": argv["--PkgId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1460,13 +1460,13 @@ def doDescribeSimpleGroups(argv, arglist):
 
     param = {
         "GroupIdList": Utils.try_to_json(argv, "--GroupIdList"),
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "NamespaceId": Utils.try_to_json(argv, "--NamespaceId"),
+        "ApplicationId": argv["--ApplicationId"],
+        "ClusterId": argv["--ClusterId"],
+        "NamespaceId": argv["--NamespaceId"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "SearchWord": Utils.try_to_json(argv, "--SearchWord"),
+        "GroupId": argv["--GroupId"],
+        "SearchWord": argv["--SearchWord"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1499,13 +1499,13 @@ def doDescribeApplications(argv, arglist):
         return
 
     param = {
-        "SearchWord": Utils.try_to_json(argv, "--SearchWord"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "SearchWord": argv["--SearchWord"],
+        "OrderBy": argv["--OrderBy"],
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "ApplicationType": Utils.try_to_json(argv, "--ApplicationType"),
-        "MicroserviceType": Utils.try_to_json(argv, "--MicroserviceType"),
+        "ApplicationType": argv["--ApplicationType"],
+        "MicroserviceType": argv["--MicroserviceType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1538,7 +1538,7 @@ def doStartGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1571,7 +1571,7 @@ def doStopContainerGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupId": argv["--GroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1604,7 +1604,7 @@ def doDescribeApplication(argv, arglist):
         return
 
     param = {
-        "ApplicationId": Utils.try_to_json(argv, "--ApplicationId"),
+        "ApplicationId": argv["--ApplicationId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1637,7 +1637,7 @@ def doDescribeMicroservice(argv, arglist):
         return
 
     param = {
-        "MicroserviceId": Utils.try_to_json(argv, "--MicroserviceId"),
+        "MicroserviceId": argv["--MicroserviceId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -1672,14 +1672,14 @@ def doAddInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ClusterId": argv["--ClusterId"],
         "InstanceIdList": Utils.try_to_json(argv, "--InstanceIdList"),
-        "OsName": Utils.try_to_json(argv, "--OsName"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
-        "SgId": Utils.try_to_json(argv, "--SgId"),
-        "InstanceImportMode": Utils.try_to_json(argv, "--InstanceImportMode"),
+        "OsName": argv["--OsName"],
+        "ImageId": argv["--ImageId"],
+        "Password": argv["--Password"],
+        "KeyId": argv["--KeyId"],
+        "SgId": argv["--SgId"],
+        "InstanceImportMode": argv["--InstanceImportMode"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

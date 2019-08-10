@@ -59,7 +59,7 @@ def doDescribeShieldResult(argv, arglist):
         return
 
     param = {
-        "ItemId": Utils.try_to_json(argv, "--ItemId"),
+        "ItemId": argv["--ItemId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -126,7 +126,7 @@ def doCreateResourceInstances(argv, arglist):
 
     param = {
         "Pid": Utils.try_to_json(argv, "--Pid"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "TimeUnit": argv["--TimeUnit"],
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
         "ResourceNum": Utils.try_to_json(argv, "--ResourceNum"),
 
@@ -161,10 +161,10 @@ def doCreateBindInstance(argv, arglist):
         return
 
     param = {
-        "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
-        "AppIconUrl": Utils.try_to_json(argv, "--AppIconUrl"),
-        "AppName": Utils.try_to_json(argv, "--AppName"),
-        "AppPkgName": Utils.try_to_json(argv, "--AppPkgName"),
+        "ResourceId": argv["--ResourceId"],
+        "AppIconUrl": argv["--AppIconUrl"],
+        "AppName": argv["--AppName"],
+        "AppPkgName": argv["--AppPkgName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -197,7 +197,7 @@ def doCreateCosSecKeyInstance(argv, arglist):
         return
 
     param = {
-        "CosRegion": Utils.try_to_json(argv, "--CosRegion"),
+        "CosRegion": argv["--CosRegion"],
         "Duration": Utils.try_to_json(argv, "--Duration"),
 
     }
@@ -235,8 +235,8 @@ def doDescribeResourceInstances(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "OrderField": argv["--OrderField"],
+        "OrderDirection": argv["--OrderDirection"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -269,7 +269,7 @@ def doDescribeScanResults(argv, arglist):
         return
 
     param = {
-        "ItemId": Utils.try_to_json(argv, "--ItemId"),
+        "ItemId": argv["--ItemId"],
         "AppMd5s": Utils.try_to_json(argv, "--AppMd5s"),
 
     }
@@ -303,7 +303,7 @@ def doDescribeShieldPlanInstance(argv, arglist):
         return
 
     param = {
-        "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
+        "ResourceId": argv["--ResourceId"],
         "Pid": Utils.try_to_json(argv, "--Pid"),
 
     }
@@ -375,8 +375,8 @@ def doDescribeShieldInstances(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "ItemIds": Utils.try_to_json(argv, "--ItemIds"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "OrderField": argv["--OrderField"],
+        "OrderDirection": argv["--OrderDirection"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -409,8 +409,8 @@ def doCreateShieldPlanInstance(argv, arglist):
         return
 
     param = {
-        "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
-        "PlanName": Utils.try_to_json(argv, "--PlanName"),
+        "ResourceId": argv["--ResourceId"],
+        "PlanName": argv["--PlanName"],
         "PlanInfo": Utils.try_to_json(argv, "--PlanInfo"),
 
     }
@@ -480,8 +480,8 @@ def doDescribeScanInstances(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "ItemIds": Utils.try_to_json(argv, "--ItemIds"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "OrderField": argv["--OrderField"],
+        "OrderDirection": argv["--OrderDirection"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

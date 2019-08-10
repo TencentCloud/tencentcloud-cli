@@ -25,8 +25,8 @@ def doCreateLibrary(argv, arglist):
         return
 
     param = {
-        "LibraryName": Utils.try_to_json(argv, "--LibraryName"),
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
+        "LibraryName": argv["--LibraryName"],
+        "LibraryId": argv["--LibraryId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -60,11 +60,11 @@ def doSubmitAudioTask(argv, arglist):
 
     param = {
         "Lang": Utils.try_to_json(argv, "--Lang"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "Url": argv["--Url"],
         "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
         "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
         "Functions": Utils.try_to_json(argv, "--Functions"),
-        "FileType": Utils.try_to_json(argv, "--FileType"),
+        "FileType": argv["--FileType"],
         "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
 
     }
@@ -98,9 +98,9 @@ def doCreateFace(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonId": argv["--PersonId"],
         "Images": Utils.try_to_json(argv, "--Images"),
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
+        "LibraryId": argv["--LibraryId"],
         "Urls": Utils.try_to_json(argv, "--Urls"),
 
     }
@@ -134,14 +134,14 @@ def doModifyPerson(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "JobNumber": Utils.try_to_json(argv, "--JobNumber"),
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
-        "Mail": Utils.try_to_json(argv, "--Mail"),
+        "PersonId": argv["--PersonId"],
+        "JobNumber": argv["--JobNumber"],
+        "LibraryId": argv["--LibraryId"],
+        "Mail": argv["--Mail"],
         "Male": Utils.try_to_json(argv, "--Male"),
-        "PersonName": Utils.try_to_json(argv, "--PersonName"),
-        "PhoneNumber": Utils.try_to_json(argv, "--PhoneNumber"),
-        "StudentNumber": Utils.try_to_json(argv, "--StudentNumber"),
+        "PersonName": argv["--PersonName"],
+        "PhoneNumber": argv["--PhoneNumber"],
+        "StudentNumber": argv["--StudentNumber"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -207,8 +207,8 @@ def doAIAssistant(argv, arglist):
         return
 
     param = {
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
-        "FileType": Utils.try_to_json(argv, "--FileType"),
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
         "Lang": Utils.try_to_json(argv, "--Lang"),
         "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
         "Template": Utils.try_to_json(argv, "--Template"),
@@ -247,8 +247,8 @@ def doModifyLibrary(argv, arglist):
         return
 
     param = {
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
-        "LibraryName": Utils.try_to_json(argv, "--LibraryName"),
+        "LibraryId": argv["--LibraryId"],
+        "LibraryName": argv["--LibraryName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -281,14 +281,14 @@ def doSubmitDoubleVideoHighlights(argv, arglist):
         return
 
     param = {
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
+        "FileContent": argv["--FileContent"],
         "LibIds": Utils.try_to_json(argv, "--LibIds"),
         "Functions": Utils.try_to_json(argv, "--Functions"),
         "PersonInfoList": Utils.try_to_json(argv, "--PersonInfoList"),
         "FrameInterval": Utils.try_to_json(argv, "--FrameInterval"),
         "PersonIds": Utils.try_to_json(argv, "--PersonIds"),
         "SimThreshold": Utils.try_to_json(argv, "--SimThreshold"),
-        "TeacherFileContent": Utils.try_to_json(argv, "--TeacherFileContent"),
+        "TeacherFileContent": argv["--TeacherFileContent"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -321,7 +321,7 @@ def doDescribePersons(argv, arglist):
         return
 
     param = {
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
+        "LibraryId": argv["--LibraryId"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -360,8 +360,8 @@ def doSubmitConversationTask(argv, arglist):
         "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
         "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
         "Functions": Utils.try_to_json(argv, "--Functions"),
-        "StudentUrl": Utils.try_to_json(argv, "--StudentUrl"),
-        "TeacherUrl": Utils.try_to_json(argv, "--TeacherUrl"),
+        "StudentUrl": argv["--StudentUrl"],
+        "TeacherUrl": argv["--TeacherUrl"],
         "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
 
     }
@@ -463,8 +463,8 @@ def doDeletePerson(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
+        "PersonId": argv["--PersonId"],
+        "LibraryId": argv["--LibraryId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -529,14 +529,14 @@ def doCreatePerson(argv, arglist):
         return
 
     param = {
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
-        "PersonName": Utils.try_to_json(argv, "--PersonName"),
-        "JobNumber": Utils.try_to_json(argv, "--JobNumber"),
-        "Mail": Utils.try_to_json(argv, "--Mail"),
+        "LibraryId": argv["--LibraryId"],
+        "PersonName": argv["--PersonName"],
+        "JobNumber": argv["--JobNumber"],
+        "Mail": argv["--Mail"],
         "Male": Utils.try_to_json(argv, "--Male"),
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "PhoneNumber": Utils.try_to_json(argv, "--PhoneNumber"),
-        "StudentNumber": Utils.try_to_json(argv, "--StudentNumber"),
+        "PersonId": argv["--PersonId"],
+        "PhoneNumber": argv["--PhoneNumber"],
+        "StudentNumber": argv["--StudentNumber"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -570,8 +570,8 @@ def doSubmitHighlights(argv, arglist):
 
     param = {
         "Functions": Utils.try_to_json(argv, "--Functions"),
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
-        "FileType": Utils.try_to_json(argv, "--FileType"),
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
         "LibIds": Utils.try_to_json(argv, "--LibIds"),
         "FrameInterval": Utils.try_to_json(argv, "--FrameInterval"),
         "KeywordsLanguage": Utils.try_to_json(argv, "--KeywordsLanguage"),
@@ -642,7 +642,7 @@ def doCreateVocab(argv, arglist):
         return
 
     param = {
-        "VocabLibName": Utils.try_to_json(argv, "--VocabLibName"),
+        "VocabLibName": argv["--VocabLibName"],
         "VocabList": Utils.try_to_json(argv, "--VocabList"),
 
     }
@@ -676,13 +676,13 @@ def doSubmitCheckAttendanceTask(argv, arglist):
         return
 
     param = {
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
-        "FileType": Utils.try_to_json(argv, "--FileType"),
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
         "LibraryIds": Utils.try_to_json(argv, "--LibraryIds"),
         "AttendanceThreshold": Utils.try_to_json(argv, "--AttendanceThreshold"),
         "EnableStranger": Utils.try_to_json(argv, "--EnableStranger"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "NoticeUrl": Utils.try_to_json(argv, "--NoticeUrl"),
+        "NoticeUrl": argv["--NoticeUrl"],
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "Threshold": Utils.try_to_json(argv, "--Threshold"),
 
@@ -786,7 +786,7 @@ def doDeleteLibrary(argv, arglist):
         return
 
     param = {
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
+        "LibraryId": argv["--LibraryId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -854,8 +854,8 @@ def doSubmitImageTask(argv, arglist):
         return
 
     param = {
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
-        "FileType": Utils.try_to_json(argv, "--FileType"),
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
         "Functions": Utils.try_to_json(argv, "--Functions"),
         "LightStandardSet": Utils.try_to_json(argv, "--LightStandardSet"),
         "FrameInterval": Utils.try_to_json(argv, "--FrameInterval"),
@@ -927,7 +927,7 @@ def doCreateVocabLib(argv, arglist):
         return
 
     param = {
-        "VocabLibName": Utils.try_to_json(argv, "--VocabLibName"),
+        "VocabLibName": argv["--VocabLibName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -960,7 +960,7 @@ def doDeleteVocab(argv, arglist):
         return
 
     param = {
-        "VocabLibName": Utils.try_to_json(argv, "--VocabLibName"),
+        "VocabLibName": argv["--VocabLibName"],
         "VocabList": Utils.try_to_json(argv, "--VocabList"),
 
     }
@@ -994,9 +994,9 @@ def doCheckAttendance(argv, arglist):
         return
 
     param = {
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
-        "FileType": Utils.try_to_json(argv, "--FileType"),
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
+        "LibraryId": argv["--LibraryId"],
         "PersonIdSet": Utils.try_to_json(argv, "--PersonIdSet"),
         "AttendanceThreshold": Utils.try_to_json(argv, "--AttendanceThreshold"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
@@ -1034,8 +1034,8 @@ def doCheckFacePhoto(argv, arglist):
         return
 
     param = {
-        "FileContent": Utils.try_to_json(argv, "--FileContent"),
-        "FileType": Utils.try_to_json(argv, "--FileType"),
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1068,7 +1068,7 @@ def doDescribeVocab(argv, arglist):
         return
 
     param = {
-        "VocabLibName": Utils.try_to_json(argv, "--VocabLibName"),
+        "VocabLibName": argv["--VocabLibName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1101,7 +1101,7 @@ def doDeleteVocabLib(argv, arglist):
         return
 
     param = {
-        "VocabLibName": Utils.try_to_json(argv, "--VocabLibName"),
+        "VocabLibName": argv["--VocabLibName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1134,8 +1134,8 @@ def doDescribePerson(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
+        "PersonId": argv["--PersonId"],
+        "LibraryId": argv["--LibraryId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1169,8 +1169,8 @@ def doDeleteFace(argv, arglist):
 
     param = {
         "FaceIdSet": Utils.try_to_json(argv, "--FaceIdSet"),
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "LibraryId": Utils.try_to_json(argv, "--LibraryId"),
+        "PersonId": argv["--PersonId"],
+        "LibraryId": argv["--LibraryId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1240,8 +1240,8 @@ def doTransmitAudioStream(argv, arglist):
     param = {
         "Functions": Utils.try_to_json(argv, "--Functions"),
         "SeqId": Utils.try_to_json(argv, "--SeqId"),
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
-        "UserVoiceData": Utils.try_to_json(argv, "--UserVoiceData"),
+        "SessionId": argv["--SessionId"],
+        "UserVoiceData": argv["--UserVoiceData"],
         "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
         "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
         "IsEnd": Utils.try_to_json(argv, "--IsEnd"),

@@ -26,15 +26,15 @@ def doDescribeCaptchaResult(argv, arglist):
 
     param = {
         "CaptchaType": Utils.try_to_json(argv, "--CaptchaType"),
-        "Ticket": Utils.try_to_json(argv, "--Ticket"),
-        "UserIp": Utils.try_to_json(argv, "--UserIp"),
-        "Randstr": Utils.try_to_json(argv, "--Randstr"),
+        "Ticket": argv["--Ticket"],
+        "UserIp": argv["--UserIp"],
+        "Randstr": argv["--Randstr"],
         "CaptchaAppId": Utils.try_to_json(argv, "--CaptchaAppId"),
-        "AppSecretKey": Utils.try_to_json(argv, "--AppSecretKey"),
+        "AppSecretKey": argv["--AppSecretKey"],
         "BusinessId": Utils.try_to_json(argv, "--BusinessId"),
         "SceneId": Utils.try_to_json(argv, "--SceneId"),
-        "MacAddress": Utils.try_to_json(argv, "--MacAddress"),
-        "Imei": Utils.try_to_json(argv, "--Imei"),
+        "MacAddress": argv["--MacAddress"],
+        "Imei": argv["--Imei"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

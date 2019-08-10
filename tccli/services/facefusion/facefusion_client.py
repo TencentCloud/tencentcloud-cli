@@ -25,10 +25,10 @@ def doFaceFusion(argv, arglist):
         return
 
     param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "ModelId": Utils.try_to_json(argv, "--ModelId"),
-        "Image": Utils.try_to_json(argv, "--Image"),
-        "RspImgType": Utils.try_to_json(argv, "--RspImgType"),
+        "ProjectId": argv["--ProjectId"],
+        "ModelId": argv["--ModelId"],
+        "Image": argv["--Image"],
+        "RspImgType": argv["--RspImgType"],
         "PornDetect": Utils.try_to_json(argv, "--PornDetect"),
         "CelebrityIdentify": Utils.try_to_json(argv, "--CelebrityIdentify"),
 

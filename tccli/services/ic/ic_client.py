@@ -26,8 +26,8 @@ def doSendSms(argv, arglist):
 
     param = {
         "Sdkappid": Utils.try_to_json(argv, "--Sdkappid"),
-        "Iccid": Utils.try_to_json(argv, "--Iccid"),
-        "Content": Utils.try_to_json(argv, "--Content"),
+        "Iccid": argv["--Iccid"],
+        "Content": argv["--Content"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -93,9 +93,9 @@ def doSendMultiSms(argv, arglist):
         return
 
     param = {
-        "Sdkappid": Utils.try_to_json(argv, "--Sdkappid"),
+        "Sdkappid": argv["--Sdkappid"],
         "Iccids": Utils.try_to_json(argv, "--Iccids"),
-        "Content": Utils.try_to_json(argv, "--Content"),
+        "Content": argv["--Content"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -129,7 +129,7 @@ def doDescribeCard(argv, arglist):
 
     param = {
         "Sdkappid": Utils.try_to_json(argv, "--Sdkappid"),
-        "Iccid": Utils.try_to_json(argv, "--Iccid"),
+        "Iccid": argv["--Iccid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -162,7 +162,7 @@ def doDescribeCards(argv, arglist):
         return
 
     param = {
-        "Sdkappid": Utils.try_to_json(argv, "--Sdkappid"),
+        "Sdkappid": argv["--Sdkappid"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 

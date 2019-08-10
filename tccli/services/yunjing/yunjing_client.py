@@ -158,7 +158,7 @@ def doDescribeHistoryAccounts(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -227,7 +227,7 @@ def doDescribeWeeklyReportBruteAttacks(argv, arglist):
         return
 
     param = {
-        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "BeginDate": argv["--BeginDate"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -262,7 +262,7 @@ def doDescribeBruteAttacks(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -298,7 +298,7 @@ def doDescribeWeeklyReportVuls(argv, arglist):
         return
 
     param = {
-        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "BeginDate": argv["--BeginDate"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -400,7 +400,7 @@ def doDescribeWeeklyReportMalwares(argv, arglist):
         return
 
     param = {
-        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "BeginDate": argv["--BeginDate"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -435,7 +435,7 @@ def doDescribeWeeklyReportInfo(argv, arglist):
         return
 
     param = {
-        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "BeginDate": argv["--BeginDate"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -534,8 +534,8 @@ def doModifyProVersionRenewFlag(argv, arglist):
         return
 
     param = {
-        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
-        "Quuid": Utils.try_to_json(argv, "--Quuid"),
+        "RenewFlag": argv["--RenewFlag"],
+        "Quuid": argv["--Quuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -568,7 +568,7 @@ def doDeleteUsualLoginPlaces(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
         "CityIds": Utils.try_to_json(argv, "--CityIds"),
 
     }
@@ -635,7 +635,7 @@ def doDescribeOpenPorts(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
         "Port": Utils.try_to_json(argv, "--Port"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
@@ -805,7 +805,7 @@ def doDescribeNonlocalLoginPlaces(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -841,7 +841,7 @@ def doDeleteMachine(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -874,7 +874,7 @@ def doDescribeProcessTaskStatus(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -972,7 +972,7 @@ def doDescribeUsualLoginPlaces(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1043,7 +1043,7 @@ def doDescribeMaliciousRequests(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1212,7 +1212,7 @@ def doModifyAutoOpenProVersionConfig(argv, arglist):
         return
 
     param = {
-        "Status": Utils.try_to_json(argv, "--Status"),
+        "Status": argv["--Status"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1245,8 +1245,8 @@ def doDescribeSecurityTrends(argv, arglist):
         return
 
     param = {
-        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
+        "BeginDate": argv["--BeginDate"],
+        "EndDate": argv["--EndDate"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1279,8 +1279,8 @@ def doDescribeAgentVuls(argv, arglist):
         return
 
     param = {
-        "VulType": Utils.try_to_json(argv, "--VulType"),
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "VulType": argv["--VulType"],
+        "Uuid": argv["--Uuid"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -1349,7 +1349,7 @@ def doDescribeWeeklyReportNonlocalLoginPlaces(argv, arglist):
         return
 
     param = {
-        "BeginDate": Utils.try_to_json(argv, "--BeginDate"),
+        "BeginDate": argv["--BeginDate"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -1384,8 +1384,8 @@ def doDescribeAccounts(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
-        "Username": Utils.try_to_json(argv, "--Username"),
+        "Uuid": argv["--Uuid"],
+        "Username": argv["--Username"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -1421,7 +1421,7 @@ def doDescribeVuls(argv, arglist):
         return
 
     param = {
-        "VulType": Utils.try_to_json(argv, "--VulType"),
+        "VulType": argv["--VulType"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -1590,7 +1590,7 @@ def doCloseProVersion(argv, arglist):
         return
 
     param = {
-        "Quuid": Utils.try_to_json(argv, "--Quuid"),
+        "Quuid": argv["--Quuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1658,7 +1658,7 @@ def doCreateProcessTask(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1691,8 +1691,8 @@ def doModifyAlarmAttribute(argv, arglist):
         return
 
     param = {
-        "Attribute": Utils.try_to_json(argv, "--Attribute"),
-        "Value": Utils.try_to_json(argv, "--Value"),
+        "Attribute": argv["--Attribute"],
+        "Value": argv["--Value"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1725,7 +1725,7 @@ def doDescribeMachineInfo(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1790,8 +1790,8 @@ def doDescribeMachines(argv, arglist):
         return
 
     param = {
-        "MachineType": Utils.try_to_json(argv, "--MachineType"),
-        "MachineRegion": Utils.try_to_json(argv, "--MachineRegion"),
+        "MachineType": argv["--MachineType"],
+        "MachineRegion": argv["--MachineRegion"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -1861,7 +1861,7 @@ def doDescribeComponents(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
         "ComponentId": Utils.try_to_json(argv, "--ComponentId"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
@@ -1899,7 +1899,7 @@ def doRenewProVersion(argv, arglist):
 
     param = {
         "ChargePrepaid": Utils.try_to_json(argv, "--ChargePrepaid"),
-        "Quuid": Utils.try_to_json(argv, "--Quuid"),
+        "Quuid": argv["--Quuid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1932,8 +1932,8 @@ def doDescribeProcesses(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
-        "ProcessName": Utils.try_to_json(argv, "--ProcessName"),
+        "Uuid": argv["--Uuid"],
+        "ProcessName": argv["--ProcessName"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -2002,7 +2002,7 @@ def doDescribeMalwares(argv, arglist):
         return
 
     param = {
-        "Uuid": Utils.try_to_json(argv, "--Uuid"),
+        "Uuid": argv["--Uuid"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),

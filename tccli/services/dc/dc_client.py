@@ -25,17 +25,17 @@ def doModifyDirectConnectAttribute(argv, arglist):
         return
 
     param = {
-        "DirectConnectId": Utils.try_to_json(argv, "--DirectConnectId"),
-        "DirectConnectName": Utils.try_to_json(argv, "--DirectConnectName"),
-        "CircuitCode": Utils.try_to_json(argv, "--CircuitCode"),
+        "DirectConnectId": argv["--DirectConnectId"],
+        "DirectConnectName": argv["--DirectConnectName"],
+        "CircuitCode": argv["--CircuitCode"],
         "Vlan": Utils.try_to_json(argv, "--Vlan"),
-        "TencentAddress": Utils.try_to_json(argv, "--TencentAddress"),
-        "CustomerAddress": Utils.try_to_json(argv, "--CustomerAddress"),
-        "CustomerName": Utils.try_to_json(argv, "--CustomerName"),
-        "CustomerContactMail": Utils.try_to_json(argv, "--CustomerContactMail"),
-        "CustomerContactNumber": Utils.try_to_json(argv, "--CustomerContactNumber"),
-        "FaultReportContactPerson": Utils.try_to_json(argv, "--FaultReportContactPerson"),
-        "FaultReportContactNumber": Utils.try_to_json(argv, "--FaultReportContactNumber"),
+        "TencentAddress": argv["--TencentAddress"],
+        "CustomerAddress": argv["--CustomerAddress"],
+        "CustomerName": argv["--CustomerName"],
+        "CustomerContactMail": argv["--CustomerContactMail"],
+        "CustomerContactNumber": argv["--CustomerContactNumber"],
+        "FaultReportContactPerson": argv["--FaultReportContactPerson"],
+        "FaultReportContactNumber": argv["--FaultReportContactNumber"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -68,20 +68,20 @@ def doCreateDirectConnectTunnel(argv, arglist):
         return
 
     param = {
-        "DirectConnectId": Utils.try_to_json(argv, "--DirectConnectId"),
-        "DirectConnectTunnelName": Utils.try_to_json(argv, "--DirectConnectTunnelName"),
-        "DirectConnectOwnerAccount": Utils.try_to_json(argv, "--DirectConnectOwnerAccount"),
-        "NetworkType": Utils.try_to_json(argv, "--NetworkType"),
-        "NetworkRegion": Utils.try_to_json(argv, "--NetworkRegion"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "DirectConnectGatewayId": Utils.try_to_json(argv, "--DirectConnectGatewayId"),
+        "DirectConnectId": argv["--DirectConnectId"],
+        "DirectConnectTunnelName": argv["--DirectConnectTunnelName"],
+        "DirectConnectOwnerAccount": argv["--DirectConnectOwnerAccount"],
+        "NetworkType": argv["--NetworkType"],
+        "NetworkRegion": argv["--NetworkRegion"],
+        "VpcId": argv["--VpcId"],
+        "DirectConnectGatewayId": argv["--DirectConnectGatewayId"],
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
-        "RouteType": Utils.try_to_json(argv, "--RouteType"),
+        "RouteType": argv["--RouteType"],
         "BgpPeer": Utils.try_to_json(argv, "--BgpPeer"),
         "RouteFilterPrefixes": Utils.try_to_json(argv, "--RouteFilterPrefixes"),
         "Vlan": Utils.try_to_json(argv, "--Vlan"),
-        "TencentAddress": Utils.try_to_json(argv, "--TencentAddress"),
-        "CustomerAddress": Utils.try_to_json(argv, "--CustomerAddress"),
+        "TencentAddress": argv["--TencentAddress"],
+        "CustomerAddress": argv["--CustomerAddress"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -114,7 +114,7 @@ def doDeleteDirectConnect(argv, arglist):
         return
 
     param = {
-        "DirectConnectId": Utils.try_to_json(argv, "--DirectConnectId"),
+        "DirectConnectId": argv["--DirectConnectId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -147,7 +147,7 @@ def doAcceptDirectConnectTunnel(argv, arglist):
         return
 
     param = {
-        "DirectConnectTunnelId": Utils.try_to_json(argv, "--DirectConnectTunnelId"),
+        "DirectConnectTunnelId": argv["--DirectConnectTunnelId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -180,7 +180,7 @@ def doDeleteDirectConnectTunnel(argv, arglist):
         return
 
     param = {
-        "DirectConnectTunnelId": Utils.try_to_json(argv, "--DirectConnectTunnelId"),
+        "DirectConnectTunnelId": argv["--DirectConnectTunnelId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -213,7 +213,7 @@ def doDescribeAccessPoints(argv, arglist):
         return
 
     param = {
-        "RegionId": Utils.try_to_json(argv, "--RegionId"),
+        "RegionId": argv["--RegionId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -284,22 +284,22 @@ def doCreateDirectConnect(argv, arglist):
         return
 
     param = {
-        "DirectConnectName": Utils.try_to_json(argv, "--DirectConnectName"),
-        "AccessPointId": Utils.try_to_json(argv, "--AccessPointId"),
-        "LineOperator": Utils.try_to_json(argv, "--LineOperator"),
-        "Location": Utils.try_to_json(argv, "--Location"),
-        "PortType": Utils.try_to_json(argv, "--PortType"),
-        "CircuitCode": Utils.try_to_json(argv, "--CircuitCode"),
+        "DirectConnectName": argv["--DirectConnectName"],
+        "AccessPointId": argv["--AccessPointId"],
+        "LineOperator": argv["--LineOperator"],
+        "Location": argv["--Location"],
+        "PortType": argv["--PortType"],
+        "CircuitCode": argv["--CircuitCode"],
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
-        "RedundantDirectConnectId": Utils.try_to_json(argv, "--RedundantDirectConnectId"),
+        "RedundantDirectConnectId": argv["--RedundantDirectConnectId"],
         "Vlan": Utils.try_to_json(argv, "--Vlan"),
-        "TencentAddress": Utils.try_to_json(argv, "--TencentAddress"),
-        "CustomerAddress": Utils.try_to_json(argv, "--CustomerAddress"),
-        "CustomerName": Utils.try_to_json(argv, "--CustomerName"),
-        "CustomerContactMail": Utils.try_to_json(argv, "--CustomerContactMail"),
-        "CustomerContactNumber": Utils.try_to_json(argv, "--CustomerContactNumber"),
-        "FaultReportContactPerson": Utils.try_to_json(argv, "--FaultReportContactPerson"),
-        "FaultReportContactNumber": Utils.try_to_json(argv, "--FaultReportContactNumber"),
+        "TencentAddress": argv["--TencentAddress"],
+        "CustomerAddress": argv["--CustomerAddress"],
+        "CustomerName": argv["--CustomerName"],
+        "CustomerContactMail": argv["--CustomerContactMail"],
+        "CustomerContactNumber": argv["--CustomerContactNumber"],
+        "FaultReportContactPerson": argv["--FaultReportContactPerson"],
+        "FaultReportContactNumber": argv["--FaultReportContactNumber"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -332,7 +332,7 @@ def doRejectDirectConnectTunnel(argv, arglist):
         return
 
     param = {
-        "DirectConnectTunnelId": Utils.try_to_json(argv, "--DirectConnectTunnelId"),
+        "DirectConnectTunnelId": argv["--DirectConnectTunnelId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -401,12 +401,12 @@ def doModifyDirectConnectTunnelAttribute(argv, arglist):
         return
 
     param = {
-        "DirectConnectTunnelId": Utils.try_to_json(argv, "--DirectConnectTunnelId"),
-        "DirectConnectTunnelName": Utils.try_to_json(argv, "--DirectConnectTunnelName"),
+        "DirectConnectTunnelId": argv["--DirectConnectTunnelId"],
+        "DirectConnectTunnelName": argv["--DirectConnectTunnelName"],
         "BgpPeer": Utils.try_to_json(argv, "--BgpPeer"),
         "RouteFilterPrefixes": Utils.try_to_json(argv, "--RouteFilterPrefixes"),
-        "TencentAddress": Utils.try_to_json(argv, "--TencentAddress"),
-        "CustomerAddress": Utils.try_to_json(argv, "--CustomerAddress"),
+        "TencentAddress": argv["--TencentAddress"],
+        "CustomerAddress": argv["--CustomerAddress"],
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
 
     }

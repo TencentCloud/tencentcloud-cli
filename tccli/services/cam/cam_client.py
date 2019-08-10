@@ -25,15 +25,15 @@ def doAddUser(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Remark": Utils.try_to_json(argv, "--Remark"),
+        "Name": argv["--Name"],
+        "Remark": argv["--Remark"],
         "ConsoleLogin": Utils.try_to_json(argv, "--ConsoleLogin"),
         "UseApi": Utils.try_to_json(argv, "--UseApi"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "Password": argv["--Password"],
         "NeedResetPassword": Utils.try_to_json(argv, "--NeedResetPassword"),
-        "PhoneNum": Utils.try_to_json(argv, "--PhoneNum"),
-        "CountryCode": Utils.try_to_json(argv, "--CountryCode"),
-        "Email": Utils.try_to_json(argv, "--Email"),
+        "PhoneNum": argv["--PhoneNum"],
+        "CountryCode": argv["--CountryCode"],
+        "Email": argv["--Email"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -66,7 +66,7 @@ def doGetSAMLProvider(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -131,9 +131,9 @@ def doCreateRole(argv, arglist):
         return
 
     param = {
-        "RoleName": Utils.try_to_json(argv, "--RoleName"),
-        "PolicyDocument": Utils.try_to_json(argv, "--PolicyDocument"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "RoleName": argv["--RoleName"],
+        "PolicyDocument": argv["--PolicyDocument"],
+        "Description": argv["--Description"],
         "ConsoleLogin": Utils.try_to_json(argv, "--ConsoleLogin"),
 
     }
@@ -201,9 +201,9 @@ def doListAttachedRolePolicies(argv, arglist):
     param = {
         "Page": Utils.try_to_json(argv, "--Page"),
         "Rp": Utils.try_to_json(argv, "--Rp"),
-        "RoleId": Utils.try_to_json(argv, "--RoleId"),
-        "RoleName": Utils.try_to_json(argv, "--RoleName"),
-        "PolicyType": Utils.try_to_json(argv, "--PolicyType"),
+        "RoleId": argv["--RoleId"],
+        "RoleName": argv["--RoleName"],
+        "PolicyType": argv["--PolicyType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -269,8 +269,8 @@ def doCreateGroup(argv, arglist):
         return
 
     param = {
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "Remark": Utils.try_to_json(argv, "--Remark"),
+        "GroupName": argv["--GroupName"],
+        "Remark": argv["--Remark"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -304,8 +304,8 @@ def doDetachRolePolicy(argv, arglist):
 
     param = {
         "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
-        "DetachRoleId": Utils.try_to_json(argv, "--DetachRoleId"),
-        "DetachRoleName": Utils.try_to_json(argv, "--DetachRoleName"),
+        "DetachRoleId": argv["--DetachRoleId"],
+        "DetachRoleName": argv["--DetachRoleName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -372,9 +372,9 @@ def doCreateSAMLProvider(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "SAMLMetadataDocument": Utils.try_to_json(argv, "--SAMLMetadataDocument"),
+        "Name": argv["--Name"],
+        "Description": argv["--Description"],
+        "SAMLMetadataDocument": argv["--SAMLMetadataDocument"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -407,7 +407,7 @@ def doDeleteSAMLProvider(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -440,14 +440,14 @@ def doUpdateUser(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Remark": Utils.try_to_json(argv, "--Remark"),
+        "Name": argv["--Name"],
+        "Remark": argv["--Remark"],
         "ConsoleLogin": Utils.try_to_json(argv, "--ConsoleLogin"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "Password": argv["--Password"],
         "NeedResetPassword": Utils.try_to_json(argv, "--NeedResetPassword"),
-        "PhoneNum": Utils.try_to_json(argv, "--PhoneNum"),
-        "CountryCode": Utils.try_to_json(argv, "--CountryCode"),
-        "Email": Utils.try_to_json(argv, "--Email"),
+        "PhoneNum": argv["--PhoneNum"],
+        "CountryCode": argv["--CountryCode"],
+        "Email": argv["--Email"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -550,7 +550,7 @@ def doGetCustomMFATokenInfo(argv, arglist):
         return
 
     param = {
-        "MFAToken": Utils.try_to_json(argv, "--MFAToken"),
+        "MFAToken": argv["--MFAToken"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -616,8 +616,8 @@ def doDeleteRole(argv, arglist):
         return
 
     param = {
-        "RoleId": Utils.try_to_json(argv, "--RoleId"),
-        "RoleName": Utils.try_to_json(argv, "--RoleName"),
+        "RoleId": argv["--RoleId"],
+        "RoleName": argv["--RoleName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -650,7 +650,7 @@ def doGetUser(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -684,8 +684,8 @@ def doUpdateGroup(argv, arglist):
 
     param = {
         "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "Remark": Utils.try_to_json(argv, "--Remark"),
+        "GroupName": argv["--GroupName"],
+        "Remark": argv["--Remark"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -753,7 +753,7 @@ def doConsumeCustomMFAToken(argv, arglist):
         return
 
     param = {
-        "MFAToken": Utils.try_to_json(argv, "--MFAToken"),
+        "MFAToken": argv["--MFAToken"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -821,7 +821,7 @@ def doListGroups(argv, arglist):
     param = {
         "Page": Utils.try_to_json(argv, "--Page"),
         "Rp": Utils.try_to_json(argv, "--Rp"),
-        "Keyword": Utils.try_to_json(argv, "--Keyword"),
+        "Keyword": argv["--Keyword"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -888,8 +888,8 @@ def doAttachRolePolicy(argv, arglist):
 
     param = {
         "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
-        "AttachRoleId": Utils.try_to_json(argv, "--AttachRoleId"),
-        "AttachRoleName": Utils.try_to_json(argv, "--AttachRoleName"),
+        "AttachRoleId": argv["--AttachRoleId"],
+        "AttachRoleName": argv["--AttachRoleName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -923,9 +923,9 @@ def doUpdatePolicy(argv, arglist):
 
     param = {
         "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
-        "PolicyName": Utils.try_to_json(argv, "--PolicyName"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "PolicyDocument": Utils.try_to_json(argv, "--PolicyDocument"),
+        "PolicyName": argv["--PolicyName"],
+        "Description": argv["--Description"],
+        "PolicyDocument": argv["--PolicyDocument"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -958,9 +958,9 @@ def doUpdateSAMLProvider(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "SAMLMetadataDocument": Utils.try_to_json(argv, "--SAMLMetadataDocument"),
+        "Name": argv["--Name"],
+        "Description": argv["--Description"],
+        "SAMLMetadataDocument": argv["--SAMLMetadataDocument"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -993,8 +993,8 @@ def doGetRole(argv, arglist):
         return
 
     param = {
-        "RoleId": Utils.try_to_json(argv, "--RoleId"),
-        "RoleName": Utils.try_to_json(argv, "--RoleName"),
+        "RoleId": argv["--RoleId"],
+        "RoleName": argv["--RoleName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1027,9 +1027,9 @@ def doUpdateRoleDescription(argv, arglist):
         return
 
     param = {
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "RoleId": Utils.try_to_json(argv, "--RoleId"),
-        "RoleName": Utils.try_to_json(argv, "--RoleName"),
+        "Description": argv["--Description"],
+        "RoleId": argv["--RoleId"],
+        "RoleName": argv["--RoleName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1097,7 +1097,7 @@ def doDeleteUser(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1199,8 +1199,8 @@ def doListPolicies(argv, arglist):
     param = {
         "Rp": Utils.try_to_json(argv, "--Rp"),
         "Page": Utils.try_to_json(argv, "--Page"),
-        "Scope": Utils.try_to_json(argv, "--Scope"),
-        "Keyword": Utils.try_to_json(argv, "--Keyword"),
+        "Scope": argv["--Scope"],
+        "Keyword": argv["--Keyword"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1305,7 +1305,7 @@ def doListEntitiesForPolicy(argv, arglist):
         "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
         "Page": Utils.try_to_json(argv, "--Page"),
         "Rp": Utils.try_to_json(argv, "--Rp"),
-        "EntityFilter": Utils.try_to_json(argv, "--EntityFilter"),
+        "EntityFilter": argv["--EntityFilter"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1372,9 +1372,9 @@ def doUpdateAssumeRolePolicy(argv, arglist):
         return
 
     param = {
-        "PolicyDocument": Utils.try_to_json(argv, "--PolicyDocument"),
-        "RoleId": Utils.try_to_json(argv, "--RoleId"),
-        "RoleName": Utils.try_to_json(argv, "--RoleName"),
+        "PolicyDocument": argv["--PolicyDocument"],
+        "RoleId": argv["--RoleId"],
+        "RoleName": argv["--RoleName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1407,9 +1407,9 @@ def doCreatePolicy(argv, arglist):
         return
 
     param = {
-        "PolicyName": Utils.try_to_json(argv, "--PolicyName"),
-        "PolicyDocument": Utils.try_to_json(argv, "--PolicyDocument"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "PolicyName": argv["--PolicyName"],
+        "PolicyDocument": argv["--PolicyDocument"],
+        "Description": argv["--Description"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

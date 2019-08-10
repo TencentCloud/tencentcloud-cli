@@ -25,7 +25,7 @@ def doDescribeEntity(argv, arglist):
         return
 
     param = {
-        "EntityName": Utils.try_to_json(argv, "--EntityName"),
+        "EntityName": argv["--EntityName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -58,7 +58,7 @@ def doDescribeTriple(argv, arglist):
         return
 
     param = {
-        "TripleCondition": Utils.try_to_json(argv, "--TripleCondition"),
+        "TripleCondition": argv["--TripleCondition"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -91,8 +91,8 @@ def doDescribeRelation(argv, arglist):
         return
 
     param = {
-        "LeftEntityName": Utils.try_to_json(argv, "--LeftEntityName"),
-        "RightEntityName": Utils.try_to_json(argv, "--RightEntityName"),
+        "LeftEntityName": argv["--LeftEntityName"],
+        "RightEntityName": argv["--RightEntityName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

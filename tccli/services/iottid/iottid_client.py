@@ -25,7 +25,7 @@ def doAuthTestTid(argv, arglist):
         return
 
     param = {
-        "Data": Utils.try_to_json(argv, "--Data"),
+        "Data": argv["--Data"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -58,7 +58,7 @@ def doVerifyChipBurnInfo(argv, arglist):
         return
 
     param = {
-        "Data": Utils.try_to_json(argv, "--Data"),
+        "Data": argv["--Data"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -91,7 +91,7 @@ def doDeliverTids(argv, arglist):
         return
 
     param = {
-        "OrderId": Utils.try_to_json(argv, "--OrderId"),
+        "OrderId": argv["--OrderId"],
         "Quantity": Utils.try_to_json(argv, "--Quantity"),
 
     }
@@ -125,8 +125,8 @@ def doBurnTidNotify(argv, arglist):
         return
 
     param = {
-        "OrderId": Utils.try_to_json(argv, "--OrderId"),
-        "Tid": Utils.try_to_json(argv, "--Tid"),
+        "OrderId": argv["--OrderId"],
+        "Tid": argv["--Tid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -191,8 +191,8 @@ def doDeliverTidNotify(argv, arglist):
         return
 
     param = {
-        "OrderId": Utils.try_to_json(argv, "--OrderId"),
-        "Tid": Utils.try_to_json(argv, "--Tid"),
+        "OrderId": argv["--OrderId"],
+        "Tid": argv["--Tid"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -225,7 +225,7 @@ def doDownloadTids(argv, arglist):
         return
 
     param = {
-        "OrderId": Utils.try_to_json(argv, "--OrderId"),
+        "OrderId": argv["--OrderId"],
         "Quantity": Utils.try_to_json(argv, "--Quantity"),
 
     }

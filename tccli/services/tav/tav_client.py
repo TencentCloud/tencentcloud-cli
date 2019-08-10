@@ -25,8 +25,8 @@ def doGetScanResult(argv, arglist):
         return
 
     param = {
-        "Key": Utils.try_to_json(argv, "--Key"),
-        "Md5": Utils.try_to_json(argv, "--Md5"),
+        "Key": argv["--Key"],
+        "Md5": argv["--Md5"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,10 +59,10 @@ def doScanFileHash(argv, arglist):
         return
 
     param = {
-        "Key": Utils.try_to_json(argv, "--Key"),
-        "Md5s": Utils.try_to_json(argv, "--Md5s"),
-        "WithCategory": Utils.try_to_json(argv, "--WithCategory"),
-        "SensitiveLevel": Utils.try_to_json(argv, "--SensitiveLevel"),
+        "Key": argv["--Key"],
+        "Md5s": argv["--Md5s"],
+        "WithCategory": argv["--WithCategory"],
+        "SensitiveLevel": argv["--SensitiveLevel"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -95,7 +95,7 @@ def doGetLocalEngine(argv, arglist):
         return
 
     param = {
-        "Key": Utils.try_to_json(argv, "--Key"),
+        "Key": argv["--Key"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -128,9 +128,9 @@ def doScanFile(argv, arglist):
         return
 
     param = {
-        "Key": Utils.try_to_json(argv, "--Key"),
-        "Sample": Utils.try_to_json(argv, "--Sample"),
-        "Md5": Utils.try_to_json(argv, "--Md5"),
+        "Key": argv["--Key"],
+        "Sample": argv["--Sample"],
+        "Md5": argv["--Md5"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

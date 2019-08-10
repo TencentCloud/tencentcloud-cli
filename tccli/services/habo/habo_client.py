@@ -25,9 +25,9 @@ def doStartAnalyse(argv, arglist):
         return
 
     param = {
-        "Pk": Utils.try_to_json(argv, "--Pk"),
-        "Md5": Utils.try_to_json(argv, "--Md5"),
-        "DlUrl": Utils.try_to_json(argv, "--DlUrl"),
+        "Pk": argv["--Pk"],
+        "Md5": argv["--Md5"],
+        "DlUrl": argv["--DlUrl"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -60,8 +60,8 @@ def doDescribeStatus(argv, arglist):
         return
 
     param = {
-        "Pk": Utils.try_to_json(argv, "--Pk"),
-        "Md5": Utils.try_to_json(argv, "--Md5"),
+        "Pk": argv["--Pk"],
+        "Md5": argv["--Md5"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -25,7 +25,7 @@ def doCreateSyncCheckJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,7 +59,7 @@ def doSwitchDrToMaster(argv, arglist):
 
     param = {
         "DstInfo": Utils.try_to_json(argv, "--DstInfo"),
-        "DatabaseType": Utils.try_to_json(argv, "--DatabaseType"),
+        "DatabaseType": argv["--DatabaseType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -92,7 +92,7 @@ def doDescribeSyncCheckJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -125,7 +125,7 @@ def doDeleteSyncJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -158,10 +158,10 @@ def doDescribeSyncJobs(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
-        "JobName": Utils.try_to_json(argv, "--JobName"),
-        "Order": Utils.try_to_json(argv, "--Order"),
-        "OrderSeq": Utils.try_to_json(argv, "--OrderSeq"),
+        "JobId": argv["--JobId"],
+        "JobName": argv["--JobName"],
+        "Order": argv["--Order"],
+        "OrderSeq": argv["--OrderSeq"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -196,7 +196,7 @@ def doStartMigrateJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -229,10 +229,10 @@ def doModifySyncJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
-        "JobName": Utils.try_to_json(argv, "--JobName"),
+        "JobId": argv["--JobId"],
+        "JobName": argv["--JobName"],
         "SyncOption": Utils.try_to_json(argv, "--SyncOption"),
-        "DatabaseInfo": Utils.try_to_json(argv, "--DatabaseInfo"),
+        "DatabaseInfo": argv["--DatabaseInfo"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -265,15 +265,15 @@ def doCreateMigrateJob(argv, arglist):
         return
 
     param = {
-        "JobName": Utils.try_to_json(argv, "--JobName"),
+        "JobName": argv["--JobName"],
         "MigrateOption": Utils.try_to_json(argv, "--MigrateOption"),
-        "SrcDatabaseType": Utils.try_to_json(argv, "--SrcDatabaseType"),
-        "SrcAccessType": Utils.try_to_json(argv, "--SrcAccessType"),
+        "SrcDatabaseType": argv["--SrcDatabaseType"],
+        "SrcAccessType": argv["--SrcAccessType"],
         "SrcInfo": Utils.try_to_json(argv, "--SrcInfo"),
-        "DstDatabaseType": Utils.try_to_json(argv, "--DstDatabaseType"),
-        "DstAccessType": Utils.try_to_json(argv, "--DstAccessType"),
+        "DstDatabaseType": argv["--DstDatabaseType"],
+        "DstAccessType": argv["--DstAccessType"],
         "DstInfo": Utils.try_to_json(argv, "--DstInfo"),
-        "DatabaseInfo": Utils.try_to_json(argv, "--DatabaseInfo"),
+        "DatabaseInfo": argv["--DatabaseInfo"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -306,7 +306,7 @@ def doDeleteMigrateJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -339,7 +339,7 @@ def doStartSyncJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -372,7 +372,7 @@ def doCreateMigrateCheckJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -405,14 +405,14 @@ def doModifyMigrateJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
-        "JobName": Utils.try_to_json(argv, "--JobName"),
+        "JobId": argv["--JobId"],
+        "JobName": argv["--JobName"],
         "MigrateOption": Utils.try_to_json(argv, "--MigrateOption"),
-        "SrcAccessType": Utils.try_to_json(argv, "--SrcAccessType"),
+        "SrcAccessType": argv["--SrcAccessType"],
         "SrcInfo": Utils.try_to_json(argv, "--SrcInfo"),
-        "DstAccessType": Utils.try_to_json(argv, "--DstAccessType"),
+        "DstAccessType": argv["--DstAccessType"],
         "DstInfo": Utils.try_to_json(argv, "--DstInfo"),
-        "DatabaseInfo": Utils.try_to_json(argv, "--DatabaseInfo"),
+        "DatabaseInfo": argv["--DatabaseInfo"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -445,15 +445,15 @@ def doCreateSyncJob(argv, arglist):
         return
 
     param = {
-        "JobName": Utils.try_to_json(argv, "--JobName"),
+        "JobName": argv["--JobName"],
         "SyncOption": Utils.try_to_json(argv, "--SyncOption"),
-        "SrcDatabaseType": Utils.try_to_json(argv, "--SrcDatabaseType"),
-        "SrcAccessType": Utils.try_to_json(argv, "--SrcAccessType"),
+        "SrcDatabaseType": argv["--SrcDatabaseType"],
+        "SrcAccessType": argv["--SrcAccessType"],
         "SrcInfo": Utils.try_to_json(argv, "--SrcInfo"),
-        "DstDatabaseType": Utils.try_to_json(argv, "--DstDatabaseType"),
-        "DstAccessType": Utils.try_to_json(argv, "--DstAccessType"),
+        "DstDatabaseType": argv["--DstDatabaseType"],
+        "DstAccessType": argv["--DstAccessType"],
         "DstInfo": Utils.try_to_json(argv, "--DstInfo"),
-        "DatabaseInfo": Utils.try_to_json(argv, "--DatabaseInfo"),
+        "DatabaseInfo": argv["--DatabaseInfo"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -486,7 +486,7 @@ def doStopMigrateJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -519,10 +519,10 @@ def doDescribeMigrateJobs(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
-        "JobName": Utils.try_to_json(argv, "--JobName"),
-        "Order": Utils.try_to_json(argv, "--Order"),
-        "OrderSeq": Utils.try_to_json(argv, "--OrderSeq"),
+        "JobId": argv["--JobId"],
+        "JobName": argv["--JobName"],
+        "Order": argv["--Order"],
+        "OrderSeq": argv["--OrderSeq"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -557,7 +557,7 @@ def doDescribeMigrateCheckJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -590,7 +590,7 @@ def doCompleteMigrateJob(argv, arglist):
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "JobId": argv["--JobId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

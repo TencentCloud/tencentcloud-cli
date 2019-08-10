@@ -26,10 +26,10 @@ def doImageModeration(argv, arglist):
 
     param = {
         "Scenes": Utils.try_to_json(argv, "--Scenes"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "Config": Utils.try_to_json(argv, "--Config"),
-        "Extra": Utils.try_to_json(argv, "--Extra"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "ImageUrl": argv["--ImageUrl"],
+        "Config": argv["--Config"],
+        "Extra": argv["--Extra"],
+        "ImageBase64": argv["--ImageBase64"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

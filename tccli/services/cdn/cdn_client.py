@@ -25,14 +25,14 @@ def doListTopData(argv, arglist):
         return
 
     param = {
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Metric": Utils.try_to_json(argv, "--Metric"),
-        "Filter": Utils.try_to_json(argv, "--Filter"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "Metric": argv["--Metric"],
+        "Filter": argv["--Filter"],
         "Domains": Utils.try_to_json(argv, "--Domains"),
         "Project": Utils.try_to_json(argv, "--Project"),
         "Detail": Utils.try_to_json(argv, "--Detail"),
-        "Code": Utils.try_to_json(argv, "--Code"),
+        "Code": argv["--Code"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -65,12 +65,12 @@ def doDescribeOriginData(argv, arglist):
         return
 
     param = {
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Metric": Utils.try_to_json(argv, "--Metric"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "Metric": argv["--Metric"],
         "Domains": Utils.try_to_json(argv, "--Domains"),
         "Project": Utils.try_to_json(argv, "--Project"),
-        "Interval": Utils.try_to_json(argv, "--Interval"),
+        "Interval": argv["--Interval"],
         "Detail": Utils.try_to_json(argv, "--Detail"),
 
     }
@@ -104,7 +104,7 @@ def doDescribeMapInfo(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -137,10 +137,10 @@ def doGetDisableRecords(argv, arglist):
         return
 
     param = {
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Url": Utils.try_to_json(argv, "--Url"),
-        "Status": Utils.try_to_json(argv, "--Status"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "Url": argv["--Url"],
+        "Status": argv["--Status"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -205,11 +205,11 @@ def doDescribeIpVisit(argv, arglist):
         return
 
     param = {
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "Domains": Utils.try_to_json(argv, "--Domains"),
         "Project": Utils.try_to_json(argv, "--Project"),
-        "Interval": Utils.try_to_json(argv, "--Interval"),
+        "Interval": argv["--Interval"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -242,18 +242,18 @@ def doDescribeCdnData(argv, arglist):
         return
 
     param = {
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Metric": Utils.try_to_json(argv, "--Metric"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "Metric": argv["--Metric"],
         "Domains": Utils.try_to_json(argv, "--Domains"),
         "Project": Utils.try_to_json(argv, "--Project"),
-        "Interval": Utils.try_to_json(argv, "--Interval"),
+        "Interval": argv["--Interval"],
         "Detail": Utils.try_to_json(argv, "--Detail"),
         "Isp": Utils.try_to_json(argv, "--Isp"),
         "District": Utils.try_to_json(argv, "--District"),
-        "Protocol": Utils.try_to_json(argv, "--Protocol"),
-        "DataSource": Utils.try_to_json(argv, "--DataSource"),
-        "IpProtocol": Utils.try_to_json(argv, "--IpProtocol"),
+        "Protocol": argv["--Protocol"],
+        "DataSource": argv["--DataSource"],
+        "IpProtocol": argv["--IpProtocol"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

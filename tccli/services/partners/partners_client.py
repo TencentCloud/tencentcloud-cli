@@ -27,8 +27,8 @@ def doDescribeAgentDealsCache(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "CreatTimeRangeStart": Utils.try_to_json(argv, "--CreatTimeRangeStart"),
-        "CreatTimeRangeEnd": Utils.try_to_json(argv, "--CreatTimeRangeEnd"),
+        "CreatTimeRangeStart": argv["--CreatTimeRangeStart"],
+        "CreatTimeRangeEnd": argv["--CreatTimeRangeEnd"],
         "Order": Utils.try_to_json(argv, "--Order"),
         "Status": Utils.try_to_json(argv, "--Status"),
         "OwnerUins": Utils.try_to_json(argv, "--OwnerUins"),
@@ -66,7 +66,7 @@ def doAgentPayDeals(argv, arglist):
         return
 
     param = {
-        "OwnerUin": Utils.try_to_json(argv, "--OwnerUin"),
+        "OwnerUin": argv["--OwnerUin"],
         "AgentPay": Utils.try_to_json(argv, "--AgentPay"),
         "DealNames": Utils.try_to_json(argv, "--DealNames"),
 
@@ -101,11 +101,11 @@ def doDescribeAgentBills(argv, arglist):
         return
 
     param = {
-        "SettleMonth": Utils.try_to_json(argv, "--SettleMonth"),
-        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
-        "PayMode": Utils.try_to_json(argv, "--PayMode"),
-        "OrderId": Utils.try_to_json(argv, "--OrderId"),
-        "ClientRemark": Utils.try_to_json(argv, "--ClientRemark"),
+        "SettleMonth": argv["--SettleMonth"],
+        "ClientUin": argv["--ClientUin"],
+        "PayMode": argv["--PayMode"],
+        "OrderId": argv["--OrderId"],
+        "ClientRemark": argv["--ClientRemark"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -140,7 +140,7 @@ def doAgentTransferMoney(argv, arglist):
         return
 
     param = {
-        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
+        "ClientUin": argv["--ClientUin"],
         "Amount": Utils.try_to_json(argv, "--Amount"),
 
     }
@@ -174,7 +174,7 @@ def doDescribeRebateInfos(argv, arglist):
         return
 
     param = {
-        "RebateMonth": Utils.try_to_json(argv, "--RebateMonth"),
+        "RebateMonth": argv["--RebateMonth"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -211,9 +211,9 @@ def doDescribeSalesmans(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SalesName": Utils.try_to_json(argv, "--SalesName"),
-        "SalesUin": Utils.try_to_json(argv, "--SalesUin"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "SalesName": argv["--SalesName"],
+        "SalesUin": argv["--SalesUin"],
+        "OrderDirection": argv["--OrderDirection"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -246,8 +246,8 @@ def doModifyClientRemark(argv, arglist):
         return
 
     param = {
-        "ClientRemark": Utils.try_to_json(argv, "--ClientRemark"),
-        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
+        "ClientRemark": argv["--ClientRemark"],
+        "ClientUin": argv["--ClientUin"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -282,8 +282,8 @@ def doDescribeAgentPayDeals(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "CreatTimeRangeStart": Utils.try_to_json(argv, "--CreatTimeRangeStart"),
-        "CreatTimeRangeEnd": Utils.try_to_json(argv, "--CreatTimeRangeEnd"),
+        "CreatTimeRangeStart": argv["--CreatTimeRangeStart"],
+        "CreatTimeRangeEnd": argv["--CreatTimeRangeEnd"],
         "Order": Utils.try_to_json(argv, "--Order"),
         "Status": Utils.try_to_json(argv, "--Status"),
         "OwnerUins": Utils.try_to_json(argv, "--OwnerUins"),
@@ -320,10 +320,10 @@ def doDescribeAgentClients(argv, arglist):
         return
 
     param = {
-        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
-        "ClientName": Utils.try_to_json(argv, "--ClientName"),
-        "ClientFlag": Utils.try_to_json(argv, "--ClientFlag"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "ClientUin": argv["--ClientUin"],
+        "ClientName": argv["--ClientName"],
+        "ClientFlag": argv["--ClientFlag"],
+        "OrderDirection": argv["--OrderDirection"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -358,7 +358,7 @@ def doDescribeClientBalance(argv, arglist):
         return
 
     param = {
-        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
+        "ClientUin": argv["--ClientUin"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -391,19 +391,19 @@ def doDescribeAgentAuditedClients(argv, arglist):
         return
 
     param = {
-        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
-        "ClientName": Utils.try_to_json(argv, "--ClientName"),
-        "ClientFlag": Utils.try_to_json(argv, "--ClientFlag"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "ClientUin": argv["--ClientUin"],
+        "ClientName": argv["--ClientName"],
+        "ClientFlag": argv["--ClientFlag"],
+        "OrderDirection": argv["--OrderDirection"],
         "ClientUins": Utils.try_to_json(argv, "--ClientUins"),
         "HasOverdueBill": Utils.try_to_json(argv, "--HasOverdueBill"),
-        "ClientRemark": Utils.try_to_json(argv, "--ClientRemark"),
+        "ClientRemark": argv["--ClientRemark"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "ClientType": Utils.try_to_json(argv, "--ClientType"),
-        "ProjectType": Utils.try_to_json(argv, "--ProjectType"),
-        "SalesUin": Utils.try_to_json(argv, "--SalesUin"),
-        "SalesName": Utils.try_to_json(argv, "--SalesName"),
+        "ClientType": argv["--ClientType"],
+        "ProjectType": argv["--ProjectType"],
+        "SalesUin": argv["--SalesUin"],
+        "SalesName": argv["--SalesName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -436,9 +436,9 @@ def doAuditApplyClient(argv, arglist):
         return
 
     param = {
-        "ClientUin": Utils.try_to_json(argv, "--ClientUin"),
-        "AuditResult": Utils.try_to_json(argv, "--AuditResult"),
-        "Note": Utils.try_to_json(argv, "--Note"),
+        "ClientUin": argv["--ClientUin"],
+        "AuditResult": argv["--AuditResult"],
+        "Note": argv["--Note"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

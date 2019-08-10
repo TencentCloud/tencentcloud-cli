@@ -25,9 +25,9 @@ def doTextTranslate(argv, arglist):
         return
 
     param = {
-        "SourceText": Utils.try_to_json(argv, "--SourceText"),
-        "Source": Utils.try_to_json(argv, "--Source"),
-        "Target": Utils.try_to_json(argv, "--Target"),
+        "SourceText": argv["--SourceText"],
+        "Source": argv["--Source"],
+        "Target": argv["--Target"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
@@ -61,11 +61,11 @@ def doImageTranslate(argv, arglist):
         return
 
     param = {
-        "SessionUuid": Utils.try_to_json(argv, "--SessionUuid"),
-        "Scene": Utils.try_to_json(argv, "--Scene"),
-        "Data": Utils.try_to_json(argv, "--Data"),
-        "Source": Utils.try_to_json(argv, "--Source"),
-        "Target": Utils.try_to_json(argv, "--Target"),
+        "SessionUuid": argv["--SessionUuid"],
+        "Scene": argv["--Scene"],
+        "Data": argv["--Data"],
+        "Source": argv["--Source"],
+        "Target": argv["--Target"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
@@ -99,15 +99,15 @@ def doSpeechTranslate(argv, arglist):
         return
 
     param = {
-        "SessionUuid": Utils.try_to_json(argv, "--SessionUuid"),
-        "Source": Utils.try_to_json(argv, "--Source"),
-        "Target": Utils.try_to_json(argv, "--Target"),
+        "SessionUuid": argv["--SessionUuid"],
+        "Source": argv["--Source"],
+        "Target": argv["--Target"],
         "AudioFormat": Utils.try_to_json(argv, "--AudioFormat"),
         "Seq": Utils.try_to_json(argv, "--Seq"),
         "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
-        "Data": Utils.try_to_json(argv, "--Data"),
+        "Data": argv["--Data"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "Mode": Utils.try_to_json(argv, "--Mode"),
+        "Mode": argv["--Mode"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -140,7 +140,7 @@ def doLanguageDetect(argv, arglist):
         return
 
     param = {
-        "Text": Utils.try_to_json(argv, "--Text"),
+        "Text": argv["--Text"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }

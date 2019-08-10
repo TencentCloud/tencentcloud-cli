@@ -57,11 +57,11 @@ def doDescribeDosageDetailByDate(argv, arglist):
         return
 
     param = {
-        "StartDate": Utils.try_to_json(argv, "--StartDate"),
-        "EndDate": Utils.try_to_json(argv, "--EndDate"),
-        "ProductCode": Utils.try_to_json(argv, "--ProductCode"),
-        "Domain": Utils.try_to_json(argv, "--Domain"),
-        "InstanceID": Utils.try_to_json(argv, "--InstanceID"),
+        "StartDate": argv["--StartDate"],
+        "EndDate": argv["--EndDate"],
+        "ProductCode": argv["--ProductCode"],
+        "Domain": argv["--Domain"],
+        "InstanceID": argv["--InstanceID"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -96,10 +96,10 @@ def doDescribeBillDetail(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PeriodType": Utils.try_to_json(argv, "--PeriodType"),
-        "Month": Utils.try_to_json(argv, "--Month"),
-        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "PeriodType": argv["--PeriodType"],
+        "Month": argv["--Month"],
+        "BeginTime": argv["--BeginTime"],
+        "EndTime": argv["--EndTime"],
         "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
 
     }
@@ -133,12 +133,12 @@ def doDescribeDealsByCond(argv, arglist):
         return
 
     param = {
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Status": Utils.try_to_json(argv, "--Status"),
-        "OrderId": Utils.try_to_json(argv, "--OrderId"),
+        "OrderId": argv["--OrderId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -171,9 +171,9 @@ def doDescribeBillSummaryByPayMode(argv, arglist):
         return
 
     param = {
-        "PayerUin": Utils.try_to_json(argv, "--PayerUin"),
-        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "PayerUin": argv["--PayerUin"],
+        "BeginTime": argv["--BeginTime"],
+        "EndTime": argv["--EndTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -208,8 +208,8 @@ def doDescribeBillResourceSummary(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PeriodType": Utils.try_to_json(argv, "--PeriodType"),
-        "Month": Utils.try_to_json(argv, "--Month"),
+        "PeriodType": argv["--PeriodType"],
+        "Month": argv["--Month"],
         "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
 
     }
@@ -243,9 +243,9 @@ def doDescribeBillSummaryByRegion(argv, arglist):
         return
 
     param = {
-        "PayerUin": Utils.try_to_json(argv, "--PayerUin"),
-        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "PayerUin": argv["--PayerUin"],
+        "BeginTime": argv["--BeginTime"],
+        "EndTime": argv["--EndTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -278,9 +278,9 @@ def doDescribeBillSummaryByProject(argv, arglist):
         return
 
     param = {
-        "PayerUin": Utils.try_to_json(argv, "--PayerUin"),
-        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "PayerUin": argv["--PayerUin"],
+        "BeginTime": argv["--BeginTime"],
+        "EndTime": argv["--EndTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -313,9 +313,9 @@ def doDescribeBillSummaryByProduct(argv, arglist):
         return
 
     param = {
-        "PayerUin": Utils.try_to_json(argv, "--PayerUin"),
-        "BeginTime": Utils.try_to_json(argv, "--BeginTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "PayerUin": argv["--PayerUin"],
+        "BeginTime": argv["--BeginTime"],
+        "EndTime": argv["--EndTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

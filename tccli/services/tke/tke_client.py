@@ -25,9 +25,9 @@ def doDeleteClusterInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ClusterId": argv["--ClusterId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceDeleteMode": Utils.try_to_json(argv, "--InstanceDeleteMode"),
+        "InstanceDeleteMode": argv["--InstanceDeleteMode"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -61,7 +61,7 @@ def doCreateCluster(argv, arglist):
 
     param = {
         "ClusterCIDRSettings": Utils.try_to_json(argv, "--ClusterCIDRSettings"),
-        "ClusterType": Utils.try_to_json(argv, "--ClusterType"),
+        "ClusterType": argv["--ClusterType"],
         "RunInstancesForNode": Utils.try_to_json(argv, "--RunInstancesForNode"),
         "ClusterBasicSettings": Utils.try_to_json(argv, "--ClusterBasicSettings"),
         "ClusterAdvancedSettings": Utils.try_to_json(argv, "--ClusterAdvancedSettings"),
@@ -99,8 +99,8 @@ def doCreateClusterInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "RunInstancePara": Utils.try_to_json(argv, "--RunInstancePara"),
+        "ClusterId": argv["--ClusterId"],
+        "RunInstancePara": argv["--RunInstancePara"],
         "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
 
     }
@@ -134,11 +134,11 @@ def doDescribeExistedInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ClusterId": argv["--ClusterId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
-        "VagueIpAddress": Utils.try_to_json(argv, "--VagueIpAddress"),
-        "VagueInstanceName": Utils.try_to_json(argv, "--VagueInstanceName"),
+        "VagueIpAddress": argv["--VagueIpAddress"],
+        "VagueInstanceName": argv["--VagueInstanceName"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -173,7 +173,7 @@ def doAddExistedInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ClusterId": argv["--ClusterId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
@@ -247,7 +247,7 @@ def doDescribeClusterSecurity(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ClusterId": argv["--ClusterId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -280,8 +280,8 @@ def doDeleteCluster(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "InstanceDeleteMode": Utils.try_to_json(argv, "--InstanceDeleteMode"),
+        "ClusterId": argv["--ClusterId"],
+        "InstanceDeleteMode": argv["--InstanceDeleteMode"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -314,7 +314,7 @@ def doDescribeClusterInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ClusterId": argv["--ClusterId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),

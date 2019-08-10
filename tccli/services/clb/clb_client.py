@@ -25,12 +25,12 @@ def doRegisterTargets(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
         "Targets": Utils.try_to_json(argv, "--Targets"),
-        "LocationId": Utils.try_to_json(argv, "--LocationId"),
-        "Domain": Utils.try_to_json(argv, "--Domain"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "LocationId": argv["--LocationId"],
+        "Domain": argv["--Domain"],
+        "Url": argv["--Url"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -63,7 +63,7 @@ def doSetLoadBalancerSecurityGroups(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "SecurityGroups": Utils.try_to_json(argv, "--SecurityGroups"),
 
     }
@@ -97,9 +97,9 @@ def doDescribeClassicalLBListeners(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
-        "Protocol": Utils.try_to_json(argv, "--Protocol"),
+        "Protocol": argv["--Protocol"],
         "ListenerPort": Utils.try_to_json(argv, "--ListenerPort"),
         "Status": Utils.try_to_json(argv, "--Status"),
 
@@ -134,8 +134,8 @@ def doDeleteListener(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -168,8 +168,8 @@ def doSetSecurityGroupForLoadbalancers(argv, arglist):
         return
 
     param = {
-        "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
-        "OperationType": Utils.try_to_json(argv, "--OperationType"),
+        "SecurityGroup": argv["--SecurityGroup"],
+        "OperationType": argv["--OperationType"],
         "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
 
     }
@@ -203,7 +203,7 @@ def doReplaceCertForLoadBalancers(argv, arglist):
         return
 
     param = {
-        "OldCertificateId": Utils.try_to_json(argv, "--OldCertificateId"),
+        "OldCertificateId": argv["--OldCertificateId"],
         "Certificate": Utils.try_to_json(argv, "--Certificate"),
 
     }
@@ -237,8 +237,8 @@ def doCreateRule(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
         "Rules": Utils.try_to_json(argv, "--Rules"),
 
     }
@@ -272,8 +272,8 @@ def doAutoRewrite(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
         "Domains": Utils.try_to_json(argv, "--Domains"),
 
     }
@@ -307,10 +307,10 @@ def doModifyDomain(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
-        "Domain": Utils.try_to_json(argv, "--Domain"),
-        "NewDomain": Utils.try_to_json(argv, "--NewDomain"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
+        "Domain": argv["--Domain"],
+        "NewDomain": argv["--NewDomain"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -343,7 +343,7 @@ def doDescribeClassicalLBTargets(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -376,7 +376,7 @@ def doDeregisterTargetsFromClassicalLB(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
@@ -410,8 +410,8 @@ def doDescribeClassicalLBHealthStatus(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -444,13 +444,13 @@ def doModifyListener(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
-        "ListenerName": Utils.try_to_json(argv, "--ListenerName"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
+        "ListenerName": argv["--ListenerName"],
         "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
         "Certificate": Utils.try_to_json(argv, "--Certificate"),
-        "Scheduler": Utils.try_to_json(argv, "--Scheduler"),
+        "Scheduler": argv["--Scheduler"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -516,11 +516,11 @@ def doDeleteRule(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
         "LocationIds": Utils.try_to_json(argv, "--LocationIds"),
-        "Domain": Utils.try_to_json(argv, "--Domain"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "Domain": argv["--Domain"],
+        "Url": argv["--Url"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -554,23 +554,23 @@ def doDescribeLoadBalancers(argv, arglist):
 
     param = {
         "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
-        "LoadBalancerType": Utils.try_to_json(argv, "--LoadBalancerType"),
+        "LoadBalancerType": argv["--LoadBalancerType"],
         "Forward": Utils.try_to_json(argv, "--Forward"),
-        "LoadBalancerName": Utils.try_to_json(argv, "--LoadBalancerName"),
-        "Domain": Utils.try_to_json(argv, "--Domain"),
+        "LoadBalancerName": argv["--LoadBalancerName"],
+        "Domain": argv["--Domain"],
         "LoadBalancerVips": Utils.try_to_json(argv, "--LoadBalancerVips"),
         "BackendPublicIps": Utils.try_to_json(argv, "--BackendPublicIps"),
         "BackendPrivateIps": Utils.try_to_json(argv, "--BackendPrivateIps"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "OrderBy": argv["--OrderBy"],
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+        "SearchKey": argv["--SearchKey"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "WithRs": Utils.try_to_json(argv, "--WithRs"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
-        "MasterZone": Utils.try_to_json(argv, "--MasterZone"),
+        "VpcId": argv["--VpcId"],
+        "SecurityGroup": argv["--SecurityGroup"],
+        "MasterZone": argv["--MasterZone"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -603,9 +603,9 @@ def doDescribeListeners(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
-        "Protocol": Utils.try_to_json(argv, "--Protocol"),
+        "Protocol": argv["--Protocol"],
         "Port": Utils.try_to_json(argv, "--Port"),
 
     }
@@ -639,14 +639,14 @@ def doCreateListener(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "Ports": Utils.try_to_json(argv, "--Ports"),
-        "Protocol": Utils.try_to_json(argv, "--Protocol"),
+        "Protocol": argv["--Protocol"],
         "ListenerNames": Utils.try_to_json(argv, "--ListenerNames"),
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
         "Certificate": Utils.try_to_json(argv, "--Certificate"),
         "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
-        "Scheduler": Utils.try_to_json(argv, "--Scheduler"),
+        "Scheduler": argv["--Scheduler"],
         "SniSwitch": Utils.try_to_json(argv, "--SniSwitch"),
 
     }
@@ -680,11 +680,11 @@ def doModifyTargetWeight(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
-        "LocationId": Utils.try_to_json(argv, "--LocationId"),
-        "Domain": Utils.try_to_json(argv, "--Domain"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
+        "LocationId": argv["--LocationId"],
+        "Domain": argv["--Domain"],
+        "Url": argv["--Url"],
         "Targets": Utils.try_to_json(argv, "--Targets"),
         "Weight": Utils.try_to_json(argv, "--Weight"),
 
@@ -719,7 +719,7 @@ def doDescribeTaskStatus(argv, arglist):
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "TaskId": argv["--TaskId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -752,14 +752,14 @@ def doModifyRule(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
-        "LocationId": Utils.try_to_json(argv, "--LocationId"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
+        "LocationId": argv["--LocationId"],
+        "Url": argv["--Url"],
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
-        "Scheduler": Utils.try_to_json(argv, "--Scheduler"),
+        "Scheduler": argv["--Scheduler"],
         "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
-        "ForwardType": Utils.try_to_json(argv, "--ForwardType"),
+        "ForwardType": argv["--ForwardType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -792,9 +792,9 @@ def doDeleteRewrite(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "SourceListenerId": Utils.try_to_json(argv, "--SourceListenerId"),
-        "TargetListenerId": Utils.try_to_json(argv, "--TargetListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "SourceListenerId": argv["--SourceListenerId"],
+        "TargetListenerId": argv["--TargetListenerId"],
         "RewriteInfos": Utils.try_to_json(argv, "--RewriteInfos"),
 
     }
@@ -828,9 +828,9 @@ def doDescribeTargets(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
-        "Protocol": Utils.try_to_json(argv, "--Protocol"),
+        "Protocol": argv["--Protocol"],
         "Port": Utils.try_to_json(argv, "--Port"),
 
     }
@@ -864,7 +864,7 @@ def doRegisterTargetsWithClassicalLB(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "Targets": Utils.try_to_json(argv, "--Targets"),
 
     }
@@ -898,7 +898,7 @@ def doDescribeRewrite(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "SourceListenerIds": Utils.try_to_json(argv, "--SourceListenerIds"),
         "SourceLocationIds": Utils.try_to_json(argv, "--SourceLocationIds"),
 
@@ -933,13 +933,13 @@ def doModifyTargetPort(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
         "Targets": Utils.try_to_json(argv, "--Targets"),
         "NewPort": Utils.try_to_json(argv, "--NewPort"),
-        "LocationId": Utils.try_to_json(argv, "--LocationId"),
-        "Domain": Utils.try_to_json(argv, "--Domain"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "LocationId": argv["--LocationId"],
+        "Domain": argv["--Domain"],
+        "Url": argv["--Url"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -972,12 +972,12 @@ def doDeregisterTargets(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "ListenerId": Utils.try_to_json(argv, "--ListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "ListenerId": argv["--ListenerId"],
         "Targets": Utils.try_to_json(argv, "--Targets"),
-        "LocationId": Utils.try_to_json(argv, "--LocationId"),
-        "Domain": Utils.try_to_json(argv, "--Domain"),
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "LocationId": argv["--LocationId"],
+        "Domain": argv["--Domain"],
+        "Url": argv["--Url"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1010,8 +1010,8 @@ def doModifyLoadBalancerAttributes(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "LoadBalancerName": Utils.try_to_json(argv, "--LoadBalancerName"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "LoadBalancerName": argv["--LoadBalancerName"],
         "TargetRegionInfo": Utils.try_to_json(argv, "--TargetRegionInfo"),
 
     }
@@ -1078,7 +1078,7 @@ def doBatchModifyTargetWeight(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
         "ModifyList": Utils.try_to_json(argv, "--ModifyList"),
 
     }
@@ -1145,17 +1145,17 @@ def doCreateLoadBalancer(argv, arglist):
         return
 
     param = {
-        "LoadBalancerType": Utils.try_to_json(argv, "--LoadBalancerType"),
+        "LoadBalancerType": argv["--LoadBalancerType"],
         "Forward": Utils.try_to_json(argv, "--Forward"),
-        "LoadBalancerName": Utils.try_to_json(argv, "--LoadBalancerName"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "LoadBalancerName": argv["--LoadBalancerName"],
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "AddressIPVersion": Utils.try_to_json(argv, "--AddressIPVersion"),
+        "AddressIPVersion": argv["--AddressIPVersion"],
         "Number": Utils.try_to_json(argv, "--Number"),
-        "MasterZoneId": Utils.try_to_json(argv, "--MasterZoneId"),
-        "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "AnycastZone": Utils.try_to_json(argv, "--AnycastZone"),
+        "MasterZoneId": argv["--MasterZoneId"],
+        "ZoneId": argv["--ZoneId"],
+        "AnycastZone": argv["--AnycastZone"],
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
 
@@ -1190,9 +1190,9 @@ def doManualRewrite(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": Utils.try_to_json(argv, "--LoadBalancerId"),
-        "SourceListenerId": Utils.try_to_json(argv, "--SourceListenerId"),
-        "TargetListenerId": Utils.try_to_json(argv, "--TargetListenerId"),
+        "LoadBalancerId": argv["--LoadBalancerId"],
+        "SourceListenerId": argv["--SourceListenerId"],
+        "TargetListenerId": argv["--TargetListenerId"],
         "RewriteInfos": Utils.try_to_json(argv, "--RewriteInfos"),
 
     }

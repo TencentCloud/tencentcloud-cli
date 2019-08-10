@@ -25,9 +25,9 @@ def doGetDetectInfo(argv, arglist):
         return
 
     param = {
-        "BizToken": Utils.try_to_json(argv, "--BizToken"),
-        "RuleId": Utils.try_to_json(argv, "--RuleId"),
-        "InfoType": Utils.try_to_json(argv, "--InfoType"),
+        "BizToken": argv["--BizToken"],
+        "RuleId": argv["--RuleId"],
+        "InfoType": argv["--InfoType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -124,11 +124,11 @@ def doLivenessCompare(argv, arglist):
         return
 
     param = {
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "VideoBase64": Utils.try_to_json(argv, "--VideoBase64"),
-        "LivenessType": Utils.try_to_json(argv, "--LivenessType"),
-        "ValidateData": Utils.try_to_json(argv, "--ValidateData"),
-        "Optional": Utils.try_to_json(argv, "--Optional"),
+        "ImageBase64": argv["--ImageBase64"],
+        "VideoBase64": argv["--VideoBase64"],
+        "LivenessType": argv["--LivenessType"],
+        "ValidateData": argv["--ValidateData"],
+        "Optional": argv["--Optional"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -161,9 +161,9 @@ def doBankCardVerification(argv, arglist):
         return
 
     param = {
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "BankCard": Utils.try_to_json(argv, "--BankCard"),
+        "IdCard": argv["--IdCard"],
+        "Name": argv["--Name"],
+        "BankCard": argv["--BankCard"],
         "CertType": Utils.try_to_json(argv, "--CertType"),
 
     }
@@ -197,10 +197,10 @@ def doLiveness(argv, arglist):
         return
 
     param = {
-        "VideoBase64": Utils.try_to_json(argv, "--VideoBase64"),
-        "LivenessType": Utils.try_to_json(argv, "--LivenessType"),
-        "ValidateData": Utils.try_to_json(argv, "--ValidateData"),
-        "Optional": Utils.try_to_json(argv, "--Optional"),
+        "VideoBase64": argv["--VideoBase64"],
+        "LivenessType": argv["--LivenessType"],
+        "ValidateData": argv["--ValidateData"],
+        "Optional": argv["--Optional"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -233,12 +233,12 @@ def doLivenessRecognition(argv, arglist):
         return
 
     param = {
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "VideoBase64": Utils.try_to_json(argv, "--VideoBase64"),
-        "LivenessType": Utils.try_to_json(argv, "--LivenessType"),
-        "ValidateData": Utils.try_to_json(argv, "--ValidateData"),
-        "Optional": Utils.try_to_json(argv, "--Optional"),
+        "IdCard": argv["--IdCard"],
+        "Name": argv["--Name"],
+        "VideoBase64": argv["--VideoBase64"],
+        "LivenessType": argv["--LivenessType"],
+        "ValidateData": argv["--ValidateData"],
+        "Optional": argv["--Optional"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -271,8 +271,8 @@ def doIdCardVerification(argv, arglist):
         return
 
     param = {
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "IdCard": argv["--IdCard"],
+        "Name": argv["--Name"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -305,10 +305,10 @@ def doBankCard4EVerification(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "BankCard": Utils.try_to_json(argv, "--BankCard"),
-        "Phone": Utils.try_to_json(argv, "--Phone"),
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
+        "Name": argv["--Name"],
+        "BankCard": argv["--BankCard"],
+        "Phone": argv["--Phone"],
+        "IdCard": argv["--IdCard"],
         "CertType": Utils.try_to_json(argv, "--CertType"),
 
     }
@@ -342,13 +342,13 @@ def doDetectAuth(argv, arglist):
         return
 
     param = {
-        "RuleId": Utils.try_to_json(argv, "--RuleId"),
-        "TerminalType": Utils.try_to_json(argv, "--TerminalType"),
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "RedirectUrl": Utils.try_to_json(argv, "--RedirectUrl"),
-        "Extra": Utils.try_to_json(argv, "--Extra"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
+        "RuleId": argv["--RuleId"],
+        "TerminalType": argv["--TerminalType"],
+        "IdCard": argv["--IdCard"],
+        "Name": argv["--Name"],
+        "RedirectUrl": argv["--RedirectUrl"],
+        "Extra": argv["--Extra"],
+        "ImageBase64": argv["--ImageBase64"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -381,10 +381,10 @@ def doImageRecognition(argv, arglist):
         return
 
     param = {
-        "IdCard": Utils.try_to_json(argv, "--IdCard"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "ImageBase64": Utils.try_to_json(argv, "--ImageBase64"),
-        "Optional": Utils.try_to_json(argv, "--Optional"),
+        "IdCard": argv["--IdCard"],
+        "Name": argv["--Name"],
+        "ImageBase64": argv["--ImageBase64"],
+        "Optional": argv["--Optional"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -417,8 +417,8 @@ def doBankCard2EVerification(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "BankCard": Utils.try_to_json(argv, "--BankCard"),
+        "Name": argv["--Name"],
+        "BankCard": argv["--BankCard"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

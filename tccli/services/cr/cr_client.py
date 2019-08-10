@@ -25,10 +25,10 @@ def doDownloadReport(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ReportDate": Utils.try_to_json(argv, "--ReportDate"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "ReportDate": argv["--ReportDate"],
+        "InstId": argv["--InstId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -61,16 +61,16 @@ def doDescribeRecords(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ProductId": Utils.try_to_json(argv, "--ProductId"),
-        "AccountNum": Utils.try_to_json(argv, "--AccountNum"),
-        "CalledPhone": Utils.try_to_json(argv, "--CalledPhone"),
-        "StartBizDate": Utils.try_to_json(argv, "--StartBizDate"),
-        "EndBizDate": Utils.try_to_json(argv, "--EndBizDate"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "ProductId": argv["--ProductId"],
+        "AccountNum": argv["--AccountNum"],
+        "CalledPhone": argv["--CalledPhone"],
+        "StartBizDate": argv["--StartBizDate"],
+        "EndBizDate": argv["--EndBizDate"],
+        "Offset": argv["--Offset"],
+        "Limit": argv["--Limit"],
+        "InstId": argv["--InstId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -103,12 +103,12 @@ def doDescribeCreditResult(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
-        "ProductId": Utils.try_to_json(argv, "--ProductId"),
-        "CaseId": Utils.try_to_json(argv, "--CaseId"),
-        "RequestDate": Utils.try_to_json(argv, "--RequestDate"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "InstId": argv["--InstId"],
+        "ProductId": argv["--ProductId"],
+        "CaseId": argv["--CaseId"],
+        "RequestDate": argv["--RequestDate"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -141,11 +141,11 @@ def doUploadFile(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
-        "FileName": Utils.try_to_json(argv, "--FileName"),
-        "FileDate": Utils.try_to_json(argv, "--FileDate"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "FileUrl": argv["--FileUrl"],
+        "FileName": argv["--FileName"],
+        "FileDate": argv["--FileDate"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -178,9 +178,9 @@ def doDescribeTaskStatus(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "TaskId": argv["--TaskId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -213,13 +213,13 @@ def doUploadDataFile(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "FileName": Utils.try_to_json(argv, "--FileName"),
-        "UploadModel": Utils.try_to_json(argv, "--UploadModel"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "FileName": argv["--FileName"],
+        "UploadModel": argv["--UploadModel"],
         "File": Utils.try_to_json(argv, "--File"),
-        "FileUrl": Utils.try_to_json(argv, "--FileUrl"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
+        "FileUrl": argv["--FileUrl"],
+        "InstId": argv["--InstId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,10 +252,10 @@ def doApplyBlackList(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
         "BlackList": Utils.try_to_json(argv, "--BlackList"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
+        "InstId": argv["--InstId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -288,13 +288,13 @@ def doApplyCreditAudit(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "InstId": Utils.try_to_json(argv, "--InstId"),
-        "ProductId": Utils.try_to_json(argv, "--ProductId"),
-        "CaseId": Utils.try_to_json(argv, "--CaseId"),
-        "CallbackUrl": Utils.try_to_json(argv, "--CallbackUrl"),
-        "Data": Utils.try_to_json(argv, "--Data"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "InstId": argv["--InstId"],
+        "ProductId": argv["--ProductId"],
+        "CaseId": argv["--CaseId"],
+        "CallbackUrl": argv["--CallbackUrl"],
+        "Data": argv["--Data"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

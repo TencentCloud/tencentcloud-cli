@@ -25,9 +25,9 @@ def doDescribeInstanceOperations(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "InstanceId": argv["--InstanceId"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -62,7 +62,7 @@ def doDescribeInstances(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceNames": Utils.try_to_json(argv, "--InstanceNames"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
@@ -101,30 +101,30 @@ def doCreateInstance(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
         "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "EsVersion": Utils.try_to_json(argv, "--EsVersion"),
-        "NodeType": Utils.try_to_json(argv, "--NodeType"),
+        "EsVersion": argv["--EsVersion"],
+        "NodeType": argv["--NodeType"],
         "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
-        "ChargeType": Utils.try_to_json(argv, "--ChargeType"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
+        "Password": argv["--Password"],
+        "InstanceName": argv["--InstanceName"],
+        "ChargeType": argv["--ChargeType"],
         "ChargePeriod": Utils.try_to_json(argv, "--ChargePeriod"),
-        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
-        "DiskType": Utils.try_to_json(argv, "--DiskType"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "RenewFlag": argv["--RenewFlag"],
+        "DiskType": argv["--DiskType"],
+        "TimeUnit": argv["--TimeUnit"],
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
         "EnableDedicatedMaster": Utils.try_to_json(argv, "--EnableDedicatedMaster"),
         "MasterNodeNum": Utils.try_to_json(argv, "--MasterNodeNum"),
-        "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
+        "MasterNodeType": argv["--MasterNodeType"],
         "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
-        "ClusterNameInConf": Utils.try_to_json(argv, "--ClusterNameInConf"),
+        "ClusterNameInConf": argv["--ClusterNameInConf"],
         "DeployMode": Utils.try_to_json(argv, "--DeployMode"),
         "MultiZoneInfo": Utils.try_to_json(argv, "--MultiZoneInfo"),
-        "LicenseType": Utils.try_to_json(argv, "--LicenseType"),
+        "LicenseType": argv["--LicenseType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -157,10 +157,10 @@ def doUpgradeInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "EsVersion": Utils.try_to_json(argv, "--EsVersion"),
+        "InstanceId": argv["--InstanceId"],
+        "EsVersion": argv["--EsVersion"],
         "CheckOnly": Utils.try_to_json(argv, "--CheckOnly"),
-        "LicenseType": Utils.try_to_json(argv, "--LicenseType"),
+        "LicenseType": argv["--LicenseType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -193,8 +193,8 @@ def doUpgradeLicense(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "LicenseType": Utils.try_to_json(argv, "--LicenseType"),
+        "InstanceId": argv["--InstanceId"],
+        "LicenseType": argv["--LicenseType"],
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
 
@@ -229,16 +229,16 @@ def doUpdateInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceId": argv["--InstanceId"],
+        "InstanceName": argv["--InstanceName"],
         "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "EsConfig": Utils.try_to_json(argv, "--EsConfig"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "EsConfig": argv["--EsConfig"],
+        "Password": argv["--Password"],
         "EsAcl": Utils.try_to_json(argv, "--EsAcl"),
         "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "NodeType": Utils.try_to_json(argv, "--NodeType"),
+        "NodeType": argv["--NodeType"],
         "MasterNodeNum": Utils.try_to_json(argv, "--MasterNodeNum"),
-        "MasterNodeType": Utils.try_to_json(argv, "--MasterNodeType"),
+        "MasterNodeType": argv["--MasterNodeType"],
         "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
         "ForceRestart": Utils.try_to_json(argv, "--ForceRestart"),
         "CosBackup": Utils.try_to_json(argv, "--CosBackup"),
@@ -274,7 +274,7 @@ def doDeleteInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -307,7 +307,7 @@ def doRestartInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "ForceRestart": Utils.try_to_json(argv, "--ForceRestart"),
 
     }
@@ -341,11 +341,11 @@ def doDescribeInstanceLogs(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "LogType": Utils.try_to_json(argv, "--LogType"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "SearchKey": argv["--SearchKey"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "OrderByType": Utils.try_to_json(argv, "--OrderByType"),

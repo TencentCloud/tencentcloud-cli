@@ -59,8 +59,8 @@ def doStopInstances(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
-        "StopType": Utils.try_to_json(argv, "--StopType"),
-        "StoppedMode": Utils.try_to_json(argv, "--StoppedMode"),
+        "StopType": argv["--StopType"],
+        "StoppedMode": argv["--StoppedMode"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -128,9 +128,9 @@ def doModifyImageSharePermission(argv, arglist):
         return
 
     param = {
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "ImageId": argv["--ImageId"],
         "AccountIds": Utils.try_to_json(argv, "--AccountIds"),
-        "Permission": Utils.try_to_json(argv, "--Permission"),
+        "Permission": argv["--Permission"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -163,7 +163,7 @@ def doDescribeImageSharePermission(argv, arglist):
         return
 
     param = {
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "ImageId": argv["--ImageId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -197,7 +197,7 @@ def doInquiryPriceModifyInstancesChargeType(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargeType": argv["--InstanceChargeType"],
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
 
     }
@@ -232,8 +232,8 @@ def doModifyHostsAttribute(argv, arglist):
 
     param = {
         "HostIds": Utils.try_to_json(argv, "--HostIds"),
-        "HostName": Utils.try_to_json(argv, "--HostName"),
-        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
+        "HostName": argv["--HostName"],
+        "RenewFlag": argv["--RenewFlag"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -270,7 +270,7 @@ def doDescribeImages(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "InstanceType": argv["--InstanceType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -303,9 +303,9 @@ def doModifyKeyPairAttribute(argv, arglist):
         return
 
     param = {
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
-        "KeyName": Utils.try_to_json(argv, "--KeyName"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "KeyId": argv["--KeyId"],
+        "KeyName": argv["--KeyName"],
+        "Description": argv["--Description"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -372,7 +372,7 @@ def doModifyInstancesAttribute(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceName": argv["--InstanceName"],
         "SecurityGroups": Utils.try_to_json(argv, "--SecurityGroups"),
 
     }
@@ -440,8 +440,8 @@ def doInquiryPriceResetInstancesInternetMaxBandwidth(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -509,7 +509,7 @@ def doCreateKeyPair(argv, arglist):
         return
 
     param = {
-        "KeyName": Utils.try_to_json(argv, "--KeyName"),
+        "KeyName": argv["--KeyName"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
@@ -576,9 +576,9 @@ def doCreateDisasterRecoverGroup(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
+        "Name": argv["--Name"],
+        "Type": argv["--Type"],
+        "ClientToken": argv["--ClientToken"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -647,9 +647,9 @@ def doImportKeyPair(argv, arglist):
         return
 
     param = {
-        "KeyName": Utils.try_to_json(argv, "--KeyName"),
+        "KeyName": argv["--KeyName"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "PublicKey": Utils.try_to_json(argv, "--PublicKey"),
+        "PublicKey": argv["--PublicKey"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -716,7 +716,7 @@ def doDescribeInstanceInternetBandwidthConfigs(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -785,26 +785,26 @@ def doRunInstances(argv, arglist):
 
     param = {
         "Placement": Utils.try_to_json(argv, "--Placement"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "ImageId": argv["--ImageId"],
+        "InstanceChargeType": argv["--InstanceChargeType"],
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "InstanceType": argv["--InstanceType"],
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "VirtualPrivateCloud": Utils.try_to_json(argv, "--VirtualPrivateCloud"),
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
         "InstanceCount": Utils.try_to_json(argv, "--InstanceCount"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceName": argv["--InstanceName"],
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
-        "HostName": Utils.try_to_json(argv, "--HostName"),
+        "ClientToken": argv["--ClientToken"],
+        "HostName": argv["--HostName"],
         "ActionTimer": Utils.try_to_json(argv, "--ActionTimer"),
         "DisasterRecoverGroupIds": Utils.try_to_json(argv, "--DisasterRecoverGroupIds"),
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
         "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
-        "UserData": Utils.try_to_json(argv, "--UserData"),
+        "UserData": argv["--UserData"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -870,7 +870,7 @@ def doInquiryPriceResizeInstanceDisks(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
 
@@ -974,8 +974,8 @@ def doInquiryPriceResetInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "InstanceId": argv["--InstanceId"],
+        "ImageId": argv["--ImageId"],
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
@@ -1044,8 +1044,8 @@ def doResetInstancesPassword(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "Password": Utils.try_to_json(argv, "--Password"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
+        "Password": argv["--Password"],
+        "UserName": argv["--UserName"],
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
 
     }
@@ -1080,7 +1080,7 @@ def doModifyInstancesRenewFlag(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
+        "RenewFlag": argv["--RenewFlag"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1113,12 +1113,12 @@ def doResetInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "InstanceId": argv["--InstanceId"],
+        "ImageId": argv["--ImageId"],
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "HostName": Utils.try_to_json(argv, "--HostName"),
+        "HostName": argv["--HostName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1151,7 +1151,7 @@ def doResizeInstanceDisks(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
 
@@ -1218,12 +1218,12 @@ def doCreateImage(argv, arglist):
         return
 
     param = {
-        "ImageName": Utils.try_to_json(argv, "--ImageName"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "ImageDescription": Utils.try_to_json(argv, "--ImageDescription"),
-        "ForcePoweroff": Utils.try_to_json(argv, "--ForcePoweroff"),
-        "Sysprep": Utils.try_to_json(argv, "--Sysprep"),
-        "Reboot": Utils.try_to_json(argv, "--Reboot"),
+        "ImageName": argv["--ImageName"],
+        "InstanceId": argv["--InstanceId"],
+        "ImageDescription": argv["--ImageDescription"],
+        "ForcePoweroff": argv["--ForcePoweroff"],
+        "Sysprep": argv["--Sysprep"],
+        "Reboot": argv["--Reboot"],
         "DataDiskIds": Utils.try_to_json(argv, "--DataDiskIds"),
         "SnapshotIds": Utils.try_to_json(argv, "--SnapshotIds"),
         "DryRun": Utils.try_to_json(argv, "--DryRun"),
@@ -1294,7 +1294,7 @@ def doResetInstancesType(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "InstanceType": argv["--InstanceType"],
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
 
     }
@@ -1328,9 +1328,9 @@ def doModifyImageAttribute(argv, arglist):
         return
 
     param = {
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "ImageName": Utils.try_to_json(argv, "--ImageName"),
-        "ImageDescription": Utils.try_to_json(argv, "--ImageDescription"),
+        "ImageId": argv["--ImageId"],
+        "ImageName": argv["--ImageName"],
+        "ImageDescription": argv["--ImageDescription"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1364,7 +1364,7 @@ def doDescribeInstancesOperationLimit(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "Operation": argv["--Operation"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1398,7 +1398,7 @@ def doInquiryPriceResetInstancesType(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "InstanceType": argv["--InstanceType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1599,21 +1599,21 @@ def doInquiryPriceRunInstances(argv, arglist):
 
     param = {
         "Placement": Utils.try_to_json(argv, "--Placement"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "ImageId": argv["--ImageId"],
+        "InstanceChargeType": argv["--InstanceChargeType"],
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "InstanceType": argv["--InstanceType"],
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "VirtualPrivateCloud": Utils.try_to_json(argv, "--VirtualPrivateCloud"),
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
         "InstanceCount": Utils.try_to_json(argv, "--InstanceCount"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceName": argv["--InstanceName"],
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
-        "HostName": Utils.try_to_json(argv, "--HostName"),
+        "ClientToken": argv["--ClientToken"],
+        "HostName": argv["--HostName"],
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
         "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
 
@@ -1648,12 +1648,12 @@ def doImportImage(argv, arglist):
         return
 
     param = {
-        "Architecture": Utils.try_to_json(argv, "--Architecture"),
-        "OsType": Utils.try_to_json(argv, "--OsType"),
-        "OsVersion": Utils.try_to_json(argv, "--OsVersion"),
-        "ImageUrl": Utils.try_to_json(argv, "--ImageUrl"),
-        "ImageName": Utils.try_to_json(argv, "--ImageName"),
-        "ImageDescription": Utils.try_to_json(argv, "--ImageDescription"),
+        "Architecture": argv["--Architecture"],
+        "OsType": argv["--OsType"],
+        "OsVersion": argv["--OsVersion"],
+        "ImageUrl": argv["--ImageUrl"],
+        "ImageName": argv["--ImageName"],
+        "ImageDescription": argv["--ImageDescription"],
         "DryRun": Utils.try_to_json(argv, "--DryRun"),
         "Force": Utils.try_to_json(argv, "--Force"),
 
@@ -1723,8 +1723,8 @@ def doModifyDisasterRecoverGroupAttribute(argv, arglist):
         return
 
     param = {
-        "DisasterRecoverGroupId": Utils.try_to_json(argv, "--DisasterRecoverGroupId"),
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "DisasterRecoverGroupId": argv["--DisasterRecoverGroupId"],
+        "Name": argv["--Name"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1757,7 +1757,7 @@ def doDescribeInstanceVncUrl(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1791,7 +1791,7 @@ def doModifyInstancesChargeType(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargeType": argv["--InstanceChargeType"],
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
 
     }
@@ -1860,7 +1860,7 @@ def doDescribeDisasterRecoverGroups(argv, arglist):
 
     param = {
         "DisasterRecoverGroupIds": Utils.try_to_json(argv, "--DisasterRecoverGroupIds"),
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -1930,8 +1930,8 @@ def doResetInstancesInternetMaxBandwidth(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2036,10 +2036,10 @@ def doAllocateHosts(argv, arglist):
 
     param = {
         "Placement": Utils.try_to_json(argv, "--Placement"),
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
+        "ClientToken": argv["--ClientToken"],
         "HostChargePrepaid": Utils.try_to_json(argv, "--HostChargePrepaid"),
-        "HostChargeType": Utils.try_to_json(argv, "--HostChargeType"),
-        "HostType": Utils.try_to_json(argv, "--HostType"),
+        "HostChargeType": argv["--HostChargeType"],
+        "HostType": argv["--HostType"],
         "HostCount": Utils.try_to_json(argv, "--HostCount"),
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
 
@@ -2108,7 +2108,7 @@ def doRebootInstances(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "ForceReboot": Utils.try_to_json(argv, "--ForceReboot"),
-        "StopType": Utils.try_to_json(argv, "--StopType"),
+        "StopType": argv["--StopType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

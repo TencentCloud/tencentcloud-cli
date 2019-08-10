@@ -98,11 +98,11 @@ def doModifyMonitorAttribute(argv, arglist):
     param = {
         "MonitorId": Utils.try_to_json(argv, "--MonitorId"),
         "Urls": Utils.try_to_json(argv, "--Urls"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "ScannerType": Utils.try_to_json(argv, "--ScannerType"),
+        "Name": argv["--Name"],
+        "ScannerType": argv["--ScannerType"],
         "Crontab": Utils.try_to_json(argv, "--Crontab"),
         "RateLimit": Utils.try_to_json(argv, "--RateLimit"),
-        "FirstScanStartTime": Utils.try_to_json(argv, "--FirstScanStartTime"),
+        "FirstScanStartTime": argv["--FirstScanStartTime"],
         "MonitorStatus": Utils.try_to_json(argv, "--MonitorStatus"),
 
     }
@@ -137,7 +137,7 @@ def doCreateSitesScans(argv, arglist):
 
     param = {
         "SiteIds": Utils.try_to_json(argv, "--SiteIds"),
-        "ScannerType": Utils.try_to_json(argv, "--ScannerType"),
+        "ScannerType": argv["--ScannerType"],
         "RateLimit": Utils.try_to_json(argv, "--RateLimit"),
 
     }
@@ -172,7 +172,7 @@ def doCreateSites(argv, arglist):
 
     param = {
         "Urls": Utils.try_to_json(argv, "--Urls"),
-        "UserAgent": Utils.try_to_json(argv, "--UserAgent"),
+        "UserAgent": argv["--UserAgent"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -340,12 +340,12 @@ def doModifySiteAttribute(argv, arglist):
 
     param = {
         "SiteId": Utils.try_to_json(argv, "--SiteId"),
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
         "NeedLogin": Utils.try_to_json(argv, "--NeedLogin"),
-        "LoginCookie": Utils.try_to_json(argv, "--LoginCookie"),
-        "LoginCheckUrl": Utils.try_to_json(argv, "--LoginCheckUrl"),
-        "LoginCheckKw": Utils.try_to_json(argv, "--LoginCheckKw"),
-        "ScanDisallow": Utils.try_to_json(argv, "--ScanDisallow"),
+        "LoginCookie": argv["--LoginCookie"],
+        "LoginCheckUrl": argv["--LoginCheckUrl"],
+        "LoginCheckKw": argv["--LoginCheckKw"],
+        "ScanDisallow": argv["--ScanDisallow"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -378,7 +378,7 @@ def doModifyConfigAttribute(argv, arglist):
         return
 
     param = {
-        "NoticeLevel": Utils.try_to_json(argv, "--NoticeLevel"),
+        "NoticeLevel": argv["--NoticeLevel"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -510,11 +510,11 @@ def doCreateMonitors(argv, arglist):
 
     param = {
         "Urls": Utils.try_to_json(argv, "--Urls"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "ScannerType": Utils.try_to_json(argv, "--ScannerType"),
+        "Name": argv["--Name"],
+        "ScannerType": argv["--ScannerType"],
         "Crontab": Utils.try_to_json(argv, "--Crontab"),
         "RateLimit": Utils.try_to_json(argv, "--RateLimit"),
-        "FirstScanStartTime": Utils.try_to_json(argv, "--FirstScanStartTime"),
+        "FirstScanStartTime": argv["--FirstScanStartTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

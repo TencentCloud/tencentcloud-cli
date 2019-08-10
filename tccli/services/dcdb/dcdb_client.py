@@ -25,13 +25,13 @@ def doDescribeAccountPrivileges(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "DbName": Utils.try_to_json(argv, "--DbName"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "Object": Utils.try_to_json(argv, "--Object"),
-        "ColName": Utils.try_to_json(argv, "--ColName"),
+        "InstanceId": argv["--InstanceId"],
+        "UserName": argv["--UserName"],
+        "Host": argv["--Host"],
+        "DbName": argv["--DbName"],
+        "Type": argv["--Type"],
+        "Object": argv["--Object"],
+        "ColName": argv["--ColName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -97,8 +97,8 @@ def doDescribeDatabaseObjects(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "DbName": Utils.try_to_json(argv, "--DbName"),
+        "InstanceId": argv["--InstanceId"],
+        "DbName": argv["--DbName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -163,8 +163,8 @@ def doDescribeDCDBUpgradePrice(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UpgradeType": Utils.try_to_json(argv, "--UpgradeType"),
+        "InstanceId": argv["--InstanceId"],
+        "UpgradeType": argv["--UpgradeType"],
         "AddShardConfig": Utils.try_to_json(argv, "--AddShardConfig"),
         "ExpandShardConfig": Utils.try_to_json(argv, "--ExpandShardConfig"),
         "SplitShardConfig": Utils.try_to_json(argv, "--SplitShardConfig"),
@@ -200,10 +200,10 @@ def doModifyAccountDescription(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "InstanceId": argv["--InstanceId"],
+        "UserName": argv["--UserName"],
+        "Host": argv["--Host"],
+        "Description": argv["--Description"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -236,10 +236,10 @@ def doResetAccountPassword(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "InstanceId": argv["--InstanceId"],
+        "UserName": argv["--UserName"],
+        "Host": argv["--Host"],
+        "Password": argv["--Password"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -272,7 +272,7 @@ def doDescribeDCDBPrice(argv, arglist):
         return
 
     param = {
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "Zone": argv["--Zone"],
         "Count": Utils.try_to_json(argv, "--Count"),
         "Period": Utils.try_to_json(argv, "--Period"),
         "ShardNodeCount": Utils.try_to_json(argv, "--ShardNodeCount"),
@@ -311,7 +311,7 @@ def doModifyDBParameters(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "Params": Utils.try_to_json(argv, "--Params"),
 
     }
@@ -377,7 +377,7 @@ def doOpenDBExtranetAccess(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -444,7 +444,7 @@ def doDescribeAccounts(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -477,14 +477,14 @@ def doGrantAccountPrivileges(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "DbName": Utils.try_to_json(argv, "--DbName"),
+        "InstanceId": argv["--InstanceId"],
+        "UserName": argv["--UserName"],
+        "Host": argv["--Host"],
+        "DbName": argv["--DbName"],
         "Privileges": Utils.try_to_json(argv, "--Privileges"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "Object": Utils.try_to_json(argv, "--Object"),
-        "ColName": Utils.try_to_json(argv, "--ColName"),
+        "Type": argv["--Type"],
+        "Object": argv["--Object"],
+        "ColName": argv["--ColName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -517,7 +517,7 @@ def doRenewDCDBInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "Period": Utils.try_to_json(argv, "--Period"),
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
@@ -553,9 +553,9 @@ def doDeleteAccount(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
+        "InstanceId": argv["--InstanceId"],
+        "UserName": argv["--UserName"],
+        "Host": argv["--Host"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -588,7 +588,7 @@ def doDescribeDBParameters(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -655,7 +655,7 @@ def doDescribeSqlLogs(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -690,8 +690,8 @@ def doDescribeDBLogFiles(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "ShardId": Utils.try_to_json(argv, "--ShardId"),
+        "InstanceId": argv["--InstanceId"],
+        "ShardId": argv["--ShardId"],
         "Type": Utils.try_to_json(argv, "--Type"),
 
     }
@@ -725,7 +725,7 @@ def doDescribeDBSyncMode(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -758,12 +758,12 @@ def doCreateAccount(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UserName": Utils.try_to_json(argv, "--UserName"),
-        "Host": Utils.try_to_json(argv, "--Host"),
-        "Password": Utils.try_to_json(argv, "--Password"),
+        "InstanceId": argv["--InstanceId"],
+        "UserName": argv["--UserName"],
+        "Host": argv["--Host"],
+        "Password": argv["--Password"],
         "ReadOnly": Utils.try_to_json(argv, "--ReadOnly"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "Description": argv["--Description"],
         "DelayThresh": Utils.try_to_json(argv, "--DelayThresh"),
 
     }
@@ -797,8 +797,8 @@ def doUpgradeDCDBInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "UpgradeType": Utils.try_to_json(argv, "--UpgradeType"),
+        "InstanceId": argv["--InstanceId"],
+        "UpgradeType": argv["--UpgradeType"],
         "AddShardConfig": Utils.try_to_json(argv, "--AddShardConfig"),
         "ExpandShardConfig": Utils.try_to_json(argv, "--ExpandShardConfig"),
         "SplitShardConfig": Utils.try_to_json(argv, "--SplitShardConfig"),
@@ -836,7 +836,7 @@ def doModifyDBSyncMode(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "SyncMode": Utils.try_to_json(argv, "--SyncMode"),
 
     }
@@ -870,7 +870,7 @@ def doCloseDBExtranetAccess(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -904,14 +904,14 @@ def doDescribeDCDBInstances(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "SearchName": Utils.try_to_json(argv, "--SearchName"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+        "SearchName": argv["--SearchName"],
+        "SearchKey": argv["--SearchKey"],
         "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
         "IsFilterVpc": Utils.try_to_json(argv, "--IsFilterVpc"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
-        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
+        "OrderBy": argv["--OrderBy"],
+        "OrderByType": argv["--OrderByType"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "ExclusterType": Utils.try_to_json(argv, "--ExclusterType"),
@@ -948,13 +948,13 @@ def doCopyAccountPrivileges(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "SrcUserName": Utils.try_to_json(argv, "--SrcUserName"),
-        "SrcHost": Utils.try_to_json(argv, "--SrcHost"),
-        "DstUserName": Utils.try_to_json(argv, "--DstUserName"),
-        "DstHost": Utils.try_to_json(argv, "--DstHost"),
-        "SrcReadOnly": Utils.try_to_json(argv, "--SrcReadOnly"),
-        "DstReadOnly": Utils.try_to_json(argv, "--DstReadOnly"),
+        "InstanceId": argv["--InstanceId"],
+        "SrcUserName": argv["--SrcUserName"],
+        "SrcHost": argv["--SrcHost"],
+        "DstUserName": argv["--DstUserName"],
+        "DstHost": argv["--DstHost"],
+        "SrcReadOnly": argv["--SrcReadOnly"],
+        "DstReadOnly": argv["--DstReadOnly"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -987,12 +987,12 @@ def doDescribeDCDBShards(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "ShardInstanceIds": Utils.try_to_json(argv, "--ShardInstanceIds"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
-        "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "OrderBy": argv["--OrderBy"],
+        "OrderByType": argv["--OrderByType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1033,9 +1033,9 @@ def doCreateDCDBInstance(argv, arglist):
         "ShardCount": Utils.try_to_json(argv, "--ShardCount"),
         "Count": Utils.try_to_json(argv, "--Count"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "DbVersionId": Utils.try_to_json(argv, "--DbVersionId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
+        "DbVersionId": argv["--DbVersionId"],
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
 
@@ -1070,7 +1070,7 @@ def doDescribeDatabases(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1103,9 +1103,9 @@ def doDescribeDatabaseTable(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "DbName": Utils.try_to_json(argv, "--DbName"),
-        "Table": Utils.try_to_json(argv, "--Table"),
+        "InstanceId": argv["--InstanceId"],
+        "DbName": argv["--DbName"],
+        "Table": argv["--Table"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1138,12 +1138,12 @@ def doCloneAccount(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "SrcUser": Utils.try_to_json(argv, "--SrcUser"),
-        "SrcHost": Utils.try_to_json(argv, "--SrcHost"),
-        "DstUser": Utils.try_to_json(argv, "--DstUser"),
-        "DstHost": Utils.try_to_json(argv, "--DstHost"),
-        "DstDesc": Utils.try_to_json(argv, "--DstDesc"),
+        "InstanceId": argv["--InstanceId"],
+        "SrcUser": argv["--SrcUser"],
+        "SrcHost": argv["--SrcHost"],
+        "DstUser": argv["--DstUser"],
+        "DstHost": argv["--DstHost"],
+        "DstDesc": argv["--DstDesc"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1176,7 +1176,7 @@ def doDescribeDCDBRenewalPrice(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "Period": Utils.try_to_json(argv, "--Period"),
 
     }

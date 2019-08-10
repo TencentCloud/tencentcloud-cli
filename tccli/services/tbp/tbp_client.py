@@ -25,10 +25,10 @@ def doReset(argv, arglist):
         return
 
     param = {
-        "BotId": Utils.try_to_json(argv, "--BotId"),
-        "UserId": Utils.try_to_json(argv, "--UserId"),
-        "BotVersion": Utils.try_to_json(argv, "--BotVersion"),
-        "BotEnv": Utils.try_to_json(argv, "--BotEnv"),
+        "BotId": argv["--BotId"],
+        "UserId": argv["--UserId"],
+        "BotVersion": argv["--BotVersion"],
+        "BotEnv": argv["--BotEnv"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -61,9 +61,9 @@ def doTextReset(argv, arglist):
         return
 
     param = {
-        "BotId": Utils.try_to_json(argv, "--BotId"),
-        "TerminalId": Utils.try_to_json(argv, "--TerminalId"),
-        "BotEnv": Utils.try_to_json(argv, "--BotEnv"),
+        "BotId": argv["--BotId"],
+        "TerminalId": argv["--TerminalId"],
+        "BotEnv": argv["--BotEnv"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -96,11 +96,11 @@ def doTextProcess(argv, arglist):
         return
 
     param = {
-        "BotId": Utils.try_to_json(argv, "--BotId"),
-        "TerminalId": Utils.try_to_json(argv, "--TerminalId"),
-        "InputText": Utils.try_to_json(argv, "--InputText"),
-        "BotEnv": Utils.try_to_json(argv, "--BotEnv"),
-        "SessionAttributes": Utils.try_to_json(argv, "--SessionAttributes"),
+        "BotId": argv["--BotId"],
+        "TerminalId": argv["--TerminalId"],
+        "InputText": argv["--InputText"],
+        "BotEnv": argv["--BotEnv"],
+        "SessionAttributes": argv["--SessionAttributes"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

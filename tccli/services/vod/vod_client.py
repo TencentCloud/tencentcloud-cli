@@ -62,14 +62,14 @@ def doModifyContentReviewTemplate(argv, arglist):
 
     param = {
         "Definition": Utils.try_to_json(argv, "--Definition"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
         "PornConfigure": Utils.try_to_json(argv, "--PornConfigure"),
         "TerrorismConfigure": Utils.try_to_json(argv, "--TerrorismConfigure"),
         "PoliticalConfigure": Utils.try_to_json(argv, "--PoliticalConfigure"),
         "UserDefineConfigure": Utils.try_to_json(argv, "--UserDefineConfigure"),
         "ScreenshotInterval": Utils.try_to_json(argv, "--ScreenshotInterval"),
-        "ReviewWallSwitch": Utils.try_to_json(argv, "--ReviewWallSwitch"),
+        "ReviewWallSwitch": argv["--ReviewWallSwitch"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -103,9 +103,9 @@ def doCreateContentReviewTemplate(argv, arglist):
         return
 
     param = {
-        "ReviewWallSwitch": Utils.try_to_json(argv, "--ReviewWallSwitch"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "ReviewWallSwitch": argv["--ReviewWallSwitch"],
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
         "PornConfigure": Utils.try_to_json(argv, "--PornConfigure"),
         "TerrorismConfigure": Utils.try_to_json(argv, "--TerrorismConfigure"),
         "PoliticalConfigure": Utils.try_to_json(argv, "--PoliticalConfigure"),
@@ -144,12 +144,12 @@ def doModifyMediaInfo(argv, arglist):
         return
 
     param = {
-        "FileId": Utils.try_to_json(argv, "--FileId"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "FileId": argv["--FileId"],
+        "Name": argv["--Name"],
+        "Description": argv["--Description"],
         "ClassId": Utils.try_to_json(argv, "--ClassId"),
-        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
-        "CoverData": Utils.try_to_json(argv, "--CoverData"),
+        "ExpireTime": argv["--ExpireTime"],
+        "CoverData": argv["--CoverData"],
         "AddKeyFrameDescs": Utils.try_to_json(argv, "--AddKeyFrameDescs"),
         "DeleteKeyFrameDescs": Utils.try_to_json(argv, "--DeleteKeyFrameDescs"),
         "ClearKeyFrameDescs": Utils.try_to_json(argv, "--ClearKeyFrameDescs"),
@@ -189,11 +189,11 @@ def doEditMedia(argv, arglist):
         return
 
     param = {
-        "InputType": Utils.try_to_json(argv, "--InputType"),
+        "InputType": argv["--InputType"],
         "FileInfos": Utils.try_to_json(argv, "--FileInfos"),
         "StreamInfos": Utils.try_to_json(argv, "--StreamInfos"),
         "Definition": Utils.try_to_json(argv, "--Definition"),
-        "ProcedureName": Utils.try_to_json(argv, "--ProcedureName"),
+        "ProcedureName": argv["--ProcedureName"],
         "OutputConfig": Utils.try_to_json(argv, "--OutputConfig"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
@@ -328,14 +328,14 @@ def doApplyUpload(argv, arglist):
         return
 
     param = {
-        "MediaType": Utils.try_to_json(argv, "--MediaType"),
-        "MediaName": Utils.try_to_json(argv, "--MediaName"),
-        "CoverType": Utils.try_to_json(argv, "--CoverType"),
-        "Procedure": Utils.try_to_json(argv, "--Procedure"),
-        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
-        "StorageRegion": Utils.try_to_json(argv, "--StorageRegion"),
+        "MediaType": argv["--MediaType"],
+        "MediaName": argv["--MediaName"],
+        "CoverType": argv["--CoverType"],
+        "Procedure": argv["--Procedure"],
+        "ExpireTime": argv["--ExpireTime"],
+        "StorageRegion": argv["--StorageRegion"],
         "ClassId": Utils.try_to_json(argv, "--ClassId"),
-        "SourceContext": Utils.try_to_json(argv, "--SourceContext"),
+        "SourceContext": argv["--SourceContext"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -370,9 +370,9 @@ def doModifyTranscodeTemplate(argv, arglist):
 
     param = {
         "Definition": Utils.try_to_json(argv, "--Definition"),
-        "Container": Utils.try_to_json(argv, "--Container"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "Container": argv["--Container"],
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
         "RemoveVideo": Utils.try_to_json(argv, "--RemoveVideo"),
         "RemoveAudio": Utils.try_to_json(argv, "--RemoveAudio"),
         "VideoTemplate": Utils.try_to_json(argv, "--VideoTemplate"),
@@ -446,7 +446,7 @@ def doCommitUpload(argv, arglist):
         return
 
     param = {
-        "VodSessionKey": Utils.try_to_json(argv, "--VodSessionKey"),
+        "VodSessionKey": argv["--VodSessionKey"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -584,7 +584,7 @@ def doSimpleHlsClip(argv, arglist):
         return
 
     param = {
-        "Url": Utils.try_to_json(argv, "--Url"),
+        "Url": argv["--Url"],
         "StartTimeOffset": Utils.try_to_json(argv, "--StartTimeOffset"),
         "EndTimeOffset": Utils.try_to_json(argv, "--EndTimeOffset"),
 
@@ -619,12 +619,12 @@ def doLiveRealTimeClip(argv, arglist):
         return
 
     param = {
-        "StreamId": Utils.try_to_json(argv, "--StreamId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StreamId": argv["--StreamId"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "IsPersistence": Utils.try_to_json(argv, "--IsPersistence"),
-        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
-        "Procedure": Utils.try_to_json(argv, "--Procedure"),
+        "ExpireTime": argv["--ExpireTime"],
+        "Procedure": argv["--Procedure"],
         "MetaDataRequired": Utils.try_to_json(argv, "--MetaDataRequired"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
@@ -660,8 +660,8 @@ def doModifyAIRecognitionTemplate(argv, arglist):
 
     param = {
         "Definition": Utils.try_to_json(argv, "--Definition"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
         "HeadTailConfigure": Utils.try_to_json(argv, "--HeadTailConfigure"),
         "SegmentConfigure": Utils.try_to_json(argv, "--SegmentConfigure"),
         "FaceConfigure": Utils.try_to_json(argv, "--FaceConfigure"),
@@ -710,9 +710,9 @@ def doProcessMediaByUrl(argv, arglist):
         "AiAnalysisTask": Utils.try_to_json(argv, "--AiAnalysisTask"),
         "AiRecognitionTask": Utils.try_to_json(argv, "--AiRecognitionTask"),
         "TasksPriority": Utils.try_to_json(argv, "--TasksPriority"),
-        "TasksNotifyMode": Utils.try_to_json(argv, "--TasksNotifyMode"),
-        "SessionContext": Utils.try_to_json(argv, "--SessionContext"),
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "TasksNotifyMode": argv["--TasksNotifyMode"],
+        "SessionContext": argv["--SessionContext"],
+        "SessionId": argv["--SessionId"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -746,12 +746,12 @@ def doProcessMediaByProcedure(argv, arglist):
         return
 
     param = {
-        "FileId": Utils.try_to_json(argv, "--FileId"),
-        "ProcedureName": Utils.try_to_json(argv, "--ProcedureName"),
+        "FileId": argv["--FileId"],
+        "ProcedureName": argv["--ProcedureName"],
         "TasksPriority": Utils.try_to_json(argv, "--TasksPriority"),
-        "TasksNotifyMode": Utils.try_to_json(argv, "--TasksNotifyMode"),
-        "SessionContext": Utils.try_to_json(argv, "--SessionContext"),
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "TasksNotifyMode": argv["--TasksNotifyMode"],
+        "SessionContext": argv["--SessionContext"],
+        "SessionId": argv["--SessionId"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -785,14 +785,14 @@ def doSearchMedia(argv, arglist):
         return
 
     param = {
-        "Text": Utils.try_to_json(argv, "--Text"),
+        "Text": argv["--Text"],
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "ClassIds": Utils.try_to_json(argv, "--ClassIds"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "StreamId": Utils.try_to_json(argv, "--StreamId"),
-        "Vid": Utils.try_to_json(argv, "--Vid"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "SourceType": argv["--SourceType"],
+        "StreamId": argv["--StreamId"],
+        "Vid": argv["--Vid"],
         "Sort": Utils.try_to_json(argv, "--Sort"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -863,7 +863,7 @@ def doDeletePersonSample(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
+        "PersonId": argv["--PersonId"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -931,7 +931,7 @@ def doDescribeTaskDetail(argv, arglist):
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "TaskId": argv["--TaskId"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -965,8 +965,8 @@ def doDescribeReviewDetails(argv, arglist):
         return
 
     param = {
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -1039,11 +1039,11 @@ def doModifyWatermarkTemplate(argv, arglist):
 
     param = {
         "Definition": Utils.try_to_json(argv, "--Definition"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
-        "CoordinateOrigin": Utils.try_to_json(argv, "--CoordinateOrigin"),
-        "XPos": Utils.try_to_json(argv, "--XPos"),
-        "YPos": Utils.try_to_json(argv, "--YPos"),
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
+        "CoordinateOrigin": argv["--CoordinateOrigin"],
+        "XPos": argv["--XPos"],
+        "YPos": argv["--YPos"],
         "ImageTemplate": Utils.try_to_json(argv, "--ImageTemplate"),
         "TextTemplate": Utils.try_to_json(argv, "--TextTemplate"),
         "SvgTemplate": Utils.try_to_json(argv, "--SvgTemplate"),
@@ -1115,8 +1115,8 @@ def doModifyAIAnalysisTemplate(argv, arglist):
 
     param = {
         "Definition": Utils.try_to_json(argv, "--Definition"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
         "ClassificationConfigure": Utils.try_to_json(argv, "--ClassificationConfigure"),
         "TagConfigure": Utils.try_to_json(argv, "--TagConfigure"),
         "CoverConfigure": Utils.try_to_json(argv, "--CoverConfigure"),
@@ -1154,7 +1154,7 @@ def doDeleteProcedureTemplate(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -1189,8 +1189,8 @@ def doModifySubAppIdInfo(argv, arglist):
 
     param = {
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "Name": argv["--Name"],
+        "Description": argv["--Description"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1259,12 +1259,12 @@ def doCreateWatermarkTemplate(argv, arglist):
         return
 
     param = {
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
-        "CoordinateOrigin": Utils.try_to_json(argv, "--CoordinateOrigin"),
-        "XPos": Utils.try_to_json(argv, "--XPos"),
-        "YPos": Utils.try_to_json(argv, "--YPos"),
+        "Type": argv["--Type"],
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
+        "CoordinateOrigin": argv["--CoordinateOrigin"],
+        "XPos": argv["--XPos"],
+        "YPos": argv["--YPos"],
         "ImageTemplate": Utils.try_to_json(argv, "--ImageTemplate"),
         "TextTemplate": Utils.try_to_json(argv, "--TextTemplate"),
         "SvgTemplate": Utils.try_to_json(argv, "--SvgTemplate"),
@@ -1301,7 +1301,7 @@ def doDescribePersonSamples(argv, arglist):
         return
 
     param = {
-        "Type": Utils.try_to_json(argv, "--Type"),
+        "Type": argv["--Type"],
         "PersonIds": Utils.try_to_json(argv, "--PersonIds"),
         "Names": Utils.try_to_json(argv, "--Names"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
@@ -1340,7 +1340,7 @@ def doWeChatMiniProgramPublish(argv, arglist):
         return
 
     param = {
-        "FileId": Utils.try_to_json(argv, "--FileId"),
+        "FileId": argv["--FileId"],
         "SourceDefinition": Utils.try_to_json(argv, "--SourceDefinition"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
@@ -1409,15 +1409,15 @@ def doPullUpload(argv, arglist):
         return
 
     param = {
-        "MediaUrl": Utils.try_to_json(argv, "--MediaUrl"),
-        "MediaName": Utils.try_to_json(argv, "--MediaName"),
-        "CoverUrl": Utils.try_to_json(argv, "--CoverUrl"),
-        "Procedure": Utils.try_to_json(argv, "--Procedure"),
-        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
-        "StorageRegion": Utils.try_to_json(argv, "--StorageRegion"),
+        "MediaUrl": argv["--MediaUrl"],
+        "MediaName": argv["--MediaName"],
+        "CoverUrl": argv["--CoverUrl"],
+        "Procedure": argv["--Procedure"],
+        "ExpireTime": argv["--ExpireTime"],
+        "StorageRegion": argv["--StorageRegion"],
         "ClassId": Utils.try_to_json(argv, "--ClassId"),
-        "SessionContext": Utils.try_to_json(argv, "--SessionContext"),
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "SessionContext": argv["--SessionContext"],
+        "SessionId": argv["--SessionId"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -1452,7 +1452,7 @@ def doModifyClass(argv, arglist):
 
     param = {
         "ClassId": Utils.try_to_json(argv, "--ClassId"),
-        "ClassName": Utils.try_to_json(argv, "--ClassName"),
+        "ClassName": argv["--ClassName"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -1486,7 +1486,7 @@ def doCreateProcedureTemplate(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
         "MediaProcessTask": Utils.try_to_json(argv, "--MediaProcessTask"),
         "AiContentReviewTask": Utils.try_to_json(argv, "--AiContentReviewTask"),
         "AiAnalysisTask": Utils.try_to_json(argv, "--AiAnalysisTask"),
@@ -1558,7 +1558,7 @@ def doDeleteMedia(argv, arglist):
         return
 
     param = {
-        "FileId": Utils.try_to_json(argv, "--FileId"),
+        "FileId": argv["--FileId"],
         "DeleteParts": Utils.try_to_json(argv, "--DeleteParts"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
@@ -1593,10 +1593,10 @@ def doDescribeTasks(argv, arglist):
         return
 
     param = {
-        "Status": Utils.try_to_json(argv, "--Status"),
-        "FileId": Utils.try_to_json(argv, "--FileId"),
+        "Status": argv["--Status"],
+        "FileId": argv["--FileId"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "ScrollToken": Utils.try_to_json(argv, "--ScrollToken"),
+        "ScrollToken": argv["--ScrollToken"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -1665,10 +1665,10 @@ def doCreatePersonSample(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
         "FaceContents": Utils.try_to_json(argv, "--FaceContents"),
         "Usages": Utils.try_to_json(argv, "--Usages"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "Description": argv["--Description"],
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
@@ -1703,7 +1703,7 @@ def doResetProcedureTemplate(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
+        "Name": argv["--Name"],
         "MediaProcessTask": Utils.try_to_json(argv, "--MediaProcessTask"),
         "AiContentReviewTask": Utils.try_to_json(argv, "--AiContentReviewTask"),
         "AiAnalysisTask": Utils.try_to_json(argv, "--AiAnalysisTask"),
@@ -1741,8 +1741,8 @@ def doExecuteFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "FunctionArg": Utils.try_to_json(argv, "--FunctionArg"),
+        "FunctionName": argv["--FunctionName"],
+        "FunctionArg": argv["--FunctionArg"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -1777,7 +1777,7 @@ def doCreateClass(argv, arglist):
 
     param = {
         "ParentId": Utils.try_to_json(argv, "--ParentId"),
-        "ClassName": Utils.try_to_json(argv, "--ClassName"),
+        "ClassName": argv["--ClassName"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -1812,7 +1812,7 @@ def doModifySubAppIdStatus(argv, arglist):
 
     param = {
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
-        "Status": Utils.try_to_json(argv, "--Status"),
+        "Status": argv["--Status"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1845,9 +1845,9 @@ def doModifyPersonSample(argv, arglist):
         return
 
     param = {
-        "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "PersonId": argv["--PersonId"],
+        "Name": argv["--Name"],
+        "Description": argv["--Description"],
         "Usages": Utils.try_to_json(argv, "--Usages"),
         "FaceOperationInfo": Utils.try_to_json(argv, "--FaceOperationInfo"),
         "TagOperationInfo": Utils.try_to_json(argv, "--TagOperationInfo"),
@@ -1884,9 +1884,9 @@ def doCreateTranscodeTemplate(argv, arglist):
         return
 
     param = {
-        "Container": Utils.try_to_json(argv, "--Container"),
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "Container": argv["--Container"],
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
         "RemoveVideo": Utils.try_to_json(argv, "--RemoveVideo"),
         "RemoveAudio": Utils.try_to_json(argv, "--RemoveAudio"),
         "VideoTemplate": Utils.try_to_json(argv, "--VideoTemplate"),
@@ -1960,15 +1960,15 @@ def doProcessMedia(argv, arglist):
         return
 
     param = {
-        "FileId": Utils.try_to_json(argv, "--FileId"),
+        "FileId": argv["--FileId"],
         "MediaProcessTask": Utils.try_to_json(argv, "--MediaProcessTask"),
         "AiContentReviewTask": Utils.try_to_json(argv, "--AiContentReviewTask"),
         "AiAnalysisTask": Utils.try_to_json(argv, "--AiAnalysisTask"),
         "AiRecognitionTask": Utils.try_to_json(argv, "--AiRecognitionTask"),
         "TasksPriority": Utils.try_to_json(argv, "--TasksPriority"),
-        "TasksNotifyMode": Utils.try_to_json(argv, "--TasksNotifyMode"),
-        "SessionContext": Utils.try_to_json(argv, "--SessionContext"),
-        "SessionId": Utils.try_to_json(argv, "--SessionId"),
+        "TasksNotifyMode": argv["--TasksNotifyMode"],
+        "SessionContext": argv["--SessionContext"],
+        "SessionId": argv["--SessionId"],
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -2002,8 +2002,8 @@ def doCreateAIRecognitionTemplate(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
         "HeadTailConfigure": Utils.try_to_json(argv, "--HeadTailConfigure"),
         "SegmentConfigure": Utils.try_to_json(argv, "--SegmentConfigure"),
         "FaceConfigure": Utils.try_to_json(argv, "--FaceConfigure"),
@@ -2046,7 +2046,7 @@ def doModifyWordSample(argv, arglist):
         return
 
     param = {
-        "Keyword": Utils.try_to_json(argv, "--Keyword"),
+        "Keyword": argv["--Keyword"],
         "Usages": Utils.try_to_json(argv, "--Usages"),
         "TagOperationInfo": Utils.try_to_json(argv, "--TagOperationInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
@@ -2150,8 +2150,8 @@ def doCreateAIAnalysisTemplate(argv, arglist):
         return
 
     param = {
-        "Name": Utils.try_to_json(argv, "--Name"),
-        "Comment": Utils.try_to_json(argv, "--Comment"),
+        "Name": argv["--Name"],
+        "Comment": argv["--Comment"],
         "ClassificationConfigure": Utils.try_to_json(argv, "--ClassificationConfigure"),
         "TagConfigure": Utils.try_to_json(argv, "--TagConfigure"),
         "CoverConfigure": Utils.try_to_json(argv, "--CoverConfigure"),
@@ -2223,7 +2223,7 @@ def doDescribeWatermarkTemplates(argv, arglist):
 
     param = {
         "Definitions": Utils.try_to_json(argv, "--Definitions"),
-        "Type": Utils.try_to_json(argv, "--Type"),
+        "Type": argv["--Type"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
@@ -2260,8 +2260,8 @@ def doDescribeTranscodeTemplates(argv, arglist):
 
     param = {
         "Definitions": Utils.try_to_json(argv, "--Definitions"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "ContainerType": Utils.try_to_json(argv, "--ContainerType"),
+        "Type": argv["--Type"],
+        "ContainerType": argv["--ContainerType"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),

@@ -25,7 +25,7 @@ def doTerminateTasks(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
 
     }
@@ -94,7 +94,7 @@ def doTerminateInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -132,18 +132,18 @@ def doCreateInstance(argv, arglist):
         "Software": Utils.try_to_json(argv, "--Software"),
         "ResourceSpec": Utils.try_to_json(argv, "--ResourceSpec"),
         "SupportHA": Utils.try_to_json(argv, "--SupportHA"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceName": argv["--InstanceName"],
         "PayMode": Utils.try_to_json(argv, "--PayMode"),
         "Placement": Utils.try_to_json(argv, "--Placement"),
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "TimeUnit": argv["--TimeUnit"],
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
+        "ClientToken": argv["--ClientToken"],
         "COSSettings": Utils.try_to_json(argv, "--COSSettings"),
-        "SgId": Utils.try_to_json(argv, "--SgId"),
+        "SgId": argv["--SgId"],
         "PreExecutedFileSettings": Utils.try_to_json(argv, "--PreExecutedFileSettings"),
         "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
-        "NeedMasterWan": Utils.try_to_json(argv, "--NeedMasterWan"),
+        "NeedMasterWan": argv["--NeedMasterWan"],
         "RemoteLoginAtCreate": Utils.try_to_json(argv, "--RemoteLoginAtCreate"),
 
     }
@@ -177,10 +177,10 @@ def doInquiryPriceCreateInstance(argv, arglist):
         return
 
     param = {
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "TimeUnit": argv["--TimeUnit"],
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
         "ResourceSpec": Utils.try_to_json(argv, "--ResourceSpec"),
-        "Currency": Utils.try_to_json(argv, "--Currency"),
+        "Currency": argv["--Currency"],
         "PayMode": Utils.try_to_json(argv, "--PayMode"),
         "SupportHA": Utils.try_to_json(argv, "--SupportHA"),
         "Software": Utils.try_to_json(argv, "--Software"),
@@ -218,14 +218,14 @@ def doInquiryPriceScaleOutInstance(argv, arglist):
         return
 
     param = {
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "TimeUnit": argv["--TimeUnit"],
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
         "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
         "PayMode": Utils.try_to_json(argv, "--PayMode"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "CoreCount": Utils.try_to_json(argv, "--CoreCount"),
         "TaskCount": Utils.try_to_json(argv, "--TaskCount"),
-        "Currency": Utils.try_to_json(argv, "--Currency"),
+        "Currency": argv["--Currency"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -258,10 +258,10 @@ def doScaleOutInstance(argv, arglist):
         return
 
     param = {
-        "ClientToken": Utils.try_to_json(argv, "--ClientToken"),
-        "TimeUnit": Utils.try_to_json(argv, "--TimeUnit"),
+        "ClientToken": argv["--ClientToken"],
+        "TimeUnit": argv["--TimeUnit"],
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "PayMode": Utils.try_to_json(argv, "--PayMode"),
         "PreExecutedFileSettings": Utils.try_to_json(argv, "--PreExecutedFileSettings"),
         "TaskCount": Utils.try_to_json(argv, "--TaskCount"),

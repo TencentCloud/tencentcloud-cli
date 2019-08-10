@@ -25,8 +25,8 @@ def doUnbindRs(argv, arglist):
         return
 
     param = {
-        "EipId": Utils.try_to_json(argv, "--EipId"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "EipId": argv["--EipId"],
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,8 +59,8 @@ def doBindHosted(argv, arglist):
         return
 
     param = {
-        "EipId": Utils.try_to_json(argv, "--EipId"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "EipId": argv["--EipId"],
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -93,7 +93,7 @@ def doCreateEipAcl(argv, arglist):
         return
 
     param = {
-        "AclName": Utils.try_to_json(argv, "--AclName"),
+        "AclName": argv["--AclName"],
         "Status": Utils.try_to_json(argv, "--Status"),
 
     }
@@ -128,11 +128,11 @@ def doCreateEip(argv, arglist):
 
     param = {
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "PayMode": argv["--PayMode"],
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
-        "SetType": Utils.try_to_json(argv, "--SetType"),
+        "SetType": argv["--SetType"],
         "Exclusive": Utils.try_to_json(argv, "--Exclusive"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "IpList": Utils.try_to_json(argv, "--IpList"),
 
     }
@@ -166,10 +166,10 @@ def doModifyEipAcl(argv, arglist):
         return
 
     param = {
-        "AclId": Utils.try_to_json(argv, "--AclId"),
-        "AclName": Utils.try_to_json(argv, "--AclName"),
+        "AclId": argv["--AclId"],
+        "AclName": argv["--AclName"],
         "Status": Utils.try_to_json(argv, "--Status"),
-        "Type": Utils.try_to_json(argv, "--Type"),
+        "Type": argv["--Type"],
         "Rules": Utils.try_to_json(argv, "--Rules"),
 
     }
@@ -235,8 +235,8 @@ def doBindRs(argv, arglist):
         return
 
     param = {
-        "EipId": Utils.try_to_json(argv, "--EipId"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "EipId": argv["--EipId"],
+        "InstanceId": argv["--InstanceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -302,9 +302,9 @@ def doUnbindHosted(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "EipId": Utils.try_to_json(argv, "--EipId"),
-        "Eip": Utils.try_to_json(argv, "--Eip"),
+        "InstanceId": argv["--InstanceId"],
+        "EipId": argv["--EipId"],
+        "Eip": argv["--Eip"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -370,7 +370,7 @@ def doModifyEipCharge(argv, arglist):
         return
 
     param = {
-        "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "PayMode": argv["--PayMode"],
         "EipIds": Utils.try_to_json(argv, "--EipIds"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
 
@@ -405,8 +405,8 @@ def doModifyEipName(argv, arglist):
         return
 
     param = {
-        "EipId": Utils.try_to_json(argv, "--EipId"),
-        "EipName": Utils.try_to_json(argv, "--EipName"),
+        "EipId": argv["--EipId"],
+        "EipName": argv["--EipName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -472,7 +472,7 @@ def doDeleteEipAcl(argv, arglist):
         return
 
     param = {
-        "AclId": Utils.try_to_json(argv, "--AclId"),
+        "AclId": argv["--AclId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -541,14 +541,14 @@ def doDescribeEips(argv, arglist):
         "EipIds": Utils.try_to_json(argv, "--EipIds"),
         "Eips": Utils.try_to_json(argv, "--Eips"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
+        "SearchKey": argv["--SearchKey"],
         "Status": Utils.try_to_json(argv, "--Status"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
+        "OrderField": argv["--OrderField"],
         "Order": Utils.try_to_json(argv, "--Order"),
-        "PayMode": Utils.try_to_json(argv, "--PayMode"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "PayMode": argv["--PayMode"],
+        "VpcId": argv["--VpcId"],
         "BindTypes": Utils.try_to_json(argv, "--BindTypes"),
         "ExclusiveTag": Utils.try_to_json(argv, "--ExclusiveTag"),
         "AclId": Utils.try_to_json(argv, "--AclId"),
@@ -585,9 +585,9 @@ def doBindVpcIp(argv, arglist):
         return
 
     param = {
-        "EipId": Utils.try_to_json(argv, "--EipId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "VpcIp": Utils.try_to_json(argv, "--VpcIp"),
+        "EipId": argv["--EipId"],
+        "VpcId": argv["--VpcId"],
+        "VpcIp": argv["--VpcIp"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -620,9 +620,9 @@ def doUnbindVpcIp(argv, arglist):
         return
 
     param = {
-        "EipId": Utils.try_to_json(argv, "--EipId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "VpcIp": Utils.try_to_json(argv, "--VpcIp"),
+        "EipId": argv["--EipId"],
+        "VpcId": argv["--VpcId"],
+        "VpcIp": argv["--VpcIp"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -655,7 +655,7 @@ def doDescribeEipAcls(argv, arglist):
         return
 
     param = {
-        "AclName": Utils.try_to_json(argv, "--AclName"),
+        "AclName": argv["--AclName"],
         "AclIds": Utils.try_to_json(argv, "--AclIds"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),

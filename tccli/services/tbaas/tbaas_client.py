@@ -25,14 +25,14 @@ def doInvoke(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "ChaincodeName": Utils.try_to_json(argv, "--ChaincodeName"),
-        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "ClusterId": argv["--ClusterId"],
+        "ChaincodeName": argv["--ChaincodeName"],
+        "ChannelName": argv["--ChannelName"],
         "Peers": Utils.try_to_json(argv, "--Peers"),
-        "FuncName": Utils.try_to_json(argv, "--FuncName"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "FuncName": argv["--FuncName"],
+        "GroupName": argv["--GroupName"],
         "Args": Utils.try_to_json(argv, "--Args"),
         "AsyncFlag": Utils.try_to_json(argv, "--AsyncFlag"),
 
@@ -67,11 +67,11 @@ def doGetClusterSummary(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "ClusterId": argv["--ClusterId"],
         "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "GroupName": argv["--GroupName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -104,14 +104,14 @@ def doGetInvokeTx(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
-        "PeerName": Utils.try_to_json(argv, "--PeerName"),
-        "PeerGroup": Utils.try_to_json(argv, "--PeerGroup"),
-        "TxId": Utils.try_to_json(argv, "--TxId"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "ClusterId": argv["--ClusterId"],
+        "ChannelName": argv["--ChannelName"],
+        "PeerName": argv["--PeerName"],
+        "PeerGroup": argv["--PeerGroup"],
+        "TxId": argv["--TxId"],
+        "GroupName": argv["--GroupName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -144,13 +144,13 @@ def doGetBlockList(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
         "ChannelId": Utils.try_to_json(argv, "--ChannelId"),
         "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "ChannelName": argv["--ChannelName"],
+        "GroupName": argv["--GroupName"],
+        "ClusterId": argv["--ClusterId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -185,14 +185,14 @@ def doQuery(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
-        "ChaincodeName": Utils.try_to_json(argv, "--ChaincodeName"),
-        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "ClusterId": argv["--ClusterId"],
+        "ChaincodeName": argv["--ChaincodeName"],
+        "ChannelName": argv["--ChannelName"],
         "Peers": Utils.try_to_json(argv, "--Peers"),
-        "FuncName": Utils.try_to_json(argv, "--FuncName"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
+        "FuncName": argv["--FuncName"],
+        "GroupName": argv["--GroupName"],
         "Args": Utils.try_to_json(argv, "--Args"),
 
     }
@@ -226,14 +226,14 @@ def doGetLatesdTransactionList(argv, arglist):
         return
 
     param = {
-        "Module": Utils.try_to_json(argv, "--Module"),
-        "Operation": Utils.try_to_json(argv, "--Operation"),
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
         "GroupId": Utils.try_to_json(argv, "--GroupId"),
         "ChannelId": Utils.try_to_json(argv, "--ChannelId"),
         "LatestBlockNumber": Utils.try_to_json(argv, "--LatestBlockNumber"),
-        "GroupName": Utils.try_to_json(argv, "--GroupName"),
-        "ChannelName": Utils.try_to_json(argv, "--ChannelName"),
-        "ClusterId": Utils.try_to_json(argv, "--ClusterId"),
+        "GroupName": argv["--GroupName"],
+        "ChannelName": argv["--ChannelName"],
+        "ClusterId": argv["--ClusterId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 

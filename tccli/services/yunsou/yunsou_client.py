@@ -25,9 +25,9 @@ def doDataManipulation(argv, arglist):
         return
 
     param = {
-        "OpType": Utils.try_to_json(argv, "--OpType"),
-        "Encoding": Utils.try_to_json(argv, "--Encoding"),
-        "Contents": Utils.try_to_json(argv, "--Contents"),
+        "OpType": argv["--OpType"],
+        "Encoding": argv["--Encoding"],
+        "Contents": argv["--Contents"],
         "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
 
     }
@@ -62,25 +62,25 @@ def doDataSearch(argv, arglist):
 
     param = {
         "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
-        "SearchQuery": Utils.try_to_json(argv, "--SearchQuery"),
+        "SearchQuery": argv["--SearchQuery"],
         "PageId": Utils.try_to_json(argv, "--PageId"),
         "NumPerPage": Utils.try_to_json(argv, "--NumPerPage"),
-        "SearchId": Utils.try_to_json(argv, "--SearchId"),
+        "SearchId": argv["--SearchId"],
         "QueryEncode": Utils.try_to_json(argv, "--QueryEncode"),
         "RankType": Utils.try_to_json(argv, "--RankType"),
-        "NumFilter": Utils.try_to_json(argv, "--NumFilter"),
-        "ClFilter": Utils.try_to_json(argv, "--ClFilter"),
-        "Extra": Utils.try_to_json(argv, "--Extra"),
+        "NumFilter": argv["--NumFilter"],
+        "ClFilter": argv["--ClFilter"],
+        "Extra": argv["--Extra"],
         "SourceId": Utils.try_to_json(argv, "--SourceId"),
         "SecondSearch": Utils.try_to_json(argv, "--SecondSearch"),
         "MaxDocReturn": Utils.try_to_json(argv, "--MaxDocReturn"),
         "IsSmartbox": Utils.try_to_json(argv, "--IsSmartbox"),
         "EnableAbsHighlight": Utils.try_to_json(argv, "--EnableAbsHighlight"),
         "QcBid": Utils.try_to_json(argv, "--QcBid"),
-        "GroupBy": Utils.try_to_json(argv, "--GroupBy"),
-        "Distinct": Utils.try_to_json(argv, "--Distinct"),
-        "L4RankExpression": Utils.try_to_json(argv, "--L4RankExpression"),
-        "MatchValue": Utils.try_to_json(argv, "--MatchValue"),
+        "GroupBy": argv["--GroupBy"],
+        "Distinct": argv["--Distinct"],
+        "L4RankExpression": argv["--L4RankExpression"],
+        "MatchValue": argv["--MatchValue"],
         "Longitude": Utils.try_to_json(argv, "--Longitude"),
         "Latitude": Utils.try_to_json(argv, "--Latitude"),
         "MultiFilter": Utils.try_to_json(argv, "--MultiFilter"),

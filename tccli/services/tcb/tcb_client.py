@@ -25,9 +25,9 @@ def doModifyDatabaseACL(argv, arglist):
         return
 
     param = {
-        "EnvId": Utils.try_to_json(argv, "--EnvId"),
-        "CollectionName": Utils.try_to_json(argv, "--CollectionName"),
-        "AclTag": Utils.try_to_json(argv, "--AclTag"),
+        "EnvId": argv["--EnvId"],
+        "CollectionName": argv["--CollectionName"],
+        "AclTag": argv["--AclTag"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -60,8 +60,8 @@ def doDescribeDatabaseACL(argv, arglist):
         return
 
     param = {
-        "EnvId": Utils.try_to_json(argv, "--EnvId"),
-        "CollectionName": Utils.try_to_json(argv, "--CollectionName"),
+        "EnvId": argv["--EnvId"],
+        "CollectionName": argv["--CollectionName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -94,8 +94,8 @@ def doModifyEnv(argv, arglist):
         return
 
     param = {
-        "EnvId": Utils.try_to_json(argv, "--EnvId"),
-        "Alias": Utils.try_to_json(argv, "--Alias"),
+        "EnvId": argv["--EnvId"],
+        "Alias": argv["--Alias"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -128,7 +128,7 @@ def doDescribeEnvs(argv, arglist):
         return
 
     param = {
-        "EnvId": Utils.try_to_json(argv, "--EnvId"),
+        "EnvId": argv["--EnvId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

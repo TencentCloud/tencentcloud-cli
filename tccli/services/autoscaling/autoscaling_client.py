@@ -25,7 +25,7 @@ def doExecuteScalingPolicy(argv, arglist):
         return
 
     param = {
-        "AutoScalingPolicyId": Utils.try_to_json(argv, "--AutoScalingPolicyId"),
+        "AutoScalingPolicyId": argv["--AutoScalingPolicyId"],
         "HonorCooldown": Utils.try_to_json(argv, "--HonorCooldown"),
 
     }
@@ -59,11 +59,11 @@ def doCreateAutoScalingGroup(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+        "AutoScalingGroupName": argv["--AutoScalingGroupName"],
+        "LaunchConfigurationId": argv["--LaunchConfigurationId"],
         "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
         "MinSize": Utils.try_to_json(argv, "--MinSize"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
         "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
         "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
@@ -72,8 +72,8 @@ def doCreateAutoScalingGroup(argv, arglist):
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
         "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
         "Zones": Utils.try_to_json(argv, "--Zones"),
-        "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
-        "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
+        "RetryPolicy": argv["--RetryPolicy"],
+        "ZonesCheckPolicy": argv["--ZonesCheckPolicy"],
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "ServiceSettings": Utils.try_to_json(argv, "--ServiceSettings"),
 
@@ -108,7 +108,7 @@ def doPreviewPaiDomainName(argv, arglist):
         return
 
     param = {
-        "DomainNameType": Utils.try_to_json(argv, "--DomainNameType"),
+        "DomainNameType": argv["--DomainNameType"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -141,9 +141,9 @@ def doModifyScalingPolicy(argv, arglist):
         return
 
     param = {
-        "AutoScalingPolicyId": Utils.try_to_json(argv, "--AutoScalingPolicyId"),
-        "ScalingPolicyName": Utils.try_to_json(argv, "--ScalingPolicyName"),
-        "AdjustmentType": Utils.try_to_json(argv, "--AdjustmentType"),
+        "AutoScalingPolicyId": argv["--AutoScalingPolicyId"],
+        "ScalingPolicyName": argv["--ScalingPolicyName"],
+        "AdjustmentType": argv["--AdjustmentType"],
         "AdjustmentValue": Utils.try_to_json(argv, "--AdjustmentValue"),
         "Cooldown": Utils.try_to_json(argv, "--Cooldown"),
         "MetricAlarm": Utils.try_to_json(argv, "--MetricAlarm"),
@@ -216,7 +216,7 @@ def doDeleteAutoScalingGroup(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -249,16 +249,16 @@ def doCreatePaiInstance(argv, arglist):
         return
 
     param = {
-        "DomainName": Utils.try_to_json(argv, "--DomainName"),
+        "DomainName": argv["--DomainName"],
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
-        "InitScript": Utils.try_to_json(argv, "--InitScript"),
+        "InitScript": argv["--InitScript"],
         "Zones": Utils.try_to_json(argv, "--Zones"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
-        "InstanceName": Utils.try_to_json(argv, "--InstanceName"),
+        "InstanceName": argv["--InstanceName"],
         "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargeType": argv["--InstanceChargeType"],
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
 
     }
@@ -292,23 +292,23 @@ def doUpgradeLaunchConfiguration(argv, arglist):
         return
 
     param = {
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "LaunchConfigurationId": argv["--LaunchConfigurationId"],
+        "ImageId": argv["--ImageId"],
         "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
-        "LaunchConfigurationName": Utils.try_to_json(argv, "--LaunchConfigurationName"),
+        "LaunchConfigurationName": argv["--LaunchConfigurationName"],
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "InstanceChargeType": argv["--InstanceChargeType"],
         "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
-        "InstanceTypesCheckPolicy": Utils.try_to_json(argv, "--InstanceTypesCheckPolicy"),
+        "InstanceTypesCheckPolicy": argv["--InstanceTypesCheckPolicy"],
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
-        "UserData": Utils.try_to_json(argv, "--UserData"),
+        "UserData": argv["--UserData"],
         "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
-        "CamRoleName": Utils.try_to_json(argv, "--CamRoleName"),
+        "CamRoleName": argv["--CamRoleName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -341,7 +341,7 @@ def doAttachInstances(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
@@ -411,7 +411,7 @@ def doDeleteScheduledAction(argv, arglist):
         return
 
     param = {
-        "ScheduledActionId": Utils.try_to_json(argv, "--ScheduledActionId"),
+        "ScheduledActionId": argv["--ScheduledActionId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -444,7 +444,7 @@ def doDetachInstances(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
@@ -478,14 +478,14 @@ def doCreateScheduledAction(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "ScheduledActionName": Utils.try_to_json(argv, "--ScheduledActionName"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
+        "ScheduledActionName": argv["--ScheduledActionName"],
         "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
         "MinSize": Utils.try_to_json(argv, "--MinSize"),
         "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Recurrence": Utils.try_to_json(argv, "--Recurrence"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "Recurrence": argv["--Recurrence"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -518,7 +518,7 @@ def doRemoveInstances(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
@@ -552,7 +552,7 @@ def doDeleteScalingPolicy(argv, arglist):
         return
 
     param = {
-        "AutoScalingPolicyId": Utils.try_to_json(argv, "--AutoScalingPolicyId"),
+        "AutoScalingPolicyId": argv["--AutoScalingPolicyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -585,10 +585,10 @@ def doCompleteLifecycleAction(argv, arglist):
         return
 
     param = {
-        "LifecycleHookId": Utils.try_to_json(argv, "--LifecycleHookId"),
-        "LifecycleActionResult": Utils.try_to_json(argv, "--LifecycleActionResult"),
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
-        "LifecycleActionToken": Utils.try_to_json(argv, "--LifecycleActionToken"),
+        "LifecycleHookId": argv["--LifecycleHookId"],
+        "LifecycleActionResult": argv["--LifecycleActionResult"],
+        "InstanceId": argv["--InstanceId"],
+        "LifecycleActionToken": argv["--LifecycleActionToken"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -621,7 +621,7 @@ def doModifyLoadBalancers(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
         "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
         "ForwardLoadBalancers": Utils.try_to_json(argv, "--ForwardLoadBalancers"),
 
@@ -656,7 +656,7 @@ def doModifyDesiredCapacity(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
         "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
 
     }
@@ -690,7 +690,7 @@ def doSetInstancesProtection(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "ProtectedFromScaleIn": Utils.try_to_json(argv, "--ProtectedFromScaleIn"),
 
@@ -725,7 +725,7 @@ def doModifyNotificationConfiguration(argv, arglist):
         return
 
     param = {
-        "AutoScalingNotificationId": Utils.try_to_json(argv, "--AutoScalingNotificationId"),
+        "AutoScalingNotificationId": argv["--AutoScalingNotificationId"],
         "NotificationTypes": Utils.try_to_json(argv, "--NotificationTypes"),
         "NotificationUserGroupIds": Utils.try_to_json(argv, "--NotificationUserGroupIds"),
 
@@ -760,23 +760,23 @@ def doCreateLaunchConfiguration(argv, arglist):
         return
 
     param = {
-        "LaunchConfigurationName": Utils.try_to_json(argv, "--LaunchConfigurationName"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "LaunchConfigurationName": argv["--LaunchConfigurationName"],
+        "ImageId": argv["--ImageId"],
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
+        "InstanceType": argv["--InstanceType"],
         "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "UserData": Utils.try_to_json(argv, "--UserData"),
-        "InstanceChargeType": Utils.try_to_json(argv, "--InstanceChargeType"),
+        "UserData": argv["--UserData"],
+        "InstanceChargeType": argv["--InstanceChargeType"],
         "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
         "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
-        "InstanceTypesCheckPolicy": Utils.try_to_json(argv, "--InstanceTypesCheckPolicy"),
+        "InstanceTypesCheckPolicy": argv["--InstanceTypesCheckPolicy"],
         "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
-        "CamRoleName": Utils.try_to_json(argv, "--CamRoleName"),
+        "CamRoleName": argv["--CamRoleName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -809,20 +809,20 @@ def doModifyAutoScalingGroup(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "AutoScalingGroupName": Utils.try_to_json(argv, "--AutoScalingGroupName"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
+        "AutoScalingGroupName": argv["--AutoScalingGroupName"],
         "DefaultCooldown": Utils.try_to_json(argv, "--DefaultCooldown"),
         "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+        "LaunchConfigurationId": argv["--LaunchConfigurationId"],
         "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
         "MinSize": Utils.try_to_json(argv, "--MinSize"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
         "TerminationPolicies": Utils.try_to_json(argv, "--TerminationPolicies"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "Zones": Utils.try_to_json(argv, "--Zones"),
-        "RetryPolicy": Utils.try_to_json(argv, "--RetryPolicy"),
-        "ZonesCheckPolicy": Utils.try_to_json(argv, "--ZonesCheckPolicy"),
+        "RetryPolicy": argv["--RetryPolicy"],
+        "ZonesCheckPolicy": argv["--ZonesCheckPolicy"],
         "ServiceSettings": Utils.try_to_json(argv, "--ServiceSettings"),
 
     }
@@ -856,7 +856,7 @@ def doCreateNotificationConfiguration(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
         "NotificationTypes": Utils.try_to_json(argv, "--NotificationTypes"),
         "NotificationUserGroupIds": Utils.try_to_json(argv, "--NotificationUserGroupIds"),
 
@@ -927,12 +927,12 @@ def doCreateLifecycleHook(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "LifecycleHookName": Utils.try_to_json(argv, "--LifecycleHookName"),
-        "LifecycleTransition": Utils.try_to_json(argv, "--LifecycleTransition"),
-        "DefaultResult": Utils.try_to_json(argv, "--DefaultResult"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
+        "LifecycleHookName": argv["--LifecycleHookName"],
+        "LifecycleTransition": argv["--LifecycleTransition"],
+        "DefaultResult": argv["--DefaultResult"],
         "HeartbeatTimeout": Utils.try_to_json(argv, "--HeartbeatTimeout"),
-        "NotificationMetadata": Utils.try_to_json(argv, "--NotificationMetadata"),
+        "NotificationMetadata": argv["--NotificationMetadata"],
         "NotificationTarget": Utils.try_to_json(argv, "--NotificationTarget"),
 
     }
@@ -966,12 +966,12 @@ def doUpgradeLifecycleHook(argv, arglist):
         return
 
     param = {
-        "LifecycleHookId": Utils.try_to_json(argv, "--LifecycleHookId"),
-        "LifecycleHookName": Utils.try_to_json(argv, "--LifecycleHookName"),
-        "LifecycleTransition": Utils.try_to_json(argv, "--LifecycleTransition"),
-        "DefaultResult": Utils.try_to_json(argv, "--DefaultResult"),
+        "LifecycleHookId": argv["--LifecycleHookId"],
+        "LifecycleHookName": argv["--LifecycleHookName"],
+        "LifecycleTransition": argv["--LifecycleTransition"],
+        "DefaultResult": argv["--DefaultResult"],
         "HeartbeatTimeout": Utils.try_to_json(argv, "--HeartbeatTimeout"),
-        "NotificationMetadata": Utils.try_to_json(argv, "--NotificationMetadata"),
+        "NotificationMetadata": argv["--NotificationMetadata"],
         "NotificationTarget": Utils.try_to_json(argv, "--NotificationTarget"),
 
     }
@@ -1005,7 +1005,7 @@ def doDisableAutoScalingGroup(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1110,9 +1110,9 @@ def doCreateScalingPolicy(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
-        "ScalingPolicyName": Utils.try_to_json(argv, "--ScalingPolicyName"),
-        "AdjustmentType": Utils.try_to_json(argv, "--AdjustmentType"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
+        "ScalingPolicyName": argv["--ScalingPolicyName"],
+        "AdjustmentType": argv["--AdjustmentType"],
         "AdjustmentValue": Utils.try_to_json(argv, "--AdjustmentValue"),
         "MetricAlarm": Utils.try_to_json(argv, "--MetricAlarm"),
         "Cooldown": Utils.try_to_json(argv, "--Cooldown"),
@@ -1149,7 +1149,7 @@ def doDeleteLaunchConfiguration(argv, arglist):
         return
 
     param = {
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
+        "LaunchConfigurationId": argv["--LaunchConfigurationId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1182,7 +1182,7 @@ def doDeleteLifecycleHook(argv, arglist):
         return
 
     param = {
-        "LifecycleHookId": Utils.try_to_json(argv, "--LifecycleHookId"),
+        "LifecycleHookId": argv["--LifecycleHookId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1251,7 +1251,7 @@ def doEnableAutoScalingGroup(argv, arglist):
         return
 
     param = {
-        "AutoScalingGroupId": Utils.try_to_json(argv, "--AutoScalingGroupId"),
+        "AutoScalingGroupId": argv["--AutoScalingGroupId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1356,14 +1356,14 @@ def doModifyScheduledAction(argv, arglist):
         return
 
     param = {
-        "ScheduledActionId": Utils.try_to_json(argv, "--ScheduledActionId"),
-        "ScheduledActionName": Utils.try_to_json(argv, "--ScheduledActionName"),
+        "ScheduledActionId": argv["--ScheduledActionId"],
+        "ScheduledActionName": argv["--ScheduledActionName"],
         "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
         "MinSize": Utils.try_to_json(argv, "--MinSize"),
         "DesiredCapacity": Utils.try_to_json(argv, "--DesiredCapacity"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Recurrence": Utils.try_to_json(argv, "--Recurrence"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
+        "Recurrence": argv["--Recurrence"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1400,8 +1400,8 @@ def doDescribeAutoScalingActivities(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1434,7 +1434,7 @@ def doDeleteNotificationConfiguration(argv, arglist):
         return
 
     param = {
-        "AutoScalingNotificationId": Utils.try_to_json(argv, "--AutoScalingNotificationId"),
+        "AutoScalingNotificationId": argv["--AutoScalingNotificationId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1499,12 +1499,12 @@ def doModifyLaunchConfigurationAttributes(argv, arglist):
         return
 
     param = {
-        "LaunchConfigurationId": Utils.try_to_json(argv, "--LaunchConfigurationId"),
-        "ImageId": Utils.try_to_json(argv, "--ImageId"),
+        "LaunchConfigurationId": argv["--LaunchConfigurationId"],
+        "ImageId": argv["--ImageId"],
         "InstanceTypes": Utils.try_to_json(argv, "--InstanceTypes"),
-        "InstanceTypesCheckPolicy": Utils.try_to_json(argv, "--InstanceTypesCheckPolicy"),
-        "LaunchConfigurationName": Utils.try_to_json(argv, "--LaunchConfigurationName"),
-        "UserData": Utils.try_to_json(argv, "--UserData"),
+        "InstanceTypesCheckPolicy": argv["--InstanceTypesCheckPolicy"],
+        "LaunchConfigurationName": argv["--LaunchConfigurationName"],
+        "UserData": argv["--UserData"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

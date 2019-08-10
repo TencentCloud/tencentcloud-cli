@@ -25,12 +25,12 @@ def doInvoke(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "InvocationType": Utils.try_to_json(argv, "--InvocationType"),
-        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
-        "ClientContext": Utils.try_to_json(argv, "--ClientContext"),
-        "LogType": Utils.try_to_json(argv, "--LogType"),
-        "Namespace": Utils.try_to_json(argv, "--Namespace"),
+        "FunctionName": argv["--FunctionName"],
+        "InvocationType": argv["--InvocationType"],
+        "Qualifier": argv["--Qualifier"],
+        "ClientContext": argv["--ClientContext"],
+        "LogType": argv["--LogType"],
+        "Namespace": argv["--Namespace"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -63,7 +63,7 @@ def doDeleteFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "FunctionName": argv["--FunctionName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -96,9 +96,9 @@ def doGetFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
-        "ShowCode": Utils.try_to_json(argv, "--ShowCode"),
+        "FunctionName": argv["--FunctionName"],
+        "Qualifier": argv["--Qualifier"],
+        "ShowCode": argv["--ShowCode"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -131,12 +131,12 @@ def doListFunctions(argv, arglist):
         return
 
     param = {
-        "Order": Utils.try_to_json(argv, "--Order"),
-        "Orderby": Utils.try_to_json(argv, "--Orderby"),
+        "Order": argv["--Order"],
+        "Orderby": argv["--Orderby"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "SearchKey": argv["--SearchKey"],
+        "Description": argv["--Description"],
         "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
@@ -170,11 +170,11 @@ def doUpdateFunctionConfiguration(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "FunctionName": argv["--FunctionName"],
+        "Description": argv["--Description"],
         "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
         "Timeout": Utils.try_to_json(argv, "--Timeout"),
-        "Runtime": Utils.try_to_json(argv, "--Runtime"),
+        "Runtime": argv["--Runtime"],
         "Environment": Utils.try_to_json(argv, "--Environment"),
         "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
 
@@ -209,12 +209,12 @@ def doCreateTrigger(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "TriggerName": Utils.try_to_json(argv, "--TriggerName"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "TriggerDesc": Utils.try_to_json(argv, "--TriggerDesc"),
-        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
-        "Enable": Utils.try_to_json(argv, "--Enable"),
+        "FunctionName": argv["--FunctionName"],
+        "TriggerName": argv["--TriggerName"],
+        "Type": argv["--Type"],
+        "TriggerDesc": argv["--TriggerDesc"],
+        "Qualifier": argv["--Qualifier"],
+        "Enable": argv["--Enable"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -247,12 +247,12 @@ def doCopyFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "NewFunctionName": Utils.try_to_json(argv, "--NewFunctionName"),
-        "Namespace": Utils.try_to_json(argv, "--Namespace"),
-        "TargetNamespace": Utils.try_to_json(argv, "--TargetNamespace"),
-        "Description": Utils.try_to_json(argv, "--Description"),
-        "TargetRegion": Utils.try_to_json(argv, "--TargetRegion"),
+        "FunctionName": argv["--FunctionName"],
+        "NewFunctionName": argv["--NewFunctionName"],
+        "Namespace": argv["--Namespace"],
+        "TargetNamespace": argv["--TargetNamespace"],
+        "Description": argv["--Description"],
+        "TargetRegion": argv["--TargetRegion"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -285,16 +285,16 @@ def doGetFunctionLogs(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "FunctionName": argv["--FunctionName"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Order": Utils.try_to_json(argv, "--Order"),
-        "OrderBy": Utils.try_to_json(argv, "--OrderBy"),
+        "Order": argv["--Order"],
+        "OrderBy": argv["--OrderBy"],
         "Filter": Utils.try_to_json(argv, "--Filter"),
-        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
-        "FunctionRequestId": Utils.try_to_json(argv, "--FunctionRequestId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "Qualifier": argv["--Qualifier"],
+        "FunctionRequestId": argv["--FunctionRequestId"],
+        "StartTime": argv["--StartTime"],
+        "EndTime": argv["--EndTime"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -327,11 +327,11 @@ def doDeleteTrigger(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "TriggerName": Utils.try_to_json(argv, "--TriggerName"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "TriggerDesc": Utils.try_to_json(argv, "--TriggerDesc"),
-        "Qualifier": Utils.try_to_json(argv, "--Qualifier"),
+        "FunctionName": argv["--FunctionName"],
+        "TriggerName": argv["--TriggerName"],
+        "Type": argv["--Type"],
+        "TriggerDesc": argv["--TriggerDesc"],
+        "Qualifier": argv["--Qualifier"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -364,17 +364,17 @@ def doCreateFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
+        "FunctionName": argv["--FunctionName"],
         "Code": Utils.try_to_json(argv, "--Code"),
-        "Handler": Utils.try_to_json(argv, "--Handler"),
-        "Description": Utils.try_to_json(argv, "--Description"),
+        "Handler": argv["--Handler"],
+        "Description": argv["--Description"],
         "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
         "Timeout": Utils.try_to_json(argv, "--Timeout"),
         "Environment": Utils.try_to_json(argv, "--Environment"),
-        "Runtime": Utils.try_to_json(argv, "--Runtime"),
+        "Runtime": argv["--Runtime"],
         "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
-        "ClsLogsetId": Utils.try_to_json(argv, "--ClsLogsetId"),
-        "ClsTopicId": Utils.try_to_json(argv, "--ClsTopicId"),
+        "ClsLogsetId": argv["--ClsLogsetId"],
+        "ClsTopicId": argv["--ClsTopicId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -407,12 +407,12 @@ def doUpdateFunctionCode(argv, arglist):
         return
 
     param = {
-        "Handler": Utils.try_to_json(argv, "--Handler"),
-        "FunctionName": Utils.try_to_json(argv, "--FunctionName"),
-        "CosBucketName": Utils.try_to_json(argv, "--CosBucketName"),
-        "CosObjectName": Utils.try_to_json(argv, "--CosObjectName"),
-        "ZipFile": Utils.try_to_json(argv, "--ZipFile"),
-        "CosBucketRegion": Utils.try_to_json(argv, "--CosBucketRegion"),
+        "Handler": argv["--Handler"],
+        "FunctionName": argv["--FunctionName"],
+        "CosBucketName": argv["--CosBucketName"],
+        "CosObjectName": argv["--CosObjectName"],
+        "ZipFile": argv["--ZipFile"],
+        "CosBucketRegion": argv["--CosBucketRegion"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

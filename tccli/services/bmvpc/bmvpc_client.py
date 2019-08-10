@@ -25,8 +25,8 @@ def doDownloadCustomerGatewayConfiguration(argv, arglist):
         return
 
     param = {
-        "VpnConnectionId": Utils.try_to_json(argv, "--VpnConnectionId"),
-        "VendorName": Utils.try_to_json(argv, "--VendorName"),
+        "VpnConnectionId": argv["--VpnConnectionId"],
+        "VendorName": argv["--VendorName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -95,11 +95,11 @@ def doCreateVpcPeerConnection(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "PeerVpcId": Utils.try_to_json(argv, "--PeerVpcId"),
-        "PeerRegion": Utils.try_to_json(argv, "--PeerRegion"),
-        "VpcPeerConnectionName": Utils.try_to_json(argv, "--VpcPeerConnectionName"),
-        "PeerUin": Utils.try_to_json(argv, "--PeerUin"),
+        "VpcId": argv["--VpcId"],
+        "PeerVpcId": argv["--PeerVpcId"],
+        "PeerRegion": argv["--PeerRegion"],
+        "VpcPeerConnectionName": argv["--VpcPeerConnectionName"],
+        "PeerUin": argv["--PeerUin"],
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
 
     }
@@ -133,8 +133,8 @@ def doAsyncRegisterIps(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "Ips": Utils.try_to_json(argv, "--Ips"),
 
     }
@@ -172,8 +172,8 @@ def doDescribeRouteTables(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": Utils.try_to_json(argv, "--OrderField"),
-        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
+        "OrderField": argv["--OrderField"],
+        "OrderDirection": argv["--OrderDirection"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -206,8 +206,8 @@ def doUnbindEipsFromNatGateway(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
         "AssignedEips": Utils.try_to_json(argv, "--AssignedEips"),
 
     }
@@ -241,8 +241,8 @@ def doBindEipsToNatGateway(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
         "AssignedEips": Utils.try_to_json(argv, "--AssignedEips"),
         "AutoAllocEipNum": Utils.try_to_json(argv, "--AutoAllocEipNum"),
 
@@ -277,9 +277,9 @@ def doModifyVpcPeerConnection(argv, arglist):
         return
 
     param = {
-        "VpcPeerConnectionId": Utils.try_to_json(argv, "--VpcPeerConnectionId"),
+        "VpcPeerConnectionId": argv["--VpcPeerConnectionId"],
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
-        "VpcPeerConnectionName": Utils.try_to_json(argv, "--VpcPeerConnectionName"),
+        "VpcPeerConnectionName": argv["--VpcPeerConnectionName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -312,9 +312,9 @@ def doCreateVpc(argv, arglist):
         return
 
     param = {
-        "VpcName": Utils.try_to_json(argv, "--VpcName"),
-        "CidrBlock": Utils.try_to_json(argv, "--CidrBlock"),
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "VpcName": argv["--VpcName"],
+        "CidrBlock": argv["--CidrBlock"],
+        "Zone": argv["--Zone"],
         "SubnetSet": Utils.try_to_json(argv, "--SubnetSet"),
         "EnableMonitoring": Utils.try_to_json(argv, "--EnableMonitoring"),
 
@@ -349,9 +349,9 @@ def doCreateNatGateway(argv, arglist):
         return
 
     param = {
-        "ForwardMode": Utils.try_to_json(argv, "--ForwardMode"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "NatName": Utils.try_to_json(argv, "--NatName"),
+        "ForwardMode": argv["--ForwardMode"],
+        "VpcId": argv["--VpcId"],
+        "NatName": argv["--NatName"],
         "MaxConcurrent": Utils.try_to_json(argv, "--MaxConcurrent"),
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
         "IpInfoSet": Utils.try_to_json(argv, "--IpInfoSet"),
@@ -390,8 +390,8 @@ def doDescribeSubnetAvailableIps(argv, arglist):
         return
 
     param = {
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "Cidr": Utils.try_to_json(argv, "--Cidr"),
+        "SubnetId": argv["--SubnetId"],
+        "Cidr": argv["--Cidr"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -424,7 +424,7 @@ def doDescribeRoutePolicies(argv, arglist):
         return
 
     param = {
-        "RouteTableId": Utils.try_to_json(argv, "--RouteTableId"),
+        "RouteTableId": argv["--RouteTableId"],
         "RoutePolicyIds": Utils.try_to_json(argv, "--RoutePolicyIds"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
@@ -461,7 +461,7 @@ def doDeleteVpc(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -495,8 +495,8 @@ def doDeleteHostedInterface(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -529,9 +529,9 @@ def doDeregisterIps(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "IpSet": Utils.try_to_json(argv, "--IpSet"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "SubnetId": argv["--SubnetId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -564,7 +564,7 @@ def doModifyRoutePolicy(argv, arglist):
         return
 
     param = {
-        "RouteTableId": Utils.try_to_json(argv, "--RouteTableId"),
+        "RouteTableId": argv["--RouteTableId"],
         "RoutePolicy": Utils.try_to_json(argv, "--RoutePolicy"),
 
     }
@@ -599,8 +599,8 @@ def doCreateInterfaces(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -633,8 +633,8 @@ def doModifyCustomerGatewayAttribute(argv, arglist):
         return
 
     param = {
-        "CustomerGatewayId": Utils.try_to_json(argv, "--CustomerGatewayId"),
-        "CustomerGatewayName": Utils.try_to_json(argv, "--CustomerGatewayName"),
+        "CustomerGatewayId": argv["--CustomerGatewayId"],
+        "CustomerGatewayName": argv["--CustomerGatewayName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -667,8 +667,8 @@ def doDeleteRoutePolicy(argv, arglist):
         return
 
     param = {
-        "RouteTableId": Utils.try_to_json(argv, "--RouteTableId"),
-        "RoutePolicyId": Utils.try_to_json(argv, "--RoutePolicyId"),
+        "RouteTableId": argv["--RouteTableId"],
+        "RoutePolicyId": argv["--RoutePolicyId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -701,10 +701,10 @@ def doModifyVpnConnectionAttribute(argv, arglist):
         return
 
     param = {
-        "VpnConnectionId": Utils.try_to_json(argv, "--VpnConnectionId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "VpnConnectionName": Utils.try_to_json(argv, "--VpnConnectionName"),
-        "PreShareKey": Utils.try_to_json(argv, "--PreShareKey"),
+        "VpnConnectionId": argv["--VpnConnectionId"],
+        "VpcId": argv["--VpcId"],
+        "VpnConnectionName": argv["--VpnConnectionName"],
+        "PreShareKey": argv["--PreShareKey"],
         "SecurityPolicyDatabases": Utils.try_to_json(argv, "--SecurityPolicyDatabases"),
         "IKEOptionsSpecification": Utils.try_to_json(argv, "--IKEOptionsSpecification"),
         "IPSECOptionsSpecification": Utils.try_to_json(argv, "--IPSECOptionsSpecification"),
@@ -740,7 +740,7 @@ def doDeleteVpnConnection(argv, arglist):
         return
 
     param = {
-        "VpnConnectionId": Utils.try_to_json(argv, "--VpnConnectionId"),
+        "VpnConnectionId": argv["--VpnConnectionId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -773,7 +773,7 @@ def doDeleteVpnGateway(argv, arglist):
         return
 
     param = {
-        "VpnGatewayId": Utils.try_to_json(argv, "--VpnGatewayId"),
+        "VpnGatewayId": argv["--VpnGatewayId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -806,8 +806,8 @@ def doBindIpsToNatGateway(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
         "IpInfoSet": Utils.try_to_json(argv, "--IpInfoSet"),
 
     }
@@ -841,8 +841,8 @@ def doModifyVpnGatewayAttribute(argv, arglist):
         return
 
     param = {
-        "VpnGatewayId": Utils.try_to_json(argv, "--VpnGatewayId"),
-        "VpnGatewayName": Utils.try_to_json(argv, "--VpnGatewayName"),
+        "VpnGatewayId": argv["--VpnGatewayId"],
+        "VpnGatewayName": argv["--VpnGatewayName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -875,8 +875,8 @@ def doUnbindIpsFromNatGateway(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
         "IpInfoSet": Utils.try_to_json(argv, "--IpInfoSet"),
 
     }
@@ -910,7 +910,7 @@ def doDeleteCustomerGateway(argv, arglist):
         return
 
     param = {
-        "CustomerGatewayId": Utils.try_to_json(argv, "--CustomerGatewayId"),
+        "CustomerGatewayId": argv["--CustomerGatewayId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -943,8 +943,8 @@ def doDeleteSubnet(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -977,9 +977,9 @@ def doModifySubnetAttribute(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
-        "SubnetName": Utils.try_to_json(argv, "--SubnetName"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
+        "SubnetName": argv["--SubnetName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1012,8 +1012,8 @@ def doDescribeNatSubnets(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1046,7 +1046,7 @@ def doRejectVpcPeerConnection(argv, arglist):
         return
 
     param = {
-        "VpcPeerConnectionId": Utils.try_to_json(argv, "--VpcPeerConnectionId"),
+        "VpcPeerConnectionId": argv["--VpcPeerConnectionId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1115,7 +1115,7 @@ def doDescribeSubnetByDevice(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "Types": Utils.try_to_json(argv, "--Types"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -1151,8 +1151,8 @@ def doModifyRouteTable(argv, arglist):
         return
 
     param = {
-        "RouteTableId": Utils.try_to_json(argv, "--RouteTableId"),
-        "RouteTableName": Utils.try_to_json(argv, "--RouteTableName"),
+        "RouteTableId": argv["--RouteTableId"],
+        "RouteTableName": argv["--RouteTableName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1185,8 +1185,8 @@ def doModifySubnetDHCPRelay(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
         "EnableDHCP": Utils.try_to_json(argv, "--EnableDHCP"),
         "ServerIps": Utils.try_to_json(argv, "--ServerIps"),
         "ReservedIpCount": Utils.try_to_json(argv, "--ReservedIpCount"),
@@ -1222,7 +1222,7 @@ def doDescribeVpcView(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1255,7 +1255,7 @@ def doDeleteVirtualIp(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "Ips": Utils.try_to_json(argv, "--Ips"),
 
     }
@@ -1289,9 +1289,9 @@ def doCreateCustomerGateway(argv, arglist):
         return
 
     param = {
-        "CustomerGatewayName": Utils.try_to_json(argv, "--CustomerGatewayName"),
-        "IpAddress": Utils.try_to_json(argv, "--IpAddress"),
-        "Zone": Utils.try_to_json(argv, "--Zone"),
+        "CustomerGatewayName": argv["--CustomerGatewayName"],
+        "IpAddress": argv["--IpAddress"],
+        "Zone": argv["--Zone"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1357,7 +1357,7 @@ def doCreateDockerSubnetWithVlan(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "SubnetSet": Utils.try_to_json(argv, "--SubnetSet"),
 
     }
@@ -1391,8 +1391,8 @@ def doUpgradeNatGateway(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
         "MaxConcurrent": Utils.try_to_json(argv, "--MaxConcurrent"),
 
     }
@@ -1426,7 +1426,7 @@ def doCreateRoutePolicies(argv, arglist):
         return
 
     param = {
-        "RouteTableId": Utils.try_to_json(argv, "--RouteTableId"),
+        "RouteTableId": argv["--RouteTableId"],
         "RoutePolicySet": Utils.try_to_json(argv, "--RoutePolicySet"),
 
     }
@@ -1496,8 +1496,8 @@ def doUnbindSubnetsFromNatGateway(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
 
     }
@@ -1531,8 +1531,8 @@ def doResetVpnConnection(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "VpnConnectionId": Utils.try_to_json(argv, "--VpnConnectionId"),
+        "VpcId": argv["--VpcId"],
+        "VpnConnectionId": argv["--VpnConnectionId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1601,7 +1601,7 @@ def doDeleteHostedInterfaces(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
 
     }
@@ -1635,7 +1635,7 @@ def doAcceptVpcPeerConnection(argv, arglist):
         return
 
     param = {
-        "VpcPeerConnectionId": Utils.try_to_json(argv, "--VpcPeerConnectionId"),
+        "VpcPeerConnectionId": argv["--VpcPeerConnectionId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1701,10 +1701,10 @@ def doDescribeNatGateways(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "NatName": Utils.try_to_json(argv, "--NatName"),
-        "SearchKey": Utils.try_to_json(argv, "--SearchKey"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "NatName": argv["--NatName"],
+        "SearchKey": argv["--SearchKey"],
+        "VpcId": argv["--VpcId"],
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -1739,8 +1739,8 @@ def doBindSubnetsToNatGateway(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
 
     }
@@ -1774,7 +1774,7 @@ def doDeleteInterfaces(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
 
     }
@@ -1809,8 +1809,8 @@ def doCreateHostedInterface(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "SubnetId": Utils.try_to_json(argv, "--SubnetId"),
+        "VpcId": argv["--VpcId"],
+        "SubnetId": argv["--SubnetId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1879,7 +1879,7 @@ def doDescribeSubnetByHostedDevice(argv, arglist):
         return
 
     param = {
-        "InstanceId": Utils.try_to_json(argv, "--InstanceId"),
+        "InstanceId": argv["--InstanceId"],
         "Types": Utils.try_to_json(argv, "--Types"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -1987,7 +1987,7 @@ def doDeleteVpcPeerConnection(argv, arglist):
         return
 
     param = {
-        "VpcPeerConnectionId": Utils.try_to_json(argv, "--VpcPeerConnectionId"),
+        "VpcPeerConnectionId": argv["--VpcPeerConnectionId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2020,8 +2020,8 @@ def doModifyVpcAttribute(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
-        "VpcName": Utils.try_to_json(argv, "--VpcName"),
+        "VpcId": argv["--VpcId"],
+        "VpcName": argv["--VpcName"],
         "EnableMonitor": Utils.try_to_json(argv, "--EnableMonitor"),
 
     }
@@ -2055,8 +2055,8 @@ def doDeleteNatGateway(argv, arglist):
         return
 
     param = {
-        "NatId": Utils.try_to_json(argv, "--NatId"),
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "NatId": argv["--NatId"],
+        "VpcId": argv["--VpcId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2089,7 +2089,7 @@ def doCreateVirtualSubnetWithVlan(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "SubnetSet": Utils.try_to_json(argv, "--SubnetSet"),
 
     }
@@ -2123,7 +2123,7 @@ def doCreateSubnet(argv, arglist):
         return
 
     param = {
-        "VpcId": Utils.try_to_json(argv, "--VpcId"),
+        "VpcId": argv["--VpcId"],
         "SubnetSet": Utils.try_to_json(argv, "--SubnetSet"),
 
     }
