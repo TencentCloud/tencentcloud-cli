@@ -536,5 +536,30 @@ INFO = {
       }
     ],
     "desc": "修改实例相关信息（目前支持：实例重命名）"
+  },
+  "SwitchInstanceVip": {
+    "params": [
+      {
+        "name": "SrcInstanceId",
+        "desc": "源实例ID"
+      },
+      {
+        "name": "DstInstanceId",
+        "desc": "目标实例ID"
+      },
+      {
+        "name": "TimeDelay",
+        "desc": "单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。"
+      },
+      {
+        "name": "ForceSwitch",
+        "desc": "在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换"
+      },
+      {
+        "name": "SwitchTime",
+        "desc": "now: 立即切换，syncComplete：等待同步完成后切换"
+      }
+    ],
+    "desc": "在通过DTS支持跨可用区灾备的场景中，通过该接口交换实例VIP完成实例灾备切换。交换VIP后目标实例可写，源和目标实例VIP互换，同时源与目标实例间DTS同步任务断开"
   }
 }

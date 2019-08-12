@@ -1044,6 +1044,43 @@ def doModifyInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSwitchInstanceVip(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SwitchInstanceVip", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SrcInstanceId": argv["--SrcInstanceId"],
+        "DstInstanceId": argv["--DstInstanceId"],
+        "TimeDelay": Utils.try_to_json(argv, "--TimeDelay"),
+        "ForceSwitch": Utils.try_to_json(argv, "--ForceSwitch"),
+        "SwitchTime": argv["--SwitchTime"],
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SwitchInstanceVipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SwitchInstanceVip(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180412": redis_client_v20180412,
 
@@ -1084,6 +1121,7 @@ ACTION_MAP = {
     "DescribeInstanceDealDetail": doDescribeInstanceDealDetail,
     "DestroyPostpaidInstance": doDestroyPostpaidInstance,
     "ModifyInstance": doModifyInstance,
+    "SwitchInstanceVip": doSwitchInstanceVip,
 
 }
 
