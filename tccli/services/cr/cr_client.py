@@ -54,6 +54,43 @@ def doDownloadReport(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUploadFile(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UploadFile", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "FileUrl": argv["--FileUrl"],
+        "FileName": argv["--FileName"],
+        "FileDate": argv["--FileDate"],
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UploadFileRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UploadFile(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeRecords(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -134,18 +171,17 @@ def doDescribeCreditResult(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUploadFile(argv, arglist):
+def doDownloadDialogueText(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UploadFile", g_param[OptionsDefine.Version])
+        show_help("DownloadDialogueText", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Module": argv["--Module"],
         "Operation": argv["--Operation"],
-        "FileUrl": argv["--FileUrl"],
-        "FileName": argv["--FileName"],
-        "FileDate": argv["--FileDate"],
+        "ReportDate": argv["--ReportDate"],
+        "InstId": argv["--InstId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -159,9 +195,9 @@ def doUploadFile(argv, arglist):
     client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UploadFileRequest()
+    model = models.DownloadDialogueTextRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UploadFile(model)
+    rsp = client.DownloadDialogueText(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -181,6 +217,7 @@ def doDescribeTaskStatus(argv, arglist):
         "Module": argv["--Module"],
         "Operation": argv["--Operation"],
         "TaskId": argv["--TaskId"],
+        "InstId": argv["--InstId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -236,6 +273,42 @@ def doUploadDataFile(argv, arglist):
     model = models.UploadDataFileRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UploadDataFile(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDownloadRecordList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DownloadRecordList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv["--Module"],
+        "Operation": argv["--Operation"],
+        "BizDate": argv["--BizDate"],
+        "InstId": argv["--InstId"],
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DownloadRecordListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DownloadRecordList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -332,11 +405,13 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DownloadReport": doDownloadReport,
+    "UploadFile": doUploadFile,
     "DescribeRecords": doDescribeRecords,
     "DescribeCreditResult": doDescribeCreditResult,
-    "UploadFile": doUploadFile,
+    "DownloadDialogueText": doDownloadDialogueText,
     "DescribeTaskStatus": doDescribeTaskStatus,
     "UploadDataFile": doUploadDataFile,
+    "DownloadRecordList": doDownloadRecordList,
     "ApplyBlackList": doApplyBlackList,
     "ApplyCreditAudit": doApplyCreditAudit,
 

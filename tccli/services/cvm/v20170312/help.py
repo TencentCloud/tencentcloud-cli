@@ -245,7 +245,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，每次请求的`Filters`的上限为0，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n<li> image-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤</li>\n<li> image-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\n    PRIVATE_IMAGE: 私有镜像 (本帐户创建的镜像) \n    PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\n    MARKET_IMAGE: 服务市场 (服务市场提供的镜像) \n   SHARED_IMAGE: 共享镜像(其他账户共享给本帐户的镜像) 。</li>\n<li> image-state - String - 是否必填： 否 - （过滤条件）按照镜像状态进行过滤。取值范围：\n    CREATING: 创建中\n    NORMAL: 正常\n    USING: 使用中\n    SYNCING: 同步中\n    IMPORTING: 导入中\n    DELETING: 删除中。</li>"
+        "desc": "过滤条件，每次请求的`Filters`的上限为0，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n<li> image-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤</li>\n<li> image-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\n    PRIVATE_IMAGE: 私有镜像 (本帐户创建的镜像) \n    PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\n    MARKET_IMAGE: 服务市场 (服务市场提供的镜像) \n   SHARED_IMAGE: 共享镜像(其他账户共享给本帐户的镜像) 。</li>"
       },
       {
         "name": "Offset",
@@ -505,6 +505,10 @@ INFO = {
       {
         "name": "UserData",
         "desc": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。"
+      },
+      {
+        "name": "DryRun",
+        "desc": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例"
       }
     ],
     "desc": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。\n\n* 实例创建成功后将自动开机启动，[实例状态](/document/api/213/9452#instance_state)变为“运行中”。\n* 预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。\n* 本接口允许购买的实例数量遵循[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)，所创建的实例和官网入口创建的实例共用配额。\n* 本接口为异步接口，当创建请求下发成功后会返回一个实例`ID`列表，此时实例的创建并立即未完成。在此期间实例的状态将会处于“准备中”，可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询对应实例的状态，来判断创建有没有最终成功。如果实例的状态由“准备中”变为“运行中”，则为创建成功。"

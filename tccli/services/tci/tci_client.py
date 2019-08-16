@@ -18,6 +18,42 @@ from tccli.services.tci import v20190318
 from tccli.services.tci.v20190318 import help as v20190318_help
 
 
+def doSubmitOpenClassTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SubmitOpenClassTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
+        "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
+        "MaxVideoDuration": Utils.try_to_json(argv, "--MaxVideoDuration"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SubmitOpenClassTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SubmitOpenClassTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateLibrary(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -211,6 +247,7 @@ def doAIAssistant(argv, arglist):
         "FileType": argv["--FileType"],
         "Lang": Utils.try_to_json(argv, "--Lang"),
         "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
+        "MaxVideoDuration": Utils.try_to_json(argv, "--MaxVideoDuration"),
         "Template": Utils.try_to_json(argv, "--Template"),
         "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
         "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
@@ -421,6 +458,42 @@ def doDescribeHighlightResult(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSubmitTraditionalClassTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SubmitTraditionalClassTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
+        "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
+        "MaxVideoDuration": Utils.try_to_json(argv, "--MaxVideoDuration"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SubmitTraditionalClassTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SubmitTraditionalClassTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAITaskResult(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -522,21 +595,14 @@ def doDescribeLibraries(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreatePerson(argv, arglist):
+def doCancelTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreatePerson", g_param[OptionsDefine.Version])
+        show_help("CancelTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LibraryId": argv["--LibraryId"],
-        "PersonName": argv["--PersonName"],
-        "JobNumber": argv["--JobNumber"],
-        "Mail": argv["--Mail"],
-        "Male": Utils.try_to_json(argv, "--Male"),
-        "PersonId": argv["--PersonId"],
-        "PhoneNumber": argv["--PhoneNumber"],
-        "StudentNumber": argv["--StudentNumber"],
+        "JobId": Utils.try_to_json(argv, "--JobId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -550,9 +616,9 @@ def doCreatePerson(argv, arglist):
     client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreatePersonRequest()
+    model = models.CancelTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreatePerson(model)
+    rsp = client.CancelTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -669,6 +735,86 @@ def doCreateVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSubmitOneByOneClassTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SubmitOneByOneClassTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
+        "Lang": Utils.try_to_json(argv, "--Lang"),
+        "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
+        "MaxVideoDuration": Utils.try_to_json(argv, "--MaxVideoDuration"),
+        "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
+        "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
+        "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SubmitOneByOneClassTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SubmitOneByOneClassTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSubmitPartialBodyClassTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SubmitPartialBodyClassTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileContent": argv["--FileContent"],
+        "FileType": argv["--FileType"],
+        "Lang": Utils.try_to_json(argv, "--Lang"),
+        "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
+        "MaxVideoDuration": Utils.try_to_json(argv, "--MaxVideoDuration"),
+        "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
+        "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
+        "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SubmitPartialBodyClassTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SubmitPartialBodyClassTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSubmitCheckAttendanceTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -710,14 +856,23 @@ def doSubmitCheckAttendanceTask(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCancelTask(argv, arglist):
+def doCreatePerson(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CancelTask", g_param[OptionsDefine.Version])
+        show_help("CreatePerson", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "JobId": Utils.try_to_json(argv, "--JobId"),
+        "LibraryId": argv["--LibraryId"],
+        "PersonName": argv["--PersonName"],
+        "Images": Utils.try_to_json(argv, "--Images"),
+        "JobNumber": argv["--JobNumber"],
+        "Mail": argv["--Mail"],
+        "Male": Utils.try_to_json(argv, "--Male"),
+        "PersonId": argv["--PersonId"],
+        "PhoneNumber": argv["--PhoneNumber"],
+        "StudentNumber": argv["--StudentNumber"],
+        "Urls": Utils.try_to_json(argv, "--Urls"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -731,9 +886,9 @@ def doCancelTask(argv, arglist):
     client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CancelTaskRequest()
+    model = models.CreatePersonRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CancelTask(model)
+    rsp = client.CreatePerson(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -987,21 +1142,21 @@ def doDeleteVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCheckAttendance(argv, arglist):
+def doSubmitFullBodyClassTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CheckAttendance", g_param[OptionsDefine.Version])
+        show_help("SubmitFullBodyClassTask", g_param[OptionsDefine.Version])
         return
 
     param = {
         "FileContent": argv["--FileContent"],
         "FileType": argv["--FileType"],
-        "LibraryId": argv["--LibraryId"],
-        "PersonIdSet": Utils.try_to_json(argv, "--PersonIdSet"),
-        "AttendanceThreshold": Utils.try_to_json(argv, "--AttendanceThreshold"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "Threshold": Utils.try_to_json(argv, "--Threshold"),
+        "Lang": Utils.try_to_json(argv, "--Lang"),
+        "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
+        "MaxVideoDuration": Utils.try_to_json(argv, "--MaxVideoDuration"),
+        "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
+        "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
+        "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1015,9 +1170,9 @@ def doCheckAttendance(argv, arglist):
     client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckAttendanceRequest()
+    model = models.SubmitFullBodyClassTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CheckAttendance(model)
+    rsp = client.SubmitFullBodyClassTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1246,6 +1401,7 @@ def doTransmitAudioStream(argv, arglist):
         "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
         "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
         "Lang": Utils.try_to_json(argv, "--Lang"),
+        "StorageMode": Utils.try_to_json(argv, "--StorageMode"),
         "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
 
     }
@@ -1283,6 +1439,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "SubmitOpenClassTask": doSubmitOpenClassTask,
     "CreateLibrary": doCreateLibrary,
     "SubmitAudioTask": doSubmitAudioTask,
     "CreateFace": doCreateFace,
@@ -1294,15 +1451,18 @@ ACTION_MAP = {
     "DescribePersons": doDescribePersons,
     "SubmitConversationTask": doSubmitConversationTask,
     "DescribeHighlightResult": doDescribeHighlightResult,
+    "SubmitTraditionalClassTask": doSubmitTraditionalClassTask,
     "DescribeAITaskResult": doDescribeAITaskResult,
     "DeletePerson": doDeletePerson,
     "DescribeLibraries": doDescribeLibraries,
-    "CreatePerson": doCreatePerson,
+    "CancelTask": doCancelTask,
     "SubmitHighlights": doSubmitHighlights,
     "DescribeVocabLib": doDescribeVocabLib,
     "CreateVocab": doCreateVocab,
+    "SubmitOneByOneClassTask": doSubmitOneByOneClassTask,
+    "SubmitPartialBodyClassTask": doSubmitPartialBodyClassTask,
     "SubmitCheckAttendanceTask": doSubmitCheckAttendanceTask,
-    "CancelTask": doCancelTask,
+    "CreatePerson": doCreatePerson,
     "DescribeConversationTask": doDescribeConversationTask,
     "DeleteLibrary": doDeleteLibrary,
     "DescribeImageTask": doDescribeImageTask,
@@ -1310,7 +1470,7 @@ ACTION_MAP = {
     "DescribeAttendanceResult": doDescribeAttendanceResult,
     "CreateVocabLib": doCreateVocabLib,
     "DeleteVocab": doDeleteVocab,
-    "CheckAttendance": doCheckAttendance,
+    "SubmitFullBodyClassTask": doSubmitFullBodyClassTask,
     "CheckFacePhoto": doCheckFacePhoto,
     "DescribeVocab": doDescribeVocab,
     "DeleteVocabLib": doDeleteVocabLib,

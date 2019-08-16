@@ -65,7 +65,7 @@ INFO = {
         "desc": "录制流参数。当前支持以下参数：\nrecord_interval - 录制分片时长，单位 秒，1800 - 7200\nstorage_time - 录制文件存储时长，单位 秒\neg. record_interval=3600&storage_time=2592000\n注：参数需要url encode。\n在定时录制模式或实时视频录制模式下，该参数均有效。"
       }
     ],
-    "desc": "- 使用前提\n  1. 录制文件存放于点播平台，所以用户如需使用录制功能，需首先自行开通点播服务。\n  2. 录制文件存放后相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，具体请参考 [对应文档](https://cloud.tencent.com/document/product/266/2838)。\n\n- 模式说明\n  该接口支持两种录制模式：\n  1. 定时录制模式【默认模式】。\n    需要传入开始时间与结束时间，录制任务根据时间自动开始与结束。\n  2. 实时视频录制模式。\n    忽略传入的开始时间，在录制任务创建后立即开始录制，录制时长支持最大为30分钟，如果传入的结束时间与当前时间差大于30分钟，则按30分钟计算，实时视频录制主要用于录制精彩视频场景，时长建议控制在5分钟以内。\n\n- 注意事项\n  1. 调用接口超时设置应大于3秒，小于3秒重试以及频繁调用都有可能产生重复录制任务。"
+    "desc": "- 使用前提\n  1. 录制文件存放于点播平台，所以用户如需使用录制功能，需首先自行开通点播服务。\n  2. 录制文件存放后相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，具体请参考 [对应文档](https://cloud.tencent.com/document/product/266/2838)。\n\n- 模式说明\n  该接口支持两种录制模式：\n  1. 定时录制模式【默认模式】。\n    需要传入开始时间与结束时间，录制任务根据时间自动开始与结束。\n  2. 实时视频录制模式。\n    忽略传入的开始时间，在录制任务创建后立即开始录制，录制时长支持最大为30分钟，如果传入的结束时间与当前时间差大于30分钟，则按30分钟计算，实时视频录制主要用于录制精彩视频场景，时长建议控制在5分钟以内。\n\n- 注意事项\n  1. 调用接口超时设置应大于3秒，小于3秒重试以及频繁调用都有可能产生重复录制任务。\n  2. 受限于音视频文件格式（FLV/MP4/HLS）对编码类型的支持，视频编码类型支持 H.264，音频编码类型支持 AAC。"
   },
   "UpdateLiveWatermark": {
     "params": [
@@ -559,7 +559,7 @@ INFO = {
       },
       {
         "name": "AreaId",
-        "desc": "区域id,1-深圳,2-上海，3-天津,4-香港。如有改动，需同时传入IspId。"
+        "desc": "区域id：\n1-深圳，\n2-上海，\n3-天津，\n4-中国香港。\n如有改动，需同时传入IspId。"
       },
       {
         "name": "IspId",
@@ -852,19 +852,19 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。\n域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "推流域名。\n域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "StreamName",
-        "desc": "流名称。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "流名称。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "TemplateId",
-        "desc": "模板ID。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "模板ID。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       }
     ],
     "desc": "删除转码规则"
@@ -1424,15 +1424,15 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "推流域名。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "StreamName",
-        "desc": "流名称。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，比如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "流名称。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       }
     ],
     "desc": "删除录制规则"
@@ -1454,6 +1454,10 @@ INFO = {
       {
         "name": "ResumeTime",
         "desc": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：默认禁播90天，且最长支持禁播90天。"
+      },
+      {
+        "name": "Reason",
+        "desc": "禁推原因。\n注明：请务必填写禁推原因，防止误操作。\n长度限制：2048字节。"
       }
     ],
     "desc": "禁止某条流的推送，可以预设某个时刻将流恢复。"
@@ -1843,7 +1847,7 @@ INFO = {
       },
       {
         "name": "AreaId",
-        "desc": "区域id：\n1-深圳，\n2-上海，\n3-天津，\n4-香港。"
+        "desc": "区域id：\n1-深圳，\n2-上海，\n3-天津，\n4-中国香港。"
       },
       {
         "name": "IspId",

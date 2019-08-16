@@ -87,6 +87,40 @@ def doDeleteStudioProduct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv["--ProductId"],
+        "DeviceName": argv["--DeviceName"],
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDeviceData(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -132,6 +166,7 @@ def doSearchStudioProduct(argv, arglist):
         "ProductName": argv["--ProductName"],
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
+        "DevStatus": argv["--DevStatus"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -164,7 +199,7 @@ def doDescribeProject(argv, arglist):
         return
 
     param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ProjectId": argv["--ProjectId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -223,15 +258,14 @@ def doDescribeModelDefinition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyModelDefinition(argv, arglist):
+def doDescribeStudioProduct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyModelDefinition", g_param[OptionsDefine.Version])
+        show_help("DescribeStudioProduct", g_param[OptionsDefine.Version])
         return
 
     param = {
         "ProductId": argv["--ProductId"],
-        "ModelSchema": argv["--ModelSchema"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -245,9 +279,9 @@ def doModifyModelDefinition(argv, arglist):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyModelDefinitionRequest()
+    model = models.DescribeStudioProductRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyModelDefinition(model)
+    rsp = client.DescribeStudioProduct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -438,6 +472,40 @@ def doDescribeDeviceDataHistory(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyModelDefinition(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyModelDefinition", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv["--ProductId"],
+        "ModelSchema": argv["--ModelSchema"],
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyModelDefinitionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyModelDefinition(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteProject(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -445,7 +513,7 @@ def doDeleteProject(argv, arglist):
         return
 
     param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ProjectId": argv["--ProjectId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -471,14 +539,15 @@ def doDeleteProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeStudioProduct(argv, arglist):
+def doDeleteDevice(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeStudioProduct", g_param[OptionsDefine.Version])
+        show_help("DeleteDevice", g_param[OptionsDefine.Version])
         return
 
     param = {
         "ProductId": argv["--ProductId"],
+        "DeviceName": argv["--DeviceName"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -492,9 +561,9 @@ def doDescribeStudioProduct(argv, arglist):
     client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeStudioProductRequest()
+    model = models.DeleteDeviceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeStudioProduct(model)
+    rsp = client.DeleteDevice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -514,6 +583,8 @@ def doControlDeviceData(argv, arglist):
         "ProductId": argv["--ProductId"],
         "DeviceName": argv["--DeviceName"],
         "Data": argv["--Data"],
+        "Method": argv["--Method"],
+        "DeviceId": argv["--DeviceId"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -582,7 +653,7 @@ def doModifyProject(argv, arglist):
         return
 
     param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ProjectId": argv["--ProjectId"],
         "ProjectName": argv["--ProjectName"],
         "ProjectDesc": argv["--ProjectDesc"],
 
@@ -623,18 +694,20 @@ MODELS_MAP = {
 ACTION_MAP = {
     "ModifyStudioProduct": doModifyStudioProduct,
     "DeleteStudioProduct": doDeleteStudioProduct,
+    "CreateDevice": doCreateDevice,
     "DescribeDeviceData": doDescribeDeviceData,
     "SearchStudioProduct": doSearchStudioProduct,
     "DescribeProject": doDescribeProject,
     "DescribeModelDefinition": doDescribeModelDefinition,
-    "ModifyModelDefinition": doModifyModelDefinition,
+    "DescribeStudioProduct": doDescribeStudioProduct,
     "ReleaseStudioProduct": doReleaseStudioProduct,
     "CreateProject": doCreateProject,
     "CreateStudioProduct": doCreateStudioProduct,
     "GetProjectList": doGetProjectList,
     "DescribeDeviceDataHistory": doDescribeDeviceDataHistory,
+    "ModifyModelDefinition": doModifyModelDefinition,
     "DeleteProject": doDeleteProject,
-    "DescribeStudioProduct": doDescribeStudioProduct,
+    "DeleteDevice": doDeleteDevice,
     "ControlDeviceData": doControlDeviceData,
     "GetStudioProductList": doGetStudioProductList,
     "ModifyProject": doModifyProject,

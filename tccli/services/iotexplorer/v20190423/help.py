@@ -31,6 +31,32 @@ INFO = {
     ],
     "desc": "提供删除某个项目下产品的能力"
   },
+  "DeleteDevice": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID。"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称。"
+      }
+    ],
+    "desc": "删除设备"
+  },
+  "CreateDevice": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID。"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称。"
+      }
+    ],
+    "desc": "创建设备"
+  },
   "DescribeDeviceData": {
     "params": [
       {
@@ -61,6 +87,10 @@ INFO = {
       {
         "name": "Offset",
         "desc": "列表Offset"
+      },
+      {
+        "name": "DevStatus",
+        "desc": "产品Status"
       }
     ],
     "desc": "提供根据产品名称查找产品的能力"
@@ -236,6 +266,14 @@ INFO = {
       {
         "name": "Data",
         "desc": "属性数据"
+      },
+      {
+        "name": "Method",
+        "desc": "请求类型"
+      },
+      {
+        "name": "DeviceId",
+        "desc": "设备ID，该字段有值将代替 ProductId/DeviceName"
       }
     ],
     "desc": "根据设备产品ID、设备名称，设置控制设备的属性数据。"

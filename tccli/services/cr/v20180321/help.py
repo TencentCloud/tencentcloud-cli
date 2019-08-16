@@ -5,15 +5,15 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名，本接口取值：Report"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名，本接口取值：DownloadReport"
       },
       {
         "name": "ReportDate",
-        "desc": "报告日期"
+        "desc": "报告日期，格式为YYYY-MM-DD"
       },
       {
         "name": "InstId",
@@ -21,51 +21,6 @@ INFO = {
       }
     ],
     "desc": "用于下载当日催收和回访结果报表。当日23:00后，可获取当日催收结果，次日00:30后，可获取昨日回访结果。"
-  },
-  "DescribeRecords": {
-    "params": [
-      {
-        "name": "Module",
-        "desc": "模块"
-      },
-      {
-        "name": "Operation",
-        "desc": "操作"
-      },
-      {
-        "name": "ProductId",
-        "desc": "产品ID"
-      },
-      {
-        "name": "AccountNum",
-        "desc": "案件编号"
-      },
-      {
-        "name": "CalledPhone",
-        "desc": "被叫号码"
-      },
-      {
-        "name": "StartBizDate",
-        "desc": "查询起始日期"
-      },
-      {
-        "name": "EndBizDate",
-        "desc": "查询结束日期"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页参数，索引，从0开始"
-      },
-      {
-        "name": "Limit",
-        "desc": "分页参数，页长"
-      },
-      {
-        "name": "InstId",
-        "desc": "实例ID，不传默认为系统分配的初始实例"
-      }
-    ],
-    "desc": "用于获取指定案件的录音地址，次日早上8:00后可查询前日录音。"
   },
   "UploadFile": {
     "params": [
@@ -92,15 +47,60 @@ INFO = {
     ],
     "desc": "客户通过调用该接口上传需催收文档，格式需为excel格式。接口返回任务ID。"
   },
+  "DescribeRecords": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，本接口取值：Record"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，本接口取值：List"
+      },
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "AccountNum",
+        "desc": "案件编号"
+      },
+      {
+        "name": "CalledPhone",
+        "desc": "被叫号码"
+      },
+      {
+        "name": "StartBizDate",
+        "desc": "查询起始日期，格式为YYYY-MM-DD"
+      },
+      {
+        "name": "EndBizDate",
+        "desc": "查询结束日期，格式为YYYY-MM-DD"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页参数，索引，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页参数，页长，默认为20"
+      },
+      {
+        "name": "InstId",
+        "desc": "实例ID，不传默认为系统分配的初始实例"
+      }
+    ],
+    "desc": "用于获取指定案件的录音地址，次日早上8:00后可查询前日录音。"
+  },
   "DescribeCreditResult": {
     "params": [
       {
         "name": "Module",
-        "desc": "模块"
+        "desc": "模块名，本接口取值：Credit"
       },
       {
         "name": "Operation",
-        "desc": "操作"
+        "desc": "操作名，本接口取值：Get"
       },
       {
         "name": "InstId",
@@ -116,24 +116,49 @@ INFO = {
       },
       {
         "name": "RequestDate",
-        "desc": "请求日期"
+        "desc": "请求日期，格式为YYYY-MM-DD"
       }
     ],
     "desc": "根据信审任务ID和请求日期，获取相关信审结果。"
+  },
+  "DownloadDialogueText": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，本接口取值：Report"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，本接口取值：DownloadTextReport"
+      },
+      {
+        "name": "ReportDate",
+        "desc": "报告日期，格式为YYYY-MM-DD"
+      },
+      {
+        "name": "InstId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "用于获取指定案件的对话文本内容，次日早上8:00后可查询前日对话文本内容。"
   },
   "DescribeTaskStatus": {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名，本接口取值：Task"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名，本接口取值：DescribeTaskStatus"
       },
       {
         "name": "TaskId",
-        "desc": "任务ID，形如abc-a0b1c2xyz"
+        "desc": "任务ID，\"上传文件\"接口返回的DataResId，形如abc-xyz123"
+      },
+      {
+        "name": "InstId",
+        "desc": "实例ID，不传默认为系统分配的初始实例。"
       }
     ],
     "desc": "根据上传文件接口的输出参数DataResId，获取相关上传结果。"
@@ -142,11 +167,11 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名"
+        "desc": "模块名，本接口取值：Data"
       },
       {
         "name": "Operation",
-        "desc": "操作名"
+        "desc": "操作名，本接口取值：Upload"
       },
       {
         "name": "FileName",
@@ -154,7 +179,7 @@ INFO = {
       },
       {
         "name": "UploadModel",
-        "desc": "<p>上传类型，不填默认催收文件，取值范围：</p><ul style=\"margin-bottom:0px;\"><li>data：催收文件</li><li>repay：还款文件</li><li>callback：回访文件</li></ul>"
+        "desc": "<p>上传类型，不填默认催收文件，取值范围：</p><ul style=\"margin-bottom:0px;\"><li>data：入催文件</li><li>repay：还款文件</li><li>callback：回访文件</li><li>callstop：回访停拨文件</li></ul>"
       },
       {
         "name": "File",
@@ -169,17 +194,38 @@ INFO = {
         "desc": "实例ID，不传默认为系统分配的初始实例。"
       }
     ],
-    "desc": "<p>该接口包含上传下列文件：</p>\n<ol style=\"margin-bottom:10px;\">\n  <li>入催文件：用于每天入催文件的上传</li>\n  <li>回访文件：用于每天贷中回访文件的上传</li>\n  <li>还款文件：实时上传当前已还款客户，用于还款客户的实时停催</li>\n</ol>\n接口返回数据任务ID，支持xlsx、xls、csv、zip格式，文档大小不超过50MB。"
+    "desc": "<p>该接口包含上传下列文件：</p>\n<ol style=\"margin-bottom:10px;\">\n  <li>入催文件：用于每天入催文件的上传</li>\n  <li>还款文件：实时上传当前已还款客户，用于还款客户的实时停催</li>\n  <li>回访文件：用于每天贷中回访文件的上传</li>\n  <li>回访停拨文件：实时上传回访停拨名单文件，文件中的名单实时停拨</li>\n</ol>\n接口返回数据任务ID，支持xlsx、xls、csv、zip格式，文档大小不超过50MB。"
+  },
+  "DownloadRecordList": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，本接口取值：Record"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，本接口取值：DownloadList"
+      },
+      {
+        "name": "BizDate",
+        "desc": "录音日期，格式为YYYY-MM-DD"
+      },
+      {
+        "name": "InstId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "<p>用于获取录音下载链接清单，次日早上8:00后可查询前日录音清单。</p>\n<p>注意：录音清单中的录音下载链接仅次日20:00之前有效，请及时下载。</p>"
   },
   "ApplyBlackList": {
     "params": [
       {
         "name": "Module",
-        "desc": "模块"
+        "desc": "模块名，本接口取值：account"
       },
       {
         "name": "Operation",
-        "desc": "操作"
+        "desc": "操作名，本接口取值：ApplyBlackList"
       },
       {
         "name": "BlackList",
@@ -190,17 +236,17 @@ INFO = {
         "desc": "实例ID，不传默认为系统分配的初始实例"
       }
     ],
-    "desc": "加入黑名单的客户，将停止拨打。用于：\n将客户进行黑名单的增加和移除，用于对某些客户阶段性停催。\n"
+    "desc": "提交黑名单后，黑名单中有效期内的号码将停止拨打，适用于提醒、催收、回访场景。"
   },
   "ApplyCreditAudit": {
     "params": [
       {
         "name": "Module",
-        "desc": "模块"
+        "desc": "模块名，本接口取值：Credit"
       },
       {
         "name": "Operation",
-        "desc": "操作"
+        "desc": "操作名，本接口取值：Apply"
       },
       {
         "name": "InstId",

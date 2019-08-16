@@ -1,6 +1,27 @@
 # -*- coding: utf-8 -*-
 DESC = "tci-2019-03-18"
 INFO = {
+  "SubmitOpenClassTask": {
+    "params": [
+      {
+        "name": "FileContent",
+        "desc": "输入分析对象内容"
+      },
+      {
+        "name": "FileType",
+        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址,picture: 图片二进制数据的BASE64编码"
+      },
+      {
+        "name": "LibrarySet",
+        "desc": "查询人员库列表，可填写学生们的注册照所在人员库"
+      },
+      {
+        "name": "MaxVideoDuration",
+        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+      }
+    ],
+    "desc": "**提交线下小班（无课桌）课任务**  \n线下小班课是指有学生无课桌的课堂，满座15人以下，全局画面且背景不动，能清晰看到。  \n  \n**提供的功能接口有：**学生人脸识别、学生表情识别、学生肢体动作识别。  可分析的指标维度包括：身份识别、正脸、侧脸、抬头、低头、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、站立、举手、坐着等。\n  \n**对场景的要求为：**真实常规教室，满座15人以下，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上但是图像整体质量不能超过1080p。\n    \n**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。"
+  },
   "CreateLibrary": {
     "params": [
       {
@@ -38,7 +59,7 @@ INFO = {
       },
       {
         "name": "FileType",
-        "desc": "视频文件类型，默认点播，直播天 live_url"
+        "desc": "视频文件类型，默认点播，直播填 live_url"
       },
       {
         "name": "VocabLibNameList",
@@ -133,6 +154,10 @@ INFO = {
         "desc": "查询人员库列表"
       },
       {
+        "name": "MaxVideoDuration",
+        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+      },
+      {
         "name": "Template",
         "desc": "标准化模板选择：0：AI助教基础版本，1：AI评教基础版本，2：AI评教标准版本。AI 助教基础版本功能包括：人脸检索、人脸检测、人脸表情识别、学生动作选项，音频信息分析，微笑识别。AI 评教基础版本功能包括：人脸检索、人脸检测、人脸表情识别、音频信息分析。AI 评教标准版功能包括人脸检索、人脸检测、人脸表情识别、手势识别、音频信息分析、音频关键词分析、视频精彩集锦分析。"
       },
@@ -163,6 +188,15 @@ INFO = {
       }
     ],
     "desc": "修改人员库信息"
+  },
+  "DeleteVocabLib": {
+    "params": [
+      {
+        "name": "VocabLibName",
+        "desc": "词汇库名称"
+      }
+    ],
+    "desc": "删除词汇库"
   },
   "SubmitDoubleVideoHighlights": {
     "params": [
@@ -251,14 +285,26 @@ INFO = {
     ],
     "desc": "对话任务分析接口"
   },
-  "DescribeHighlightResult": {
+  "SubmitTraditionalClassTask": {
     "params": [
       {
-        "name": "JobId",
-        "desc": "精彩集锦任务唯一id。在URL方式时提交请求后会返回一个JobId，后续查询该url的结果时使用这个JobId进行查询。"
+        "name": "FileContent",
+        "desc": "输入分析对象内容，仅支持url，暂不支持直接上传base64图片"
+      },
+      {
+        "name": "FileType",
+        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址"
+      },
+      {
+        "name": "LibrarySet",
+        "desc": "查询人员库列表，可填写学生们的注册照所在人员库"
+      },
+      {
+        "name": "MaxVideoDuration",
+        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
       }
     ],
-    "desc": "视频精彩集锦结果查询接口，异步查询客户提交的请求的结果。"
+    "desc": "**提交线下传统面授大班课（含课桌）任务。**  \n传统教室课堂是指有学生课堂有课桌的课堂，满座20-50人，全局画面且背景不动。  \n  \n**提供的功能接口有：**学生人脸识别、学生表情识别、学生肢体动作识别。可分析的指标维度包括：学生身份识别、正脸、侧脸、抬头、低头、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、举手、站立、坐着、趴桌子、玩手机等  \n  \n**对场景的要求为：**传统的学生上课教室，满座20-50人，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。\n    \n**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。\n  "
   },
   "DescribeAITaskResult": {
     "params": [
@@ -301,7 +347,7 @@ INFO = {
         "desc": "待取消任务标志符。"
       }
     ],
-    "desc": "用于取消已经提交的任务"
+    "desc": "用于取消已经提交的任务，目前只支持图像任务。"
   },
   "SubmitHighlights": {
     "params": [
@@ -361,6 +407,80 @@ INFO = {
     ],
     "desc": "创建词汇"
   },
+  "SubmitOneByOneClassTask": {
+    "params": [
+      {
+        "name": "FileContent",
+        "desc": "输入分析对象内容"
+      },
+      {
+        "name": "FileType",
+        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址，picture: 图片二进制数据的BASE64编码"
+      },
+      {
+        "name": "Lang",
+        "desc": "音频源的语言，默认0为英文，1为中文 "
+      },
+      {
+        "name": "LibrarySet",
+        "desc": "查询人员库列表，可填写学生的注册照所在人员库"
+      },
+      {
+        "name": "MaxVideoDuration",
+        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+      },
+      {
+        "name": "VocabLibNameList",
+        "desc": "识别词库名列表，这些词汇库用来维护关键词，评估学生对这些关键词的使用情况"
+      },
+      {
+        "name": "VoiceEncodeType",
+        "desc": "语音编码类型 1:pcm，当FileType为vod_url或live_url时为必填"
+      },
+      {
+        "name": "VoiceFileType",
+        "desc": "语音文件类型10:视频（三种音频格式目前仅支持16k采样率16bit），当FileType为vod_url或live_url时为必填"
+      }
+    ],
+    "desc": "**提交在线1对1课堂任务**  \n对于在线1对1课堂，老师通过视频向学生授课，并且学生人数为1人。通过上传学生端的图像信息，可以获取学生的听课情况分析。 具体指一路全局画面且背景不动，有1位学生的头像或上半身的画面，要求画面稳定清晰。\n  \n**提供的功能接口有：**学生人脸识别、学生表情识别、语音识别。可分析的指标维度包括：学生身份识别、正脸、侧脸、抬头、低头、人脸坐标、人脸尺寸、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、语音转文字、发音时长、非发音时长、音量、语速等。\n  \n**对场景的要求为：**真实常规1v1授课场景，学生2人以下，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。\n    \n**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。"
+  },
+  "SubmitPartialBodyClassTask": {
+    "params": [
+      {
+        "name": "FileContent",
+        "desc": "输入分析对象内容"
+      },
+      {
+        "name": "FileType",
+        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址，picture: 图片二进制数据的BASE64编码"
+      },
+      {
+        "name": "Lang",
+        "desc": "音频源的语言，默认0为英文，1为中文"
+      },
+      {
+        "name": "LibrarySet",
+        "desc": "查询人员库列表，可填写老师的注册照所在人员库"
+      },
+      {
+        "name": "MaxVideoDuration",
+        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+      },
+      {
+        "name": "VocabLibNameList",
+        "desc": "识别词库名列表，这些词汇库用来维护关键词，评估老师授课过程中，对这些关键词的使用情况"
+      },
+      {
+        "name": "VoiceEncodeType",
+        "desc": "语音编码类型 1:pcm，当FileType为vod_url或live_url时为必填"
+      },
+      {
+        "name": "VoiceFileType",
+        "desc": "语音文件类型 10:视频（三种音频格式目前仅支持16k采样率16bit），当FileType为vod_url或live_url时为必填"
+      }
+    ],
+    "desc": "**在线小班课任务**：此场景是在线授课场景，老师一般为坐着授课，摄像头可以拍摄到老师的头部及上半身。拍摄视频为一路全局画面，且背景不动，要求画面稳定清晰。通过此接口可分析老师授课的行为及语音，以支持AI评教。    \n  \n**提供的功能接口有：**老师人脸识别、老师表情识别、老师手势识别、光线识别、语音识别。 可分析的指标维度包括：身份识别、正脸、侧脸、人脸坐标、人脸尺寸、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、点赞手势、听你说手势、听我说手势、拿教具行为、语音转文字、发音时长、非发音时长、音量、语速、指定关键词的使用等 \n  \n**对场景的要求为：**在线常规授课场景，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。\n    \n**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。"
+  },
   "SubmitCheckAttendanceTask": {
     "params": [
       {
@@ -377,11 +497,11 @@ INFO = {
       },
       {
         "name": "AttendanceThreshold",
-        "desc": "确定出勤阀值；默认为0.92"
+        "desc": "确定出勤阈值；默认为0.92"
       },
       {
         "name": "EnableStranger",
-        "desc": "是否开启陌生人模式，开启后才会推送陌生人事件，默认不开启"
+        "desc": "是否开启陌生人模式，陌生人模式是指在任务中发现的非注册人脸库中的人脸也返回相关统计信息，默认不开启"
       },
       {
         "name": "EndTime",
@@ -400,7 +520,7 @@ INFO = {
         "desc": "识别阈值；默认为0.8"
       }
     ],
-    "desc": "提交人员考勤任务"
+    "desc": "提交人员考勤任务，支持包括点播和直播资源；支持通过DescribeAttendanceResult查询结果，也支持通过NoticeUrl设置考勤回调结果，回调结果结构如下：\n##### 回调事件结构\n | 参数名称 | 类型 | 描述 | \n | ----  | ---  | ------  |\n | jobid | Integer | 任务ID | \n | person_info | array of PersonInfo | 识别到的人员列表 | \n#####子结构PersonInfo\n | 参数名称 | 类型 | 描述 | \n | ----  | ---  | ------  |\n | traceid | String | 可用于区分同一路视频流下的不同陌生人 | \n | personid | String | 识别到的人员ID，如果是陌生人则返回空串 | \n | libid | String | 识别到的人员所在的库ID，如果是陌生人则返回空串 | \n | timestamp | uint64 | 识别到人脸的绝对时间戳，单位ms | \n | image_url | string | 识别到人脸的事件抓图的下载地址，不长期保存，需要请及时下载 | "
   },
   "CreatePerson": {
     "params": [
@@ -411,6 +531,10 @@ INFO = {
       {
         "name": "PersonName",
         "desc": "人员名称"
+      },
+      {
+        "name": "Images",
+        "desc": "图片数据 base64 字符串，与 Urls 参数选择一个输入"
       },
       {
         "name": "JobNumber",
@@ -435,6 +559,10 @@ INFO = {
       {
         "name": "StudentNumber",
         "desc": "人员学生号码"
+      },
+      {
+        "name": "Urls",
+        "desc": "图片下载地址，与 Images 参数选择一个输入"
       }
     ],
     "desc": "创建人员"
@@ -554,42 +682,22 @@ INFO = {
     ],
     "desc": "删除词汇"
   },
-  "CheckAttendance": {
+  "DescribeAudioTask": {
     "params": [
       {
-        "name": "FileContent",
-        "desc": "输入数据"
+        "name": "JobId",
+        "desc": "音频任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。"
       },
       {
-        "name": "FileType",
-        "desc": "输入类型，picture_url:图片，vod_url:视频文件"
+        "name": "Limit",
+        "desc": "限制数目"
       },
       {
-        "name": "LibraryId",
-        "desc": "人员库 ID"
-      },
-      {
-        "name": "PersonIdSet",
-        "desc": "人员 ID 列表"
-      },
-      {
-        "name": "AttendanceThreshold",
-        "desc": "确定出勤阀值；默认为0.92"
-      },
-      {
-        "name": "EndTime",
-        "desc": "考勤结束时间（到视频的第几秒结束考勤），单位秒；默认为900"
-      },
-      {
-        "name": "StartTime",
-        "desc": "考勤开始时间（从视频的第几秒开始考勤），单位秒；默认为0"
-      },
-      {
-        "name": "Threshold",
-        "desc": "识别阈值；默认为0.7"
+        "name": "Offset",
+        "desc": "偏移量"
       }
     ],
-    "desc": "人员考勤"
+    "desc": "音频评估任务信息查询接口，异步查询客户提交的请求的结果。"
   },
   "CheckFacePhoto": {
     "params": [
@@ -613,14 +721,14 @@ INFO = {
     ],
     "desc": "查询词汇"
   },
-  "DeleteVocabLib": {
+  "DescribeHighlightResult": {
     "params": [
       {
-        "name": "VocabLibName",
-        "desc": "词汇库名称"
+        "name": "JobId",
+        "desc": "精彩集锦任务唯一id。在URL方式时提交请求后会返回一个JobId，后续查询该url的结果时使用这个JobId进行查询。"
       }
     ],
-    "desc": "删除词汇库"
+    "desc": "视频精彩集锦结果查询接口，异步查询客户提交的请求的结果。"
   },
   "DescribePerson": {
     "params": [
@@ -652,22 +760,42 @@ INFO = {
     ],
     "desc": "删除人脸"
   },
-  "DescribeAudioTask": {
+  "SubmitFullBodyClassTask": {
     "params": [
       {
-        "name": "JobId",
-        "desc": "音频任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。"
+        "name": "FileContent",
+        "desc": "输入分析对象内容"
       },
       {
-        "name": "Limit",
-        "desc": "限制数目"
+        "name": "FileType",
+        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址，picture: 图片二进制数据的BASE64编码"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量"
+        "name": "Lang",
+        "desc": "音频源的语言，默认0为英文，1为中文"
+      },
+      {
+        "name": "LibrarySet",
+        "desc": "查询人员库列表，可填写老师的注册照所在人员库"
+      },
+      {
+        "name": "MaxVideoDuration",
+        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+      },
+      {
+        "name": "VocabLibNameList",
+        "desc": "识别词库名列表，这些词汇库用来维护关键词，评估老师授课过程中，对这些关键词的使用情况"
+      },
+      {
+        "name": "VoiceEncodeType",
+        "desc": "语音编码类型 1:pcm，当FileType为vod_url或live_url时为必填"
+      },
+      {
+        "name": "VoiceFileType",
+        "desc": "语音文件类型 10:视频（三种音频格式目前仅支持16k采样率16bit），当FileType为vod_url或live_url时为必填"
       }
     ],
-    "desc": "音频评估任务信息查询接口，异步查询客户提交的请求的结果。"
+    "desc": "**传统课堂授课任务**：在此场景中，老师为站立授课，有白板或投影供老师展示课程内容，摄像头可以拍摄到老师的半身或者全身。拍摄视频为一路全局画面，且背景不动，要求画面稳定清晰。通过此接口可分析老师授课的行为及语音，以支持AI评教。  \n  \n**提供的功能接口有：**老师人脸识别、老师表情识别、老师肢体动作识别、语音识别。  可分析的指标维度包括：身份识别、正脸、侧脸、人脸坐标、人脸尺寸、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、正面讲解、写板书、指黑板、语音转文字、发音时长、非发音时长、音量、语速、指定关键词的使用等\n  \n**对场景的要求为：**真实场景老师1人出现在画面中，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。\n    \n**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。"
   },
   "TransmitAudioStream": {
     "params": [
@@ -702,6 +830,10 @@ INFO = {
       {
         "name": "Lang",
         "desc": "音频源的语言，默认0为英文，1为中文"
+      },
+      {
+        "name": "StorageMode",
+        "desc": "是否临时保存 音频链接"
       },
       {
         "name": "VocabLibNameList",

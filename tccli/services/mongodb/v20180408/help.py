@@ -84,6 +84,15 @@ INFO = {
     ],
     "desc": "本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。"
   },
+  "DescribeClientConnections": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      }
+    ],
+    "desc": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。目前只支持3.2版本的MongoDB实例。"
+  },
   "CreateDBInstanceHour": {
     "params": [
       {

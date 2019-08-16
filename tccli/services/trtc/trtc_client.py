@@ -53,10 +53,10 @@ def doKickOutUser(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDissloveRoom(argv, arglist):
+def doDissolveRoom(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DissloveRoom", g_param[OptionsDefine.Version])
+        show_help("DissolveRoom", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -75,9 +75,9 @@ def doDissloveRoom(argv, arglist):
     client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DissloveRoomRequest()
+    model = models.DissolveRoomRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DissloveRoom(model)
+    rsp = client.DissolveRoom(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -99,7 +99,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "KickOutUser": doKickOutUser,
-    "DissloveRoom": doDissloveRoom,
+    "DissolveRoom": doDissolveRoom,
 
 }
 

@@ -2604,6 +2604,7 @@ def doForbidLiveStream(argv, arglist):
         "DomainName": argv["--DomainName"],
         "StreamName": argv["--StreamName"],
         "ResumeTime": argv["--ResumeTime"],
+        "Reason": argv["--Reason"],
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

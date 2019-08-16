@@ -805,6 +805,7 @@ def doRunInstances(argv, arglist):
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
         "InstanceMarketOptions": Utils.try_to_json(argv, "--InstanceMarketOptions"),
         "UserData": argv["--UserData"],
+        "DryRun": Utils.try_to_json(argv, "--DryRun"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

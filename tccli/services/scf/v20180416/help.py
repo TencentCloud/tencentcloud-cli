@@ -1,52 +1,6 @@
 # -*- coding: utf-8 -*-
 DESC = "scf-2018-04-16"
 INFO = {
-  "Invoke": {
-    "params": [
-      {
-        "name": "FunctionName",
-        "desc": "函数名称"
-      },
-      {
-        "name": "InvocationType",
-        "desc": "RequestResponse(同步) 和 Event(异步)，默认为同步"
-      },
-      {
-        "name": "Qualifier",
-        "desc": "触发函数的版本号"
-      },
-      {
-        "name": "ClientContext",
-        "desc": "运行函数时的参数，以json格式传入，最大支持的参数长度是 1M"
-      },
-      {
-        "name": "LogType",
-        "desc": "同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志"
-      },
-      {
-        "name": "Namespace",
-        "desc": "命名空间"
-      }
-    ],
-    "desc": "该接口用于运行函数。"
-  },
-  "GetFunction": {
-    "params": [
-      {
-        "name": "FunctionName",
-        "desc": "需要获取详情的函数名称"
-      },
-      {
-        "name": "Qualifier",
-        "desc": "函数的版本号"
-      },
-      {
-        "name": "ShowCode",
-        "desc": "是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示"
-      }
-    ],
-    "desc": "该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。"
-  },
   "CreateFunction": {
     "params": [
       {
@@ -86,57 +40,184 @@ INFO = {
         "desc": "函数的私有网络配置"
       },
       {
+        "name": "Namespace",
+        "desc": "函数所属命名空间"
+      },
+      {
+        "name": "Role",
+        "desc": "函数绑定的角色"
+      },
+      {
         "name": "ClsLogsetId",
         "desc": "函数日志投递到的CLS LogsetID"
       },
       {
         "name": "ClsTopicId",
         "desc": "函数日志投递到的CLS TopicID"
+      },
+      {
+        "name": "Type",
+        "desc": "函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP"
+      },
+      {
+        "name": "CodeSource",
+        "desc": "CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段"
       }
     ],
     "desc": "该接口根据传入参数创建新的函数。"
+  },
+  "ListVersionByFunction": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数ID"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间"
+      }
+    ],
+    "desc": "该接口根据传入的参数查询函数的版本。"
+  },
+  "UpdateNamespace": {
+    "params": [
+      {
+        "name": "Namespace",
+        "desc": "命名空间名称"
+      },
+      {
+        "name": "Description",
+        "desc": "命名空间描述"
+      }
+    ],
+    "desc": "更新命名空间"
+  },
+  "Invoke": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数名称"
+      },
+      {
+        "name": "InvocationType",
+        "desc": "RequestResponse(同步) 和 Event(异步)，默认为同步"
+      },
+      {
+        "name": "Qualifier",
+        "desc": "触发函数的版本号"
+      },
+      {
+        "name": "ClientContext",
+        "desc": "运行函数时的参数，以json格式传入，最大支持的参数长度是 1M"
+      },
+      {
+        "name": "LogType",
+        "desc": "同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间"
+      }
+    ],
+    "desc": "该接口用于运行函数。"
   },
   "DeleteFunction": {
     "params": [
       {
         "name": "FunctionName",
         "desc": "要删除的函数名称"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数所属命名空间"
       }
     ],
     "desc": "该接口根据传入参数删除函数。"
   },
-  "ListFunctions": {
+  "PublishVersion": {
     "params": [
       {
-        "name": "Order",
-        "desc": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC"
+        "name": "FunctionName",
+        "desc": "发布函数的名称"
       },
       {
-        "name": "Orderby",
-        "desc": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName"
+        "name": "Description",
+        "desc": "函数的描述"
       },
       {
-        "name": "Offset",
-        "desc": "数据偏移量，默认值为 0"
-      },
+        "name": "Namespace",
+        "desc": "函数的命名空间"
+      }
+    ],
+    "desc": "该接口用于用户发布新版本函数。"
+  },
+  "ListNamespaces": {
+    "params": [
       {
         "name": "Limit",
         "desc": "返回数据长度，默认值为 20"
       },
       {
-        "name": "SearchKey",
-        "desc": "支持FunctionName模糊匹配"
+        "name": "Offset",
+        "desc": "数据的偏移量，默认值为 0"
       },
       {
-        "name": "Description",
-        "desc": "函数描述，支持模糊搜索"
+        "name": "Orderby",
+        "desc": "根据哪个字段进行返回结果排序,支持以下字段：Name,Updatetime"
       },
       {
-        "name": "Filters",
-        "desc": "过滤条件。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。"
+        "name": "Order",
+        "desc": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC"
       }
     ],
-    "desc": "该接口根据传入的查询参数返回相关函数信息。"
+    "desc": "列出命名空间列表"
+  },
+  "GetFunction": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "需要获取详情的函数名称"
+      },
+      {
+        "name": "Qualifier",
+        "desc": "函数的版本号"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数所属命名空间"
+      },
+      {
+        "name": "ShowCode",
+        "desc": "是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示"
+      }
+    ],
+    "desc": "该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。"
+  },
+  "GetFunctionAddress": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数的名称"
+      },
+      {
+        "name": "Qualifier",
+        "desc": "函数的版本"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数的命名空间"
+      }
+    ],
+    "desc": "该接口用于获取函数代码包的下载地址。"
+  },
+  "DeleteNamespace": {
+    "params": [
+      {
+        "name": "Namespace",
+        "desc": "命名空间名称"
+      }
+    ],
+    "desc": "该接口根据传入的参数创建命名空间。"
   },
   "CreateTrigger": {
     "params": [
@@ -157,6 +238,10 @@ INFO = {
         "desc": "触发器对应的参数，如果是 timer 类型的触发器其内容是 Linux cron 表达式，如果是其他触发器，见具体触发器说明"
       },
       {
+        "name": "Namespace",
+        "desc": "函数的命名空间"
+      },
+      {
         "name": "Qualifier",
         "desc": "函数的版本"
       },
@@ -167,11 +252,24 @@ INFO = {
     ],
     "desc": "该接口根据参数输入设置新的触发方式。"
   },
+  "CreateNamespace": {
+    "params": [
+      {
+        "name": "Namespace",
+        "desc": "命名空间名称"
+      },
+      {
+        "name": "Description",
+        "desc": "命名空间描述"
+      }
+    ],
+    "desc": "该接口根据传入的参数创建命名空间。"
+  },
   "CopyFunction": {
     "params": [
       {
         "name": "FunctionName",
-        "desc": "函数名"
+        "desc": "要复制的函数的名称"
       },
       {
         "name": "NewFunctionName",
@@ -179,7 +277,7 @@ INFO = {
       },
       {
         "name": "Namespace",
-        "desc": "命名空间，默认为default"
+        "desc": "要复制的函数所在的命名空间，默认为default"
       },
       {
         "name": "TargetNamespace",
@@ -187,14 +285,22 @@ INFO = {
       },
       {
         "name": "Description",
-        "desc": "函数描述"
+        "desc": "新函数的描述"
       },
       {
         "name": "TargetRegion",
         "desc": "要将函数复制到的地域，不填则默认为当前地域"
+      },
+      {
+        "name": "Override",
+        "desc": "如果目标Namespace下已有同名函数，是否覆盖，默认为否\n（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）\nTRUE：覆盖同名函数\nFALSE：不覆盖同名函数"
+      },
+      {
+        "name": "CopyConfiguration",
+        "desc": "是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。\nTRUE：复制函数配置\nFALSE：不复制函数配置"
       }
     ],
-    "desc": "复制一个函数，可以选择将复制出的新函数放置在同一个namespace或另一个namespace。\n注：本接口**不会**复制函数的以下对象或属性：\n1. 函数的触发器\n2. 除了$LATEST以外的其它版本\n3. 函数配置的日志投递到的CLS目标\n\n如有需要，您可以在复制后手动修改新函数。"
+    "desc": "复制一个函数，您可以选择将复制出的新函数放置在特定的Region和Namespace。\n注：本接口**不会**复制函数的以下对象或属性：\n1. 函数的触发器\n2. 除了$LATEST以外的其它版本\n3. 函数配置的日志投递到的CLS目标。\n\n如有需要，您可以在复制后手动配置新函数。"
   },
   "UpdateFunctionConfiguration": {
     "params": [
@@ -223,11 +329,97 @@ INFO = {
         "desc": "函数的环境变量"
       },
       {
+        "name": "Namespace",
+        "desc": "函数所属命名空间"
+      },
+      {
         "name": "VpcConfig",
         "desc": "函数的私有网络配置"
+      },
+      {
+        "name": "Role",
+        "desc": "函数绑定的角色"
+      },
+      {
+        "name": "ClsLogsetId",
+        "desc": "日志投递到的cls日志集ID"
+      },
+      {
+        "name": "ClsTopicId",
+        "desc": "日志投递到的cls Topic ID"
+      },
+      {
+        "name": "Publish",
+        "desc": "在更新时是否同步发布新版本，默认为：FALSE，不发布"
       }
     ],
     "desc": "该接口根据传入参数更新函数配置。"
+  },
+  "ListFunctions": {
+    "params": [
+      {
+        "name": "Order",
+        "desc": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC"
+      },
+      {
+        "name": "Orderby",
+        "desc": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认值为 0"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数据长度，默认值为 20"
+      },
+      {
+        "name": "SearchKey",
+        "desc": "支持FunctionName模糊匹配"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间"
+      },
+      {
+        "name": "Description",
+        "desc": "函数描述，支持模糊搜索"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。"
+      }
+    ],
+    "desc": "该接口根据传入的查询参数返回相关函数信息。"
+  },
+  "DeleteTrigger": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数的名称"
+      },
+      {
+        "name": "TriggerName",
+        "desc": "要删除的触发器名称"
+      },
+      {
+        "name": "Type",
+        "desc": "要删除的触发器类型，目前支持 cos 、cmq、 timer、ckafka 类型"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数所属命名空间"
+      },
+      {
+        "name": "TriggerDesc",
+        "desc": "如果删除的触发器类型为 COS 触发器，该字段为必填值，存放 JSON 格式的数据 {\"event\":\"cos:ObjectCreated:*\"}，数据内容和 SetTrigger 接口中该字段的格式相同；如果删除的触发器类型为定时触发器或 CMQ 触发器，可以不指定该字段"
+      },
+      {
+        "name": "Qualifier",
+        "desc": "函数的版本信息"
+      }
+    ],
+    "desc": "该接口根据参数传入删除已有的触发方式。"
   },
   "GetFunctionLogs": {
     "params": [
@@ -256,6 +448,10 @@ INFO = {
         "desc": "日志过滤条件。可用来区分正确和错误日志，filter.retCode=not0 表示只返回错误日志，filter.retCode=is0 表示只返回正确日志，不传，则返回所有日志"
       },
       {
+        "name": "Namespace",
+        "desc": "函数的命名空间"
+      },
+      {
         "name": "Qualifier",
         "desc": "函数的版本"
       },
@@ -270,34 +466,13 @@ INFO = {
       {
         "name": "EndTime",
         "desc": "查询的具体日期，例如：2017-05-16 20:59:59，只能与startTime相差一天之内"
+      },
+      {
+        "name": "SearchContext",
+        "desc": "服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写"
       }
     ],
     "desc": "该接口根据指定的日志查询条件返回函数运行日志。"
-  },
-  "DeleteTrigger": {
-    "params": [
-      {
-        "name": "FunctionName",
-        "desc": "函数的名称"
-      },
-      {
-        "name": "TriggerName",
-        "desc": "要删除的触发器名称"
-      },
-      {
-        "name": "Type",
-        "desc": "要删除的触发器类型，目前支持 cos 、cmq、 timer、ckafka 类型"
-      },
-      {
-        "name": "TriggerDesc",
-        "desc": "如果删除的触发器类型为 COS 触发器，该字段为必填值，存放 JSON 格式的数据 {\"event\":\"cos:ObjectCreated:*\"}，数据内容和 SetTrigger 接口中该字段的格式相同；如果删除的触发器类型为定时触发器或 CMQ 触发器，可以不指定该字段"
-      },
-      {
-        "name": "Qualifier",
-        "desc": "函数的版本信息"
-      }
-    ],
-    "desc": "该接口根据参数传入删除已有的触发方式。"
   },
   "UpdateFunctionCode": {
     "params": [
@@ -322,8 +497,20 @@ INFO = {
         "desc": "包含函数代码文件及其依赖项的 zip 格式文件，使用该接口时要求将 zip 文件的内容转成 base64 编码，最大支持20M"
       },
       {
+        "name": "Namespace",
+        "desc": "函数所属命名空间"
+      },
+      {
         "name": "CosBucketRegion",
         "desc": "对象存储的地域，注：北京分为ap-beijing和ap-beijing-1"
+      },
+      {
+        "name": "EnvId",
+        "desc": "函数所属环境"
+      },
+      {
+        "name": "Publish",
+        "desc": "在更新时是否同步发布新版本，默认为：FALSE，不发布"
       }
     ],
     "desc": "该接口根据传入参数更新函数代码。"

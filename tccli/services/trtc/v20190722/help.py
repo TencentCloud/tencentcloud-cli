@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
 DESC = "trtc-2019-07-22"
 INFO = {
+  "DissolveRoom": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "TRTC的SDKAppId。"
+      },
+      {
+        "name": "RoomId",
+        "desc": "房间号。"
+      }
+    ],
+    "desc": "接口说明：把房间所有用户从房间踢出，解散房间。"
+  },
   "KickOutUser": {
     "params": [
       {
@@ -17,18 +30,5 @@ INFO = {
       }
     ],
     "desc": "接口说明：将用户从房间踢出。"
-  },
-  "DissloveRoom": {
-    "params": [
-      {
-        "name": "SdkAppId",
-        "desc": "TRTC的SDKAppId。"
-      },
-      {
-        "name": "RoomId",
-        "desc": "房间号。"
-      }
-    ],
-    "desc": "接口说明：把房间所有用户从房间踢出，解散房间。"
   }
 }
