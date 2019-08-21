@@ -25,12 +25,12 @@ def doDescribeCameraPerson(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "CameraId": Utils.try_to_json(argv, "--CameraId"),
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "PosId": argv["--PosId"],
+        "PosId": argv.get("--PosId"),
         "Num": Utils.try_to_json(argv, "--Num"),
         "IsNeedPic": Utils.try_to_json(argv, "--IsNeedPic"),
 
@@ -65,7 +65,7 @@ def doDescribePersonInfo(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "StartPersonId": Utils.try_to_json(argv, "--StartPersonId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
@@ -104,10 +104,10 @@ def doDescribeZoneTrafficInfo(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -142,11 +142,11 @@ def doDescribeZoneFlowAgeInfoByZoneId(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -179,8 +179,8 @@ def doRegisterCallback(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
-        "BackUrl": argv["--BackUrl"],
+        "CompanyId": argv.get("--CompanyId"),
+        "BackUrl": argv.get("--BackUrl"),
         "Time": Utils.try_to_json(argv, "--Time"),
         "NeedFacePic": Utils.try_to_json(argv, "--NeedFacePic"),
 
@@ -215,11 +215,11 @@ def doDescribeZoneFlowGenderAvrStayTimeByZoneId(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,10 +252,10 @@ def doDescribeZoneFlowAndStayTime(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -288,15 +288,15 @@ def doDescribePersonVisitInfo(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
-        "StartDateTime": argv["--StartDateTime"],
-        "EndDateTime": argv["--EndDateTime"],
+        "StartDateTime": argv.get("--StartDateTime"),
+        "EndDateTime": argv.get("--EndDateTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -329,11 +329,11 @@ def doDescribeZoneFlowHourlyByZoneId(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -400,11 +400,11 @@ def doDescribeFaceIdByTempId(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "TempId": argv["--TempId"],
+        "TempId": argv.get("--TempId"),
         "CameraId": Utils.try_to_json(argv, "--CameraId"),
-        "PosId": argv["--PosId"],
+        "PosId": argv.get("--PosId"),
         "PictureExpires": Utils.try_to_json(argv, "--PictureExpires"),
 
     }
@@ -438,11 +438,11 @@ def doDescribeZoneFlowGenderInfoByZoneId(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -475,10 +475,10 @@ def doDescribeShopTrafficInfo(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -513,9 +513,9 @@ def doDescribePersonInfoByFacePicture(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "Picture": argv["--Picture"],
+        "Picture": argv.get("--Picture"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -548,10 +548,10 @@ def doCreateFacePicture(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "PersonType": Utils.try_to_json(argv, "--PersonType"),
-        "Picture": argv["--Picture"],
-        "PictureName": argv["--PictureName"],
+        "Picture": argv.get("--Picture"),
+        "PictureName": argv.get("--PictureName"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "IsForceUpload": Utils.try_to_json(argv, "--IsForceUpload"),
 
@@ -586,11 +586,11 @@ def doCreateAccount(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
-        "Name": argv["--Name"],
-        "Password": argv["--Password"],
-        "ShopCode": argv["--ShopCode"],
-        "Remark": argv["--Remark"],
+        "CompanyId": argv.get("--CompanyId"),
+        "Name": argv.get("--Name"),
+        "Password": argv.get("--Password"),
+        "ShopCode": argv.get("--ShopCode"),
+        "Remark": argv.get("--Remark"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -623,10 +623,10 @@ def doDescribeShopHourTrafficInfo(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -661,10 +661,10 @@ def doDescribePersonTrace(argv, arglist):
         return
 
     param = {
-        "MallId": argv["--MallId"],
-        "PersonId": argv["--PersonId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "MallId": argv.get("--MallId"),
+        "PersonId": argv.get("--PersonId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -697,11 +697,11 @@ def doDescribeZoneFlowDailyByZoneId(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "ZoneId": Utils.try_to_json(argv, "--ZoneId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -734,10 +734,10 @@ def doDescribePersonArrivedMall(argv, arglist):
         return
 
     param = {
-        "MallId": argv["--MallId"],
-        "PersonId": argv["--PersonId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "MallId": argv.get("--MallId"),
+        "PersonId": argv.get("--PersonId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -770,10 +770,10 @@ def doDescribeClusterPersonArrivedMall(argv, arglist):
         return
 
     param = {
-        "MallId": argv["--MallId"],
-        "PersonId": argv["--PersonId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "MallId": argv.get("--MallId"),
+        "PersonId": argv.get("--PersonId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -806,9 +806,9 @@ def doDescribePersonTraceDetail(argv, arglist):
         return
 
     param = {
-        "MallId": argv["--MallId"],
-        "PersonId": argv["--PersonId"],
-        "TraceId": argv["--TraceId"],
+        "MallId": argv.get("--MallId"),
+        "PersonId": argv.get("--PersonId"),
+        "TraceId": argv.get("--TraceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -841,7 +841,7 @@ def doModifyPersonType(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "PersonId": Utils.try_to_json(argv, "--PersonId"),
         "PersonType": Utils.try_to_json(argv, "--PersonType"),
@@ -878,10 +878,10 @@ def doModifyPersonFeatureInfo(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "PersonId": Utils.try_to_json(argv, "--PersonId"),
-        "Picture": argv["--Picture"],
-        "PictureName": argv["--PictureName"],
+        "Picture": argv.get("--Picture"),
+        "PictureName": argv.get("--PictureName"),
         "PersonType": Utils.try_to_json(argv, "--PersonType"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
 
@@ -917,10 +917,10 @@ def doDescribeHistoryNetworkInfo(argv, arglist):
 
     param = {
         "Time": Utils.try_to_json(argv, "--Time"),
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDay": argv["--StartDay"],
-        "EndDay": argv["--EndDay"],
+        "StartDay": argv.get("--StartDay"),
+        "EndDay": argv.get("--EndDay"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -956,7 +956,7 @@ def doDescribeNetworkInfo(argv, arglist):
 
     param = {
         "Time": Utils.try_to_json(argv, "--Time"),
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
 
     }
@@ -990,7 +990,7 @@ def doDeletePersonFeature(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "PersonId": Utils.try_to_json(argv, "--PersonId"),
 
@@ -1025,7 +1025,7 @@ def doModifyPersonTagInfo(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
 
@@ -1060,7 +1060,7 @@ def doDescribePerson(argv, arglist):
         return
 
     param = {
-        "MallId": argv["--MallId"],
+        "MallId": argv.get("--MallId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -1095,10 +1095,10 @@ def doDescribeClusterPersonTrace(argv, arglist):
         return
 
     param = {
-        "MallId": argv["--MallId"],
-        "PersonId": argv["--PersonId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "MallId": argv.get("--MallId"),
+        "PersonId": argv.get("--PersonId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1131,10 +1131,10 @@ def doDescribeTrajectoryData(argv, arglist):
         return
 
     param = {
-        "CompanyId": argv["--CompanyId"],
+        "CompanyId": argv.get("--CompanyId"),
         "ShopId": Utils.try_to_json(argv, "--ShopId"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Gender": Utils.try_to_json(argv, "--Gender"),
 

@@ -57,11 +57,11 @@ def doDescribeDosageDetailByDate(argv, arglist):
         return
 
     param = {
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
-        "ProductCode": argv["--ProductCode"],
-        "Domain": argv["--Domain"],
-        "InstanceID": argv["--InstanceID"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
+        "ProductCode": argv.get("--ProductCode"),
+        "Domain": argv.get("--Domain"),
+        "InstanceID": argv.get("--InstanceID"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -96,10 +96,10 @@ def doDescribeBillDetail(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PeriodType": argv["--PeriodType"],
-        "Month": argv["--Month"],
-        "BeginTime": argv["--BeginTime"],
-        "EndTime": argv["--EndTime"],
+        "PeriodType": argv.get("--PeriodType"),
+        "Month": argv.get("--Month"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
         "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
 
     }
@@ -133,12 +133,12 @@ def doDescribeDealsByCond(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Status": Utils.try_to_json(argv, "--Status"),
-        "OrderId": argv["--OrderId"],
+        "OrderId": argv.get("--OrderId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -171,9 +171,9 @@ def doDescribeBillSummaryByPayMode(argv, arglist):
         return
 
     param = {
-        "PayerUin": argv["--PayerUin"],
-        "BeginTime": argv["--BeginTime"],
-        "EndTime": argv["--EndTime"],
+        "PayerUin": argv.get("--PayerUin"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -208,8 +208,8 @@ def doDescribeBillResourceSummary(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PeriodType": argv["--PeriodType"],
-        "Month": argv["--Month"],
+        "PeriodType": argv.get("--PeriodType"),
+        "Month": argv.get("--Month"),
         "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
 
     }
@@ -243,9 +243,9 @@ def doDescribeBillSummaryByRegion(argv, arglist):
         return
 
     param = {
-        "PayerUin": argv["--PayerUin"],
-        "BeginTime": argv["--BeginTime"],
-        "EndTime": argv["--EndTime"],
+        "PayerUin": argv.get("--PayerUin"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -278,9 +278,9 @@ def doDescribeBillSummaryByProject(argv, arglist):
         return
 
     param = {
-        "PayerUin": argv["--PayerUin"],
-        "BeginTime": argv["--BeginTime"],
-        "EndTime": argv["--EndTime"],
+        "PayerUin": argv.get("--PayerUin"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -313,9 +313,9 @@ def doDescribeBillSummaryByProduct(argv, arglist):
         return
 
     param = {
-        "PayerUin": argv["--PayerUin"],
-        "BeginTime": argv["--BeginTime"],
-        "EndTime": argv["--EndTime"],
+        "PayerUin": argv.get("--PayerUin"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

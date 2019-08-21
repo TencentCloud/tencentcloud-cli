@@ -25,9 +25,9 @@ def doStartAnalyse(argv, arglist):
         return
 
     param = {
-        "Pk": argv["--Pk"],
-        "Md5": argv["--Md5"],
-        "DlUrl": argv["--DlUrl"],
+        "Pk": argv.get("--Pk"),
+        "Md5": argv.get("--Md5"),
+        "DlUrl": argv.get("--DlUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -60,8 +60,8 @@ def doDescribeStatus(argv, arglist):
         return
 
     param = {
-        "Pk": argv["--Pk"],
-        "Md5": argv["--Md5"],
+        "Pk": argv.get("--Pk"),
+        "Md5": argv.get("--Md5"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

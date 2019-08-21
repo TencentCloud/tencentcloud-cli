@@ -25,10 +25,10 @@ def doStartEncryption(argv, arglist):
         return
 
     param = {
-        "CosEndPoint": argv["--CosEndPoint"],
-        "CosSecretId": argv["--CosSecretId"],
-        "CosSecretKey": argv["--CosSecretKey"],
-        "DrmType": argv["--DrmType"],
+        "CosEndPoint": argv.get("--CosEndPoint"),
+        "CosSecretId": argv.get("--CosSecretId"),
+        "CosSecretKey": argv.get("--CosSecretKey"),
+        "DrmType": argv.get("--DrmType"),
         "SourceObject": Utils.try_to_json(argv, "--SourceObject"),
         "OutputObjects": Utils.try_to_json(argv, "--OutputObjects"),
 
@@ -63,9 +63,9 @@ def doAddFairPlayPem(argv, arglist):
         return
 
     param = {
-        "Pem": argv["--Pem"],
-        "Ask": argv["--Ask"],
-        "PemDecryptKey": argv["--PemDecryptKey"],
+        "Pem": argv.get("--Pem"),
+        "Ask": argv.get("--Ask"),
+        "PemDecryptKey": argv.get("--PemDecryptKey"),
         "BailorId": Utils.try_to_json(argv, "--BailorId"),
         "Priority": Utils.try_to_json(argv, "--Priority"),
 
@@ -100,9 +100,9 @@ def doCreateLicense(argv, arglist):
         return
 
     param = {
-        "DrmType": argv["--DrmType"],
-        "LicenseRequest": argv["--LicenseRequest"],
-        "ContentType": argv["--ContentType"],
+        "DrmType": argv.get("--DrmType"),
+        "LicenseRequest": argv.get("--LicenseRequest"),
+        "ContentType": argv.get("--ContentType"),
         "Tracks": Utils.try_to_json(argv, "--Tracks"),
         "PlaybackPolicy": Utils.try_to_json(argv, "--PlaybackPolicy"),
 
@@ -137,10 +137,10 @@ def doModifyFairPlayPem(argv, arglist):
         return
 
     param = {
-        "Pem": argv["--Pem"],
-        "Ask": argv["--Ask"],
+        "Pem": argv.get("--Pem"),
+        "Ask": argv.get("--Ask"),
         "FairPlayPemId": Utils.try_to_json(argv, "--FairPlayPemId"),
-        "PemDecryptKey": argv["--PemDecryptKey"],
+        "PemDecryptKey": argv.get("--PemDecryptKey"),
         "BailorId": Utils.try_to_json(argv, "--BailorId"),
         "Priority": Utils.try_to_json(argv, "--Priority"),
 
@@ -175,11 +175,11 @@ def doDescribeKeys(argv, arglist):
         return
 
     param = {
-        "DrmType": argv["--DrmType"],
+        "DrmType": argv.get("--DrmType"),
         "Tracks": Utils.try_to_json(argv, "--Tracks"),
-        "ContentType": argv["--ContentType"],
-        "RsaPublicKey": argv["--RsaPublicKey"],
-        "ContentId": argv["--ContentId"],
+        "ContentType": argv.get("--ContentType"),
+        "RsaPublicKey": argv.get("--RsaPublicKey"),
+        "ContentId": argv.get("--ContentId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

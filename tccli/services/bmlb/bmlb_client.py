@@ -25,7 +25,7 @@ def doDescribeL7Listeners(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
 
     }
@@ -59,7 +59,7 @@ def doUnbindTrafficMirrorReceivers(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
         "ReceiverSet": Utils.try_to_json(argv, "--ReceiverSet"),
 
     }
@@ -93,11 +93,11 @@ def doModifyL7BackendWeight(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "DomainId": argv["--DomainId"],
-        "LocationId": argv["--LocationId"],
-        "InstanceId": argv["--InstanceId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "DomainId": argv.get("--DomainId"),
+        "LocationId": argv.get("--LocationId"),
+        "InstanceId": argv.get("--InstanceId"),
         "Weight": Utils.try_to_json(argv, "--Weight"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
@@ -133,9 +133,9 @@ def doModifyL4BackendWeight(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "InstanceId": argv["--InstanceId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "InstanceId": argv.get("--InstanceId"),
         "Weight": Utils.try_to_json(argv, "--Weight"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
@@ -171,7 +171,7 @@ def doCreateL4Listeners(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
         "ListenerSet": Utils.try_to_json(argv, "--ListenerSet"),
 
     }
@@ -205,8 +205,8 @@ def doUnbindL4Backends(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
         "BackendSet": Utils.try_to_json(argv, "--BackendSet"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
 
@@ -241,17 +241,17 @@ def doModifyL7Listener(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "ListenerName": argv["--ListenerName"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "ListenerName": argv.get("--ListenerName"),
         "SslMode": Utils.try_to_json(argv, "--SslMode"),
-        "CertId": argv["--CertId"],
-        "CertName": argv["--CertName"],
-        "CertContent": argv["--CertContent"],
-        "CertKey": argv["--CertKey"],
-        "CertCaId": argv["--CertCaId"],
-        "CertCaName": argv["--CertCaName"],
-        "CertCaContent": argv["--CertCaContent"],
+        "CertId": argv.get("--CertId"),
+        "CertName": argv.get("--CertName"),
+        "CertContent": argv.get("--CertContent"),
+        "CertKey": argv.get("--CertKey"),
+        "CertCaId": argv.get("--CertCaId"),
+        "CertCaName": argv.get("--CertCaName"),
+        "CertCaContent": argv.get("--CertCaContent"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
 
     }
@@ -318,8 +318,8 @@ def doCreateL7Rules(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
         "RuleSet": Utils.try_to_json(argv, "--RuleSet"),
 
     }
@@ -353,7 +353,7 @@ def doDescribeTrafficMirrorReceiverHealthStatus(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
         "ReceiverSet": Utils.try_to_json(argv, "--ReceiverSet"),
 
     }
@@ -387,10 +387,10 @@ def doUnbindL7Backends(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "DomainId": argv["--DomainId"],
-        "LocationId": argv["--LocationId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "DomainId": argv.get("--DomainId"),
+        "LocationId": argv.get("--LocationId"),
         "BackendSet": Utils.try_to_json(argv, "--BackendSet"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
 
@@ -425,9 +425,9 @@ def doDeleteL7Rules(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "DomainId": argv["--DomainId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "DomainId": argv.get("--DomainId"),
         "LocationIds": Utils.try_to_json(argv, "--LocationIds"),
 
     }
@@ -461,8 +461,8 @@ def doDescribeL4ListenerInfo(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "SearchKey": argv["--SearchKey"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "SearchKey": argv.get("--SearchKey"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
@@ -496,7 +496,7 @@ def doDescribeTrafficMirrorListeners(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "SearchLoadBalancerIds": Utils.try_to_json(argv, "--SearchLoadBalancerIds"),
@@ -538,8 +538,8 @@ def doModifyL7Locations(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
         "RuleSet": Utils.try_to_json(argv, "--RuleSet"),
 
     }
@@ -573,9 +573,9 @@ def doModifyL4BackendPort(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "InstanceId": argv["--InstanceId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "InstanceId": argv.get("--InstanceId"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "NewPort": Utils.try_to_json(argv, "--NewPort"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
@@ -611,7 +611,7 @@ def doDeleteLoadBalancer(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -644,17 +644,17 @@ def doCreateLoadBalancers(argv, arglist):
         return
 
     param = {
-        "VpcId": argv["--VpcId"],
-        "LoadBalancerType": argv["--LoadBalancerType"],
-        "SubnetId": argv["--SubnetId"],
+        "VpcId": argv.get("--VpcId"),
+        "LoadBalancerType": argv.get("--LoadBalancerType"),
+        "SubnetId": argv.get("--SubnetId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "PayMode": argv["--PayMode"],
-        "TgwSetType": argv["--TgwSetType"],
+        "PayMode": argv.get("--PayMode"),
+        "TgwSetType": argv.get("--TgwSetType"),
         "Exclusive": Utils.try_to_json(argv, "--Exclusive"),
         "SpecifiedVips": Utils.try_to_json(argv, "--SpecifiedVips"),
         "BzConf": Utils.try_to_json(argv, "--BzConf"),
-        "IpProtocolType": argv["--IpProtocolType"],
+        "IpProtocolType": argv.get("--IpProtocolType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -687,8 +687,8 @@ def doDescribeL7Rules(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
         "DomainIds": Utils.try_to_json(argv, "--DomainIds"),
 
     }
@@ -722,7 +722,7 @@ def doDescribeLoadBalancerTaskResult(argv, arglist):
         return
 
     param = {
-        "TaskId": argv["--TaskId"],
+        "TaskId": argv.get("--TaskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -755,8 +755,8 @@ def doDescribeL7ListenerInfo(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "SearchKey": argv["--SearchKey"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "SearchKey": argv.get("--SearchKey"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "IfGetBackendInfo": Utils.try_to_json(argv, "--IfGetBackendInfo"),
 
@@ -791,7 +791,7 @@ def doDescribeL4Listeners(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
 
     }
@@ -825,13 +825,13 @@ def doSetTrafficMirrorHealthSwitch(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
         "HealthSwitch": Utils.try_to_json(argv, "--HealthSwitch"),
         "HealthNum": Utils.try_to_json(argv, "--HealthNum"),
         "UnhealthNum": Utils.try_to_json(argv, "--UnhealthNum"),
         "IntervalTime": Utils.try_to_json(argv, "--IntervalTime"),
-        "HttpCheckDomain": argv["--HttpCheckDomain"],
-        "HttpCheckPath": argv["--HttpCheckPath"],
+        "HttpCheckDomain": argv.get("--HttpCheckDomain"),
+        "HttpCheckPath": argv.get("--HttpCheckPath"),
         "HttpCodes": Utils.try_to_json(argv, "--HttpCodes"),
 
     }
@@ -866,21 +866,21 @@ def doDescribeLoadBalancers(argv, arglist):
 
     param = {
         "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
-        "LoadBalancerType": argv["--LoadBalancerType"],
-        "LoadBalancerName": argv["--LoadBalancerName"],
-        "Domain": argv["--Domain"],
+        "LoadBalancerType": argv.get("--LoadBalancerType"),
+        "LoadBalancerName": argv.get("--LoadBalancerName"),
+        "Domain": argv.get("--Domain"),
         "LoadBalancerVips": Utils.try_to_json(argv, "--LoadBalancerVips"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SearchKey": argv["--SearchKey"],
-        "OrderBy": argv["--OrderBy"],
+        "SearchKey": argv.get("--SearchKey"),
+        "OrderBy": argv.get("--OrderBy"),
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "Exclusive": Utils.try_to_json(argv, "--Exclusive"),
-        "TgwSetType": argv["--TgwSetType"],
-        "VpcId": argv["--VpcId"],
-        "QueryType": argv["--QueryType"],
-        "ConfId": argv["--ConfId"],
+        "TgwSetType": argv.get("--TgwSetType"),
+        "VpcId": argv.get("--VpcId"),
+        "QueryType": argv.get("--QueryType"),
+        "ConfId": argv.get("--ConfId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -913,7 +913,7 @@ def doDeleteListeners(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
 
     }
@@ -947,7 +947,7 @@ def doDescribeCertDetail(argv, arglist):
         return
 
     param = {
-        "CertId": argv["--CertId"],
+        "CertId": argv.get("--CertId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -980,7 +980,7 @@ def doUnbindTrafficMirrorListeners(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
 
     }
@@ -1014,11 +1014,11 @@ def doModifyL7BackendPort(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "DomainId": argv["--DomainId"],
-        "LocationId": argv["--LocationId"],
-        "InstanceId": argv["--InstanceId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "DomainId": argv.get("--DomainId"),
+        "LocationId": argv.get("--LocationId"),
+        "InstanceId": argv.get("--InstanceId"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "NewPort": Utils.try_to_json(argv, "--NewPort"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
@@ -1054,11 +1054,11 @@ def doDescribeL7Backends(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "DomainId": argv["--DomainId"],
-        "LocationId": argv["--LocationId"],
-        "QueryType": argv["--QueryType"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "DomainId": argv.get("--DomainId"),
+        "LocationId": argv.get("--LocationId"),
+        "QueryType": argv.get("--QueryType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1091,8 +1091,8 @@ def doCreateTrafficMirror(argv, arglist):
         return
 
     param = {
-        "Alias": argv["--Alias"],
-        "VpcId": argv["--VpcId"],
+        "Alias": argv.get("--Alias"),
+        "VpcId": argv.get("--VpcId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1125,9 +1125,9 @@ def doModifyL4BackendProbePort(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "InstanceId": argv["--InstanceId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "InstanceId": argv.get("--InstanceId"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "ProbePort": Utils.try_to_json(argv, "--ProbePort"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
@@ -1163,8 +1163,8 @@ def doBindL4Backends(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
         "BackendSet": Utils.try_to_json(argv, "--BackendSet"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
 
@@ -1199,7 +1199,7 @@ def doBindTrafficMirrorReceivers(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
         "ReceiverSet": Utils.try_to_json(argv, "--ReceiverSet"),
 
     }
@@ -1233,10 +1233,10 @@ def doReplaceCert(argv, arglist):
         return
 
     param = {
-        "OldCertId": argv["--OldCertId"],
-        "NewCert": argv["--NewCert"],
-        "NewAlias": argv["--NewAlias"],
-        "NewKey": argv["--NewKey"],
+        "OldCertId": argv.get("--OldCertId"),
+        "NewCert": argv.get("--NewCert"),
+        "NewAlias": argv.get("--NewAlias"),
+        "NewKey": argv.get("--NewKey"),
         "DeleteOld": Utils.try_to_json(argv, "--DeleteOld"),
 
     }
@@ -1270,8 +1270,8 @@ def doDeleteL7Domains(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
         "DomainIds": Utils.try_to_json(argv, "--DomainIds"),
 
     }
@@ -1342,8 +1342,8 @@ def doDescribeL7ListenersEx(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
-        "VpcId": argv["--VpcId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
+        "VpcId": argv.get("--VpcId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -1379,10 +1379,10 @@ def doUploadCert(argv, arglist):
         return
 
     param = {
-        "CertType": argv["--CertType"],
-        "Cert": argv["--Cert"],
-        "Alias": argv["--Alias"],
-        "Key": argv["--Key"],
+        "CertType": argv.get("--CertType"),
+        "Cert": argv.get("--Cert"),
+        "Alias": argv.get("--Alias"),
+        "Key": argv.get("--Key"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1415,10 +1415,10 @@ def doBindL7Backends(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "DomainId": argv["--DomainId"],
-        "LocationId": argv["--LocationId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "DomainId": argv.get("--DomainId"),
+        "LocationId": argv.get("--LocationId"),
         "BackendSet": Utils.try_to_json(argv, "--BackendSet"),
         "BindType": Utils.try_to_json(argv, "--BindType"),
 
@@ -1453,8 +1453,8 @@ def doDescribeL4Backends(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
         "BackendSet": Utils.try_to_json(argv, "--BackendSet"),
 
     }
@@ -1488,7 +1488,7 @@ def doBindTrafficMirrorListeners(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
 
     }
@@ -1522,9 +1522,9 @@ def doModifyLoadBalancer(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "LoadBalancerName": argv["--LoadBalancerName"],
-        "DomainPrefix": argv["--DomainPrefix"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "LoadBalancerName": argv.get("--LoadBalancerName"),
+        "DomainPrefix": argv.get("--DomainPrefix"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1557,8 +1557,8 @@ def doSetTrafficMirrorAlias(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
-        "Alias": argv["--Alias"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
+        "Alias": argv.get("--Alias"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1591,7 +1591,7 @@ def doDescribeLoadBalancerPortInfo(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1624,8 +1624,8 @@ def doModifyLoadBalancerChargeMode(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "PayMode": argv["--PayMode"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "PayMode": argv.get("--PayMode"),
         "ListenerSet": Utils.try_to_json(argv, "--ListenerSet"),
 
     }
@@ -1659,7 +1659,7 @@ def doCreateL7Listeners(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
         "ListenerSet": Utils.try_to_json(argv, "--ListenerSet"),
 
     }
@@ -1693,7 +1693,7 @@ def doDescribeDevicesBindInfo(argv, arglist):
         return
 
     param = {
-        "VpcId": argv["--VpcId"],
+        "VpcId": argv.get("--VpcId"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
@@ -1727,9 +1727,9 @@ def doModifyL4Listener(argv, arglist):
         return
 
     param = {
-        "LoadBalancerId": argv["--LoadBalancerId"],
-        "ListenerId": argv["--ListenerId"],
-        "ListenerName": argv["--ListenerName"],
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "ListenerName": argv.get("--ListenerName"),
         "SessionExpire": Utils.try_to_json(argv, "--SessionExpire"),
         "HealthSwitch": Utils.try_to_json(argv, "--HealthSwitch"),
         "TimeOut": Utils.try_to_json(argv, "--TimeOut"),
@@ -1738,12 +1738,12 @@ def doModifyL4Listener(argv, arglist):
         "UnhealthNum": Utils.try_to_json(argv, "--UnhealthNum"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
         "CustomHealthSwitch": Utils.try_to_json(argv, "--CustomHealthSwitch"),
-        "InputType": argv["--InputType"],
+        "InputType": argv.get("--InputType"),
         "LineSeparatorType": Utils.try_to_json(argv, "--LineSeparatorType"),
-        "HealthRequest": argv["--HealthRequest"],
-        "HealthResponse": argv["--HealthResponse"],
+        "HealthRequest": argv.get("--HealthRequest"),
+        "HealthResponse": argv.get("--HealthResponse"),
         "ToaFlag": Utils.try_to_json(argv, "--ToaFlag"),
-        "BalanceMode": argv["--BalanceMode"],
+        "BalanceMode": argv.get("--BalanceMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1776,14 +1776,14 @@ def doDescribeTrafficMirrorReceivers(argv, arglist):
         return
 
     param = {
-        "TrafficMirrorId": argv["--TrafficMirrorId"],
+        "TrafficMirrorId": argv.get("--TrafficMirrorId"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "Ports": Utils.try_to_json(argv, "--Ports"),
         "Weights": Utils.try_to_json(argv, "--Weights"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "VagueStr": argv["--VagueStr"],
-        "VagueIp": argv["--VagueIp"],
+        "VagueStr": argv.get("--VagueStr"),
+        "VagueIp": argv.get("--VagueIp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

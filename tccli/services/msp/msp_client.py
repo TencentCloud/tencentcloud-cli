@@ -60,18 +60,18 @@ def doRegisterMigrationTask(argv, arglist):
         return
 
     param = {
-        "TaskType": argv["--TaskType"],
-        "TaskName": argv["--TaskName"],
-        "ServiceSupplier": argv["--ServiceSupplier"],
+        "TaskType": argv.get("--TaskType"),
+        "TaskName": argv.get("--TaskName"),
+        "ServiceSupplier": argv.get("--ServiceSupplier"),
         "SrcInfo": Utils.try_to_json(argv, "--SrcInfo"),
         "DstInfo": Utils.try_to_json(argv, "--DstInfo"),
-        "CreateTime": argv["--CreateTime"],
-        "UpdateTime": argv["--UpdateTime"],
-        "MigrateClass": argv["--MigrateClass"],
-        "SrcAccessType": argv["--SrcAccessType"],
-        "SrcDatabaseType": argv["--SrcDatabaseType"],
-        "DstAccessType": argv["--DstAccessType"],
-        "DstDatabaseType": argv["--DstDatabaseType"],
+        "CreateTime": argv.get("--CreateTime"),
+        "UpdateTime": argv.get("--UpdateTime"),
+        "MigrateClass": argv.get("--MigrateClass"),
+        "SrcAccessType": argv.get("--SrcAccessType"),
+        "SrcDatabaseType": argv.get("--SrcDatabaseType"),
+        "DstAccessType": argv.get("--DstAccessType"),
+        "DstDatabaseType": argv.get("--DstDatabaseType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -104,8 +104,8 @@ def doModifyMigrationTaskStatus(argv, arglist):
         return
 
     param = {
-        "Status": argv["--Status"],
-        "TaskId": argv["--TaskId"],
+        "Status": argv.get("--Status"),
+        "TaskId": argv.get("--TaskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -138,7 +138,7 @@ def doDeregisterMigrationTask(argv, arglist):
         return
 
     param = {
-        "TaskId": argv["--TaskId"],
+        "TaskId": argv.get("--TaskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -171,7 +171,7 @@ def doDescribeMigrationTask(argv, arglist):
         return
 
     param = {
-        "TaskId": argv["--TaskId"],
+        "TaskId": argv.get("--TaskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -204,7 +204,7 @@ def doModifyMigrationTaskBelongToProject(argv, arglist):
         return
 
     param = {
-        "TaskId": argv["--TaskId"],
+        "TaskId": argv.get("--TaskId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }

@@ -25,8 +25,8 @@ def doDescribeBaseMetrics(argv, arglist):
         return
 
     param = {
-        "Namespace": argv["--Namespace"],
-        "MetricName": argv["--MetricName"],
+        "Namespace": argv.get("--Namespace"),
+        "MetricName": argv.get("--MetricName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,12 +59,12 @@ def doGetMonitorData(argv, arglist):
         return
 
     param = {
-        "Namespace": argv["--Namespace"],
-        "MetricName": argv["--MetricName"],
+        "Namespace": argv.get("--Namespace"),
+        "MetricName": argv.get("--MetricName"),
         "Instances": Utils.try_to_json(argv, "--Instances"),
         "Period": Utils.try_to_json(argv, "--Period"),
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

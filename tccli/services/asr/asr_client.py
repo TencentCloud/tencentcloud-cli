@@ -27,12 +27,12 @@ def doSentenceRecognition(argv, arglist):
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
-        "EngSerViceType": argv["--EngSerViceType"],
+        "EngSerViceType": argv.get("--EngSerViceType"),
         "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "VoiceFormat": argv["--VoiceFormat"],
-        "UsrAudioKey": argv["--UsrAudioKey"],
-        "Url": argv["--Url"],
-        "Data": argv["--Data"],
+        "VoiceFormat": argv.get("--VoiceFormat"),
+        "UsrAudioKey": argv.get("--UsrAudioKey"),
+        "Url": argv.get("--Url"),
+        "Data": argv.get("--Data"),
         "DataLen": Utils.try_to_json(argv, "--DataLen"),
 
     }

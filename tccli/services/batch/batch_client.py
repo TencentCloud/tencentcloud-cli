@@ -25,7 +25,7 @@ def doDescribeComputeEnv(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
+        "EnvId": argv.get("--EnvId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -58,9 +58,9 @@ def doCreateTaskTemplate(argv, arglist):
         return
 
     param = {
-        "TaskTemplateName": argv["--TaskTemplateName"],
+        "TaskTemplateName": argv.get("--TaskTemplateName"),
         "TaskTemplateInfo": Utils.try_to_json(argv, "--TaskTemplateInfo"),
-        "TaskTemplateDescription": argv["--TaskTemplateDescription"],
+        "TaskTemplateDescription": argv.get("--TaskTemplateDescription"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -93,8 +93,8 @@ def doTerminateComputeNode(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
-        "ComputeNodeId": argv["--ComputeNodeId"],
+        "EnvId": argv.get("--EnvId"),
+        "ComputeNodeId": argv.get("--ComputeNodeId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -198,7 +198,7 @@ def doCreateComputeEnv(argv, arglist):
     param = {
         "ComputeEnv": Utils.try_to_json(argv, "--ComputeEnv"),
         "Placement": Utils.try_to_json(argv, "--Placement"),
-        "ClientToken": argv["--ClientToken"],
+        "ClientToken": argv.get("--ClientToken"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -231,7 +231,7 @@ def doDeleteComputeEnv(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
+        "EnvId": argv.get("--EnvId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -264,8 +264,8 @@ def doDescribeTaskLogs(argv, arglist):
         return
 
     param = {
-        "JobId": argv["--JobId"],
-        "TaskName": argv["--TaskName"],
+        "JobId": argv.get("--JobId"),
+        "TaskName": argv.get("--TaskName"),
         "TaskInstanceIndexes": Utils.try_to_json(argv, "--TaskInstanceIndexes"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -301,7 +301,7 @@ def doTerminateJob(argv, arglist):
         return
 
     param = {
-        "JobId": argv["--JobId"],
+        "JobId": argv.get("--JobId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -334,8 +334,8 @@ def doDescribeTask(argv, arglist):
         return
 
     param = {
-        "JobId": argv["--JobId"],
-        "TaskName": argv["--TaskName"],
+        "JobId": argv.get("--JobId"),
+        "TaskName": argv.get("--TaskName"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -404,7 +404,7 @@ def doDescribeJob(argv, arglist):
         return
 
     param = {
-        "JobId": argv["--JobId"],
+        "JobId": argv.get("--JobId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -439,7 +439,7 @@ def doSubmitJob(argv, arglist):
     param = {
         "Placement": Utils.try_to_json(argv, "--Placement"),
         "Job": Utils.try_to_json(argv, "--Job"),
-        "ClientToken": argv["--ClientToken"],
+        "ClientToken": argv.get("--ClientToken"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -472,7 +472,7 @@ def doTerminateComputeNodes(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
+        "EnvId": argv.get("--EnvId"),
         "ComputeNodeIds": Utils.try_to_json(argv, "--ComputeNodeIds"),
 
     }
@@ -607,8 +607,8 @@ def doTerminateTaskInstance(argv, arglist):
         return
 
     param = {
-        "JobId": argv["--JobId"],
-        "TaskName": argv["--TaskName"],
+        "JobId": argv.get("--JobId"),
+        "TaskName": argv.get("--TaskName"),
         "TaskInstanceIndex": Utils.try_to_json(argv, "--TaskInstanceIndex"),
 
     }
@@ -642,10 +642,10 @@ def doModifyComputeEnv(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
+        "EnvId": argv.get("--EnvId"),
         "DesiredComputeNodeCount": Utils.try_to_json(argv, "--DesiredComputeNodeCount"),
-        "EnvName": argv["--EnvName"],
-        "EnvDescription": argv["--EnvDescription"],
+        "EnvName": argv.get("--EnvName"),
+        "EnvDescription": argv.get("--EnvDescription"),
         "EnvData": Utils.try_to_json(argv, "--EnvData"),
 
     }
@@ -679,7 +679,7 @@ def doDescribeJobSubmitInfo(argv, arglist):
         return
 
     param = {
-        "JobId": argv["--JobId"],
+        "JobId": argv.get("--JobId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -712,7 +712,7 @@ def doDescribeComputeEnvCreateInfo(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
+        "EnvId": argv.get("--EnvId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -745,7 +745,7 @@ def doDescribeComputeEnvActivities(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
+        "EnvId": argv.get("--EnvId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
@@ -817,7 +817,7 @@ def doDeleteJob(argv, arglist):
         return
 
     param = {
-        "JobId": argv["--JobId"],
+        "JobId": argv.get("--JobId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -886,9 +886,9 @@ def doModifyTaskTemplate(argv, arglist):
         return
 
     param = {
-        "TaskTemplateId": argv["--TaskTemplateId"],
-        "TaskTemplateName": argv["--TaskTemplateName"],
-        "TaskTemplateDescription": argv["--TaskTemplateDescription"],
+        "TaskTemplateId": argv.get("--TaskTemplateId"),
+        "TaskTemplateName": argv.get("--TaskTemplateName"),
+        "TaskTemplateDescription": argv.get("--TaskTemplateDescription"),
         "TaskTemplateInfo": Utils.try_to_json(argv, "--TaskTemplateInfo"),
 
     }

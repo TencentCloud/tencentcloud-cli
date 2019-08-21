@@ -25,9 +25,9 @@ def doTextTranslate(argv, arglist):
         return
 
     param = {
-        "SourceText": argv["--SourceText"],
-        "Source": argv["--Source"],
-        "Target": argv["--Target"],
+        "SourceText": argv.get("--SourceText"),
+        "Source": argv.get("--Source"),
+        "Target": argv.get("--Target"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
@@ -61,11 +61,11 @@ def doImageTranslate(argv, arglist):
         return
 
     param = {
-        "SessionUuid": argv["--SessionUuid"],
-        "Scene": argv["--Scene"],
-        "Data": argv["--Data"],
-        "Source": argv["--Source"],
-        "Target": argv["--Target"],
+        "SessionUuid": argv.get("--SessionUuid"),
+        "Scene": argv.get("--Scene"),
+        "Data": argv.get("--Data"),
+        "Source": argv.get("--Source"),
+        "Target": argv.get("--Target"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
@@ -99,15 +99,15 @@ def doSpeechTranslate(argv, arglist):
         return
 
     param = {
-        "SessionUuid": argv["--SessionUuid"],
-        "Source": argv["--Source"],
-        "Target": argv["--Target"],
+        "SessionUuid": argv.get("--SessionUuid"),
+        "Source": argv.get("--Source"),
+        "Target": argv.get("--Target"),
         "AudioFormat": Utils.try_to_json(argv, "--AudioFormat"),
         "Seq": Utils.try_to_json(argv, "--Seq"),
         "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
-        "Data": argv["--Data"],
+        "Data": argv.get("--Data"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "Mode": argv["--Mode"],
+        "Mode": argv.get("--Mode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -140,7 +140,7 @@ def doLanguageDetect(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }

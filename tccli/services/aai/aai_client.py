@@ -27,15 +27,15 @@ def doSimultaneousInterpreting(argv, arglist):
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
-        "RecEngineModelType": argv["--RecEngineModelType"],
-        "Data": argv["--Data"],
+        "RecEngineModelType": argv.get("--RecEngineModelType"),
+        "Data": argv.get("--Data"),
         "DataLen": Utils.try_to_json(argv, "--DataLen"),
-        "VoiceId": argv["--VoiceId"],
+        "VoiceId": argv.get("--VoiceId"),
         "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
         "VoiceFormat": Utils.try_to_json(argv, "--VoiceFormat"),
         "OpenTranslate": Utils.try_to_json(argv, "--OpenTranslate"),
-        "SourceLanguage": argv["--SourceLanguage"],
-        "TargetLanguage": argv["--TargetLanguage"],
+        "SourceLanguage": argv.get("--SourceLanguage"),
+        "TargetLanguage": argv.get("--TargetLanguage"),
         "Seq": Utils.try_to_json(argv, "--Seq"),
 
     }
@@ -71,12 +71,12 @@ def doSentenceRecognition(argv, arglist):
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
-        "EngSerViceType": argv["--EngSerViceType"],
+        "EngSerViceType": argv.get("--EngSerViceType"),
         "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "VoiceFormat": argv["--VoiceFormat"],
-        "UsrAudioKey": argv["--UsrAudioKey"],
-        "Url": argv["--Url"],
-        "Data": argv["--Data"],
+        "VoiceFormat": argv.get("--VoiceFormat"),
+        "UsrAudioKey": argv.get("--UsrAudioKey"),
+        "Url": argv.get("--Url"),
+        "Data": argv.get("--Data"),
         "DataLen": Utils.try_to_json(argv, "--DataLen"),
 
     }
@@ -110,9 +110,9 @@ def doChat(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "User": argv["--User"],
+        "User": argv.get("--User"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -145,8 +145,8 @@ def doTextToVoice(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
-        "SessionId": argv["--SessionId"],
+        "Text": argv.get("--Text"),
+        "SessionId": argv.get("--SessionId"),
         "ModelType": Utils.try_to_json(argv, "--ModelType"),
         "Volume": Utils.try_to_json(argv, "--Volume"),
         "Speed": Utils.try_to_json(argv, "--Speed"),
@@ -154,7 +154,7 @@ def doTextToVoice(argv, arglist):
         "VoiceType": Utils.try_to_json(argv, "--VoiceType"),
         "PrimaryLanguage": Utils.try_to_json(argv, "--PrimaryLanguage"),
         "SampleRate": Utils.try_to_json(argv, "--SampleRate"),
-        "Codec": argv["--Codec"],
+        "Codec": argv.get("--Codec"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

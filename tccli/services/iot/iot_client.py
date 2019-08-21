@@ -25,13 +25,13 @@ def doGetDataHistory(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "Size": Utils.try_to_json(argv, "--Size"),
-        "Order": argv["--Order"],
-        "ScrollId": argv["--ScrollId"],
+        "Order": argv.get("--Order"),
+        "ScrollId": argv.get("--ScrollId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -64,8 +64,8 @@ def doResetDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -99,8 +99,8 @@ def doGetDeviceStatistics(argv, arglist):
 
     param = {
         "Products": Utils.try_to_json(argv, "--Products"),
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -133,8 +133,8 @@ def doAppSecureAddDevice(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
-        "DeviceSignature": argv["--DeviceSignature"],
+        "AccessToken": argv.get("--AccessToken"),
+        "DeviceSignature": argv.get("--DeviceSignature"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -167,9 +167,9 @@ def doIssueDeviceControl(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
-        "ControlData": argv["--ControlData"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "ControlData": argv.get("--ControlData"),
         "Metadata": Utils.try_to_json(argv, "--Metadata"),
 
     }
@@ -203,14 +203,14 @@ def doGetDebugLog(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "Size": Utils.try_to_json(argv, "--Size"),
-        "Order": argv["--Order"],
-        "ScrollId": argv["--ScrollId"],
-        "Type": argv["--Type"],
+        "Order": argv.get("--Order"),
+        "ScrollId": argv.get("--ScrollId"),
+        "Type": argv.get("--Type"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -243,7 +243,7 @@ def doDeactivateRule(argv, arglist):
         return
 
     param = {
-        "RuleId": argv["--RuleId"],
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -276,10 +276,10 @@ def doGetDevices(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Length": Utils.try_to_json(argv, "--Length"),
-        "Keyword": argv["--Keyword"],
+        "Keyword": argv.get("--Keyword"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -312,8 +312,8 @@ def doAddTopic(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "TopicName": argv["--TopicName"],
+        "ProductId": argv.get("--ProductId"),
+        "TopicName": argv.get("--TopicName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -346,7 +346,7 @@ def doAppGetDeviceStatuses(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
+        "AccessToken": argv.get("--AccessToken"),
         "DeviceIds": Utils.try_to_json(argv, "--DeviceIds"),
 
     }
@@ -414,8 +414,8 @@ def doAppGetToken(argv, arglist):
         return
 
     param = {
-        "UserName": argv["--UserName"],
-        "Password": argv["--Password"],
+        "UserName": argv.get("--UserName"),
+        "Password": argv.get("--Password"),
         "Expire": Utils.try_to_json(argv, "--Expire"),
 
     }
@@ -449,8 +449,8 @@ def doAppUpdateUser(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
-        "NickName": argv["--NickName"],
+        "AccessToken": argv.get("--AccessToken"),
+        "NickName": argv.get("--NickName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -483,8 +483,8 @@ def doAddRule(argv, arglist):
         return
 
     param = {
-        "Name": argv["--Name"],
-        "Description": argv["--Description"],
+        "Name": argv.get("--Name"),
+        "Description": argv.get("--Description"),
         "Query": Utils.try_to_json(argv, "--Query"),
         "Actions": Utils.try_to_json(argv, "--Actions"),
         "DataType": Utils.try_to_json(argv, "--DataType"),
@@ -520,8 +520,8 @@ def doUnassociateSubDeviceFromGatewayProduct(argv, arglist):
         return
 
     param = {
-        "SubDeviceProductId": argv["--SubDeviceProductId"],
-        "GatewayProductId": argv["--GatewayProductId"],
+        "SubDeviceProductId": argv.get("--SubDeviceProductId"),
+        "GatewayProductId": argv.get("--GatewayProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -554,7 +554,7 @@ def doGetDeviceSignatures(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
         "Expire": Utils.try_to_json(argv, "--Expire"),
 
@@ -589,7 +589,7 @@ def doDeleteRule(argv, arglist):
         return
 
     param = {
-        "RuleId": argv["--RuleId"],
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -622,13 +622,13 @@ def doAddProduct(argv, arglist):
         return
 
     param = {
-        "Name": argv["--Name"],
-        "Description": argv["--Description"],
+        "Name": argv.get("--Name"),
+        "Description": argv.get("--Description"),
         "DataTemplate": Utils.try_to_json(argv, "--DataTemplate"),
-        "DataProtocol": argv["--DataProtocol"],
+        "DataProtocol": argv.get("--DataProtocol"),
         "AuthType": Utils.try_to_json(argv, "--AuthType"),
-        "CommProtocol": argv["--CommProtocol"],
-        "DeviceType": argv["--DeviceType"],
+        "CommProtocol": argv.get("--CommProtocol"),
+        "DeviceType": argv.get("--DeviceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -661,8 +661,8 @@ def doDeleteDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -695,8 +695,8 @@ def doPublishMsg(argv, arglist):
         return
 
     param = {
-        "Topic": argv["--Topic"],
-        "Message": argv["--Message"],
+        "Topic": argv.get("--Topic"),
+        "Message": argv.get("--Message"),
         "Qos": Utils.try_to_json(argv, "--Qos"),
 
     }
@@ -730,9 +730,9 @@ def doUpdateRule(argv, arglist):
         return
 
     param = {
-        "RuleId": argv["--RuleId"],
-        "Name": argv["--Name"],
-        "Description": argv["--Description"],
+        "RuleId": argv.get("--RuleId"),
+        "Name": argv.get("--Name"),
+        "Description": argv.get("--Description"),
         "Query": Utils.try_to_json(argv, "--Query"),
         "Actions": Utils.try_to_json(argv, "--Actions"),
         "DataType": Utils.try_to_json(argv, "--DataType"),
@@ -768,9 +768,9 @@ def doAppDeleteDevice(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "AccessToken": argv.get("--AccessToken"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -803,7 +803,7 @@ def doGetDeviceStatuses(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
 
     }
@@ -871,7 +871,7 @@ def doDeleteProduct(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -904,7 +904,7 @@ def doAppGetUser(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
+        "AccessToken": argv.get("--AccessToken"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -937,7 +937,7 @@ def doAppGetDevices(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
+        "AccessToken": argv.get("--AccessToken"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -970,8 +970,8 @@ def doAppAddUser(argv, arglist):
         return
 
     param = {
-        "UserName": argv["--UserName"],
-        "Password": argv["--Password"],
+        "UserName": argv.get("--UserName"),
+        "Password": argv.get("--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1004,9 +1004,9 @@ def doUpdateProduct(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "Name": argv["--Name"],
-        "Description": argv["--Description"],
+        "ProductId": argv.get("--ProductId"),
+        "Name": argv.get("--Name"),
+        "Description": argv.get("--Description"),
         "DataTemplate": Utils.try_to_json(argv, "--DataTemplate"),
 
     }
@@ -1040,10 +1040,10 @@ def doAppIssueDeviceControl(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
-        "ControlData": argv["--ControlData"],
+        "AccessToken": argv.get("--AccessToken"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "ControlData": argv.get("--ControlData"),
         "Metadata": Utils.try_to_json(argv, "--Metadata"),
 
     }
@@ -1077,8 +1077,8 @@ def doGetTopic(argv, arglist):
         return
 
     param = {
-        "TopicId": argv["--TopicId"],
-        "ProductId": argv["--ProductId"],
+        "TopicId": argv.get("--TopicId"),
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1111,9 +1111,9 @@ def doAppGetDeviceData(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "AccessToken": argv.get("--AccessToken"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1146,8 +1146,8 @@ def doGetDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1180,9 +1180,9 @@ def doAppGetDevice(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "AccessToken": argv.get("--AccessToken"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1215,8 +1215,8 @@ def doGetDeviceData(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1249,7 +1249,7 @@ def doGetRule(argv, arglist):
         return
 
     param = {
-        "RuleId": argv["--RuleId"],
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1282,14 +1282,14 @@ def doGetDeviceLog(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "Size": Utils.try_to_json(argv, "--Size"),
-        "Order": argv["--Order"],
-        "ScrollId": argv["--ScrollId"],
-        "Type": argv["--Type"],
+        "Order": argv.get("--Order"),
+        "ScrollId": argv.get("--ScrollId"),
+        "Type": argv.get("--Type"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1322,7 +1322,7 @@ def doGetTopics(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Length": Utils.try_to_json(argv, "--Length"),
 
@@ -1357,8 +1357,8 @@ def doAddDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1391,7 +1391,7 @@ def doGetProduct(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1424,9 +1424,9 @@ def doAppResetPassword(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
-        "OldPassword": argv["--OldPassword"],
-        "NewPassword": argv["--NewPassword"],
+        "AccessToken": argv.get("--AccessToken"),
+        "OldPassword": argv.get("--OldPassword"),
+        "NewPassword": argv.get("--NewPassword"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1459,7 +1459,7 @@ def doActivateRule(argv, arglist):
         return
 
     param = {
-        "RuleId": argv["--RuleId"],
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1492,8 +1492,8 @@ def doAssociateSubDeviceToGatewayProduct(argv, arglist):
         return
 
     param = {
-        "SubDeviceProductId": argv["--SubDeviceProductId"],
-        "GatewayProductId": argv["--GatewayProductId"],
+        "SubDeviceProductId": argv.get("--SubDeviceProductId"),
+        "GatewayProductId": argv.get("--GatewayProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1526,8 +1526,8 @@ def doDeleteTopic(argv, arglist):
         return
 
     param = {
-        "TopicId": argv["--TopicId"],
-        "ProductId": argv["--ProductId"],
+        "TopicId": argv.get("--TopicId"),
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1560,10 +1560,10 @@ def doAppUpdateDevice(argv, arglist):
         return
 
     param = {
-        "AccessToken": argv["--AccessToken"],
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
-        "AliasName": argv["--AliasName"],
+        "AccessToken": argv.get("--AccessToken"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "AliasName": argv.get("--AliasName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

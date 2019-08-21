@@ -25,7 +25,7 @@ def doCleanUpInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -58,11 +58,11 @@ def doDescribeInstanceBackups(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "BeginTime": argv["--BeginTime"],
-        "EndTime": argv["--EndTime"],
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
         "Status": Utils.try_to_json(argv, "--Status"),
 
     }
@@ -96,9 +96,9 @@ def doModifyAutoBackupConfig(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "WeekDays": Utils.try_to_json(argv, "--WeekDays"),
-        "TimePeriod": argv["--TimePeriod"],
+        "TimePeriod": argv.get("--TimePeriod"),
         "AutoBackupType": Utils.try_to_json(argv, "--AutoBackupType"),
 
     }
@@ -132,7 +132,7 @@ def doDescribeInstanceShards(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "FilterSlave": Utils.try_to_json(argv, "--FilterSlave"),
 
     }
@@ -166,9 +166,9 @@ def doRestoreInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "BackupId": argv["--BackupId"],
-        "Password": argv["--Password"],
+        "InstanceId": argv.get("--InstanceId"),
+        "BackupId": argv.get("--BackupId"),
+        "Password": argv.get("--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -203,22 +203,22 @@ def doDescribeInstances(argv, arglist):
     param = {
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "InstanceId": argv["--InstanceId"],
-        "OrderBy": argv["--OrderBy"],
+        "InstanceId": argv.get("--InstanceId"),
+        "OrderBy": argv.get("--OrderBy"),
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "VpcIds": Utils.try_to_json(argv, "--VpcIds"),
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
         "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
-        "SearchKey": argv["--SearchKey"],
-        "InstanceName": argv["--InstanceName"],
+        "SearchKey": argv.get("--SearchKey"),
+        "InstanceName": argv.get("--InstanceName"),
         "UniqVpcIds": Utils.try_to_json(argv, "--UniqVpcIds"),
         "UniqSubnetIds": Utils.try_to_json(argv, "--UniqSubnetIds"),
         "RegionIds": Utils.try_to_json(argv, "--RegionIds"),
         "Status": Utils.try_to_json(argv, "--Status"),
         "TypeVersion": Utils.try_to_json(argv, "--TypeVersion"),
-        "EngineName": argv["--EngineName"],
+        "EngineName": argv.get("--EngineName"),
         "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
-        "BillingMode": argv["--BillingMode"],
+        "BillingMode": argv.get("--BillingMode"),
         "Type": Utils.try_to_json(argv, "--Type"),
         "SearchKeys": Utils.try_to_json(argv, "--SearchKeys"),
 
@@ -253,7 +253,7 @@ def doModifyInstanceParams(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "InstanceParams": Utils.try_to_json(argv, "--InstanceParams"),
 
     }
@@ -287,8 +287,8 @@ def doResetPassword(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "Password": argv["--Password"],
+        "InstanceId": argv.get("--InstanceId"),
+        "Password": argv.get("--Password"),
         "NoAuth": Utils.try_to_json(argv, "--NoAuth"),
 
     }
@@ -322,7 +322,7 @@ def doDisableReplicaReadonly(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -355,7 +355,7 @@ def doDescribeAutoBackupConfig(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -388,11 +388,11 @@ def doModifyNetworkConfig(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "Operation": argv["--Operation"],
-        "Vip": argv["--Vip"],
-        "VpcId": argv["--VpcId"],
-        "SubnetId": argv["--SubnetId"],
+        "InstanceId": argv.get("--InstanceId"),
+        "Operation": argv.get("--Operation"),
+        "Vip": argv.get("--Vip"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -431,9 +431,9 @@ def doCreateInstances(argv, arglist):
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
         "Period": Utils.try_to_json(argv, "--Period"),
         "BillingMode": Utils.try_to_json(argv, "--BillingMode"),
-        "Password": argv["--Password"],
-        "VpcId": argv["--VpcId"],
-        "SubnetId": argv["--SubnetId"],
+        "Password": argv.get("--Password"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
         "SecurityGroupIdList": Utils.try_to_json(argv, "--SecurityGroupIdList"),
@@ -441,7 +441,7 @@ def doCreateInstances(argv, arglist):
         "RedisShardNum": Utils.try_to_json(argv, "--RedisShardNum"),
         "RedisReplicasNum": Utils.try_to_json(argv, "--RedisReplicasNum"),
         "ReplicasReadonly": Utils.try_to_json(argv, "--ReplicasReadonly"),
-        "InstanceName": argv["--InstanceName"],
+        "InstanceName": argv.get("--InstanceName"),
         "NoAuth": Utils.try_to_json(argv, "--NoAuth"),
 
     }
@@ -476,7 +476,7 @@ def doDescribeProjectSecurityGroup(argv, arglist):
 
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SecurityGroupId": argv["--SecurityGroupId"],
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -510,7 +510,7 @@ def doRenewInstance(argv, arglist):
 
     param = {
         "Period": Utils.try_to_json(argv, "--Period"),
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -543,9 +543,9 @@ def doModfiyInstancePassword(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "OldPassword": argv["--OldPassword"],
-        "Password": argv["--Password"],
+        "InstanceId": argv.get("--InstanceId"),
+        "OldPassword": argv.get("--OldPassword"),
+        "Password": argv.get("--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -578,8 +578,8 @@ def doDescribeBackupUrl(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "BackupId": argv["--BackupId"],
+        "InstanceId": argv.get("--InstanceId"),
+        "BackupId": argv.get("--BackupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -612,7 +612,7 @@ def doEnableReplicaReadonly(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -645,7 +645,7 @@ def doDescribeInstanceParams(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -743,7 +743,7 @@ def doUpgradeInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "MemSize": Utils.try_to_json(argv, "--MemSize"),
         "RedisShardNum": Utils.try_to_json(argv, "--RedisShardNum"),
         "RedisReplicasNum": Utils.try_to_json(argv, "--RedisReplicasNum"),
@@ -779,8 +779,8 @@ def doManualBackupInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "Remark": argv["--Remark"],
+        "InstanceId": argv.get("--InstanceId"),
+        "Remark": argv.get("--Remark"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -846,7 +846,7 @@ def doDestroyPrepaidInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -879,7 +879,7 @@ def doDescribeInstanceParamRecords(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -914,8 +914,8 @@ def doClearInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "Password": argv["--Password"],
+        "InstanceId": argv.get("--InstanceId"),
+        "Password": argv.get("--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -981,7 +981,7 @@ def doDestroyPostpaidInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1014,9 +1014,9 @@ def doModifyInstance(argv, arglist):
         return
 
     param = {
-        "Operation": argv["--Operation"],
-        "InstanceId": argv["--InstanceId"],
-        "InstanceName": argv["--InstanceName"],
+        "Operation": argv.get("--Operation"),
+        "InstanceId": argv.get("--InstanceId"),
+        "InstanceName": argv.get("--InstanceName"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
 
@@ -1051,11 +1051,11 @@ def doSwitchInstanceVip(argv, arglist):
         return
 
     param = {
-        "SrcInstanceId": argv["--SrcInstanceId"],
-        "DstInstanceId": argv["--DstInstanceId"],
+        "SrcInstanceId": argv.get("--SrcInstanceId"),
+        "DstInstanceId": argv.get("--DstInstanceId"),
         "TimeDelay": Utils.try_to_json(argv, "--TimeDelay"),
         "ForceSwitch": Utils.try_to_json(argv, "--ForceSwitch"),
-        "SwitchTime": argv["--SwitchTime"],
+        "SwitchTime": argv.get("--SwitchTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

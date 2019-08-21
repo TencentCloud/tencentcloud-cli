@@ -25,8 +25,8 @@ def doRecognizeCar(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,8 +59,8 @@ def doDetectLabel(argv, arglist):
         return
 
     param = {
-        "ImageUrl": argv["--ImageUrl"],
-        "ImageBase64": argv["--ImageBase64"],
+        "ImageUrl": argv.get("--ImageUrl"),
+        "ImageBase64": argv.get("--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -93,8 +93,8 @@ def doAssessQuality(argv, arglist):
         return
 
     param = {
-        "ImageUrl": argv["--ImageUrl"],
-        "ImageBase64": argv["--ImageBase64"],
+        "ImageUrl": argv.get("--ImageUrl"),
+        "ImageBase64": argv.get("--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -127,8 +127,8 @@ def doDetectProduct(argv, arglist):
         return
 
     param = {
-        "ImageUrl": argv["--ImageUrl"],
-        "ImageBase64": argv["--ImageBase64"],
+        "ImageUrl": argv.get("--ImageUrl"),
+        "ImageBase64": argv.get("--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -162,10 +162,10 @@ def doImageModeration(argv, arglist):
 
     param = {
         "Scenes": Utils.try_to_json(argv, "--Scenes"),
-        "ImageUrl": argv["--ImageUrl"],
-        "Config": argv["--Config"],
-        "Extra": argv["--Extra"],
-        "ImageBase64": argv["--ImageBase64"],
+        "ImageUrl": argv.get("--ImageUrl"),
+        "Config": argv.get("--Config"),
+        "Extra": argv.get("--Extra"),
+        "ImageBase64": argv.get("--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -198,8 +198,8 @@ def doEnhanceImage(argv, arglist):
         return
 
     param = {
-        "ImageUrl": argv["--ImageUrl"],
-        "ImageBase64": argv["--ImageBase64"],
+        "ImageUrl": argv.get("--ImageUrl"),
+        "ImageBase64": argv.get("--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -232,8 +232,8 @@ def doDetectCelebrity(argv, arglist):
         return
 
     param = {
-        "ImageUrl": argv["--ImageUrl"],
-        "ImageBase64": argv["--ImageBase64"],
+        "ImageUrl": argv.get("--ImageUrl"),
+        "ImageBase64": argv.get("--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

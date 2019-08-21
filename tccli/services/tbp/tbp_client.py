@@ -25,10 +25,10 @@ def doReset(argv, arglist):
         return
 
     param = {
-        "BotId": argv["--BotId"],
-        "UserId": argv["--UserId"],
-        "BotVersion": argv["--BotVersion"],
-        "BotEnv": argv["--BotEnv"],
+        "BotId": argv.get("--BotId"),
+        "UserId": argv.get("--UserId"),
+        "BotVersion": argv.get("--BotVersion"),
+        "BotEnv": argv.get("--BotEnv"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -61,9 +61,9 @@ def doTextReset(argv, arglist):
         return
 
     param = {
-        "BotId": argv["--BotId"],
-        "TerminalId": argv["--TerminalId"],
-        "BotEnv": argv["--BotEnv"],
+        "BotId": argv.get("--BotId"),
+        "TerminalId": argv.get("--TerminalId"),
+        "BotEnv": argv.get("--BotEnv"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -96,11 +96,11 @@ def doTextProcess(argv, arglist):
         return
 
     param = {
-        "BotId": argv["--BotId"],
-        "TerminalId": argv["--TerminalId"],
-        "InputText": argv["--InputText"],
-        "BotEnv": argv["--BotEnv"],
-        "SessionAttributes": argv["--SessionAttributes"],
+        "BotId": argv.get("--BotId"),
+        "TerminalId": argv.get("--TerminalId"),
+        "InputText": argv.get("--InputText"),
+        "BotEnv": argv.get("--BotEnv"),
+        "SessionAttributes": argv.get("--SessionAttributes"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

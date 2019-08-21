@@ -26,7 +26,7 @@ def doRenewDisk(argv, arglist):
 
     param = {
         "DiskChargePrepaid": Utils.try_to_json(argv, "--DiskChargePrepaid"),
-        "DiskId": argv["--DiskId"],
+        "DiskId": argv.get("--DiskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -92,7 +92,7 @@ def doInquiryPriceResizeDisk(argv, arglist):
         return
 
     param = {
-        "DiskId": argv["--DiskId"],
+        "DiskId": argv.get("--DiskId"),
         "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
@@ -131,8 +131,8 @@ def doDescribeAutoSnapshotPolicies(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Order": argv["--Order"],
-        "OrderField": argv["--OrderField"],
+        "Order": argv.get("--Order"),
+        "OrderField": argv.get("--OrderField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -166,7 +166,7 @@ def doAttachDisks(argv, arglist):
 
     param = {
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "DeleteWithInstance": Utils.try_to_json(argv, "--DeleteWithInstance"),
 
     }
@@ -201,7 +201,7 @@ def doModifyDisksRenewFlag(argv, arglist):
 
     param = {
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-        "RenewFlag": argv["--RenewFlag"],
+        "RenewFlag": argv.get("--RenewFlag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -234,9 +234,9 @@ def doModifyAutoSnapshotPolicyAttribute(argv, arglist):
         return
 
     param = {
-        "AutoSnapshotPolicyId": argv["--AutoSnapshotPolicyId"],
+        "AutoSnapshotPolicyId": argv.get("--AutoSnapshotPolicyId"),
         "Policy": Utils.try_to_json(argv, "--Policy"),
-        "AutoSnapshotPolicyName": argv["--AutoSnapshotPolicyName"],
+        "AutoSnapshotPolicyName": argv.get("--AutoSnapshotPolicyName"),
         "IsActivated": Utils.try_to_json(argv, "--IsActivated"),
         "IsPermanent": Utils.try_to_json(argv, "--IsPermanent"),
         "RetentionDays": Utils.try_to_json(argv, "--RetentionDays"),
@@ -272,9 +272,9 @@ def doInquiryPriceCreateDisks(argv, arglist):
         return
 
     param = {
-        "DiskType": argv["--DiskType"],
+        "DiskType": argv.get("--DiskType"),
         "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "DiskChargeType": argv["--DiskChargeType"],
+        "DiskChargeType": argv.get("--DiskChargeType"),
         "DiskChargePrepaid": Utils.try_to_json(argv, "--DiskChargePrepaid"),
         "DiskCount": Utils.try_to_json(argv, "--DiskCount"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
@@ -380,8 +380,8 @@ def doDescribeDisks(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Order": argv["--Order"],
-        "OrderField": argv["--OrderField"],
+        "Order": argv.get("--Order"),
+        "OrderField": argv.get("--OrderField"),
         "ReturnBindAutoSnapshotPolicy": Utils.try_to_json(argv, "--ReturnBindAutoSnapshotPolicy"),
 
     }
@@ -415,16 +415,16 @@ def doCreateDisks(argv, arglist):
         return
 
     param = {
-        "DiskType": argv["--DiskType"],
-        "DiskChargeType": argv["--DiskChargeType"],
+        "DiskType": argv.get("--DiskType"),
+        "DiskChargeType": argv.get("--DiskChargeType"),
         "Placement": Utils.try_to_json(argv, "--Placement"),
-        "DiskName": argv["--DiskName"],
+        "DiskName": argv.get("--DiskName"),
         "DiskCount": Utils.try_to_json(argv, "--DiskCount"),
         "DiskChargePrepaid": Utils.try_to_json(argv, "--DiskChargePrepaid"),
         "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "SnapshotId": argv["--SnapshotId"],
-        "ClientToken": argv["--ClientToken"],
-        "Encrypt": argv["--Encrypt"],
+        "SnapshotId": argv.get("--SnapshotId"),
+        "ClientToken": argv.get("--ClientToken"),
+        "Encrypt": argv.get("--Encrypt"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "Shareable": Utils.try_to_json(argv, "--Shareable"),
 
@@ -461,10 +461,10 @@ def doModifyDiskAttributes(argv, arglist):
     param = {
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "DiskName": argv["--DiskName"],
+        "DiskName": argv.get("--DiskName"),
         "Portable": Utils.try_to_json(argv, "--Portable"),
         "DeleteWithInstance": Utils.try_to_json(argv, "--DeleteWithInstance"),
-        "DiskType": argv["--DiskType"],
+        "DiskType": argv.get("--DiskType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -530,8 +530,8 @@ def doModifySnapshotAttribute(argv, arglist):
         return
 
     param = {
-        "SnapshotId": argv["--SnapshotId"],
-        "SnapshotName": argv["--SnapshotName"],
+        "SnapshotId": argv.get("--SnapshotId"),
+        "SnapshotName": argv.get("--SnapshotName"),
         "IsPermanent": Utils.try_to_json(argv, "--IsPermanent"),
 
     }
@@ -565,7 +565,7 @@ def doDescribeDiskAssociatedAutoSnapshotPolicy(argv, arglist):
         return
 
     param = {
-        "DiskId": argv["--DiskId"],
+        "DiskId": argv.get("--DiskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -598,7 +598,7 @@ def doBindAutoSnapshotPolicy(argv, arglist):
         return
 
     param = {
-        "AutoSnapshotPolicyId": argv["--AutoSnapshotPolicyId"],
+        "AutoSnapshotPolicyId": argv.get("--AutoSnapshotPolicyId"),
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
 
     }
@@ -636,8 +636,8 @@ def doDescribeSnapshots(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Order": argv["--Order"],
-        "OrderField": argv["--OrderField"],
+        "Order": argv.get("--Order"),
+        "OrderField": argv.get("--OrderField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -671,7 +671,7 @@ def doCreateAutoSnapshotPolicy(argv, arglist):
 
     param = {
         "Policy": Utils.try_to_json(argv, "--Policy"),
-        "AutoSnapshotPolicyName": argv["--AutoSnapshotPolicyName"],
+        "AutoSnapshotPolicyName": argv.get("--AutoSnapshotPolicyName"),
         "IsActivated": Utils.try_to_json(argv, "--IsActivated"),
         "IsPermanent": Utils.try_to_json(argv, "--IsPermanent"),
         "RetentionDays": Utils.try_to_json(argv, "--RetentionDays"),
@@ -741,11 +741,11 @@ def doDescribeDiskConfigQuota(argv, arglist):
         return
 
     param = {
-        "InquiryType": argv["--InquiryType"],
+        "InquiryType": argv.get("--InquiryType"),
         "Zones": Utils.try_to_json(argv, "--Zones"),
-        "DiskChargeType": argv["--DiskChargeType"],
+        "DiskChargeType": argv.get("--DiskChargeType"),
         "DiskTypes": Utils.try_to_json(argv, "--DiskTypes"),
-        "DiskUsage": argv["--DiskUsage"],
+        "DiskUsage": argv.get("--DiskUsage"),
         "InstanceFamilies": Utils.try_to_json(argv, "--InstanceFamilies"),
         "CPU": Utils.try_to_json(argv, "--CPU"),
         "Memory": Utils.try_to_json(argv, "--Memory"),
@@ -782,7 +782,7 @@ def doUnbindAutoSnapshotPolicy(argv, arglist):
 
     param = {
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-        "AutoSnapshotPolicyId": argv["--AutoSnapshotPolicyId"],
+        "AutoSnapshotPolicyId": argv.get("--AutoSnapshotPolicyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -815,8 +815,8 @@ def doApplySnapshot(argv, arglist):
         return
 
     param = {
-        "SnapshotId": argv["--SnapshotId"],
-        "DiskId": argv["--DiskId"],
+        "SnapshotId": argv.get("--SnapshotId"),
+        "DiskId": argv.get("--DiskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -882,8 +882,8 @@ def doCreateSnapshot(argv, arglist):
         return
 
     param = {
-        "DiskId": argv["--DiskId"],
-        "SnapshotName": argv["--SnapshotName"],
+        "DiskId": argv.get("--DiskId"),
+        "SnapshotName": argv.get("--SnapshotName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -916,7 +916,7 @@ def doResizeDisk(argv, arglist):
         return
 
     param = {
-        "DiskId": argv["--DiskId"],
+        "DiskId": argv.get("--DiskId"),
         "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
 
     }
@@ -951,7 +951,7 @@ def doDetachDisks(argv, arglist):
 
     param = {
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -986,7 +986,7 @@ def doInquiryPriceRenewDisks(argv, arglist):
     param = {
         "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
         "DiskChargePrepaids": Utils.try_to_json(argv, "--DiskChargePrepaids"),
-        "NewDeadline": argv["--NewDeadline"],
+        "NewDeadline": argv.get("--NewDeadline"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }

@@ -25,9 +25,9 @@ def doModifyStudioProduct(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "ProductName": argv["--ProductName"],
-        "ProductDesc": argv["--ProductDesc"],
+        "ProductId": argv.get("--ProductId"),
+        "ProductName": argv.get("--ProductName"),
+        "ProductDesc": argv.get("--ProductDesc"),
         "ModuleId": Utils.try_to_json(argv, "--ModuleId"),
 
     }
@@ -61,7 +61,7 @@ def doDeleteStudioProduct(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -94,8 +94,8 @@ def doCreateDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -128,8 +128,8 @@ def doDescribeDeviceData(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -162,11 +162,11 @@ def doSearchStudioProduct(argv, arglist):
         return
 
     param = {
-        "ProjectId": argv["--ProjectId"],
-        "ProductName": argv["--ProductName"],
+        "ProjectId": argv.get("--ProjectId"),
+        "ProductName": argv.get("--ProductName"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "DevStatus": argv["--DevStatus"],
+        "DevStatus": argv.get("--DevStatus"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -199,7 +199,7 @@ def doDescribeProject(argv, arglist):
         return
 
     param = {
-        "ProjectId": argv["--ProjectId"],
+        "ProjectId": argv.get("--ProjectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -232,7 +232,7 @@ def doDescribeModelDefinition(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -265,7 +265,7 @@ def doDescribeStudioProduct(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -298,8 +298,8 @@ def doReleaseStudioProduct(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DevStatus": argv["--DevStatus"],
+        "ProductId": argv.get("--ProductId"),
+        "DevStatus": argv.get("--DevStatus"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -332,8 +332,8 @@ def doCreateProject(argv, arglist):
         return
 
     param = {
-        "ProjectName": argv["--ProjectName"],
-        "ProjectDesc": argv["--ProjectDesc"],
+        "ProjectName": argv.get("--ProjectName"),
+        "ProjectDesc": argv.get("--ProjectDesc"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -366,14 +366,14 @@ def doCreateStudioProduct(argv, arglist):
         return
 
     param = {
-        "ProductName": argv["--ProductName"],
+        "ProductName": argv.get("--ProductName"),
         "CategoryId": Utils.try_to_json(argv, "--CategoryId"),
         "ProductType": Utils.try_to_json(argv, "--ProductType"),
-        "EncryptionType": argv["--EncryptionType"],
-        "NetType": argv["--NetType"],
+        "EncryptionType": argv.get("--EncryptionType"),
+        "NetType": argv.get("--NetType"),
         "DataProtocol": Utils.try_to_json(argv, "--DataProtocol"),
-        "ProductDesc": argv["--ProductDesc"],
-        "ProjectId": argv["--ProjectId"],
+        "ProductDesc": argv.get("--ProductDesc"),
+        "ProjectId": argv.get("--ProjectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -442,11 +442,11 @@ def doDescribeDeviceDataHistory(argv, arglist):
     param = {
         "MinTime": Utils.try_to_json(argv, "--MinTime"),
         "MaxTime": Utils.try_to_json(argv, "--MaxTime"),
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
-        "FieldName": argv["--FieldName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "FieldName": argv.get("--FieldName"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Context": argv["--Context"],
+        "Context": argv.get("--Context"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -479,8 +479,8 @@ def doModifyModelDefinition(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "ModelSchema": argv["--ModelSchema"],
+        "ProductId": argv.get("--ProductId"),
+        "ModelSchema": argv.get("--ModelSchema"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -513,7 +513,7 @@ def doDeleteProject(argv, arglist):
         return
 
     param = {
-        "ProjectId": argv["--ProjectId"],
+        "ProjectId": argv.get("--ProjectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -546,8 +546,8 @@ def doDeleteDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -580,11 +580,11 @@ def doControlDeviceData(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
-        "Data": argv["--Data"],
-        "Method": argv["--Method"],
-        "DeviceId": argv["--DeviceId"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "Data": argv.get("--Data"),
+        "Method": argv.get("--Method"),
+        "DeviceId": argv.get("--DeviceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -617,8 +617,8 @@ def doGetStudioProductList(argv, arglist):
         return
 
     param = {
-        "ProjectId": argv["--ProjectId"],
-        "DevStatus": argv["--DevStatus"],
+        "ProjectId": argv.get("--ProjectId"),
+        "DevStatus": argv.get("--DevStatus"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -653,9 +653,9 @@ def doModifyProject(argv, arglist):
         return
 
     param = {
-        "ProjectId": argv["--ProjectId"],
-        "ProjectName": argv["--ProjectName"],
-        "ProjectDesc": argv["--ProjectDesc"],
+        "ProjectId": argv.get("--ProjectId"),
+        "ProjectName": argv.get("--ProjectName"),
+        "ProjectDesc": argv.get("--ProjectDesc"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

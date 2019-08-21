@@ -25,17 +25,17 @@ def doModifyDirectConnectAttribute(argv, arglist):
         return
 
     param = {
-        "DirectConnectId": argv["--DirectConnectId"],
-        "DirectConnectName": argv["--DirectConnectName"],
-        "CircuitCode": argv["--CircuitCode"],
+        "DirectConnectId": argv.get("--DirectConnectId"),
+        "DirectConnectName": argv.get("--DirectConnectName"),
+        "CircuitCode": argv.get("--CircuitCode"),
         "Vlan": Utils.try_to_json(argv, "--Vlan"),
-        "TencentAddress": argv["--TencentAddress"],
-        "CustomerAddress": argv["--CustomerAddress"],
-        "CustomerName": argv["--CustomerName"],
-        "CustomerContactMail": argv["--CustomerContactMail"],
-        "CustomerContactNumber": argv["--CustomerContactNumber"],
-        "FaultReportContactPerson": argv["--FaultReportContactPerson"],
-        "FaultReportContactNumber": argv["--FaultReportContactNumber"],
+        "TencentAddress": argv.get("--TencentAddress"),
+        "CustomerAddress": argv.get("--CustomerAddress"),
+        "CustomerName": argv.get("--CustomerName"),
+        "CustomerContactMail": argv.get("--CustomerContactMail"),
+        "CustomerContactNumber": argv.get("--CustomerContactNumber"),
+        "FaultReportContactPerson": argv.get("--FaultReportContactPerson"),
+        "FaultReportContactNumber": argv.get("--FaultReportContactNumber"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -68,20 +68,20 @@ def doCreateDirectConnectTunnel(argv, arglist):
         return
 
     param = {
-        "DirectConnectId": argv["--DirectConnectId"],
-        "DirectConnectTunnelName": argv["--DirectConnectTunnelName"],
-        "DirectConnectOwnerAccount": argv["--DirectConnectOwnerAccount"],
-        "NetworkType": argv["--NetworkType"],
-        "NetworkRegion": argv["--NetworkRegion"],
-        "VpcId": argv["--VpcId"],
-        "DirectConnectGatewayId": argv["--DirectConnectGatewayId"],
+        "DirectConnectId": argv.get("--DirectConnectId"),
+        "DirectConnectTunnelName": argv.get("--DirectConnectTunnelName"),
+        "DirectConnectOwnerAccount": argv.get("--DirectConnectOwnerAccount"),
+        "NetworkType": argv.get("--NetworkType"),
+        "NetworkRegion": argv.get("--NetworkRegion"),
+        "VpcId": argv.get("--VpcId"),
+        "DirectConnectGatewayId": argv.get("--DirectConnectGatewayId"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
-        "RouteType": argv["--RouteType"],
+        "RouteType": argv.get("--RouteType"),
         "BgpPeer": Utils.try_to_json(argv, "--BgpPeer"),
         "RouteFilterPrefixes": Utils.try_to_json(argv, "--RouteFilterPrefixes"),
         "Vlan": Utils.try_to_json(argv, "--Vlan"),
-        "TencentAddress": argv["--TencentAddress"],
-        "CustomerAddress": argv["--CustomerAddress"],
+        "TencentAddress": argv.get("--TencentAddress"),
+        "CustomerAddress": argv.get("--CustomerAddress"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -114,7 +114,7 @@ def doDeleteDirectConnect(argv, arglist):
         return
 
     param = {
-        "DirectConnectId": argv["--DirectConnectId"],
+        "DirectConnectId": argv.get("--DirectConnectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -147,7 +147,7 @@ def doAcceptDirectConnectTunnel(argv, arglist):
         return
 
     param = {
-        "DirectConnectTunnelId": argv["--DirectConnectTunnelId"],
+        "DirectConnectTunnelId": argv.get("--DirectConnectTunnelId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -180,7 +180,7 @@ def doDeleteDirectConnectTunnel(argv, arglist):
         return
 
     param = {
-        "DirectConnectTunnelId": argv["--DirectConnectTunnelId"],
+        "DirectConnectTunnelId": argv.get("--DirectConnectTunnelId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -213,7 +213,7 @@ def doDescribeAccessPoints(argv, arglist):
         return
 
     param = {
-        "RegionId": argv["--RegionId"],
+        "RegionId": argv.get("--RegionId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -284,22 +284,22 @@ def doCreateDirectConnect(argv, arglist):
         return
 
     param = {
-        "DirectConnectName": argv["--DirectConnectName"],
-        "AccessPointId": argv["--AccessPointId"],
-        "LineOperator": argv["--LineOperator"],
-        "Location": argv["--Location"],
-        "PortType": argv["--PortType"],
-        "CircuitCode": argv["--CircuitCode"],
+        "DirectConnectName": argv.get("--DirectConnectName"),
+        "AccessPointId": argv.get("--AccessPointId"),
+        "LineOperator": argv.get("--LineOperator"),
+        "Location": argv.get("--Location"),
+        "PortType": argv.get("--PortType"),
+        "CircuitCode": argv.get("--CircuitCode"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
-        "RedundantDirectConnectId": argv["--RedundantDirectConnectId"],
+        "RedundantDirectConnectId": argv.get("--RedundantDirectConnectId"),
         "Vlan": Utils.try_to_json(argv, "--Vlan"),
-        "TencentAddress": argv["--TencentAddress"],
-        "CustomerAddress": argv["--CustomerAddress"],
-        "CustomerName": argv["--CustomerName"],
-        "CustomerContactMail": argv["--CustomerContactMail"],
-        "CustomerContactNumber": argv["--CustomerContactNumber"],
-        "FaultReportContactPerson": argv["--FaultReportContactPerson"],
-        "FaultReportContactNumber": argv["--FaultReportContactNumber"],
+        "TencentAddress": argv.get("--TencentAddress"),
+        "CustomerAddress": argv.get("--CustomerAddress"),
+        "CustomerName": argv.get("--CustomerName"),
+        "CustomerContactMail": argv.get("--CustomerContactMail"),
+        "CustomerContactNumber": argv.get("--CustomerContactNumber"),
+        "FaultReportContactPerson": argv.get("--FaultReportContactPerson"),
+        "FaultReportContactNumber": argv.get("--FaultReportContactNumber"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -332,7 +332,7 @@ def doRejectDirectConnectTunnel(argv, arglist):
         return
 
     param = {
-        "DirectConnectTunnelId": argv["--DirectConnectTunnelId"],
+        "DirectConnectTunnelId": argv.get("--DirectConnectTunnelId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -401,12 +401,12 @@ def doModifyDirectConnectTunnelAttribute(argv, arglist):
         return
 
     param = {
-        "DirectConnectTunnelId": argv["--DirectConnectTunnelId"],
-        "DirectConnectTunnelName": argv["--DirectConnectTunnelName"],
+        "DirectConnectTunnelId": argv.get("--DirectConnectTunnelId"),
+        "DirectConnectTunnelName": argv.get("--DirectConnectTunnelName"),
         "BgpPeer": Utils.try_to_json(argv, "--BgpPeer"),
         "RouteFilterPrefixes": Utils.try_to_json(argv, "--RouteFilterPrefixes"),
-        "TencentAddress": argv["--TencentAddress"],
-        "CustomerAddress": argv["--CustomerAddress"],
+        "TencentAddress": argv.get("--TencentAddress"),
+        "CustomerAddress": argv.get("--CustomerAddress"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
 
     }

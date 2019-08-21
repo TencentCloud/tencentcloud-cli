@@ -25,8 +25,8 @@ def doListVersionByFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "Namespace": argv["--Namespace"],
+        "FunctionName": argv.get("--FunctionName"),
+        "Namespace": argv.get("--Namespace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,8 +59,8 @@ def doUpdateNamespace(argv, arglist):
         return
 
     param = {
-        "Namespace": argv["--Namespace"],
-        "Description": argv["--Description"],
+        "Namespace": argv.get("--Namespace"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -93,12 +93,12 @@ def doInvoke(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "InvocationType": argv["--InvocationType"],
-        "Qualifier": argv["--Qualifier"],
-        "ClientContext": argv["--ClientContext"],
-        "LogType": argv["--LogType"],
-        "Namespace": argv["--Namespace"],
+        "FunctionName": argv.get("--FunctionName"),
+        "InvocationType": argv.get("--InvocationType"),
+        "Qualifier": argv.get("--Qualifier"),
+        "ClientContext": argv.get("--ClientContext"),
+        "LogType": argv.get("--LogType"),
+        "Namespace": argv.get("--Namespace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -131,8 +131,8 @@ def doDeleteFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "Namespace": argv["--Namespace"],
+        "FunctionName": argv.get("--FunctionName"),
+        "Namespace": argv.get("--Namespace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -165,9 +165,9 @@ def doPublishVersion(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "Description": argv["--Description"],
-        "Namespace": argv["--Namespace"],
+        "FunctionName": argv.get("--FunctionName"),
+        "Description": argv.get("--Description"),
+        "Namespace": argv.get("--Namespace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -200,12 +200,12 @@ def doDeleteTrigger(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "TriggerName": argv["--TriggerName"],
-        "Type": argv["--Type"],
-        "Namespace": argv["--Namespace"],
-        "TriggerDesc": argv["--TriggerDesc"],
-        "Qualifier": argv["--Qualifier"],
+        "FunctionName": argv.get("--FunctionName"),
+        "TriggerName": argv.get("--TriggerName"),
+        "Type": argv.get("--Type"),
+        "Namespace": argv.get("--Namespace"),
+        "TriggerDesc": argv.get("--TriggerDesc"),
+        "Qualifier": argv.get("--Qualifier"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -238,10 +238,10 @@ def doGetFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "Qualifier": argv["--Qualifier"],
-        "Namespace": argv["--Namespace"],
-        "ShowCode": argv["--ShowCode"],
+        "FunctionName": argv.get("--FunctionName"),
+        "Qualifier": argv.get("--Qualifier"),
+        "Namespace": argv.get("--Namespace"),
+        "ShowCode": argv.get("--ShowCode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -274,9 +274,9 @@ def doGetFunctionAddress(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "Qualifier": argv["--Qualifier"],
-        "Namespace": argv["--Namespace"],
+        "FunctionName": argv.get("--FunctionName"),
+        "Qualifier": argv.get("--Qualifier"),
+        "Namespace": argv.get("--Namespace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -311,8 +311,8 @@ def doListNamespaces(argv, arglist):
     param = {
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Orderby": argv["--Orderby"],
-        "Order": argv["--Order"],
+        "Orderby": argv.get("--Orderby"),
+        "Order": argv.get("--Order"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -345,18 +345,18 @@ def doUpdateFunctionConfiguration(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "Description": argv["--Description"],
+        "FunctionName": argv.get("--FunctionName"),
+        "Description": argv.get("--Description"),
         "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
         "Timeout": Utils.try_to_json(argv, "--Timeout"),
-        "Runtime": argv["--Runtime"],
+        "Runtime": argv.get("--Runtime"),
         "Environment": Utils.try_to_json(argv, "--Environment"),
-        "Namespace": argv["--Namespace"],
+        "Namespace": argv.get("--Namespace"),
         "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
-        "Role": argv["--Role"],
-        "ClsLogsetId": argv["--ClsLogsetId"],
-        "ClsTopicId": argv["--ClsTopicId"],
-        "Publish": argv["--Publish"],
+        "Role": argv.get("--Role"),
+        "ClsLogsetId": argv.get("--ClsLogsetId"),
+        "ClsTopicId": argv.get("--ClsTopicId"),
+        "Publish": argv.get("--Publish"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -389,13 +389,13 @@ def doCreateTrigger(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "TriggerName": argv["--TriggerName"],
-        "Type": argv["--Type"],
-        "TriggerDesc": argv["--TriggerDesc"],
-        "Namespace": argv["--Namespace"],
-        "Qualifier": argv["--Qualifier"],
-        "Enable": argv["--Enable"],
+        "FunctionName": argv.get("--FunctionName"),
+        "TriggerName": argv.get("--TriggerName"),
+        "Type": argv.get("--Type"),
+        "TriggerDesc": argv.get("--TriggerDesc"),
+        "Namespace": argv.get("--Namespace"),
+        "Qualifier": argv.get("--Qualifier"),
+        "Enable": argv.get("--Enable"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -428,8 +428,8 @@ def doCreateNamespace(argv, arglist):
         return
 
     param = {
-        "Namespace": argv["--Namespace"],
-        "Description": argv["--Description"],
+        "Namespace": argv.get("--Namespace"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -462,12 +462,12 @@ def doCopyFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
-        "NewFunctionName": argv["--NewFunctionName"],
-        "Namespace": argv["--Namespace"],
-        "TargetNamespace": argv["--TargetNamespace"],
-        "Description": argv["--Description"],
-        "TargetRegion": argv["--TargetRegion"],
+        "FunctionName": argv.get("--FunctionName"),
+        "NewFunctionName": argv.get("--NewFunctionName"),
+        "Namespace": argv.get("--Namespace"),
+        "TargetNamespace": argv.get("--TargetNamespace"),
+        "Description": argv.get("--Description"),
+        "TargetRegion": argv.get("--TargetRegion"),
         "Override": Utils.try_to_json(argv, "--Override"),
         "CopyConfiguration": Utils.try_to_json(argv, "--CopyConfiguration"),
 
@@ -502,17 +502,17 @@ def doGetFunctionLogs(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
+        "FunctionName": argv.get("--FunctionName"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Order": argv["--Order"],
-        "OrderBy": argv["--OrderBy"],
+        "Order": argv.get("--Order"),
+        "OrderBy": argv.get("--OrderBy"),
         "Filter": Utils.try_to_json(argv, "--Filter"),
-        "Namespace": argv["--Namespace"],
-        "Qualifier": argv["--Qualifier"],
-        "FunctionRequestId": argv["--FunctionRequestId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "Namespace": argv.get("--Namespace"),
+        "Qualifier": argv.get("--Qualifier"),
+        "FunctionRequestId": argv.get("--FunctionRequestId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "SearchContext": Utils.try_to_json(argv, "--SearchContext"),
 
     }
@@ -546,13 +546,13 @@ def doListFunctions(argv, arglist):
         return
 
     param = {
-        "Order": argv["--Order"],
-        "Orderby": argv["--Orderby"],
+        "Order": argv.get("--Order"),
+        "Orderby": argv.get("--Orderby"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SearchKey": argv["--SearchKey"],
-        "Namespace": argv["--Namespace"],
-        "Description": argv["--Description"],
+        "SearchKey": argv.get("--SearchKey"),
+        "Namespace": argv.get("--Namespace"),
+        "Description": argv.get("--Description"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
@@ -586,21 +586,21 @@ def doCreateFunction(argv, arglist):
         return
 
     param = {
-        "FunctionName": argv["--FunctionName"],
+        "FunctionName": argv.get("--FunctionName"),
         "Code": Utils.try_to_json(argv, "--Code"),
-        "Handler": argv["--Handler"],
-        "Description": argv["--Description"],
+        "Handler": argv.get("--Handler"),
+        "Description": argv.get("--Description"),
         "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
         "Timeout": Utils.try_to_json(argv, "--Timeout"),
         "Environment": Utils.try_to_json(argv, "--Environment"),
-        "Runtime": argv["--Runtime"],
+        "Runtime": argv.get("--Runtime"),
         "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
-        "Namespace": argv["--Namespace"],
-        "Role": argv["--Role"],
-        "ClsLogsetId": argv["--ClsLogsetId"],
-        "ClsTopicId": argv["--ClsTopicId"],
-        "Type": argv["--Type"],
-        "CodeSource": argv["--CodeSource"],
+        "Namespace": argv.get("--Namespace"),
+        "Role": argv.get("--Role"),
+        "ClsLogsetId": argv.get("--ClsLogsetId"),
+        "ClsTopicId": argv.get("--ClsTopicId"),
+        "Type": argv.get("--Type"),
+        "CodeSource": argv.get("--CodeSource"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -633,7 +633,7 @@ def doDeleteNamespace(argv, arglist):
         return
 
     param = {
-        "Namespace": argv["--Namespace"],
+        "Namespace": argv.get("--Namespace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -666,15 +666,15 @@ def doUpdateFunctionCode(argv, arglist):
         return
 
     param = {
-        "Handler": argv["--Handler"],
-        "FunctionName": argv["--FunctionName"],
-        "CosBucketName": argv["--CosBucketName"],
-        "CosObjectName": argv["--CosObjectName"],
-        "ZipFile": argv["--ZipFile"],
-        "Namespace": argv["--Namespace"],
-        "CosBucketRegion": argv["--CosBucketRegion"],
-        "EnvId": argv["--EnvId"],
-        "Publish": argv["--Publish"],
+        "Handler": argv.get("--Handler"),
+        "FunctionName": argv.get("--FunctionName"),
+        "CosBucketName": argv.get("--CosBucketName"),
+        "CosObjectName": argv.get("--CosObjectName"),
+        "ZipFile": argv.get("--ZipFile"),
+        "Namespace": argv.get("--Namespace"),
+        "CosBucketRegion": argv.get("--CosBucketRegion"),
+        "EnvId": argv.get("--EnvId"),
+        "Publish": argv.get("--Publish"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

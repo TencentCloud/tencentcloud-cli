@@ -25,7 +25,7 @@ def doDescribeUserPortrait(argv, arglist):
         return
 
     param = {
-        "BrandId": argv["--BrandId"],
+        "BrandId": argv.get("--BrandId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -58,9 +58,9 @@ def doDescribeBrandPosComments(argv, arglist):
         return
 
     param = {
-        "BrandId": argv["--BrandId"],
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "BrandId": argv.get("--BrandId"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -95,9 +95,9 @@ def doDescribeIndustryNews(argv, arglist):
         return
 
     param = {
-        "IndustryId": argv["--IndustryId"],
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "IndustryId": argv.get("--IndustryId"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "ShowList": Utils.try_to_json(argv, "--ShowList"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -133,9 +133,9 @@ def doDescribeBrandMediaReport(argv, arglist):
         return
 
     param = {
-        "BrandId": argv["--BrandId"],
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "BrandId": argv.get("--BrandId"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -168,9 +168,9 @@ def doDescribeBrandNegComments(argv, arglist):
         return
 
     param = {
-        "BrandId": argv["--BrandId"],
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "BrandId": argv.get("--BrandId"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -205,9 +205,9 @@ def doDescribeBrandSocialReport(argv, arglist):
         return
 
     param = {
-        "BrandId": argv["--BrandId"],
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "BrandId": argv.get("--BrandId"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -240,9 +240,9 @@ def doDescribeBrandSocialOpinion(argv, arglist):
         return
 
     param = {
-        "BrandId": argv["--BrandId"],
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "BrandId": argv.get("--BrandId"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "ShowList": Utils.try_to_json(argv, "--ShowList"),
@@ -278,9 +278,9 @@ def doDescribeBrandCommentCount(argv, arglist):
         return
 
     param = {
-        "BrandId": argv["--BrandId"],
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "BrandId": argv.get("--BrandId"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -313,9 +313,9 @@ def doDescribeBrandExposure(argv, arglist):
         return
 
     param = {
-        "BrandId": argv["--BrandId"],
-        "StartDate": argv["--StartDate"],
-        "EndDate": argv["--EndDate"],
+        "BrandId": argv.get("--BrandId"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

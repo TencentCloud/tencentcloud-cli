@@ -25,7 +25,7 @@ def doDescribeFileInfo(argv, arglist):
         return
 
     param = {
-        "Key": argv["--Key"],
+        "Key": argv.get("--Key"),
         "Option": Utils.try_to_json(argv, "--Option"),
 
     }
@@ -59,7 +59,7 @@ def doDescribeIpInfo(argv, arglist):
         return
 
     param = {
-        "Key": argv["--Key"],
+        "Key": argv.get("--Key"),
         "Option": Utils.try_to_json(argv, "--Option"),
 
     }
@@ -93,7 +93,7 @@ def doDescribeDomainInfo(argv, arglist):
         return
 
     param = {
-        "Key": argv["--Key"],
+        "Key": argv.get("--Key"),
         "Option": Utils.try_to_json(argv, "--Option"),
 
     }
@@ -127,8 +127,8 @@ def doDescribeThreatInfo(argv, arglist):
         return
 
     param = {
-        "Key": argv["--Key"],
-        "Type": argv["--Type"],
+        "Key": argv.get("--Key"),
+        "Type": argv.get("--Type"),
         "Option": Utils.try_to_json(argv, "--Option"),
 
     }

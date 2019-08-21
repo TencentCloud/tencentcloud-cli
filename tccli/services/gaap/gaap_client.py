@@ -62,7 +62,7 @@ def doOpenSecurityPolicy(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
+        "ProxyId": argv.get("--ProxyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -130,7 +130,7 @@ def doCreateSecurityRules(argv, arglist):
         return
 
     param = {
-        "PolicyId": argv["--PolicyId"],
+        "PolicyId": argv.get("--PolicyId"),
         "RuleList": Utils.try_to_json(argv, "--RuleList"),
 
     }
@@ -164,9 +164,9 @@ def doModifySecurityRule(argv, arglist):
         return
 
     param = {
-        "RuleId": argv["--RuleId"],
-        "AliasName": argv["--AliasName"],
-        "PolicyId": argv["--PolicyId"],
+        "RuleId": argv.get("--RuleId"),
+        "AliasName": argv.get("--AliasName"),
+        "PolicyId": argv.get("--PolicyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -199,13 +199,13 @@ def doDescribeHTTPSListeners(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
-        "ListenerId": argv["--ListenerId"],
-        "ListenerName": argv["--ListenerName"],
+        "ProxyId": argv.get("--ProxyId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "ListenerName": argv.get("--ListenerName"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SearchValue": argv["--SearchValue"],
+        "SearchValue": argv.get("--SearchValue"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -238,13 +238,13 @@ def doCreateHTTPSListener(argv, arglist):
         return
 
     param = {
-        "ListenerName": argv["--ListenerName"],
+        "ListenerName": argv.get("--ListenerName"),
         "Port": Utils.try_to_json(argv, "--Port"),
-        "CertificateId": argv["--CertificateId"],
-        "ForwardProtocol": argv["--ForwardProtocol"],
-        "ProxyId": argv["--ProxyId"],
+        "CertificateId": argv.get("--CertificateId"),
+        "ForwardProtocol": argv.get("--ForwardProtocol"),
+        "ProxyId": argv.get("--ProxyId"),
         "AuthType": Utils.try_to_json(argv, "--AuthType"),
-        "ClientCertificateId": argv["--ClientCertificateId"],
+        "ClientCertificateId": argv.get("--ClientCertificateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -277,7 +277,7 @@ def doDeleteSecurityPolicy(argv, arglist):
         return
 
     param = {
-        "PolicyId": argv["--PolicyId"],
+        "PolicyId": argv.get("--PolicyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -310,10 +310,10 @@ def doDescribeRealServerStatistics(argv, arglist):
         return
 
     param = {
-        "RealServerId": argv["--RealServerId"],
-        "ListenerId": argv["--ListenerId"],
+        "RealServerId": argv.get("--RealServerId"),
+        "ListenerId": argv.get("--ListenerId"),
         "WithinTime": Utils.try_to_json(argv, "--WithinTime"),
-        "RuleId": argv["--RuleId"],
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -346,7 +346,7 @@ def doDescribeProxyGroupDetails(argv, arglist):
         return
 
     param = {
-        "GroupId": argv["--GroupId"],
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -379,10 +379,10 @@ def doModifyCertificate(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "Domain": argv["--Domain"],
-        "CertificateId": argv["--CertificateId"],
-        "ClientCertificateId": argv["--ClientCertificateId"],
+        "ListenerId": argv.get("--ListenerId"),
+        "Domain": argv.get("--Domain"),
+        "CertificateId": argv.get("--CertificateId"),
+        "ClientCertificateId": argv.get("--ClientCertificateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -415,14 +415,14 @@ def doDescribeTCPListeners(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
-        "ListenerId": argv["--ListenerId"],
-        "ListenerName": argv["--ListenerName"],
+        "ProxyId": argv.get("--ProxyId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "ListenerName": argv.get("--ListenerName"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "GroupId": argv["--GroupId"],
-        "SearchValue": argv["--SearchValue"],
+        "GroupId": argv.get("--GroupId"),
+        "SearchValue": argv.get("--SearchValue"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -455,14 +455,14 @@ def doCreateRule(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "Domain": argv["--Domain"],
-        "Path": argv["--Path"],
-        "RealServerType": argv["--RealServerType"],
-        "Scheduler": argv["--Scheduler"],
+        "ListenerId": argv.get("--ListenerId"),
+        "Domain": argv.get("--Domain"),
+        "Path": argv.get("--Path"),
+        "RealServerType": argv.get("--RealServerType"),
+        "Scheduler": argv.get("--Scheduler"),
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
         "CheckParams": Utils.try_to_json(argv, "--CheckParams"),
-        "ForwardProtocol": argv["--ForwardProtocol"],
+        "ForwardProtocol": argv.get("--ForwardProtocol"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -495,9 +495,9 @@ def doDescribeProxyGroupStatistics(argv, arglist):
         return
 
     param = {
-        "GroupId": argv["--GroupId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "GroupId": argv.get("--GroupId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "MetricNames": Utils.try_to_json(argv, "--MetricNames"),
         "Granularity": Utils.try_to_json(argv, "--Granularity"),
 
@@ -532,7 +532,7 @@ def doDescribeSecurityPolicyDetail(argv, arglist):
         return
 
     param = {
-        "PolicyId": argv["--PolicyId"],
+        "PolicyId": argv.get("--PolicyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -565,11 +565,11 @@ def doModifyDomain(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "OldDomain": argv["--OldDomain"],
-        "NewDomain": argv["--NewDomain"],
-        "CertificateId": argv["--CertificateId"],
-        "ClientCertificateId": argv["--ClientCertificateId"],
+        "ListenerId": argv.get("--ListenerId"),
+        "OldDomain": argv.get("--OldDomain"),
+        "NewDomain": argv.get("--NewDomain"),
+        "CertificateId": argv.get("--CertificateId"),
+        "ClientCertificateId": argv.get("--ClientCertificateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -602,8 +602,8 @@ def doModifyCertificateAttributes(argv, arglist):
         return
 
     param = {
-        "CertificateId": argv["--CertificateId"],
-        "CertificateAlias": argv["--CertificateAlias"],
+        "CertificateId": argv.get("--CertificateId"),
+        "CertificateAlias": argv.get("--CertificateAlias"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -637,7 +637,7 @@ def doOpenProxies(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "ClientToken": argv["--ClientToken"],
+        "ClientToken": argv.get("--ClientToken"),
         "ProxyIds": Utils.try_to_json(argv, "--ProxyIds"),
 
     }
@@ -671,7 +671,7 @@ def doDescribeRuleRealServers(argv, arglist):
         return
 
     param = {
-        "RuleId": argv["--RuleId"],
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -704,8 +704,8 @@ def doModifyRealServerName(argv, arglist):
         return
 
     param = {
-        "RealServerName": argv["--RealServerName"],
-        "RealServerId": argv["--RealServerId"],
+        "RealServerName": argv.get("--RealServerName"),
+        "RealServerId": argv.get("--RealServerId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -738,8 +738,8 @@ def doCheckProxyCreate(argv, arglist):
         return
 
     param = {
-        "AccessRegion": argv["--AccessRegion"],
-        "RealServerRegion": argv["--RealServerRegion"],
+        "AccessRegion": argv.get("--AccessRegion"),
+        "RealServerRegion": argv.get("--RealServerRegion"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
         "Concurrent": Utils.try_to_json(argv, "--Concurrent"),
 
@@ -838,7 +838,7 @@ def doDeleteSecurityRules(argv, arglist):
         return
 
     param = {
-        "PolicyId": argv["--PolicyId"],
+        "PolicyId": argv.get("--PolicyId"),
         "RuleIdList": Utils.try_to_json(argv, "--RuleIdList"),
 
     }
@@ -872,9 +872,9 @@ def doModifyHTTPListenerAttribute(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "ListenerName": argv["--ListenerName"],
-        "ProxyId": argv["--ProxyId"],
+        "ListenerId": argv.get("--ListenerId"),
+        "ListenerName": argv.get("--ListenerName"),
+        "ProxyId": argv.get("--ProxyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -907,8 +907,8 @@ def doDeleteRule(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "RuleId": argv["--RuleId"],
+        "ListenerId": argv.get("--ListenerId"),
+        "RuleId": argv.get("--RuleId"),
         "Force": Utils.try_to_json(argv, "--Force"),
 
     }
@@ -942,7 +942,7 @@ def doDescribeProxyDetail(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
+        "ProxyId": argv.get("--ProxyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -975,7 +975,7 @@ def doDeleteCertificate(argv, arglist):
         return
 
     param = {
-        "CertificateId": argv["--CertificateId"],
+        "CertificateId": argv.get("--CertificateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1008,8 +1008,8 @@ def doCreateSecurityPolicy(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
-        "DefaultAction": argv["--DefaultAction"],
+        "ProxyId": argv.get("--ProxyId"),
+        "DefaultAction": argv.get("--DefaultAction"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1081,7 +1081,7 @@ def doDeleteProxyGroup(argv, arglist):
         return
 
     param = {
-        "GroupId": argv["--GroupId"],
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1116,7 +1116,7 @@ def doModifyProxiesProject(argv, arglist):
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "ClientToken": argv["--ClientToken"],
+        "ClientToken": argv.get("--ClientToken"),
         "ProxyIds": Utils.try_to_json(argv, "--ProxyIds"),
 
     }
@@ -1150,7 +1150,7 @@ def doDescribeGroupDomainConfig(argv, arglist):
         return
 
     param = {
-        "GroupId": argv["--GroupId"],
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1183,14 +1183,14 @@ def doDescribeUDPListeners(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
-        "ListenerId": argv["--ListenerId"],
-        "ListenerName": argv["--ListenerName"],
+        "ProxyId": argv.get("--ProxyId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "ListenerName": argv.get("--ListenerName"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "GroupId": argv["--GroupId"],
-        "SearchValue": argv["--SearchValue"],
+        "GroupId": argv.get("--GroupId"),
+        "SearchValue": argv.get("--SearchValue"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1225,7 +1225,7 @@ def doAddRealServers(argv, arglist):
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "RealServerIP": Utils.try_to_json(argv, "--RealServerIP"),
-        "RealServerName": argv["--RealServerName"],
+        "RealServerName": argv.get("--RealServerName"),
         "TagSet": Utils.try_to_json(argv, "--TagSet"),
 
     }
@@ -1259,7 +1259,7 @@ def doDescribeAccessRegionsByDestRegion(argv, arglist):
         return
 
     param = {
-        "DestRegion": argv["--DestRegion"],
+        "DestRegion": argv.get("--DestRegion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1292,12 +1292,12 @@ def doModifyHTTPSListenerAttribute(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "ProxyId": argv["--ProxyId"],
-        "ListenerName": argv["--ListenerName"],
-        "ForwardProtocol": argv["--ForwardProtocol"],
-        "CertificateId": argv["--CertificateId"],
-        "ClientCertificateId": argv["--ClientCertificateId"],
+        "ListenerId": argv.get("--ListenerId"),
+        "ProxyId": argv.get("--ProxyId"),
+        "ListenerName": argv.get("--ListenerName"),
+        "ForwardProtocol": argv.get("--ForwardProtocol"),
+        "CertificateId": argv.get("--CertificateId"),
+        "ClientCertificateId": argv.get("--ClientCertificateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1330,10 +1330,10 @@ def doCreateDomain(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "Domain": argv["--Domain"],
-        "CertificateId": argv["--CertificateId"],
-        "ClientCertificateId": argv["--ClientCertificateId"],
+        "ListenerId": argv.get("--ListenerId"),
+        "Domain": argv.get("--Domain"),
+        "CertificateId": argv.get("--CertificateId"),
+        "ClientCertificateId": argv.get("--ClientCertificateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1366,14 +1366,14 @@ def doModifyRuleAttribute(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "RuleId": argv["--RuleId"],
-        "Scheduler": argv["--Scheduler"],
+        "ListenerId": argv.get("--ListenerId"),
+        "RuleId": argv.get("--RuleId"),
+        "Scheduler": argv.get("--Scheduler"),
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
         "CheckParams": Utils.try_to_json(argv, "--CheckParams"),
-        "Path": argv["--Path"],
-        "ForwardProtocol": argv["--ForwardProtocol"],
-        "ForwardHost": argv["--ForwardHost"],
+        "Path": argv.get("--Path"),
+        "ForwardProtocol": argv.get("--ForwardProtocol"),
+        "ForwardHost": argv.get("--ForwardHost"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1406,7 +1406,7 @@ def doDescribeCertificateDetail(argv, arglist):
         return
 
     param = {
-        "CertificateId": argv["--CertificateId"],
+        "CertificateId": argv.get("--CertificateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1441,8 +1441,8 @@ def doDeleteListeners(argv, arglist):
     param = {
         "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
         "Force": Utils.try_to_json(argv, "--Force"),
-        "GroupId": argv["--GroupId"],
-        "ProxyId": argv["--ProxyId"],
+        "GroupId": argv.get("--GroupId"),
+        "ProxyId": argv.get("--ProxyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1475,8 +1475,8 @@ def doModifyGroupDomainConfig(argv, arglist):
         return
 
     param = {
-        "GroupId": argv["--GroupId"],
-        "DefaultDnsIp": argv["--DefaultDnsIp"],
+        "GroupId": argv.get("--GroupId"),
+        "DefaultDnsIp": argv.get("--DefaultDnsIp"),
         "AccessRegionList": Utils.try_to_json(argv, "--AccessRegionList"),
 
     }
@@ -1510,9 +1510,9 @@ def doDescribeProxyStatistics(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "ProxyId": argv.get("--ProxyId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "MetricNames": Utils.try_to_json(argv, "--MetricNames"),
         "Granularity": Utils.try_to_json(argv, "--Granularity"),
 
@@ -1581,7 +1581,7 @@ def doDescribeRealServers(argv, arglist):
 
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SearchValue": argv["--SearchValue"],
+        "SearchValue": argv.get("--SearchValue"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "TagSet": Utils.try_to_json(argv, "--TagSet"),
@@ -1618,15 +1618,15 @@ def doSetAuthentication(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "Domain": argv["--Domain"],
+        "ListenerId": argv.get("--ListenerId"),
+        "Domain": argv.get("--Domain"),
         "BasicAuth": Utils.try_to_json(argv, "--BasicAuth"),
         "GaapAuth": Utils.try_to_json(argv, "--GaapAuth"),
         "RealServerAuth": Utils.try_to_json(argv, "--RealServerAuth"),
-        "BasicAuthConfId": argv["--BasicAuthConfId"],
-        "GaapCertificateId": argv["--GaapCertificateId"],
-        "RealServerCertificateId": argv["--RealServerCertificateId"],
-        "RealServerCertificateDomain": argv["--RealServerCertificateDomain"],
+        "BasicAuthConfId": argv.get("--BasicAuthConfId"),
+        "GaapCertificateId": argv.get("--GaapCertificateId"),
+        "RealServerCertificateId": argv.get("--RealServerCertificateId"),
+        "RealServerCertificateDomain": argv.get("--RealServerCertificateDomain"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1659,11 +1659,11 @@ def doModifyUDPListenerAttribute(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "GroupId": argv["--GroupId"],
-        "ProxyId": argv["--ProxyId"],
-        "ListenerName": argv["--ListenerName"],
-        "Scheduler": argv["--Scheduler"],
+        "ListenerId": argv.get("--ListenerId"),
+        "GroupId": argv.get("--GroupId"),
+        "ProxyId": argv.get("--ProxyId"),
+        "ListenerName": argv.get("--ListenerName"),
+        "Scheduler": argv.get("--Scheduler"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1729,9 +1729,9 @@ def doCreateHTTPListener(argv, arglist):
         return
 
     param = {
-        "ListenerName": argv["--ListenerName"],
+        "ListenerName": argv.get("--ListenerName"),
         "Port": Utils.try_to_json(argv, "--Port"),
-        "ProxyId": argv["--ProxyId"],
+        "ProxyId": argv.get("--ProxyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1764,7 +1764,7 @@ def doCreateProxyGroupDomain(argv, arglist):
         return
 
     param = {
-        "GroupId": argv["--GroupId"],
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1797,11 +1797,11 @@ def doModifyProxyConfiguration(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
         "Concurrent": Utils.try_to_json(argv, "--Concurrent"),
-        "ClientToken": argv["--ClientToken"],
-        "ProxyId": argv["--ProxyId"],
+        "ClientToken": argv.get("--ClientToken"),
+        "ProxyId": argv.get("--ProxyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1834,9 +1834,9 @@ def doDescribeResourcesByTag(argv, arglist):
         return
 
     param = {
-        "TagKey": argv["--TagKey"],
-        "TagValue": argv["--TagValue"],
-        "ResourceType": argv["--ResourceType"],
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
+        "ResourceType": argv.get("--ResourceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1869,11 +1869,11 @@ def doModifyTCPListenerAttribute(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "GroupId": argv["--GroupId"],
-        "ProxyId": argv["--ProxyId"],
-        "ListenerName": argv["--ListenerName"],
-        "Scheduler": argv["--Scheduler"],
+        "ListenerId": argv.get("--ListenerId"),
+        "GroupId": argv.get("--GroupId"),
+        "ProxyId": argv.get("--ProxyId"),
+        "ListenerName": argv.get("--ListenerName"),
+        "Scheduler": argv.get("--Scheduler"),
         "DelayLoop": Utils.try_to_json(argv, "--DelayLoop"),
         "ConnectTimeout": Utils.try_to_json(argv, "--ConnectTimeout"),
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
@@ -1909,8 +1909,8 @@ def doModifyProxyGroupAttribute(argv, arglist):
         return
 
     param = {
-        "GroupId": argv["--GroupId"],
-        "GroupName": argv["--GroupName"],
+        "GroupId": argv.get("--GroupId"),
+        "GroupName": argv.get("--GroupName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2008,7 +2008,7 @@ def doBindListenerRealServers(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
+        "ListenerId": argv.get("--ListenerId"),
         "RealServerBindSet": Utils.try_to_json(argv, "--RealServerBindSet"),
 
     }
@@ -2042,13 +2042,13 @@ def doDescribeHTTPListeners(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
-        "ListenerId": argv["--ListenerId"],
-        "ListenerName": argv["--ListenerName"],
+        "ProxyId": argv.get("--ProxyId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "ListenerName": argv.get("--ListenerName"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SearchValue": argv["--SearchValue"],
+        "SearchValue": argv.get("--SearchValue"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2082,8 +2082,8 @@ def doCreateProxyGroup(argv, arglist):
 
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "GroupName": argv["--GroupName"],
-        "RealServerRegion": argv["--RealServerRegion"],
+        "GroupName": argv.get("--GroupName"),
+        "RealServerRegion": argv.get("--RealServerRegion"),
         "TagSet": Utils.try_to_json(argv, "--TagSet"),
 
     }
@@ -2117,12 +2117,12 @@ def doCreateUDPListeners(argv, arglist):
         return
 
     param = {
-        "ListenerName": argv["--ListenerName"],
+        "ListenerName": argv.get("--ListenerName"),
         "Ports": Utils.try_to_json(argv, "--Ports"),
-        "Scheduler": argv["--Scheduler"],
-        "RealServerType": argv["--RealServerType"],
-        "ProxyId": argv["--ProxyId"],
-        "GroupId": argv["--GroupId"],
+        "Scheduler": argv.get("--Scheduler"),
+        "RealServerType": argv.get("--RealServerType"),
+        "ProxyId": argv.get("--ProxyId"),
+        "GroupId": argv.get("--GroupId"),
         "RealServerPorts": Utils.try_to_json(argv, "--RealServerPorts"),
 
     }
@@ -2189,9 +2189,9 @@ def doCreateCertificate(argv, arglist):
 
     param = {
         "CertificateType": Utils.try_to_json(argv, "--CertificateType"),
-        "CertificateContent": argv["--CertificateContent"],
-        "CertificateAlias": argv["--CertificateAlias"],
-        "CertificateKey": argv["--CertificateKey"],
+        "CertificateContent": argv.get("--CertificateContent"),
+        "CertificateAlias": argv.get("--CertificateAlias"),
+        "CertificateKey": argv.get("--CertificateKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2224,9 +2224,9 @@ def doDescribeListenerStatistics(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "ListenerId": argv.get("--ListenerId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "MetricNames": Utils.try_to_json(argv, "--MetricNames"),
         "Granularity": Utils.try_to_json(argv, "--Granularity"),
 
@@ -2295,7 +2295,7 @@ def doCloseProxies(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "ClientToken": argv["--ClientToken"],
+        "ClientToken": argv.get("--ClientToken"),
         "ProxyIds": Utils.try_to_json(argv, "--ProxyIds"),
 
     }
@@ -2363,7 +2363,7 @@ def doDescribeRules(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
+        "ListenerId": argv.get("--ListenerId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2396,13 +2396,13 @@ def doCreateTCPListeners(argv, arglist):
         return
 
     param = {
-        "ListenerName": argv["--ListenerName"],
+        "ListenerName": argv.get("--ListenerName"),
         "Ports": Utils.try_to_json(argv, "--Ports"),
-        "Scheduler": argv["--Scheduler"],
+        "Scheduler": argv.get("--Scheduler"),
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
-        "RealServerType": argv["--RealServerType"],
-        "ProxyId": argv["--ProxyId"],
-        "GroupId": argv["--GroupId"],
+        "RealServerType": argv.get("--RealServerType"),
+        "ProxyId": argv.get("--ProxyId"),
+        "GroupId": argv.get("--GroupId"),
         "DelayLoop": Utils.try_to_json(argv, "--DelayLoop"),
         "ConnectTimeout": Utils.try_to_json(argv, "--ConnectTimeout"),
         "RealServerPorts": Utils.try_to_json(argv, "--RealServerPorts"),
@@ -2440,7 +2440,7 @@ def doDestroyProxies(argv, arglist):
     param = {
         "Force": Utils.try_to_json(argv, "--Force"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "ClientToken": argv["--ClientToken"],
+        "ClientToken": argv.get("--ClientToken"),
         "ProxyIds": Utils.try_to_json(argv, "--ProxyIds"),
 
     }
@@ -2475,8 +2475,8 @@ def doModifyProxiesAttribute(argv, arglist):
 
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "ProxyName": argv["--ProxyName"],
-        "ClientToken": argv["--ClientToken"],
+        "ProxyName": argv.get("--ProxyName"),
+        "ClientToken": argv.get("--ClientToken"),
         "ProxyIds": Utils.try_to_json(argv, "--ProxyIds"),
 
     }
@@ -2510,7 +2510,7 @@ def doBindRuleRealServers(argv, arglist):
         return
 
     param = {
-        "RuleId": argv["--RuleId"],
+        "RuleId": argv.get("--RuleId"),
         "RealServerBindSet": Utils.try_to_json(argv, "--RealServerBindSet"),
 
     }
@@ -2545,13 +2545,13 @@ def doCreateProxy(argv, arglist):
 
     param = {
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "ProxyName": argv["--ProxyName"],
-        "AccessRegion": argv["--AccessRegion"],
+        "ProxyName": argv.get("--ProxyName"),
+        "AccessRegion": argv.get("--AccessRegion"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
         "Concurrent": Utils.try_to_json(argv, "--Concurrent"),
-        "RealServerRegion": argv["--RealServerRegion"],
-        "ClientToken": argv["--ClientToken"],
-        "GroupId": argv["--GroupId"],
+        "RealServerRegion": argv.get("--RealServerRegion"),
+        "ClientToken": argv.get("--ClientToken"),
+        "GroupId": argv.get("--GroupId"),
         "TagSet": Utils.try_to_json(argv, "--TagSet"),
 
     }
@@ -2585,8 +2585,8 @@ def doDeleteDomain(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
-        "Domain": argv["--Domain"],
+        "ListenerId": argv.get("--ListenerId"),
+        "Domain": argv.get("--Domain"),
         "Force": Utils.try_to_json(argv, "--Force"),
 
     }
@@ -2620,7 +2620,7 @@ def doDescribeListenerRealServers(argv, arglist):
         return
 
     param = {
-        "ListenerId": argv["--ListenerId"],
+        "ListenerId": argv.get("--ListenerId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2653,7 +2653,7 @@ def doCloseSecurityPolicy(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv["--ProxyId"],
+        "ProxyId": argv.get("--ProxyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2686,11 +2686,11 @@ def doInquiryPriceCreateProxy(argv, arglist):
         return
 
     param = {
-        "AccessRegion": argv["--AccessRegion"],
+        "AccessRegion": argv.get("--AccessRegion"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
-        "DestRegion": argv["--DestRegion"],
+        "DestRegion": argv.get("--DestRegion"),
         "Concurrency": Utils.try_to_json(argv, "--Concurrency"),
-        "RealServerRegion": argv["--RealServerRegion"],
+        "RealServerRegion": argv.get("--RealServerRegion"),
         "Concurrent": Utils.try_to_json(argv, "--Concurrent"),
 
     }

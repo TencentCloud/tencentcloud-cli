@@ -25,7 +25,7 @@ def doDescribeEntity(argv, arglist):
         return
 
     param = {
-        "EntityName": argv["--EntityName"],
+        "EntityName": argv.get("--EntityName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -58,7 +58,7 @@ def doDescribeTriple(argv, arglist):
         return
 
     param = {
-        "TripleCondition": argv["--TripleCondition"],
+        "TripleCondition": argv.get("--TripleCondition"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -91,8 +91,8 @@ def doDescribeRelation(argv, arglist):
         return
 
     param = {
-        "LeftEntityName": argv["--LeftEntityName"],
-        "RightEntityName": argv["--RightEntityName"],
+        "LeftEntityName": argv.get("--LeftEntityName"),
+        "RightEntityName": argv.get("--RightEntityName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

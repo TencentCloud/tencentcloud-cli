@@ -25,9 +25,9 @@ def doCreateTask(argv, arglist):
         return
 
     param = {
-        "TaskType": argv["--TaskType"],
-        "ProductId": argv["--ProductId"],
-        "DeviceNameFilter": argv["--DeviceNameFilter"],
+        "TaskType": argv.get("--TaskType"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceNameFilter": argv.get("--DeviceNameFilter"),
         "ScheduleTimeInSeconds": Utils.try_to_json(argv, "--ScheduleTimeInSeconds"),
         "Tasks": Utils.try_to_json(argv, "--Tasks"),
         "MaxExecutionTimeInSeconds": Utils.try_to_json(argv, "--MaxExecutionTimeInSeconds"),
@@ -63,7 +63,7 @@ def doReplaceTopicRule(argv, arglist):
         return
 
     param = {
-        "RuleName": argv["--RuleName"],
+        "RuleName": argv.get("--RuleName"),
         "TopicRulePayload": Utils.try_to_json(argv, "--TopicRulePayload"),
         "ModifyType": Utils.try_to_json(argv, "--ModifyType"),
         "ActionIndex": Utils.try_to_json(argv, "--ActionIndex"),
@@ -99,8 +99,8 @@ def doDeleteLoraDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -133,10 +133,10 @@ def doPublishToDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
         "Port": Utils.try_to_json(argv, "--Port"),
-        "Payload": argv["--Payload"],
+        "Payload": argv.get("--Payload"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -169,8 +169,8 @@ def doDescribeDeviceShadow(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -203,8 +203,8 @@ def doDescribeDevice(argv, arglist):
         return
 
     param = {
-        "ProductID": argv["--ProductID"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductID": argv.get("--ProductID"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -237,7 +237,7 @@ def doCreateMultiDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
 
     }
@@ -271,7 +271,7 @@ def doCreateTopicRule(argv, arglist):
         return
 
     param = {
-        "RuleName": argv["--RuleName"],
+        "RuleName": argv.get("--RuleName"),
         "TopicRulePayload": Utils.try_to_json(argv, "--TopicRulePayload"),
 
     }
@@ -305,7 +305,7 @@ def doCancelTask(argv, arglist):
         return
 
     param = {
-        "Id": argv["--Id"],
+        "Id": argv.get("--Id"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -338,9 +338,9 @@ def doUpdateDeviceShadow(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
-        "State": argv["--State"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "State": argv.get("--State"),
         "ShadowVersion": Utils.try_to_json(argv, "--ShadowVersion"),
 
     }
@@ -374,8 +374,8 @@ def doCreateTopicPolicy(argv, arglist):
         return
 
     param = {
-        "ProductID": argv["--ProductID"],
-        "TopicName": argv["--TopicName"],
+        "ProductID": argv.get("--ProductID"),
+        "TopicName": argv.get("--TopicName"),
         "Privilege": Utils.try_to_json(argv, "--Privilege"),
         "BrokerSubscribe": Utils.try_to_json(argv, "--BrokerSubscribe"),
 
@@ -410,9 +410,9 @@ def doCreateProduct(argv, arglist):
         return
 
     param = {
-        "ProductName": argv["--ProductName"],
+        "ProductName": argv.get("--ProductName"),
         "ProductProperties": Utils.try_to_json(argv, "--ProductProperties"),
-        "Skey": argv["--Skey"],
+        "Skey": argv.get("--Skey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -445,8 +445,8 @@ def doDescribeDeviceClientKey(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -514,8 +514,8 @@ def doDescribeLoraDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -548,7 +548,7 @@ def doDescribeTask(argv, arglist):
         return
 
     param = {
-        "Id": argv["--Id"],
+        "Id": argv.get("--Id"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -581,9 +581,9 @@ def doDeleteDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
-        "Skey": argv["--Skey"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "Skey": argv.get("--Skey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -616,16 +616,16 @@ def doCreateDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
         "Attribute": Utils.try_to_json(argv, "--Attribute"),
-        "DefinedPsk": argv["--DefinedPsk"],
+        "DefinedPsk": argv.get("--DefinedPsk"),
         "Isp": Utils.try_to_json(argv, "--Isp"),
-        "Imei": argv["--Imei"],
-        "LoraDevEui": argv["--LoraDevEui"],
+        "Imei": argv.get("--Imei"),
+        "LoraDevEui": argv.get("--LoraDevEui"),
         "LoraMoteType": Utils.try_to_json(argv, "--LoraMoteType"),
-        "Skey": argv["--Skey"],
-        "LoraAppKey": argv["--LoraAppKey"],
+        "Skey": argv.get("--Skey"),
+        "LoraAppKey": argv.get("--LoraAppKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -658,10 +658,10 @@ def doPublishMessage(argv, arglist):
         return
 
     param = {
-        "Topic": argv["--Topic"],
-        "Payload": argv["--Payload"],
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "Topic": argv.get("--Topic"),
+        "Payload": argv.get("--Payload"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
         "Qos": Utils.try_to_json(argv, "--Qos"),
 
     }
@@ -695,8 +695,8 @@ def doDeleteProduct(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "Skey": argv["--Skey"],
+        "ProductId": argv.get("--ProductId"),
+        "Skey": argv.get("--Skey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -729,7 +729,7 @@ def doResetDeviceState(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
 
     }
@@ -797,8 +797,8 @@ def doDescribeMultiDevices(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "TaskId": argv["--TaskId"],
+        "ProductId": argv.get("--ProductId"),
+        "TaskId": argv.get("--TaskId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -833,10 +833,10 @@ def doPublishAsDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
         "Port": Utils.try_to_json(argv, "--Port"),
-        "Payload": argv["--Payload"],
+        "Payload": argv.get("--Payload"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -869,14 +869,14 @@ def doCreateLoraDevice(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
-        "DeviceName": argv["--DeviceName"],
-        "DeviceType": argv["--DeviceType"],
-        "AppEui": argv["--AppEui"],
-        "DeviceEui": argv["--DeviceEui"],
-        "AppKey": argv["--AppKey"],
-        "AuthKey": argv["--AuthKey"],
-        "Memo": argv["--Memo"],
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "DeviceType": argv.get("--DeviceType"),
+        "AppEui": argv.get("--AppEui"),
+        "DeviceEui": argv.get("--DeviceEui"),
+        "AppKey": argv.get("--AppKey"),
+        "AuthKey": argv.get("--AuthKey"),
+        "Memo": argv.get("--Memo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -909,9 +909,9 @@ def doUpdateTopicPolicy(argv, arglist):
         return
 
     param = {
-        "ProductID": argv["--ProductID"],
-        "TopicName": argv["--TopicName"],
-        "NewTopicName": argv["--NewTopicName"],
+        "ProductID": argv.get("--ProductID"),
+        "TopicName": argv.get("--TopicName"),
+        "NewTopicName": argv.get("--NewTopicName"),
         "Privilege": Utils.try_to_json(argv, "--Privilege"),
         "BrokerSubscribe": Utils.try_to_json(argv, "--BrokerSubscribe"),
 
@@ -946,10 +946,10 @@ def doDescribeDevices(argv, arglist):
         return
 
     param = {
-        "ProductId": argv["--ProductId"],
+        "ProductId": argv.get("--ProductId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "FirmwareVersion": argv["--FirmwareVersion"],
+        "FirmwareVersion": argv.get("--FirmwareVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -982,7 +982,7 @@ def doDisableTopicRule(argv, arglist):
         return
 
     param = {
-        "RuleName": argv["--RuleName"],
+        "RuleName": argv.get("--RuleName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1015,8 +1015,8 @@ def doDescribeMultiDevTask(argv, arglist):
         return
 
     param = {
-        "TaskId": argv["--TaskId"],
-        "ProductId": argv["--ProductId"],
+        "TaskId": argv.get("--TaskId"),
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1049,7 +1049,7 @@ def doEnableTopicRule(argv, arglist):
         return
 
     param = {
-        "RuleName": argv["--RuleName"],
+        "RuleName": argv.get("--RuleName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1082,7 +1082,7 @@ def doDeleteTopicRule(argv, arglist):
         return
 
     param = {
-        "RuleName": argv["--RuleName"],
+        "RuleName": argv.get("--RuleName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

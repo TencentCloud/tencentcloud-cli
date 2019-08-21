@@ -25,8 +25,8 @@ def doUnbindRs(argv, arglist):
         return
 
     param = {
-        "EipId": argv["--EipId"],
-        "InstanceId": argv["--InstanceId"],
+        "EipId": argv.get("--EipId"),
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,8 +59,8 @@ def doBindHosted(argv, arglist):
         return
 
     param = {
-        "EipId": argv["--EipId"],
-        "InstanceId": argv["--InstanceId"],
+        "EipId": argv.get("--EipId"),
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -93,7 +93,7 @@ def doCreateEipAcl(argv, arglist):
         return
 
     param = {
-        "AclName": argv["--AclName"],
+        "AclName": argv.get("--AclName"),
         "Status": Utils.try_to_json(argv, "--Status"),
 
     }
@@ -128,11 +128,11 @@ def doCreateEip(argv, arglist):
 
     param = {
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "PayMode": argv["--PayMode"],
+        "PayMode": argv.get("--PayMode"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
-        "SetType": argv["--SetType"],
+        "SetType": argv.get("--SetType"),
         "Exclusive": Utils.try_to_json(argv, "--Exclusive"),
-        "VpcId": argv["--VpcId"],
+        "VpcId": argv.get("--VpcId"),
         "IpList": Utils.try_to_json(argv, "--IpList"),
 
     }
@@ -166,10 +166,10 @@ def doModifyEipAcl(argv, arglist):
         return
 
     param = {
-        "AclId": argv["--AclId"],
-        "AclName": argv["--AclName"],
+        "AclId": argv.get("--AclId"),
+        "AclName": argv.get("--AclName"),
         "Status": Utils.try_to_json(argv, "--Status"),
-        "Type": argv["--Type"],
+        "Type": argv.get("--Type"),
         "Rules": Utils.try_to_json(argv, "--Rules"),
 
     }
@@ -235,8 +235,8 @@ def doBindRs(argv, arglist):
         return
 
     param = {
-        "EipId": argv["--EipId"],
-        "InstanceId": argv["--InstanceId"],
+        "EipId": argv.get("--EipId"),
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -302,9 +302,9 @@ def doUnbindHosted(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "EipId": argv["--EipId"],
-        "Eip": argv["--Eip"],
+        "InstanceId": argv.get("--InstanceId"),
+        "EipId": argv.get("--EipId"),
+        "Eip": argv.get("--Eip"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -370,7 +370,7 @@ def doModifyEipCharge(argv, arglist):
         return
 
     param = {
-        "PayMode": argv["--PayMode"],
+        "PayMode": argv.get("--PayMode"),
         "EipIds": Utils.try_to_json(argv, "--EipIds"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
 
@@ -405,8 +405,8 @@ def doModifyEipName(argv, arglist):
         return
 
     param = {
-        "EipId": argv["--EipId"],
-        "EipName": argv["--EipName"],
+        "EipId": argv.get("--EipId"),
+        "EipName": argv.get("--EipName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -472,7 +472,7 @@ def doDeleteEipAcl(argv, arglist):
         return
 
     param = {
-        "AclId": argv["--AclId"],
+        "AclId": argv.get("--AclId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -541,14 +541,14 @@ def doDescribeEips(argv, arglist):
         "EipIds": Utils.try_to_json(argv, "--EipIds"),
         "Eips": Utils.try_to_json(argv, "--Eips"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "SearchKey": argv["--SearchKey"],
+        "SearchKey": argv.get("--SearchKey"),
         "Status": Utils.try_to_json(argv, "--Status"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "OrderField": argv["--OrderField"],
+        "OrderField": argv.get("--OrderField"),
         "Order": Utils.try_to_json(argv, "--Order"),
-        "PayMode": argv["--PayMode"],
-        "VpcId": argv["--VpcId"],
+        "PayMode": argv.get("--PayMode"),
+        "VpcId": argv.get("--VpcId"),
         "BindTypes": Utils.try_to_json(argv, "--BindTypes"),
         "ExclusiveTag": Utils.try_to_json(argv, "--ExclusiveTag"),
         "AclId": Utils.try_to_json(argv, "--AclId"),
@@ -585,9 +585,9 @@ def doBindVpcIp(argv, arglist):
         return
 
     param = {
-        "EipId": argv["--EipId"],
-        "VpcId": argv["--VpcId"],
-        "VpcIp": argv["--VpcIp"],
+        "EipId": argv.get("--EipId"),
+        "VpcId": argv.get("--VpcId"),
+        "VpcIp": argv.get("--VpcIp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -620,9 +620,9 @@ def doUnbindVpcIp(argv, arglist):
         return
 
     param = {
-        "EipId": argv["--EipId"],
-        "VpcId": argv["--VpcId"],
-        "VpcIp": argv["--VpcIp"],
+        "EipId": argv.get("--EipId"),
+        "VpcId": argv.get("--VpcId"),
+        "VpcIp": argv.get("--VpcIp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -655,7 +655,7 @@ def doDescribeEipAcls(argv, arglist):
         return
 
     param = {
-        "AclName": argv["--AclName"],
+        "AclName": argv.get("--AclName"),
         "AclIds": Utils.try_to_json(argv, "--AclIds"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),

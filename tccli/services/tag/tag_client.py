@@ -25,9 +25,9 @@ def doUpdateResourceTagValue(argv, arglist):
         return
 
     param = {
-        "TagKey": argv["--TagKey"],
-        "TagValue": argv["--TagValue"],
-        "Resource": argv["--Resource"],
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
+        "Resource": argv.get("--Resource"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -96,10 +96,10 @@ def doDescribeResourceTagsByResourceIds(argv, arglist):
         return
 
     param = {
-        "ServiceType": argv["--ServiceType"],
-        "ResourcePrefix": argv["--ResourcePrefix"],
+        "ServiceType": argv.get("--ServiceType"),
+        "ResourcePrefix": argv.get("--ResourcePrefix"),
         "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
-        "ResourceRegion": argv["--ResourceRegion"],
+        "ResourceRegion": argv.get("--ResourceRegion"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -134,8 +134,8 @@ def doDeleteResourceTag(argv, arglist):
         return
 
     param = {
-        "TagKey": argv["--TagKey"],
-        "Resource": argv["--Resource"],
+        "TagKey": argv.get("--TagKey"),
+        "Resource": argv.get("--Resource"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -168,8 +168,8 @@ def doCreateTag(argv, arglist):
         return
 
     param = {
-        "TagKey": argv["--TagKey"],
-        "TagValue": argv["--TagValue"],
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -202,8 +202,8 @@ def doDescribeTags(argv, arglist):
         return
 
     param = {
-        "TagKey": argv["--TagKey"],
-        "TagValue": argv["--TagValue"],
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "CreateUin": Utils.try_to_json(argv, "--CreateUin"),
@@ -239,7 +239,7 @@ def doModifyResourceTags(argv, arglist):
         return
 
     param = {
-        "Resource": argv["--Resource"],
+        "Resource": argv.get("--Resource"),
         "ReplaceTags": Utils.try_to_json(argv, "--ReplaceTags"),
         "DeleteTags": Utils.try_to_json(argv, "--DeleteTags"),
 
@@ -274,9 +274,9 @@ def doAddResourceTag(argv, arglist):
         return
 
     param = {
-        "TagKey": argv["--TagKey"],
-        "TagValue": argv["--TagValue"],
-        "Resource": argv["--Resource"],
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
+        "Resource": argv.get("--Resource"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -309,8 +309,8 @@ def doDeleteTag(argv, arglist):
         return
 
     param = {
-        "TagKey": argv["--TagKey"],
-        "TagValue": argv["--TagValue"],
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

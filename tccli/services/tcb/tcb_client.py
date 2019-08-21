@@ -25,9 +25,9 @@ def doModifyDatabaseACL(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
-        "CollectionName": argv["--CollectionName"],
-        "AclTag": argv["--AclTag"],
+        "EnvId": argv.get("--EnvId"),
+        "CollectionName": argv.get("--CollectionName"),
+        "AclTag": argv.get("--AclTag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -60,8 +60,8 @@ def doDescribeDatabaseACL(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
-        "CollectionName": argv["--CollectionName"],
+        "EnvId": argv.get("--EnvId"),
+        "CollectionName": argv.get("--CollectionName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -94,8 +94,8 @@ def doModifyEnv(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
-        "Alias": argv["--Alias"],
+        "EnvId": argv.get("--EnvId"),
+        "Alias": argv.get("--Alias"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -128,7 +128,7 @@ def doDescribeEnvs(argv, arglist):
         return
 
     param = {
-        "EnvId": argv["--EnvId"],
+        "EnvId": argv.get("--EnvId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

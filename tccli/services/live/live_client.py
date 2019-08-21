@@ -25,9 +25,9 @@ def doDropLiveStream(argv, arglist):
         return
 
     param = {
-        "StreamName": argv["--StreamName"],
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
+        "StreamName": argv.get("--StreamName"),
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -92,16 +92,16 @@ def doCreateLiveRecord(argv, arglist):
         return
 
     param = {
-        "StreamName": argv["--StreamName"],
-        "AppName": argv["--AppName"],
-        "DomainName": argv["--DomainName"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "RecordType": argv["--RecordType"],
-        "FileFormat": argv["--FileFormat"],
+        "StreamName": argv.get("--StreamName"),
+        "AppName": argv.get("--AppName"),
+        "DomainName": argv.get("--DomainName"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "RecordType": argv.get("--RecordType"),
+        "FileFormat": argv.get("--FileFormat"),
         "Highlight": Utils.try_to_json(argv, "--Highlight"),
         "MixStream": Utils.try_to_json(argv, "--MixStream"),
-        "StreamParam": argv["--StreamParam"],
+        "StreamParam": argv.get("--StreamParam"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -135,10 +135,10 @@ def doUpdateLiveWatermark(argv, arglist):
 
     param = {
         "WatermarkId": Utils.try_to_json(argv, "--WatermarkId"),
-        "PictureUrl": argv["--PictureUrl"],
+        "PictureUrl": argv.get("--PictureUrl"),
         "XPosition": Utils.try_to_json(argv, "--XPosition"),
         "YPosition": Utils.try_to_json(argv, "--YPosition"),
-        "WatermarkName": argv["--WatermarkName"],
+        "WatermarkName": argv.get("--WatermarkName"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
 
@@ -174,15 +174,15 @@ def doModifyLiveSnapshotTemplate(argv, arglist):
 
     param = {
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
-        "TemplateName": argv["--TemplateName"],
-        "Description": argv["--Description"],
+        "TemplateName": argv.get("--TemplateName"),
+        "Description": argv.get("--Description"),
         "SnapshotInterval": Utils.try_to_json(argv, "--SnapshotInterval"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
         "PornFlag": Utils.try_to_json(argv, "--PornFlag"),
         "CosAppId": Utils.try_to_json(argv, "--CosAppId"),
-        "CosBucket": argv["--CosBucket"],
-        "CosRegion": argv["--CosRegion"],
+        "CosBucket": argv.get("--CosBucket"),
+        "CosRegion": argv.get("--CosRegion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -216,8 +216,8 @@ def doModifyLiveRecordTemplate(argv, arglist):
 
     param = {
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
-        "TemplateName": argv["--TemplateName"],
-        "Description": argv["--Description"],
+        "TemplateName": argv.get("--TemplateName"),
+        "Description": argv.get("--Description"),
         "FlvParam": Utils.try_to_json(argv, "--FlvParam"),
         "HlsParam": Utils.try_to_json(argv, "--HlsParam"),
         "Mp4Param": Utils.try_to_json(argv, "--Mp4Param"),
@@ -256,9 +256,9 @@ def doCreateLiveWatermarkRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
-        "StreamName": argv["--StreamName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
+        "StreamName": argv.get("--StreamName"),
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
 
     }
@@ -292,11 +292,11 @@ def doDescribeLiveStreamEventList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "AppName": argv["--AppName"],
-        "DomainName": argv["--DomainName"],
-        "StreamName": argv["--StreamName"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "AppName": argv.get("--AppName"),
+        "DomainName": argv.get("--DomainName"),
+        "StreamName": argv.get("--StreamName"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
         "IsFilter": Utils.try_to_json(argv, "--IsFilter"),
@@ -334,7 +334,7 @@ def doDescribePullStreamConfigs(argv, arglist):
         return
 
     param = {
-        "ConfigId": argv["--ConfigId"],
+        "ConfigId": argv.get("--ConfigId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -367,8 +367,8 @@ def doDescribeHttpStatusInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
 
     }
@@ -402,10 +402,10 @@ def doDescribeProvinceIspPlayInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "Granularity": Utils.try_to_json(argv, "--Granularity"),
-        "StatType": argv["--StatType"],
+        "StatType": argv.get("--StatType"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "ProvinceNames": Utils.try_to_json(argv, "--ProvinceNames"),
         "IspNames": Utils.try_to_json(argv, "--IspNames"),
@@ -441,10 +441,10 @@ def doModifyLivePushAuthKey(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "Enable": Utils.try_to_json(argv, "--Enable"),
-        "MasterAuthKey": argv["--MasterAuthKey"],
-        "BackupAuthKey": argv["--BackupAuthKey"],
+        "MasterAuthKey": argv.get("--MasterAuthKey"),
+        "BackupAuthKey": argv.get("--BackupAuthKey"),
         "AuthDelta": Utils.try_to_json(argv, "--AuthDelta"),
 
     }
@@ -478,11 +478,11 @@ def doDescribeStreamPushInfoList(argv, arglist):
         return
 
     param = {
-        "StreamName": argv["--StreamName"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "PushDomain": argv["--PushDomain"],
-        "AppName": argv["--AppName"],
+        "StreamName": argv.get("--StreamName"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "PushDomain": argv.get("--PushDomain"),
+        "AppName": argv.get("--AppName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -580,12 +580,12 @@ def doDescribeTopClientIpSumInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
-        "OrderParam": argv["--OrderParam"],
+        "OrderParam": argv.get("--OrderParam"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -619,7 +619,7 @@ def doModifyPullStreamStatus(argv, arglist):
 
     param = {
         "ConfigIds": Utils.try_to_json(argv, "--ConfigIds"),
-        "Status": argv["--Status"],
+        "Status": argv.get("--Status"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -685,7 +685,7 @@ def doModifyLiveDomainCert(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "CertId": Utils.try_to_json(argv, "--CertId"),
         "Status": Utils.try_to_json(argv, "--Status"),
 
@@ -720,13 +720,13 @@ def doDescribeVisitTopSumInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "TopIndex": argv["--TopIndex"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "TopIndex": argv.get("--TopIndex"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
-        "OrderParam": argv["--OrderParam"],
+        "OrderParam": argv.get("--OrderParam"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -759,7 +759,7 @@ def doDescribeLiveDomainCert(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -792,8 +792,8 @@ def doAddLiveWatermark(argv, arglist):
         return
 
     param = {
-        "PictureUrl": argv["--PictureUrl"],
-        "WatermarkName": argv["--WatermarkName"],
+        "PictureUrl": argv.get("--PictureUrl"),
+        "WatermarkName": argv.get("--WatermarkName"),
         "XPosition": Utils.try_to_json(argv, "--XPosition"),
         "YPosition": Utils.try_to_json(argv, "--YPosition"),
         "Width": Utils.try_to_json(argv, "--Width"),
@@ -830,9 +830,9 @@ def doDeleteLiveWatermarkRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
-        "StreamName": argv["--StreamName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -865,8 +865,8 @@ def doDeleteLiveCallbackRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -899,13 +899,13 @@ def doModifyPullStreamConfig(argv, arglist):
         return
 
     param = {
-        "ConfigId": argv["--ConfigId"],
-        "FromUrl": argv["--FromUrl"],
-        "ToUrl": argv["--ToUrl"],
+        "ConfigId": argv.get("--ConfigId"),
+        "FromUrl": argv.get("--FromUrl"),
+        "ToUrl": argv.get("--ToUrl"),
         "AreaId": Utils.try_to_json(argv, "--AreaId"),
         "IspId": Utils.try_to_json(argv, "--IspId"),
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -938,11 +938,11 @@ def doCreateLiveSnapshotTemplate(argv, arglist):
         return
 
     param = {
-        "TemplateName": argv["--TemplateName"],
+        "TemplateName": argv.get("--TemplateName"),
         "CosAppId": Utils.try_to_json(argv, "--CosAppId"),
-        "CosBucket": argv["--CosBucket"],
-        "CosRegion": argv["--CosRegion"],
-        "Description": argv["--Description"],
+        "CosBucket": argv.get("--CosBucket"),
+        "CosRegion": argv.get("--CosRegion"),
+        "Description": argv.get("--Description"),
         "SnapshotInterval": Utils.try_to_json(argv, "--SnapshotInterval"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
@@ -979,11 +979,11 @@ def doDescribeLiveStreamOnlineList(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
-        "StreamName": argv["--StreamName"],
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1049,7 +1049,7 @@ def doDescribeLivePushAuthKey(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1082,7 +1082,7 @@ def doDeletePullStreamConfig(argv, arglist):
         return
 
     param = {
-        "ConfigId": argv["--ConfigId"],
+        "ConfigId": argv.get("--ConfigId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1181,8 +1181,8 @@ def doDescribePlayErrorCodeSumInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
@@ -1218,11 +1218,11 @@ def doAddDelayLiveStream(argv, arglist):
         return
 
     param = {
-        "AppName": argv["--AppName"],
-        "DomainName": argv["--DomainName"],
-        "StreamName": argv["--StreamName"],
+        "AppName": argv.get("--AppName"),
+        "DomainName": argv.get("--DomainName"),
+        "StreamName": argv.get("--StreamName"),
         "DelayTime": Utils.try_to_json(argv, "--DelayTime"),
-        "ExpireTime": argv["--ExpireTime"],
+        "ExpireTime": argv.get("--ExpireTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1255,8 +1255,8 @@ def doDescribeStreamDayPlayInfoList(argv, arglist):
         return
 
     param = {
-        "DayTime": argv["--DayTime"],
-        "PlayDomain": argv["--PlayDomain"],
+        "DayTime": argv.get("--DayTime"),
+        "PlayDomain": argv.get("--PlayDomain"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
 
@@ -1291,7 +1291,7 @@ def doModifyLivePlayDomain(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "PlayType": Utils.try_to_json(argv, "--PlayType"),
 
     }
@@ -1326,10 +1326,10 @@ def doModifyLiveTranscodeTemplate(argv, arglist):
 
     param = {
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
-        "Vcodec": argv["--Vcodec"],
-        "Acodec": argv["--Acodec"],
+        "Vcodec": argv.get("--Vcodec"),
+        "Acodec": argv.get("--Acodec"),
         "AudioBitrate": Utils.try_to_json(argv, "--AudioBitrate"),
-        "Description": argv["--Description"],
+        "Description": argv.get("--Description"),
         "VideoBitrate": Utils.try_to_json(argv, "--VideoBitrate"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "NeedVideo": Utils.try_to_json(argv, "--NeedVideo"),
@@ -1338,7 +1338,7 @@ def doModifyLiveTranscodeTemplate(argv, arglist):
         "Fps": Utils.try_to_json(argv, "--Fps"),
         "Gop": Utils.try_to_json(argv, "--Gop"),
         "Rotate": Utils.try_to_json(argv, "--Rotate"),
-        "Profile": argv["--Profile"],
+        "Profile": argv.get("--Profile"),
         "BitrateToOrig": Utils.try_to_json(argv, "--BitrateToOrig"),
         "HeightToOrig": Utils.try_to_json(argv, "--HeightToOrig"),
         "FpsToOrig": Utils.try_to_json(argv, "--FpsToOrig"),
@@ -1375,9 +1375,9 @@ def doDeleteLiveTranscodeRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
-        "StreamName": argv["--StreamName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
+        "StreamName": argv.get("--StreamName"),
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
 
     }
@@ -1411,9 +1411,9 @@ def doDeleteLiveSnapshotRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
-        "StreamName": argv["--StreamName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1513,12 +1513,12 @@ def doModifyLiveCert(argv, arglist):
         return
 
     param = {
-        "CertId": argv["--CertId"],
+        "CertId": argv.get("--CertId"),
         "CertType": Utils.try_to_json(argv, "--CertType"),
-        "CertName": argv["--CertName"],
-        "HttpsCrt": argv["--HttpsCrt"],
-        "HttpsKey": argv["--HttpsKey"],
-        "Description": argv["--Description"],
+        "CertName": argv.get("--CertName"),
+        "HttpsCrt": argv.get("--HttpsCrt"),
+        "HttpsKey": argv.get("--HttpsKey"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1621,14 +1621,14 @@ def doCreateLiveCallbackTemplate(argv, arglist):
         return
 
     param = {
-        "TemplateName": argv["--TemplateName"],
-        "Description": argv["--Description"],
-        "StreamBeginNotifyUrl": argv["--StreamBeginNotifyUrl"],
-        "StreamEndNotifyUrl": argv["--StreamEndNotifyUrl"],
-        "RecordNotifyUrl": argv["--RecordNotifyUrl"],
-        "SnapshotNotifyUrl": argv["--SnapshotNotifyUrl"],
-        "PornCensorshipNotifyUrl": argv["--PornCensorshipNotifyUrl"],
-        "CallbackKey": argv["--CallbackKey"],
+        "TemplateName": argv.get("--TemplateName"),
+        "Description": argv.get("--Description"),
+        "StreamBeginNotifyUrl": argv.get("--StreamBeginNotifyUrl"),
+        "StreamEndNotifyUrl": argv.get("--StreamEndNotifyUrl"),
+        "RecordNotifyUrl": argv.get("--RecordNotifyUrl"),
+        "SnapshotNotifyUrl": argv.get("--SnapshotNotifyUrl"),
+        "PornCensorshipNotifyUrl": argv.get("--PornCensorshipNotifyUrl"),
+        "CallbackKey": argv.get("--CallbackKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1661,9 +1661,9 @@ def doResumeLiveStream(argv, arglist):
         return
 
     param = {
-        "AppName": argv["--AppName"],
-        "DomainName": argv["--DomainName"],
-        "StreamName": argv["--StreamName"],
+        "AppName": argv.get("--AppName"),
+        "DomainName": argv.get("--DomainName"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1729,7 +1729,7 @@ def doDeleteLiveDomain(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "DomainType": Utils.try_to_json(argv, "--DomainType"),
 
     }
@@ -1764,14 +1764,14 @@ def doModifyLiveCallbackTemplate(argv, arglist):
 
     param = {
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
-        "TemplateName": argv["--TemplateName"],
-        "Description": argv["--Description"],
-        "StreamBeginNotifyUrl": argv["--StreamBeginNotifyUrl"],
-        "StreamEndNotifyUrl": argv["--StreamEndNotifyUrl"],
-        "RecordNotifyUrl": argv["--RecordNotifyUrl"],
-        "SnapshotNotifyUrl": argv["--SnapshotNotifyUrl"],
-        "PornCensorshipNotifyUrl": argv["--PornCensorshipNotifyUrl"],
-        "CallbackKey": argv["--CallbackKey"],
+        "TemplateName": argv.get("--TemplateName"),
+        "Description": argv.get("--Description"),
+        "StreamBeginNotifyUrl": argv.get("--StreamBeginNotifyUrl"),
+        "StreamEndNotifyUrl": argv.get("--StreamEndNotifyUrl"),
+        "RecordNotifyUrl": argv.get("--RecordNotifyUrl"),
+        "SnapshotNotifyUrl": argv.get("--SnapshotNotifyUrl"),
+        "PornCensorshipNotifyUrl": argv.get("--PornCensorshipNotifyUrl"),
+        "CallbackKey": argv.get("--CallbackKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1804,9 +1804,9 @@ def doDescribeProIspPlaySumInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "StatType": argv["--StatType"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "StatType": argv.get("--StatType"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
@@ -1842,11 +1842,11 @@ def doDescribeStreamPlayInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "PlayDomain": argv["--PlayDomain"],
-        "StreamName": argv["--StreamName"],
-        "AppName": argv["--AppName"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "PlayDomain": argv.get("--PlayDomain"),
+        "StreamName": argv.get("--StreamName"),
+        "AppName": argv.get("--AppName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1880,10 +1880,10 @@ def doCreateLiveCert(argv, arglist):
 
     param = {
         "CertType": Utils.try_to_json(argv, "--CertType"),
-        "HttpsCrt": argv["--HttpsCrt"],
-        "HttpsKey": argv["--HttpsKey"],
-        "CertName": argv["--CertName"],
-        "Description": argv["--Description"],
+        "HttpsCrt": argv.get("--HttpsCrt"),
+        "HttpsKey": argv.get("--HttpsKey"),
+        "CertName": argv.get("--CertName"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2045,7 +2045,7 @@ def doStopLiveRecord(argv, arglist):
         return
 
     param = {
-        "StreamName": argv["--StreamName"],
+        "StreamName": argv.get("--StreamName"),
         "TaskId": Utils.try_to_json(argv, "--TaskId"),
 
     }
@@ -2079,11 +2079,11 @@ def doModifyLivePlayAuthKey(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "Enable": Utils.try_to_json(argv, "--Enable"),
-        "AuthKey": argv["--AuthKey"],
+        "AuthKey": argv.get("--AuthKey"),
         "AuthDelta": Utils.try_to_json(argv, "--AuthDelta"),
-        "AuthBackKey": argv["--AuthBackKey"],
+        "AuthBackKey": argv.get("--AuthBackKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2149,7 +2149,7 @@ def doUnBindLiveDomainCert(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2182,9 +2182,9 @@ def doDescribeLiveTranscodeDetailInfo(argv, arglist):
         return
 
     param = {
-        "DayTime": argv["--DayTime"],
-        "PushDomain": argv["--PushDomain"],
-        "StreamName": argv["--StreamName"],
+        "DayTime": argv.get("--DayTime"),
+        "PushDomain": argv.get("--PushDomain"),
+        "StreamName": argv.get("--StreamName"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
 
@@ -2219,8 +2219,8 @@ def doDescribeLogDownloadList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
 
     }
@@ -2257,7 +2257,7 @@ def doDescribeLiveStreamOnlineInfo(argv, arglist):
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
         "Status": Utils.try_to_json(argv, "--Status"),
-        "StreamName": argv["--StreamName"],
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2354,9 +2354,9 @@ def doDeleteLiveRecordRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
-        "StreamName": argv["--StreamName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2389,7 +2389,7 @@ def doDescribeLiveDomain(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2422,8 +2422,8 @@ def doCreateLiveCallbackRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
 
     }
@@ -2458,7 +2458,7 @@ def doBindLiveDomainCert(argv, arglist):
 
     param = {
         "CertId": Utils.try_to_json(argv, "--CertId"),
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "Status": Utils.try_to_json(argv, "--Status"),
 
     }
@@ -2524,10 +2524,10 @@ def doDescribePlayErrorCodeDetailInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "Granularity": Utils.try_to_json(argv, "--Granularity"),
-        "StatType": argv["--StatType"],
+        "StatType": argv.get("--StatType"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
 
     }
@@ -2561,13 +2561,13 @@ def doDescribeLiveStreamPublishedList(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "EndTime": argv["--EndTime"],
-        "StartTime": argv["--StartTime"],
-        "AppName": argv["--AppName"],
+        "DomainName": argv.get("--DomainName"),
+        "EndTime": argv.get("--EndTime"),
+        "StartTime": argv.get("--StartTime"),
+        "AppName": argv.get("--AppName"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
-        "StreamName": argv["--StreamName"],
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2600,11 +2600,11 @@ def doForbidLiveStream(argv, arglist):
         return
 
     param = {
-        "AppName": argv["--AppName"],
-        "DomainName": argv["--DomainName"],
-        "StreamName": argv["--StreamName"],
-        "ResumeTime": argv["--ResumeTime"],
-        "Reason": argv["--Reason"],
+        "AppName": argv.get("--AppName"),
+        "DomainName": argv.get("--DomainName"),
+        "StreamName": argv.get("--StreamName"),
+        "ResumeTime": argv.get("--ResumeTime"),
+        "Reason": argv.get("--Reason"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2637,7 +2637,7 @@ def doAddLiveDomain(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "DomainType": Utils.try_to_json(argv, "--DomainType"),
         "PlayType": Utils.try_to_json(argv, "--PlayType"),
         "IsDelayLive": Utils.try_to_json(argv, "--IsDelayLive"),
@@ -2706,10 +2706,10 @@ def doCreateLiveRecordRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
-        "AppName": argv["--AppName"],
-        "StreamName": argv["--StreamName"],
+        "AppName": argv.get("--AppName"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2807,8 +2807,8 @@ def doCreateLiveRecordTemplate(argv, arglist):
         return
 
     param = {
-        "TemplateName": argv["--TemplateName"],
-        "Description": argv["--Description"],
+        "TemplateName": argv.get("--TemplateName"),
+        "Description": argv.get("--Description"),
         "FlvParam": Utils.try_to_json(argv, "--FlvParam"),
         "HlsParam": Utils.try_to_json(argv, "--HlsParam"),
         "Mp4Param": Utils.try_to_json(argv, "--Mp4Param"),
@@ -2848,10 +2848,10 @@ def doDescribeBillBandwidthAndFluxList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
-        "MainlandOrOversea": argv["--MainlandOrOversea"],
+        "MainlandOrOversea": argv.get("--MainlandOrOversea"),
         "Granularity": Utils.try_to_json(argv, "--Granularity"),
 
     }
@@ -2885,7 +2885,7 @@ def doForbidLiveDomain(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2918,9 +2918,9 @@ def doCreateLiveTranscodeRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
-        "AppName": argv["--AppName"],
-        "StreamName": argv["--StreamName"],
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
+        "StreamName": argv.get("--StreamName"),
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
 
     }
@@ -2986,7 +2986,7 @@ def doDeleteLiveRecord(argv, arglist):
         return
 
     param = {
-        "StreamName": argv["--StreamName"],
+        "StreamName": argv.get("--StreamName"),
         "TaskId": Utils.try_to_json(argv, "--TaskId"),
 
     }
@@ -3020,10 +3020,10 @@ def doCreateLiveSnapshotRule(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
         "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
-        "AppName": argv["--AppName"],
-        "StreamName": argv["--StreamName"],
+        "AppName": argv.get("--AppName"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3056,12 +3056,12 @@ def doDescribeGroupProIspPlayInfoList(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "ProvinceNames": Utils.try_to_json(argv, "--ProvinceNames"),
         "IspNames": Utils.try_to_json(argv, "--IspNames"),
-        "MainlandOrOversea": argv["--MainlandOrOversea"],
+        "MainlandOrOversea": argv.get("--MainlandOrOversea"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3094,7 +3094,7 @@ def doDescribeLivePlayAuthKey(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3127,9 +3127,9 @@ def doDescribeLiveStreamState(argv, arglist):
         return
 
     param = {
-        "AppName": argv["--AppName"],
-        "DomainName": argv["--DomainName"],
-        "StreamName": argv["--StreamName"],
+        "AppName": argv.get("--AppName"),
+        "DomainName": argv.get("--DomainName"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3195,9 +3195,9 @@ def doResumeDelayLiveStream(argv, arglist):
         return
 
     param = {
-        "AppName": argv["--AppName"],
-        "DomainName": argv["--DomainName"],
-        "StreamName": argv["--StreamName"],
+        "AppName": argv.get("--AppName"),
+        "DomainName": argv.get("--DomainName"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3230,12 +3230,12 @@ def doCreateLiveTranscodeTemplate(argv, arglist):
         return
 
     param = {
-        "TemplateName": argv["--TemplateName"],
+        "TemplateName": argv.get("--TemplateName"),
         "VideoBitrate": Utils.try_to_json(argv, "--VideoBitrate"),
-        "Vcodec": argv["--Vcodec"],
-        "Acodec": argv["--Acodec"],
+        "Vcodec": argv.get("--Vcodec"),
+        "Acodec": argv.get("--Acodec"),
         "AudioBitrate": Utils.try_to_json(argv, "--AudioBitrate"),
-        "Description": argv["--Description"],
+        "Description": argv.get("--Description"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "NeedVideo": Utils.try_to_json(argv, "--NeedVideo"),
         "NeedAudio": Utils.try_to_json(argv, "--NeedAudio"),
@@ -3243,7 +3243,7 @@ def doCreateLiveTranscodeTemplate(argv, arglist):
         "Fps": Utils.try_to_json(argv, "--Fps"),
         "Gop": Utils.try_to_json(argv, "--Gop"),
         "Rotate": Utils.try_to_json(argv, "--Rotate"),
-        "Profile": argv["--Profile"],
+        "Profile": argv.get("--Profile"),
         "BitrateToOrig": Utils.try_to_json(argv, "--BitrateToOrig"),
         "HeightToOrig": Utils.try_to_json(argv, "--HeightToOrig"),
         "FpsToOrig": Utils.try_to_json(argv, "--FpsToOrig"),
@@ -3313,7 +3313,7 @@ def doEnableLiveDomain(argv, arglist):
         return
 
     param = {
-        "DomainName": argv["--DomainName"],
+        "DomainName": argv.get("--DomainName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3346,12 +3346,12 @@ def doCreatePullStreamConfig(argv, arglist):
         return
 
     param = {
-        "FromUrl": argv["--FromUrl"],
-        "ToUrl": argv["--ToUrl"],
+        "FromUrl": argv.get("--FromUrl"),
+        "ToUrl": argv.get("--ToUrl"),
         "AreaId": Utils.try_to_json(argv, "--AreaId"),
         "IspId": Utils.try_to_json(argv, "--IspId"),
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3384,8 +3384,8 @@ def doDescribeLiveStreamPushInfoList(argv, arglist):
         return
 
     param = {
-        "PushDomain": argv["--PushDomain"],
-        "AppName": argv["--AppName"],
+        "PushDomain": argv.get("--PushDomain"),
+        "AppName": argv.get("--AppName"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
 

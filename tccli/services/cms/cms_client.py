@@ -25,7 +25,7 @@ def doDescribeModerationOverview(argv, arglist):
         return
 
     param = {
-        "Date": argv["--Date"],
+        "Date": argv.get("--Date"),
         "ServiceTypes": Utils.try_to_json(argv, "--ServiceTypes"),
         "Channels": Utils.try_to_json(argv, "--Channels"),
 
@@ -128,10 +128,10 @@ def doVideoModeration(argv, arglist):
         return
 
     param = {
-        "CallbackUrl": argv["--CallbackUrl"],
-        "FileMD5": argv["--FileMD5"],
-        "FileContent": argv["--FileContent"],
-        "FileUrl": argv["--FileUrl"],
+        "CallbackUrl": argv.get("--CallbackUrl"),
+        "FileMD5": argv.get("--FileMD5"),
+        "FileContent": argv.get("--FileContent"),
+        "FileUrl": argv.get("--FileUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -164,7 +164,7 @@ def doTextModeration(argv, arglist):
         return
 
     param = {
-        "Content": argv["--Content"],
+        "Content": argv.get("--Content"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -199,7 +199,7 @@ def doCreateFileSample(argv, arglist):
     param = {
         "Contents": Utils.try_to_json(argv, "--Contents"),
         "EvilType": Utils.try_to_json(argv, "--EvilType"),
-        "FileType": argv["--FileType"],
+        "FileType": argv.get("--FileType"),
         "Label": Utils.try_to_json(argv, "--Label"),
 
     }
@@ -233,10 +233,10 @@ def doAudioModeration(argv, arglist):
         return
 
     param = {
-        "CallbackUrl": argv["--CallbackUrl"],
-        "FileContent": argv["--FileContent"],
-        "FileMD5": argv["--FileMD5"],
-        "FileUrl": argv["--FileUrl"],
+        "CallbackUrl": argv.get("--CallbackUrl"),
+        "FileContent": argv.get("--FileContent"),
+        "FileMD5": argv.get("--FileMD5"),
+        "FileUrl": argv.get("--FileUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -272,8 +272,8 @@ def doDescribeFileSample(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderDirection": argv["--OrderDirection"],
-        "OrderField": argv["--OrderField"],
+        "OrderDirection": argv.get("--OrderDirection"),
+        "OrderField": argv.get("--OrderField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -309,8 +309,8 @@ def doDescribeTextSample(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderDirection": argv["--OrderDirection"],
-        "OrderField": argv["--OrderField"],
+        "OrderDirection": argv.get("--OrderDirection"),
+        "OrderField": argv.get("--OrderField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -343,9 +343,9 @@ def doImageModeration(argv, arglist):
         return
 
     param = {
-        "FileContent": argv["--FileContent"],
-        "FileMD5": argv["--FileMD5"],
-        "FileUrl": argv["--FileUrl"],
+        "FileContent": argv.get("--FileContent"),
+        "FileMD5": argv.get("--FileMD5"),
+        "FileUrl": argv.get("--FileUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

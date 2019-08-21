@@ -25,10 +25,10 @@ def doDownloadReport(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "ReportDate": argv["--ReportDate"],
-        "InstId": argv["--InstId"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ReportDate": argv.get("--ReportDate"),
+        "InstId": argv.get("--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -61,11 +61,11 @@ def doUploadFile(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "FileUrl": argv["--FileUrl"],
-        "FileName": argv["--FileName"],
-        "FileDate": argv["--FileDate"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "FileUrl": argv.get("--FileUrl"),
+        "FileName": argv.get("--FileName"),
+        "FileDate": argv.get("--FileDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -98,16 +98,16 @@ def doDescribeRecords(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "ProductId": argv["--ProductId"],
-        "AccountNum": argv["--AccountNum"],
-        "CalledPhone": argv["--CalledPhone"],
-        "StartBizDate": argv["--StartBizDate"],
-        "EndBizDate": argv["--EndBizDate"],
-        "Offset": argv["--Offset"],
-        "Limit": argv["--Limit"],
-        "InstId": argv["--InstId"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ProductId": argv.get("--ProductId"),
+        "AccountNum": argv.get("--AccountNum"),
+        "CalledPhone": argv.get("--CalledPhone"),
+        "StartBizDate": argv.get("--StartBizDate"),
+        "EndBizDate": argv.get("--EndBizDate"),
+        "Offset": argv.get("--Offset"),
+        "Limit": argv.get("--Limit"),
+        "InstId": argv.get("--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -140,12 +140,12 @@ def doDescribeCreditResult(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "InstId": argv["--InstId"],
-        "ProductId": argv["--ProductId"],
-        "CaseId": argv["--CaseId"],
-        "RequestDate": argv["--RequestDate"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "InstId": argv.get("--InstId"),
+        "ProductId": argv.get("--ProductId"),
+        "CaseId": argv.get("--CaseId"),
+        "RequestDate": argv.get("--RequestDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -178,10 +178,10 @@ def doDownloadDialogueText(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "ReportDate": argv["--ReportDate"],
-        "InstId": argv["--InstId"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ReportDate": argv.get("--ReportDate"),
+        "InstId": argv.get("--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -214,10 +214,10 @@ def doDescribeTaskStatus(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "TaskId": argv["--TaskId"],
-        "InstId": argv["--InstId"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "TaskId": argv.get("--TaskId"),
+        "InstId": argv.get("--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -250,13 +250,13 @@ def doUploadDataFile(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "FileName": argv["--FileName"],
-        "UploadModel": argv["--UploadModel"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "FileName": argv.get("--FileName"),
+        "UploadModel": argv.get("--UploadModel"),
         "File": Utils.try_to_json(argv, "--File"),
-        "FileUrl": argv["--FileUrl"],
-        "InstId": argv["--InstId"],
+        "FileUrl": argv.get("--FileUrl"),
+        "InstId": argv.get("--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -289,10 +289,10 @@ def doDownloadRecordList(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "BizDate": argv["--BizDate"],
-        "InstId": argv["--InstId"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "BizDate": argv.get("--BizDate"),
+        "InstId": argv.get("--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -325,10 +325,10 @@ def doApplyBlackList(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
         "BlackList": Utils.try_to_json(argv, "--BlackList"),
-        "InstId": argv["--InstId"],
+        "InstId": argv.get("--InstId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -361,13 +361,13 @@ def doApplyCreditAudit(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "InstId": argv["--InstId"],
-        "ProductId": argv["--ProductId"],
-        "CaseId": argv["--CaseId"],
-        "CallbackUrl": argv["--CallbackUrl"],
-        "Data": argv["--Data"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "InstId": argv.get("--InstId"),
+        "ProductId": argv.get("--ProductId"),
+        "CaseId": argv.get("--CaseId"),
+        "CallbackUrl": argv.get("--CallbackUrl"),
+        "Data": argv.get("--Data"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

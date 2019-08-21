@@ -25,7 +25,7 @@ def doEHOCR(argv, arglist):
         return
 
     param = {
-        "Image": argv["--Image"],
+        "Image": argv.get("--Image"),
         "InputType": Utils.try_to_json(argv, "--InputType"),
 
     }
@@ -59,12 +59,12 @@ def doECC(argv, arglist):
         return
 
     param = {
-        "Content": argv["--Content"],
-        "Title": argv["--Title"],
-        "Grade": argv["--Grade"],
-        "Outline": argv["--Outline"],
-        "ModelSubject": argv["--ModelSubject"],
-        "ModelContent": argv["--ModelContent"],
+        "Content": argv.get("--Content"),
+        "Title": argv.get("--Title"),
+        "Grade": argv.get("--Grade"),
+        "Outline": argv.get("--Outline"),
+        "ModelSubject": argv.get("--ModelSubject"),
+        "ModelContent": argv.get("--ModelContent"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

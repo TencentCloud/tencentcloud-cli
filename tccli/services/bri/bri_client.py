@@ -26,7 +26,7 @@ def doDescribeBRI(argv, arglist):
 
     param = {
         "RequestData": Utils.try_to_json(argv, "--RequestData"),
-        "ResourceId": argv["--ResourceId"],
+        "ResourceId": argv.get("--ResourceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

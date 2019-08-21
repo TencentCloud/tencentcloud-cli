@@ -25,7 +25,7 @@ def doStartLogging(argv, arglist):
         return
 
     param = {
-        "AuditName": argv["--AuditName"],
+        "AuditName": argv.get("--AuditName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -58,7 +58,7 @@ def doGetAttributeKey(argv, arglist):
         return
 
     param = {
-        "WebsiteType": argv["--WebsiteType"],
+        "WebsiteType": argv.get("--WebsiteType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -91,7 +91,7 @@ def doListCmqEnableRegion(argv, arglist):
         return
 
     param = {
-        "WebsiteType": argv["--WebsiteType"],
+        "WebsiteType": argv.get("--WebsiteType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -124,7 +124,7 @@ def doDeleteAudit(argv, arglist):
         return
 
     param = {
-        "AuditName": argv["--AuditName"],
+        "AuditName": argv.get("--AuditName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -157,7 +157,7 @@ def doStopLogging(argv, arglist):
         return
 
     param = {
-        "AuditName": argv["--AuditName"],
+        "AuditName": argv.get("--AuditName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -222,15 +222,15 @@ def doUpdateAudit(argv, arglist):
         return
 
     param = {
-        "AuditName": argv["--AuditName"],
-        "CmqQueueName": argv["--CmqQueueName"],
-        "CmqRegion": argv["--CmqRegion"],
-        "CosBucketName": argv["--CosBucketName"],
-        "CosRegion": argv["--CosRegion"],
+        "AuditName": argv.get("--AuditName"),
+        "CmqQueueName": argv.get("--CmqQueueName"),
+        "CmqRegion": argv.get("--CmqRegion"),
+        "CosBucketName": argv.get("--CosBucketName"),
+        "CosRegion": argv.get("--CosRegion"),
         "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
         "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
         "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
-        "LogFilePrefix": argv["--LogFilePrefix"],
+        "LogFilePrefix": argv.get("--LogFilePrefix"),
         "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
 
     }
@@ -264,7 +264,7 @@ def doDescribeAudit(argv, arglist):
         return
 
     param = {
-        "AuditName": argv["--AuditName"],
+        "AuditName": argv.get("--AuditName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -297,16 +297,16 @@ def doCreateAudit(argv, arglist):
         return
 
     param = {
-        "AuditName": argv["--AuditName"],
-        "CosBucketName": argv["--CosBucketName"],
-        "CosRegion": argv["--CosRegion"],
+        "AuditName": argv.get("--AuditName"),
+        "CosBucketName": argv.get("--CosBucketName"),
+        "CosRegion": argv.get("--CosRegion"),
         "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
         "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
         "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
-        "CmqQueueName": argv["--CmqQueueName"],
-        "CmqRegion": argv["--CmqRegion"],
+        "CmqQueueName": argv.get("--CmqQueueName"),
+        "CmqRegion": argv.get("--CmqRegion"),
         "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
-        "LogFilePrefix": argv["--LogFilePrefix"],
+        "LogFilePrefix": argv.get("--LogFilePrefix"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -339,7 +339,7 @@ def doListCosEnableRegion(argv, arglist):
         return
 
     param = {
-        "WebsiteType": argv["--WebsiteType"],
+        "WebsiteType": argv.get("--WebsiteType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -376,7 +376,7 @@ def doLookUpEvents(argv, arglist):
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "LookupAttributes": Utils.try_to_json(argv, "--LookupAttributes"),
         "MaxResults": Utils.try_to_json(argv, "--MaxResults"),
-        "NextToken": argv["--NextToken"],
+        "NextToken": argv.get("--NextToken"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

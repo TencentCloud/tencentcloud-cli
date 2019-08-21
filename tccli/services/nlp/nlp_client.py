@@ -25,8 +25,8 @@ def doWordSimilarity(argv, arglist):
         return
 
     param = {
-        "SrcWord": argv["--SrcWord"],
-        "TargetWord": argv["--TargetWord"],
+        "SrcWord": argv.get("--SrcWord"),
+        "TargetWord": argv.get("--TargetWord"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,8 +59,8 @@ def doSentenceSimilarity(argv, arglist):
         return
 
     param = {
-        "SrcText": argv["--SrcText"],
-        "TargetText": argv["--TargetText"],
+        "SrcText": argv.get("--SrcText"),
+        "TargetText": argv.get("--TargetText"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -93,7 +93,7 @@ def doTextClassification(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
         "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
@@ -127,7 +127,7 @@ def doLexicalAnalysis(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
         "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
@@ -161,7 +161,7 @@ def doSensitiveWordsRecognition(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -194,7 +194,7 @@ def doDependencyParsing(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -227,7 +227,7 @@ def doSentimentAnalysis(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
         "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
@@ -261,7 +261,7 @@ def doWordEmbedding(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -294,7 +294,7 @@ def doTextCorrection(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -327,7 +327,7 @@ def doContentApproval(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -360,7 +360,7 @@ def doKeywordsExtraction(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -393,7 +393,7 @@ def doSentenceEmbedding(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -426,7 +426,7 @@ def doSimilarWords(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
         "WordNumber": Utils.try_to_json(argv, "--WordNumber"),
 
     }
@@ -460,7 +460,7 @@ def doAutoSummarization(argv, arglist):
         return
 
     param = {
-        "Text": argv["--Text"],
+        "Text": argv.get("--Text"),
         "Length": Utils.try_to_json(argv, "--Length"),
 
     }

@@ -25,10 +25,10 @@ def doForbidLiveStream(argv, arglist):
         return
 
     param = {
-        "AppName": argv["--AppName"],
-        "DomainName": argv["--DomainName"],
-        "StreamName": argv["--StreamName"],
-        "ResumeTime": argv["--ResumeTime"],
+        "AppName": argv.get("--AppName"),
+        "DomainName": argv.get("--DomainName"),
+        "StreamName": argv.get("--StreamName"),
+        "ResumeTime": argv.get("--ResumeTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -61,10 +61,10 @@ def doDescribeStreamPlayInfoList(argv, arglist):
         return
 
     param = {
-        "EndTime": argv["--EndTime"],
-        "PlayDomain": argv["--PlayDomain"],
-        "StartTime": argv["--StartTime"],
-        "StreamName": argv["--StreamName"],
+        "EndTime": argv.get("--EndTime"),
+        "PlayDomain": argv.get("--PlayDomain"),
+        "StartTime": argv.get("--StartTime"),
+        "StreamName": argv.get("--StreamName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -97,9 +97,9 @@ def doRegisterIM(argv, arglist):
         return
 
     param = {
-        "Nickname": argv["--Nickname"],
-        "UserId": argv["--UserId"],
-        "HeadImgUrl": argv["--HeadImgUrl"],
+        "Nickname": argv.get("--Nickname"),
+        "UserId": argv.get("--UserId"),
+        "HeadImgUrl": argv.get("--HeadImgUrl"),
         "Level": Utils.try_to_json(argv, "--Level"),
 
     }

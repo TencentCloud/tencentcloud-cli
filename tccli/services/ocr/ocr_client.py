@@ -25,9 +25,9 @@ def doBusinessCardOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
-        "Config": argv["--Config"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+        "Config": argv.get("--Config"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -60,10 +60,10 @@ def doIDCardOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
-        "CardSide": argv["--CardSide"],
-        "Config": argv["--Config"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+        "CardSide": argv.get("--CardSide"),
+        "Config": argv.get("--Config"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -96,8 +96,8 @@ def doGeneralAccurateOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -130,8 +130,8 @@ def doVinOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -164,8 +164,8 @@ def doQuotaInvoiceOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -198,8 +198,8 @@ def doGeneralFastOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -232,9 +232,9 @@ def doVehicleLicenseOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
-        "CardSide": argv["--CardSide"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+        "CardSide": argv.get("--CardSide"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -267,8 +267,8 @@ def doBizLicenseOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -301,8 +301,8 @@ def doGeneralHandwritingOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -335,8 +335,8 @@ def doVatInvoiceOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -369,8 +369,8 @@ def doWaybillOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -403,10 +403,10 @@ def doGeneralBasicOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
-        "Scene": argv["--Scene"],
-        "LanguageType": argv["--LanguageType"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+        "Scene": argv.get("--Scene"),
+        "LanguageType": argv.get("--LanguageType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -439,8 +439,8 @@ def doPermitOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -473,8 +473,8 @@ def doTableOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -507,8 +507,8 @@ def doArithmeticOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -541,8 +541,8 @@ def doLicensePlateOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -575,8 +575,8 @@ def doTrainTicketOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -609,8 +609,8 @@ def doTaxiInvoiceOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -643,8 +643,8 @@ def doEnglishOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -677,8 +677,8 @@ def doBankCardOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -711,8 +711,8 @@ def doCarInvoiceOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -745,8 +745,8 @@ def doDriverLicenseOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -779,8 +779,8 @@ def doFlightInvoiceOCR(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv["--ImageBase64"],
-        "ImageUrl": argv["--ImageUrl"],
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

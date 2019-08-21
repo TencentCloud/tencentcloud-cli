@@ -25,8 +25,8 @@ def doGetScanResult(argv, arglist):
         return
 
     param = {
-        "Key": argv["--Key"],
-        "Md5": argv["--Md5"],
+        "Key": argv.get("--Key"),
+        "Md5": argv.get("--Md5"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,10 +59,10 @@ def doScanFileHash(argv, arglist):
         return
 
     param = {
-        "Key": argv["--Key"],
-        "Md5s": argv["--Md5s"],
-        "WithCategory": argv["--WithCategory"],
-        "SensitiveLevel": argv["--SensitiveLevel"],
+        "Key": argv.get("--Key"),
+        "Md5s": argv.get("--Md5s"),
+        "WithCategory": argv.get("--WithCategory"),
+        "SensitiveLevel": argv.get("--SensitiveLevel"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -95,7 +95,7 @@ def doGetLocalEngine(argv, arglist):
         return
 
     param = {
-        "Key": argv["--Key"],
+        "Key": argv.get("--Key"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -128,9 +128,9 @@ def doScanFile(argv, arglist):
         return
 
     param = {
-        "Key": argv["--Key"],
-        "Sample": argv["--Sample"],
-        "Md5": argv["--Md5"],
+        "Key": argv.get("--Key"),
+        "Sample": argv.get("--Sample"),
+        "Md5": argv.get("--Md5"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

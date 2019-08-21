@@ -25,9 +25,9 @@ def doDeleteClusterRoute(argv, arglist):
         return
 
     param = {
-        "RouteTableName": argv["--RouteTableName"],
-        "GatewayIp": argv["--GatewayIp"],
-        "DestinationCidrBlock": argv["--DestinationCidrBlock"],
+        "RouteTableName": argv.get("--RouteTableName"),
+        "GatewayIp": argv.get("--GatewayIp"),
+        "DestinationCidrBlock": argv.get("--DestinationCidrBlock"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -96,8 +96,8 @@ def doDescribeRouteTableConflicts(argv, arglist):
         return
 
     param = {
-        "RouteTableCidrBlock": argv["--RouteTableCidrBlock"],
-        "VpcId": argv["--VpcId"],
+        "RouteTableCidrBlock": argv.get("--RouteTableCidrBlock"),
+        "VpcId": argv.get("--VpcId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -130,9 +130,9 @@ def doDeleteClusterInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": argv["--ClusterId"],
+        "ClusterId": argv.get("--ClusterId"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceDeleteMode": argv["--InstanceDeleteMode"],
+        "InstanceDeleteMode": argv.get("--InstanceDeleteMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -166,7 +166,7 @@ def doCreateCluster(argv, arglist):
 
     param = {
         "ClusterCIDRSettings": Utils.try_to_json(argv, "--ClusterCIDRSettings"),
-        "ClusterType": argv["--ClusterType"],
+        "ClusterType": argv.get("--ClusterType"),
         "RunInstancesForNode": Utils.try_to_json(argv, "--RunInstancesForNode"),
         "ClusterBasicSettings": Utils.try_to_json(argv, "--ClusterBasicSettings"),
         "ClusterAdvancedSettings": Utils.try_to_json(argv, "--ClusterAdvancedSettings"),
@@ -204,8 +204,8 @@ def doDeleteCluster(argv, arglist):
         return
 
     param = {
-        "ClusterId": argv["--ClusterId"],
-        "InstanceDeleteMode": argv["--InstanceDeleteMode"],
+        "ClusterId": argv.get("--ClusterId"),
+        "InstanceDeleteMode": argv.get("--InstanceDeleteMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -238,11 +238,11 @@ def doDescribeExistedInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": argv["--ClusterId"],
+        "ClusterId": argv.get("--ClusterId"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
-        "VagueIpAddress": argv["--VagueIpAddress"],
-        "VagueInstanceName": argv["--VagueInstanceName"],
+        "VagueIpAddress": argv.get("--VagueIpAddress"),
+        "VagueInstanceName": argv.get("--VagueInstanceName"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -277,9 +277,9 @@ def doCreateClusterRoute(argv, arglist):
         return
 
     param = {
-        "RouteTableName": argv["--RouteTableName"],
-        "DestinationCidrBlock": argv["--DestinationCidrBlock"],
-        "GatewayIp": argv["--GatewayIp"],
+        "RouteTableName": argv.get("--RouteTableName"),
+        "DestinationCidrBlock": argv.get("--DestinationCidrBlock"),
+        "GatewayIp": argv.get("--GatewayIp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -312,7 +312,7 @@ def doAddExistedInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": argv["--ClusterId"],
+        "ClusterId": argv.get("--ClusterId"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
@@ -350,9 +350,9 @@ def doCreateClusterRouteTable(argv, arglist):
         return
 
     param = {
-        "RouteTableName": argv["--RouteTableName"],
-        "RouteTableCidrBlock": argv["--RouteTableCidrBlock"],
-        "VpcId": argv["--VpcId"],
+        "RouteTableName": argv.get("--RouteTableName"),
+        "RouteTableCidrBlock": argv.get("--RouteTableCidrBlock"),
+        "VpcId": argv.get("--VpcId"),
         "IgnoreClusterCidrConflict": Utils.try_to_json(argv, "--IgnoreClusterCidrConflict"),
 
     }
@@ -418,7 +418,7 @@ def doDescribeClusterRoutes(argv, arglist):
         return
 
     param = {
-        "RouteTableName": argv["--RouteTableName"],
+        "RouteTableName": argv.get("--RouteTableName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -451,7 +451,7 @@ def doDescribeClusterSecurity(argv, arglist):
         return
 
     param = {
-        "ClusterId": argv["--ClusterId"],
+        "ClusterId": argv.get("--ClusterId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -484,7 +484,7 @@ def doDeleteClusterRouteTable(argv, arglist):
         return
 
     param = {
-        "RouteTableName": argv["--RouteTableName"],
+        "RouteTableName": argv.get("--RouteTableName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -517,8 +517,8 @@ def doCreateClusterInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": argv["--ClusterId"],
-        "RunInstancePara": argv["--RunInstancePara"],
+        "ClusterId": argv.get("--ClusterId"),
+        "RunInstancePara": argv.get("--RunInstancePara"),
         "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
 
     }
@@ -552,7 +552,7 @@ def doDescribeClusterInstances(argv, arglist):
         return
 
     param = {
-        "ClusterId": argv["--ClusterId"],
+        "ClusterId": argv.get("--ClusterId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),

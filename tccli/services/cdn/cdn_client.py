@@ -25,14 +25,14 @@ def doListTopData(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "Metric": argv["--Metric"],
-        "Filter": argv["--Filter"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Metric": argv.get("--Metric"),
+        "Filter": argv.get("--Filter"),
         "Domains": Utils.try_to_json(argv, "--Domains"),
         "Project": Utils.try_to_json(argv, "--Project"),
         "Detail": Utils.try_to_json(argv, "--Detail"),
-        "Code": argv["--Code"],
+        "Code": argv.get("--Code"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -65,12 +65,12 @@ def doDescribeOriginData(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "Metric": argv["--Metric"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Metric": argv.get("--Metric"),
         "Domains": Utils.try_to_json(argv, "--Domains"),
         "Project": Utils.try_to_json(argv, "--Project"),
-        "Interval": argv["--Interval"],
+        "Interval": argv.get("--Interval"),
         "Detail": Utils.try_to_json(argv, "--Detail"),
 
     }
@@ -104,7 +104,7 @@ def doDescribeMapInfo(argv, arglist):
         return
 
     param = {
-        "Name": argv["--Name"],
+        "Name": argv.get("--Name"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -137,10 +137,10 @@ def doGetDisableRecords(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "Url": argv["--Url"],
-        "Status": argv["--Status"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Url": argv.get("--Url"),
+        "Status": argv.get("--Status"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -205,11 +205,11 @@ def doDescribeIpVisit(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "Domains": Utils.try_to_json(argv, "--Domains"),
         "Project": Utils.try_to_json(argv, "--Project"),
-        "Interval": argv["--Interval"],
+        "Interval": argv.get("--Interval"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -242,18 +242,18 @@ def doDescribeCdnData(argv, arglist):
         return
 
     param = {
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
-        "Metric": argv["--Metric"],
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Metric": argv.get("--Metric"),
         "Domains": Utils.try_to_json(argv, "--Domains"),
         "Project": Utils.try_to_json(argv, "--Project"),
-        "Interval": argv["--Interval"],
+        "Interval": argv.get("--Interval"),
         "Detail": Utils.try_to_json(argv, "--Detail"),
         "Isp": Utils.try_to_json(argv, "--Isp"),
         "District": Utils.try_to_json(argv, "--District"),
-        "Protocol": argv["--Protocol"],
-        "DataSource": argv["--DataSource"],
-        "IpProtocol": argv["--IpProtocol"],
+        "Protocol": argv.get("--Protocol"),
+        "DataSource": argv.get("--DataSource"),
+        "IpProtocol": argv.get("--IpProtocol"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -25,14 +25,14 @@ def doCreateContractByUpload(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
         "SignInfos": Utils.try_to_json(argv, "--SignInfos"),
-        "ContractFile": argv["--ContractFile"],
-        "ContractName": argv["--ContractName"],
-        "Initiator": argv["--Initiator"],
-        "Remarks": argv["--Remarks"],
-        "ExpireTime": argv["--ExpireTime"],
+        "ContractFile": argv.get("--ContractFile"),
+        "ContractName": argv.get("--ContractName"),
+        "Initiator": argv.get("--Initiator"),
+        "Remarks": argv.get("--Remarks"),
+        "ExpireTime": argv.get("--ExpireTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -65,11 +65,11 @@ def doCreateSeal(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "AccountResId": argv["--AccountResId"],
-        "ImgUrl": argv["--ImgUrl"],
-        "ImgData": argv["--ImgData"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "AccountResId": argv.get("--AccountResId"),
+        "ImgUrl": argv.get("--ImgUrl"),
+        "ImgData": argv.get("--ImgData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -102,9 +102,9 @@ def doDownloadContract(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "ContractResId": argv["--ContractResId"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ContractResId": argv.get("--ContractResId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -137,8 +137,8 @@ def doDeleteAccount(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
         "AccountList": Utils.try_to_json(argv, "--AccountList"),
 
     }
@@ -172,8 +172,8 @@ def doDescribeTaskStatus(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
         "TaskId": Utils.try_to_json(argv, "--TaskId"),
 
     }
@@ -207,12 +207,12 @@ def doCreatePersonalAccount(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "Name": argv["--Name"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "Name": argv.get("--Name"),
         "IdentType": Utils.try_to_json(argv, "--IdentType"),
-        "IdentNo": argv["--IdentNo"],
-        "MobilePhone": argv["--MobilePhone"],
+        "IdentNo": argv.get("--IdentNo"),
+        "MobilePhone": argv.get("--MobilePhone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -245,16 +245,16 @@ def doSignContractByKeyword(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "ContractResId": argv["--ContractResId"],
-        "AccountResId": argv["--AccountResId"],
-        "AuthorizationTime": argv["--AuthorizationTime"],
-        "Position": argv["--Position"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ContractResId": argv.get("--ContractResId"),
+        "AccountResId": argv.get("--AccountResId"),
+        "AuthorizationTime": argv.get("--AuthorizationTime"),
+        "Position": argv.get("--Position"),
         "SignKeyword": Utils.try_to_json(argv, "--SignKeyword"),
-        "SealResId": argv["--SealResId"],
+        "SealResId": argv.get("--SealResId"),
         "CertType": Utils.try_to_json(argv, "--CertType"),
-        "ImageData": argv["--ImageData"],
+        "ImageData": argv.get("--ImageData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -287,10 +287,10 @@ def doDeleteSeal(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "AccountResId": argv["--AccountResId"],
-        "SealResId": argv["--SealResId"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "AccountResId": argv.get("--AccountResId"),
+        "SealResId": argv.get("--SealResId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -323,16 +323,16 @@ def doCreateEnterpriseAccount(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "Name": argv["--Name"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "Name": argv.get("--Name"),
         "IdentType": Utils.try_to_json(argv, "--IdentType"),
-        "IdentNo": argv["--IdentNo"],
-        "MobilePhone": argv["--MobilePhone"],
-        "TransactorName": argv["--TransactorName"],
+        "IdentNo": argv.get("--IdentNo"),
+        "MobilePhone": argv.get("--MobilePhone"),
+        "TransactorName": argv.get("--TransactorName"),
         "TransactorIdentType": Utils.try_to_json(argv, "--TransactorIdentType"),
-        "TransactorIdentNo": argv["--TransactorIdentNo"],
-        "TransactorPhone": argv["--TransactorPhone"],
+        "TransactorIdentNo": argv.get("--TransactorIdentNo"),
+        "TransactorPhone": argv.get("--TransactorPhone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -365,10 +365,10 @@ def doSendVcode(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "ContractResId": argv["--ContractResId"],
-        "AccountResId": argv["--AccountResId"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ContractResId": argv.get("--ContractResId"),
+        "AccountResId": argv.get("--AccountResId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -401,11 +401,11 @@ def doCheckVcode(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "AccountResId": argv["--AccountResId"],
-        "ContractResId": argv["--ContractResId"],
-        "VerifyCode": argv["--VerifyCode"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "AccountResId": argv.get("--AccountResId"),
+        "ContractResId": argv.get("--ContractResId"),
+        "VerifyCode": argv.get("--VerifyCode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -438,16 +438,16 @@ def doSignContractByCoordinate(argv, arglist):
         return
 
     param = {
-        "Module": argv["--Module"],
-        "Operation": argv["--Operation"],
-        "ContractResId": argv["--ContractResId"],
-        "AccountResId": argv["--AccountResId"],
-        "AuthorizationTime": argv["--AuthorizationTime"],
-        "Position": argv["--Position"],
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ContractResId": argv.get("--ContractResId"),
+        "AccountResId": argv.get("--AccountResId"),
+        "AuthorizationTime": argv.get("--AuthorizationTime"),
+        "Position": argv.get("--Position"),
         "SignLocations": Utils.try_to_json(argv, "--SignLocations"),
-        "SealResId": argv["--SealResId"],
+        "SealResId": argv.get("--SealResId"),
         "CertType": Utils.try_to_json(argv, "--CertType"),
-        "ImageData": argv["--ImageData"],
+        "ImageData": argv.get("--ImageData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -25,9 +25,9 @@ def doDataManipulation(argv, arglist):
         return
 
     param = {
-        "OpType": argv["--OpType"],
-        "Encoding": argv["--Encoding"],
-        "Contents": argv["--Contents"],
+        "OpType": argv.get("--OpType"),
+        "Encoding": argv.get("--Encoding"),
+        "Contents": argv.get("--Contents"),
         "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
 
     }
@@ -62,25 +62,25 @@ def doDataSearch(argv, arglist):
 
     param = {
         "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
-        "SearchQuery": argv["--SearchQuery"],
+        "SearchQuery": argv.get("--SearchQuery"),
         "PageId": Utils.try_to_json(argv, "--PageId"),
         "NumPerPage": Utils.try_to_json(argv, "--NumPerPage"),
-        "SearchId": argv["--SearchId"],
+        "SearchId": argv.get("--SearchId"),
         "QueryEncode": Utils.try_to_json(argv, "--QueryEncode"),
         "RankType": Utils.try_to_json(argv, "--RankType"),
-        "NumFilter": argv["--NumFilter"],
-        "ClFilter": argv["--ClFilter"],
-        "Extra": argv["--Extra"],
+        "NumFilter": argv.get("--NumFilter"),
+        "ClFilter": argv.get("--ClFilter"),
+        "Extra": argv.get("--Extra"),
         "SourceId": Utils.try_to_json(argv, "--SourceId"),
         "SecondSearch": Utils.try_to_json(argv, "--SecondSearch"),
         "MaxDocReturn": Utils.try_to_json(argv, "--MaxDocReturn"),
         "IsSmartbox": Utils.try_to_json(argv, "--IsSmartbox"),
         "EnableAbsHighlight": Utils.try_to_json(argv, "--EnableAbsHighlight"),
         "QcBid": Utils.try_to_json(argv, "--QcBid"),
-        "GroupBy": argv["--GroupBy"],
-        "Distinct": argv["--Distinct"],
-        "L4RankExpression": argv["--L4RankExpression"],
-        "MatchValue": argv["--MatchValue"],
+        "GroupBy": argv.get("--GroupBy"),
+        "Distinct": argv.get("--Distinct"),
+        "L4RankExpression": argv.get("--L4RankExpression"),
+        "MatchValue": argv.get("--MatchValue"),
         "Longitude": Utils.try_to_json(argv, "--Longitude"),
         "Latitude": Utils.try_to_json(argv, "--Latitude"),
         "MultiFilter": Utils.try_to_json(argv, "--MultiFilter"),

@@ -59,7 +59,7 @@ def doTerminateDBInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -95,16 +95,16 @@ def doCreateDBInstance(argv, arglist):
         "SecondaryNum": Utils.try_to_json(argv, "--SecondaryNum"),
         "Memory": Utils.try_to_json(argv, "--Memory"),
         "Volume": Utils.try_to_json(argv, "--Volume"),
-        "MongoVersion": argv["--MongoVersion"],
-        "MachineCode": argv["--MachineCode"],
+        "MongoVersion": argv.get("--MongoVersion"),
+        "MachineCode": argv.get("--MachineCode"),
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Zone": argv["--Zone"],
+        "Zone": argv.get("--Zone"),
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
-        "Password": argv["--Password"],
+        "Password": argv.get("--Password"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
-        "UniqVpcId": argv["--UniqVpcId"],
-        "UniqSubnetId": argv["--UniqSubnetId"],
+        "UniqVpcId": argv.get("--UniqVpcId"),
+        "UniqSubnetId": argv.get("--UniqSubnetId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -137,7 +137,7 @@ def doDescribeClientConnections(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -174,15 +174,15 @@ def doCreateDBInstanceHour(argv, arglist):
         "Volume": Utils.try_to_json(argv, "--Volume"),
         "ReplicateSetNum": Utils.try_to_json(argv, "--ReplicateSetNum"),
         "SecondaryNum": Utils.try_to_json(argv, "--SecondaryNum"),
-        "EngineVersion": argv["--EngineVersion"],
-        "Machine": argv["--Machine"],
+        "EngineVersion": argv.get("--EngineVersion"),
+        "Machine": argv.get("--Machine"),
         "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Zone": argv["--Zone"],
-        "InstanceRole": argv["--InstanceRole"],
-        "InstanceType": argv["--InstanceType"],
+        "Zone": argv.get("--Zone"),
+        "InstanceRole": argv.get("--InstanceRole"),
+        "InstanceType": argv.get("--InstanceType"),
         "Encrypt": Utils.try_to_json(argv, "--Encrypt"),
-        "VpcId": argv["--VpcId"],
-        "SubnetId": argv["--SubnetId"],
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
 
@@ -217,9 +217,9 @@ def doDescribeSlowLog(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "StartTime": argv["--StartTime"],
-        "EndTime": argv["--EndTime"],
+        "InstanceId": argv.get("--InstanceId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "SlowMS": Utils.try_to_json(argv, "--SlowMS"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -255,8 +255,8 @@ def doRenameInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "NewName": argv["--NewName"],
+        "InstanceId": argv.get("--InstanceId"),
+        "NewName": argv.get("--NewName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -289,7 +289,7 @@ def doUpgradeDBInstance(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "Memory": Utils.try_to_json(argv, "--Memory"),
         "Volume": Utils.try_to_json(argv, "--Volume"),
         "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
@@ -359,7 +359,7 @@ def doDescribeSpecInfo(argv, arglist):
         return
 
     param = {
-        "Zone": argv["--Zone"],
+        "Zone": argv.get("--Zone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -392,9 +392,9 @@ def doSetPassword(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
-        "UserName": argv["--UserName"],
-        "Password": argv["--Password"],
+        "InstanceId": argv.get("--InstanceId"),
+        "UserName": argv.get("--UserName"),
+        "Password": argv.get("--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -427,7 +427,7 @@ def doUpgradeDBInstanceHour(argv, arglist):
         return
 
     param = {
-        "InstanceId": argv["--InstanceId"],
+        "InstanceId": argv.get("--InstanceId"),
         "Memory": Utils.try_to_json(argv, "--Memory"),
         "Volume": Utils.try_to_json(argv, "--Volume"),
         "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
@@ -467,13 +467,13 @@ def doDescribeDBInstances(argv, arglist):
         "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
         "ClusterType": Utils.try_to_json(argv, "--ClusterType"),
         "Status": Utils.try_to_json(argv, "--Status"),
-        "VpcId": argv["--VpcId"],
-        "SubnetId": argv["--SubnetId"],
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
         "PayMode": Utils.try_to_json(argv, "--PayMode"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderBy": argv["--OrderBy"],
-        "OrderByType": argv["--OrderByType"],
+        "OrderBy": argv.get("--OrderBy"),
+        "OrderByType": argv.get("--OrderByType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
