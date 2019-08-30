@@ -243,6 +243,10 @@ INFO = {
       {
         "name": "IsFilterExcluster",
         "desc": "标识是否使用ExclusterType字段, false不使用，true使用"
+      },
+      {
+        "name": "ExclusterIds",
+        "desc": "独享集群ID"
       }
     ],
     "desc": "查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回10条实例记录，单次请求最多支持返回100条实例记录。"
@@ -627,7 +631,7 @@ INFO = {
         "desc": "表名称，通过 DescribeDatabaseObjects 接口获取。"
       }
     ],
-    "desc": "本接口（DescribeDatabaseObjects）用于查询云数据库实例的表信息。"
+    "desc": "本接口（DescribeDatabaseTable）用于查询云数据库实例的表信息。"
   },
   "DescribeDCDBUpgradePrice": {
     "params": [

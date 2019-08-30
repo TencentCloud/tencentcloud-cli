@@ -27,6 +27,23 @@ INFO = {
     ],
     "desc": "用于创建任务模板"
   },
+  "CreateCpmComputeEnv": {
+    "params": [
+      {
+        "name": "ComputeEnv",
+        "desc": "计算环境信息"
+      },
+      {
+        "name": "Placement",
+        "desc": "位置信息"
+      },
+      {
+        "name": "ClientToken",
+        "desc": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。"
+      }
+    ],
+    "desc": "创建黑石计算环境"
+  },
   "TerminateComputeNode": {
     "params": [
       {

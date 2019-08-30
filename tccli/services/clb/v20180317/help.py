@@ -232,7 +232,7 @@ INFO = {
         "desc": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。"
       }
     ],
-    "desc": "ModifyListener接口用来修改应用型负载均衡监听器的属性，包括监听器名称、健康检查参数、证书信息、转发策略等。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "ModifyListener接口用来修改负载均衡监听器的属性，包括监听器名称、健康检查参数、证书信息、转发策略等。本接口不支持传统型负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "DeleteLoadBalancer": {
     "params": [
@@ -493,7 +493,7 @@ INFO = {
         "desc": "要查询的负载均衡实例 ID列表"
       }
     ],
-    "desc": "DescribeTargetHealth 接口用来获取应用型负载均衡后端的健康检查结果。"
+    "desc": "DescribeTargetHealth 接口用来获取负载均衡后端服务的健康检查结果，不支持传统型负载均衡。"
   },
   "DescribeTargets": {
     "params": [
@@ -645,7 +645,7 @@ INFO = {
         "desc": "要批量修改权重的列表"
       }
     ],
-    "desc": "BatchModifyTargetWeight接口用于批量修改监听器绑定的后端机器的转发权重，当前接口只支持应用型HTTP/HTTPS监听器。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "BatchModifyTargetWeight接口用于批量修改负载均衡监听器绑定的后端机器的转发权重，暂时只支持HTTP/HTTPS监听器。不支持传统型负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "DeleteRewrite": {
     "params": [

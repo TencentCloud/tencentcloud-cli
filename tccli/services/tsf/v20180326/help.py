@@ -22,6 +22,10 @@ INFO = {
       {
         "name": "MicroserviceType",
         "desc": "微服务类型"
+      },
+      {
+        "name": "ApplicationResourceTypeList",
+        "desc": "资源类型数组"
       }
     ],
     "desc": "查询简单应用列表"
@@ -147,6 +151,10 @@ INFO = {
       {
         "name": "NamespaceId",
         "desc": "命名空间ID，不传入时查询全量"
+      },
+      {
+        "name": "NamespaceResourceTypeList",
+        "desc": "查询资源类型列表"
       }
     ],
     "desc": "查询简单命名空间列表 "
@@ -234,6 +242,10 @@ INFO = {
       {
         "name": "NamespaceDesc",
         "desc": "命名空间描述"
+      },
+      {
+        "name": "NamespaceResourceType",
+        "desc": "命名空间资源类型(默认值为DEF)"
       }
     ],
     "desc": "创建命名空间"
@@ -643,6 +655,10 @@ INFO = {
       {
         "name": "ClusterId",
         "desc": "集群ID"
+      },
+      {
+        "name": "GroupResourceTypeList",
+        "desc": "部署组资源类型列表"
       }
     ],
     "desc": "获取虚拟机部署组列表"
@@ -783,6 +799,10 @@ INFO = {
       {
         "name": "MicroserviceType",
         "desc": "应用微服务类型"
+      },
+      {
+        "name": "ApplicationResourceType",
+        "desc": "应有资源类型"
       }
     ],
     "desc": "创建应用"
@@ -871,6 +891,10 @@ INFO = {
       {
         "name": "MicroserviceType",
         "desc": "应用的微服务类型"
+      },
+      {
+        "name": "ApplicationResourceTypeList",
+        "desc": "应用资源类型数组"
       }
     ],
     "desc": "获取应用列表"

@@ -916,6 +916,7 @@ def doDescribeDCDBInstances(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "ExclusterType": Utils.try_to_json(argv, "--ExclusterType"),
         "IsFilterExcluster": Utils.try_to_json(argv, "--IsFilterExcluster"),
+        "ExclusterIds": Utils.try_to_json(argv, "--ExclusterIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

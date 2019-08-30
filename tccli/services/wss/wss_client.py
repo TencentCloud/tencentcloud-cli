@@ -12,26 +12,21 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tbp.v20190627 import tbp_client as tbp_client_v20190627
-from tencentcloud.tbp.v20190627 import models as models_v20190627
-from tencentcloud.tbp.v20190311 import tbp_client as tbp_client_v20190311
-from tencentcloud.tbp.v20190311 import models as models_v20190311
-from tccli.services.tbp import v20190627
-from tccli.services.tbp.v20190627 import help as v20190627_help
-from tccli.services.tbp import v20190311
-from tccli.services.tbp.v20190311 import help as v20190311_help
+from tencentcloud.wss.v20180426 import wss_client as wss_client_v20180426
+from tencentcloud.wss.v20180426 import models as models_v20180426
+from tccli.services.wss import v20180426
+from tccli.services.wss.v20180426 import help as v20180426_help
 
 
-def doTextReset(argv, arglist):
+def doDeleteCert(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TextReset", g_param[OptionsDefine.Version])
+        show_help("DeleteCert", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BotId": argv.get("--BotId"),
-        "TerminalId": argv.get("--TerminalId"),
-        "BotEnv": argv.get("--BotEnv"),
+        "Id": argv.get("--Id"),
+        "ModuleType": argv.get("--ModuleType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -42,12 +37,12 @@ def doTextReset(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.WssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextResetRequest()
+    model = models.DeleteCertRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TextReset(model)
+    rsp = client.DeleteCert(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -57,18 +52,21 @@ def doTextReset(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTextProcess(argv, arglist):
+def doDescribeCertList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TextProcess", g_param[OptionsDefine.Version])
+        show_help("DescribeCertList", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BotId": argv.get("--BotId"),
-        "TerminalId": argv.get("--TerminalId"),
-        "InputText": argv.get("--InputText"),
-        "BotEnv": argv.get("--BotEnv"),
-        "SessionAttributes": argv.get("--SessionAttributes"),
+        "ModuleType": argv.get("--ModuleType"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SearchKey": argv.get("--SearchKey"),
+        "CertType": argv.get("--CertType"),
+        "Id": argv.get("--Id"),
+        "WithCert": argv.get("--WithCert"),
+        "AltDomain": argv.get("--AltDomain"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -79,12 +77,12 @@ def doTextProcess(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.WssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextProcessRequest()
+    model = models.DescribeCertListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TextProcess(model)
+    rsp = client.DescribeCertList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -94,17 +92,19 @@ def doTextProcess(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReset(argv, arglist):
+def doUploadCert(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Reset", g_param[OptionsDefine.Version])
+        show_help("UploadCert", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BotId": argv.get("--BotId"),
-        "UserId": argv.get("--UserId"),
-        "BotVersion": argv.get("--BotVersion"),
-        "BotEnv": argv.get("--BotEnv"),
+        "Cert": argv.get("--Cert"),
+        "CertType": argv.get("--CertType"),
+        "ProjectId": argv.get("--ProjectId"),
+        "ModuleType": argv.get("--ModuleType"),
+        "Key": argv.get("--Key"),
+        "Alias": argv.get("--Alias"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -115,12 +115,12 @@ def doReset(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TbpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.WssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetRequest()
+    model = models.UploadCertRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Reset(model)
+    rsp = client.UploadCert(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -131,37 +131,33 @@ def doReset(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190627": tbp_client_v20190627,
-    "v20190311": tbp_client_v20190311,
+    "v20180426": wss_client_v20180426,
 
 }
 
 MODELS_MAP = {
-    "v20190627": models_v20190627,
-    "v20190311": models_v20190311,
+    "v20180426": models_v20180426,
 
 }
 
 ACTION_MAP = {
-    "TextReset": doTextReset,
-    "TextProcess": doTextProcess,
-    "Reset": doReset,
+    "DeleteCert": doDeleteCert,
+    "DescribeCertList": doDescribeCertList,
+    "UploadCert": doUploadCert,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190627.version,
-    v20190311.version,
+    v20180426.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190627.version.replace('-', ''): {"help": v20190627_help.INFO,"desc": v20190627_help.DESC},
-     'v' + v20190311.version.replace('-', ''): {"help": v20190311_help.INFO,"desc": v20190311_help.DESC},
+     'v' + v20180426.version.replace('-', ''): {"help": v20180426_help.INFO,"desc": v20180426_help.DESC},
 
 }
 
 
-def tbp_action(argv, arglist):
+def wss_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -177,7 +173,7 @@ def tbp_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "tbp", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "wss", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -198,7 +194,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("tbp", tbp_action)
+    cmd = NiceCommand("wss", wss_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -257,11 +253,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["tbp"][OptionsDefine.Version]
+            version = config["wss"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["tbp"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["wss"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -278,7 +274,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tbp", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "wss", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -288,7 +284,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["tbp"]["version"]
+        version = profile["wss"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

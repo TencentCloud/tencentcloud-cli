@@ -1276,7 +1276,7 @@ INFO = {
       },
       {
         "name": "CertificateKey",
-        "desc": "秘钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。"
+        "desc": "密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。"
       }
     ],
     "desc": "本接口（CreateCertificate）用于创建Gaap相关证书和配置文件，包括基础认证配置文件，客户端CA证书，服务器SSL证书，Gaap SSL证书以及源站CA证书。"

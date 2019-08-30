@@ -25,8 +25,8 @@ def doRecognizeCar(argv, arglist):
         return
 
     param = {
-        "ImageBase64": argv.get("--ImageBase64"),
         "ImageUrl": argv.get("--ImageUrl"),
+        "ImageBase64": argv.get("--ImageBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

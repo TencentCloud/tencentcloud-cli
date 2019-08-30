@@ -12,21 +12,24 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.gme.v20180711 import gme_client as gme_client_v20180711
-from tencentcloud.gme.v20180711 import models as models_v20180711
-from tccli.services.gme import v20180711
-from tccli.services.gme.v20180711 import help as v20180711_help
+from tencentcloud.tiems.v20190416 import tiems_client as tiems_client_v20190416
+from tencentcloud.tiems.v20190416 import models as models_v20190416
+from tccli.services.tiems import v20190416
+from tccli.services.tiems.v20190416 import help as v20190416_help
 
 
-def doDescribeFilterResult(argv, arglist):
+def doCreateService(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeFilterResult", g_param[OptionsDefine.Version])
+        show_help("CreateService", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BizId": Utils.try_to_json(argv, "--BizId"),
-        "FileId": argv.get("--FileId"),
+        "Scaler": Utils.try_to_json(argv, "--Scaler"),
+        "ServiceConfigId": Utils.try_to_json(argv, "--ServiceConfigId"),
+        "Name": argv.get("--Name"),
+        "ScaleMode": argv.get("--ScaleMode"),
+        "Cluster": argv.get("--Cluster"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -37,12 +40,12 @@ def doDescribeFilterResult(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeFilterResultRequest()
+    model = models.CreateServiceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeFilterResult(model)
+    rsp = client.CreateService(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -52,56 +55,18 @@ def doDescribeFilterResult(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doVoiceFilter(argv, arglist):
+def doDescribeServices(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("VoiceFilter", g_param[OptionsDefine.Version])
+        show_help("DescribeServices", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BizId": Utils.try_to_json(argv, "--BizId"),
-        "FileId": argv.get("--FileId"),
-        "FileName": argv.get("--FileName"),
-        "FileUrl": argv.get("--FileUrl"),
-        "FileContent": argv.get("--FileContent"),
-        "OpenId": argv.get("--OpenId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GmeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.VoiceFilterRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.VoiceFilter(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeFilterResultList(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeFilterResultList", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "BizId": Utils.try_to_json(argv, "--BizId"),
-        "StartDate": argv.get("--StartDate"),
-        "EndDate": argv.get("--EndDate"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Order": argv.get("--Order"),
+        "OrderField": argv.get("--OrderField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -112,12 +77,12 @@ def doDescribeFilterResultList(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeFilterResultListRequest()
+    model = models.DescribeServicesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeFilterResultList(model)
+    rsp = client.DescribeServices(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -127,18 +92,20 @@ def doDescribeFilterResultList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doScanVoice(argv, arglist):
+def doCreateServiceConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ScanVoice", g_param[OptionsDefine.Version])
+        show_help("CreateServiceConfig", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BizId": Utils.try_to_json(argv, "--BizId"),
-        "Scenes": Utils.try_to_json(argv, "--Scenes"),
-        "Live": Utils.try_to_json(argv, "--Live"),
-        "Tasks": Utils.try_to_json(argv, "--Tasks"),
-        "Callback": argv.get("--Callback"),
+        "Name": argv.get("--Name"),
+        "Runtime": argv.get("--Runtime"),
+        "ModelUri": argv.get("--ModelUri"),
+        "Cpu": Utils.try_to_json(argv, "--Cpu"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "TflopUnits": Utils.try_to_json(argv, "--TflopUnits"),
+        "GpuMemory": Utils.try_to_json(argv, "--GpuMemory"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -149,12 +116,12 @@ def doScanVoice(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ScanVoiceRequest()
+    model = models.CreateServiceConfigRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ScanVoice(model)
+    rsp = client.CreateServiceConfig(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -164,15 +131,18 @@ def doScanVoice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeScanResultList(argv, arglist):
+def doDescribeServiceConfigs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeScanResultList", g_param[OptionsDefine.Version])
+        show_help("DescribeServiceConfigs", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BizId": Utils.try_to_json(argv, "--BizId"),
-        "TaskIdList": Utils.try_to_json(argv, "--TaskIdList"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Order": argv.get("--Order"),
+        "OrderField": argv.get("--OrderField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -183,12 +153,148 @@ def doDescribeScanResultList(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeScanResultListRequest()
+    model = models.DescribeServiceConfigsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeScanResultList(model)
+    rsp = client.DescribeServiceConfigs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteService(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteService", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceId": Utils.try_to_json(argv, "--ServiceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteServiceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteService(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteServiceConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteServiceConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceConfigId": Utils.try_to_json(argv, "--ServiceConfigId"),
+        "ServiceConfigName": argv.get("--ServiceConfigName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteServiceConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteServiceConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeRuntimes(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRuntimes", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRuntimesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRuntimes(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateService(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateService", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceId": Utils.try_to_json(argv, "--ServiceId"),
+        "Scaler": Utils.try_to_json(argv, "--Scaler"),
+        "ServiceConfigId": Utils.try_to_json(argv, "--ServiceConfigId"),
+        "ScaleMode": argv.get("--ScaleMode"),
+        "ServiceAction": argv.get("--ServiceAction"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateServiceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateService(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -199,35 +305,38 @@ def doDescribeScanResultList(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180711": gme_client_v20180711,
+    "v20190416": tiems_client_v20190416,
 
 }
 
 MODELS_MAP = {
-    "v20180711": models_v20180711,
+    "v20190416": models_v20190416,
 
 }
 
 ACTION_MAP = {
-    "DescribeFilterResult": doDescribeFilterResult,
-    "VoiceFilter": doVoiceFilter,
-    "DescribeFilterResultList": doDescribeFilterResultList,
-    "ScanVoice": doScanVoice,
-    "DescribeScanResultList": doDescribeScanResultList,
+    "CreateService": doCreateService,
+    "DescribeServices": doDescribeServices,
+    "CreateServiceConfig": doCreateServiceConfig,
+    "DescribeServiceConfigs": doDescribeServiceConfigs,
+    "DeleteService": doDeleteService,
+    "DeleteServiceConfig": doDeleteServiceConfig,
+    "DescribeRuntimes": doDescribeRuntimes,
+    "UpdateService": doUpdateService,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180711.version,
+    v20190416.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180711.version.replace('-', ''): {"help": v20180711_help.INFO,"desc": v20180711_help.DESC},
+     'v' + v20190416.version.replace('-', ''): {"help": v20190416_help.INFO,"desc": v20190416_help.DESC},
 
 }
 
 
-def gme_action(argv, arglist):
+def tiems_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -243,7 +352,7 @@ def gme_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "gme", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "tiems", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -264,7 +373,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("gme", gme_action)
+    cmd = NiceCommand("tiems", tiems_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -323,11 +432,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["gme"][OptionsDefine.Version]
+            version = config["tiems"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["gme"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["tiems"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -344,7 +453,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "gme", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tiems", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -354,7 +463,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["gme"]["version"]
+        version = profile["tiems"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

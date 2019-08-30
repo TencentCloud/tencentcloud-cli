@@ -37,7 +37,7 @@ INFO = {
         "desc": "机器人版本，取值\"dev\"或\"release\"，{调试版本：dev；线上版本：release}。"
       }
     ],
-    "desc": "会话重置接口"
+    "desc": "会话重置接口。已废弃，推荐使用最新版TextReset接口。"
   },
   "TextProcess": {
     "params": [
@@ -59,9 +59,9 @@ INFO = {
       },
       {
         "name": "SessionAttributes",
-        "desc": "透传字段，透传给endpoint服务。"
+        "desc": "透传字段，透传给用户自定义的WebService服务。"
       }
     ],
-    "desc": "接收调用侧的文本输入，返回应答文本。"
+    "desc": "接收调用侧的文本输入，返回应答文本。已废弃，推荐使用最新版TextProcess接口。"
   }
 }

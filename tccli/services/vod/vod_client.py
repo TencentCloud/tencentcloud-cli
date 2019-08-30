@@ -336,6 +336,7 @@ def doApplyUpload(argv, arglist):
         "StorageRegion": argv.get("--StorageRegion"),
         "ClassId": Utils.try_to_json(argv, "--ClassId"),
         "SourceContext": argv.get("--SourceContext"),
+        "SessionContext": argv.get("--SessionContext"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }

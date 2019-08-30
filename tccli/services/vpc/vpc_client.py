@@ -1857,8 +1857,11 @@ def doAllocateAddresses(argv, arglist):
     param = {
         "AddressCount": Utils.try_to_json(argv, "--AddressCount"),
         "InternetServiceProvider": argv.get("--InternetServiceProvider"),
+        "InternetChargeType": argv.get("--InternetChargeType"),
+        "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
         "AddressType": argv.get("--AddressType"),
         "AnycastZone": argv.get("--AnycastZone"),
+        "ApplicableForCLB": Utils.try_to_json(argv, "--ApplicableForCLB"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -5449,6 +5452,7 @@ def doModifyAddressAttribute(argv, arglist):
     param = {
         "AddressId": argv.get("--AddressId"),
         "AddressName": argv.get("--AddressName"),
+        "EipDirectConnection": argv.get("--EipDirectConnection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -233,7 +233,7 @@ INFO = {
         "desc": "老师视频url"
       }
     ],
-    "desc": "发起双路视频生成精彩集锦接口。该接口可以通过客户传入的学生音视频及老师视频两路Url，自动生成一堂课程的精彩集锦。需要通过SubmitDoubleVideoHighlights接口获取生成结果。"
+    "desc": "发起双路视频生成精彩集锦接口。该接口可以通过客户传入的学生音视频及老师视频两路Url，自动生成一堂课程的精彩集锦。需要通过DescribeHighlightResult\n接口获取生成结果。"
   },
   "DescribePersons": {
     "params": [

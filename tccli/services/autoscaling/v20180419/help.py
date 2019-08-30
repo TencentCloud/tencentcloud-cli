@@ -825,6 +825,15 @@ INFO = {
     ],
     "desc": "本接口（DeleteLifecycleHook）用于删除生命周期挂钩。"
   },
+  "DescribeAutoScalingGroupLastActivities": {
+    "params": [
+      {
+        "name": "AutoScalingGroupIds",
+        "desc": "伸缩组ID列表"
+      }
+    ],
+    "desc": "本接口（DescribeAutoScalingGroupLastActivities）用于查询伸缩组的最新一次伸缩活动记录。"
+  },
   "DescribeLifecycleHooks": {
     "params": [
       {

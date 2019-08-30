@@ -68,22 +68,22 @@ INFO = {
     ],
     "desc": "用于查询已有资源标签键值对"
   },
-  "DescribeTagKeys": {
+  "AddResourceTag": {
     "params": [
       {
-        "name": "CreateUin",
-        "desc": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询"
+        "name": "TagKey",
+        "desc": "标签键"
       },
       {
-        "name": "Offset",
-        "desc": "数据偏移量，默认为 0, 必须为Limit参数的整数倍"
+        "name": "TagValue",
+        "desc": "标签值"
       },
       {
-        "name": "Limit",
-        "desc": "每页大小，默认为 15"
+        "name": "Resource",
+        "desc": "资源六段式描述"
       }
     ],
-    "desc": "用于查询已建立的标签列表中的标签键。\n"
+    "desc": "本接口用于给标签关联资源"
   },
   "DeleteResourceTag": {
     "params": [
@@ -97,6 +97,19 @@ INFO = {
       }
     ],
     "desc": "本接口用于解除标签和资源的关联关系"
+  },
+  "CreateTag": {
+    "params": [
+      {
+        "name": "TagKey",
+        "desc": "标签键"
+      },
+      {
+        "name": "TagValue",
+        "desc": "标签值"
+      }
+    ],
+    "desc": "本接口用于创建一对标签键和标签值"
   },
   "DescribeTags": {
     "params": [
@@ -140,22 +153,59 @@ INFO = {
     ],
     "desc": "本接口用于修改资源关联的所有标签"
   },
-  "AddResourceTag": {
+  "DescribeResourcesByTags": {
     "params": [
       {
-        "name": "TagKey",
-        "desc": "标签键"
+        "name": "TagFilters",
+        "desc": "标签过滤数组"
       },
       {
-        "name": "TagValue",
-        "desc": "标签值"
+        "name": "CreateUin",
+        "desc": "创建标签者uin"
       },
       {
-        "name": "Resource",
-        "desc": "资源六段式描述"
+        "name": "Offset",
+        "desc": "数据偏移量，默认为 0, 必须为Limit参数的整数倍"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页大小，默认为 15"
+      },
+      {
+        "name": "ResourcePrefix",
+        "desc": "资源前缀"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "资源唯一标记"
+      },
+      {
+        "name": "ResourceRegion",
+        "desc": "资源所在地域"
+      },
+      {
+        "name": "ServiceType",
+        "desc": "业务类型"
       }
     ],
-    "desc": "本接口用于给标签关联资源"
+    "desc": "通过标签查询资源列表"
+  },
+  "DescribeTagKeys": {
+    "params": [
+      {
+        "name": "CreateUin",
+        "desc": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认为 0, 必须为Limit参数的整数倍"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页大小，默认为 15"
+      }
+    ],
+    "desc": "用于查询已建立的标签列表中的标签键。\n"
   },
   "DeleteTag": {
     "params": [
@@ -169,18 +219,5 @@ INFO = {
       }
     ],
     "desc": "本接口用于删除一对标签键和标签值"
-  },
-  "CreateTag": {
-    "params": [
-      {
-        "name": "TagKey",
-        "desc": "标签键"
-      },
-      {
-        "name": "TagValue",
-        "desc": "标签值"
-      }
-    ],
-    "desc": "本接口用于创建一对标签键和标签值"
   }
 }

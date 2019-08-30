@@ -47,7 +47,7 @@ INFO = {
       },
       {
         "name": "RunInstancesForNode",
-        "desc": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。"
+        "desc": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。"
       },
       {
         "name": "ClusterBasicSettings",
@@ -63,7 +63,7 @@ INFO = {
       },
       {
         "name": "ExistedInstancesForNode",
-        "desc": "已存在实例的配置信息"
+        "desc": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。"
       }
     ],
     "desc": "创建集群"
@@ -97,6 +97,31 @@ INFO = {
       }
     ],
     "desc": "扩展(新建)集群节点"
+  },
+  "CreateClusterAsGroup": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "AutoScalingGroupPara",
+        "desc": "伸缩组创建透传参数，json化字符串格式，详见[伸缩组创建实例](https://cloud.tencent.com/document/api/377/20440)接口。LaunchConfigurationId由LaunchConfigurePara参数创建，不支持填写"
+      },
+      {
+        "name": "LaunchConfigurePara",
+        "desc": "启动配置创建透传参数，json化字符串格式，详见[创建启动配置](https://cloud.tencent.com/document/api/377/20447)接口。另外ImageId参数由于集群维度已经有的ImageId信息，这个字段不需要填写。UserData字段设置通过UserScript设置，这个字段不需要填写。"
+      },
+      {
+        "name": "InstanceAdvancedSettings",
+        "desc": "节点高级配置信息"
+      },
+      {
+        "name": "Labels",
+        "desc": "节点Label数组"
+      }
+    ],
+    "desc": "为已经存在的集群创建伸缩组"
   },
   "DescribeExistedInstances": {
     "params": [
@@ -185,15 +210,19 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量,默认0"
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
       },
       {
         "name": "Limit",
-        "desc": "最大输出条数，默认20"
+        "desc": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
       },
       {
         "name": "InstanceIds",
-        "desc": "需要获取的节点实例Id列表(默认为空，表示拉取集群下所有节点实例)"
+        "desc": "需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。"
+      },
+      {
+        "name": "InstanceRole",
+        "desc": "节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。"
       }
     ],
     "desc": " 查询集群下节点实例信息 "
@@ -244,7 +273,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "最大输出条数，默认20"
+        "desc": "最大输出条数，默认20，最大为100"
       },
       {
         "name": "Filters",
