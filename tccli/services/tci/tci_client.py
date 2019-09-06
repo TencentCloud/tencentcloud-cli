@@ -170,9 +170,9 @@ def doModifyPerson(argv, arglist):
         return
 
     param = {
+        "LibraryId": argv.get("--LibraryId"),
         "PersonId": argv.get("--PersonId"),
         "JobNumber": argv.get("--JobNumber"),
-        "LibraryId": argv.get("--LibraryId"),
         "Mail": argv.get("--Mail"),
         "Male": Utils.try_to_json(argv, "--Male"),
         "PersonName": argv.get("--PersonName"),
@@ -394,11 +394,11 @@ def doSubmitConversationTask(argv, arglist):
 
     param = {
         "Lang": Utils.try_to_json(argv, "--Lang"),
+        "StudentUrl": argv.get("--StudentUrl"),
+        "TeacherUrl": argv.get("--TeacherUrl"),
         "VoiceEncodeType": Utils.try_to_json(argv, "--VoiceEncodeType"),
         "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
         "Functions": Utils.try_to_json(argv, "--Functions"),
-        "StudentUrl": argv.get("--StudentUrl"),
-        "TeacherUrl": argv.get("--TeacherUrl"),
         "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
 
     }
@@ -536,8 +536,8 @@ def doDeletePerson(argv, arglist):
         return
 
     param = {
-        "PersonId": argv.get("--PersonId"),
         "LibraryId": argv.get("--LibraryId"),
+        "PersonId": argv.get("--PersonId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1289,8 +1289,8 @@ def doDescribePerson(argv, arglist):
         return
 
     param = {
-        "PersonId": argv.get("--PersonId"),
         "LibraryId": argv.get("--LibraryId"),
+        "PersonId": argv.get("--PersonId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

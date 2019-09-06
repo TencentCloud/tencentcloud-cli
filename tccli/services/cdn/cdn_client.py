@@ -97,6 +97,73 @@ def doDescribeOriginData(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doPushUrlsCache(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PushUrlsCache", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Urls": Utils.try_to_json(argv, "--Urls"),
+        "UserAgent": argv.get("--UserAgent"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PushUrlsCacheRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PushUrlsCache(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCdnIp(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCdnIp", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Ips": Utils.try_to_json(argv, "--Ips"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCdnIpRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCdnIp(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeMapInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -121,6 +188,46 @@ def doDescribeMapInfo(argv, arglist):
     model = models.DescribeMapInfoRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeMapInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePurgeTasks(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePurgeTasks", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PurgeType": argv.get("--PurgeType"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "TaskId": argv.get("--TaskId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Keyword": argv.get("--Keyword"),
+        "Status": argv.get("--Status"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePurgeTasksRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePurgeTasks(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -189,6 +296,73 @@ def doDescribePayType(argv, arglist):
     model = models.DescribePayTypeRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePayType(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doPurgePathCache(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PurgePathCache", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Paths": Utils.try_to_json(argv, "--Paths"),
+        "FlushType": argv.get("--FlushType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PurgePathCacheRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PurgePathCache(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doPurgeUrlsCache(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PurgeUrlsCache", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Urls": Utils.try_to_json(argv, "--Urls"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PurgeUrlsCacheRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PurgeUrlsCache(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -312,6 +486,46 @@ def doDisableCaches(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePushTasks(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePushTasks", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "TaskId": argv.get("--TaskId"),
+        "Keyword": argv.get("--Keyword"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Area": argv.get("--Area"),
+        "Status": argv.get("--Status"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePushTasksRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePushTasks(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doEnableCaches(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -358,12 +572,18 @@ MODELS_MAP = {
 ACTION_MAP = {
     "ListTopData": doListTopData,
     "DescribeOriginData": doDescribeOriginData,
+    "PushUrlsCache": doPushUrlsCache,
+    "DescribeCdnIp": doDescribeCdnIp,
     "DescribeMapInfo": doDescribeMapInfo,
+    "DescribePurgeTasks": doDescribePurgeTasks,
     "GetDisableRecords": doGetDisableRecords,
     "DescribePayType": doDescribePayType,
+    "PurgePathCache": doPurgePathCache,
+    "PurgeUrlsCache": doPurgeUrlsCache,
     "DescribeIpVisit": doDescribeIpVisit,
     "DescribeCdnData": doDescribeCdnData,
     "DisableCaches": doDisableCaches,
+    "DescribePushTasks": doDescribePushTasks,
     "EnableCaches": doEnableCaches,
 
 }

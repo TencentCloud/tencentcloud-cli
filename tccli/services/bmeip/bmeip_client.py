@@ -551,7 +551,7 @@ def doDescribeEips(argv, arglist):
         "VpcId": argv.get("--VpcId"),
         "BindTypes": Utils.try_to_json(argv, "--BindTypes"),
         "ExclusiveTag": Utils.try_to_json(argv, "--ExclusiveTag"),
-        "AclId": Utils.try_to_json(argv, "--AclId"),
+        "AclId": argv.get("--AclId"),
         "BindAcl": Utils.try_to_json(argv, "--BindAcl"),
 
     }

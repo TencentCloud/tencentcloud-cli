@@ -71,6 +71,28 @@ INFO = {
     ],
     "desc": "DescribeOriginData 用于查询 CDN 实时回源监控数据，支持以下指标查询：\n\n+ 回源流量（单位为 byte）\n+ 回源带宽（单位为 bps）\n+ 回源请求数（单位为 次）\n+ 回源失败请求数（单位为 次）\n+ 回源失败率（单位为 %，小数点后保留两位）\n+ 回源状态码 2xx 汇总及各 2 开头回源状态码明细（单位为 个）\n+ 回源状态码 3xx 汇总及各 3 开头回源状态码明细（单位为 个）\n+ 回源状态码 4xx 汇总及各 4 开头回源状态码明细（单位为 个）\n+ 回源状态码 5xx 汇总及各 5 开头回源状态码明细（单位为 个）"
   },
+  "PushUrlsCache": {
+    "params": [
+      {
+        "name": "Urls",
+        "desc": "URL 列表，提交时需要包含协议头部（http:// 或 https://）"
+      },
+      {
+        "name": "UserAgent",
+        "desc": "预热请求回源时 HTTP 请求的 User-Agent 头部，默认为 TencentCdn"
+      }
+    ],
+    "desc": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，默认情况下每次调用可提交 20 条 URL，每日一共可提交 1000 条。"
+  },
+  "DescribeCdnIp": {
+    "params": [
+      {
+        "name": "Ips",
+        "desc": "需要查询的 IP 列表"
+      }
+    ],
+    "desc": "DescribeCdnIp 用于查询 CDN IP 归属。"
+  },
   "DescribeMapInfo": {
     "params": [
       {
@@ -79,6 +101,43 @@ INFO = {
       }
     ],
     "desc": "DescribeMapInfo 用于查询省份对应的 ID，运营商对应的 ID 信息。"
+  },
+  "DescribePurgeTasks": {
+    "params": [
+      {
+        "name": "PurgeType",
+        "desc": "查询刷新类型。url：查询 url 刷新记录；path：查询目录刷新记录。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间，如2018-08-08 00:00:00。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，如2018-08-08 23:59:59。"
+      },
+      {
+        "name": "TaskId",
+        "desc": "提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页查询偏移量，默认为 0 （第一页）。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页查询限制数目，默认为20。"
+      },
+      {
+        "name": "Keyword",
+        "desc": "查询关键字，请输入域名或 http(s):// 开头完整 URL。"
+      },
+      {
+        "name": "Status",
+        "desc": "查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。"
+      }
+    ],
+    "desc": "DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。"
   },
   "GetDisableRecords": {
     "params": [
@@ -104,6 +163,28 @@ INFO = {
   "DescribePayType": {
     "params": [],
     "desc": "DescribePayType 用于查询用户的计费类型，计费周期等信息。"
+  },
+  "PurgePathCache": {
+    "params": [
+      {
+        "name": "Paths",
+        "desc": "要刷新的目录列表，必须包含协议头部。"
+      },
+      {
+        "name": "FlushType",
+        "desc": "刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。"
+      }
+    ],
+    "desc": "PurgeUrlsCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。"
+  },
+  "PurgeUrlsCache": {
+    "params": [
+      {
+        "name": "Urls",
+        "desc": "要刷新的Url列表，必须包含协议头部。"
+      }
+    ],
+    "desc": "PurgeUrlsCache 用于批量刷新Url，一次提交将返回一个刷新任务id。"
   },
   "DescribeIpVisit": {
     "params": [
@@ -191,6 +272,43 @@ INFO = {
       }
     ],
     "desc": "DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，全网访问会直接返回 403。（接口尚在内测中，暂未全量开放使用）"
+  },
+  "DescribePushTasks": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "开始时间，如2018-08-08 00:00:00。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，如2018-08-08 23:59:59。"
+      },
+      {
+        "name": "TaskId",
+        "desc": "提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。"
+      },
+      {
+        "name": "Keyword",
+        "desc": "查询关键字，请输入域名或 http(s):// 开头完整 URL。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页查询偏移量，默认为 0 （第一页）。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页查询限制数目，默认为20。"
+      },
+      {
+        "name": "Area",
+        "desc": "查询刷新记录指定地区。mainland：中国大陆。"
+      },
+      {
+        "name": "Status",
+        "desc": "查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。"
+      }
+    ],
+    "desc": "DescribePushTasks 用于查询预热任务提交历史记录及执行进度。（接口尚在批量公测中，暂未全量开放使用）"
   },
   "EnableCaches": {
     "params": [

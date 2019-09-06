@@ -166,7 +166,7 @@ INFO = {
       },
       {
         "name": "Type",
-        "desc": "实例类型：1-Redis老集群版；2-Redis 2.8主从版；3-CKV主从版；4-CKV集群版；5-Redis 2.8单机版；7-Redis 4.0集群版"
+        "desc": "实例类型：1-Redis老集群版；2-Redis 2.8主从版；3-CKV主从版；4-CKV集群版；5-Redis 2.8单机版；6-Redis 4.0主从版；7-Redis 4.0集群版"
       },
       {
         "name": "SearchKeys",

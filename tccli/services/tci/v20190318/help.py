@@ -5,7 +5,7 @@ INFO = {
     "params": [
       {
         "name": "FileContent",
-        "desc": "输入分析对象内容"
+        "desc": "输入分析对象内容，输入数据格式参考FileType参数释义"
       },
       {
         "name": "FileType",
@@ -17,7 +17,7 @@ INFO = {
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+        "desc": "视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束"
       }
     ],
     "desc": "**提交线下小班（无课桌）课任务**  \n线下小班课是指有学生无课桌的课堂，满座15人以下，全局画面且背景不动，能清晰看到。  \n  \n**提供的功能接口有：**学生人脸识别、学生表情识别、学生肢体动作识别。  可分析的指标维度包括：身份识别、正脸、侧脸、抬头、低头、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、站立、举手、坐着等。\n  \n**对场景的要求为：**真实常规教室，满座15人以下，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上但是图像整体质量不能超过1080p。\n    \n**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。"
@@ -92,16 +92,16 @@ INFO = {
   "ModifyPerson": {
     "params": [
       {
+        "name": "LibraryId",
+        "desc": "人员库唯一标识符"
+      },
+      {
         "name": "PersonId",
         "desc": "人员唯一标识符"
       },
       {
         "name": "JobNumber",
         "desc": "人员工作号码"
-      },
-      {
-        "name": "LibraryId",
-        "desc": "人员库唯一标识符"
       },
       {
         "name": "Mail",
@@ -139,11 +139,11 @@ INFO = {
     "params": [
       {
         "name": "FileContent",
-        "desc": "输入分析对象内容"
+        "desc": "输入分析对象内容，输入数据格式参考FileType参数释义"
       },
       {
         "name": "FileType",
-        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址,audio_url: 音频文件"
+        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址，audio_url: 音频文件，picture：图片二进制数据的BASE64编码"
       },
       {
         "name": "Lang",
@@ -155,7 +155,7 @@ INFO = {
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+        "desc": "视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束"
       },
       {
         "name": "Template",
@@ -259,6 +259,14 @@ INFO = {
         "desc": "音频源的语言，默认0为英文，1为中文"
       },
       {
+        "name": "StudentUrl",
+        "desc": "学生音频流"
+      },
+      {
+        "name": "TeacherUrl",
+        "desc": "教师音频流"
+      },
+      {
         "name": "VoiceEncodeType",
         "desc": "语音编码类型 1:pcm"
       },
@@ -271,14 +279,6 @@ INFO = {
         "desc": "功能开关列表，表示是否需要打开相应的功能，返回相应的信息"
       },
       {
-        "name": "StudentUrl",
-        "desc": "学生音频流"
-      },
-      {
-        "name": "TeacherUrl",
-        "desc": "教师音频流"
-      },
-      {
         "name": "VocabLibNameList",
         "desc": "识别词库名列表，评估过程使用这些词汇库中的词汇进行词汇使用行为分析"
       }
@@ -289,11 +289,11 @@ INFO = {
     "params": [
       {
         "name": "FileContent",
-        "desc": "输入分析对象内容，仅支持url，暂不支持直接上传base64图片"
+        "desc": "输入分析对象内容，输入数据格式参考FileType参数释义"
       },
       {
         "name": "FileType",
-        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址"
+        "desc": "输入分析对象类型，picture_url:图片地址，vod_url:视频地址，live_url：直播地址，picture：图片二进制数据的BASE64编码"
       },
       {
         "name": "LibrarySet",
@@ -301,7 +301,7 @@ INFO = {
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+        "desc": "视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束"
       }
     ],
     "desc": "**提交线下传统面授大班课（含课桌）任务。**  \n传统教室课堂是指有学生课堂有课桌的课堂，满座20-50人，全局画面且背景不动。  \n  \n**提供的功能接口有：**学生人脸识别、学生表情识别、学生肢体动作识别。可分析的指标维度包括：学生身份识别、正脸、侧脸、抬头、低头、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、举手、站立、坐着、趴桌子、玩手机等  \n  \n**对场景的要求为：**传统的学生上课教室，满座20-50人，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。\n    \n**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。\n  "
@@ -326,12 +326,12 @@ INFO = {
   "DeletePerson": {
     "params": [
       {
-        "name": "PersonId",
-        "desc": "人员唯一标识符"
-      },
-      {
         "name": "LibraryId",
         "desc": "人员库唯一标识符"
+      },
+      {
+        "name": "PersonId",
+        "desc": "人员唯一标识符"
       }
     ],
     "desc": "删除人员"
@@ -411,7 +411,7 @@ INFO = {
     "params": [
       {
         "name": "FileContent",
-        "desc": "输入分析对象内容"
+        "desc": "输入分析对象内容，输入数据格式参考FileType参数释义"
       },
       {
         "name": "FileType",
@@ -427,7 +427,7 @@ INFO = {
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+        "desc": "视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束"
       },
       {
         "name": "VocabLibNameList",
@@ -448,7 +448,7 @@ INFO = {
     "params": [
       {
         "name": "FileContent",
-        "desc": "输入分析对象内容"
+        "desc": "输入分析对象内容，输入数据格式参考FileType参数释义"
       },
       {
         "name": "FileType",
@@ -464,7 +464,7 @@ INFO = {
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+        "desc": "视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束"
       },
       {
         "name": "VocabLibNameList",
@@ -618,7 +618,7 @@ INFO = {
     "params": [
       {
         "name": "FileContent",
-        "desc": "输入分析对象内容"
+        "desc": "输入分析对象内容，输入数据格式参考FileType参数释义"
       },
       {
         "name": "FileType",
@@ -642,7 +642,7 @@ INFO = {
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "最大的视频长度，单位毫秒，默认值为两小时"
+        "desc": "视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束"
       },
       {
         "name": "SimThreshold",
@@ -733,12 +733,12 @@ INFO = {
   "DescribePerson": {
     "params": [
       {
-        "name": "PersonId",
-        "desc": "人员唯一标识符"
-      },
-      {
         "name": "LibraryId",
         "desc": "人员库唯一标识符"
+      },
+      {
+        "name": "PersonId",
+        "desc": "人员唯一标识符"
       }
     ],
     "desc": "获取人员详情"
@@ -764,7 +764,7 @@ INFO = {
     "params": [
       {
         "name": "FileContent",
-        "desc": "输入分析对象内容"
+        "desc": "输入分析对象内容，输入数据格式参考FileType参数释义"
       },
       {
         "name": "FileType",
@@ -780,7 +780,7 @@ INFO = {
       },
       {
         "name": "MaxVideoDuration",
-        "desc": "直播流评估时间，在FileType为live_url时生效，默认值为10分钟。"
+        "desc": "视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束"
       },
       {
         "name": "VocabLibNameList",
