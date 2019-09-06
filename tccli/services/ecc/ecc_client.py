@@ -27,6 +27,15 @@ def doEHOCR(argv, arglist):
     param = {
         "Image": argv.get("--Image"),
         "InputType": Utils.try_to_json(argv, "--InputType"),
+        "EccAppid": argv.get("--EccAppid"),
+        "SessionId": argv.get("--SessionId"),
+        "ServerType": Utils.try_to_json(argv, "--ServerType"),
+        "Title": argv.get("--Title"),
+        "Grade": argv.get("--Grade"),
+        "Requirement": argv.get("--Requirement"),
+        "ModelTitle": argv.get("--ModelTitle"),
+        "ModelContent": argv.get("--ModelContent"),
+        "IsAsync": Utils.try_to_json(argv, "--IsAsync"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -62,9 +71,12 @@ def doECC(argv, arglist):
         "Content": argv.get("--Content"),
         "Title": argv.get("--Title"),
         "Grade": argv.get("--Grade"),
-        "Outline": argv.get("--Outline"),
-        "ModelSubject": argv.get("--ModelSubject"),
+        "Requirement": argv.get("--Requirement"),
+        "ModelTitle": argv.get("--ModelTitle"),
         "ModelContent": argv.get("--ModelContent"),
+        "EccAppid": argv.get("--EccAppid"),
+        "IsAsync": Utils.try_to_json(argv, "--IsAsync"),
+        "SessionId": argv.get("--SessionId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -90,6 +102,40 @@ def doECC(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": argv.get("--TaskId"),
+        "EccAppid": argv.get("--EccAppid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20181213": ecc_client_v20181213,
 
@@ -103,6 +149,7 @@ MODELS_MAP = {
 ACTION_MAP = {
     "EHOCR": doEHOCR,
     "ECC": doECC,
+    "DescribeTask": doDescribeTask,
 
 }
 

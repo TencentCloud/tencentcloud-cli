@@ -1,26 +1,92 @@
 # -*- coding: utf-8 -*-
 DESC = "vod-2018-07-17"
 INFO = {
-  "DescribeAIRecognitionTemplates": {
+  "CreateImageSpriteTemplate": {
     "params": [
       {
-        "name": "Definitions",
-        "desc": "视频内容识别模板唯一标识过滤条件，数组长度限制：100。"
+        "name": "Width",
+        "desc": "雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。"
       },
       {
-        "name": "Offset",
-        "desc": "分页偏移量，默认值：0。"
+        "name": "Height",
+        "desc": "雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。"
       },
       {
-        "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：100。"
+        "name": "SampleType",
+        "desc": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
+      },
+      {
+        "name": "SampleInterval",
+        "desc": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>"
+      },
+      {
+        "name": "RowCount",
+        "desc": "雪碧图中小图的行数。"
+      },
+      {
+        "name": "ColumnCount",
+        "desc": "雪碧图中小图的列数。"
+      },
+      {
+        "name": "Name",
+        "desc": "雪碧图模板名称，长度限制：64 个字符。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据视频内容识别模板唯一标识，获取视频内容识别模板详情列表。返回结果包含符合条件的所有用户自定义视频内容识别模板及[系统预置视频内容识别模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF)。"
+    "desc": "创建用户自定义雪碧图模板，数量上限：16。"
+  },
+  "DeleteAnimatedGraphicsTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "转动图模板唯一标识。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "删除用户自定义转动图模板。"
+  },
+  "CreateAnimatedGraphicsTemplate": {
+    "params": [
+      {
+        "name": "Width",
+        "desc": "动图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "Height",
+        "desc": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "Fps",
+        "desc": "帧率，取值范围：[1, 30]，单位：Hz。"
+      },
+      {
+        "name": "Format",
+        "desc": "动图格式，取值为 gif 和 webp。默认为 gif。"
+      },
+      {
+        "name": "Quality",
+        "desc": "图片质量，取值范围：[1, 100]，默认值为 75。"
+      },
+      {
+        "name": "Name",
+        "desc": "转动图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建用户自定义转动图模板，数量上限：16。"
   },
   "ComposeMedia": {
     "params": [
@@ -84,6 +150,43 @@ INFO = {
     ],
     "desc": "创建用户自定义视频内容审核模板，数量上限：50。"
   },
+  "CreateSampleSnapshotTemplate": {
+    "params": [
+      {
+        "name": "Width",
+        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Height",
+        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "SampleType",
+        "desc": "采样截图类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
+      },
+      {
+        "name": "SampleInterval",
+        "desc": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>"
+      },
+      {
+        "name": "Name",
+        "desc": "采样截图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Format",
+        "desc": "图片格式，取值为 jpg 和 png。默认为 jpg。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建用户自定义采样截图模板，数量上限：16。"
+  },
   "EditMedia": {
     "params": [
       {
@@ -130,18 +233,30 @@ INFO = {
     ],
     "desc": "删除用户自定义视频内容分析模板。\n\n注意：模板 ID 为 10000 以下的为系统预置模板，不允许删除。"
   },
-  "ConfirmEvents": {
+  "DescribeSnapshotByTimeOffsetTemplates": {
     "params": [
       {
-        "name": "EventHandles",
-        "desc": "事件句柄，数组长度限制：16。"
+        "name": "Definitions",
+        "desc": "指定时间点截图模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "* 开发者调用拉取事件通知，获取到事件后，必须调用该接口来确认消息已经收到；\n* 开发者获取到事件句柄后，等待确认的有效时间为 30 秒，超出 30 秒会报参数错误（4000）；\n* 更多参考事件通知的[可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83)。"
+    "desc": "查询指定时间点截图模板，支持根据条件，分页查询。"
   },
   "DescribeSubAppIds": {
     "params": [],
@@ -272,32 +387,44 @@ INFO = {
         "desc": "音频流配置参数。"
       },
       {
+        "name": "TEHDConfig",
+        "desc": "极速高清转码参数，需联系商务架构师开通后才能使用。"
+      },
+      {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
     "desc": "修改用户自定义转码模板信息。"
   },
-  "DescribeContentReviewTemplates": {
+  "CreateSnapshotByTimeOffsetTemplate": {
     "params": [
       {
-        "name": "Definitions",
-        "desc": "内容审核模板唯一标识过滤条件，数组长度限制：100。"
+        "name": "Width",
+        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
       },
       {
-        "name": "Offset",
-        "desc": "分页偏移量，默认值：0。"
+        "name": "Height",
+        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
       },
       {
-        "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：100。"
+        "name": "Name",
+        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Format",
+        "desc": "图片格式，取值可以为 jpg 和 png。默认为 jpg。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。"
+    "desc": "创建用户自定义指定时间点截图模板，数量上限：16。"
   },
   "CommitUpload": {
     "params": [
@@ -498,38 +625,46 @@ INFO = {
     ],
     "desc": "* 该接口用于申请媒体文件（和封面文件）的上传，获取文件上传到云点播的元信息（包括上传路径、上传签名等），用于后续上传接口。\n* 上传流程请参考 [服务端上传综述](/document/product/266/9759)。"
   },
-  "ProcessMediaByProcedure": {
+  "ModifySampleSnapshotTemplate": {
     "params": [
       {
-        "name": "FileId",
-        "desc": "媒体文件 ID。"
+        "name": "Definition",
+        "desc": "采样截图模板唯一标识。"
       },
       {
-        "name": "ProcedureName",
-        "desc": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字。"
+        "name": "Name",
+        "desc": "采样截图模板名称，长度限制：64 个字符。"
       },
       {
-        "name": "TasksPriority",
-        "desc": "任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。"
+        "name": "Width",
+        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
       },
       {
-        "name": "TasksNotifyMode",
-        "desc": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。"
+        "name": "Height",
+        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
       },
       {
-        "name": "SessionContext",
-        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
+        "name": "SampleType",
+        "desc": "采样截图类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
       },
       {
-        "name": "SessionId",
-        "desc": "用于去重的识别码，如果一天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
+        "name": "SampleInterval",
+        "desc": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>"
+      },
+      {
+        "name": "Format",
+        "desc": "图片格式，取值为 jpg 和 png。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "使用任务流模板，对点播中的视频发起处理任务。\n有两种方式创建任务流模板：\n1. 在控制台上创建和修改任务流模板；\n2. 通过任务流模板接口创建任务流模板。"
+    "desc": "修改用户自定义采样截图模板。"
   },
   "SearchMedia": {
     "params": [
@@ -651,7 +786,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。\n\n1. 可以查询最近90天内的视频内容审核时长统计数据。\n2. 查询时间跨度不超过60天。"
+    "desc": "该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。\n\n1. 可以查询最近365天内的视频内容审核时长统计数据。\n2. 查询时间跨度不超过90天。"
   },
   "DescribeWordSamples": {
     "params": [
@@ -769,6 +904,10 @@ INFO = {
       {
         "name": "FrameTagConfigure",
         "desc": "智能按帧标签任务控制参数。"
+      },
+      {
+        "name": "HighlightConfigure",
+        "desc": "智能精彩集锦任务控制参数。"
       },
       {
         "name": "SubAppId",
@@ -906,6 +1045,19 @@ INFO = {
     ],
     "desc": "该接口用于查询人物样本信息，支持根据人物 ID、名称、标签，分页查询。"
   },
+  "DeleteSampleSnapshotTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "采样截图模板唯一标识。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "删除用户自定义采样截图模板。"
+  },
   "WeChatMiniProgramPublish": {
     "params": [
       {
@@ -922,6 +1074,47 @@ INFO = {
       }
     ],
     "desc": "将点播视频发布到微信小程序，供微信小程序播放器播放。"
+  },
+  "ModifyAnimatedGraphicsTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "转动图模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "转动图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Width",
+        "desc": "动图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "Height",
+        "desc": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "Format",
+        "desc": "动图格式，取值为 gif 和 webp。"
+      },
+      {
+        "name": "Fps",
+        "desc": "帧率，取值范围：[1, 30]，单位：Hz。"
+      },
+      {
+        "name": "Quality",
+        "desc": "图片质量，取值范围：[1, 100]，默认值为 75。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "修改用户自定义转动图模板。"
   },
   "DeleteAIRecognitionTemplate": {
     "params": [
@@ -952,6 +1145,69 @@ INFO = {
       }
     ],
     "desc": "对 HLS 视频进行按时间段裁剪。\n\n注意：裁剪出来的视频与原始视频共用 ts，仅生成新的 m3u8。原始视频删除后，该裁剪视频也会被删除。"
+  },
+  "DeleteSnapshotByTimeOffsetTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "指定时间点截图模板唯一标识。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "删除用户自定义指定时间点截图模板。"
+  },
+  "DescribeAnimatedGraphicsTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "转动图模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "查询转动图模板列表，支持根据条件，分页查询。"
+  },
+  "DescribeSampleSnapshotTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "采样截图模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "查询采样截图模板，支持根据条件，分页查询。"
   },
   "ModifyClass": {
     "params": [
@@ -1085,40 +1341,85 @@ INFO = {
         "desc": "音频流配置参数，当 RemoveAudio 为 0，该字段必填。"
       },
       {
+        "name": "TEHDConfig",
+        "desc": "极速高清转码参数，需联系商务架构师开通后才能使用。"
+      },
+      {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
     "desc": "创建用户自定义转码模板，数量上限：1000。"
   },
-  "CreatePersonSample": {
+  "CreateAIAnalysisTemplate": {
     "params": [
       {
         "name": "Name",
-        "desc": "人物名称，长度限制：20 个字符。"
+        "desc": "视频内容分析模板名称，长度限制：64 个字符。"
       },
       {
-        "name": "FaceContents",
-        "desc": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。"
+        "name": "Comment",
+        "desc": "视频内容分析模板描述信息，长度限制：256 个字符。"
       },
       {
-        "name": "Usages",
-        "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
+        "name": "ClassificationConfigure",
+        "desc": "智能分类任务控制参数。"
       },
       {
-        "name": "Description",
-        "desc": "人物描述，长度限制：1024 个字符。"
+        "name": "TagConfigure",
+        "desc": "智能标签任务控制参数。"
       },
       {
-        "name": "Tags",
-        "desc": "人物标签\n<li>数组长度限制：20 个标签；</li>\n<li>单个标签长度限制：128 个字符。</li>"
+        "name": "CoverConfigure",
+        "desc": "智能封面任务控制参数。"
+      },
+      {
+        "name": "FrameTagConfigure",
+        "desc": "智能按帧标签任务控制参数。"
+      },
+      {
+        "name": "HighlightConfigure",
+        "desc": "智能精彩集锦任务控制参数。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "该接口用于创建人物样本，用于通过人脸识别等技术，进行内容识别、内容审核等视频处理。"
+    "desc": "创建用户自定义视频内容分析模板，数量上限：50。"
+  },
+  "ModifySnapshotByTimeOffsetTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "指定时间点截图模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Width",
+        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Height",
+        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Format",
+        "desc": "图片格式，取值可以为 jpg 和 png。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "修改用户自定义指定时间点截图模板。"
   },
   "ResetProcedureTemplate": {
     "params": [
@@ -1236,6 +1537,52 @@ INFO = {
       }
     ],
     "desc": "该接口用于根据人物 ID，修改人物样本信息，包括名称、描述的修改，以及人脸、标签的添加、删除、重置操作。人脸删除操作需保证至少剩余 1 张图片，否则，请使用重置操作。"
+  },
+  "DescribeTranscodeTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "转码模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+      },
+      {
+        "name": "ContainerType",
+        "desc": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>"
+      },
+      {
+        "name": "TEHDType",
+        "desc": "极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。"
+  },
+  "ConfirmEvents": {
+    "params": [
+      {
+        "name": "EventHandles",
+        "desc": "事件句柄，数组长度限制：16。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "* 开发者调用拉取事件通知，获取到事件后，必须调用该接口来确认消息已经收到；\n* 开发者获取到事件句柄后，等待确认的有效时间为 30 秒，超出 30 秒会报参数错误（4000）；\n* 更多参考事件通知的[可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83)。"
   },
   "CreateWordSamples": {
     "params": [
@@ -1410,6 +1757,47 @@ INFO = {
     ],
     "desc": "创建用户自定义视频内容识别模板，数量上限：50。"
   },
+  "ModifyImageSpriteTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "雪碧图模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "雪碧图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Width",
+        "desc": "雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Height",
+        "desc": "雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "SampleType",
+        "desc": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
+      },
+      {
+        "name": "SampleInterval",
+        "desc": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>"
+      },
+      {
+        "name": "RowCount",
+        "desc": "雪碧图中小图的行数。"
+      },
+      {
+        "name": "ColumnCount",
+        "desc": "雪碧图中小图的列数。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "修改用户自定义雪碧图模板。"
+  },
   "ModifyWordSample": {
     "params": [
       {
@@ -1430,6 +1818,31 @@ INFO = {
       }
     ],
     "desc": "该接口用于修改关键词的应用场景、标签，关键词本身不可修改，如需修改，可删除重建。"
+  },
+  "DescribeImageSpriteTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "雪碧图模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "查询雪碧图模板，支持根据条件，分页查询。"
   },
   "DeleteClass": {
     "params": [
@@ -1501,38 +1914,34 @@ INFO = {
     ],
     "desc": "修改媒体文件的属性，包括分类、名称、描述、标签、过期时间、打点信息、视频封面等。"
   },
-  "CreateAIAnalysisTemplate": {
+  "CreatePersonSample": {
     "params": [
       {
         "name": "Name",
-        "desc": "视频内容分析模板名称，长度限制：64 个字符。"
+        "desc": "人物名称，长度限制：20 个字符。"
       },
       {
-        "name": "Comment",
-        "desc": "视频内容分析模板描述信息，长度限制：256 个字符。"
+        "name": "FaceContents",
+        "desc": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。"
       },
       {
-        "name": "ClassificationConfigure",
-        "desc": "智能分类任务控制参数。"
+        "name": "Usages",
+        "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
       },
       {
-        "name": "TagConfigure",
-        "desc": "智能标签任务控制参数。"
+        "name": "Description",
+        "desc": "人物描述，长度限制：1024 个字符。"
       },
       {
-        "name": "CoverConfigure",
-        "desc": "智能封面任务控制参数。"
-      },
-      {
-        "name": "FrameTagConfigure",
-        "desc": "智能按帧标签任务控制参数。"
+        "name": "Tags",
+        "desc": "人物标签\n<li>数组长度限制：20 个标签；</li>\n<li>单个标签长度限制：128 个字符。</li>"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "创建用户自定义视频内容分析模板，数量上限：50。"
+    "desc": "该接口用于创建人物样本，用于通过人脸识别等技术，进行内容识别、内容审核等视频处理。"
   },
   "DescribeAllClass": {
     "params": [
@@ -1560,19 +1969,11 @@ INFO = {
     ],
     "desc": "本接口仅用于定制开发的特殊场景，除非云点播客服人员主动告知您需要使用本接口，其它情况请勿调用。"
   },
-  "DescribeTranscodeTemplates": {
+  "DescribeAIRecognitionTemplates": {
     "params": [
       {
         "name": "Definitions",
-        "desc": "转码模板唯一标识过滤条件，数组长度限制：100。"
-      },
-      {
-        "name": "Type",
-        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
-      },
-      {
-        "name": "ContainerType",
-        "desc": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>"
+        "desc": "视频内容识别模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
         "name": "Offset",
@@ -1587,6 +1988,73 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。"
+    "desc": "根据视频内容识别模板唯一标识，获取视频内容识别模板详情列表。返回结果包含符合条件的所有用户自定义视频内容识别模板及[系统预置视频内容识别模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF)。"
+  },
+  "DeleteImageSpriteTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "雪碧图模板唯一标识。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "删除雪碧图模板。"
+  },
+  "ProcessMediaByProcedure": {
+    "params": [
+      {
+        "name": "FileId",
+        "desc": "媒体文件 ID。"
+      },
+      {
+        "name": "ProcedureName",
+        "desc": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字。"
+      },
+      {
+        "name": "TasksPriority",
+        "desc": "任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。"
+      },
+      {
+        "name": "TasksNotifyMode",
+        "desc": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。"
+      },
+      {
+        "name": "SessionContext",
+        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
+      },
+      {
+        "name": "SessionId",
+        "desc": "用于去重的识别码，如果一天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "使用任务流模板，对点播中的视频发起处理任务。\n有两种方式创建任务流模板：\n1. 在控制台上创建和修改任务流模板；\n2. 通过任务流模板接口创建任务流模板。"
+  },
+  "DescribeContentReviewTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "内容审核模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。"
   }
 }

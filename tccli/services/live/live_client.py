@@ -1556,6 +1556,7 @@ def doDescribeLiveDomains(argv, arglist):
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "IsDelayLive": Utils.try_to_json(argv, "--IsDelayLive"),
+        "DomainPrefix": argv.get("--DomainPrefix"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -56,6 +56,44 @@ def doFaceFusion(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doFuseFace(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("FuseFace", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProjectId": argv.get("--ProjectId"),
+        "ModelId": argv.get("--ModelId"),
+        "RspImgType": argv.get("--RspImgType"),
+        "MergeInfos": Utils.try_to_json(argv, "--MergeInfos"),
+        "FuseProfileDegree": Utils.try_to_json(argv, "--FuseProfileDegree"),
+        "FuseFaceDegree": Utils.try_to_json(argv, "--FuseFaceDegree"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FacefusionClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.FuseFaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.FuseFace(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20181201": facefusion_client_v20181201,
 
@@ -68,6 +106,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "FaceFusion": doFaceFusion,
+    "FuseFace": doFuseFace,
 
 }
 

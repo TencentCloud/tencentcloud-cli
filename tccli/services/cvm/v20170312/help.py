@@ -17,15 +17,11 @@ INFO = {
       },
       {
         "name": "ForcePoweroff",
-        "desc": "软关机失败时是否执行强制关机以制作镜像"
+        "desc": "是否执行强制关机以制作镜像。\n取值范围：<br><li>TRUE：表示关机之后制作镜像<br><li>FALSE：表示开机状态制作镜像<br><br>默认取值：FALSE。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。"
       },
       {
         "name": "Sysprep",
         "desc": "创建Windows镜像时是否启用Sysprep"
-      },
-      {
-        "name": "Reboot",
-        "desc": "实例处于运行中时，是否允许关机执行制作镜像任务。"
       },
       {
         "name": "DataDiskIds",
@@ -33,7 +29,7 @@ INFO = {
       },
       {
         "name": "SnapshotIds",
-        "desc": "需要制作镜像的快照Id,必须包含一个系统盘快照"
+        "desc": "需要制作镜像的快照ID,必须包含一个系统盘快照"
       },
       {
         "name": "DryRun",
@@ -591,7 +587,7 @@ INFO = {
         "desc": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。"
       }
     ],
-    "desc": "本接口 (InquiryPriceResetInstance) 用于重装实例询价。* 如果指定了`ImageId`参数，则使用指定的镜像进行重装询价；否则按照当前实例使用的镜像进行重装询价。* 目前只支持[系统盘类型](/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换的重装询价。* 目前不支持海外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换的重装询价。"
+    "desc": "本接口 (InquiryPriceResetInstance) 用于重装实例询价。\n\n* 如果指定了`ImageId`参数，则使用指定的镜像进行重装询价；否则按照当前实例使用的镜像进行重装询价。\n* 目前只支持[系统盘类型](/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换的重装询价。\n* 目前不支持海外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换的重装询价。"
   },
   "DescribeDisasterRecoverGroupQuota": {
     "params": [],

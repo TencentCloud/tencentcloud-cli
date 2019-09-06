@@ -1224,7 +1224,6 @@ def doCreateImage(argv, arglist):
         "ImageDescription": argv.get("--ImageDescription"),
         "ForcePoweroff": argv.get("--ForcePoweroff"),
         "Sysprep": argv.get("--Sysprep"),
-        "Reboot": argv.get("--Reboot"),
         "DataDiskIds": Utils.try_to_json(argv, "--DataDiskIds"),
         "SnapshotIds": Utils.try_to_json(argv, "--SnapshotIds"),
         "DryRun": Utils.try_to_json(argv, "--DryRun"),

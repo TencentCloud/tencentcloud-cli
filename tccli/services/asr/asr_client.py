@@ -18,6 +18,46 @@ from tccli.services.asr import v20190614
 from tccli.services.asr.v20190614 import help as v20190614_help
 
 
+def doCreateRecTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateRecTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EngineModelType": argv.get("--EngineModelType"),
+        "ChannelNum": Utils.try_to_json(argv, "--ChannelNum"),
+        "ResTextFormat": Utils.try_to_json(argv, "--ResTextFormat"),
+        "SourceType": Utils.try_to_json(argv, "--SourceType"),
+        "CallbackUrl": argv.get("--CallbackUrl"),
+        "Url": argv.get("--Url"),
+        "Data": argv.get("--Data"),
+        "DataLen": Utils.try_to_json(argv, "--DataLen"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRecTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateRecTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSentenceRecognition(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -59,6 +99,39 @@ def doSentenceRecognition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTaskStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20190614": asr_client_v20190614,
 
@@ -70,7 +143,9 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "CreateRecTask": doCreateRecTask,
     "SentenceRecognition": doSentenceRecognition,
+    "DescribeTaskStatus": doDescribeTaskStatus,
 
 }
 

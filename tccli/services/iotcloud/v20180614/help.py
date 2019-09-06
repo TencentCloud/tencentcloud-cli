@@ -218,7 +218,7 @@ INFO = {
     "params": [
       {
         "name": "ProductId",
-        "desc": "产品id"
+        "desc": "产品Id"
       },
       {
         "name": "DeviceName",
@@ -392,6 +392,23 @@ INFO = {
     ],
     "desc": "服务器端下发消息给lora类型的设备"
   },
+  "UpdateDeviceAvailableState": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "设备所属产品id"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      },
+      {
+        "name": "EnableState",
+        "desc": "要设置的设备状态，1为启用，0为禁用"
+      }
+    ],
+    "desc": "启用或者禁用设备"
+  },
   "PublishAsDevice": {
     "params": [
       {
@@ -450,6 +467,31 @@ INFO = {
     ],
     "desc": "创建lora类型的设备"
   },
+  "BindDevices": {
+    "params": [
+      {
+        "name": "GatewayProductId",
+        "desc": "网关设备的产品ID"
+      },
+      {
+        "name": "GatewayDeviceName",
+        "desc": "网关设备的设备名"
+      },
+      {
+        "name": "ProductId",
+        "desc": "被绑定设备的产品ID"
+      },
+      {
+        "name": "DeviceNames",
+        "desc": "被绑定的多个设备名"
+      },
+      {
+        "name": "Skey",
+        "desc": "中兴CLAA设备的绑定需要skey，普通的设备不需要"
+      }
+    ],
+    "desc": "本接口（BindDevices）用于网关设备批量绑定子设备"
+  },
   "UpdateTopicPolicy": {
     "params": [
       {
@@ -474,6 +516,31 @@ INFO = {
       }
     ],
     "desc": "本接口（UpdateTopicPolicy）用于更新Topic信息"
+  },
+  "UnbindDevices": {
+    "params": [
+      {
+        "name": "GatewayProductId",
+        "desc": "网关设备的产品ID"
+      },
+      {
+        "name": "GatewayDeviceName",
+        "desc": "网关设备的设备名"
+      },
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "DeviceNames",
+        "desc": "多个设备名"
+      },
+      {
+        "name": "Skey",
+        "desc": "中兴CLAA设备的解绑需要Skey，普通设备不需要"
+      }
+    ],
+    "desc": "本接口（UnbindDevices）用于网关设备批量解绑子设备"
   },
   "DescribeDevices": {
     "params": [

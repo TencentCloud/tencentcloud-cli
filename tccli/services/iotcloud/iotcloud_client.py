@@ -826,6 +826,41 @@ def doDescribeMultiDevices(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpdateDeviceAvailableState(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateDeviceAvailableState", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv.get("--ProductId"),
+        "DeviceName": argv.get("--DeviceName"),
+        "EnableState": Utils.try_to_json(argv, "--EnableState"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateDeviceAvailableStateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateDeviceAvailableState(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPublishAsDevice(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -902,6 +937,43 @@ def doCreateLoraDevice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doBindDevices(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("BindDevices", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GatewayProductId": argv.get("--GatewayProductId"),
+        "GatewayDeviceName": argv.get("--GatewayDeviceName"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
+        "Skey": argv.get("--Skey"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BindDevicesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.BindDevices(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doUpdateTopicPolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -930,6 +1002,43 @@ def doUpdateTopicPolicy(argv, arglist):
     model = models.UpdateTopicPolicyRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UpdateTopicPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnbindDevices(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnbindDevices", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GatewayProductId": argv.get("--GatewayProductId"),
+        "GatewayDeviceName": argv.get("--GatewayDeviceName"),
+        "ProductId": argv.get("--ProductId"),
+        "DeviceNames": Utils.try_to_json(argv, "--DeviceNames"),
+        "Skey": argv.get("--Skey"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnbindDevicesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnbindDevices(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1142,9 +1251,12 @@ ACTION_MAP = {
     "ResetDeviceState": doResetDeviceState,
     "DescribeTasks": doDescribeTasks,
     "DescribeMultiDevices": doDescribeMultiDevices,
+    "UpdateDeviceAvailableState": doUpdateDeviceAvailableState,
     "PublishAsDevice": doPublishAsDevice,
     "CreateLoraDevice": doCreateLoraDevice,
+    "BindDevices": doBindDevices,
     "UpdateTopicPolicy": doUpdateTopicPolicy,
+    "UnbindDevices": doUnbindDevices,
     "DescribeDevices": doDescribeDevices,
     "DisableTopicRule": doDisableTopicRule,
     "DescribeMultiDevTask": doDescribeMultiDevTask,
