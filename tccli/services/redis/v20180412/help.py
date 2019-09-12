@@ -370,6 +370,35 @@ INFO = {
     ],
     "desc": "用于查询任务结果"
   },
+  "DescribeSlowLog": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "开始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间"
+      },
+      {
+        "name": "MinQueryTime",
+        "desc": "慢查询阈值（单位：微秒）"
+      },
+      {
+        "name": "Limit",
+        "desc": "页面大小"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，取Limit整数倍"
+      }
+    ],
+    "desc": "查询实例慢查询记录"
+  },
   "RestoreInstance": {
     "params": [
       {

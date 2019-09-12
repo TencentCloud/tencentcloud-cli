@@ -148,6 +148,27 @@ INFO = {
     ],
     "desc": "传入姓名和身份证号，校验两者的真实性和一致性。"
   },
+  "IdCardOCRVerification": {
+    "params": [
+      {
+        "name": "IdCard",
+        "desc": "身份证号\n姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。"
+      },
+      {
+        "name": "Name",
+        "desc": "姓名"
+      },
+      {
+        "name": "ImageBase64",
+        "desc": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。"
+      },
+      {
+        "name": "ImageUrl",
+        "desc": "身份证人像面的 Url 地址\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。"
+      }
+    ],
+    "desc": "本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。"
+  },
   "BankCard4EVerification": {
     "params": [
       {

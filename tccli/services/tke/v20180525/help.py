@@ -1,6 +1,23 @@
 # -*- coding: utf-8 -*-
 DESC = "tke-2018-05-25"
 INFO = {
+  "DeleteClusterAsGroups": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID，通过[DescribeClusters](https://cloud.tencent.com/document/api/457/31862)接口获取。"
+      },
+      {
+        "name": "AutoScalingGroupIds",
+        "desc": "集群伸缩组ID的列表"
+      },
+      {
+        "name": "KeepInstance",
+        "desc": "是否保留伸缩组中的节点(默认值： false(不保留))"
+      }
+    ],
+    "desc": "删除集群伸缩组"
+  },
   "DeleteClusterRoute": {
     "params": [
       {
@@ -68,18 +85,18 @@ INFO = {
     ],
     "desc": "创建集群"
   },
-  "DescribeRouteTableConflicts": {
+  "DeleteCluster": {
     "params": [
       {
-        "name": "RouteTableCidrBlock",
-        "desc": "路由表CIDR"
+        "name": "ClusterId",
+        "desc": "集群ID"
       },
       {
-        "name": "VpcId",
-        "desc": "路由表绑定的VPC"
+        "name": "InstanceDeleteMode",
+        "desc": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）"
       }
     ],
-    "desc": "查询路由表冲突列表"
+    "desc": "删除集群(YUNAPI V3版本)"
   },
   "CreateClusterInstances": {
     "params": [
@@ -291,18 +308,18 @@ INFO = {
     ],
     "desc": "删除集群路由表"
   },
-  "DeleteCluster": {
+  "DescribeRouteTableConflicts": {
     "params": [
       {
-        "name": "ClusterId",
-        "desc": "集群ID"
+        "name": "RouteTableCidrBlock",
+        "desc": "路由表CIDR"
       },
       {
-        "name": "InstanceDeleteMode",
-        "desc": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）"
+        "name": "VpcId",
+        "desc": "路由表绑定的VPC"
       }
     ],
-    "desc": "删除集群(YUNAPI V3版本)"
+    "desc": "查询路由表冲突列表"
   },
   "DescribeClusterSecurity": {
     "params": [
