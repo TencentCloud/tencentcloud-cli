@@ -663,6 +663,39 @@ def doDescribeSnapshots(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSnapshotSharePermission(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSnapshotSharePermission", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SnapshotId": argv.get("--SnapshotId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSnapshotSharePermissionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSnapshotSharePermission(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateAutoSnapshotPolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -692,6 +725,40 @@ def doCreateAutoSnapshotPolicy(argv, arglist):
     model = models.CreateAutoSnapshotPolicyRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateAutoSnapshotPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDisksChargeType(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDisksChargeType", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DiskIds": Utils.try_to_json(argv, "--DiskIds"),
+        "DiskChargePrepaid": Utils.try_to_json(argv, "--DiskChargePrepaid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDisksChargeTypeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDisksChargeType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -875,6 +942,41 @@ def doDescribeSnapshotOperationLogs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifySnapshotsSharePermission(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySnapshotsSharePermission", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccountIds": Utils.try_to_json(argv, "--AccountIds"),
+        "Permission": argv.get("--Permission"),
+        "SnapshotIds": Utils.try_to_json(argv, "--SnapshotIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CbsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySnapshotsSharePermissionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySnapshotsSharePermission(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateSnapshot(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1042,12 +1144,15 @@ ACTION_MAP = {
     "DescribeDiskAssociatedAutoSnapshotPolicy": doDescribeDiskAssociatedAutoSnapshotPolicy,
     "BindAutoSnapshotPolicy": doBindAutoSnapshotPolicy,
     "DescribeSnapshots": doDescribeSnapshots,
+    "DescribeSnapshotSharePermission": doDescribeSnapshotSharePermission,
     "CreateAutoSnapshotPolicy": doCreateAutoSnapshotPolicy,
+    "ModifyDisksChargeType": doModifyDisksChargeType,
     "TerminateDisks": doTerminateDisks,
     "DescribeDiskConfigQuota": doDescribeDiskConfigQuota,
     "UnbindAutoSnapshotPolicy": doUnbindAutoSnapshotPolicy,
     "ApplySnapshot": doApplySnapshot,
     "DescribeSnapshotOperationLogs": doDescribeSnapshotOperationLogs,
+    "ModifySnapshotsSharePermission": doModifySnapshotsSharePermission,
     "CreateSnapshot": doCreateSnapshot,
     "ResizeDisk": doResizeDisk,
     "DetachDisks": doDetachDisks,

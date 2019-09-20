@@ -698,6 +698,7 @@ def doCompareFace(argv, arglist):
         "ImageB": argv.get("--ImageB"),
         "UrlA": argv.get("--UrlA"),
         "UrlB": argv.get("--UrlB"),
+        "FaceModelVersion": argv.get("--FaceModelVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

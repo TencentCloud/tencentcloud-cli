@@ -18,6 +18,40 @@ from tccli.services.nlp import v20190408
 from tccli.services.nlp.v20190408 import help as v20190408_help
 
 
+def doTextApproval(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TextApproval", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": argv.get("--Text"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TextApprovalRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TextApproval(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doWordSimilarity(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -361,6 +395,7 @@ def doKeywordsExtraction(argv, arglist):
 
     param = {
         "Text": argv.get("--Text"),
+        "Num": Utils.try_to_json(argv, "--Num"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -498,6 +533,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "TextApproval": doTextApproval,
     "WordSimilarity": doWordSimilarity,
     "SentenceSimilarity": doSentenceSimilarity,
     "TextClassification": doTextClassification,

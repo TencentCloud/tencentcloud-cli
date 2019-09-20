@@ -59,9 +59,13 @@ def doDescribeInstances(argv, arglist):
         return
 
     param = {
+        "DisplayStrategy": argv.get("--DisplayStrategy"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "OrderField": argv.get("--OrderField"),
+        "Asc": Utils.try_to_json(argv, "--Asc"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -95,6 +99,7 @@ def doTerminateInstance(argv, arglist):
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
+        "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -111,6 +116,82 @@ def doTerminateInstance(argv, arglist):
     model = models.TerminateInstanceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.TerminateInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquiryPriceUpdateInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquiryPriceUpdateInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TimeUnit": argv.get("--TimeUnit"),
+        "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
+        "UpdateSpec": Utils.try_to_json(argv, "--UpdateSpec"),
+        "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "Currency": argv.get("--Currency"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquiryPriceUpdateInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InquiryPriceUpdateInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquiryPriceRenewInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquiryPriceRenewInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
+        "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "TimeUnit": argv.get("--TimeUnit"),
+        "Currency": argv.get("--Currency"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquiryPriceRenewInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InquiryPriceRenewInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -138,13 +219,15 @@ def doCreateInstance(argv, arglist):
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
         "TimeUnit": argv.get("--TimeUnit"),
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
-        "ClientToken": argv.get("--ClientToken"),
         "COSSettings": Utils.try_to_json(argv, "--COSSettings"),
         "SgId": argv.get("--SgId"),
         "PreExecutedFileSettings": Utils.try_to_json(argv, "--PreExecutedFileSettings"),
         "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
+        "ClientToken": argv.get("--ClientToken"),
         "NeedMasterWan": argv.get("--NeedMasterWan"),
         "RemoteLoginAtCreate": Utils.try_to_json(argv, "--RemoteLoginAtCreate"),
+        "CheckSecurity": Utils.try_to_json(argv, "--CheckSecurity"),
+        "ExtendFsField": argv.get("--ExtendFsField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -258,14 +341,15 @@ def doScaleOutInstance(argv, arglist):
         return
 
     param = {
-        "ClientToken": argv.get("--ClientToken"),
         "TimeUnit": argv.get("--TimeUnit"),
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
         "InstanceId": argv.get("--InstanceId"),
         "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "ClientToken": argv.get("--ClientToken"),
         "PreExecutedFileSettings": Utils.try_to_json(argv, "--PreExecutedFileSettings"),
         "TaskCount": Utils.try_to_json(argv, "--TaskCount"),
         "CoreCount": Utils.try_to_json(argv, "--CoreCount"),
+        "UnNecessaryNodeList": Utils.try_to_json(argv, "--UnNecessaryNodeList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -305,6 +389,8 @@ ACTION_MAP = {
     "TerminateTasks": doTerminateTasks,
     "DescribeInstances": doDescribeInstances,
     "TerminateInstance": doTerminateInstance,
+    "InquiryPriceUpdateInstance": doInquiryPriceUpdateInstance,
+    "InquiryPriceRenewInstance": doInquiryPriceRenewInstance,
     "CreateInstance": doCreateInstance,
     "InquiryPriceCreateInstance": doInquiryPriceCreateInstance,
     "InquiryPriceScaleOutInstance": doInquiryPriceScaleOutInstance,

@@ -367,6 +367,15 @@ INFO = {
     ],
     "desc": "本接口（DescribeSnapshots）用于查询快照的详细信息。\n\n* 根据快照ID、创建快照的云硬盘ID、创建快照的云硬盘类型等对结果进行过滤，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n*  如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照列表。"
   },
+  "DescribeSnapshotSharePermission": {
+    "params": [
+      {
+        "name": "SnapshotId",
+        "desc": "要查询快照的ID。可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。"
+      }
+    ],
+    "desc": "本接口（DescribeSnapshotSharePermission）用于查询快照的分享信息。"
+  },
   "CreateAutoSnapshotPolicy": {
     "params": [
       {
@@ -395,6 +404,19 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateAutoSnapshotPolicy）用于创建定期快照策略。\n\n* 每个地域可创建的定期快照策略数量限制请参考文档[定期快照](/document/product/362/8191)。\n* 每个地域可创建的快照有数量和容量的限制，具体请见腾讯云控制台快照页面提示，如果快照超配额，定期快照创建会失败。"
+  },
+  "ModifyDisksChargeType": {
+    "params": [
+      {
+        "name": "DiskIds",
+        "desc": "一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。"
+      },
+      {
+        "name": "DiskChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。"
+      }
+    ],
+    "desc": "接口请求域名： cbs.tencentcloudapi.com 。\n\n本接口 (ModifyDisksChargeType) 用于切换云盘的计费模式。\n\n只支持从 POSTPAID_BY_HOUR 计费模式切换为PREPAID计费模式。\n非弹性云盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云盘一起转换。\n默认接口请求频率限制：10次/秒。\n"
   },
   "TerminateDisks": {
     "params": [
@@ -476,6 +498,23 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeSnapshotOperationLogs）用于查询快照操作日志列表。\n\n可根据快照ID过滤。快照ID形如：snap-a1kmcp13。\n"
+  },
+  "ModifySnapshotsSharePermission": {
+    "params": [
+      {
+        "name": "AccountIds",
+        "desc": "接收分享快照的账号Id列表，array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。"
+      },
+      {
+        "name": "Permission",
+        "desc": "操作，包括 SHARE，CANCEL。其中SHARE代表分享操作，CANCEL代表取消分享操作。"
+      },
+      {
+        "name": "SnapshotIds",
+        "desc": "快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。"
+      }
+    ],
+    "desc": "本接口（ModifySnapshotsSharePermission）用于修改快照分享信息。\n\n分享快照后，被分享账户可以通过该快照创建云硬盘。\n* 每个快照最多可分享给50个账户。\n* 分享快照无法更改名称，描述，仅可用于创建云硬盘。\n* 只支持分享到对方账户相同地域。\n* 仅支持分享数据盘快照。"
   },
   "DetachDisks": {
     "params": [

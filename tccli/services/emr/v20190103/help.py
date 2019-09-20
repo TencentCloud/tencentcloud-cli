@@ -4,10 +4,6 @@ INFO = {
   "ScaleOutInstance": {
     "params": [
       {
-        "name": "ClientToken",
-        "desc": "Token"
-      },
-      {
         "name": "TimeUnit",
         "desc": "时间单位"
       },
@@ -24,6 +20,10 @@ INFO = {
         "desc": "付费类型"
       },
       {
+        "name": "ClientToken",
+        "desc": "Token"
+      },
+      {
         "name": "PreExecutedFileSettings",
         "desc": "预执行脚本设置"
       },
@@ -34,12 +34,20 @@ INFO = {
       {
         "name": "CoreCount",
         "desc": "扩容Core节点数量"
+      },
+      {
+        "name": "UnNecessaryNodeList",
+        "desc": "扩容时不需要安装的进程"
       }
     ],
     "desc": "实例扩容"
   },
   "DescribeInstances": {
     "params": [
+      {
+        "name": "DisplayStrategy",
+        "desc": "集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage"
+      },
       {
         "name": "InstanceIds",
         "desc": "查询列表,  如果不填写，返回该AppId下所有实例列表"
@@ -51,6 +59,18 @@ INFO = {
       {
         "name": "Limit",
         "desc": "查询结果限制，默认值10"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "项目列表，默认值-1"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段，当前支持以下排序字段：clusterId、addTime、status"
+      },
+      {
+        "name": "Asc",
+        "desc": "排序方法，0降序，1升序"
       }
     ],
     "desc": "查询EMR实例"
@@ -60,9 +80,71 @@ INFO = {
       {
         "name": "InstanceId",
         "desc": "被销毁的实例ID"
+      },
+      {
+        "name": "ResourceIds",
+        "desc": "销毁节点ID"
       }
     ],
     "desc": "销毁EMR实例"
+  },
+  "InquiryPriceUpdateInstance": {
+    "params": [
+      {
+        "name": "TimeUnit",
+        "desc": "时间单位。s:按量用例单位。m:包年包月用例单位"
+      },
+      {
+        "name": "TimeSpan",
+        "desc": "时间长度。按量用例长度为3600。"
+      },
+      {
+        "name": "UpdateSpec",
+        "desc": "变配参数"
+      },
+      {
+        "name": "PayMode",
+        "desc": "计费类型"
+      },
+      {
+        "name": "Placement",
+        "desc": "位置信息"
+      },
+      {
+        "name": "Currency",
+        "desc": "货币种类"
+      }
+    ],
+    "desc": "变配询价"
+  },
+  "InquiryPriceRenewInstance": {
+    "params": [
+      {
+        "name": "TimeSpan",
+        "desc": "时间长度"
+      },
+      {
+        "name": "ResourceIds",
+        "desc": "资源ID列表"
+      },
+      {
+        "name": "Placement",
+        "desc": "位置信息"
+      },
+      {
+        "name": "PayMode",
+        "desc": "计费模式，0表示按量，1表示包年报月，此处只能为包年包月"
+      },
+      {
+        "name": "TimeUnit",
+        "desc": "时间单位，默认为m"
+      },
+      {
+        "name": "Currency",
+        "desc": "货币种类"
+      }
+    ],
+    "desc": "续费询价。"
   },
   "CreateInstance": {
     "params": [
@@ -111,10 +193,6 @@ INFO = {
         "desc": "登录配置"
       },
       {
-        "name": "ClientToken",
-        "desc": "客户端Token"
-      },
-      {
         "name": "COSSettings",
         "desc": "COS设置参数"
       },
@@ -131,12 +209,24 @@ INFO = {
         "desc": "自动续费"
       },
       {
+        "name": "ClientToken",
+        "desc": "客户端Token"
+      },
+      {
         "name": "NeedMasterWan",
         "desc": "是否需要外网Ip。支持填NEED_MASTER_WAN，不支持使用NOT_NEED_MASTER_WAN，默认使用NEED_MASTER_WAN"
       },
       {
         "name": "RemoteLoginAtCreate",
         "desc": "是否需要开启外网远程登录，即22号端口，在SgId不为空时，该选项无效"
+      },
+      {
+        "name": "CheckSecurity",
+        "desc": "是否开启安全集群，0表示不开启，非0表示开启"
+      },
+      {
+        "name": "ExtendFsField",
+        "desc": "访问外部文件系统"
       }
     ],
     "desc": "创建EMR实例"

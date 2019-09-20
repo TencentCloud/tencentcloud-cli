@@ -185,11 +185,11 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。"
+        "desc": "备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。"
       },
       {
         "name": "BackupMethod",
-        "desc": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备；默认备份方法为 逻辑冷备。"
+        "desc": "自动备份方式，仅支持：physical - 物理冷备"
       },
       {
         "name": "BinlogExpireDays",
@@ -578,7 +578,7 @@ INFO = {
         "desc": "分页大小，最小值为1，最大值为2000。"
       }
     ],
-    "desc": "本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (将废弃)。"
+    "desc": "本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。"
   },
   "RestartDBInstances": {
     "params": [
@@ -844,7 +844,7 @@ INFO = {
       },
       {
         "name": "GlobalPrivileges",
-        "desc": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
+        "desc": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
       },
       {
         "name": "DatabasePrivileges",
@@ -1346,7 +1346,7 @@ INFO = {
         "desc": "实例类型，默认为 master，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。"
       }
     ],
-    "desc": "本接口(UpgradeDBInstance)用于升级云数据库实例，实例类型支持主实例、灾备实例和只读实例。"
+    "desc": "本接口(UpgradeDBInstance)用于升级或降级云数据库实例的配置，实例类型支持主实例、灾备实例和只读实例。"
   },
   "UpgradeDBInstanceEngineVersion": {
     "params": [
@@ -1444,6 +1444,6 @@ INFO = {
         "desc": "分页大小，最小值为1，最大值为2000。"
       }
     ],
-    "desc": "本接口(DescribeBackupDatabases)用于查询备份数据库列表 (将废弃)。"
+    "desc": "本接口(DescribeBackupDatabases)用于查询备份文件包含的库 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。"
   }
 }
