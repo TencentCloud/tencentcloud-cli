@@ -33,7 +33,7 @@ INFO = {
       },
       {
         "name": "ExpireTime",
-        "desc": "过期时间"
+        "desc": "合同长时间未签署的过期时间"
       }
     ],
     "desc": "此接口适用于：客户平台通过上传PDF文件作为合同，以备未来进行签署。接口返回任务号，可调用DescribeTaskStatus接口查看任务执行结果。"
@@ -130,7 +130,7 @@ INFO = {
       },
       {
         "name": "IdentType",
-        "desc": "个人用户证件类型。0代表身份证"
+        "desc": "个人用户证件类型，0代表身份证，详情请见常见问题"
       },
       {
         "name": "IdentNo",
@@ -225,7 +225,7 @@ INFO = {
       },
       {
         "name": "IdentType",
-        "desc": "企业用户证件类型，8代表营业执照"
+        "desc": "企业用户证件类型，8代表营业执照，详情请见常见问题"
       },
       {
         "name": "IdentNo",
@@ -332,7 +332,7 @@ INFO = {
       },
       {
         "name": "SealResId",
-        "desc": "印章ID"
+        "desc": "签章ID"
       },
       {
         "name": "CertType",

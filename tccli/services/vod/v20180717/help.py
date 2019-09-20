@@ -88,26 +88,50 @@ INFO = {
     ],
     "desc": "创建用户自定义转动图模板，数量上限：16。"
   },
-  "ComposeMedia": {
+  "ModifyContentReviewTemplate": {
     "params": [
       {
-        "name": "Tracks",
-        "desc": "输入的媒体轨道列表，包括视频、音频、图片等素材组成的多个轨道信息。输入的多个轨道在时间轴上和输出媒体文件的时间轴对齐，时间轴上相同时间点的各个轨道的素材进行重叠，视频或者图片按轨道顺序进行图像的叠加，轨道顺序高的素材叠加在上面；音频素材进行混音。"
+        "name": "Definition",
+        "desc": "内容审核模板唯一标识。"
       },
       {
-        "name": "Output",
-        "desc": "输出的媒体文件信息。"
+        "name": "Name",
+        "desc": "内容审核模板名称，长度限制：64 个字符。"
       },
       {
-        "name": "Canvas",
-        "desc": "制作视频文件时使用的画布。"
+        "name": "Comment",
+        "desc": "内容审核模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "PornConfigure",
+        "desc": "鉴黄控制参数。"
+      },
+      {
+        "name": "TerrorismConfigure",
+        "desc": "鉴恐控制参数。"
+      },
+      {
+        "name": "PoliticalConfigure",
+        "desc": "鉴政控制参数。"
+      },
+      {
+        "name": "UserDefineConfigure",
+        "desc": "用户自定义内容审核控制参数。"
+      },
+      {
+        "name": "ScreenshotInterval",
+        "desc": "截帧间隔，单位为秒，最小值为 0.5 秒。"
+      },
+      {
+        "name": "ReviewWallSwitch",
+        "desc": "审核结果是否进入审核墙（对审核结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "该接口用于制作媒体文件，可以\n\n1. 对一个媒体文件进行剪辑，生成一个新的媒体文件；\n2. 对多个媒体文件进行裁剪拼接，生成一个新的媒体文件；\n3. 对多个媒体文件的媒体流进行裁剪拼接，生成一个新的媒体文件；"
+    "desc": "修改用户自定义视频内容审核模板。"
   },
   "CreateContentReviewTemplate": {
     "params": [
@@ -266,7 +290,7 @@ INFO = {
     "params": [
       {
         "name": "MediaUrl",
-        "desc": "要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。\n<li>URL 里文件名需要包括扩展名, 比如 ```https://xxxx.mp4``` ，扩展名为 mp4，支持的扩展名详见[文件类型](https://cloud.tencent.com/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。</li>"
+        "desc": "要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。\n支持的扩展名详见[文件类型](https://cloud.tencent.com/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。"
       },
       {
         "name": "MediaName",
@@ -307,50 +331,71 @@ INFO = {
     ],
     "desc": "该接口用于将一个网络上的视频拉取到云点播平台。"
   },
-  "ProcessMediaByUrl": {
+  "ComposeMedia": {
     "params": [
       {
-        "name": "InputInfo",
-        "desc": "输入视频信息，包括视频 URL ， 名称、视频自定义 ID。"
+        "name": "Tracks",
+        "desc": "输入的媒体轨道列表，包括视频、音频、图片等素材组成的多个轨道信息。输入的多个轨道在时间轴上和输出媒体文件的时间轴对齐，时间轴上相同时间点的各个轨道的素材进行重叠，视频或者图片按轨道顺序进行图像的叠加，轨道顺序高的素材叠加在上面；音频素材进行混音。"
       },
       {
-        "name": "OutputInfo",
-        "desc": "输出文件 COS 路径信息。"
+        "name": "Output",
+        "desc": "输出的媒体文件信息。"
       },
       {
-        "name": "AiContentReviewTask",
-        "desc": "视频内容审核类型任务参数。"
-      },
-      {
-        "name": "AiAnalysisTask",
-        "desc": "视频内容分析类型任务参数。"
-      },
-      {
-        "name": "AiRecognitionTask",
-        "desc": "视频内容识别类型任务参数。"
-      },
-      {
-        "name": "TasksPriority",
-        "desc": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。"
-      },
-      {
-        "name": "TasksNotifyMode",
-        "desc": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。"
-      },
-      {
-        "name": "SessionContext",
-        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
-      },
-      {
-        "name": "SessionId",
-        "desc": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
+        "name": "Canvas",
+        "desc": "制作视频文件时使用的画布。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "对来源为 URL 的音视频媒体发起处理任务，功能包括：\n\n1. 智能内容审核（鉴黄、鉴恐、鉴政）；\n2. 智能内容分析（标签、分类、封面、按帧标签）；\n3. 智能内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。"
+    "desc": "该接口用于制作媒体文件，可以\n\n1. 对一个媒体文件进行剪辑，生成一个新的媒体文件；\n2. 对多个媒体文件进行裁剪拼接，生成一个新的媒体文件；\n3. 对多个媒体文件的媒体流进行裁剪拼接，生成一个新的媒体文件；"
+  },
+  "ApplyUpload": {
+    "params": [
+      {
+        "name": "MediaType",
+        "desc": "媒体类型，可选值请参考 [上传能力综述](/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。"
+      },
+      {
+        "name": "MediaName",
+        "desc": "媒体名称。"
+      },
+      {
+        "name": "CoverType",
+        "desc": "封面类型，可选值请参考 [上传能力综述](/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。"
+      },
+      {
+        "name": "Procedure",
+        "desc": "媒体后续任务处理操作，即完成媒体上传后，可自动发起任务流操作。参数值为任务流模板名，云点播支持 [创建任务流模板](/document/product/266/33819) 并为模板命名。"
+      },
+      {
+        "name": "ExpireTime",
+        "desc": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+      },
+      {
+        "name": "StorageRegion",
+        "desc": "指定上传园区，仅适用于对上传地域有特殊需求的用户。"
+      },
+      {
+        "name": "ClassId",
+        "desc": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>"
+      },
+      {
+        "name": "SourceContext",
+        "desc": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。"
+      },
+      {
+        "name": "SessionContext",
+        "desc": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "* 该接口用于申请媒体文件（和封面文件）的上传，获取文件上传到云点播的元信息（包括上传路径、上传签名等），用于后续上传接口。\n* 上传流程请参考 [服务端上传综述](/document/product/266/9759)。"
   },
   "ModifyTranscodeTemplate": {
     "params": [
@@ -486,6 +531,31 @@ INFO = {
     ],
     "desc": "* 该接口用于业务服务器以[可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83)的方式获取事件通知；\n* 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；\n* 请求最多挂起 5 秒，建议请求方将超时时间设置为 10 秒；\n* 若该接口有事件返回，调用方必须再调用[确认事件通知](https://cloud.tencent.com/document/product/266/33434)接口，确认事件通知已经处理，否则该事件通知后续会再次被拉取到。"
   },
+  "DescribeAudioTrackTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "获取转自适应码流音频轨模板列表，支持根据条件，分页查询。"
+  },
   "LiveRealTimeClip": {
     "params": [
       {
@@ -580,50 +650,50 @@ INFO = {
     ],
     "desc": "修改用户自定义视频内容识别模板。"
   },
-  "ApplyUpload": {
+  "ProcessMediaByUrl": {
     "params": [
       {
-        "name": "MediaType",
-        "desc": "媒体类型，可选值请参考 [上传能力综述](/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。"
+        "name": "InputInfo",
+        "desc": "输入视频信息，包括视频 URL ， 名称、视频自定义 ID。"
       },
       {
-        "name": "MediaName",
-        "desc": "媒体名称。"
+        "name": "OutputInfo",
+        "desc": "输出文件 COS 路径信息。"
       },
       {
-        "name": "CoverType",
-        "desc": "封面类型，可选值请参考 [上传能力综述](/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。"
+        "name": "AiContentReviewTask",
+        "desc": "视频内容审核类型任务参数。"
       },
       {
-        "name": "Procedure",
-        "desc": "媒体后续任务处理操作，即完成媒体上传后，可自动发起任务流操作。参数值为任务流模板名，云点播支持 [创建任务流模板](/document/product/266/33819) 并为模板命名。"
+        "name": "AiAnalysisTask",
+        "desc": "视频内容分析类型任务参数。"
       },
       {
-        "name": "ExpireTime",
-        "desc": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "name": "AiRecognitionTask",
+        "desc": "视频内容识别类型任务参数。"
       },
       {
-        "name": "StorageRegion",
-        "desc": "指定上传园区，仅适用于对上传地域有特殊需求的用户。"
+        "name": "TasksPriority",
+        "desc": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。"
       },
       {
-        "name": "ClassId",
-        "desc": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>"
-      },
-      {
-        "name": "SourceContext",
-        "desc": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。"
+        "name": "TasksNotifyMode",
+        "desc": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。"
       },
       {
         "name": "SessionContext",
-        "desc": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。"
+        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
+      },
+      {
+        "name": "SessionId",
+        "desc": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
       },
       {
         "name": "SubAppId",
-        "desc": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "* 该接口用于申请媒体文件（和封面文件）的上传，获取文件上传到云点播的元信息（包括上传路径、上传签名等），用于后续上传接口。\n* 上传流程请参考 [服务端上传综述](/document/product/266/9759)。"
+    "desc": "对来源为 URL 的音视频媒体发起处理任务，功能包括：\n\n1. 智能内容审核（鉴黄、鉴恐、鉴政）；\n2. 智能内容分析（标签、分类、封面、按帧标签）；\n3. 智能内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。"
   },
   "ModifySampleSnapshotTemplate": {
     "params": [
@@ -731,6 +801,43 @@ INFO = {
       }
     ],
     "desc": "删除用户自定义水印模板。"
+  },
+  "CreateAIAnalysisTemplate": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "视频内容分析模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容分析模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "ClassificationConfigure",
+        "desc": "智能分类任务控制参数。"
+      },
+      {
+        "name": "TagConfigure",
+        "desc": "智能标签任务控制参数。"
+      },
+      {
+        "name": "CoverConfigure",
+        "desc": "智能封面任务控制参数。"
+      },
+      {
+        "name": "FrameTagConfigure",
+        "desc": "智能按帧标签任务控制参数。"
+      },
+      {
+        "name": "HighlightConfigure",
+        "desc": "智能精彩集锦任务控制参数。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建用户自定义视频内容分析模板，数量上限：50。"
   },
   "DeletePersonSample": {
     "params": [
@@ -1351,42 +1458,30 @@ INFO = {
     ],
     "desc": "创建用户自定义转码模板，数量上限：1000。"
   },
-  "CreateAIAnalysisTemplate": {
+  "DescribeVideoTrackTemplates": {
     "params": [
       {
-        "name": "Name",
-        "desc": "视频内容分析模板名称，长度限制：64 个字符。"
+        "name": "Definitions",
+        "desc": "模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
-        "name": "Comment",
-        "desc": "视频内容分析模板描述信息，长度限制：256 个字符。"
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
       },
       {
-        "name": "ClassificationConfigure",
-        "desc": "智能分类任务控制参数。"
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
       },
       {
-        "name": "TagConfigure",
-        "desc": "智能标签任务控制参数。"
-      },
-      {
-        "name": "CoverConfigure",
-        "desc": "智能封面任务控制参数。"
-      },
-      {
-        "name": "FrameTagConfigure",
-        "desc": "智能按帧标签任务控制参数。"
-      },
-      {
-        "name": "HighlightConfigure",
-        "desc": "智能精彩集锦任务控制参数。"
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "创建用户自定义视频内容分析模板，数量上限：50。"
+    "desc": "获取转自适应码流视频轨模板列表，支持根据条件，分页查询。"
   },
   "ModifySnapshotByTimeOffsetTemplate": {
     "params": [
@@ -1614,50 +1709,30 @@ INFO = {
     ],
     "desc": "删除用户自定义视频内容审核模板。"
   },
-  "ModifyContentReviewTemplate": {
+  "DescribeAdaptiveDynamicStreamingTemplates": {
     "params": [
       {
-        "name": "Definition",
-        "desc": "内容审核模板唯一标识。"
+        "name": "Definitions",
+        "desc": "转自适应码流模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
-        "name": "Name",
-        "desc": "内容审核模板名称，长度限制：64 个字符。"
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
       },
       {
-        "name": "Comment",
-        "desc": "内容审核模板描述信息，长度限制：256 个字符。"
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
       },
       {
-        "name": "PornConfigure",
-        "desc": "鉴黄控制参数。"
-      },
-      {
-        "name": "TerrorismConfigure",
-        "desc": "鉴恐控制参数。"
-      },
-      {
-        "name": "PoliticalConfigure",
-        "desc": "鉴政控制参数。"
-      },
-      {
-        "name": "UserDefineConfigure",
-        "desc": "用户自定义内容审核控制参数。"
-      },
-      {
-        "name": "ScreenshotInterval",
-        "desc": "截帧间隔，单位为秒，最小值为 0.5 秒。"
-      },
-      {
-        "name": "ReviewWallSwitch",
-        "desc": "审核结果是否进入审核墙（对审核结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>"
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "修改用户自定义视频内容审核模板。"
+    "desc": "查询转自适应码流模板，支持根据条件，分页查询。"
   },
   "ProcessMedia": {
     "params": [

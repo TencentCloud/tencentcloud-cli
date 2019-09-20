@@ -627,34 +627,26 @@ INFO = {
     ],
     "desc": "本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。\n\n* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。\n* 支持批量操作。每次请求批量实例的上限为100。"
   },
-  "ResetInstance": {
+  "PurchaseReservedInstancesOffering": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) API返回值中的`InstanceId`获取。"
+        "name": "InstanceCount",
+        "desc": "购买预留实例计费数量"
       },
       {
-        "name": "ImageId",
-        "desc": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/9418) ，取返回信息中的`ImageId`字段。</li>\n<br>默认取值：默认使用当前镜像。"
+        "name": "ReservedInstancesOfferingId",
+        "desc": "预留实例计费配置ID"
       },
       {
-        "name": "SystemDisk",
-        "desc": "实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作，若不指定则默认系统盘大小保持不变。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。"
+        "name": "DryRun",
+        "desc": "试运行"
       },
       {
-        "name": "LoginSettings",
-        "desc": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。"
-      },
-      {
-        "name": "EnhancedService",
-        "desc": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。"
-      },
-      {
-        "name": "HostName",
-        "desc": "重装系统时，可以指定修改实例的HostName。"
+        "name": "ClientToken",
+        "desc": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性"
       }
     ],
-    "desc": "本接口 (ResetInstance) 用于重装指定实例上的操作系统。\n\n* 如果指定了`ImageId`参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* `Linux`和`Windows`系统互相切换时，该实例系统盘`ID`将发生变化，系统盘关联快照将无法回滚、恢复数据。\n* 密码不指定将会通过站内信下发随机密码。\n* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换。\n* 目前不支持海外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换。"
+    "desc": "本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例"
   },
   "ResizeInstanceDisks": {
     "params": [
@@ -672,6 +664,27 @@ INFO = {
       }
     ],
     "desc": "本接口 (ResizeInstanceDisks) 用于扩容实例的数据盘。\n\n* 目前只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](/document/api/213/9452#block_device)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口扩容数据盘。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。\n* 目前只支持扩容一块数据盘。"
+  },
+  "DescribeReservedInstances": {
+    "params": [
+      {
+        "name": "DryRun",
+        "desc": "试运行。默认为 false。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Filters",
+        "desc": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费可购买的【<strong>可用区</strong>】进行过滤。形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>duration</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费【<strong>有效期</strong>】即预留实例计费购买时长进行过滤。形如：31536000。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">计量单位：秒</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：31536000 (1年) | 94608000（3年）</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>预留实例计费类型</strong>】进行过滤。形如：S3.MEDIUM4。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/11518\">预留实例计费类型列表</a></p>\n<li><strong>offering-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>付款类型</strong>】进行过滤。形如：All Upfront (预付全部费用)。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：All Upfront (预付全部费用)</p>\n<li><strong>product-description</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费的【<strong>平台描述</strong>】（即操作系统）进行过滤。形如：linux。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：linux</p>\n<li><strong>reserved-instances-id</strong></li>\n<p style=\"padding-left: 30px;\">按照已购买【<strong>预留实例计费ID</strong>】进行过滤。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>state</strong></li>\n<p style=\"padding-left: 30px;\">按照已购买【<strong>预留实例计费状态</strong>】进行过滤。形如：active。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：active (以创建) | pending (等待被创建) | retired (过期)</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。"
+      }
+    ],
+    "desc": "本接口(DescribeReservedInstances)可提供列出用户已购买的预留实例"
   },
   "DescribeZones": {
     "params": [],
@@ -804,6 +817,35 @@ INFO = {
       }
     ],
     "desc": "本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址。\n\n* 处于 `STOPPED` 状态的机器无法使用此功能。\n* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。\n* 管理终端地址一旦被访问，将自动失效，您需要重新查询。\n* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。\n* 获取到 `InstanceVncUrl` 后，您需要在在链接 <https://img.qcloud.com/qcloud/app/active_vnc/index.html?> 末尾加上参数 `InstanceVncUrl=xxxx`  。\n  - 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。\n\n    最后组成的 URL 格式如下：\n\n```\nhttps://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\n```\n"
+  },
+  "ResetInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) API返回值中的`InstanceId`获取。"
+      },
+      {
+        "name": "ImageId",
+        "desc": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/9418) ，取返回信息中的`ImageId`字段。</li>\n<br>默认取值：默认使用当前镜像。"
+      },
+      {
+        "name": "SystemDisk",
+        "desc": "实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作，若不指定则默认系统盘大小保持不变。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。"
+      },
+      {
+        "name": "LoginSettings",
+        "desc": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。"
+      },
+      {
+        "name": "EnhancedService",
+        "desc": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。"
+      },
+      {
+        "name": "HostName",
+        "desc": "重装系统时，可以指定修改实例的HostName。"
+      }
+    ],
+    "desc": "本接口 (ResetInstance) 用于重装指定实例上的操作系统。\n\n* 如果指定了`ImageId`参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* `Linux`和`Windows`系统互相切换时，该实例系统盘`ID`将发生变化，系统盘关联快照将无法回滚、恢复数据。\n* 密码不指定将会通过站内信下发随机密码。\n* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换。\n* 目前不支持海外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换。"
   },
   "SyncImages": {
     "params": [
@@ -976,6 +1018,35 @@ INFO = {
       }
     ],
     "desc": "本接口 (DescribeKeyPairs) 用于查询密钥对信息。\n\n* 密钥对是通过一种算法生成的一对密钥，在生成的密钥对中，一个向外界公开，称为公钥；另一个用户自己保留，称为私钥。密钥对的公钥内容可以通过这个接口查询，但私钥内容系统不保留。"
+  },
+  "DescribeReservedInstancesOfferings": {
+    "params": [
+      {
+        "name": "DryRun",
+        "desc": "试运行, 默认为 false。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "MaxDuration",
+        "desc": "以最大有效期作为过滤参数。\n计量单位: 秒\n默认为 94608000。"
+      },
+      {
+        "name": "MinDuration",
+        "desc": "以最小有效期作为过滤参数。\n计量单位: 秒\n默认为 2592000。"
+      },
+      {
+        "name": "Filters",
+        "desc": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费可购买的【<strong>可用区</strong>】进行过滤。形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>duration</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费【<strong>有效期</strong>】即预留实例计费购买时长进行过滤。形如：31536000。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">计量单位：秒</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：31536000 (1年) | 94608000（3年）</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>预留实例计费类型</strong>】进行过滤。形如：S3.MEDIUM4。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/11518\">预留实例计费类型列表</a></p>\n<li><strong>offering-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>付款类型</strong>】进行过滤。形如：All Upfront (预付全部费用)。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：All Upfront (预付全部费用)</p>\n<li><strong>product-description</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费的【<strong>平台描述</strong>】（即操作系统）进行过滤。形如：linux。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：linux</p>\n<li><strong>reserved-instances-offering-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>预留实例计费配置ID</strong>】进行过滤。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。"
+      }
+    ],
+    "desc": "本接口(DescribeReservedInstancesOfferings)供用户列出可购买的预留实例配置"
   },
   "InquiryPriceModifyInstancesChargeType": {
     "params": [

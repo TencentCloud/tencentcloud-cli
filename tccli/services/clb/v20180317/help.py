@@ -243,6 +243,39 @@ INFO = {
     ],
     "desc": "DeleteLoadBalancer 接口用以删除指定的一个或多个负载均衡实例。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
+  "ModifyDomainAttributes": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
+      },
+      {
+        "name": "ListenerId",
+        "desc": "应用型负载均衡监听器 ID"
+      },
+      {
+        "name": "Domain",
+        "desc": "域名（必须是已经创建的转发规则下的域名）"
+      },
+      {
+        "name": "NewDomain",
+        "desc": "要修改的新域名"
+      },
+      {
+        "name": "Certificate",
+        "desc": "域名相关的证书信息，注意，仅对启用SNI的监听器适用。"
+      },
+      {
+        "name": "Http2",
+        "desc": "是否开启Http2，注意，只用HTTPS域名才能开启Http2。"
+      },
+      {
+        "name": "DefaultServer",
+        "desc": "是否设为默认域名，注意，一个监听器下只能设置一个默认域名。"
+      }
+    ],
+    "desc": "ModifyDomainAttributes接口用于修改负载均衡7层监听器转发规则的域名级别属性，如修改域名、修改DefaultServer、开启/关闭Http2、修改证书。\n本接口为异步接口，本接口返回成功后，需以返回的RequestId为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+  },
   "DeleteRule": {
     "params": [
       {
@@ -280,7 +313,7 @@ INFO = {
       },
       {
         "name": "Forward",
-        "desc": "负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例"
+        "desc": "负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。"
       },
       {
         "name": "LoadBalancerName",
@@ -332,7 +365,7 @@ INFO = {
       },
       {
         "name": "VpcId",
-        "desc": "负载均衡实例所属私有网络，如 vpc-bhqkbhdx，\n基础网络不支持通过VpcId查询。"
+        "desc": "负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，\n基础网络可传入'0'。"
       },
       {
         "name": "SecurityGroup",
@@ -435,7 +468,7 @@ INFO = {
       },
       {
         "name": "Weight",
-        "desc": "后端服务服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。"
+        "desc": "后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。"
       }
     ],
     "desc": "ModifyTargetWeight 接口用于修改负载均衡绑定的后端服务的转发权重。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
@@ -621,6 +654,10 @@ INFO = {
       {
         "name": "TargetRegionInfo",
         "desc": "负载均衡绑定的后端服务的地域信息"
+      },
+      {
+        "name": "InternetChargeInfo",
+        "desc": "网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。"
       }
     ],
     "desc": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。"
@@ -684,7 +721,7 @@ INFO = {
       },
       {
         "name": "VpcId",
-        "desc": "负载均衡后端目标设备所属的网络 ID，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（\"0\"）。"
+        "desc": "负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（\"0\"）。"
       },
       {
         "name": "SubnetId",
