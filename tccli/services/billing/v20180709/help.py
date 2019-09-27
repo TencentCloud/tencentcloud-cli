@@ -59,6 +59,18 @@ INFO = {
       {
         "name": "NeedRecordNum",
         "desc": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要"
+      },
+      {
+        "name": "ProductCode",
+        "desc": "查询指定产品信息"
+      },
+      {
+        "name": "PayMode",
+        "desc": "付费模式 prePay/postPay"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "查询指定资源信息"
       }
     ],
     "desc": "查询账单明细数据"
@@ -184,6 +196,27 @@ INFO = {
       }
     ],
     "desc": "获取产品汇总费用分布"
+  },
+  "DescribeBillSummaryByTag": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59"
+      },
+      {
+        "name": "TagKey",
+        "desc": "分账标签键"
+      }
+    ],
+    "desc": "获取按标签汇总费用分布"
   },
   "PayDeals": {
     "params": [

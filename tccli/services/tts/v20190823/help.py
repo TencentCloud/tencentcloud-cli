@@ -29,7 +29,7 @@ INFO = {
       },
       {
         "name": "VoiceType",
-        "desc": "音色<li>0-亲和女声(默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>"
+        "desc": "音色<li>0-亲和女声(默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>"
       },
       {
         "name": "PrimaryLanguage",

@@ -4447,6 +4447,8 @@ def doCreateCcn(argv, arglist):
         "CcnName": argv.get("--CcnName"),
         "CcnDescription": argv.get("--CcnDescription"),
         "QosLevel": argv.get("--QosLevel"),
+        "InstanceChargeType": argv.get("--InstanceChargeType"),
+        "BandwidthLimitType": argv.get("--BandwidthLimitType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

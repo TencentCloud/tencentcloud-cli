@@ -118,7 +118,7 @@ INFO = {
       },
       {
         "name": "InstanceChargeType",
-        "desc": "计费类型，当前只支持预付费，即包年包月，取值为PREPAID。默认值为PREPAID"
+        "desc": "计费类型，取值支持 PREPAID，POSTPAID。"
       },
       {
         "name": "Period",
@@ -130,7 +130,7 @@ INFO = {
       },
       {
         "name": "DBVersion",
-        "desc": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 R2），2012SP3（SQL Server 2012），2016SP1（SQL Server 2016 SP1）两种版本。默认为2008R2版本"
+        "desc": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本"
       }
     ],
     "desc": "本接口（InquiryPriceCreateDBInstances）用于查询申请实例价格。"
@@ -255,18 +255,14 @@ INFO = {
     ],
     "desc": "本接口（ModifyDBInstanceName）用于修改实例名字。"
   },
-  "DeleteDB": {
+  "TerminateDBInstance": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID，形如mssql-rljoi3bf"
-      },
-      {
-        "name": "Names",
-        "desc": "数据库名数组"
+        "name": "InstanceIdSet",
+        "desc": "主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同"
       }
     ],
-    "desc": "本接口(DeleteDB)用于删除数据库。"
+    "desc": "本接口(TerminateDBInstance)用于主动销毁按量计费实例。"
   },
   "CreateBackup": {
     "params": [
@@ -301,7 +297,7 @@ INFO = {
       },
       {
         "name": "InstanceChargeType",
-        "desc": "付费模式，目前只支持预付费，其值为PREPAID。可不填，默认值为PREPAID"
+        "desc": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。"
       },
       {
         "name": "ProjectId",
@@ -333,7 +329,7 @@ INFO = {
       },
       {
         "name": "DBVersion",
-        "desc": "数据库版本号，目前取值有2012SP3，表示SQL Server 2012；2008R2，表示SQL Server 2008 R2；2016SP1，表示SQL Server 2016 SP1。每个地域支持售卖的版本可能不一样，可以通过DescribeZones接口来拉取每个地域可售卖的版本信息。不填的话，默认为版本2008R2"
+        "desc": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。"
       }
     ],
     "desc": "本接口（CreateDBInstances）用于创建实例。"
@@ -388,15 +384,19 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量，默认为 0"
+        "desc": "页数，默认为 0"
       },
       {
         "name": "Limit",
-        "desc": "返回数量，默认为50"
+        "desc": "页大小，默认为50"
       },
       {
         "name": "InstanceIdSet",
         "desc": "一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl"
+      },
+      {
+        "name": "PayMode",
+        "desc": "付费类型检索 1-包年包月，0-按量计费"
       }
     ],
     "desc": "本接口(DescribeDBInstances)用于查询实例列表。"
@@ -557,6 +557,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeRollbackTime）用于查询实例可回档时间范围"
+  },
+  "DeleteDB": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-rljoi3bf"
+      },
+      {
+        "name": "Names",
+        "desc": "数据库名数组"
+      }
+    ],
+    "desc": "本接口(DeleteDB)用于删除数据库。"
   },
   "CreateDB": {
     "params": [

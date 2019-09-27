@@ -351,6 +351,10 @@ INFO = {
       {
         "name": "Publish",
         "desc": "在更新时是否同步发布新版本，默认为：FALSE，不发布"
+      },
+      {
+        "name": "L5Enable",
+        "desc": "是否开启L5访问能力，TRUE 为开启，FALSE为关闭"
       }
     ],
     "desc": "该接口根据传入参数更新函数配置。"
@@ -511,6 +515,14 @@ INFO = {
       {
         "name": "Publish",
         "desc": "在更新时是否同步发布新版本，默认为：FALSE，不发布"
+      },
+      {
+        "name": "Code",
+        "desc": "函数代码"
+      },
+      {
+        "name": "CodeSource",
+        "desc": "代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段"
       }
     ],
     "desc": "该接口根据传入参数更新函数代码。"

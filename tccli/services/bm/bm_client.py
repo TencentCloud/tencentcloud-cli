@@ -520,6 +520,7 @@ def doBuyDevices(argv, arglist):
         "DataDiskCount": Utils.try_to_json(argv, "--DataDiskCount"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "FileSystem": argv.get("--FileSystem"),
+        "BuySession": argv.get("--BuySession"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

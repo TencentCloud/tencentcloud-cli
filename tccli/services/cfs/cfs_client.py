@@ -12,21 +12,28 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.scf.v20180416 import scf_client as scf_client_v20180416
-from tencentcloud.scf.v20180416 import models as models_v20180416
-from tccli.services.scf import v20180416
-from tccli.services.scf.v20180416 import help as v20180416_help
+from tencentcloud.cfs.v20190719 import cfs_client as cfs_client_v20190719
+from tencentcloud.cfs.v20190719 import models as models_v20190719
+from tccli.services.cfs import v20190719
+from tccli.services.cfs.v20190719 import help as v20190719_help
 
 
-def doListVersionByFunction(argv, arglist):
+def doCreateCfsFileSystem(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ListVersionByFunction", g_param[OptionsDefine.Version])
+        show_help("CreateCfsFileSystem", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Namespace": argv.get("--Namespace"),
+        "Zone": argv.get("--Zone"),
+        "NetInterface": argv.get("--NetInterface"),
+        "PGroupId": argv.get("--PGroupId"),
+        "Protocol": argv.get("--Protocol"),
+        "StorageType": argv.get("--StorageType"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+        "MountIP": argv.get("--MountIP"),
+        "FsName": argv.get("--FsName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -37,12 +44,12 @@ def doListVersionByFunction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListVersionByFunctionRequest()
+    model = models.CreateCfsFileSystemRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ListVersionByFunction(model)
+    rsp = client.CreateCfsFileSystem(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -52,15 +59,13 @@ def doListVersionByFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateNamespace(argv, arglist):
+def doDescribeCfsPGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateNamespace", g_param[OptionsDefine.Version])
+        show_help("DescribeCfsPGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Namespace": argv.get("--Namespace"),
-        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -71,12 +76,12 @@ def doUpdateNamespace(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateNamespaceRequest()
+    model = models.DescribeCfsPGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateNamespace(model)
+    rsp = client.DescribeCfsPGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -86,19 +91,14 @@ def doUpdateNamespace(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInvoke(argv, arglist):
+def doDescribeCfsRules(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Invoke", g_param[OptionsDefine.Version])
+        show_help("DescribeCfsRules", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "InvocationType": argv.get("--InvocationType"),
-        "Qualifier": argv.get("--Qualifier"),
-        "ClientContext": argv.get("--ClientContext"),
-        "LogType": argv.get("--LogType"),
-        "Namespace": argv.get("--Namespace"),
+        "PGroupId": argv.get("--PGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -109,12 +109,12 @@ def doInvoke(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InvokeRequest()
+    model = models.DescribeCfsRulesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Invoke(model)
+    rsp = client.DescribeCfsRules(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -124,15 +124,15 @@ def doInvoke(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteFunction(argv, arglist):
+def doUpdateCfsFileSystemPGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteFunction", g_param[OptionsDefine.Version])
+        show_help("UpdateCfsFileSystemPGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Namespace": argv.get("--Namespace"),
+        "PGroupId": argv.get("--PGroupId"),
+        "FileSystemId": argv.get("--FileSystemId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -143,12 +143,12 @@ def doDeleteFunction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteFunctionRequest()
+    model = models.UpdateCfsFileSystemPGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteFunction(model)
+    rsp = client.UpdateCfsFileSystemPGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -158,16 +158,13 @@ def doDeleteFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doPublishVersion(argv, arglist):
+def doDescribeAvailableZoneInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("PublishVersion", g_param[OptionsDefine.Version])
+        show_help("DescribeAvailableZoneInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Description": argv.get("--Description"),
-        "Namespace": argv.get("--Namespace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -178,12 +175,12 @@ def doPublishVersion(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PublishVersionRequest()
+    model = models.DescribeAvailableZoneInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.PublishVersion(model)
+    rsp = client.DescribeAvailableZoneInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -193,19 +190,15 @@ def doPublishVersion(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTrigger(argv, arglist):
+def doUpdateCfsFileSystemName(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteTrigger", g_param[OptionsDefine.Version])
+        show_help("UpdateCfsFileSystemName", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "TriggerName": argv.get("--TriggerName"),
-        "Type": argv.get("--Type"),
-        "Namespace": argv.get("--Namespace"),
-        "TriggerDesc": argv.get("--TriggerDesc"),
-        "Qualifier": argv.get("--Qualifier"),
+        "FileSystemId": argv.get("--FileSystemId"),
+        "FsName": argv.get("--FsName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -216,12 +209,12 @@ def doDeleteTrigger(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTriggerRequest()
+    model = models.UpdateCfsFileSystemNameRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteTrigger(model)
+    rsp = client.UpdateCfsFileSystemName(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -231,17 +224,14 @@ def doDeleteTrigger(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetFunction(argv, arglist):
+def doDeleteCfsFileSystem(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetFunction", g_param[OptionsDefine.Version])
+        show_help("DeleteCfsFileSystem", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Qualifier": argv.get("--Qualifier"),
-        "Namespace": argv.get("--Namespace"),
-        "ShowCode": argv.get("--ShowCode"),
+        "FileSystemId": argv.get("--FileSystemId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,12 +242,12 @@ def doGetFunction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetFunctionRequest()
+    model = models.DeleteCfsFileSystemRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetFunction(model)
+    rsp = client.DeleteCfsFileSystem(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -267,16 +257,15 @@ def doGetFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetFunctionAddress(argv, arglist):
+def doUpdateCfsFileSystemSizeLimit(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetFunctionAddress", g_param[OptionsDefine.Version])
+        show_help("UpdateCfsFileSystemSizeLimit", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Qualifier": argv.get("--Qualifier"),
-        "Namespace": argv.get("--Namespace"),
+        "FsLimit": Utils.try_to_json(argv, "--FsLimit"),
+        "FileSystemId": argv.get("--FileSystemId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -287,12 +276,12 @@ def doGetFunctionAddress(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetFunctionAddressRequest()
+    model = models.UpdateCfsFileSystemSizeLimitRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetFunctionAddress(model)
+    rsp = client.UpdateCfsFileSystemSizeLimit(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -302,17 +291,15 @@ def doGetFunctionAddress(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListNamespaces(argv, arglist):
+def doCreateCfsPGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ListNamespaces", g_param[OptionsDefine.Version])
+        show_help("CreateCfsPGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Orderby": argv.get("--Orderby"),
-        "Order": argv.get("--Order"),
+        "Name": argv.get("--Name"),
+        "DescInfo": argv.get("--DescInfo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -323,12 +310,12 @@ def doListNamespaces(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListNamespacesRequest()
+    model = models.CreateCfsPGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ListNamespaces(model)
+    rsp = client.CreateCfsPGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -338,26 +325,19 @@ def doListNamespaces(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateFunctionConfiguration(argv, arglist):
+def doUpdateCfsRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateFunctionConfiguration", g_param[OptionsDefine.Version])
+        show_help("UpdateCfsRule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Description": argv.get("--Description"),
-        "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
-        "Timeout": Utils.try_to_json(argv, "--Timeout"),
-        "Runtime": argv.get("--Runtime"),
-        "Environment": Utils.try_to_json(argv, "--Environment"),
-        "Namespace": argv.get("--Namespace"),
-        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
-        "Role": argv.get("--Role"),
-        "ClsLogsetId": argv.get("--ClsLogsetId"),
-        "ClsTopicId": argv.get("--ClsTopicId"),
-        "Publish": argv.get("--Publish"),
-        "L5Enable": argv.get("--L5Enable"),
+        "PGroupId": argv.get("--PGroupId"),
+        "RuleId": argv.get("--RuleId"),
+        "AuthClientIp": argv.get("--AuthClientIp"),
+        "RWPermission": argv.get("--RWPermission"),
+        "UserPermission": argv.get("--UserPermission"),
+        "Priority": Utils.try_to_json(argv, "--Priority"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -368,12 +348,12 @@ def doUpdateFunctionConfiguration(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateFunctionConfigurationRequest()
+    model = models.UpdateCfsRuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateFunctionConfiguration(model)
+    rsp = client.UpdateCfsRule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -383,20 +363,13 @@ def doUpdateFunctionConfiguration(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateTrigger(argv, arglist):
+def doDescribeCfsServiceStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateTrigger", g_param[OptionsDefine.Version])
+        show_help("DescribeCfsServiceStatus", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "TriggerName": argv.get("--TriggerName"),
-        "Type": argv.get("--Type"),
-        "TriggerDesc": argv.get("--TriggerDesc"),
-        "Namespace": argv.get("--Namespace"),
-        "Qualifier": argv.get("--Qualifier"),
-        "Enable": argv.get("--Enable"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -407,12 +380,12 @@ def doCreateTrigger(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTriggerRequest()
+    model = models.DescribeCfsServiceStatusRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateTrigger(model)
+    rsp = client.DescribeCfsServiceStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -422,15 +395,16 @@ def doCreateTrigger(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateNamespace(argv, arglist):
+def doDescribeCfsFileSystems(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateNamespace", g_param[OptionsDefine.Version])
+        show_help("DescribeCfsFileSystems", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Namespace": argv.get("--Namespace"),
-        "Description": argv.get("--Description"),
+        "FileSystemId": argv.get("--FileSystemId"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -441,12 +415,12 @@ def doCreateNamespace(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateNamespaceRequest()
+    model = models.DescribeCfsFileSystemsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateNamespace(model)
+    rsp = client.DescribeCfsFileSystems(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -456,21 +430,13 @@ def doCreateNamespace(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCopyFunction(argv, arglist):
+def doSignUpCfsService(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CopyFunction", g_param[OptionsDefine.Version])
+        show_help("SignUpCfsService", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "NewFunctionName": argv.get("--NewFunctionName"),
-        "Namespace": argv.get("--Namespace"),
-        "TargetNamespace": argv.get("--TargetNamespace"),
-        "Description": argv.get("--Description"),
-        "TargetRegion": argv.get("--TargetRegion"),
-        "Override": Utils.try_to_json(argv, "--Override"),
-        "CopyConfiguration": Utils.try_to_json(argv, "--CopyConfiguration"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -481,12 +447,12 @@ def doCopyFunction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CopyFunctionRequest()
+    model = models.SignUpCfsServiceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CopyFunction(model)
+    rsp = client.SignUpCfsService(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -496,25 +462,18 @@ def doCopyFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetFunctionLogs(argv, arglist):
+def doCreateCfsRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetFunctionLogs", g_param[OptionsDefine.Version])
+        show_help("CreateCfsRule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Order": argv.get("--Order"),
-        "OrderBy": argv.get("--OrderBy"),
-        "Filter": Utils.try_to_json(argv, "--Filter"),
-        "Namespace": argv.get("--Namespace"),
-        "Qualifier": argv.get("--Qualifier"),
-        "FunctionRequestId": argv.get("--FunctionRequestId"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "SearchContext": Utils.try_to_json(argv, "--SearchContext"),
+        "PGroupId": argv.get("--PGroupId"),
+        "AuthClientIp": argv.get("--AuthClientIp"),
+        "Priority": Utils.try_to_json(argv, "--Priority"),
+        "RWPermission": argv.get("--RWPermission"),
+        "UserPermission": argv.get("--UserPermission"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -525,12 +484,12 @@ def doGetFunctionLogs(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetFunctionLogsRequest()
+    model = models.CreateCfsRuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetFunctionLogs(model)
+    rsp = client.CreateCfsRule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -540,21 +499,14 @@ def doGetFunctionLogs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListFunctions(argv, arglist):
+def doDeleteCfsPGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ListFunctions", g_param[OptionsDefine.Version])
+        show_help("DeleteCfsPGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Order": argv.get("--Order"),
-        "Orderby": argv.get("--Orderby"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SearchKey": argv.get("--SearchKey"),
-        "Namespace": argv.get("--Namespace"),
-        "Description": argv.get("--Description"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "PGroupId": argv.get("--PGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -565,12 +517,12 @@ def doListFunctions(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListFunctionsRequest()
+    model = models.DeleteCfsPGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ListFunctions(model)
+    rsp = client.DeleteCfsPGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -580,28 +532,14 @@ def doListFunctions(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateFunction(argv, arglist):
+def doDescribeMountTargets(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateFunction", g_param[OptionsDefine.Version])
+        show_help("DescribeMountTargets", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Code": Utils.try_to_json(argv, "--Code"),
-        "Handler": argv.get("--Handler"),
-        "Description": argv.get("--Description"),
-        "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
-        "Timeout": Utils.try_to_json(argv, "--Timeout"),
-        "Environment": Utils.try_to_json(argv, "--Environment"),
-        "Runtime": argv.get("--Runtime"),
-        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
-        "Namespace": argv.get("--Namespace"),
-        "Role": argv.get("--Role"),
-        "ClsLogsetId": argv.get("--ClsLogsetId"),
-        "ClsTopicId": argv.get("--ClsTopicId"),
-        "Type": argv.get("--Type"),
-        "CodeSource": argv.get("--CodeSource"),
+        "FileSystemId": argv.get("--FileSystemId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -612,12 +550,12 @@ def doCreateFunction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateFunctionRequest()
+    model = models.DescribeMountTargetsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateFunction(model)
+    rsp = client.DescribeMountTargets(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -627,14 +565,16 @@ def doCreateFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteNamespace(argv, arglist):
+def doUpdateCfsPGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteNamespace", g_param[OptionsDefine.Version])
+        show_help("UpdateCfsPGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Namespace": argv.get("--Namespace"),
+        "PGroupId": argv.get("--PGroupId"),
+        "Name": argv.get("--Name"),
+        "DescInfo": argv.get("--DescInfo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -645,12 +585,12 @@ def doDeleteNamespace(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteNamespaceRequest()
+    model = models.UpdateCfsPGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteNamespace(model)
+    rsp = client.UpdateCfsPGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -660,24 +600,15 @@ def doDeleteNamespace(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateFunctionCode(argv, arglist):
+def doDeleteCfsRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateFunctionCode", g_param[OptionsDefine.Version])
+        show_help("DeleteCfsRule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Handler": argv.get("--Handler"),
-        "FunctionName": argv.get("--FunctionName"),
-        "CosBucketName": argv.get("--CosBucketName"),
-        "CosObjectName": argv.get("--CosObjectName"),
-        "ZipFile": argv.get("--ZipFile"),
-        "Namespace": argv.get("--Namespace"),
-        "CosBucketRegion": argv.get("--CosBucketRegion"),
-        "EnvId": argv.get("--EnvId"),
-        "Publish": argv.get("--Publish"),
-        "Code": Utils.try_to_json(argv, "--Code"),
-        "CodeSource": argv.get("--CodeSource"),
+        "PGroupId": argv.get("--PGroupId"),
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -688,12 +619,46 @@ def doUpdateFunctionCode(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateFunctionCodeRequest()
+    model = models.DeleteCfsRuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateFunctionCode(model)
+    rsp = client.DeleteCfsRule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteMountTarget(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteMountTarget", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileSystemId": argv.get("--FileSystemId"),
+        "MountTargetId": argv.get("--MountTargetId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteMountTargetRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteMountTarget(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -704,48 +669,49 @@ def doUpdateFunctionCode(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180416": scf_client_v20180416,
+    "v20190719": cfs_client_v20190719,
 
 }
 
 MODELS_MAP = {
-    "v20180416": models_v20180416,
+    "v20190719": models_v20190719,
 
 }
 
 ACTION_MAP = {
-    "ListVersionByFunction": doListVersionByFunction,
-    "UpdateNamespace": doUpdateNamespace,
-    "Invoke": doInvoke,
-    "DeleteFunction": doDeleteFunction,
-    "PublishVersion": doPublishVersion,
-    "DeleteTrigger": doDeleteTrigger,
-    "GetFunction": doGetFunction,
-    "GetFunctionAddress": doGetFunctionAddress,
-    "ListNamespaces": doListNamespaces,
-    "UpdateFunctionConfiguration": doUpdateFunctionConfiguration,
-    "CreateTrigger": doCreateTrigger,
-    "CreateNamespace": doCreateNamespace,
-    "CopyFunction": doCopyFunction,
-    "GetFunctionLogs": doGetFunctionLogs,
-    "ListFunctions": doListFunctions,
-    "CreateFunction": doCreateFunction,
-    "DeleteNamespace": doDeleteNamespace,
-    "UpdateFunctionCode": doUpdateFunctionCode,
+    "CreateCfsFileSystem": doCreateCfsFileSystem,
+    "DescribeCfsPGroups": doDescribeCfsPGroups,
+    "DescribeCfsRules": doDescribeCfsRules,
+    "UpdateCfsFileSystemPGroup": doUpdateCfsFileSystemPGroup,
+    "DescribeAvailableZoneInfo": doDescribeAvailableZoneInfo,
+    "UpdateCfsFileSystemName": doUpdateCfsFileSystemName,
+    "DeleteCfsFileSystem": doDeleteCfsFileSystem,
+    "UpdateCfsFileSystemSizeLimit": doUpdateCfsFileSystemSizeLimit,
+    "CreateCfsPGroup": doCreateCfsPGroup,
+    "UpdateCfsRule": doUpdateCfsRule,
+    "DescribeCfsServiceStatus": doDescribeCfsServiceStatus,
+    "DescribeCfsFileSystems": doDescribeCfsFileSystems,
+    "SignUpCfsService": doSignUpCfsService,
+    "CreateCfsRule": doCreateCfsRule,
+    "DeleteCfsPGroup": doDeleteCfsPGroup,
+    "DescribeMountTargets": doDescribeMountTargets,
+    "UpdateCfsPGroup": doUpdateCfsPGroup,
+    "DeleteCfsRule": doDeleteCfsRule,
+    "DeleteMountTarget": doDeleteMountTarget,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180416.version,
+    v20190719.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180416.version.replace('-', ''): {"help": v20180416_help.INFO,"desc": v20180416_help.DESC},
+     'v' + v20190719.version.replace('-', ''): {"help": v20190719_help.INFO,"desc": v20190719_help.DESC},
 
 }
 
 
-def scf_action(argv, arglist):
+def cfs_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -761,7 +727,7 @@ def scf_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "scf", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "cfs", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -782,7 +748,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("scf", scf_action)
+    cmd = NiceCommand("cfs", cfs_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -841,11 +807,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["scf"][OptionsDefine.Version]
+            version = config["cfs"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["scf"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["cfs"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -862,7 +828,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "scf", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cfs", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -872,7 +838,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["scf"]["version"]
+        version = profile["cfs"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

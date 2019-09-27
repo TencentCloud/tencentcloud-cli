@@ -463,6 +463,7 @@ def doCreateRule(argv, arglist):
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
         "CheckParams": Utils.try_to_json(argv, "--CheckParams"),
         "ForwardProtocol": argv.get("--ForwardProtocol"),
+        "ForwardHost": argv.get("--ForwardHost"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2553,6 +2554,7 @@ def doCreateProxy(argv, arglist):
         "ClientToken": argv.get("--ClientToken"),
         "GroupId": argv.get("--GroupId"),
         "TagSet": Utils.try_to_json(argv, "--TagSet"),
+        "ClonedProxyId": argv.get("--ClonedProxyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

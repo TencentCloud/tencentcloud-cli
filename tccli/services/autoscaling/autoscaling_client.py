@@ -624,6 +624,7 @@ def doModifyLoadBalancers(argv, arglist):
         "AutoScalingGroupId": argv.get("--AutoScalingGroupId"),
         "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
         "ForwardLoadBalancers": Utils.try_to_json(argv, "--ForwardLoadBalancers"),
+        "LoadBalancersCheckPolicy": argv.get("--LoadBalancersCheckPolicy"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

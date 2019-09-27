@@ -949,7 +949,7 @@ INFO = {
       },
       {
         "name": "AnycastZone",
-        "desc": "Anycast发布域。\n<ul style=\"margin:0\"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>ANYCAST_ZONE_GLOBAL：全球发布域（需要额外开通Anycast全球加速白名单）</li><li>ANYCAST_ZONE_OVERSEAS：海外发布域</li></ul>默认值：ANYCAST_ZONE_OVERSEAS。</li></ul>"
+        "desc": "Anycast发布域。\n<ul style=\"margin:0\"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>ANYCAST_ZONE_GLOBAL：全球发布域（需要额外开通Anycast全球加速白名单）</li><li>ANYCAST_ZONE_OVERSEAS：境外发布域</li></ul>默认值：ANYCAST_ZONE_OVERSEAS。</li></ul>"
       },
       {
         "name": "ApplicableForCLB",
@@ -2078,6 +2078,14 @@ INFO = {
       {
         "name": "QosLevel",
         "desc": "CCN服务质量，'PT'：白金，'AU'：金，'AG'：银，默认为‘AU’。"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。"
+      },
+      {
+        "name": "BandwidthLimitType",
+        "desc": "限速类型，OUTER_REGION_LIMIT表示地域出口限速，INTER_REGION_LIMIT为地域间限速，默认为OUTER_REGION_LIMIT"
       }
     ],
     "desc": "本接口（CreateCcn）用于创建云联网（CCN）。<br />\n每个账号能创建的云联网实例个数是有限的，详请参考产品文档。如果需要扩充请联系在线客服。"
