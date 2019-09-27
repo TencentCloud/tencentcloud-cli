@@ -54,6 +54,47 @@ def doSubmitOpenClassTask(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSubmitCheckAttendanceTaskPlus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SubmitCheckAttendanceTaskPlus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileContent": Utils.try_to_json(argv, "--FileContent"),
+        "FileType": argv.get("--FileType"),
+        "LibraryIds": Utils.try_to_json(argv, "--LibraryIds"),
+        "AttendanceThreshold": Utils.try_to_json(argv, "--AttendanceThreshold"),
+        "EnableStranger": Utils.try_to_json(argv, "--EnableStranger"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "NoticeUrl": argv.get("--NoticeUrl"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "Threshold": Utils.try_to_json(argv, "--Threshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SubmitCheckAttendanceTaskPlusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SubmitCheckAttendanceTaskPlus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateLibrary(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1075,6 +1116,46 @@ def doDescribeAttendanceResult(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSubmitImageTaskPlus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SubmitImageTaskPlus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileContent": Utils.try_to_json(argv, "--FileContent"),
+        "FileType": argv.get("--FileType"),
+        "Functions": Utils.try_to_json(argv, "--Functions"),
+        "LightStandardSet": Utils.try_to_json(argv, "--LightStandardSet"),
+        "FrameInterval": Utils.try_to_json(argv, "--FrameInterval"),
+        "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
+        "MaxVideoDuration": Utils.try_to_json(argv, "--MaxVideoDuration"),
+        "SimThreshold": Utils.try_to_json(argv, "--SimThreshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TciClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SubmitImageTaskPlusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SubmitImageTaskPlus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateVocabLib(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1440,6 +1521,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "SubmitOpenClassTask": doSubmitOpenClassTask,
+    "SubmitCheckAttendanceTaskPlus": doSubmitCheckAttendanceTaskPlus,
     "CreateLibrary": doCreateLibrary,
     "SubmitAudioTask": doSubmitAudioTask,
     "CreateFace": doCreateFace,
@@ -1468,6 +1550,7 @@ ACTION_MAP = {
     "DescribeImageTask": doDescribeImageTask,
     "SubmitImageTask": doSubmitImageTask,
     "DescribeAttendanceResult": doDescribeAttendanceResult,
+    "SubmitImageTaskPlus": doSubmitImageTaskPlus,
     "CreateVocabLib": doCreateVocabLib,
     "DeleteVocab": doDeleteVocab,
     "SubmitFullBodyClassTask": doSubmitFullBodyClassTask,
