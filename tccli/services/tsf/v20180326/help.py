@@ -1,34 +1,14 @@
 # -*- coding: utf-8 -*-
 DESC = "tsf-2018-03-26"
 INFO = {
-  "DescribeSimpleApplications": {
+  "DeletePublicConfig": {
     "params": [
       {
-        "name": "ApplicationIdList",
-        "desc": "应用ID列表"
-      },
-      {
-        "name": "ApplicationType",
-        "desc": "应用类型"
-      },
-      {
-        "name": "Limit",
-        "desc": "每页条数"
-      },
-      {
-        "name": "Offset",
-        "desc": "起始偏移量"
-      },
-      {
-        "name": "MicroserviceType",
-        "desc": "微服务类型"
-      },
-      {
-        "name": "ApplicationResourceTypeList",
-        "desc": "资源类型数组"
+        "name": "ConfigId",
+        "desc": "配置项ID"
       }
     ],
-    "desc": "查询简单应用列表"
+    "desc": "删除公共配置项"
   },
   "CreateGroup": {
     "params": [
@@ -130,43 +110,26 @@ INFO = {
     ],
     "desc": "修改容器部署组实例数"
   },
-  "DescribeSimpleNamespaces": {
+  "DescribeConfigSummary": {
     "params": [
       {
-        "name": "NamespaceIdList",
-        "desc": "命名空间ID列表，不传入时查询全量"
+        "name": "ApplicationId",
+        "desc": "应用ID，不传入时查询全量"
       },
       {
-        "name": "ClusterId",
-        "desc": "集群ID，不传入时查询全量"
-      },
-      {
-        "name": "Limit",
-        "desc": "每页条数"
+        "name": "SearchWord",
+        "desc": "查询关键字，模糊查询：应用名称，配置项名称，不传入时查询全量"
       },
       {
         "name": "Offset",
-        "desc": "起始偏移量"
+        "desc": "偏移量，默认为0"
       },
       {
-        "name": "NamespaceId",
-        "desc": "命名空间ID，不传入时查询全量"
-      },
-      {
-        "name": "NamespaceResourceTypeList",
-        "desc": "查询资源类型列表"
+        "name": "Limit",
+        "desc": "每页条数，默认为20"
       }
     ],
-    "desc": "查询简单命名空间列表 "
-  },
-  "DeleteGroup": {
-    "params": [
-      {
-        "name": "GroupId",
-        "desc": "部署组ID"
-      }
-    ],
-    "desc": "删除容器部署组"
+    "desc": "查询配置汇总列表"
   },
   "DeployContainerGroup": {
     "params": [
@@ -268,14 +231,35 @@ INFO = {
     ],
     "desc": "删除微服务"
   },
-  "DescribeGroup": {
+  "DescribePublicConfigReleaseLogs": {
     "params": [
       {
-        "name": "GroupId",
-        "desc": "部署组ID"
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不传入时查询全量"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数，默认为20"
       }
     ],
-    "desc": "查询虚拟机部署组详情"
+    "desc": "查询公共配置发布历史"
+  },
+  "DeleteNamespace": {
+    "params": [
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      }
+    ],
+    "desc": "删除命名空间"
   },
   "DescribeGroupInstances": {
     "params": [
@@ -306,14 +290,31 @@ INFO = {
     ],
     "desc": "查询虚拟机部署组云主机列表"
   },
-  "DescribeApplicationAttribute": {
+  "DeleteConfig": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "应用ID"
+        "name": "ConfigId",
+        "desc": "配置项ID"
       }
     ],
-    "desc": "获取应用列表其它字段，如实例数量信息等"
+    "desc": "删除配置项"
+  },
+  "DescribePublicConfigSummary": {
+    "params": [
+      {
+        "name": "SearchWord",
+        "desc": "查询关键字，模糊查询：配置项名称，不传入时查询全量"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数，默认为20"
+      }
+    ],
+    "desc": "查询公共配置汇总列表"
   },
   "DeletePkgs": {
     "params": [
@@ -328,42 +329,111 @@ INFO = {
     ],
     "desc": "从软件仓库批量删除程序包。\n一次最多支持删除1000个包，数量超过1000，返回UpperDeleteLimit错误。"
   },
-  "DescribeContainerGroups": {
+  "RevocationPublicConfig": {
     "params": [
       {
-        "name": "SearchWord",
-        "desc": "搜索字段，模糊搜索groupName字段"
-      },
+        "name": "ConfigReleaseId",
+        "desc": "配置项发布ID"
+      }
+    ],
+    "desc": "撤回已发布的公共配置"
+  },
+  "DescribePublicConfigs": {
+    "params": [
       {
-        "name": "ApplicationId",
-        "desc": "分组所属应用ID"
-      },
-      {
-        "name": "OrderBy",
-        "desc": "排序字段，默认为 createTime字段，支持id， name， createTime"
-      },
-      {
-        "name": "OrderType",
-        "desc": "排序方式，默认为1：倒序排序，0：正序，1：倒序"
+        "name": "ConfigId",
+        "desc": "配置项ID，不传入时查询全量，高优先级"
       },
       {
         "name": "Offset",
-        "desc": "偏移量，取值从0开始"
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数，默认为20"
+      },
+      {
+        "name": "ConfigIdList",
+        "desc": "配置项ID列表，不传入时查询全量，低优先级"
+      },
+      {
+        "name": "ConfigName",
+        "desc": "配置项名称，精确查询，不传入时查询全量"
+      }
+    ],
+    "desc": "查询公共配置项列表"
+  },
+  "DescribeSimpleClusters": {
+    "params": [
+      {
+        "name": "ClusterIdList",
+        "desc": "需要查询的集群ID列表，不填或不传入时查询所有内容"
+      },
+      {
+        "name": "ClusterType",
+        "desc": "需要查询的集群类型，不填或不传入时查询所有内容"
+      },
+      {
+        "name": "Offset",
+        "desc": "查询偏移量，默认为0"
       },
       {
         "name": "Limit",
         "desc": "分页个数，默认为20， 取值应为1~50"
       },
       {
-        "name": "ClusterId",
-        "desc": "集群ID"
-      },
-      {
-        "name": "NamespaceId",
-        "desc": "命名空间 ID"
+        "name": "SearchWord",
+        "desc": "对id和name进行关键词过滤"
       }
     ],
-    "desc": "容器部署组列表"
+    "desc": "查询简单集群列表"
+  },
+  "DescribeConfigs": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID，不传入时查询全量"
+      },
+      {
+        "name": "ConfigId",
+        "desc": "配置项ID，不传入时查询全量，高优先级"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数"
+      },
+      {
+        "name": "ConfigIdList",
+        "desc": "配置项ID列表，不传入时查询全量，低优先级"
+      },
+      {
+        "name": "ConfigName",
+        "desc": "配置项名称，精确查询，不传入时查询全量"
+      }
+    ],
+    "desc": "查询配置项列表"
+  },
+  "DescribeApplicationAttribute": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID"
+      }
+    ],
+    "desc": "获取应用列表其它字段，如实例数量信息等"
+  },
+  "DescribeConfig": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "配置项ID"
+      }
+    ],
+    "desc": "查询配置"
   },
   "DescribeMicroservices": {
     "params": [
@@ -429,6 +499,15 @@ INFO = {
     ],
     "desc": "虚拟机部署组添加实例"
   },
+  "DeleteGroup": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "部署组ID"
+      }
+    ],
+    "desc": "删除容器部署组"
+  },
   "DescribeContainerGroupDetail": {
     "params": [
       {
@@ -447,6 +526,19 @@ INFO = {
     ],
     "desc": "删除容器部署组"
   },
+  "RollbackConfig": {
+    "params": [
+      {
+        "name": "ConfigReleaseLogId",
+        "desc": "配置项发布历史ID"
+      },
+      {
+        "name": "ReleaseDesc",
+        "desc": "回滚描述"
+      }
+    ],
+    "desc": "回滚配置"
+  },
   "ModifyMicroservice": {
     "params": [
       {
@@ -459,6 +551,31 @@ INFO = {
       }
     ],
     "desc": "修改微服务详情"
+  },
+  "CreatePublicConfig": {
+    "params": [
+      {
+        "name": "ConfigName",
+        "desc": "配置项名称"
+      },
+      {
+        "name": "ConfigVersion",
+        "desc": "配置项版本"
+      },
+      {
+        "name": "ConfigValue",
+        "desc": "配置项值，总是接收yaml格式的内容"
+      },
+      {
+        "name": "ConfigVersionDesc",
+        "desc": "配置项版本描述"
+      },
+      {
+        "name": "ConfigType",
+        "desc": "配置项类型"
+      }
+    ],
+    "desc": "创建公共配置项"
   },
   "DescribeImageTags": {
     "params": [
@@ -481,30 +598,42 @@ INFO = {
     ],
     "desc": "镜像版本列表"
   },
-  "ModifyUploadInfo": {
+  "DescribeConfigReleases": {
     "params": [
       {
+        "name": "ConfigName",
+        "desc": "配置项名称，不传入时查询全量"
+      },
+      {
+        "name": "GroupId",
+        "desc": "部署组ID，不传入时查询全量"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不传入时查询全量"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "集群ID，不传入时查询全量"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "ConfigId",
+        "desc": "配置ID，不传入时查询全量"
+      },
+      {
         "name": "ApplicationId",
-        "desc": "应用ID"
-      },
-      {
-        "name": "PkgId",
-        "desc": "调用DescribeUploadInfo接口时返回的软件包ID"
-      },
-      {
-        "name": "Result",
-        "desc": "COS返回上传结果（默认为0：成功，其他值表示失败）"
-      },
-      {
-        "name": "Md5",
-        "desc": "程序包MD5"
-      },
-      {
-        "name": "Size",
-        "desc": "程序包大小（单位字节）"
+        "desc": "应用ID，不传入时查询全量"
       }
     ],
-    "desc": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。"
+    "desc": "查询配置发布信息"
   },
   "DescribeMicroservice": {
     "params": [
@@ -540,26 +669,57 @@ INFO = {
     ],
     "desc": "部署虚拟机部署组应用"
   },
-  "DescribeSimpleClusters": {
+  "RevocationConfig": {
     "params": [
       {
-        "name": "ClusterIdList",
-        "desc": "需要查询的集群ID列表，不填或不传入时查询所有内容"
-      },
-      {
-        "name": "ClusterType",
-        "desc": "需要查询的集群类型，不填或不传入时查询所有内容"
-      },
-      {
-        "name": "Offset",
-        "desc": "查询偏移量，默认为0"
-      },
-      {
-        "name": "Limit",
-        "desc": "分页个数，默认为20， 取值应为1~50"
+        "name": "ConfigReleaseId",
+        "desc": "配置项发布ID"
       }
     ],
-    "desc": "查询简单集群列表"
+    "desc": "撤回已发布的配置"
+  },
+  "ReleasePublicConfig": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "配置ID"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID"
+      },
+      {
+        "name": "ReleaseDesc",
+        "desc": "发布描述"
+      }
+    ],
+    "desc": "发布公共配置"
+  },
+  "ReleaseConfig": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "配置ID"
+      },
+      {
+        "name": "GroupId",
+        "desc": "部署组ID"
+      },
+      {
+        "name": "ReleaseDesc",
+        "desc": "发布描述"
+      }
+    ],
+    "desc": "发布配置"
+  },
+  "DescribeReleasedConfig": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "部署组ID"
+      }
+    ],
+    "desc": "查询group发布的配置"
   },
   "CreateContainGroup": {
     "params": [
@@ -622,6 +782,31 @@ INFO = {
     ],
     "desc": "创建容器部署组"
   },
+  "DescribePublicConfigReleases": {
+    "params": [
+      {
+        "name": "ConfigName",
+        "desc": "配置项名称，不传入时查询全量"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不传入时查询全量"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "ConfigId",
+        "desc": "配置项ID，不传入时查询全量"
+      }
+    ],
+    "desc": "查询公共配置发布信息"
+  },
   "DescribeGroups": {
     "params": [
       {
@@ -663,65 +848,71 @@ INFO = {
     ],
     "desc": "获取虚拟机部署组列表"
   },
-  "DescribeApplication": {
+  "DescribeSimpleNamespaces": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "应用ID"
-      }
-    ],
-    "desc": "获取应用详情"
-  },
-  "DescribeDownloadInfo": {
-    "params": [
-      {
-        "name": "ApplicationId",
-        "desc": "应用ID"
-      },
-      {
-        "name": "PkgId",
-        "desc": "程序包ID"
-      }
-    ],
-    "desc": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436"
-  },
-  "DeleteNamespace": {
-    "params": [
-      {
-        "name": "NamespaceId",
-        "desc": "命名空间ID"
+        "name": "NamespaceIdList",
+        "desc": "命名空间ID列表，不传入时查询全量"
       },
       {
         "name": "ClusterId",
-        "desc": "集群ID"
+        "desc": "集群ID，不传入时查询全量"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "起始偏移量"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不传入时查询全量"
+      },
+      {
+        "name": "NamespaceResourceTypeList",
+        "desc": "查询资源类型列表"
+      },
+      {
+        "name": "SearchWord",
+        "desc": "通过id和name进行过滤"
+      },
+      {
+        "name": "NamespaceTypeList",
+        "desc": "查询的命名空间类型列表"
       }
     ],
-    "desc": "删除命名空间"
+    "desc": "查询简单命名空间列表 "
   },
-  "DescribeUploadInfo": {
+  "DescribeConfigReleaseLogs": {
     "params": [
       {
+        "name": "GroupId",
+        "desc": "部署组ID，不传入时查询全量"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数，默认为20"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不传入时查询全量"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "集群ID，不传入时查询全量"
+      },
+      {
         "name": "ApplicationId",
-        "desc": "应用ID"
-      },
-      {
-        "name": "PkgName",
-        "desc": "程序包名"
-      },
-      {
-        "name": "PkgVersion",
-        "desc": "程序包版本"
-      },
-      {
-        "name": "PkgType",
-        "desc": "程序包类型"
-      },
-      {
-        "name": "PkgDesc",
-        "desc": "程序包介绍"
+        "desc": "应用ID，不传入时查询全量"
       }
     ],
-    "desc": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436"
+    "desc": "查询配置发布历史"
   },
   "CreateMicroservice": {
     "params": [
@@ -739,6 +930,94 @@ INFO = {
       }
     ],
     "desc": "新增微服务"
+  },
+  "DescribeDownloadInfo": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID"
+      },
+      {
+        "name": "PkgId",
+        "desc": "程序包ID"
+      }
+    ],
+    "desc": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436"
+  },
+  "DescribeGroup": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "部署组ID"
+      }
+    ],
+    "desc": "查询虚拟机部署组详情"
+  },
+  "CreateConfig": {
+    "params": [
+      {
+        "name": "ConfigName",
+        "desc": "配置项名称"
+      },
+      {
+        "name": "ConfigVersion",
+        "desc": "配置项版本"
+      },
+      {
+        "name": "ConfigValue",
+        "desc": "配置项值"
+      },
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID"
+      },
+      {
+        "name": "ConfigVersionDesc",
+        "desc": "配置项版本描述"
+      },
+      {
+        "name": "ConfigType",
+        "desc": "配置项值类型"
+      }
+    ],
+    "desc": "创建配置项"
+  },
+  "DescribeContainerGroups": {
+    "params": [
+      {
+        "name": "SearchWord",
+        "desc": "搜索字段，模糊搜索groupName字段"
+      },
+      {
+        "name": "ApplicationId",
+        "desc": "分组所属应用ID"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "排序字段，默认为 createTime字段，支持id， name， createTime"
+      },
+      {
+        "name": "OrderType",
+        "desc": "排序方式，默认为1：倒序排序，0：正序，1：倒序"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，取值从0开始"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页个数，默认为20， 取值应为1~50"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间 ID"
+      }
+    ],
+    "desc": "容器部署组列表"
   },
   "DeleteImageTags": {
     "params": [
@@ -899,6 +1178,31 @@ INFO = {
     ],
     "desc": "获取应用列表"
   },
+  "DescribeUploadInfo": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID"
+      },
+      {
+        "name": "PkgName",
+        "desc": "程序包名"
+      },
+      {
+        "name": "PkgVersion",
+        "desc": "程序包版本"
+      },
+      {
+        "name": "PkgType",
+        "desc": "程序包类型"
+      },
+      {
+        "name": "PkgDesc",
+        "desc": "程序包介绍"
+      }
+    ],
+    "desc": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436"
+  },
   "StartGroup": {
     "params": [
       {
@@ -916,6 +1220,48 @@ INFO = {
       }
     ],
     "desc": "停止容器部署组"
+  },
+  "DescribeSimpleApplications": {
+    "params": [
+      {
+        "name": "ApplicationIdList",
+        "desc": "应用ID列表"
+      },
+      {
+        "name": "ApplicationType",
+        "desc": "应用类型"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "起始偏移量"
+      },
+      {
+        "name": "MicroserviceType",
+        "desc": "微服务类型"
+      },
+      {
+        "name": "ApplicationResourceTypeList",
+        "desc": "资源类型数组"
+      },
+      {
+        "name": "SearchWord",
+        "desc": "通过id和name进行关键词过滤"
+      }
+    ],
+    "desc": "查询简单应用列表"
+  },
+  "DescribePublicConfig": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "需要查询的配置项ID"
+      }
+    ],
+    "desc": "查询公共配置（单条）"
   },
   "ModifyContainerGroup": {
     "params": [
@@ -942,6 +1288,15 @@ INFO = {
     ],
     "desc": "修改容器部署组"
   },
+  "DescribeApplication": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID"
+      }
+    ],
+    "desc": "获取应用详情"
+  },
   "ShrinkInstances": {
     "params": [
       {
@@ -954,6 +1309,31 @@ INFO = {
       }
     ],
     "desc": "虚拟机部署组下线实例"
+  },
+  "ModifyUploadInfo": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID"
+      },
+      {
+        "name": "PkgId",
+        "desc": "调用DescribeUploadInfo接口时返回的软件包ID"
+      },
+      {
+        "name": "Result",
+        "desc": "COS返回上传结果（默认为0：成功，其他值表示失败）"
+      },
+      {
+        "name": "Md5",
+        "desc": "程序包MD5"
+      },
+      {
+        "name": "Size",
+        "desc": "程序包大小（单位字节）"
+      }
+    ],
+    "desc": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。"
   },
   "AddInstances": {
     "params": [

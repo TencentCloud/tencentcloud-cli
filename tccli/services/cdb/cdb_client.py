@@ -910,6 +910,7 @@ def doCreateDBInstanceHour(argv, arglist):
         "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
         "InstanceName": argv.get("--InstanceName"),
         "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
+        "DeployGroupId": argv.get("--DeployGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1722,6 +1723,7 @@ def doCreateDBInstance(argv, arglist):
         "RoGroup": Utils.try_to_json(argv, "--RoGroup"),
         "InstanceName": argv.get("--InstanceName"),
         "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
+        "DeployGroupId": argv.get("--DeployGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
