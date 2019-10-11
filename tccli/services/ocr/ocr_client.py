@@ -158,10 +158,10 @@ def doMLIDCardOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGeneralAccurateOCR(argv, arglist):
+def doQrcodeOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GeneralAccurateOCR", g_param[OptionsDefine.Version])
+        show_help("QrcodeOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -180,9 +180,77 @@ def doGeneralAccurateOCR(argv, arglist):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GeneralAccurateOCRRequest()
+    model = models.QrcodeOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GeneralAccurateOCR(model)
+    rsp = client.QrcodeOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInstitutionOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InstitutionOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InstitutionOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InstitutionOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doFlightInvoiceOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("FlightInvoiceOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.FlightInvoiceOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.FlightInvoiceOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -740,10 +808,10 @@ def doPermitOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTextDetect(argv, arglist):
+def doOrgCodeCertOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TextDetect", g_param[OptionsDefine.Version])
+        show_help("OrgCodeCertOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -762,9 +830,43 @@ def doTextDetect(argv, arglist):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextDetectRequest()
+    model = models.OrgCodeCertOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TextDetect(model)
+    rsp = client.OrgCodeCertOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doFinanBillSliceOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("FinanBillSliceOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.FinanBillSliceOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.FinanBillSliceOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -910,6 +1012,40 @@ def doLicensePlateOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doEstateCertOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("EstateCertOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EstateCertOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.EstateCertOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doTrainTicketOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -935,6 +1071,40 @@ def doTrainTicketOCR(argv, arglist):
     model = models.TrainTicketOCRRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.TrainTicketOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTextDetect(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TextDetect", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TextDetectRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TextDetect(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1012,6 +1182,40 @@ def doTaxiInvoiceOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGeneralAccurateOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GeneralAccurateOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GeneralAccurateOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GeneralAccurateOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doEnglishOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1037,6 +1241,40 @@ def doEnglishOCR(argv, arglist):
     model = models.EnglishOCRRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.EnglishOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doVehicleRegCertOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VehicleRegCertOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VehicleRegCertOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VehicleRegCertOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1148,6 +1386,40 @@ def doDriverLicenseOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doFormulaOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("FormulaOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.FormulaOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.FormulaOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPassportOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1183,10 +1455,10 @@ def doPassportOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doFlightInvoiceOCR(argv, arglist):
+def doFinanBillOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("FlightInvoiceOCR", g_param[OptionsDefine.Version])
+        show_help("FinanBillOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -1205,9 +1477,9 @@ def doFlightInvoiceOCR(argv, arglist):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.FlightInvoiceOCRRequest()
+    model = models.FinanBillOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.FlightInvoiceOCR(model)
+    rsp = client.FinanBillOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1251,6 +1523,40 @@ def doMixedInvoiceOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doEduPaperOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("EduPaperOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EduPaperOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.EduPaperOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20181119": ocr_client_v20181119,
 
@@ -1266,7 +1572,9 @@ ACTION_MAP = {
     "IDCardOCR": doIDCardOCR,
     "TollInvoiceOCR": doTollInvoiceOCR,
     "MLIDCardOCR": doMLIDCardOCR,
-    "GeneralAccurateOCR": doGeneralAccurateOCR,
+    "QrcodeOCR": doQrcodeOCR,
+    "InstitutionOCR": doInstitutionOCR,
+    "FlightInvoiceOCR": doFlightInvoiceOCR,
     "MixedInvoiceDetect": doMixedInvoiceDetect,
     "ShipInvoiceOCR": doShipInvoiceOCR,
     "MLIDPassportOCR": doMLIDPassportOCR,
@@ -1283,21 +1591,28 @@ ACTION_MAP = {
     "DutyPaidProofOCR": doDutyPaidProofOCR,
     "GeneralBasicOCR": doGeneralBasicOCR,
     "PermitOCR": doPermitOCR,
-    "TextDetect": doTextDetect,
+    "OrgCodeCertOCR": doOrgCodeCertOCR,
+    "FinanBillSliceOCR": doFinanBillSliceOCR,
     "BusInvoiceOCR": doBusInvoiceOCR,
     "TableOCR": doTableOCR,
     "ArithmeticOCR": doArithmeticOCR,
     "LicensePlateOCR": doLicensePlateOCR,
+    "EstateCertOCR": doEstateCertOCR,
     "TrainTicketOCR": doTrainTicketOCR,
+    "TextDetect": doTextDetect,
     "GeneralEfficientOCR": doGeneralEfficientOCR,
     "TaxiInvoiceOCR": doTaxiInvoiceOCR,
+    "GeneralAccurateOCR": doGeneralAccurateOCR,
     "EnglishOCR": doEnglishOCR,
+    "VehicleRegCertOCR": doVehicleRegCertOCR,
     "BankCardOCR": doBankCardOCR,
     "CarInvoiceOCR": doCarInvoiceOCR,
     "DriverLicenseOCR": doDriverLicenseOCR,
+    "FormulaOCR": doFormulaOCR,
     "PassportOCR": doPassportOCR,
-    "FlightInvoiceOCR": doFlightInvoiceOCR,
+    "FinanBillOCR": doFinanBillOCR,
     "MixedInvoiceOCR": doMixedInvoiceOCR,
+    "EduPaperOCR": doEduPaperOCR,
 
 }
 

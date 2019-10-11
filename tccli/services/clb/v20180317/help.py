@@ -98,6 +98,19 @@ INFO = {
     ],
     "desc": "绑定或解绑一个安全组到多个公网负载均衡实例。注意：内网负载均衡不支持绑定安全组。"
   },
+  "BatchDeregisterTargets": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡ID"
+      },
+      {
+        "name": "Targets",
+        "desc": "解绑目标"
+      }
+    ],
+    "desc": "批量解绑四七层后端服务。"
+  },
   "ReplaceCertForLoadBalancers": {
     "params": [
       {
@@ -251,7 +264,7 @@ INFO = {
       },
       {
         "name": "ListenerId",
-        "desc": "应用型负载均衡监听器 ID"
+        "desc": "负载均衡监听器 ID"
       },
       {
         "name": "Domain",
@@ -439,6 +452,19 @@ INFO = {
       }
     ],
     "desc": "在一个负载均衡实例下创建监听器。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+  },
+  "BatchRegisterTargets": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡ID"
+      },
+      {
+        "name": "Targets",
+        "desc": "绑定目标"
+      }
+    ],
+    "desc": "批量绑定虚拟主机或弹性网卡，支持跨域绑定，只支持四层（TCP、UDP）协议绑定。"
   },
   "ModifyTargetWeight": {
     "params": [
@@ -760,7 +786,7 @@ INFO = {
         "desc": "购买负载均衡同时，给负载均衡打上标签"
       }
     ],
-    "desc": "CreateLoadBalancer 接口用来创建负载均衡实例。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾【如需使用，请提交工单（ https://console.cloud.tencent.com/workorder/category ）申请】；(2)目前只有北京、上海、广州支持IPv6；\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。"
+    "desc": "CreateLoadBalancer 接口用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾【如需使用，请提交工单（ https://console.cloud.tencent.com/workorder/category ）申请】；(2)目前只有北京、上海、广州支持IPv6；\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。"
   },
   "ManualRewrite": {
     "params": [

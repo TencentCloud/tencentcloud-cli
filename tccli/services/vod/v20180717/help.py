@@ -1253,6 +1253,27 @@ INFO = {
     ],
     "desc": "对 HLS 视频进行按时间段裁剪。\n\n注意：裁剪出来的视频与原始视频共用 ts，仅生成新的 m3u8。原始视频删除后，该裁剪视频也会被删除。"
   },
+  "DescribeCDNUsageData": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束日期，需大于开始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+      },
+      {
+        "name": "DataType",
+        "desc": "CDN 统计数据类型，有效值：\n<li>Flux：流量，单位为byte。</li>\n<li>Bandwidth：带宽，单位为bps。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。\n当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。"
+      }
+    ],
+    "desc": "该接口用于查询点播 CDN 的流量、带宽等统计数据。\n   1. 可以查询最近365天内的 CDN 用量数据。\n   2.  查询时间跨度不超过90天。\n   3.  流量为每天的总流量，带宽为每天的峰值带宽。\n"
+  },
   "DeleteSnapshotByTimeOffsetTemplate": {
     "params": [
       {

@@ -48,7 +48,7 @@ INFO = {
     "params": [
       {
         "name": "CallbackUrl",
-        "desc": "回调Url"
+        "desc": "回调URL，音频识别结果将以POST请求方式发送到此地址"
       },
       {
         "name": "FileMD5",
@@ -63,7 +63,7 @@ INFO = {
         "desc": "视频内容Url,其中FileUrl与FileContent二选一"
       }
     ],
-    "desc": "视频内容检测（Video Moderation, VM）服务能识别涉黄、涉政、涉恐等违规视频，同时支持用户配置视频黑库，打击自定义的违规内容。\n\n<br>\n接口返回值说明：调用本接口有两个返回值，一个是同步返回值，一个是识别完成后的异步回调返回值。\n\n视频识别结果存在于异步回调返回值中，异步回调返回值明细：\n\n参数名 | 类型 | 描述\n-|-|-\nSeqID | String | 请求seqId唯一标识\nEvilFlag | Integer | 是否恶意：0正常，1可疑（Homology模块下：0未匹配到，1恶意，2白样本）\nEvilType | Integer | 恶意类型：100正常，20001政治，20002色情\nDuration | Integer | 视频时长（单位：秒）\nPornDetect |  | 视频智能鉴黄\nPolityDetect | | 视频涉政识别\nHomology | | 相似度识别\nHitFlag | Integer  | 0正常，1可疑\nScore | Integer | 判断分值\nSeedUrl | String | 命中的种子URL"
+    "desc": "视频内容检测（Video Moderation, VM）服务能识别涉黄、涉政、涉恐等违规视频，同时支持用户配置视频黑库，打击自定义的违规内容。\n\n<br>\n接口返回值说明：调用本接口有两个返回值，一个是同步返回值，一个是识别完成后的异步回调返回值。\n\n视频识别结果存在于异步回调返回值中，异步回调返回值明细：\n\n参数名 | 类型 | 描述\n-|-|-\nSeqID | String | 请求seqId唯一标识\nEvilFlag | Integer | 是否恶意：0正常，1可疑（Homology模块下：0未匹配到，1恶意，2白样本）\nEvilType | Integer | 恶意类型：100正常，20001政治，20002色情\nDuration | Integer | 视频时长（单位：秒）\nPornDetect | [VideoDetectData](#VDD) | 视频智能鉴黄\nPolityDetect | [VideoDetectData](#VDD) | 视频涉政识别\nHomology | [VideoDetectData](#VDD) | 相似度识别\n\n\n<span id=\"VDD\">VideoDetectData</span>\n\n参数名 | 类型 | 描述\n-|-|-\nHitFlag | Integer  | 0正常，1可疑\nScore | Integer | 判断分值\nEvilType | Integer | 恶意类型：100正常，20001政治，20002色情\nKeywords | Array of String | 关键词明细\nSeedUrl | String | 命中的种子URL"
   },
   "CreateFileSample": {
     "params": [
@@ -90,7 +90,7 @@ INFO = {
     "params": [
       {
         "name": "CallbackUrl",
-        "desc": "回调url"
+        "desc": "回调URL，音频识别结果将以POST请求方式发送到此地址"
       },
       {
         "name": "FileContent",
@@ -105,7 +105,7 @@ INFO = {
         "desc": "音频内容Url ，其中FileUrl和FileContent二选一"
       }
     ],
-    "desc": "音频内容检测（Audio Moderation, AM）服务使用了波形分析、声纹分析等技术，能识别涉黄、涉政、涉恐等违规音频，同时支持用户配置音频黑库，打击自定义的违规内容。\n\n<br>\n接口返回值说明：调用本接口有两个返回值，一个是同步返回值，一个是识别完成后的异步回调返回值。\n\n音频识别结果存在于异步回调返回值中，异步回调返回值明细：\n\n参数名 | 类型 | 描述\n-|-|-\nSeqID | String | 请求seqId唯一标识\nEvilFlag | Integer | 是否恶意：0正常，1可疑（Homology模块下：0未匹配到，1恶意，2白样本）\nEvilType | Integer | 恶意类型：100正常，20001政治，20002色情，20007谩骂\nDuration | Integer | 音频时长（单位：毫秒）\nPornDetect | | 音频智能鉴黄\nPolityDetect | | 音频涉政识别\nCurseDetect | | 音频谩骂识别\nHomology | | 相似度识别\nHitFlag | Integer | 0正常，1可疑\nScore | Integer | 判断分值\nKeywords | Array of String | 关键词明细\nStartTime | Array of String | 恶意开始时间\nEndTime | Array of String | 恶意结束时间\nSeedUrl | String | 命中的种子URL"
+    "desc": "音频内容检测（Audio Moderation, AM）服务使用了波形分析、声纹分析等技术，能识别涉黄、涉政、涉恐等违规音频，同时支持用户配置音频黑库，打击自定义的违规内容。\n\n<br>\n接口返回值说明：调用本接口有两个返回值，一个是同步返回值，一个是识别完成后的异步回调返回值。\n\n音频识别结果存在于异步回调返回值中，异步回调返回值明细：\n\n参数名 | 类型 | 描述\n-|-|-\nSeqID | String | 请求seqId唯一标识\nEvilFlag | Integer | 是否恶意：0正常，1可疑（Homology模块下：0未匹配到，1恶意，2白样本）\nEvilType | Integer | 恶意类型：100正常，20001政治，20002色情，20007谩骂\nDuration | Integer | 音频时长（单位：毫秒）\nPornDetect | [AudioDetectData](#ADD) | 音频智能鉴黄\nPolityDetect | [AudioDetectData](#ADD)| 音频涉政识别\nCurseDetect | [AudioDetectData](#ADD) | 音频谩骂识别\nCustomizedDetect | [AudioDetectData](#ADD) | 自定义识别\nHomology | [AudioDetectData](#ADD) | 相似度识别\n\n\n<span id=\"ADD\"> AudioDetectData </span>\n\n参数名 | 类型 | 描述\n-|-|-\nHitFlag | Integer | 0正常，1可疑\nScore | Integer | 判断分值\nEvilType | Integer | 恶意类型：100正常，20001政治，20002色情，20007谩骂\nKeywords | Array of String | 关键词明细\nStartTime | Array of String | 恶意开始时间（Homology、CustomizedDetect无此字段）\nEndTime | Array of String | 恶意结束时间（Homology、CustomizedDetect无此字段）\nSeedUrl | String | 命中的种子URL"
   },
   "DescribeFileSample": {
     "params": [
