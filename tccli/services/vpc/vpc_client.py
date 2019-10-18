@@ -621,15 +621,14 @@ def doResetRoutes(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDisassociateNatGatewayAddress(argv, arglist):
+def doDescribeNetworkInterfaceLimit(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DisassociateNatGatewayAddress", g_param[OptionsDefine.Version])
+        show_help("DescribeNetworkInterfaceLimit", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "NatGatewayId": argv.get("--NatGatewayId"),
-        "PublicIpAddresses": Utils.try_to_json(argv, "--PublicIpAddresses"),
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -643,9 +642,9 @@ def doDisassociateNatGatewayAddress(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DisassociateNatGatewayAddressRequest()
+    model = models.DescribeNetworkInterfaceLimitRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DisassociateNatGatewayAddress(model)
+    rsp = client.DescribeNetworkInterfaceLimit(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2119,6 +2118,40 @@ def doAttachClassicLinkVpc(argv, arglist):
     model = models.AttachClassicLinkVpcRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.AttachClassicLinkVpc(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisassociateNatGatewayAddress(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisassociateNatGatewayAddress", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NatGatewayId": argv.get("--NatGatewayId"),
+        "PublicIpAddresses": Utils.try_to_json(argv, "--PublicIpAddresses"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisassociateNatGatewayAddressRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisassociateNatGatewayAddress(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -5715,7 +5748,7 @@ ACTION_MAP = {
     "ModifyServiceTemplateGroupAttribute": doModifyServiceTemplateGroupAttribute,
     "DescribeCcnAttachedInstances": doDescribeCcnAttachedInstances,
     "ResetRoutes": doResetRoutes,
-    "DisassociateNatGatewayAddress": doDisassociateNatGatewayAddress,
+    "DescribeNetworkInterfaceLimit": doDescribeNetworkInterfaceLimit,
     "ModifyPrivateIpAddressesAttribute": doModifyPrivateIpAddressesAttribute,
     "DescribeGatewayFlowMonitorDetail": doDescribeGatewayFlowMonitorDetail,
     "UnassignIpv6Addresses": doUnassignIpv6Addresses,
@@ -5758,6 +5791,7 @@ ACTION_MAP = {
     "DeleteCustomerGateway": doDeleteCustomerGateway,
     "DeleteSubnet": doDeleteSubnet,
     "AttachClassicLinkVpc": doAttachClassicLinkVpc,
+    "DisassociateNatGatewayAddress": doDisassociateNatGatewayAddress,
     "DescribeFlowLogs": doDescribeFlowLogs,
     "DeleteDirectConnectGateway": doDeleteDirectConnectGateway,
     "DescribeDirectConnectGatewayCcnRoutes": doDescribeDirectConnectGatewayCcnRoutes,

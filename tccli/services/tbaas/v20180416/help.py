@@ -1,6 +1,93 @@
 # -*- coding: utf-8 -*-
 DESC = "tbaas-2018-04-16"
 INFO = {
+  "ApplyUserCert": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：cert_mng"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：cert_apply_for_user"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "区块链网络ID，可在区块链网络详情或列表中获取"
+      },
+      {
+        "name": "GroupName",
+        "desc": "申请证书的组织名称，可以在组织管理列表中获取当前组织的名称"
+      },
+      {
+        "name": "UserIdentity",
+        "desc": "用户证书标识，用于标识用户证书，要求由纯小写字母组成，长度小于10"
+      },
+      {
+        "name": "Applicant",
+        "desc": "证书申请实体，使用腾讯云账号实名认证的名称"
+      },
+      {
+        "name": "IdentityNum",
+        "desc": "证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入企业营业执照；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码"
+      },
+      {
+        "name": "CsrData",
+        "desc": "csr p10证书文件。需要用户根据文档生成证书的CSR文件"
+      },
+      {
+        "name": "Notes",
+        "desc": "证书备注信息"
+      }
+    ],
+    "desc": "申请用户证书"
+  },
+  "GetBlockListHandler": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：block"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：get_block_list"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录偏移数"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页记录数"
+      },
+      {
+        "name": "GroupPk",
+        "desc": "当前群组编号"
+      },
+      {
+        "name": "BlockHash",
+        "desc": "区块哈希"
+      }
+    ],
+    "desc": "bcos分页查询当前群组下的区块列表"
+  },
+  "SrvInvoke": {
+    "params": [
+      {
+        "name": "Service",
+        "desc": "服务类型，ss或者dam"
+      },
+      {
+        "name": "Method",
+        "desc": "服务接口，要调用的方法函数名"
+      },
+      {
+        "name": "Param",
+        "desc": "用户自定义json字符串"
+      }
+    ],
+    "desc": "trustsql服务统一接口"
+  },
   "Invoke": {
     "params": [
       {
@@ -71,6 +158,27 @@ INFO = {
     ],
     "desc": "获取区块链网络概要"
   },
+  "BlockByNumberHandler": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：block"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：block_by_number"
+      },
+      {
+        "name": "GroupPk",
+        "desc": "当前群组编号"
+      },
+      {
+        "name": "BlockNumber",
+        "desc": "区块高度"
+      }
+    ],
+    "desc": "Bcos根据块高查询区块信息"
+  },
   "GetInvokeTx": {
     "params": [
       {
@@ -107,6 +215,97 @@ INFO = {
       }
     ],
     "desc": "Invoke异步调用结果查询"
+  },
+  "SendTransactionHandler": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：transaction"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：send_transaction"
+      },
+      {
+        "name": "GroupPk",
+        "desc": "群组编号"
+      },
+      {
+        "name": "KeyUser",
+        "desc": "私钥用户编号"
+      },
+      {
+        "name": "ContractId",
+        "desc": "合约编号"
+      },
+      {
+        "name": "FuncName",
+        "desc": "合约方法名"
+      },
+      {
+        "name": "FuncParam",
+        "desc": "合约方法入参"
+      }
+    ],
+    "desc": "Bcos发送交易"
+  },
+  "DownloadUserCert": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：cert_mng"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：cert_download_for_user"
+      },
+      {
+        "name": "CertId",
+        "desc": "证书ID，可以在证书详情页面获取"
+      },
+      {
+        "name": "CertDn",
+        "desc": "证书DN，可以在证书详情页面获取"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "区块链网络ID，可在区块链网络详情或列表中获取"
+      },
+      {
+        "name": "GroupName",
+        "desc": "下载证书的组织名称，可以在组织管理列表中获取当前组织的名称"
+      }
+    ],
+    "desc": "下载用户证书"
+  },
+  "GetTransListHandler": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：transaction"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：get_trans_list"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页记录数"
+      },
+      {
+        "name": "GroupPk",
+        "desc": "群组编号"
+      },
+      {
+        "name": "TransHash",
+        "desc": "交易哈希"
+      }
+    ],
+    "desc": "Bcos分页查询当前群组的交易信息列表"
   },
   "GetBlockList": {
     "params": [
@@ -189,6 +388,27 @@ INFO = {
       }
     ],
     "desc": "查询交易"
+  },
+  "GetTransByHashHandler": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：transaction"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：get_trans_by_hash"
+      },
+      {
+        "name": "GroupPk",
+        "desc": "群组编号"
+      },
+      {
+        "name": "TransHash",
+        "desc": "交易哈希"
+      }
+    ],
+    "desc": "Bcos根据交易哈希查看交易详细信息"
   },
   "GetLatesdTransactionList": {
     "params": [

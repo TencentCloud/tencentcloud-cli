@@ -168,6 +168,7 @@ def doDeleteClusterInstances(argv, arglist):
         "ClusterId": argv.get("--ClusterId"),
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "InstanceDeleteMode": argv.get("--InstanceDeleteMode"),
+        "ForceDelete": Utils.try_to_json(argv, "--ForceDelete"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

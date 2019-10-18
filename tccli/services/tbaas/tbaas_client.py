@@ -18,6 +18,82 @@ from tccli.services.tbaas import v20180416
 from tccli.services.tbaas.v20180416 import help as v20180416_help
 
 
+def doApplyUserCert(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ApplyUserCert", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ClusterId": argv.get("--ClusterId"),
+        "GroupName": argv.get("--GroupName"),
+        "UserIdentity": argv.get("--UserIdentity"),
+        "Applicant": argv.get("--Applicant"),
+        "IdentityNum": argv.get("--IdentityNum"),
+        "CsrData": argv.get("--CsrData"),
+        "Notes": argv.get("--Notes"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ApplyUserCertRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ApplyUserCert(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSrvInvoke(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SrvInvoke", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Service": argv.get("--Service"),
+        "Method": argv.get("--Method"),
+        "Param": argv.get("--Param"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SrvInvokeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SrvInvoke(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doInvoke(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -97,6 +173,42 @@ def doGetClusterSummary(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doBlockByNumberHandler(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("BlockByNumberHandler", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "GroupPk": argv.get("--GroupPk"),
+        "BlockNumber": Utils.try_to_json(argv, "--BlockNumber"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BlockByNumberHandlerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.BlockByNumberHandler(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetInvokeTx(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -128,6 +240,157 @@ def doGetInvokeTx(argv, arglist):
     model = models.GetInvokeTxRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetInvokeTx(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetTransListHandler(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetTransListHandler", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "GroupPk": argv.get("--GroupPk"),
+        "TransHash": argv.get("--TransHash"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetTransListHandlerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetTransListHandler(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSendTransactionHandler(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SendTransactionHandler", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "GroupPk": argv.get("--GroupPk"),
+        "KeyUser": argv.get("--KeyUser"),
+        "ContractId": Utils.try_to_json(argv, "--ContractId"),
+        "FuncName": argv.get("--FuncName"),
+        "FuncParam": Utils.try_to_json(argv, "--FuncParam"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SendTransactionHandlerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SendTransactionHandler(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDownloadUserCert(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DownloadUserCert", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "CertId": Utils.try_to_json(argv, "--CertId"),
+        "CertDn": argv.get("--CertDn"),
+        "ClusterId": argv.get("--ClusterId"),
+        "GroupName": argv.get("--GroupName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DownloadUserCertRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DownloadUserCert(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetTransByHashHandler(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetTransByHashHandler", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "GroupPk": argv.get("--GroupPk"),
+        "TransHash": argv.get("--TransHash"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetTransByHashHandlerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetTransByHashHandler(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -219,6 +482,44 @@ def doQuery(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetBlockListHandler(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetBlockListHandler", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "GroupPk": argv.get("--GroupPk"),
+        "BlockHash": argv.get("--BlockHash"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetBlockListHandlerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetBlockListHandler(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetLatesdTransactionList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -272,11 +573,19 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "ApplyUserCert": doApplyUserCert,
+    "SrvInvoke": doSrvInvoke,
     "Invoke": doInvoke,
     "GetClusterSummary": doGetClusterSummary,
+    "BlockByNumberHandler": doBlockByNumberHandler,
     "GetInvokeTx": doGetInvokeTx,
+    "GetTransListHandler": doGetTransListHandler,
+    "SendTransactionHandler": doSendTransactionHandler,
+    "DownloadUserCert": doDownloadUserCert,
+    "GetTransByHashHandler": doGetTransByHashHandler,
     "GetBlockList": doGetBlockList,
     "Query": doQuery,
+    "GetBlockListHandler": doGetBlockListHandler,
     "GetLatesdTransactionList": doGetLatesdTransactionList,
 
 }

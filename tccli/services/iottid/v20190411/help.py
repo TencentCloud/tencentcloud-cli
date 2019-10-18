@@ -10,6 +10,19 @@ INFO = {
     ],
     "desc": "单向认证测试TID "
   },
+  "UploadDeviceUniqueCode": {
+    "params": [
+      {
+        "name": "CodeSet",
+        "desc": "硬件唯一标识码"
+      },
+      {
+        "name": "OrderId",
+        "desc": "硬件标识码绑定的申请编号"
+      }
+    ],
+    "desc": "上传硬件唯一标识码，是软加固设备身份参数。本接口如遇到错误数据，则所有当次上传数据失效。"
+  },
   "VerifyChipBurnInfo": {
     "params": [
       {

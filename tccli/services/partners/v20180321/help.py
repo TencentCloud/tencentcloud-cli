@@ -147,6 +147,15 @@ INFO = {
     ],
     "desc": "代理商查询名下业务员列表信息"
   },
+  "RemovePayRelationForClient": {
+    "params": [
+      {
+        "name": "ClientUin",
+        "desc": "客户账号ID"
+      }
+    ],
+    "desc": "合作伙伴为客户消除强代付关系"
+  },
   "ModifyClientRemark": {
     "params": [
       {
@@ -291,6 +300,15 @@ INFO = {
       }
     ],
     "desc": "查询已审核客户列表"
+  },
+  "CreatePayRelationForClient": {
+    "params": [
+      {
+        "name": "ClientUin",
+        "desc": "客户账号ID"
+      }
+    ],
+    "desc": "合作伙伴为客户创建强代付关系"
   },
   "AuditApplyClient": {
     "params": [

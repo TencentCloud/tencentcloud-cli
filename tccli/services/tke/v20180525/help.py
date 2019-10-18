@@ -48,6 +48,10 @@ INFO = {
       {
         "name": "InstanceDeleteMode",
         "desc": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）"
+      },
+      {
+        "name": "ForceDelete",
+        "desc": "是否强制删除(当节点在初始化时，可以指定参数为TRUE)"
       }
     ],
     "desc": "删除集群中的实例"
@@ -144,7 +148,7 @@ INFO = {
     "params": [
       {
         "name": "ClusterId",
-        "desc": "集群 ID，请填写查询集群列表 接口中返回的 ClusterId 字段（仅通过ClusterId获取需要过滤条件中的VPCID，比较状态时会使用该地域下所有集群中的节点进行比较。参数不支持同时指定InstanceIds和ClusterId。"
+        "desc": "集群 ID，请填写查询集群列表 接口中返回的 ClusterId 字段（仅通过ClusterId获取需要过滤条件中的VPCID。节点状态比较时会使用该地域下所有集群中的节点进行比较。参数不支持同时指定InstanceIds和ClusterId。"
       },
       {
         "name": "InstanceIds",

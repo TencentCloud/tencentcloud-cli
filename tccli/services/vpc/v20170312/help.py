@@ -310,18 +310,14 @@ INFO = {
     ],
     "desc": "本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。<br />\n注意: 调用本接口是先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。"
   },
-  "DisassociateNatGatewayAddress": {
+  "DescribeNetworkInterfaceLimit": {
     "params": [
       {
-        "name": "NatGatewayId",
-        "desc": "NAT网关的ID，形如：`nat-df45454`。"
-      },
-      {
-        "name": "PublicIpAddresses",
-        "desc": "绑定NAT网关的弹性IP数组。"
+        "name": "InstanceId",
+        "desc": "要查询的CVM实例ID"
       }
     ],
-    "desc": "本接口（DisassociateNatGatewayAddress）用于NAT网关解绑弹性IP。"
+    "desc": "本接口（DescribeNetworkInterfaceLimit）根据CVM实例ID查询弹性网卡配额，返回该CVM实例能绑定的弹性网卡配额，以及每个弹性网卡可以分配的ip配额"
   },
   "DescribeSecurityGroupPolicies": {
     "params": [
@@ -1052,6 +1048,19 @@ INFO = {
     ],
     "desc": "本接口(AttachClassicLinkVpc)用于创建私有网络和基础网络设备互通。\n* 私有网络和基础网络设备必须在同一个地域。\n* 私有网络和基础网络的区别详见vpc产品文档-<a href=\"https://cloud.tencent.com/document/product/215/535#2.-.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E4.B8.8E.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C\">私有网络与基础网络</a>。"
   },
+  "DisassociateNatGatewayAddress": {
+    "params": [
+      {
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
+      },
+      {
+        "name": "PublicIpAddresses",
+        "desc": "绑定NAT网关的弹性IP数组。"
+      }
+    ],
+    "desc": "本接口（DisassociateNatGatewayAddress）用于NAT网关解绑弹性IP。"
+  },
   "DescribeFlowLogs": {
     "params": [
       {
@@ -1185,7 +1194,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定CcnIds和Filters。\n<li>ccn-id - String - （过滤条件）CCN唯一ID，形如：vpc-f49l6u0z。</li>\n<li>ccn-name - String - （过滤条件）CCN名称。</li>\n<li>ccn-description - String - （过滤条件）CCN描述。</li>\n<li>state - String - （过滤条件）实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。</li>"
+        "desc": "过滤条件，参数不支持同时指定CcnIds和Filters。\n<li>ccn-id - String - （过滤条件）CCN唯一ID，形如：vpc-f49l6u0z。</li>\n<li>ccn-name - String - （过滤条件）CCN名称。</li>\n<li>ccn-description - String - （过滤条件）CCN描述。</li>\n<li>state - String - （过滤条件）实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例：查询绑定了标签的CCN列表。</li>"
       },
       {
         "name": "Offset",

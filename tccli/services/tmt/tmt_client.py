@@ -29,6 +29,7 @@ def doTextTranslate(argv, arglist):
         "Source": argv.get("--Source"),
         "Target": argv.get("--Target"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "UntranslatedText": argv.get("--UntranslatedText"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
