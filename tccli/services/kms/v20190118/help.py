@@ -56,7 +56,7 @@ INFO = {
       },
       {
         "name": "ValidTo",
-        "desc": "密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点。"
+        "desc": "密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。"
       }
     ],
     "desc": "用于导入密钥材料。只有类型为EXTERNAL 的CMK 才可以导入，导入的密钥材料使用 GetParametersForImport 获取的密钥进行加密。可以为指定的 CMK 重新导入密钥材料，并重新指定过期时间，但必须导入相同的密钥材料。CMK 密钥材料导入后不可以更换密钥材料。导入的密钥材料过期或者被删除后，指定的CMK将无法使用，需要再次导入相同的密钥材料才能正常使用。CMK是独立的，同样的密钥材料可导入不同的 CMK 中，但使用其中一个 CMK 加密的数据无法使用另一个 CMK解密。\n只有Enabled 和 PendingImport状态的CMK可以导入密钥材料。"
@@ -143,6 +143,15 @@ INFO = {
       }
     ],
     "desc": "列出账号下面状态为Enabled， Disabled 和 PendingImport 的CMK KeyId 列表"
+  },
+  "GenerateRandom": {
+    "params": [
+      {
+        "name": "NumberOfBytes",
+        "desc": "生成的随机数的长度。最小值为1， 最大值为1024。"
+      }
+    ],
+    "desc": "随机数生成接口。"
   },
   "CreateKey": {
     "params": [

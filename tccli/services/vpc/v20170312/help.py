@@ -319,6 +319,27 @@ INFO = {
     ],
     "desc": "本接口（DescribeNetworkInterfaceLimit）根据CVM实例ID查询弹性网卡配额，返回该CVM实例能绑定的弹性网卡配额，以及每个弹性网卡可以分配的ip配额"
   },
+  "DescribeNetDetects": {
+    "params": [
+      {
+        "name": "NetDetectIds",
+        "desc": "网络探测实例`ID`数组。形如：[`netd-12345678`]"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定NetDetectIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678</li>\n<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>\n<li>subnet-id - String - （过滤条件）子网实例ID，形如：subnet-12345678</li>\n<li>net-detect-name - String - （过滤条件）网络探测名称</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeNetDetects）用于查询网络探测列表。"
+  },
   "DescribeSecurityGroupPolicies": {
     "params": [
       {
@@ -395,22 +416,14 @@ INFO = {
     ],
     "desc": "本接口(DeleteVpnConnection)用于删除VPN通道。"
   },
-  "ModifyAddressTemplateGroupAttribute": {
+  "DeleteAddressTemplateGroup": {
     "params": [
       {
         "name": "AddressTemplateGroupId",
-        "desc": "IP地址模板集合实例ID，例如：ipmg-2uw6ujo6。"
-      },
-      {
-        "name": "AddressTemplateGroupName",
-        "desc": "IP地址模板集合名称。"
-      },
-      {
-        "name": "AddressTemplateIds",
-        "desc": "IP地址模板实例ID， 例如：ipm-mdunqeb6。"
+        "desc": "IP地址模板集合实例ID，例如：ipmg-90cex8mq。"
       }
     ],
-    "desc": "本接口（ModifyAddressTemplateGroupAttribute）用于修改IP地址模板集合"
+    "desc": "本接口（DeleteAddressTemplateGroup）用于删除IP地址模板集合"
   },
   "DescribeCustomerGatewayVendors": {
     "params": [],
@@ -631,6 +644,39 @@ INFO = {
       }
     ],
     "desc": "本接口（ReplaceRouteTableAssociation)用于修改子网（Subnet）关联的路由表（RouteTable）。\n* 一个子网只能关联一个路由表。"
+  },
+  "CheckNetDetectState": {
+    "params": [
+      {
+        "name": "DetectDestinationIp",
+        "desc": "探测目的IPv4地址数组，最多两个。"
+      },
+      {
+        "name": "NextHopType",
+        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云主机；"
+      },
+      {
+        "name": "NextHopDestination",
+        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云主机IPv4地址，形如：10.0.0.12；"
+      },
+      {
+        "name": "NetDetectId",
+        "desc": "网络探测实例ID。形如：netd-12345678。"
+      },
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`。形如：`vpc-12345678`"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网实例ID。形如：subnet-12345678。"
+      },
+      {
+        "name": "NetDetectName",
+        "desc": "网络探测名称，最大长度不能超过60个字节。"
+      }
+    ],
+    "desc": "本接口(CheckNetDetectState)用于验证网络探测。"
   },
   "DescribeVpcs": {
     "params": [
@@ -1186,6 +1232,27 @@ INFO = {
     ],
     "desc": "接口支持删除共享带宽包，包括[设备带宽包](https://cloud.tencent.com/document/product/684/15246#.E8.AE.BE.E5.A4.87.E5.B8.A6.E5.AE.BD.E5.8C.85)和[ip带宽包](https://cloud.tencent.com/document/product/684/15246#ip-.E5.B8.A6.E5.AE.BD.E5.8C.85)"
   },
+  "DescribeNetDetectStates": {
+    "params": [
+      {
+        "name": "NetDetectIds",
+        "desc": "网络探测实例`ID`数组。形如：[`netd-12345678`]"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定NetDetectIds和Filters。\n<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口(DescribeNetDetectStates)用于查询网络探测验证结果列表。"
+  },
   "DescribeCcns": {
     "params": [
       {
@@ -1398,14 +1465,22 @@ INFO = {
     ],
     "desc": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。"
   },
-  "DeleteAddressTemplateGroup": {
+  "ModifyAddressTemplateGroupAttribute": {
     "params": [
       {
         "name": "AddressTemplateGroupId",
-        "desc": "IP地址模板集合实例ID，例如：ipmg-90cex8mq。"
+        "desc": "IP地址模板集合实例ID，例如：ipmg-2uw6ujo6。"
+      },
+      {
+        "name": "AddressTemplateGroupName",
+        "desc": "IP地址模板集合名称。"
+      },
+      {
+        "name": "AddressTemplateIds",
+        "desc": "IP地址模板实例ID， 例如：ipm-mdunqeb6。"
       }
     ],
-    "desc": "本接口（DeleteAddressTemplateGroup）用于删除IP地址模板集合"
+    "desc": "本接口（ModifyAddressTemplateGroupAttribute）用于修改IP地址模板集合"
   },
   "DescribeCcnRoutes": {
     "params": [
@@ -1431,6 +1506,10 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeCcnRoutes）用于查询已加入云联网（CCN）的路由"
+  },
+  "DescribeBandwidthPackageQuota": {
+    "params": [],
+    "desc": "接口用于查询账户在当前地域的带宽包上限数量以及使用数量"
   },
   "CreateIp6Translators": {
     "params": [
@@ -1520,6 +1599,15 @@ INFO = {
       }
     ],
     "desc": "本接口(CreateNatGateway)用于创建NAT网关。"
+  },
+  "DeleteNetDetect": {
+    "params": [
+      {
+        "name": "NetDetectId",
+        "desc": "网络探测实例`ID`。形如：`netd-12345678`"
+      }
+    ],
+    "desc": "本接口(DeleteNetDetect)用于删除网络探测实例。"
   },
   "ModifySecurityGroupAttribute": {
     "params": [
@@ -2350,6 +2438,35 @@ INFO = {
     ],
     "desc": "本接口（ModifyRouteTableAttribute）用于修改路由表（RouteTable）属性。"
   },
+  "ModifyNetDetect": {
+    "params": [
+      {
+        "name": "NetDetectId",
+        "desc": "网络探测实例`ID`。形如：`netd-12345678`"
+      },
+      {
+        "name": "NetDetectName",
+        "desc": "网络探测名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "DetectDestinationIp",
+        "desc": "探测目的IPv4地址数组，最多两个。"
+      },
+      {
+        "name": "NextHopType",
+        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云主机；"
+      },
+      {
+        "name": "NextHopDestination",
+        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云主机IPv4地址，形如：10.0.0.12；"
+      },
+      {
+        "name": "NetDetectDescription",
+        "desc": "网络探测描述。"
+      }
+    ],
+    "desc": "本接口(ModifyNetDetect)用于修改网络探测参数。"
+  },
   "DeleteNatGatewayDestinationIpPortTranslationNatRule": {
     "params": [
       {
@@ -2376,9 +2493,38 @@ INFO = {
     ],
     "desc": "本接口(CreateRoutes)用于创建路由策略。\n* 向指定路由表批量新增路由策略。"
   },
-  "DescribeBandwidthPackageQuota": {
-    "params": [],
-    "desc": "接口用于查询账户在当前地域的带宽包上限数量以及使用数量"
+  "CreateNetDetect": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`。形如：`vpc-12345678`"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网实例ID。形如：subnet-12345678。"
+      },
+      {
+        "name": "NetDetectName",
+        "desc": "网络探测名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "DetectDestinationIp",
+        "desc": "探测目的IPv4地址数组。最多两个。"
+      },
+      {
+        "name": "NextHopType",
+        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云主机；"
+      },
+      {
+        "name": "NextHopDestination",
+        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云主机IPv4地址，形如：10.0.0.12；"
+      },
+      {
+        "name": "NetDetectDescription",
+        "desc": "网络探测描述。"
+      }
+    ],
+    "desc": "本接口(CreateNetDetect)用于创建网络探测。"
   },
   "ModifyHaVipAttribute": {
     "params": [

@@ -58,6 +58,23 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBInstanceCharset)用于查询云数据库实例的字符集，获取字符集的名称。"
   },
+  "DescribeInstanceParamRecords": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小。"
+      }
+    ],
+    "desc": "该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。"
+  },
   "DescribeBackupConfig": {
     "params": [
       {
@@ -185,7 +202,7 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。"
+        "desc": "(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。"
       },
       {
         "name": "BackupMethod",
@@ -194,6 +211,10 @@ INFO = {
       {
         "name": "BinlogExpireDays",
         "desc": "binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。"
+      },
+      {
+        "name": "BackupTimeWindow",
+        "desc": "备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{\"Monday\": \"\", \"Tuesday\": \"10:00-14:00\", \"Wednesday\": \"\", \"Thursday\": \"\", \"Friday\": \"\", \"Saturday\": \"\", \"Sunday\": \"10:00-14:00\"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）"
       }
     ],
     "desc": "本接口(ModifyBackupConfig)用于修改数据库备份配置信息。"
@@ -210,6 +231,15 @@ INFO = {
       }
     ],
     "desc": "本接口(ModifyInstanceParam)用于修改云数据库实例的参数。"
+  },
+  "DeleteDeployGroups": {
+    "params": [
+      {
+        "name": "DeployGroupIds",
+        "desc": "要删除的置放群组 ID 列表。"
+      }
+    ],
+    "desc": "根据置放群组ID删除置放群组（置放群组中有资源存在时不能删除该置放群组）"
   },
   "ModifyDBInstanceProject": {
     "params": [
@@ -685,15 +715,15 @@ INFO = {
       },
       {
         "name": "WithDr",
-        "desc": "是否包含灾备实例，可取值：0 - 不包含，1 - 包含。"
+        "desc": "是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。"
       },
       {
         "name": "WithRo",
-        "desc": "是否包含只读实例，可取值：0 - 不包含，1 - 包含。"
+        "desc": "是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。"
       },
       {
         "name": "WithMaster",
-        "desc": "是否包含主实例，可取值：0 - 不包含，1 - 包含。"
+        "desc": "是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。"
       }
     ],
     "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目 ID、实例 ID、访问地址、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。"
@@ -1151,14 +1181,26 @@ INFO = {
     ],
     "desc": "本接口(ModifyAccountDescription)用于修改云数据库账户的备注信息。"
   },
-  "DescribeSupportedPrivileges": {
+  "DescribeDeployGroupList": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+        "name": "DeployGroupId",
+        "desc": "置放群组 ID。"
+      },
+      {
+        "name": "DeployGroupName",
+        "desc": "置放群组名称。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
       }
     ],
-    "desc": "本接口(DescribeSupportedPrivileges)用于查询云数据库的支持的权限信息，包括全局权限，数据库权限，表权限以及列权限。"
+    "desc": "根据置放群组 ID 或置放群组名称查询置放群组列表"
   },
   "StopDBImportJob": {
     "params": [
@@ -1259,6 +1301,15 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。"
   },
+  "DescribeSupportedPrivileges": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      }
+    ],
+    "desc": "本接口(DescribeSupportedPrivileges)用于查询云数据库的支持的权限信息，包括全局权限，数据库权限，表权限以及列权限。"
+  },
   "DescribeInstanceParams": {
     "params": [
       {
@@ -1294,22 +1345,22 @@ INFO = {
     ],
     "desc": "本接口(OpenWanService)用于开通实例外网访问。\n\n注意，实例开通外网访问之前，需要先将实例进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作。"
   },
-  "DescribeInstanceParamRecords": {
+  "ModifyNameOrDescByDpId": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+        "name": "DeployGroupId",
+        "desc": "置放群组 ID。"
       },
       {
-        "name": "Offset",
-        "desc": "分页偏移量。"
+        "name": "DeployGroupName",
+        "desc": "置放群组名称，最长不能超过60个字符。置放群组名和置放群组描述不能都为空。"
       },
       {
-        "name": "Limit",
-        "desc": "分页大小。"
+        "name": "Description",
+        "desc": "置放群组描述，最长不能超过200个字符。置放群组名和置放群组描述不能都为空。"
       }
     ],
-    "desc": "该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。"
+    "desc": "修改置放群组的名称或者描述"
   },
   "UpgradeDBInstance": {
     "params": [
@@ -1394,6 +1445,19 @@ INFO = {
       }
     ],
     "desc": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。"
+  },
+  "CreateDeployGroup": {
+    "params": [
+      {
+        "name": "DeployGroupName",
+        "desc": "置放群组名称，最长不能超过60个字符。"
+      },
+      {
+        "name": "Description",
+        "desc": "置放群组描述，最长不能超过200个字符。"
+      }
+    ],
+    "desc": "创建放置实例的置放群组"
   },
   "DeleteTimeWindow": {
     "params": [

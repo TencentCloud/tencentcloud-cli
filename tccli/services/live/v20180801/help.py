@@ -1251,10 +1251,6 @@ INFO = {
   "DescribeLiveTranscodeDetailInfo": {
     "params": [
       {
-        "name": "DayTime",
-        "desc": "起始时间，北京时间，\n格式：yyyymmdd。\n注意：当前只支持查询近30天内某天的详细数据。"
-      },
-      {
         "name": "PushDomain",
         "desc": "推流域名。"
       },
@@ -1263,15 +1259,27 @@ INFO = {
         "desc": "流名称。"
       },
       {
+        "name": "DayTime",
+        "desc": "查询时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近3个月内某天的详细数据。"
+      },
+      {
         "name": "PageNum",
         "desc": "页数，默认1，\n不超过100页。"
       },
       {
         "name": "PageSize",
         "desc": "每页个数，默认20，\n范围：[10,1000]。"
+      },
+      {
+        "name": "StartDayTime",
+        "desc": "起始天时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近3个月内的详细数据。"
+      },
+      {
+        "name": "EndDayTime",
+        "desc": "结束天时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近3个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。"
       }
     ],
-    "desc": "支持查询某天的转码详细信息。\n注意：当前只支持查询近30天内某天的详细数据。"
+    "desc": "支持查询某天或某段时间的转码详细信息。"
   },
   "DescribeLogDownloadList": {
     "params": [
@@ -1449,7 +1457,7 @@ INFO = {
       },
       {
         "name": "DomainName",
-        "desc": "您的加速域名。"
+        "desc": "您的推流域名。"
       },
       {
         "name": "StreamName",
@@ -1457,7 +1465,7 @@ INFO = {
       },
       {
         "name": "ResumeTime",
-        "desc": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认禁播90天，且最长支持禁播90天。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认禁播7天，且最长支持禁播90天。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
       },
       {
         "name": "Reason",
@@ -1641,7 +1649,7 @@ INFO = {
         "desc": "任务ID，全局唯一标识录制任务。"
       }
     ],
-    "desc": "用于删除录制任务。"
+    "desc": "注：DeleteLiveRecord 接口仅用于删除录制任务记录，不具备停止录制的功能，也不能删除正在进行中的录制。如果需要停止录制任务，请使用终止录制[StopLiveRecord](/document/product/267/30146) 接口。"
   },
   "CreateLiveSnapshotRule": {
     "params": [

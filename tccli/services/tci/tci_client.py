@@ -142,6 +142,7 @@ def doSubmitAudioTask(argv, arglist):
         "VoiceFileType": Utils.try_to_json(argv, "--VoiceFileType"),
         "Functions": Utils.try_to_json(argv, "--Functions"),
         "FileType": argv.get("--FileType"),
+        "MuteThreshold": Utils.try_to_json(argv, "--MuteThreshold"),
         "VocabLibNameList": Utils.try_to_json(argv, "--VocabLibNameList"),
 
     }

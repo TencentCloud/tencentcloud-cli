@@ -2183,11 +2183,13 @@ def doDescribeLiveTranscodeDetailInfo(argv, arglist):
         return
 
     param = {
-        "DayTime": argv.get("--DayTime"),
         "PushDomain": argv.get("--PushDomain"),
         "StreamName": argv.get("--StreamName"),
+        "DayTime": argv.get("--DayTime"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
+        "StartDayTime": argv.get("--StartDayTime"),
+        "EndDayTime": argv.get("--EndDayTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

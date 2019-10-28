@@ -12,25 +12,20 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.mongodb.v20180408 import mongodb_client as mongodb_client_v20180408
-from tencentcloud.mongodb.v20180408 import models as models_v20180408
-from tencentcloud.mongodb.v20190725 import mongodb_client as mongodb_client_v20190725
-from tencentcloud.mongodb.v20190725 import models as models_v20190725
-from tccli.services.mongodb import v20180408
-from tccli.services.mongodb.v20180408 import help as v20180408_help
-from tccli.services.mongodb import v20190725
-from tccli.services.mongodb.v20190725 import help as v20190725_help
+from tencentcloud.organization.v20181225 import organization_client as organization_client_v20181225
+from tencentcloud.organization.v20181225 import models as models_v20181225
+from tccli.services.organization import v20181225
+from tccli.services.organization.v20181225 import help as v20181225_help
 
 
-def doAssignProject(argv, arglist):
+def doDenyOrganizationInvitation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AssignProject", g_param[OptionsDefine.Version])
+        show_help("DenyOrganizationInvitation", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "Id": Utils.try_to_json(argv, "--Id"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -41,12 +36,12 @@ def doAssignProject(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AssignProjectRequest()
+    model = models.DenyOrganizationInvitationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AssignProject(model)
+    rsp = client.DenyOrganizationInvitation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -56,177 +51,14 @@ def doAssignProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTerminateDBInstance(argv, arglist):
+def doListOrganizationInvitations(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TerminateDBInstance", g_param[OptionsDefine.Version])
+        show_help("ListOrganizationInvitations", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TerminateDBInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateDBInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateDBInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "MongoVersion": argv.get("--MongoVersion"),
-        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Zone": argv.get("--Zone"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "MachineCode": argv.get("--MachineCode"),
-        "ClusterType": argv.get("--ClusterType"),
-        "ReplicateSetNum": Utils.try_to_json(argv, "--ReplicateSetNum"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "VpcId": argv.get("--VpcId"),
-        "SubnetId": argv.get("--SubnetId"),
-        "Password": argv.get("--Password"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
-        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateDBInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeClientConnections(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeClientConnections", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClientConnectionsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClientConnections(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateDBInstanceHour(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateDBInstanceHour", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "ReplicateSetNum": Utils.try_to_json(argv, "--ReplicateSetNum"),
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "MongoVersion": argv.get("--MongoVersion"),
-        "MachineCode": argv.get("--MachineCode"),
-        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Zone": argv.get("--Zone"),
-        "ClusterType": argv.get("--ClusterType"),
-        "VpcId": argv.get("--VpcId"),
-        "SubnetId": argv.get("--SubnetId"),
-        "Password": argv.get("--Password"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDBInstanceHourRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateDBInstanceHour(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeSlowLog(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeSlowLog", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "SlowMS": Utils.try_to_json(argv, "--SlowMS"),
+        "Invited": Utils.try_to_json(argv, "--Invited"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -239,12 +71,12 @@ def doDescribeSlowLog(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSlowLogRequest()
+    model = models.ListOrganizationInvitationsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSlowLog(model)
+    rsp = client.ListOrganizationInvitations(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -254,15 +86,16 @@ def doDescribeSlowLog(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRenameInstance(argv, arglist):
+def doUpdateOrganizationNode(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RenameInstance", g_param[OptionsDefine.Version])
+        show_help("UpdateOrganizationNode", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "NewName": argv.get("--NewName"),
+        "NodeId": Utils.try_to_json(argv, "--NodeId"),
+        "Name": argv.get("--Name"),
+        "ParentNodeId": Utils.try_to_json(argv, "--ParentNodeId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -273,12 +106,12 @@ def doRenameInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenameInstanceRequest()
+    model = models.UpdateOrganizationNodeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RenameInstance(model)
+    rsp = client.UpdateOrganizationNode(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -288,17 +121,14 @@ def doRenameInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpgradeDBInstance(argv, arglist):
+def doAcceptOrganizationInvitation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpgradeDBInstance", g_param[OptionsDefine.Version])
+        show_help("AcceptOrganizationInvitation", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
+        "Id": Utils.try_to_json(argv, "--Id"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -309,12 +139,12 @@ def doUpgradeDBInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeDBInstanceRequest()
+    model = models.AcceptOrganizationInvitationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpgradeDBInstance(model)
+    rsp = client.AcceptOrganizationInvitation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -324,15 +154,14 @@ def doUpgradeDBInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSetAutoRenew(argv, arglist):
+def doGetOrganizationMember(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SetAutoRenew", g_param[OptionsDefine.Version])
+        show_help("GetOrganizationMember", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
+        "MemberUin": Utils.try_to_json(argv, "--MemberUin"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -343,12 +172,12 @@ def doSetAutoRenew(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetAutoRenewRequest()
+    model = models.GetOrganizationMemberRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SetAutoRenew(model)
+    rsp = client.GetOrganizationMember(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -358,14 +187,13 @@ def doSetAutoRenew(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSpecInfo(argv, arglist):
+def doGetOrganization(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeSpecInfo", g_param[OptionsDefine.Version])
+        show_help("GetOrganization", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Zone": argv.get("--Zone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -376,12 +204,12 @@ def doDescribeSpecInfo(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSpecInfoRequest()
+    model = models.GetOrganizationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSpecInfo(model)
+    rsp = client.GetOrganization(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -391,16 +219,13 @@ def doDescribeSpecInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSetPassword(argv, arglist):
+def doListOrganizationNodes(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SetPassword", g_param[OptionsDefine.Version])
+        show_help("ListOrganizationNodes", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "UserName": argv.get("--UserName"),
-        "Password": argv.get("--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -411,12 +236,12 @@ def doSetPassword(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetPasswordRequest()
+    model = models.ListOrganizationNodesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SetPassword(model)
+    rsp = client.ListOrganizationNodes(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -426,17 +251,16 @@ def doSetPassword(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpgradeDBInstanceHour(argv, arglist):
+def doUpdateOrganizationMember(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpgradeDBInstanceHour", g_param[OptionsDefine.Version])
+        show_help("UpdateOrganizationMember", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
+        "MemberUin": Utils.try_to_json(argv, "--MemberUin"),
+        "Name": argv.get("--Name"),
+        "Remark": argv.get("--Remark"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -447,12 +271,12 @@ def doUpgradeDBInstanceHour(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeDBInstanceHourRequest()
+    model = models.UpdateOrganizationMemberRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpgradeDBInstanceHour(model)
+    rsp = client.UpdateOrganizationMember(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -462,26 +286,81 @@ def doUpgradeDBInstanceHour(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDBInstances(argv, arglist):
+def doQuitOrganization(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDBInstances", g_param[OptionsDefine.Version])
+        show_help("QuitOrganization", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
-        "ClusterType": Utils.try_to_json(argv, "--ClusterType"),
-        "Status": Utils.try_to_json(argv, "--Status"),
-        "VpcId": argv.get("--VpcId"),
-        "SubnetId": argv.get("--SubnetId"),
-        "PayMode": Utils.try_to_json(argv, "--PayMode"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrgId": Utils.try_to_json(argv, "--OrgId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QuitOrganizationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QuitOrganization(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteOrganizationNodes(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteOrganizationNodes", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NodeIds": Utils.try_to_json(argv, "--NodeIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteOrganizationNodesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteOrganizationNodes(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListOrganizationMembers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListOrganizationMembers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderBy": argv.get("--OrderBy"),
-        "OrderByType": argv.get("--OrderByType"),
-        "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
-        "SearchKey": argv.get("--SearchKey"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -492,12 +371,12 @@ def doDescribeDBInstances(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBInstancesRequest()
+    model = models.ListOrganizationMembersRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDBInstances(model)
+    rsp = client.ListOrganizationMembers(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -507,17 +386,15 @@ def doDescribeDBInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDBInstanceSpec(argv, arglist):
+def doDeleteOrganizationMemberFromNode(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyDBInstanceSpec", g_param[OptionsDefine.Version])
+        show_help("DeleteOrganizationMemberFromNode", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
+        "MemberUin": Utils.try_to_json(argv, "--MemberUin"),
+        "NodeId": Utils.try_to_json(argv, "--NodeId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -528,12 +405,12 @@ def doModifyDBInstanceSpec(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDBInstanceSpecRequest()
+    model = models.DeleteOrganizationMemberFromNodeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDBInstanceSpec(model)
+    rsp = client.DeleteOrganizationMemberFromNode(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -543,14 +420,15 @@ def doModifyDBInstanceSpec(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doOfflineIsolatedDBInstance(argv, arglist):
+def doAddOrganizationNode(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("OfflineIsolatedDBInstance", g_param[OptionsDefine.Version])
+        show_help("AddOrganizationNode", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
+        "ParentNodeId": Utils.try_to_json(argv, "--ParentNodeId"),
+        "Name": argv.get("--Name"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -561,12 +439,12 @@ def doOfflineIsolatedDBInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.OfflineIsolatedDBInstanceRequest()
+    model = models.AddOrganizationNodeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.OfflineIsolatedDBInstance(model)
+    rsp = client.AddOrganizationNode(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -576,14 +454,16 @@ def doOfflineIsolatedDBInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDBBackups(argv, arglist):
+def doSendOrganizationInvitation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDBBackups", g_param[OptionsDefine.Version])
+        show_help("SendOrganizationInvitation", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
+        "InviteUin": Utils.try_to_json(argv, "--InviteUin"),
+        "Name": argv.get("--Name"),
+        "Remark": argv.get("--Remark"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -594,12 +474,12 @@ def doDescribeDBBackups(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBBackupsRequest()
+    model = models.SendOrganizationInvitationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDBBackups(model)
+    rsp = client.SendOrganizationInvitation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -609,14 +489,14 @@ def doDescribeDBBackups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doIsolateDBInstance(argv, arglist):
+def doCancelOrganizationInvitation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("IsolateDBInstance", g_param[OptionsDefine.Version])
+        show_help("CancelOrganizationInvitation", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
+        "Id": Utils.try_to_json(argv, "--Id"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -627,12 +507,12 @@ def doIsolateDBInstance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.IsolateDBInstanceRequest()
+    model = models.CancelOrganizationInvitationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.IsolateDBInstance(model)
+    rsp = client.CancelOrganizationInvitation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -642,15 +522,13 @@ def doIsolateDBInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBackupAccess(argv, arglist):
+def doDeleteOrganization(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeBackupAccess", g_param[OptionsDefine.Version])
+        show_help("DeleteOrganization", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "BackupName": argv.get("--BackupName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -661,12 +539,147 @@ def doDescribeBackupAccess(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBackupAccessRequest()
+    model = models.DeleteOrganizationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeBackupAccess(model)
+    rsp = client.DeleteOrganization(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteOrganizationMembers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteOrganizationMembers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uins": Utils.try_to_json(argv, "--Uins"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteOrganizationMembersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteOrganizationMembers(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListOrganizationNodeMembers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListOrganizationNodeMembers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NodeId": Utils.try_to_json(argv, "--NodeId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListOrganizationNodeMembersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListOrganizationNodeMembers(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateOrganization(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateOrganization", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "OrgType": Utils.try_to_json(argv, "--OrgType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateOrganizationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateOrganization(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doMoveOrganizationMembersToNode(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("MoveOrganizationMembersToNode", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NodeId": Utils.try_to_json(argv, "--NodeId"),
+        "Uins": Utils.try_to_json(argv, "--Uins"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.MoveOrganizationMembersToNodeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.MoveOrganizationMembersToNode(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -677,52 +690,50 @@ def doDescribeBackupAccess(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180408": mongodb_client_v20180408,
-    "v20190725": mongodb_client_v20190725,
+    "v20181225": organization_client_v20181225,
 
 }
 
 MODELS_MAP = {
-    "v20180408": models_v20180408,
-    "v20190725": models_v20190725,
+    "v20181225": models_v20181225,
 
 }
 
 ACTION_MAP = {
-    "AssignProject": doAssignProject,
-    "TerminateDBInstance": doTerminateDBInstance,
-    "CreateDBInstance": doCreateDBInstance,
-    "DescribeClientConnections": doDescribeClientConnections,
-    "CreateDBInstanceHour": doCreateDBInstanceHour,
-    "DescribeSlowLog": doDescribeSlowLog,
-    "RenameInstance": doRenameInstance,
-    "UpgradeDBInstance": doUpgradeDBInstance,
-    "SetAutoRenew": doSetAutoRenew,
-    "DescribeSpecInfo": doDescribeSpecInfo,
-    "SetPassword": doSetPassword,
-    "UpgradeDBInstanceHour": doUpgradeDBInstanceHour,
-    "DescribeDBInstances": doDescribeDBInstances,
-    "ModifyDBInstanceSpec": doModifyDBInstanceSpec,
-    "OfflineIsolatedDBInstance": doOfflineIsolatedDBInstance,
-    "DescribeDBBackups": doDescribeDBBackups,
-    "IsolateDBInstance": doIsolateDBInstance,
-    "DescribeBackupAccess": doDescribeBackupAccess,
+    "DenyOrganizationInvitation": doDenyOrganizationInvitation,
+    "ListOrganizationInvitations": doListOrganizationInvitations,
+    "UpdateOrganizationNode": doUpdateOrganizationNode,
+    "AcceptOrganizationInvitation": doAcceptOrganizationInvitation,
+    "GetOrganizationMember": doGetOrganizationMember,
+    "GetOrganization": doGetOrganization,
+    "ListOrganizationNodes": doListOrganizationNodes,
+    "UpdateOrganizationMember": doUpdateOrganizationMember,
+    "QuitOrganization": doQuitOrganization,
+    "DeleteOrganizationNodes": doDeleteOrganizationNodes,
+    "ListOrganizationMembers": doListOrganizationMembers,
+    "DeleteOrganizationMemberFromNode": doDeleteOrganizationMemberFromNode,
+    "AddOrganizationNode": doAddOrganizationNode,
+    "SendOrganizationInvitation": doSendOrganizationInvitation,
+    "CancelOrganizationInvitation": doCancelOrganizationInvitation,
+    "DeleteOrganization": doDeleteOrganization,
+    "DeleteOrganizationMembers": doDeleteOrganizationMembers,
+    "ListOrganizationNodeMembers": doListOrganizationNodeMembers,
+    "CreateOrganization": doCreateOrganization,
+    "MoveOrganizationMembersToNode": doMoveOrganizationMembersToNode,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180408.version,
-    v20190725.version,
+    v20181225.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180408.version.replace('-', ''): {"help": v20180408_help.INFO,"desc": v20180408_help.DESC},
-     'v' + v20190725.version.replace('-', ''): {"help": v20190725_help.INFO,"desc": v20190725_help.DESC},
+     'v' + v20181225.version.replace('-', ''): {"help": v20181225_help.INFO,"desc": v20181225_help.DESC},
 
 }
 
 
-def mongodb_action(argv, arglist):
+def organization_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -738,7 +749,7 @@ def mongodb_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "mongodb", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "organization", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -759,7 +770,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("mongodb", mongodb_action)
+    cmd = NiceCommand("organization", organization_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -818,11 +829,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["mongodb"][OptionsDefine.Version]
+            version = config["organization"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["mongodb"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["organization"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -839,7 +850,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "mongodb", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "organization", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -849,7 +860,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["mongodb"]["version"]
+        version = profile["organization"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

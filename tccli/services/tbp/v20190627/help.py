@@ -17,7 +17,7 @@ INFO = {
       },
       {
         "name": "PlatformType",
-        "desc": "平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount}。"
+        "desc": "平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount；企业微信: WXWork}。"
       }
     ],
     "desc": "会话重置接口。"
@@ -46,7 +46,7 @@ INFO = {
       },
       {
         "name": "PlatformType",
-        "desc": "平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount}。"
+        "desc": "平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount；企业微信: WXWork}。"
       }
     ],
     "desc": "接收调用侧的文本输入，返回应答文本。"
