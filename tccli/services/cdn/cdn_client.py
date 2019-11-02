@@ -33,6 +33,8 @@ def doListTopData(argv, arglist):
         "Project": Utils.try_to_json(argv, "--Project"),
         "Detail": Utils.try_to_json(argv, "--Detail"),
         "Code": argv.get("--Code"),
+        "Area": argv.get("--Area"),
+        "AreaType": argv.get("--AreaType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -72,6 +74,7 @@ def doDescribeOriginData(argv, arglist):
         "Project": Utils.try_to_json(argv, "--Project"),
         "Interval": argv.get("--Interval"),
         "Detail": Utils.try_to_json(argv, "--Detail"),
+        "Area": argv.get("--Area"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -248,6 +251,8 @@ def doGetDisableRecords(argv, arglist):
         "EndTime": argv.get("--EndTime"),
         "Url": argv.get("--Url"),
         "Status": argv.get("--Status"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -280,6 +285,7 @@ def doDescribePayType(argv, arglist):
         return
 
     param = {
+        "Area": argv.get("--Area"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -428,6 +434,8 @@ def doDescribeCdnData(argv, arglist):
         "Protocol": argv.get("--Protocol"),
         "DataSource": argv.get("--DataSource"),
         "IpProtocol": argv.get("--IpProtocol"),
+        "Area": argv.get("--Area"),
+        "AreaType": argv.get("--AreaType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

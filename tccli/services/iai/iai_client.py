@@ -52,6 +52,47 @@ def doDeletePersonFromGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSearchFacesReturnsByGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SearchFacesReturnsByGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
+        "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
+        "MaxPersonNumPerGroup": Utils.try_to_json(argv, "--MaxPersonNumPerGroup"),
+        "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchFacesReturnsByGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SearchFacesReturnsByGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -63,6 +104,7 @@ def doCreateGroup(argv, arglist):
         "GroupId": argv.get("--GroupId"),
         "GroupExDescriptions": Utils.try_to_json(argv, "--GroupExDescriptions"),
         "Tag": argv.get("--Tag"),
+        "FaceModelVersion": argv.get("--FaceModelVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -165,6 +207,8 @@ def doCreateFace(argv, arglist):
         "PersonId": argv.get("--PersonId"),
         "Images": Utils.try_to_json(argv, "--Images"),
         "Urls": Utils.try_to_json(argv, "--Urls"),
+        "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -373,6 +417,7 @@ def doVerifyFace(argv, arglist):
         "PersonId": argv.get("--PersonId"),
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -514,6 +559,8 @@ def doCreatePerson(argv, arglist):
         "PersonExDescriptionInfos": Utils.try_to_json(argv, "--PersonExDescriptionInfos"),
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
+        "UniquePersonControl": Utils.try_to_json(argv, "--UniquePersonControl"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -553,6 +600,8 @@ def doSearchFaces(argv, arglist):
         "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
         "MaxPersonNum": Utils.try_to_json(argv, "--MaxPersonNum"),
         "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -652,6 +701,42 @@ def doGetPersonList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doVerifyPerson(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VerifyPerson", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "PersonId": argv.get("--PersonId"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VerifyPersonRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VerifyPerson(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyPersonGroupInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -687,6 +772,46 @@ def doModifyPersonGroupInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSearchPersons(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SearchPersons", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
+        "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
+        "MaxPersonNum": Utils.try_to_json(argv, "--MaxPersonNum"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchPersonsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SearchPersons(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCompareFace(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -699,6 +824,7 @@ def doCompareFace(argv, arglist):
         "UrlA": argv.get("--UrlA"),
         "UrlB": argv.get("--UrlB"),
         "FaceModelVersion": argv.get("--FaceModelVersion"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -715,6 +841,46 @@ def doCompareFace(argv, arglist):
     model = models.CompareFaceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CompareFace(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSearchPersonsReturnsByGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SearchPersonsReturnsByGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
+        "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
+        "MaxPersonNumPerGroup": Utils.try_to_json(argv, "--MaxPersonNumPerGroup"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchPersonsReturnsByGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SearchPersonsReturnsByGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -804,6 +970,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DeletePersonFromGroup": doDeletePersonFromGroup,
+    "SearchFacesReturnsByGroup": doSearchFacesReturnsByGroup,
     "CreateGroup": doCreateGroup,
     "GetPersonBaseInfo": doGetPersonBaseInfo,
     "DetectLiveFace": doDetectLiveFace,
@@ -821,8 +988,11 @@ ACTION_MAP = {
     "SearchFaces": doSearchFaces,
     "DetectFace": doDetectFace,
     "GetPersonList": doGetPersonList,
+    "VerifyPerson": doVerifyPerson,
     "ModifyPersonGroupInfo": doModifyPersonGroupInfo,
+    "SearchPersons": doSearchPersons,
     "CompareFace": doCompareFace,
+    "SearchPersonsReturnsByGroup": doSearchPersonsReturnsByGroup,
     "GetGroupList": doGetGroupList,
     "DeleteFace": doDeleteFace,
 

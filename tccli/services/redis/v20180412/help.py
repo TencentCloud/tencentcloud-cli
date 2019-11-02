@@ -1,6 +1,98 @@
 # -*- coding: utf-8 -*-
 DESC = "redis-2018-04-12"
 INFO = {
+  "DescribeInstanceMonitorBigKeySizeDist": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Date",
+        "desc": "时间；例如：\"20190219\""
+      }
+    ],
+    "desc": "查询实例大Key大小分布"
+  },
+  "CreateInstanceAccount": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "AccountName",
+        "desc": "子账号名称"
+      },
+      {
+        "name": "AccountPassword",
+        "desc": "子账号密码"
+      },
+      {
+        "name": "ReadonlyPolicy",
+        "desc": "路由策略：填写master或者replication，表示主节点或者从节点"
+      },
+      {
+        "name": "Privilege",
+        "desc": "读写策略：填写r、w、rw，表示只读、只写、读写"
+      },
+      {
+        "name": "Remark",
+        "desc": "子账号描述信息"
+      }
+    ],
+    "desc": "创建实例子账号"
+  },
+  "DescribeInstanceMonitorBigKey": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "ReqType",
+        "desc": "请求类型：1——string类型，2——所有类型"
+      },
+      {
+        "name": "Date",
+        "desc": "时间；例如：\"20190219\""
+      }
+    ],
+    "desc": "查询实例大Key"
+  },
+  "ModifyInstanceAccount": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "AccountName",
+        "desc": "子账号名称，如果要修改主账号，填root"
+      },
+      {
+        "name": "AccountPassword",
+        "desc": "子账号密码"
+      },
+      {
+        "name": "Remark",
+        "desc": "子账号描述信息"
+      },
+      {
+        "name": "ReadonlyPolicy",
+        "desc": "子账号路由策略：填写master或者slave，表示路由主节点，从节点"
+      },
+      {
+        "name": "Privilege",
+        "desc": "子账号读写策略：填写r、w、rw，表示只读，只写，读写策略"
+      },
+      {
+        "name": "NoAuth",
+        "desc": "true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密"
+      }
+    ],
+    "desc": "修改实例子账号"
+  },
   "CleanUpInstance": {
     "params": [
       {
@@ -10,34 +102,35 @@ INFO = {
     ],
     "desc": "回收站实例立即下线"
   },
-  "DescribeInstanceBackups": {
+  "DescribeInstanceAccount": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "待操作的实例ID，可通过 DescribeInstance 接口返回值中的 InstanceId 获取。"
+        "desc": "实例ID"
       },
       {
         "name": "Limit",
-        "desc": "实例列表大小，默认大小20"
+        "desc": "分页大小"
       },
       {
         "name": "Offset",
-        "desc": "偏移量，取Limit整数倍"
-      },
-      {
-        "name": "BeginTime",
-        "desc": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。"
-      },
-      {
-        "name": "EndTime",
-        "desc": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。"
-      },
-      {
-        "name": "Status",
-        "desc": "1：备份在流程中，2：备份正常，3：备份转RDB文件处理中，4：已完成RDB转换，-1：备份已过期，-2：备份已删除。"
+        "desc": "分页偏移量"
       }
     ],
-    "desc": "查询 CRS 实例备份列表"
+    "desc": "查看实例子账号信息"
+  },
+  "DescribeInstanceMonitorTopNCmdTook": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "SpanType",
+        "desc": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时"
+      }
+    ],
+    "desc": "查询实例CPU耗时"
   },
   "ModifyNetworkConfig": {
     "params": [
@@ -64,22 +157,18 @@ INFO = {
     ],
     "desc": "修改实例网络配置"
   },
-  "ResetPassword": {
+  "DescribeInstanceShards": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "Redis实例ID"
+        "desc": "实例id"
       },
       {
-        "name": "Password",
-        "desc": "重置的密码（切换为免密实例时，可不传；其他情况必传）"
-      },
-      {
-        "name": "NoAuth",
-        "desc": "是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false"
+        "name": "FilterSlave",
+        "desc": "是否过滤掉从节信息"
       }
     ],
-    "desc": "重置密码"
+    "desc": "获取集群版实例分片信息"
   },
   "DestroyPrepaidInstance": {
     "params": [
@@ -192,6 +281,19 @@ INFO = {
     ],
     "desc": "查询参数修改历史列表"
   },
+  "DescribeInstanceMonitorTopNCmd": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "SpanType",
+        "desc": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时"
+      }
+    ],
+    "desc": "查询实例访问命令"
+  },
   "DisableReplicaReadonly": {
     "params": [
       {
@@ -231,6 +333,15 @@ INFO = {
     ],
     "desc": "设置自动备份时间"
   },
+  "DescribeInstanceMonitorSIP": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      }
+    ],
+    "desc": "查询实例访问来源信息"
+  },
   "ClearInstance": {
     "params": [
       {
@@ -257,35 +368,27 @@ INFO = {
     ],
     "desc": "查询项目安全组信息"
   },
-  "RenewInstance": {
+  "DescribeInstanceMonitorHotKey": {
     "params": [
       {
-        "name": "Period",
-        "desc": "购买时长，单位：月"
+        "name": "InstanceId",
+        "desc": "实例Id"
       },
       {
-        "name": "InstanceId",
-        "desc": "实例ID"
+        "name": "SpanType",
+        "desc": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时"
       }
     ],
-    "desc": "续费实例"
+    "desc": "查询实例热Key"
   },
-  "ModfiyInstancePassword": {
+  "DescribeTaskInfo": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID"
-      },
-      {
-        "name": "OldPassword",
-        "desc": "实例旧密码"
-      },
-      {
-        "name": "Password",
-        "desc": "实例新密码"
+        "name": "TaskId",
+        "desc": "任务ID"
       }
     ],
-    "desc": "修改redis密码"
+    "desc": "用于查询任务结果"
   },
   "DescribeInstanceDealDetail": {
     "params": [
@@ -301,9 +404,43 @@ INFO = {
       {
         "name": "InstanceId",
         "desc": "实例序号ID"
+      },
+      {
+        "name": "ReadonlyPolicy",
+        "desc": "账号路由策略：填写master或者replication，表示路由主节点，从节点；不填路由策略默认为写主节点，读从节点"
       }
     ],
     "desc": "启用读写分离"
+  },
+  "ResetPassword": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "Redis实例ID"
+      },
+      {
+        "name": "Password",
+        "desc": "重置的密码（切换为免密实例时，可不传；其他情况必传）"
+      },
+      {
+        "name": "NoAuth",
+        "desc": "是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false"
+      }
+    ],
+    "desc": "重置密码"
+  },
+  "DeleteInstanceAccount": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "AccountName",
+        "desc": "子账号名称"
+      }
+    ],
+    "desc": "删除实例子账号"
   },
   "DescribeInstanceParams": {
     "params": [
@@ -322,6 +459,19 @@ INFO = {
       }
     ],
     "desc": "查询实例安全组信息"
+  },
+  "DescribeInstanceMonitorBigKeyTypeDist": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Date",
+        "desc": "时间；例如：\"20190219\""
+      }
+    ],
+    "desc": "查询实例大Key类型分布"
   },
   "DescribeProductInfo": {
     "params": [],
@@ -348,6 +498,19 @@ INFO = {
     ],
     "desc": "升级实例"
   },
+  "RenewInstance": {
+    "params": [
+      {
+        "name": "Period",
+        "desc": "购买时长，单位：月"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "续费实例"
+  },
   "ManualBackupInstance": {
     "params": [
       {
@@ -361,14 +524,22 @@ INFO = {
     ],
     "desc": "手动备份Redis实例"
   },
-  "DescribeTaskInfo": {
+  "ModfiyInstancePassword": {
     "params": [
       {
-        "name": "TaskId",
-        "desc": "任务ID"
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "OldPassword",
+        "desc": "实例旧密码"
+      },
+      {
+        "name": "Password",
+        "desc": "实例新密码"
       }
     ],
-    "desc": "用于查询任务结果"
+    "desc": "修改redis密码"
   },
   "DescribeSlowLog": {
     "params": [
@@ -506,19 +677,6 @@ INFO = {
     ],
     "desc": "创建redis实例"
   },
-  "DescribeInstanceShards": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "实例id"
-      },
-      {
-        "name": "FilterSlave",
-        "desc": "是否过滤掉从节信息"
-      }
-    ],
-    "desc": "获取集群版实例分片信息"
-  },
   "DescribeBackupUrl": {
     "params": [
       {
@@ -540,6 +698,35 @@ INFO = {
       }
     ],
     "desc": "按量计费实例销毁"
+  },
+  "DescribeInstanceBackups": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "待操作的实例ID，可通过 DescribeInstance 接口返回值中的 InstanceId 获取。"
+      },
+      {
+        "name": "Limit",
+        "desc": "实例列表大小，默认大小20"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，取Limit整数倍"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。"
+      },
+      {
+        "name": "Status",
+        "desc": "1：备份在流程中，2：备份正常，3：备份转RDB文件处理中，4：已完成RDB转换，-1：备份已过期，-2：备份已删除。"
+      }
+    ],
+    "desc": "查询 CRS 实例备份列表"
   },
   "ModifyInstance": {
     "params": [
@@ -565,6 +752,23 @@ INFO = {
       }
     ],
     "desc": "修改实例相关信息（目前支持：实例重命名）"
+  },
+  "DescribeInstanceMonitorTookDist": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Date",
+        "desc": "时间；例如：\"20190219\""
+      },
+      {
+        "name": "SpanType",
+        "desc": "请求类型：1——string类型，2——所有类型"
+      }
+    ],
+    "desc": "查询实例大Key大小分布"
   },
   "SwitchInstanceVip": {
     "params": [

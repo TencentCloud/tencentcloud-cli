@@ -18,6 +18,155 @@ from tccli.services.redis import v20180412
 from tccli.services.redis.v20180412 import help as v20180412_help
 
 
+def doDescribeInstanceMonitorBigKeySizeDist(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceMonitorBigKeySizeDist", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Date": argv.get("--Date"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceMonitorBigKeySizeDistRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceMonitorBigKeySizeDist(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateInstanceAccount(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateInstanceAccount", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "AccountName": argv.get("--AccountName"),
+        "AccountPassword": argv.get("--AccountPassword"),
+        "ReadonlyPolicy": Utils.try_to_json(argv, "--ReadonlyPolicy"),
+        "Privilege": argv.get("--Privilege"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInstanceAccountRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateInstanceAccount(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyInstanceAccount(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyInstanceAccount", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "AccountName": argv.get("--AccountName"),
+        "AccountPassword": argv.get("--AccountPassword"),
+        "Remark": argv.get("--Remark"),
+        "ReadonlyPolicy": Utils.try_to_json(argv, "--ReadonlyPolicy"),
+        "Privilege": argv.get("--Privilege"),
+        "NoAuth": Utils.try_to_json(argv, "--NoAuth"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyInstanceAccountRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyInstanceAccount(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSlowLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSlowLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "MinQueryTime": Utils.try_to_json(argv, "--MinQueryTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSlowLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSlowLog(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCleanUpInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -51,19 +200,16 @@ def doCleanUpInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstanceBackups(argv, arglist):
+def doDescribeInstanceAccount(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeInstanceBackups", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceAccount", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "BeginTime": argv.get("--BeginTime"),
-        "EndTime": argv.get("--EndTime"),
-        "Status": Utils.try_to_json(argv, "--Status"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,9 +223,43 @@ def doDescribeInstanceBackups(argv, arglist):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceBackupsRequest()
+    model = models.DescribeInstanceAccountRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInstanceBackups(model)
+    rsp = client.DescribeInstanceAccount(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstanceMonitorTopNCmdTook(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceMonitorTopNCmdTook", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "SpanType": Utils.try_to_json(argv, "--SpanType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceMonitorTopNCmdTookRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceMonitorTopNCmdTook(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -280,16 +460,15 @@ def doModifyInstanceParams(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResetPassword(argv, arglist):
+def doDescribeInstanceMonitorTopNCmd(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResetPassword", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceMonitorTopNCmd", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
-        "Password": argv.get("--Password"),
-        "NoAuth": Utils.try_to_json(argv, "--NoAuth"),
+        "SpanType": Utils.try_to_json(argv, "--SpanType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -303,9 +482,9 @@ def doResetPassword(argv, arglist):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetPasswordRequest()
+    model = models.DescribeInstanceMonitorTopNCmdRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResetPassword(model)
+    rsp = client.DescribeInstanceMonitorTopNCmd(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -418,6 +597,39 @@ def doModifyNetworkConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeInstanceMonitorSIP(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceMonitorSIP", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceMonitorSIPRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceMonitorSIP(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -502,15 +714,15 @@ def doDescribeProjectSecurityGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRenewInstance(argv, arglist):
+def doDescribeInstanceMonitorHotKey(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RenewInstance", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceMonitorHotKey", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Period": Utils.try_to_json(argv, "--Period"),
         "InstanceId": argv.get("--InstanceId"),
+        "SpanType": Utils.try_to_json(argv, "--SpanType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -524,9 +736,9 @@ def doRenewInstance(argv, arglist):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenewInstanceRequest()
+    model = models.DescribeInstanceMonitorHotKeyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RenewInstance(model)
+    rsp = client.DescribeInstanceMonitorHotKey(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -536,16 +748,14 @@ def doRenewInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModfiyInstancePassword(argv, arglist):
+def doDescribeTaskInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModfiyInstancePassword", g_param[OptionsDefine.Version])
+        show_help("DescribeTaskInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "OldPassword": argv.get("--OldPassword"),
-        "Password": argv.get("--Password"),
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -559,9 +769,9 @@ def doModfiyInstancePassword(argv, arglist):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModfiyInstancePasswordRequest()
+    model = models.DescribeTaskInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModfiyInstancePassword(model)
+    rsp = client.DescribeTaskInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -613,6 +823,7 @@ def doEnableReplicaReadonly(argv, arglist):
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
+        "ReadonlyPolicy": Utils.try_to_json(argv, "--ReadonlyPolicy"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -629,6 +840,74 @@ def doEnableReplicaReadonly(argv, arglist):
     model = models.EnableReplicaReadonlyRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.EnableReplicaReadonly(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetPassword(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ResetPassword", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Password": argv.get("--Password"),
+        "NoAuth": Utils.try_to_json(argv, "--NoAuth"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetPasswordRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ResetPassword(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDestroyPostpaidInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DestroyPostpaidInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DestroyPostpaidInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DestroyPostpaidInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -695,6 +974,40 @@ def doDescribeInstanceSecurityGroup(argv, arglist):
     model = models.DescribeInstanceSecurityGroupRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeInstanceSecurityGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstanceMonitorBigKeyTypeDist(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceMonitorBigKeyTypeDist", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Date": argv.get("--Date"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceMonitorBigKeyTypeDistRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceMonitorBigKeyTypeDist(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -772,6 +1085,40 @@ def doUpgradeInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRenewInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RenewInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RenewInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RenewInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doManualBackupInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -806,14 +1153,16 @@ def doManualBackupInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTaskInfo(argv, arglist):
+def doModfiyInstancePassword(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTaskInfo", g_param[OptionsDefine.Version])
+        show_help("ModfiyInstancePassword", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "InstanceId": argv.get("--InstanceId"),
+        "OldPassword": argv.get("--OldPassword"),
+        "Password": argv.get("--Password"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -827,9 +1176,9 @@ def doDescribeTaskInfo(argv, arglist):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskInfoRequest()
+    model = models.ModfiyInstancePasswordRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskInfo(model)
+    rsp = client.ModfiyInstancePassword(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -839,19 +1188,16 @@ def doDescribeTaskInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSlowLog(argv, arglist):
+def doDescribeInstanceMonitorBigKey(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeSlowLog", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceMonitorBigKey", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
-        "BeginTime": argv.get("--BeginTime"),
-        "EndTime": argv.get("--EndTime"),
-        "MinQueryTime": Utils.try_to_json(argv, "--MinQueryTime"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "ReqType": Utils.try_to_json(argv, "--ReqType"),
+        "Date": argv.get("--Date"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -865,9 +1211,9 @@ def doDescribeSlowLog(argv, arglist):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSlowLogRequest()
+    model = models.DescribeInstanceMonitorBigKeyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSlowLog(model)
+    rsp = client.DescribeInstanceMonitorBigKey(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1012,14 +1358,15 @@ def doDescribeInstanceDealDetail(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDestroyPostpaidInstance(argv, arglist):
+def doDeleteInstanceAccount(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DestroyPostpaidInstance", g_param[OptionsDefine.Version])
+        show_help("DeleteInstanceAccount", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
+        "AccountName": argv.get("--AccountName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1033,9 +1380,47 @@ def doDestroyPostpaidInstance(argv, arglist):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DestroyPostpaidInstanceRequest()
+    model = models.DeleteInstanceAccountRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DestroyPostpaidInstance(model)
+    rsp = client.DeleteInstanceAccount(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstanceBackups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceBackups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Status": Utils.try_to_json(argv, "--Status"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceBackupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceBackups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1073,6 +1458,41 @@ def doModifyInstance(argv, arglist):
     model = models.ModifyInstanceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstanceMonitorTookDist(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceMonitorTookDist", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Date": argv.get("--Date"),
+        "SpanType": Utils.try_to_json(argv, "--SpanType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceMonitorTookDistRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceMonitorTookDist(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1130,36 +1550,48 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeInstanceMonitorBigKeySizeDist": doDescribeInstanceMonitorBigKeySizeDist,
+    "CreateInstanceAccount": doCreateInstanceAccount,
+    "ModifyInstanceAccount": doModifyInstanceAccount,
+    "DescribeSlowLog": doDescribeSlowLog,
     "CleanUpInstance": doCleanUpInstance,
-    "DescribeInstanceBackups": doDescribeInstanceBackups,
+    "DescribeInstanceAccount": doDescribeInstanceAccount,
+    "DescribeInstanceMonitorTopNCmdTook": doDescribeInstanceMonitorTopNCmdTook,
     "ModifyAutoBackupConfig": doModifyAutoBackupConfig,
     "DescribeInstanceShards": doDescribeInstanceShards,
     "RestoreInstance": doRestoreInstance,
     "DescribeInstances": doDescribeInstances,
     "ModifyInstanceParams": doModifyInstanceParams,
-    "ResetPassword": doResetPassword,
+    "DescribeInstanceMonitorTopNCmd": doDescribeInstanceMonitorTopNCmd,
     "DisableReplicaReadonly": doDisableReplicaReadonly,
     "DescribeAutoBackupConfig": doDescribeAutoBackupConfig,
     "ModifyNetworkConfig": doModifyNetworkConfig,
+    "DescribeInstanceMonitorSIP": doDescribeInstanceMonitorSIP,
     "CreateInstances": doCreateInstances,
     "DescribeProjectSecurityGroup": doDescribeProjectSecurityGroup,
-    "RenewInstance": doRenewInstance,
-    "ModfiyInstancePassword": doModfiyInstancePassword,
+    "DescribeInstanceMonitorHotKey": doDescribeInstanceMonitorHotKey,
+    "DescribeTaskInfo": doDescribeTaskInfo,
     "DescribeBackupUrl": doDescribeBackupUrl,
     "EnableReplicaReadonly": doEnableReplicaReadonly,
+    "ResetPassword": doResetPassword,
+    "DestroyPostpaidInstance": doDestroyPostpaidInstance,
     "DescribeInstanceParams": doDescribeInstanceParams,
     "DescribeInstanceSecurityGroup": doDescribeInstanceSecurityGroup,
+    "DescribeInstanceMonitorBigKeyTypeDist": doDescribeInstanceMonitorBigKeyTypeDist,
     "DescribeProductInfo": doDescribeProductInfo,
     "UpgradeInstance": doUpgradeInstance,
+    "RenewInstance": doRenewInstance,
     "ManualBackupInstance": doManualBackupInstance,
-    "DescribeTaskInfo": doDescribeTaskInfo,
-    "DescribeSlowLog": doDescribeSlowLog,
+    "ModfiyInstancePassword": doModfiyInstancePassword,
+    "DescribeInstanceMonitorBigKey": doDescribeInstanceMonitorBigKey,
     "DestroyPrepaidInstance": doDestroyPrepaidInstance,
     "DescribeInstanceParamRecords": doDescribeInstanceParamRecords,
     "ClearInstance": doClearInstance,
     "DescribeInstanceDealDetail": doDescribeInstanceDealDetail,
-    "DestroyPostpaidInstance": doDestroyPostpaidInstance,
+    "DeleteInstanceAccount": doDeleteInstanceAccount,
+    "DescribeInstanceBackups": doDescribeInstanceBackups,
     "ModifyInstance": doModifyInstance,
+    "DescribeInstanceMonitorTookDist": doDescribeInstanceMonitorTookDist,
     "SwitchInstanceVip": doSwitchInstanceVip,
 
 }

@@ -99,6 +99,10 @@ INFO = {
       {
         "name": "DeviceName",
         "desc": "设备名"
+      },
+      {
+        "name": "DeviceId",
+        "desc": "设备ID，该字段有值将代替 ProductId/DeviceName"
       }
     ],
     "desc": "用于查看某个设备的详细信息"
@@ -173,6 +177,27 @@ INFO = {
       }
     ],
     "desc": "获取设备在指定时间范围内上报的历史数据。"
+  },
+  "CallDeviceActionSync": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品Id"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      },
+      {
+        "name": "ActionId",
+        "desc": "动作Id"
+      },
+      {
+        "name": "InputParams",
+        "desc": "输入参数"
+      }
+    ],
+    "desc": "为用户提供同步调用设备动作的能力。"
   },
   "DeleteDevice": {
     "params": [
@@ -323,6 +348,27 @@ INFO = {
       }
     ],
     "desc": "为用户提供新建项目的能力，用于集中管理产品和应用。"
+  },
+  "CallDeviceActionAsync": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品Id"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      },
+      {
+        "name": "ActionId",
+        "desc": "动作Id"
+      },
+      {
+        "name": "InputParams",
+        "desc": "输入参数"
+      }
+    ],
+    "desc": "提供给用户异步调用设备动作的能力"
   },
   "DeleteProject": {
     "params": [

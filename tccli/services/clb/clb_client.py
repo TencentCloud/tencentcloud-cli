@@ -485,6 +485,7 @@ def doModifyListener(argv, arglist):
         "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
         "Certificate": Utils.try_to_json(argv, "--Certificate"),
         "Scheduler": argv.get("--Scheduler"),
+        "SniSwitch": Utils.try_to_json(argv, "--SniSwitch"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
