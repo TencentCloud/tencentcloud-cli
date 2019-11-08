@@ -61,6 +61,7 @@ def doDetectLabel(argv, arglist):
     param = {
         "ImageUrl": argv.get("--ImageUrl"),
         "ImageBase64": argv.get("--ImageBase64"),
+        "Scenes": Utils.try_to_json(argv, "--Scenes"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

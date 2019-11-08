@@ -33,7 +33,7 @@ INFO = {
         "desc": "要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter"
       }
     ],
-    "desc": "本接口(DescribeAppStatistics)用户获取某个GME应用的用量数据。包括实时语音，离线语音，语音过滤等。最长查询周期为最近30天。"
+    "desc": "本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，离线语音，语音过滤等。最长查询周期为最近30天。"
   },
   "DescribeScanResultList": {
     "params": [
@@ -139,11 +139,11 @@ INFO = {
       },
       {
         "name": "EngineList",
-        "desc": "需要支持的引擎列表，取值android, ios, uinty, cocos, unreal, windows。默认全选。"
+        "desc": "需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。"
       },
       {
         "name": "RegionList",
-        "desc": "服务区域列表, 默认为空数组. 取值: mainland(美), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选"
+        "desc": "服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。"
       },
       {
         "name": "RealtimeSpeechConf",
@@ -151,11 +151,11 @@ INFO = {
       },
       {
         "name": "VoiceMessageConf",
-        "desc": "离线语音服务配置数据"
+        "desc": "语音消息及转文本服务配置数据"
       },
       {
         "name": "VoiceFilterConf",
-        "desc": "语音过滤服务配置数据"
+        "desc": "语音分析服务配置数据"
       },
       {
         "name": "Tags",

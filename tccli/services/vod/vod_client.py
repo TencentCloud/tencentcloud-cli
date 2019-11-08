@@ -215,6 +215,8 @@ def doEditMedia(argv, arglist):
         "Definition": Utils.try_to_json(argv, "--Definition"),
         "ProcedureName": argv.get("--ProcedureName"),
         "OutputConfig": Utils.try_to_json(argv, "--OutputConfig"),
+        "SessionContext": argv.get("--SessionContext"),
+        "SessionId": argv.get("--SessionId"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -1379,6 +1381,7 @@ def doDescribeProcedureTemplates(argv, arglist):
 
     param = {
         "Names": Utils.try_to_json(argv, "--Names"),
+        "Type": argv.get("--Type"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),

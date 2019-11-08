@@ -30,6 +30,19 @@ INFO = {
     ],
     "desc": "获取自定义脚本信息列表"
   },
+  "AttachCamRole": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "服务器ID"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名称。"
+      }
+    ],
+    "desc": "服务器绑定CAM角色，该角色授权访问黑石物理服务器服务，为黑石物理服务器提供了访问资源的权限，如请求服务器的临时证书"
+  },
   "ModifyPsaRegulation": {
     "params": [
       {
@@ -166,9 +179,14 @@ INFO = {
     ],
     "desc": "开启服务器"
   },
-  "DescribeHardwareSpecification": {
-    "params": [],
-    "desc": "查询自定义机型部件信息，包括CpuId对应的型号，DiskTypeId对应的磁盘类型"
+  "DescribeDeviceHardwareInfo": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "设备 ID 列表"
+      }
+    ],
+    "desc": "查询设备硬件配置信息，如 CPU 型号，内存大小，磁盘大小和数量"
   },
   "DescribeUserCmdTasks": {
     "params": [
@@ -224,7 +242,7 @@ INFO = {
       },
       {
         "name": "OsTypeId",
-        "desc": "部署服务器的操作系统ID。通过接口[查询操作系统信息(DescribeOsInfo)](https://cloud.tencent.com/document/api/386/31964)获取操作系统信息"
+        "desc": "部署服务器的操作系统ID。通过接口[查询操作系统信息(DescribeOsInfo)](https://cloud.tencent.com/document/product/386/32902)获取操作系统信息"
       },
       {
         "name": "RaidId",
@@ -368,7 +386,7 @@ INFO = {
       },
       {
         "name": "BuySession",
-        "desc": "此参数是为了防止重复发货。如果两次调用传入相同的BuySession，只会发货一次。 不要以设备别名做为BuySession，这样只会第一次购买成功。参数长度为128位，合法字符为大小字母，数字，下划线，横线。"
+        "desc": "此参数是为了防止重复发货。如果两次调用传入相同的BuySession，只会发货一次。 不要以设备别名作为BuySession，这样只会第一次购买成功。参数长度为128位，合法字符为大小字母，数字，下划线，横线。"
       }
     ],
     "desc": "购买黑石物理机"
@@ -468,54 +486,18 @@ INFO = {
     ],
     "desc": "创建自定义脚本"
   },
-  "DescribeTaskInfo": {
+  "DescribeHardwareSpecification": {
+    "params": [],
+    "desc": "查询自定义机型部件信息，包括CpuId对应的型号，DiskTypeId对应的磁盘类型"
+  },
+  "DetachCamRole": {
     "params": [
       {
-        "name": "Offset",
-        "desc": "开始位置"
-      },
-      {
-        "name": "Limit",
-        "desc": "数据条数"
-      },
-      {
-        "name": "StartDate",
-        "desc": "时间过滤下限"
-      },
-      {
-        "name": "EndDate",
-        "desc": "时间过滤上限"
-      },
-      {
-        "name": "TaskStatus",
-        "desc": "任务状态ID过滤"
-      },
-      {
-        "name": "OrderField",
-        "desc": "排序字段，目前支持：CreateTime，AuthTime，EndTime"
-      },
-      {
-        "name": "Order",
-        "desc": "排序方式 0:递增(默认) 1:递减"
-      },
-      {
-        "name": "TaskIds",
-        "desc": "任务ID过滤"
-      },
-      {
-        "name": "InstanceIds",
-        "desc": "实例ID过滤"
-      },
-      {
-        "name": "Aliases",
-        "desc": "实例别名过滤"
-      },
-      {
-        "name": "TaskTypeIds",
-        "desc": "故障类型ID过滤"
+        "name": "InstanceId",
+        "desc": "服务器ID"
       }
     ],
-    "desc": "获取用户维修任务列表及详细信息<br>\n<br>\nTaskStatus（任务状态ID）与状态中文名的对应关系如下：<br>\n1：未授权<br>\n2：处理中<br>\n3：待确认<br>\n4：未授权-暂不处理<br>\n5：已恢复<br>\n6：待确认-未恢复<br>"
+    "desc": "服务器绑定CAM角色"
   },
   "RebootDevices": {
     "params": [
@@ -846,6 +828,55 @@ INFO = {
     ],
     "desc": "查询设备操作日志， 如设备重启，重装，设置密码等操作"
   },
+  "DescribeTaskInfo": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "开始位置"
+      },
+      {
+        "name": "Limit",
+        "desc": "数据条数"
+      },
+      {
+        "name": "StartDate",
+        "desc": "时间过滤下限"
+      },
+      {
+        "name": "EndDate",
+        "desc": "时间过滤上限"
+      },
+      {
+        "name": "TaskStatus",
+        "desc": "任务状态ID过滤"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段，目前支持：CreateTime，AuthTime，EndTime"
+      },
+      {
+        "name": "Order",
+        "desc": "排序方式 0:递增(默认) 1:递减"
+      },
+      {
+        "name": "TaskIds",
+        "desc": "任务ID过滤"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID过滤"
+      },
+      {
+        "name": "Aliases",
+        "desc": "实例别名过滤"
+      },
+      {
+        "name": "TaskTypeIds",
+        "desc": "故障类型ID过滤"
+      }
+    ],
+    "desc": "获取用户维修任务列表及详细信息<br>\n<br>\nTaskStatus（任务状态ID）与状态中文名的对应关系如下：<br>\n1：未授权<br>\n2：处理中<br>\n3：待确认<br>\n4：未授权-暂不处理<br>\n5：已恢复<br>\n6：待确认-未恢复<br>"
+  },
   "RepairTaskControl": {
     "params": [
       {
@@ -871,7 +902,7 @@ INFO = {
       },
       {
         "name": "DeviceClassCode",
-        "desc": "机型ID，通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/31968)查询"
+        "desc": "机型ID，通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/32911)查询"
       },
       {
         "name": "InstanceIds",
@@ -935,15 +966,6 @@ INFO = {
       }
     ],
     "desc": "查询物理服务器，可以按照实例，业务IP等过滤"
-  },
-  "DescribeDeviceHardwareInfo": {
-    "params": [
-      {
-        "name": "InstanceIds",
-        "desc": "设备 ID 列表"
-      }
-    ],
-    "desc": "查询设备硬件配置信息，如 CPU 型号，内存大小，磁盘大小和数量"
   },
   "DescribeRepairTaskConstant": {
     "params": [],

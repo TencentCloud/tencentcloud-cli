@@ -56,6 +56,39 @@ def doDescribeUserCmds(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRebootDevices(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RebootDevices", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RebootDevicesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RebootDevices(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyPsaRegulation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -817,14 +850,14 @@ def doDescribeHardwareSpecification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRebootDevices(argv, arglist):
+def doDetachCamRole(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RebootDevices", g_param[OptionsDefine.Version])
+        show_help("DetachCamRole", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InstanceId": argv.get("--InstanceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -838,9 +871,43 @@ def doRebootDevices(argv, arglist):
     client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RebootDevicesRequest()
+    model = models.DetachCamRoleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RebootDevices(model)
+    rsp = client.DetachCamRole(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAttachCamRole(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AttachCamRole", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "RoleName": argv.get("--RoleName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AttachCamRoleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AttachCamRole(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1830,6 +1897,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeUserCmds": doDescribeUserCmds,
+    "RebootDevices": doRebootDevices,
     "ModifyPsaRegulation": doModifyPsaRegulation,
     "DescribePsaRegulations": doDescribePsaRegulations,
     "ModifyDeviceAutoRenewFlag": doModifyDeviceAutoRenewFlag,
@@ -1851,7 +1919,8 @@ ACTION_MAP = {
     "DeletePsaRegulation": doDeletePsaRegulation,
     "CreateUserCmd": doCreateUserCmd,
     "DescribeHardwareSpecification": doDescribeHardwareSpecification,
-    "RebootDevices": doRebootDevices,
+    "DetachCamRole": doDetachCamRole,
+    "AttachCamRole": doAttachCamRole,
     "DescribeOsInfo": doDescribeOsInfo,
     "DescribeOperationResult": doDescribeOperationResult,
     "ModifyCustomImageAttribute": doModifyCustomImageAttribute,
