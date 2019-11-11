@@ -409,6 +409,7 @@ def doDescribeProvinceIspPlayInfoList(argv, arglist):
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "ProvinceNames": Utils.try_to_json(argv, "--ProvinceNames"),
         "IspNames": Utils.try_to_json(argv, "--IspNames"),
+        "MainlandOrOversea": argv.get("--MainlandOrOversea"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -586,6 +587,8 @@ def doDescribeTopClientIpSumInfoList(argv, arglist):
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
         "OrderParam": argv.get("--OrderParam"),
+        "MainlandOrOversea": argv.get("--MainlandOrOversea"),
+        "OutLanguage": argv.get("--OutLanguage"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1186,6 +1189,9 @@ def doDescribePlayErrorCodeSumInfoList(argv, arglist):
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
+        "MainlandOrOversea": argv.get("--MainlandOrOversea"),
+        "GroupType": argv.get("--GroupType"),
+        "OutLanguage": argv.get("--OutLanguage"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1811,6 +1817,8 @@ def doDescribeProIspPlaySumInfoList(argv, arglist):
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "PageNum": Utils.try_to_json(argv, "--PageNum"),
         "PageSize": Utils.try_to_json(argv, "--PageSize"),
+        "MainlandOrOversea": argv.get("--MainlandOrOversea"),
+        "OutLanguage": argv.get("--OutLanguage"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2532,6 +2540,7 @@ def doDescribePlayErrorCodeDetailInfoList(argv, arglist):
         "Granularity": Utils.try_to_json(argv, "--Granularity"),
         "StatType": argv.get("--StatType"),
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
+        "MainlandOrOversea": argv.get("--MainlandOrOversea"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

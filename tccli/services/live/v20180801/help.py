@@ -302,11 +302,15 @@ INFO = {
       },
       {
         "name": "ProvinceNames",
-        "desc": "非必传参数，要查询的省份（地区）英文名称列表，如 Beijing"
+        "desc": "要查询的省份（地区）英文名称列表，如 Beijing。"
       },
       {
         "name": "IspNames",
-        "desc": "非必传参数，要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据"
+        "desc": "要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
       }
     ],
     "desc": "查询某省份某运营商下行播放数据，包括带宽，流量，请求数，并发连接数信息。"
@@ -390,15 +394,23 @@ INFO = {
       },
       {
         "name": "PageNum",
-        "desc": "页号，\n范围是[1,1000]，\n默认值是1。"
+        "desc": "页号，范围是[1,1000]，默认值是1。"
       },
       {
         "name": "PageSize",
-        "desc": "每页个数，范围是[1,1000]，\n默认值是20。"
+        "desc": "每页个数，范围是[1,1000]，默认值是20。"
       },
       {
         "name": "OrderParam",
-        "desc": "排序指标，可选值包括”TotalRequest”，”FailedRequest”,“TotalFlux”。"
+        "desc": "排序指标，可选值包括TotalRequest（默认值），FailedRequest,TotalFlux。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
+      },
+      {
+        "name": "OutLanguage",
+        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。"
       }
     ],
     "desc": "查询某段时间top n客户端ip汇总信息（暂支持top 1000）"
@@ -703,11 +715,23 @@ INFO = {
       },
       {
         "name": "PageNum",
-        "desc": "页数，\n范围[1,1000]，\n默认值：1。"
+        "desc": "页数，范围[1,1000]，默认值是1。"
       },
       {
         "name": "PageSize",
-        "desc": "每页个数，\n范围：[1,1000]，\n默认值： 20。"
+        "desc": "每页个数，范围：[1,1000]，默认值是20。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
+      },
+      {
+        "name": "GroupType",
+        "desc": "分组参数，可选值：CountryProIsp（默认值），Country（国家），默认是按照国家+省份+运营商来进行分组；目前国外的省份和运营商暂时无法识别。"
+      },
+      {
+        "name": "OutLanguage",
+        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English，目前国家，省份和运营商支持多语言。"
       }
     ],
     "desc": "查询下行播放错误码信息。"
@@ -1428,6 +1452,10 @@ INFO = {
       {
         "name": "PlayDomains",
         "desc": "播放域名列表。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
       }
     ],
     "desc": "查询下行播放错误码信息，某段时间内1分钟粒度的各http错误码出现的次数，包括4xx，5xx。\n\n"
@@ -1625,7 +1653,7 @@ INFO = {
       },
       {
         "name": "StreamName",
-        "desc": "流名称。"
+        "desc": "流名称。如果只绑定域名或路径，则此处填空。"
       },
       {
         "name": "TemplateId",
@@ -1684,7 +1712,7 @@ INFO = {
       },
       {
         "name": "StatType",
-        "desc": "统计的类型，可选值包括”Province”，”Isp”。"
+        "desc": "统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。"
       },
       {
         "name": "PlayDomains",
@@ -1692,14 +1720,22 @@ INFO = {
       },
       {
         "name": "PageNum",
-        "desc": "页号，\n范围是[1,1000]，\n默认值是1。"
+        "desc": "页号，范围是[1,1000]，默认值是1。"
       },
       {
         "name": "PageSize",
-        "desc": "每页个数，范围是[1,1000]，\n默认值是20。"
+        "desc": "每页个数，范围是[1,1000]，默认值是20。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
+      },
+      {
+        "name": "OutLanguage",
+        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。"
       }
     ],
-    "desc": "查询某段时间内每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
+    "desc": "查询某段时间内每个国家地区每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
   },
   "DescribeLivePlayAuthKey": {
     "params": [
@@ -1769,7 +1805,7 @@ INFO = {
       },
       {
         "name": "Acodec",
-        "desc": "音频编码：aac，默认原始音频格式。"
+        "desc": "音频编码：aac，默认原始音频格式。\n注意：当前该参数未生效，待后续支持！"
       },
       {
         "name": "AudioBitrate",
