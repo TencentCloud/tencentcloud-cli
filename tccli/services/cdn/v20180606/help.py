@@ -83,18 +83,30 @@ INFO = {
     ],
     "desc": "DescribeOriginData 用于查询 CDN 实时回源监控数据，支持以下指标查询：\n\n+ 回源流量（单位为 byte）\n+ 回源带宽（单位为 bps）\n+ 回源请求数（单位为 次）\n+ 回源失败请求数（单位为 次）\n+ 回源失败率（单位为 %，小数点后保留两位）\n+ 回源状态码 2xx 汇总及各 2 开头回源状态码明细（单位为 个）\n+ 回源状态码 3xx 汇总及各 3 开头回源状态码明细（单位为 个）\n+ 回源状态码 4xx 汇总及各 4 开头回源状态码明细（单位为 个）\n+ 回源状态码 5xx 汇总及各 5 开头回源状态码明细（单位为 个）"
   },
-  "PushUrlsCache": {
+  "DescribeIpVisit": {
     "params": [
       {
-        "name": "Urls",
-        "desc": "URL 列表，提交时需要包含协议头部（http:// 或 https://）"
+        "name": "StartTime",
+        "desc": "查询起始时间，如：2018-09-04 10:40:10，返回结果大于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:40:00"
       },
       {
-        "name": "UserAgent",
-        "desc": "预热请求回源时 HTTP 请求的 User-Agent 头部，默认为 TencentCdn"
+        "name": "EndTime",
+        "desc": "查询结束时间，如：2018-09-04 10:40:10，返回结果小于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:40:00"
+      },
+      {
+        "name": "Domains",
+        "desc": "指定查询域名列表，最多可一次性查询 30 个加速域名明细"
+      },
+      {
+        "name": "Project",
+        "desc": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主"
+      },
+      {
+        "name": "Interval",
+        "desc": "时间粒度，支持以下几种模式：\n5min：5 分钟粒度，查询时间区间 24 小时内，默认返回 5 分钟粒度活跃用户数\nday：天粒度，查询时间区间大于 1 天时，默认返回天粒度活跃用户数"
       }
     ],
-    "desc": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，默认情况下每次调用可提交 20 条 URL，每日一共可提交 1000 条。"
+    "desc": "DescribeIpVisit 用于查询 5 分钟活跃用户数，及日活跃用户数明细\n\n+ 5 分钟活跃用户数：根据日志中客户端 IP，5 分钟粒度去重统计\n+ 日活跃用户数：根据日志中客户端 IP，按天粒度去重统计"
   },
   "DescribeCdnIp": {
     "params": [
@@ -105,51 +117,59 @@ INFO = {
     ],
     "desc": "DescribeCdnIp 用于查询 CDN IP 归属。"
   },
-  "DescribeMapInfo": {
+  "PurgePathCache": {
     "params": [
       {
-        "name": "Name",
-        "desc": "映射查询类别：\nisp：运营商映射查询\ndistrict：省份（中国境内）、国家/地区（中国境外）映射查询"
+        "name": "Paths",
+        "desc": "目录列表，需要包含协议头部 http:// 或 https://"
+      },
+      {
+        "name": "FlushType",
+        "desc": "刷新类型\nflush：刷新产生更新的资源\ndelete：刷新全部资源"
       }
     ],
-    "desc": "DescribeMapInfo 用于查询省份对应的 ID，运营商对应的 ID 信息。"
+    "desc": "PurgePathCache 用于批量提交目录刷新，根据域名的加速区域进行对应区域的刷新。\n默认情况下境内、境外加速区域每日目录刷新额度为各 100 条，每次最多可提交 20 条。"
   },
   "DescribePurgeTasks": {
     "params": [
       {
         "name": "PurgeType",
-        "desc": "查询刷新类型。url：查询 url 刷新记录；path：查询目录刷新记录。"
+        "desc": "指定刷新类型查询\nurl：url 刷新记录\npath：目录刷新记录"
       },
       {
         "name": "StartTime",
-        "desc": "开始时间，如2018-08-08 00:00:00。"
+        "desc": "根据时间区间查询时，填充开始时间，如 2018-08-08 00:00:00"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，如2018-08-08 23:59:59。"
+        "desc": "根据时间区间查询时，填充结束时间，如 2018-08-08 23:59:59"
       },
       {
         "name": "TaskId",
-        "desc": "提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。"
+        "desc": "根据任务 ID 查询时，填充任务 ID\n查询时任务 ID 与起始时间必须填充一项"
       },
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）。"
+        "desc": "分页查询偏移量，默认为 0 （第一页）"
       },
       {
         "name": "Limit",
-        "desc": "分页查询限制数目，默认为20。"
+        "desc": "分页查询限制数目，默认为 20"
       },
       {
         "name": "Keyword",
-        "desc": "查询关键字，请输入域名或 http(s):// 开头完整 URL。"
+        "desc": "支持域名过滤，或 http(s):// 开头完整 URL 过滤"
       },
       {
         "name": "Status",
-        "desc": "查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。"
+        "desc": "指定任务状态查询\nfail：刷新失败\ndone：刷新成功\nprocess：刷新中"
+      },
+      {
+        "name": "Area",
+        "desc": "指定刷新地域查询\nmainland：境内\noverseas：境外\nglobal：全球"
       }
     ],
-    "desc": "DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。"
+    "desc": "DescribePurgeTasks 用于查询提交的 URL 刷新、目录刷新记录及执行进度，通过 PurgePathCache 与 PurgeUrlsCache 接口提交的任务均可通过此接口进行查询。"
   },
   "GetDisableRecords": {
     "params": [
@@ -184,57 +204,70 @@ INFO = {
     "params": [
       {
         "name": "Area",
-        "desc": "指定服务地域查询，不填充表示查询中国境内 CDN 计费方式\nmainland：指定查询中国境内 CDN 计费方式\noverseas：指定查询中国境外 CDN 计费方式"
+        "desc": "指定服务地域查询\nmainland：境内计费方式查询\noverseas：境外计费方式查询\n未填充时默认为 mainland"
       }
     ],
     "desc": "DescribePayType 用于查询用户的计费类型，计费周期等信息。"
   },
-  "PurgePathCache": {
+  "DescribeMapInfo": {
     "params": [
       {
-        "name": "Paths",
-        "desc": "要刷新的目录列表，必须包含协议头部。"
-      },
-      {
-        "name": "FlushType",
-        "desc": "刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。"
+        "name": "Name",
+        "desc": "映射查询类别：\nisp：运营商映射查询\ndistrict：省份（中国境内）、国家/地区（中国境外）映射查询"
       }
     ],
-    "desc": "PurgePathCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。"
+    "desc": "DescribeMapInfo 用于查询省份对应的 ID，运营商对应的 ID 信息。"
+  },
+  "DescribeCdnDomainLogs": {
+    "params": [
+      {
+        "name": "Domain",
+        "desc": "指定域名查询"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间，如 2019-09-04 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，如 2019-09-04 12:00:00"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页查询偏移量，默认为 0 （第一页）"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页查询限制数目，默认为 100，最大为 1000"
+      },
+      {
+        "name": "Area",
+        "desc": "指定区域下载日志\nmainland：获取境内加速日志包下载链接\noverseas：获取境外加速日志包下载链接\nglobal：同时获取境内、境外加速日志包下载链接（分开打包）\n不指定时默认为 mainland"
+      }
+    ],
+    "desc": "DescribeCdnDomainLogs 用于查询访问日志下载地址，仅支持 30 天以内的境内、境外访问日志下载链接查询。"
   },
   "PurgeUrlsCache": {
     "params": [
       {
         "name": "Urls",
-        "desc": "要刷新的Url列表，必须包含协议头部。"
+        "desc": "URL 列表，需要包含协议头部 http:// 或 https://"
       }
     ],
-    "desc": "PurgeUrlsCache 用于批量刷新Url，一次提交将返回一个刷新任务id。"
+    "desc": "PurgeUrlsCache 用于批量提交 URL 进行刷新，根据 URL 中域名的当前加速区域进行对应区域的刷新。\n默认情况下境内、境外加速区域每日 URL 刷新额度各为 10000 条，每次最多可提交 1000 条。"
   },
-  "DescribeIpVisit": {
+  "DescribeTrafficPackages": {
     "params": [
       {
-        "name": "StartTime",
-        "desc": "查询起始时间，如：2018-09-04 10:40:10，返回结果大于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:40:00"
+        "name": "Offset",
+        "desc": "分页查询起始地址，默认 0（第一页）"
       },
       {
-        "name": "EndTime",
-        "desc": "查询结束时间，如：2018-09-04 10:40:10，返回结果小于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:40:00"
-      },
-      {
-        "name": "Domains",
-        "desc": "指定查询域名列表，最多可一次性查询 30 个加速域名明细"
-      },
-      {
-        "name": "Project",
-        "desc": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主"
-      },
-      {
-        "name": "Interval",
-        "desc": "时间粒度，支持以下几种模式：\n5min：5 分钟粒度，查询时间区间 24 小时内，默认返回 5 分钟粒度活跃用户数\nday：天粒度，查询时间区间大于 1 天时，默认返回天粒度活跃用户数"
+        "name": "Limit",
+        "desc": "分页查询记录个数，默认100，最大1000"
       }
     ],
-    "desc": "DescribeIpVisit 用于查询 5 分钟活跃用户数，及日活跃用户数明细\n\n+ 5 分钟活跃用户数：根据日志中客户端 IP，5 分钟粒度去重统计\n+ 日活跃用户数：根据日志中客户端 IP，按天粒度去重统计"
+    "desc": "DescribeTrafficPackages 用于查询境内 CDN 流量包详情。"
   },
   "DescribeCdnData": {
     "params": [
@@ -318,30 +351,30 @@ INFO = {
       },
       {
         "name": "TaskId",
-        "desc": "提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。"
+        "desc": "指定任务 ID 查询\nTaskId 和起始时间必须指定一项"
       },
       {
         "name": "Keyword",
-        "desc": "查询关键字，请输入域名或 http(s):// 开头完整 URL。"
+        "desc": "查询关键字，请输入域名或 http(s):// 开头完整 URL"
       },
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）。"
+        "desc": "分页查询偏移量，默认为 0 （第一页）"
       },
       {
         "name": "Limit",
-        "desc": "分页查询限制数目，默认为20。"
+        "desc": "分页查询限制数目，默认为 20"
       },
       {
         "name": "Area",
-        "desc": "查询刷新记录指定地区。mainland：中国大陆。"
+        "desc": "指定地区查询预热纪录\nmainland：境内\noverseas：境外\nglobal：全球"
       },
       {
         "name": "Status",
-        "desc": "查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。"
+        "desc": "指定任务状态查询\nfail：预热失败\ndone：预热成功\nprocess：预热中"
       }
     ],
-    "desc": "DescribePushTasks 用于查询预热任务提交历史记录及执行进度。（接口尚在批量公测中，暂未全量开放使用）"
+    "desc": "DescribePushTasks  用于查询预热任务提交历史记录及执行进度。\n接口灰度中，暂未全量开放，敬请期待。"
   },
   "EnableCaches": {
     "params": [
@@ -351,5 +384,22 @@ INFO = {
       }
     ],
     "desc": "EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。（接口尚在内测中，暂未全量开放使用）"
+  },
+  "PushUrlsCache": {
+    "params": [
+      {
+        "name": "Urls",
+        "desc": "URL 列表，需要包含协议头部 http:// 或 https://"
+      },
+      {
+        "name": "UserAgent",
+        "desc": "指定预热请求回源时 HTTP 请求的 User-Agent 头部\n默认为 TencentCdn"
+      },
+      {
+        "name": "Area",
+        "desc": "预热生效区域\nmainland：预热至境内节点\noverseas：预热至境外节点\nglobal：预热全球节点\n不填充情况下，默认为 mainland， URL 中域名必须在对应区域启用了加速服务才能提交对应区域的预热任务"
+      }
+    ],
+    "desc": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，支持指定加速区域预热。\n默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 20 条。\n接口灰度中，暂未全量开放，敬请期待。"
   }
 }

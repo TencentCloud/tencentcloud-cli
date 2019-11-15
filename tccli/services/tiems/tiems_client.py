@@ -26,10 +26,18 @@ def doCreateService(argv, arglist):
 
     param = {
         "Scaler": Utils.try_to_json(argv, "--Scaler"),
-        "ServiceConfigId": Utils.try_to_json(argv, "--ServiceConfigId"),
+        "ServiceConfigId": argv.get("--ServiceConfigId"),
         "Name": argv.get("--Name"),
         "ScaleMode": argv.get("--ScaleMode"),
+        "Cpu": Utils.try_to_json(argv, "--Cpu"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
         "Cluster": argv.get("--Cluster"),
+        "ResourceGroupId": argv.get("--ResourceGroupId"),
+        "Authentication": argv.get("--Authentication"),
+        "Gpu": Utils.try_to_json(argv, "--Gpu"),
+        "GpuMemory": Utils.try_to_json(argv, "--GpuMemory"),
+        "Description": argv.get("--Description"),
+        "GpuType": argv.get("--GpuType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -46,6 +54,41 @@ def doCreateService(argv, arglist):
     model = models.CreateServiceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateService(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+        "JobAction": argv.get("--JobAction"),
+        "Description": argv.get("--Description"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateJob(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -102,10 +145,7 @@ def doCreateServiceConfig(argv, arglist):
         "Name": argv.get("--Name"),
         "Runtime": argv.get("--Runtime"),
         "ModelUri": argv.get("--ModelUri"),
-        "Cpu": Utils.try_to_json(argv, "--Cpu"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "TflopUnits": Utils.try_to_json(argv, "--TflopUnits"),
-        "GpuMemory": Utils.try_to_json(argv, "--GpuMemory"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -131,6 +171,109 @@ def doCreateServiceConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateRuntime(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateRuntime", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Name": argv.get("--Name"),
+        "Image": argv.get("--Image"),
+        "Framework": argv.get("--Framework"),
+        "Description": argv.get("--Description"),
+        "HealthCheckOn": Utils.try_to_json(argv, "--HealthCheckOn"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRuntimeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateRuntime(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteRuntime(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteRuntime", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Runtime": argv.get("--Runtime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteRuntimeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteRuntime(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeServiceConfigs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -143,6 +286,7 @@ def doDescribeServiceConfigs(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Order": argv.get("--Order"),
         "OrderField": argv.get("--OrderField"),
+        "PageByName": Utils.try_to_json(argv, "--PageByName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -175,7 +319,7 @@ def doDeleteService(argv, arglist):
         return
 
     param = {
-        "ServiceId": Utils.try_to_json(argv, "--ServiceId"),
+        "ServiceId": argv.get("--ServiceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -201,6 +345,88 @@ def doDeleteService(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Order": argv.get("--Order"),
+        "OrderField": argv.get("--OrderField"),
+        "ResourceGroupId": argv.get("--ResourceGroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Name": argv.get("--Name"),
+        "WorkerCount": Utils.try_to_json(argv, "--WorkerCount"),
+        "ConfigId": argv.get("--ConfigId"),
+        "Cpu": Utils.try_to_json(argv, "--Cpu"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Cluster": argv.get("--Cluster"),
+        "PredictInput": Utils.try_to_json(argv, "--PredictInput"),
+        "Description": argv.get("--Description"),
+        "ResourceGroupId": argv.get("--ResourceGroupId"),
+        "Gpu": Utils.try_to_json(argv, "--Gpu"),
+        "GpuMemory": Utils.try_to_json(argv, "--GpuMemory"),
+        "GpuType": argv.get("--GpuType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiemsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteServiceConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -208,7 +434,7 @@ def doDeleteServiceConfig(argv, arglist):
         return
 
     param = {
-        "ServiceConfigId": Utils.try_to_json(argv, "--ServiceConfigId"),
+        "ServiceConfigId": argv.get("--ServiceConfigId"),
         "ServiceConfigName": argv.get("--ServiceConfigName"),
 
     }
@@ -274,11 +500,13 @@ def doUpdateService(argv, arglist):
         return
 
     param = {
-        "ServiceId": Utils.try_to_json(argv, "--ServiceId"),
+        "ServiceId": argv.get("--ServiceId"),
         "Scaler": Utils.try_to_json(argv, "--Scaler"),
-        "ServiceConfigId": Utils.try_to_json(argv, "--ServiceConfigId"),
+        "ServiceConfigId": argv.get("--ServiceConfigId"),
         "ScaleMode": argv.get("--ScaleMode"),
         "ServiceAction": argv.get("--ServiceAction"),
+        "Description": argv.get("--Description"),
+        "GpuType": argv.get("--GpuType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -316,10 +544,16 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateService": doCreateService,
+    "UpdateJob": doUpdateJob,
     "DescribeServices": doDescribeServices,
     "CreateServiceConfig": doCreateServiceConfig,
+    "CreateRuntime": doCreateRuntime,
+    "DeleteJob": doDeleteJob,
+    "DeleteRuntime": doDeleteRuntime,
     "DescribeServiceConfigs": doDescribeServiceConfigs,
     "DeleteService": doDeleteService,
+    "DescribeInstances": doDescribeInstances,
+    "CreateJob": doCreateJob,
     "DeleteServiceConfig": doDeleteServiceConfig,
     "DescribeRuntimes": doDescribeRuntimes,
     "UpdateService": doUpdateService,

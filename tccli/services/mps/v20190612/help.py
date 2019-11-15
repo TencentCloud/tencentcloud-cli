@@ -34,14 +34,39 @@ INFO = {
     ],
     "desc": "创建用户自定义雪碧图模板，数量上限：16。"
   },
-  "DeleteAnimatedGraphicsTemplate": {
+  "CreateSnapshotByTimeOffsetTemplate": {
+    "params": [
+      {
+        "name": "Width",
+        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Height",
+        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Name",
+        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Format",
+        "desc": "图片格式，取值可以为 jpg 和 png。默认为 jpg。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      }
+    ],
+    "desc": "创建用户自定义指定时间点截图模板，数量上限：16。"
+  },
+  "DeleteSampleSnapshotTemplate": {
     "params": [
       {
         "name": "Definition",
-        "desc": "转动图模板唯一标识。"
+        "desc": "采样截图模板唯一标识。"
       }
     ],
-    "desc": "删除用户自定义转动图模板。"
+    "desc": "删除用户自定义采样截图模板。"
   },
   "CreateAnimatedGraphicsTemplate": {
     "params": [
@@ -196,30 +221,14 @@ INFO = {
     ],
     "desc": "修改用户自定义转码模板信息。"
   },
-  "CreateSnapshotByTimeOffsetTemplate": {
+  "DeleteAnimatedGraphicsTemplate": {
     "params": [
       {
-        "name": "Width",
-        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
-        "name": "Height",
-        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
-        "name": "Name",
-        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
-      },
-      {
-        "name": "Format",
-        "desc": "图片格式，取值可以为 jpg 和 png。默认为 jpg。"
-      },
-      {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
+        "name": "Definition",
+        "desc": "转动图模板唯一标识。"
       }
     ],
-    "desc": "创建用户自定义指定时间点截图模板，数量上限：16。"
+    "desc": "删除用户自定义转动图模板。"
   },
   "DescribeSnapshotByTimeOffsetTemplates": {
     "params": [
@@ -241,6 +250,15 @@ INFO = {
       }
     ],
     "desc": "查询指定时间点截图模板，支持根据条件，分页查询。"
+  },
+  "ParseLiveStreamProcessNotification": {
+    "params": [
+      {
+        "name": "Content",
+        "desc": "从 CMQ 获取到的直播流事件通知内容。"
+      }
+    ],
+    "desc": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。"
   },
   "ModifySampleSnapshotTemplate": {
     "params": [
@@ -464,14 +482,14 @@ INFO = {
     ],
     "desc": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。"
   },
-  "DeleteSampleSnapshotTemplate": {
+  "ParseNotification": {
     "params": [
       {
-        "name": "Definition",
-        "desc": "采样截图模板唯一标识。"
+        "name": "Content",
+        "desc": "从 CMQ 获取到的事件通知内容。"
       }
     ],
-    "desc": "删除用户自定义采样截图模板。"
+    "desc": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。"
   },
   "ProcessLiveMedia": {
     "params": [
@@ -552,10 +570,6 @@ INFO = {
       }
     ],
     "desc": "启用工作流。"
-  },
-  "DescribeUserInfo": {
-    "params": [],
-    "desc": "用户服务信息查询，返回用户状态和计费类型；若未注册则返回相应错误提示。"
   },
   "DescribeTasks": {
     "params": [
@@ -672,6 +686,39 @@ INFO = {
       }
     ],
     "desc": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流。\n\n注意：创建工作流成功后是禁用状态，需要手动启用。"
+  },
+  "ProcessLiveStream": {
+    "params": [
+      {
+        "name": "Url",
+        "desc": "直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv 等）。"
+      },
+      {
+        "name": "TaskNotifyConfig",
+        "desc": "任务的事件通知信息，用于指定直播流处理的结果。"
+      },
+      {
+        "name": "OutputStorage",
+        "desc": "直播流处理输出文件的目标存储。如处理有文件输出，该参数为必填项。"
+      },
+      {
+        "name": "OutputDir",
+        "desc": "直播流处理生成的文件输出的目标目录，如`/movie/201909/`，如果不填为 `/` 目录。"
+      },
+      {
+        "name": "AiContentReviewTask",
+        "desc": "视频内容审核类型任务参数。"
+      },
+      {
+        "name": "SessionContext",
+        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
+      },
+      {
+        "name": "SessionId",
+        "desc": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
+      }
+    ],
+    "desc": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、鉴政、鉴暴、声音鉴黄）。\n\n直播流处理事件通知实时写入用户指定的消息队列 CMQ 中，用户需要从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。"
   },
   "ProcessMedia": {
     "params": [

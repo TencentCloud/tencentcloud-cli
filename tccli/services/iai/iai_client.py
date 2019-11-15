@@ -172,6 +172,7 @@ def doDetectLiveFace(argv, arglist):
     param = {
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
+        "FaceModelVersion": argv.get("--FaceModelVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
