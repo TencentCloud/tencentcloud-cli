@@ -58,22 +58,26 @@ INFO = {
     ],
     "desc": "创建服务"
   },
-  "UpdateJob": {
+  "ExposeService": {
     "params": [
       {
-        "name": "JobId",
-        "desc": "任务 Id"
+        "name": "ServiceId",
+        "desc": "服务Id"
       },
       {
-        "name": "JobAction",
-        "desc": "任务更新动作，支持：Cancel"
+        "name": "ExposeType",
+        "desc": "暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）"
       },
       {
-        "name": "Description",
-        "desc": "备注"
+        "name": "VpcId",
+        "desc": "暴露方式为 VPC 时，填写需要打通的私有网络Id"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "暴露方式为 VPC 时，填写需要打通的子网Id"
       }
     ],
-    "desc": "更新任务"
+    "desc": "暴露服务"
   },
   "DeleteServiceConfig": {
     "params": [
@@ -133,6 +137,23 @@ INFO = {
       }
     ],
     "desc": "创建运行环境"
+  },
+  "UpdateJob": {
+    "params": [
+      {
+        "name": "JobId",
+        "desc": "任务 Id"
+      },
+      {
+        "name": "JobAction",
+        "desc": "任务更新动作，支持：Cancel"
+      },
+      {
+        "name": "Description",
+        "desc": "备注"
+      }
+    ],
+    "desc": "更新任务"
   },
   "CreateJob": {
     "params": [
