@@ -93,6 +93,47 @@ INFO = {
     ],
     "desc": "修改实例子账号"
   },
+  "DescribeTaskList": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "InstanceName",
+        "desc": "实例名称"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，取Limit整数倍（自动向下取整）"
+      },
+      {
+        "name": "ProjectIds",
+        "desc": "项目Id"
+      },
+      {
+        "name": "TaskTypes",
+        "desc": "任务类型"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "起始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "终止时间"
+      },
+      {
+        "name": "TaskStatus",
+        "desc": "任务状态"
+      }
+    ],
+    "desc": "查询任务列表信息"
+  },
   "CleanUpInstance": {
     "params": [
       {
@@ -118,6 +159,15 @@ INFO = {
       }
     ],
     "desc": "查看实例子账号信息"
+  },
+  "DescribeAutoBackupConfig": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "获取备份配置"
   },
   "DescribeInstanceMonitorTopNCmdTook": {
     "params": [
@@ -303,14 +353,14 @@ INFO = {
     ],
     "desc": "禁用读写分离"
   },
-  "DescribeAutoBackupConfig": {
+  "DescribeInstanceDTSInfo": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例ID"
       }
     ],
-    "desc": "获取备份配置"
+    "desc": "查询实例DTS信息"
   },
   "ModifyAutoBackupConfig": {
     "params": [
