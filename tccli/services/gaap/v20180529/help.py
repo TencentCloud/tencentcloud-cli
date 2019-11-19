@@ -135,7 +135,11 @@ INFO = {
       },
       {
         "name": "ClientCertificateId",
-        "desc": "客户端CA证书ID，仅当双向认证时设置该参数。"
+        "desc": "客户端CA单证书ID，仅当双向认证时设置该参数或PolyClientCertificateIds参数"
+      },
+      {
+        "name": "PolyClientCertificateIds",
+        "desc": "新的客户端多CA证书ID，仅当双向认证时设置该参数或设置ClientCertificateId参数"
       }
     ],
     "desc": "该接口（CreateHTTPSListener）用于在通道实例下创建HTTPS协议类型的监听器。"
@@ -207,6 +211,15 @@ INFO = {
     ],
     "desc": "该接口（DeleteRule）用于删除HTTP/HTTPS监听器的转发规则。"
   },
+  "DeleteDomainErrorPageInfo": {
+    "params": [
+      {
+        "name": "ErrorPageId",
+        "desc": "定制错误响应页的唯一ID，请参考CreateDomainErrorPageInfo的响应"
+      }
+    ],
+    "desc": "删除域名的定制错误"
+  },
   "ModifyCertificate": {
     "params": [
       {
@@ -223,7 +236,11 @@ INFO = {
       },
       {
         "name": "ClientCertificateId",
-        "desc": "新的客户端证书ID。其中：\n当ClientCertificateId=default时，表示使用监听器的证书。\n仅当采用双向认证方式时，需要设置该参数。"
+        "desc": "新的客户端证书ID。其中：\n当ClientCertificateId=default时，表示使用监听器的证书。\n仅当采用双向认证方式时，需要设置该参数或者PolyClientCertificateIds。"
+      },
+      {
+        "name": "PolyClientCertificateIds",
+        "desc": "新的多客户端证书ID列表。其中：\n仅当采用双向认证方式时，需要设置该参数或ClientCertificateId参数。"
       }
     ],
     "desc": "本接口（ModifyCertificate）用于修改监听器下的域名对应的证书。该接口仅适用于version3.0的通道。"
@@ -298,6 +315,39 @@ INFO = {
     "params": [],
     "desc": "本接口（DescribeDestRegions）用于查询源站区域，即源站服务器所在区域。"
   },
+  "CreateDomainErrorPageInfo": {
+    "params": [
+      {
+        "name": "ListenerId",
+        "desc": "监听器ID"
+      },
+      {
+        "name": "Domain",
+        "desc": "域名"
+      },
+      {
+        "name": "ErrorNos",
+        "desc": "原始错误码"
+      },
+      {
+        "name": "Body",
+        "desc": "新的响应包体"
+      },
+      {
+        "name": "NewErrorNo",
+        "desc": "新错误码"
+      },
+      {
+        "name": "ClearHeaders",
+        "desc": "需要删除的响应头"
+      },
+      {
+        "name": "SetHeaders",
+        "desc": "需要设置的响应头"
+      }
+    ],
+    "desc": "定制域名指定错误码的错误响应"
+  },
   "DescribeProxyGroupStatistics": {
     "params": [
       {
@@ -352,7 +402,11 @@ INFO = {
       },
       {
         "name": "ClientCertificateId",
-        "desc": "客户端CA证书ID，，仅适用于version3.0的通道。其中：\n不带该字段时，表示使用原证书；\n携带该字段时并且ClientCertificateId=default，表示使用监听器证书；\n其他情况，使用该ClientCertificateId指定的证书。"
+        "desc": "客户端CA证书ID，仅适用于version3.0的通道。其中：\n不带该字段和PolyClientCertificateIds时，表示使用原证书；\n携带该字段时并且ClientCertificateId=default，表示使用监听器证书；\n其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。"
+      },
+      {
+        "name": "PolyClientCertificateIds",
+        "desc": "客户端CA证书ID，仅适用于version3.0的通道。其中：\n不带该字段和ClientCertificateId时，表示使用原证书；\n携带该字段时并且ClientCertificateId=default，表示使用监听器证书；\n其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。"
       }
     ],
     "desc": "本接口（ModifyDomain）用于监听器下的域名。当通道版本为3.0时，支持对该域名所对应的证书修改。"
@@ -653,6 +707,19 @@ INFO = {
     ],
     "desc": "本接口（DescribeGroupDomainConfig）用于获取通道组域名解析配置详情。"
   },
+  "BindRuleRealServers": {
+    "params": [
+      {
+        "name": "RuleId",
+        "desc": "转发规则ID"
+      },
+      {
+        "name": "RealServerBindSet",
+        "desc": "需要绑定的源站信息列表。\n如果已经存在绑定的源站，则会覆盖更新成这个源站列表。\n当不带该字段时，表示解绑该规则上的所有源站。\n如果该规则的源站调度策略是加权轮询，需要填写源站权重 RealServerWeight, 不填或者其他调度类型默认源站权重为1。"
+      }
+    ],
+    "desc": "该接口用于7层监听器的转发规则绑定源站。注意：本接口会解绑之前绑定的源站，绑定本次调用所选择的源站。"
+  },
   "DeleteProxyGroup": {
     "params": [
       {
@@ -687,7 +754,7 @@ INFO = {
       },
       {
         "name": "ForwardProtocol",
-        "desc": "监听器后端转发源站协议类型"
+        "desc": "监听器后端转发与源站之间的协议类型"
       },
       {
         "name": "CertificateId",
@@ -695,7 +762,11 @@ INFO = {
       },
       {
         "name": "ClientCertificateId",
-        "desc": "修改后的监听器客户端证书ID"
+        "desc": "修改后的监听器客户端证书ID，不支持多客户端证书，多客户端证书新采用PolyClientCertificateIds字段"
+      },
+      {
+        "name": "PolyClientCertificateIds",
+        "desc": "新字段,修改后的监听器客户端证书ID"
       }
     ],
     "desc": "该接口（ModifyHTTPSListenerAttribute）用于修改HTTPS监听器配置，当前不支持通道组和v1版本通道。"
@@ -716,7 +787,11 @@ INFO = {
       },
       {
         "name": "ClientCertificateId",
-        "desc": "客户端CA证书，用于客户端与GAAP的HTTPS的交互。\n仅当采用双向认证的方式时，需要设置该字段。"
+        "desc": "客户端CA证书，用于客户端与GAAP的HTTPS的交互。\n仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。"
+      },
+      {
+        "name": "PolyClientCertificateIds",
+        "desc": "客户端CA证书，用于客户端与GAAP的HTTPS的交互。\n仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。"
       }
     ],
     "desc": "本接口（CreateDomain）用于创建HTTP/HTTPS监听器的访问域名，客户端请求通过访问该域名来请求后端业务。\n该接口仅支持version3.0的通道。"
@@ -767,26 +842,14 @@ INFO = {
     ],
     "desc": "本接口（DescribeCertificateDetail）用于查询证书详情，包括证书ID，证书名字，证书类型，证书内容以及密钥等信息。"
   },
-  "DeleteListeners": {
+  "CloseSecurityPolicy": {
     "params": [
       {
-        "name": "ListenerIds",
-        "desc": "待删除的监听器ID列表"
-      },
-      {
-        "name": "Force",
-        "desc": "已绑定源站的监听器是否允许强制删除，1：允许， 0：不允许"
-      },
-      {
-        "name": "GroupId",
-        "desc": "通道组ID，该参数和GroupId必须设置一个，但不能同时设置。"
-      },
-      {
         "name": "ProxyId",
-        "desc": "通道ID，该参数和GroupId必须设置一个，但不能同时设置。"
+        "desc": "通道ID"
       }
     ],
-    "desc": "该接口（DeleteListeners）用于批量删除通道或通道组的监听器，包括4/7层监听器。"
+    "desc": "关闭安全策略"
   },
   "ModifyGroupDomainConfig": {
     "params": [
@@ -842,18 +905,18 @@ INFO = {
     ],
     "desc": "该接口（DescribeTCPListeners）用于查询单通道或者通道组下的TCP监听器信息。"
   },
-  "BindRuleRealServers": {
+  "DescribeDomainErrorPageInfo": {
     "params": [
       {
-        "name": "RuleId",
-        "desc": "转发规则ID"
+        "name": "ListenerId",
+        "desc": "监听器ID"
       },
       {
-        "name": "RealServerBindSet",
-        "desc": "需要绑定的源站信息列表。\n如果已经存在绑定的源站，则会覆盖更新成这个源站列表。\n当不带该字段时，表示解绑该规则上的所有源站。\n如果该规则的源站调度策略是加权轮询，需要填写源站权重 RealServerWeight, 不填或者其他调度类型默认源站权重为1。"
+        "name": "Domain",
+        "desc": "域名"
       }
     ],
-    "desc": "该接口用于7层监听器的转发规则绑定源站。注意：本接口会解绑之前绑定的源站，绑定本次调用所选择的源站。"
+    "desc": "查询目前订制域名的错误响应"
   },
   "DescribeRealServers": {
     "params": [
@@ -1406,14 +1469,26 @@ INFO = {
     ],
     "desc": "该接口（DescribeListenerRealServers）用于查询TCP/UDP监听器源站列表，包括该监听器已经绑定的源站列表以及可以绑定的源站列表。"
   },
-  "CloseSecurityPolicy": {
+  "DeleteListeners": {
     "params": [
       {
+        "name": "ListenerIds",
+        "desc": "待删除的监听器ID列表"
+      },
+      {
+        "name": "Force",
+        "desc": "已绑定源站的监听器是否允许强制删除，1：允许， 0：不允许"
+      },
+      {
+        "name": "GroupId",
+        "desc": "通道组ID，该参数和GroupId必须设置一个，但不能同时设置。"
+      },
+      {
         "name": "ProxyId",
-        "desc": "通道ID"
+        "desc": "通道ID，该参数和GroupId必须设置一个，但不能同时设置。"
       }
     ],
-    "desc": "关闭安全策略"
+    "desc": "该接口（DeleteListeners）用于批量删除通道或通道组的监听器，包括4/7层监听器。"
   },
   "DescribeRealServersStatus": {
     "params": [

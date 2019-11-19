@@ -245,6 +245,7 @@ def doCreateHTTPSListener(argv, arglist):
         "ProxyId": argv.get("--ProxyId"),
         "AuthType": Utils.try_to_json(argv, "--AuthType"),
         "ClientCertificateId": argv.get("--ClientCertificateId"),
+        "PolyClientCertificateIds": Utils.try_to_json(argv, "--PolyClientCertificateIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -372,6 +373,39 @@ def doDescribeProxyGroupDetails(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteDomainErrorPageInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteDomainErrorPageInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ErrorPageId": argv.get("--ErrorPageId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDomainErrorPageInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteDomainErrorPageInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyCertificate(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -383,6 +417,7 @@ def doModifyCertificate(argv, arglist):
         "Domain": argv.get("--Domain"),
         "CertificateId": argv.get("--CertificateId"),
         "ClientCertificateId": argv.get("--ClientCertificateId"),
+        "PolyClientCertificateIds": Utils.try_to_json(argv, "--PolyClientCertificateIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -489,6 +524,45 @@ def doCreateRule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateDomainErrorPageInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateDomainErrorPageInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ListenerId": argv.get("--ListenerId"),
+        "Domain": argv.get("--Domain"),
+        "ErrorNos": Utils.try_to_json(argv, "--ErrorNos"),
+        "Body": argv.get("--Body"),
+        "NewErrorNo": Utils.try_to_json(argv, "--NewErrorNo"),
+        "ClearHeaders": Utils.try_to_json(argv, "--ClearHeaders"),
+        "SetHeaders": Utils.try_to_json(argv, "--SetHeaders"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDomainErrorPageInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateDomainErrorPageInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeProxyGroupStatistics(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -571,6 +645,7 @@ def doModifyDomain(argv, arglist):
         "NewDomain": argv.get("--NewDomain"),
         "CertificateId": argv.get("--CertificateId"),
         "ClientCertificateId": argv.get("--ClientCertificateId"),
+        "PolyClientCertificateIds": Utils.try_to_json(argv, "--PolyClientCertificateIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1299,6 +1374,7 @@ def doModifyHTTPSListenerAttribute(argv, arglist):
         "ForwardProtocol": argv.get("--ForwardProtocol"),
         "CertificateId": argv.get("--CertificateId"),
         "ClientCertificateId": argv.get("--ClientCertificateId"),
+        "PolyClientCertificateIds": Utils.try_to_json(argv, "--PolyClientCertificateIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1335,6 +1411,7 @@ def doCreateDomain(argv, arglist):
         "Domain": argv.get("--Domain"),
         "CertificateId": argv.get("--CertificateId"),
         "ClientCertificateId": argv.get("--ClientCertificateId"),
+        "PolyClientCertificateIds": Utils.try_to_json(argv, "--PolyClientCertificateIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1433,16 +1510,13 @@ def doDescribeCertificateDetail(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteListeners(argv, arglist):
+def doCloseSecurityPolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteListeners", g_param[OptionsDefine.Version])
+        show_help("CloseSecurityPolicy", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
-        "Force": Utils.try_to_json(argv, "--Force"),
-        "GroupId": argv.get("--GroupId"),
         "ProxyId": argv.get("--ProxyId"),
 
     }
@@ -1457,9 +1531,9 @@ def doDeleteListeners(argv, arglist):
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteListenersRequest()
+    model = models.CloseSecurityPolicyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteListeners(model)
+    rsp = client.CloseSecurityPolicy(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1565,6 +1639,40 @@ def doRemoveRealServers(argv, arglist):
     model = models.RemoveRealServersRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.RemoveRealServers(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDomainErrorPageInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDomainErrorPageInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ListenerId": argv.get("--ListenerId"),
+        "Domain": argv.get("--Domain"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDomainErrorPageInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDomainErrorPageInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2648,13 +2756,16 @@ def doDescribeListenerRealServers(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCloseSecurityPolicy(argv, arglist):
+def doDeleteListeners(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CloseSecurityPolicy", g_param[OptionsDefine.Version])
+        show_help("DeleteListeners", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "ListenerIds": Utils.try_to_json(argv, "--ListenerIds"),
+        "Force": Utils.try_to_json(argv, "--Force"),
+        "GroupId": argv.get("--GroupId"),
         "ProxyId": argv.get("--ProxyId"),
 
     }
@@ -2669,9 +2780,9 @@ def doCloseSecurityPolicy(argv, arglist):
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CloseSecurityPolicyRequest()
+    model = models.DeleteListenersRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CloseSecurityPolicy(model)
+    rsp = client.DeleteListeners(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2740,9 +2851,11 @@ ACTION_MAP = {
     "DeleteSecurityPolicy": doDeleteSecurityPolicy,
     "DescribeRealServerStatistics": doDescribeRealServerStatistics,
     "DescribeProxyGroupDetails": doDescribeProxyGroupDetails,
+    "DeleteDomainErrorPageInfo": doDeleteDomainErrorPageInfo,
     "ModifyCertificate": doModifyCertificate,
     "DescribeTCPListeners": doDescribeTCPListeners,
     "CreateRule": doCreateRule,
+    "CreateDomainErrorPageInfo": doCreateDomainErrorPageInfo,
     "DescribeProxyGroupStatistics": doDescribeProxyGroupStatistics,
     "DescribeSecurityPolicyDetail": doDescribeSecurityPolicyDetail,
     "ModifyDomain": doModifyDomain,
@@ -2770,10 +2883,11 @@ ACTION_MAP = {
     "CreateDomain": doCreateDomain,
     "ModifyRuleAttribute": doModifyRuleAttribute,
     "DescribeCertificateDetail": doDescribeCertificateDetail,
-    "DeleteListeners": doDeleteListeners,
+    "CloseSecurityPolicy": doCloseSecurityPolicy,
     "ModifyGroupDomainConfig": doModifyGroupDomainConfig,
     "DescribeProxyStatistics": doDescribeProxyStatistics,
     "RemoveRealServers": doRemoveRealServers,
+    "DescribeDomainErrorPageInfo": doDescribeDomainErrorPageInfo,
     "DescribeRealServers": doDescribeRealServers,
     "SetAuthentication": doSetAuthentication,
     "ModifyUDPListenerAttribute": doModifyUDPListenerAttribute,
@@ -2804,7 +2918,7 @@ ACTION_MAP = {
     "CreateProxy": doCreateProxy,
     "DeleteDomain": doDeleteDomain,
     "DescribeListenerRealServers": doDescribeListenerRealServers,
-    "CloseSecurityPolicy": doCloseSecurityPolicy,
+    "DeleteListeners": doDeleteListeners,
     "InquiryPriceCreateProxy": doInquiryPriceCreateProxy,
 
 }
