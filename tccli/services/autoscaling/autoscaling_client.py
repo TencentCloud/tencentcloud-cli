@@ -309,6 +309,7 @@ def doUpgradeLaunchConfiguration(argv, arglist):
         "UserData": argv.get("--UserData"),
         "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
         "CamRoleName": argv.get("--CamRoleName"),
+        "HostNameSettings": Utils.try_to_json(argv, "--HostNameSettings"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -778,6 +779,7 @@ def doCreateLaunchConfiguration(argv, arglist):
         "InstanceTypesCheckPolicy": argv.get("--InstanceTypesCheckPolicy"),
         "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
         "CamRoleName": argv.get("--CamRoleName"),
+        "HostNameSettings": Utils.try_to_json(argv, "--HostNameSettings"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

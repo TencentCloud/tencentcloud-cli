@@ -18,15 +18,14 @@ from tccli.services.tsf import v20180326
 from tccli.services.tsf.v20180326 import help as v20180326_help
 
 
-def doExpandGroup(argv, arglist):
+def doStopContainerGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ExpandGroup", g_param[OptionsDefine.Version])
+        show_help("StopContainerGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
         "GroupId": argv.get("--GroupId"),
-        "InstanceIdList": Utils.try_to_json(argv, "--InstanceIdList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -40,9 +39,9 @@ def doExpandGroup(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ExpandGroupRequest()
+    model = models.StopContainerGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ExpandGroup(model)
+    rsp = client.StopContainerGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -348,14 +347,19 @@ def doDeployContainerGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRevocationPublicConfig(argv, arglist):
+def doDescribeServerlessGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RevocationPublicConfig", g_param[OptionsDefine.Version])
+        show_help("DescribeServerlessGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ConfigReleaseId": argv.get("--ConfigReleaseId"),
+        "ApplicationId": argv.get("--ApplicationId"),
+        "SearchWord": argv.get("--SearchWord"),
+        "OrderBy": argv.get("--OrderBy"),
+        "OrderType": argv.get("--OrderType"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -369,9 +373,9 @@ def doRevocationPublicConfig(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RevocationPublicConfigRequest()
+    model = models.DescribeServerlessGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RevocationPublicConfig(model)
+    rsp = client.DescribeServerlessGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -839,6 +843,72 @@ def doDescribeConfigs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeServerlessGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeServerlessGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": argv.get("--GroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServerlessGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeServerlessGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeApplicationAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeApplicationAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ApplicationId": argv.get("--ApplicationId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeApplicationAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeApplicationAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -976,14 +1046,15 @@ def doDescribeGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopContainerGroup(argv, arglist):
+def doExpandGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("StopContainerGroup", g_param[OptionsDefine.Version])
+        show_help("ExpandGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
         "GroupId": argv.get("--GroupId"),
+        "InstanceIdList": Utils.try_to_json(argv, "--InstanceIdList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -997,9 +1068,9 @@ def doStopContainerGroup(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopContainerGroupRequest()
+    model = models.ExpandGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.StopContainerGroup(model)
+    rsp = client.ExpandGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1009,16 +1080,14 @@ def doStopContainerGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeployGroup(argv, arglist):
+def doDescribePublicConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeployGroup", g_param[OptionsDefine.Version])
+        show_help("DescribePublicConfig", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GroupId": argv.get("--GroupId"),
-        "PkgId": argv.get("--PkgId"),
-        "StartupParameters": argv.get("--StartupParameters"),
+        "ConfigId": argv.get("--ConfigId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1032,9 +1101,9 @@ def doDeployGroup(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeployGroupRequest()
+    model = models.DescribePublicConfigRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeployGroup(model)
+    rsp = client.DescribePublicConfig(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1292,6 +1361,39 @@ def doDescribeConfigReleases(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRevocationPublicConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RevocationPublicConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ConfigReleaseId": argv.get("--ConfigReleaseId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RevocationPublicConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RevocationPublicConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doShrinkInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1326,14 +1428,16 @@ def doShrinkInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeApplicationAttribute(argv, arglist):
+def doDeployGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeApplicationAttribute", g_param[OptionsDefine.Version])
+        show_help("DeployGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ApplicationId": argv.get("--ApplicationId"),
+        "GroupId": argv.get("--GroupId"),
+        "PkgId": argv.get("--PkgId"),
+        "StartupParameters": argv.get("--StartupParameters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1347,9 +1451,9 @@ def doDescribeApplicationAttribute(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeApplicationAttributeRequest()
+    model = models.DeployGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeApplicationAttribute(model)
+    rsp = client.DeployGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1654,6 +1758,43 @@ def doDescribeSimpleNamespaces(argv, arglist):
     model = models.DescribeSimpleNamespacesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeSimpleNamespaces(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyUploadInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyUploadInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ApplicationId": argv.get("--ApplicationId"),
+        "PkgId": argv.get("--PkgId"),
+        "Result": Utils.try_to_json(argv, "--Result"),
+        "Md5": argv.get("--Md5"),
+        "Size": Utils.try_to_json(argv, "--Size"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyUploadInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyUploadInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2243,14 +2384,17 @@ def doDescribeSimpleApplications(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicConfig(argv, arglist):
+def doCreateServerlessGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribePublicConfig", g_param[OptionsDefine.Version])
+        show_help("CreateServerlessGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ConfigId": argv.get("--ConfigId"),
+        "ApplicationId": argv.get("--ApplicationId"),
+        "GroupName": argv.get("--GroupName"),
+        "PkgId": argv.get("--PkgId"),
+        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2264,9 +2408,9 @@ def doDescribePublicConfig(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicConfigRequest()
+    model = models.CreateServerlessGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribePublicConfig(model)
+    rsp = client.CreateServerlessGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2344,18 +2488,14 @@ def doDescribeMicroservice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyUploadInfo(argv, arglist):
+def doDeleteServerlessGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyUploadInfo", g_param[OptionsDefine.Version])
+        show_help("DeleteServerlessGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ApplicationId": argv.get("--ApplicationId"),
-        "PkgId": argv.get("--PkgId"),
-        "Result": Utils.try_to_json(argv, "--Result"),
-        "Md5": argv.get("--Md5"),
-        "Size": Utils.try_to_json(argv, "--Size"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2369,9 +2509,9 @@ def doModifyUploadInfo(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyUploadInfoRequest()
+    model = models.DeleteServerlessGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyUploadInfo(model)
+    rsp = client.DeleteServerlessGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2432,7 +2572,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "ExpandGroup": doExpandGroup,
+    "StopContainerGroup": doStopContainerGroup,
     "DeletePublicConfig": doDeletePublicConfig,
     "CreateGroup": doCreateGroup,
     "CreateCluster": doCreateCluster,
@@ -2441,7 +2581,7 @@ ACTION_MAP = {
     "StartContainerGroup": doStartContainerGroup,
     "DescribeConfigSummary": doDescribeConfigSummary,
     "DeployContainerGroup": doDeployContainerGroup,
-    "RevocationPublicConfig": doRevocationPublicConfig,
+    "DescribeServerlessGroups": doDescribeServerlessGroups,
     "CreateNamespace": doCreateNamespace,
     "DeleteApplication": doDeleteApplication,
     "DeleteMicroservice": doDeleteMicroservice,
@@ -2455,12 +2595,14 @@ ACTION_MAP = {
     "DescribePublicConfigs": doDescribePublicConfigs,
     "RevocationConfig": doRevocationConfig,
     "DescribeConfigs": doDescribeConfigs,
+    "DescribeServerlessGroup": doDescribeServerlessGroup,
+    "DescribeApplicationAttribute": doDescribeApplicationAttribute,
     "DescribeConfig": doDescribeConfig,
     "DescribeMicroservices": doDescribeMicroservices,
     "DeleteGroup": doDeleteGroup,
     "DescribeGroup": doDescribeGroup,
-    "StopContainerGroup": doStopContainerGroup,
-    "DeployGroup": doDeployGroup,
+    "ExpandGroup": doExpandGroup,
+    "DescribePublicConfig": doDescribePublicConfig,
     "DescribeContainerGroupDetail": doDescribeContainerGroupDetail,
     "DeleteContainerGroup": doDeleteContainerGroup,
     "RollbackConfig": doRollbackConfig,
@@ -2468,8 +2610,9 @@ ACTION_MAP = {
     "CreateApplication": doCreateApplication,
     "DescribeImageTags": doDescribeImageTags,
     "DescribeConfigReleases": doDescribeConfigReleases,
+    "RevocationPublicConfig": doRevocationPublicConfig,
     "ShrinkInstances": doShrinkInstances,
-    "DescribeApplicationAttribute": doDescribeApplicationAttribute,
+    "DeployGroup": doDeployGroup,
     "DescribeSimpleClusters": doDescribeSimpleClusters,
     "ReleasePublicConfig": doReleasePublicConfig,
     "ReleaseConfig": doReleaseConfig,
@@ -2478,6 +2621,7 @@ ACTION_MAP = {
     "DescribePublicConfigReleases": doDescribePublicConfigReleases,
     "DescribeGroups": doDescribeGroups,
     "DescribeSimpleNamespaces": doDescribeSimpleNamespaces,
+    "ModifyUploadInfo": doModifyUploadInfo,
     "ModifyContainerGroup": doModifyContainerGroup,
     "ShrinkGroup": doShrinkGroup,
     "StartGroup": doStartGroup,
@@ -2494,10 +2638,10 @@ ACTION_MAP = {
     "DescribePublicConfigReleaseLogs": doDescribePublicConfigReleaseLogs,
     "DescribeConfigReleaseLogs": doDescribeConfigReleaseLogs,
     "DescribeSimpleApplications": doDescribeSimpleApplications,
-    "DescribePublicConfig": doDescribePublicConfig,
+    "CreateServerlessGroup": doCreateServerlessGroup,
     "DescribeApplication": doDescribeApplication,
     "DescribeMicroservice": doDescribeMicroservice,
-    "ModifyUploadInfo": doModifyUploadInfo,
+    "DeleteServerlessGroup": doDeleteServerlessGroup,
     "AddInstances": doAddInstances,
 
 }

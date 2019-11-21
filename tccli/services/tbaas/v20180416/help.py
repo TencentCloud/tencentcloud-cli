@@ -29,7 +29,7 @@ INFO = {
       },
       {
         "name": "IdentityNum",
-        "desc": "证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入企业营业执照；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码"
+        "desc": "证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入“0”；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码"
       },
       {
         "name": "CsrData",
@@ -75,7 +75,7 @@ INFO = {
     "params": [
       {
         "name": "Service",
-        "desc": "服务类型，ss或者dam"
+        "desc": "服务类型，iss或者dam"
       },
       {
         "name": "Method",
@@ -388,6 +388,39 @@ INFO = {
       }
     ],
     "desc": "查询交易"
+  },
+  "GetTransactionDetailForUser": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：transaction"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：transaction_detail_for_user"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "区块链网络ID，可在区块链网络详情或列表中获取"
+      },
+      {
+        "name": "GroupName",
+        "desc": "参与交易的组织名称，可以在组织管理列表中获取当前组织的名称"
+      },
+      {
+        "name": "ChannelName",
+        "desc": "业务所属通道名称，可在通道详情或列表中获取"
+      },
+      {
+        "name": "BlockId",
+        "desc": "区块ID，通过GetInvokeTx接口可以获取交易所在的区块ID"
+      },
+      {
+        "name": "TransactionId",
+        "desc": "交易ID，需要查询的详情的交易ID"
+      }
+    ],
+    "desc": "获取交易详情"
   },
   "GetTransByHashHandler": {
     "params": [

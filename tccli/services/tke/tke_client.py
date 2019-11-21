@@ -18,6 +18,113 @@ from tccli.services.tke import v20180525
 from tccli.services.tke.v20180525 import help as v20180525_help
 
 
+def doCreateCluster(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateCluster", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterCIDRSettings": Utils.try_to_json(argv, "--ClusterCIDRSettings"),
+        "ClusterType": argv.get("--ClusterType"),
+        "RunInstancesForNode": Utils.try_to_json(argv, "--RunInstancesForNode"),
+        "ClusterBasicSettings": Utils.try_to_json(argv, "--ClusterBasicSettings"),
+        "ClusterAdvancedSettings": Utils.try_to_json(argv, "--ClusterAdvancedSettings"),
+        "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
+        "ExistedInstancesForNode": Utils.try_to_json(argv, "--ExistedInstancesForNode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClusterRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateCluster(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteClusterEndpoint(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteClusterEndpoint", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "IsExtranet": Utils.try_to_json(argv, "--IsExtranet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClusterEndpointRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteClusterEndpoint(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteCluster(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteCluster", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "InstanceDeleteMode": argv.get("--InstanceDeleteMode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClusterRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteCluster(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteClusterAsGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -88,87 +195,14 @@ def doDeleteClusterRoute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusters(argv, arglist):
+def doDescribeClusterEndpointVipStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeClusters", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ClusterIds": Utils.try_to_json(argv, "--ClusterIds"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClustersRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClusters(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeRouteTableConflicts(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeRouteTableConflicts", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "RouteTableCidrBlock": argv.get("--RouteTableCidrBlock"),
-        "VpcId": argv.get("--VpcId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRouteTableConflictsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeRouteTableConflicts(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteClusterInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteClusterInstances", g_param[OptionsDefine.Version])
+        show_help("DescribeClusterEndpointVipStatus", g_param[OptionsDefine.Version])
         return
 
     param = {
         "ClusterId": argv.get("--ClusterId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceDeleteMode": argv.get("--InstanceDeleteMode"),
-        "ForceDelete": Utils.try_to_json(argv, "--ForceDelete"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -182,9 +216,9 @@ def doDeleteClusterInstances(argv, arglist):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterInstancesRequest()
+    model = models.DescribeClusterEndpointVipStatusRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteClusterInstances(model)
+    rsp = client.DescribeClusterEndpointVipStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -194,20 +228,16 @@ def doDeleteClusterInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCluster(argv, arglist):
+def doCreateClusterInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateCluster", g_param[OptionsDefine.Version])
+        show_help("CreateClusterInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClusterCIDRSettings": Utils.try_to_json(argv, "--ClusterCIDRSettings"),
-        "ClusterType": argv.get("--ClusterType"),
-        "RunInstancesForNode": Utils.try_to_json(argv, "--RunInstancesForNode"),
-        "ClusterBasicSettings": Utils.try_to_json(argv, "--ClusterBasicSettings"),
-        "ClusterAdvancedSettings": Utils.try_to_json(argv, "--ClusterAdvancedSettings"),
+        "ClusterId": argv.get("--ClusterId"),
+        "RunInstancePara": argv.get("--RunInstancePara"),
         "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
-        "ExistedInstancesForNode": Utils.try_to_json(argv, "--ExistedInstancesForNode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -221,43 +251,9 @@ def doCreateCluster(argv, arglist):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterRequest()
+    model = models.CreateClusterInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateCluster(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteCluster(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteCluster", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ClusterId": argv.get("--ClusterId"),
-        "InstanceDeleteMode": argv.get("--InstanceDeleteMode"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteCluster(model)
+    rsp = client.CreateClusterInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -378,44 +374,6 @@ def doCreateClusterRoute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAddExistedInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("AddExistedInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ClusterId": argv.get("--ClusterId"),
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
-        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
-        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
-        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AddExistedInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.AddExistedInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateClusterRouteTable(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -484,14 +442,17 @@ def doDescribeClusterRouteTables(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusterRoutes(argv, arglist):
+def doDescribeClusters(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeClusterRoutes", g_param[OptionsDefine.Version])
+        show_help("DescribeClusters", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RouteTableName": argv.get("--RouteTableName"),
+        "ClusterIds": Utils.try_to_json(argv, "--ClusterIds"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -505,9 +466,116 @@ def doDescribeClusterRoutes(argv, arglist):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClusterRoutesRequest()
+    model = models.DescribeClustersRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClusterRoutes(model)
+    rsp = client.DescribeClusters(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeClusterEndpointStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeClusterEndpointStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "IsExtranet": Utils.try_to_json(argv, "--IsExtranet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClusterEndpointStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeClusterEndpointStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateClusterEndpoint(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateClusterEndpoint", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "SubnetId": argv.get("--SubnetId"),
+        "IsExtranet": Utils.try_to_json(argv, "--IsExtranet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClusterEndpointRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateClusterEndpoint(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAddExistedInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AddExistedInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
+        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
+        "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddExistedInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AddExistedInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -550,14 +618,15 @@ def doDescribeClusterSecurity(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteClusterRouteTable(argv, arglist):
+def doDescribeRouteTableConflicts(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteClusterRouteTable", g_param[OptionsDefine.Version])
+        show_help("DescribeRouteTableConflicts", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RouteTableName": argv.get("--RouteTableName"),
+        "RouteTableCidrBlock": argv.get("--RouteTableCidrBlock"),
+        "VpcId": argv.get("--VpcId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -571,44 +640,9 @@ def doDeleteClusterRouteTable(argv, arglist):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterRouteTableRequest()
+    model = models.DescribeRouteTableConflictsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteClusterRouteTable(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateClusterInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateClusterInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ClusterId": argv.get("--ClusterId"),
-        "RunInstancePara": argv.get("--RunInstancePara"),
-        "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateClusterInstances(model)
+    rsp = client.DescribeRouteTableConflicts(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -655,6 +689,209 @@ def doDescribeClusterInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteClusterEndpointVip(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteClusterEndpointVip", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClusterEndpointVipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteClusterEndpointVip(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteClusterInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteClusterInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InstanceDeleteMode": argv.get("--InstanceDeleteMode"),
+        "ForceDelete": Utils.try_to_json(argv, "--ForceDelete"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClusterInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteClusterInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyClusterEndpointSP(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyClusterEndpointSP", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "SecurityPolicies": Utils.try_to_json(argv, "--SecurityPolicies"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyClusterEndpointSPRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyClusterEndpointSP(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateClusterEndpointVip(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateClusterEndpointVip", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "SecurityPolicies": Utils.try_to_json(argv, "--SecurityPolicies"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClusterEndpointVipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateClusterEndpointVip(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteClusterRouteTable(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteClusterRouteTable", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RouteTableName": argv.get("--RouteTableName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClusterRouteTableRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteClusterRouteTable(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeClusterRoutes(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeClusterRoutes", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RouteTableName": argv.get("--RouteTableName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClusterRoutesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeClusterRoutes(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180525": tke_client_v20180525,
 
@@ -666,24 +903,31 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "CreateCluster": doCreateCluster,
+    "DeleteClusterEndpoint": doDeleteClusterEndpoint,
+    "DeleteCluster": doDeleteCluster,
     "DeleteClusterAsGroups": doDeleteClusterAsGroups,
     "DeleteClusterRoute": doDeleteClusterRoute,
-    "DescribeClusters": doDescribeClusters,
-    "DescribeRouteTableConflicts": doDescribeRouteTableConflicts,
-    "DeleteClusterInstances": doDeleteClusterInstances,
-    "CreateCluster": doCreateCluster,
-    "DeleteCluster": doDeleteCluster,
+    "DescribeClusterEndpointVipStatus": doDescribeClusterEndpointVipStatus,
+    "CreateClusterInstances": doCreateClusterInstances,
     "CreateClusterAsGroup": doCreateClusterAsGroup,
     "DescribeExistedInstances": doDescribeExistedInstances,
     "CreateClusterRoute": doCreateClusterRoute,
-    "AddExistedInstances": doAddExistedInstances,
     "CreateClusterRouteTable": doCreateClusterRouteTable,
     "DescribeClusterRouteTables": doDescribeClusterRouteTables,
-    "DescribeClusterRoutes": doDescribeClusterRoutes,
+    "DescribeClusters": doDescribeClusters,
+    "DescribeClusterEndpointStatus": doDescribeClusterEndpointStatus,
+    "CreateClusterEndpoint": doCreateClusterEndpoint,
+    "AddExistedInstances": doAddExistedInstances,
     "DescribeClusterSecurity": doDescribeClusterSecurity,
-    "DeleteClusterRouteTable": doDeleteClusterRouteTable,
-    "CreateClusterInstances": doCreateClusterInstances,
+    "DescribeRouteTableConflicts": doDescribeRouteTableConflicts,
     "DescribeClusterInstances": doDescribeClusterInstances,
+    "DeleteClusterEndpointVip": doDeleteClusterEndpointVip,
+    "DeleteClusterInstances": doDeleteClusterInstances,
+    "ModifyClusterEndpointSP": doModifyClusterEndpointSP,
+    "CreateClusterEndpointVip": doCreateClusterEndpointVip,
+    "DeleteClusterRouteTable": doDeleteClusterRouteTable,
+    "DescribeClusterRoutes": doDescribeClusterRoutes,
 
 }
 

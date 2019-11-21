@@ -1,39 +1,6 @@
 # -*- coding: utf-8 -*-
 DESC = "mps-2019-06-12"
 INFO = {
-  "CreateImageSpriteTemplate": {
-    "params": [
-      {
-        "name": "Width",
-        "desc": "雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
-        "name": "Height",
-        "desc": "雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
-        "name": "SampleType",
-        "desc": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
-      },
-      {
-        "name": "SampleInterval",
-        "desc": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>"
-      },
-      {
-        "name": "RowCount",
-        "desc": "雪碧图中小图的行数。"
-      },
-      {
-        "name": "ColumnCount",
-        "desc": "雪碧图中小图的列数。"
-      },
-      {
-        "name": "Name",
-        "desc": "雪碧图模板名称，长度限制：64 个字符。"
-      }
-    ],
-    "desc": "创建用户自定义雪碧图模板，数量上限：16。"
-  },
   "CreateSnapshotByTimeOffsetTemplate": {
     "params": [
       {
@@ -101,6 +68,35 @@ INFO = {
     ],
     "desc": "创建用户自定义转动图模板，数量上限：16。"
   },
+  "CreateContentReviewTemplate": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "内容审核模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "内容审核模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "PornConfigure",
+        "desc": "鉴黄控制参数。"
+      },
+      {
+        "name": "TerrorismConfigure",
+        "desc": "鉴恐控制参数。"
+      },
+      {
+        "name": "PoliticalConfigure",
+        "desc": "鉴政控制参数。"
+      },
+      {
+        "name": "UserDefineConfigure",
+        "desc": "用户自定义内容审核控制参数。"
+      }
+    ],
+    "desc": "创建用户自定义内容审核模板，数量上限：50。"
+  },
   "CreateSampleSnapshotTemplate": {
     "params": [
       {
@@ -133,6 +129,15 @@ INFO = {
       }
     ],
     "desc": "创建用户自定义采样截图模板，数量上限：16。"
+  },
+  "DeletePersonSample": {
+    "params": [
+      {
+        "name": "PersonId",
+        "desc": "人物 ID。"
+      }
+    ],
+    "desc": "该接口用于根据人物 ID，删除人物样本。"
   },
   "ModifyAnimatedGraphicsTemplate": {
     "params": [
@@ -251,6 +256,31 @@ INFO = {
     ],
     "desc": "查询指定时间点截图模板，支持根据条件，分页查询。"
   },
+  "CreatePersonSample": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "人物名称，长度限制：20 个字符。"
+      },
+      {
+        "name": "FaceContents",
+        "desc": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。"
+      },
+      {
+        "name": "Usages",
+        "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
+      },
+      {
+        "name": "Description",
+        "desc": "人物描述，长度限制：1024 个字符。"
+      },
+      {
+        "name": "Tags",
+        "desc": "人物标签\n<li>数组长度限制：20 个标签；</li>\n<li>单个标签长度限制：128 个字符。</li>"
+      }
+    ],
+    "desc": "该接口用于创建人物样本，用于通过人脸识别等技术，进行内容识别、内容审核等视频处理。"
+  },
   "ParseLiveStreamProcessNotification": {
     "params": [
       {
@@ -259,6 +289,43 @@ INFO = {
       }
     ],
     "desc": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。"
+  },
+  "ModifyAIRecognitionTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "视频内容识别模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "视频内容识别模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容识别模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "FaceConfigure",
+        "desc": "人脸识别控制参数。"
+      },
+      {
+        "name": "OcrFullTextConfigure",
+        "desc": "文本全文识别控制参数。"
+      },
+      {
+        "name": "OcrWordsConfigure",
+        "desc": "文本关键词识别控制参数。"
+      },
+      {
+        "name": "AsrFullTextConfigure",
+        "desc": "语音全文识别控制参数。"
+      },
+      {
+        "name": "AsrWordsConfigure",
+        "desc": "语音关键词识别控制参数。"
+      }
+    ],
+    "desc": "修改用户自定义内容识别模板。"
   },
   "ModifySampleSnapshotTemplate": {
     "params": [
@@ -354,6 +421,14 @@ INFO = {
         "desc": "视频处理类型任务参数。"
       },
       {
+        "name": "AiContentReviewTask",
+        "desc": "视频内容审核类型任务参数。"
+      },
+      {
+        "name": "AiRecognitionTask",
+        "desc": "视频内容识别类型任务参数。"
+      },
+      {
         "name": "TaskPriority",
         "desc": "工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。"
       },
@@ -372,6 +447,31 @@ INFO = {
       }
     ],
     "desc": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。"
+  },
+  "DescribeWordSamples": {
+    "params": [
+      {
+        "name": "Usages",
+        "desc": "<b>关键词应用场景过滤条件，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n可多选，元素间关系为 or，即关键词的应用场景包含该字段集合中任意元素的记录，均符合该条件。"
+      },
+      {
+        "name": "Keywords",
+        "desc": "关键词过滤条件，数组长度限制：100 个词。"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签过滤条件，数组长度限制：20 个词。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：100，最大值：100。"
+      }
+    ],
+    "desc": "该接口用于根据应用场景、关键词、标签，分页查询关键词样本信息。"
   },
   "ModifyWatermarkTemplate": {
     "params": [
@@ -414,6 +514,15 @@ INFO = {
     ],
     "desc": "修改用户自定义水印模板，水印类型不允许修改。"
   },
+  "DeleteWordSamples": {
+    "params": [
+      {
+        "name": "Keywords",
+        "desc": "关键词，数组长度限制：100 个词。"
+      }
+    ],
+    "desc": "该接口用于批量删除关键词样本。"
+  },
   "DeleteWorkflow": {
     "params": [
       {
@@ -453,23 +562,64 @@ INFO = {
     ],
     "desc": "查询采样截图模板，支持根据条件，分页查询。"
   },
-  "DescribeTranscodeTemplates": {
+  "CreateWatermarkTemplate": {
     "params": [
       {
-        "name": "Definitions",
-        "desc": "转码模板唯一标识过滤条件，数组长度限制：100。"
+        "name": "Type",
+        "desc": "水印类型，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>"
       },
+      {
+        "name": "Name",
+        "desc": "水印模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "CoordinateOrigin",
+        "desc": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>\n默认值：TopLeft。目前，当 Type 为 image，该字段仅支持 TopLeft。"
+      },
+      {
+        "name": "XPos",
+        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。"
+      },
+      {
+        "name": "YPos",
+        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。"
+      },
+      {
+        "name": "ImageTemplate",
+        "desc": "图片水印模板，仅当 Type 为 image，该字段必填且有效。"
+      },
+      {
+        "name": "TextTemplate",
+        "desc": "文字水印模板，仅当 Type 为 text，该字段必填且有效。"
+      },
+      {
+        "name": "SvgTemplate",
+        "desc": "SVG 水印模板，仅当 Type 为 svg，该字段必填且有效。"
+      }
+    ],
+    "desc": "创建用户自定义水印模板，数量上限：1000。"
+  },
+  "DescribePersonSamples": {
+    "params": [
       {
         "name": "Type",
-        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+        "desc": "拉取的人物类型，可选值：\n<li>UserDefine：用户自定义人物库；</li>\n<li>Default：系统默认人物库。</li>\n\n默认值：UserDefine，拉取用户自定义人物库人物。\n说明：如果是拉取系统默认人物库，只能使用人物名字或者人物 ID + 人物名字的方式进行拉取，且人脸图片只返回一张。"
       },
       {
-        "name": "ContainerType",
-        "desc": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>"
+        "name": "PersonIds",
+        "desc": "人物 ID，数组长度限制：100。"
       },
       {
-        "name": "TEHDType",
-        "desc": "极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>"
+        "name": "Names",
+        "desc": "人物名称，数组长度限制：20。"
+      },
+      {
+        "name": "Tags",
+        "desc": "人物标签，数组长度限制：20。"
       },
       {
         "name": "Offset",
@@ -477,10 +627,10 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：100。"
+        "desc": "返回记录条数，默认值：100，最大值：100。"
       }
     ],
-    "desc": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。"
+    "desc": "该接口用于查询人物样本信息，支持根据人物 ID、名称、标签，分页查询。"
   },
   "ParseNotification": {
     "params": [
@@ -491,46 +641,14 @@ INFO = {
     ],
     "desc": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。"
   },
-  "ProcessLiveMedia": {
+  "DeleteAIRecognitionTemplate": {
     "params": [
       {
-        "name": "Url",
-        "desc": "直播流 URL。"
-      },
-      {
-        "name": "OutputStorage",
-        "desc": "直播流处理输出文件的目标存储。如处理有文件输出，该参数为必填项。"
-      },
-      {
-        "name": "OutputDir",
-        "desc": "直播流处理生成的文件输出的目标目录，如`/movie/201909/`，如果不填为 `/` 目录。"
-      },
-      {
-        "name": "AiRecognitionTask",
-        "desc": "直播流内容识别类型任务参数。"
-      },
-      {
-        "name": "AiAnalysisTask",
-        "desc": "直播流内容分析类型任务参数。"
-      },
-      {
-        "name": "TaskNotifyConfig",
-        "desc": "任务的事件通知信息，不填代表不获取事件通知。"
-      },
-      {
-        "name": "SessionContext",
-        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
-      },
-      {
-        "name": "SessionId",
-        "desc": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "直播开始时间戳（UTC 时间 单位为秒，该参数仅对于直播流分析有效）。"
+        "name": "Definition",
+        "desc": "视频内容识别模板唯一标识。"
       }
     ],
-    "desc": "对直播流媒体发起处理任务，功能包括：\n\n1. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n2. 智能内容分析（精彩集锦）。\n\n直播流处理事件通知实时写入用户指定的消息队列 CMQ 中，用户需要从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。"
+    "desc": "删除用户自定义内容识别模板。"
   },
   "DeleteSnapshotByTimeOffsetTemplate": {
     "params": [
@@ -588,35 +706,6 @@ INFO = {
     ],
     "desc": "* 该接口用于查询任务列表；\n* 当列表数据比较多时，单次接口调用无法拉取整个列表，可通过 ScrollToken 参数，分批拉取；\n* 只能查询到最近三天（72 小时）内的任务。"
   },
-  "ModifySnapshotByTimeOffsetTemplate": {
-    "params": [
-      {
-        "name": "Definition",
-        "desc": "指定时间点截图模板唯一标识。"
-      },
-      {
-        "name": "Name",
-        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
-      },
-      {
-        "name": "Width",
-        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
-        "name": "Height",
-        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
-        "name": "Format",
-        "desc": "图片格式，取值可以为 jpg 和 png。"
-      },
-      {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
-      }
-    ],
-    "desc": "修改用户自定义指定时间点截图模板。"
-  },
   "CreateTranscodeTemplate": {
     "params": [
       {
@@ -654,6 +743,77 @@ INFO = {
     ],
     "desc": "创建用户自定义转码模板，数量上限：1000。"
   },
+  "ModifySnapshotByTimeOffsetTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "指定时间点截图模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Width",
+        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Height",
+        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Format",
+        "desc": "图片格式，取值可以为 jpg 和 png。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      }
+    ],
+    "desc": "修改用户自定义指定时间点截图模板。"
+  },
+  "ModifyPersonSample": {
+    "params": [
+      {
+        "name": "PersonId",
+        "desc": "人物 ID。"
+      },
+      {
+        "name": "Name",
+        "desc": "名称，长度限制：128 个字符。"
+      },
+      {
+        "name": "Description",
+        "desc": "描述，长度限制：1024 个字符。"
+      },
+      {
+        "name": "Usages",
+        "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
+      },
+      {
+        "name": "FaceOperationInfo",
+        "desc": "人脸操作信息。"
+      },
+      {
+        "name": "TagOperationInfo",
+        "desc": "标签操作信息。"
+      }
+    ],
+    "desc": "该接口用于根据人物 ID，修改人物样本信息，包括名称、描述的修改，以及人脸、标签的添加、删除、重置操作。人脸删除操作需保证至少剩余 1 张图片，否则，请使用重置操作。"
+  },
+  "CreateWordSamples": {
+    "params": [
+      {
+        "name": "Usages",
+        "desc": "<b>关键词应用场景，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n7. All：通过光学字符识别技术、语音识别技术，进行内容识别、内容审核，等价于 1+2+3+4。"
+      },
+      {
+        "name": "Words",
+        "desc": "关键词，数组长度限制：100。"
+      }
+    ],
+    "desc": "该接口用于批量创建关键词样本，样本用于通过OCR、ASR技术，进行内容审核、内容识别等视频处理。"
+  },
   "CreateWorkflow": {
     "params": [
       {
@@ -677,6 +837,14 @@ INFO = {
         "desc": "视频处理类型任务参数。"
       },
       {
+        "name": "AiContentReviewTask",
+        "desc": "视频内容审核类型任务参数。"
+      },
+      {
+        "name": "AiRecognitionTask",
+        "desc": "视频内容识别类型任务参数。"
+      },
+      {
         "name": "TaskNotifyConfig",
         "desc": "任务的事件通知配置，不填代表不获取事件通知。"
       },
@@ -685,7 +853,7 @@ INFO = {
         "desc": "工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。"
       }
     ],
-    "desc": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流。\n\n注意：创建工作流成功后是禁用状态，需要手动启用。"
+    "desc": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、鉴恐、鉴政）；\n8. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。\n\n注意：创建工作流成功后是禁用状态，需要手动启用。"
   },
   "ProcessLiveStream": {
     "params": [
@@ -720,6 +888,39 @@ INFO = {
     ],
     "desc": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、鉴政、鉴暴、声音鉴黄）。\n\n直播流处理事件通知实时写入用户指定的消息队列 CMQ 中，用户需要从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。"
   },
+  "ModifyContentReviewTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "内容审核模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "内容审核模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "内容审核模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "PornConfigure",
+        "desc": "鉴黄控制参数。"
+      },
+      {
+        "name": "TerrorismConfigure",
+        "desc": "鉴恐控制参数。"
+      },
+      {
+        "name": "PoliticalConfigure",
+        "desc": "鉴政控制参数。"
+      },
+      {
+        "name": "UserDefineConfigure",
+        "desc": "用户自定义内容审核控制参数。"
+      }
+    ],
+    "desc": "修改用户自定义内容审核模板。"
+  },
   "ProcessMedia": {
     "params": [
       {
@@ -739,6 +940,14 @@ INFO = {
         "desc": "视频处理类型任务参数。"
       },
       {
+        "name": "AiContentReviewTask",
+        "desc": "视频内容审核类型任务参数。"
+      },
+      {
+        "name": "AiRecognitionTask",
+        "desc": "视频内容识别类型任务参数。"
+      },
+      {
         "name": "TaskNotifyConfig",
         "desc": "任务的事件通知信息，不填代表不获取事件通知。"
       },
@@ -755,7 +964,40 @@ INFO = {
         "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
       }
     ],
-    "desc": "对 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流。"
+    "desc": "对 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、鉴恐、鉴政）；\n8. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。"
+  },
+  "CreateAIRecognitionTemplate": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "视频内容识别模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容识别模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "FaceConfigure",
+        "desc": "人脸识别控制参数。"
+      },
+      {
+        "name": "OcrFullTextConfigure",
+        "desc": "文本全文识别控制参数。"
+      },
+      {
+        "name": "OcrWordsConfigure",
+        "desc": "文本关键词识别控制参数。"
+      },
+      {
+        "name": "AsrFullTextConfigure",
+        "desc": "语音全文识别控制参数。"
+      },
+      {
+        "name": "AsrWordsConfigure",
+        "desc": "语音关键词识别控制参数。"
+      }
+    ],
+    "desc": "创建用户自定义内容识别模板，数量上限：50。"
   },
   "ModifyImageSpriteTemplate": {
     "params": [
@@ -794,6 +1036,23 @@ INFO = {
     ],
     "desc": "修改用户自定义雪碧图模板。"
   },
+  "ModifyWordSample": {
+    "params": [
+      {
+        "name": "Keyword",
+        "desc": "关键词，长度限制：128 个字符。"
+      },
+      {
+        "name": "Usages",
+        "desc": "<b>关键词应用场景，可选值：</b>\n1. Recognition.Ocr：通过光学字符识别技术，进行内容识别；\n2. Recognition.Asr：通过语音识别技术，进行内容识别；\n3. Review.Ocr：通过光学字符识别技术，进行内容审核；\n4. Review.Asr：通过语音识别技术，进行内容审核；\n<b>可合并简写为：</b>\n5. Recognition：通过光学字符识别技术、语音识别技术，进行内容识别，等价于 1+2；\n6. Review：通过光学字符识别技术、语音识别技术，进行内容审核，等价于 3+4；\n7. All：通过光学字符识别技术、语音识别技术，进行内容识别、内容审核，等价于 1+2+3+4。"
+      },
+      {
+        "name": "TagOperationInfo",
+        "desc": "标签操作信息。"
+      }
+    ],
+    "desc": "该接口用于修改关键词的应用场景、标签，关键词本身不可修改，如需修改，可删除重建。"
+  },
   "DescribeImageSpriteTemplates": {
     "params": [
       {
@@ -814,6 +1073,32 @@ INFO = {
       }
     ],
     "desc": "查询雪碧图模板，支持根据条件，分页查询。"
+  },
+  "DeleteContentReviewTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "内容审核模板唯一标识。"
+      }
+    ],
+    "desc": "删除用户自定义内容审核模板。"
+  },
+  "DescribeAIRecognitionTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "视频内容识别模板唯一标识过滤条件，数组长度限制：10。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：50。"
+      }
+    ],
+    "desc": "根据内容识别模板唯一标识，获取内容识别模板详情列表。返回结果包含符合条件的所有用户自定义内容识别模板及系统预置视频内容识别模板"
   },
   "DescribeWatermarkTemplates": {
     "params": [
@@ -836,46 +1121,38 @@ INFO = {
     ],
     "desc": "查询用户自定义水印模板，支持根据条件，分页查询。"
   },
-  "CreateWatermarkTemplate": {
+  "CreateImageSpriteTemplate": {
     "params": [
       {
-        "name": "Type",
-        "desc": "水印类型，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>"
+        "name": "Width",
+        "desc": "雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "Height",
+        "desc": "雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。"
+      },
+      {
+        "name": "SampleType",
+        "desc": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
+      },
+      {
+        "name": "SampleInterval",
+        "desc": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>"
+      },
+      {
+        "name": "RowCount",
+        "desc": "雪碧图中小图的行数。"
+      },
+      {
+        "name": "ColumnCount",
+        "desc": "雪碧图中小图的列数。"
       },
       {
         "name": "Name",
-        "desc": "水印模板名称，长度限制：64 个字符。"
-      },
-      {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
-      },
-      {
-        "name": "CoordinateOrigin",
-        "desc": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>\n默认值：TopLeft。目前，当 Type 为 image，该字段仅支持 TopLeft。"
-      },
-      {
-        "name": "XPos",
-        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。"
-      },
-      {
-        "name": "YPos",
-        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。"
-      },
-      {
-        "name": "ImageTemplate",
-        "desc": "图片水印模板，仅当 Type 为 image，该字段必填且有效。"
-      },
-      {
-        "name": "TextTemplate",
-        "desc": "文字水印模板，仅当 Type 为 text，该字段必填且有效。"
-      },
-      {
-        "name": "SvgTemplate",
-        "desc": "SVG 水印模板，仅当 Type 为 svg，该字段必填且有效。"
+        "desc": "雪碧图模板名称，长度限制：64 个字符。"
       }
     ],
-    "desc": "创建用户自定义水印模板，数量上限：1000。"
+    "desc": "创建用户自定义雪碧图模板，数量上限：16。"
   },
   "DeleteImageSpriteTemplate": {
     "params": [
@@ -885,5 +1162,51 @@ INFO = {
       }
     ],
     "desc": "删除雪碧图模板。"
+  },
+  "DescribeTranscodeTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "转码模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+      },
+      {
+        "name": "ContainerType",
+        "desc": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>"
+      },
+      {
+        "name": "TEHDType",
+        "desc": "极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      }
+    ],
+    "desc": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。"
+  },
+  "DescribeContentReviewTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "内容审核模板唯一标识过滤条件，数组长度限制：50。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：50。"
+      }
+    ],
+    "desc": "根据内容审核模板唯一标识，获取内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置内容审核模板。"
   }
 }

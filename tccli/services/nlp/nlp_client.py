@@ -86,6 +86,39 @@ def doWordSimilarity(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeEntity(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeEntity", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EntityName": argv.get("--EntityName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeEntityRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeEntity(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSentenceSimilarity(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -111,6 +144,74 @@ def doSentenceSimilarity(argv, arglist):
     model = models.SentenceSimilarityRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.SentenceSimilarity(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doChatBot(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ChatBot", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Query": argv.get("--Query"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
+        "OpenId": argv.get("--OpenId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ChatBotRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ChatBot(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doWordEmbedding(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("WordEmbedding", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": argv.get("--Text"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.WordEmbeddingRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.WordEmbedding(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -154,15 +255,14 @@ def doTextClassification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLexicalAnalysis(argv, arglist):
+def doContentApproval(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LexicalAnalysis", g_param[OptionsDefine.Version])
+        show_help("ContentApproval", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Text": argv.get("--Text"),
-        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -176,9 +276,9 @@ def doLexicalAnalysis(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LexicalAnalysisRequest()
+    model = models.ContentApprovalRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LexicalAnalysis(model)
+    rsp = client.ContentApproval(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -188,14 +288,15 @@ def doLexicalAnalysis(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSensitiveWordsRecognition(argv, arglist):
+def doDescribeRelation(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SensitiveWordsRecognition", g_param[OptionsDefine.Version])
+        show_help("DescribeRelation", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Text": argv.get("--Text"),
+        "LeftEntityName": argv.get("--LeftEntityName"),
+        "RightEntityName": argv.get("--RightEntityName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -209,9 +310,9 @@ def doSensitiveWordsRecognition(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SensitiveWordsRecognitionRequest()
+    model = models.DescribeRelationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SensitiveWordsRecognition(model)
+    rsp = client.DescribeRelation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -288,14 +389,15 @@ def doSentimentAnalysis(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doWordEmbedding(argv, arglist):
+def doLexicalAnalysis(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("WordEmbedding", g_param[OptionsDefine.Version])
+        show_help("LexicalAnalysis", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Text": argv.get("--Text"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -309,9 +411,9 @@ def doWordEmbedding(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.WordEmbeddingRequest()
+    model = models.LexicalAnalysisRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.WordEmbedding(model)
+    rsp = client.LexicalAnalysis(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -354,10 +456,43 @@ def doTextCorrection(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doContentApproval(argv, arglist):
+def doDescribeTriple(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ContentApproval", g_param[OptionsDefine.Version])
+        show_help("DescribeTriple", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TripleCondition": argv.get("--TripleCondition"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTripleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTriple(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSensitiveWordsRecognition(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SensitiveWordsRecognition", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -375,9 +510,9 @@ def doContentApproval(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ContentApprovalRequest()
+    model = models.SensitiveWordsRecognitionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ContentApproval(model)
+    rsp = client.SensitiveWordsRecognition(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -535,15 +670,19 @@ MODELS_MAP = {
 ACTION_MAP = {
     "TextApproval": doTextApproval,
     "WordSimilarity": doWordSimilarity,
+    "DescribeEntity": doDescribeEntity,
     "SentenceSimilarity": doSentenceSimilarity,
+    "ChatBot": doChatBot,
+    "WordEmbedding": doWordEmbedding,
     "TextClassification": doTextClassification,
-    "LexicalAnalysis": doLexicalAnalysis,
-    "SensitiveWordsRecognition": doSensitiveWordsRecognition,
+    "ContentApproval": doContentApproval,
+    "DescribeRelation": doDescribeRelation,
     "DependencyParsing": doDependencyParsing,
     "SentimentAnalysis": doSentimentAnalysis,
-    "WordEmbedding": doWordEmbedding,
+    "LexicalAnalysis": doLexicalAnalysis,
     "TextCorrection": doTextCorrection,
-    "ContentApproval": doContentApproval,
+    "DescribeTriple": doDescribeTriple,
+    "SensitiveWordsRecognition": doSensitiveWordsRecognition,
     "KeywordsExtraction": doKeywordsExtraction,
     "SentenceEmbedding": doSentenceEmbedding,
     "SimilarWords": doSimilarWords,

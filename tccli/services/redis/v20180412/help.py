@@ -778,6 +778,15 @@ INFO = {
     ],
     "desc": "查询 CRS 实例备份列表"
   },
+  "StartupInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例id"
+      }
+    ],
+    "desc": "实例解隔离"
+  },
   "ModifyInstance": {
     "params": [
       {

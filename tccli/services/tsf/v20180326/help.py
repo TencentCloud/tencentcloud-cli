@@ -10,6 +10,43 @@ INFO = {
     ],
     "desc": "删除公共配置项"
   },
+  "DescribeSimpleGroups": {
+    "params": [
+      {
+        "name": "GroupIdList",
+        "desc": "部署组ID列表，不填写时查询全量"
+      },
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID，不填写时查询全量"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "集群ID，不填写时查询全量"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不填写时查询全量"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "起始偏移量"
+      },
+      {
+        "name": "GroupId",
+        "desc": "部署组ID，不填写时查询全量"
+      },
+      {
+        "name": "SearchWord",
+        "desc": "模糊查询，部署组名称，不填写时查询全量"
+      }
+    ],
+    "desc": "查询简单部署组列表"
+  },
   "CreateGroup": {
     "params": [
       {
@@ -192,6 +229,35 @@ INFO = {
     ],
     "desc": "部署容器应用"
   },
+  "DescribeServerlessGroups": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "分组所属应用ID"
+      },
+      {
+        "name": "SearchWord",
+        "desc": "搜索字段，模糊搜索groupName字段"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "排序字段，默认为 createTime字段，支持id， name， createTime"
+      },
+      {
+        "name": "OrderType",
+        "desc": "排序方式，默认为1：倒序排序，0：正序，1：倒序"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，取值从0开始"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页个数，默认为20， 取值应为1~50"
+      }
+    ],
+    "desc": "查询Serverless部署组列表"
+  },
   "CreateNamespace": {
     "params": [
       {
@@ -231,22 +297,14 @@ INFO = {
     ],
     "desc": "删除微服务"
   },
-  "DescribePublicConfigReleaseLogs": {
+  "StartGroup": {
     "params": [
       {
-        "name": "NamespaceId",
-        "desc": "命名空间ID，不传入时查询全量"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0"
-      },
-      {
-        "name": "Limit",
-        "desc": "每页条数，默认为20"
+        "name": "GroupId",
+        "desc": "部署组ID"
       }
     ],
-    "desc": "查询公共配置发布历史"
+    "desc": "启动分组"
   },
   "DeleteNamespace": {
     "params": [
@@ -388,6 +446,27 @@ INFO = {
     ],
     "desc": "查询简单集群列表"
   },
+  "CreateServerlessGroup": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "分组所属应用ID"
+      },
+      {
+        "name": "GroupName",
+        "desc": "分组名称字段，长度1~60，字母或下划线开头，可包含字母数字下划线"
+      },
+      {
+        "name": "PkgId",
+        "desc": "程序包Id"
+      },
+      {
+        "name": "VpcConfig",
+        "desc": "VpcConfig对象"
+      }
+    ],
+    "desc": "创建Serverless部署组"
+  },
   "DescribeConfigs": {
     "params": [
       {
@@ -416,15 +495,6 @@ INFO = {
       }
     ],
     "desc": "查询配置项列表"
-  },
-  "DescribeApplicationAttribute": {
-    "params": [
-      {
-        "name": "ApplicationId",
-        "desc": "应用ID"
-      }
-    ],
-    "desc": "获取应用列表其它字段，如实例数量信息等"
   },
   "DescribeConfig": {
     "params": [
@@ -598,42 +668,14 @@ INFO = {
     ],
     "desc": "镜像版本列表"
   },
-  "DescribeConfigReleases": {
+  "DescribeServerlessGroup": {
     "params": [
       {
-        "name": "ConfigName",
-        "desc": "配置项名称，不传入时查询全量"
-      },
-      {
         "name": "GroupId",
-        "desc": "部署组ID，不传入时查询全量"
-      },
-      {
-        "name": "NamespaceId",
-        "desc": "命名空间ID，不传入时查询全量"
-      },
-      {
-        "name": "ClusterId",
-        "desc": "集群ID，不传入时查询全量"
-      },
-      {
-        "name": "Limit",
-        "desc": "每页条数"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量"
-      },
-      {
-        "name": "ConfigId",
-        "desc": "配置ID，不传入时查询全量"
-      },
-      {
-        "name": "ApplicationId",
-        "desc": "应用ID，不传入时查询全量"
+        "desc": "部署组ID"
       }
     ],
-    "desc": "查询配置发布信息"
+    "desc": "查询Serverless部署组明细"
   },
   "DescribeMicroservice": {
     "params": [
@@ -652,22 +694,31 @@ INFO = {
     ],
     "desc": "查询微服务详情"
   },
-  "DeployGroup": {
+  "DescribePublicConfigReleaseLogs": {
     "params": [
       {
-        "name": "GroupId",
-        "desc": "部署组ID"
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不传入时查询全量"
       },
       {
-        "name": "PkgId",
-        "desc": "程序包ID"
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
       },
       {
-        "name": "StartupParameters",
-        "desc": "部署组启动参数"
+        "name": "Limit",
+        "desc": "每页条数，默认为20"
       }
     ],
-    "desc": "部署虚拟机部署组应用"
+    "desc": "查询公共配置发布历史"
+  },
+  "DescribeApplicationAttribute": {
+    "params": [
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID"
+      }
+    ],
+    "desc": "获取应用列表其它字段，如实例数量信息等"
   },
   "RevocationConfig": {
     "params": [
@@ -1104,42 +1155,22 @@ INFO = {
     ],
     "desc": "下线部署组所有机器实例"
   },
-  "DescribeSimpleGroups": {
+  "DeployGroup": {
     "params": [
       {
-        "name": "GroupIdList",
-        "desc": "部署组ID列表，不填写时查询全量"
-      },
-      {
-        "name": "ApplicationId",
-        "desc": "应用ID，不填写时查询全量"
-      },
-      {
-        "name": "ClusterId",
-        "desc": "集群ID，不填写时查询全量"
-      },
-      {
-        "name": "NamespaceId",
-        "desc": "命名空间ID，不填写时查询全量"
-      },
-      {
-        "name": "Limit",
-        "desc": "每页条数"
-      },
-      {
-        "name": "Offset",
-        "desc": "起始偏移量"
-      },
-      {
         "name": "GroupId",
-        "desc": "部署组ID，不填写时查询全量"
+        "desc": "部署组ID"
       },
       {
-        "name": "SearchWord",
-        "desc": "模糊查询，部署组名称，不填写时查询全量"
+        "name": "PkgId",
+        "desc": "程序包ID"
+      },
+      {
+        "name": "StartupParameters",
+        "desc": "部署组启动参数"
       }
     ],
-    "desc": "查询简单部署组列表"
+    "desc": "部署虚拟机部署组应用"
   },
   "DescribeApplications": {
     "params": [
@@ -1178,6 +1209,15 @@ INFO = {
     ],
     "desc": "获取应用列表"
   },
+  "DeleteServerlessGroup": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "groupId，分组唯一标识"
+      }
+    ],
+    "desc": "删除Serverless部署组"
+  },
   "DescribeUploadInfo": {
     "params": [
       {
@@ -1203,14 +1243,42 @@ INFO = {
     ],
     "desc": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436"
   },
-  "StartGroup": {
+  "DescribeConfigReleases": {
     "params": [
       {
+        "name": "ConfigName",
+        "desc": "配置项名称，不传入时查询全量"
+      },
+      {
         "name": "GroupId",
-        "desc": "部署组ID"
+        "desc": "部署组ID，不传入时查询全量"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不传入时查询全量"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "集群ID，不传入时查询全量"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "ConfigId",
+        "desc": "配置ID，不传入时查询全量"
+      },
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID，不传入时查询全量"
       }
     ],
-    "desc": "启动分组"
+    "desc": "查询配置发布信息"
   },
   "StopContainerGroup": {
     "params": [

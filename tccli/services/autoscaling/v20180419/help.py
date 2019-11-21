@@ -46,7 +46,7 @@ INFO = {
       },
       {
         "name": "LoadBalancerIds",
-        "desc": "传统负载均衡器ID列表，目前长度上限为5，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+        "desc": "传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
       },
       {
         "name": "ProjectId",
@@ -54,7 +54,7 @@ INFO = {
       },
       {
         "name": "ForwardLoadBalancers",
-        "desc": "应用型负载均衡器列表，目前长度上限为5，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+        "desc": "应用型负载均衡器列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
       },
       {
         "name": "SubnetIds",
@@ -268,6 +268,10 @@ INFO = {
       {
         "name": "CamRoleName",
         "desc": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。"
+      },
+      {
+        "name": "HostNameSettings",
+        "desc": "云服务器主机名（HostName）的相关设置。"
       }
     ],
     "desc": "本接口（UpgradeLaunchConfiguration）用于升级启动配置。\n\n* 本接口用于升级启动配置，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。\n* 升级修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。"
@@ -280,7 +284,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。"
+        "desc": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n<li> vague-launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称模糊搜索。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。"
       },
       {
         "name": "Limit",
@@ -437,11 +441,11 @@ INFO = {
       },
       {
         "name": "LoadBalancerIds",
-        "desc": "传统负载均衡器ID列表，目前长度上限为5，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+        "desc": "传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
       },
       {
         "name": "ForwardLoadBalancers",
-        "desc": "应用型负载均衡器列表，目前长度上限为5，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
+        "desc": "应用型负载均衡器列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个"
       },
       {
         "name": "LoadBalancersCheckPolicy",
@@ -566,6 +570,10 @@ INFO = {
       {
         "name": "CamRoleName",
         "desc": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。"
+      },
+      {
+        "name": "HostNameSettings",
+        "desc": "云服务器主机名（HostName）的相关设置。"
       }
     ],
     "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置，可以通过 `ModifyLaunchConfigurationAttributes` 修改少量字段。如需使用新的启动配置，建议重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"
@@ -681,15 +689,15 @@ INFO = {
       },
       {
         "name": "LifecycleHookName",
-        "desc": "生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超128个字节。"
+        "desc": "生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字节。"
       },
       {
         "name": "LifecycleTransition",
-        "desc": "进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”"
+        "desc": "进行生命周期挂钩的场景，取值范围包括 INSTANCE_LAUNCHING 和 INSTANCE_TERMINATING"
       },
       {
         "name": "DefaultResult",
-        "desc": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”"
+        "desc": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是 CONTINUE 或 ABANDON，默认值为 CONTINUE"
       },
       {
         "name": "HeartbeatTimeout",
@@ -697,7 +705,7 @@ INFO = {
       },
       {
         "name": "NotificationMetadata",
-        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。"
+        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为空字符串“”。最大长度不能超过1024个字节。"
       },
       {
         "name": "NotificationTarget",
@@ -880,7 +888,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingGroupIds`和`Filters`。"
+        "desc": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>\n<li> vague-auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称模糊搜索。</li>\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingGroupIds`和`Filters`。"
       },
       {
         "name": "Limit",

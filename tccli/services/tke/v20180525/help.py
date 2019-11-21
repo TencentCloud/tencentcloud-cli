@@ -1,6 +1,69 @@
 # -*- coding: utf-8 -*-
 DESC = "tke-2018-05-25"
 INFO = {
+  "CreateCluster": {
+    "params": [
+      {
+        "name": "ClusterCIDRSettings",
+        "desc": "集群容器网络配置信息"
+      },
+      {
+        "name": "ClusterType",
+        "desc": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。"
+      },
+      {
+        "name": "RunInstancesForNode",
+        "desc": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。"
+      },
+      {
+        "name": "ClusterBasicSettings",
+        "desc": "集群的基本配置信息"
+      },
+      {
+        "name": "ClusterAdvancedSettings",
+        "desc": "集群高级配置信息"
+      },
+      {
+        "name": "InstanceAdvancedSettings",
+        "desc": "节点高级配置信息"
+      },
+      {
+        "name": "ExistedInstancesForNode",
+        "desc": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。"
+      }
+    ],
+    "desc": "创建集群"
+  },
+  "DeleteClusterEndpoint": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "IsExtranet",
+        "desc": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）"
+      }
+    ],
+    "desc": "删除集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)"
+  },
+  "CreateClusterInstances": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段"
+      },
+      {
+        "name": "RunInstancePara",
+        "desc": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。"
+      },
+      {
+        "name": "InstanceAdvancedSettings",
+        "desc": "实例额外需要设置参数信息"
+      }
+    ],
+    "desc": "扩展(新建)集群节点"
+  },
   "DeleteClusterAsGroups": {
     "params": [
       {
@@ -35,59 +98,14 @@ INFO = {
     ],
     "desc": "删除集群路由"
   },
-  "DeleteClusterInstances": {
+  "DescribeClusterEndpointVipStatus": {
     "params": [
       {
         "name": "ClusterId",
         "desc": "集群ID"
-      },
-      {
-        "name": "InstanceIds",
-        "desc": "主机InstanceId列表"
-      },
-      {
-        "name": "InstanceDeleteMode",
-        "desc": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）"
-      },
-      {
-        "name": "ForceDelete",
-        "desc": "是否强制删除(当节点在初始化时，可以指定参数为TRUE)"
       }
     ],
-    "desc": "删除集群中的实例"
-  },
-  "CreateCluster": {
-    "params": [
-      {
-        "name": "ClusterCIDRSettings",
-        "desc": "集群容器网络配置信息"
-      },
-      {
-        "name": "ClusterType",
-        "desc": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。"
-      },
-      {
-        "name": "RunInstancesForNode",
-        "desc": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。"
-      },
-      {
-        "name": "ClusterBasicSettings",
-        "desc": "集群的基本配置信息"
-      },
-      {
-        "name": "ClusterAdvancedSettings",
-        "desc": "集群高级配置信息"
-      },
-      {
-        "name": "InstanceAdvancedSettings",
-        "desc": "节点高级配置信息"
-      },
-      {
-        "name": "ExistedInstancesForNode",
-        "desc": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。"
-      }
-    ],
-    "desc": "创建集群"
+    "desc": "查询集群开启端口流程状态(仅支持托管集群外网端口)"
   },
   "DeleteCluster": {
     "params": [
@@ -101,23 +119,6 @@ INFO = {
       }
     ],
     "desc": "删除集群(YUNAPI V3版本)"
-  },
-  "CreateClusterInstances": {
-    "params": [
-      {
-        "name": "ClusterId",
-        "desc": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段"
-      },
-      {
-        "name": "RunInstancePara",
-        "desc": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。"
-      },
-      {
-        "name": "InstanceAdvancedSettings",
-        "desc": "实例额外需要设置参数信息"
-      }
-    ],
-    "desc": "扩展(新建)集群节点"
   },
   "CreateClusterAsGroup": {
     "params": [
@@ -194,6 +195,82 @@ INFO = {
     ],
     "desc": "创建集群路由"
   },
+  "CreateClusterRouteTable": {
+    "params": [
+      {
+        "name": "RouteTableName",
+        "desc": "路由表名称"
+      },
+      {
+        "name": "RouteTableCidrBlock",
+        "desc": "路由表CIDR"
+      },
+      {
+        "name": "VpcId",
+        "desc": "路由表绑定的VPC"
+      },
+      {
+        "name": "IgnoreClusterCidrConflict",
+        "desc": "是否忽略CIDR冲突"
+      }
+    ],
+    "desc": "创建集群路由表"
+  },
+  "DescribeClusterRouteTables": {
+    "params": [],
+    "desc": "查询集群路由表"
+  },
+  "DescribeClusters": {
+    "params": [
+      {
+        "name": "ClusterIds",
+        "desc": "集群ID列表(为空时，\n表示获取账号下所有集群)"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量,默认0"
+      },
+      {
+        "name": "Limit",
+        "desc": "最大输出条数，默认20，最大为100"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件,当前只支持按照单个条件ClusterName进行过滤"
+      }
+    ],
+    "desc": "查询集群列表"
+  },
+  "DescribeClusterEndpointStatus": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "IsExtranet",
+        "desc": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）"
+      }
+    ],
+    "desc": "查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)"
+  },
+  "CreateClusterEndpoint": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)"
+      },
+      {
+        "name": "IsExtranet",
+        "desc": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）"
+      }
+    ],
+    "desc": "创建集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)"
+  },
   "AddExistedInstances": {
     "params": [
       {
@@ -223,6 +300,28 @@ INFO = {
     ],
     "desc": "添加已经存在的实例到集群"
   },
+  "DescribeClusterSecurity": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段"
+      }
+    ],
+    "desc": "集群的密钥信息"
+  },
+  "DescribeRouteTableConflicts": {
+    "params": [
+      {
+        "name": "RouteTableCidrBlock",
+        "desc": "路由表CIDR"
+      },
+      {
+        "name": "VpcId",
+        "desc": "路由表绑定的VPC"
+      }
+    ],
+    "desc": "查询路由表冲突列表"
+  },
   "DescribeClusterInstances": {
     "params": [
       {
@@ -248,60 +347,61 @@ INFO = {
     ],
     "desc": " 查询集群下节点实例信息 "
   },
-  "CreateClusterRouteTable": {
+  "DeleteClusterEndpointVip": {
     "params": [
       {
-        "name": "RouteTableName",
-        "desc": "路由表名称"
-      },
-      {
-        "name": "RouteTableCidrBlock",
-        "desc": "路由表CIDR"
-      },
-      {
-        "name": "VpcId",
-        "desc": "路由表绑定的VPC"
-      },
-      {
-        "name": "IgnoreClusterCidrConflict",
-        "desc": "是否忽略CIDR冲突"
+        "name": "ClusterId",
+        "desc": "集群ID"
       }
     ],
-    "desc": "创建集群路由表"
+    "desc": "删除托管集群外网访问端口（老的方式，仅支持托管集群外网端口）"
   },
-  "DescribeClusterRouteTables": {
-    "params": [],
-    "desc": "查询集群路由表"
-  },
-  "DescribeClusterRoutes": {
+  "DeleteClusterInstances": {
     "params": [
       {
-        "name": "RouteTableName",
-        "desc": "路由表名称。"
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "主机InstanceId列表"
+      },
+      {
+        "name": "InstanceDeleteMode",
+        "desc": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）"
+      },
+      {
+        "name": "ForceDelete",
+        "desc": "是否强制删除(当节点在初始化时，可以指定参数为TRUE)"
       }
     ],
-    "desc": "查询集群路由"
+    "desc": "删除集群中的实例"
   },
-  "DescribeClusters": {
+  "ModifyClusterEndpointSP": {
     "params": [
       {
-        "name": "ClusterIds",
-        "desc": "集群ID列表(为空时，\n表示获取账号下所有集群)"
+        "name": "ClusterId",
+        "desc": "集群ID"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量,默认0"
-      },
-      {
-        "name": "Limit",
-        "desc": "最大输出条数，默认20，最大为100"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件,当前只支持按照单个条件ClusterName进行过滤"
+        "name": "SecurityPolicies",
+        "desc": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)"
       }
     ],
-    "desc": "查询集群列表"
+    "desc": "修改托管集群外网端口的安全策略（老的方式，仅支持托管集群外网端口）"
+  },
+  "CreateClusterEndpointVip": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "SecurityPolicies",
+        "desc": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)"
+      }
+    ],
+    "desc": "创建托管集群外网访问端口（老的方式，仅支持托管集群外网端口）"
   },
   "DeleteClusterRouteTable": {
     "params": [
@@ -312,26 +412,13 @@ INFO = {
     ],
     "desc": "删除集群路由表"
   },
-  "DescribeRouteTableConflicts": {
+  "DescribeClusterRoutes": {
     "params": [
       {
-        "name": "RouteTableCidrBlock",
-        "desc": "路由表CIDR"
-      },
-      {
-        "name": "VpcId",
-        "desc": "路由表绑定的VPC"
+        "name": "RouteTableName",
+        "desc": "路由表名称。"
       }
     ],
-    "desc": "查询路由表冲突列表"
-  },
-  "DescribeClusterSecurity": {
-    "params": [
-      {
-        "name": "ClusterId",
-        "desc": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段"
-      }
-    ],
-    "desc": "集群的密钥信息"
+    "desc": "查询集群路由"
   }
 }

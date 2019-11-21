@@ -364,6 +364,7 @@ def doPullUpload(argv, arglist):
         "ClassId": Utils.try_to_json(argv, "--ClassId"),
         "SessionContext": argv.get("--SessionContext"),
         "SessionId": argv.get("--SessionId"),
+        "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -2266,6 +2267,8 @@ def doDescribeCDNUsageData(argv, arglist):
         "StartTime": argv.get("--StartTime"),
         "EndTime": argv.get("--EndTime"),
         "DataType": argv.get("--DataType"),
+        "DataInterval": Utils.try_to_json(argv, "--DataInterval"),
+        "DomainNames": Utils.try_to_json(argv, "--DomainNames"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -2501,6 +2504,7 @@ def doProcessMedia(argv, arglist):
         "TasksNotifyMode": argv.get("--TasksNotifyMode"),
         "SessionContext": argv.get("--SessionContext"),
         "SessionId": argv.get("--SessionId"),
+        "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }

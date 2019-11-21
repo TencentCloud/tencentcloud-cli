@@ -302,6 +302,7 @@ def doCreateMountPoint(argv, arglist):
         "AccessGroupId": argv.get("--AccessGroupId"),
         "VpcId": argv.get("--VpcId"),
         "MountPointStatus": Utils.try_to_json(argv, "--MountPointStatus"),
+        "VpcType": Utils.try_to_json(argv, "--VpcType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
