@@ -113,7 +113,7 @@ INFO = {
         "desc": "漏洞ID列表"
       }
     ],
-    "desc": "本接口（CreateVulsMisinformation）用于新增一个或多个漏洞误报信息。"
+    "desc": "本接口（CreateVulsMisinformation）可以用于新增一个或多个漏洞误报信息。"
   },
   "DescribeConfig": {
     "params": [],
@@ -223,7 +223,7 @@ INFO = {
         "desc": "监控任务ID列表"
       }
     ],
-    "desc": "本接口 (DeleteMonitors) 用于删除监控任务。"
+    "desc": "本接口 (DeleteMonitors) 用于删除用户监控任务。"
   },
   "CreateMonitors": {
     "params": [

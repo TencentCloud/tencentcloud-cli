@@ -1,19 +1,6 @@
 # -*- coding: utf-8 -*-
 DESC = "sms-2019-07-11"
 INFO = {
-  "PullSmsReplyStatus": {
-    "params": [
-      {
-        "name": "Limit",
-        "desc": "拉取最大条数，最多100条"
-      },
-      {
-        "name": "SmsSdkAppid",
-        "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
-      }
-    ],
-    "desc": "拉取短信回复状态"
-  },
   "PullSmsSendStatus": {
     "params": [
       {
@@ -63,6 +50,90 @@ INFO = {
       }
     ],
     "desc": "短信发送接口，用户给用户发短信验证码、通知类短信或营销短信。\n\n"
+  },
+  "SmsPackagesStatistics": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "最大上限\n注：目前固定设置为0"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量\n注：目前固定设置为0"
+      },
+      {
+        "name": "NumberOfPullPackages",
+        "desc": "需要拉取的套餐包个数"
+      },
+      {
+        "name": "SmsSdkAppid",
+        "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
+      }
+    ],
+    "desc": "用户套餐包信息统计"
+  },
+  "SendStatusStatistics": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "最大上限\n注：目前固定设置为0"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量\n注：目前固定设置为0"
+      },
+      {
+        "name": "StartDateTime",
+        "desc": "拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时"
+      },
+      {
+        "name": "EndDataTime",
+        "desc": "结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时\n注：EndDataTime 必须大于StartDateTime"
+      },
+      {
+        "name": "SmsSdkAppid",
+        "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
+      }
+    ],
+    "desc": "统计用户发送短信的数据"
+  },
+  "CallbackStatusStatistics": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "最大上限\n注：目前固定设置为0"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量\n注：目前固定设置为0"
+      },
+      {
+        "name": "StartDateTime",
+        "desc": "开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时"
+      },
+      {
+        "name": "EndDataTime",
+        "desc": "结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时\n注：EndDataTime 必须大于StartDateTime"
+      },
+      {
+        "name": "SmsSdkAppid",
+        "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
+      }
+    ],
+    "desc": "统计用户回执的数据"
+  },
+  "PullSmsReplyStatus": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "拉取最大条数，最多100条"
+      },
+      {
+        "name": "SmsSdkAppid",
+        "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
+      }
+    ],
+    "desc": "拉取短信回复状态"
   },
   "PullSmsSendStatusByPhoneNumber": {
     "params": [
