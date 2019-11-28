@@ -872,11 +872,11 @@ INFO = {
     "params": [
       {
         "name": "ProxyId",
-        "desc": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。"
+        "desc": "过滤条件，根据通道ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。"
       },
       {
         "name": "ListenerId",
-        "desc": "过滤条件，根据监听器ID精确查询"
+        "desc": "过滤条件，根据监听器ID精确查询。\n当设置了ProxyId时，会检查该监听器是否归属于该通道。\n当设置了GroupId时，会检查该监听器是否归属于该通道组。"
       },
       {
         "name": "ListenerName",
@@ -896,7 +896,7 @@ INFO = {
       },
       {
         "name": "GroupId",
-        "desc": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。"
+        "desc": "过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。"
       },
       {
         "name": "SearchValue",
@@ -1002,11 +1002,11 @@ INFO = {
     "params": [
       {
         "name": "ProxyId",
-        "desc": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。"
+        "desc": "过滤条件，根据通道ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。"
       },
       {
         "name": "ListenerId",
-        "desc": "过滤条件，根据监听器ID精确查询"
+        "desc": "过滤条件，根据监听器ID精确查询。\n当设置了ProxyId时，会检查该监听器是否归属于该通道。\n当设置了GroupId时，会检查该监听器是否归属于该通道组。"
       },
       {
         "name": "ListenerName",
@@ -1026,7 +1026,7 @@ INFO = {
       },
       {
         "name": "GroupId",
-        "desc": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。"
+        "desc": "过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。"
       },
       {
         "name": "SearchValue",
@@ -1314,6 +1314,15 @@ INFO = {
     ],
     "desc": "本接口（DescribeProxiesStatus）用于查询通道状态列表。"
   },
+  "DescribeSecurityRules": {
+    "params": [
+      {
+        "name": "SecurityRuleIds",
+        "desc": "安全规则ID列表。总数不能超过20个。"
+      }
+    ],
+    "desc": "本接口（DescribeSecurityRules）用于根据安全规则ID查询安全规则详情列表。支持一个或多个安全规则的查询。一次最多支持20个安全规则的查询。"
+  },
   "DeleteDomain": {
     "params": [
       {
@@ -1498,6 +1507,15 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeRealServersStatus）用于查询源站是否已被规则或者监听器绑定"
+  },
+  "DescribeRulesByRuleIds": {
+    "params": [
+      {
+        "name": "RuleIds",
+        "desc": "规则ID列表。最多支持10个规则。"
+      }
+    ],
+    "desc": "本接口（DescribeRulesByRuleIds）用于根据规则ID拉取规则信息列表。支持一个或者多个规则信息的拉取。一次最多支持10个规则信息的拉取。"
   },
   "InquiryPriceCreateProxy": {
     "params": [

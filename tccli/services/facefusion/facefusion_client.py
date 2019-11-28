@@ -69,6 +69,7 @@ def doFuseFace(argv, arglist):
         "MergeInfos": Utils.try_to_json(argv, "--MergeInfos"),
         "FuseProfileDegree": Utils.try_to_json(argv, "--FuseProfileDegree"),
         "FuseFaceDegree": Utils.try_to_json(argv, "--FuseFaceDegree"),
+        "CelebrityIdentify": Utils.try_to_json(argv, "--CelebrityIdentify"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -140,7 +140,7 @@ INFO = {
       },
       {
         "name": "CertType",
-        "desc": "证书类型，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]"
+        "desc": "证书类型，当为协议为HTTPS协议时必须填，取值[2(腾讯云托管证书)]"
       },
       {
         "name": "SSLId",
@@ -152,7 +152,7 @@ INFO = {
       },
       {
         "name": "PrivateKey",
-        "desc": "当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)"
+        "desc": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)"
       }
     ],
     "desc": "配置7层转发规则的证书"
@@ -206,15 +206,15 @@ INFO = {
       },
       {
         "name": "Protocol",
-        "desc": "可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写Domain和RuleId字段；"
+        "desc": "可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；"
       },
       {
         "name": "Domain",
-        "desc": "可选字段，表示https协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；"
+        "desc": "可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；"
       },
       {
         "name": "RuleId",
-        "desc": "可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），\n当Method为delete时，不用填写此字段；"
+        "desc": "可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），\n当Method为delete时，不用填写此字段；"
       }
     ],
     "desc": "添加或删除CC的IP黑白名单"
@@ -278,23 +278,6 @@ INFO = {
     ],
     "desc": "获取CC的IP黑白名单"
   },
-  "DescribeL7HealthConfig": {
-    "params": [
-      {
-        "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
-      },
-      {
-        "name": "Id",
-        "desc": "资源ID"
-      },
-      {
-        "name": "RuleIdList",
-        "desc": "规则ID数组，当导出所有规则的健康检查配置则不填或填空数组；"
-      }
-    ],
-    "desc": "导出七层健康检查配置"
-  },
   "CreateL7CCRule": {
     "params": [
       {
@@ -319,6 +302,52 @@ INFO = {
       }
     ],
     "desc": "支持读取，添加，删除7层CC自定义规则"
+  },
+  "DescribeL7HealthConfig": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源ID"
+      },
+      {
+        "name": "RuleIdList",
+        "desc": "规则ID数组，当导出所有规则的健康检查配置则不填或填空数组；"
+      }
+    ],
+    "desc": "导出七层健康检查配置"
+  },
+  "DescribeIpUnBlockList": {
+    "params": [
+      {
+        "name": "BeginTime",
+        "desc": "开始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间"
+      },
+      {
+        "name": "Ip",
+        "desc": "IP（不为空时，进行IP过滤）"
+      },
+      {
+        "name": "Paging",
+        "desc": "分页参数（不为空时，进行分页查询），此字段后面会弃用，请用Limit和Offset字段代替；"
+      },
+      {
+        "name": "Limit",
+        "desc": "一页条数，填0表示不分页"
+      },
+      {
+        "name": "Offset",
+        "desc": "页起始偏移，取值为(页码-1)*一页条数"
+      }
+    ],
+    "desc": "获取IP解封记录"
   },
   "DescribePcap": {
     "params": [
@@ -1057,15 +1086,15 @@ INFO = {
       },
       {
         "name": "Protocol",
-        "desc": "可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写Domain和RuleId字段；"
+        "desc": "可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；"
       },
       {
         "name": "Domain",
-        "desc": "可选字段，表示https协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；"
+        "desc": "可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；"
       },
       {
         "name": "RuleId",
-        "desc": "可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；\n当Method为delete时，可以不用填写此字段；"
+        "desc": "可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；\n当Method为delete时，可以不用填写此字段；"
       }
     ],
     "desc": "添加或删除CC的URL白名单"
@@ -1254,7 +1283,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包）"
       },
       {
         "name": "Id",
@@ -1278,7 +1307,7 @@ INFO = {
       },
       {
         "name": "IpList",
-        "desc": "资源的IP；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；"
+        "desc": "资源的IP（当Business为bgp-multip时必填，且仅支持一个IP）；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；"
       }
     ],
     "desc": "获取业务转发统计数据，支持转发流量和转发包速率"
@@ -1328,11 +1357,11 @@ INFO = {
       },
       {
         "name": "Protocol",
-        "desc": "可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写RuleId字段；"
+        "desc": "可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；"
       },
       {
         "name": "RuleId",
-        "desc": "可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；\n当Protocol=https时必须填写；"
+        "desc": "可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；\n当Protocol=https时必须填写；"
       }
     ],
     "desc": "修改CC的防护阈值"
@@ -1362,7 +1391,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",
@@ -1374,11 +1403,11 @@ INFO = {
       },
       {
         "name": "Protocol",
-        "desc": "可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写RuleId字段；"
+        "desc": "可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；"
       },
       {
         "name": "RuleId",
-        "desc": "可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；\n当Protocol=https时必须填写；"
+        "desc": "表示7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；"
       }
     ],
     "desc": "修改CC防护等级"

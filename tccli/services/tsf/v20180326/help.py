@@ -995,6 +995,23 @@ INFO = {
     ],
     "desc": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436"
   },
+  "DeployServerlessGroup": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "部署组ID"
+      },
+      {
+        "name": "PkgId",
+        "desc": "程序包ID"
+      },
+      {
+        "name": "VpcConfig",
+        "desc": "VpcConfig对象，和创建接口中对象一致"
+      }
+    ],
+    "desc": "部署Serverless应用"
+  },
   "DescribeGroup": {
     "params": [
       {

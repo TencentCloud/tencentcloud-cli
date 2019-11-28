@@ -560,6 +560,7 @@ def doAddExistedInstances(argv, arglist):
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
         "LoginSettings": Utils.try_to_json(argv, "--LoginSettings"),
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "HostName": argv.get("--HostName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

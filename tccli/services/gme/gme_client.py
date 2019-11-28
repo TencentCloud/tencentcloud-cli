@@ -97,6 +97,7 @@ def doDescribeScanResultList(argv, arglist):
     param = {
         "BizId": Utils.try_to_json(argv, "--BizId"),
         "TaskIdList": Utils.try_to_json(argv, "--TaskIdList"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

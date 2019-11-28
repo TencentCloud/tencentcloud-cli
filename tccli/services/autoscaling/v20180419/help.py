@@ -681,6 +681,35 @@ INFO = {
     ],
     "desc": "本接口（DescribeAutoScalingInstances）用于查询弹性伸缩关联实例的信息。\n\n* 可以根据实例ID、伸缩组ID等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。"
   },
+  "CreateAutoScalingGroupFromInstance": {
+    "params": [
+      {
+        "name": "AutoScalingGroupName",
+        "desc": "伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超55个字节。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "MinSize",
+        "desc": "最大实例数，取值范围为0-2000。"
+      },
+      {
+        "name": "MaxSize",
+        "desc": "最小实例数，取值范围为0-2000。"
+      },
+      {
+        "name": "DesiredCapacity",
+        "desc": "期望实例数，大小介于最小实例数和最大实例数之间。"
+      },
+      {
+        "name": "InheritInstanceTag",
+        "desc": "是否继承实例标签，默认值为False"
+      }
+    ],
+    "desc": "本接口（CreateAutoScalingGroupFromInstance）用于根据实例创建启动配置及伸缩组。\n\n说明：根据按包年包月计费的实例所创建的伸缩组，其扩容的实例为按量计费实例。"
+  },
   "CreateLifecycleHook": {
     "params": [
       {

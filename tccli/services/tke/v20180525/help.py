@@ -296,6 +296,10 @@ INFO = {
       {
         "name": "SecurityGroupIds",
         "desc": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）"
+      },
+      {
+        "name": "HostName",
+        "desc": "重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)"
       }
     ],
     "desc": "添加已经存在的实例到集群"

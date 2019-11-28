@@ -2465,6 +2465,39 @@ def doDescribeProxiesStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSecurityRules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSecurityRules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityRuleIds": Utils.try_to_json(argv, "--SecurityRuleIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityRulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSecurityRules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeRules(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2792,6 +2825,39 @@ def doDeleteListeners(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeRulesByRuleIds(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRulesByRuleIds", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RuleIds": Utils.try_to_json(argv, "--RuleIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRulesByRuleIdsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRulesByRuleIds(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doInquiryPriceCreateProxy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2910,6 +2976,7 @@ ACTION_MAP = {
     "DescribeRealServersStatus": doDescribeRealServersStatus,
     "CloseProxies": doCloseProxies,
     "DescribeProxiesStatus": doDescribeProxiesStatus,
+    "DescribeSecurityRules": doDescribeSecurityRules,
     "DescribeRules": doDescribeRules,
     "CreateTCPListeners": doCreateTCPListeners,
     "DestroyProxies": doDestroyProxies,
@@ -2919,6 +2986,7 @@ ACTION_MAP = {
     "DeleteDomain": doDeleteDomain,
     "DescribeListenerRealServers": doDescribeListenerRealServers,
     "DeleteListeners": doDeleteListeners,
+    "DescribeRulesByRuleIds": doDescribeRulesByRuleIds,
     "InquiryPriceCreateProxy": doInquiryPriceCreateProxy,
 
 }

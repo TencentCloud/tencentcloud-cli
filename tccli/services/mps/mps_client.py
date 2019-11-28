@@ -1412,8 +1412,9 @@ def doProcessLiveStream(argv, arglist):
         "OutputStorage": Utils.try_to_json(argv, "--OutputStorage"),
         "OutputDir": argv.get("--OutputDir"),
         "AiContentReviewTask": Utils.try_to_json(argv, "--AiContentReviewTask"),
-        "SessionContext": argv.get("--SessionContext"),
+        "AiRecognitionTask": Utils.try_to_json(argv, "--AiRecognitionTask"),
         "SessionId": argv.get("--SessionId"),
+        "SessionContext": argv.get("--SessionContext"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "Policy",
-        "desc": "策略描述\n注意：\n1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照云 API 规范再 urlencode 一次）。\n2、策略语法参照 CAM 策略语法。\n3、策略中不能包含 principal 元素。"
+        "desc": "策略描述\n注意：\n1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。\n2、策略语法参照 CAM 策略语法。\n3、策略中不能包含 principal 元素。"
       },
       {
         "name": "DurationSeconds",
@@ -59,7 +59,7 @@ INFO = {
       },
       {
         "name": "Policy",
-        "desc": "策略描述\n注意：\n1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照云 API 规范再 urlencode 一次）。\n2、策略语法参照 CAM 策略语法。\n3、策略中不能包含 principal 元素。"
+        "desc": "策略描述\n注意：\n1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。\n2、策略语法参照 CAM 策略语法。\n3、策略中不能包含 principal 元素。"
       }
     ],
     "desc": "申请扮演角色"
