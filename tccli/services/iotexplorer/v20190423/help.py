@@ -49,6 +49,10 @@ INFO = {
       {
         "name": "DeviceName",
         "desc": "设备名称"
+      },
+      {
+        "name": "DeviceId",
+        "desc": "设备ID，该字段有值将代替 ProductId/DeviceName"
       }
     ],
     "desc": "根据设备产品ID、设备名称，获取设备上报的属性数据。"
@@ -57,27 +61,27 @@ INFO = {
     "params": [
       {
         "name": "ProductName",
-        "desc": "产品名称"
+        "desc": "产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}"
       },
       {
         "name": "CategoryId",
-        "desc": "产品分组模板ID"
+        "desc": "产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)"
       },
       {
         "name": "ProductType",
-        "desc": "产品类型"
+        "desc": "产品类型 填写 ( 0 普通产品 )"
       },
       {
         "name": "EncryptionType",
-        "desc": "加密类型"
+        "desc": "加密类型 加密类型，1表示证书认证，2表示签名认证。"
       },
       {
         "name": "NetType",
-        "desc": "连接类型"
+        "desc": "连接类型 可以填写 wifi cellular else"
       },
       {
         "name": "DataProtocol",
-        "desc": "数据协议"
+        "desc": "数据协议 (1 使用物模型)"
       },
       {
         "name": "ProductDesc",
@@ -237,7 +241,7 @@ INFO = {
       },
       {
         "name": "DeviceName",
-        "desc": "设备名称。"
+        "desc": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。"
       }
     ],
     "desc": "创建设备"

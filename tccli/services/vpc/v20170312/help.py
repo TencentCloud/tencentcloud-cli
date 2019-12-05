@@ -166,6 +166,14 @@ INFO = {
       {
         "name": "InternetMaxBandwidth",
         "desc": "带宽包限速大小。单位：Mbps，-1表示不限速。"
+      },
+      {
+        "name": "Tags",
+        "desc": "需要关联的标签列表。"
+      },
+      {
+        "name": "Protocol",
+        "desc": "带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。"
       }
     ],
     "desc": "接口支持创建[设备带宽包](https://cloud.tencent.com/document/product/684/15246#.E8.AE.BE.E5.A4.87.E5.B8.A6.E5.AE.BD.E5.8C.85)和[ip带宽包](https://cloud.tencent.com/document/product/684/15246#ip-.E5.B8.A6.E5.AE.BD.E5.8C.85)"
@@ -203,7 +211,7 @@ INFO = {
         "desc": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。"
       }
     ],
-    "desc": "本接口（AssignIpv6CidrBlock）用于分配IPv6网段。\n* 使用本接口前，你需要已有VPC实例，如果没有可通过接口<a href=\"https://cloud.tencent.com/document/api/215/15774\" title=\"CreateVpc\" target=\"_blank\">CreateVpc</a>创建。\n* 每个VPC只能申请一个IPv6网段"
+    "desc": "本接口（AssignIpv6CidrBlock）用于分配IPv6网段。\n* 使用本接口前，您需要已有VPC实例，如果没有可通过接口<a href=\"https://cloud.tencent.com/document/api/215/15774\" title=\"CreateVpc\" target=\"_blank\">CreateVpc</a>创建。\n* 每个VPC只能申请一个IPv6网段"
   },
   "DescribeNatGatewayDestinationIpPortTranslationNatRules": {
     "params": [
@@ -454,7 +462,7 @@ INFO = {
     "params": [
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li>vpc-id - String - （过滤条件）VPC实例ID。</li>\n<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>"
+        "desc": "过滤条件。\n<li>vpc-id - String - （过滤条件）VPC实例ID。</li>\n<li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>"
       },
       {
         "name": "Offset",
@@ -563,7 +571,7 @@ INFO = {
       },
       {
         "name": "ResourceIds",
-        "desc": "资源Id，形如'eip-xxxx', 'lb-xxxx'"
+        "desc": "资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'"
       }
     ],
     "desc": "接口用于删除带宽包资源，包括[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)和[负载均衡](https://cloud.tencent.com/document/product/214/517)等"
@@ -630,7 +638,7 @@ INFO = {
         "desc": "子网对象列表。"
       }
     ],
-    "desc": "本接口(CreateSubnets)用于批量创建子网。\n* 创建子网前必须创建好 VPC。\n* 子网创建成功后，子网网段不能修改。子网网段必须在VPC网段内，可以和VPC网段相同（VPC有且只有一个子网时），建议子网网段在VPC网段内，预留网段给其他子网使用。\n* 你可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）。\n* 同一个VPC内，多个子网的网段不能重叠。\n* 子网创建后会自动关联到默认路由表。"
+    "desc": "本接口(CreateSubnets)用于批量创建子网。\n* 创建子网前必须创建好 VPC。\n* 子网创建成功后，子网网段不能修改。子网网段必须在VPC网段内，可以和VPC网段相同（VPC有且只有一个子网时），建议子网网段在VPC网段内，预留网段给其他子网使用。\n* 您可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）。\n* 同一个VPC内，多个子网的网段不能重叠。\n* 子网创建后会自动关联到默认路由表。"
   },
   "ReplaceRouteTableAssociation": {
     "params": [
@@ -653,11 +661,11 @@ INFO = {
       },
       {
         "name": "NextHopType",
-        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云主机；"
+        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；"
       },
       {
         "name": "NextHopDestination",
-        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云主机IPv4地址，形如：10.0.0.12；"
+        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；"
       },
       {
         "name": "NetDetectId",
@@ -751,7 +759,7 @@ INFO = {
     "params": [
       {
         "name": "AddressIds",
-        "desc": "EIP唯一标识id，形如'eip-xxxx'"
+        "desc": "EIP唯一标识ID，形如'eip-xxxx'"
       },
       {
         "name": "InternetMaxBandwidthOut",
@@ -808,7 +816,24 @@ INFO = {
         "desc": "子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。"
       }
     ],
-    "desc": "本接口(CreateSubnet)用于创建子网。\n* 创建子网前必须创建好 VPC。\n* 子网创建成功后，子网网段不能修改。子网网段必须在VPC网段内，可以和VPC网段相同（VPC有且只有一个子网时），建议子网网段在VPC网段内，预留网段给其他子网使用。\n* 你可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）。\n* 同一个VPC内，多个子网的网段不能重叠。\n* 子网创建后会自动关联到默认路由表。"
+    "desc": "本接口(CreateSubnet)用于创建子网。\n* 创建子网前必须创建好 VPC。\n* 子网创建成功后，子网网段不能修改。子网网段必须在VPC网段内，可以和VPC网段相同（VPC有且只有一个子网时），建议子网网段在VPC网段内，预留网段给其他子网使用。\n* 您可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）。\n* 同一个VPC内，多个子网的网段不能重叠。\n* 子网创建后会自动关联到默认路由表。"
+  },
+  "AllocateIp6AddressesBandwidth": {
+    "params": [
+      {
+        "name": "Ip6Addresses",
+        "desc": "需要开通公网访问能力的IPV6地址"
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "带宽，单位Mbps。默认是1Mbps"
+      },
+      {
+        "name": "InternetChargeType",
+        "desc": "网络计费模式。IPV6当前支持\"TRAFFIC_POSTPAID_BY_HOUR\"，默认是\"TRAFFIC_POSTPAID_BY_HOUR\"。"
+      }
+    ],
+    "desc": "该接口用于给IPv6地址初次分配公网带宽"
   },
   "ModifyAddressTemplateAttribute": {
     "params": [
@@ -937,7 +962,7 @@ INFO = {
     "params": [
       {
         "name": "ResourceIds",
-        "desc": "资源Id，形如'eip-xxxx', 'lb-xxxx'"
+        "desc": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'"
       },
       {
         "name": "BandwidthPackageId",
@@ -945,11 +970,15 @@ INFO = {
       },
       {
         "name": "NetworkType",
-        "desc": "带宽包类型，包括'BGP', 'SINGLEISP', 'ANYCAST'"
+        "desc": "带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。"
       },
       {
         "name": "ResourceType",
         "desc": "资源类型，包括'Address', 'LoadBalance'"
+      },
+      {
+        "name": "Protocol",
+        "desc": "带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。"
       }
     ],
     "desc": "接口用于添加带宽包资源，包括[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)和[负载均衡](https://cloud.tencent.com/document/product/214/517)等"
@@ -1021,6 +1050,27 @@ INFO = {
     ],
     "desc": "本接口（DescribeVpcIpv6Addresses）用于查询 `VPC` `IPv6` 信息。\n只能查询已使用的`IPv6`信息，当查询未使用的IP时，本接口不会报错，但不会出现在返回结果里。"
   },
+  "DescribeIp6Addresses": {
+    "params": [
+      {
+        "name": "Ip6AddressIds",
+        "desc": "标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。"
+      },
+      {
+        "name": "Filters",
+        "desc": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。"
+      }
+    ],
+    "desc": "该接口用于查询IPV6地址信息"
+  },
   "DescribeAccountAttributes": {
     "params": [],
     "desc": "本接口（DescribeAccountAttributes）用于查询用户账号私有属性。"
@@ -1079,7 +1129,7 @@ INFO = {
         "desc": "子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。"
       }
     ],
-    "desc": "本接口（DeleteSubnet）用于用于删除子网(Subnet)。\n* 删除子网前，请清理该子网下所有资源，包括云主机、负载均衡、云数据、noSql、弹性网卡等资源。"
+    "desc": "本接口（DeleteSubnet）用于用于删除子网(Subnet)。\n* 删除子网前，请清理该子网下所有资源，包括云服务器、负载均衡、云数据、noSql、弹性网卡等资源。"
   },
   "AttachClassicLinkVpc": {
     "params": [
@@ -1219,15 +1269,19 @@ INFO = {
       {
         "name": "PrivateIpAddresses",
         "desc": "指定的内网IP信息，单次最多指定10个。"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
       }
     ],
-    "desc": "本接口（CreateNetworkInterface）用于创建弹性网卡。\n* 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。\n* 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 创建弹性网卡同时可以绑定已有安全组。"
+    "desc": "本接口（CreateNetworkInterface）用于创建弹性网卡。\n* 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。\n* 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 创建弹性网卡同时可以绑定已有安全组。\n* 创建弹性网卡同时可以绑定标签, 应答里的标签列表代表添加成功的标签。"
   },
   "DeleteBandwidthPackage": {
     "params": [
       {
         "name": "BandwidthPackageId",
-        "desc": "待删除带宽包bwpId"
+        "desc": "待删除带宽包唯一ID"
       }
     ],
     "desc": "接口支持删除共享带宽包，包括[设备带宽包](https://cloud.tencent.com/document/product/684/15246#.E8.AE.BE.E5.A4.87.E5.B8.A6.E5.AE.BD.E5.8C.85)和[ip带宽包](https://cloud.tencent.com/document/product/684/15246#ip-.E5.B8.A6.E5.AE.BD.E5.8C.85)"
@@ -1329,7 +1383,7 @@ INFO = {
         "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
       }
     ],
-    "desc": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云主机时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。"
+    "desc": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云服务器时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。"
   },
   "CreateNatGatewayDestinationIpPortTranslationNatRule": {
     "params": [
@@ -1526,7 +1580,7 @@ INFO = {
         "desc": "转换实例运营商属性，可取\"CMCC\",\"CTCC\",\"CUCC\",\"BGP\""
       }
     ],
-    "desc": "1. 该接口用于创建IPV6转换IPV4实例，支持批量\n2. 同一个账户在在一个地域最多允许创建10个转换实例"
+    "desc": "1. 该接口用于创建IPV6转换IPV4实例，支持批量\n2. 同一个账户在一个地域最多允许创建10个转换实例"
   },
   "CreateDefaultVpc": {
     "params": [
@@ -1539,7 +1593,7 @@ INFO = {
         "desc": "是否强制返回默认VPC"
       }
     ],
-    "desc": "本接口（CreateDefaultVpc）用于创建默认私有网络(VPC）。\n\n默认VPC适用于快速入门和启动公共实例，您可以像使用任何其他VPC一样使用默认VPC。如果你想创建标准VPC，即指定VPC名称、VPC网段、子网网段、子网可用区，请使用常规创建VPC接口（CreateVpc）\n\n正常情况，本接口并不一定生产默认VPC，而是根据用户账号的网络属性（DescribeAccountAttributes）来决定的\n* 支持基础网络、VPC，返回VpcId为0\n* 只支持VPC，返回默认VPC信息\n\n你也可以通过 Force 参数，强制返回默认VPC"
+    "desc": "本接口（CreateDefaultVpc）用于创建默认私有网络(VPC）。\n\n默认VPC适用于快速入门和启动公共实例，您可以像使用任何其他VPC一样使用默认VPC。如果您想创建标准VPC，即指定VPC名称、VPC网段、子网网段、子网可用区，请使用常规创建VPC接口（CreateVpc）\n\n正常情况，本接口并不一定生产默认VPC，而是根据用户账号的网络属性（DescribeAccountAttributes）来决定的\n* 支持基础网络、VPC，返回VpcId为0\n* 只支持VPC，返回默认VPC信息\n\n您也可以通过 Force 参数，强制返回默认VPC"
   },
   "AttachNetworkInterface": {
     "params": [
@@ -1679,9 +1733,13 @@ INFO = {
       {
         "name": "SecurityGroupPolicySet",
         "desc": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。"
+      },
+      {
+        "name": "SortPolicys",
+        "desc": "排序安全组标识。值为True时，支持安全组排序；SortPolicys不存在或SortPolicys为False时，为修改安全组规则。"
       }
     ],
-    "desc": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n* 接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex 。\n* 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略Egress和Ingress。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。"
+    "desc": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n* 接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex 。\n* 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略Egress和Ingress。\n* Protocol字段支持输入TCP, UDP, ICMP, ICMPV6, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* Ipv6CidrBlock字段允许输入符合IPv6 cidr格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate四者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。"
   },
   "ModifySubnetAttribute": {
     "params": [
@@ -2139,7 +2197,7 @@ INFO = {
         "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
       }
     ],
-    "desc": "本接口（DeleteVpc）用于删除私有网络。\n* 删除前请确保 VPC 内已经没有相关资源，例如云主机、云数据库、NoSQL、VPN网关、专线网关、负载均衡、对等连接、与之互通的基础网络设备等。\n* 删除私有网络是不可逆的操作，请谨慎处理。"
+    "desc": "本接口（DeleteVpc）用于删除私有网络。\n* 删除前请确保 VPC 内已经没有相关资源，例如云服务器、云数据库、NoSQL、VPN网关、专线网关、负载均衡、对等连接、与之互通的基础网络设备等。\n* 删除私有网络是不可逆的操作，请谨慎处理。"
   },
   "DescribeSubnets": {
     "params": [
@@ -2237,7 +2295,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定SecurityGroupIds和Filters。\n<li>security-group-id - String - （过滤条件）安全组ID。</li>\n<li>project-id - Integer - （过滤条件）项目id。</li>\n<li>security-group-name - String - （过滤条件）安全组名称。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。</li>"
+        "desc": "过滤条件，参数不支持同时指定SecurityGroupIds和Filters。\n<li>security-group-id - String - （过滤条件）安全组ID。</li>\n<li>project-id - Integer - （过滤条件）项目ID。</li>\n<li>security-group-name - String - （过滤条件）安全组名称。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。</li>"
       },
       {
         "name": "Offset",
@@ -2454,11 +2512,11 @@ INFO = {
       },
       {
         "name": "NextHopType",
-        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云主机；"
+        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；"
       },
       {
         "name": "NextHopDestination",
-        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云主机IPv4地址，形如：10.0.0.12；"
+        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；"
       },
       {
         "name": "NetDetectDescription",
@@ -2513,11 +2571,11 @@ INFO = {
       },
       {
         "name": "NextHopType",
-        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云主机；"
+        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；"
       },
       {
         "name": "NextHopDestination",
-        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云主机IPv4地址，形如：10.0.0.12；"
+        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；"
       },
       {
         "name": "NetDetectDescription",
@@ -2560,7 +2618,7 @@ INFO = {
     "params": [
       {
         "name": "BandwidthPackageIds",
-        "desc": "带宽包Id，支持批量"
+        "desc": "带宽包唯一ID列表"
       },
       {
         "name": "Filters",
@@ -2589,6 +2647,19 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateServiceTemplateGroup）用于创建协议端口模板集合"
+  },
+  "ReleaseIp6AddressesBandwidth": {
+    "params": [
+      {
+        "name": "Ip6Addresses",
+        "desc": "IPV6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个"
+      },
+      {
+        "name": "Ip6AddressIds",
+        "desc": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。"
+      }
+    ],
+    "desc": "该接口用于给弹性公网IPv6地址释放带宽。"
   },
   "ModifyCcnAttribute": {
     "params": [
@@ -2645,6 +2716,23 @@ INFO = {
       }
     ],
     "desc": "本接口（UnassignIpv6SubnetCidrBlock）用于释放IPv6子网段。<br />\n子网段如果还有IP占用且未回收，则子网段无法释放。"
+  },
+  "ModifyIp6AddressesBandwidth": {
+    "params": [
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "修改的目标带宽，单位Mbps"
+      },
+      {
+        "name": "Ip6Addresses",
+        "desc": "IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个"
+      },
+      {
+        "name": "Ip6AddressIds",
+        "desc": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个"
+      }
+    ],
+    "desc": "该接口用于修改IPV6地址访问internet的带宽"
   },
   "DescribeAddressTemplates": {
     "params": [
@@ -2730,7 +2818,7 @@ INFO = {
         "desc": "安全组规则集合。"
       }
     ],
-    "desc": "本接口（CreateSecurityGroupPolicies）用于创建安全组规则（SecurityGroupPolicy）。\n\n* Version安全组规则版本号，用户每次更新安全规则版本会自动加1，防止你更新的路由规则已过期，不填不考虑冲突。\n* Protocol字段支持输入TCP, UDP, ICMP, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受，即Protocol字段不是TCP或UDP时，Protocol和Port排他关系，不允许同时输入，否则会接口报错。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, SecurityGroupId, AddressTemplate三者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。\n* 一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。"
+    "desc": "本接口（CreateSecurityGroupPolicies）用于创建安全组规则（SecurityGroupPolicy）。\n\n* Version安全组规则版本号，用户每次更新安全规则版本会自动加1，防止您更新的路由规则已过期，不填不考虑冲突。\n* Protocol字段支持输入TCP, UDP, ICMP, ICMPV6, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* Ipv6CidrBlock字段允许输入符合IPv6 cidr格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受，即Protocol字段不是TCP或UDP时，Protocol和Port排他关系，不允许同时输入，否则会接口报错。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate四者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。\n* 一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。"
   },
   "ResetNatGatewayConnection": {
     "params": [

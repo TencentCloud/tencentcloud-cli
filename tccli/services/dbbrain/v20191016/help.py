@@ -9,14 +9,14 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "开始时间。"
+        "desc": "开始时间。如“2019-09-10 12:13:14”。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间。"
+        "desc": "结束时间。如“2019-09-11 12:13:14”。"
       }
     ],
-    "desc": "获取实例诊断历史。"
+    "desc": "获取实例诊断事件的列表。"
   },
   "DescribeDBDiagEvent": {
     "params": [
@@ -26,10 +26,10 @@ INFO = {
       },
       {
         "name": "EventId",
-        "desc": "事件 ID 。"
+        "desc": "事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。"
       }
     ],
-    "desc": "输入参数可以是事件Id, 若没有给定事件Id,则通过时间点查询。"
+    "desc": "获取实例异常诊断事件的详情信息。"
   },
   "DescribeSlowLogTopSqls": {
     "params": [

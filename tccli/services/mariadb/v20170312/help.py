@@ -201,6 +201,15 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBLogFiles)用于获取数据库的各种日志列表，包括冷备、binlog、errlog和slowlog。"
   },
+  "DescribeAccounts": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。"
+      }
+    ],
+    "desc": "本接口（DescribeAccounts）用于查询指定云数据库实例的账号列表。"
+  },
   "GrantAccountPrivileges": {
     "params": [
       {
@@ -475,7 +484,7 @@ INFO = {
       },
       {
         "name": "UserName",
-        "desc": "登录用户名，由字幕、数字、下划线和连字符组成，长度为1~32位。"
+        "desc": "登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。"
       },
       {
         "name": "Host",
@@ -589,14 +598,14 @@ INFO = {
     ],
     "desc": "本接口(CloseDBExtranetAccess)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问，查询实例列表接口将不返回对应实例的外网域名和端口信息。"
   },
-  "DescribeAccounts": {
+  "RestartDBInstances": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。"
+        "name": "InstanceIds",
+        "desc": "实例ID的数组"
       }
     ],
-    "desc": "本接口（DescribeAccounts）用于查询指定云数据库实例的账号列表。"
+    "desc": "本接口（RestartDBInstances）用于重启数据库实例"
   },
   "CopyAccountPrivileges": {
     "params": [
@@ -630,6 +639,15 @@ INFO = {
       }
     ],
     "desc": "本接口（CopyAccountPrivileges）用于复制云数据库账号的权限。\n注意：相同用户名，不同Host是不同的账号，Readonly属性相同的账号之间才能复制权限。"
+  },
+  "DescribeDatabases": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，形如：dcdbt-ow7t8lmc。"
+      }
+    ],
+    "desc": "本接口（DescribeDatabases）用于查询云数据库实例的数据库列表。"
   },
   "DescribePrice": {
     "params": [

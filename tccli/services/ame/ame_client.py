@@ -12,94 +12,19 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.sms.v20190711 import sms_client as sms_client_v20190711
-from tencentcloud.sms.v20190711 import models as models_v20190711
-from tccli.services.sms import v20190711
-from tccli.services.sms.v20190711 import help as v20190711_help
+from tencentcloud.ame.v20190916 import ame_client as ame_client_v20190916
+from tencentcloud.ame.v20190916 import models as models_v20190916
+from tccli.services.ame import v20190916
+from tccli.services.ame.v20190916 import help as v20190916_help
 
 
-def doPullSmsSendStatus(argv, arglist):
+def doDescribeStations(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("PullSmsSendStatus", g_param[OptionsDefine.Version])
+        show_help("DescribeStations", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SmsSdkAppid": argv.get("--SmsSdkAppid"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PullSmsSendStatusRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.PullSmsSendStatus(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSendSms(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SendSms", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "PhoneNumberSet": Utils.try_to_json(argv, "--PhoneNumberSet"),
-        "TemplateID": argv.get("--TemplateID"),
-        "SmsSdkAppid": argv.get("--SmsSdkAppid"),
-        "Sign": argv.get("--Sign"),
-        "TemplateParamSet": Utils.try_to_json(argv, "--TemplateParamSet"),
-        "ExtendCode": argv.get("--ExtendCode"),
-        "SessionContext": argv.get("--SessionContext"),
-        "SenderId": argv.get("--SenderId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SendSmsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SendSms(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSmsPackagesStatistics(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SmsPackagesStatistics", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "SmsSdkAppid": argv.get("--SmsSdkAppid"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -112,12 +37,12 @@ def doSmsPackagesStatistics(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SmsPackagesStatisticsRequest()
+    model = models.DescribeStationsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SmsPackagesStatistics(model)
+    rsp = client.DescribeStations(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -127,126 +52,17 @@ def doSmsPackagesStatistics(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSendStatusStatistics(argv, arglist):
+def doDescribeItems(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SendStatusStatistics", g_param[OptionsDefine.Version])
+        show_help("DescribeItems", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "StartDateTime": Utils.try_to_json(argv, "--StartDateTime"),
-        "EndDataTime": Utils.try_to_json(argv, "--EndDataTime"),
-        "SmsSdkAppid": argv.get("--SmsSdkAppid"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SendStatusStatisticsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SendStatusStatistics(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCallbackStatusStatistics(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CallbackStatusStatistics", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "StartDateTime": Utils.try_to_json(argv, "--StartDateTime"),
-        "EndDataTime": Utils.try_to_json(argv, "--EndDataTime"),
-        "SmsSdkAppid": argv.get("--SmsSdkAppid"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CallbackStatusStatisticsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CallbackStatusStatistics(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doPullSmsReplyStatus(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("PullSmsReplyStatus", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "SmsSdkAppid": argv.get("--SmsSdkAppid"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PullSmsReplyStatusRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.PullSmsReplyStatus(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doPullSmsSendStatusByPhoneNumber(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("PullSmsSendStatusByPhoneNumber", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "SendDateTime": Utils.try_to_json(argv, "--SendDateTime"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PhoneNumber": argv.get("--PhoneNumber"),
-        "SmsSdkAppid": argv.get("--SmsSdkAppid"),
+        "CategoryId": argv.get("--CategoryId"),
+        "CategoryCode": argv.get("--CategoryCode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -257,12 +73,12 @@ def doPullSmsSendStatusByPhoneNumber(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PullSmsSendStatusByPhoneNumberRequest()
+    model = models.DescribeItemsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.PullSmsSendStatusByPhoneNumber(model)
+    rsp = client.DescribeItems(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -272,18 +88,15 @@ def doPullSmsSendStatusByPhoneNumber(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doPullSmsReplyStatusByPhoneNumber(argv, arglist):
+def doDescribeLyric(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("PullSmsReplyStatusByPhoneNumber", g_param[OptionsDefine.Version])
+        show_help("DescribeLyric", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SendDateTime": Utils.try_to_json(argv, "--SendDateTime"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "PhoneNumber": argv.get("--PhoneNumber"),
-        "SmsSdkAppid": argv.get("--SmsSdkAppid"),
+        "ItemId": argv.get("--ItemId"),
+        "SubItemType": argv.get("--SubItemType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -294,12 +107,48 @@ def doPullSmsReplyStatusByPhoneNumber(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PullSmsReplyStatusByPhoneNumberRequest()
+    model = models.DescribeLyricRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.PullSmsReplyStatusByPhoneNumber(model)
+    rsp = client.DescribeLyric(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMusic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeMusic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ItemId": argv.get("--ItemId"),
+        "IdentityId": argv.get("--IdentityId"),
+        "SubItemType": argv.get("--SubItemType"),
+        "Ssl": argv.get("--Ssl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMusicRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeMusic(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -310,38 +159,34 @@ def doPullSmsReplyStatusByPhoneNumber(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190711": sms_client_v20190711,
+    "v20190916": ame_client_v20190916,
 
 }
 
 MODELS_MAP = {
-    "v20190711": models_v20190711,
+    "v20190916": models_v20190916,
 
 }
 
 ACTION_MAP = {
-    "PullSmsSendStatus": doPullSmsSendStatus,
-    "SendSms": doSendSms,
-    "SmsPackagesStatistics": doSmsPackagesStatistics,
-    "SendStatusStatistics": doSendStatusStatistics,
-    "CallbackStatusStatistics": doCallbackStatusStatistics,
-    "PullSmsReplyStatus": doPullSmsReplyStatus,
-    "PullSmsSendStatusByPhoneNumber": doPullSmsSendStatusByPhoneNumber,
-    "PullSmsReplyStatusByPhoneNumber": doPullSmsReplyStatusByPhoneNumber,
+    "DescribeStations": doDescribeStations,
+    "DescribeItems": doDescribeItems,
+    "DescribeLyric": doDescribeLyric,
+    "DescribeMusic": doDescribeMusic,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190711.version,
+    v20190916.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190711.version.replace('-', ''): {"help": v20190711_help.INFO,"desc": v20190711_help.DESC},
+     'v' + v20190916.version.replace('-', ''): {"help": v20190916_help.INFO,"desc": v20190916_help.DESC},
 
 }
 
 
-def sms_action(argv, arglist):
+def ame_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -357,7 +202,7 @@ def sms_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "sms", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "ame", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -378,7 +223,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("sms", sms_action)
+    cmd = NiceCommand("ame", ame_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -437,11 +282,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["sms"][OptionsDefine.Version]
+            version = config["ame"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["sms"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["ame"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -458,7 +303,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "sms", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ame", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -468,7 +313,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["sms"]["version"]
+        version = profile["ame"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

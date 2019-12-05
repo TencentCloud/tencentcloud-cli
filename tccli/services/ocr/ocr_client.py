@@ -567,16 +567,15 @@ def doGeneralFastOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doVehicleLicenseOCR(argv, arglist):
+def doPropOwnerCertOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("VehicleLicenseOCR", g_param[OptionsDefine.Version])
+        show_help("PropOwnerCertOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
         "ImageBase64": argv.get("--ImageBase64"),
         "ImageUrl": argv.get("--ImageUrl"),
-        "CardSide": argv.get("--CardSide"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -590,9 +589,9 @@ def doVehicleLicenseOCR(argv, arglist):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.VehicleLicenseOCRRequest()
+    model = models.PropOwnerCertOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.VehicleLicenseOCR(model)
+    rsp = client.PropOwnerCertOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1250,6 +1249,40 @@ def doTaxiInvoiceOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doVehicleRegCertOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VehicleRegCertOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VehicleRegCertOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VehicleRegCertOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doInstitutionOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1318,10 +1351,10 @@ def doEnglishOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doVehicleRegCertOCR(argv, arglist):
+def doResidenceBookletOCR(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("VehicleRegCertOCR", g_param[OptionsDefine.Version])
+        show_help("ResidenceBookletOCR", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -1340,9 +1373,9 @@ def doVehicleRegCertOCR(argv, arglist):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.VehicleRegCertOCRRequest()
+    model = models.ResidenceBookletOCRRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.VehicleRegCertOCR(model)
+    rsp = client.ResidenceBookletOCR(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1626,6 +1659,41 @@ def doEduPaperOCR(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doVehicleLicenseOCR(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VehicleLicenseOCR", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageBase64": argv.get("--ImageBase64"),
+        "ImageUrl": argv.get("--ImageUrl"),
+        "CardSide": argv.get("--CardSide"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VehicleLicenseOCRRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VehicleLicenseOCR(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20181119": ocr_client_v20181119,
 
@@ -1653,7 +1721,7 @@ ACTION_MAP = {
     "QuotaInvoiceOCR": doQuotaInvoiceOCR,
     "VinOCR": doVinOCR,
     "GeneralFastOCR": doGeneralFastOCR,
-    "VehicleLicenseOCR": doVehicleLicenseOCR,
+    "PropOwnerCertOCR": doPropOwnerCertOCR,
     "BizLicenseOCR": doBizLicenseOCR,
     "GeneralHandwritingOCR": doGeneralHandwritingOCR,
     "WaybillOCR": doWaybillOCR,
@@ -1673,9 +1741,10 @@ ACTION_MAP = {
     "TextDetect": doTextDetect,
     "GeneralEfficientOCR": doGeneralEfficientOCR,
     "TaxiInvoiceOCR": doTaxiInvoiceOCR,
+    "VehicleRegCertOCR": doVehicleRegCertOCR,
     "InstitutionOCR": doInstitutionOCR,
     "EnglishOCR": doEnglishOCR,
-    "VehicleRegCertOCR": doVehicleRegCertOCR,
+    "ResidenceBookletOCR": doResidenceBookletOCR,
     "BankCardOCR": doBankCardOCR,
     "CarInvoiceOCR": doCarInvoiceOCR,
     "DriverLicenseOCR": doDriverLicenseOCR,
@@ -1684,6 +1753,7 @@ ACTION_MAP = {
     "FinanBillOCR": doFinanBillOCR,
     "MixedInvoiceOCR": doMixedInvoiceOCR,
     "EduPaperOCR": doEduPaperOCR,
+    "VehicleLicenseOCR": doVehicleLicenseOCR,
 
 }
 

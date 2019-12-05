@@ -54,34 +54,22 @@ INFO = {
   "SmsPackagesStatistics": {
     "params": [
       {
+        "name": "SmsSdkAppid",
+        "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
+      },
+      {
         "name": "Limit",
-        "desc": "最大上限\n注：目前固定设置为0"
+        "desc": "最大上限(需要拉取的套餐包个数)"
       },
       {
         "name": "Offset",
         "desc": "偏移量\n注：目前固定设置为0"
-      },
-      {
-        "name": "NumberOfPullPackages",
-        "desc": "需要拉取的套餐包个数"
-      },
-      {
-        "name": "SmsSdkAppid",
-        "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
       }
     ],
     "desc": "用户套餐包信息统计"
   },
   "SendStatusStatistics": {
     "params": [
-      {
-        "name": "Limit",
-        "desc": "最大上限\n注：目前固定设置为0"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量\n注：目前固定设置为0"
-      },
       {
         "name": "StartDateTime",
         "desc": "拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时"
@@ -93,12 +81,7 @@ INFO = {
       {
         "name": "SmsSdkAppid",
         "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
-      }
-    ],
-    "desc": "统计用户发送短信的数据"
-  },
-  "CallbackStatusStatistics": {
-    "params": [
+      },
       {
         "name": "Limit",
         "desc": "最大上限\n注：目前固定设置为0"
@@ -106,7 +89,12 @@ INFO = {
       {
         "name": "Offset",
         "desc": "偏移量\n注：目前固定设置为0"
-      },
+      }
+    ],
+    "desc": "统计用户发送短信的数据"
+  },
+  "CallbackStatusStatistics": {
+    "params": [
       {
         "name": "StartDateTime",
         "desc": "开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时"
@@ -118,6 +106,14 @@ INFO = {
       {
         "name": "SmsSdkAppid",
         "desc": "短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。"
+      },
+      {
+        "name": "Limit",
+        "desc": "最大上限\n注：目前固定设置为0"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量\n注：目前固定设置为0"
       }
     ],
     "desc": "统计用户回执的数据"

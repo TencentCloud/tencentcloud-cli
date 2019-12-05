@@ -96,6 +96,7 @@ def doDescribeDeviceData(argv, arglist):
     param = {
         "ProductId": argv.get("--ProductId"),
         "DeviceName": argv.get("--DeviceName"),
+        "DeviceId": argv.get("--DeviceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -22,6 +22,27 @@ INFO = {
     ],
     "desc": "支持水印密钥的添加，删除，开启，关闭"
   },
+  "CreateBasicDDoSAlarmThreshold": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（basic表示DDoS基础防护）"
+      },
+      {
+        "name": "Method",
+        "desc": "=get表示读取告警阈值；=set表示设置告警阈值；"
+      },
+      {
+        "name": "AlarmType",
+        "desc": "可选，告警阈值类型，1-入流量，2-清洗流量；当Method为set时必须填写；"
+      },
+      {
+        "name": "AlarmThreshold",
+        "desc": "可选，告警阈值，当Method为set时必须填写；当设置阈值为0时表示清除告警阈值配置；"
+      }
+    ],
+    "desc": "设置基础防护的DDoS告警阈值，只支持基础防护产品"
+  },
   "DescribeInsurePacks": {
     "params": [
       {
@@ -391,6 +412,19 @@ INFO = {
     ],
     "desc": "创建CC自定义策略"
   },
+  "DescribeIPProductInfo": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）"
+      },
+      {
+        "name": "IpList",
+        "desc": "IP列表"
+      }
+    ],
+    "desc": "获取独享包或共享包IP对应的云资产信息，只支持独享包和共享包的IP"
+  },
   "DeleteDDoSPolicyCase": {
     "params": [
       {
@@ -404,7 +438,7 @@ INFO = {
     ],
     "desc": "删除策略场景"
   },
-  "DeleteL7Rules": {
+  "ModifyCCPolicySwitch": {
     "params": [
       {
         "name": "Business",
@@ -415,11 +449,15 @@ INFO = {
         "desc": "资源ID"
       },
       {
-        "name": "RuleIdList",
-        "desc": "规则ID列表"
+        "name": "SetId",
+        "desc": "策略ID"
+      },
+      {
+        "name": "Switch",
+        "desc": "开关状态"
       }
     ],
-    "desc": "删除七层转发规则"
+    "desc": "修改CC自定义策略开关"
   },
   "CreateDDoSPolicyCase": {
     "params": [
@@ -602,7 +640,7 @@ INFO = {
       },
       {
         "name": "MetricName",
-        "desc": "指标名，取值：\nconnum表示总TCP连接数（新建TCP连接数与活跃TCP连接数的和）；\nnew_conn表示新建TCP连接数；\nintraffic表示入流量；\nouttraffic表示出流量；\nalltraffic表示出流量和入流量之和；\ninpkg表示入包速率；\noutpkg表示出包速率；"
+        "desc": "指标名，取值：\nconnum表示TCP活跃连接数；\nnew_conn表示新建TCP连接数；\ninactive_conn表示非活跃连接数;\nintraffic表示入流量；\nouttraffic表示出流量；\nalltraffic表示出流量和入流量之和；\ninpkg表示入包速率；\noutpkg表示出包速率；"
       },
       {
         "name": "Period",
@@ -801,7 +839,7 @@ INFO = {
     ],
     "desc": "获取策略场景"
   },
-  "ModifyCCPolicySwitch": {
+  "DeleteL7Rules": {
     "params": [
       {
         "name": "Business",
@@ -812,15 +850,11 @@ INFO = {
         "desc": "资源ID"
       },
       {
-        "name": "SetId",
-        "desc": "策略ID"
-      },
-      {
-        "name": "Switch",
-        "desc": "开关状态"
+        "name": "RuleIdList",
+        "desc": "规则ID列表"
       }
     ],
-    "desc": "修改CC自定义策略开关"
+    "desc": "删除七层转发规则"
   },
   "ModifyDDoSPolicyCase": {
     "params": [
@@ -1112,6 +1146,39 @@ INFO = {
     ],
     "desc": "获取L4转发规则健康检查异常结果"
   },
+  "DescribeBasicDeviceThreshold": {
+    "params": [
+      {
+        "name": "BasicIp",
+        "desc": "查询的IP地址，取值如：1.1.1.1"
+      },
+      {
+        "name": "BasicRegion",
+        "desc": "查询IP所属地域，取值如：gz、bj、sh、hk等地域缩写"
+      },
+      {
+        "name": "BasicBizType",
+        "desc": "专区类型，取值如：公有云专区：public，黑石专区：bm, NAT服务器专区：nat，互联网通道：channel。"
+      },
+      {
+        "name": "BasicDeviceType",
+        "desc": "设备类型，取值如：服务器：cvm，公有云负载均衡：clb，黑石负载均衡：lb，NAT服务器：nat，互联网通道：channel."
+      },
+      {
+        "name": "BasicCheckFlag",
+        "desc": "有效性检查，取值为1"
+      },
+      {
+        "name": "BasicIpInstance",
+        "desc": "可选，IPInstance Nat 网关（如果查询的设备类型是NAT服务器，需要传此参数，通过nat资源查询接口获取）"
+      },
+      {
+        "name": "BasicIspCode",
+        "desc": "可选，运营商线路（如果查询的设备类型是NAT服务器，需要传此参数为5）"
+      }
+    ],
+    "desc": "获取基础防护黑洞阈值"
+  },
   "DescribeDDoSDefendStatus": {
     "params": [
       {
@@ -1143,7 +1210,7 @@ INFO = {
         "desc": "只有当Business为基础防护时才需要填写此字段，表示IP所属的地域，取值：\n\"bj\":     华北地区(北京)\n\"cd\":     西南地区(成都)\n\"cq\":     西南地区(重庆)\n\"gz\":     华南地区(广州)\n\"gzopen\": 华南地区(广州Open)\n\"hk\":     中国香港\n\"kr\":     东南亚地区(首尔)\n\"sh\":     华东地区(上海)\n\"shjr\":   华东地区(上海金融)\n\"szjr\":   华南地区(深圳金融)\n\"sg\":     东南亚地区(新加坡)\n\"th\":     东南亚地区(泰国)\n\"de\":     欧洲地区(德国)\n\"usw\":    美国西部（硅谷）\n\"ca\":     北美地区(多伦多)\n\"jp\":     日本\n\"hzec\":   杭州\n\"in\":     印度\n\"use\":    美东地区（弗吉尼亚）\n\"ru\":     俄罗斯\n\"tpe\":    中国台湾\n\"nj\":     南京"
       }
     ],
-    "desc": "获取DDoS防护状态，支持产品：基础防护，独享包，共享包，高防IP，高防IP专业版；"
+    "desc": "获取DDoS防护状态（临时关闭状态），支持产品：基础防护，独享包，共享包，高防IP，高防IP专业版；调用此接口是获取当前是否有设置临时关闭DDoS防护状态，如果有设置会返回临时关闭的时长等参数。"
   },
   "CreateUnblockIp": {
     "params": [
@@ -1451,7 +1518,7 @@ INFO = {
         "desc": "只有当Business为基础防护时才需要填写此字段，表示IP所属的地域，取值：\n\"bj\":     华北地区(北京)\n\"cd\":     西南地区(成都)\n\"cq\":     西南地区(重庆)\n\"gz\":     华南地区(广州)\n\"gzopen\": 华南地区(广州Open)\n\"hk\":     中国香港\n\"kr\":     东南亚地区(首尔)\n\"sh\":     华东地区(上海)\n\"shjr\":   华东地区(上海金融)\n\"szjr\":   华南地区(深圳金融)\n\"sg\":     东南亚地区(新加坡)\n\"th\":     东南亚地区(泰国)\n\"de\":     欧洲地区(德国)\n\"usw\":    美国西部（硅谷）\n\"ca\":     北美地区(多伦多)\n\"jp\":     日本\n\"hzec\":   杭州\n\"in\":     印度\n\"use\":    美东地区（弗吉尼亚）\n\"ru\":     俄罗斯\n\"tpe\":    中国台湾\n\"nj\":     南京"
       }
     ],
-    "desc": "开启或关闭DDoS防护状态"
+    "desc": "开启或关闭DDoS防护状态，调用此接口允许临时关闭DDoS防护一段时间，等时间到了会自动开启DDoS防护；"
   },
   "ModifyL4Rules": {
     "params": [
@@ -1636,10 +1703,27 @@ INFO = {
       },
       {
         "name": "Threshold",
-        "desc": "DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];"
+        "desc": "DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];\n当设置值为0时，表示采用默认值；"
       }
     ],
     "desc": "修改DDoS清洗阈值"
+  },
+  "ModifyResourceRenewFlag": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包；insurance表示保险包；staticpack表示三网套餐包）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源Id"
+      },
+      {
+        "name": "RenewFlag",
+        "desc": "自动续费标记（0手动续费；1自动续费；2到期不续费）"
+      }
+    ],
+    "desc": "修改资源自动续费标记"
   },
   "ModifyCCSelfDefinePolicy": {
     "params": [

@@ -54,6 +54,42 @@ def doModifyDDoSWaterKey(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateBasicDDoSAlarmThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateBasicDDoSAlarmThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Method": argv.get("--Method"),
+        "AlarmType": Utils.try_to_json(argv, "--AlarmType"),
+        "AlarmThreshold": Utils.try_to_json(argv, "--AlarmThreshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateBasicDDoSAlarmThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateBasicDDoSAlarmThreshold(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeInsurePacks(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -729,6 +765,40 @@ def doCreateCCSelfDefinePolicy(argv, arglist):
     model = models.CreateCCSelfDefinePolicyRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateCCSelfDefinePolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeIPProductInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeIPProductInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeIPProductInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeIPProductInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1839,6 +1909,45 @@ def doDescribeResourceList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeBasicDeviceThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeBasicDeviceThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BasicIp": argv.get("--BasicIp"),
+        "BasicRegion": argv.get("--BasicRegion"),
+        "BasicBizType": argv.get("--BasicBizType"),
+        "BasicDeviceType": argv.get("--BasicDeviceType"),
+        "BasicCheckFlag": Utils.try_to_json(argv, "--BasicCheckFlag"),
+        "BasicIpInstance": argv.get("--BasicIpInstance"),
+        "BasicIspCode": Utils.try_to_json(argv, "--BasicIspCode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBasicDeviceThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeBasicDeviceThreshold(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDDoSDefendStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2565,6 +2674,41 @@ def doModifyElasticLimit(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyResourceRenewFlag(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyResourceRenewFlag", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyResourceRenewFlagRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyResourceRenewFlag(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePackIndex(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2865,6 +3009,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "ModifyDDoSWaterKey": doModifyDDoSWaterKey,
+    "CreateBasicDDoSAlarmThreshold": doCreateBasicDDoSAlarmThreshold,
     "DescribeInsurePacks": doDescribeInsurePacks,
     "DeleteL4Rules": doDeleteL4Rules,
     "CreateInstanceName": doCreateInstanceName,
@@ -2884,6 +3029,7 @@ ACTION_MAP = {
     "CreateL7CCRule": doCreateL7CCRule,
     "DescribePcap": doDescribePcap,
     "CreateCCSelfDefinePolicy": doCreateCCSelfDefinePolicy,
+    "DescribeIPProductInfo": doDescribeIPProductInfo,
     "DeleteDDoSPolicyCase": doDeleteDDoSPolicyCase,
     "DeleteL7Rules": doDeleteL7Rules,
     "CreateDDoSPolicy": doCreateDDoSPolicy,
@@ -2913,6 +3059,7 @@ ACTION_MAP = {
     "DescribeDDoSUsedStatis": doDescribeDDoSUsedStatis,
     "DescribeL4RulesErrHealth": doDescribeL4RulesErrHealth,
     "DescribeResourceList": doDescribeResourceList,
+    "DescribeBasicDeviceThreshold": doDescribeBasicDeviceThreshold,
     "DescribeDDoSDefendStatus": doDescribeDDoSDefendStatus,
     "CreateUnblockIp": doCreateUnblockIp,
     "DeleteDDoSPolicy": doDeleteDDoSPolicy,
@@ -2933,6 +3080,7 @@ ACTION_MAP = {
     "ModifyDDoSAIStatus": doModifyDDoSAIStatus,
     "ModifyDDoSLevel": doModifyDDoSLevel,
     "ModifyElasticLimit": doModifyElasticLimit,
+    "ModifyResourceRenewFlag": doModifyResourceRenewFlag,
     "DescribePackIndex": doDescribePackIndex,
     "DescribeDDoSEvInfo": doDescribeDDoSEvInfo,
     "CreateL4HealthConfig": doCreateL4HealthConfig,

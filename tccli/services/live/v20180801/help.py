@@ -259,7 +259,7 @@ INFO = {
         "desc": "配置id。"
       }
     ],
-    "desc": "查询拉流配置"
+    "desc": "查询直播拉流配置。"
   },
   "DescribeHttpStatusInfoList": {
     "params": [
@@ -426,7 +426,7 @@ INFO = {
         "desc": "目标状态。0无效，2正在运行，4暂停。"
       }
     ],
-    "desc": "修改直播拉流配置状态"
+    "desc": "修改直播拉流配置的状态。"
   },
   "DescribeLiveRecordTemplates": {
     "params": [
@@ -579,14 +579,14 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
       }
     ],
-    "desc": "更新拉流配置"
+    "desc": "更新拉流配置。"
   },
   "CreateLiveSnapshotTemplate": {
     "params": [
@@ -756,7 +756,7 @@ INFO = {
       },
       {
         "name": "ExpireTime",
-        "desc": "延播设置的过期时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认7天后过期，且最长支持7天内生效。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "延播设置的过期时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认7天后过期，且最长支持7天内生效。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
       }
     ],
     "desc": "对流设置延播时间\n注意：如果在推流前设置延播，需要提前5分钟设置。\n目前该接口只支持流粒度的，域名及应用粒度功能支持当前开发中。\n"
@@ -1051,7 +1051,7 @@ INFO = {
         "desc": "流名称。"
       }
     ],
-    "desc": "恢复某条流的推送。"
+    "desc": "恢复某条流的推流。"
   },
   "DescribeLiveCallbackTemplate": {
     "params": [
@@ -1493,7 +1493,7 @@ INFO = {
       },
       {
         "name": "ResumeTime",
-        "desc": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认禁播7天，且最长支持禁播90天。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认禁播7天，且最长支持禁播90天。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
       },
       {
         "name": "Reason",
@@ -1903,11 +1903,11 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
       }
     ],
     "desc": "创建临时拉流转推任务，目前限制添加10条任务。\n\n注意：该接口用于创建临时拉流转推任务，\n拉流源地址即FromUrl 可以是腾讯或非腾讯数据源，\n但转推目标地址即ToUrl 目前限制为已注册的腾讯直播域名。"
