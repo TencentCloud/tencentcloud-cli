@@ -185,11 +185,15 @@ INFO = {
       },
       {
         "name": "RealServerCertificateId",
-        "desc": "源站CA证书ID，从证书管理页获取。"
+        "desc": "源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数"
       },
       {
         "name": "RealServerCertificateDomain",
         "desc": "源站证书域名。"
+      },
+      {
+        "name": "PolyRealServerCertificateIds",
+        "desc": "多源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数"
       }
     ],
     "desc": "本接口（SetAuthentication）用于通道的高级认证配置，包括认证方式选择，以及各种认证方式对应的证书选择。仅支持Version3.0的通道。"
@@ -916,7 +920,7 @@ INFO = {
         "desc": "域名"
       }
     ],
-    "desc": "查询目前订制域名的错误响应"
+    "desc": "查询目前定制域名的错误响应"
   },
   "DescribeRealServers": {
     "params": [

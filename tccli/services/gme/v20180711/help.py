@@ -18,7 +18,7 @@ INFO = {
     "params": [
       {
         "name": "BizId",
-        "desc": "GME应用id"
+        "desc": "GME应用ID"
       },
       {
         "name": "StartDate",
@@ -33,7 +33,7 @@ INFO = {
         "desc": "要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter"
       }
     ],
-    "desc": "本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，离线语音，语音过滤等。最长查询周期为最近30天。"
+    "desc": "本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，语音消息及转文本，语音分析等。最长查询周期为最近30天。"
   },
   "DescribeScanResultList": {
     "params": [
@@ -139,15 +139,15 @@ INFO = {
       },
       {
         "name": "ProjectId",
-        "desc": "腾讯云项目id，默认为0，表示默认项目"
+        "desc": "腾讯云项目ID，默认为0，表示默认项目"
       },
       {
         "name": "EngineList",
-        "desc": "需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。"
+        "desc": "需要支持的引擎列表，默认全选。"
       },
       {
         "name": "RegionList",
-        "desc": "服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。"
+        "desc": "服务区域列表，默认全选。"
       },
       {
         "name": "RealtimeSpeechConf",
@@ -166,13 +166,13 @@ INFO = {
         "desc": "需要添加的标签列表"
       }
     ],
-    "desc": "本接口(CreateApp)用于创建一个GME应用"
+    "desc": "本接口(CreateApp)用于创建一个GME应用。"
   },
   "ModifyAppStatus": {
     "params": [
       {
         "name": "BizId",
-        "desc": "应用id，创建应用后由后台生成并返回。"
+        "desc": "应用ID，创建应用后由后台生成并返回。"
       },
       {
         "name": "Status",

@@ -130,6 +130,15 @@ INFO = {
     ],
     "desc": "创建用户自定义采样截图模板，数量上限：16。"
   },
+  "DeleteAIAnalysisTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "视频内容分析模板唯一标识。"
+      }
+    ],
+    "desc": "删除用户自定义内容分析模板。\n\n注意：模板 ID 为 10000 以下的为系统预置模板，不允许删除。"
+  },
   "DeletePersonSample": {
     "params": [
       {
@@ -256,30 +265,22 @@ INFO = {
     ],
     "desc": "查询指定时间点截图模板，支持根据条件，分页查询。"
   },
-  "CreatePersonSample": {
+  "DescribeAIAnalysisTemplates": {
     "params": [
       {
-        "name": "Name",
-        "desc": "人物名称，长度限制：20 个字符。"
+        "name": "Definitions",
+        "desc": "视频内容分析模板唯一标识过滤条件，数组长度限制：10。"
       },
       {
-        "name": "FaceContents",
-        "desc": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。"
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
       },
       {
-        "name": "Usages",
-        "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
-      },
-      {
-        "name": "Description",
-        "desc": "人物描述，长度限制：1024 个字符。"
-      },
-      {
-        "name": "Tags",
-        "desc": "人物标签\n<li>数组长度限制：20 个标签；</li>\n<li>单个标签长度限制：128 个字符。</li>"
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
       }
     ],
-    "desc": "该接口用于创建人物样本，用于通过人脸识别等技术，进行内容识别、内容审核等视频处理。"
+    "desc": "根据内容分析模板唯一标识，获取内容分析模板详情列表。返回结果包含符合条件的所有用户自定义内容分析模板及系统预置视频内容分析模板"
   },
   "ParseLiveStreamProcessNotification": {
     "params": [
@@ -423,6 +424,10 @@ INFO = {
       {
         "name": "AiContentReviewTask",
         "desc": "视频内容审核类型任务参数。"
+      },
+      {
+        "name": "AiAnalysisTask",
+        "desc": "视频内容分析类型任务参数。"
       },
       {
         "name": "AiRecognitionTask",
@@ -689,6 +694,68 @@ INFO = {
     ],
     "desc": "启用工作流。"
   },
+  "CreateAIAnalysisTemplate": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "视频内容分析模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容分析模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "ClassificationConfigure",
+        "desc": "智能分类任务控制参数。"
+      },
+      {
+        "name": "TagConfigure",
+        "desc": "智能标签任务控制参数。"
+      },
+      {
+        "name": "CoverConfigure",
+        "desc": "智能封面任务控制参数。"
+      },
+      {
+        "name": "FrameTagConfigure",
+        "desc": "智能按帧标签任务控制参数。"
+      }
+    ],
+    "desc": "创建用户自定义内容分析模板，数量上限：50。"
+  },
+  "ModifyAIAnalysisTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "视频内容分析模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "视频内容分析模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Comment",
+        "desc": "视频内容分析模板描述信息，长度限制：256 个字符。"
+      },
+      {
+        "name": "ClassificationConfigure",
+        "desc": "智能分类任务控制参数。"
+      },
+      {
+        "name": "TagConfigure",
+        "desc": "智能标签任务控制参数。"
+      },
+      {
+        "name": "CoverConfigure",
+        "desc": "智能封面任务控制参数。"
+      },
+      {
+        "name": "FrameTagConfigure",
+        "desc": "智能按帧标签任务控制参数。"
+      }
+    ],
+    "desc": "修改用户自定义内容分析模板。\n\n注意：模板 ID 10000 以下的为系统预置模板，不允许修改。"
+  },
   "DescribeTasks": {
     "params": [
       {
@@ -841,6 +908,10 @@ INFO = {
         "desc": "视频内容审核类型任务参数。"
       },
       {
+        "name": "AiAnalysisTask",
+        "desc": "视频内容分析类型任务参数。"
+      },
+      {
         "name": "AiRecognitionTask",
         "desc": "视频内容识别类型任务参数。"
       },
@@ -853,7 +924,7 @@ INFO = {
         "desc": "工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。"
       }
     ],
-    "desc": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、鉴恐、鉴政）；\n8. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。\n\n注意：创建工作流成功后是禁用状态，需要手动启用。"
+    "desc": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、鉴恐、鉴政）；\n8. 智能内容分析（标签、分类、封面、按帧标签）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。\n\n注意：创建工作流成功后是禁用状态，需要手动启用。"
   },
   "ProcessLiveStream": {
     "params": [
@@ -948,6 +1019,10 @@ INFO = {
         "desc": "视频内容审核类型任务参数。"
       },
       {
+        "name": "AiAnalysisTask",
+        "desc": "视频内容分析类型任务参数。"
+      },
+      {
         "name": "AiRecognitionTask",
         "desc": "视频内容识别类型任务参数。"
       },
@@ -968,7 +1043,7 @@ INFO = {
         "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
       }
     ],
-    "desc": "对 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、鉴恐、鉴政）；\n8. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。"
+    "desc": "对 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、鉴恐、鉴政）；\n8. 智能内容分析（标签、分类、封面、按帧标签）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。"
   },
   "CreateAIRecognitionTemplate": {
     "params": [
@@ -1086,6 +1161,31 @@ INFO = {
       }
     ],
     "desc": "删除用户自定义内容审核模板。"
+  },
+  "CreatePersonSample": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "人物名称，长度限制：20 个字符。"
+      },
+      {
+        "name": "FaceContents",
+        "desc": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。"
+      },
+      {
+        "name": "Usages",
+        "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
+      },
+      {
+        "name": "Description",
+        "desc": "人物描述，长度限制：1024 个字符。"
+      },
+      {
+        "name": "Tags",
+        "desc": "人物标签\n<li>数组长度限制：20 个标签；</li>\n<li>单个标签长度限制：128 个字符。</li>"
+      }
+    ],
+    "desc": "该接口用于创建人物样本，用于通过人脸识别等技术，进行内容识别、内容审核等视频处理。"
   },
   "DescribeAIRecognitionTemplates": {
     "params": [

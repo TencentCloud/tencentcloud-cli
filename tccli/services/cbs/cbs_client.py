@@ -311,6 +311,8 @@ def doDescribeDiskOperationLogs(argv, arglist):
 
     param = {
         "Filters": Utils.try_to_json(argv, "--Filters"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -917,6 +919,8 @@ def doDescribeSnapshotOperationLogs(argv, arglist):
 
     param = {
         "Filters": Utils.try_to_json(argv, "--Filters"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

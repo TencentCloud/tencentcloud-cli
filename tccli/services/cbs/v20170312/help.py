@@ -162,6 +162,14 @@ INFO = {
       {
         "name": "Filters",
         "desc": "过滤条件。支持以下条件：\n<li>disk-id - Array of String - 是否必填：是 - 按云盘ID过滤，每个请求最多可指定10个云盘ID。"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00\""
+      },
+      {
+        "name": "EndTime",
+        "desc": "要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59\""
       }
     ],
     "desc": "本接口（DescribeDiskOperationLogs）用于查询云盘操作日志列表。\n\n可根据云盘ID过滤。云盘ID形如：disk-a1kmcp13。\n"
@@ -495,6 +503,14 @@ INFO = {
       {
         "name": "Filters",
         "desc": "过滤条件。支持以下条件：\n<li>snapshot-id - Array of String - 是否必填：是 - 按快照ID过滤，每个请求最多可指定10个快照ID。"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00\""
+      },
+      {
+        "name": "EndTime",
+        "desc": "要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59\""
       }
     ],
     "desc": "本接口（DescribeSnapshotOperationLogs）用于查询快照操作日志列表。\n\n可根据快照ID过滤。快照ID形如：snap-a1kmcp13。\n"

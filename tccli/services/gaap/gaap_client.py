@@ -1736,6 +1736,7 @@ def doSetAuthentication(argv, arglist):
         "GaapCertificateId": argv.get("--GaapCertificateId"),
         "RealServerCertificateId": argv.get("--RealServerCertificateId"),
         "RealServerCertificateDomain": argv.get("--RealServerCertificateDomain"),
+        "PolyRealServerCertificateIds": Utils.try_to_json(argv, "--PolyRealServerCertificateIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

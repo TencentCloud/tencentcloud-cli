@@ -17,7 +17,7 @@ INFO = {
       },
       {
         "name": "RspImgType",
-        "desc": "返回图像方式（url 或 base64) ，二选一。当前仅支持 url 方式，base64 方式后期开放。"
+        "desc": "返回图像方式（url 或 base64) ，二选一。url有效期为30天。"
       },
       {
         "name": "PornDetect",

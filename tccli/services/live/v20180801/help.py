@@ -462,7 +462,7 @@ INFO = {
       },
       {
         "name": "EndTime",
-        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,4小时]，支持最近1天数据查询。"
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在[0,4小时]，支持最近1天数据查询。"
       },
       {
         "name": "TopIndex",
