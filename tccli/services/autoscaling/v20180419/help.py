@@ -83,6 +83,10 @@ INFO = {
       {
         "name": "ServiceSettings",
         "desc": "服务设置，包括云监控不健康替换等服务设置。"
+      },
+      {
+        "name": "Ipv6AddressCount",
+        "desc": "实例具有IPv6地址数量的配置，取值包括 0、1，默认值为0。"
       }
     ],
     "desc": "本接口（CreateAutoScalingGroup）用于创建伸缩组"
@@ -120,6 +124,43 @@ INFO = {
     ],
     "desc": "本接口（ModifyScalingPolicy）用于修改告警触发策略。"
   },
+  "ModifyScheduledAction": {
+    "params": [
+      {
+        "name": "ScheduledActionId",
+        "desc": "待修改的定时任务ID"
+      },
+      {
+        "name": "ScheduledActionName",
+        "desc": "定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。"
+      },
+      {
+        "name": "MaxSize",
+        "desc": "当定时任务触发时，设置的伸缩组最大实例数。"
+      },
+      {
+        "name": "MinSize",
+        "desc": "当定时任务触发时，设置的伸缩组最小实例数。"
+      },
+      {
+        "name": "DesiredCapacity",
+        "desc": "当定时任务触发时，设置的伸缩组期望实例数。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。"
+      },
+      {
+        "name": "Recurrence",
+        "desc": "定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。"
+      }
+    ],
+    "desc": "本接口（ModifyScheduledAction）用于修改定时任务。"
+  },
   "DescribeNotificationConfigurations": {
     "params": [
       {
@@ -150,6 +191,19 @@ INFO = {
     ],
     "desc": "本接口（DeleteAutoScalingGroup）用于删除指定伸缩组，删除前提是伸缩组内无实例且当前未在执行伸缩活动。"
   },
+  "StartAutoScalingInstances": {
+    "params": [
+      {
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "待开启的CVM实例ID列表"
+      }
+    ],
+    "desc": "本接口（StartAutoScalingInstances）用于开启伸缩组内 CVM 实例。\n* 开机成功，实例转为`IN_SERVICE`状态后，会增加期望实例数，期望实例数不可超过设置的最大值\n* 本接口支持批量操作，每次请求开机实例的上限为100"
+  },
   "CreatePaiInstance": {
     "params": [
       {
@@ -170,7 +224,7 @@ INFO = {
       },
       {
         "name": "VpcId",
-        "desc": "VpcId。"
+        "desc": "VPC ID。"
       },
       {
         "name": "SubnetIds",
@@ -340,7 +394,7 @@ INFO = {
     ],
     "desc": "本接口（DeleteScheduledAction）用于删除特定的定时任务。"
   },
-  "DetachInstances": {
+  "StopAutoScalingInstances": {
     "params": [
       {
         "name": "AutoScalingGroupId",
@@ -348,10 +402,14 @@ INFO = {
       },
       {
         "name": "InstanceIds",
-        "desc": "CVM实例ID列表"
+        "desc": "待关闭的CVM实例ID列表"
+      },
+      {
+        "name": "StoppedMode",
+        "desc": "关闭的实例是否收费，取值为：  \nKEEP_CHARGING：关机继续收费  \nSTOP_CHARGING：关机停止收费\n默认为 KEEP_CHARGING"
       }
     ],
-    "desc": "本接口（DetachInstances）用于从伸缩组移出 CVM 实例，本接口不会销毁实例。"
+    "desc": "本接口（StopAutoScalingInstances）用于关闭伸缩组内 CVM 实例。\n* 关机方式采用`SOFT_FIRST`方式，表示在正常关闭失败后进行强制关闭\n* 关闭`IN_SERVICE`状态的实例，会减少期望实例数，期望实例数不可低于设置的最小值\n* 使用`STOP_CHARGING`选项关机，待关机的实例需要满足[关机不收费条件](https://cloud.tencent.com/document/product/213/19918)\n* 本接口支持批量操作，每次请求关机实例的上限为100"
   },
   "CreateScheduledAction": {
     "params": [
@@ -484,23 +542,6 @@ INFO = {
     ],
     "desc": "本接口（SetInstancesProtection）用于设置实例移除保护。\n子机设置为移除保护之后，当发生不健康替换、报警策略、期望值变更等触发缩容时，将不对此子机缩容操作。"
   },
-  "ModifyNotificationConfiguration": {
-    "params": [
-      {
-        "name": "AutoScalingNotificationId",
-        "desc": "待修改的通知ID。"
-      },
-      {
-        "name": "NotificationTypes",
-        "desc": "通知类型，即为需要订阅的通知类型集合，取值范围如下：\n<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>\n<li>SCALE_OUT_FAILED：扩容失败</li>\n<li>SCALE_IN_SUCCESSFUL：缩容成功</li>\n<li>SCALE_IN_FAILED：缩容失败</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>"
-      },
-      {
-        "name": "NotificationUserGroupIds",
-        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。"
-      }
-    ],
-    "desc": "本接口（ModifyNotificationConfiguration）用于修改通知。"
-  },
   "CreateLaunchConfiguration": {
     "params": [
       {
@@ -578,6 +619,23 @@ INFO = {
     ],
     "desc": "本接口（CreateLaunchConfiguration）用于创建新的启动配置。\n\n* 启动配置，可以通过 `ModifyLaunchConfigurationAttributes` 修改少量字段。如需使用新的启动配置，建议重新创建启动配置。\n\n* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。\n"
   },
+  "ModifyNotificationConfiguration": {
+    "params": [
+      {
+        "name": "AutoScalingNotificationId",
+        "desc": "待修改的通知ID。"
+      },
+      {
+        "name": "NotificationTypes",
+        "desc": "通知类型，即为需要订阅的通知类型集合，取值范围如下：\n<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>\n<li>SCALE_OUT_FAILED：扩容失败</li>\n<li>SCALE_IN_SUCCESSFUL：缩容成功</li>\n<li>SCALE_IN_FAILED：缩容失败</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>"
+      },
+      {
+        "name": "NotificationUserGroupIds",
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。"
+      }
+    ],
+    "desc": "本接口（ModifyNotificationConfiguration）用于修改通知。"
+  },
   "ModifyAutoScalingGroup": {
     "params": [
       {
@@ -639,6 +697,10 @@ INFO = {
       {
         "name": "ServiceSettings",
         "desc": "服务设置，包括云监控不健康替换等服务设置。"
+      },
+      {
+        "name": "Ipv6AddressCount",
+        "desc": "实例具有IPv6地址数量的配置，取值包括0、1。"
       }
     ],
     "desc": "本接口（ModifyAutoScalingGroup）用于修改伸缩组。"
@@ -930,42 +992,18 @@ INFO = {
     ],
     "desc": "本接口（DescribeAutoScalingGroups）用于查询伸缩组信息。\n\n* 可以根据伸缩组ID、伸缩组名称或者启动配置ID等信息来查询伸缩组的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的伸缩组。"
   },
-  "ModifyScheduledAction": {
+  "DetachInstances": {
     "params": [
       {
-        "name": "ScheduledActionId",
-        "desc": "待修改的定时任务ID"
+        "name": "AutoScalingGroupId",
+        "desc": "伸缩组ID"
       },
       {
-        "name": "ScheduledActionName",
-        "desc": "定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。"
-      },
-      {
-        "name": "MaxSize",
-        "desc": "当定时任务触发时，设置的伸缩组最大实例数。"
-      },
-      {
-        "name": "MinSize",
-        "desc": "当定时任务触发时，设置的伸缩组最小实例数。"
-      },
-      {
-        "name": "DesiredCapacity",
-        "desc": "当定时任务触发时，设置的伸缩组期望实例数。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。"
-      },
-      {
-        "name": "EndTime",
-        "desc": "定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。"
-      },
-      {
-        "name": "Recurrence",
-        "desc": "定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。"
+        "name": "InstanceIds",
+        "desc": "CVM实例ID列表"
       }
     ],
-    "desc": "本接口（ModifyScheduledAction）用于修改定时任务。"
+    "desc": "本接口（DetachInstances）用于从伸缩组移出 CVM 实例，本接口不会销毁实例。"
   },
   "DescribeAutoScalingActivities": {
     "params": [

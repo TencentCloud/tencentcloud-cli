@@ -12,23 +12,21 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.yunsou.v20180504 import yunsou_client as yunsou_client_v20180504
-from tencentcloud.yunsou.v20180504 import models as models_v20180504
-from tccli.services.yunsou import v20180504
-from tccli.services.yunsou.v20180504 import help as v20180504_help
+from tencentcloud.smpn.v20190822 import smpn_client as smpn_client_v20190822
+from tencentcloud.smpn.v20190822 import models as models_v20190822
+from tccli.services.smpn import v20190822
+from tccli.services.smpn.v20190822 import help as v20190822_help
 
 
-def doDataManipulation(argv, arglist):
+def doDescribeSmpnMhm(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DataManipulation", g_param[OptionsDefine.Version])
+        show_help("DescribeSmpnMhm", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "OpType": argv.get("--OpType"),
-        "Encoding": argv.get("--Encoding"),
-        "Contents": argv.get("--Contents"),
-        "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
+        "RequestData": Utils.try_to_json(argv, "--RequestData"),
+        "ResourceId": argv.get("--ResourceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -39,12 +37,12 @@ def doDataManipulation(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YunsouClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SmpnClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DataManipulationRequest()
+    model = models.DescribeSmpnMhmRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DataManipulation(model)
+    rsp = client.DescribeSmpnMhm(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -54,36 +52,15 @@ def doDataManipulation(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDataSearch(argv, arglist):
+def doDescribeSmpnFnr(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DataSearch", g_param[OptionsDefine.Version])
+        show_help("DescribeSmpnFnr", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ResourceId": Utils.try_to_json(argv, "--ResourceId"),
-        "SearchQuery": argv.get("--SearchQuery"),
-        "PageId": Utils.try_to_json(argv, "--PageId"),
-        "NumPerPage": Utils.try_to_json(argv, "--NumPerPage"),
-        "SearchId": argv.get("--SearchId"),
-        "QueryEncode": Utils.try_to_json(argv, "--QueryEncode"),
-        "RankType": Utils.try_to_json(argv, "--RankType"),
-        "NumFilter": argv.get("--NumFilter"),
-        "ClFilter": argv.get("--ClFilter"),
-        "Extra": argv.get("--Extra"),
-        "SourceId": Utils.try_to_json(argv, "--SourceId"),
-        "SecondSearch": Utils.try_to_json(argv, "--SecondSearch"),
-        "MaxDocReturn": Utils.try_to_json(argv, "--MaxDocReturn"),
-        "IsSmartbox": Utils.try_to_json(argv, "--IsSmartbox"),
-        "EnableAbsHighlight": Utils.try_to_json(argv, "--EnableAbsHighlight"),
-        "QcBid": Utils.try_to_json(argv, "--QcBid"),
-        "GroupBy": argv.get("--GroupBy"),
-        "Distinct": argv.get("--Distinct"),
-        "L4RankExpression": argv.get("--L4RankExpression"),
-        "MatchValue": argv.get("--MatchValue"),
-        "Longitude": Utils.try_to_json(argv, "--Longitude"),
-        "Latitude": Utils.try_to_json(argv, "--Latitude"),
-        "MultiFilter": Utils.try_to_json(argv, "--MultiFilter"),
+        "RequestData": Utils.try_to_json(argv, "--RequestData"),
+        "ResourceId": argv.get("--ResourceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -94,12 +71,114 @@ def doDataSearch(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.YunsouClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SmpnClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DataSearchRequest()
+    model = models.DescribeSmpnFnrRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DataSearch(model)
+    rsp = client.DescribeSmpnFnr(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateSmpnEpa(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateSmpnEpa", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RequestData": Utils.try_to_json(argv, "--RequestData"),
+        "ResourceId": argv.get("--ResourceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmpnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateSmpnEpaRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateSmpnEpa(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSmpnChp(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSmpnChp", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ResourceId": argv.get("--ResourceId"),
+        "RequestData": Utils.try_to_json(argv, "--RequestData"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmpnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSmpnChpRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSmpnChp(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSmpnMrl(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSmpnMrl", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RequestData": Utils.try_to_json(argv, "--RequestData"),
+        "ResourceId": argv.get("--ResourceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmpnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSmpnMrlRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSmpnMrl(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -110,32 +189,35 @@ def doDataSearch(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180504": yunsou_client_v20180504,
+    "v20190822": smpn_client_v20190822,
 
 }
 
 MODELS_MAP = {
-    "v20180504": models_v20180504,
+    "v20190822": models_v20190822,
 
 }
 
 ACTION_MAP = {
-    "DataManipulation": doDataManipulation,
-    "DataSearch": doDataSearch,
+    "DescribeSmpnMhm": doDescribeSmpnMhm,
+    "DescribeSmpnFnr": doDescribeSmpnFnr,
+    "CreateSmpnEpa": doCreateSmpnEpa,
+    "DescribeSmpnChp": doDescribeSmpnChp,
+    "DescribeSmpnMrl": doDescribeSmpnMrl,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180504.version,
+    v20190822.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180504.version.replace('-', ''): {"help": v20180504_help.INFO,"desc": v20180504_help.DESC},
+     'v' + v20190822.version.replace('-', ''): {"help": v20190822_help.INFO,"desc": v20190822_help.DESC},
 
 }
 
 
-def yunsou_action(argv, arglist):
+def smpn_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -151,7 +233,7 @@ def yunsou_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "yunsou", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "smpn", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -172,7 +254,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("yunsou", yunsou_action)
+    cmd = NiceCommand("smpn", smpn_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -231,11 +313,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["yunsou"][OptionsDefine.Version]
+            version = config["smpn"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["yunsou"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["smpn"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -252,7 +334,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "yunsou", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "smpn", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -262,7 +344,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["yunsou"]["version"]
+        version = profile["smpn"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass
