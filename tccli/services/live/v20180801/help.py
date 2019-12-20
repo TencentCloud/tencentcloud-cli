@@ -1414,7 +1414,7 @@ INFO = {
     "params": [
       {
         "name": "CertId",
-        "desc": "证书Id。"
+        "desc": "证书Id。使用添加证书接口获取证书Id。"
       },
       {
         "name": "DomainName",
@@ -1425,7 +1425,7 @@ INFO = {
         "desc": "状态，0： 关闭  1：打开。"
       }
     ],
-    "desc": "域名绑定证书"
+    "desc": "域名绑定证书。\n注意：需先调用添加证书接口进行证书添加。获取到证书Id后再调用该接口进行绑定。"
   },
   "DescribeLiveCallbackRules": {
     "params": [],
@@ -1797,7 +1797,7 @@ INFO = {
       },
       {
         "name": "VideoBitrate",
-        "desc": "视频码率。范围：100-8000。"
+        "desc": "视频码率。范围：100-8000。\n注意：码率必须是100的倍数。"
       },
       {
         "name": "Vcodec",

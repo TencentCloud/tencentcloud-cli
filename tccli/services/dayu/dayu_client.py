@@ -18,17 +18,21 @@ from tccli.services.dayu import v20180709
 from tccli.services.dayu.v20180709 import help as v20180709_help
 
 
-def doModifyDDoSWaterKey(argv, arglist):
+def doModifyCCIpAllowDeny(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyDDoSWaterKey", g_param[OptionsDefine.Version])
+        show_help("ModifyCCIpAllowDeny", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
-        "PolicyId": argv.get("--PolicyId"),
+        "Id": argv.get("--Id"),
         "Method": argv.get("--Method"),
-        "KeyId": Utils.try_to_json(argv, "--KeyId"),
+        "Type": argv.get("--Type"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
+        "Protocol": argv.get("--Protocol"),
+        "Domain": argv.get("--Domain"),
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -42,9 +46,9 @@ def doModifyDDoSWaterKey(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDDoSWaterKeyRequest()
+    model = models.ModifyCCIpAllowDenyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDDoSWaterKey(model)
+    rsp = client.ModifyCCIpAllowDeny(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -54,17 +58,19 @@ def doModifyDDoSWaterKey(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateBasicDDoSAlarmThreshold(argv, arglist):
+def doDescribeDDoSCount(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateBasicDDoSAlarmThreshold", g_param[OptionsDefine.Version])
+        show_help("DescribeDDoSCount", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
-        "Method": argv.get("--Method"),
-        "AlarmType": Utils.try_to_json(argv, "--AlarmType"),
-        "AlarmThreshold": Utils.try_to_json(argv, "--AlarmThreshold"),
+        "Id": argv.get("--Id"),
+        "Ip": argv.get("--Ip"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "MetricName": argv.get("--MetricName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -78,9 +84,9 @@ def doCreateBasicDDoSAlarmThreshold(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateBasicDDoSAlarmThresholdRequest()
+    model = models.DescribeDDoSCountRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateBasicDDoSAlarmThreshold(model)
+    rsp = client.DescribeDDoSCount(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -90,13 +96,14 @@ def doCreateBasicDDoSAlarmThreshold(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInsurePacks(argv, arglist):
+def doDescribeRuleSets(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeInsurePacks", g_param[OptionsDefine.Version])
+        show_help("DescribeRuleSets", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "Business": argv.get("--Business"),
         "IdList": Utils.try_to_json(argv, "--IdList"),
 
     }
@@ -111,9 +118,9 @@ def doDescribeInsurePacks(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInsurePacksRequest()
+    model = models.DescribeRuleSetsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeInsurePacks(model)
+    rsp = client.DescribeRuleSets(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -123,89 +130,93 @@ def doDescribeInsurePacks(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteL4Rules(argv, arglist):
+def doCreateL7CCRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteL4Rules", g_param[OptionsDefine.Version])
+        show_help("CreateL7CCRule", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Method": argv.get("--Method"),
+        "RuleId": argv.get("--RuleId"),
+        "RuleConfig": Utils.try_to_json(argv, "--RuleConfig"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateL7CCRuleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateL7CCRule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCCSelfDefinePolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateCCSelfDefinePolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Policy": Utils.try_to_json(argv, "--Policy"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCCSelfDefinePolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateCCSelfDefinePolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribleL7Rules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribleL7Rules", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
         "Id": argv.get("--Id"),
         "RuleIdList": Utils.try_to_json(argv, "--RuleIdList"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteL4RulesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteL4Rules(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateInstanceName(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateInstanceName", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Name": argv.get("--Name"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateInstanceNameRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateInstanceName(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDDoSNetEvList(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDDoSNetEvList", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Domain": argv.get("--Domain"),
+        "ProtocolList": Utils.try_to_json(argv, "--ProtocolList"),
+        "StatusList": Utils.try_to_json(argv, "--StatusList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -219,45 +230,9 @@ def doDescribeDDoSNetEvList(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSNetEvListRequest()
+    model = models.DescribleL7RulesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSNetEvList(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyCCHostProtection(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyCCHostProtection", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "RuleId": argv.get("--RuleId"),
-        "Method": argv.get("--Method"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCCHostProtectionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyCCHostProtection(model)
+    rsp = client.DescribleL7Rules(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -303,20 +278,35 @@ def doModifyCCPolicySwitch(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateL7RuleCert(argv, arglist):
+def doCreateDDoSPolicyCase(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateL7RuleCert", g_param[OptionsDefine.Version])
+        show_help("CreateDDoSPolicyCase", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "RuleId": argv.get("--RuleId"),
-        "CertType": Utils.try_to_json(argv, "--CertType"),
-        "SSLId": argv.get("--SSLId"),
-        "Cert": argv.get("--Cert"),
-        "PrivateKey": argv.get("--PrivateKey"),
+        "CaseName": argv.get("--CaseName"),
+        "PlatformTypes": Utils.try_to_json(argv, "--PlatformTypes"),
+        "AppType": argv.get("--AppType"),
+        "AppProtocols": Utils.try_to_json(argv, "--AppProtocols"),
+        "TcpSportStart": argv.get("--TcpSportStart"),
+        "TcpSportEnd": argv.get("--TcpSportEnd"),
+        "UdpSportStart": argv.get("--UdpSportStart"),
+        "UdpSportEnd": argv.get("--UdpSportEnd"),
+        "HasAbroad": argv.get("--HasAbroad"),
+        "HasInitiateTcp": argv.get("--HasInitiateTcp"),
+        "HasInitiateUdp": argv.get("--HasInitiateUdp"),
+        "PeerTcpPort": argv.get("--PeerTcpPort"),
+        "PeerUdpPort": argv.get("--PeerUdpPort"),
+        "TcpFootprint": argv.get("--TcpFootprint"),
+        "UdpFootprint": argv.get("--UdpFootprint"),
+        "WebApiUrl": Utils.try_to_json(argv, "--WebApiUrl"),
+        "MinTcpPackageLen": argv.get("--MinTcpPackageLen"),
+        "MaxTcpPackageLen": argv.get("--MaxTcpPackageLen"),
+        "MinUdpPackageLen": argv.get("--MinUdpPackageLen"),
+        "MaxUdpPackageLen": argv.get("--MaxUdpPackageLen"),
+        "HasVPN": argv.get("--HasVPN"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -330,9 +320,407 @@ def doCreateL7RuleCert(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateL7RuleCertRequest()
+    model = models.CreateDDoSPolicyCaseRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateL7RuleCert(model)
+    rsp = client.CreateDDoSPolicyCase(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSNetTrend(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSNetTrend", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "MetricName": argv.get("--MetricName"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSNetTrendRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSNetTrend(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDDoSPolicyName(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDDoSPolicyName", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "PolicyId": argv.get("--PolicyId"),
+        "Name": argv.get("--Name"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDDoSPolicyNameRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDDoSPolicyName(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyL4Health(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyL4Health", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Healths": Utils.try_to_json(argv, "--Healths"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyL4HealthRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyL4Health(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSUsedStatis(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSUsedStatis", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSUsedStatisRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSUsedStatis(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSDefendStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSDefendStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Ip": argv.get("--Ip"),
+        "BizType": argv.get("--BizType"),
+        "DeviceType": argv.get("--DeviceType"),
+        "InstanceId": argv.get("--InstanceId"),
+        "IPRegion": argv.get("--IPRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSDefendStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSDefendStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCCAlarmThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCCAlarmThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "RsId": argv.get("--RsId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCCAlarmThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCCAlarmThreshold(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePcap(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePcap", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Ip": argv.get("--Ip"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePcapRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePcap(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyElasticLimit(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyElasticLimit", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyElasticLimitRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyElasticLimit(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSNetIpLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSNetIpLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSNetIpLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSNetIpLog(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCCAlarmThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyCCAlarmThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "RsId": argv.get("--RsId"),
+        "AlarmThreshold": Utils.try_to_json(argv, "--AlarmThreshold"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCCAlarmThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyCCAlarmThreshold(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSEvList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSEvList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Id": argv.get("--Id"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
+        "OverLoad": argv.get("--OverLoad"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSEvListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSEvList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -441,203 +829,15 @@ def doDescribeSecIndex(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTransmitStatis(argv, arglist):
+def doDescribeCCSelfDefinePolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTransmitStatis", g_param[OptionsDefine.Version])
+        show_help("DescribeCCSelfDefinePolicy", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
         "Id": argv.get("--Id"),
-        "MetricName": argv.get("--MetricName"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "IpList": Utils.try_to_json(argv, "--IpList"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTransmitStatisRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTransmitStatis(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyCCIpAllowDeny(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyCCIpAllowDeny", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Method": argv.get("--Method"),
-        "Type": argv.get("--Type"),
-        "IpList": Utils.try_to_json(argv, "--IpList"),
-        "Protocol": argv.get("--Protocol"),
-        "Domain": argv.get("--Domain"),
-        "RuleId": argv.get("--RuleId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCCIpAllowDenyRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyCCIpAllowDeny(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribleRegionCount(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribleRegionCount", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "LineList": Utils.try_to_json(argv, "--LineList"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribleRegionCountRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribleRegionCount(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateL7Rules(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateL7Rules", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Rules": Utils.try_to_json(argv, "--Rules"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateL7RulesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateL7Rules(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeCCIpAllowDeny(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeCCIpAllowDeny", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Protocol": argv.get("--Protocol"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCCIpAllowDenyRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCCIpAllowDeny(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeIpUnBlockList(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeIpUnBlockList", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "BeginTime": argv.get("--BeginTime"),
-        "EndTime": argv.get("--EndTime"),
-        "Ip": argv.get("--Ip"),
-        "Paging": Utils.try_to_json(argv, "--Paging"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -653,152 +853,9 @@ def doDescribeIpUnBlockList(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeIpUnBlockListRequest()
+    model = models.DescribeCCSelfDefinePolicyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeIpUnBlockList(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateL7CCRule(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateL7CCRule", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Method": argv.get("--Method"),
-        "RuleId": argv.get("--RuleId"),
-        "RuleConfig": Utils.try_to_json(argv, "--RuleConfig"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateL7CCRuleRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateL7CCRule(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribePcap(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribePcap", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "Ip": argv.get("--Ip"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePcapRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribePcap(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateCCSelfDefinePolicy(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateCCSelfDefinePolicy", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Policy": Utils.try_to_json(argv, "--Policy"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCCSelfDefinePolicyRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateCCSelfDefinePolicy(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeIPProductInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeIPProductInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "IpList": Utils.try_to_json(argv, "--IpList"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeIPProductInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeIPProductInfo(model)
+    rsp = client.DescribeCCSelfDefinePolicy(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -877,82 +934,6 @@ def doDeleteL7Rules(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDDoSPolicy(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateDDoSPolicy", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "DropOptions": Utils.try_to_json(argv, "--DropOptions"),
-        "Name": argv.get("--Name"),
-        "PortLimits": Utils.try_to_json(argv, "--PortLimits"),
-        "IpAllowDenys": Utils.try_to_json(argv, "--IpAllowDenys"),
-        "PacketFilters": Utils.try_to_json(argv, "--PacketFilters"),
-        "WaterPrint": Utils.try_to_json(argv, "--WaterPrint"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDDoSPolicyRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateDDoSPolicy(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDDoSNetCount(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDDoSNetCount", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "MetricName": argv.get("--MetricName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSNetCountRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSNetCount(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateL4Rules(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -979,82 +960,6 @@ def doCreateL4Rules(argv, arglist):
     model = models.CreateL4RulesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateL4Rules(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyCCUrlAllow(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyCCUrlAllow", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Method": argv.get("--Method"),
-        "Type": argv.get("--Type"),
-        "UrlList": Utils.try_to_json(argv, "--UrlList"),
-        "Protocol": argv.get("--Protocol"),
-        "Domain": argv.get("--Domain"),
-        "RuleId": argv.get("--RuleId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCCUrlAllowRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyCCUrlAllow(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyCCSelfDefinePolicy(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyCCSelfDefinePolicy", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "SetId": argv.get("--SetId"),
-        "Policy": Utils.try_to_json(argv, "--Policy"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCCSelfDefinePolicyRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyCCSelfDefinePolicy(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1105,88 +1010,16 @@ def doDescribeBaradData(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribleL4Rules(argv, arglist):
+def doCreateDDoSPolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribleL4Rules", g_param[OptionsDefine.Version])
+        show_help("CreateDDoSPolicy", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "RuleIdList": Utils.try_to_json(argv, "--RuleIdList"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribleL4RulesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribleL4Rules(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyL4Rules(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyL4Rules", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Rule": Utils.try_to_json(argv, "--Rule"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyL4RulesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyL4Rules(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyDDoSPolicy(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyDDoSPolicy", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "PolicyId": argv.get("--PolicyId"),
         "DropOptions": Utils.try_to_json(argv, "--DropOptions"),
+        "Name": argv.get("--Name"),
         "PortLimits": Utils.try_to_json(argv, "--PortLimits"),
         "IpAllowDenys": Utils.try_to_json(argv, "--IpAllowDenys"),
         "PacketFilters": Utils.try_to_json(argv, "--PacketFilters"),
@@ -1204,175 +1037,9 @@ def doModifyDDoSPolicy(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDDoSPolicyRequest()
+    model = models.CreateDDoSPolicyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDDoSPolicy(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribleL7Rules(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribleL7Rules", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "RuleIdList": Utils.try_to_json(argv, "--RuleIdList"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Domain": argv.get("--Domain"),
-        "ProtocolList": Utils.try_to_json(argv, "--ProtocolList"),
-        "StatusList": Utils.try_to_json(argv, "--StatusList"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribleL7RulesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribleL7Rules(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateDDoSPolicyCase(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateDDoSPolicyCase", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "CaseName": argv.get("--CaseName"),
-        "PlatformTypes": Utils.try_to_json(argv, "--PlatformTypes"),
-        "AppType": argv.get("--AppType"),
-        "AppProtocols": Utils.try_to_json(argv, "--AppProtocols"),
-        "TcpSportStart": argv.get("--TcpSportStart"),
-        "TcpSportEnd": argv.get("--TcpSportEnd"),
-        "UdpSportStart": argv.get("--UdpSportStart"),
-        "UdpSportEnd": argv.get("--UdpSportEnd"),
-        "HasAbroad": argv.get("--HasAbroad"),
-        "HasInitiateTcp": argv.get("--HasInitiateTcp"),
-        "HasInitiateUdp": argv.get("--HasInitiateUdp"),
-        "PeerTcpPort": argv.get("--PeerTcpPort"),
-        "PeerUdpPort": argv.get("--PeerUdpPort"),
-        "TcpFootprint": argv.get("--TcpFootprint"),
-        "UdpFootprint": argv.get("--UdpFootprint"),
-        "WebApiUrl": Utils.try_to_json(argv, "--WebApiUrl"),
-        "MinTcpPackageLen": argv.get("--MinTcpPackageLen"),
-        "MaxTcpPackageLen": argv.get("--MaxTcpPackageLen"),
-        "MinUdpPackageLen": argv.get("--MinUdpPackageLen"),
-        "MaxUdpPackageLen": argv.get("--MaxUdpPackageLen"),
-        "HasVPN": argv.get("--HasVPN"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDDoSPolicyCaseRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateDDoSPolicyCase(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeCCUrlAllow(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeCCUrlAllow", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Type": Utils.try_to_json(argv, "--Type"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Protocol": argv.get("--Protocol"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCCUrlAllowRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCCUrlAllow(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribePolicyCase(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribePolicyCase", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "SceneId": argv.get("--SceneId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePolicyCaseRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribePolicyCase(model)
+    rsp = client.CreateDDoSPolicy(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1418,351 +1085,6 @@ def doModifyResBindDDoSPolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeL7HealthConfig(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeL7HealthConfig", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "RuleIdList": Utils.try_to_json(argv, "--RuleIdList"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeL7HealthConfigRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeL7HealthConfig(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyDDoSPolicyCase(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyDDoSPolicyCase", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "SceneId": argv.get("--SceneId"),
-        "PlatformTypes": Utils.try_to_json(argv, "--PlatformTypes"),
-        "AppType": argv.get("--AppType"),
-        "AppProtocols": Utils.try_to_json(argv, "--AppProtocols"),
-        "TcpSportStart": argv.get("--TcpSportStart"),
-        "TcpSportEnd": argv.get("--TcpSportEnd"),
-        "UdpSportStart": argv.get("--UdpSportStart"),
-        "UdpSportEnd": argv.get("--UdpSportEnd"),
-        "HasAbroad": argv.get("--HasAbroad"),
-        "HasInitiateTcp": argv.get("--HasInitiateTcp"),
-        "HasInitiateUdp": argv.get("--HasInitiateUdp"),
-        "PeerTcpPort": argv.get("--PeerTcpPort"),
-        "PeerUdpPort": argv.get("--PeerUdpPort"),
-        "TcpFootprint": argv.get("--TcpFootprint"),
-        "UdpFootprint": argv.get("--UdpFootprint"),
-        "WebApiUrl": Utils.try_to_json(argv, "--WebApiUrl"),
-        "MinTcpPackageLen": argv.get("--MinTcpPackageLen"),
-        "MaxTcpPackageLen": argv.get("--MaxTcpPackageLen"),
-        "MinUdpPackageLen": argv.get("--MinUdpPackageLen"),
-        "MaxUdpPackageLen": argv.get("--MaxUdpPackageLen"),
-        "HasVPN": argv.get("--HasVPN"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDDoSPolicyCaseRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDDoSPolicyCase(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDDoSNetEvInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDDoSNetEvInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSNetEvInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSNetEvInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDDoSTrend(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDDoSTrend", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Ip": argv.get("--Ip"),
-        "MetricName": argv.get("--MetricName"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "Id": argv.get("--Id"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSTrendRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSTrend(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeCCTrend(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeCCTrend", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Ip": argv.get("--Ip"),
-        "MetricName": argv.get("--MetricName"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "Id": argv.get("--Id"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCCTrendRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCCTrend(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyDDoSPolicyName(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyDDoSPolicyName", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "PolicyId": argv.get("--PolicyId"),
-        "Name": argv.get("--Name"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDDoSPolicyNameRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDDoSPolicyName(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyL4Health(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyL4Health", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Healths": Utils.try_to_json(argv, "--Healths"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyL4HealthRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyL4Health(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyL7Rules(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyL7Rules", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Rule": Utils.try_to_json(argv, "--Rule"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyL7RulesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyL7Rules(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyL4KeepTime(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyL4KeepTime", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "RuleId": argv.get("--RuleId"),
-        "KeepEnable": Utils.try_to_json(argv, "--KeepEnable"),
-        "KeepTime": Utils.try_to_json(argv, "--KeepTime"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyL4KeepTimeRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyL4KeepTime(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeSourceIpSegment(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1797,93 +1119,21 @@ def doDescribeSourceIpSegment(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSUsedStatis(argv, arglist):
+def doModifyCCUrlAllow(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDDoSUsedStatis", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSUsedStatisRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSUsedStatis(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeL4RulesErrHealth(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeL4RulesErrHealth", g_param[OptionsDefine.Version])
+        show_help("ModifyCCUrlAllow", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
         "Id": argv.get("--Id"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeL4RulesErrHealthRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeL4RulesErrHealth(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeResourceList(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeResourceList", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "RegionList": Utils.try_to_json(argv, "--RegionList"),
-        "Line": Utils.try_to_json(argv, "--Line"),
-        "IdList": Utils.try_to_json(argv, "--IdList"),
-        "Name": argv.get("--Name"),
-        "IpList": Utils.try_to_json(argv, "--IpList"),
-        "Status": Utils.try_to_json(argv, "--Status"),
-        "Expire": Utils.try_to_json(argv, "--Expire"),
-        "OderBy": Utils.try_to_json(argv, "--OderBy"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "CName": argv.get("--CName"),
+        "Method": argv.get("--Method"),
+        "Type": argv.get("--Type"),
+        "UrlList": Utils.try_to_json(argv, "--UrlList"),
+        "Protocol": argv.get("--Protocol"),
         "Domain": argv.get("--Domain"),
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1897,9 +1147,9 @@ def doDescribeResourceList(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeResourceListRequest()
+    model = models.ModifyCCUrlAllowRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeResourceList(model)
+    rsp = client.ModifyCCUrlAllow(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1939,45 +1189,6 @@ def doDescribeBasicDeviceThreshold(argv, arglist):
     model = models.DescribeBasicDeviceThresholdRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeBasicDeviceThreshold(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDDoSDefendStatus(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDDoSDefendStatus", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Ip": argv.get("--Ip"),
-        "BizType": argv.get("--BizType"),
-        "DeviceType": argv.get("--DeviceType"),
-        "InstanceId": argv.get("--InstanceId"),
-        "IPRegion": argv.get("--IPRegion"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSDefendStatusRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSDefendStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2055,16 +1266,26 @@ def doDeleteDDoSPolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateL7RulesUpload(argv, arglist):
+def doDescribeResourceList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateL7RulesUpload", g_param[OptionsDefine.Version])
+        show_help("DescribeResourceList", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Rules": Utils.try_to_json(argv, "--Rules"),
+        "RegionList": Utils.try_to_json(argv, "--RegionList"),
+        "Line": Utils.try_to_json(argv, "--Line"),
+        "IdList": Utils.try_to_json(argv, "--IdList"),
+        "Name": argv.get("--Name"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
+        "Status": Utils.try_to_json(argv, "--Status"),
+        "Expire": Utils.try_to_json(argv, "--Expire"),
+        "OderBy": Utils.try_to_json(argv, "--OderBy"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "CName": argv.get("--CName"),
+        "Domain": argv.get("--Domain"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2078,78 +1299,9 @@ def doCreateL7RulesUpload(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateL7RulesUploadRequest()
+    model = models.DescribeResourceListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateL7RulesUpload(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateL7HealthConfig(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateL7HealthConfig", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "HealthConfig": Utils.try_to_json(argv, "--HealthConfig"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateL7HealthConfigRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateL7HealthConfig(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDDoSPolicy(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDDoSPolicy", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSPolicyRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSPolicy(model)
+    rsp = client.DescribeResourceList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2194,19 +1346,15 @@ def doDeleteCCSelfDefinePolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSCount(argv, arglist):
+def doDescribePolicyCase(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDDoSCount", g_param[OptionsDefine.Version])
+        show_help("DescribePolicyCase", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Ip": argv.get("--Ip"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "MetricName": argv.get("--MetricName"),
+        "SceneId": argv.get("--SceneId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2220,9 +1368,9 @@ def doDescribeDDoSCount(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSCountRequest()
+    model = models.DescribePolicyCaseRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSCount(model)
+    rsp = client.DescribePolicyCase(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2270,18 +1418,16 @@ def doDescribeActionLog(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCCThreshold(argv, arglist):
+def doModifyL4Rules(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyCCThreshold", g_param[OptionsDefine.Version])
+        show_help("ModifyL4Rules", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
         "Id": argv.get("--Id"),
-        "Threshold": Utils.try_to_json(argv, "--Threshold"),
-        "Protocol": argv.get("--Protocol"),
-        "RuleId": argv.get("--RuleId"),
+        "Rule": Utils.try_to_json(argv, "--Rule"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2295,9 +1441,149 @@ def doModifyCCThreshold(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCCThresholdRequest()
+    model = models.ModifyL4RulesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyCCThreshold(model)
+    rsp = client.ModifyL4Rules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSIpLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSIpLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Ip": argv.get("--Ip"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSIpLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSIpLog(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSAlarmThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSAlarmThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "RsId": argv.get("--RsId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSAlarmThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSAlarmThreshold(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePackIndex(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePackIndex", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePackIndexRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePackIndex(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateBasicDDoSAlarmThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateBasicDDoSAlarmThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Method": argv.get("--Method"),
+        "AlarmType": Utils.try_to_json(argv, "--AlarmType"),
+        "AlarmThreshold": Utils.try_to_json(argv, "--AlarmThreshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateBasicDDoSAlarmThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateBasicDDoSAlarmThreshold(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2333,6 +1619,536 @@ def doModifyDDoSThreshold(argv, arglist):
     model = models.ModifyDDoSThresholdRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyDDoSThreshold(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateL7RuleCert(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateL7RuleCert", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RuleId": argv.get("--RuleId"),
+        "CertType": Utils.try_to_json(argv, "--CertType"),
+        "SSLId": argv.get("--SSLId"),
+        "Cert": argv.get("--Cert"),
+        "PrivateKey": argv.get("--PrivateKey"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateL7RuleCertRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateL7RuleCert(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDDoSAIStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDDoSAIStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Method": argv.get("--Method"),
+        "DDoSAI": argv.get("--DDoSAI"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDDoSAIStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDDoSAIStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCCIpAllowDeny(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCCIpAllowDeny", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Protocol": argv.get("--Protocol"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCCIpAllowDenyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCCIpAllowDeny(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateL4HealthConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateL4HealthConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "HealthConfig": Utils.try_to_json(argv, "--HealthConfig"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateL4HealthConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateL4HealthConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSNetCount(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSNetCount", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "MetricName": argv.get("--MetricName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSNetCountRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSNetCount(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDDoSPolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDDoSPolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "PolicyId": argv.get("--PolicyId"),
+        "DropOptions": Utils.try_to_json(argv, "--DropOptions"),
+        "PortLimits": Utils.try_to_json(argv, "--PortLimits"),
+        "IpAllowDenys": Utils.try_to_json(argv, "--IpAllowDenys"),
+        "PacketFilters": Utils.try_to_json(argv, "--PacketFilters"),
+        "WaterPrint": Utils.try_to_json(argv, "--WaterPrint"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDDoSPolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDDoSPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDDoSPolicyCase(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDDoSPolicyCase", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "SceneId": argv.get("--SceneId"),
+        "PlatformTypes": Utils.try_to_json(argv, "--PlatformTypes"),
+        "AppType": argv.get("--AppType"),
+        "AppProtocols": Utils.try_to_json(argv, "--AppProtocols"),
+        "TcpSportStart": argv.get("--TcpSportStart"),
+        "TcpSportEnd": argv.get("--TcpSportEnd"),
+        "UdpSportStart": argv.get("--UdpSportStart"),
+        "UdpSportEnd": argv.get("--UdpSportEnd"),
+        "HasAbroad": argv.get("--HasAbroad"),
+        "HasInitiateTcp": argv.get("--HasInitiateTcp"),
+        "HasInitiateUdp": argv.get("--HasInitiateUdp"),
+        "PeerTcpPort": argv.get("--PeerTcpPort"),
+        "PeerUdpPort": argv.get("--PeerUdpPort"),
+        "TcpFootprint": argv.get("--TcpFootprint"),
+        "UdpFootprint": argv.get("--UdpFootprint"),
+        "WebApiUrl": Utils.try_to_json(argv, "--WebApiUrl"),
+        "MinTcpPackageLen": argv.get("--MinTcpPackageLen"),
+        "MaxTcpPackageLen": argv.get("--MaxTcpPackageLen"),
+        "MinUdpPackageLen": argv.get("--MinUdpPackageLen"),
+        "MaxUdpPackageLen": argv.get("--MaxUdpPackageLen"),
+        "HasVPN": argv.get("--HasVPN"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDDoSPolicyCaseRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDDoSPolicyCase(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDDoSAlarmThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDDoSAlarmThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "RsId": argv.get("--RsId"),
+        "AlarmType": Utils.try_to_json(argv, "--AlarmType"),
+        "AlarmThreshold": Utils.try_to_json(argv, "--AlarmThreshold"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDDoSAlarmThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDDoSAlarmThreshold(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSNetEvInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSNetEvInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSNetEvInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSNetEvInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyL4KeepTime(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyL4KeepTime", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RuleId": argv.get("--RuleId"),
+        "KeepEnable": Utils.try_to_json(argv, "--KeepEnable"),
+        "KeepTime": Utils.try_to_json(argv, "--KeepTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyL4KeepTimeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyL4KeepTime(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeL4RulesErrHealth(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeL4RulesErrHealth", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeL4RulesErrHealthRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeL4RulesErrHealth(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateL7RulesUpload(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateL7RulesUpload", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Rules": Utils.try_to_json(argv, "--Rules"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateL7RulesUploadRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateL7RulesUpload(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSPolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSPolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSPolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTransmitStatis(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTransmitStatis", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "MetricName": argv.get("--MetricName"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTransmitStatisRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTransmitStatis(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2452,56 +2268,20 @@ def doDescribeUnBlockStatis(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSNetTrend(argv, arglist):
+def doDescribeDDoSTrend(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDDoSNetTrend", g_param[OptionsDefine.Version])
+        show_help("DescribeDDoSTrend", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
+        "Ip": argv.get("--Ip"),
         "MetricName": argv.get("--MetricName"),
         "Period": Utils.try_to_json(argv, "--Period"),
         "StartTime": argv.get("--StartTime"),
         "EndTime": argv.get("--EndTime"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSNetTrendRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSNetTrend(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDDoSIpLog(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDDoSIpLog", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
         "Id": argv.get("--Id"),
-        "Ip": argv.get("--Ip"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2515,9 +2295,9 @@ def doDescribeDDoSIpLog(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSIpLogRequest()
+    model = models.DescribeDDoSTrendRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSIpLog(model)
+    rsp = client.DescribeDDoSTrend(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2567,42 +2347,6 @@ def doModifyDDoSSwitch(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDDoSAIStatus(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyDDoSAIStatus", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Method": argv.get("--Method"),
-        "DDoSAI": argv.get("--DDoSAI"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDDoSAIStatusRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyDDoSAIStatus(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doModifyDDoSLevel(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2639,121 +2383,20 @@ def doModifyDDoSLevel(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyElasticLimit(argv, arglist):
+def doDescribeDDoSAttackSource(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyElasticLimit", g_param[OptionsDefine.Version])
+        show_help("DescribeDDoSAttackSource", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
         "Id": argv.get("--Id"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyElasticLimitRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyElasticLimit(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyResourceRenewFlag(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyResourceRenewFlag", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyResourceRenewFlagRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyResourceRenewFlag(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribePackIndex(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribePackIndex", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePackIndexRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribePackIndex(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDDoSEvInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDDoSEvInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Ip": argv.get("--Ip"),
         "StartTime": argv.get("--StartTime"),
         "EndTime": argv.get("--EndTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2767,44 +2410,9 @@ def doDescribeDDoSEvInfo(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSEvInfoRequest()
+    model = models.DescribeDDoSAttackSourceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSEvInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateL4HealthConfig(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateL4HealthConfig", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "HealthConfig": Utils.try_to_json(argv, "--HealthConfig"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateL4HealthConfigRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateL4HealthConfig(model)
+    rsp = client.DescribeDDoSAttackSource(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2853,17 +2461,17 @@ def doDescribeCCEvList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSNetIpLog(argv, arglist):
+def doModifyDDoSWaterKey(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDDoSNetIpLog", g_param[OptionsDefine.Version])
+        show_help("ModifyDDoSWaterKey", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
+        "PolicyId": argv.get("--PolicyId"),
+        "Method": argv.get("--Method"),
+        "KeyId": Utils.try_to_json(argv, "--KeyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2877,9 +2485,9 @@ def doDescribeDDoSNetIpLog(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSNetIpLogRequest()
+    model = models.ModifyDDoSWaterKeyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSNetIpLog(model)
+    rsp = client.ModifyDDoSWaterKey(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2889,14 +2497,13 @@ def doDescribeDDoSNetIpLog(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRuleSets(argv, arglist):
+def doDescribeInsurePacks(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeRuleSets", g_param[OptionsDefine.Version])
+        show_help("DescribeInsurePacks", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Business": argv.get("--Business"),
         "IdList": Utils.try_to_json(argv, "--IdList"),
 
     }
@@ -2911,9 +2518,9 @@ def doDescribeRuleSets(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRuleSetsRequest()
+    model = models.DescribeInsurePacksRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeRuleSets(model)
+    rsp = client.DescribeInsurePacks(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2923,19 +2530,52 @@ def doDescribeRuleSets(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSEvList(argv, arglist):
+def doDeleteL4Rules(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDDoSEvList", g_param[OptionsDefine.Version])
+        show_help("DeleteL4Rules", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RuleIdList": Utils.try_to_json(argv, "--RuleIdList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteL4RulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteL4Rules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSNetEvList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSNetEvList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
         "StartTime": argv.get("--StartTime"),
         "EndTime": argv.get("--EndTime"),
-        "Id": argv.get("--Id"),
-        "IpList": Utils.try_to_json(argv, "--IpList"),
-        "OverLoad": argv.get("--OverLoad"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
 
@@ -2951,9 +2591,442 @@ def doDescribeDDoSEvList(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSEvListRequest()
+    model = models.DescribeDDoSNetEvListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSEvList(model)
+    rsp = client.DescribeDDoSNetEvList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCCHostProtection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyCCHostProtection", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RuleId": argv.get("--RuleId"),
+        "Method": argv.get("--Method"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCCHostProtectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyCCHostProtection(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribleRegionCount(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribleRegionCount", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "LineList": Utils.try_to_json(argv, "--LineList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribleRegionCountRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribleRegionCount(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateL7Rules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateL7Rules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Rules": Utils.try_to_json(argv, "--Rules"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateL7RulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateL7Rules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeIpUnBlockList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeIpUnBlockList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Ip": argv.get("--Ip"),
+        "Paging": Utils.try_to_json(argv, "--Paging"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeIpUnBlockListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeIpUnBlockList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeIPProductInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeIPProductInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeIPProductInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeIPProductInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCCThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyCCThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Threshold": Utils.try_to_json(argv, "--Threshold"),
+        "Protocol": argv.get("--Protocol"),
+        "RuleId": argv.get("--RuleId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCCThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyCCThreshold(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribleL4Rules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribleL4Rules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RuleIdList": Utils.try_to_json(argv, "--RuleIdList"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribleL4RulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribleL4Rules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCCUrlAllow(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCCUrlAllow", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Protocol": argv.get("--Protocol"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCCUrlAllowRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCCUrlAllow(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeL7HealthConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeL7HealthConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RuleIdList": Utils.try_to_json(argv, "--RuleIdList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeL7HealthConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeL7HealthConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCCTrend(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCCTrend", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Ip": argv.get("--Ip"),
+        "MetricName": argv.get("--MetricName"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Id": argv.get("--Id"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCCTrendRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCCTrend(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyL7Rules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyL7Rules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Rule": Utils.try_to_json(argv, "--Rule"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyL7RulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyL7Rules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateL7HealthConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateL7HealthConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "HealthConfig": Utils.try_to_json(argv, "--HealthConfig"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateL7HealthConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateL7HealthConfig(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2997,6 +3070,149 @@ def doDescribeResIpList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateInstanceName(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateInstanceName", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Name": argv.get("--Name"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInstanceNameRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateInstanceName(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyResourceRenewFlag(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyResourceRenewFlag", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RenewFlag": Utils.try_to_json(argv, "--RenewFlag"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyResourceRenewFlagRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyResourceRenewFlag(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCCSelfDefinePolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyCCSelfDefinePolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "SetId": argv.get("--SetId"),
+        "Policy": Utils.try_to_json(argv, "--Policy"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCCSelfDefinePolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyCCSelfDefinePolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSEvInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSEvInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Ip": argv.get("--Ip"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSEvInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSEvInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180709": dayu_client_v20180709,
 
@@ -3008,87 +3224,93 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "ModifyDDoSWaterKey": doModifyDDoSWaterKey,
-    "CreateBasicDDoSAlarmThreshold": doCreateBasicDDoSAlarmThreshold,
-    "DescribeInsurePacks": doDescribeInsurePacks,
-    "DeleteL4Rules": doDeleteL4Rules,
-    "CreateInstanceName": doCreateInstanceName,
-    "DescribeDDoSNetEvList": doDescribeDDoSNetEvList,
-    "ModifyCCHostProtection": doModifyCCHostProtection,
+    "ModifyCCIpAllowDeny": doModifyCCIpAllowDeny,
+    "DescribeDDoSCount": doDescribeDDoSCount,
+    "DescribeRuleSets": doDescribeRuleSets,
+    "CreateL7CCRule": doCreateL7CCRule,
+    "CreateCCSelfDefinePolicy": doCreateCCSelfDefinePolicy,
+    "DescribleL7Rules": doDescribleL7Rules,
     "ModifyCCPolicySwitch": doModifyCCPolicySwitch,
-    "CreateL7RuleCert": doCreateL7RuleCert,
+    "CreateDDoSPolicyCase": doCreateDDoSPolicyCase,
+    "DescribeDDoSNetTrend": doDescribeDDoSNetTrend,
+    "ModifyDDoSPolicyName": doModifyDDoSPolicyName,
+    "ModifyL4Health": doModifyL4Health,
+    "DescribeDDoSUsedStatis": doDescribeDDoSUsedStatis,
+    "DescribeDDoSDefendStatus": doDescribeDDoSDefendStatus,
+    "DescribeCCAlarmThreshold": doDescribeCCAlarmThreshold,
+    "DescribePcap": doDescribePcap,
+    "ModifyElasticLimit": doModifyElasticLimit,
+    "DescribeDDoSNetIpLog": doDescribeDDoSNetIpLog,
+    "ModifyCCAlarmThreshold": doModifyCCAlarmThreshold,
+    "DescribeDDoSEvList": doDescribeDDoSEvList,
     "DescribeIpBlockList": doDescribeIpBlockList,
     "DescribeL4HealthConfig": doDescribeL4HealthConfig,
     "DescribeSecIndex": doDescribeSecIndex,
-    "DescribeTransmitStatis": doDescribeTransmitStatis,
-    "ModifyCCIpAllowDeny": doModifyCCIpAllowDeny,
-    "DescribleRegionCount": doDescribleRegionCount,
-    "CreateL7Rules": doCreateL7Rules,
-    "DescribeCCIpAllowDeny": doDescribeCCIpAllowDeny,
-    "DescribeIpUnBlockList": doDescribeIpUnBlockList,
-    "CreateL7CCRule": doCreateL7CCRule,
-    "DescribePcap": doDescribePcap,
-    "CreateCCSelfDefinePolicy": doCreateCCSelfDefinePolicy,
-    "DescribeIPProductInfo": doDescribeIPProductInfo,
+    "DescribeCCSelfDefinePolicy": doDescribeCCSelfDefinePolicy,
     "DeleteDDoSPolicyCase": doDeleteDDoSPolicyCase,
     "DeleteL7Rules": doDeleteL7Rules,
-    "CreateDDoSPolicy": doCreateDDoSPolicy,
-    "DescribeDDoSNetCount": doDescribeDDoSNetCount,
     "CreateL4Rules": doCreateL4Rules,
-    "ModifyCCUrlAllow": doModifyCCUrlAllow,
-    "ModifyCCSelfDefinePolicy": doModifyCCSelfDefinePolicy,
     "DescribeBaradData": doDescribeBaradData,
-    "DescribleL4Rules": doDescribleL4Rules,
-    "ModifyL4Rules": doModifyL4Rules,
-    "ModifyDDoSPolicy": doModifyDDoSPolicy,
-    "DescribleL7Rules": doDescribleL7Rules,
-    "CreateDDoSPolicyCase": doCreateDDoSPolicyCase,
-    "DescribeCCUrlAllow": doDescribeCCUrlAllow,
-    "DescribePolicyCase": doDescribePolicyCase,
+    "CreateDDoSPolicy": doCreateDDoSPolicy,
     "ModifyResBindDDoSPolicy": doModifyResBindDDoSPolicy,
-    "DescribeL7HealthConfig": doDescribeL7HealthConfig,
-    "ModifyDDoSPolicyCase": doModifyDDoSPolicyCase,
-    "DescribeDDoSNetEvInfo": doDescribeDDoSNetEvInfo,
-    "DescribeDDoSTrend": doDescribeDDoSTrend,
-    "DescribeCCTrend": doDescribeCCTrend,
-    "ModifyDDoSPolicyName": doModifyDDoSPolicyName,
-    "ModifyL4Health": doModifyL4Health,
-    "ModifyL7Rules": doModifyL7Rules,
-    "ModifyL4KeepTime": doModifyL4KeepTime,
     "DescribeSourceIpSegment": doDescribeSourceIpSegment,
-    "DescribeDDoSUsedStatis": doDescribeDDoSUsedStatis,
-    "DescribeL4RulesErrHealth": doDescribeL4RulesErrHealth,
-    "DescribeResourceList": doDescribeResourceList,
+    "ModifyCCUrlAllow": doModifyCCUrlAllow,
     "DescribeBasicDeviceThreshold": doDescribeBasicDeviceThreshold,
-    "DescribeDDoSDefendStatus": doDescribeDDoSDefendStatus,
     "CreateUnblockIp": doCreateUnblockIp,
     "DeleteDDoSPolicy": doDeleteDDoSPolicy,
-    "CreateL7RulesUpload": doCreateL7RulesUpload,
-    "CreateL7HealthConfig": doCreateL7HealthConfig,
-    "DescribeDDoSPolicy": doDescribeDDoSPolicy,
+    "DescribeResourceList": doDescribeResourceList,
     "DeleteCCSelfDefinePolicy": doDeleteCCSelfDefinePolicy,
-    "DescribeDDoSCount": doDescribeDDoSCount,
+    "DescribePolicyCase": doDescribePolicyCase,
     "DescribeActionLog": doDescribeActionLog,
-    "ModifyCCThreshold": doModifyCCThreshold,
+    "ModifyL4Rules": doModifyL4Rules,
+    "DescribeDDoSIpLog": doDescribeDDoSIpLog,
+    "DescribeDDoSAlarmThreshold": doDescribeDDoSAlarmThreshold,
+    "DescribePackIndex": doDescribePackIndex,
+    "CreateBasicDDoSAlarmThreshold": doCreateBasicDDoSAlarmThreshold,
     "ModifyDDoSThreshold": doModifyDDoSThreshold,
+    "CreateL7RuleCert": doCreateL7RuleCert,
+    "ModifyDDoSAIStatus": doModifyDDoSAIStatus,
+    "DescribeCCIpAllowDeny": doDescribeCCIpAllowDeny,
+    "CreateL4HealthConfig": doCreateL4HealthConfig,
+    "DescribeDDoSNetCount": doDescribeDDoSNetCount,
+    "ModifyDDoSPolicy": doModifyDDoSPolicy,
+    "ModifyDDoSPolicyCase": doModifyDDoSPolicyCase,
+    "ModifyDDoSAlarmThreshold": doModifyDDoSAlarmThreshold,
+    "DescribeDDoSNetEvInfo": doDescribeDDoSNetEvInfo,
+    "ModifyL4KeepTime": doModifyL4KeepTime,
+    "DescribeL4RulesErrHealth": doDescribeL4RulesErrHealth,
+    "CreateL7RulesUpload": doCreateL7RulesUpload,
+    "DescribeDDoSPolicy": doDescribeDDoSPolicy,
+    "DescribeTransmitStatis": doDescribeTransmitStatis,
     "ModifyCCLevel": doModifyCCLevel,
     "ModifyDDoSDefendStatus": doModifyDDoSDefendStatus,
     "DescribeUnBlockStatis": doDescribeUnBlockStatis,
-    "DescribeDDoSNetTrend": doDescribeDDoSNetTrend,
-    "DescribeDDoSIpLog": doDescribeDDoSIpLog,
+    "DescribeDDoSTrend": doDescribeDDoSTrend,
     "ModifyDDoSSwitch": doModifyDDoSSwitch,
-    "ModifyDDoSAIStatus": doModifyDDoSAIStatus,
     "ModifyDDoSLevel": doModifyDDoSLevel,
-    "ModifyElasticLimit": doModifyElasticLimit,
-    "ModifyResourceRenewFlag": doModifyResourceRenewFlag,
-    "DescribePackIndex": doDescribePackIndex,
-    "DescribeDDoSEvInfo": doDescribeDDoSEvInfo,
-    "CreateL4HealthConfig": doCreateL4HealthConfig,
+    "DescribeDDoSAttackSource": doDescribeDDoSAttackSource,
     "DescribeCCEvList": doDescribeCCEvList,
-    "DescribeDDoSNetIpLog": doDescribeDDoSNetIpLog,
-    "DescribeRuleSets": doDescribeRuleSets,
-    "DescribeDDoSEvList": doDescribeDDoSEvList,
+    "ModifyDDoSWaterKey": doModifyDDoSWaterKey,
+    "DescribeInsurePacks": doDescribeInsurePacks,
+    "DeleteL4Rules": doDeleteL4Rules,
+    "DescribeDDoSNetEvList": doDescribeDDoSNetEvList,
+    "ModifyCCHostProtection": doModifyCCHostProtection,
+    "DescribleRegionCount": doDescribleRegionCount,
+    "CreateL7Rules": doCreateL7Rules,
+    "DescribeIpUnBlockList": doDescribeIpUnBlockList,
+    "DescribeIPProductInfo": doDescribeIPProductInfo,
+    "ModifyCCThreshold": doModifyCCThreshold,
+    "DescribleL4Rules": doDescribleL4Rules,
+    "DescribeCCUrlAllow": doDescribeCCUrlAllow,
+    "DescribeL7HealthConfig": doDescribeL7HealthConfig,
+    "DescribeCCTrend": doDescribeCCTrend,
+    "ModifyL7Rules": doModifyL7Rules,
+    "CreateL7HealthConfig": doCreateL7HealthConfig,
     "DescribeResIpList": doDescribeResIpList,
+    "CreateInstanceName": doCreateInstanceName,
+    "ModifyResourceRenewFlag": doModifyResourceRenewFlag,
+    "ModifyCCSelfDefinePolicy": doModifyCCSelfDefinePolicy,
+    "DescribeDDoSEvInfo": doDescribeDDoSEvInfo,
 
 }
 

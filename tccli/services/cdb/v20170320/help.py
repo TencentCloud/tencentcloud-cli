@@ -79,7 +79,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例短实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。"
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。"
       }
     ],
     "desc": "本接口(DescribeBackupConfig)用于查询数据库备份配置信息。"
@@ -188,7 +188,7 @@ INFO = {
         "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
       }
     ],
-    "desc": "本接口(IsolateDBInstance)用于隔离云数据库实例，隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行冲正。"
+    "desc": "本接口(IsolateDBInstance)用于隔离云数据库实例，隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。"
   },
   "ModifyBackupConfig": {
     "params": [
@@ -882,22 +882,22 @@ INFO = {
       },
       {
         "name": "GlobalPrivileges",
-        "desc": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
+        "desc": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。"
       },
       {
         "name": "DatabasePrivileges",
-        "desc": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。"
+        "desc": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。"
       },
       {
         "name": "TablePrivileges",
-        "desc": "数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。"
+        "desc": "数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示清除该权限。"
       },
       {
         "name": "ColumnPrivileges",
-        "desc": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。"
+        "desc": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，不传该参数表示清除该权限。"
       }
     ],
-    "desc": "本接口(ModifyAccountPrivileges)用于修改云数据库的账户的权限信息。"
+    "desc": "本接口(ModifyAccountPrivileges)用于修改云数据库的账户的权限信息。\n\n注意，修改账号权限时，需要传入该账号下的全量权限信息。用户可以先通过 [查询云数据库账户的权限信息\n](https://cloud.tencent.com/document/api/236/17500) 查询该账号下的全量权限信息，然后进行权限修改。"
   },
   "DescribeAccounts": {
     "params": [
@@ -1261,11 +1261,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量。"
+        "desc": "分页偏移量。"
       },
       {
         "name": "Limit",
-        "desc": "每页返回多少个标签。"
+        "desc": "分页大小。"
       }
     ],
     "desc": "本接口(DescribeTagsOfInstanceIds)用于获取云数据库实例的标签信息。"
