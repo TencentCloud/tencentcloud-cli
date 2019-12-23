@@ -96,11 +96,11 @@ INFO = {
     "params": [
       {
         "name": "EnvIds",
-        "desc": "计算环境ID"
+        "desc": "计算环境ID列表，与Filters参数不能同时指定。"
       },
       {
         "name": "Filters",
-        "desc": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>"
+        "desc": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>\n<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>\n与EnvIds参数不能同时指定。"
       },
       {
         "name": "Offset",
@@ -228,11 +228,11 @@ INFO = {
     "params": [
       {
         "name": "TaskTemplateIds",
-        "desc": "任务模板ID"
+        "desc": "任务模板ID列表，与Filters参数不能同时指定。"
       },
       {
         "name": "Filters",
-        "desc": "过滤条件\n<li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>"
+        "desc": "过滤条件\n<li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>\n与TaskTemplateIds参数不能同时指定。"
       },
       {
         "name": "Offset",
@@ -339,11 +339,11 @@ INFO = {
     "params": [
       {
         "name": "EnvIds",
-        "desc": "计算环境ID"
+        "desc": "计算环境ID列表，与Filters参数不能同时指定。"
       },
       {
         "name": "Filters",
-        "desc": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>"
+        "desc": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>\n与EnvIds参数不能同时指定。"
       },
       {
         "name": "Offset",
@@ -360,11 +360,11 @@ INFO = {
     "params": [
       {
         "name": "JobIds",
-        "desc": "作业ID"
+        "desc": "作业ID列表，与Filters参数不能同时指定。"
       },
       {
         "name": "Filters",
-        "desc": "过滤条件\n<li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>\n<li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>\n<li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>"
+        "desc": "过滤条件\n<li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>\n<li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>\n<li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n与JobIds参数不能同时指定。"
       },
       {
         "name": "Offset",
@@ -376,6 +376,15 @@ INFO = {
       }
     ],
     "desc": "用于查询若干个作业的概览信息"
+  },
+  "DescribeCpmOsInfo": {
+    "params": [
+      {
+        "name": "DeviceClassCode",
+        "desc": "黑石设备类型代号。 可以从[DescribeDeviceClass](https://cloud.tencent.com/document/api/386/32911)查询设备类型列表。"
+      }
+    ],
+    "desc": "创建黑石计算环境时，查询批量计算环境支持的黑石操作系统信息"
   },
   "DeleteComputeEnv": {
     "params": [
