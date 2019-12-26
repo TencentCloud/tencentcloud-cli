@@ -342,6 +342,7 @@ def doUpdateDeviceShadow(argv, arglist):
         "DeviceName": argv.get("--DeviceName"),
         "State": argv.get("--State"),
         "ShadowVersion": Utils.try_to_json(argv, "--ShadowVersion"),
+        "Prefix": argv.get("--Prefix"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -481,7 +482,6 @@ def doDescribeProducts(argv, arglist):
     param = {
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

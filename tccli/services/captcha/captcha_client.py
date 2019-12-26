@@ -18,6 +18,222 @@ from tccli.services.captcha import v20190722
 from tccli.services.captcha.v20190722 import help as v20190722_help
 
 
+def doDescribeCaptchaUserAllAppId(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCaptchaUserAllAppId", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CaptchaClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCaptchaUserAllAppIdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCaptchaUserAllAppId(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCaptchaDataSum(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCaptchaDataSum", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CaptchaAppId": Utils.try_to_json(argv, "--CaptchaAppId"),
+        "Start": Utils.try_to_json(argv, "--Start"),
+        "End": Utils.try_to_json(argv, "--End"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CaptchaClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCaptchaDataSumRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCaptchaDataSum(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCaptchaOperData(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCaptchaOperData", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CaptchaAppId": Utils.try_to_json(argv, "--CaptchaAppId"),
+        "Start": Utils.try_to_json(argv, "--Start"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CaptchaClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCaptchaOperDataRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCaptchaOperData(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCaptchaAppIdInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCaptchaAppIdInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CaptchaAppId": Utils.try_to_json(argv, "--CaptchaAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CaptchaClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCaptchaAppIdInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCaptchaAppIdInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCaptchaData(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCaptchaData", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CaptchaAppId": Utils.try_to_json(argv, "--CaptchaAppId"),
+        "Start": Utils.try_to_json(argv, "--Start"),
+        "End": Utils.try_to_json(argv, "--End"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CaptchaClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCaptchaDataRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCaptchaData(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateCaptchaAppIdInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateCaptchaAppIdInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CaptchaAppId": Utils.try_to_json(argv, "--CaptchaAppId"),
+        "AppName": argv.get("--AppName"),
+        "DomainLimit": argv.get("--DomainLimit"),
+        "SceneType": Utils.try_to_json(argv, "--SceneType"),
+        "CapType": Utils.try_to_json(argv, "--CapType"),
+        "EvilInterceptGrade": Utils.try_to_json(argv, "--EvilInterceptGrade"),
+        "SmartVerify": Utils.try_to_json(argv, "--SmartVerify"),
+        "SmartEngine": Utils.try_to_json(argv, "--SmartEngine"),
+        "SchemeColor": argv.get("--SchemeColor"),
+        "CaptchaLanguage": Utils.try_to_json(argv, "--CaptchaLanguage"),
+        "MailAlarm": argv.get("--MailAlarm"),
+        "TopFullScreen": Utils.try_to_json(argv, "--TopFullScreen"),
+        "TrafficThreshold": Utils.try_to_json(argv, "--TrafficThreshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CaptchaClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateCaptchaAppIdInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateCaptchaAppIdInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeCaptchaResult(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -71,6 +287,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeCaptchaUserAllAppId": doDescribeCaptchaUserAllAppId,
+    "DescribeCaptchaDataSum": doDescribeCaptchaDataSum,
+    "DescribeCaptchaOperData": doDescribeCaptchaOperData,
+    "DescribeCaptchaAppIdInfo": doDescribeCaptchaAppIdInfo,
+    "DescribeCaptchaData": doDescribeCaptchaData,
+    "UpdateCaptchaAppIdInfo": doUpdateCaptchaAppIdInfo,
     "DescribeCaptchaResult": doDescribeCaptchaResult,
 
 }

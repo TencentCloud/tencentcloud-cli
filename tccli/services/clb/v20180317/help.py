@@ -122,7 +122,7 @@ INFO = {
         "desc": "新证书的内容等相关信息"
       }
     ],
-    "desc": "ReplaceCertForLoadBalancers 接口用以替换负载均衡实例所关联的证书，对于各个地域的负载均衡，如果指定的老的证书ID与其有关联关系，则会先解除关联，再建立新证书与该负载均衡的关联关系。\n此接口支持替换服务端证书或客户端证书。\n需要使用的新证书，可以通过传入证书ID来指定，如果不指定证书ID，则必须传入证书内容等相关信息，用以新建证书并绑定至负载均衡。\n注：本接口仅可从广州地域调用，其他地域存在域名解析问题，会报错。"
+    "desc": "ReplaceCertForLoadBalancers 接口用以替换负载均衡实例所关联的证书，对于各个地域的负载均衡，如果指定的老的证书ID与其有关联关系，则会先解除关联，再建立新证书与该负载均衡的关联关系。\n此接口支持替换服务端证书或客户端证书。\n需要使用的新证书，可以通过传入证书ID来指定，如果不指定证书ID，则必须传入证书内容等相关信息，用以新建证书并绑定至负载均衡。\n注：本接口仅可从广州地域调用。"
   },
   "CreateRule": {
     "params": [
@@ -358,7 +358,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "返回负载均衡实例的个数，默认为 20。"
+        "desc": "返回负载均衡实例的数量，默认为20，最大值为100。"
       },
       {
         "name": "OrderBy",
@@ -394,6 +394,23 @@ INFO = {
       }
     ],
     "desc": "查询负载均衡实例列表\n"
+  },
+  "DescribeBlockIPList": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID。"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认为 0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回IP的最大个数，默认为 100000。"
+      }
+    ],
+    "desc": "查询一个负载均衡所封禁的IP列表（黑名单）。（接口灰度中，如需使用请提工单）"
   },
   "DescribeListeners": {
     "params": [
@@ -468,7 +485,7 @@ INFO = {
         "desc": "绑定目标"
       }
     ],
-    "desc": "批量绑定虚拟主机或弹性网卡，支持跨域绑定，只支持四层（TCP、UDP）协议绑定。"
+    "desc": "批量绑定虚拟主机或弹性网卡，支持跨域绑定，支持四层、七层（TCP、UDP、HTTP、HTTPS）协议绑定。"
   },
   "ModifyTargetWeight": {
     "params": [
@@ -549,14 +566,55 @@ INFO = {
     ],
     "desc": "ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
-  "DescribeTargetHealth": {
+  "ModifyBlockIPList": {
     "params": [
       {
         "name": "LoadBalancerIds",
-        "desc": "要查询的负载均衡实例 ID列表"
+        "desc": "负载均衡实例ID"
+      },
+      {
+        "name": "Type",
+        "desc": "操作类型，可取：\n<li> add_customized_field（首次设置header，开启黑名单功能）</li>\n<li> set_customized_field（修改header）</li>\n<li> del_customized_field（删除header）</li>\n<li> add_blocked（添加黑名单）</li>\n<li> del_blocked（删除黑名单）</li>\n<li> flush_blocked（清空黑名单）</li>"
+      },
+      {
+        "name": "ClientIPField",
+        "desc": "客户端真实IP存放的header字段名"
+      },
+      {
+        "name": "BlockIPList",
+        "desc": "封禁IP列表，单次操作数组最大长度支持200000"
+      },
+      {
+        "name": "ExpireTime",
+        "desc": "过期时间，单位秒，默认值3600"
+      },
+      {
+        "name": "AddStrategy",
+        "desc": "添加IP的策略，可取：fifo（如果黑名单容量已满，新加入黑名单的IP采用先进先出策略）"
       }
     ],
-    "desc": "DescribeTargetHealth 接口用来获取负载均衡后端服务的健康检查结果，不支持传统型负载均衡。"
+    "desc": "修改负载均衡的IP（client IP）封禁黑名单列表，一个转发规则最多支持封禁 2000000 个IP，及黑名单容量为 2000000。\n（接口灰度中，如需使用请提工单）"
+  },
+  "DeleteRewrite": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例ID"
+      },
+      {
+        "name": "SourceListenerId",
+        "desc": "源监听器ID"
+      },
+      {
+        "name": "TargetListenerId",
+        "desc": "目标监听器ID"
+      },
+      {
+        "name": "RewriteInfos",
+        "desc": "转发规则之间的重定向关系"
+      }
+    ],
+    "desc": "DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "DescribeTargets": {
     "params": [
@@ -687,10 +745,19 @@ INFO = {
       },
       {
         "name": "InternetChargeInfo",
-        "desc": "网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。"
+        "desc": "网络计费相关参数"
       }
     ],
     "desc": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。"
+  },
+  "DescribeBlockIPTask": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "ModifyBlockIPList 接口返回的异步任务的ID。"
+      }
+    ],
+    "desc": "根据 ModifyBlockIPList 接口返回的异步任务的ID，查询封禁IP（黑名单）异步任务的执行状态。（接口灰度中，如需使用请提工单）"
   },
   "DescribeClassicalLBByInstanceId": {
     "params": [
@@ -712,28 +779,16 @@ INFO = {
         "desc": "要批量修改权重的列表"
       }
     ],
-    "desc": "BatchModifyTargetWeight接口用于批量修改负载均衡监听器绑定的后端机器的转发权重，支持负载均衡的4层和7层监听器；不支持传统型负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "本接口(BatchModifyTargetWeight)用于批量修改负载均衡监听器绑定的后端机器的转发权重，支持负载均衡的4层和7层监听器；不支持传统型负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
-  "DeleteRewrite": {
+  "DescribeTargetHealth": {
     "params": [
       {
-        "name": "LoadBalancerId",
-        "desc": "负载均衡实例ID"
-      },
-      {
-        "name": "SourceListenerId",
-        "desc": "源监听器ID"
-      },
-      {
-        "name": "TargetListenerId",
-        "desc": "目标监听器ID"
-      },
-      {
-        "name": "RewriteInfos",
-        "desc": "转发规则之间的重定向关系"
+        "name": "LoadBalancerIds",
+        "desc": "要查询的负载均衡实例 ID列表"
       }
     ],
-    "desc": "DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "DescribeTargetHealth 接口用来获取负载均衡后端服务的健康检查结果，不支持传统型负载均衡。"
   },
   "CreateLoadBalancer": {
     "params": [
@@ -755,7 +810,7 @@ INFO = {
       },
       {
         "name": "SubnetId",
-        "desc": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。"
+        "desc": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。"
       },
       {
         "name": "ProjectId",
@@ -763,7 +818,7 @@ INFO = {
       },
       {
         "name": "AddressIPVersion",
-        "desc": "仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。"
+        "desc": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。"
       },
       {
         "name": "Number",
@@ -778,10 +833,6 @@ INFO = {
         "desc": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1"
       },
       {
-        "name": "AnycastZone",
-        "desc": "仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。"
-      },
-      {
         "name": "InternetAccessible",
         "desc": "仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。"
       },
@@ -790,7 +841,7 @@ INFO = {
         "desc": "购买负载均衡同时，给负载均衡打上标签"
       }
     ],
-    "desc": "CreateLoadBalancer 接口用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾【如需使用，请提交工单（ https://console.cloud.tencent.com/workorder/category ）申请】；(2)目前只有北京、上海、广州支持IPv6；\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。"
+    "desc": "本接口(CreateLoadBalancer)用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾(仅香港支持)【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】；(2)目前只有北京、上海、广州支持IPv6；(3)一个账号在每个地域的默认购买配额为：公网100个，内网100个。\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。"
   },
   "ManualRewrite": {
     "params": [

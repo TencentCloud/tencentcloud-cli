@@ -28,7 +28,7 @@ INFO = {
         "desc": "最长执行时间，单位秒，被调度后超过此时间仍未有结果则视为任务失败。取值为0-86400，默认为86400"
       }
     ],
-    "desc": "本接口（CreateTask）用于创建一个批量任务。目前此接口可以创建批量更新影子以及批量下发消息的任务"
+    "desc": "本接口（CreateTask）用于创建一个批量任务。目前此接口可以创建批量更新影子以及批量下发消息的任务 "
   },
   "ReplaceTopicRule": {
     "params": [
@@ -55,7 +55,7 @@ INFO = {
     "params": [
       {
         "name": "ProductId",
-        "desc": "设备所属产品id"
+        "desc": "设备所属产品ID"
       },
       {
         "name": "DeviceName",
@@ -96,7 +96,7 @@ INFO = {
         "desc": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}"
       }
     ],
-    "desc": "本接口（DescribeDeviceShadow）用于查询虚拟设备信息。"
+    "desc": "本接口（DescribeDeviceShadow）用于查询虚拟设备信息。 "
   },
   "DescribeDevice": {
     "params": [
@@ -109,7 +109,7 @@ INFO = {
         "desc": "设备名"
       }
     ],
-    "desc": "本接口（DescribeDevice）用于查看设备信息"
+    "desc": "本接口（DescribeDevice）用于查看设备信息 "
   },
   "CreateMultiDevice": {
     "params": [
@@ -150,7 +150,7 @@ INFO = {
     "params": [
       {
         "name": "ProductID",
-        "desc": "产品自身id"
+        "desc": "产品自身ID"
       },
       {
         "name": "TopicName",
@@ -162,10 +162,10 @@ INFO = {
       },
       {
         "name": "BrokerSubscribe",
-        "desc": "代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的id和设备信息。"
+        "desc": "代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。"
       }
     ],
-    "desc": "本接口（CreateTopicPolicy）用于创建一个Topic"
+    "desc": "本接口（CreateTopicPolicy）用于创建一个Topic "
   },
   "CreateProduct": {
     "params": [
@@ -182,7 +182,7 @@ INFO = {
         "desc": "创建CLAA产品时，需要Skey"
       }
     ],
-    "desc": "本接口（CreateProduct）用于创建一个新的物联网通信产品"
+    "desc": "本接口（CreateProduct）用于创建一个新的物联网通信产品 "
   },
   "DescribeDeviceClientKey": {
     "params": [
@@ -206,19 +206,15 @@ INFO = {
       {
         "name": "Limit",
         "desc": "分页大小，当前页面中显示的最大数量，值范围 10-250。"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件"
       }
     ],
-    "desc": "本接口（DescribeProducts）用于列出产品列表。"
+    "desc": "本接口（DescribeProducts）用于列出产品列表。 "
   },
   "DescribeLoraDevice": {
     "params": [
       {
         "name": "ProductId",
-        "desc": "产品Id"
+        "desc": "产品id"
       },
       {
         "name": "DeviceName",
@@ -234,7 +230,7 @@ INFO = {
         "desc": "任务ID"
       }
     ],
-    "desc": "本接口（DescribeTask）用于查询一个已创建任务的详情，任务保留一个月"
+    "desc": "本接口（DescribeTask）用于查询一个已创建任务的详情，任务保留一个月 "
   },
   "DeleteDevice": {
     "params": [
@@ -251,7 +247,7 @@ INFO = {
         "desc": "删除LoRa设备以及LoRa网关设备需要skey"
       }
     ],
-    "desc": "本接口（DeleteDevice）用于删除物联网通信设备。"
+    "desc": "本接口（DeleteDevice）用于删除物联网通信设备。 "
   },
   "DeleteProduct": {
     "params": [
@@ -264,7 +260,7 @@ INFO = {
         "desc": "删除LoRa产品需要skey"
       }
     ],
-    "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品。"
+    "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品"
   },
   "CreateDevice": {
     "params": [
@@ -309,7 +305,7 @@ INFO = {
         "desc": "LoRa设备的AppKey"
       }
     ],
-    "desc": "本接口（CreateDevice）用于新建一个物联网通信设备。"
+    "desc": "本接口（CreateDevice）用于新建一个物联网通信设备。 "
   },
   "PublishMessage": {
     "params": [
@@ -334,7 +330,7 @@ INFO = {
         "desc": "服务质量等级，取值为0或1"
       }
     ],
-    "desc": "本接口（PublishMessage）用于向某个主题发消息。"
+    "desc": "本接口（PublishMessage）用于向某个主题发消息。 "
   },
   "CancelTask": {
     "params": [
@@ -343,20 +339,20 @@ INFO = {
         "desc": "任务 ID"
       }
     ],
-    "desc": "本接口（CancelTask）用于取消一个未被调度的任务。"
+    "desc": "本接口（CancelTask）用于取消一个未被调度的任务。 "
   },
   "ResetDeviceState": {
     "params": [
       {
         "name": "ProductId",
-        "desc": "产品Id"
+        "desc": "产品ID"
       },
       {
         "name": "DeviceNames",
         "desc": "设备名称"
       }
     ],
-    "desc": "重置设备的连接状态"
+    "desc": "重置设备的连接状态 "
   },
   "DescribeTasks": {
     "params": [
@@ -369,7 +365,7 @@ INFO = {
         "desc": "分页的大小，数值范围 1-250"
       }
     ],
-    "desc": "本接口（DescribeTasks）用于查询已创建的任务列表，任务保留一个月"
+    "desc": "本接口（DescribeTasks）用于查询已创建的任务列表，任务保留一个月 "
   },
   "PublishToDevice": {
     "params": [
@@ -413,7 +409,7 @@ INFO = {
     "params": [
       {
         "name": "ProductId",
-        "desc": "产品id"
+        "desc": "产品ID"
       },
       {
         "name": "DeviceName",
@@ -561,7 +557,7 @@ INFO = {
         "desc": "设备固件版本号，若不带此参数会返回所有固件版本的设备"
       }
     ],
-    "desc": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。"
+    "desc": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 "
   },
   "UpdateDeviceShadow": {
     "params": [
@@ -580,6 +576,10 @@ INFO = {
       {
         "name": "ShadowVersion",
         "desc": "当前版本号，需要和后台的version保持一致，才能更新成功"
+      },
+      {
+        "name": "Prefix",
+        "desc": "下发delta消息的topic前缀，可选类型: \"$shadow\",\"$template\"。不填写默认\"$shadow\"。"
       }
     ],
     "desc": "本接口（UpdateDeviceShadow）用于更新虚拟设备信息。"

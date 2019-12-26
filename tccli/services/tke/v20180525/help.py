@@ -30,9 +30,26 @@ INFO = {
       {
         "name": "ExistedInstancesForNode",
         "desc": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。"
+      },
+      {
+        "name": "InstanceDataDiskMountSettings",
+        "desc": "CVM类型和其对应的数据盘挂载配置信息"
       }
     ],
     "desc": "创建集群"
+  },
+  "ModifyClusterAsGroupAttribute": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "ClusterAsGroupAttribute",
+        "desc": "集群关联的伸缩组属性"
+      }
+    ],
+    "desc": "修改集群伸缩组属性"
   },
   "DeleteClusterEndpoint": {
     "params": [
@@ -216,9 +233,14 @@ INFO = {
     ],
     "desc": "创建集群路由表"
   },
-  "DescribeClusterRouteTables": {
-    "params": [],
-    "desc": "查询集群路由表"
+  "DescribeClusterAsGroupOption": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      }
+    ],
+    "desc": "集群弹性伸缩配置"
   },
   "DescribeClusters": {
     "params": [
@@ -254,6 +276,27 @@ INFO = {
     ],
     "desc": "查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)"
   },
+  "DescribeClusterAsGroups": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "AutoScalingGroupIds",
+        "desc": "伸缩组ID列表，如果为空，表示拉取集群关联的所有伸缩组。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。"
+      }
+    ],
+    "desc": "集群关联的伸缩组列表"
+  },
   "CreateClusterEndpoint": {
     "params": [
       {
@@ -270,6 +313,10 @@ INFO = {
       }
     ],
     "desc": "创建集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)"
+  },
+  "DescribeClusterRouteTables": {
+    "params": [],
+    "desc": "查询集群路由表"
   },
   "AddExistedInstances": {
     "params": [

@@ -285,6 +285,7 @@ def doConfirmEvents(argv, arglist):
 
     param = {
         "EventHandles": Utils.try_to_json(argv, "--EventHandles"),
+        "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -625,6 +626,7 @@ def doPullEvents(argv, arglist):
         return
 
     param = {
+        "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -2162,6 +2164,9 @@ def doExecuteFunction(argv, arglist):
     param = {
         "FunctionName": argv.get("--FunctionName"),
         "FunctionArg": argv.get("--FunctionArg"),
+        "SessionContext": argv.get("--SessionContext"),
+        "SessionId": argv.get("--SessionId"),
+        "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -2698,6 +2703,7 @@ def doProcessMediaByProcedure(argv, arglist):
         "TasksNotifyMode": argv.get("--TasksNotifyMode"),
         "SessionContext": argv.get("--SessionContext"),
         "SessionId": argv.get("--SessionId"),
+        "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }

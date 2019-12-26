@@ -386,7 +386,7 @@ INFO = {
       },
       {
         "name": "EndTime",
-        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,4小时]，支持最近1天数据查询。"
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在[0,4小时]，支持最近1天数据查询。"
       },
       {
         "name": "PlayDomains",
@@ -462,7 +462,7 @@ INFO = {
       },
       {
         "name": "EndTime",
-        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在[0,4小时]，支持最近1天数据查询。"
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在(0,4小时]，支持最近1天数据查询。"
       },
       {
         "name": "TopIndex",
@@ -1111,10 +1111,10 @@ INFO = {
       },
       {
         "name": "CallbackKey",
-        "desc": "回调key，回调URL公用，鉴权回调说明详见回调格式文档"
+        "desc": "回调key，回调URL公用，鉴权回调说明详见回调格式文档。"
       }
     ],
-    "desc": "修改回调模板"
+    "desc": "修改回调模板。"
   },
   "DescribeGroupProIspPlayInfoList": {
     "params": [
@@ -1321,27 +1321,6 @@ INFO = {
       }
     ],
     "desc": "批量获取日志URL。"
-  },
-  "DescribeLiveStreamOnlineInfo": {
-    "params": [
-      {
-        "name": "PageNum",
-        "desc": "取得第几页。\n默认值：1。"
-      },
-      {
-        "name": "PageSize",
-        "desc": "分页大小。\n最大值：100。\n取值范围：1~100 之前的任意整数。\n默认值：10。"
-      },
-      {
-        "name": "Status",
-        "desc": "0:未开始推流 1:正在推流"
-      },
-      {
-        "name": "StreamName",
-        "desc": "流名称。"
-      }
-    ],
-    "desc": "查询在线推流信息列表"
   },
   "DescribeLiveRecordRules": {
     "params": [],
