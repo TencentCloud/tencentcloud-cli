@@ -951,6 +951,15 @@ INFO = {
     ],
     "desc": "本接口（DescribeRealServers）用于查询源站信息，可以根据项目名查询所有的源站信息，此外支持指定IP机或者域名的源站模糊查询。"
   },
+  "DescribeDomainErrorPageInfoByIds": {
+    "params": [
+      {
+        "name": "ErrorPageIds",
+        "desc": "定制错误ID列表,最多支持10个"
+      }
+    ],
+    "desc": "根据定制错误ID查询错误响应"
+  },
   "ModifyUDPListenerAttribute": {
     "params": [
       {
