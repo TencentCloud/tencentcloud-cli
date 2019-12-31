@@ -598,6 +598,19 @@ INFO = {
     ],
     "desc": "本接口(CloseDBExtranetAccess)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问，查询实例列表接口将不返回对应实例的外网域名和端口信息。"
   },
+  "CreateTmpInstances": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "回档实例的ID列表，形如：tdsql-ow728lmc。"
+      },
+      {
+        "name": "RollbackTime",
+        "desc": "回档时间点"
+      }
+    ],
+    "desc": "本接口（CreateTmpInstances）用于创建临时实例。"
+  },
   "RestartDBInstances": {
     "params": [
       {

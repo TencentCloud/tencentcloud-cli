@@ -68,6 +68,15 @@ INFO = {
     ],
     "desc": "DescribeClassicalLBListeners 接口用于获取传统型负载均衡的监听器信息。"
   },
+  "DescribeBlockIPTask": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "ModifyBlockIPList 接口返回的异步任务的ID。"
+      }
+    ],
+    "desc": "根据 ModifyBlockIPList 接口返回的异步任务的ID，查询封禁IP（黑名单）异步任务的执行状态。（接口灰度中，如需使用请提工单）"
+  },
   "DeleteListener": {
     "params": [
       {
@@ -111,18 +120,18 @@ INFO = {
     ],
     "desc": "批量解绑四七层后端服务。"
   },
-  "ReplaceCertForLoadBalancers": {
+  "RegisterTargetGroupInstances": {
     "params": [
       {
-        "name": "OldCertificateId",
-        "desc": "需要被替换的证书的ID，可以是服务端证书或客户端证书"
+        "name": "TargetGroupId",
+        "desc": "目标组ID"
       },
       {
-        "name": "Certificate",
-        "desc": "新证书的内容等相关信息"
+        "name": "TargetGroupInstances",
+        "desc": "服务器实例数组"
       }
     ],
-    "desc": "ReplaceCertForLoadBalancers 接口用以替换负载均衡实例所关联的证书，对于各个地域的负载均衡，如果指定的老的证书ID与其有关联关系，则会先解除关联，再建立新证书与该负载均衡的关联关系。\n此接口支持替换服务端证书或客户端证书。\n需要使用的新证书，可以通过传入证书ID来指定，如果不指定证书ID，则必须传入证书内容等相关信息，用以新建证书并绑定至负载均衡。\n注：本接口仅可从广州地域调用。"
+    "desc": "注册服务器到目标组。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
   "CreateRule": {
     "params": [
@@ -179,14 +188,27 @@ INFO = {
     ],
     "desc": "ModifyDomain接口用来修改负载均衡七层监听器下的域名。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
-  "DescribeClassicalLBTargets": {
+  "ModifyTargetGroupInstancesWeight": {
     "params": [
       {
-        "name": "LoadBalancerId",
-        "desc": "负载均衡实例 ID"
+        "name": "TargetGroupId",
+        "desc": "目标组ID"
+      },
+      {
+        "name": "TargetGroupInstances",
+        "desc": "待修改权重的服务器数组"
       }
     ],
-    "desc": "DescribeClassicalLBTargets用于获取传统型负载均衡绑定的后端服务"
+    "desc": "批量修改目标组的服务器权重。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+  },
+  "DeleteTargetGroups": {
+    "params": [
+      {
+        "name": "TargetGroupIds",
+        "desc": "目标组的ID数组"
+      }
+    ],
+    "desc": "删除目标组"
   },
   "DeregisterTargetsFromClassicalLB": {
     "params": [
@@ -293,30 +315,53 @@ INFO = {
     ],
     "desc": "ModifyDomainAttributes接口用于修改负载均衡7层监听器转发规则的域名级别属性，如修改域名、修改DefaultServer、开启/关闭Http2、修改证书。\n本接口为异步接口，本接口返回成功后，需以返回的RequestId为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
-  "DeleteRule": {
+  "DisassociateTargetGroups": {
     "params": [
       {
-        "name": "LoadBalancerId",
-        "desc": "负载均衡实例 ID"
-      },
-      {
-        "name": "ListenerId",
-        "desc": "负载均衡监听器 ID"
-      },
-      {
-        "name": "LocationIds",
-        "desc": "要删除的转发规则的ID组成的数组"
-      },
-      {
-        "name": "Domain",
-        "desc": "要删除的转发规则的域名，已提供LocationIds参数时本参数不生效"
-      },
-      {
-        "name": "Url",
-        "desc": "要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效"
+        "name": "Associations",
+        "desc": "待解绑的规则关系数组"
       }
     ],
-    "desc": "DeleteRule 接口用来删除负载均衡实例七层监听器下的转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "解除规则的目标组关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+  },
+  "DescribeTargetGroupInstances": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤"
+      },
+      {
+        "name": "Limit",
+        "desc": "显示数量限制，默认20"
+      },
+      {
+        "name": "Offset",
+        "desc": "显示的偏移量，默认为0"
+      }
+    ],
+    "desc": "获取目标组绑定的服务器信息"
+  },
+  "AssociateTargetGroups": {
+    "params": [
+      {
+        "name": "Associations",
+        "desc": "绑定的关系数组"
+      }
+    ],
+    "desc": "监听器或转发规则绑定目标组。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+  },
+  "DeregisterTargetGroupInstances": {
+    "params": [
+      {
+        "name": "TargetGroupId",
+        "desc": "目标组ID"
+      },
+      {
+        "name": "TargetGroupInstances",
+        "desc": "待解绑的服务器信息"
+      }
+    ],
+    "desc": "将服务器从目标组中解绑。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
   "DescribeLoadBalancers": {
     "params": [
@@ -433,6 +478,15 @@ INFO = {
     ],
     "desc": "DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，默认返该负载均衡器下的默认数据长度（20 个）的监听器。"
   },
+  "DescribeClassicalLBTargets": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
+      }
+    ],
+    "desc": "DescribeClassicalLBTargets用于获取传统型负载均衡绑定的后端服务"
+  },
   "CreateListener": {
     "params": [
       {
@@ -486,6 +540,27 @@ INFO = {
       }
     ],
     "desc": "批量绑定虚拟主机或弹性网卡，支持跨域绑定，支持四层、七层（TCP、UDP、HTTP、HTTPS）协议绑定。"
+  },
+  "DeleteRewrite": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例ID"
+      },
+      {
+        "name": "SourceListenerId",
+        "desc": "源监听器ID"
+      },
+      {
+        "name": "TargetListenerId",
+        "desc": "目标监听器ID"
+      },
+      {
+        "name": "RewriteInfos",
+        "desc": "转发规则之间的重定向关系"
+      }
+    ],
+    "desc": "DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
   "ModifyTargetWeight": {
     "params": [
@@ -566,6 +641,52 @@ INFO = {
     ],
     "desc": "ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
+  "DeleteRule": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
+      },
+      {
+        "name": "ListenerId",
+        "desc": "负载均衡监听器 ID"
+      },
+      {
+        "name": "LocationIds",
+        "desc": "要删除的转发规则的ID组成的数组"
+      },
+      {
+        "name": "Domain",
+        "desc": "要删除的转发规则的域名，已提供LocationIds参数时本参数不生效"
+      },
+      {
+        "name": "Url",
+        "desc": "要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效"
+      }
+    ],
+    "desc": "DeleteRule 接口用来删除负载均衡实例七层监听器下的转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+  },
+  "DescribeTargetGroupList": {
+    "params": [
+      {
+        "name": "TargetGroupIds",
+        "desc": "目标组ID数组"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID，"
+      },
+      {
+        "name": "Offset",
+        "desc": "显示的偏移起始量"
+      },
+      {
+        "name": "Limit",
+        "desc": "显示条数限制，默认为20"
+      }
+    ],
+    "desc": "获取目标组列表"
+  },
   "ModifyBlockIPList": {
     "params": [
       {
@@ -595,26 +716,26 @@ INFO = {
     ],
     "desc": "修改负载均衡的IP（client IP）封禁黑名单列表，一个转发规则最多支持封禁 2000000 个IP，及黑名单容量为 2000000。\n（接口灰度中，如需使用请提工单）"
   },
-  "DeleteRewrite": {
+  "CreateTargetGroup": {
     "params": [
       {
-        "name": "LoadBalancerId",
-        "desc": "负载均衡实例ID"
+        "name": "TargetGroupName",
+        "desc": "目标组名称，限定50个字符"
       },
       {
-        "name": "SourceListenerId",
-        "desc": "源监听器ID"
+        "name": "VpcId",
+        "desc": "目标组的vpcid属性，不填则使用默认vpc"
       },
       {
-        "name": "TargetListenerId",
-        "desc": "目标监听器ID"
+        "name": "Port",
+        "desc": "目标组的默认端口， 后续添加服务器时可使用该默认端口"
       },
       {
-        "name": "RewriteInfos",
-        "desc": "转发规则之间的重定向关系"
+        "name": "TargetGroupInstances",
+        "desc": "目标组绑定的后端服务器"
       }
     ],
-    "desc": "DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
+    "desc": "创建目标组。（目标组功能正在灰度中，需要开通白名单支持）"
   },
   "DescribeTargets": {
     "params": [
@@ -700,6 +821,23 @@ INFO = {
     ],
     "desc": "ModifyTargetPort接口用于修改监听器绑定的后端服务的端口。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
+  "ModifyTargetGroupAttribute": {
+    "params": [
+      {
+        "name": "TargetGroupId",
+        "desc": "目标组的ID"
+      },
+      {
+        "name": "TargetGroupName",
+        "desc": "目标组的新名称"
+      },
+      {
+        "name": "Port",
+        "desc": "目标组的新默认端口"
+      }
+    ],
+    "desc": "修改目标组的名称或者默认端口属性"
+  },
   "DeregisterTargets": {
     "params": [
       {
@@ -750,14 +888,26 @@ INFO = {
     ],
     "desc": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。"
   },
-  "DescribeBlockIPTask": {
+  "DescribeTargetGroups": {
     "params": [
       {
-        "name": "TaskId",
-        "desc": "ModifyBlockIPList 接口返回的异步任务的ID。"
+        "name": "TargetGroupIds",
+        "desc": "目标组ID，与Filters互斥"
+      },
+      {
+        "name": "Limit",
+        "desc": "显示条数限制，默认为20"
+      },
+      {
+        "name": "Offset",
+        "desc": "显示的偏移起始量"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName"
       }
     ],
-    "desc": "根据 ModifyBlockIPList 接口返回的异步任务的ID，查询封禁IP（黑名单）异步任务的执行状态。（接口灰度中，如需使用请提工单）"
+    "desc": "查询目标组信息"
   },
   "DescribeClassicalLBByInstanceId": {
     "params": [
@@ -767,6 +917,32 @@ INFO = {
       }
     ],
     "desc": "DescribeClassicalLBByInstanceId用于通过后端实例ID获取传统型负载均衡ID列表"
+  },
+  "ReplaceCertForLoadBalancers": {
+    "params": [
+      {
+        "name": "OldCertificateId",
+        "desc": "需要被替换的证书的ID，可以是服务端证书或客户端证书"
+      },
+      {
+        "name": "Certificate",
+        "desc": "新证书的内容等相关信息"
+      }
+    ],
+    "desc": "ReplaceCertForLoadBalancers 接口用以替换负载均衡实例所关联的证书，对于各个地域的负载均衡，如果指定的老的证书ID与其有关联关系，则会先解除关联，再建立新证书与该负载均衡的关联关系。\n此接口支持替换服务端证书或客户端证书。\n需要使用的新证书，可以通过传入证书ID来指定，如果不指定证书ID，则必须传入证书内容等相关信息，用以新建证书并绑定至负载均衡。\n注：本接口仅可从广州地域调用。"
+  },
+  "ModifyTargetGroupInstancesPort": {
+    "params": [
+      {
+        "name": "TargetGroupId",
+        "desc": "目标组ID"
+      },
+      {
+        "name": "TargetGroupInstances",
+        "desc": "待修改端口的服务器数组"
+      }
+    ],
+    "desc": "批量修改目标组服务器端口。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
   "BatchModifyTargetWeight": {
     "params": [

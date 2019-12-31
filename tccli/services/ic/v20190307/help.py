@@ -5,15 +5,15 @@ INFO = {
     "params": [
       {
         "name": "Sdkappid",
-        "desc": "应用id"
+        "desc": "应用ID"
       },
       {
         "name": "Iccid",
-        "desc": "卡片id"
+        "desc": "卡片ID"
       },
       {
         "name": "Content",
-        "desc": "短信内容"
+        "desc": "短信内容长度70限制"
       }
     ],
     "desc": "发送短信息接口"
@@ -31,7 +31,7 @@ INFO = {
     "params": [
       {
         "name": "Sdkappid",
-        "desc": "应用id"
+        "desc": "应用ID"
       },
       {
         "name": "Iccids",
@@ -39,7 +39,7 @@ INFO = {
       },
       {
         "name": "Content",
-        "desc": "短信内容"
+        "desc": "短信内容 长度限制 70"
       }
     ],
     "desc": "群发短信"
@@ -48,11 +48,11 @@ INFO = {
     "params": [
       {
         "name": "Sdkappid",
-        "desc": "应用id"
+        "desc": "应用ID"
       },
       {
         "name": "Iccid",
-        "desc": "卡片id"
+        "desc": "卡片ID"
       }
     ],
     "desc": "查询卡片详细信息"
@@ -61,7 +61,7 @@ INFO = {
     "params": [
       {
         "name": "Sdkappid",
-        "desc": "应用id"
+        "desc": "应用ID"
       },
       {
         "name": "Offset",

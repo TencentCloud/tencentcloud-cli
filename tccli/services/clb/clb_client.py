@@ -230,15 +230,15 @@ def doBatchDeregisterTargets(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReplaceCertForLoadBalancers(argv, arglist):
+def doRegisterTargetGroupInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ReplaceCertForLoadBalancers", g_param[OptionsDefine.Version])
+        show_help("RegisterTargetGroupInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "OldCertificateId": argv.get("--OldCertificateId"),
-        "Certificate": Utils.try_to_json(argv, "--Certificate"),
+        "TargetGroupId": argv.get("--TargetGroupId"),
+        "TargetGroupInstances": Utils.try_to_json(argv, "--TargetGroupInstances"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,9 +252,9 @@ def doReplaceCertForLoadBalancers(argv, arglist):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReplaceCertForLoadBalancersRequest()
+    model = models.RegisterTargetGroupInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ReplaceCertForLoadBalancers(model)
+    rsp = client.RegisterTargetGroupInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -334,6 +334,39 @@ def doAutoRewrite(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDisassociateTargetGroups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisassociateTargetGroups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Associations": Utils.try_to_json(argv, "--Associations"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisassociateTargetGroupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisassociateTargetGroups(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyDomain(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -370,14 +403,14 @@ def doModifyDomain(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClassicalLBTargets(argv, arglist):
+def doDeleteTargetGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeClassicalLBTargets", g_param[OptionsDefine.Version])
+        show_help("DeleteTargetGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "TargetGroupIds": Utils.try_to_json(argv, "--TargetGroupIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -391,9 +424,9 @@ def doDescribeClassicalLBTargets(argv, arglist):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClassicalLBTargetsRequest()
+    model = models.DeleteTargetGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClassicalLBTargets(model)
+    rsp = client.DeleteTargetGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -620,6 +653,107 @@ def doDeleteRule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doReplaceCertForLoadBalancers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ReplaceCertForLoadBalancers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "OldCertificateId": argv.get("--OldCertificateId"),
+        "Certificate": Utils.try_to_json(argv, "--Certificate"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReplaceCertForLoadBalancersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ReplaceCertForLoadBalancers(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAssociateTargetGroups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AssociateTargetGroups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Associations": Utils.try_to_json(argv, "--Associations"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssociateTargetGroupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AssociateTargetGroups(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeregisterTargetGroupInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeregisterTargetGroupInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TargetGroupId": argv.get("--TargetGroupId"),
+        "TargetGroupInstances": Utils.try_to_json(argv, "--TargetGroupInstances"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeregisterTargetGroupInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeregisterTargetGroupInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeLoadBalancers(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -741,6 +875,39 @@ def doDescribeListeners(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeClassicalLBTargets(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeClassicalLBTargets", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClassicalLBTargetsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeClassicalLBTargets(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateListener(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -807,6 +974,45 @@ def doBatchRegisterTargets(argv, arglist):
     model = models.BatchRegisterTargetsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.BatchRegisterTargets(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTargetPort(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTargetPort", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "Targets": Utils.try_to_json(argv, "--Targets"),
+        "NewPort": Utils.try_to_json(argv, "--NewPort"),
+        "LocationId": argv.get("--LocationId"),
+        "Domain": argv.get("--Domain"),
+        "Url": argv.get("--Url"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTargetPortRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyTargetPort(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -928,6 +1134,75 @@ def doModifyRule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeTargetHealth(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTargetHealth", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTargetHealthRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTargetHealth(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTargetGroupList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTargetGroupList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TargetGroupIds": Utils.try_to_json(argv, "--TargetGroupIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTargetGroupListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTargetGroupList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyBlockIPList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -966,14 +1241,17 @@ def doModifyBlockIPList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTargetHealth(argv, arglist):
+def doCreateTargetGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTargetHealth", g_param[OptionsDefine.Version])
+        show_help("CreateTargetGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
+        "TargetGroupName": argv.get("--TargetGroupName"),
+        "VpcId": argv.get("--VpcId"),
+        "Port": Utils.try_to_json(argv, "--Port"),
+        "TargetGroupInstances": Utils.try_to_json(argv, "--TargetGroupInstances"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -987,9 +1265,9 @@ def doDescribeTargetHealth(argv, arglist):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTargetHealthRequest()
+    model = models.CreateTargetGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTargetHealth(model)
+    rsp = client.CreateTargetGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1104,20 +1382,17 @@ def doDescribeRewrite(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyTargetPort(argv, arglist):
+def doDescribeTargetGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyTargetPort", g_param[OptionsDefine.Version])
+        show_help("DescribeTargetGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LoadBalancerId": argv.get("--LoadBalancerId"),
-        "ListenerId": argv.get("--ListenerId"),
-        "Targets": Utils.try_to_json(argv, "--Targets"),
-        "NewPort": Utils.try_to_json(argv, "--NewPort"),
-        "LocationId": argv.get("--LocationId"),
-        "Domain": argv.get("--Domain"),
-        "Url": argv.get("--Url"),
+        "TargetGroupIds": Utils.try_to_json(argv, "--TargetGroupIds"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1131,9 +1406,44 @@ def doModifyTargetPort(argv, arglist):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyTargetPortRequest()
+    model = models.DescribeTargetGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyTargetPort(model)
+    rsp = client.DescribeTargetGroups(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTargetGroupAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTargetGroupAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TargetGroupId": argv.get("--TargetGroupId"),
+        "TargetGroupName": argv.get("--TargetGroupName"),
+        "Port": Utils.try_to_json(argv, "--Port"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTargetGroupAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyTargetGroupAttribute(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1217,6 +1527,40 @@ def doModifyLoadBalancerAttributes(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyTargetGroupInstancesWeight(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTargetGroupInstancesWeight", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TargetGroupId": argv.get("--TargetGroupId"),
+        "TargetGroupInstances": Utils.try_to_json(argv, "--TargetGroupInstances"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTargetGroupInstancesWeightRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyTargetGroupInstancesWeight(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeBlockIPTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1274,6 +1618,75 @@ def doDescribeClassicalLBByInstanceId(argv, arglist):
     model = models.DescribeClassicalLBByInstanceIdRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeClassicalLBByInstanceId(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTargetGroupInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTargetGroupInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTargetGroupInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTargetGroupInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTargetGroupInstancesPort(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTargetGroupInstancesPort", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TargetGroupId": argv.get("--TargetGroupId"),
+        "TargetGroupInstances": Utils.try_to_json(argv, "--TargetGroupInstances"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTargetGroupInstancesPortRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyTargetGroupInstancesPort(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1450,35 +1863,47 @@ ACTION_MAP = {
     "DeleteListener": doDeleteListener,
     "SetSecurityGroupForLoadbalancers": doSetSecurityGroupForLoadbalancers,
     "BatchDeregisterTargets": doBatchDeregisterTargets,
-    "ReplaceCertForLoadBalancers": doReplaceCertForLoadBalancers,
+    "RegisterTargetGroupInstances": doRegisterTargetGroupInstances,
     "CreateRule": doCreateRule,
     "AutoRewrite": doAutoRewrite,
+    "DisassociateTargetGroups": doDisassociateTargetGroups,
     "ModifyDomain": doModifyDomain,
-    "DescribeClassicalLBTargets": doDescribeClassicalLBTargets,
+    "DeleteTargetGroups": doDeleteTargetGroups,
     "DeregisterTargetsFromClassicalLB": doDeregisterTargetsFromClassicalLB,
     "DescribeClassicalLBHealthStatus": doDescribeClassicalLBHealthStatus,
     "ModifyListener": doModifyListener,
     "DeleteLoadBalancer": doDeleteLoadBalancer,
     "ModifyDomainAttributes": doModifyDomainAttributes,
     "DeleteRule": doDeleteRule,
+    "ReplaceCertForLoadBalancers": doReplaceCertForLoadBalancers,
+    "AssociateTargetGroups": doAssociateTargetGroups,
+    "DeregisterTargetGroupInstances": doDeregisterTargetGroupInstances,
     "DescribeLoadBalancers": doDescribeLoadBalancers,
     "DescribeBlockIPList": doDescribeBlockIPList,
     "DescribeListeners": doDescribeListeners,
+    "DescribeClassicalLBTargets": doDescribeClassicalLBTargets,
     "CreateListener": doCreateListener,
     "BatchRegisterTargets": doBatchRegisterTargets,
+    "ModifyTargetPort": doModifyTargetPort,
     "ModifyTargetWeight": doModifyTargetWeight,
     "DescribeTaskStatus": doDescribeTaskStatus,
     "ModifyRule": doModifyRule,
-    "ModifyBlockIPList": doModifyBlockIPList,
     "DescribeTargetHealth": doDescribeTargetHealth,
+    "DescribeTargetGroupList": doDescribeTargetGroupList,
+    "ModifyBlockIPList": doModifyBlockIPList,
+    "CreateTargetGroup": doCreateTargetGroup,
     "DescribeTargets": doDescribeTargets,
     "RegisterTargetsWithClassicalLB": doRegisterTargetsWithClassicalLB,
     "DescribeRewrite": doDescribeRewrite,
-    "ModifyTargetPort": doModifyTargetPort,
+    "DescribeTargetGroups": doDescribeTargetGroups,
+    "ModifyTargetGroupAttribute": doModifyTargetGroupAttribute,
     "DeregisterTargets": doDeregisterTargets,
     "ModifyLoadBalancerAttributes": doModifyLoadBalancerAttributes,
+    "ModifyTargetGroupInstancesWeight": doModifyTargetGroupInstancesWeight,
     "DescribeBlockIPTask": doDescribeBlockIPTask,
     "DescribeClassicalLBByInstanceId": doDescribeClassicalLBByInstanceId,
+    "DescribeTargetGroupInstances": doDescribeTargetGroupInstances,
+    "ModifyTargetGroupInstancesPort": doModifyTargetGroupInstancesPort,
     "BatchModifyTargetWeight": doBatchModifyTargetWeight,
     "DeleteRewrite": doDeleteRewrite,
     "CreateLoadBalancer": doCreateLoadBalancer,

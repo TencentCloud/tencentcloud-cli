@@ -728,6 +728,10 @@ INFO = {
       {
         "name": "WithMaster",
         "desc": "是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。"
+      },
+      {
+        "name": "DeployGroupIds",
+        "desc": "置放群组ID列表。"
       }
     ],
     "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目 ID、实例 ID、访问地址、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。"
@@ -1208,7 +1212,7 @@ INFO = {
         "desc": "偏移量，默认为0。"
       }
     ],
-    "desc": "根据置放群组 ID 或置放群组名称查询置放群组列表"
+    "desc": "本接口(DescribeDeployGroupList)用于查询用户的置放群组列表，可以指定置放群组 ID 或置放群组名称。"
   },
   "StopDBImportJob": {
     "params": [
@@ -1463,9 +1467,17 @@ INFO = {
       {
         "name": "Description",
         "desc": "置放群组描述，最长不能超过200个字符。"
+      },
+      {
+        "name": "Affinity",
+        "desc": "置放群组的亲和性策略。"
+      },
+      {
+        "name": "LimitNum",
+        "desc": "置放群组亲和性策略1的实例限制个数。"
       }
     ],
-    "desc": "创建放置实例的置放群组"
+    "desc": "本接口(CreateDeployGroup)用于创建放置实例的置放群组"
   },
   "DeleteTimeWindow": {
     "params": [

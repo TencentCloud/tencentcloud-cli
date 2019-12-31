@@ -1545,9 +1545,12 @@ def doModifyInstance(argv, arglist):
 
     param = {
         "Operation": argv.get("--Operation"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InstanceNames": Utils.try_to_json(argv, "--InstanceNames"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "AutoRenews": Utils.try_to_json(argv, "--AutoRenews"),
         "InstanceId": argv.get("--InstanceId"),
         "InstanceName": argv.get("--InstanceName"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "AutoRenew": Utils.try_to_json(argv, "--AutoRenew"),
 
     }

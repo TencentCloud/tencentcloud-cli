@@ -12,22 +12,23 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.faceid.v20180301 import faceid_client as faceid_client_v20180301
-from tencentcloud.faceid.v20180301 import models as models_v20180301
-from tccli.services.faceid import v20180301
-from tccli.services.faceid.v20180301 import help as v20180301_help
+from tencentcloud.ssm.v20190923 import ssm_client as ssm_client_v20190923
+from tencentcloud.ssm.v20190923 import models as models_v20190923
+from tccli.services.ssm import v20190923
+from tccli.services.ssm.v20190923 import help as v20190923_help
 
 
-def doGetDetectInfo(argv, arglist):
+def doPutSecretValue(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetDetectInfo", g_param[OptionsDefine.Version])
+        show_help("PutSecretValue", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BizToken": argv.get("--BizToken"),
-        "RuleId": argv.get("--RuleId"),
-        "InfoType": argv.get("--InfoType"),
+        "SecretName": argv.get("--SecretName"),
+        "VersionId": argv.get("--VersionId"),
+        "SecretBinary": argv.get("--SecretBinary"),
+        "SecretString": argv.get("--SecretString"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -38,12 +39,12 @@ def doGetDetectInfo(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetDetectInfoRequest()
+    model = models.PutSecretValueRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetDetectInfo(model)
+    rsp = client.PutSecretValue(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -53,17 +54,14 @@ def doGetDetectInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMinorsVerification(argv, arglist):
+def doListSecretVersionIds(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("MinorsVerification", g_param[OptionsDefine.Version])
+        show_help("ListSecretVersionIds", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Type": argv.get("--Type"),
-        "Mobile": argv.get("--Mobile"),
-        "IdCard": argv.get("--IdCard"),
-        "Name": argv.get("--Name"),
+        "SecretName": argv.get("--SecretName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -74,12 +72,12 @@ def doMinorsVerification(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MinorsVerificationRequest()
+    model = models.ListSecretVersionIdsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.MinorsVerification(model)
+    rsp = client.ListSecretVersionIds(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -89,13 +87,17 @@ def doMinorsVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetLiveCode(argv, arglist):
+def doUpdateSecret(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetLiveCode", g_param[OptionsDefine.Version])
+        show_help("UpdateSecret", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "SecretName": argv.get("--SecretName"),
+        "VersionId": argv.get("--VersionId"),
+        "SecretBinary": argv.get("--SecretBinary"),
+        "SecretString": argv.get("--SecretString"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -106,12 +108,12 @@ def doGetLiveCode(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetLiveCodeRequest()
+    model = models.UpdateSecretRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetLiveCode(model)
+    rsp = client.UpdateSecret(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -121,14 +123,19 @@ def doGetLiveCode(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMobileNetworkTimeVerification(argv, arglist):
+def doCreateSecret(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("MobileNetworkTimeVerification", g_param[OptionsDefine.Version])
+        show_help("CreateSecret", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Mobile": argv.get("--Mobile"),
+        "SecretName": argv.get("--SecretName"),
+        "VersionId": argv.get("--VersionId"),
+        "Description": argv.get("--Description"),
+        "KmsKeyId": argv.get("--KmsKeyId"),
+        "SecretBinary": argv.get("--SecretBinary"),
+        "SecretString": argv.get("--SecretString"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -139,12 +146,12 @@ def doMobileNetworkTimeVerification(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MobileNetworkTimeVerificationRequest()
+    model = models.CreateSecretRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.MobileNetworkTimeVerification(model)
+    rsp = client.CreateSecret(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -154,13 +161,15 @@ def doMobileNetworkTimeVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetActionSequence(argv, arglist):
+def doDeleteSecret(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetActionSequence", g_param[OptionsDefine.Version])
+        show_help("DeleteSecret", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "SecretName": argv.get("--SecretName"),
+        "RecoveryWindowInDays": Utils.try_to_json(argv, "--RecoveryWindowInDays"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -171,12 +180,12 @@ def doGetActionSequence(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetActionSequenceRequest()
+    model = models.DeleteSecretRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetActionSequence(model)
+    rsp = client.DeleteSecret(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -186,18 +195,14 @@ def doGetActionSequence(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLivenessCompare(argv, arglist):
+def doDescribeSecret(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LivenessCompare", g_param[OptionsDefine.Version])
+        show_help("DescribeSecret", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageBase64": argv.get("--ImageBase64"),
-        "VideoBase64": argv.get("--VideoBase64"),
-        "LivenessType": argv.get("--LivenessType"),
-        "ValidateData": argv.get("--ValidateData"),
-        "Optional": argv.get("--Optional"),
+        "SecretName": argv.get("--SecretName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -208,12 +213,12 @@ def doLivenessCompare(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LivenessCompareRequest()
+    model = models.DescribeSecretRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LivenessCompare(model)
+    rsp = client.DescribeSecret(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -223,17 +228,14 @@ def doLivenessCompare(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBankCardVerification(argv, arglist):
+def doRestoreSecret(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("BankCardVerification", g_param[OptionsDefine.Version])
+        show_help("RestoreSecret", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": argv.get("--IdCard"),
-        "Name": argv.get("--Name"),
-        "BankCard": argv.get("--BankCard"),
-        "CertType": Utils.try_to_json(argv, "--CertType"),
+        "SecretName": argv.get("--SecretName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -244,12 +246,12 @@ def doBankCardVerification(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BankCardVerificationRequest()
+    model = models.RestoreSecretRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.BankCardVerification(model)
+    rsp = client.RestoreSecret(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -259,17 +261,18 @@ def doBankCardVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLiveness(argv, arglist):
+def doListSecrets(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Liveness", g_param[OptionsDefine.Version])
+        show_help("ListSecrets", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VideoBase64": argv.get("--VideoBase64"),
-        "LivenessType": argv.get("--LivenessType"),
-        "ValidateData": argv.get("--ValidateData"),
-        "Optional": argv.get("--Optional"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderType": Utils.try_to_json(argv, "--OrderType"),
+        "State": Utils.try_to_json(argv, "--State"),
+        "SearchSecretName": argv.get("--SearchSecretName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -280,12 +283,12 @@ def doLiveness(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LivenessRequest()
+    model = models.ListSecretsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Liveness(model)
+    rsp = client.ListSecrets(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -295,19 +298,14 @@ def doLiveness(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLivenessRecognition(argv, arglist):
+def doEnableSecret(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LivenessRecognition", g_param[OptionsDefine.Version])
+        show_help("EnableSecret", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": argv.get("--IdCard"),
-        "Name": argv.get("--Name"),
-        "VideoBase64": argv.get("--VideoBase64"),
-        "LivenessType": argv.get("--LivenessType"),
-        "ValidateData": argv.get("--ValidateData"),
-        "Optional": argv.get("--Optional"),
+        "SecretName": argv.get("--SecretName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -318,12 +316,12 @@ def doLivenessRecognition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LivenessRecognitionRequest()
+    model = models.EnableSecretRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LivenessRecognition(model)
+    rsp = client.EnableSecret(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -333,14 +331,13 @@ def doLivenessRecognition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMobileStatus(argv, arglist):
+def doGetServiceStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("MobileStatus", g_param[OptionsDefine.Version])
+        show_help("GetServiceStatus", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Mobile": argv.get("--Mobile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -351,12 +348,12 @@ def doMobileStatus(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MobileStatusRequest()
+    model = models.GetServiceStatusRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.MobileStatus(model)
+    rsp = client.GetServiceStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -366,15 +363,15 @@ def doMobileStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doIdCardVerification(argv, arglist):
+def doDeleteSecretVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("IdCardVerification", g_param[OptionsDefine.Version])
+        show_help("DeleteSecretVersion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": argv.get("--IdCard"),
-        "Name": argv.get("--Name"),
+        "SecretName": argv.get("--SecretName"),
+        "VersionId": argv.get("--VersionId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -385,12 +382,12 @@ def doIdCardVerification(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.IdCardVerificationRequest()
+    model = models.DeleteSecretVersionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.IdCardVerification(model)
+    rsp = client.DeleteSecretVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -400,17 +397,15 @@ def doIdCardVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doIdCardOCRVerification(argv, arglist):
+def doUpdateDescription(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("IdCardOCRVerification", g_param[OptionsDefine.Version])
+        show_help("UpdateDescription", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": argv.get("--IdCard"),
-        "Name": argv.get("--Name"),
-        "ImageBase64": argv.get("--ImageBase64"),
-        "ImageUrl": argv.get("--ImageUrl"),
+        "SecretName": argv.get("--SecretName"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -421,12 +416,12 @@ def doIdCardOCRVerification(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.IdCardOCRVerificationRequest()
+    model = models.UpdateDescriptionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.IdCardOCRVerification(model)
+    rsp = client.UpdateDescription(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -436,18 +431,13 @@ def doIdCardOCRVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBankCard4EVerification(argv, arglist):
+def doGetRegions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("BankCard4EVerification", g_param[OptionsDefine.Version])
+        show_help("GetRegions", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Name": argv.get("--Name"),
-        "BankCard": argv.get("--BankCard"),
-        "Phone": argv.get("--Phone"),
-        "IdCard": argv.get("--IdCard"),
-        "CertType": Utils.try_to_json(argv, "--CertType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -458,12 +448,12 @@ def doBankCard4EVerification(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BankCard4EVerificationRequest()
+    model = models.GetRegionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.BankCard4EVerification(model)
+    rsp = client.GetRegions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -473,20 +463,14 @@ def doBankCard4EVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDetectAuth(argv, arglist):
+def doDisableSecret(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DetectAuth", g_param[OptionsDefine.Version])
+        show_help("DisableSecret", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RuleId": argv.get("--RuleId"),
-        "TerminalType": argv.get("--TerminalType"),
-        "IdCard": argv.get("--IdCard"),
-        "Name": argv.get("--Name"),
-        "RedirectUrl": argv.get("--RedirectUrl"),
-        "Extra": argv.get("--Extra"),
-        "ImageBase64": argv.get("--ImageBase64"),
+        "SecretName": argv.get("--SecretName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -497,12 +481,12 @@ def doDetectAuth(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetectAuthRequest()
+    model = models.DisableSecretRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DetectAuth(model)
+    rsp = client.DisableSecret(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -512,17 +496,15 @@ def doDetectAuth(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doImageRecognition(argv, arglist):
+def doGetSecretValue(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ImageRecognition", g_param[OptionsDefine.Version])
+        show_help("GetSecretValue", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "IdCard": argv.get("--IdCard"),
-        "Name": argv.get("--Name"),
-        "ImageBase64": argv.get("--ImageBase64"),
-        "Optional": argv.get("--Optional"),
+        "SecretName": argv.get("--SecretName"),
+        "VersionId": argv.get("--VersionId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -533,81 +515,12 @@ def doImageRecognition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.SsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImageRecognitionRequest()
+    model = models.GetSecretValueRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ImageRecognition(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doBankCard2EVerification(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("BankCard2EVerification", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Name": argv.get("--Name"),
-        "BankCard": argv.get("--BankCard"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BankCard2EVerificationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.BankCard2EVerification(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doPhoneVerification(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("PhoneVerification", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "IdCard": argv.get("--IdCard"),
-        "Name": argv.get("--Name"),
-        "Phone": argv.get("--Phone"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PhoneVerificationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.PhoneVerification(model)
+    rsp = client.GetSecretValue(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -618,47 +531,45 @@ def doPhoneVerification(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180301": faceid_client_v20180301,
+    "v20190923": ssm_client_v20190923,
 
 }
 
 MODELS_MAP = {
-    "v20180301": models_v20180301,
+    "v20190923": models_v20190923,
 
 }
 
 ACTION_MAP = {
-    "GetDetectInfo": doGetDetectInfo,
-    "MinorsVerification": doMinorsVerification,
-    "GetLiveCode": doGetLiveCode,
-    "MobileNetworkTimeVerification": doMobileNetworkTimeVerification,
-    "GetActionSequence": doGetActionSequence,
-    "LivenessCompare": doLivenessCompare,
-    "BankCardVerification": doBankCardVerification,
-    "Liveness": doLiveness,
-    "LivenessRecognition": doLivenessRecognition,
-    "MobileStatus": doMobileStatus,
-    "IdCardVerification": doIdCardVerification,
-    "IdCardOCRVerification": doIdCardOCRVerification,
-    "BankCard4EVerification": doBankCard4EVerification,
-    "DetectAuth": doDetectAuth,
-    "ImageRecognition": doImageRecognition,
-    "BankCard2EVerification": doBankCard2EVerification,
-    "PhoneVerification": doPhoneVerification,
+    "PutSecretValue": doPutSecretValue,
+    "ListSecretVersionIds": doListSecretVersionIds,
+    "UpdateSecret": doUpdateSecret,
+    "CreateSecret": doCreateSecret,
+    "DeleteSecret": doDeleteSecret,
+    "DescribeSecret": doDescribeSecret,
+    "RestoreSecret": doRestoreSecret,
+    "ListSecrets": doListSecrets,
+    "EnableSecret": doEnableSecret,
+    "GetServiceStatus": doGetServiceStatus,
+    "DeleteSecretVersion": doDeleteSecretVersion,
+    "UpdateDescription": doUpdateDescription,
+    "GetRegions": doGetRegions,
+    "DisableSecret": doDisableSecret,
+    "GetSecretValue": doGetSecretValue,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180301.version,
+    v20190923.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180301.version.replace('-', ''): {"help": v20180301_help.INFO,"desc": v20180301_help.DESC},
+     'v' + v20190923.version.replace('-', ''): {"help": v20190923_help.INFO,"desc": v20190923_help.DESC},
 
 }
 
 
-def faceid_action(argv, arglist):
+def ssm_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -674,7 +585,7 @@ def faceid_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "faceid", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "ssm", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -695,7 +606,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("faceid", faceid_action)
+    cmd = NiceCommand("ssm", ssm_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -754,11 +665,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["faceid"][OptionsDefine.Version]
+            version = config["ssm"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["faceid"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["ssm"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -775,7 +686,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "faceid", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ssm", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -785,7 +696,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["faceid"]["version"]
+        version = profile["ssm"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

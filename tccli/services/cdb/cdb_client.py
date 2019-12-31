@@ -1322,6 +1322,7 @@ def doDescribeDBInstances(argv, arglist):
         "WithDr": Utils.try_to_json(argv, "--WithDr"),
         "WithRo": Utils.try_to_json(argv, "--WithRo"),
         "WithMaster": Utils.try_to_json(argv, "--WithMaster"),
+        "DeployGroupIds": Utils.try_to_json(argv, "--DeployGroupIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2697,6 +2698,8 @@ def doCreateDeployGroup(argv, arglist):
     param = {
         "DeployGroupName": argv.get("--DeployGroupName"),
         "Description": argv.get("--Description"),
+        "Affinity": Utils.try_to_json(argv, "--Affinity"),
+        "LimitNum": Utils.try_to_json(argv, "--LimitNum"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

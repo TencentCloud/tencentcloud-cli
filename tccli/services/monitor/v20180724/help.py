@@ -70,7 +70,7 @@ INFO = {
     "params": [
       {
         "name": "Module",
-        "desc": "接口模块名，当前接口取值policy"
+        "desc": "接口模块名，当前接口取值monitor"
       },
       {
         "name": "StartTime",
@@ -119,6 +119,23 @@ INFO = {
     ],
     "desc": "获取平台事件列表"
   },
+  "UnBindingPolicyObject": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "固定值，为\"monitor\""
+      },
+      {
+        "name": "GroupId",
+        "desc": "策略组id"
+      },
+      {
+        "name": "UniqueId",
+        "desc": "待删除对象实例的唯一id列表"
+      }
+    ],
+    "desc": "删除策略的关联对象"
+  },
   "BindingPolicyObject": {
     "params": [
       {
@@ -157,6 +174,32 @@ INFO = {
     ],
     "desc": "修改告警接收人"
   },
+  "DescribeBindingPolicyObjectList": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "固定值，为\"monitor\""
+      },
+      {
+        "name": "GroupId",
+        "desc": "策略组id"
+      }
+    ],
+    "desc": "获取已绑定对象列表"
+  },
+  "DeletePolicyGroup": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "固定值，为\"monitor\""
+      },
+      {
+        "name": "GroupId",
+        "desc": "策略组id"
+      }
+    ],
+    "desc": "删除告警策略组"
+  },
   "DescribeBaseMetrics": {
     "params": [
       {
@@ -169,6 +212,19 @@ INFO = {
       }
     ],
     "desc": "获取基础指标详情"
+  },
+  "DescribePolicyGroupInfo": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "固定值，为\"monitor\""
+      },
+      {
+        "name": "GroupId",
+        "desc": "策略组id"
+      }
+    ],
+    "desc": "获取基础策略组详情"
   },
   "GetMonitorData": {
     "params": [
@@ -268,5 +324,18 @@ INFO = {
       }
     ],
     "desc": "增加策略组"
+  },
+  "UnBindingAllPolicyObject": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "固定值，为\"monitor\""
+      },
+      {
+        "name": "GroupId",
+        "desc": "策略组id"
+      }
+    ],
+    "desc": "删除全部的关联对象"
   }
 }

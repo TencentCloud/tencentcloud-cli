@@ -43,9 +43,31 @@ INFO = {
     "params": [],
     "desc": "使用数字活体检测模式前，需调用本接口获取数字验证码。"
   },
+  "MobileNetworkTimeVerification": {
+    "params": [
+      {
+        "name": "Mobile",
+        "desc": "手机号码。不支持电信手机号。"
+      }
+    ],
+    "desc": "本接口用于查询手机号在网时长，输入手机号进行查询。"
+  },
   "GetActionSequence": {
     "params": [],
     "desc": "使用动作活体检测模式前，需调用本接口获取动作顺序。"
+  },
+  "BankCard2EVerification": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "姓名"
+      },
+      {
+        "name": "BankCard",
+        "desc": "银行卡"
+      }
+    ],
+    "desc": "本接口用于校验姓名和银行卡号的真实性和一致性。"
   },
   "LivenessCompare": {
     "params": [
@@ -143,18 +165,14 @@ INFO = {
     ],
     "desc": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与公安权威库的证件照是否属于同一个人。"
   },
-  "BankCard2EVerification": {
+  "MobileStatus": {
     "params": [
       {
-        "name": "Name",
-        "desc": "姓名"
-      },
-      {
-        "name": "BankCard",
-        "desc": "银行卡"
+        "name": "Mobile",
+        "desc": "手机号码"
       }
     ],
-    "desc": "本接口用于校验姓名和银行卡号的真实性和一致性。"
+    "desc": "本接口用于验证手机号的状态，您可以输入手机号进行查询。"
   },
   "IdCardVerification": {
     "params": [

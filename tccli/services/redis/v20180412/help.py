@@ -702,7 +702,7 @@ INFO = {
       },
       {
         "name": "VPort",
-        "desc": "用户自定义的端口 不填则默认为6379"
+        "desc": "用户自定义的端口 不填则默认为6379，范围[1024,65535]"
       },
       {
         "name": "RedisShardNum",
@@ -794,11 +794,11 @@ INFO = {
         "desc": "修改实例操作，如填写：rename-表示实例重命名；modifyProject-修改实例所属项目；modifyAutoRenew-修改实例续费标记"
       },
       {
-        "name": "InstanceId",
+        "name": "InstanceIds",
         "desc": "实例Id"
       },
       {
-        "name": "InstanceName",
+        "name": "InstanceNames",
         "desc": "实例的新名称"
       },
       {
@@ -806,11 +806,23 @@ INFO = {
         "desc": "项目Id"
       },
       {
-        "name": "AutoRenew",
+        "name": "AutoRenews",
         "desc": "自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "已经废弃"
+      },
+      {
+        "name": "InstanceName",
+        "desc": "已经废弃"
+      },
+      {
+        "name": "AutoRenew",
+        "desc": "已经废弃"
       }
     ],
-    "desc": "修改实例相关信息（目前支持：实例重命名）"
+    "desc": "修改实例相关信息"
   },
   "DescribeInstanceMonitorTookDist": {
     "params": [
