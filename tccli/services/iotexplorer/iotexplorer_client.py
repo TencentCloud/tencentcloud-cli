@@ -455,6 +455,11 @@ def doCreateDevice(argv, arglist):
     param = {
         "ProductId": argv.get("--ProductId"),
         "DeviceName": argv.get("--DeviceName"),
+        "DevAddr": argv.get("--DevAddr"),
+        "AppKey": argv.get("--AppKey"),
+        "DevEUI": argv.get("--DevEUI"),
+        "AppSKey": argv.get("--AppSKey"),
+        "NwkSKey": argv.get("--NwkSKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

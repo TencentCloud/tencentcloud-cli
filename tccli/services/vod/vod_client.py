@@ -169,14 +169,16 @@ def doCreateSampleSnapshotTemplate(argv, arglist):
         return
 
     param = {
-        "Width": Utils.try_to_json(argv, "--Width"),
-        "Height": Utils.try_to_json(argv, "--Height"),
         "SampleType": argv.get("--SampleType"),
         "SampleInterval": Utils.try_to_json(argv, "--SampleInterval"),
         "Name": argv.get("--Name"),
+        "Width": Utils.try_to_json(argv, "--Width"),
+        "Height": Utils.try_to_json(argv, "--Height"),
+        "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "Format": argv.get("--Format"),
         "Comment": argv.get("--Comment"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "FillType": argv.get("--FillType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -483,12 +485,14 @@ def doCreateSnapshotByTimeOffsetTemplate(argv, arglist):
         return
 
     param = {
+        "Name": argv.get("--Name"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
-        "Name": argv.get("--Name"),
+        "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "Format": argv.get("--Format"),
         "Comment": argv.get("--Comment"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "FillType": argv.get("--FillType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -820,11 +824,13 @@ def doModifySampleSnapshotTemplate(argv, arglist):
         "Name": argv.get("--Name"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
+        "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "SampleType": argv.get("--SampleType"),
         "SampleInterval": Utils.try_to_json(argv, "--SampleInterval"),
         "Format": argv.get("--Format"),
         "Comment": argv.get("--Comment"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "FillType": argv.get("--FillType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1574,6 +1580,7 @@ def doModifyAnimatedGraphicsTemplate(argv, arglist):
         "Name": argv.get("--Name"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
+        "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "Format": argv.get("--Format"),
         "Fps": Utils.try_to_json(argv, "--Fps"),
         "Quality": Utils.try_to_json(argv, "--Quality"),
@@ -1721,9 +1728,10 @@ def doCreateAnimatedGraphicsTemplate(argv, arglist):
         return
 
     param = {
+        "Fps": Utils.try_to_json(argv, "--Fps"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
-        "Fps": Utils.try_to_json(argv, "--Fps"),
+        "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "Format": argv.get("--Format"),
         "Quality": Utils.try_to_json(argv, "--Quality"),
         "Name": argv.get("--Name"),
@@ -1782,6 +1790,41 @@ def doDescribeAnimatedGraphicsTemplates(argv, arglist):
     model = models.DescribeAnimatedGraphicsTemplatesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeAnimatedGraphicsTemplates(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doForbidMediaDistribution(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ForbidMediaDistribution", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FileIds": Utils.try_to_json(argv, "--FileIds"),
+        "Operation": argv.get("--Operation"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ForbidMediaDistributionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ForbidMediaDistribution(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1979,9 +2022,11 @@ def doModifySnapshotByTimeOffsetTemplate(argv, arglist):
         "Name": argv.get("--Name"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
+        "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "Format": argv.get("--Format"),
         "Comment": argv.get("--Comment"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "FillType": argv.get("--FillType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2387,11 +2432,13 @@ def doModifyImageSpriteTemplate(argv, arglist):
         "Name": argv.get("--Name"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
+        "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "SampleType": argv.get("--SampleType"),
         "SampleInterval": Utils.try_to_json(argv, "--SampleInterval"),
         "RowCount": Utils.try_to_json(argv, "--RowCount"),
         "ColumnCount": Utils.try_to_json(argv, "--ColumnCount"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "FillType": argv.get("--FillType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2918,14 +2965,16 @@ def doCreateImageSpriteTemplate(argv, arglist):
         return
 
     param = {
-        "Width": Utils.try_to_json(argv, "--Width"),
-        "Height": Utils.try_to_json(argv, "--Height"),
         "SampleType": argv.get("--SampleType"),
         "SampleInterval": Utils.try_to_json(argv, "--SampleInterval"),
         "RowCount": Utils.try_to_json(argv, "--RowCount"),
         "ColumnCount": Utils.try_to_json(argv, "--ColumnCount"),
         "Name": argv.get("--Name"),
+        "Width": Utils.try_to_json(argv, "--Width"),
+        "Height": Utils.try_to_json(argv, "--Height"),
+        "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "FillType": argv.get("--FillType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3118,6 +3167,7 @@ ACTION_MAP = {
     "ModifyPersonSample": doModifyPersonSample,
     "CreateAnimatedGraphicsTemplate": doCreateAnimatedGraphicsTemplate,
     "DescribeAnimatedGraphicsTemplates": doDescribeAnimatedGraphicsTemplates,
+    "ForbidMediaDistribution": doForbidMediaDistribution,
     "DescribeAllClass": doDescribeAllClass,
     "CreateProcedureTemplate": doCreateProcedureTemplate,
     "PushUrlCache": doPushUrlCache,

@@ -188,39 +188,6 @@ def doChatBot(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doWordEmbedding(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("WordEmbedding", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Text": argv.get("--Text"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.WordEmbeddingRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.WordEmbedding(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doTextClassification(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -255,14 +222,15 @@ def doTextClassification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doContentApproval(argv, arglist):
+def doLexicalAnalysis(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ContentApproval", g_param[OptionsDefine.Version])
+        show_help("LexicalAnalysis", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Text": argv.get("--Text"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -276,9 +244,9 @@ def doContentApproval(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ContentApprovalRequest()
+    model = models.LexicalAnalysisRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ContentApproval(model)
+    rsp = client.LexicalAnalysis(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -389,15 +357,14 @@ def doSentimentAnalysis(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLexicalAnalysis(argv, arglist):
+def doWordEmbedding(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LexicalAnalysis", g_param[OptionsDefine.Version])
+        show_help("WordEmbedding", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Text": argv.get("--Text"),
-        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -411,9 +378,9 @@ def doLexicalAnalysis(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LexicalAnalysisRequest()
+    model = models.WordEmbeddingRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LexicalAnalysis(model)
+    rsp = client.WordEmbedding(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -673,13 +640,12 @@ ACTION_MAP = {
     "DescribeEntity": doDescribeEntity,
     "SentenceSimilarity": doSentenceSimilarity,
     "ChatBot": doChatBot,
-    "WordEmbedding": doWordEmbedding,
     "TextClassification": doTextClassification,
-    "ContentApproval": doContentApproval,
+    "LexicalAnalysis": doLexicalAnalysis,
     "DescribeRelation": doDescribeRelation,
     "DependencyParsing": doDependencyParsing,
     "SentimentAnalysis": doSentimentAnalysis,
-    "LexicalAnalysis": doLexicalAnalysis,
+    "WordEmbedding": doWordEmbedding,
     "TextCorrection": doTextCorrection,
     "DescribeTriple": doDescribeTriple,
     "SensitiveWordsRecognition": doSensitiveWordsRecognition,

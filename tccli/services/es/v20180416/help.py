@@ -55,6 +55,14 @@ INFO = {
       {
         "name": "OrderByType",
         "desc": "排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序"
+      },
+      {
+        "name": "TagList",
+        "desc": "节点标签信息列表"
+      },
+      {
+        "name": "IpList",
+        "desc": "私有网络vip列表"
       }
     ],
     "desc": "查询用户该地域下符合条件的所有实例"
@@ -66,20 +74,8 @@ INFO = {
         "desc": "可用区"
       },
       {
-        "name": "NodeNum",
-        "desc": "节点数量（2-50个）"
-      },
-      {
         "name": "EsVersion",
         "desc": "实例版本（支持\"5.6.4\"、\"6.4.3\"）"
-      },
-      {
-        "name": "NodeType",
-        "desc": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>"
-      },
-      {
-        "name": "DiskSize",
-        "desc": "节点磁盘容量（单位GB）"
       },
       {
         "name": "VpcId",
@@ -98,6 +94,10 @@ INFO = {
         "desc": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）"
       },
       {
+        "name": "NodeNum",
+        "desc": "已废弃请使用NodeInfoList\n节点数量（2-50个）"
+      },
+      {
         "name": "ChargeType",
         "desc": "计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR"
       },
@@ -110,8 +110,16 @@ INFO = {
         "desc": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费"
       },
       {
+        "name": "NodeType",
+        "desc": "已废弃请使用NodeInfoList\n节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>"
+      },
+      {
         "name": "DiskType",
-        "desc": "节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD"
+        "desc": "已废弃请使用NodeInfoList\n节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD"
+      },
+      {
+        "name": "DiskSize",
+        "desc": "已废弃请使用NodeInfoList\n节点磁盘容量（单位GB）"
       },
       {
         "name": "TimeUnit",
@@ -127,19 +135,19 @@ INFO = {
       },
       {
         "name": "EnableDedicatedMaster",
-        "desc": "是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false"
+        "desc": "已废弃请使用NodeInfoList\n是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false"
       },
       {
         "name": "MasterNodeNum",
-        "desc": "专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）"
+        "desc": "已废弃请使用NodeInfoList\n专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）"
       },
       {
         "name": "MasterNodeType",
-        "desc": "专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>"
+        "desc": "已废弃请使用NodeInfoList\n专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>"
       },
       {
         "name": "MasterNodeDiskSize",
-        "desc": "专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）"
+        "desc": "已废弃请使用NodeInfoList\n专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）"
       },
       {
         "name": "ClusterNameInConf",
@@ -156,6 +164,18 @@ INFO = {
       {
         "name": "LicenseType",
         "desc": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum"
+      },
+      {
+        "name": "NodeInfoList",
+        "desc": "节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等"
+      },
+      {
+        "name": "TagList",
+        "desc": "节点标签信息列表"
+      },
+      {
+        "name": "BasicSecurityType",
+        "desc": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>"
       }
     ],
     "desc": "创建指定规格的ES集群实例"
@@ -177,6 +197,10 @@ INFO = {
       {
         "name": "LicenseType",
         "desc": "目标商业特性版本：<li>oss 开源版</li><li>basic 基础版</li>当前仅在5.6.4升级6.x版本时使用，默认值为basic"
+      },
+      {
+        "name": "BasicSecurityType",
+        "desc": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>"
       }
     ],
     "desc": "升级ES集群版本"
@@ -198,6 +222,14 @@ INFO = {
       {
         "name": "VoucherIds",
         "desc": "代金券ID列表（目前仅支持指定一张代金券）"
+      },
+      {
+        "name": "BasicSecurityType",
+        "desc": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>"
+      },
+      {
+        "name": "ForceRestart",
+        "desc": "是否强制重启<li>true强制重启</li><li>false不强制重启</li> 默认值false"
       }
     ],
     "desc": "升级ES商业特性"
@@ -214,7 +246,7 @@ INFO = {
       },
       {
         "name": "NodeNum",
-        "desc": "节点个数（2-50个）"
+        "desc": "已废弃请使用NodeInfoList\n节点个数（2-50个）"
       },
       {
         "name": "EsConfig",
@@ -230,23 +262,23 @@ INFO = {
       },
       {
         "name": "DiskSize",
-        "desc": "磁盘大小（单位GB）"
+        "desc": "已废弃请使用NodeInfoList\n磁盘大小（单位GB）"
       },
       {
         "name": "NodeType",
-        "desc": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>"
+        "desc": "已废弃请使用NodeInfoList\n节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>"
       },
       {
         "name": "MasterNodeNum",
-        "desc": "专用主节点个数（只支持3个或5个）"
+        "desc": "已废弃请使用NodeInfoList\n专用主节点个数（只支持3个或5个）"
       },
       {
         "name": "MasterNodeType",
-        "desc": "专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>"
+        "desc": "已废弃请使用NodeInfoList\n专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>"
       },
       {
         "name": "MasterNodeDiskSize",
-        "desc": "专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）"
+        "desc": "已废弃请使用NodeInfoList\n专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）"
       },
       {
         "name": "ForceRestart",
@@ -255,9 +287,29 @@ INFO = {
       {
         "name": "CosBackup",
         "desc": "COS自动备份信息"
+      },
+      {
+        "name": "NodeInfoList",
+        "desc": "节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改"
+      },
+      {
+        "name": "PublicAccess",
+        "desc": "公网访问状态"
+      },
+      {
+        "name": "EsPublicAcl",
+        "desc": "公网访问控制列表"
+      },
+      {
+        "name": "KibanaPublicAccess",
+        "desc": "Kibana公网访问状态"
+      },
+      {
+        "name": "KibanaPrivateAccess",
+        "desc": "Kibana内网访问状态"
       }
     ],
-    "desc": "对集群进行扩缩容，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeNum：集群数据节点横向扩缩容\n- NodeType, DiskSize：集群数据节点纵向扩缩容\n- MasterNodeNum: 集群专用主节点横向扩缩容\n- MasterNodeType, MasterNodeDiskSize: 集群专用主节点纵向扩缩容\n- EsConfig：修改集群配置\n- Password：修改默认用户elastic的密码\n- EsAcl：修改访问控制列表\n- CosBackUp: 设置集群COS自动备份信息\n以上参数组合只能传递一种，多传或少传均会导致请求失败"
+    "desc": "对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeInfoList: 修改节点配置（节点横向扩缩容，纵向扩缩容，增加主节点，增加冷节点等）\n- EsConfig：修改集群配置\n- Password：修改默认用户elastic的密码\n- EsAcl：修改访问控制列表\n- CosBackUp: 设置集群COS自动备份信息\n以上参数组合只能传递一种，多传或少传均会导致请求失败"
   },
   "DeleteInstance": {
     "params": [

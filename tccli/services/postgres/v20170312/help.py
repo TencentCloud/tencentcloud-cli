@@ -279,6 +279,10 @@ INFO = {
       {
         "name": "SubnetId",
         "desc": "私有网络子网ID。"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "续费标记：0-正常续费（默认）；1-自动续费；"
       }
     ],
     "desc": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例。"

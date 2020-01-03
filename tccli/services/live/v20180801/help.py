@@ -1174,7 +1174,11 @@ INFO = {
     "params": [
       {
         "name": "CertType",
-        "desc": "证书类型。0-用户添加证书；1-腾讯云托管证书。"
+        "desc": "证书类型。0-用户添加证书；1-腾讯云托管证书。\n注意：当证书类型为0时，HttpsCrt和HttpsKey必选；\n当证书类型为1时，优先使用CloudCertId对应证书，若CloudCertId为空则使用HttpsCrt和HttpsKey。"
+      },
+      {
+        "name": "CertName",
+        "desc": "证书名称。"
       },
       {
         "name": "HttpsCrt",
@@ -1185,12 +1189,12 @@ INFO = {
         "desc": "私钥。"
       },
       {
-        "name": "CertName",
-        "desc": "证书名称。"
-      },
-      {
         "name": "Description",
         "desc": "描述。"
+      },
+      {
+        "name": "CloudCertId",
+        "desc": "腾讯云证书托管ID。"
       }
     ],
     "desc": "添加证书"
@@ -1840,11 +1844,11 @@ INFO = {
       },
       {
         "name": "AiTransCode",
-        "desc": "是否是急速高清模板，0：否，1：是。默认0。"
+        "desc": "是否是极速高清模板，0：否，1：是。默认0。"
       },
       {
         "name": "AdaptBitratePercent",
-        "desc": "急速高清相比VideoBitrate少多少码率，0.1到0.5"
+        "desc": "极速高清相比VideoBitrate少多少码率，0.1到0.5"
       }
     ],
     "desc": "创建转码模板，成功返回模板id后，需要调用[CreateLiveTranscodeRule](/document/product/267/32647)接口，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。"

@@ -4,14 +4,6 @@ INFO = {
   "CreateImageSpriteTemplate": {
     "params": [
       {
-        "name": "Width",
-        "desc": "雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
-        "name": "Height",
-        "desc": "雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
         "name": "SampleType",
         "desc": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
       },
@@ -32,8 +24,24 @@ INFO = {
         "desc": "雪碧图模板名称，长度限制：64 个字符。"
       },
       {
+        "name": "Width",
+        "desc": "雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "Height",
+        "desc": "雪碧图中小图的高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
+      },
+      {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "FillType",
+        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。"
       }
     ],
     "desc": "创建用户自定义雪碧图模板，数量上限：16。"
@@ -54,16 +62,20 @@ INFO = {
   "CreateAnimatedGraphicsTemplate": {
     "params": [
       {
+        "name": "Fps",
+        "desc": "帧率，取值范围：[1, 30]，单位：Hz。"
+      },
+      {
         "name": "Width",
         "desc": "动图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
       },
       {
         "name": "Height",
-        "desc": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+        "desc": "动图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
       },
       {
-        "name": "Fps",
-        "desc": "帧率，取值范围：[1, 30]，单位：Hz。"
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
       },
       {
         "name": "Format",
@@ -177,14 +189,6 @@ INFO = {
   "CreateSampleSnapshotTemplate": {
     "params": [
       {
-        "name": "Width",
-        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
-        "name": "Height",
-        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
-      },
-      {
         "name": "SampleType",
         "desc": "采样截图类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
       },
@@ -197,6 +201,18 @@ INFO = {
         "desc": "采样截图模板名称，长度限制：64 个字符。"
       },
       {
+        "name": "Width",
+        "desc": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "Height",
+        "desc": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
+      },
+      {
         "name": "Format",
         "desc": "图片格式，取值为 jpg 和 png。默认为 jpg。"
       },
@@ -207,6 +223,10 @@ INFO = {
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "FillType",
+        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。"
       }
     ],
     "desc": "创建用户自定义采样截图模板，数量上限：16。"
@@ -445,7 +465,7 @@ INFO = {
       },
       {
         "name": "TEHDConfig",
-        "desc": "极速高清转码参数，需联系商务架构师开通后才能使用。"
+        "desc": "极速高清转码参数。"
       },
       {
         "name": "SubAppId",
@@ -457,16 +477,20 @@ INFO = {
   "CreateSnapshotByTimeOffsetTemplate": {
     "params": [
       {
+        "name": "Name",
+        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
+      },
+      {
         "name": "Width",
-        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
+        "desc": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
       },
       {
         "name": "Height",
-        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
+        "desc": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
       },
       {
-        "name": "Name",
-        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
       },
       {
         "name": "Format",
@@ -479,6 +503,10 @@ INFO = {
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "FillType",
+        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。"
       }
     ],
     "desc": "创建用户自定义指定时间点截图模板，数量上限：16。"
@@ -723,11 +751,15 @@ INFO = {
       },
       {
         "name": "Width",
-        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
+        "desc": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
       },
       {
         "name": "Height",
-        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
+        "desc": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
       },
       {
         "name": "SampleType",
@@ -748,6 +780,10 @@ INFO = {
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "FillType",
+        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。"
       }
     ],
     "desc": "修改用户自定义采样截图模板。"
@@ -1218,7 +1254,11 @@ INFO = {
       },
       {
         "name": "Height",
-        "desc": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+        "desc": "动图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
       },
       {
         "name": "Format",
@@ -1339,6 +1379,23 @@ INFO = {
       }
     ],
     "desc": "查询转动图模板列表，支持根据条件，分页查询。"
+  },
+  "ForbidMediaDistribution": {
+    "params": [
+      {
+        "name": "FileIds",
+        "desc": "媒体文件列表，每次最多可提交 20 条。"
+      },
+      {
+        "name": "Operation",
+        "desc": "forbid：禁播，recover：解禁。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "* 对媒体禁播后，除了点播控制台预览，其他场景访问视频各种资源的 URL（原始文件、转码输出文件、截图等）均会返回 403。\n  禁播/解禁操作全网生效时间约 5~10 分钟。"
   },
   "DescribeSampleSnapshotTemplates": {
     "params": [
@@ -1498,14 +1555,14 @@ INFO = {
       },
       {
         "name": "TEHDConfig",
-        "desc": "极速高清转码参数，需联系商务架构师开通后才能使用。"
+        "desc": "极速高清转码参数。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "创建用户自定义转码模板，数量上限：1000。"
+    "desc": "创建用户自定义转码模板，数量上限：100。"
   },
   "DescribeVideoTrackTemplates": {
     "params": [
@@ -1544,11 +1601,15 @@ INFO = {
       },
       {
         "name": "Width",
-        "desc": "图片宽度，取值范围： [128, 4096]，单位：px。"
+        "desc": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
       },
       {
         "name": "Height",
-        "desc": "图片高度，取值范围： [128, 4096]，单位：px。"
+        "desc": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
       },
       {
         "name": "Format",
@@ -1561,6 +1622,10 @@ INFO = {
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "FillType",
+        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。"
       }
     ],
     "desc": "修改用户自定义指定时间点截图模板。"
@@ -1908,6 +1973,10 @@ INFO = {
         "desc": "雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。"
       },
       {
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
+      },
+      {
         "name": "SampleType",
         "desc": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
       },
@@ -1926,6 +1995,10 @@ INFO = {
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "FillType",
+        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。"
       }
     ],
     "desc": "修改用户自定义雪碧图模板。"

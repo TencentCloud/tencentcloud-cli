@@ -69,6 +69,8 @@ def doDescribeInstances(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "OrderByKey": Utils.try_to_json(argv, "--OrderByKey"),
         "OrderByType": Utils.try_to_json(argv, "--OrderByType"),
+        "TagList": Utils.try_to_json(argv, "--TagList"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -102,18 +104,18 @@ def doCreateInstance(argv, arglist):
 
     param = {
         "Zone": argv.get("--Zone"),
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
         "EsVersion": argv.get("--EsVersion"),
-        "NodeType": argv.get("--NodeType"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
         "VpcId": argv.get("--VpcId"),
         "SubnetId": argv.get("--SubnetId"),
         "Password": argv.get("--Password"),
         "InstanceName": argv.get("--InstanceName"),
+        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
         "ChargeType": argv.get("--ChargeType"),
         "ChargePeriod": Utils.try_to_json(argv, "--ChargePeriod"),
         "RenewFlag": argv.get("--RenewFlag"),
+        "NodeType": argv.get("--NodeType"),
         "DiskType": argv.get("--DiskType"),
+        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
         "TimeUnit": argv.get("--TimeUnit"),
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
@@ -125,6 +127,9 @@ def doCreateInstance(argv, arglist):
         "DeployMode": Utils.try_to_json(argv, "--DeployMode"),
         "MultiZoneInfo": Utils.try_to_json(argv, "--MultiZoneInfo"),
         "LicenseType": argv.get("--LicenseType"),
+        "NodeInfoList": Utils.try_to_json(argv, "--NodeInfoList"),
+        "TagList": Utils.try_to_json(argv, "--TagList"),
+        "BasicSecurityType": Utils.try_to_json(argv, "--BasicSecurityType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -161,6 +166,7 @@ def doUpgradeInstance(argv, arglist):
         "EsVersion": argv.get("--EsVersion"),
         "CheckOnly": Utils.try_to_json(argv, "--CheckOnly"),
         "LicenseType": argv.get("--LicenseType"),
+        "BasicSecurityType": Utils.try_to_json(argv, "--BasicSecurityType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -197,6 +203,8 @@ def doUpgradeLicense(argv, arglist):
         "LicenseType": argv.get("--LicenseType"),
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+        "BasicSecurityType": Utils.try_to_json(argv, "--BasicSecurityType"),
+        "ForceRestart": Utils.try_to_json(argv, "--ForceRestart"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -242,6 +250,11 @@ def doUpdateInstance(argv, arglist):
         "MasterNodeDiskSize": Utils.try_to_json(argv, "--MasterNodeDiskSize"),
         "ForceRestart": Utils.try_to_json(argv, "--ForceRestart"),
         "CosBackup": Utils.try_to_json(argv, "--CosBackup"),
+        "NodeInfoList": Utils.try_to_json(argv, "--NodeInfoList"),
+        "PublicAccess": argv.get("--PublicAccess"),
+        "EsPublicAcl": Utils.try_to_json(argv, "--EsPublicAcl"),
+        "KibanaPublicAccess": argv.get("--KibanaPublicAccess"),
+        "KibanaPrivateAccess": argv.get("--KibanaPrivateAccess"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

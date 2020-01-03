@@ -494,6 +494,7 @@ def doCreateDBInstances(argv, arglist):
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
         "VpcId": argv.get("--VpcId"),
         "SubnetId": argv.get("--SubnetId"),
+        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

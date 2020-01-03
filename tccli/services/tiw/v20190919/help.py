@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "Callback",
-        "desc": "在线录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头"
+        "desc": "实时录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头"
       }
     ],
     "desc": "设置实时录制回调地址"
@@ -68,7 +68,7 @@ INFO = {
       },
       {
         "name": "RecordUserId",
-        "desc": "用于实时录制服务进房的用户Id，格式为\"tic_record_user_${RoomId}_${Random}\"，其中 ${RoomId} 与录制房间号对应，${Random}为一个随机字符串。\n实时录制服务会使用这个用户Id进房进行录制房间内的音视频与白板，为了防止进房冲突，请保证此 用户Id不重复"
+        "desc": "用于实时录制服务进房的用户Id，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId}` 与录制房间号对应，`${Random}`为一个随机字符串。\n实时录制服务会使用这个用户Id进房进行录制房间内的音视频与白板，为了防止进房冲突，请保证此 用户Id不重复"
       },
       {
         "name": "RecordUserSig",
@@ -165,5 +165,23 @@ INFO = {
       }
     ],
     "desc": "恢复实时录制"
+  },
+  "DescribeOnlineRecordCallback": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "应用的SdkAppId"
+      }
+    ],
+    "desc": "查询实时录制回调地址"
+  },
+  "DescribeTranscodeCallback": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "应用的SdkAppId"
+      }
+    ],
+    "desc": "查询文档转码回调地址"
   }
 }

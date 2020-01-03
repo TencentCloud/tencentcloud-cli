@@ -1889,10 +1889,11 @@ def doCreateLiveCert(argv, arglist):
 
     param = {
         "CertType": Utils.try_to_json(argv, "--CertType"),
+        "CertName": argv.get("--CertName"),
         "HttpsCrt": argv.get("--HttpsCrt"),
         "HttpsKey": argv.get("--HttpsKey"),
-        "CertName": argv.get("--CertName"),
         "Description": argv.get("--Description"),
+        "CloudCertId": argv.get("--CloudCertId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -242,6 +242,26 @@ INFO = {
       {
         "name": "DeviceName",
         "desc": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。"
+      },
+      {
+        "name": "DevAddr",
+        "desc": "LoRaWAN 设备地址"
+      },
+      {
+        "name": "AppKey",
+        "desc": "LoRaWAN 应用密钥"
+      },
+      {
+        "name": "DevEUI",
+        "desc": "LoRaWAN 设备唯一标识"
+      },
+      {
+        "name": "AppSKey",
+        "desc": "LoRaWAN 应用会话密钥"
+      },
+      {
+        "name": "NwkSKey",
+        "desc": "LoRaWAN 网络会话密钥"
       }
     ],
     "desc": "创建设备"
