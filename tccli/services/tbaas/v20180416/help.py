@@ -69,7 +69,7 @@ INFO = {
         "desc": "区块哈希"
       }
     ],
-    "desc": "bcos分页查询当前群组下的区块列表"
+    "desc": "Bcos分页查询当前群组下的区块列表"
   },
   "SrvInvoke": {
     "params": [
@@ -229,10 +229,6 @@ INFO = {
       {
         "name": "GroupPk",
         "desc": "群组编号"
-      },
-      {
-        "name": "KeyUser",
-        "desc": "私钥用户编号"
       },
       {
         "name": "ContractId",

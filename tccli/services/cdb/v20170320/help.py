@@ -58,22 +58,14 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBInstanceCharset)用于查询云数据库实例的字符集，获取字符集的名称。"
   },
-  "DescribeInstanceParamRecords": {
+  "ReleaseIsolatedDBInstances": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页偏移量。"
-      },
-      {
-        "name": "Limit",
-        "desc": "分页大小。"
+        "name": "InstanceIds",
+        "desc": "实例 ID 数组，单个实例 ID 格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
       }
     ],
-    "desc": "该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。"
+    "desc": "本接口（ReleaseIsolatedDBInstances）用于恢复已隔离云数据库实例。"
   },
   "DescribeBackupConfig": {
     "params": [
@@ -143,6 +135,24 @@ INFO = {
       }
     ],
     "desc": "本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息。"
+  },
+  "DescribeRoGroups": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      }
+    ],
+    "desc": "本接口(DescribeRoGroups)用于查询云数据库实例的所有的RO组的信息。"
+  },
+  "BalanceRoGroupLoad": {
+    "params": [
+      {
+        "name": "RoGroupId",
+        "desc": "RO 组的 ID，格式如：cdbrg-c1nl9rpv。"
+      }
+    ],
+    "desc": "本接口(BalanceRoGroupLoad)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。"
   },
   "AddTimeWindow": {
     "params": [
@@ -376,6 +386,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeDBPrice)用于查询云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。\n\n注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照 <a href=\"https://cloud.tencent.com/document/api/236/15832\">服务地址</a> 文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com。"
+  },
+  "OpenWanService": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+      }
+    ],
+    "desc": "本接口(OpenWanService)用于开通实例外网访问。\n\n注意，实例开通外网访问之前，需要先将实例进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作。"
   },
   "CreateDBInstanceHour": {
     "params": [
@@ -1114,6 +1133,23 @@ INFO = {
     ],
     "desc": "本接口(SwitchForUpgrade)用于切换访问新实例，针对主升级中的实例处于待切换状态时，用户可主动发起该流程。"
   },
+  "DescribeInstanceParamRecords": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小。"
+      }
+    ],
+    "desc": "该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。"
+  },
   "DescribeTasks": {
     "params": [
       {
@@ -1348,14 +1384,26 @@ INFO = {
     ],
     "desc": "本接口(DescribeUploadedFiles)用于查询用户导入的SQL文件列表。"
   },
-  "OpenWanService": {
+  "ModifyRoGroupInfo": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+        "name": "RoGroupId",
+        "desc": "RO 组的实例 ID。"
+      },
+      {
+        "name": "RoGroupInfo",
+        "desc": "RO 组的详细信息。"
+      },
+      {
+        "name": "RoWeightValues",
+        "desc": "RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。"
+      },
+      {
+        "name": "IsBalanceRoLoad",
+        "desc": "是否重新均衡 RO 组内的 RO 实例的负载。支持值包括：1 - 重新均衡负载；0 - 不重新均衡负载。默认值为 0。注意，设置为重新均衡负载是，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库。"
       }
     ],
-    "desc": "本接口(OpenWanService)用于开通实例外网访问。\n\n注意，实例开通外网访问之前，需要先将实例进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作。"
+    "desc": "本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重等。"
   },
   "ModifyNameOrDescByDpId": {
     "params": [
@@ -1470,11 +1518,11 @@ INFO = {
       },
       {
         "name": "Affinity",
-        "desc": "置放群组的亲和性策略。"
+        "desc": "置放群组的亲和性策略，目前仅支持取值为1，策略1表示同台物理机上限制实例的个数。"
       },
       {
         "name": "LimitNum",
-        "desc": "置放群组亲和性策略1的实例限制个数。"
+        "desc": "置放群组亲和性策略1中同台物理机上实例的限制个数。"
       }
     ],
     "desc": "本接口(CreateDeployGroup)用于创建放置实例的置放群组"

@@ -297,7 +297,6 @@ def doSendTransactionHandler(argv, arglist):
         "Module": argv.get("--Module"),
         "Operation": argv.get("--Operation"),
         "GroupPk": argv.get("--GroupPk"),
-        "KeyUser": argv.get("--KeyUser"),
         "ContractId": Utils.try_to_json(argv, "--ContractId"),
         "FuncName": argv.get("--FuncName"),
         "FuncParam": Utils.try_to_json(argv, "--FuncParam"),
