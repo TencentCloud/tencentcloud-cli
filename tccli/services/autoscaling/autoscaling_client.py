@@ -77,6 +77,7 @@ def doCreateAutoScalingGroup(argv, arglist):
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "ServiceSettings": Utils.try_to_json(argv, "--ServiceSettings"),
         "Ipv6AddressCount": Utils.try_to_json(argv, "--Ipv6AddressCount"),
+        "MultiZoneSubnetPolicy": argv.get("--MultiZoneSubnetPolicy"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -345,6 +346,8 @@ def doUpgradeLaunchConfiguration(argv, arglist):
         "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
         "CamRoleName": argv.get("--CamRoleName"),
         "HostNameSettings": Utils.try_to_json(argv, "--HostNameSettings"),
+        "InstanceNameSettings": Utils.try_to_json(argv, "--InstanceNameSettings"),
+        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -850,6 +853,8 @@ def doCreateLaunchConfiguration(argv, arglist):
         "InstanceTags": Utils.try_to_json(argv, "--InstanceTags"),
         "CamRoleName": argv.get("--CamRoleName"),
         "HostNameSettings": Utils.try_to_json(argv, "--HostNameSettings"),
+        "InstanceNameSettings": Utils.try_to_json(argv, "--InstanceNameSettings"),
+        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -898,6 +903,7 @@ def doModifyAutoScalingGroup(argv, arglist):
         "ZonesCheckPolicy": argv.get("--ZonesCheckPolicy"),
         "ServiceSettings": Utils.try_to_json(argv, "--ServiceSettings"),
         "Ipv6AddressCount": Utils.try_to_json(argv, "--Ipv6AddressCount"),
+        "MultiZoneSubnetPolicy": argv.get("--MultiZoneSubnetPolicy"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

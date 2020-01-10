@@ -438,7 +438,7 @@ INFO = {
         "desc": "主可用区ID，如 ：\"100001\" （对应的是广州一区）"
       }
     ],
-    "desc": "查询负载均衡实例列表\n"
+    "desc": "查询一个地域的负载均衡实例列表\n"
   },
   "DescribeBlockIPList": {
     "params": [
@@ -476,7 +476,7 @@ INFO = {
         "desc": "要查询的监听器的端口"
       }
     ],
-    "desc": "DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，默认返该负载均衡器下的默认数据长度（20 个）的监听器。"
+    "desc": "DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。"
   },
   "DescribeClassicalLBTargets": {
     "params": [
@@ -511,7 +511,7 @@ INFO = {
       },
       {
         "name": "Certificate",
-        "desc": "证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器"
+        "desc": "证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。"
       },
       {
         "name": "SessionExpireTime",
@@ -838,6 +838,15 @@ INFO = {
     ],
     "desc": "修改目标组的名称或者默认端口属性"
   },
+  "DescribeLoadBalancerListByCertId": {
+    "params": [
+      {
+        "name": "CertIds",
+        "desc": "服务端证书的ID，或客户端证书的ID"
+      }
+    ],
+    "desc": "根据证书ID查询其在一个地域中所关联到负载均衡实例列表"
+  },
   "DeregisterTargets": {
     "params": [
       {
@@ -884,6 +893,10 @@ INFO = {
       {
         "name": "InternetChargeInfo",
         "desc": "网络计费相关参数"
+      },
+      {
+        "name": "LoadBalancerPassToTarget",
+        "desc": "Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。"
       }
     ],
     "desc": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。"
@@ -1010,7 +1023,11 @@ INFO = {
       },
       {
         "name": "InternetAccessible",
-        "desc": "仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。"
+        "desc": "仅适用于公网负载均衡。负载均衡的网络计费模式。"
+      },
+      {
+        "name": "VipIsp",
+        "desc": "仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。"
       },
       {
         "name": "Tags",

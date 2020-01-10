@@ -1866,6 +1866,15 @@ INFO = {
     ],
     "desc": "启用状态为停用的直播域名"
   },
+  "DescribeLivePackageInfo": {
+    "params": [
+      {
+        "name": "PackageType",
+        "desc": "包类型，可选值：\n0：流量包；\n1：转码包。"
+      }
+    ],
+    "desc": "查询用户套餐包总量、使用量、剩余量、包状态、购买时间和过期时间等。"
+  },
   "CreatePullStreamConfig": {
     "params": [
       {

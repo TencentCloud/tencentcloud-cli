@@ -130,6 +130,40 @@ def doCreateGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetCheckSimilarPersonJobIdList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetCheckSimilarPersonJobIdList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetCheckSimilarPersonJobIdListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetCheckSimilarPersonJobIdList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetPersonBaseInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -365,6 +399,47 @@ def doModifyPersonBaseInfo(argv, arglist):
     model = models.ModifyPersonBaseInfoRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyPersonBaseInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSearchFaces(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SearchFaces", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
+        "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
+        "MaxPersonNum": Utils.try_to_json(argv, "--MaxPersonNum"),
+        "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
+        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchFacesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SearchFaces(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -618,22 +693,14 @@ def doCreatePerson(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSearchFaces(argv, arglist):
+def doGetGroupInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SearchFaces", g_param[OptionsDefine.Version])
+        show_help("GetGroupInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GroupIds": Utils.try_to_json(argv, "--GroupIds"),
-        "Image": argv.get("--Image"),
-        "Url": argv.get("--Url"),
-        "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
-        "MinFaceSize": Utils.try_to_json(argv, "--MinFaceSize"),
-        "MaxPersonNum": Utils.try_to_json(argv, "--MaxPersonNum"),
-        "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
-        "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
-        "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -647,9 +714,9 @@ def doSearchFaces(argv, arglist):
     client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SearchFacesRequest()
+    model = models.GetGroupInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SearchFaces(model)
+    rsp = client.GetGroupInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1075,6 +1142,7 @@ ACTION_MAP = {
     "DeletePersonFromGroup": doDeletePersonFromGroup,
     "SearchFacesReturnsByGroup": doSearchFacesReturnsByGroup,
     "CreateGroup": doCreateGroup,
+    "GetCheckSimilarPersonJobIdList": doGetCheckSimilarPersonJobIdList,
     "GetPersonBaseInfo": doGetPersonBaseInfo,
     "DetectLiveFace": doDetectLiveFace,
     "CreateFace": doCreateFace,
@@ -1082,6 +1150,7 @@ ACTION_MAP = {
     "GetPersonGroupInfo": doGetPersonGroupInfo,
     "AnalyzeFace": doAnalyzeFace,
     "ModifyPersonBaseInfo": doModifyPersonBaseInfo,
+    "SearchFaces": doSearchFaces,
     "CopyPerson": doCopyPerson,
     "CheckSimilarPerson": doCheckSimilarPerson,
     "DeleteGroup": doDeleteGroup,
@@ -1089,7 +1158,7 @@ ACTION_MAP = {
     "ModifyGroup": doModifyGroup,
     "GetSimilarPersonResult": doGetSimilarPersonResult,
     "CreatePerson": doCreatePerson,
-    "SearchFaces": doSearchFaces,
+    "GetGroupInfo": doGetGroupInfo,
     "DetectFace": doDetectFace,
     "GetPersonList": doGetPersonList,
     "VerifyPerson": doVerifyPerson,

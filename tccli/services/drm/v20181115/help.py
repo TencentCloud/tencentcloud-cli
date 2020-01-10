@@ -55,6 +55,27 @@ INFO = {
     ],
     "desc": "本接口用来设置fairplay方案所需的私钥、私钥密钥、ask等信息。\n如需使用fairplay方案，请务必先设置私钥。"
   },
+  "CreateEncryptKeys": {
+    "params": [
+      {
+        "name": "DrmType",
+        "desc": "使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。"
+      },
+      {
+        "name": "Keys",
+        "desc": "设置的加密密钥列表。"
+      },
+      {
+        "name": "ContentId",
+        "desc": "一个加密内容的唯一标识。"
+      },
+      {
+        "name": "ContentType",
+        "desc": "内容类型。接口取值VodVideo,LiveVideo。"
+      }
+    ],
+    "desc": "该接口用来设置加密的秘钥。注意，同一个content id，只能设置一次！"
+  },
   "CreateLicense": {
     "params": [
       {
@@ -133,6 +154,27 @@ INFO = {
       }
     ],
     "desc": "开发者需要指定使用的DRM类型、和需要加密的Track类型，后台返回加密使用的密钥\n如果加密使用的ContentID没有关联的密钥信息，后台会自动生成新的密钥返回\n"
+  },
+  "DescribeAllKeys": {
+    "params": [
+      {
+        "name": "DrmType",
+        "desc": "使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。"
+      },
+      {
+        "name": "RsaPublicKey",
+        "desc": "Base64编码的Rsa公钥，用来加密出参中的SessionKey。\n如果该参数为空，则出参中SessionKey为明文。"
+      },
+      {
+        "name": "ContentId",
+        "desc": "一个加密内容的唯一标识。"
+      },
+      {
+        "name": "ContentType",
+        "desc": "内容类型。接口取值VodVideo,LiveVideo。"
+      }
+    ],
+    "desc": "本接口用来查询指定DRM类型、ContentType的所有加密秘钥\n"
   },
   "DeleteFairPlayPem": {
     "params": [

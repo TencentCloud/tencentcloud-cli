@@ -363,17 +363,21 @@ def doDownloadUserCert(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetTransByHashHandler(argv, arglist):
+def doGetBlockTransactionListForUser(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetTransByHashHandler", g_param[OptionsDefine.Version])
+        show_help("GetBlockTransactionListForUser", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Module": argv.get("--Module"),
         "Operation": argv.get("--Operation"),
-        "GroupPk": argv.get("--GroupPk"),
-        "TransHash": argv.get("--TransHash"),
+        "ClusterId": argv.get("--ClusterId"),
+        "GroupName": argv.get("--GroupName"),
+        "ChannelName": argv.get("--ChannelName"),
+        "BlockId": Utils.try_to_json(argv, "--BlockId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -387,9 +391,9 @@ def doGetTransByHashHandler(argv, arglist):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTransByHashHandlerRequest()
+    model = models.GetBlockTransactionListForUserRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetTransByHashHandler(model)
+    rsp = client.GetBlockTransactionListForUser(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -520,6 +524,42 @@ def doGetTransactionDetailForUser(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetTransByHashHandler(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetTransByHashHandler", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "GroupPk": argv.get("--GroupPk"),
+        "TransHash": argv.get("--TransHash"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetTransByHashHandlerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetTransByHashHandler(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetBlockListHandler(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -620,10 +660,11 @@ ACTION_MAP = {
     "GetTransListHandler": doGetTransListHandler,
     "SendTransactionHandler": doSendTransactionHandler,
     "DownloadUserCert": doDownloadUserCert,
-    "GetTransByHashHandler": doGetTransByHashHandler,
+    "GetBlockTransactionListForUser": doGetBlockTransactionListForUser,
     "GetBlockList": doGetBlockList,
     "Query": doQuery,
     "GetTransactionDetailForUser": doGetTransactionDetailForUser,
+    "GetTransByHashHandler": doGetTransByHashHandler,
     "GetBlockListHandler": doGetBlockListHandler,
     "GetLatesdTransactionList": doGetLatesdTransactionList,
 

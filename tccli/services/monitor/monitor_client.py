@@ -351,6 +351,41 @@ def doDescribePolicyGroupInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePolicyGroupList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePolicyGroupList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePolicyGroupListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePolicyGroupList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetMonitorData(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -502,6 +537,39 @@ def doUnBindingAllPolicyObject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePolicyConditionList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePolicyConditionList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePolicyConditionListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePolicyConditionList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180724": monitor_client_v20180724,
 
@@ -522,10 +590,12 @@ ACTION_MAP = {
     "DeletePolicyGroup": doDeletePolicyGroup,
     "DescribeBaseMetrics": doDescribeBaseMetrics,
     "DescribePolicyGroupInfo": doDescribePolicyGroupInfo,
+    "DescribePolicyGroupList": doDescribePolicyGroupList,
     "GetMonitorData": doGetMonitorData,
     "PutMonitorData": doPutMonitorData,
     "CreatePolicyGroup": doCreatePolicyGroup,
     "UnBindingAllPolicyObject": doUnBindingAllPolicyObject,
+    "DescribePolicyConditionList": doDescribePolicyConditionList,
 
 }
 

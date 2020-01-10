@@ -226,6 +226,23 @@ INFO = {
     ],
     "desc": "获取基础策略组详情"
   },
+  "DescribePolicyGroupList": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "固定值，为\"monitor\""
+      },
+      {
+        "name": "Limit",
+        "desc": "分页参数，最大返回个数"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页参数，起始位置"
+      }
+    ],
+    "desc": "获取基础策略告警组列表"
+  },
   "GetMonitorData": {
     "params": [
       {
@@ -337,5 +354,14 @@ INFO = {
       }
     ],
     "desc": "删除全部的关联对象"
+  },
+  "DescribePolicyConditionList": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "固定值，为\"monitor\""
+      }
+    ],
+    "desc": "获取基础告警策略条件"
   }
 }

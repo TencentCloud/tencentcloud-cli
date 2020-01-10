@@ -755,6 +755,19 @@ INFO = {
     ],
     "desc": "创建用户自定义内容分析模板，数量上限：50。"
   },
+  "ManageTask": {
+    "params": [
+      {
+        "name": "OperationType",
+        "desc": "操作类型，取值范围：\n<li>Abort：终止任务。</li>"
+      },
+      {
+        "name": "TaskId",
+        "desc": "视频处理的任务 ID。"
+      }
+    ],
+    "desc": "对已发起的任务进行管理。\n> 注意：目前仅支持终止执行中的直播流处理任务。"
+  },
   "ModifyAIAnalysisTemplate": {
     "params": [
       {

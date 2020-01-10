@@ -418,27 +418,6 @@ INFO = {
     ],
     "desc": "获取交易详情"
   },
-  "GetTransByHashHandler": {
-    "params": [
-      {
-        "name": "Module",
-        "desc": "模块名，固定字段：transaction"
-      },
-      {
-        "name": "Operation",
-        "desc": "操作名，固定字段：get_trans_by_hash"
-      },
-      {
-        "name": "GroupPk",
-        "desc": "群组编号"
-      },
-      {
-        "name": "TransHash",
-        "desc": "交易哈希"
-      }
-    ],
-    "desc": "Bcos根据交易哈希查看交易详细信息"
-  },
   "GetLatesdTransactionList": {
     "params": [
       {
@@ -483,5 +462,63 @@ INFO = {
       }
     ],
     "desc": "获取最新交易列表"
+  },
+  "GetTransByHashHandler": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：transaction"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：get_trans_by_hash"
+      },
+      {
+        "name": "GroupPk",
+        "desc": "群组编号"
+      },
+      {
+        "name": "TransHash",
+        "desc": "交易哈希"
+      }
+    ],
+    "desc": "Bcos根据交易哈希查看交易详细信息"
+  },
+  "GetBlockTransactionListForUser": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：transaction"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：block_transaction_list_for_user"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "区块链网络ID，可在区块链网络详情或列表中获取"
+      },
+      {
+        "name": "GroupName",
+        "desc": "参与交易的组织名称，可以在组织管理列表中获取当前组织的名称"
+      },
+      {
+        "name": "ChannelName",
+        "desc": "业务所属通道名称，可在通道详情或列表中获取"
+      },
+      {
+        "name": "BlockId",
+        "desc": "区块ID，通过GetInvokeTx接口可以获取交易所在的区块ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "查询的交易列表起始偏移地址"
+      },
+      {
+        "name": "Limit",
+        "desc": "查询的交易列表数量"
+      }
+    ],
+    "desc": "获取区块内的交易列表"
   }
 }
