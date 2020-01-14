@@ -59,6 +59,46 @@ def doApplyUserCert(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doTransByDynamicContractHandler(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TransByDynamicContractHandler", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "GroupPk": argv.get("--GroupPk"),
+        "ContractAddress": argv.get("--ContractAddress"),
+        "ContractName": argv.get("--ContractName"),
+        "AbiInfo": argv.get("--AbiInfo"),
+        "FuncName": argv.get("--FuncName"),
+        "FuncParam": Utils.try_to_json(argv, "--FuncParam"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TransByDynamicContractHandlerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TransByDynamicContractHandler(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSrvInvoke(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -164,6 +204,45 @@ def doGetClusterSummary(argv, arglist):
     model = models.GetClusterSummaryRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetClusterSummary(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetTransactionDetailForUser(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetTransactionDetailForUser", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ClusterId": argv.get("--ClusterId"),
+        "GroupName": argv.get("--GroupName"),
+        "ChannelName": argv.get("--ChannelName"),
+        "BlockId": Utils.try_to_json(argv, "--BlockId"),
+        "TransactionId": argv.get("--TransactionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetTransactionDetailForUserRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetTransactionDetailForUser(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -485,20 +564,20 @@ def doQuery(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetTransactionDetailForUser(argv, arglist):
+def doDeployDynamicContractHandler(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetTransactionDetailForUser", g_param[OptionsDefine.Version])
+        show_help("DeployDynamicContractHandler", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Module": argv.get("--Module"),
         "Operation": argv.get("--Operation"),
-        "ClusterId": argv.get("--ClusterId"),
-        "GroupName": argv.get("--GroupName"),
-        "ChannelName": argv.get("--ChannelName"),
-        "BlockId": Utils.try_to_json(argv, "--BlockId"),
-        "TransactionId": argv.get("--TransactionId"),
+        "GroupPk": argv.get("--GroupPk"),
+        "ContractName": argv.get("--ContractName"),
+        "AbiInfo": argv.get("--AbiInfo"),
+        "ByteCodeBin": argv.get("--ByteCodeBin"),
+        "ConstructorParams": Utils.try_to_json(argv, "--ConstructorParams"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -512,9 +591,9 @@ def doGetTransactionDetailForUser(argv, arglist):
     client = mod.TbaasClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTransactionDetailForUserRequest()
+    model = models.DeployDynamicContractHandlerRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetTransactionDetailForUser(model)
+    rsp = client.DeployDynamicContractHandler(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -652,9 +731,11 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "ApplyUserCert": doApplyUserCert,
+    "TransByDynamicContractHandler": doTransByDynamicContractHandler,
     "SrvInvoke": doSrvInvoke,
     "Invoke": doInvoke,
     "GetClusterSummary": doGetClusterSummary,
+    "GetTransactionDetailForUser": doGetTransactionDetailForUser,
     "BlockByNumberHandler": doBlockByNumberHandler,
     "GetInvokeTx": doGetInvokeTx,
     "GetTransListHandler": doGetTransListHandler,
@@ -663,7 +744,7 @@ ACTION_MAP = {
     "GetBlockTransactionListForUser": doGetBlockTransactionListForUser,
     "GetBlockList": doGetBlockList,
     "Query": doQuery,
-    "GetTransactionDetailForUser": doGetTransactionDetailForUser,
+    "DeployDynamicContractHandler": doDeployDynamicContractHandler,
     "GetTransByHashHandler": doGetTransByHashHandler,
     "GetBlockListHandler": doGetBlockListHandler,
     "GetLatesdTransactionList": doGetLatesdTransactionList,

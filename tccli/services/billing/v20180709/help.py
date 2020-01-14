@@ -30,6 +30,72 @@ INFO = {
     ],
     "desc": "按日期获取产品用量明细"
   },
+  "DescribeCostSummaryByResource": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月1号 00:00:00，且必须和EndTime为相同月份，不支持跨月查询，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月最后一天 23:59:59，且必须和BeginTime为相同月份，不支持跨月查询，例 2018-09-30 23:59:59"
+      },
+      {
+        "name": "Limit",
+        "desc": "每次获取数据量"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "NeedRecordNum",
+        "desc": "是否需要返回记录数量，0不需要，1需要，默认不需要"
+      },
+      {
+        "name": "NeedConditionValue",
+        "desc": "是否需要返回过滤条件，0不需要，1需要，默认不需要"
+      },
+      {
+        "name": "Conditions",
+        "desc": "过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）"
+      }
+    ],
+    "desc": "获取按资源汇总消耗详情"
+  },
+  "DescribeCostSummaryByRegion": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月1号 00:00:00，且必须和EndTime为相同月份，不支持跨月查询，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月最后一天 23:59:59，且必须和BeginTime为相同月份，不支持跨月查询，例 2018-09-30 23:59:59"
+      },
+      {
+        "name": "Limit",
+        "desc": "每次获取数据量"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "NeedRecordNum",
+        "desc": "是否需要返回记录数量，0不需要，1需要，默认不需要"
+      }
+    ],
+    "desc": "获取按地域汇总消耗详情"
+  },
   "DescribeBillDetail": {
     "params": [
       {
@@ -103,6 +169,35 @@ INFO = {
       }
     ],
     "desc": "查询订单"
+  },
+  "DescribeCostSummaryByProject": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月1号 00:00:00，且必须和EndTime为相同月份，不支持跨月查询，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月最后一天 23:59:59，且必须和BeginTime为相同月份，不支持跨月查询，例 2018-09-30 23:59:59"
+      },
+      {
+        "name": "Limit",
+        "desc": "每次获取数据量"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "NeedRecordNum",
+        "desc": "是否需要返回记录数量，0不需要，1需要，默认不需要"
+      }
+    ],
+    "desc": "获取按项目汇总消耗详情"
   },
   "DescribeBillSummaryByPayMode": {
     "params": [
@@ -217,6 +312,76 @@ INFO = {
       }
     ],
     "desc": "获取按标签汇总费用分布"
+  },
+  "DescribeCostSummaryByProduct": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月1号 00:00:00，且必须和EndTime为相同月份，不支持跨月查询，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月最后一天 23:59:59，且必须和BeginTime为相同月份，不支持跨月查询，例 2018-09-30 23:59:59"
+      },
+      {
+        "name": "Limit",
+        "desc": "每次获取数据量"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "NeedRecordNum",
+        "desc": "是否需要返回记录数量，0不需要，1需要，默认不需要"
+      }
+    ],
+    "desc": "获取按产品汇总消耗详情"
+  },
+  "DescribeCostDetail": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "数量，最大值为100"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "周期开始时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通成本分析的月份，最多可拉取24个月内的数据。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "周期结束时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通成本分析的月份，最多可拉取24个月内的数据。"
+      },
+      {
+        "name": "NeedRecordNum",
+        "desc": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要"
+      },
+      {
+        "name": "Month",
+        "desc": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通成本分析的月份，最多可拉取24个月内的数据。"
+      },
+      {
+        "name": "ProductCode",
+        "desc": "查询指定产品信息"
+      },
+      {
+        "name": "PayMode",
+        "desc": "付费模式 prePay/postPay"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "查询指定资源信息"
+      }
+    ],
+    "desc": "查询消耗明细"
   },
   "PayDeals": {
     "params": [

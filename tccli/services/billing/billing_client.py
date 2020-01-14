@@ -87,6 +87,84 @@ def doDescribeDosageDetailByDate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCostSummaryByResource(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCostSummaryByResource", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PayerUin": argv.get("--PayerUin"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
+        "NeedConditionValue": Utils.try_to_json(argv, "--NeedConditionValue"),
+        "Conditions": Utils.try_to_json(argv, "--Conditions"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCostSummaryByResourceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCostSummaryByResource(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCostSummaryByRegion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCostSummaryByRegion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PayerUin": argv.get("--PayerUin"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCostSummaryByRegionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCostSummaryByRegion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeBillDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -158,6 +236,44 @@ def doDescribeDealsByCond(argv, arglist):
     model = models.DescribeDealsByCondRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeDealsByCond(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCostSummaryByProject(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCostSummaryByProject", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PayerUin": argv.get("--PayerUin"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCostSummaryByProjectRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCostSummaryByProject(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -380,6 +496,85 @@ def doDescribeBillSummaryByTag(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCostSummaryByProduct(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCostSummaryByProduct", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PayerUin": argv.get("--PayerUin"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCostSummaryByProductRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCostSummaryByProduct(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCostDetail(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCostDetail", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "NeedRecordNum": Utils.try_to_json(argv, "--NeedRecordNum"),
+        "Month": argv.get("--Month"),
+        "ProductCode": argv.get("--ProductCode"),
+        "PayMode": argv.get("--PayMode"),
+        "ResourceId": argv.get("--ResourceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BillingClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCostDetailRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCostDetail(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPayDeals(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -428,14 +623,19 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DescribeAccountBalance": doDescribeAccountBalance,
     "DescribeDosageDetailByDate": doDescribeDosageDetailByDate,
+    "DescribeCostSummaryByResource": doDescribeCostSummaryByResource,
+    "DescribeCostSummaryByRegion": doDescribeCostSummaryByRegion,
     "DescribeBillDetail": doDescribeBillDetail,
     "DescribeDealsByCond": doDescribeDealsByCond,
+    "DescribeCostSummaryByProject": doDescribeCostSummaryByProject,
     "DescribeBillSummaryByPayMode": doDescribeBillSummaryByPayMode,
     "DescribeBillResourceSummary": doDescribeBillResourceSummary,
     "DescribeBillSummaryByRegion": doDescribeBillSummaryByRegion,
     "DescribeBillSummaryByProject": doDescribeBillSummaryByProject,
     "DescribeBillSummaryByProduct": doDescribeBillSummaryByProduct,
     "DescribeBillSummaryByTag": doDescribeBillSummaryByTag,
+    "DescribeCostSummaryByProduct": doDescribeCostSummaryByProduct,
+    "DescribeCostDetail": doDescribeCostDetail,
     "PayDeals": doPayDeals,
 
 }

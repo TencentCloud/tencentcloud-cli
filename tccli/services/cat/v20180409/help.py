@@ -1,71 +1,6 @@
 # -*- coding: utf-8 -*-
 DESC = "cat-2018-04-09"
 INFO = {
-  "CreateTask": {
-    "params": [
-      {
-        "name": "AgentGroupId",
-        "desc": "拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的groupId的值。"
-      },
-      {
-        "name": "CatTypeName",
-        "desc": "http, https, ping, tcp 之一"
-      },
-      {
-        "name": "Url",
-        "desc": "拨测的url  例如：www.baidu.com (url域名解析需要能解析出具体的ip)"
-      },
-      {
-        "name": "TaskName",
-        "desc": "拨测任务名称不能超过32个字符。同一个用户创建的任务名不可重复"
-      },
-      {
-        "name": "Host",
-        "desc": "需要满足ip 的格式"
-      },
-      {
-        "name": "Port",
-        "desc": "服务端监听或接收数据的端口"
-      },
-      {
-        "name": "IsHeader",
-        "desc": "是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）"
-      },
-      {
-        "name": "SslVer",
-        "desc": "url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一"
-      },
-      {
-        "name": "PostData",
-        "desc": "POST 请求数据。空字符串表示非POST请求"
-      },
-      {
-        "name": "UserAgent",
-        "desc": "用户agent 信息"
-      },
-      {
-        "name": "CheckStr",
-        "desc": "要在结果中进行匹配的字符串"
-      },
-      {
-        "name": "CheckType",
-        "desc": "1 表示通过检查结果是否包含CheckStr 进行校验"
-      },
-      {
-        "name": "Cookie",
-        "desc": "需要设置的cookie信息"
-      },
-      {
-        "name": "Period",
-        "desc": "拨测周期。取值可为1,5,15,30之一, 单位：分钟。精度不能低于用户等级规定的最小精度"
-      },
-      {
-        "name": "TaskId",
-        "desc": "任务号。用于验证且修改任务时传入原任务号"
-      }
-    ],
-    "desc": "创建拨测任务（创建任务并发起验证）\n\n操作提示：\n下一步，请通过VerifyCatResult 接口，验证一下拨测验证是否成功。如果成功，则可通过RunTask 接口运行该任务。\n"
-  },
   "GetRespTimeTrendEx": {
     "params": [
       {
@@ -91,9 +26,26 @@ INFO = {
     ],
     "desc": "查询拨测任务的走势数据"
   },
-  "DescribeUserLimit": {
-    "params": [],
-    "desc": "获取用户可用资源限制"
+  "ModifyAgentGroup": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "拨测分组id"
+      },
+      {
+        "name": "GroupName",
+        "desc": "拨测分组名称"
+      },
+      {
+        "name": "IsDefault",
+        "desc": "是否为默认分组。取值可为0，1"
+      },
+      {
+        "name": "Agents",
+        "desc": "Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。"
+      }
+    ],
+    "desc": "修改拨测分组"
   },
   "DescribeTasksByType": {
     "params": [
@@ -255,71 +207,6 @@ INFO = {
     ],
     "desc": "获取实时可用率信息"
   },
-  "ModifyTask": {
-    "params": [
-      {
-        "name": "AgentGroupId",
-        "desc": "拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的groupId的值。"
-      },
-      {
-        "name": "CatTypeName",
-        "desc": "http, https, ping, tcp 之一"
-      },
-      {
-        "name": "Url",
-        "desc": "拨测的url  例如：www.baidu.com (url域名解析需要能解析出具体的ip)"
-      },
-      {
-        "name": "Period",
-        "desc": "拨测周期。取值可为1,5,15,30之一, 单位：分钟。精度不能低于用户等级规定的最小精度"
-      },
-      {
-        "name": "TaskName",
-        "desc": "拨测任务名称不能超过32个字符。同一个用户创建的任务名不可重复"
-      },
-      {
-        "name": "TaskId",
-        "desc": "验证成功的拨测任务id"
-      },
-      {
-        "name": "Host",
-        "desc": "需要满足ip 的格式"
-      },
-      {
-        "name": "Port",
-        "desc": "服务端监听或接收数据的端口"
-      },
-      {
-        "name": "IsHeader",
-        "desc": "是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）"
-      },
-      {
-        "name": "SslVer",
-        "desc": "url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一"
-      },
-      {
-        "name": "PostData",
-        "desc": "POST 请求数据。空字符串表示非POST请求"
-      },
-      {
-        "name": "UserAgent",
-        "desc": "用户agent 信息"
-      },
-      {
-        "name": "CheckStr",
-        "desc": "要在结果中进行匹配的字符串"
-      },
-      {
-        "name": "CheckType",
-        "desc": "1 表示通过检查结果是否包含checkStr 进行校验"
-      },
-      {
-        "name": "Cookie",
-        "desc": "需要设置的cookie信息"
-      }
-    ],
-    "desc": "修改 拨测任务。\n如果验证未成功，请先验证成功。避免修改为失败率100%的拨测任务。\n"
-  },
   "CreateAgentGroup": {
     "params": [
       {
@@ -345,15 +232,6 @@ INFO = {
       }
     ],
     "desc": "查询拨测任务信息"
-  },
-  "DescribeTask": {
-    "params": [
-      {
-        "name": "TaskIds",
-        "desc": "拨测任务id 数组"
-      }
-    ],
-    "desc": "查询拨测任务详情"
   },
   "DescribeAlarmTopic": {
     "params": [
@@ -439,15 +317,6 @@ INFO = {
       }
     ],
     "desc": "获取一天的整体可用率信息"
-  },
-  "DescribeAgentGroup": {
-    "params": [
-      {
-        "name": "GroupId",
-        "desc": "拨测分组id"
-      }
-    ],
-    "desc": "查询拨测分组详情"
   },
   "ModifyTaskEx": {
     "params": [
@@ -570,26 +439,9 @@ INFO = {
     "params": [],
     "desc": "查询本用户可选的拨测点列表"
   },
-  "ModifyAgentGroup": {
-    "params": [
-      {
-        "name": "GroupId",
-        "desc": "拨测分组id"
-      },
-      {
-        "name": "GroupName",
-        "desc": "拨测分组名称"
-      },
-      {
-        "name": "IsDefault",
-        "desc": "是否为默认分组。取值可为0，1"
-      },
-      {
-        "name": "Agents",
-        "desc": "Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。"
-      }
-    ],
-    "desc": "修改拨测分组"
+  "DescribeUserLimit": {
+    "params": [],
+    "desc": "获取用户可用资源限制"
   },
   "DescribeCatLogs": {
     "params": [
@@ -628,23 +480,6 @@ INFO = {
       }
     ],
     "desc": "验证拨测任务，结果验证查询（验证成功的，才建议创建拨测任务）"
-  },
-  "DescribeTasks": {
-    "params": [
-      {
-        "name": "Offset",
-        "desc": "从第Offset 条开始查询。缺省值为0"
-      },
-      {
-        "name": "Limit",
-        "desc": "本批次查询Limit 条记录。缺省值为20"
-      },
-      {
-        "name": "GroupId",
-        "desc": "任务所使用的拨测分组Id"
-      }
-    ],
-    "desc": "查询拨测任务列表"
   },
   "BindAlarmPolicy": {
     "params": [
@@ -698,6 +533,36 @@ INFO = {
     ],
     "desc": "获取指定时刻的可用率地图信息"
   },
+  "RunTask": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "任务Id"
+      }
+    ],
+    "desc": "运行拨测任务"
+  },
+  "GetReturnCodeInfo": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "正整数。验证成功的拨测任务id"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "开始时间点。格式如：2017-05-09 10:20:00，最多拉群两天的数据"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间点。格式如：2017-05-09 10:25:00，最多拉群两天的数据"
+      },
+      {
+        "name": "Province",
+        "desc": "省份名称的全拼"
+      }
+    ],
+    "desc": "查询拨测任务的返回码统计信息"
+  },
   "DescribeAlarmsByTask": {
     "params": [
       {
@@ -738,128 +603,6 @@ INFO = {
       }
     ],
     "desc": "按任务查询拨测告警列表"
-  },
-  "ModifyAlarmPloicy": {
-    "params": [
-      {
-        "name": "TaskId",
-        "desc": "验证成功的拨测任务id"
-      },
-      {
-        "name": "Interval",
-        "desc": "持续周期。值为任务的Period 乘以0、1、2、3、4。单位：分钟"
-      },
-      {
-        "name": "Operate",
-        "desc": "目前取值仅支持 lt (小于)"
-      },
-      {
-        "name": "Threshold",
-        "desc": "门限百分比。比如：80，表示80%。成功率低于80%时告警"
-      },
-      {
-        "name": "PolicyId",
-        "desc": "拨测告警策略id"
-      },
-      {
-        "name": "ReceiverGroupId",
-        "desc": "告警接收组的id。参见： DescribeAlarmGroups 接口。从返回结果里的GroupId 中选取一个"
-      }
-    ],
-    "desc": "为拨测任务修改告警策略"
-  },
-  "GetRespTimeTrend": {
-    "params": [
-      {
-        "name": "TaskId",
-        "desc": "验证成功的拨测任务id"
-      },
-      {
-        "name": "Date",
-        "desc": "统计数据的发生日期。格式如：2017-05-09"
-      },
-      {
-        "name": "Period",
-        "desc": "数据的采集周期，单位分钟"
-      },
-      {
-        "name": "Dimentions",
-        "desc": "可为 Isp, Province"
-      },
-      {
-        "name": "MetricName",
-        "desc": "可为  totalTime, parseTime, connectTime, sendTime, waitTime, receiveTime"
-      }
-    ],
-    "desc": "查询拨测任务的统计数据"
-  },
-  "RunTask": {
-    "params": [
-      {
-        "name": "TaskId",
-        "desc": "任务Id"
-      }
-    ],
-    "desc": "运行拨测任务"
-  },
-  "GetReturnCodeInfo": {
-    "params": [
-      {
-        "name": "TaskId",
-        "desc": "正整数。验证成功的拨测任务id"
-      },
-      {
-        "name": "BeginTime",
-        "desc": "开始时间点。格式如：2017-05-09 10:20:00，最多拉群两天的数据"
-      },
-      {
-        "name": "EndTime",
-        "desc": "结束时间点。格式如：2017-05-09 10:25:00，最多拉群两天的数据"
-      },
-      {
-        "name": "Province",
-        "desc": "省份名称的全拼"
-      }
-    ],
-    "desc": "查询拨测任务的返回码统计信息"
-  },
-  "DescribeAlarmGroups": {
-    "params": [
-      {
-        "name": "Offset",
-        "desc": "满足条件的第几条开始"
-      },
-      {
-        "name": "Limit",
-        "desc": "每批多少条"
-      }
-    ],
-    "desc": "查询用户的告警接收组列表"
-  },
-  "CreateAlarmPloicy": {
-    "params": [
-      {
-        "name": "TaskId",
-        "desc": "正整数。拨测任务id"
-      },
-      {
-        "name": "Interval",
-        "desc": "持续周期。值为任务的Period 乘以0、1、2、3、4。单位：分钟"
-      },
-      {
-        "name": "Operate",
-        "desc": "目前取值仅支持 lt (小于)。"
-      },
-      {
-        "name": "Threshold",
-        "desc": "门限百分比。比如：80，表示80%。成功率低于80%时告警。"
-      },
-      {
-        "name": "ReceiverGroupId",
-        "desc": "告警接收组的id。参见： DescribeAlarmGroups 接口。从返回结果里的GroupId 中选取一个。"
-      }
-    ],
-    "desc": "为拨测任务创建告警策略"
   },
   "GetTaskTotalNumber": {
     "params": [],

@@ -29,6 +29,7 @@ def doTrylockWorker(argv, arglist):
         "GameId": argv.get("--GameId"),
         "GameRegion": argv.get("--GameRegion"),
         "SetNo": Utils.try_to_json(argv, "--SetNo"),
+        "UserIp": argv.get("--UserIp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -69,6 +70,11 @@ def doCreateSession(argv, arglist):
         "Resolution": argv.get("--Resolution"),
         "ImageUrl": argv.get("--ImageUrl"),
         "SetNo": Utils.try_to_json(argv, "--SetNo"),
+        "Bitrate": Utils.try_to_json(argv, "--Bitrate"),
+        "MaxBitrate": Utils.try_to_json(argv, "--MaxBitrate"),
+        "MinBitrate": Utils.try_to_json(argv, "--MinBitrate"),
+        "Fps": Utils.try_to_json(argv, "--Fps"),
+        "UserIp": argv.get("--UserIp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

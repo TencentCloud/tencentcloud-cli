@@ -2363,6 +2363,7 @@ def doDescribeFlowLogs(argv, arglist):
         "OrderDirection": argv.get("--OrderDirection"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -4568,6 +4569,7 @@ def doModifyBandwidthPackageAttribute(argv, arglist):
     param = {
         "BandwidthPackageId": argv.get("--BandwidthPackageId"),
         "BandwidthPackageName": argv.get("--BandwidthPackageName"),
+        "ChargeType": argv.get("--ChargeType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

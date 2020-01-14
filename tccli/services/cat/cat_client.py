@@ -18,53 +18,6 @@ from tccli.services.cat import v20180409
 from tccli.services.cat.v20180409 import help as v20180409_help
 
 
-def doCreateTask(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateTask", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "AgentGroupId": Utils.try_to_json(argv, "--AgentGroupId"),
-        "CatTypeName": argv.get("--CatTypeName"),
-        "Url": argv.get("--Url"),
-        "TaskName": argv.get("--TaskName"),
-        "Host": argv.get("--Host"),
-        "Port": Utils.try_to_json(argv, "--Port"),
-        "IsHeader": Utils.try_to_json(argv, "--IsHeader"),
-        "SslVer": argv.get("--SslVer"),
-        "PostData": argv.get("--PostData"),
-        "UserAgent": argv.get("--UserAgent"),
-        "CheckStr": argv.get("--CheckStr"),
-        "CheckType": Utils.try_to_json(argv, "--CheckType"),
-        "Cookie": argv.get("--Cookie"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTaskRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateTask(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doGetRespTimeTrendEx(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -102,16 +55,17 @@ def doGetRespTimeTrendEx(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTasks(argv, arglist):
+def doModifyAgentGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTasks", g_param[OptionsDefine.Version])
+        show_help("ModifyAgentGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
         "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupName": argv.get("--GroupName"),
+        "IsDefault": Utils.try_to_json(argv, "--IsDefault"),
+        "Agents": Utils.try_to_json(argv, "--Agents"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -125,9 +79,9 @@ def doDescribeTasks(argv, arglist):
     client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTasksRequest()
+    model = models.ModifyAgentGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTasks(model)
+    rsp = client.ModifyAgentGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -331,53 +285,6 @@ def doGetRealAvailRatio(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyTask(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyTask", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "AgentGroupId": Utils.try_to_json(argv, "--AgentGroupId"),
-        "CatTypeName": argv.get("--CatTypeName"),
-        "Url": argv.get("--Url"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "TaskName": argv.get("--TaskName"),
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-        "Host": argv.get("--Host"),
-        "Port": Utils.try_to_json(argv, "--Port"),
-        "IsHeader": Utils.try_to_json(argv, "--IsHeader"),
-        "SslVer": argv.get("--SslVer"),
-        "PostData": argv.get("--PostData"),
-        "UserAgent": argv.get("--UserAgent"),
-        "CheckStr": argv.get("--CheckStr"),
-        "CheckType": Utils.try_to_json(argv, "--CheckType"),
-        "Cookie": argv.get("--Cookie"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyTaskRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyTask(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateAgentGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -437,39 +344,6 @@ def doDescribeTaskDetail(argv, arglist):
     model = models.DescribeTaskDetailRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeTaskDetail(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTask(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeTask", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "TaskIds": Utils.try_to_json(argv, "--TaskIds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -645,75 +519,6 @@ def doGetDailyAvailRatio(argv, arglist):
     model = models.GetDailyAvailRatioRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetDailyAvailRatio(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyAgentGroup(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyAgentGroup", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "GroupName": argv.get("--GroupName"),
-        "IsDefault": Utils.try_to_json(argv, "--IsDefault"),
-        "Agents": Utils.try_to_json(argv, "--Agents"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAgentGroupRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyAgentGroup(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeAgentGroup(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeAgentGroup", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAgentGroupRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAgentGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -987,40 +792,6 @@ def doGetResultSummary(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAlarmGroups(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeAlarmGroups", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAlarmGroupsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAlarmGroups(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDeleteAgentGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1079,81 +850,6 @@ def doGetAvailRatioHistory(argv, arglist):
     model = models.GetAvailRatioHistoryRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetAvailRatioHistory(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyAlarmPloicy(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyAlarmPloicy", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-        "Interval": Utils.try_to_json(argv, "--Interval"),
-        "Operate": argv.get("--Operate"),
-        "Threshold": Utils.try_to_json(argv, "--Threshold"),
-        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
-        "ReceiverGroupId": Utils.try_to_json(argv, "--ReceiverGroupId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAlarmPloicyRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyAlarmPloicy(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetRespTimeTrend(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GetRespTimeTrend", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-        "Date": argv.get("--Date"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "Dimentions": Utils.try_to_json(argv, "--Dimentions"),
-        "MetricName": argv.get("--MetricName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetRespTimeTrendRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.GetRespTimeTrend(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1273,43 +969,6 @@ def doDescribeAlarmsByTask(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAlarmPloicy(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateAlarmPloicy", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
-        "Interval": Utils.try_to_json(argv, "--Interval"),
-        "Operate": argv.get("--Operate"),
-        "Threshold": Utils.try_to_json(argv, "--Threshold"),
-        "ReceiverGroupId": Utils.try_to_json(argv, "--ReceiverGroupId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CatClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAlarmPloicyRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateAlarmPloicy(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doGetTaskTotalNumber(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1353,25 +1012,20 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "CreateTask": doCreateTask,
     "GetRespTimeTrendEx": doGetRespTimeTrendEx,
-    "DescribeTasks": doDescribeTasks,
+    "ModifyAgentGroup": doModifyAgentGroup,
     "DescribeTasksByType": doDescribeTasksByType,
     "CreateTaskEx": doCreateTaskEx,
     "PauseTask": doPauseTask,
     "DescribeAgentGroups": doDescribeAgentGroups,
     "GetRealAvailRatio": doGetRealAvailRatio,
-    "ModifyTask": doModifyTask,
     "CreateAgentGroup": doCreateAgentGroup,
     "DescribeTaskDetail": doDescribeTaskDetail,
-    "DescribeTask": doDescribeTask,
     "DescribeAlarmTopic": doDescribeAlarmTopic,
     "DescribeAlarms": doDescribeAlarms,
     "GetReturnCodeHistory": doGetReturnCodeHistory,
     "DeleteTasks": doDeleteTasks,
     "GetDailyAvailRatio": doGetDailyAvailRatio,
-    "ModifyAgentGroup": doModifyAgentGroup,
-    "DescribeAgentGroup": doDescribeAgentGroup,
     "ModifyTaskEx": doModifyTaskEx,
     "DescribeAgents": doDescribeAgents,
     "DescribeUserLimit": doDescribeUserLimit,
@@ -1379,15 +1033,11 @@ ACTION_MAP = {
     "VerifyResult": doVerifyResult,
     "BindAlarmPolicy": doBindAlarmPolicy,
     "GetResultSummary": doGetResultSummary,
-    "DescribeAlarmGroups": doDescribeAlarmGroups,
     "DeleteAgentGroup": doDeleteAgentGroup,
     "GetAvailRatioHistory": doGetAvailRatioHistory,
-    "ModifyAlarmPloicy": doModifyAlarmPloicy,
-    "GetRespTimeTrend": doGetRespTimeTrend,
     "RunTask": doRunTask,
     "GetReturnCodeInfo": doGetReturnCodeInfo,
     "DescribeAlarmsByTask": doDescribeAlarmsByTask,
-    "CreateAlarmPloicy": doCreateAlarmPloicy,
     "GetTaskTotalNumber": doGetTaskTotalNumber,
 
 }

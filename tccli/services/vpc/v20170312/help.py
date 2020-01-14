@@ -1219,6 +1219,10 @@ INFO = {
       {
         "name": "Limit",
         "desc": "每页行数，默认为10"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定FlowLogIds和Filters。\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>"
       }
     ],
     "desc": "本接口（DescribeFlowLogs）用于查询获取流日志集合"
@@ -2165,6 +2169,10 @@ INFO = {
       {
         "name": "BandwidthPackageName",
         "desc": "带宽包名称"
+      },
+      {
+        "name": "ChargeType",
+        "desc": "带宽包计费模式"
       }
     ],
     "desc": "接口用于修改带宽包属性，包括带宽包名字等"

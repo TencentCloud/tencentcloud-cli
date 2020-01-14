@@ -42,6 +42,43 @@ INFO = {
     ],
     "desc": "申请用户证书"
   },
+  "GetInvokeTx": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：transaction"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：query_txid"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "区块链网络ID，可在区块链网络详情或列表中获取"
+      },
+      {
+        "name": "ChannelName",
+        "desc": "业务所属通道名称，可在通道详情或列表中获取"
+      },
+      {
+        "name": "PeerName",
+        "desc": "执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称"
+      },
+      {
+        "name": "PeerGroup",
+        "desc": "执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称"
+      },
+      {
+        "name": "TxId",
+        "desc": "交易ID"
+      },
+      {
+        "name": "GroupName",
+        "desc": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称"
+      }
+    ],
+    "desc": "Invoke异步调用结果查询"
+  },
   "GetBlockListHandler": {
     "params": [
       {
@@ -179,7 +216,7 @@ INFO = {
     ],
     "desc": "Bcos根据块高查询区块信息"
   },
-  "GetInvokeTx": {
+  "TransByDynamicContractHandler": {
     "params": [
       {
         "name": "Module",
@@ -187,34 +224,34 @@ INFO = {
       },
       {
         "name": "Operation",
-        "desc": "操作名，固定字段：query_txid"
+        "desc": "操作名，固定字段：trans_by_dynamic_contract"
       },
       {
-        "name": "ClusterId",
-        "desc": "区块链网络ID，可在区块链网络详情或列表中获取"
+        "name": "GroupPk",
+        "desc": "群组编号"
       },
       {
-        "name": "ChannelName",
-        "desc": "业务所属通道名称，可在通道详情或列表中获取"
+        "name": "ContractAddress",
+        "desc": "合约地址（合约部署成功，可得到合约地址）"
       },
       {
-        "name": "PeerName",
-        "desc": "执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称"
+        "name": "ContractName",
+        "desc": "合约名"
       },
       {
-        "name": "PeerGroup",
-        "desc": "执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称"
+        "name": "AbiInfo",
+        "desc": "合约编译后的abi"
       },
       {
-        "name": "TxId",
-        "desc": "交易ID"
+        "name": "FuncName",
+        "desc": "合约被调用方法名"
       },
       {
-        "name": "GroupName",
-        "desc": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称"
+        "name": "FuncParam",
+        "desc": "合约被调用方法的入参"
       }
     ],
-    "desc": "Invoke异步调用结果查询"
+    "desc": "根据动态部署的合约发送交易"
   },
   "SendTransactionHandler": {
     "params": [
@@ -462,6 +499,39 @@ INFO = {
       }
     ],
     "desc": "获取最新交易列表"
+  },
+  "DeployDynamicContractHandler": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，固定字段：contract"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，固定字段：deploy_by_dynamic_contract"
+      },
+      {
+        "name": "GroupPk",
+        "desc": "群组编号"
+      },
+      {
+        "name": "ContractName",
+        "desc": "合约名称"
+      },
+      {
+        "name": "AbiInfo",
+        "desc": "合约编译后的abi"
+      },
+      {
+        "name": "ByteCodeBin",
+        "desc": "合约编译后的binary"
+      },
+      {
+        "name": "ConstructorParams",
+        "desc": "构造函数入参"
+      }
+    ],
+    "desc": "动态部署合约"
   },
   "GetTransByHashHandler": {
     "params": [
