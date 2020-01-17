@@ -57,10 +57,31 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>"
+        "desc": "过滤条件。\n<li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>\n<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月[\"2019-11-17\", \"2019-12-17\"]</li>"
       }
     ],
     "desc": "按分页形式展示网络攻击日志列表"
+  },
+  "OpenProVersion": {
+    "params": [
+      {
+        "name": "MachineType",
+        "desc": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>"
+      },
+      {
+        "name": "MachineRegion",
+        "desc": "机器所属地域。\n如：ap-guangzhou，ap-shanghai"
+      },
+      {
+        "name": "Quuids",
+        "desc": "主机唯一标识Uuid数组。\n黑石的InstanceId，CVM的Uuid"
+      },
+      {
+        "name": "ActivityId",
+        "desc": "活动ID。"
+      }
+    ],
+    "desc": "本接口 (OpenProVersion) 用于开通专业版。"
   },
   "DescribeWeeklyReportMalwares": {
     "params": [
@@ -434,7 +455,7 @@ INFO = {
     "params": [
       {
         "name": "Ids",
-        "desc": "异地登录事件Id数组。"
+        "desc": "异地登录事件ID数组。"
       }
     ],
     "desc": "本接口 (DeleteNonlocalLoginPlaces) 用于删除异地登录记录。"
@@ -743,7 +764,7 @@ INFO = {
     "params": [
       {
         "name": "Quuid",
-        "desc": "云主机ID"
+        "desc": "云服务器ID"
       },
       {
         "name": "TagId",
@@ -751,11 +772,11 @@ INFO = {
       },
       {
         "name": "MRegion",
-        "desc": "主机地区"
+        "desc": "云服务器地区"
       },
       {
         "name": "MArea",
-        "desc": "主机地区类型(CVM|BM)"
+        "desc": "云服务器类型(CVM|BM)"
       }
     ],
     "desc": "增加机器关联标签"
@@ -777,7 +798,7 @@ INFO = {
     "params": [
       {
         "name": "Ids",
-        "desc": "木马事件Id数组。"
+        "desc": "木马事件ID数组。"
       }
     ],
     "desc": "本接口（SeparateMalwares）用于隔离木马。"
@@ -1053,7 +1074,7 @@ INFO = {
     "params": [
       {
         "name": "Ids",
-        "desc": "木马Id数组，单次最大处理不能超过200条。"
+        "desc": "木马ID数组，单次最大处理不能超过200条。"
       }
     ],
     "desc": "本接口（UntrustMalwares）用于取消信任木马文件。"

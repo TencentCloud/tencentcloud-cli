@@ -21,7 +21,7 @@ INFO = {
       },
       {
         "name": "Password",
-        "desc": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。"
+        "desc": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。"
       },
       {
         "name": "NeedResetPassword",
@@ -67,7 +67,7 @@ INFO = {
       },
       {
         "name": "ConsoleLogin",
-        "desc": "是否允许登录"
+        "desc": "是否允许登录 1 为允许 0 为不允许"
       }
     ],
     "desc": "本接口（CreateRole）用于创建角色。"
@@ -153,7 +153,7 @@ INFO = {
     "params": [
       {
         "name": "TargetGroupId",
-        "desc": "用户组 id"
+        "desc": "用户组ID"
       },
       {
         "name": "Page",
@@ -191,7 +191,7 @@ INFO = {
       },
       {
         "name": "Password",
-        "desc": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。"
+        "desc": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。"
       },
       {
         "name": "NeedResetPassword",
@@ -388,13 +388,13 @@ INFO = {
         "desc": "是否需要充值mfa"
       }
     ],
-    "desc": "设置用户的登录，敏感操作，异步登录设置"
+    "desc": "设置用户的登录保护和敏感操作校验方式"
   },
   "UpdatePolicy": {
     "params": [
       {
         "name": "PolicyId",
-        "desc": "策略 id"
+        "desc": "策略ID"
       },
       {
         "name": "PolicyName",
@@ -406,7 +406,7 @@ INFO = {
       },
       {
         "name": "PolicyDocument",
-        "desc": "策略文档"
+        "desc": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo"
       }
     ],
     "desc": "本接口（UpdatePolicy ）可用于更新策略。"
@@ -598,7 +598,7 @@ INFO = {
       },
       {
         "name": "PolicyDocument",
-        "desc": "策略文档"
+        "desc": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo"
       },
       {
         "name": "Description",

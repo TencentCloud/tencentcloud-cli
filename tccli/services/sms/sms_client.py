@@ -18,6 +18,79 @@ from tccli.services.sms import v20190711
 from tccli.services.sms.v20190711 import help as v20190711_help
 
 
+def doDeleteSmsTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteSmsTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSmsTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteSmsTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAddSmsSign(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AddSmsSign", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SignName": argv.get("--SignName"),
+        "SignType": Utils.try_to_json(argv, "--SignType"),
+        "DocumentType": Utils.try_to_json(argv, "--DocumentType"),
+        "International": Utils.try_to_json(argv, "--International"),
+        "UsedMethod": Utils.try_to_json(argv, "--UsedMethod"),
+        "ProofImage": argv.get("--ProofImage"),
+        "CommissionImage": argv.get("--CommissionImage"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddSmsSignRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AddSmsSign(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPullSmsSendStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -83,6 +156,47 @@ def doSendSms(argv, arglist):
     model = models.SendSmsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.SendSms(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifySmsSign(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySmsSign", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SignId": Utils.try_to_json(argv, "--SignId"),
+        "SignName": argv.get("--SignName"),
+        "SignType": Utils.try_to_json(argv, "--SignType"),
+        "DocumentType": Utils.try_to_json(argv, "--DocumentType"),
+        "International": Utils.try_to_json(argv, "--International"),
+        "UsedMethod": Utils.try_to_json(argv, "--UsedMethod"),
+        "ProofImage": argv.get("--ProofImage"),
+        "CommissionImage": argv.get("--CommissionImage"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySmsSignRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySmsSign(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -272,6 +386,44 @@ def doPullSmsSendStatusByPhoneNumber(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifySmsTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySmsTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
+        "TemplateName": argv.get("--TemplateName"),
+        "TemplateContent": argv.get("--TemplateContent"),
+        "SmsType": Utils.try_to_json(argv, "--SmsType"),
+        "International": Utils.try_to_json(argv, "--International"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySmsTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySmsTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPullSmsReplyStatusByPhoneNumber(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -309,6 +461,76 @@ def doPullSmsReplyStatusByPhoneNumber(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteSmsSign(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteSmsSign", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SignId": Utils.try_to_json(argv, "--SignId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSmsSignRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteSmsSign(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAddSmsTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AddSmsTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TemplateName": argv.get("--TemplateName"),
+        "TemplateContent": argv.get("--TemplateContent"),
+        "SmsType": Utils.try_to_json(argv, "--SmsType"),
+        "International": Utils.try_to_json(argv, "--International"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddSmsTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AddSmsTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20190711": sms_client_v20190711,
 
@@ -320,14 +542,20 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DeleteSmsTemplate": doDeleteSmsTemplate,
+    "AddSmsSign": doAddSmsSign,
     "PullSmsSendStatus": doPullSmsSendStatus,
     "SendSms": doSendSms,
+    "ModifySmsSign": doModifySmsSign,
     "SmsPackagesStatistics": doSmsPackagesStatistics,
     "SendStatusStatistics": doSendStatusStatistics,
     "CallbackStatusStatistics": doCallbackStatusStatistics,
     "PullSmsReplyStatus": doPullSmsReplyStatus,
     "PullSmsSendStatusByPhoneNumber": doPullSmsSendStatusByPhoneNumber,
+    "ModifySmsTemplate": doModifySmsTemplate,
     "PullSmsReplyStatusByPhoneNumber": doPullSmsReplyStatusByPhoneNumber,
+    "DeleteSmsSign": doDeleteSmsSign,
+    "AddSmsTemplate": doAddSmsTemplate,
 
 }
 

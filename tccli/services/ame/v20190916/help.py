@@ -13,11 +13,11 @@ INFO = {
       },
       {
         "name": "CategoryId",
-        "desc": "（电台/歌单）ID，CategoryId和CategoryCode两个必传1个"
+        "desc": "（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。\n链接地址：https://cloud.tencent.com/document/product/1155/40109"
       },
       {
         "name": "CategoryCode",
-        "desc": "（电台/歌单）代码，CategoryId和CategoryCode两个必传1个"
+        "desc": "（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。\n链接地址：https://cloud.tencent.com/document/product/1155/40109"
       }
     ],
     "desc": "分类内容下歌曲列表获取，根据CategoryID或CategoryCode"
@@ -47,6 +47,15 @@ INFO = {
       }
     ],
     "desc": "根据接口的模式及歌曲ID来取得歌词信息。"
+  },
+  "ReportData": {
+    "params": [
+      {
+        "name": "ReportData",
+        "desc": "上报数据\n注:reportData为客户端压缩后的上报数据进行16进制转换的字符串数据\n压缩说明：\na) 上报的json格式字符串通过流的转换（ByteArrayInputStream, java.util.zip.GZIPOutputStream），获取到压缩后的字节数组。\nb) 将压缩后的字节数组转成16进制字符串。\n\nreportData由两部分数据组成：\n1）report_type（上报类型）\n2）data（歌曲上报数据）\n不同的report_type对应的data数据结构不一样。\n\n详细说明请参考文档reportdata.docx：\nhttps://github.com/ame-demo/doc"
+      }
+    ],
+    "desc": "客户上报用户数据功能，为了更好的为用户提供优质服务"
   },
   "DescribeMusic": {
     "params": [

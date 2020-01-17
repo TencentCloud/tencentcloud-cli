@@ -80,7 +80,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "实例 ID 列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。"
+        "desc": "实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。"
       }
     ],
     "desc": "本接口(DescribeRollbackRangeTime)用于查询云数据库实例可回档的时间范围。"
