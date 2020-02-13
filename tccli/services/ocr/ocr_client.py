@@ -644,6 +644,7 @@ def doGeneralHandwritingOCR(argv, arglist):
     param = {
         "ImageBase64": argv.get("--ImageBase64"),
         "ImageUrl": argv.get("--ImageUrl"),
+        "Scene": argv.get("--Scene"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

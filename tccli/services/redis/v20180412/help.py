@@ -1,18 +1,31 @@
 # -*- coding: utf-8 -*-
 DESC = "redis-2018-04-12"
 INFO = {
-  "DescribeInstanceMonitorBigKeySizeDist": {
+  "ClearInstance": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例ID"
       },
       {
-        "name": "Date",
-        "desc": "时间；例如：\"20190219\""
+        "name": "Password",
+        "desc": "redis的实例密码（免密实例不需要传密码，非免密实例必传）"
       }
     ],
-    "desc": "查询实例大Key大小分布"
+    "desc": "清空Redis实例的实例数据。"
+  },
+  "InquiryPriceRenewInstance": {
+    "params": [
+      {
+        "name": "Period",
+        "desc": "购买时长，单位：月"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "查询实例续费价格（包年包月）"
   },
   "CreateInstanceAccount": {
     "params": [
@@ -42,23 +55,6 @@ INFO = {
       }
     ],
     "desc": "创建实例子账号"
-  },
-  "DescribeInstanceMonitorBigKey": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "实例Id"
-      },
-      {
-        "name": "ReqType",
-        "desc": "请求类型：1——string类型，2——所有类型"
-      },
-      {
-        "name": "Date",
-        "desc": "时间；例如：\"20190219\""
-      }
-    ],
-    "desc": "查询实例大Key"
   },
   "ModifyInstanceAccount": {
     "params": [
@@ -138,10 +134,19 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例ID"
       }
     ],
     "desc": "回收站实例立即下线"
+  },
+  "StartupInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例id"
+      }
+    ],
+    "desc": "实例解隔离"
   },
   "DescribeInstanceAccount": {
     "params": [
@@ -160,14 +165,14 @@ INFO = {
     ],
     "desc": "查看实例子账号信息"
   },
-  "DescribeAutoBackupConfig": {
+  "DescribeInstanceDTSInfo": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例ID"
       }
     ],
-    "desc": "获取备份配置"
+    "desc": "查询实例DTS信息"
   },
   "DescribeInstanceMonitorTopNCmdTook": {
     "params": [
@@ -207,24 +212,28 @@ INFO = {
     ],
     "desc": "修改实例网络配置"
   },
-  "DescribeInstanceShards": {
+  "ResetPassword": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例id"
+        "desc": "Redis实例ID"
       },
       {
-        "name": "FilterSlave",
-        "desc": "是否过滤掉从节信息"
+        "name": "Password",
+        "desc": "重置的密码（切换为免密实例时，可不传；其他情况必传）"
+      },
+      {
+        "name": "NoAuth",
+        "desc": "是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false"
       }
     ],
-    "desc": "获取集群版实例分片信息"
+    "desc": "重置密码"
   },
   "DestroyPrepaidInstance": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例ID"
       }
     ],
     "desc": "包年包月实例退还"
@@ -310,6 +319,10 @@ INFO = {
       {
         "name": "SearchKeys",
         "desc": "搜索关键词：支持实例Id、实例名称、完整IP"
+      },
+      {
+        "name": "TypeList",
+        "desc": "内部参数，用户可忽略"
       }
     ],
     "desc": "查询Redis实例列表"
@@ -353,14 +366,14 @@ INFO = {
     ],
     "desc": "禁用读写分离"
   },
-  "DescribeInstanceDTSInfo": {
+  "DescribeAutoBackupConfig": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例ID"
       }
     ],
-    "desc": "查询实例DTS信息"
+    "desc": "获取备份配置"
   },
   "ModifyAutoBackupConfig": {
     "params": [
@@ -392,18 +405,48 @@ INFO = {
     ],
     "desc": "查询实例访问来源信息"
   },
-  "ClearInstance": {
+  "DescribeInstanceParams": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      }
+    ],
+    "desc": "查询实例参数列表"
+  },
+  "DescribeInstanceMonitorBigKeySizeDist": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例Id"
       },
       {
-        "name": "Password",
-        "desc": "redis的实例密码（免密实例不需要传密码，非免密实例必传）"
+        "name": "Date",
+        "desc": "时间；例如：\"20190219\""
       }
     ],
-    "desc": "清空Redis实例的实例数据。"
+    "desc": "查询实例大Key大小分布"
+  },
+  "InquiryPriceUpgradeInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "MemSize",
+        "desc": "分片大小 单位 MB"
+      },
+      {
+        "name": "RedisShardNum",
+        "desc": "分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
+      },
+      {
+        "name": "RedisReplicasNum",
+        "desc": "副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
+      }
+    ],
+    "desc": "查询实例扩容价格"
   },
   "DescribeProjectSecurityGroup": {
     "params": [
@@ -418,18 +461,18 @@ INFO = {
     ],
     "desc": "查询项目安全组信息"
   },
-  "DescribeInstanceMonitorHotKey": {
+  "DescribeInstanceShards": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例id"
       },
       {
-        "name": "SpanType",
-        "desc": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时"
+        "name": "FilterSlave",
+        "desc": "是否过滤掉从节信息"
       }
     ],
-    "desc": "查询实例热Key"
+    "desc": "获取集群版实例分片信息"
   },
   "DescribeTaskInfo": {
     "params": [
@@ -462,22 +505,105 @@ INFO = {
     ],
     "desc": "启用读写分离"
   },
-  "ResetPassword": {
+  "DescribeProjectSecurityGroups": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "Redis实例ID"
+        "name": "Product",
+        "desc": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb"
       },
       {
-        "name": "Password",
-        "desc": "重置的密码（切换为免密实例时，可不传；其他情况必传）"
+        "name": "ProjectId",
+        "desc": "项目Id。"
       },
       {
-        "name": "NoAuth",
-        "desc": "是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false"
+        "name": "Offset",
+        "desc": "偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "拉取数量限制。"
+      },
+      {
+        "name": "SearchKey",
+        "desc": "搜索条件，支持安全组id或者安全组名称。"
       }
     ],
-    "desc": "重置密码"
+    "desc": "本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。"
+  },
+  "AssociateSecurityGroups": {
+    "params": [
+      {
+        "name": "Product",
+        "desc": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。"
+      },
+      {
+        "name": "SecurityGroupId",
+        "desc": "要绑定的安全组ID，类似sg-efil73jd。"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "被绑定的实例ID，类似ins-lesecurk，支持指定多个实例。"
+      }
+    ],
+    "desc": "本接口 (AssociateSecurityGroups) 用于绑定安全组到指定实例。"
+  },
+  "InquiryPriceCreateInstance": {
+    "params": [
+      {
+        "name": "ZoneId",
+        "desc": "实例所属的可用区id"
+      },
+      {
+        "name": "TypeId",
+        "desc": "实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，"
+      },
+      {
+        "name": "MemSize",
+        "desc": "实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准"
+      },
+      {
+        "name": "GoodsNum",
+        "desc": "实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准"
+      },
+      {
+        "name": "Period",
+        "desc": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]"
+      },
+      {
+        "name": "BillingMode",
+        "desc": "付费方式:0-按量计费，1-包年包月。"
+      },
+      {
+        "name": "RedisShardNum",
+        "desc": "实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写"
+      },
+      {
+        "name": "RedisReplicasNum",
+        "desc": "实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
+      },
+      {
+        "name": "ReplicasReadonly",
+        "desc": "是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写"
+      }
+    ],
+    "desc": "查询新购实例价格"
+  },
+  "ModifyDBInstanceSecurityGroups": {
+    "params": [
+      {
+        "name": "Product",
+        "desc": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "要修改的安全组ID列表，一个或者多个安全组Id组成的数组。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同"
+      }
+    ],
+    "desc": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组"
   },
   "DeleteInstanceAccount": {
     "params": [
@@ -492,14 +618,22 @@ INFO = {
     ],
     "desc": "删除实例子账号"
   },
-  "DescribeInstanceParams": {
+  "DescribeInstanceMonitorBigKey": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例Id"
+      },
+      {
+        "name": "ReqType",
+        "desc": "请求类型：1——string类型，2——所有类型"
+      },
+      {
+        "name": "Date",
+        "desc": "时间；例如：\"20190219\""
       }
     ],
-    "desc": "查询实例参数列表"
+    "desc": "查询实例大Key"
   },
   "DescribeInstanceSecurityGroup": {
     "params": [
@@ -531,7 +665,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例ID"
       },
       {
         "name": "MemSize",
@@ -548,18 +682,18 @@ INFO = {
     ],
     "desc": "升级实例"
   },
-  "RenewInstance": {
+  "DescribeInstanceMonitorHotKey": {
     "params": [
       {
-        "name": "Period",
-        "desc": "购买时长，单位：月"
+        "name": "InstanceId",
+        "desc": "实例Id"
       },
       {
-        "name": "InstanceId",
-        "desc": "实例ID"
+        "name": "SpanType",
+        "desc": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时"
       }
     ],
-    "desc": "续费实例"
+    "desc": "查询实例热Key"
   },
   "ManualBackupInstance": {
     "params": [
@@ -590,6 +724,19 @@ INFO = {
       }
     ],
     "desc": "修改redis密码"
+  },
+  "DescribeDBSecurityGroups": {
+    "params": [
+      {
+        "name": "Product",
+        "desc": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      }
+    ],
+    "desc": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。"
   },
   "DescribeSlowLog": {
     "params": [
@@ -641,7 +788,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例ID"
       },
       {
         "name": "InstanceParams",
@@ -654,7 +801,7 @@ INFO = {
     "params": [
       {
         "name": "ZoneId",
-        "desc": "实例所属的可用区id"
+        "desc": "实例所属的可用区ID"
       },
       {
         "name": "TypeId",
@@ -731,11 +878,11 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例ID"
       },
       {
         "name": "BackupId",
-        "desc": "备份Id，通过DescribeInstanceBackups接口可查"
+        "desc": "备份ID，通过DescribeInstanceBackups接口可查"
       }
     ],
     "desc": "查询备份Rdb下载地址(接口灰度中，需要加白名单使用)"
@@ -744,7 +891,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例Id"
+        "desc": "实例ID"
       }
     ],
     "desc": "按量计费实例销毁"
@@ -778,14 +925,35 @@ INFO = {
     ],
     "desc": "查询 CRS 实例备份列表"
   },
-  "StartupInstance": {
+  "DisassociateSecurityGroups": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例id"
+        "name": "Product",
+        "desc": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。"
+      },
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组Id。"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID列表，一个或者多个实例Id组成的数组。"
       }
     ],
-    "desc": "实例解隔离"
+    "desc": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。"
+  },
+  "RenewInstance": {
+    "params": [
+      {
+        "name": "Period",
+        "desc": "购买时长，单位：月"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "续费实例"
   },
   "ModifyInstance": {
     "params": [

@@ -279,6 +279,7 @@ def doDescribeDCDBPrice(argv, arglist):
         "ShardMemory": Utils.try_to_json(argv, "--ShardMemory"),
         "ShardStorage": Utils.try_to_json(argv, "--ShardStorage"),
         "ShardCount": Utils.try_to_json(argv, "--ShardCount"),
+        "Paymode": argv.get("--Paymode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1039,6 +1040,8 @@ def doCreateDCDBInstance(argv, arglist):
         "DbVersionId": argv.get("--DbVersionId"),
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
+        "InstanceName": argv.get("--InstanceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

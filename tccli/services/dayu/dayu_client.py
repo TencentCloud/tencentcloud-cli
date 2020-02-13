@@ -130,43 +130,6 @@ def doDescribeRuleSets(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateL7CCRule(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateL7CCRule", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
-        "Method": argv.get("--Method"),
-        "RuleId": argv.get("--RuleId"),
-        "RuleConfig": Utils.try_to_json(argv, "--RuleConfig"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateL7CCRuleRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateL7CCRule(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateCCSelfDefinePolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -307,6 +270,8 @@ def doCreateDDoSPolicyCase(argv, arglist):
         "MinUdpPackageLen": argv.get("--MinUdpPackageLen"),
         "MaxUdpPackageLen": argv.get("--MaxUdpPackageLen"),
         "HasVPN": argv.get("--HasVPN"),
+        "TcpPortList": argv.get("--TcpPortList"),
+        "UdpPortList": argv.get("--UdpPortList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -829,17 +794,16 @@ def doDescribeSecIndex(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCCSelfDefinePolicy(argv, arglist):
+def doDescribeCCFrequencyRules(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeCCSelfDefinePolicy", g_param[OptionsDefine.Version])
+        show_help("DescribeCCFrequencyRules", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
         "Id": argv.get("--Id"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -853,9 +817,9 @@ def doDescribeCCSelfDefinePolicy(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCCSelfDefinePolicyRequest()
+    model = models.DescribeCCFrequencyRulesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCCSelfDefinePolicy(model)
+    rsp = client.DescribeCCFrequencyRules(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1001,6 +965,48 @@ def doDescribeBaradData(argv, arglist):
     model = models.DescribeBaradDataRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeBaradData(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCCFrequencyRules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyCCFrequencyRules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "CCFrequencyRuleId": argv.get("--CCFrequencyRuleId"),
+        "Mode": argv.get("--Mode"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "ReqNumber": Utils.try_to_json(argv, "--ReqNumber"),
+        "Act": argv.get("--Act"),
+        "ExeDuration": Utils.try_to_json(argv, "--ExeDuration"),
+        "Uri": argv.get("--Uri"),
+        "UserAgent": argv.get("--UserAgent"),
+        "Cookie": argv.get("--Cookie"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCCFrequencyRulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyCCFrequencyRules(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1881,6 +1887,8 @@ def doModifyDDoSPolicyCase(argv, arglist):
         "MinUdpPackageLen": argv.get("--MinUdpPackageLen"),
         "MaxUdpPackageLen": argv.get("--MaxUdpPackageLen"),
         "HasVPN": argv.get("--HasVPN"),
+        "TcpPortList": argv.get("--TcpPortList"),
+        "UdpPortList": argv.get("--UdpPortList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1970,6 +1978,40 @@ def doDescribeDDoSNetEvInfo(argv, arglist):
     model = models.DescribeDDoSNetEvInfoRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeDDoSNetEvInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteCCFrequencyRules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteCCFrequencyRules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "CCFrequencyRuleId": argv.get("--CCFrequencyRuleId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteCCFrequencyRulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteCCFrequencyRules(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2085,15 +2127,18 @@ def doCreateL7RulesUpload(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSPolicy(argv, arglist):
+def doDescribeDDoSAttackIPRegionMap(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDDoSPolicy", g_param[OptionsDefine.Version])
+        show_help("DescribeDDoSAttackIPRegionMap", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Business": argv.get("--Business"),
         "Id": argv.get("--Id"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "IpList": Utils.try_to_json(argv, "--IpList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2107,9 +2152,9 @@ def doDescribeDDoSPolicy(argv, arglist):
     client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSPolicyRequest()
+    model = models.DescribeDDoSAttackIPRegionMapRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDDoSPolicy(model)
+    rsp = client.DescribeDDoSAttackIPRegionMap(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2780,6 +2825,78 @@ def doDescribeIPProductInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCCSelfDefinePolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCCSelfDefinePolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCCSelfDefinePolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCCSelfDefinePolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCCFrequencyRulesStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyCCFrequencyRulesStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RuleId": argv.get("--RuleId"),
+        "Method": argv.get("--Method"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCCFrequencyRulesStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyCCFrequencyRulesStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyCCThreshold(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2788,10 +2905,16 @@ def doModifyCCThreshold(argv, arglist):
 
     param = {
         "Business": argv.get("--Business"),
-        "Id": argv.get("--Id"),
         "Threshold": Utils.try_to_json(argv, "--Threshold"),
+        "Id": argv.get("--Id"),
         "Protocol": argv.get("--Protocol"),
         "RuleId": argv.get("--RuleId"),
+        "BasicIp": argv.get("--BasicIp"),
+        "BasicRegion": argv.get("--BasicRegion"),
+        "BasicBizType": argv.get("--BasicBizType"),
+        "BasicDeviceType": argv.get("--BasicDeviceType"),
+        "BasicIpInstance": argv.get("--BasicIpInstance"),
+        "BasicIspCode": Utils.try_to_json(argv, "--BasicIspCode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2966,6 +3089,49 @@ def doDescribeCCTrend(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateCCFrequencyRules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateCCFrequencyRules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "RuleId": argv.get("--RuleId"),
+        "Mode": argv.get("--Mode"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "ReqNumber": Utils.try_to_json(argv, "--ReqNumber"),
+        "Act": argv.get("--Act"),
+        "ExeDuration": Utils.try_to_json(argv, "--ExeDuration"),
+        "Uri": argv.get("--Uri"),
+        "UserAgent": argv.get("--UserAgent"),
+        "Cookie": argv.get("--Cookie"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCCFrequencyRulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateCCFrequencyRules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyL7Rules(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2992,6 +3158,44 @@ def doModifyL7Rules(argv, arglist):
     model = models.ModifyL7RulesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyL7Rules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBasicCCThreshold(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeBasicCCThreshold", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BasicIp": argv.get("--BasicIp"),
+        "BasicRegion": argv.get("--BasicRegion"),
+        "BasicBizType": argv.get("--BasicBizType"),
+        "BasicDeviceType": argv.get("--BasicDeviceType"),
+        "BasicIpInstance": argv.get("--BasicIpInstance"),
+        "BasicIspCode": Utils.try_to_json(argv, "--BasicIspCode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBasicCCThresholdRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeBasicCCThreshold(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3213,6 +3417,40 @@ def doDescribeDDoSEvInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDDoSPolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDDoSPolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSPolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDDoSPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180709": dayu_client_v20180709,
 
@@ -3227,7 +3465,6 @@ ACTION_MAP = {
     "ModifyCCIpAllowDeny": doModifyCCIpAllowDeny,
     "DescribeDDoSCount": doDescribeDDoSCount,
     "DescribeRuleSets": doDescribeRuleSets,
-    "CreateL7CCRule": doCreateL7CCRule,
     "CreateCCSelfDefinePolicy": doCreateCCSelfDefinePolicy,
     "DescribleL7Rules": doDescribleL7Rules,
     "ModifyCCPolicySwitch": doModifyCCPolicySwitch,
@@ -3246,11 +3483,12 @@ ACTION_MAP = {
     "DescribeIpBlockList": doDescribeIpBlockList,
     "DescribeL4HealthConfig": doDescribeL4HealthConfig,
     "DescribeSecIndex": doDescribeSecIndex,
-    "DescribeCCSelfDefinePolicy": doDescribeCCSelfDefinePolicy,
+    "DescribeCCFrequencyRules": doDescribeCCFrequencyRules,
     "DeleteDDoSPolicyCase": doDeleteDDoSPolicyCase,
     "DeleteL7Rules": doDeleteL7Rules,
     "CreateL4Rules": doCreateL4Rules,
     "DescribeBaradData": doDescribeBaradData,
+    "ModifyCCFrequencyRules": doModifyCCFrequencyRules,
     "CreateDDoSPolicy": doCreateDDoSPolicy,
     "ModifyResBindDDoSPolicy": doModifyResBindDDoSPolicy,
     "DescribeSourceIpSegment": doDescribeSourceIpSegment,
@@ -3277,10 +3515,11 @@ ACTION_MAP = {
     "ModifyDDoSPolicyCase": doModifyDDoSPolicyCase,
     "ModifyDDoSAlarmThreshold": doModifyDDoSAlarmThreshold,
     "DescribeDDoSNetEvInfo": doDescribeDDoSNetEvInfo,
+    "DeleteCCFrequencyRules": doDeleteCCFrequencyRules,
     "ModifyL4KeepTime": doModifyL4KeepTime,
     "DescribeL4RulesErrHealth": doDescribeL4RulesErrHealth,
     "CreateL7RulesUpload": doCreateL7RulesUpload,
-    "DescribeDDoSPolicy": doDescribeDDoSPolicy,
+    "DescribeDDoSAttackIPRegionMap": doDescribeDDoSAttackIPRegionMap,
     "DescribeTransmitStatis": doDescribeTransmitStatis,
     "ModifyCCLevel": doModifyCCLevel,
     "ModifyDDoSDefendStatus": doModifyDDoSDefendStatus,
@@ -3299,18 +3538,23 @@ ACTION_MAP = {
     "CreateL7Rules": doCreateL7Rules,
     "DescribeIpUnBlockList": doDescribeIpUnBlockList,
     "DescribeIPProductInfo": doDescribeIPProductInfo,
+    "DescribeCCSelfDefinePolicy": doDescribeCCSelfDefinePolicy,
+    "ModifyCCFrequencyRulesStatus": doModifyCCFrequencyRulesStatus,
     "ModifyCCThreshold": doModifyCCThreshold,
     "DescribleL4Rules": doDescribleL4Rules,
     "DescribeCCUrlAllow": doDescribeCCUrlAllow,
     "DescribeL7HealthConfig": doDescribeL7HealthConfig,
     "DescribeCCTrend": doDescribeCCTrend,
+    "CreateCCFrequencyRules": doCreateCCFrequencyRules,
     "ModifyL7Rules": doModifyL7Rules,
+    "DescribeBasicCCThreshold": doDescribeBasicCCThreshold,
     "CreateL7HealthConfig": doCreateL7HealthConfig,
     "DescribeResIpList": doDescribeResIpList,
     "CreateInstanceName": doCreateInstanceName,
     "ModifyResourceRenewFlag": doModifyResourceRenewFlag,
     "ModifyCCSelfDefinePolicy": doModifyCCSelfDefinePolicy,
     "DescribeDDoSEvInfo": doDescribeDDoSEvInfo,
+    "DescribeDDoSPolicy": doDescribeDDoSPolicy,
 
 }
 

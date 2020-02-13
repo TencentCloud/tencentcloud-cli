@@ -54,7 +54,7 @@ INFO = {
         "desc": "待查询的长订单号列表，创建实例、续费实例、扩容实例接口返回。"
       }
     ],
-    "desc": "本接口（DescribeOrders）用于查询云数据库订单信息。传入订单Id来查询订单关联的云数据库实例，和对应的任务流程ID。"
+    "desc": "本接口（DescribeOrders）用于查询云数据库订单信息。传入订单ID来查询订单关联的云数据库实例，和对应的任务流程ID。"
   },
   "DescribeSaleInfo": {
     "params": [],
@@ -380,7 +380,7 @@ INFO = {
       },
       {
         "name": "ExclusterIds",
-        "desc": "按独享集群Id过滤实例，独享集群Id形如dbdc-4ih6uct9"
+        "desc": "按独享集群ID过滤实例，独享集群ID形如dbdc-4ih6uct9"
       }
     ],
     "desc": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回20条实例记录，单次请求最多支持返回100条实例记录。"
@@ -522,7 +522,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "待初始化的实例Id列表，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。"
+        "desc": "待初始化的实例ID列表，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。"
       },
       {
         "name": "Params",

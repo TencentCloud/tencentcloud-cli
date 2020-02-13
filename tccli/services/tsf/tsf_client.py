@@ -135,6 +135,7 @@ def doCreateCluster(argv, arglist):
         "ClusterDesc": argv.get("--ClusterDesc"),
         "TsfRegionId": argv.get("--TsfRegionId"),
         "TsfZoneId": argv.get("--TsfZoneId"),
+        "SubnetId": argv.get("--SubnetId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -347,6 +348,46 @@ def doDeployContainerGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAddClusterInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AddClusterInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "InstanceIdList": Utils.try_to_json(argv, "--InstanceIdList"),
+        "OsName": argv.get("--OsName"),
+        "ImageId": argv.get("--ImageId"),
+        "Password": argv.get("--Password"),
+        "KeyId": argv.get("--KeyId"),
+        "SgId": argv.get("--SgId"),
+        "InstanceImportMode": argv.get("--InstanceImportMode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddClusterInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AddClusterInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeServerlessGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -354,12 +395,14 @@ def doDescribeServerlessGroups(argv, arglist):
         return
 
     param = {
-        "ApplicationId": argv.get("--ApplicationId"),
         "SearchWord": argv.get("--SearchWord"),
+        "ApplicationId": argv.get("--ApplicationId"),
         "OrderBy": argv.get("--OrderBy"),
         "OrderType": argv.get("--OrderType"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "NamespaceId": argv.get("--NamespaceId"),
+        "ClusterId": argv.get("--ClusterId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -392,10 +435,12 @@ def doCreateNamespace(argv, arglist):
         return
 
     param = {
-        "ClusterId": argv.get("--ClusterId"),
         "NamespaceName": argv.get("--NamespaceName"),
+        "ClusterId": argv.get("--ClusterId"),
         "NamespaceDesc": argv.get("--NamespaceDesc"),
         "NamespaceResourceType": argv.get("--NamespaceResourceType"),
+        "NamespaceType": argv.get("--NamespaceType"),
+        "NamespaceId": argv.get("--NamespaceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1256,10 +1301,11 @@ def doCreateApplication(argv, arglist):
     param = {
         "ApplicationName": argv.get("--ApplicationName"),
         "ApplicationType": argv.get("--ApplicationType"),
+        "MicroserviceType": argv.get("--MicroserviceType"),
         "ApplicationDesc": argv.get("--ApplicationDesc"),
         "ApplicationLogConfig": argv.get("--ApplicationLogConfig"),
-        "MicroserviceType": argv.get("--MicroserviceType"),
         "ApplicationResourceType": argv.get("--ApplicationResourceType"),
+        "ApplicationRuntimeType": argv.get("--ApplicationRuntimeType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1742,6 +1788,8 @@ def doDescribeSimpleNamespaces(argv, arglist):
         "NamespaceResourceTypeList": Utils.try_to_json(argv, "--NamespaceResourceTypeList"),
         "SearchWord": argv.get("--SearchWord"),
         "NamespaceTypeList": Utils.try_to_json(argv, "--NamespaceTypeList"),
+        "NamespaceName": argv.get("--NamespaceName"),
+        "IsDefault": argv.get("--IsDefault"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1883,7 +1931,9 @@ def doDeployServerlessGroup(argv, arglist):
     param = {
         "GroupId": argv.get("--GroupId"),
         "PkgId": argv.get("--PkgId"),
-        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
+        "Memory": argv.get("--Memory"),
+        "InstanceRequest": Utils.try_to_json(argv, "--InstanceRequest"),
+        "StartupParameters": argv.get("--StartupParameters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2205,6 +2255,7 @@ def doDescribeSimpleGroups(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "GroupId": argv.get("--GroupId"),
         "SearchWord": argv.get("--SearchWord"),
+        "AppMicroServiceType": argv.get("--AppMicroServiceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2428,8 +2479,8 @@ def doCreateServerlessGroup(argv, arglist):
     param = {
         "ApplicationId": argv.get("--ApplicationId"),
         "GroupName": argv.get("--GroupName"),
-        "PkgId": argv.get("--PkgId"),
-        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
+        "NamespaceId": argv.get("--NamespaceId"),
+        "ClusterId": argv.get("--ClusterId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2616,6 +2667,7 @@ ACTION_MAP = {
     "StartContainerGroup": doStartContainerGroup,
     "DescribeConfigSummary": doDescribeConfigSummary,
     "DeployContainerGroup": doDeployContainerGroup,
+    "AddClusterInstances": doAddClusterInstances,
     "DescribeServerlessGroups": doDescribeServerlessGroups,
     "CreateNamespace": doCreateNamespace,
     "DeleteApplication": doDeleteApplication,

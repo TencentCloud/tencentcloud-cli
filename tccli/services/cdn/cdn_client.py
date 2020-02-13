@@ -934,6 +934,46 @@ def doGetDisableRecords(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeBillingData(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeBillingData", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Interval": argv.get("--Interval"),
+        "Domain": argv.get("--Domain"),
+        "Project": Utils.try_to_json(argv, "--Project"),
+        "Area": argv.get("--Area"),
+        "District": Utils.try_to_json(argv, "--District"),
+        "Metric": argv.get("--Metric"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBillingDataRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeBillingData(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doUpdatePayType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1036,6 +1076,7 @@ ACTION_MAP = {
     "DescribePushTasks": doDescribePushTasks,
     "PushUrlsCache": doPushUrlsCache,
     "GetDisableRecords": doGetDisableRecords,
+    "DescribeBillingData": doDescribeBillingData,
     "UpdatePayType": doUpdatePayType,
     "EnableCaches": doEnableCaches,
 

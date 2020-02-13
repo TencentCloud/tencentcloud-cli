@@ -243,6 +243,55 @@ INFO = {
     ],
     "desc": "获取基础策略告警组列表"
   },
+  "DescribeBasicAlarmList": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "接口模块名，当前取值monitor"
+      },
+      {
+        "name": "StartTime",
+        "desc": "起始时间，默认一天前的时间戳"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，默认当前时间戳"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页返回的数量，默认20"
+      },
+      {
+        "name": "Offset",
+        "desc": "页偏移量，默认0"
+      },
+      {
+        "name": "OccurTimeOrder",
+        "desc": "根据发生时间排序，取值ASC或DESC"
+      },
+      {
+        "name": "ProjectIds",
+        "desc": "根据项目ID过滤"
+      },
+      {
+        "name": "ViewNames",
+        "desc": "根据策略类型过滤"
+      },
+      {
+        "name": "AlarmStatus",
+        "desc": "根据告警状态过滤"
+      },
+      {
+        "name": "ObjLike",
+        "desc": "根据告警对象过滤"
+      },
+      {
+        "name": "InstanceGroupIds",
+        "desc": "根据实例组ID过滤"
+      }
+    ],
+    "desc": "获取基础告警列表"
+  },
   "GetMonitorData": {
     "params": [
       {

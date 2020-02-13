@@ -80,31 +80,6 @@ INFO = {
     ],
     "desc": "获取资源的规则数"
   },
-  "CreateL7CCRule": {
-    "params": [
-      {
-        "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
-      },
-      {
-        "name": "Id",
-        "desc": "资源ID"
-      },
-      {
-        "name": "Method",
-        "desc": "操作码，取值[query(表示查询)，add(表示添加)，del(表示删除)]"
-      },
-      {
-        "name": "RuleId",
-        "desc": "7层转发规则ID，例如：rule-0000001"
-      },
-      {
-        "name": "RuleConfig",
-        "desc": "7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写；"
-      }
-    ],
-    "desc": "支持读取，添加，删除7层CC自定义规则"
-  },
   "CreateCCSelfDefinePolicy": {
     "params": [
       {
@@ -269,6 +244,14 @@ INFO = {
       {
         "name": "HasVPN",
         "desc": "是否有VPN业务，取值[no（没有）, yes（有）]"
+      },
+      {
+        "name": "TcpPortList",
+        "desc": "TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000"
+      },
+      {
+        "name": "UdpPortList",
+        "desc": "UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000"
       }
     ],
     "desc": "添加策略场景"
@@ -395,7 +378,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；shield表示棋牌盾）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
       },
       {
         "name": "Id",
@@ -537,26 +520,22 @@ INFO = {
     "params": [],
     "desc": "获取本月安全统计"
   },
-  "DescribeCCSelfDefinePolicy": {
+  "DescribeCCFrequencyRules": {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgp高防包；bgp-multip共享包）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",
         "desc": "资源ID"
       },
       {
-        "name": "Limit",
-        "desc": "拉取的条数"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量"
+        "name": "RuleId",
+        "desc": "7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；当填写时表示获取转发规则的访问频率控制规则；"
       }
     ],
-    "desc": "获取CC自定义策略"
+    "desc": "获取CC防护的访问频率控制规则"
   },
   "DeleteDDoSPolicyCase": {
     "params": [
@@ -609,7 +588,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",
@@ -644,7 +623,52 @@ INFO = {
         "desc": "资源实例下的IP，只有当Business=net(高防IP专业版)时才必须填写资源的一个IP（因为高防IP专业版资源实例有多个IP，才需要指定）；"
       }
     ],
-    "desc": "为大禹子产品提供从巴拉多获取指标统计数据的接口"
+    "desc": "为大禹子产品提供业务转发指标数据的接口"
+  },
+  "ModifyCCFrequencyRules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
+      },
+      {
+        "name": "CCFrequencyRuleId",
+        "desc": "CC的访问频率控制规则ID"
+      },
+      {
+        "name": "Mode",
+        "desc": "匹配规则，取值[\"include\"(前缀匹配)，\"equal\"(完全匹配)]"
+      },
+      {
+        "name": "Period",
+        "desc": "统计周期，单位秒，取值[10, 30, 60]"
+      },
+      {
+        "name": "ReqNumber",
+        "desc": "访问次数，取值[1-10000]"
+      },
+      {
+        "name": "Act",
+        "desc": "执行动作，取值[\"alg\"（人机识别）, \"drop\"（拦截）]"
+      },
+      {
+        "name": "ExeDuration",
+        "desc": "执行时间，单位秒，取值[1-900]"
+      },
+      {
+        "name": "Uri",
+        "desc": "URI字符串，必须以/开头，例如/abc/a.php，长度不超过31；当URI=/时，匹配模式只能选择前缀匹配；"
+      },
+      {
+        "name": "UserAgent",
+        "desc": "User-Agent字符串，长度不超过80"
+      },
+      {
+        "name": "Cookie",
+        "desc": "Cookie字符串，长度不超过40"
+      }
+    ],
+    "desc": "修改CC防护的访问频率控制规则"
   },
   "CreateDDoSPolicy": {
     "params": [
@@ -711,7 +735,7 @@ INFO = {
         "desc": "资源ID"
       }
     ],
-    "desc": "获取回源IP段，支持的产品：高防IP，高防IP专业版，棋牌盾；"
+    "desc": "获取回源IP段，支持的产品：高防IP，高防IP专业版；"
   },
   "ModifyCCUrlAllow": {
     "params": [
@@ -955,7 +979,7 @@ INFO = {
         "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示高防包；net表示高防IP专业版）"
       }
     ],
-    "desc": "获取产品总览统计，支持高防包、高防IP、高防IP专业版、棋牌盾"
+    "desc": "获取产品总览统计，支持高防包、高防IP、高防IP专业版；"
   },
   "CreateBasicDDoSAlarmThreshold": {
     "params": [
@@ -1099,7 +1123,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌）"
+        "desc": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "RegionList",
@@ -1274,6 +1298,14 @@ INFO = {
       {
         "name": "HasVPN",
         "desc": "是否有VPN业务，取值[no（没有）, yes（有）]"
+      },
+      {
+        "name": "TcpPortList",
+        "desc": "TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000"
+      },
+      {
+        "name": "UdpPortList",
+        "desc": "UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000"
       }
     ],
     "desc": "修改策略场景"
@@ -1323,6 +1355,19 @@ INFO = {
       }
     ],
     "desc": "获取高防IP专业版资源的DDoS攻击事件详情"
+  },
+  "DeleteCCFrequencyRules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
+      },
+      {
+        "name": "CCFrequencyRuleId",
+        "desc": "CC防护的访问频率控制规则ID"
+      }
+    ],
+    "desc": "删除CC防护的访问频率控制规则"
   },
   "ModifyL4KeepTime": {
     "params": [
@@ -1379,24 +1424,36 @@ INFO = {
     ],
     "desc": "批量上传7层转发规则"
   },
-  "DescribeDDoSPolicy": {
+  "DescribeDDoSAttackIPRegionMap": {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）"
       },
       {
         "name": "Id",
-        "desc": "可选字段，资源ID，如果填写则表示该资源绑定的DDoS高级策略"
+        "desc": "资源ID"
+      },
+      {
+        "name": "StartTime",
+        "desc": "统计开始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "统计结束时间，最大可统计的时间范围是半年；"
+      },
+      {
+        "name": "IpList",
+        "desc": "指定资源的特定IP的攻击源，可选"
       }
     ],
-    "desc": "获取DDoS高级策略"
+    "desc": "获取DDoS攻击源IP地域分布图，支持全球攻击分布和国内省份攻击分布；"
   },
   "DescribeTransmitStatis": {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；bgp表示独享包；bgp-multip表示共享包）"
       },
       {
         "name": "Id",
@@ -1623,7 +1680,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（shield表示棋牌盾；bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）"
       },
       {
         "name": "StartTime",
@@ -1821,19 +1878,61 @@ INFO = {
     ],
     "desc": "获取独享包或共享包IP对应的云资产信息，只支持独享包和共享包的IP"
   },
-  "ModifyCCThreshold": {
+  "DescribeCCSelfDefinePolicy": {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（bgp高防包；bgp-multip共享包）"
       },
       {
         "name": "Id",
         "desc": "资源ID"
       },
       {
+        "name": "Limit",
+        "desc": "拉取的条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      }
+    ],
+    "desc": "获取CC自定义策略"
+  },
+  "ModifyCCFrequencyRulesStatus": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源ID"
+      },
+      {
+        "name": "RuleId",
+        "desc": "7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）"
+      },
+      {
+        "name": "Method",
+        "desc": "开启或关闭，取值[\"on\"(开启)，\"off\"(关闭)]"
+      }
+    ],
+    "desc": "开启或关闭CC防护的访问频率控制规则"
+  },
+  "ModifyCCThreshold": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示基础防护）"
+      },
+      {
         "name": "Threshold",
-        "desc": "CC防护阈值，取值(0 100 150 240 350 480 550 700 850 1000 1500 2000 3000 5000 10000 20000);\n当Business为高防IP、高防IP专业版、棋牌盾时，其CC防护最大阈值跟资源的保底防护带宽有关，对应关系如下：\n  保底带宽: 最大C防护阈值\n  10:  20000,\n  20:  40000,\n  30:  70000,\n  40:  100000,\n  50:  150000,\n  60:  200000,\n  80:  250000,\n  100: 300000,"
+        "desc": "CC防护阈值，取值(0 100 150 240 350 480 550 700 850 1000 1500 2000 3000 5000 10000 20000);\n当Business为高防IP、高防IP专业版时，其CC防护最大阈值跟资源的保底防护带宽有关，对应关系如下：\n  保底带宽: 最大C防护阈值\n  10:  20000,\n  20:  40000,\n  30:  70000,\n  40:  100000,\n  50:  150000,\n  60:  200000,\n  80:  250000,\n  100: 300000,"
+      },
+      {
+        "name": "Id",
+        "desc": "资源ID"
       },
       {
         "name": "Protocol",
@@ -1842,6 +1941,30 @@ INFO = {
       {
         "name": "RuleId",
         "desc": "可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；\n当Protocol=https时必须填写；"
+      },
+      {
+        "name": "BasicIp",
+        "desc": "查询的IP地址（仅基础防护提供），取值如：1.1.1.1"
+      },
+      {
+        "name": "BasicRegion",
+        "desc": "查询IP所属地域（仅基础防护提供），取值如：gz、bj、sh、hk等地域缩写"
+      },
+      {
+        "name": "BasicBizType",
+        "desc": "专区类型（仅基础防护提供），取值如：公有云专区：public，黑石专区：bm, NAT服务器专区：nat，互联网通道：channel。"
+      },
+      {
+        "name": "BasicDeviceType",
+        "desc": "设备类型（仅基础防护提供），取值如：服务器：cvm，公有云负载均衡：clb，黑石负载均衡：lb，NAT服务器：nat，互联网通道：channel."
+      },
+      {
+        "name": "BasicIpInstance",
+        "desc": "仅基础防护提供。可选，IPInstance Nat 网关（如果查询的设备类型是NAT服务器，需要传此参数，通过nat资源查询接口获取）"
+      },
+      {
+        "name": "BasicIspCode",
+        "desc": "仅基础防护提供。可选，运营商线路（如果查询的设备类型是NAT服务器，需要传此参数为5）"
       }
     ],
     "desc": "修改CC的防护阈值"
@@ -1950,6 +2073,55 @@ INFO = {
     ],
     "desc": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)"
   },
+  "CreateCCFrequencyRules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源ID"
+      },
+      {
+        "name": "RuleId",
+        "desc": "7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）"
+      },
+      {
+        "name": "Mode",
+        "desc": "匹配规则，取值[\"include\"(前缀匹配)，\"equal\"(完全匹配)]"
+      },
+      {
+        "name": "Period",
+        "desc": "统计周期，单位秒，取值[10, 30, 60]"
+      },
+      {
+        "name": "ReqNumber",
+        "desc": "访问次数，取值[1-10000]"
+      },
+      {
+        "name": "Act",
+        "desc": "执行动作，取值[\"alg\"（人机识别）, \"drop\"（拦截）]"
+      },
+      {
+        "name": "ExeDuration",
+        "desc": "执行时间，单位秒，取值[1-900]"
+      },
+      {
+        "name": "Uri",
+        "desc": "URI字符串，必须以/开头，例如/abc/a.php，长度不超过31；当URI=/时，匹配模式只能选择前缀匹配；"
+      },
+      {
+        "name": "UserAgent",
+        "desc": "User-Agent字符串，长度不超过80"
+      },
+      {
+        "name": "Cookie",
+        "desc": "Cookie字符串，长度不超过40"
+      }
+    ],
+    "desc": "添加CC防护的访问频率控制规则"
+  },
   "ModifyL7Rules": {
     "params": [
       {
@@ -1966,6 +2138,35 @@ INFO = {
       }
     ],
     "desc": "修改L7转发规则"
+  },
+  "DescribeBasicCCThreshold": {
+    "params": [
+      {
+        "name": "BasicIp",
+        "desc": "查询的IP地址，取值如：1.1.1.1"
+      },
+      {
+        "name": "BasicRegion",
+        "desc": "查询IP所属地域，取值如：gz、bj、sh、hk等地域缩写"
+      },
+      {
+        "name": "BasicBizType",
+        "desc": "专区类型，取值如：公有云专区：public，黑石专区：bm, NAT服务器专区：nat，互联网通道：channel。"
+      },
+      {
+        "name": "BasicDeviceType",
+        "desc": "设备类型，取值如：服务器：cvm，公有云负载均衡：clb，黑石负载均衡：lb，NAT服务器：nat，互联网通道：channel."
+      },
+      {
+        "name": "BasicIpInstance",
+        "desc": "可选，IPInstance Nat 网关（如果查询的设备类型是NAT服务器，需要传此参数，通过nat资源查询接口获取）"
+      },
+      {
+        "name": "BasicIspCode",
+        "desc": "可选，运营商线路（如果查询的设备类型是NAT服务器，需要传此参数为5）"
+      }
+    ],
+    "desc": "获取基础防护CC防护阈值"
   },
   "CreateL7HealthConfig": {
     "params": [
@@ -2012,7 +2213,7 @@ INFO = {
         "desc": "资源实例名称，长度不超过32个字符"
       }
     ],
-    "desc": "资源实例重命名，支持独享包、共享包、高防IP、高防IP专业版、棋牌盾；"
+    "desc": "资源实例重命名，支持独享包、共享包、高防IP、高防IP专业版；"
   },
   "ModifyResourceRenewFlag": {
     "params": [
@@ -2076,5 +2277,18 @@ INFO = {
       }
     ],
     "desc": "获取DDoS攻击事件详情"
+  },
+  "DescribeDDoSPolicy": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+      },
+      {
+        "name": "Id",
+        "desc": "可选字段，资源ID，如果填写则表示该资源绑定的DDoS高级策略"
+      }
+    ],
+    "desc": "获取DDoS高级策略"
   }
 }

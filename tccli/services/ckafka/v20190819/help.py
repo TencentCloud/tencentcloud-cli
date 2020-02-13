@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "GroupList",
-        "desc": "Kafka 消费分组，Consumer-group，这里是数组形式，格式：group.0=xxx&group.1=yyy。"
+        "desc": "Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。"
       }
     ],
     "desc": "获取消费分组信息"

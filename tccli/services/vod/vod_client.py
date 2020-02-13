@@ -667,6 +667,7 @@ def doSimpleHlsClip(argv, arglist):
         "Url": argv.get("--Url"),
         "StartTimeOffset": Utils.try_to_json(argv, "--StartTimeOffset"),
         "EndTimeOffset": Utils.try_to_json(argv, "--EndTimeOffset"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2478,6 +2479,8 @@ def doLiveRealTimeClip(argv, arglist):
         "ExpireTime": argv.get("--ExpireTime"),
         "Procedure": argv.get("--Procedure"),
         "MetaDataRequired": Utils.try_to_json(argv, "--MetaDataRequired"),
+        "Host": argv.get("--Host"),
+        "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }

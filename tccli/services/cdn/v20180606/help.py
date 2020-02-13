@@ -713,6 +713,43 @@ INFO = {
     ],
     "desc": "GetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。（接口尚在内测中，暂未全量开放使用）"
   },
+  "DescribeBillingData": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间\n根据指定时间粒度参数不同，会进行向前取整，如指定起始时间为 2018-09-04 10:40:00 按小时粒度查询，返回的第一个数据对应时间点为 2018-09-04 10:00:00\n起始时间与结束时间间隔小于等于 90 天"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间\n根据指定时间粒度参数不同，会进行向前取整，如指定结束时间为  2018-09-04 10:40:00 按小时粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:00:00\n起始时间与结束时间间隔小于等于 90 天"
+      },
+      {
+        "name": "Interval",
+        "desc": "时间粒度，支持模式如下：\nmin：1 分钟粒度，查询区间需要小于等于 24 小时\n5min：5 分钟粒度，查询区间需要小于等于 31 天\nhour：1 小时粒度，查询区间需要小于等于 31 天内\nday：天粒度，查询区间需要大于 31 天\n\nArea 字段为 overseas 时暂不支持1分钟粒度数据查询"
+      },
+      {
+        "name": "Domain",
+        "desc": "指定域名查询计费数据"
+      },
+      {
+        "name": "Project",
+        "desc": "指定项目 ID 查询，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n若 Domain 参数填充了具体域名信息，则返回该域名的计费数据，而非指定项目计费数据"
+      },
+      {
+        "name": "Area",
+        "desc": "指定加速区域查询计费数据：\nmainland：中国境内\noverseas：中国境外\n不填充时，默认为 mainland"
+      },
+      {
+        "name": "District",
+        "desc": "Area 为 overseas 时，指定国家/地区查询\n省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)\n不填充时，查询所有国家/地区"
+      },
+      {
+        "name": "Metric",
+        "desc": "计费统计类型\nflux：计费流量\nbandwidth：计费带宽\n默认为 bandwidth"
+      }
+    ],
+    "desc": "DescribeBillingData 用于查询实际计费数据明细。"
+  },
   "UpdatePayType": {
     "params": [
       {

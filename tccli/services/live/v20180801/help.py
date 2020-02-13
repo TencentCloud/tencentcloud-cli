@@ -633,11 +633,11 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。"
+        "desc": "推流域名。多域名用户需要填写DomainName。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。多路径用户需要填写AppName。"
       },
       {
         "name": "PageNum",
@@ -1136,7 +1136,7 @@ INFO = {
       },
       {
         "name": "IspNames",
-        "desc": "运营商列表，默认不填，则返回个运营商的数据。"
+        "desc": "运营商列表，默认不填，则返回整个运营商的数据。"
       },
       {
         "name": "MainlandOrOversea",
@@ -1632,7 +1632,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填空。"
       },
       {
         "name": "StreamName",

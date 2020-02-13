@@ -43,6 +43,10 @@ INFO = {
       {
         "name": "SearchWord",
         "desc": "模糊查询，部署组名称，不填写时查询全量"
+      },
+      {
+        "name": "AppMicroServiceType",
+        "desc": "部署组类型，精确过滤字段，M：service mesh, P：原生应用， M：网关应用"
       }
     ],
     "desc": "查询简单部署组列表"
@@ -101,6 +105,10 @@ INFO = {
       {
         "name": "TsfZoneId",
         "desc": "集群所属TSF可用区"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "私有网络子网ID"
       }
     ],
     "desc": "创建集群"
@@ -229,15 +237,52 @@ INFO = {
     ],
     "desc": "部署容器应用"
   },
+  "AddClusterInstances": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "InstanceIdList",
+        "desc": "云主机ID列表"
+      },
+      {
+        "name": "OsName",
+        "desc": "操作系统名称"
+      },
+      {
+        "name": "ImageId",
+        "desc": "操作系统镜像ID"
+      },
+      {
+        "name": "Password",
+        "desc": "重装系统密码设置"
+      },
+      {
+        "name": "KeyId",
+        "desc": "重装系统，关联密钥设置"
+      },
+      {
+        "name": "SgId",
+        "desc": "安全组设置"
+      },
+      {
+        "name": "InstanceImportMode",
+        "desc": "云主机导入方式，虚拟机集群必填，容器集群不填写此字段，R：重装TSF系统镜像，M：手动安装agent"
+      }
+    ],
+    "desc": "添加云主机节点至TSF集群"
+  },
   "DescribeServerlessGroups": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "分组所属应用ID"
-      },
-      {
         "name": "SearchWord",
         "desc": "搜索字段，模糊搜索groupName字段"
+      },
+      {
+        "name": "ApplicationId",
+        "desc": "分组所属应用ID"
       },
       {
         "name": "OrderBy",
@@ -254,6 +299,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "分页个数，默认为20， 取值应为1~50"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "分组所属名字空间ID"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "分组所属集群ID"
       }
     ],
     "desc": "查询Serverless部署组列表"
@@ -261,12 +314,12 @@ INFO = {
   "CreateNamespace": {
     "params": [
       {
-        "name": "ClusterId",
-        "desc": "集群ID"
-      },
-      {
         "name": "NamespaceName",
         "desc": "命名空间名称"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
       },
       {
         "name": "NamespaceDesc",
@@ -275,6 +328,14 @@ INFO = {
       {
         "name": "NamespaceResourceType",
         "desc": "命名空间资源类型(默认值为DEF)"
+      },
+      {
+        "name": "NamespaceType",
+        "desc": "是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID"
       }
     ],
     "desc": "创建命名空间"
@@ -457,12 +518,12 @@ INFO = {
         "desc": "分组名称字段，长度1~60，字母或下划线开头，可包含字母数字下划线"
       },
       {
-        "name": "PkgId",
-        "desc": "程序包Id"
+        "name": "NamespaceId",
+        "desc": "分组所属名字空间ID"
       },
       {
-        "name": "VpcConfig",
-        "desc": "VpcConfig对象"
+        "name": "ClusterId",
+        "desc": "分组所属集群ID"
       }
     ],
     "desc": "创建Serverless部署组"
@@ -932,6 +993,14 @@ INFO = {
       {
         "name": "NamespaceTypeList",
         "desc": "查询的命名空间类型列表"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "通过命名空间名精确过滤"
+      },
+      {
+        "name": "IsDefault",
+        "desc": "通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认，命名空间。1：非默认命名空间"
       }
     ],
     "desc": "查询简单命名空间列表 "
@@ -1006,8 +1075,16 @@ INFO = {
         "desc": "程序包ID"
       },
       {
-        "name": "VpcConfig",
-        "desc": "VpcConfig对象，和创建接口中对象一致"
+        "name": "Memory",
+        "desc": "所需实例内存大小，取值为 1Gi 2Gi 4Gi 8Gi 16Gi，缺省为 1Gi，不传表示维持原态"
+      },
+      {
+        "name": "InstanceRequest",
+        "desc": "要求最小实例数，取值范围 [1, 4]，缺省为 1，不传表示维持原态"
+      },
+      {
+        "name": "StartupParameters",
+        "desc": "部署组启动参数，不传表示维持原态"
       }
     ],
     "desc": "部署Serverless应用"
@@ -1133,7 +1210,11 @@ INFO = {
       },
       {
         "name": "ApplicationType",
-        "desc": "应用类型"
+        "desc": "应用类型，V：虚拟机应用；C：容器应用；S：serverless应用"
+      },
+      {
+        "name": "MicroserviceType",
+        "desc": "应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用"
       },
       {
         "name": "ApplicationDesc",
@@ -1144,12 +1225,12 @@ INFO = {
         "desc": "应用日志配置项，废弃参数"
       },
       {
-        "name": "MicroserviceType",
-        "desc": "应用微服务类型"
+        "name": "ApplicationResourceType",
+        "desc": "应用资源类型，废弃参数"
       },
       {
-        "name": "ApplicationResourceType",
-        "desc": "应有资源类型"
+        "name": "ApplicationRuntimeType",
+        "desc": "应用runtime类型"
       }
     ],
     "desc": "创建应用"

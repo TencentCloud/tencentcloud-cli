@@ -201,7 +201,7 @@ INFO = {
     "params": [
       {
         "name": "Offset",
-        "desc": "分页偏移，Offset从0开始"
+        "desc": "偏移量，Offset从0开始"
       },
       {
         "name": "Limit",
@@ -358,7 +358,7 @@ INFO = {
     "params": [
       {
         "name": "Offset",
-        "desc": "分页偏移，从0开始"
+        "desc": "偏移l量，从0开始"
       },
       {
         "name": "Limit",
@@ -546,11 +546,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "分页偏移"
+        "desc": "偏移量，Offset从0开始"
       },
       {
         "name": "Limit",
-        "desc": "分页的大小，数值范围 10-100"
+        "desc": "分页的大小，数值范围 10-250"
       },
       {
         "name": "FirmwareVersion",

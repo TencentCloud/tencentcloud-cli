@@ -41,7 +41,7 @@ INFO = {
         "desc": "待查询的长订单号列表，创建实例、续费实例、扩容实例接口返回。"
       }
     ],
-    "desc": "本接口（DescribeOrders）用于查询分布式数据库订单信息。传入订单Id来查询订单关联的分布式数据库实例，和对应的任务流程ID。"
+    "desc": "本接口（DescribeOrders）用于查询分布式数据库订单信息。传入订单ID来查询订单关联的分布式数据库实例，和对应的任务流程ID。"
   },
   "DescribeDatabaseObjects": {
     "params": [
@@ -399,7 +399,7 @@ INFO = {
       },
       {
         "name": "Count",
-        "desc": "欲购买实例的数量，目前只支持购买1个实例"
+        "desc": "欲购买实例的数量，目前支持购买1-10个实例"
       },
       {
         "name": "Period",
@@ -420,6 +420,10 @@ INFO = {
       {
         "name": "ShardCount",
         "desc": "实例分片个数，可选范围2-8，可以通过升级实例进行新增分片到最多64个分片。"
+      },
+      {
+        "name": "Paymode",
+        "desc": "付费类型。postpaid：按量付费   prepaid：预付费"
       }
     ],
     "desc": "本接口（DescribeDCDBPrice）用于在购买实例前，查询实例的价格。"
@@ -529,7 +533,7 @@ INFO = {
       },
       {
         "name": "ShardInstanceIds",
-        "desc": "分片Id列表。"
+        "desc": "分片ID列表。"
       },
       {
         "name": "Offset",
@@ -587,7 +591,7 @@ INFO = {
       },
       {
         "name": "Count",
-        "desc": "欲购买实例的数量，目前只支持购买1个实例"
+        "desc": "欲购买实例的数量"
       },
       {
         "name": "ProjectId",
@@ -612,6 +616,14 @@ INFO = {
       {
         "name": "VoucherIds",
         "desc": "代金券ID列表，目前仅支持指定一张代金券。"
+      },
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组id"
+      },
+      {
+        "name": "InstanceName",
+        "desc": "实例名称， 可以通过该字段自主的设置实例的名字"
       }
     ],
     "desc": "本接口（CreateDCDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长等信息创建云数据库实例。"
@@ -662,7 +674,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "待初始化的实例Id列表，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。"
+        "desc": "待初始化的实例ID列表，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。"
       },
       {
         "name": "Params",
