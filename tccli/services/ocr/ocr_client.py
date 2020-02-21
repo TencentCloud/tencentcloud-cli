@@ -1635,6 +1635,7 @@ def doEduPaperOCR(argv, arglist):
     param = {
         "ImageBase64": argv.get("--ImageBase64"),
         "ImageUrl": argv.get("--ImageUrl"),
+        "Config": argv.get("--Config"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

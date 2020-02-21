@@ -1,6 +1,31 @@
 # -*- coding: utf-8 -*-
 DESC = "vod-2018-07-17"
 INFO = {
+  "DescribeSampleSnapshotTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "采样截图模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "查询采样截图模板，支持根据条件，分页查询。"
+  },
   "CreateImageSpriteTemplate": {
     "params": [
       {
@@ -575,30 +600,18 @@ INFO = {
     ],
     "desc": "* 该接口用于业务服务器以 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 的方式获取事件通知；\n* 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；\n* 请求最多挂起5秒，建议请求方将超时时间设置为10秒；\n* 若该接口有事件返回，调用方必须在<font color=\"red\">30秒</font>内调用 [确认事件通知](https://cloud.tencent.com/document/product/266/33434) 接口，确认事件通知已经处理，否则该事件通知在<font color=\"red\">30秒</font>后会再次被拉取到。"
   },
-  "DescribeAudioTrackTemplates": {
+  "ParseStreamingManifest": {
     "params": [
       {
-        "name": "Definitions",
-        "desc": "模板唯一标识过滤条件，数组长度限制：100。"
+        "name": "MediaManifestContent",
+        "desc": "待解析的索引文件内容。"
       },
       {
-        "name": "Offset",
-        "desc": "分页偏移量，默认值：0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：100。"
-      },
-      {
-        "name": "Type",
-        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
-      },
-      {
-        "name": "SubAppId",
-        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+        "name": "ManifestType",
+        "desc": "视频索引文件格式。默认 m3u8 格式。\n<li>m3u8</li>\n<li>mpd</li>"
       }
     ],
-    "desc": "获取转自适应码流音频轨模板列表，支持根据条件，分页查询。"
+    "desc": "上传 HLS 视频时，解析索引文件内容，返回待上传的分片文件列表。分片文件路径必须是当前目录或子目录的相对路径，不能是 URL，不能是绝对路径。"
   },
   "LiveRealTimeClip": {
     "params": [
@@ -1409,11 +1422,11 @@ INFO = {
     ],
     "desc": "* 对媒体禁播后，除了点播控制台预览，其他场景访问视频各种资源的 URL（原始文件、转码输出文件、截图等）均会返回 403。\n  禁播/解禁操作全网生效时间约 5~10 分钟。"
   },
-  "DescribeSampleSnapshotTemplates": {
+  "DescribeAudioTrackTemplates": {
     "params": [
       {
         "name": "Definitions",
-        "desc": "采样截图模板唯一标识过滤条件，数组长度限制：100。"
+        "desc": "模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
         "name": "Offset",
@@ -1432,7 +1445,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "查询采样截图模板，支持根据条件，分页查询。"
+    "desc": "获取转自适应码流音频轨模板列表，支持根据条件，分页查询。"
   },
   "ModifyClass": {
     "params": [

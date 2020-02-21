@@ -18,112 +18,6 @@ from tccli.services.scf import v20180416
 from tccli.services.scf.v20180416 import help as v20180416_help
 
 
-def doListVersionByFunction(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ListVersionByFunction", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Namespace": argv.get("--Namespace"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListVersionByFunctionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ListVersionByFunction(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateNamespace(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UpdateNamespace", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Namespace": argv.get("--Namespace"),
-        "Description": argv.get("--Description"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateNamespaceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.UpdateNamespace(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doInvoke(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("Invoke", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "InvocationType": argv.get("--InvocationType"),
-        "Qualifier": argv.get("--Qualifier"),
-        "ClientContext": argv.get("--ClientContext"),
-        "LogType": argv.get("--LogType"),
-        "Namespace": argv.get("--Namespace"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InvokeRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.Invoke(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDeleteFunction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -158,16 +52,15 @@ def doDeleteFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doPublishVersion(argv, arglist):
+def doGetLayerVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("PublishVersion", g_param[OptionsDefine.Version])
+        show_help("GetLayerVersion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Description": argv.get("--Description"),
-        "Namespace": argv.get("--Namespace"),
+        "LayerName": argv.get("--LayerName"),
+        "LayerVersion": Utils.try_to_json(argv, "--LayerVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -181,199 +74,9 @@ def doPublishVersion(argv, arglist):
     client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.PublishVersionRequest()
+    model = models.GetLayerVersionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.PublishVersion(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteTrigger(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteTrigger", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "TriggerName": argv.get("--TriggerName"),
-        "Type": argv.get("--Type"),
-        "Namespace": argv.get("--Namespace"),
-        "TriggerDesc": argv.get("--TriggerDesc"),
-        "Qualifier": argv.get("--Qualifier"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTriggerRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteTrigger(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetFunction(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GetFunction", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Qualifier": argv.get("--Qualifier"),
-        "Namespace": argv.get("--Namespace"),
-        "ShowCode": argv.get("--ShowCode"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetFunctionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.GetFunction(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetFunctionAddress(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GetFunctionAddress", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Qualifier": argv.get("--Qualifier"),
-        "Namespace": argv.get("--Namespace"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetFunctionAddressRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.GetFunctionAddress(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doListNamespaces(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ListNamespaces", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Orderby": argv.get("--Orderby"),
-        "Order": argv.get("--Order"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListNamespacesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ListNamespaces(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateFunctionConfiguration(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UpdateFunctionConfiguration", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionName": argv.get("--FunctionName"),
-        "Description": argv.get("--Description"),
-        "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
-        "Timeout": Utils.try_to_json(argv, "--Timeout"),
-        "Runtime": argv.get("--Runtime"),
-        "Environment": Utils.try_to_json(argv, "--Environment"),
-        "Namespace": argv.get("--Namespace"),
-        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
-        "Role": argv.get("--Role"),
-        "ClsLogsetId": argv.get("--ClsLogsetId"),
-        "ClsTopicId": argv.get("--ClsTopicId"),
-        "Publish": argv.get("--Publish"),
-        "L5Enable": argv.get("--L5Enable"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateFunctionConfigurationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.UpdateFunctionConfiguration(model)
+    rsp = client.GetLayerVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -496,6 +199,44 @@ def doCopyFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteTrigger(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteTrigger", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "TriggerName": argv.get("--TriggerName"),
+        "Type": argv.get("--Type"),
+        "Namespace": argv.get("--Namespace"),
+        "TriggerDesc": argv.get("--TriggerDesc"),
+        "Qualifier": argv.get("--Qualifier"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTriggerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteTrigger(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetFunctionLogs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -531,6 +272,320 @@ def doGetFunctionLogs(argv, arglist):
     model = models.GetFunctionLogsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetFunctionLogs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateNamespace(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateNamespace", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Namespace": argv.get("--Namespace"),
+        "Description": argv.get("--Description"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateNamespaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateNamespace(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInvoke(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("Invoke", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "InvocationType": argv.get("--InvocationType"),
+        "Qualifier": argv.get("--Qualifier"),
+        "ClientContext": argv.get("--ClientContext"),
+        "LogType": argv.get("--LogType"),
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InvokeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.Invoke(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doPublishVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PublishVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "Description": argv.get("--Description"),
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PublishVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PublishVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteLayerVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteLayerVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LayerName": argv.get("--LayerName"),
+        "LayerVersion": Utils.try_to_json(argv, "--LayerVersion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteLayerVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteLayerVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetFunction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetFunction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "Qualifier": argv.get("--Qualifier"),
+        "Namespace": argv.get("--Namespace"),
+        "ShowCode": argv.get("--ShowCode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetFunctionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetFunction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteNamespace(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteNamespace", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteNamespaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteNamespace(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListVersionByFunction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListVersionByFunction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListVersionByFunctionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListVersionByFunction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListLayers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListLayers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CompatibleRuntime": argv.get("--CompatibleRuntime"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SearchKey": argv.get("--SearchKey"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListLayersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListLayers(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListLayerVersions(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListLayerVersions", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LayerName": argv.get("--LayerName"),
+        "CompatibleRuntime": Utils.try_to_json(argv, "--CompatibleRuntime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListLayerVersionsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListLayerVersions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -580,6 +635,126 @@ def doListFunctions(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpdateFunctionConfiguration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateFunctionConfiguration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "Description": argv.get("--Description"),
+        "MemorySize": Utils.try_to_json(argv, "--MemorySize"),
+        "Timeout": Utils.try_to_json(argv, "--Timeout"),
+        "Runtime": argv.get("--Runtime"),
+        "Environment": Utils.try_to_json(argv, "--Environment"),
+        "Namespace": argv.get("--Namespace"),
+        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
+        "Role": argv.get("--Role"),
+        "ClsLogsetId": argv.get("--ClsLogsetId"),
+        "ClsTopicId": argv.get("--ClsTopicId"),
+        "Publish": argv.get("--Publish"),
+        "L5Enable": argv.get("--L5Enable"),
+        "Layers": Utils.try_to_json(argv, "--Layers"),
+        "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
+        "OnsEnable": argv.get("--OnsEnable"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateFunctionConfigurationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateFunctionConfiguration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doPublishLayerVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PublishLayerVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LayerName": argv.get("--LayerName"),
+        "CompatibleRuntimes": Utils.try_to_json(argv, "--CompatibleRuntimes"),
+        "Content": Utils.try_to_json(argv, "--Content"),
+        "Description": argv.get("--Description"),
+        "LicenseInfo": argv.get("--LicenseInfo"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PublishLayerVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PublishLayerVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetFunctionAddress(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetFunctionAddress", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "Qualifier": argv.get("--Qualifier"),
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetFunctionAddressRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetFunctionAddress(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateFunction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -602,6 +777,8 @@ def doCreateFunction(argv, arglist):
         "ClsTopicId": argv.get("--ClsTopicId"),
         "Type": argv.get("--Type"),
         "CodeSource": argv.get("--CodeSource"),
+        "Layers": Utils.try_to_json(argv, "--Layers"),
+        "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -627,14 +804,17 @@ def doCreateFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteNamespace(argv, arglist):
+def doListNamespaces(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteNamespace", g_param[OptionsDefine.Version])
+        show_help("ListNamespaces", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Namespace": argv.get("--Namespace"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Orderby": argv.get("--Orderby"),
+        "Order": argv.get("--Order"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -648,9 +828,9 @@ def doDeleteNamespace(argv, arglist):
     client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteNamespaceRequest()
+    model = models.ListNamespacesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteNamespace(model)
+    rsp = client.ListNamespaces(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -714,23 +894,28 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "ListVersionByFunction": doListVersionByFunction,
-    "UpdateNamespace": doUpdateNamespace,
-    "Invoke": doInvoke,
     "DeleteFunction": doDeleteFunction,
-    "PublishVersion": doPublishVersion,
-    "DeleteTrigger": doDeleteTrigger,
-    "GetFunction": doGetFunction,
-    "GetFunctionAddress": doGetFunctionAddress,
-    "ListNamespaces": doListNamespaces,
-    "UpdateFunctionConfiguration": doUpdateFunctionConfiguration,
+    "GetLayerVersion": doGetLayerVersion,
     "CreateTrigger": doCreateTrigger,
     "CreateNamespace": doCreateNamespace,
     "CopyFunction": doCopyFunction,
+    "DeleteTrigger": doDeleteTrigger,
     "GetFunctionLogs": doGetFunctionLogs,
-    "ListFunctions": doListFunctions,
-    "CreateFunction": doCreateFunction,
+    "UpdateNamespace": doUpdateNamespace,
+    "Invoke": doInvoke,
+    "PublishVersion": doPublishVersion,
+    "DeleteLayerVersion": doDeleteLayerVersion,
+    "GetFunction": doGetFunction,
     "DeleteNamespace": doDeleteNamespace,
+    "ListVersionByFunction": doListVersionByFunction,
+    "ListLayers": doListLayers,
+    "ListLayerVersions": doListLayerVersions,
+    "ListFunctions": doListFunctions,
+    "UpdateFunctionConfiguration": doUpdateFunctionConfiguration,
+    "PublishLayerVersion": doPublishLayerVersion,
+    "GetFunctionAddress": doGetFunctionAddress,
+    "CreateFunction": doCreateFunction,
+    "ListNamespaces": doListNamespaces,
     "UpdateFunctionCode": doUpdateFunctionCode,
 
 }

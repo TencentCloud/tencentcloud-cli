@@ -661,6 +661,10 @@ INFO = {
       {
         "name": "ImageUrl",
         "desc": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。"
+      },
+      {
+        "name": "Config",
+        "desc": "扩展配置信息。\n配置格式：{\"option1\":value1,\"option2\":value2}\n可配置信息：\n      参数名称  是否必选   类型   可选值  默认值  描述\n      task_type  否  Int32  [0,1]  1  用于选择任务类型: 0: 关闭版式分析与处理 1: 开启版式分析处理\n      is_structuralization 否 Bool false\\true true  用于选择是否结构化输出：false：返回包体返回通用输出 true：返回包体同时返回通用和结构化输出\n      if_readable_format 否 Bool false\\true false 是否按照版式整合通用文本/公式输出结果\n例子：\n{\"task_type\": 1,\"is_structuralization\": true,\"if_readable_format\": true}"
       }
     ],
     "desc": "本接口支持数学试题内容的识别和结构化输出，包括通用文本解析和小学/初中/高中数学公式解析能力（包括91种题型，180种符号）。"

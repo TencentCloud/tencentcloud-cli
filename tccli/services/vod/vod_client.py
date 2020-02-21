@@ -52,6 +52,42 @@ def doDeleteAnimatedGraphicsTemplate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSimpleHlsClip(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SimpleHlsClip", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Url": argv.get("--Url"),
+        "StartTimeOffset": Utils.try_to_json(argv, "--StartTimeOffset"),
+        "EndTimeOffset": Utils.try_to_json(argv, "--EndTimeOffset"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SimpleHlsClipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SimpleHlsClip(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAdaptiveDynamicStreamingTemplates(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -657,17 +693,15 @@ def doPullEvents(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSimpleHlsClip(argv, arglist):
+def doParseStreamingManifest(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SimpleHlsClip", g_param[OptionsDefine.Version])
+        show_help("ParseStreamingManifest", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Url": argv.get("--Url"),
-        "StartTimeOffset": Utils.try_to_json(argv, "--StartTimeOffset"),
-        "EndTimeOffset": Utils.try_to_json(argv, "--EndTimeOffset"),
-        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "MediaManifestContent": argv.get("--MediaManifestContent"),
+        "ManifestType": argv.get("--ManifestType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -681,9 +715,9 @@ def doSimpleHlsClip(argv, arglist):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SimpleHlsClipRequest()
+    model = models.ParseStreamingManifestRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SimpleHlsClip(model)
+    rsp = client.ParseStreamingManifest(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3124,6 +3158,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DeleteAnimatedGraphicsTemplate": doDeleteAnimatedGraphicsTemplate,
+    "SimpleHlsClip": doSimpleHlsClip,
     "DescribeAdaptiveDynamicStreamingTemplates": doDescribeAdaptiveDynamicStreamingTemplates,
     "CreateContentReviewTemplate": doCreateContentReviewTemplate,
     "DescribeSubAppIds": doDescribeSubAppIds,
@@ -3140,7 +3175,7 @@ ACTION_MAP = {
     "DescribeMediaInfos": doDescribeMediaInfos,
     "DescribeAIAnalysisTemplates": doDescribeAIAnalysisTemplates,
     "PullEvents": doPullEvents,
-    "SimpleHlsClip": doSimpleHlsClip,
+    "ParseStreamingManifest": doParseStreamingManifest,
     "DescribeTaskDetail": doDescribeTaskDetail,
     "ModifyAIRecognitionTemplate": doModifyAIRecognitionTemplate,
     "ProcessMediaByUrl": doProcessMediaByUrl,

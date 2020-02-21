@@ -1526,7 +1526,7 @@ INFO = {
         "desc": "分页大小，默认值为20，最小值为1，最大值为100。"
       }
     ],
-    "desc": "本接口(DescribeBinlogs)用于查询云数据库实例的二进制数据。"
+    "desc": "本接口(DescribeBinlogs)用于查询云数据库实例的 binlog 文件列表。"
   },
   "DescribeDBSecurityGroups": {
     "params": [

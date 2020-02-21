@@ -1879,11 +1879,11 @@ INFO = {
     "params": [
       {
         "name": "FromUrl",
-        "desc": "源Url。目前可支持直播流及点播文件。"
+        "desc": "源Url。目前可支持直播流及点播文件。\n注意：\n1. 多个点播url之间使用空格拼接。\n2. 目前上限支持10个url。\n3. 支持拉流文件格式：flv，rtmp，hls，mp4。"
       },
       {
         "name": "ToUrl",
-        "desc": "目的Url，目前限制该目标地址为腾讯域名。"
+        "desc": "目的Url，目前限制该目标地址为腾讯域名。\n仅支持：rtmp协议。"
       },
       {
         "name": "AreaId",
