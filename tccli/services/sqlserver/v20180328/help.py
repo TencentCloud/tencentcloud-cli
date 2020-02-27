@@ -17,7 +17,7 @@ INFO = {
       },
       {
         "name": "SourceType",
-        "desc": "迁移源的类型 1:CDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改"
+        "desc": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改"
       },
       {
         "name": "Source",
@@ -55,11 +55,11 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "每页的记录数"
+        "desc": "分页返回，每页返回的数目，取值为1-100，默认值为100"
       },
       {
         "name": "Offset",
-        "desc": "查询第几页的记录"
+        "desc": "分页返回，页编号，默认值为第0页"
       },
       {
         "name": "OrderBy",
@@ -76,7 +76,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例id"
+        "desc": "实例ID"
       },
       {
         "name": "OldDBName",
@@ -164,11 +164,11 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "分页返回结果，分页大小，默认20，不超过100"
+        "desc": "分页返回，每页返回的数目，取值为1-100，默认值为20"
       },
       {
         "name": "Offset",
-        "desc": "从第几页开始返回，起始页，从0开始，默认为0"
+        "desc": "分页返回，页编号，默认值为第0页"
       }
     ],
     "desc": "本接口（DescribeSlowlogs）用于获取慢查询日志文件信息"
@@ -189,11 +189,11 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "分页返回，每页返回数量，默认为20，最大值为 100"
+        "desc": "分页返回，每页返回的数目，取值为1-100，默认值为20"
       },
       {
         "name": "Offset",
-        "desc": "偏移量，默认为 0"
+        "desc": "分页返回，页编号，默认值为第0页"
       }
     ],
     "desc": "本接口(DescribeBackups)用于查询备份列表。"
@@ -363,11 +363,11 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "每页记录数，最大为100，默认20"
+        "desc": "分页返回，每页返回的数目，取值为1-100，默认值为20"
       },
       {
         "name": "Offset",
-        "desc": "页编号，从第0页开始"
+        "desc": "分页返回，页编号，默认值为第0页"
       }
     ],
     "desc": "本接口（DescribeDBs）用于查询数据库列表。"
@@ -384,11 +384,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "页数，默认为 0"
+        "desc": "分页返回，页编号，默认值为第0页"
       },
       {
         "name": "Limit",
-        "desc": "页大小，默认为50"
+        "desc": "分页返回，每页返回的数目，取值为1-100，默认值为100"
       },
       {
         "name": "InstanceIdSet",
@@ -481,7 +481,7 @@ INFO = {
       },
       {
         "name": "SourceType",
-        "desc": "迁移源的类型 1:CDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）"
+        "desc": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）"
       },
       {
         "name": "Source",
@@ -540,7 +540,7 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "分页返回，从第几页开始返回。从第0页开始，默认第0页"
+        "desc": "分页返回，页编号，默认值为第0页"
       }
     ],
     "desc": "本接口（DescribeAccounts）用于拉取实例账户列表。"
@@ -575,7 +575,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例id"
+        "desc": "实例ID"
       },
       {
         "name": "DBs",

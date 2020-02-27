@@ -34,6 +34,7 @@ def doCreateCfsFileSystem(argv, arglist):
         "SubnetId": argv.get("--SubnetId"),
         "MountIP": argv.get("--MountIP"),
         "FsName": argv.get("--FsName"),
+        "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

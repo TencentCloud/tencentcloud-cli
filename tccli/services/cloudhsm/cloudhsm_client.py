@@ -12,19 +12,25 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.asr.v20190614 import asr_client as asr_client_v20190614
-from tencentcloud.asr.v20190614 import models as models_v20190614
-from tccli.services.asr import v20190614
-from tccli.services.asr.v20190614 import help as v20190614_help
+from tencentcloud.cloudhsm.v20191112 import cloudhsm_client as cloudhsm_client_v20191112
+from tencentcloud.cloudhsm.v20191112 import models as models_v20191112
+from tccli.services.cloudhsm import v20191112
+from tccli.services.cloudhsm.v20191112 import help as v20191112_help
 
 
-def doGetAsrVocabList(argv, arglist):
+def doModifyVsmAttributes(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetAsrVocabList", g_param[OptionsDefine.Version])
+        show_help("ModifyVsmAttributes", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "ResourceId": argv.get("--ResourceId"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "ResourceName": argv.get("--ResourceName"),
+        "SgIds": Utils.try_to_json(argv, "--SgIds"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -35,12 +41,12 @@ def doGetAsrVocabList(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudhsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetAsrVocabListRequest()
+    model = models.ModifyVsmAttributesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetAsrVocabList(model)
+    rsp = client.ModifyVsmAttributes(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -50,22 +56,14 @@ def doGetAsrVocabList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateRecTask(argv, arglist):
+def doDescribeVsmAttributes(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateRecTask", g_param[OptionsDefine.Version])
+        show_help("DescribeVsmAttributes", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "EngineModelType": argv.get("--EngineModelType"),
-        "ChannelNum": Utils.try_to_json(argv, "--ChannelNum"),
-        "ResTextFormat": Utils.try_to_json(argv, "--ResTextFormat"),
-        "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "CallbackUrl": argv.get("--CallbackUrl"),
-        "Url": argv.get("--Url"),
-        "Data": argv.get("--Data"),
-        "DataLen": Utils.try_to_json(argv, "--DataLen"),
-        "HotwordId": argv.get("--HotwordId"),
+        "ResourceId": argv.get("--ResourceId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -76,12 +74,12 @@ def doCreateRecTask(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudhsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateRecTaskRequest()
+    model = models.DescribeVsmAttributesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateRecTask(model)
+    rsp = client.DescribeVsmAttributes(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -91,14 +89,16 @@ def doCreateRecTask(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetAsrVocab(argv, arglist):
+def doDescribeVsms(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetAsrVocab", g_param[OptionsDefine.Version])
+        show_help("DescribeVsms", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SearchWord": argv.get("--SearchWord"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -109,12 +109,12 @@ def doGetAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudhsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetAsrVocabRequest()
+    model = models.DescribeVsmsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetAsrVocab(model)
+    rsp = client.DescribeVsms(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -124,14 +124,16 @@ def doGetAsrVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTaskStatus(argv, arglist):
+def doDescribeVpc(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
+        show_help("DescribeVpc", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SearchWord": argv.get("--SearchWord"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -142,12 +144,12 @@ def doDescribeTaskStatus(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudhsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskStatusRequest()
+    model = models.DescribeVpcRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskStatus(model)
+    rsp = client.DescribeVpc(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -157,15 +159,16 @@ def doDescribeTaskStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSetVocabState(argv, arglist):
+def doDescribeUsg(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SetVocabState", g_param[OptionsDefine.Version])
+        show_help("DescribeUsg", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
-        "State": Utils.try_to_json(argv, "--State"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SearchWord": argv.get("--SearchWord"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -176,12 +179,12 @@ def doSetVocabState(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudhsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetVocabStateRequest()
+    model = models.DescribeUsgRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SetVocabState(model)
+    rsp = client.DescribeUsg(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -191,18 +194,17 @@ def doSetVocabState(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateAsrVocab(argv, arglist):
+def doDescribeSubnet(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateAsrVocab", g_param[OptionsDefine.Version])
+        show_help("DescribeSubnet", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
-        "Name": argv.get("--Name"),
-        "WordWeights": Utils.try_to_json(argv, "--WordWeights"),
-        "WordWeightStr": argv.get("--WordWeightStr"),
-        "Description": argv.get("--Description"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "VpcId": argv.get("--VpcId"),
+        "SearchWord": argv.get("--SearchWord"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -213,12 +215,12 @@ def doUpdateAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudhsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateAsrVocabRequest()
+    model = models.DescribeSubnetRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateAsrVocab(model)
+    rsp = client.DescribeSubnet(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -228,17 +230,19 @@ def doUpdateAsrVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAsrVocab(argv, arglist):
+def doInquiryPriceBuyVsm(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateAsrVocab", g_param[OptionsDefine.Version])
+        show_help("InquiryPriceBuyVsm", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Name": argv.get("--Name"),
-        "Description": argv.get("--Description"),
-        "WordWeights": Utils.try_to_json(argv, "--WordWeights"),
-        "WordWeightStr": argv.get("--WordWeightStr"),
+        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
+        "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "TimeSpan": argv.get("--TimeSpan"),
+        "TimeUnit": argv.get("--TimeUnit"),
+        "Currency": argv.get("--Currency"),
+        "Type": argv.get("--Type"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -249,12 +253,12 @@ def doCreateAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudhsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAsrVocabRequest()
+    model = models.InquiryPriceBuyVsmRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateAsrVocab(model)
+    rsp = client.InquiryPriceBuyVsm(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -264,14 +268,14 @@ def doCreateAsrVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDownloadAsrVocab(argv, arglist):
+def doDescribeUsgRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DownloadAsrVocab", g_param[OptionsDefine.Version])
+        show_help("DescribeUsgRule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
+        "SgIds": Utils.try_to_json(argv, "--SgIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -282,87 +286,12 @@ def doDownloadAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CloudhsmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DownloadAsrVocabRequest()
+    model = models.DescribeUsgRuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DownloadAsrVocab(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteAsrVocab(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteAsrVocab", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "VocabId": argv.get("--VocabId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAsrVocabRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteAsrVocab(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSentenceRecognition(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SentenceRecognition", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
-        "EngSerViceType": argv.get("--EngSerViceType"),
-        "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "VoiceFormat": argv.get("--VoiceFormat"),
-        "UsrAudioKey": argv.get("--UsrAudioKey"),
-        "Url": argv.get("--Url"),
-        "Data": argv.get("--Data"),
-        "DataLen": Utils.try_to_json(argv, "--DataLen"),
-        "HotwordId": argv.get("--HotwordId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SentenceRecognitionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SentenceRecognition(model)
+    rsp = client.DescribeUsgRule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -373,40 +302,38 @@ def doSentenceRecognition(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190614": asr_client_v20190614,
+    "v20191112": cloudhsm_client_v20191112,
 
 }
 
 MODELS_MAP = {
-    "v20190614": models_v20190614,
+    "v20191112": models_v20191112,
 
 }
 
 ACTION_MAP = {
-    "GetAsrVocabList": doGetAsrVocabList,
-    "CreateRecTask": doCreateRecTask,
-    "GetAsrVocab": doGetAsrVocab,
-    "DescribeTaskStatus": doDescribeTaskStatus,
-    "SetVocabState": doSetVocabState,
-    "UpdateAsrVocab": doUpdateAsrVocab,
-    "CreateAsrVocab": doCreateAsrVocab,
-    "DownloadAsrVocab": doDownloadAsrVocab,
-    "DeleteAsrVocab": doDeleteAsrVocab,
-    "SentenceRecognition": doSentenceRecognition,
+    "ModifyVsmAttributes": doModifyVsmAttributes,
+    "DescribeVsmAttributes": doDescribeVsmAttributes,
+    "DescribeVsms": doDescribeVsms,
+    "DescribeVpc": doDescribeVpc,
+    "DescribeUsg": doDescribeUsg,
+    "DescribeSubnet": doDescribeSubnet,
+    "InquiryPriceBuyVsm": doInquiryPriceBuyVsm,
+    "DescribeUsgRule": doDescribeUsgRule,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190614.version,
+    v20191112.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190614.version.replace('-', ''): {"help": v20190614_help.INFO,"desc": v20190614_help.DESC},
+     'v' + v20191112.version.replace('-', ''): {"help": v20191112_help.INFO,"desc": v20191112_help.DESC},
 
 }
 
 
-def asr_action(argv, arglist):
+def cloudhsm_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -422,7 +349,7 @@ def asr_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "asr", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "cloudhsm", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -443,7 +370,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("asr", asr_action)
+    cmd = NiceCommand("cloudhsm", cloudhsm_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -502,11 +429,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["asr"][OptionsDefine.Version]
+            version = config["cloudhsm"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["asr"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["cloudhsm"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -523,7 +450,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "asr", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cloudhsm", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -533,7 +460,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["asr"]["version"]
+        version = profile["cloudhsm"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

@@ -228,6 +228,12 @@ def doCreateInstance(argv, arglist):
         "RemoteLoginAtCreate": Utils.try_to_json(argv, "--RemoteLoginAtCreate"),
         "CheckSecurity": Utils.try_to_json(argv, "--CheckSecurity"),
         "ExtendFsField": argv.get("--ExtendFsField"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "DisasterRecoverGroupIds": Utils.try_to_json(argv, "--DisasterRecoverGroupIds"),
+        "CbsEncrypt": Utils.try_to_json(argv, "--CbsEncrypt"),
+        "MetaType": argv.get("--MetaType"),
+        "UnifyMetaInstanceId": argv.get("--UnifyMetaInstanceId"),
+        "MetaDBInfo": Utils.try_to_json(argv, "--MetaDBInfo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -269,6 +275,10 @@ def doInquiryPriceCreateInstance(argv, arglist):
         "Software": Utils.try_to_json(argv, "--Software"),
         "Placement": Utils.try_to_json(argv, "--Placement"),
         "VPCSettings": Utils.try_to_json(argv, "--VPCSettings"),
+        "MetaType": argv.get("--MetaType"),
+        "UnifyMetaInstanceId": argv.get("--UnifyMetaInstanceId"),
+        "MetaDBInfo": Utils.try_to_json(argv, "--MetaDBInfo"),
+        "ProductId": Utils.try_to_json(argv, "--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -309,6 +319,7 @@ def doInquiryPriceScaleOutInstance(argv, arglist):
         "CoreCount": Utils.try_to_json(argv, "--CoreCount"),
         "TaskCount": Utils.try_to_json(argv, "--TaskCount"),
         "Currency": argv.get("--Currency"),
+        "RouterCount": Utils.try_to_json(argv, "--RouterCount"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -350,6 +361,11 @@ def doScaleOutInstance(argv, arglist):
         "TaskCount": Utils.try_to_json(argv, "--TaskCount"),
         "CoreCount": Utils.try_to_json(argv, "--CoreCount"),
         "UnNecessaryNodeList": Utils.try_to_json(argv, "--UnNecessaryNodeList"),
+        "RouterCount": Utils.try_to_json(argv, "--RouterCount"),
+        "SoftDeployInfo": Utils.try_to_json(argv, "--SoftDeployInfo"),
+        "ServiceNodeInfo": Utils.try_to_json(argv, "--ServiceNodeInfo"),
+        "DisasterRecoverGroupIds": Utils.try_to_json(argv, "--DisasterRecoverGroupIds"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -72,7 +72,7 @@ INFO = {
       },
       {
         "name": "Url",
-        "desc": "拨测的url  例如：www.qq.com (url域名解析需要能解析出具体的ip)"
+        "desc": "拨测的URL， 例如：www.qq.com (URL域名解析需要能解析出具体的IP)"
       },
       {
         "name": "Period",
@@ -84,7 +84,7 @@ INFO = {
       },
       {
         "name": "AgentGroupId",
-        "desc": "拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroups 接口，本参数使用返回结果里的GroupId的值。注意： Type为0时，AgentGroupId为必填"
+        "desc": "拨测分组ID，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroups 接口，本参数使用返回结果里的GroupId的值。注意： Type为0时，AgentGroupId为必填"
       },
       {
         "name": "Host",
@@ -96,15 +96,15 @@ INFO = {
       },
       {
         "name": "SslVer",
-        "desc": "url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一"
+        "desc": "URL中含有\"https\"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一"
       },
       {
         "name": "PostData",
-        "desc": "POST 请求数据。空字符串表示非POST请求"
+        "desc": "POST请求数据。空字符串表示非POST请求"
       },
       {
         "name": "UserAgent",
-        "desc": "用户agent 信息"
+        "desc": "用户Agent信息"
       },
       {
         "name": "CheckStr",
@@ -116,19 +116,19 @@ INFO = {
       },
       {
         "name": "Cookie",
-        "desc": "需要设置的cookie信息"
+        "desc": "需要设置的Cookie信息"
       },
       {
         "name": "TaskId",
-        "desc": "任务号。用于验证且修改任务时传入原任务号"
+        "desc": "任务ID，用于验证且修改任务时传入原任务ID"
       },
       {
         "name": "UserName",
-        "desc": "登陆服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测。"
+        "desc": "登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测"
       },
       {
         "name": "PassWord",
-        "desc": "登陆服务器的密码"
+        "desc": "登录服务器的密码"
       },
       {
         "name": "ReqDataType",
@@ -136,7 +136,7 @@ INFO = {
       },
       {
         "name": "ReqData",
-        "desc": "发起tcp, udp请求的协议请求数据"
+        "desc": "发起TCP, UDP请求的协议请求数据"
       },
       {
         "name": "RespDataType",
@@ -144,15 +144,15 @@ INFO = {
       },
       {
         "name": "RespData",
-        "desc": "预期的udp请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过"
+        "desc": "预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过"
       },
       {
         "name": "DnsSvr",
-        "desc": "目的dns服务器  可以为空字符串"
+        "desc": "目的DNS服务器  可以为空字符串"
       },
       {
         "name": "DnsCheckIp",
-        "desc": "需要检验是否在dns ip列表的ip。可以为空字符串，表示不校验"
+        "desc": "需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验"
       },
       {
         "name": "DnsQueryType",
@@ -160,11 +160,11 @@ INFO = {
       },
       {
         "name": "UseSecConn",
-        "desc": "是否使用安全链接ssl  0 不使用，1 使用"
+        "desc": "是否使用安全链接SSL， 0 不使用，1 使用"
       },
       {
         "name": "NeedAuth",
-        "desc": "ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证"
+        "desc": "FTP登录验证方式， 0 不验证 ， 1 匿名登录， 2 需要身份验证"
       },
       {
         "name": "Port",
@@ -326,7 +326,7 @@ INFO = {
       },
       {
         "name": "Url",
-        "desc": "拨测的url  例如：www.qq.com (url域名解析需要能解析出具体的ip)"
+        "desc": "拨测的URL，例如：www.qq.com (URL域名解析需要能解析出具体的IP)"
       },
       {
         "name": "Period",
@@ -338,11 +338,11 @@ INFO = {
       },
       {
         "name": "TaskId",
-        "desc": "验证成功的拨测任务id"
+        "desc": "验证成功的拨测任务ID"
       },
       {
         "name": "AgentGroupId",
-        "desc": "拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的groupId的值。注意，Type为0时，AgentGroupId为必填"
+        "desc": "拨测分组ID，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填"
       },
       {
         "name": "Host",
@@ -354,19 +354,19 @@ INFO = {
       },
       {
         "name": "IsHeader",
-        "desc": "是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）"
+        "desc": "是否为Header请求（非0 发起Header 请求。为0，且PostData非空，发起POST请求。为0，PostData为空，发起GET请求）"
       },
       {
         "name": "SslVer",
-        "desc": "url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一"
+        "desc": "URL中含有\"https\"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一"
       },
       {
         "name": "PostData",
-        "desc": "POST 请求数据。空字符串表示非POST请求"
+        "desc": "POST 请求数据，空字符串表示非POST请求"
       },
       {
         "name": "UserAgent",
-        "desc": "用户agent 信息"
+        "desc": "用户Agent信息"
       },
       {
         "name": "CheckStr",
@@ -374,27 +374,27 @@ INFO = {
       },
       {
         "name": "CheckType",
-        "desc": "1 表示通过检查结果是否包含checkStr 进行校验"
+        "desc": "1 表示通过检查结果是否包含CheckStr 进行校验"
       },
       {
         "name": "Cookie",
-        "desc": "需要设置的cookie信息"
+        "desc": "需要设置的Cookie信息"
       },
       {
         "name": "UserName",
-        "desc": "登陆服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测。"
+        "desc": "登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测"
       },
       {
         "name": "PassWord",
-        "desc": "登陆服务器的密码"
+        "desc": "登录服务器的密码"
       },
       {
         "name": "ReqDataType",
-        "desc": "缺省为0。0 表示请求为字符串类型。1表示为二进制类型"
+        "desc": "缺省为0，0 表示请求为字符串类型, 1表示为二进制类型"
       },
       {
         "name": "ReqData",
-        "desc": "发起tcp, udp请求的协议请求数据"
+        "desc": "发起TCP, UDP请求的协议请求数据"
       },
       {
         "name": "RespDataType",
@@ -402,15 +402,15 @@ INFO = {
       },
       {
         "name": "RespData",
-        "desc": "预期的udp请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过"
+        "desc": "预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过"
       },
       {
         "name": "DnsSvr",
-        "desc": "目的dns服务器  可以为空字符串"
+        "desc": "目的DNS服务器，可以为空字符串"
       },
       {
         "name": "DnsCheckIp",
-        "desc": "需要检验是否在dns ip列表的ip。可以为空字符串，表示不校验"
+        "desc": "需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验"
       },
       {
         "name": "DnsQueryType",
@@ -418,11 +418,11 @@ INFO = {
       },
       {
         "name": "UseSecConn",
-        "desc": "是否使用安全链接ssl  0 不使用，1 使用"
+        "desc": "是否使用安全链接SSL， 0 不使用，1 使用"
       },
       {
         "name": "NeedAuth",
-        "desc": "ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证"
+        "desc": "FTP登录验证方式，  0 不验证  1 匿名登录  2 需要身份验证"
       },
       {
         "name": "Type",

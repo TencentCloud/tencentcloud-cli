@@ -102,6 +102,7 @@ def doCreateContentReviewTemplate(argv, arglist):
         "PornConfigure": Utils.try_to_json(argv, "--PornConfigure"),
         "TerrorismConfigure": Utils.try_to_json(argv, "--TerrorismConfigure"),
         "PoliticalConfigure": Utils.try_to_json(argv, "--PoliticalConfigure"),
+        "ProhibitedConfigure": Utils.try_to_json(argv, "--ProhibitedConfigure"),
         "UserDefineConfigure": Utils.try_to_json(argv, "--UserDefineConfigure"),
 
     }
@@ -1639,6 +1640,7 @@ def doModifyContentReviewTemplate(argv, arglist):
         "PornConfigure": Utils.try_to_json(argv, "--PornConfigure"),
         "TerrorismConfigure": Utils.try_to_json(argv, "--TerrorismConfigure"),
         "PoliticalConfigure": Utils.try_to_json(argv, "--PoliticalConfigure"),
+        "ProhibitedConfigure": Utils.try_to_json(argv, "--ProhibitedConfigure"),
         "UserDefineConfigure": Utils.try_to_json(argv, "--UserDefineConfigure"),
 
     }

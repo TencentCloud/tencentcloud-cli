@@ -1,30 +1,30 @@
 # -*- coding: utf-8 -*-
 DESC = "tcaplusdb-2019-08-23"
 INFO = {
-  "ModifyAppPassword": {
+  "CreateCluster": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "需要修改密码的应用实例ID"
+        "name": "IdlType",
+        "desc": "集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`"
       },
       {
-        "name": "OldPassword",
-        "desc": "应用旧密码"
+        "name": "ClusterName",
+        "desc": "集群名称，可使用中文或英文字符，最大长度32个字符"
       },
       {
-        "name": "OldPasswordExpireTime",
-        "desc": "应用旧密码预期失效时间"
+        "name": "VpcId",
+        "desc": "集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z"
       },
       {
-        "name": "NewPassword",
-        "desc": "应用新密码"
+        "name": "SubnetId",
+        "desc": "集群所绑定的子网实例ID，形如：subnet-pxir56ns"
       },
       {
-        "name": "Mode",
-        "desc": "更新模式： `1` 更新密码；`2` 更新旧密码失效时间，默认为`1` 模式"
+        "name": "Password",
+        "desc": "集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母"
       }
     ],
-    "desc": "修改指定AppInstanceId的实例密码，后台将在旧密码失效之前同时支持TcaplusDB SDK使用旧密码和新密码访问数据库。在旧密码失效之前不能提交新的密码修改请求，在旧密码失效之后不能提交修改旧密码过期时间的请求。"
+    "desc": "本接口用于创建TcaplusDB集群"
   },
   "DescribeUinInWhitelist": {
     "params": [],
@@ -33,12 +33,12 @@ INFO = {
   "DescribeTablesInRecycle": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待查询表所属应用实例ID"
+        "name": "ClusterId",
+        "desc": "待查询表格所属集群ID"
       },
       {
-        "name": "LogicZoneIds",
-        "desc": "待查询表所属大区列表"
+        "name": "TableGroupIds",
+        "desc": "待查询表格所属表格组ID列表"
       },
       {
         "name": "Filters",
@@ -46,11 +46,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量"
+        "desc": "查询结果偏移量"
       },
       {
         "name": "Limit",
-        "desc": "结果列表数量"
+        "desc": "查询结果返回记录数量"
       }
     ],
     "desc": "查询回收站中的表详情"
@@ -58,12 +58,12 @@ INFO = {
   "RollbackTables": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待回档表所在应用实例ID"
+        "name": "ClusterId",
+        "desc": "待回档表格所在集群ID"
       },
       {
         "name": "SelectedTables",
-        "desc": "待回档表列表"
+        "desc": "待回档表格列表"
       },
       {
         "name": "RollbackTime",
@@ -74,43 +74,73 @@ INFO = {
         "desc": "回档模式，支持：`KEYS`"
       }
     ],
-    "desc": "表数据回档"
+    "desc": "表格数据回档"
   },
-  "CreateZone": {
+  "ModifyClusterName": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "大区所属应用实例ID"
+        "name": "ClusterId",
+        "desc": "需要修改名称的集群ID"
       },
       {
-        "name": "ZoneName",
-        "desc": "大区名称，可以采用中文、英文或数字字符，长度不能超过30"
-      },
-      {
-        "name": "LogicZoneId",
-        "desc": "大区ID，可以由用户指定，但在同一个App内不能重复，如果不指定则采用自增的模式"
+        "name": "ClusterName",
+        "desc": "需要修改的集群名称，可使用中文或英文字符，最大长度32个字符"
       }
     ],
-    "desc": "在TcaplusDB应用下创建大区"
+    "desc": "修改指定的集群名称"
+  },
+  "DeleteCluster": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "待删除的集群ID"
+      }
+    ],
+    "desc": "删除TcaplusDB集群，必须在集群所属所有资源（包括表格组，表）都已经释放的情况下才会成功。"
+  },
+  "ModifyClusterPassword": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "需要修改密码的集群ID"
+      },
+      {
+        "name": "OldPassword",
+        "desc": "集群旧密码"
+      },
+      {
+        "name": "OldPasswordExpireTime",
+        "desc": "集群旧密码预期失效时间"
+      },
+      {
+        "name": "NewPassword",
+        "desc": "集群新密码，密码必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母"
+      },
+      {
+        "name": "Mode",
+        "desc": "更新模式： `1` 更新密码；`2` 更新旧密码失效时间，默认为`1` 模式"
+      }
+    ],
+    "desc": "修改指定集群的密码，后台将在旧密码失效之前同时支持TcaplusDB SDK使用旧密码和新密码访问数据库。在旧密码失效之前不能提交新的密码修改请求，在旧密码失效之后不能提交修改旧密码过期时间的请求。"
   },
   "DeleteIdlFiles": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "应用实例ID"
+        "name": "ClusterId",
+        "desc": "IDL所属集群ID"
       },
       {
         "name": "IdlFiles",
         "desc": "待删除的IDL文件信息列表"
       }
     ],
-    "desc": "指定应用ID和待删除IDL文件的信息，删除目标文件，如果文件正在被表关联则删除失败。"
+    "desc": "指定集群ID和待删除IDL文件的信息，删除目标文件，如果文件正在被表关联则删除失败。"
   },
   "RecoverRecycleTables": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "表所在应用实例ID"
+        "name": "ClusterId",
+        "desc": "表所在集群ID"
       },
       {
         "name": "SelectedTables",
@@ -132,88 +162,58 @@ INFO = {
     ],
     "desc": "修改指定的应用名称"
   },
-  "DeleteApp": {
+  "CreateBackup": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待删除的应用实例ID"
+        "name": "ClusterId",
+        "desc": "待创建备份表所属集群ID"
+      },
+      {
+        "name": "SelectedTables",
+        "desc": "待创建备份表信息列表"
+      },
+      {
+        "name": "Remark",
+        "desc": "备注信息"
       }
     ],
-    "desc": "删除TcaplusDB应用实例，必须在应用实例所属所有资源（包括大区，表）都已经释放的情况下才会成功。"
+    "desc": "用户创建备份任务"
   },
   "CreateTables": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待创建表所属应用实例ID"
+        "name": "ClusterId",
+        "desc": "待创建表格所属集群ID"
       },
       {
         "name": "IdlFiles",
-        "desc": "用户选定的建表IDL文件列表"
+        "desc": "用户选定的建表格IDL文件列表"
       },
       {
         "name": "SelectedTables",
-        "desc": "待创建表信息列表"
+        "desc": "待创建表格信息列表"
       }
     ],
-    "desc": "根据选择的IDL文件列表，批量创建表"
+    "desc": "根据选择的IDL文件列表，批量创建表格"
   },
   "ModifyTableQuotas": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "带扩缩容表所属应用实例ID"
+        "name": "ClusterId",
+        "desc": "带扩缩容表所属集群ID"
       },
       {
         "name": "TableQuotas",
         "desc": "已选中待修改的表配额列表"
       }
     ],
-    "desc": "表扩缩容"
+    "desc": "表格扩缩容"
   },
-  "DescribeZones": {
+  "DescribeClusters": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "大区所属应用实例ID"
-      },
-      {
-        "name": "LogicZoneIds",
-        "desc": "大区ID"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件，本接口支持：ZoneName，ZoneId"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量"
-      },
-      {
-        "name": "Limit",
-        "desc": "大区列表大小"
-      }
-    ],
-    "desc": "查询大区列表"
-  },
-  "DeleteZone": {
-    "params": [
-      {
-        "name": "ApplicationId",
-        "desc": "大区所属的应用实例ID"
-      },
-      {
-        "name": "LogicZoneId",
-        "desc": "大区ID"
-      }
-    ],
-    "desc": "删除大区"
-  },
-  "DescribeApps": {
-    "params": [
-      {
-        "name": "ApplicationIds",
-        "desc": "指定查询的应用ID"
+        "name": "ClusterIds",
+        "desc": "指定查询的集群ID列表"
       },
       {
         "name": "Filters",
@@ -221,14 +221,61 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量"
+        "desc": "查询列表偏移量"
       },
       {
         "name": "Limit",
-        "desc": "应用列表的大小，默认值20"
+        "desc": "查询列表返回记录数，默认值20"
       }
     ],
-    "desc": "查询TcaplusDB应用列表，包含应用详细信息。"
+    "desc": "查询TcaplusDB集群列表，包含集群详细信息。"
+  },
+  "DeleteTableGroup": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "表格组所属的集群ID"
+      },
+      {
+        "name": "TableGroupId",
+        "desc": "表格组ID"
+      }
+    ],
+    "desc": "删除表格组"
+  },
+  "ModifyTableGroupName": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "表格组所属的集群ID"
+      },
+      {
+        "name": "TableGroupId",
+        "desc": "待修改名称的表格组ID"
+      },
+      {
+        "name": "TableGroupName",
+        "desc": "新的大区名称，可以使用中英文字符和符号"
+      }
+    ],
+    "desc": "修改TcaplusDB表格组名称"
+  },
+  "CreateTableGroup": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "表格组所属集群ID"
+      },
+      {
+        "name": "TableGroupName",
+        "desc": "表格组名称，可以采用中文、英文或数字字符，最大长度32个字符"
+      },
+      {
+        "name": "TableGroupId",
+        "desc": "表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式"
+      }
+    ],
+    "desc": "在TcaplusDB集群下创建表格组"
   },
   "DescribeRegions": {
     "params": [],
@@ -237,8 +284,8 @@ INFO = {
   "DescribeTasks": {
     "params": [
       {
-        "name": "ApplicationIds",
-        "desc": "需要查询任务所属的应用ID列表"
+        "name": "ClusterIds",
+        "desc": "需要查询任务所属的集群ID列表"
       },
       {
         "name": "TaskIds",
@@ -250,66 +297,49 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量"
+        "desc": "查询列表偏移量"
       },
       {
         "name": "Limit",
-        "desc": "任务列表大小"
+        "desc": "查询列表返回记录数"
       }
     ],
     "desc": "查询任务列表"
   },
-  "ModifyZoneName": {
+  "DescribeTableGroups": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "大区所属的应用实例ID"
+        "name": "ClusterId",
+        "desc": "表格组所属集群ID"
       },
       {
-        "name": "LogicZoneId",
-        "desc": "待修改名称的大区ID"
+        "name": "TableGroupIds",
+        "desc": "表格组ID列表"
       },
       {
-        "name": "ZoneName",
-        "desc": "新的大区名称"
+        "name": "Filters",
+        "desc": "过滤条件，本接口支持：TableGroupName，TableGroupId"
+      },
+      {
+        "name": "Offset",
+        "desc": "查询列表偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "查询列表返回记录数"
       }
     ],
-    "desc": "修改TcaplusDB大区名称"
-  },
-  "CreateApp": {
-    "params": [
-      {
-        "name": "IdlType",
-        "desc": "应用数据描述语言类型，如：`PROTO`，`TDR`或`MIX`"
-      },
-      {
-        "name": "AppName",
-        "desc": "应用名称，可使用中文或英文字符，长度在30个字符以内"
-      },
-      {
-        "name": "VpcId",
-        "desc": "应用所绑定的私有网络实例ID，形如：vpc-f49l6u0z"
-      },
-      {
-        "name": "SubnetId",
-        "desc": "应用所绑定的子网实例ID，形如：subnet-pxir56ns"
-      },
-      {
-        "name": "Password",
-        "desc": "应用访问密码，可使用英文和数字字符，长度为12~16个字符"
-      }
-    ],
-    "desc": "本接口用于创建TcaplusDB应用"
+    "desc": "查询表格组列表"
   },
   "CompareIdlFiles": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待修改表所在应用实例ID"
+        "name": "ClusterId",
+        "desc": "待修改表格所在集群ID"
       },
       {
         "name": "SelectedTables",
-        "desc": "待修改表列表"
+        "desc": "待修改表格列表"
       },
       {
         "name": "ExistingIdlFiles",
@@ -320,29 +350,29 @@ INFO = {
         "desc": "本次上传IDL文件列表，与ExistingIdlFiles必选其一"
       }
     ],
-    "desc": "选中目标表，上传并校验改表文件，返回是否允许修改表结构"
+    "desc": "选中目标表格，上传并校验改表文件，返回是否允许修改表格结构的结果。"
   },
   "DescribeIdlFileInfos": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "文件所属应用实例ID"
+        "name": "ClusterId",
+        "desc": "文件所属集群ID"
       },
       {
-        "name": "LogicZoneIds",
-        "desc": "文件所属大区ID"
+        "name": "TableGroupIds",
+        "desc": "文件所属表格组ID"
       },
       {
         "name": "IdlFileIds",
-        "desc": "指定文件ID"
+        "desc": "指定文件ID列表"
       },
       {
         "name": "Offset",
-        "desc": "偏移量"
+        "desc": "查询列表偏移量"
       },
       {
         "name": "Limit",
-        "desc": "文件列表大小"
+        "desc": "查询列表返回记录数"
       }
     ],
     "desc": "查询表描述文件详情"
@@ -350,8 +380,8 @@ INFO = {
   "DeleteTables": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待删除表所在应用实例ID"
+        "name": "ClusterId",
+        "desc": "待删除表所在集群ID"
       },
       {
         "name": "SelectedTables",
@@ -363,8 +393,8 @@ INFO = {
   "ModifyTableMemos": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "表所属应用实例ID"
+        "name": "ClusterId",
+        "desc": "表所属集群实例ID"
       },
       {
         "name": "TableMemos",
@@ -376,12 +406,12 @@ INFO = {
   "VerifyIdlFiles": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待加表的应用实例ID"
+        "name": "ClusterId",
+        "desc": "待创建表格的集群ID"
       },
       {
-        "name": "LogicZoneId",
-        "desc": "待加表的大区ID"
+        "name": "TableGroupId",
+        "desc": "待创建表格的表格组ID"
       },
       {
         "name": "ExistingIdlFiles",
@@ -392,13 +422,13 @@ INFO = {
         "desc": "待上传的IDL文件信息列表，与ExistingIdlFiles至少有一者"
       }
     ],
-    "desc": "上传并校验加表文件，返回校验合法的表定义"
+    "desc": "上传并校验创建表格文件，返回校验合法的表格定义"
   },
   "ModifyTables": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待修改表所在应用实例ID"
+        "name": "ClusterId",
+        "desc": "待修改表格所在集群ID"
       },
       {
         "name": "IdlFiles",
@@ -406,7 +436,7 @@ INFO = {
       },
       {
         "name": "SelectedTables",
-        "desc": "待改表列表"
+        "desc": "待改表格列表"
       }
     ],
     "desc": "根据用户选定的表定义IDL文件，批量修改指定的表"
@@ -414,16 +444,16 @@ INFO = {
   "DescribeTables": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "待查询表所属应用实例ID"
+        "name": "ClusterId",
+        "desc": "待查询表格所属集群ID"
       },
       {
-        "name": "LogicZoneIds",
-        "desc": "待查询表所属大区列表"
+        "name": "TableGroupIds",
+        "desc": "待查询表格所属表格组ID列表"
       },
       {
         "name": "SelectedTables",
-        "desc": "待查询表信息列表"
+        "desc": "待查询表格信息列表"
       },
       {
         "name": "Filters",
@@ -431,11 +461,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量"
+        "desc": "查询结果偏移量"
       },
       {
         "name": "Limit",
-        "desc": "结果列表数量"
+        "desc": "查询结果返回记录数量"
       }
     ],
     "desc": "查询表详情"
@@ -443,8 +473,8 @@ INFO = {
   "ClearTables": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "表所属应用实例ID"
+        "name": "ClusterId",
+        "desc": "表所属集群实例ID"
       },
       {
         "name": "SelectedTables",

@@ -793,7 +793,7 @@ INFO = {
         "desc": "拉流域名类型。1-国内；2-全球；3-境外"
       }
     ],
-    "desc": "修改播放域名信息"
+    "desc": "修改播放域名信息。"
   },
   "ModifyLiveTranscodeTemplate": {
     "params": [
@@ -965,30 +965,30 @@ INFO = {
     "params": [
       {
         "name": "DomainStatus",
-        "desc": "域名状态过滤。0-停用，1-启用"
+        "desc": "域名状态过滤。0-停用，1-启用。"
       },
       {
         "name": "DomainType",
-        "desc": "域名类型过滤。0-推流，1-播放"
+        "desc": "域名类型过滤。0-推流，1-播放。"
       },
       {
         "name": "PageSize",
-        "desc": "分页大小，范围：10~100。默认10"
+        "desc": "分页大小，范围：10~100。默认10。"
       },
       {
         "name": "PageNum",
-        "desc": "取第几页，范围：1~100000。默认1"
+        "desc": "取第几页，范围：1~100000。默认1。"
       },
       {
         "name": "IsDelayLive",
-        "desc": "0 普通直播 1慢直播 默认0"
+        "desc": "0 普通直播 1慢直播 默认0。"
       },
       {
         "name": "DomainPrefix",
-        "desc": "域名前缀"
+        "desc": "域名前缀。"
       }
     ],
-    "desc": "根据域名状态、类型等信息查询用户的域名信息"
+    "desc": "根据域名状态、类型等信息查询用户的域名信息。"
   },
   "DeleteLiveCert": {
     "params": [

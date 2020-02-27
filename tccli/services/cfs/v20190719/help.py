@@ -21,15 +21,15 @@ INFO = {
       },
       {
         "name": "StorageType",
-        "desc": "文件系统存储类型，值为 SD ；其中 SD 为标准型存储"
+        "desc": "文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。"
       },
       {
         "name": "VpcId",
-        "desc": "私有网路（VPC） ID"
+        "desc": "私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。"
       },
       {
         "name": "SubnetId",
-        "desc": "子网 ID"
+        "desc": "子网 ID，若网络类型选择的是VPC，该字段为必填。"
       },
       {
         "name": "MountIP",
@@ -38,6 +38,10 @@ INFO = {
       {
         "name": "FsName",
         "desc": "用户自定义文件系统名称"
+      },
+      {
+        "name": "ResourceTags",
+        "desc": "文件系统标签"
       }
     ],
     "desc": "用于添加新文件系统"

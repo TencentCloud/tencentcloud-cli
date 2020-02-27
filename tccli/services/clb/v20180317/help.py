@@ -77,6 +77,19 @@ INFO = {
     ],
     "desc": "根据 ModifyBlockIPList 接口返回的异步任务的ID，查询封禁IP（黑名单）异步任务的执行状态。（接口灰度中，如需使用请提工单）"
   },
+  "DeleteLoadBalancerSnatIps": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡唯一Id，如lb-12345678"
+      },
+      {
+        "name": "Ips",
+        "desc": "删除SnatIp地址数组"
+      }
+    ],
+    "desc": "对于SnatPro的负载均衡，这个接口用于删除SnatIp"
+  },
   "DeleteListener": {
     "params": [
       {
@@ -188,18 +201,18 @@ INFO = {
     ],
     "desc": "ModifyDomain接口用来修改负载均衡七层监听器下的域名。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
-  "ModifyTargetGroupInstancesWeight": {
+  "DeleteLoadBalancerListeners": {
     "params": [
       {
-        "name": "TargetGroupId",
-        "desc": "目标组ID"
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
       },
       {
-        "name": "TargetGroupInstances",
-        "desc": "待修改权重的服务器数组"
+        "name": "ListenerIds",
+        "desc": "指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器"
       }
     ],
-    "desc": "批量修改目标组的服务器权重。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+    "desc": "该接口支持删除负载均衡的多个监听器。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
   "DeleteTargetGroups": {
     "params": [
@@ -223,18 +236,71 @@ INFO = {
     ],
     "desc": "DeregisterTargetsFromClassicalLB 接口用于解绑负载均衡后端服务。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
-  "DescribeClassicalLBHealthStatus": {
+  "CreateLoadBalancer": {
     "params": [
       {
-        "name": "LoadBalancerId",
-        "desc": "负载均衡实例 ID"
+        "name": "LoadBalancerType",
+        "desc": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。"
       },
       {
-        "name": "ListenerId",
-        "desc": "负载均衡监听器ID"
+        "name": "Forward",
+        "desc": "负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1"
+      },
+      {
+        "name": "LoadBalancerName",
+        "desc": "负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。"
+      },
+      {
+        "name": "VpcId",
+        "desc": "负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（\"0\"）。"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。"
+      },
+      {
+        "name": "AddressIPVersion",
+        "desc": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。"
+      },
+      {
+        "name": "Number",
+        "desc": "创建负载均衡的个数，默认值 1。"
+      },
+      {
+        "name": "MasterZoneId",
+        "desc": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。"
+      },
+      {
+        "name": "ZoneId",
+        "desc": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1"
+      },
+      {
+        "name": "InternetAccessible",
+        "desc": "仅适用于公网负载均衡。负载均衡的网络计费模式。"
+      },
+      {
+        "name": "VipIsp",
+        "desc": "仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。"
+      },
+      {
+        "name": "Tags",
+        "desc": "购买负载均衡同时，给负载均衡打上标签"
       }
     ],
-    "desc": "DescribeClassicalLBHealthStatus用于获取传统型负载均衡后端的健康状态"
+    "desc": "本接口(CreateLoadBalancer)用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾(仅香港支持)【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】；(2)目前只有北京、上海、广州支持IPv6；(3)一个账号在每个地域的默认购买配额为：公网100个，内网100个。\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。"
+  },
+  "DescribeLoadBalancerListByCertId": {
+    "params": [
+      {
+        "name": "CertIds",
+        "desc": "服务端证书的ID，或客户端证书的ID"
+      }
+    ],
+    "desc": "根据证书ID查询其在一个地域中所关联到负载均衡实例列表"
   },
   "ModifyListener": {
     "params": [
@@ -348,7 +414,7 @@ INFO = {
         "desc": "绑定的关系数组"
       }
     ],
-    "desc": "监听器或转发规则绑定目标组。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+    "desc": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡的监听器（四层协议）或转发规则（七层协议）上。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
   "DeregisterTargetGroupInstances": {
     "params": [
@@ -604,6 +670,27 @@ INFO = {
     ],
     "desc": "本接口用于查询异步任务的执行状态，对于非查询类的接口（创建/删除负载均衡实例、监听器、规则以及绑定或解绑后端服务等），在接口调用成功后，都需要使用本接口查询任务最终是否执行成功。"
   },
+  "DescribeTargetGroups": {
+    "params": [
+      {
+        "name": "TargetGroupIds",
+        "desc": "目标组ID，与Filters互斥"
+      },
+      {
+        "name": "Limit",
+        "desc": "显示条数限制，默认为20"
+      },
+      {
+        "name": "Offset",
+        "desc": "显示的偏移起始量"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName"
+      }
+    ],
+    "desc": "查询目标组信息"
+  },
   "ModifyRule": {
     "params": [
       {
@@ -838,14 +925,18 @@ INFO = {
     ],
     "desc": "修改目标组的名称或者默认端口属性"
   },
-  "DescribeLoadBalancerListByCertId": {
+  "DescribeClassicalLBHealthStatus": {
     "params": [
       {
-        "name": "CertIds",
-        "desc": "服务端证书的ID，或客户端证书的ID"
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
+      },
+      {
+        "name": "ListenerId",
+        "desc": "负载均衡监听器ID"
       }
     ],
-    "desc": "根据证书ID查询其在一个地域中所关联到负载均衡实例列表"
+    "desc": "DescribeClassicalLBHealthStatus用于获取传统型负载均衡后端的健康状态"
   },
   "DeregisterTargets": {
     "params": [
@@ -897,30 +988,26 @@ INFO = {
       {
         "name": "LoadBalancerPassToTarget",
         "desc": "Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。"
+      },
+      {
+        "name": "SnatPro",
+        "desc": "是否开启SnatPro"
       }
     ],
     "desc": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。"
   },
-  "DescribeTargetGroups": {
+  "CreateLoadBalancerSnatIps": {
     "params": [
       {
-        "name": "TargetGroupIds",
-        "desc": "目标组ID，与Filters互斥"
+        "name": "LoadBalancerId",
+        "desc": "负载均衡唯一性Id，如lb-12345678"
       },
       {
-        "name": "Limit",
-        "desc": "显示条数限制，默认为20"
-      },
-      {
-        "name": "Offset",
-        "desc": "显示的偏移起始量"
-      },
-      {
-        "name": "Filters",
-        "desc": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName"
+        "name": "SnatIps",
+        "desc": "添加SnatIp信息，可指定Ip申请，或者指定子网自动申请"
       }
     ],
-    "desc": "查询目标组信息"
+    "desc": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启"
   },
   "DescribeClassicalLBByInstanceId": {
     "params": [
@@ -979,62 +1066,18 @@ INFO = {
     ],
     "desc": "DescribeTargetHealth 接口用来获取负载均衡后端服务的健康检查结果，不支持传统型负载均衡。"
   },
-  "CreateLoadBalancer": {
+  "ModifyTargetGroupInstancesWeight": {
     "params": [
       {
-        "name": "LoadBalancerType",
-        "desc": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。"
+        "name": "TargetGroupId",
+        "desc": "目标组ID"
       },
       {
-        "name": "Forward",
-        "desc": "负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1"
-      },
-      {
-        "name": "LoadBalancerName",
-        "desc": "负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。"
-      },
-      {
-        "name": "VpcId",
-        "desc": "负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（\"0\"）。"
-      },
-      {
-        "name": "SubnetId",
-        "desc": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。"
-      },
-      {
-        "name": "ProjectId",
-        "desc": "负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。"
-      },
-      {
-        "name": "AddressIPVersion",
-        "desc": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。"
-      },
-      {
-        "name": "Number",
-        "desc": "创建负载均衡的个数，默认值 1。"
-      },
-      {
-        "name": "MasterZoneId",
-        "desc": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。"
-      },
-      {
-        "name": "ZoneId",
-        "desc": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1"
-      },
-      {
-        "name": "InternetAccessible",
-        "desc": "仅适用于公网负载均衡。负载均衡的网络计费模式。"
-      },
-      {
-        "name": "VipIsp",
-        "desc": "仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。"
-      },
-      {
-        "name": "Tags",
-        "desc": "购买负载均衡同时，给负载均衡打上标签"
+        "name": "TargetGroupInstances",
+        "desc": "待修改权重的服务器数组"
       }
     ],
-    "desc": "本接口(CreateLoadBalancer)用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾(仅香港支持)【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】；(2)目前只有北京、上海、广州支持IPv6；(3)一个账号在每个地域的默认购买配额为：公网100个，内网100个。\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。"
+    "desc": "批量修改目标组的服务器权重。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
   "ManualRewrite": {
     "params": [
