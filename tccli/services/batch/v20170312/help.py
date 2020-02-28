@@ -27,22 +27,14 @@ INFO = {
     ],
     "desc": "用于创建任务模板"
   },
-  "CreateCpmComputeEnv": {
+  "DescribeJobSubmitInfo": {
     "params": [
       {
-        "name": "ComputeEnv",
-        "desc": "计算环境信息"
-      },
-      {
-        "name": "Placement",
-        "desc": "位置信息"
-      },
-      {
-        "name": "ClientToken",
-        "desc": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。"
+        "name": "JobId",
+        "desc": "作业ID"
       }
     ],
-    "desc": "创建黑石计算环境"
+    "desc": "用于查询指定作业的提交信息，其返回内容包括 JobId 和 SubmitJob 接口中作为输入参数的作业提交信息"
   },
   "TerminateComputeNode": {
     "params": [
@@ -74,6 +66,19 @@ INFO = {
       }
     ],
     "desc": "查看可用的CVM机型配置信息"
+  },
+  "AttachInstances": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "计算环境ID"
+      },
+      {
+        "name": "Instances",
+        "desc": "加入计算环境实例列表"
+      }
+    ],
+    "desc": "此接口可将已存在实例添加到计算环境中。\n实例需要满足如下条件：<br/>\n1.实例不在批量计算系统中。<br/>\n2.实例状态要求处于运行中。<br/>\n3.支持预付费实例，按小时后付费实例，专享子机实例。不支持竞价实例。<br/>\n\n此接口会将加入到计算环境中的实例重设UserData和重装操作系统。"
   },
   "CreateComputeEnv": {
     "params": [
@@ -112,6 +117,19 @@ INFO = {
       }
     ],
     "desc": "用于查看计算环境列表"
+  },
+  "DetachInstances": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "计算环境ID"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID列表"
+      }
+    ],
+    "desc": "将添加到计算环境中的实例从计算环境中移出。若是由批量计算自动创建的计算节点实例则不允许移出。"
   },
   "DescribeTaskLogs": {
     "params": [
@@ -300,14 +318,22 @@ INFO = {
     ],
     "desc": "用于修改计算环境属性"
   },
-  "DescribeJobSubmitInfo": {
+  "CreateCpmComputeEnv": {
     "params": [
       {
-        "name": "JobId",
-        "desc": "作业ID"
+        "name": "ComputeEnv",
+        "desc": "计算环境信息"
+      },
+      {
+        "name": "Placement",
+        "desc": "位置信息"
+      },
+      {
+        "name": "ClientToken",
+        "desc": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。"
       }
     ],
-    "desc": "用于查询指定作业的提交信息，其返回内容包括 JobId 和 SubmitJob 接口中作为输入参数的作业提交信息"
+    "desc": "创建黑石计算环境"
   },
   "DescribeComputeEnvCreateInfo": {
     "params": [

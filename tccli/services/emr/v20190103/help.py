@@ -95,19 +95,6 @@ INFO = {
     ],
     "desc": "查询EMR实例"
   },
-  "TerminateInstance": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "实例ID。"
-      },
-      {
-        "name": "ResourceIds",
-        "desc": "销毁节点ID。该参数为预留参数，用户无需配置。"
-      }
-    ],
-    "desc": "销毁EMR实例。此接口仅支持弹性MapReduce正式计费版本。"
-  },
   "InquiryPriceUpdateInstance": {
     "params": [
       {
@@ -136,6 +123,27 @@ INFO = {
       }
     ],
     "desc": "变配询价"
+  },
+  "DescribeClusterNodes": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "集群实例ID,实例ID形如: emr-xxxxxxxx"
+      },
+      {
+        "name": "NodeFlag",
+        "desc": "节点标识，取值为：\n<li>all：表示获取全部类型节点，cdb信息除外。</li>\n<li>master：表示获取master节点信息。</li>\n<li>core：表示获取core节点信息。</li>\n<li>task：表示获取task节点信息。</li>\n<li>common：表示获取common节点信息。</li>\n<li>router：表示获取router节点信息。</li>\n<li>db：表示获取正常状态的cdb信息。</li>\n<li>recyle：表示获取回收站隔离中的节点信息，包括cdb信息。</li>\n<li>renew：表示获取所有待续费的节点信息，包括cdb信息，自动续费节点不会返回。</li>\n注意：现在只支持以上取值，输入其他值会导致错误。"
+      },
+      {
+        "name": "Offset",
+        "desc": "页编号，默认值为0，表示第一页。"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页返回数量，默认值为100，最大值为100。"
+      }
+    ],
+    "desc": "查询硬件节点信息"
   },
   "InquiryPriceRenewInstance": {
     "params": [
@@ -385,5 +393,18 @@ INFO = {
       }
     ],
     "desc": "缩容Task节点"
+  },
+  "TerminateInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID。"
+      },
+      {
+        "name": "ResourceIds",
+        "desc": "销毁节点ID。该参数为预留参数，用户无需配置。"
+      }
+    ],
+    "desc": "销毁EMR实例。此接口仅支持弹性MapReduce正式计费版本。"
   }
 }

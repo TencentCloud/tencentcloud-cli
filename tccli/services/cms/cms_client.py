@@ -96,6 +96,7 @@ def doCreateTextSample(argv, arglist):
         "Contents": Utils.try_to_json(argv, "--Contents"),
         "EvilType": Utils.try_to_json(argv, "--EvilType"),
         "Label": Utils.try_to_json(argv, "--Label"),
+        "Test": argv.get("--Test"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -1267,6 +1267,31 @@ INFO = {
     ],
     "desc": "获取单个转码模板"
   },
+  "DescribeScreenShotSheetNumList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "utc起始时间，格式为yyyy-mm-ddTHH:MM:SSZ"
+      },
+      {
+        "name": "EndTime",
+        "desc": "utc结束时间，格式为yyyy-mm-ddTHH:MM:SSZ，支持查询最近1年数据。"
+      },
+      {
+        "name": "Zone",
+        "desc": "地域信息，可选值包括Mainland，Oversea，前者是查询中国大陆范围内的数据，后者是除中国大陆范围之外的数据，若不传该参数，则查询所有地区的数据。"
+      },
+      {
+        "name": "PushDomains",
+        "desc": "推流域名（支持查询2019年11 月1日之后的域名维度数据）。"
+      },
+      {
+        "name": "Granularity",
+        "desc": "数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，最大支持查询时间范围是186天当天）。"
+      }
+    ],
+    "desc": "接口用来查询直播增值业务--截图的张数"
+  },
   "UnBindLiveDomainCert": {
     "params": [
       {

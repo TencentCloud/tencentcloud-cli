@@ -210,7 +210,7 @@ INFO = {
         "desc": "更新后的密码"
       }
     ],
-    "desc": "修改个人用户登陆密码"
+    "desc": "修改个人用户登录密码"
   },
   "DeleteApplicationTriggerPersonal": {
     "params": [
@@ -428,7 +428,7 @@ INFO = {
         "desc": "命名空间"
       }
     ],
-    "desc": "用于在个人版版镜像仓库中，获取满足输入搜索条件的用户镜像仓库"
+    "desc": "用于在个人版镜像仓库中，获取满足输入搜索条件的用户镜像仓库"
   },
   "ValidateNamespaceExistPersonal": {
     "params": [
@@ -516,6 +516,6 @@ INFO = {
         "desc": "实例Id"
       }
     ],
-    "desc": "获取临时登陆密码"
+    "desc": "获取临时登录密码"
   }
 }

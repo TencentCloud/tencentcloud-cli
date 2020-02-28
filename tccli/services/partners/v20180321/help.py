@@ -231,6 +231,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "限制数目"
+      },
+      {
+        "name": "SalesUin",
+        "desc": "业务员ID"
+      },
+      {
+        "name": "SalesName",
+        "desc": "业务员姓名（模糊查询）"
       }
     ],
     "desc": "代理商可查询自己名下待审核客户列表"
