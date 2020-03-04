@@ -176,6 +176,10 @@ INFO = {
       {
         "name": "Bandwidth",
         "desc": "计费模式为按固定带宽方式时监听器的限速值，可选值：0-1000，单位：Mbps。"
+      },
+      {
+        "name": "ForwardProtocol",
+        "desc": "转发协议。当监听器Protocol为https时并且SslMode为1或2时，有意义。可选的值为0：https，1：spdy，2：http2，3：spdy+http2。"
       }
     ],
     "desc": "修改黑石负载均衡七层监听器。"
@@ -615,7 +619,7 @@ INFO = {
       },
       {
         "name": "QueryType",
-        "desc": "查询条件，传'all'则查询所有与规则绑定的主机信息。"
+        "desc": "查询条件，传'all'则查询所有与规则绑定的主机信息。如果为all时，DomainId和LocationId参数没有意义不必传入，否则DomainId和LocationId参数必须传入。"
       }
     ],
     "desc": "获取黑石负载均衡七层监听器绑定的主机列表"
@@ -772,6 +776,18 @@ INFO = {
       {
         "name": "Limit",
         "desc": "单次查询返回的条目数，默认值：500。"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段。trafficMirrorId或者createTime。"
+      },
+      {
+        "name": "Order",
+        "desc": "排序方式，取值：0:增序(默认)，1:降序"
+      },
+      {
+        "name": "SearchKey",
+        "desc": "模糊匹配trafficMirrorId或者alias字段。"
       }
     ],
     "desc": "获取流量镜像实例的列表信息。"
@@ -1007,7 +1023,7 @@ INFO = {
       },
       {
         "name": "TgwSetType",
-        "desc": "负载均衡对应的TGW集群类别，取值为tunnel、fullnat或dnat。tunnel表示隧道集群，fullnat表示FULLNAT集群，dnat表示DNAT集群。默认值为fullnat。如需获取client IP，可以选择 tunnel 模式，fullnat 模式（tcp 通过toa 获取），dnat 模式。"
+        "desc": "负载均衡对应的TGW集群类别，取值为tunnel、fullnat或dnat。tunnel表示隧道集群，fullnat表示FULLNAT集群（普通外网负载均衡），dnat表示DNAT集群（增强型外网负载均衡）。默认值为fullnat。如需获取client IP，可以选择 tunnel 模式，fullnat 模式（tcp 通过toa 获取），dnat 模式。"
       },
       {
         "name": "Exclusive",

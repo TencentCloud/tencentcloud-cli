@@ -133,6 +133,15 @@ INFO = {
     ],
     "desc": "黑石EIP查询任务状态"
   },
+  "UnbindRsList": {
+    "params": [
+      {
+        "name": "EipRsList",
+        "desc": "物理机绑定的EIP列表"
+      }
+    ],
+    "desc": "批量解绑物理机弹性公网IP接口"
+  },
   "DeleteEip": {
     "params": [
       {
@@ -323,6 +332,26 @@ INFO = {
       {
         "name": "Limit",
         "desc": "分页参数。每一页的 EIPACL 列表数目"
+      },
+      {
+        "name": "EipIds",
+        "desc": "EIP实例ID列表"
+      },
+      {
+        "name": "EipIps",
+        "desc": "EIP IP地址列表"
+      },
+      {
+        "name": "EipNames",
+        "desc": "EIP名称列表"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段"
+      },
+      {
+        "name": "Order",
+        "desc": "排序方式，取值：0:增序(默认)，1:降序"
       }
     ],
     "desc": "查询弹性公网IP ACL"

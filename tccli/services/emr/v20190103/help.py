@@ -82,7 +82,7 @@ INFO = {
       },
       {
         "name": "ProjectId",
-        "desc": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。如果该参数取值为-1，返回所有实例列表。"
+        "desc": "建议必填-1，表示拉取所有项目下的集群。\n不填默认值为0，表示拉取默认项目下的集群。\n实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。"
       },
       {
         "name": "OrderField",

@@ -67,34 +67,38 @@ INFO = {
     ],
     "desc": "获取按资源汇总消耗详情"
   },
-  "DescribeCostSummaryByRegion": {
+  "DescribeBillList": {
     "params": [
       {
-        "name": "PayerUin",
-        "desc": "查询账单数据的用户UIN"
-      },
-      {
-        "name": "BeginTime",
-        "desc": "目前只支持传当月1号 00:00:00，且必须和EndTime为相同月份，不支持跨月查询，例 2018-09-01 00:00:00"
+        "name": "StartTime",
+        "desc": "查询范围的起始时间（包含）"
       },
       {
         "name": "EndTime",
-        "desc": "目前只支持传当月最后一天 23:59:59，且必须和BeginTime为相同月份，不支持跨月查询，例 2018-09-30 23:59:59"
-      },
-      {
-        "name": "Limit",
-        "desc": "每次获取数据量"
+        "desc": "查询范围的结束时间（包含）"
       },
       {
         "name": "Offset",
-        "desc": "偏移量"
+        "desc": "翻页偏移量，初始值为0"
       },
       {
-        "name": "NeedRecordNum",
-        "desc": "是否需要返回记录数量，0不需要，1需要，默认不需要"
+        "name": "Limit",
+        "desc": "每页的限制数量"
+      },
+      {
+        "name": "PayType",
+        "desc": "交易类型： all所有交易类型，recharge充值，return退款，unblock解冻，agentin资金转入，advanced垫付，cash提现，deduct扣费，block冻结，agentout资金转出，repay垫付回款，repayment还款(仅国际信用账户)，adj_refund调增(仅国际信用账户)，adj_deduct调减(仅国际信用账户)"
+      },
+      {
+        "name": "SubPayType",
+        "desc": "扣费模式，当所选的交易类型中包含扣费deduct时有意义： all所有扣费类型，trade预付费支付，hour_h按量小时结，hour_d按量日结，hour_m按量月结，decompensate调账扣费，other其他扣费"
+      },
+      {
+        "name": "WithZeroAmount",
+        "desc": "是否返回0元交易金额的交易项，取值：0-不返回，1-返回。不传该参数则不返回"
       }
     ],
-    "desc": "获取按地域汇总消耗详情"
+    "desc": "获取收支明细列表，支持翻页和参数过滤"
   },
   "DescribeBillDetail": {
     "params": [
@@ -240,6 +244,35 @@ INFO = {
       }
     ],
     "desc": "查询账单资源汇总数据 "
+  },
+  "DescribeCostSummaryByRegion": {
+    "params": [
+      {
+        "name": "PayerUin",
+        "desc": "查询账单数据的用户UIN"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "目前只支持传当月1号 00:00:00，且必须和EndTime为相同月份，不支持跨月查询，例 2018-09-01 00:00:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "目前只支持传当月最后一天 23:59:59，且必须和BeginTime为相同月份，不支持跨月查询，例 2018-09-30 23:59:59"
+      },
+      {
+        "name": "Limit",
+        "desc": "每次获取数据量"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "NeedRecordNum",
+        "desc": "是否需要返回记录数量，0不需要，1需要，默认不需要"
+      }
+    ],
+    "desc": "获取按地域汇总消耗详情"
   },
   "DescribeBillSummaryByRegion": {
     "params": [

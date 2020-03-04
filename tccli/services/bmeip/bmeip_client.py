@@ -330,6 +330,41 @@ def doUnbindHosted(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUnbindVpcIp(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnbindVpcIp", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EipId": argv.get("--EipId"),
+        "VpcId": argv.get("--VpcId"),
+        "VpcIp": argv.get("--VpcIp"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmeipClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnbindVpcIpRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnbindVpcIp(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteEip(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -613,16 +648,14 @@ def doBindVpcIp(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnbindVpcIp(argv, arglist):
+def doUnbindRsList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UnbindVpcIp", g_param[OptionsDefine.Version])
+        show_help("UnbindRsList", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "EipId": argv.get("--EipId"),
-        "VpcId": argv.get("--VpcId"),
-        "VpcIp": argv.get("--VpcIp"),
+        "EipRsList": Utils.try_to_json(argv, "--EipRsList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -636,9 +669,9 @@ def doUnbindVpcIp(argv, arglist):
     client = mod.BmeipClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnbindVpcIpRequest()
+    model = models.UnbindRsListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UnbindVpcIp(model)
+    rsp = client.UnbindRsList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -659,6 +692,11 @@ def doDescribeEipAcls(argv, arglist):
         "AclIds": Utils.try_to_json(argv, "--AclIds"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "EipIds": Utils.try_to_json(argv, "--EipIds"),
+        "EipIps": Utils.try_to_json(argv, "--EipIps"),
+        "EipNames": Utils.try_to_json(argv, "--EipNames"),
+        "OrderField": argv.get("--OrderField"),
+        "Order": Utils.try_to_json(argv, "--Order"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -704,6 +742,7 @@ ACTION_MAP = {
     "BindRs": doBindRs,
     "DescribeEipTask": doDescribeEipTask,
     "UnbindHosted": doUnbindHosted,
+    "UnbindVpcIp": doUnbindVpcIp,
     "DeleteEip": doDeleteEip,
     "ModifyEipCharge": doModifyEipCharge,
     "ModifyEipName": doModifyEipName,
@@ -712,7 +751,7 @@ ACTION_MAP = {
     "UnbindEipAcls": doUnbindEipAcls,
     "DescribeEips": doDescribeEips,
     "BindVpcIp": doBindVpcIp,
-    "UnbindVpcIp": doUnbindVpcIp,
+    "UnbindRsList": doUnbindRsList,
     "DescribeEipAcls": doDescribeEipAcls,
 
 }

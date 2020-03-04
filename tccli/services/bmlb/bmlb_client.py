@@ -253,6 +253,7 @@ def doModifyL7Listener(argv, arglist):
         "CertCaName": argv.get("--CertCaName"),
         "CertCaContent": argv.get("--CertCaContent"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
+        "ForwardProtocol": Utils.try_to_json(argv, "--ForwardProtocol"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1310,6 +1311,9 @@ def doDescribeTrafficMirrors(argv, arglist):
         "VpcIds": Utils.try_to_json(argv, "--VpcIds"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "Order": Utils.try_to_json(argv, "--Order"),
+        "SearchKey": argv.get("--SearchKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
