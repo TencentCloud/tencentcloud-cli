@@ -287,6 +287,35 @@ INFO = {
     ],
     "desc": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。"
   },
+  "GetDetectInfoEnhanced": {
+    "params": [
+      {
+        "name": "BizToken",
+        "desc": "人脸核身流程的标识，调用DetectAuth接口时生成。"
+      },
+      {
+        "name": "RuleId",
+        "desc": "用于细分客户使用场景，由腾讯侧在线下对接时分配。"
+      },
+      {
+        "name": "InfoType",
+        "desc": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：视频最佳截图信息；4：视频信息）。\n如 134表示拉取文本类、视频最佳截图信息、视频信息。\n默认值：0"
+      },
+      {
+        "name": "BestFramesCount",
+        "desc": "从活体视频中截取一定张数的最佳帧。默认为0，最大为10，超出10的最多只给10张。（InfoType需要包含3）"
+      },
+      {
+        "name": "IsCutIdCardImage",
+        "desc": "是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）"
+      },
+      {
+        "name": "IsNeedIdCardAvatar",
+        "desc": "是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）"
+      }
+    ],
+    "desc": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。"
+  },
   "PhoneVerification": {
     "params": [
       {

@@ -25,7 +25,7 @@ INFO = {
       },
       {
         "name": "Object",
-        "desc": "具体的 Type 的名称，比如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空"
+        "desc": "具体的 Type 的名称，例如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空"
       },
       {
         "name": "ColName",
@@ -238,7 +238,7 @@ INFO = {
       },
       {
         "name": "Object",
-        "desc": "具体的 Type 的名称，比如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空"
+        "desc": "具体的 Type 的名称，例如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空"
       },
       {
         "name": "ColName",

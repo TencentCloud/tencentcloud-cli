@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
 DESC = "cdn-2018-06-06"
 INFO = {
+  "DescribeIpStatus": {
+    "params": [
+      {
+        "name": "Domain",
+        "desc": "加速域名"
+      },
+      {
+        "name": "Layer",
+        "desc": "节点类型：\nedge：表示边缘节点\nlast：表示回源层节点\n不填充情况下，默认返回边缘节点信息"
+      }
+    ],
+    "desc": "DescribeIpStatus 用于查询域名所在加速平台的边缘节点、回源节点明细\n注意事项：接口尚未全量开放，未在内测名单中的账号不支持调用"
+  },
   "DescribeMapInfo": {
     "params": [
       {
@@ -344,6 +357,10 @@ INFO = {
       }
     ],
     "desc": "StopCdnDomain 用于停止域名的加速服务。\n注意：停止加速服务后，访问至加速节点的请求将会直接返回 404。为避免对您的业务造成影响，请在停止加速服务前将解析切走。"
+  },
+  "DescribePurgeQuota": {
+    "params": [],
+    "desc": "DescribePurgeQuota 用于查询账户刷新配额和每日可用量。"
   },
   "ListTopData": {
     "params": [
@@ -757,6 +774,10 @@ INFO = {
       }
     ],
     "desc": "DescribeBillingData 用于查询实际计费数据明细。"
+  },
+  "DescribePushQuota": {
+    "params": [],
+    "desc": "DescribePushQuota  用于查询预热配额和每日可用量。"
   },
   "UpdatePayType": {
     "params": [

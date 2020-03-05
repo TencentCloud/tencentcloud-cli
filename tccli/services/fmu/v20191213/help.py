@@ -5,14 +5,14 @@ INFO = {
     "params": [
       {
         "name": "LUTFile",
-        "desc": "LUT文件。 用于试唇色。须为 512*512的PNG图片。"
+        "desc": "用于试唇色，要求必须是LUT 格式的cube文件转换成512*512的PNG图片。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。了解 [cube文件转png图片小工具](http://yyb.gtimg.com/aiplat/static/qcloud-cube-to-png.html)。"
       },
       {
         "name": "Description",
         "desc": "文件描述信息，可用于备注。"
       }
     ],
-    "desc": "上传 LUT 格式文件注册唇色ID。最多允许上传1万张素材。"
+    "desc": "在使用LUT素材的modelid实现试唇色前，您需要先上传 LUT 格式的cube文件注册唇色ID。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。\n\n注：您也可以直接使用 [试唇色接口](https://cloud.tencent.com/document/product/1172/40706)，通过输入RGBA模型数值的方式指定唇色，更简单易用。\n"
   },
   "DeleteModel": {
     "params": [
@@ -80,6 +80,6 @@ INFO = {
         "desc": "大眼程度，取值范围[0,100]。0不大眼，100代表最高程度。默认值70。"
       }
     ],
-    "desc": "输入人脸图片，输出美颜后的人脸图片。"
+    "desc": "用户上传一张人脸图片，精准定位五官，实现美肤、亮肤、祛痘等美颜功能。"
   }
 }
