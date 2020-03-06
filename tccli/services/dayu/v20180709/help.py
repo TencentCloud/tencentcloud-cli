@@ -1176,6 +1176,31 @@ INFO = {
     ],
     "desc": "获取资源列表"
   },
+  "CreateBoundIP": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源实例ID"
+      },
+      {
+        "name": "BoundDevList",
+        "desc": "绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；"
+      },
+      {
+        "name": "UnBoundDevList",
+        "desc": "与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；"
+      },
+      {
+        "name": "CopyPolicy",
+        "desc": "已弃用，不填"
+      }
+    ],
+    "desc": "绑定IP到高防包实例，支持独享包、共享包；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。"
+  },
   "ModifyDDoSPolicy": {
     "params": [
       {
