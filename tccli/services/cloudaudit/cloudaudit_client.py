@@ -230,6 +230,9 @@ def doUpdateAudit(argv, arglist):
         "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
         "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
         "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
+        "IsEnableKmsEncry": Utils.try_to_json(argv, "--IsEnableKmsEncry"),
+        "KeyId": argv.get("--KeyId"),
+        "KmsRegion": argv.get("--KmsRegion"),
         "LogFilePrefix": argv.get("--LogFilePrefix"),
         "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
 
@@ -306,6 +309,9 @@ def doCreateAudit(argv, arglist):
         "CmqQueueName": argv.get("--CmqQueueName"),
         "CmqRegion": argv.get("--CmqRegion"),
         "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
+        "IsEnableKmsEncry": Utils.try_to_json(argv, "--IsEnableKmsEncry"),
+        "KeyId": argv.get("--KeyId"),
+        "KmsRegion": argv.get("--KmsRegion"),
         "LogFilePrefix": argv.get("--LogFilePrefix"),
 
     }

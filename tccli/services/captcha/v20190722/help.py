@@ -167,6 +167,10 @@ INFO = {
       {
         "name": "Imei",
         "desc": "手机设备号"
+      },
+      {
+        "name": "NeedGetCaptchaTime",
+        "desc": "是否返回前端获取验证码时间，取值1：需要返回"
       }
     ],
     "desc": "核查验证码票据结果"

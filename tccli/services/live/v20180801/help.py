@@ -16,7 +16,7 @@ INFO = {
         "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       }
     ],
-    "desc": "断开推流连接，但可以重新推流"
+    "desc": "断开推流连接，但可以重新推流。"
   },
   "DescribeLiveWatermarks": {
     "params": [],

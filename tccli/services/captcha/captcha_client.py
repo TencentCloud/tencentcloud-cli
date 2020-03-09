@@ -251,6 +251,7 @@ def doDescribeCaptchaResult(argv, arglist):
         "SceneId": Utils.try_to_json(argv, "--SceneId"),
         "MacAddress": argv.get("--MacAddress"),
         "Imei": argv.get("--Imei"),
+        "NeedGetCaptchaTime": Utils.try_to_json(argv, "--NeedGetCaptchaTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

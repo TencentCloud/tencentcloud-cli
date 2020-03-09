@@ -1387,6 +1387,19 @@ INFO = {
     ],
     "desc": "本接口（DeleteCcn）用于删除云联网。\n* 删除后，云联网关联的所有实例间路由将被删除，网络将会中断，请务必确认\n* 删除云联网是不可逆的操作，请谨慎处理。\n"
   },
+  "ModifyNetworkAclEntries": {
+    "params": [
+      {
+        "name": "NetworkAclId",
+        "desc": "网络ACL实例ID。例如：acl-12345678。"
+      },
+      {
+        "name": "NetworkAclEntrySet",
+        "desc": "网络ACL规则集。"
+      }
+    ],
+    "desc": "本接口（ModifyNetworkAclEntries）用于修改（包括添加和删除）网络ACL的入站规则和出站规则。"
+  },
   "HaVipDisassociateAddressIp": {
     "params": [
       {
@@ -1683,6 +1696,10 @@ INFO = {
       {
         "name": "Zone",
         "desc": "可用区，形如：`ap-guangzhou-1`。"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
       }
     ],
     "desc": "本接口(CreateNatGateway)用于创建NAT网关。"

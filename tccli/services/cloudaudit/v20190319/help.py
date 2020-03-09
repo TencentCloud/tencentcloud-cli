@@ -85,6 +85,18 @@ INFO = {
         "desc": "是否开启cmq消息通知。1：是，0：否。目前仅支持cmq的队列服务。如果开启cmq消息通知服务，云审计会将您的日志内容实时投递到您指定地域的指定队列中。"
       },
       {
+        "name": "IsEnableKmsEncry",
+        "desc": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。"
+      },
+      {
+        "name": "KeyId",
+        "desc": "CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。"
+      },
+      {
+        "name": "KmsRegion",
+        "desc": "kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。"
+      },
+      {
         "name": "LogFilePrefix",
         "desc": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。"
       },
@@ -93,7 +105,7 @@ INFO = {
         "desc": "管理事件的读写属性。1：只读，2：只写，3：全部。"
       }
     ],
-    "desc": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。"
+    "desc": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。\n4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项"
   },
   "DescribeAudit": {
     "params": [
@@ -143,11 +155,23 @@ INFO = {
         "desc": "是否创建新的队列。1：是，0：否。如果IsEnableCmqNotify值是1的话，此值属于必填字段。"
       },
       {
+        "name": "IsEnableKmsEncry",
+        "desc": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。"
+      },
+      {
+        "name": "KeyId",
+        "desc": "CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。"
+      },
+      {
+        "name": "KmsRegion",
+        "desc": "kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。"
+      },
+      {
         "name": "LogFilePrefix",
         "desc": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。可以不填，默认以账号ID作为日志前缀。"
       }
     ],
-    "desc": "创建跟踪集"
+    "desc": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。\n4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项"
   },
   "ListCosEnableRegion": {
     "params": [
