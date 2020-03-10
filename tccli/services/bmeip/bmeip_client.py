@@ -697,6 +697,7 @@ def doDescribeEipAcls(argv, arglist):
         "EipNames": Utils.try_to_json(argv, "--EipNames"),
         "OrderField": argv.get("--OrderField"),
         "Order": Utils.try_to_json(argv, "--Order"),
+        "AclNames": Utils.try_to_json(argv, "--AclNames"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

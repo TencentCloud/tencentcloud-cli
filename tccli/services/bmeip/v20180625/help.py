@@ -352,6 +352,10 @@ INFO = {
       {
         "name": "Order",
         "desc": "排序方式，取值：0:增序(默认)，1:降序"
+      },
+      {
+        "name": "AclNames",
+        "desc": "ACL名称列表，支持模糊查找"
       }
     ],
     "desc": "查询弹性公网IP ACL"
