@@ -18,15 +18,13 @@ from tccli.services.tcr import v20190924
 from tccli.services.tcr.v20190924 import help as v20190924_help
 
 
-def doDescribeImageFilterPersonal(argv, arglist):
+def doDescribeImageLifecycleGlobalPersonal(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeImageFilterPersonal", g_param[OptionsDefine.Version])
+        show_help("DescribeImageLifecycleGlobalPersonal", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RepoName": argv.get("--RepoName"),
-        "Tag": argv.get("--Tag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -40,9 +38,9 @@ def doDescribeImageFilterPersonal(argv, arglist):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeImageFilterPersonalRequest()
+    model = models.DescribeImageLifecycleGlobalPersonalRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeImageFilterPersonal(model)
+    rsp = client.DescribeImageLifecycleGlobalPersonal(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -157,6 +155,40 @@ def doModifyApplicationTriggerPersonal(argv, arglist):
     model = models.ModifyApplicationTriggerPersonalRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyApplicationTriggerPersonal(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeImageFilterPersonal(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeImageFilterPersonal", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RepoName": argv.get("--RepoName"),
+        "Tag": argv.get("--Tag"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeImageFilterPersonalRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeImageFilterPersonal(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -361,6 +393,40 @@ def doDescribeRepositoryPersonal(argv, arglist):
     model = models.DescribeRepositoryPersonalRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeRepositoryPersonal(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doManageImageLifecycleGlobalPersonal(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ManageImageLifecycleGlobalPersonal", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Type": argv.get("--Type"),
+        "Val": Utils.try_to_json(argv, "--Val"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ManageImageLifecycleGlobalPersonalRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ManageImageLifecycleGlobalPersonal(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1024,6 +1090,38 @@ def doCreateUserPersonal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteImageLifecycleGlobalPersonal(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteImageLifecycleGlobalPersonal", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteImageLifecycleGlobalPersonalRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteImageLifecycleGlobalPersonal(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteNamespacePersonal(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1204,16 +1302,18 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeImageFilterPersonal": doDescribeImageFilterPersonal,
+    "DescribeImageLifecycleGlobalPersonal": doDescribeImageLifecycleGlobalPersonal,
     "CreateImageLifecyclePersonal": doCreateImageLifecyclePersonal,
     "DescribeImagePersonal": doDescribeImagePersonal,
     "ModifyApplicationTriggerPersonal": doModifyApplicationTriggerPersonal,
+    "DescribeImageFilterPersonal": doDescribeImageFilterPersonal,
     "DeleteRepositoryPersonal": doDeleteRepositoryPersonal,
     "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
     "DescribeInstances": doDescribeInstances,
     "ModifyRepositoryInfoPersonal": doModifyRepositoryInfoPersonal,
     "DescribeNamespacePersonal": doDescribeNamespacePersonal,
     "DescribeRepositoryPersonal": doDescribeRepositoryPersonal,
+    "ManageImageLifecycleGlobalPersonal": doManageImageLifecycleGlobalPersonal,
     "DescribeApplicationTriggerLogPersonal": doDescribeApplicationTriggerLogPersonal,
     "ModifyUserPasswordPersonal": doModifyUserPasswordPersonal,
     "DeleteApplicationTriggerPersonal": doDeleteApplicationTriggerPersonal,
@@ -1233,6 +1333,7 @@ ACTION_MAP = {
     "ValidateNamespaceExistPersonal": doValidateNamespaceExistPersonal,
     "CreateNamespacePersonal": doCreateNamespacePersonal,
     "CreateUserPersonal": doCreateUserPersonal,
+    "DeleteImageLifecycleGlobalPersonal": doDeleteImageLifecycleGlobalPersonal,
     "DeleteNamespacePersonal": doDeleteNamespacePersonal,
     "ModifyRepositoryAccessPersonal": doModifyRepositoryAccessPersonal,
     "DeleteImageLifecyclePersonal": doDeleteImageLifecyclePersonal,

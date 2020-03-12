@@ -18,14 +18,18 @@ INFO = {
     ],
     "desc": "本接口用于加密最多为4KB任意数据，可用于加密数据库密码，RSA Key，或其它较小的敏感信息。对于应用的数据加密，使用GenerateDataKey生成的DataKey进行本地数据的加解密操作"
   },
-  "DeleteImportedKeyMaterial": {
+  "Decrypt": {
     "params": [
       {
-        "name": "KeyId",
-        "desc": "指定需要删除密钥材料的EXTERNAL CMK。"
+        "name": "CiphertextBlob",
+        "desc": "待解密的密文数据"
+      },
+      {
+        "name": "EncryptionContext",
+        "desc": "key/value对的json字符串，如果Encrypt指定了该参数，则在调用Decrypt API时需要提供同样的参数，最大支持1024字符"
       }
     ],
-    "desc": "用于删除导入的密钥材料，仅对EXTERNAL类型的CMK有效，该接口将CMK设置为PendingImport 状态，并不会删除CMK，在重新进行密钥导入后可继续使用。彻底删除CMK请使用 ScheduleKeyDeletion 接口。"
+    "desc": "本接口用于解密密文，得到明文数据。"
   },
   "UpdateAlias": {
     "params": [
@@ -61,6 +65,15 @@ INFO = {
     ],
     "desc": "用于导入密钥材料。只有类型为EXTERNAL 的CMK 才可以导入，导入的密钥材料使用 GetParametersForImport 获取的密钥进行加密。可以为指定的 CMK 重新导入密钥材料，并重新指定过期时间，但必须导入相同的密钥材料。CMK 密钥材料导入后不可以更换密钥材料。导入的密钥材料过期或者被删除后，指定的CMK将无法使用，需要再次导入相同的密钥材料才能正常使用。CMK是独立的，同样的密钥材料可导入不同的 CMK 中，但使用其中一个 CMK 加密的数据无法使用另一个 CMK解密。\n只有Enabled 和 PendingImport状态的CMK可以导入密钥材料。"
   },
+  "GetPublicKey": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "CMK的唯一标识。"
+      }
+    ],
+    "desc": "该接口用户获取 KeyUsage为ASYMMETRIC_DECRYPT_RSA_2048 和 ASYMMETRIC_DECRYPT_SM2 的非对称密钥的公钥信息，使用该公钥用户可在本地进行数据加密，使用该公钥加密的数据只能通过KMS使用对应的私钥进行解密。只有处于Enabled状态的非对称密钥才可能获取公钥。"
+  },
   "DisableKey": {
     "params": [
       {
@@ -91,6 +104,19 @@ INFO = {
     ],
     "desc": "本接口生成一个数据密钥，您可以用这个密钥进行本地数据的加密。"
   },
+  "AsymmetricSm2Decrypt": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "CMK的唯一标识"
+      },
+      {
+        "name": "Ciphertext",
+        "desc": "使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。"
+      }
+    ],
+    "desc": "使用指定的SM2非对称密钥的私钥进行数据解密，密文必须是使用对应公钥加密的。处于Enabled 状态的非对称密钥才能进行解密操作。传入的密文的长度不能超过256字节。"
+  },
   "CancelKeyDeletion": {
     "params": [
       {
@@ -117,6 +143,10 @@ INFO = {
       }
     ],
     "desc": "该接口用于批量禁止CMK的使用。"
+  },
+  "ListAlgorithms": {
+    "params": [],
+    "desc": "列出当前Region支持的加密方式"
   },
   "DescribeKey": {
     "params": [
@@ -157,7 +187,7 @@ INFO = {
     "params": [
       {
         "name": "Alias",
-        "desc": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合。以 kms- 作为前缀的用于云产品使用，Alias 不可重复。"
+        "desc": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。以 kms- 作为前缀的用于云产品使用，Alias 不可重复。"
       },
       {
         "name": "Description",
@@ -165,7 +195,7 @@ INFO = {
       },
       {
         "name": "KeyUsage",
-        "desc": "指定key的用途。目前，仅支持\"ENCRYPT_DECRYPT\"，默认为  \"ENCRYPT_DECRYPT\"，即key用于加密和解密"
+        "desc": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥"
       },
       {
         "name": "Type",
@@ -199,7 +229,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "含义跟 SQL 查询的 Limit 一致，表示本次获最多获取 Limit 个元素。缺省值为10，最大值为200"
+        "desc": "含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200"
       },
       {
         "name": "Role",
@@ -220,9 +250,30 @@ INFO = {
       {
         "name": "Origin",
         "desc": "根据CMK类型筛选， \"TENCENT_KMS\" 表示筛选密钥材料由KMS创建的CMK， \"EXTERNAL\" 表示筛选密钥材料需要用户导入的 EXTERNAL类型CMK，\"ALL\" 或者不设置表示两种类型都查询，大小写敏感。"
+      },
+      {
+        "name": "KeyUsage",
+        "desc": "根据CMK的KeyUsage筛选，为空表示筛选全部，可使用的参数为：ENCRYPT_DECRYPT 或 ASYMMETRIC_DECRYPT_RSA_2048 或 ASYMMETRIC_DECRYPT_SM2"
       }
     ],
     "desc": "根据指定Offset和Limit获取主密钥列表详情。"
+  },
+  "AsymmetricRsaDecrypt": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "CMK的唯一标识"
+      },
+      {
+        "name": "Ciphertext",
+        "desc": "使用PublicKey加密的密文，Base64编码"
+      },
+      {
+        "name": "Algorithm",
+        "desc": "在使用公钥加密时对应的算法：当前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256"
+      }
+    ],
+    "desc": "使用指定的RSA非对称密钥的私钥进行数据解密，密文必须是使用对应公钥加密的。处于Enabled 状态的非对称密钥才能进行解密操作。"
   },
   "DisableKeyRotation": {
     "params": [
@@ -294,18 +345,14 @@ INFO = {
     ],
     "desc": "用于启用一个指定的CMK。"
   },
-  "Decrypt": {
+  "DeleteImportedKeyMaterial": {
     "params": [
       {
-        "name": "CiphertextBlob",
-        "desc": "待解密的密文数据"
-      },
-      {
-        "name": "EncryptionContext",
-        "desc": "key/value对的json字符串，如果Encrypt指定了该参数，则在调用Decrypt API时需要提供同样的参数，最大支持1024字符"
+        "name": "KeyId",
+        "desc": "指定需要删除密钥材料的EXTERNAL CMK。"
       }
     ],
-    "desc": "本接口用于解密密文，得到明文数据。"
+    "desc": "用于删除导入的密钥材料，仅对EXTERNAL类型的CMK有效，该接口将CMK设置为PendingImport 状态，并不会删除CMK，在重新进行密钥导入后可继续使用。彻底删除CMK请使用 ScheduleKeyDeletion 接口。"
   },
   "DescribeKeys": {
     "params": [
@@ -324,7 +371,7 @@ INFO = {
       },
       {
         "name": "KeyId",
-        "desc": "需要修改描述信息的的CMK ID"
+        "desc": "需要修改描述信息的CMK ID"
       }
     ],
     "desc": "该接口用于对指定的cmk修改描述信息。对于处于PendingDelete状态的CMK禁止修改。"

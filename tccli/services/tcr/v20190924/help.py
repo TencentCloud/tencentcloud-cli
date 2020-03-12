@@ -1,18 +1,9 @@
 # -*- coding: utf-8 -*-
 DESC = "tcr-2019-09-24"
 INFO = {
-  "DescribeImageFilterPersonal": {
-    "params": [
-      {
-        "name": "RepoName",
-        "desc": "仓库名称"
-      },
-      {
-        "name": "Tag",
-        "desc": "Tag名"
-      }
-    ],
-    "desc": "用于在个人版中查询与指定tag镜像内容相同的tag列表"
+  "DescribeImageLifecycleGlobalPersonal": {
+    "params": [],
+    "desc": "用于获取个人版全局镜像版本自动清理策略"
   },
   "CreateImageLifecyclePersonal": {
     "params": [
@@ -101,6 +92,19 @@ INFO = {
     ],
     "desc": "用于修改应用更新触发器"
   },
+  "DescribeImageFilterPersonal": {
+    "params": [
+      {
+        "name": "RepoName",
+        "desc": "仓库名称"
+      },
+      {
+        "name": "Tag",
+        "desc": "Tag名"
+      }
+    ],
+    "desc": "用于在个人版中查询与指定tag镜像内容相同的tag列表"
+  },
   "DeleteRepositoryPersonal": {
     "params": [
       {
@@ -177,6 +181,19 @@ INFO = {
       }
     ],
     "desc": "查询个人版仓库信息"
+  },
+  "ManageImageLifecycleGlobalPersonal": {
+    "params": [
+      {
+        "name": "Type",
+        "desc": "global_keep_last_days:全局保留最近几天的数据;global_keep_last_nums:全局保留最近多少个"
+      },
+      {
+        "name": "Val",
+        "desc": "策略值"
+      }
+    ],
+    "desc": "用于设置个人版全局镜像版本自动清理策略"
   },
   "DescribeApplicationTriggerLogPersonal": {
     "params": [
@@ -456,6 +473,10 @@ INFO = {
       }
     ],
     "desc": "创建个人用户"
+  },
+  "DeleteImageLifecycleGlobalPersonal": {
+    "params": [],
+    "desc": "用于删除个人版全局镜像版本自动清理策略"
   },
   "DeleteNamespacePersonal": {
     "params": [
