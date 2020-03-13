@@ -65,7 +65,7 @@ INFO = {
       },
       {
         "name": "IdentityId",
-        "desc": "User identity ID，用来唯一标识用户"
+        "desc": "在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。"
       },
       {
         "name": "SubItemType",

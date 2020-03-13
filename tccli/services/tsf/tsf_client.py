@@ -792,6 +792,7 @@ def doDescribePublicConfigs(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "ConfigIdList": Utils.try_to_json(argv, "--ConfigIdList"),
         "ConfigName": argv.get("--ConfigName"),
+        "ConfigVersion": argv.get("--ConfigVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -863,6 +864,7 @@ def doDescribeConfigs(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "ConfigIdList": Utils.try_to_json(argv, "--ConfigIdList"),
         "ConfigName": argv.get("--ConfigName"),
+        "ConfigVersion": argv.get("--ConfigVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1342,6 +1344,7 @@ def doDescribeImageTags(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "QueryImageIdFlag": Utils.try_to_json(argv, "--QueryImageIdFlag"),
+        "SearchWord": argv.get("--SearchWord"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

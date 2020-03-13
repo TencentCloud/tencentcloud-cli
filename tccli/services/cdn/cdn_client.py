@@ -441,6 +441,42 @@ def doDescribeDomains(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doManageClsTopicDomains(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ManageClsTopicDomains", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LogsetId": argv.get("--LogsetId"),
+        "TopicId": argv.get("--TopicId"),
+        "Channel": argv.get("--Channel"),
+        "DomainAreaConfigs": Utils.try_to_json(argv, "--DomainAreaConfigs"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ManageClsTopicDomainsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ManageClsTopicDomains(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doStartCdnDomain(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -530,6 +566,47 @@ def doDescribePurgeQuota(argv, arglist):
     model = models.DescribePurgeQuotaRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePurgeQuota(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSearchClsLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SearchClsLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LogsetId": argv.get("--LogsetId"),
+        "TopicIds": argv.get("--TopicIds"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Channel": argv.get("--Channel"),
+        "Query": argv.get("--Query"),
+        "Context": argv.get("--Context"),
+        "Sort": argv.get("--Sort"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchClsLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SearchClsLog(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -930,6 +1007,42 @@ def doDescribePushTasks(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateClsLogTopic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateClsLogTopic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TopicName": argv.get("--TopicName"),
+        "LogsetId": argv.get("--LogsetId"),
+        "Channel": argv.get("--Channel"),
+        "DomainAreaConfigs": Utils.try_to_json(argv, "--DomainAreaConfigs"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClsLogTopicRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateClsLogTopic(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPushUrlsCache(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -956,6 +1069,109 @@ def doPushUrlsCache(argv, arglist):
     model = models.PushUrlsCacheRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.PushUrlsCache(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisableClsLogTopic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisableClsLogTopic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LogsetId": argv.get("--LogsetId"),
+        "TopicId": argv.get("--TopicId"),
+        "Channel": argv.get("--Channel"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisableClsLogTopicRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisableClsLogTopic(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListClsTopicDomains(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListClsTopicDomains", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LogsetId": argv.get("--LogsetId"),
+        "TopicId": argv.get("--TopicId"),
+        "Channel": argv.get("--Channel"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListClsTopicDomainsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListClsTopicDomains(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListClsLogTopics(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListClsLogTopics", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Channel": argv.get("--Channel"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListClsLogTopicsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListClsLogTopics(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -994,6 +1210,41 @@ def doGetDisableRecords(argv, arglist):
     model = models.GetDisableRecordsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetDisableRecords(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteClsLogTopic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteClsLogTopic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TopicId": argv.get("--TopicId"),
+        "LogsetId": argv.get("--LogsetId"),
+        "Channel": argv.get("--Channel"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClsLogTopicRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteClsLogTopic(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1066,6 +1317,41 @@ def doDescribePushQuota(argv, arglist):
     model = models.DescribePushQuotaRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePushQuota(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doEnableClsLogTopic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("EnableClsLogTopic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LogsetId": argv.get("--LogsetId"),
+        "TopicId": argv.get("--TopicId"),
+        "Channel": argv.get("--Channel"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EnableClsLogTopicRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.EnableClsLogTopic(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1164,9 +1450,11 @@ ACTION_MAP = {
     "DescribeCdnData": doDescribeCdnData,
     "DisableCaches": doDisableCaches,
     "DescribeDomains": doDescribeDomains,
+    "ManageClsTopicDomains": doManageClsTopicDomains,
     "StartCdnDomain": doStartCdnDomain,
     "StopCdnDomain": doStopCdnDomain,
     "DescribePurgeQuota": doDescribePurgeQuota,
+    "SearchClsLog": doSearchClsLog,
     "ListTopData": doListTopData,
     "DescribeOriginData": doDescribeOriginData,
     "DescribeCdnIp": doDescribeCdnIp,
@@ -1177,10 +1465,16 @@ ACTION_MAP = {
     "UpdateDomainConfig": doUpdateDomainConfig,
     "DescribeCdnDomainLogs": doDescribeCdnDomainLogs,
     "DescribePushTasks": doDescribePushTasks,
+    "CreateClsLogTopic": doCreateClsLogTopic,
     "PushUrlsCache": doPushUrlsCache,
+    "DisableClsLogTopic": doDisableClsLogTopic,
+    "ListClsTopicDomains": doListClsTopicDomains,
+    "ListClsLogTopics": doListClsLogTopics,
     "GetDisableRecords": doGetDisableRecords,
+    "DeleteClsLogTopic": doDeleteClsLogTopic,
     "DescribeBillingData": doDescribeBillingData,
     "DescribePushQuota": doDescribePushQuota,
+    "EnableClsLogTopic": doEnableClsLogTopic,
     "UpdatePayType": doUpdatePayType,
     "EnableCaches": doEnableCaches,
 

@@ -107,6 +107,19 @@ INFO = {
     ],
     "desc": "查询EIP异步任务执行结果"
   },
+  "CreateNetworkAcl": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
+      },
+      {
+        "name": "NetworkAclName",
+        "desc": "网络ACL名称，最大长度不能超过60个字节。"
+      }
+    ],
+    "desc": "本接口（CreateNetworkAcl）用于创建新的<a href=\"https://cloud.tencent.com/document/product/215/20088\">网络ACL</a>。\n* 新建的网络ACL的入站和出站规则默认都是全部拒绝，在创建后通常您需要再调用ModifyNetworkAclEntries将网络ACL的规则设置为需要的规则。"
+  },
   "DescribeServiceTemplateGroups": {
     "params": [
       {
@@ -216,6 +229,15 @@ INFO = {
       }
     ],
     "desc": "本接口（AssignIpv6CidrBlock）用于分配IPv6网段。\n* 使用本接口前，您需要已有VPC实例，如果没有可通过接口<a href=\"https://cloud.tencent.com/document/api/215/15774\" title=\"CreateVpc\" target=\"_blank\">CreateVpc</a>创建。\n* 每个VPC只能申请一个IPv6网段"
+  },
+  "DeleteNetworkAcl": {
+    "params": [
+      {
+        "name": "NetworkAclId",
+        "desc": "网络ACL实例ID。例如：acl-12345678。"
+      }
+    ],
+    "desc": "本接口（DeleteNetworkAcl）用于删除网络ACL。"
   },
   "DescribeNatGatewayDestinationIpPortTranslationNatRules": {
     "params": [
@@ -418,6 +440,27 @@ INFO = {
       }
     ],
     "desc": "本接口（UnassignIpv6Addresses）用于释放弹性网卡`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口。"
+  },
+  "DescribeNetworkAcls": {
+    "params": [
+      {
+        "name": "NetworkAclIds",
+        "desc": "网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定NetworkAclIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>\n<li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>\n<li>network-acl-name - String - （过滤条件）网络ACL实例名称。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最小值为1，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeNetworkAcls）用于查询网络ACL列表。"
   },
   "DeleteVpnConnection": {
     "params": [
@@ -1923,26 +1966,18 @@ INFO = {
     ],
     "desc": "本接口（CreateSecurityGroup）用于创建新的安全组（SecurityGroup）。\n* 每个账户下每个地域的每个项目的<a href=\"https://cloud.tencent.com/document/product/213/12453\">安全组数量限制</a>。\n* 新建的安全组的入站和出站规则默认都是全部拒绝，在创建后通常您需要再调用CreateSecurityGroupPolicies将安全组的规则设置为需要的规则。\n* 创建安全组同时可以绑定标签, 应答里的标签列表代表添加成功的标签。"
   },
-  "ModifyNetworkInterfaceAttribute": {
+  "AssociateNetworkAclSubnets": {
     "params": [
       {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-pxir56ns。"
+        "name": "NetworkAclId",
+        "desc": "网络ACL实例ID。例如：acl-12345678。"
       },
       {
-        "name": "NetworkInterfaceName",
-        "desc": "弹性网卡名称，最大长度不能超过60个字节。"
-      },
-      {
-        "name": "NetworkInterfaceDescription",
-        "desc": "弹性网卡描述，可任意命名，但不得超过60个字符。"
-      },
-      {
-        "name": "SecurityGroupIds",
-        "desc": "指定绑定的安全组，例如:['sg-1dd51d']。"
+        "name": "SubnetIds",
+        "desc": "子网实例ID数组。例如：[subnet-12345678]"
       }
     ],
-    "desc": "本接口（ModifyNetworkInterfaceAttribute）用于修改弹性网卡属性。"
+    "desc": "本接口（AssociateNetworkAclSubnets）用于网络ACL关联vpc下的子网。"
   },
   "DescribeVpnGateways": {
     "params": [
@@ -1964,6 +1999,27 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeVpnGateways）用于查询VPN网关列表。"
+  },
+  "ModifyNetworkInterfaceAttribute": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-pxir56ns。"
+      },
+      {
+        "name": "NetworkInterfaceName",
+        "desc": "弹性网卡名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "NetworkInterfaceDescription",
+        "desc": "弹性网卡描述，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "指定绑定的安全组，例如:['sg-1dd51d']。"
+      }
+    ],
+    "desc": "本接口（ModifyNetworkInterfaceAttribute）用于修改弹性网卡属性。"
   },
   "CreateDirectConnectGatewayCcnRoutes": {
     "params": [
@@ -2536,6 +2592,19 @@ INFO = {
     ],
     "desc": "本接口 (ReleaseAddresses) 用于释放一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 该操作不可逆，释放后 EIP 关联的 IP 地址将不再属于您的名下。\n* 只有状态为 UNBIND 的 EIP 才能进行释放操作。"
   },
+  "DisassociateNetworkAclSubnets": {
+    "params": [
+      {
+        "name": "NetworkAclId",
+        "desc": "网络ACL实例ID。例如：acl-12345678。"
+      },
+      {
+        "name": "SubnetIds",
+        "desc": "子网实例ID数组。例如：[subnet-12345678]"
+      }
+    ],
+    "desc": "本接口（DisassociateNetworkAclSubnets）用于网络ACL解关联vpc下的子网。"
+  },
   "EnableCcnRoutes": {
     "params": [
       {
@@ -2885,6 +2954,19 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateSecurityGroupPolicies）用于创建安全组规则（SecurityGroupPolicy）。\n\n* Version安全组规则版本号，用户每次更新安全规则版本会自动加1，防止您更新的路由规则已过期，不填不考虑冲突。\n* Protocol字段支持输入TCP, UDP, ICMP, ICMPV6, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* Ipv6CidrBlock字段允许输入符合IPv6 cidr格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受，即Protocol字段不是TCP或UDP时，Protocol和Port排他关系，不允许同时输入，否则会接口报错。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate四者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。\n* 一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。"
+  },
+  "ModifyNetworkAclAttribute": {
+    "params": [
+      {
+        "name": "NetworkAclId",
+        "desc": "网络ACL实例ID。例如：acl-12345678。"
+      },
+      {
+        "name": "NetworkAclName",
+        "desc": "网络ACL名称，最大长度不能超过60个字节。"
+      }
+    ],
+    "desc": "本接口（ModifyNetworkAclAttribute）用于修改网络ACL属性。"
   },
   "ResetNatGatewayConnection": {
     "params": [

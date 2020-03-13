@@ -340,6 +340,47 @@ INFO = {
     ],
     "desc": "DescribeDomains 用于查询内容分发网络加速域名（含境内、境外）基本配置信息，包括项目ID、服务状态，业务类型、创建时间、更新时间等信息。"
   },
+  "SearchClsLog": {
+    "params": [
+      {
+        "name": "LogsetId",
+        "desc": "需要查询的日志集ID"
+      },
+      {
+        "name": "TopicIds",
+        "desc": "需要查询的日志主题ID组合，以逗号分隔"
+      },
+      {
+        "name": "StartTime",
+        "desc": "需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS"
+      },
+      {
+        "name": "EndTime",
+        "desc": "需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次要返回的日志条数，单次返回的最大条数为100"
+      },
+      {
+        "name": "Channel",
+        "desc": "接入渠道，默认值为cdn"
+      },
+      {
+        "name": "Query",
+        "desc": "需要查询的内容，详情请参考https://cloud.tencent.com/document/product/614/16982"
+      },
+      {
+        "name": "Context",
+        "desc": "加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围"
+      },
+      {
+        "name": "Sort",
+        "desc": "按日志时间排序， asc（升序）或者 desc（降序），默认为 desc"
+      }
+    ],
+    "desc": "SearchClsLog 用于 CLS 日志检索。支持检索今天，24小时（可选近7中的某一天），近7天的日志数据。"
+  },
   "StartCdnDomain": {
     "params": [
       {
@@ -361,6 +402,10 @@ INFO = {
   "DescribePurgeQuota": {
     "params": [],
     "desc": "DescribePurgeQuota 用于查询账户刷新配额和每日可用量。"
+  },
+  "DescribePushQuota": {
+    "params": [],
+    "desc": "DescribePushQuota  用于查询预热配额和每日可用量。"
   },
   "ListTopData": {
     "params": [
@@ -659,42 +704,64 @@ INFO = {
     ],
     "desc": "DescribeCdnDomainLogs 用于查询访问日志下载地址，仅支持 30 天以内的境内、境外访问日志下载链接查询。"
   },
-  "DescribePushTasks": {
+  "ManageClsTopicDomains": {
     "params": [
       {
-        "name": "StartTime",
-        "desc": "开始时间，如2018-08-08 00:00:00。"
+        "name": "LogsetId",
+        "desc": "日志集ID"
       },
       {
-        "name": "EndTime",
-        "desc": "结束时间，如2018-08-08 23:59:59。"
+        "name": "TopicId",
+        "desc": "日志主题ID"
       },
       {
-        "name": "TaskId",
-        "desc": "指定任务 ID 查询\nTaskId 和起始时间必须指定一项"
+        "name": "Channel",
+        "desc": "接入渠道，默认值为cdn"
       },
       {
-        "name": "Keyword",
-        "desc": "查询关键字，请输入域名或 http(s):// 开头完整 URL"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）"
-      },
-      {
-        "name": "Limit",
-        "desc": "分页查询限制数目，默认为 20"
-      },
-      {
-        "name": "Area",
-        "desc": "指定地区查询预热纪录\nmainland：境内\noverseas：境外\nglobal：全球"
-      },
-      {
-        "name": "Status",
-        "desc": "指定任务状态查询\nfail：预热失败\ndone：预热成功\nprocess：预热中"
+        "name": "DomainAreaConfigs",
+        "desc": "域名区域配置，注意：如果此字段为空，则表示解绑对应主题下的所有域名"
       }
     ],
-    "desc": "DescribePushTasks  用于查询预热任务提交历史记录及执行进度。\n接口灰度中，暂未全量开放，敬请期待。"
+    "desc": "ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。"
+  },
+  "CreateClsLogTopic": {
+    "params": [
+      {
+        "name": "TopicName",
+        "desc": "日志主题名称"
+      },
+      {
+        "name": "LogsetId",
+        "desc": "日志集ID"
+      },
+      {
+        "name": "Channel",
+        "desc": "接入渠道，默认值为cdn"
+      },
+      {
+        "name": "DomainAreaConfigs",
+        "desc": "域名区域信息"
+      }
+    ],
+    "desc": "CreatClsLogTopic 用于创建日志主题。注意：一个日志集下至多可创建10个日志主题。"
+  },
+  "DisableClsLogTopic": {
+    "params": [
+      {
+        "name": "LogsetId",
+        "desc": "日志集ID"
+      },
+      {
+        "name": "TopicId",
+        "desc": "日志主题ID"
+      },
+      {
+        "name": "Channel",
+        "desc": "接入渠道，默认值为cdn"
+      }
+    ],
+    "desc": "DisableClsLogTopic 用于停止日志主题投递。注意：停止后，所有绑定该日志主题域名的日志将不再继续投递至该主题，已经投递的日志将会继续保留。生效时间约 5~15 分钟。\n"
   },
   "PushUrlsCache": {
     "params": [
@@ -712,6 +779,32 @@ INFO = {
       }
     ],
     "desc": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，支持指定加速区域预热。\n默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 20 条。\n接口灰度中，暂未全量开放，敬请期待。"
+  },
+  "ListClsTopicDomains": {
+    "params": [
+      {
+        "name": "LogsetId",
+        "desc": "日志集ID"
+      },
+      {
+        "name": "TopicId",
+        "desc": "主题ID"
+      },
+      {
+        "name": "Channel",
+        "desc": "接入渠道，默认值为cdn，后期可扩充dsa/ecdn等"
+      }
+    ],
+    "desc": "获取主题下绑定的域名列表"
+  },
+  "ListClsLogTopics": {
+    "params": [
+      {
+        "name": "Channel",
+        "desc": "接入渠道，默认值为cdn"
+      }
+    ],
+    "desc": "ListClsLogTopics 用于显示日志主题列表。注意：一个日志集下至多含10个日志主题。"
   },
   "GetDisableRecords": {
     "params": [
@@ -741,6 +834,23 @@ INFO = {
       }
     ],
     "desc": "GetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。（接口尚在内测中，暂未全量开放使用）"
+  },
+  "DeleteClsLogTopic": {
+    "params": [
+      {
+        "name": "TopicId",
+        "desc": "主日志题ID"
+      },
+      {
+        "name": "LogsetId",
+        "desc": "日志集ID"
+      },
+      {
+        "name": "Channel",
+        "desc": "接入渠道，默认值为cdn"
+      }
+    ],
+    "desc": "DeleteClsLogTopic 用于删除日志主题。注意：删除后，所有该日志主题下绑定域名的日志将不再继续投递至该主题，已经投递的日志将会被全部清空。生效时间约 5~15 分钟。"
   },
   "DescribeBillingData": {
     "params": [
@@ -779,9 +889,59 @@ INFO = {
     ],
     "desc": "DescribeBillingData 用于查询实际计费数据明细。"
   },
-  "DescribePushQuota": {
-    "params": [],
-    "desc": "DescribePushQuota  用于查询预热配额和每日可用量。"
+  "DescribePushTasks": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "开始时间，如2018-08-08 00:00:00。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，如2018-08-08 23:59:59。"
+      },
+      {
+        "name": "TaskId",
+        "desc": "指定任务 ID 查询\nTaskId 和起始时间必须指定一项"
+      },
+      {
+        "name": "Keyword",
+        "desc": "查询关键字，请输入域名或 http(s):// 开头完整 URL"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页查询偏移量，默认为 0 （第一页）"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页查询限制数目，默认为 20"
+      },
+      {
+        "name": "Area",
+        "desc": "指定地区查询预热纪录\nmainland：境内\noverseas：境外\nglobal：全球"
+      },
+      {
+        "name": "Status",
+        "desc": "指定任务状态查询\nfail：预热失败\ndone：预热成功\nprocess：预热中"
+      }
+    ],
+    "desc": "DescribePushTasks  用于查询预热任务提交历史记录及执行进度。\n接口灰度中，暂未全量开放，敬请期待。"
+  },
+  "EnableClsLogTopic": {
+    "params": [
+      {
+        "name": "LogsetId",
+        "desc": "日志集ID"
+      },
+      {
+        "name": "TopicId",
+        "desc": "日志主题ID"
+      },
+      {
+        "name": "Channel",
+        "desc": "接入渠道，默认值为cdn"
+      }
+    ],
+    "desc": "EnableClsLogTopic 用于启动日志主题投递。注意：启动后，所有绑定该日志主题域名的日志将继续投递至该主题。生效时间约 5~15 分钟。"
   },
   "UpdatePayType": {
     "params": [

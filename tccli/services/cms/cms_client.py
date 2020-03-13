@@ -18,41 +18,6 @@ from tccli.services.cms import v20190321
 from tccli.services.cms.v20190321 import help as v20190321_help
 
 
-def doDescribeModerationOverview(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeModerationOverview", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Date": argv.get("--Date"),
-        "ServiceTypes": Utils.try_to_json(argv, "--ServiceTypes"),
-        "Channels": Utils.try_to_json(argv, "--Channels"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeModerationOverviewRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeModerationOverview(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDeleteTextSample(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -122,75 +87,6 @@ def doCreateTextSample(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doVideoModeration(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("VideoModeration", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CallbackUrl": argv.get("--CallbackUrl"),
-        "FileMD5": argv.get("--FileMD5"),
-        "FileContent": argv.get("--FileContent"),
-        "FileUrl": argv.get("--FileUrl"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.VideoModerationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.VideoModeration(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTextModeration(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TextModeration", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Content": argv.get("--Content"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextModerationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TextModeration(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateFileSample(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -227,17 +123,18 @@ def doCreateFileSample(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAudioModeration(argv, arglist):
+def doDescribeTextSample(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AudioModeration", g_param[OptionsDefine.Version])
+        show_help("DescribeTextSample", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CallbackUrl": argv.get("--CallbackUrl"),
-        "FileContent": argv.get("--FileContent"),
-        "FileMD5": argv.get("--FileMD5"),
-        "FileUrl": argv.get("--FileUrl"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "OrderDirection": argv.get("--OrderDirection"),
+        "OrderField": argv.get("--OrderField"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -251,9 +148,9 @@ def doAudioModeration(argv, arglist):
     client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AudioModerationRequest()
+    model = models.DescribeTextSampleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AudioModeration(model)
+    rsp = client.DescribeTextSample(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -300,18 +197,14 @@ def doDescribeFileSample(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTextSample(argv, arglist):
+def doTextModeration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTextSample", g_param[OptionsDefine.Version])
+        show_help("TextModeration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderDirection": argv.get("--OrderDirection"),
-        "OrderField": argv.get("--OrderField"),
+        "Content": argv.get("--Content"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -325,9 +218,9 @@ def doDescribeTextSample(argv, arglist):
     client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTextSampleRequest()
+    model = models.TextModerationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTextSample(model)
+    rsp = client.TextModeration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -416,15 +309,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeModerationOverview": doDescribeModerationOverview,
     "DeleteTextSample": doDeleteTextSample,
     "CreateTextSample": doCreateTextSample,
-    "VideoModeration": doVideoModeration,
-    "TextModeration": doTextModeration,
     "CreateFileSample": doCreateFileSample,
-    "AudioModeration": doAudioModeration,
-    "DescribeFileSample": doDescribeFileSample,
     "DescribeTextSample": doDescribeTextSample,
+    "DescribeFileSample": doDescribeFileSample,
+    "TextModeration": doTextModeration,
     "ImageModeration": doImageModeration,
     "DeleteFileSample": doDeleteFileSample,
 

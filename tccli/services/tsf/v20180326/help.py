@@ -478,6 +478,10 @@ INFO = {
       {
         "name": "ConfigName",
         "desc": "配置项名称，精确查询，不传入时查询全量"
+      },
+      {
+        "name": "ConfigVersion",
+        "desc": "配置项版本，精确查询，不传入时查询全量"
       }
     ],
     "desc": "查询公共配置项列表"
@@ -553,6 +557,10 @@ INFO = {
       {
         "name": "ConfigName",
         "desc": "配置项名称，精确查询，不传入时查询全量"
+      },
+      {
+        "name": "ConfigVersion",
+        "desc": "配置项版本，精确查询，不传入时查询全量"
       }
     ],
     "desc": "查询配置项列表"
@@ -725,6 +733,10 @@ INFO = {
       {
         "name": "QueryImageIdFlag",
         "desc": "不填和0:查询 1:不查询"
+      },
+      {
+        "name": "SearchWord",
+        "desc": "可用于搜索的 tag 名字"
       }
     ],
     "desc": "镜像版本列表"
