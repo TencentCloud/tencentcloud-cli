@@ -24,12 +24,12 @@ INFO = {
         "desc": "合同名称"
       },
       {
-        "name": "Initiator",
-        "desc": "合同发起方帐号ID"
-      },
-      {
         "name": "Remarks",
         "desc": "备注"
+      },
+      {
+        "name": "Initiator",
+        "desc": "合同发起方腾讯云帐号ID（由平台自动填写）"
       },
       {
         "name": "ExpireTime",
@@ -162,16 +162,16 @@ INFO = {
         "desc": "账户ID"
       },
       {
+        "name": "SignKeyword",
+        "desc": "签署关键字，偏移坐标原点为关键字中心"
+      },
+      {
         "name": "AuthorizationTime",
-        "desc": "授权时间，格式为年月日时分秒，例20160801095509"
+        "desc": "授权时间（由平台自动填充）"
       },
       {
         "name": "Position",
-        "desc": "授权IP地址"
-      },
-      {
-        "name": "SignKeyword",
-        "desc": "签署关键字，偏移坐标原点为关键字中心"
+        "desc": "授权IP地址（由平台自动填充）"
       },
       {
         "name": "SealResId",
@@ -250,6 +250,10 @@ INFO = {
       {
         "name": "TransactorPhone",
         "desc": "经办人手机号"
+      },
+      {
+        "name": "Email",
+        "desc": "企业联系人邮箱"
       }
     ],
     "desc": "为企业电子合同平台的最终企业用户进行开户。在企业电子合同平台进行操作的企业用户，企业电子合同平台向腾讯云发送企业用户的信息，提交开户命令。腾讯云接到请求后，自动为企业电子合同平台的企业用户生成一张数字证书。"
@@ -319,16 +323,16 @@ INFO = {
         "desc": "帐户ID"
       },
       {
+        "name": "SignLocations",
+        "desc": "签署坐标，坐标原点在文件左下角，坐标单位为磅，坐标不得超过合同文件边界"
+      },
+      {
         "name": "AuthorizationTime",
-        "desc": "授权时间，格式为年月日时分秒，例20160801095509"
+        "desc": "授权时间（由平台自动填充）"
       },
       {
         "name": "Position",
-        "desc": "授权IP地址"
-      },
-      {
-        "name": "SignLocations",
-        "desc": "签署坐标，坐标原点在文件左下角，坐标单位为磅，坐标不得超过合同文件边界"
+        "desc": "授权IP地址（由平台自动填充）"
       },
       {
         "name": "SealResId",

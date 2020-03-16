@@ -372,6 +372,57 @@ def doStartDevices(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doReloadDeviceOs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ReloadDeviceOs", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Password": argv.get("--Password"),
+        "OsTypeId": Utils.try_to_json(argv, "--OsTypeId"),
+        "RaidId": Utils.try_to_json(argv, "--RaidId"),
+        "IsZoning": Utils.try_to_json(argv, "--IsZoning"),
+        "SysRootSpace": Utils.try_to_json(argv, "--SysRootSpace"),
+        "SysSwaporuefiSpace": Utils.try_to_json(argv, "--SysSwaporuefiSpace"),
+        "SysUsrlocalSpace": Utils.try_to_json(argv, "--SysUsrlocalSpace"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+        "LanIp": argv.get("--LanIp"),
+        "HyperThreading": Utils.try_to_json(argv, "--HyperThreading"),
+        "ImageId": argv.get("--ImageId"),
+        "FileSystem": argv.get("--FileSystem"),
+        "NeedSecurityAgent": Utils.try_to_json(argv, "--NeedSecurityAgent"),
+        "NeedMonitorAgent": Utils.try_to_json(argv, "--NeedMonitorAgent"),
+        "NeedEMRAgent": Utils.try_to_json(argv, "--NeedEMRAgent"),
+        "NeedEMRSoftware": Utils.try_to_json(argv, "--NeedEMRSoftware"),
+        "ReserveSgConfig": Utils.try_to_json(argv, "--ReserveSgConfig"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReloadDeviceOsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ReloadDeviceOs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDeviceHardwareInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -484,6 +535,8 @@ def doDescribeDeviceClass(argv, arglist):
         return
 
     param = {
+        "OnSale": Utils.try_to_json(argv, "--OnSale"),
+        "NeedPriceInfo": Utils.try_to_json(argv, "--NeedPriceInfo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -554,6 +607,8 @@ def doBuyDevices(argv, arglist):
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "FileSystem": argv.get("--FileSystem"),
         "BuySession": argv.get("--BuySession"),
+        "SgId": argv.get("--SgId"),
+        "TemplateId": argv.get("--TemplateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1384,11 +1439,12 @@ def doDescribeDeviceInventory(argv, arglist):
         "VpcId": argv.get("--VpcId"),
         "SubnetId": argv.get("--SubnetId"),
         "CpuId": Utils.try_to_json(argv, "--CpuId"),
-        "DiskType": argv.get("--DiskType"),
-        "DiskSize": Utils.try_to_json(argv, "--DiskSize"),
-        "DiskNum": Utils.try_to_json(argv, "--DiskNum"),
-        "Mem": Utils.try_to_json(argv, "--Mem"),
-        "HaveRaidCard": Utils.try_to_json(argv, "--HaveRaidCard"),
+        "MemSize": Utils.try_to_json(argv, "--MemSize"),
+        "ContainRaidCard": Utils.try_to_json(argv, "--ContainRaidCard"),
+        "SystemDiskTypeId": Utils.try_to_json(argv, "--SystemDiskTypeId"),
+        "SystemDiskCount": Utils.try_to_json(argv, "--SystemDiskCount"),
+        "DataDiskTypeId": Utils.try_to_json(argv, "--DataDiskTypeId"),
+        "DataDiskCount": Utils.try_to_json(argv, "--DataDiskCount"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1825,6 +1881,13 @@ def doDescribeDeviceClassPartition(argv, arglist):
     param = {
         "DeviceClassCode": argv.get("--DeviceClassCode"),
         "InstanceId": argv.get("--InstanceId"),
+        "CpuId": Utils.try_to_json(argv, "--CpuId"),
+        "MemSize": Utils.try_to_json(argv, "--MemSize"),
+        "ContainRaidCard": Utils.try_to_json(argv, "--ContainRaidCard"),
+        "SystemDiskTypeId": Utils.try_to_json(argv, "--SystemDiskTypeId"),
+        "SystemDiskCount": Utils.try_to_json(argv, "--SystemDiskCount"),
+        "DataDiskTypeId": Utils.try_to_json(argv, "--DataDiskTypeId"),
+        "DataDiskCount": Utils.try_to_json(argv, "--DataDiskCount"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1906,6 +1969,7 @@ ACTION_MAP = {
     "RunUserCmd": doRunUserCmd,
     "DescribeCustomImageProcess": doDescribeCustomImageProcess,
     "StartDevices": doStartDevices,
+    "ReloadDeviceOs": doReloadDeviceOs,
     "DescribeDeviceHardwareInfo": doDescribeDeviceHardwareInfo,
     "DescribeUserCmdTasks": doDescribeUserCmdTasks,
     "CreatePsaRegulation": doCreatePsaRegulation,

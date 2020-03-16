@@ -179,6 +179,87 @@ INFO = {
     ],
     "desc": "开启服务器"
   },
+  "ReloadDeviceOs": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "设备的唯一ID"
+      },
+      {
+        "name": "Password",
+        "desc": "密码。 用户设置的linux root或Windows Administrator密码。密码校验规则: <li> Windows机器密码需12到16位，至少包括三项 `[a-z]`,`[A-Z]`,`[0-9]`和`[()`'`~!@#$%^&*-+=_`|`{}[]:;'<>,.?/]`的特殊符号, 密码不能包含Administrator(不区分大小写); <li> Linux机器密码需8到16位，至少包括两项`[a-z,A-Z]`,`[0-9]`和`[()`'`~!@#$%^&*-+=_`|`{}[]:;'<>,.?/]`的特殊符号"
+      },
+      {
+        "name": "OsTypeId",
+        "desc": "操作系统类型ID。通过接口[查询操作系统信息(DescribeOsInfo)](https://cloud.tencent.com/document/api/386/32902)获取操作系统信息"
+      },
+      {
+        "name": "RaidId",
+        "desc": "RAID类型ID。通过接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/api/386/32910)获取RAID信息"
+      },
+      {
+        "name": "IsZoning",
+        "desc": "是否格式化数据盘。0: 不格式化（默认值）；1：格式化"
+      },
+      {
+        "name": "SysRootSpace",
+        "desc": "系统盘根分区大小，默认是10G。系统盘的大小参考接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/api/386/32910)"
+      },
+      {
+        "name": "SysSwaporuefiSpace",
+        "desc": "系统盘swap分区或/boot/efi分区的大小。若是uefi启动的机器，分区为/boot/efi ,且此值是默认是2G。普通机器为swap分区，可以不指定此分区。机型是否是uefi启动，参考接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/32911)"
+      },
+      {
+        "name": "SysUsrlocalSpace",
+        "desc": "/usr/local分区大小"
+      },
+      {
+        "name": "VpcId",
+        "desc": "重装到新的私有网络的ID。如果改变VPC子网，则要求与SubnetId同时传参，否则可不填"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "重装到新的子网的ID。如果改变VPC子网，则要求与VpcId同时传参，否则可不填"
+      },
+      {
+        "name": "LanIp",
+        "desc": "重装指定IP地址"
+      },
+      {
+        "name": "HyperThreading",
+        "desc": "指定是否开启超线程。 0：关闭超线程；1：开启超线程（默认值）"
+      },
+      {
+        "name": "ImageId",
+        "desc": "自定义镜像ID。传此字段则用自定义镜像重装"
+      },
+      {
+        "name": "FileSystem",
+        "desc": "指定数据盘的文件系统格式，当前支持 EXT4和XFS选项， 默认为EXT4。 参数适用于数据盘和Linux， 且在IsZoning为1时生效"
+      },
+      {
+        "name": "NeedSecurityAgent",
+        "desc": "是否安装安全Agent，取值：1(安装) 0(不安装)，默认取值0"
+      },
+      {
+        "name": "NeedMonitorAgent",
+        "desc": "是否安装监控Agent，取值：1(安装) 0(不安装)，默认取值0"
+      },
+      {
+        "name": "NeedEMRAgent",
+        "desc": "是否安装EMR Agent，取值：1(安装) 0(不安装)，默认取值0"
+      },
+      {
+        "name": "NeedEMRSoftware",
+        "desc": "是否安装EMR软件包，取值：1(安装) 0(不安装)，默认取值0"
+      },
+      {
+        "name": "ReserveSgConfig",
+        "desc": "是否保留安全组配置，取值：1(保留) 0(不保留)，默认取值0"
+      }
+    ],
+    "desc": "重装操作系统"
+  },
   "DescribeDeviceHardwareInfo": {
     "params": [
       {
@@ -231,7 +312,16 @@ INFO = {
     "desc": "创建预授权规则"
   },
   "DescribeDeviceClass": {
-    "params": [],
+    "params": [
+      {
+        "name": "OnSale",
+        "desc": "是否仅查询在售标准机型配置信息。取值0：查询所有机型；1：查询在售机型。默认为1"
+      },
+      {
+        "name": "NeedPriceInfo",
+        "desc": "是否返回价格信息。取值0：不返回价格信息，接口返回速度更快；1：返回价格信息。默认为1"
+      }
+    ],
     "desc": "获取获取设备类型"
   },
   "BuyDevices": {
@@ -350,7 +440,7 @@ INFO = {
       },
       {
         "name": "CpuId",
-        "desc": "CPU型号ID，自定义机型需要传入，取值：\n<br/><li>1: E5-2620v3 (6核) * 2</li><li>2: E5-2680v4 (14核) * 2</li><li>3: E5-2670v3 (12核) * 2</li><li>4: E5-2620v4 (8核) * 2</li><li>5: 4110 (8核) * 2</li><li>6: 6133 (20核) * 2</li><br/>"
+        "desc": "CPU型号ID，自定义机型需要传入，取值：\n<br/><li>1: E5-2620v3 (6核) &#42; 2</li><li>2: E5-2680v4 (14核) &#42; 2</li><li>3: E5-2670v3 (12核) &#42; 2</li><li>4: E5-2620v4 (8核) &#42; 2</li><li>5: 4110 (8核) &#42; 2</li><li>6: 6133 (20核) &#42; 2</li><br/>"
       },
       {
         "name": "ContainRaidCard",
@@ -387,6 +477,14 @@ INFO = {
       {
         "name": "BuySession",
         "desc": "此参数是为了防止重复发货。如果两次调用传入相同的BuySession，只会发货一次。 不要以设备别名作为BuySession，这样只会第一次购买成功。参数长度为128位，合法字符为大小字母，数字，下划线，横线。"
+      },
+      {
+        "name": "SgId",
+        "desc": "绑定已有的安全组ID。仅在NeedSecurityAgent为1时生效"
+      },
+      {
+        "name": "TemplateId",
+        "desc": "安全组模板ID，由模板创建新安全组并绑定。TemplateId和SgId不能同时传入"
       }
     ],
     "desc": "购买黑石物理机"
@@ -596,7 +694,35 @@ INFO = {
       },
       {
         "name": "InstanceId",
-        "desc": "需要查询自定义机型RAID信息时，传入自定义机型实例ID。InstanceId存在时DeviceClassCode失效。 虽是可选参数，但DeviceClassCode和InstanceId参数，必须要填写一个。"
+        "desc": "需要查询自定义机型RAID信息时，传入自定义机型实例ID。InstanceId存在时其余参数失效。"
+      },
+      {
+        "name": "CpuId",
+        "desc": "CPU型号ID，查询自定义机型时需要传入"
+      },
+      {
+        "name": "MemSize",
+        "desc": "内存大小，单位为G，查询自定义机型时需要传入"
+      },
+      {
+        "name": "ContainRaidCard",
+        "desc": "是否有RAID卡，取值：1(有) 0(无)。查询自定义机型时需要传入"
+      },
+      {
+        "name": "SystemDiskTypeId",
+        "desc": "系统盘类型ID，查询自定义机型时需要传入"
+      },
+      {
+        "name": "SystemDiskCount",
+        "desc": "系统盘数量，查询自定义机型时需要传入"
+      },
+      {
+        "name": "DataDiskTypeId",
+        "desc": "数据盘类型ID，查询自定义机型时可传入"
+      },
+      {
+        "name": "DataDiskCount",
+        "desc": "数据盘数量，查询自定义机型时可传入"
       }
     ],
     "desc": "查询机型支持的RAID方式， 并返回系统盘的分区和逻辑盘的列表"
@@ -778,27 +904,31 @@ INFO = {
       },
       {
         "name": "CpuId",
-        "desc": "CpuId，自定义机型时需传入"
+        "desc": "CPU型号ID，查询自定义机型时必填"
       },
       {
-        "name": "DiskType",
-        "desc": "硬盘类型，自定义机型时需传入"
+        "name": "MemSize",
+        "desc": "内存大小，单位为G，查询自定义机型时必填"
       },
       {
-        "name": "DiskSize",
-        "desc": "单块硬盘大小，自定义机型时需传入"
+        "name": "ContainRaidCard",
+        "desc": "是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填"
       },
       {
-        "name": "DiskNum",
-        "desc": "硬盘数量，自定义机型时需传入"
+        "name": "SystemDiskTypeId",
+        "desc": "系统盘类型ID，查询自定义机型时必填"
       },
       {
-        "name": "Mem",
-        "desc": "内存总大小，自定义机型时需传入"
+        "name": "SystemDiskCount",
+        "desc": "系统盘数量，查询自定义机型时必填"
       },
       {
-        "name": "HaveRaidCard",
-        "desc": "是否支持raid，自定义机型时需传入"
+        "name": "DataDiskTypeId",
+        "desc": "数据盘类型ID，查询自定义机型时可填"
+      },
+      {
+        "name": "DataDiskCount",
+        "desc": "数据盘数量，查询自定义机型时可填"
       }
     ],
     "desc": "查询设备库存"

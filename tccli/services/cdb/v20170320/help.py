@@ -1289,7 +1289,7 @@ INFO = {
     "params": [
       {
         "name": "RoGroupId",
-        "desc": "RO 组的实例 ID。"
+        "desc": "RO 组的 ID。"
       },
       {
         "name": "RoGroupInfo",

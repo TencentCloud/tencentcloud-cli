@@ -788,14 +788,14 @@ INFO = {
       },
       {
         "name": "TopicId",
-        "desc": "主题ID"
+        "desc": "日志主题ID"
       },
       {
         "name": "Channel",
-        "desc": "接入渠道，默认值为cdn，后期可扩充dsa/ecdn等"
+        "desc": "接入渠道，默认值为cdn"
       }
     ],
-    "desc": "获取主题下绑定的域名列表"
+    "desc": "ListClsTopicDomains 用于获取某日志主题下绑定的域名列表。"
   },
   "ListClsLogTopics": {
     "params": [

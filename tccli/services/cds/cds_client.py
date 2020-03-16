@@ -18,10 +18,10 @@ from tccli.services.cds import v20180420
 from tccli.services.cds.v20180420 import help as v20180420_help
 
 
-def doDescribeDbauditInstanceType(argv, arglist):
+def doDescribeDasbImageIds(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDbauditInstanceType", g_param[OptionsDefine.Version])
+        show_help("DescribeDasbImageIds", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -38,9 +38,9 @@ def doDescribeDbauditInstanceType(argv, arglist):
     client = mod.CdsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDbauditInstanceTypeRequest()
+    model = models.DescribeDasbImageIdsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDbauditInstanceType(model)
+    rsp = client.DescribeDasbImageIds(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -188,6 +188,38 @@ def doDescribeDbauditUsedRegions(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDbauditInstanceType(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDbauditInstanceType", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDbauditInstanceTypeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDbauditInstanceType(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180420": cds_client_v20180420,
 
@@ -199,11 +231,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeDbauditInstanceType": doDescribeDbauditInstanceType,
+    "DescribeDasbImageIds": doDescribeDasbImageIds,
     "ModifyDbauditInstancesRenewFlag": doModifyDbauditInstancesRenewFlag,
     "DescribeDbauditInstances": doDescribeDbauditInstances,
     "InquiryPriceDbauditInstance": doInquiryPriceDbauditInstance,
     "DescribeDbauditUsedRegions": doDescribeDbauditUsedRegions,
+    "DescribeDbauditInstanceType": doDescribeDbauditInstanceType,
 
 }
 

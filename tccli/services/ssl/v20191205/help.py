@@ -26,7 +26,7 @@ INFO = {
     "params": [
       {
         "name": "Offset",
-        "desc": "页数。"
+        "desc": "分页偏移量，从0开始"
       },
       {
         "name": "Limit",

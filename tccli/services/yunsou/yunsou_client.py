@@ -12,8 +12,12 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.yunsou.v20191115 import yunsou_client as yunsou_client_v20191115
+from tencentcloud.yunsou.v20191115 import models as models_v20191115
 from tencentcloud.yunsou.v20180504 import yunsou_client as yunsou_client_v20180504
 from tencentcloud.yunsou.v20180504 import models as models_v20180504
+from tccli.services.yunsou import v20191115
+from tccli.services.yunsou.v20191115 import help as v20191115_help
 from tccli.services.yunsou import v20180504
 from tccli.services.yunsou.v20180504 import help as v20180504_help
 
@@ -110,11 +114,13 @@ def doDataSearch(argv, arglist):
 
 
 CLIENT_MAP = {
+    "v20191115": yunsou_client_v20191115,
     "v20180504": yunsou_client_v20180504,
 
 }
 
 MODELS_MAP = {
+    "v20191115": models_v20191115,
     "v20180504": models_v20180504,
 
 }
@@ -126,10 +132,12 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    v20191115.version,
     v20180504.version,
 
 ]
 AVAILABLE_VERSIONS = {
+     'v' + v20191115.version.replace('-', ''): {"help": v20191115_help.INFO,"desc": v20191115_help.DESC},
      'v' + v20180504.version.replace('-', ''): {"help": v20180504_help.INFO,"desc": v20180504_help.DESC},
 
 }

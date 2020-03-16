@@ -74,7 +74,7 @@ INFO = {
         "desc": "内容类型。接口取值VodVideo,LiveVideo。"
       }
     ],
-    "desc": "该接口用来设置加密的秘钥。注意，同一个content id，只能设置一次！"
+    "desc": "该接口用来设置加密的密钥。注意，同一个content id，只能设置一次！"
   },
   "CreateLicense": {
     "params": [
@@ -174,7 +174,7 @@ INFO = {
         "desc": "内容类型。接口取值VodVideo,LiveVideo。"
       }
     ],
-    "desc": "本接口用来查询指定DRM类型、ContentType的所有加密秘钥\n"
+    "desc": "本接口用来查询指定DRM类型、ContentType的所有加密密钥\n"
   },
   "DeleteFairPlayPem": {
     "params": [

@@ -1,9 +1,22 @@
 # -*- coding: utf-8 -*-
 DESC = "cds-2018-04-20"
 INFO = {
-  "DescribeDbauditInstanceType": {
+  "DescribeDasbImageIds": {
     "params": [],
-    "desc": "本接口 (DescribeDbauditInstanceType) 用于查询可售卖的产品规格列表。"
+    "desc": "获取镜像列表"
+  },
+  "ModifyDbauditInstancesRenewFlag": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "0，表示默认状态(用户未设置，即初始状态)；1，表示自动续费；2，表示明确不自动续费"
+      }
+    ],
+    "desc": "本接口 (ModifyDbauditInstancesRenewFlag) 用于修改数据安全审计产品实例续费标识"
   },
   "DescribeDbauditInstances": {
     "params": [
@@ -21,19 +34,6 @@ INFO = {
       }
     ],
     "desc": "本接口 (DescribeDbauditInstances) 用于查询数据安全审计实例列表"
-  },
-  "ModifyDbauditInstancesRenewFlag": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "实例ID"
-      },
-      {
-        "name": "AutoRenewFlag",
-        "desc": "0，表示默认状态(用户未设置，即初始状态)；1，表示自动续费；2，表示明确不自动续费"
-      }
-    ],
-    "desc": "本接口 (ModifyDbauditInstancesRenewFlag) 用于修改数据安全审计产品实例续费标识"
   },
   "InquiryPriceDbauditInstance": {
     "params": [
@@ -63,5 +63,9 @@ INFO = {
   "DescribeDbauditUsedRegions": {
     "params": [],
     "desc": "本接口 (DescribeDbauditUsedRegions) 用于查询可售卖地域列表。"
+  },
+  "DescribeDbauditInstanceType": {
+    "params": [],
+    "desc": "本接口 (DescribeDbauditInstanceType) 用于查询可售卖的产品规格列表。"
   }
 }

@@ -132,6 +132,10 @@ INFO = {
       {
         "name": "UniqueId",
         "desc": "待删除对象实例的唯一id列表"
+      },
+      {
+        "name": "InstanceGroupId",
+        "desc": "实例分组id, 如果按实例分组删除的话UniqueId参数是无效的"
       }
     ],
     "desc": "删除策略的关联对象"
@@ -183,6 +187,18 @@ INFO = {
       {
         "name": "GroupId",
         "desc": "策略组id"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页参数，每页返回的数量，取值1~100，默认20"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页参数，页偏移量，从0开始计数，默认0"
+      },
+      {
+        "name": "Dimensions",
+        "desc": "筛选对象的维度信息"
       }
     ],
     "desc": "获取已绑定对象列表"
@@ -234,11 +250,55 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "分页参数，最大返回个数"
+        "desc": "分页参数，每页返回的数量，取值1~100"
       },
       {
         "name": "Offset",
-        "desc": "分页参数，起始位置"
+        "desc": "分页参数，页偏移量，从0开始计数"
+      },
+      {
+        "name": "Like",
+        "desc": "按策略名搜索"
+      },
+      {
+        "name": "InstanceGroupId",
+        "desc": "实例分组id"
+      },
+      {
+        "name": "UpdateTimeOrder",
+        "desc": "按更新时间排序, asc 或者 desc"
+      },
+      {
+        "name": "ProjectIds",
+        "desc": "项目id列表"
+      },
+      {
+        "name": "ViewNames",
+        "desc": "告警策略类型列表"
+      },
+      {
+        "name": "FilterUnuseReceiver",
+        "desc": "是否过滤无接收人策略组, 1表示过滤, 0表示不过滤"
+      },
+      {
+        "name": "Receivers",
+        "desc": "过滤条件, 接收组列表"
+      },
+      {
+        "name": "ReceiverUserList",
+        "desc": "过滤条件, 接收人列表"
+      },
+      {
+        "name": "Dimensions",
+        "desc": "维度组合字段(json字符串), 例如[[{\"name\":\"unInstanceId\",\"value\":\"ins-6e4b2aaa\"}]]"
+      },
+      {
+        "name": "ConditionTempGroupId",
+        "desc": "模板策略组id, 多个id用逗号分隔"
+      },
+      {
+        "name": "ReceiverType",
+        "desc": "过滤条件, 接收人或者接收组, user表示接收人, group表示接收组"
       }
     ],
     "desc": "获取基础策略告警组列表"
@@ -387,6 +447,10 @@ INFO = {
       {
         "name": "BackEndCall",
         "desc": "是否为后端调用。当且仅当值为1时，后台拉取策略模版中的规则填充入Conditions以及EventConditions字段"
+      },
+      {
+        "name": "IsUnionRule",
+        "desc": "指标告警规则的且或关系，0表示或规则(满足任意规则就告警)，1表示且规则(满足所有规则才告警)"
       }
     ],
     "desc": "增加策略组"

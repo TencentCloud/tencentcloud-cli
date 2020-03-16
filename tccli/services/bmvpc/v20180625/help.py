@@ -31,6 +31,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量，默认为20，最大值为100。"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段, 支持\"CreateTime\"排序"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方向, “asc”、“desc”"
       }
     ],
     "desc": "本接口（DescribeCustomerGateways）用于查询对端网关列表。"
@@ -548,6 +556,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段, 支持按“CreateTime”，“VlanId”"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方向, “asc”、“desc”"
       }
     ],
     "desc": "本接口（DescribeSubnets）用于查询黑石子网列表。"
@@ -767,6 +783,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "请求对象个数"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段, 支持\"CreateTime\"排序"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方向, “asc”、“desc”"
       }
     ],
     "desc": "本接口（DescribeVpnGateways）用于查询VPN网关列表。"
@@ -826,6 +850,18 @@ INFO = {
       {
         "name": "Limit",
         "desc": "偏移值，默认值为 20"
+      },
+      {
+        "name": "Zone",
+        "desc": "NAT所在可用区，形如：ap-guangzhou-2。"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段, 支持\"CreateTime\"排序"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方向, “asc”、“desc”"
       }
     ],
     "desc": "获取NAT网关信息，包括NAT网关 ID、网关名称、私有网络、网关并发连接上限、绑定EIP列表等"
@@ -911,6 +947,10 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量，默认为20，最大值为100。"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络ID"
       }
     ],
     "desc": "获取对等连接列表"
@@ -923,7 +963,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nvpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。\nvpc-name - String - （过滤条件）私有网络名称。\nzone - String - （过滤条件）可用区。\nstate - String - （过滤条件）VPC状态。"
+        "desc": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nvpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。\nvpc-name - String - （过滤条件）私有网络名称。\nzone - String - （过滤条件）可用区。\nstate - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中"
       },
       {
         "name": "Offset",
@@ -932,6 +972,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方向, “asc”、“desc”"
       }
     ],
     "desc": "查询黑石私有网络关联资源"
@@ -1009,6 +1057,22 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量，默认为20，最大值为100。"
+      },
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID"
+      },
+      {
+        "name": "VpnConnectionName",
+        "desc": "VPN通道名称"
+      },
+      {
+        "name": "OrderField",
+        "desc": "排序字段, 支持\"CreateTime\"排序"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "排序方向, “asc”、“desc”"
       }
     ],
     "desc": " 本接口（DescribeVpnConnections）查询VPN通道列表。"

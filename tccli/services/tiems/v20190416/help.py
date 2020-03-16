@@ -140,6 +140,14 @@ INFO = {
       {
         "name": "Name",
         "desc": "重命名名称"
+      },
+      {
+        "name": "MaxSize",
+        "desc": "伸缩组最大节点数"
+      },
+      {
+        "name": "MinSize",
+        "desc": "伸缩组最小节点数"
       }
     ],
     "desc": "更新资源组的伸缩组"

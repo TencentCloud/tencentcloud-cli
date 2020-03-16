@@ -22,6 +22,31 @@ INFO = {
     "params": [],
     "desc": "查询水印列表"
   },
+  "DescribeConcurrentRecordStreamNum": {
+    "params": [
+      {
+        "name": "LiveType",
+        "desc": "直播类型，SlowLive：慢直播。\nNormalLive：普通直播。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "起始时间，格式：yyyy-mm-dd HH:MM:SS。\n可以查询最近180天的数据。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，格式：yyyy-mm-dd HH:MM:SS。\n时间跨度最大支持31天。"
+      },
+      {
+        "name": "MainlandOrOversea",
+        "desc": "如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
+      },
+      {
+        "name": "PushDomains",
+        "desc": "推流域名列表，不填表示总体数据。"
+      }
+    ],
+    "desc": "查询并发录制路数，对慢直播和普通直播适用。"
+  },
   "CreateLiveRecord": {
     "params": [
       {
@@ -1116,34 +1141,42 @@ INFO = {
     ],
     "desc": "修改回调模板。"
   },
-  "DescribeGroupProIspPlayInfoList": {
+  "DescribeProIspPlaySumInfoList": {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
+        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
+        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
+      },
+      {
+        "name": "StatType",
+        "desc": "统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。"
       },
       {
         "name": "PlayDomains",
-        "desc": "播放域名，默认为不填，表示求总体数据。"
+        "desc": "不填则为总体数据。"
       },
       {
-        "name": "ProvinceNames",
-        "desc": "省份列表，默认不填，则返回各省份的数据。"
+        "name": "PageNum",
+        "desc": "页号，范围是[1,1000]，默认值是1。"
       },
       {
-        "name": "IspNames",
-        "desc": "运营商列表，默认不填，则返回整个运营商的数据。"
+        "name": "PageSize",
+        "desc": "每页个数，范围是[1,1000]，默认值是20。"
       },
       {
         "name": "MainlandOrOversea",
-        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
+        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
+      },
+      {
+        "name": "OutLanguage",
+        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。"
       }
     ],
-    "desc": "查询按省份和运营商分组的下行播放数据。"
+    "desc": "查询某段时间内每个国家地区每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
   },
   "DescribeStreamPlayInfoList": {
     "params": [
@@ -1708,42 +1741,34 @@ INFO = {
     ],
     "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
   },
-  "DescribeProIspPlaySumInfoList": {
+  "DescribeGroupProIspPlayInfoList": {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
-      },
-      {
-        "name": "StatType",
-        "desc": "统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。"
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
       },
       {
         "name": "PlayDomains",
-        "desc": "不填则为总体数据。"
+        "desc": "播放域名，默认为不填，表示求总体数据。"
       },
       {
-        "name": "PageNum",
-        "desc": "页号，范围是[1,1000]，默认值是1。"
+        "name": "ProvinceNames",
+        "desc": "省份列表，默认不填，则返回各省份的数据。"
       },
       {
-        "name": "PageSize",
-        "desc": "每页个数，范围是[1,1000]，默认值是20。"
+        "name": "IspNames",
+        "desc": "运营商列表，默认不填，则返回整个运营商的数据。"
       },
       {
         "name": "MainlandOrOversea",
-        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
-      },
-      {
-        "name": "OutLanguage",
-        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。"
+        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
       }
     ],
-    "desc": "查询某段时间内每个国家地区每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
+    "desc": "查询按省份和运营商分组的下行播放数据。"
   },
   "DescribeLivePlayAuthKey": {
     "params": [

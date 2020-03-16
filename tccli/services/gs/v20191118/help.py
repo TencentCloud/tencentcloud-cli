@@ -1,15 +1,6 @@
 # -*- coding: utf-8 -*-
 DESC = "gs-2019-11-18"
 INFO = {
-  "DescribeWorkers": {
-    "params": [
-      {
-        "name": "SetNo",
-        "desc": "资源池编号，1表示正式，2表示测试"
-      }
-    ],
-    "desc": "查询空闲机器数量"
-  },
   "TrylockWorker": {
     "params": [
       {
@@ -43,6 +34,19 @@ INFO = {
       }
     ],
     "desc": "强制退出游戏"
+  },
+  "DescribeWorkers": {
+    "params": [
+      {
+        "name": "SetNo",
+        "desc": "资源池编号，1表示正式，2表示测试"
+      }
+    ],
+    "desc": "查询空闲机器数量"
+  },
+  "DescribeWorkersInfo": {
+    "params": [],
+    "desc": "获取机器信息"
   },
   "CreateSession": {
     "params": [
@@ -100,5 +104,18 @@ INFO = {
       }
     ],
     "desc": "创建会话"
+  },
+  "ModifyWorkers": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "批量机器ID，最多不超过100个"
+      },
+      {
+        "name": "SetNo",
+        "desc": "资源池编号，修改有效范围为[1,100]，在idle状态下才能修改成功"
+      }
+    ],
+    "desc": "修改机器信息"
   }
 }

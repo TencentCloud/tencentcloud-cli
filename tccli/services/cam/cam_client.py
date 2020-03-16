@@ -135,6 +135,7 @@ def doCreateRole(argv, arglist):
         "PolicyDocument": argv.get("--PolicyDocument"),
         "Description": argv.get("--Description"),
         "ConsoleLogin": Utils.try_to_json(argv, "--ConsoleLogin"),
+        "SessionDuration": Utils.try_to_json(argv, "--SessionDuration"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1098,6 +1099,7 @@ def doDeleteUser(argv, arglist):
 
     param = {
         "Name": argv.get("--Name"),
+        "Force": Utils.try_to_json(argv, "--Force"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

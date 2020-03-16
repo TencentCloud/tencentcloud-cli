@@ -119,6 +119,7 @@ def doUnBindingPolicyObject(argv, arglist):
         "Module": argv.get("--Module"),
         "GroupId": Utils.try_to_json(argv, "--GroupId"),
         "UniqueId": Utils.try_to_json(argv, "--UniqueId"),
+        "InstanceGroupId": Utils.try_to_json(argv, "--InstanceGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -224,6 +225,9 @@ def doDescribeBindingPolicyObjectList(argv, arglist):
     param = {
         "Module": argv.get("--Module"),
         "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Dimensions": Utils.try_to_json(argv, "--Dimensions"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -361,6 +365,17 @@ def doDescribePolicyGroupList(argv, arglist):
         "Module": argv.get("--Module"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Like": argv.get("--Like"),
+        "InstanceGroupId": Utils.try_to_json(argv, "--InstanceGroupId"),
+        "UpdateTimeOrder": argv.get("--UpdateTimeOrder"),
+        "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
+        "ViewNames": Utils.try_to_json(argv, "--ViewNames"),
+        "FilterUnuseReceiver": Utils.try_to_json(argv, "--FilterUnuseReceiver"),
+        "Receivers": Utils.try_to_json(argv, "--Receivers"),
+        "ReceiverUserList": Utils.try_to_json(argv, "--ReceiverUserList"),
+        "Dimensions": argv.get("--Dimensions"),
+        "ConditionTempGroupId": argv.get("--ConditionTempGroupId"),
+        "ReceiverType": argv.get("--ReceiverType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -521,6 +536,7 @@ def doCreatePolicyGroup(argv, arglist):
         "Conditions": Utils.try_to_json(argv, "--Conditions"),
         "EventConditions": Utils.try_to_json(argv, "--EventConditions"),
         "BackEndCall": Utils.try_to_json(argv, "--BackEndCall"),
+        "IsUnionRule": Utils.try_to_json(argv, "--IsUnionRule"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

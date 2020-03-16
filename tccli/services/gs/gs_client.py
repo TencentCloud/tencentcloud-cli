@@ -55,51 +55,6 @@ def doTrylockWorker(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateSession(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateSession", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ClientSession": argv.get("--ClientSession"),
-        "UserId": argv.get("--UserId"),
-        "GameId": argv.get("--GameId"),
-        "GameRegion": argv.get("--GameRegion"),
-        "GameParas": argv.get("--GameParas"),
-        "Resolution": argv.get("--Resolution"),
-        "ImageUrl": argv.get("--ImageUrl"),
-        "SetNo": Utils.try_to_json(argv, "--SetNo"),
-        "Bitrate": Utils.try_to_json(argv, "--Bitrate"),
-        "MaxBitrate": Utils.try_to_json(argv, "--MaxBitrate"),
-        "MinBitrate": Utils.try_to_json(argv, "--MinBitrate"),
-        "Fps": Utils.try_to_json(argv, "--Fps"),
-        "UserIp": argv.get("--UserIp"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateSessionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateSession(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doStopGame(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -166,6 +121,117 @@ def doDescribeWorkers(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWorkersInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWorkersInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWorkersInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWorkersInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateSession(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateSession", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClientSession": argv.get("--ClientSession"),
+        "UserId": argv.get("--UserId"),
+        "GameId": argv.get("--GameId"),
+        "GameRegion": argv.get("--GameRegion"),
+        "GameParas": argv.get("--GameParas"),
+        "Resolution": argv.get("--Resolution"),
+        "ImageUrl": argv.get("--ImageUrl"),
+        "SetNo": Utils.try_to_json(argv, "--SetNo"),
+        "Bitrate": Utils.try_to_json(argv, "--Bitrate"),
+        "MaxBitrate": Utils.try_to_json(argv, "--MaxBitrate"),
+        "MinBitrate": Utils.try_to_json(argv, "--MinBitrate"),
+        "Fps": Utils.try_to_json(argv, "--Fps"),
+        "UserIp": argv.get("--UserIp"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateSessionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateSession(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyWorkers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyWorkers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "SetNo": Utils.try_to_json(argv, "--SetNo"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyWorkersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyWorkers(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20191118": gs_client_v20191118,
 
@@ -178,9 +244,11 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "TrylockWorker": doTrylockWorker,
-    "CreateSession": doCreateSession,
     "StopGame": doStopGame,
     "DescribeWorkers": doDescribeWorkers,
+    "DescribeWorkersInfo": doDescribeWorkersInfo,
+    "CreateSession": doCreateSession,
+    "ModifyWorkers": doModifyWorkers,
 
 }
 

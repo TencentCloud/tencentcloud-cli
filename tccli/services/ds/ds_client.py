@@ -30,8 +30,8 @@ def doCreateContractByUpload(argv, arglist):
         "SignInfos": Utils.try_to_json(argv, "--SignInfos"),
         "ContractFile": argv.get("--ContractFile"),
         "ContractName": argv.get("--ContractName"),
-        "Initiator": argv.get("--Initiator"),
         "Remarks": argv.get("--Remarks"),
+        "Initiator": argv.get("--Initiator"),
         "ExpireTime": argv.get("--ExpireTime"),
 
     }
@@ -249,9 +249,9 @@ def doSignContractByKeyword(argv, arglist):
         "Operation": argv.get("--Operation"),
         "ContractResId": argv.get("--ContractResId"),
         "AccountResId": argv.get("--AccountResId"),
+        "SignKeyword": Utils.try_to_json(argv, "--SignKeyword"),
         "AuthorizationTime": argv.get("--AuthorizationTime"),
         "Position": argv.get("--Position"),
-        "SignKeyword": Utils.try_to_json(argv, "--SignKeyword"),
         "SealResId": argv.get("--SealResId"),
         "CertType": Utils.try_to_json(argv, "--CertType"),
         "ImageData": argv.get("--ImageData"),
@@ -333,6 +333,7 @@ def doCreateEnterpriseAccount(argv, arglist):
         "TransactorIdentType": Utils.try_to_json(argv, "--TransactorIdentType"),
         "TransactorIdentNo": argv.get("--TransactorIdentNo"),
         "TransactorPhone": argv.get("--TransactorPhone"),
+        "Email": argv.get("--Email"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -442,9 +443,9 @@ def doSignContractByCoordinate(argv, arglist):
         "Operation": argv.get("--Operation"),
         "ContractResId": argv.get("--ContractResId"),
         "AccountResId": argv.get("--AccountResId"),
+        "SignLocations": Utils.try_to_json(argv, "--SignLocations"),
         "AuthorizationTime": argv.get("--AuthorizationTime"),
         "Position": argv.get("--Position"),
-        "SignLocations": Utils.try_to_json(argv, "--SignLocations"),
         "SealResId": argv.get("--SealResId"),
         "CertType": Utils.try_to_json(argv, "--CertType"),
         "ImageData": argv.get("--ImageData"),

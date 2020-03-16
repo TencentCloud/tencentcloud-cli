@@ -18,6 +18,10 @@ INFO = {
       {
         "name": "ModuleId",
         "desc": "模型ID"
+      },
+      {
+        "name": "EnableProductScript",
+        "desc": "是否打开二进制转Json功能, 取值为字符串 true/false"
       }
     ],
     "desc": "提供修改产品的名称和描述等信息的能力"

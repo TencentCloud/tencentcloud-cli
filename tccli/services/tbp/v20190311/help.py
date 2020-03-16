@@ -22,6 +22,19 @@ INFO = {
     ],
     "desc": "对当前机器人的会话状态进行复位"
   },
+  "CreateBot": {
+    "params": [
+      {
+        "name": "BotName",
+        "desc": "机器人名称"
+      },
+      {
+        "name": "BotCnName",
+        "desc": "机器人中文名称"
+      }
+    ],
+    "desc": "创建机器人"
+  },
   "TextReset": {
     "params": [
       {

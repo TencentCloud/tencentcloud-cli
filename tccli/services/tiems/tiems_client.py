@@ -256,6 +256,8 @@ def doUpdateRsgAsGroup(argv, arglist):
     param = {
         "Id": argv.get("--Id"),
         "Name": argv.get("--Name"),
+        "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
+        "MinSize": Utils.try_to_json(argv, "--MinSize"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

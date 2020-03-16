@@ -29,6 +29,7 @@ def doModifyStudioProduct(argv, arglist):
         "ProductName": argv.get("--ProductName"),
         "ProductDesc": argv.get("--ProductDesc"),
         "ModuleId": Utils.try_to_json(argv, "--ModuleId"),
+        "EnableProductScript": argv.get("--EnableProductScript"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

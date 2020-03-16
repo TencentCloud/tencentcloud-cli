@@ -63,6 +63,8 @@ def doDescribeCustomerGateways(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1083,6 +1085,8 @@ def doDescribeSubnets(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1464,6 +1468,8 @@ def doDescribeVpcResource(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1569,6 +1575,8 @@ def doDescribeVpnGateways(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1707,6 +1715,9 @@ def doDescribeNatGateways(argv, arglist):
         "VpcId": argv.get("--VpcId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Zone": argv.get("--Zone"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1847,6 +1858,10 @@ def doDescribeVpnConnections(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "VpnGatewayId": argv.get("--VpnGatewayId"),
+        "VpnConnectionName": argv.get("--VpnConnectionName"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1919,6 +1934,7 @@ def doDescribeVpcPeerConnections(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "VpcId": argv.get("--VpcId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

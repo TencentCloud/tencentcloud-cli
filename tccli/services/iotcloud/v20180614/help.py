@@ -358,7 +358,7 @@ INFO = {
     "params": [
       {
         "name": "Offset",
-        "desc": "偏移l量，从0开始"
+        "desc": "偏移量，从0开始"
       },
       {
         "name": "Limit",

@@ -31,6 +31,7 @@ def doEvaluation(argv, arglist):
         "Url": argv.get("--Url"),
         "SupportHorizontalImage": Utils.try_to_json(argv, "--SupportHorizontalImage"),
         "RejectNonArithmeticImage": Utils.try_to_json(argv, "--RejectNonArithmeticImage"),
+        "IsAsync": Utils.try_to_json(argv, "--IsAsync"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

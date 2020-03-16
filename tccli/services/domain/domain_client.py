@@ -26,6 +26,8 @@ def doDescribeDomainPriceList(argv, arglist):
 
     param = {
         "TldList": Utils.try_to_json(argv, "--TldList"),
+        "Year": Utils.try_to_json(argv, "--Year"),
+        "Operation": Utils.try_to_json(argv, "--Operation"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -59,6 +61,7 @@ def doCheckDomain(argv, arglist):
 
     param = {
         "DomainName": argv.get("--DomainName"),
+        "Period": argv.get("--Period"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

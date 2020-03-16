@@ -724,6 +724,27 @@ INFO = {
     ],
     "desc": "资源实例绑定DDoS高级策略"
   },
+  "ModifyNetReturnSwitch": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（net表示高防IP专业版）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源实例ID"
+      },
+      {
+        "name": "Status",
+        "desc": "Status 表示回切开关，0: 关闭， 1:打开"
+      },
+      {
+        "name": "Hour",
+        "desc": "回切时长，单位：小时，取值[0,1,2,3,4,5,6;]当status=1时必选填写Hour>0"
+      }
+    ],
+    "desc": "在客户收攻击或者被封堵时，切回到源站，并设置回切的时长"
+  },
   "DescribeSourceIpSegment": {
     "params": [
       {
@@ -1609,6 +1630,19 @@ INFO = {
       }
     ],
     "desc": "获取DDoS攻击流量带宽和攻击包速率数据"
+  },
+  "CreateNetReturn": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（net表示高防IP专业版）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源实例ID"
+      }
+    ],
+    "desc": "高防IP专业版一键切回源站"
   },
   "ModifyDDoSSwitch": {
     "params": [
