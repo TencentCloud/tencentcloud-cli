@@ -33,6 +33,8 @@ def doDescribeInstances(argv, arglist):
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
         "SearchKeys": Utils.try_to_json(argv, "--SearchKeys"),
+        "UniqSubnetIds": Utils.try_to_json(argv, "--UniqSubnetIds"),
+        "UniqVpcIds": Utils.try_to_json(argv, "--UniqVpcIds"),
         "Vips": Utils.try_to_json(argv, "--Vips"),
 
     }

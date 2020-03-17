@@ -636,6 +636,31 @@ INFO = {
     ],
     "desc": "账单下载接口，根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。"
   },
+  "QueryAcctBinding": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "聚鑫计费SubAppId，代表子商户"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "由平台客服提供的计费密钥Id"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      },
+      {
+        "name": "PlatformId",
+        "desc": "平台参数，沙箱环境传sandbox，生产环境传release，默认release"
+      }
+    ],
+    "desc": "聚鑫-查询子账户绑定银行卡"
+  },
   "QueryOrder": {
     "params": [
       {
@@ -1138,6 +1163,10 @@ INFO = {
       {
         "name": "ShortName",
         "desc": "不填则默认子商户名称"
+      },
+      {
+        "name": "PlatformId",
+        "desc": "平台参数，沙箱环境传sandbox，生产环境传release，默认release"
       }
     ],
     "desc": "子商户入驻聚鑫平台"

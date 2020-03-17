@@ -36,6 +36,14 @@ INFO = {
         "desc": "搜索关键词：支持实例ID、实例名称、完整IP"
       },
       {
+        "name": "UniqSubnetIds",
+        "desc": "子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2"
+      },
+      {
+        "name": "UniqVpcIds",
+        "desc": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk"
+      },
+      {
         "name": "Vips",
         "desc": "实例服务IP组成的数组，数组下标从0开始"
       }

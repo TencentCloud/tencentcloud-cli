@@ -38,7 +38,7 @@ INFO = {
       },
       {
         "name": "Host",
-        "desc": "默认为*，表示任何host都可以访问，当前ckafka不支持host为*，但是后面开源kafka的产品化会直接支持"
+        "desc": "默认为\\*，表示任何host都可以访问，当前ckafka不支持host为\\*，但是后面开源kafka的产品化会直接支持"
       },
       {
         "name": "Principal",
@@ -441,7 +441,7 @@ INFO = {
       },
       {
         "name": "Host",
-        "desc": "默认为*，表示任何host都可以访问，当前ckafka不支持host为*，但是后面开源kafka的产品化会直接支持"
+        "desc": "默认为\\*，表示任何host都可以访问，当前ckafka不支持host为\\*，但是后面开源kafka的产品化会直接支持"
       },
       {
         "name": "Principal",
@@ -576,7 +576,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "返回数量，不填则默认为10，最大值为20"
+        "desc": "返回数量，不填则默认为10，最大值为50"
       }
     ],
     "desc": "接口请求域名：https://ckafka.tencentcloudapi.com\n本接口（DescribeTopic）用于在用户获取消息队列 CKafka 实例的主题列表"

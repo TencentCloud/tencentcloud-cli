@@ -12,286 +12,24 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.cpdp.v20190820 import cpdp_client as cpdp_client_v20190820
-from tencentcloud.cpdp.v20190820 import models as models_v20190820
-from tccli.services.cpdp import v20190820
-from tccli.services.cpdp.v20190820 import help as v20190820_help
+from tencentcloud.iotvideo.v20191126 import iotvideo_client as iotvideo_client_v20191126
+from tencentcloud.iotvideo.v20191126 import models as models_v20191126
+from tccli.services.iotvideo import v20191126
+from tccli.services.iotvideo.v20191126 import help as v20191126_help
 
 
-def doBindAcct(argv, arglist):
+def doDescribeOtaVersions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("BindAcct", g_param[OptionsDefine.Version])
+        show_help("DescribeOtaVersions", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "SubAppId": argv.get("--SubAppId"),
-        "BindType": Utils.try_to_json(argv, "--BindType"),
-        "SettleAcctNo": argv.get("--SettleAcctNo"),
-        "SettleAcctName": argv.get("--SettleAcctName"),
-        "SettleAcctType": Utils.try_to_json(argv, "--SettleAcctType"),
-        "IdType": argv.get("--IdType"),
-        "IdCode": argv.get("--IdCode"),
-        "AcctBranchName": argv.get("--AcctBranchName"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-        "Mobile": argv.get("--Mobile"),
-        "CnapsBranchId": argv.get("--CnapsBranchId"),
-        "EiconBankBranchId": argv.get("--EiconBankBranchId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BindAcctRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.BindAcct(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doBindRelateAcctSmallAmount(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("BindRelateAcctSmallAmount", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberName": argv.get("--MemberName"),
-        "MemberGlobalType": argv.get("--MemberGlobalType"),
-        "MemberGlobalId": argv.get("--MemberGlobalId"),
-        "MemberAcctNo": argv.get("--MemberAcctNo"),
-        "BankType": argv.get("--BankType"),
-        "AcctOpenBranchName": argv.get("--AcctOpenBranchName"),
-        "Mobile": argv.get("--Mobile"),
-        "CnapsBranchId": argv.get("--CnapsBranchId"),
-        "EiconBankBranchId": argv.get("--EiconBankBranchId"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BindRelateAcctSmallAmountRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.BindRelateAcctSmallAmount(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doApplyWithdrawal(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ApplyWithdrawal", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "SubAppId": argv.get("--SubAppId"),
-        "SettleAcctNo": argv.get("--SettleAcctNo"),
-        "SettleAcctName": argv.get("--SettleAcctName"),
-        "CurrencyType": argv.get("--CurrencyType"),
-        "CurrencyUnit": Utils.try_to_json(argv, "--CurrencyUnit"),
-        "CurrencyAmt": argv.get("--CurrencyAmt"),
-        "TranWebName": argv.get("--TranWebName"),
-        "IdType": argv.get("--IdType"),
-        "IdCode": argv.get("--IdCode"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplyWithdrawalRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ApplyWithdrawal(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyMntMbrBindRelateAcctBankCode(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyMntMbrBindRelateAcctBankCode", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "MemberBindAcctNo": argv.get("--MemberBindAcctNo"),
-        "AcctOpenBranchName": argv.get("--AcctOpenBranchName"),
-        "CnapsBranchId": argv.get("--CnapsBranchId"),
-        "EiconBankBranchId": argv.get("--EiconBankBranchId"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyMntMbrBindRelateAcctBankCodeRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyMntMbrBindRelateAcctBankCode(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doQueryMemberBind(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("QueryMemberBind", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "QueryFlag": argv.get("--QueryFlag"),
-        "PageNum": argv.get("--PageNum"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryMemberBindRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.QueryMemberBind(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateCustAcctId(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateCustAcctId", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "FundSummaryAcctNo": argv.get("--FundSummaryAcctNo"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberProperty": argv.get("--MemberProperty"),
-        "Mobile": argv.get("--Mobile"),
-        "MrchCode": argv.get("--MrchCode"),
-        "SelfBusiness": Utils.try_to_json(argv, "--SelfBusiness"),
-        "ContactName": argv.get("--ContactName"),
-        "SubAcctName": argv.get("--SubAcctName"),
-        "SubAcctShortName": argv.get("--SubAcctShortName"),
-        "SubAcctType": Utils.try_to_json(argv, "--SubAcctType"),
-        "UserNickname": argv.get("--UserNickname"),
-        "Email": argv.get("--Email"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCustAcctIdRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateCustAcctId(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doQueryOrder(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("QueryOrder", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "UserId": argv.get("--UserId"),
-        "Type": argv.get("--Type"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-        "Count": Utils.try_to_json(argv, "--Count"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "OutTradeNo": argv.get("--OutTradeNo"),
-        "TransactionId": argv.get("--TransactionId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "ProductId": argv.get("--ProductId"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "PubStatus": Utils.try_to_json(argv, "--PubStatus"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -302,12 +40,12 @@ def doQueryOrder(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryOrderRequest()
+    model = models.DescribeOtaVersionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryOrder(model)
+    rsp = client.DescribeOtaVersions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -317,17 +55,16 @@ def doQueryOrder(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReviseMbrProperty(argv, arglist):
+def doDisableOtaVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ReviseMbrProperty", g_param[OptionsDefine.Version])
+        show_help("DisableOtaVersion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "MemberProperty": argv.get("--MemberProperty"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "ProductId": argv.get("--ProductId"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -338,12 +75,12 @@ def doReviseMbrProperty(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReviseMbrPropertyRequest()
+    model = models.DisableOtaVersionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ReviseMbrProperty(model)
+    rsp = client.DisableOtaVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -353,19 +90,15 @@ def doReviseMbrProperty(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryBalance(argv, arglist):
+def doCreateUploadTest(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryBalance", g_param[OptionsDefine.Version])
+        show_help("CreateUploadTest", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "SubAppId": argv.get("--SubAppId"),
-        "QueryFlag": argv.get("--QueryFlag"),
-        "PageOffset": argv.get("--PageOffset"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
+        "PkgId": argv.get("--PkgId"),
+        "Tid": argv.get("--Tid"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -376,12 +109,12 @@ def doQueryBalance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryBalanceRequest()
+    model = models.CreateUploadTestRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryBalance(model)
+    rsp = client.CreateUploadTest(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -391,25 +124,15 @@ def doQueryBalance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBindRelateAcctUnionPay(argv, arglist):
+def doCreateGencode(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("BindRelateAcctUnionPay", g_param[OptionsDefine.Version])
+        show_help("CreateGencode", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberName": argv.get("--MemberName"),
-        "MemberGlobalType": argv.get("--MemberGlobalType"),
-        "MemberGlobalId": argv.get("--MemberGlobalId"),
-        "MemberAcctNo": argv.get("--MemberAcctNo"),
-        "BankType": argv.get("--BankType"),
-        "AcctOpenBranchName": argv.get("--AcctOpenBranchName"),
-        "Mobile": argv.get("--Mobile"),
-        "MrchCode": argv.get("--MrchCode"),
-        "CnapsBranchId": argv.get("--CnapsBranchId"),
-        "EiconBankBranchId": argv.get("--EiconBankBranchId"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "ProductId": argv.get("--ProductId"),
+        "Revision": Utils.try_to_json(argv, "--Revision"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -420,12 +143,12 @@ def doBindRelateAcctUnionPay(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BindRelateAcctUnionPayRequest()
+    model = models.CreateGencodeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.BindRelateAcctUnionPay(model)
+    rsp = client.CreateGencode(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -435,26 +158,14 @@ def doBindRelateAcctUnionPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doWithdrawCashMembership(argv, arglist):
+def doDescribeIotDataType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("WithdrawCashMembership", g_param[OptionsDefine.Version])
+        show_help("DescribeIotDataType", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "TranWebName": argv.get("--TranWebName"),
-        "MemberGlobalType": argv.get("--MemberGlobalType"),
-        "MemberGlobalId": argv.get("--MemberGlobalId"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberName": argv.get("--MemberName"),
-        "TakeCashAcctNo": argv.get("--TakeCashAcctNo"),
-        "OutAmtAcctName": argv.get("--OutAmtAcctName"),
-        "Ccy": argv.get("--Ccy"),
-        "CashAmt": argv.get("--CashAmt"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-        "WebSign": argv.get("--WebSign"),
+        "TypeId": argv.get("--TypeId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -465,12 +176,12 @@ def doWithdrawCashMembership(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.WithdrawCashMembershipRequest()
+    model = models.DescribeIotDataTypeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.WithdrawCashMembership(model)
+    rsp = client.DescribeIotDataType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -480,21 +191,14 @@ def doWithdrawCashMembership(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryBankTransactionDetails(argv, arglist):
+def doDisableDevice(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryBankTransactionDetails", g_param[OptionsDefine.Version])
+        show_help("DisableDevice", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "QueryFlag": argv.get("--QueryFlag"),
-        "PageNum": argv.get("--PageNum"),
-        "StartDate": argv.get("--StartDate"),
-        "EndDate": argv.get("--EndDate"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "Tids": Utils.try_to_json(argv, "--Tids"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -505,12 +209,12 @@ def doQueryBankTransactionDetails(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryBankTransactionDetailsRequest()
+    model = models.DisableDeviceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryBankTransactionDetails(model)
+    rsp = client.DisableDevice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -520,30 +224,14 @@ def doQueryBankTransactionDetails(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryMemberTransaction(argv, arglist):
+def doDeleteTraceIds(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryMemberTransaction", g_param[OptionsDefine.Version])
+        show_help("DeleteTraceIds", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "OutSubAcctNo": argv.get("--OutSubAcctNo"),
-        "OutMemberCode": argv.get("--OutMemberCode"),
-        "OutSubAcctName": argv.get("--OutSubAcctName"),
-        "InSubAcctNo": argv.get("--InSubAcctNo"),
-        "InMemberCode": argv.get("--InMemberCode"),
-        "InSubAcctName": argv.get("--InSubAcctName"),
-        "TranAmt": argv.get("--TranAmt"),
-        "TranFee": argv.get("--TranFee"),
-        "TranType": argv.get("--TranType"),
-        "Ccy": argv.get("--Ccy"),
-        "OrderNo": argv.get("--OrderNo"),
-        "OrderContent": argv.get("--OrderContent"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-        "WebSign": argv.get("--WebSign"),
+        "Tids": Utils.try_to_json(argv, "--Tids"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -554,12 +242,12 @@ def doQueryMemberTransaction(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryMemberTransactionRequest()
+    model = models.DeleteTraceIdsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryMemberTransaction(model)
+    rsp = client.DeleteTraceIds(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -569,19 +257,14 @@ def doQueryMemberTransaction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryCommonTransferRecharge(argv, arglist):
+def doDescribeDevice(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryCommonTransferRecharge", g_param[OptionsDefine.Version])
+        show_help("DescribeDevice", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "StartDate": argv.get("--StartDate"),
-        "EndDate": argv.get("--EndDate"),
-        "PageNum": argv.get("--PageNum"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "Tid": argv.get("--Tid"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -592,12 +275,12 @@ def doQueryCommonTransferRecharge(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryCommonTransferRechargeRequest()
+    model = models.DescribeDeviceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryCommonTransferRecharge(model)
+    rsp = client.DescribeDevice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -607,17 +290,17 @@ def doQueryCommonTransferRecharge(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDownloadBill(argv, arglist):
+def doRunTestOtaVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DownloadBill", g_param[OptionsDefine.Version])
+        show_help("RunTestOtaVersion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "StateDate": argv.get("--StateDate"),
-        "MidasAppId": argv.get("--MidasAppId"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
+        "ProductId": argv.get("--ProductId"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "Tids": Utils.try_to_json(argv, "--Tids"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -628,12 +311,12 @@ def doDownloadBill(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DownloadBillRequest()
+    model = models.RunTestOtaVersionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DownloadBill(model)
+    rsp = client.RunTestOtaVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -643,18 +326,14 @@ def doDownloadBill(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryAcctBinding(argv, arglist):
+def doDescribeProduct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryAcctBinding", g_param[OptionsDefine.Version])
+        show_help("DescribeProduct", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "SubAppId": argv.get("--SubAppId"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-        "PlatformId": argv.get("--PlatformId"),
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -665,12 +344,12 @@ def doQueryAcctBinding(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryAcctBindingRequest()
+    model = models.DescribeProductRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryAcctBinding(model)
+    rsp = client.DescribeProduct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -680,19 +359,18 @@ def doQueryAcctBinding(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCloseOrder(argv, arglist):
+def doSendOnlineMsg(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CloseOrder", g_param[OptionsDefine.Version])
+        show_help("SendOnlineMsg", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "UserId": argv.get("--UserId"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-        "OutTradeNo": argv.get("--OutTradeNo"),
-        "TransactionId": argv.get("--TransactionId"),
+        "Tid": argv.get("--Tid"),
+        "Wakeup": Utils.try_to_json(argv, "--Wakeup"),
+        "WaitResp": Utils.try_to_json(argv, "--WaitResp"),
+        "MsgTopic": argv.get("--MsgTopic"),
+        "MsgContent": argv.get("--MsgContent"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -703,12 +381,12 @@ def doCloseOrder(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CloseOrderRequest()
+    model = models.SendOnlineMsgRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CloseOrder(model)
+    rsp = client.SendOnlineMsg(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -718,18 +396,15 @@ def doCloseOrder(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryCustAcctIdBalance(argv, arglist):
+def doRunIotModel(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryCustAcctIdBalance", g_param[OptionsDefine.Version])
+        show_help("RunIotModel", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "QueryFlag": argv.get("--QueryFlag"),
-        "PageNum": argv.get("--PageNum"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "ProductId": argv.get("--ProductId"),
+        "IotModel": argv.get("--IotModel"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -740,12 +415,12 @@ def doQueryCustAcctIdBalance(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryCustAcctIdBalanceRequest()
+    model = models.RunIotModelRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryCustAcctIdBalance(model)
+    rsp = client.RunIotModel(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -755,18 +430,18 @@ def doQueryCustAcctIdBalance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryRefund(argv, arglist):
+def doModifyDeviceAction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryRefund", g_param[OptionsDefine.Version])
+        show_help("ModifyDeviceAction", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "UserId": argv.get("--UserId"),
-        "RefundId": argv.get("--RefundId"),
-        "MidasAppId": argv.get("--MidasAppId"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
+        "Tid": argv.get("--Tid"),
+        "Wakeup": Utils.try_to_json(argv, "--Wakeup"),
+        "Branch": argv.get("--Branch"),
+        "Value": argv.get("--Value"),
+        "IsNum": Utils.try_to_json(argv, "--IsNum"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -777,12 +452,12 @@ def doQueryRefund(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryRefundRequest()
+    model = models.ModifyDeviceActionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryRefund(model)
+    rsp = client.ModifyDeviceAction(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -792,22 +467,14 @@ def doQueryRefund(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRegisterBillSupportWithdraw(argv, arglist):
+def doCreateIotDataType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RegisterBillSupportWithdraw", g_param[OptionsDefine.Version])
+        show_help("CreateIotDataType", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "OrderNo": argv.get("--OrderNo"),
-        "SuspendAmt": argv.get("--SuspendAmt"),
-        "TranFee": argv.get("--TranFee"),
-        "MrchCode": argv.get("--MrchCode"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsgOne": argv.get("--ReservedMsgOne"),
-        "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
-        "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "IotDataType": argv.get("--IotDataType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -818,12 +485,12 @@ def doRegisterBillSupportWithdraw(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RegisterBillSupportWithdrawRequest()
+    model = models.CreateIotDataTypeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RegisterBillSupportWithdraw(model)
+    rsp = client.CreateIotDataType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -833,19 +500,17 @@ def doRegisterBillSupportWithdraw(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryBankClear(argv, arglist):
+def doCreateDevices(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryBankClear", g_param[OptionsDefine.Version])
+        show_help("CreateDevices", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "PageNum": argv.get("--PageNum"),
-        "StartDate": argv.get("--StartDate"),
-        "EndDate": argv.get("--EndDate"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "ProductId": argv.get("--ProductId"),
+        "Number": Utils.try_to_json(argv, "--Number"),
+        "NamePrefix": argv.get("--NamePrefix"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -856,12 +521,12 @@ def doQueryBankClear(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryBankClearRequest()
+    model = models.CreateDevicesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryBankClear(model)
+    rsp = client.CreateDevices(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -871,19 +536,19 @@ def doQueryBankClear(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQuerySingleTransactionStatus(argv, arglist):
+def doCreateProduct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QuerySingleTransactionStatus", g_param[OptionsDefine.Version])
+        show_help("CreateProduct", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "TranNetSeqNo": argv.get("--TranNetSeqNo"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "TranDate": argv.get("--TranDate"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "ProductModel": argv.get("--ProductModel"),
+        "Features": Utils.try_to_json(argv, "--Features"),
+        "ProductName": argv.get("--ProductName"),
+        "ProductDescription": argv.get("--ProductDescription"),
+        "ChipManufactureId": argv.get("--ChipManufactureId"),
+        "ChipId": argv.get("--ChipId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -894,12 +559,12 @@ def doQuerySingleTransactionStatus(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QuerySingleTransactionStatusRequest()
+    model = models.CreateProductRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QuerySingleTransactionStatus(model)
+    rsp = client.CreateProduct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -909,18 +574,15 @@ def doQuerySingleTransactionStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnBindAcct(argv, arglist):
+def doCreateIotModel(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UnBindAcct", g_param[OptionsDefine.Version])
+        show_help("CreateIotModel", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "SubAppId": argv.get("--SubAppId"),
-        "SettleAcctNo": argv.get("--SettleAcctNo"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
+        "ProductId": argv.get("--ProductId"),
+        "IotModel": argv.get("--IotModel"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -931,12 +593,12 @@ def doUnBindAcct(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnBindAcctRequest()
+    model = models.CreateIotModelRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UnBindAcct(model)
+    rsp = client.CreateIotModel(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -946,18 +608,14 @@ def doUnBindAcct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBindRelateAccReUnionPay(argv, arglist):
+def doDeleteIotDataType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("BindRelateAccReUnionPay", g_param[OptionsDefine.Version])
+        show_help("DeleteIotDataType", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberAcctNo": argv.get("--MemberAcctNo"),
-        "MessageCheckCode": argv.get("--MessageCheckCode"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "TypeId": argv.get("--TypeId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -968,12 +626,12 @@ def doBindRelateAccReUnionPay(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BindRelateAccReUnionPayRequest()
+    model = models.DeleteIotDataTypeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.BindRelateAccReUnionPay(model)
+    rsp = client.DeleteIotDataType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -983,19 +641,14 @@ def doBindRelateAccReUnionPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCheckAmount(argv, arglist):
+def doDescribeMessageQueue(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CheckAmount", g_param[OptionsDefine.Version])
+        show_help("DescribeMessageQueue", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "TakeCashAcctNo": argv.get("--TakeCashAcctNo"),
-        "AuthAmt": argv.get("--AuthAmt"),
-        "Ccy": argv.get("--Ccy"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1006,12 +659,12 @@ def doCheckAmount(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckAmountRequest()
+    model = models.DescribeMessageQueueRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CheckAmount(model)
+    rsp = client.DescribeMessageQueue(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1021,24 +674,15 @@ def doCheckAmount(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRevokeMemberRechargeThirdPay(argv, arglist):
+def doDescribeIotModel(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RevokeMemberRechargeThirdPay", g_param[OptionsDefine.Version])
+        show_help("DescribeIotModel", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "OldFillFrontSeqNo": argv.get("--OldFillFrontSeqNo"),
-        "OldFillPayChannelType": argv.get("--OldFillPayChannelType"),
-        "OldPayChannelTranSeqNo": argv.get("--OldPayChannelTranSeqNo"),
-        "OldFillEjzbOrderNo": argv.get("--OldFillEjzbOrderNo"),
-        "ApplyCancelMemberAmt": argv.get("--ApplyCancelMemberAmt"),
-        "ApplyCancelCommission": argv.get("--ApplyCancelCommission"),
-        "MrchCode": argv.get("--MrchCode"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsgOne": argv.get("--ReservedMsgOne"),
-        "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
-        "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "ProductId": argv.get("--ProductId"),
+        "Revision": Utils.try_to_json(argv, "--Revision"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1049,12 +693,12 @@ def doRevokeMemberRechargeThirdPay(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RevokeMemberRechargeThirdPayRequest()
+    model = models.DescribeIotModelRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RevokeMemberRechargeThirdPay(model)
+    rsp = client.DescribeIotModel(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1064,24 +708,18 @@ def doRevokeMemberRechargeThirdPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRefund(argv, arglist):
+def doDescribeProducts(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Refund", g_param[OptionsDefine.Version])
+        show_help("DescribeProducts", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "UserId": argv.get("--UserId"),
-        "RefundId": argv.get("--RefundId"),
-        "MidasAppId": argv.get("--MidasAppId"),
-        "TotalRefundAmt": Utils.try_to_json(argv, "--TotalRefundAmt"),
-        "SubOrderRefundList": Utils.try_to_json(argv, "--SubOrderRefundList"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-        "OutTradeNo": argv.get("--OutTradeNo"),
-        "MchRefundAmt": Utils.try_to_json(argv, "--MchRefundAmt"),
-        "TransactionId": argv.get("--TransactionId"),
-        "PlatformRefundAmt": Utils.try_to_json(argv, "--PlatformRefundAmt"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "ProductModel": argv.get("--ProductModel"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1092,12 +730,12 @@ def doRefund(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RefundRequest()
+    model = models.DescribeProductsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Refund(model)
+    rsp = client.DescribeProducts(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1107,17 +745,14 @@ def doRefund(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQuerySmallAmountTransfer(argv, arglist):
+def doCreateTraceIds(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QuerySmallAmountTransfer", g_param[OptionsDefine.Version])
+        show_help("CreateTraceIds", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "OldTranSeqNo": argv.get("--OldTranSeqNo"),
-        "TranDate": argv.get("--TranDate"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "Tids": Utils.try_to_json(argv, "--Tids"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1128,12 +763,12 @@ def doQuerySmallAmountTransfer(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QuerySmallAmountTransferRequest()
+    model = models.CreateTraceIdsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QuerySmallAmountTransfer(model)
+    rsp = client.CreateTraceIds(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1143,27 +778,15 @@ def doQuerySmallAmountTransfer(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRechargeMemberThirdPay(argv, arglist):
+def doDescribeBindUsr(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RechargeMemberThirdPay", g_param[OptionsDefine.Version])
+        show_help("DescribeBindUsr", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberFillAmt": argv.get("--MemberFillAmt"),
-        "Commission": argv.get("--Commission"),
-        "Ccy": argv.get("--Ccy"),
-        "PayChannelType": argv.get("--PayChannelType"),
-        "PayChannelAssignMerNo": argv.get("--PayChannelAssignMerNo"),
-        "PayChannelTranSeqNo": argv.get("--PayChannelTranSeqNo"),
-        "EjzbOrderNo": argv.get("--EjzbOrderNo"),
-        "MrchCode": argv.get("--MrchCode"),
-        "EjzbOrderContent": argv.get("--EjzbOrderContent"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsgOne": argv.get("--ReservedMsgOne"),
-        "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
-        "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "AccessId": argv.get("--AccessId"),
+        "Tid": argv.get("--Tid"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1174,12 +797,12 @@ def doRechargeMemberThirdPay(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RechargeMemberThirdPayRequest()
+    model = models.DescribeBindUsrRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RechargeMemberThirdPay(model)
+    rsp = client.DescribeBindUsr(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1189,25 +812,14 @@ def doRechargeMemberThirdPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAcct(argv, arglist):
+def doCreateAppUsr(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateAcct", g_param[OptionsDefine.Version])
+        show_help("CreateAppUsr", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "SubMchId": argv.get("--SubMchId"),
-        "SubMchName": argv.get("--SubMchName"),
-        "Address": argv.get("--Address"),
-        "Contact": argv.get("--Contact"),
-        "Mobile": argv.get("--Mobile"),
-        "Email": argv.get("--Email"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-        "SubMchType": argv.get("--SubMchType"),
-        "ShortName": argv.get("--ShortName"),
-        "PlatformId": argv.get("--PlatformId"),
+        "CunionId": argv.get("--CunionId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1218,12 +830,12 @@ def doCreateAcct(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAcctRequest()
+    model = models.CreateAppUsrRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateAcct(model)
+    rsp = client.CreateAppUsr(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1233,35 +845,120 @@ def doCreateAcct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnifiedOrder(argv, arglist):
+def doCreateBinding(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UnifiedOrder", g_param[OptionsDefine.Version])
+        show_help("CreateBinding", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CurrencyType": argv.get("--CurrencyType"),
-        "MidasAppId": argv.get("--MidasAppId"),
-        "OutTradeNo": argv.get("--OutTradeNo"),
-        "ProductDetail": argv.get("--ProductDetail"),
+        "AccessId": argv.get("--AccessId"),
+        "Tid": argv.get("--Tid"),
+        "Role": argv.get("--Role"),
+        "ForceBind": Utils.try_to_json(argv, "--ForceBind"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateBindingRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateBinding(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateDevToken(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateDevToken", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessId": argv.get("--AccessId"),
+        "Tids": Utils.try_to_json(argv, "--Tids"),
+        "TtlMinutes": Utils.try_to_json(argv, "--TtlMinutes"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDevTokenRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateDevToken(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tids": Utils.try_to_json(argv, "--Tids"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyProduct(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyProduct", g_param[OptionsDefine.Version])
+        return
+
+    param = {
         "ProductId": argv.get("--ProductId"),
         "ProductName": argv.get("--ProductName"),
-        "TotalAmt": Utils.try_to_json(argv, "--TotalAmt"),
-        "UserId": argv.get("--UserId"),
-        "RealChannel": argv.get("--RealChannel"),
-        "SubOrderList": Utils.try_to_json(argv, "--SubOrderList"),
-        "OriginalAmt": Utils.try_to_json(argv, "--OriginalAmt"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-        "CallbackUrl": argv.get("--CallbackUrl"),
-        "Channel": argv.get("--Channel"),
-        "Metadata": argv.get("--Metadata"),
-        "Quantity": Utils.try_to_json(argv, "--Quantity"),
-        "SubAppId": argv.get("--SubAppId"),
-        "TotalMchIncome": Utils.try_to_json(argv, "--TotalMchIncome"),
-        "TotalPlatformIncome": Utils.try_to_json(argv, "--TotalPlatformIncome"),
-        "WxOpenId": argv.get("--WxOpenId"),
-        "WxSubOpenId": argv.get("--WxSubOpenId"),
+        "ProductDescription": argv.get("--ProductDescription"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1272,12 +969,12 @@ def doUnifiedOrder(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnifiedOrderRequest()
+    model = models.ModifyProductRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UnifiedOrder(model)
+    rsp = client.ModifyProduct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1287,22 +984,20 @@ def doUnifiedOrder(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRevRegisterBillSupportWithdraw(argv, arglist):
+def doDescribeLogs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RevRegisterBillSupportWithdraw", g_param[OptionsDefine.Version])
+        show_help("DescribeLogs", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "OldOrderNo": argv.get("--OldOrderNo"),
-        "CancelAmt": argv.get("--CancelAmt"),
-        "TranFee": argv.get("--TranFee"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsgOne": argv.get("--ReservedMsgOne"),
-        "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
-        "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "Tid": argv.get("--Tid"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "LogType": Utils.try_to_json(argv, "--LogType"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "DataObject": argv.get("--DataObject"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1313,12 +1008,12 @@ def doRevRegisterBillSupportWithdraw(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RevRegisterBillSupportWithdrawRequest()
+    model = models.DescribeLogsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RevRegisterBillSupportWithdraw(model)
+    rsp = client.DescribeLogs(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1328,18 +1023,14 @@ def doRevRegisterBillSupportWithdraw(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnbindRelateAcct(argv, arglist):
+def doDescribeIotModels(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UnbindRelateAcct", g_param[OptionsDefine.Version])
+        show_help("DescribeIotModels", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberAcctNo": argv.get("--MemberAcctNo"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1350,12 +1041,12 @@ def doUnbindRelateAcct(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnbindRelateAcctRequest()
+    model = models.DescribeIotModelsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UnbindRelateAcct(model)
+    rsp = client.DescribeIotModels(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1365,21 +1056,14 @@ def doUnbindRelateAcct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryBankWithdrawCashDetails(argv, arglist):
+def doDeleteProduct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryBankWithdrawCashDetails", g_param[OptionsDefine.Version])
+        show_help("DeleteProduct", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "QueryFlag": argv.get("--QueryFlag"),
-        "PageNum": argv.get("--PageNum"),
-        "BeginDate": argv.get("--BeginDate"),
-        "EndDate": argv.get("--EndDate"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1390,12 +1074,12 @@ def doQueryBankWithdrawCashDetails(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryBankWithdrawCashDetailsRequest()
+    model = models.DeleteProductRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryBankWithdrawCashDetails(model)
+    rsp = client.DeleteProduct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1405,17 +1089,14 @@ def doQueryBankWithdrawCashDetails(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryReconciliationDocument(argv, arglist):
+def doDescribeTraceStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryReconciliationDocument", g_param[OptionsDefine.Version])
+        show_help("DescribeTraceStatus", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FileType": argv.get("--FileType"),
-        "FileDate": argv.get("--FileDate"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "Tids": Utils.try_to_json(argv, "--Tids"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1426,12 +1107,12 @@ def doQueryReconciliationDocument(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryReconciliationDocumentRequest()
+    model = models.DescribeTraceStatusRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryReconciliationDocument(model)
+    rsp = client.DescribeTraceStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1441,23 +1122,18 @@ def doQueryReconciliationDocument(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCheckAcct(argv, arglist):
+def doRunOtaVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CheckAcct", g_param[OptionsDefine.Version])
+        show_help("RunOtaVersion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "SubAppId": argv.get("--SubAppId"),
-        "BindType": Utils.try_to_json(argv, "--BindType"),
-        "SettleAcctNo": argv.get("--SettleAcctNo"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
-        "CheckCode": argv.get("--CheckCode"),
-        "CurrencyType": argv.get("--CurrencyType"),
-        "CurrencyUnit": Utils.try_to_json(argv, "--CurrencyUnit"),
-        "CurrencyAmt": argv.get("--CurrencyAmt"),
+        "ProductId": argv.get("--ProductId"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "GrayValue": Utils.try_to_json(argv, "--GrayValue"),
+        "OldVersions": Utils.try_to_json(argv, "--OldVersions"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1468,12 +1144,665 @@ def doCheckAcct(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckAcctRequest()
+    model = models.RunOtaVersionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CheckAcct(model)
+    rsp = client.RunOtaVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeRunLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRunLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tid": argv.get("--Tid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRunLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRunLog(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteOtaVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteOtaVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv.get("--ProductId"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteOtaVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteOtaVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSetMessageQueue(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SetMessageQueue", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv.get("--ProductId"),
+        "MsgQueueType": Utils.try_to_json(argv, "--MsgQueueType"),
+        "MsgType": argv.get("--MsgType"),
+        "Topic": argv.get("--Topic"),
+        "Instance": argv.get("--Instance"),
+        "MsgRegion": argv.get("--MsgRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetMessageQueueRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SetMessageQueue(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisableDeviceStream(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisableDeviceStream", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tids": Utils.try_to_json(argv, "--Tids"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisableDeviceStreamRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisableDeviceStream(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateUploadPath(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateUploadPath", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv.get("--ProductId"),
+        "FileName": argv.get("--FileName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateUploadPathRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateUploadPath(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeModelDataRet(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeModelDataRet", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": argv.get("--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeModelDataRetRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeModelDataRet(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePubVersions(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribePubVersions", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv.get("--ProductId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePubVersionsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribePubVersions(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRunDeviceStream(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RunDeviceStream", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tids": Utils.try_to_json(argv, "--Tids"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RunDeviceStreamRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RunDeviceStream(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRenewUploadTest(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RenewUploadTest", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PkgId": argv.get("--PkgId"),
+        "Tid": argv.get("--Tid"),
+        "SessionKey": argv.get("--SessionKey"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RenewUploadTestRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RenewUploadTest(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDevices(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDevices", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv.get("--ProductId"),
+        "ReturnModel": Utils.try_to_json(argv, "--ReturnModel"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "DeviceName": argv.get("--DeviceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDevicesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDevices(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBindDev(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeBindDev", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessId": argv.get("--AccessId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBindDevRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeBindDev(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDeviceModel(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDeviceModel", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tid": argv.get("--Tid"),
+        "Branch": argv.get("--Branch"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeviceModelRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDeviceModel(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteBinding(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteBinding", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessId": argv.get("--AccessId"),
+        "Tid": argv.get("--Tid"),
+        "Role": argv.get("--Role"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteBindingRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteBinding(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTraceIds(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTraceIds", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTraceIdsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTraceIds(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteMessageQueue(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteMessageQueue", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv.get("--ProductId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteMessageQueueRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteMessageQueue(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRunDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RunDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tids": Utils.try_to_json(argv, "--Tids"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RunDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RunDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUploadOtaVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UploadOtaVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ProductId": argv.get("--ProductId"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "VersionUrl": argv.get("--VersionUrl"),
+        "FileSize": Utils.try_to_json(argv, "--FileSize"),
+        "Md5": argv.get("--Md5"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UploadOtaVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UploadOtaVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpgradeDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpgradeDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tid": argv.get("--Tid"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "UpgradeNow": Utils.try_to_json(argv, "--UpgradeNow"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpgradeDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateUsrToken(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateUsrToken", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessId": argv.get("--AccessId"),
+        "UniqueId": argv.get("--UniqueId"),
+        "TtlMinutes": Utils.try_to_json(argv, "--TtlMinutes"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateUsrTokenRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateUsrToken(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1484,66 +1813,82 @@ def doCheckAcct(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190820": cpdp_client_v20190820,
+    "v20191126": iotvideo_client_v20191126,
 
 }
 
 MODELS_MAP = {
-    "v20190820": models_v20190820,
+    "v20191126": models_v20191126,
 
 }
 
 ACTION_MAP = {
-    "BindAcct": doBindAcct,
-    "BindRelateAcctSmallAmount": doBindRelateAcctSmallAmount,
-    "ApplyWithdrawal": doApplyWithdrawal,
-    "ModifyMntMbrBindRelateAcctBankCode": doModifyMntMbrBindRelateAcctBankCode,
-    "QueryMemberBind": doQueryMemberBind,
-    "CreateCustAcctId": doCreateCustAcctId,
-    "QueryOrder": doQueryOrder,
-    "ReviseMbrProperty": doReviseMbrProperty,
-    "QueryBalance": doQueryBalance,
-    "BindRelateAcctUnionPay": doBindRelateAcctUnionPay,
-    "WithdrawCashMembership": doWithdrawCashMembership,
-    "QueryBankTransactionDetails": doQueryBankTransactionDetails,
-    "QueryMemberTransaction": doQueryMemberTransaction,
-    "QueryCommonTransferRecharge": doQueryCommonTransferRecharge,
-    "DownloadBill": doDownloadBill,
-    "QueryAcctBinding": doQueryAcctBinding,
-    "CloseOrder": doCloseOrder,
-    "QueryCustAcctIdBalance": doQueryCustAcctIdBalance,
-    "QueryRefund": doQueryRefund,
-    "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
-    "QueryBankClear": doQueryBankClear,
-    "QuerySingleTransactionStatus": doQuerySingleTransactionStatus,
-    "UnBindAcct": doUnBindAcct,
-    "BindRelateAccReUnionPay": doBindRelateAccReUnionPay,
-    "CheckAmount": doCheckAmount,
-    "RevokeMemberRechargeThirdPay": doRevokeMemberRechargeThirdPay,
-    "Refund": doRefund,
-    "QuerySmallAmountTransfer": doQuerySmallAmountTransfer,
-    "RechargeMemberThirdPay": doRechargeMemberThirdPay,
-    "CreateAcct": doCreateAcct,
-    "UnifiedOrder": doUnifiedOrder,
-    "RevRegisterBillSupportWithdraw": doRevRegisterBillSupportWithdraw,
-    "UnbindRelateAcct": doUnbindRelateAcct,
-    "QueryBankWithdrawCashDetails": doQueryBankWithdrawCashDetails,
-    "QueryReconciliationDocument": doQueryReconciliationDocument,
-    "CheckAcct": doCheckAcct,
+    "DescribeOtaVersions": doDescribeOtaVersions,
+    "DisableOtaVersion": doDisableOtaVersion,
+    "CreateUploadTest": doCreateUploadTest,
+    "CreateGencode": doCreateGencode,
+    "DescribeIotDataType": doDescribeIotDataType,
+    "DisableDevice": doDisableDevice,
+    "DeleteTraceIds": doDeleteTraceIds,
+    "DescribeDevice": doDescribeDevice,
+    "RunTestOtaVersion": doRunTestOtaVersion,
+    "DescribeProduct": doDescribeProduct,
+    "SendOnlineMsg": doSendOnlineMsg,
+    "RunIotModel": doRunIotModel,
+    "ModifyDeviceAction": doModifyDeviceAction,
+    "CreateIotDataType": doCreateIotDataType,
+    "CreateDevices": doCreateDevices,
+    "CreateProduct": doCreateProduct,
+    "CreateIotModel": doCreateIotModel,
+    "DeleteIotDataType": doDeleteIotDataType,
+    "DescribeMessageQueue": doDescribeMessageQueue,
+    "DescribeIotModel": doDescribeIotModel,
+    "DescribeProducts": doDescribeProducts,
+    "CreateTraceIds": doCreateTraceIds,
+    "DescribeBindUsr": doDescribeBindUsr,
+    "CreateAppUsr": doCreateAppUsr,
+    "CreateBinding": doCreateBinding,
+    "CreateDevToken": doCreateDevToken,
+    "DeleteDevice": doDeleteDevice,
+    "ModifyProduct": doModifyProduct,
+    "DescribeLogs": doDescribeLogs,
+    "DescribeIotModels": doDescribeIotModels,
+    "DeleteProduct": doDeleteProduct,
+    "DescribeTraceStatus": doDescribeTraceStatus,
+    "RunOtaVersion": doRunOtaVersion,
+    "DescribeRunLog": doDescribeRunLog,
+    "DeleteOtaVersion": doDeleteOtaVersion,
+    "SetMessageQueue": doSetMessageQueue,
+    "DisableDeviceStream": doDisableDeviceStream,
+    "CreateUploadPath": doCreateUploadPath,
+    "DescribeModelDataRet": doDescribeModelDataRet,
+    "DescribePubVersions": doDescribePubVersions,
+    "RunDeviceStream": doRunDeviceStream,
+    "RenewUploadTest": doRenewUploadTest,
+    "DescribeDevices": doDescribeDevices,
+    "DescribeBindDev": doDescribeBindDev,
+    "DescribeDeviceModel": doDescribeDeviceModel,
+    "DeleteBinding": doDeleteBinding,
+    "DescribeTraceIds": doDescribeTraceIds,
+    "DeleteMessageQueue": doDeleteMessageQueue,
+    "RunDevice": doRunDevice,
+    "UploadOtaVersion": doUploadOtaVersion,
+    "UpgradeDevice": doUpgradeDevice,
+    "CreateUsrToken": doCreateUsrToken,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190820.version,
+    v20191126.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190820.version.replace('-', ''): {"help": v20190820_help.INFO,"desc": v20190820_help.DESC},
+     'v' + v20191126.version.replace('-', ''): {"help": v20191126_help.INFO,"desc": v20191126_help.DESC},
 
 }
 
 
-def cpdp_action(argv, arglist):
+def iotvideo_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -1559,7 +1904,7 @@ def cpdp_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "cpdp", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "iotvideo", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -1580,7 +1925,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("cpdp", cpdp_action)
+    cmd = NiceCommand("iotvideo", iotvideo_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -1639,11 +1984,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["cpdp"][OptionsDefine.Version]
+            version = config["iotvideo"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["cpdp"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["iotvideo"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -1660,7 +2005,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cpdp", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "iotvideo", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -1670,7 +2015,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["cpdp"]["version"]
+        version = profile["iotvideo"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

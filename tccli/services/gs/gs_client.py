@@ -173,6 +173,7 @@ def doCreateSession(argv, arglist):
         "MinBitrate": Utils.try_to_json(argv, "--MinBitrate"),
         "Fps": Utils.try_to_json(argv, "--Fps"),
         "UserIp": argv.get("--UserIp"),
+        "Optimization": Utils.try_to_json(argv, "--Optimization"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
