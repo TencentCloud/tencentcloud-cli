@@ -255,7 +255,7 @@ INFO = {
       },
       {
         "name": "TableGroupName",
-        "desc": "新的大区名称，可以使用中英文字符和符号"
+        "desc": "新的表格组名称，可以使用中英文字符和符号"
       }
     ],
     "desc": "修改TcaplusDB表格组名称"

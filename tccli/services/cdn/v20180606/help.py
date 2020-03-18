@@ -725,6 +725,15 @@ INFO = {
     ],
     "desc": "ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。"
   },
+  "DescribeCertDomains": {
+    "params": [
+      {
+        "name": "Cert",
+        "desc": "PEM格式证书Base64编码后的字符串"
+      }
+    ],
+    "desc": "校验证书并提取SSL证书中包含的域名，返回CDN已接入的域名列表，及已配置证书的域名列表"
+  },
   "CreateClsLogTopic": {
     "params": [
       {

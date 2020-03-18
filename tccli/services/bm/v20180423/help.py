@@ -256,6 +256,10 @@ INFO = {
       {
         "name": "ReserveSgConfig",
         "desc": "是否保留安全组配置，取值：1(保留) 0(不保留)，默认取值0"
+      },
+      {
+        "name": "SysDataSpace",
+        "desc": "/data分区大小，可不填。除root、swap、usr/local的剩余空间会自动分配到data分区"
       }
     ],
     "desc": "重装操作系统"

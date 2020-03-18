@@ -30,7 +30,7 @@ INFO = {
     "params": [
       {
         "name": "GroupId",
-        "desc": "拨测分组id"
+        "desc": "拨测分组ID"
       },
       {
         "name": "GroupName",
@@ -38,7 +38,7 @@ INFO = {
       },
       {
         "name": "IsDefault",
-        "desc": "是否为默认分组。取值可为0，1"
+        "desc": "是否为默认分组。取值可为0，1。取 1 时表示设置为默认分组"
       },
       {
         "name": "Agents",
@@ -84,7 +84,7 @@ INFO = {
       },
       {
         "name": "AgentGroupId",
-        "desc": "拨测分组ID，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroups 接口，本参数使用返回结果里的GroupId的值。注意： Type为0时，AgentGroupId为必填"
+        "desc": "拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroups 接口，本参数使用返回结果里的GroupId的值。注意： Type为0时，AgentGroupId为必填"
       },
       {
         "name": "Host",
@@ -183,7 +183,7 @@ INFO = {
         "desc": "跟随跳转次数，取值范围0-5，不传则表示不跟随"
       }
     ],
-    "desc": "创建拨测任务(扩充)"
+    "desc": "创建拨测任务(扩展)"
   },
   "PauseTask": {
     "params": [
@@ -215,11 +215,11 @@ INFO = {
       },
       {
         "name": "IsDefault",
-        "desc": "是否为默认分组，取值可为 0 或 1"
+        "desc": "是否为默认分组，取值可为 0 或 1。取 1 时表示设置为默认分组"
       },
       {
         "name": "Agents",
-        "desc": "Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgentList 的返回结果。"
+        "desc": "Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。"
       }
     ],
     "desc": "添加拨测分组"
@@ -342,7 +342,7 @@ INFO = {
       },
       {
         "name": "AgentGroupId",
-        "desc": "拨测分组ID，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填"
+        "desc": "拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填"
       },
       {
         "name": "Host",

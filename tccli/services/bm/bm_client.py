@@ -398,6 +398,7 @@ def doReloadDeviceOs(argv, arglist):
         "NeedEMRAgent": Utils.try_to_json(argv, "--NeedEMRAgent"),
         "NeedEMRSoftware": Utils.try_to_json(argv, "--NeedEMRSoftware"),
         "ReserveSgConfig": Utils.try_to_json(argv, "--ReserveSgConfig"),
+        "SysDataSpace": Utils.try_to_json(argv, "--SysDataSpace"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
