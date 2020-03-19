@@ -80,6 +80,31 @@ INFO = {
     ],
     "desc": "获取资源的规则数"
   },
+  "CreateL7CCRule": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源ID"
+      },
+      {
+        "name": "Method",
+        "desc": "操作码，取值[query(表示查询)，add(表示添加)，del(表示删除)]"
+      },
+      {
+        "name": "RuleId",
+        "desc": "7层转发规则ID，例如：rule-0000001"
+      },
+      {
+        "name": "RuleConfig",
+        "desc": "7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；"
+      }
+    ],
+    "desc": "此接口是7层CC的访问频控自定义规则（IP+Host维度，不支持具体的URI），此接口已弃用，请调用新接口CreateCCFrequencyRules，新接口同时支持IP+Host维度以及具体的URI；"
+  },
   "CreateCCSelfDefinePolicy": {
     "params": [
       {

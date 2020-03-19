@@ -1,15 +1,40 @@
 # -*- coding: utf-8 -*-
 DESC = "gse-2019-11-12"
 INFO = {
-  "DescribeScalingPolicies": {
+  "UpdateGameServerSession": {
+    "params": [
+      {
+        "name": "GameServerSessionId",
+        "desc": "游戏服务器会话ID"
+      },
+      {
+        "name": "MaximumPlayerSessionCount",
+        "desc": "最大玩家数量"
+      },
+      {
+        "name": "Name",
+        "desc": "游戏服务器会话名称"
+      },
+      {
+        "name": "PlayerSessionCreationPolicy",
+        "desc": "玩家会话创建策略（ACCEPT_ALL,DENY_ALL）"
+      },
+      {
+        "name": "ProtectionPolicy",
+        "desc": "保护策略(NoProtection,TimeLimitProtection,FullProtection)"
+      }
+    ],
+    "desc": "本接口（UpdateGameServerSession）用于更新游戏服务器会话"
+  },
+  "DescribeInstances": {
     "params": [
       {
         "name": "FleetId",
         "desc": "服务部署ID"
       },
       {
-        "name": "StatusFilter",
-        "desc": "状态过滤条件"
+        "name": "InstanceId",
+        "desc": "实例ID"
       },
       {
         "name": "Offset",
@@ -20,16 +45,7 @@ INFO = {
         "desc": "返回结果偏移"
       }
     ],
-    "desc": "用于查询服务部署的动态扩缩容配置"
-  },
-  "StopGameServerSessionPlacement": {
-    "params": [
-      {
-        "name": "PlacementId",
-        "desc": "游戏服务器会话放置的唯一标识符"
-      }
-    ],
-    "desc": "本接口（StopGameServerSessionPlacement）用于停止放置游戏服务器会话"
+    "desc": "用于查询服务器实例列表"
   },
   "DescribeGameServerSessions": {
     "params": [
@@ -60,26 +76,18 @@ INFO = {
     ],
     "desc": "本接口（DescribeGameServerSessions）用于查询游戏服务器会话列表"
   },
-  "UpdateFleetCapacity": {
+  "GetInstanceAccess": {
     "params": [
       {
         "name": "FleetId",
-        "desc": "服务部署ID"
+        "desc": "服务部署Id"
       },
       {
-        "name": "DesiredInstances",
-        "desc": "期望的服务器实例数"
-      },
-      {
-        "name": "MinSize",
-        "desc": "服务器实例数最小限制"
-      },
-      {
-        "name": "MaxSize",
-        "desc": "服务器实例数最大限制"
+        "name": "InstanceId",
+        "desc": "实例Id"
       }
     ],
-    "desc": "用于更新服务部署容量配置"
+    "desc": "获取实例登录所需要的凭据"
   },
   "JoinGameServerSession": {
     "params": [
@@ -135,19 +143,6 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeGameServerSessionDetails）用于查询游戏服务器会话详情列表"
-  },
-  "PutScalingPolicy": {
-    "params": [
-      {
-        "name": "FleetId",
-        "desc": "服务部署ID"
-      },
-      {
-        "name": "TargetConfiguration",
-        "desc": "基于规则的扩缩容配置"
-      }
-    ],
-    "desc": "用于设置动态扩缩容配置"
   },
   "StartGameServerSessionPlacement": {
     "params": [
@@ -224,60 +219,14 @@ INFO = {
     ],
     "desc": "本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL"
   },
-  "UpdateGameServerSession": {
+  "StopGameServerSessionPlacement": {
     "params": [
       {
-        "name": "GameServerSessionId",
-        "desc": "游戏服务器会话ID"
-      },
-      {
-        "name": "MaximumPlayerSessionCount",
-        "desc": "最大玩家数量"
-      },
-      {
-        "name": "Name",
-        "desc": "游戏服务器会话名称"
-      },
-      {
-        "name": "PlayerSessionCreationPolicy",
-        "desc": "玩家会话创建策略（ACCEPT_ALL,DENY_ALL）"
-      },
-      {
-        "name": "ProtectionPolicy",
-        "desc": "保护策略(NoProtection,TimeLimitProtection,FullProtection)"
+        "name": "PlacementId",
+        "desc": "游戏服务器会话放置的唯一标识符"
       }
     ],
-    "desc": "本接口（UpdateGameServerSession）用于更新游戏服务器会话"
-  },
-  "DeleteScalingPolicy": {
-    "params": [
-      {
-        "name": "FleetId",
-        "desc": "服务部署ID"
-      },
-      {
-        "name": "Name",
-        "desc": "名称"
-      }
-    ],
-    "desc": "用于删除扩缩容配置"
-  },
-  "DescribeFleetCapacity": {
-    "params": [
-      {
-        "name": "FleetIds",
-        "desc": "服务部署 Id列表"
-      },
-      {
-        "name": "Limit",
-        "desc": "结果返回最大数量"
-      },
-      {
-        "name": "Offset",
-        "desc": "返回结果偏移"
-      }
-    ],
-    "desc": "用于查询服务部署容量配置"
+    "desc": "本接口（StopGameServerSessionPlacement）用于停止放置游戏服务器会话"
   },
   "CreateGameServerSession": {
     "params": [

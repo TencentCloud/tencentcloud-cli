@@ -419,15 +419,19 @@ INFO = {
       },
       {
         "name": "Data",
-        "desc": "属性数据"
+        "desc": "属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义"
       },
       {
         "name": "Method",
-        "desc": "请求类型"
+        "desc": "请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性"
       },
       {
         "name": "DeviceId",
-        "desc": "设备ID，该字段有值将代替 ProductId/DeviceName"
+        "desc": "设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写"
+      },
+      {
+        "name": "DataTimestamp",
+        "desc": "上报数据UNIX时间戳(毫秒), 仅对Method:reported有效"
       }
     ],
     "desc": "根据设备产品ID、设备名称，设置控制设备的属性数据。"

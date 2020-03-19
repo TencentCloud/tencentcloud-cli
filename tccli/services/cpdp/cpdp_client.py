@@ -654,7 +654,6 @@ def doQueryAcctBinding(argv, arglist):
         "SubAppId": argv.get("--SubAppId"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
-        "PlatformId": argv.get("--PlatformId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1207,7 +1206,6 @@ def doCreateAcct(argv, arglist):
         "MidasSignature": argv.get("--MidasSignature"),
         "SubMchType": argv.get("--SubMchType"),
         "ShortName": argv.get("--ShortName"),
-        "PlatformId": argv.get("--PlatformId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

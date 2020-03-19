@@ -12,24 +12,21 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.iotexplorer.v20190423 import iotexplorer_client as iotexplorer_client_v20190423
-from tencentcloud.iotexplorer.v20190423 import models as models_v20190423
-from tccli.services.iotexplorer import v20190423
-from tccli.services.iotexplorer.v20190423 import help as v20190423_help
+from tencentcloud.ecm.v20190719 import ecm_client as ecm_client_v20190719
+from tencentcloud.ecm.v20190719 import models as models_v20190719
+from tccli.services.ecm import v20190719
+from tccli.services.ecm.v20190719 import help as v20190719_help
 
 
-def doModifyStudioProduct(argv, arglist):
+def doResetInstancesMaxBandwidth(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyStudioProduct", g_param[OptionsDefine.Version])
+        show_help("ResetInstancesMaxBandwidth", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "ProductName": argv.get("--ProductName"),
-        "ProductDesc": argv.get("--ProductDesc"),
-        "ModuleId": Utils.try_to_json(argv, "--ModuleId"),
-        "EnableProductScript": argv.get("--EnableProductScript"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "MaxBandwidthOut": Utils.try_to_json(argv, "--MaxBandwidthOut"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -40,12 +37,12 @@ def doModifyStudioProduct(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyStudioProductRequest()
+    model = models.ResetInstancesMaxBandwidthRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyStudioProduct(model)
+    rsp = client.ResetInstancesMaxBandwidth(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -55,193 +52,14 @@ def doModifyStudioProduct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteStudioProduct(argv, arglist):
+def doDescribeModule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteStudioProduct", g_param[OptionsDefine.Version])
+        show_help("DescribeModule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteStudioProductRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteStudioProduct(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDeviceData(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDeviceData", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
-        "DeviceId": argv.get("--DeviceId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeviceDataRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDeviceData(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateStudioProduct(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateStudioProduct", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ProductName": argv.get("--ProductName"),
-        "CategoryId": Utils.try_to_json(argv, "--CategoryId"),
-        "ProductType": Utils.try_to_json(argv, "--ProductType"),
-        "EncryptionType": argv.get("--EncryptionType"),
-        "NetType": argv.get("--NetType"),
-        "DataProtocol": Utils.try_to_json(argv, "--DataProtocol"),
-        "ProductDesc": argv.get("--ProductDesc"),
-        "ProjectId": argv.get("--ProjectId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateStudioProductRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateStudioProduct(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDevice(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDevice", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
-        "DeviceId": argv.get("--DeviceId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeviceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDevice(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSearchStudioProduct(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SearchStudioProduct", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ProjectId": argv.get("--ProjectId"),
-        "ProductName": argv.get("--ProductName"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "DevStatus": argv.get("--DevStatus"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SearchStudioProductRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SearchStudioProduct(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetProjectList(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GetProjectList", g_param[OptionsDefine.Version])
-        return
-
-    param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -254,12 +72,12 @@ def doGetProjectList(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetProjectListRequest()
+    model = models.DescribeModuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetProjectList(model)
+    rsp = client.DescribeModule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -269,20 +87,13 @@ def doGetProjectList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDeviceDataHistory(argv, arglist):
+def doDescribeConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDeviceDataHistory", g_param[OptionsDefine.Version])
+        show_help("DescribeConfig", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MinTime": Utils.try_to_json(argv, "--MinTime"),
-        "MaxTime": Utils.try_to_json(argv, "--MaxTime"),
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
-        "FieldName": argv.get("--FieldName"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Context": argv.get("--Context"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -293,12 +104,12 @@ def doDescribeDeviceDataHistory(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeviceDataHistoryRequest()
+    model = models.DescribeConfigRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDeviceDataHistory(model)
+    rsp = client.DescribeConfig(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -308,17 +119,13 @@ def doDescribeDeviceDataHistory(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCallDeviceActionSync(argv, arglist):
+def doDescribeBaseOverview(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CallDeviceActionSync", g_param[OptionsDefine.Version])
+        show_help("DescribeBaseOverview", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
-        "ActionId": argv.get("--ActionId"),
-        "InputParams": argv.get("--InputParams"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -329,12 +136,12 @@ def doCallDeviceActionSync(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CallDeviceActionSyncRequest()
+    model = models.DescribeBaseOverviewRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CallDeviceActionSync(model)
+    rsp = client.DescribeBaseOverview(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -344,14 +151,15 @@ def doCallDeviceActionSync(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeStudioProduct(argv, arglist):
+def doModifyModuleName(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeStudioProduct", g_param[OptionsDefine.Version])
+        show_help("ModifyModuleName", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
+        "ModuleId": argv.get("--ModuleId"),
+        "ModuleName": argv.get("--ModuleName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -362,12 +170,12 @@ def doDescribeStudioProduct(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeStudioProductRequest()
+    model = models.ModifyModuleNameRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeStudioProduct(model)
+    rsp = client.ModifyModuleName(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -377,16 +185,15 @@ def doDescribeStudioProduct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyProject(argv, arglist):
+def doModifyInstancesAttribute(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyProject", g_param[OptionsDefine.Version])
+        show_help("ModifyInstancesAttribute", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProjectId": argv.get("--ProjectId"),
-        "ProjectName": argv.get("--ProjectName"),
-        "ProjectDesc": argv.get("--ProjectDesc"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "InstanceName": argv.get("--InstanceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -397,12 +204,12 @@ def doModifyProject(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyProjectRequest()
+    model = models.ModifyInstancesAttributeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyProject(model)
+    rsp = client.ModifyInstancesAttribute(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -412,14 +219,14 @@ def doModifyProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetDeviceList(argv, arglist):
+def doDescribeInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetDeviceList", g_param[OptionsDefine.Version])
+        show_help("DescribeInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -432,12 +239,12 @@ def doGetDeviceList(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetDeviceListRequest()
+    model = models.DescribeInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetDeviceList(model)
+    rsp = client.DescribeInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -447,20 +254,13 @@ def doGetDeviceList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDevice(argv, arglist):
+def doDescribeInstanceTypeConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateDevice", g_param[OptionsDefine.Version])
+        show_help("DescribeInstanceTypeConfig", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
-        "DevAddr": argv.get("--DevAddr"),
-        "AppKey": argv.get("--AppKey"),
-        "DevEUI": argv.get("--DevEUI"),
-        "AppSKey": argv.get("--AppSKey"),
-        "NwkSKey": argv.get("--NwkSKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -471,12 +271,12 @@ def doCreateDevice(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDeviceRequest()
+    model = models.DescribeInstanceTypeConfigRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateDevice(model)
+    rsp = client.DescribeInstanceTypeConfig(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -486,20 +286,15 @@ def doCreateDevice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListEventHistory(argv, arglist):
+def doModifyModuleImage(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ListEventHistory", g_param[OptionsDefine.Version])
+        show_help("ModifyModuleImage", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
-        "Type": argv.get("--Type"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "Context": argv.get("--Context"),
-        "Size": Utils.try_to_json(argv, "--Size"),
+        "DefaultImageId": argv.get("--DefaultImageId"),
+        "ModuleId": argv.get("--ModuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -510,12 +305,12 @@ def doListEventHistory(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListEventHistoryRequest()
+    model = models.ModifyModuleImageRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ListEventHistory(model)
+    rsp = client.ModifyModuleImage(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -525,15 +320,19 @@ def doListEventHistory(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteDevice(argv, arglist):
+def doCreateModule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteDevice", g_param[OptionsDefine.Version])
+        show_help("CreateModule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
+        "ModuleName": argv.get("--ModuleName"),
+        "DefaultBandWidth": Utils.try_to_json(argv, "--DefaultBandWidth"),
+        "DefaultImageId": argv.get("--DefaultImageId"),
+        "InstanceType": argv.get("--InstanceType"),
+        "DefaultSystemDiskSize": Utils.try_to_json(argv, "--DefaultSystemDiskSize"),
+        "DefaultDataDiskSize": Utils.try_to_json(argv, "--DefaultDataDiskSize"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -544,12 +343,12 @@ def doDeleteDevice(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteDeviceRequest()
+    model = models.CreateModuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteDevice(model)
+    rsp = client.CreateModule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -559,15 +358,15 @@ def doDeleteDevice(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReleaseStudioProduct(argv, arglist):
+def doModifyModuleNetwork(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ReleaseStudioProduct", g_param[OptionsDefine.Version])
+        show_help("ModifyModuleNetwork", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "DevStatus": argv.get("--DevStatus"),
+        "ModuleId": argv.get("--ModuleId"),
+        "DefaultBandwidth": Utils.try_to_json(argv, "--DefaultBandwidth"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -578,12 +377,12 @@ def doReleaseStudioProduct(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReleaseStudioProductRequest()
+    model = models.ModifyModuleNetworkRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ReleaseStudioProduct(model)
+    rsp = client.ModifyModuleNetwork(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -593,15 +392,14 @@ def doReleaseStudioProduct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyModelDefinition(argv, arglist):
+def doDescribeInstancesDeniedActions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyModelDefinition", g_param[OptionsDefine.Version])
+        show_help("DescribeInstancesDeniedActions", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "ModelSchema": argv.get("--ModelSchema"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -612,12 +410,12 @@ def doModifyModelDefinition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyModelDefinitionRequest()
+    model = models.DescribeInstancesDeniedActionsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyModelDefinition(model)
+    rsp = client.DescribeInstancesDeniedActions(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -627,14 +425,16 @@ def doModifyModelDefinition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeProject(argv, arglist):
+def doDescribePeakNetworkOverview(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeProject", g_param[OptionsDefine.Version])
+        show_help("DescribePeakNetworkOverview", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProjectId": argv.get("--ProjectId"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -645,12 +445,12 @@ def doDescribeProject(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeProjectRequest()
+    model = models.DescribePeakNetworkOverviewRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeProject(model)
+    rsp = client.DescribePeakNetworkOverview(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -660,14 +460,13 @@ def doDescribeProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeModelDefinition(argv, arglist):
+def doDescribeNode(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeModelDefinition", g_param[OptionsDefine.Version])
+        show_help("DescribeNode", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -678,12 +477,12 @@ def doDescribeModelDefinition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeModelDefinitionRequest()
+    model = models.DescribeNodeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeModelDefinition(model)
+    rsp = client.DescribeNode(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -693,15 +492,14 @@ def doDescribeModelDefinition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateProject(argv, arglist):
+def doDescribeModuleDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateProject", g_param[OptionsDefine.Version])
+        show_help("DescribeModuleDetail", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProjectName": argv.get("--ProjectName"),
-        "ProjectDesc": argv.get("--ProjectDesc"),
+        "ModuleId": argv.get("--ModuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -712,12 +510,12 @@ def doCreateProject(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateProjectRequest()
+    model = models.DescribeModuleDetailRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateProject(model)
+    rsp = client.DescribeModuleDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -727,17 +525,16 @@ def doCreateProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCallDeviceActionAsync(argv, arglist):
+def doTerminateInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CallDeviceActionAsync", g_param[OptionsDefine.Version])
+        show_help("TerminateInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
-        "ActionId": argv.get("--ActionId"),
-        "InputParams": argv.get("--InputParams"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "TerminateDelay": Utils.try_to_json(argv, "--TerminateDelay"),
+        "TerminateTime": argv.get("--TerminateTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -748,12 +545,12 @@ def doCallDeviceActionAsync(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CallDeviceActionAsyncRequest()
+    model = models.TerminateInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CallDeviceActionAsync(model)
+    rsp = client.TerminateInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -763,14 +560,17 @@ def doCallDeviceActionAsync(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteProject(argv, arglist):
+def doResetInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteProject", g_param[OptionsDefine.Version])
+        show_help("ResetInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProjectId": argv.get("--ProjectId"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "ImageId": argv.get("--ImageId"),
+        "Password": argv.get("--Password"),
+        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -781,12 +581,12 @@ def doDeleteProject(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteProjectRequest()
+    model = models.ResetInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteProject(model)
+    rsp = client.ResetInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -796,19 +596,15 @@ def doDeleteProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doControlDeviceData(argv, arglist):
+def doDescribePeakBaseOverview(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ControlDeviceData", g_param[OptionsDefine.Version])
+        show_help("DescribePeakBaseOverview", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProductId": argv.get("--ProductId"),
-        "DeviceName": argv.get("--DeviceName"),
-        "Data": argv.get("--Data"),
-        "Method": argv.get("--Method"),
-        "DeviceId": argv.get("--DeviceId"),
-        "DataTimestamp": Utils.try_to_json(argv, "--DataTimestamp"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -819,12 +615,12 @@ def doControlDeviceData(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ControlDeviceDataRequest()
+    model = models.DescribePeakBaseOverviewRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ControlDeviceData(model)
+    rsp = client.DescribePeakBaseOverview(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -834,15 +630,82 @@ def doControlDeviceData(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetStudioProductList(argv, arglist):
+def doDeleteModule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetStudioProductList", g_param[OptionsDefine.Version])
+        show_help("DeleteModule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProjectId": argv.get("--ProjectId"),
-        "DevStatus": argv.get("--DevStatus"),
+        "ModuleId": argv.get("--ModuleId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteModuleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteModule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRebootInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RebootInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "ForceReboot": Utils.try_to_json(argv, "--ForceReboot"),
+        "StopType": argv.get("--StopType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RebootInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RebootInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeImage(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeImage", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
 
@@ -855,12 +718,45 @@ def doGetStudioProductList(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotexplorerClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetStudioProductListRequest()
+    model = models.DescribeImageRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetStudioProductList(model)
+    rsp = client.DescribeImage(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteImage(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteImage", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageIDSet": Utils.try_to_json(argv, "--ImageIDSet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteImageRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteImage(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -871,54 +767,52 @@ def doGetStudioProductList(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190423": iotexplorer_client_v20190423,
+    "v20190719": ecm_client_v20190719,
 
 }
 
 MODELS_MAP = {
-    "v20190423": models_v20190423,
+    "v20190719": models_v20190719,
 
 }
 
 ACTION_MAP = {
-    "ModifyStudioProduct": doModifyStudioProduct,
-    "DeleteStudioProduct": doDeleteStudioProduct,
-    "DescribeDeviceData": doDescribeDeviceData,
-    "CreateStudioProduct": doCreateStudioProduct,
-    "DescribeDevice": doDescribeDevice,
-    "SearchStudioProduct": doSearchStudioProduct,
-    "GetProjectList": doGetProjectList,
-    "DescribeDeviceDataHistory": doDescribeDeviceDataHistory,
-    "CallDeviceActionSync": doCallDeviceActionSync,
-    "DescribeStudioProduct": doDescribeStudioProduct,
-    "ModifyProject": doModifyProject,
-    "GetDeviceList": doGetDeviceList,
-    "CreateDevice": doCreateDevice,
-    "ListEventHistory": doListEventHistory,
-    "DeleteDevice": doDeleteDevice,
-    "ReleaseStudioProduct": doReleaseStudioProduct,
-    "ModifyModelDefinition": doModifyModelDefinition,
-    "DescribeProject": doDescribeProject,
-    "DescribeModelDefinition": doDescribeModelDefinition,
-    "CreateProject": doCreateProject,
-    "CallDeviceActionAsync": doCallDeviceActionAsync,
-    "DeleteProject": doDeleteProject,
-    "ControlDeviceData": doControlDeviceData,
-    "GetStudioProductList": doGetStudioProductList,
+    "ResetInstancesMaxBandwidth": doResetInstancesMaxBandwidth,
+    "DescribeModule": doDescribeModule,
+    "DescribeConfig": doDescribeConfig,
+    "DescribeBaseOverview": doDescribeBaseOverview,
+    "ModifyModuleName": doModifyModuleName,
+    "ModifyInstancesAttribute": doModifyInstancesAttribute,
+    "DescribeInstances": doDescribeInstances,
+    "DescribeInstanceTypeConfig": doDescribeInstanceTypeConfig,
+    "ModifyModuleImage": doModifyModuleImage,
+    "CreateModule": doCreateModule,
+    "ModifyModuleNetwork": doModifyModuleNetwork,
+    "DescribeInstancesDeniedActions": doDescribeInstancesDeniedActions,
+    "DescribePeakNetworkOverview": doDescribePeakNetworkOverview,
+    "DescribeNode": doDescribeNode,
+    "DescribeModuleDetail": doDescribeModuleDetail,
+    "TerminateInstances": doTerminateInstances,
+    "ResetInstances": doResetInstances,
+    "DescribePeakBaseOverview": doDescribePeakBaseOverview,
+    "DeleteModule": doDeleteModule,
+    "RebootInstances": doRebootInstances,
+    "DescribeImage": doDescribeImage,
+    "DeleteImage": doDeleteImage,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190423.version,
+    v20190719.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190423.version.replace('-', ''): {"help": v20190423_help.INFO,"desc": v20190423_help.DESC},
+     'v' + v20190719.version.replace('-', ''): {"help": v20190719_help.INFO,"desc": v20190719_help.DESC},
 
 }
 
 
-def iotexplorer_action(argv, arglist):
+def ecm_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -934,7 +828,7 @@ def iotexplorer_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "iotexplorer", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "ecm", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -955,7 +849,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("iotexplorer", iotexplorer_action)
+    cmd = NiceCommand("ecm", ecm_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -1014,11 +908,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["iotexplorer"][OptionsDefine.Version]
+            version = config["ecm"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["iotexplorer"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["ecm"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -1035,7 +929,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "iotexplorer", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ecm", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -1045,7 +939,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["iotexplorer"]["version"]
+        version = profile["ecm"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

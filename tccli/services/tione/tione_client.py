@@ -12,19 +12,20 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.asr.v20190614 import asr_client as asr_client_v20190614
-from tencentcloud.asr.v20190614 import models as models_v20190614
-from tccli.services.asr import v20190614
-from tccli.services.asr.v20190614 import help as v20190614_help
+from tencentcloud.tione.v20191022 import tione_client as tione_client_v20191022
+from tencentcloud.tione.v20191022 import models as models_v20191022
+from tccli.services.tione import v20191022
+from tccli.services.tione.v20191022 import help as v20191022_help
 
 
-def doGetAsrVocabList(argv, arglist):
+def doDescribeTrainingJob(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetAsrVocabList", g_param[OptionsDefine.Version])
+        show_help("DescribeTrainingJob", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "TrainingJobName": argv.get("--TrainingJobName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -35,12 +36,12 @@ def doGetAsrVocabList(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetAsrVocabListRequest()
+    model = models.DescribeTrainingJobRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetAsrVocabList(model)
+    rsp = client.DescribeTrainingJob(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -50,24 +51,14 @@ def doGetAsrVocabList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateRecTask(argv, arglist):
+def doStopNotebookInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateRecTask", g_param[OptionsDefine.Version])
+        show_help("StopNotebookInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "EngineModelType": argv.get("--EngineModelType"),
-        "ChannelNum": Utils.try_to_json(argv, "--ChannelNum"),
-        "ResTextFormat": Utils.try_to_json(argv, "--ResTextFormat"),
-        "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "CallbackUrl": argv.get("--CallbackUrl"),
-        "Url": argv.get("--Url"),
-        "Data": argv.get("--Data"),
-        "DataLen": Utils.try_to_json(argv, "--DataLen"),
-        "HotwordId": argv.get("--HotwordId"),
-        "FilterDirty": Utils.try_to_json(argv, "--FilterDirty"),
-        "FilterModal": Utils.try_to_json(argv, "--FilterModal"),
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -78,12 +69,12 @@ def doCreateRecTask(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateRecTaskRequest()
+    model = models.StopNotebookInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateRecTask(model)
+    rsp = client.StopNotebookInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -93,14 +84,18 @@ def doCreateRecTask(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetAsrVocab(argv, arglist):
+def doUpdateNotebookInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetAsrVocab", g_param[OptionsDefine.Version])
+        show_help("UpdateNotebookInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+        "RoleArn": argv.get("--RoleArn"),
+        "RootAccess": argv.get("--RootAccess"),
+        "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
+        "InstanceType": argv.get("--InstanceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -111,12 +106,12 @@ def doGetAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetAsrVocabRequest()
+    model = models.UpdateNotebookInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetAsrVocab(model)
+    rsp = client.UpdateNotebookInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -126,14 +121,14 @@ def doGetAsrVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTaskStatus(argv, arglist):
+def doDescribeNotebookInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
+        show_help("DescribeNotebookInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -144,12 +139,12 @@ def doDescribeTaskStatus(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskStatusRequest()
+    model = models.DescribeNotebookInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskStatus(model)
+    rsp = client.DescribeNotebookInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -159,15 +154,15 @@ def doDescribeTaskStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSetVocabState(argv, arglist):
+def doCreatePresignedNotebookInstanceUrl(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SetVocabState", g_param[OptionsDefine.Version])
+        show_help("CreatePresignedNotebookInstanceUrl", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
-        "State": Utils.try_to_json(argv, "--State"),
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+        "SessionExpirationDurationInSeconds": Utils.try_to_json(argv, "--SessionExpirationDurationInSeconds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -178,12 +173,12 @@ def doSetVocabState(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetVocabStateRequest()
+    model = models.CreatePresignedNotebookInstanceUrlRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SetVocabState(model)
+    rsp = client.CreatePresignedNotebookInstanceUrl(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -193,18 +188,22 @@ def doSetVocabState(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateAsrVocab(argv, arglist):
+def doCreateNotebookInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateAsrVocab", g_param[OptionsDefine.Version])
+        show_help("CreateNotebookInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
-        "Name": argv.get("--Name"),
-        "WordWeights": Utils.try_to_json(argv, "--WordWeights"),
-        "WordWeightStr": argv.get("--WordWeightStr"),
-        "Description": argv.get("--Description"),
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+        "InstanceType": argv.get("--InstanceType"),
+        "RoleArn": argv.get("--RoleArn"),
+        "DirectInternetAccess": argv.get("--DirectInternetAccess"),
+        "RootAccess": argv.get("--RootAccess"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "SubnetId": argv.get("--SubnetId"),
+        "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -215,12 +214,12 @@ def doUpdateAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateAsrVocabRequest()
+    model = models.CreateNotebookInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateAsrVocab(model)
+    rsp = client.CreateNotebookInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -230,17 +229,24 @@ def doUpdateAsrVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAsrVocab(argv, arglist):
+def doDescribeNotebookInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateAsrVocab", g_param[OptionsDefine.Version])
+        show_help("DescribeNotebookInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Name": argv.get("--Name"),
-        "Description": argv.get("--Description"),
-        "WordWeights": Utils.try_to_json(argv, "--WordWeights"),
-        "WordWeightStr": argv.get("--WordWeightStr"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SortBy": argv.get("--SortBy"),
+        "SortOrder": argv.get("--SortOrder"),
+        "CreationTimeAfter": argv.get("--CreationTimeAfter"),
+        "CreationTimeBefore": argv.get("--CreationTimeBefore"),
+        "LastModifiedTimeAfter": argv.get("--LastModifiedTimeAfter"),
+        "LastModifiedTimeBefore": argv.get("--LastModifiedTimeBefore"),
+        "NameContains": argv.get("--NameContains"),
+        "StatusEquals": argv.get("--StatusEquals"),
+        "MaxResults": Utils.try_to_json(argv, "--MaxResults"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -251,12 +257,12 @@ def doCreateAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAsrVocabRequest()
+    model = models.DescribeNotebookInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateAsrVocab(model)
+    rsp = client.DescribeNotebookInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -266,14 +272,23 @@ def doCreateAsrVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDownloadAsrVocab(argv, arglist):
+def doCreateTrainingJob(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DownloadAsrVocab", g_param[OptionsDefine.Version])
+        show_help("CreateTrainingJob", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
+        "TrainingJobName": argv.get("--TrainingJobName"),
+        "AlgorithmSpecification": Utils.try_to_json(argv, "--AlgorithmSpecification"),
+        "InputDataConfig": Utils.try_to_json(argv, "--InputDataConfig"),
+        "OutputDataConfig": Utils.try_to_json(argv, "--OutputDataConfig"),
+        "ResourceConfig": Utils.try_to_json(argv, "--ResourceConfig"),
+        "StoppingCondition": Utils.try_to_json(argv, "--StoppingCondition"),
+        "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
+        "HyperParameters": argv.get("--HyperParameters"),
+        "RoleName": argv.get("--RoleName"),
+        "EnvConfig": Utils.try_to_json(argv, "--EnvConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -284,12 +299,12 @@ def doDownloadAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DownloadAsrVocabRequest()
+    model = models.CreateTrainingJobRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DownloadAsrVocab(model)
+    rsp = client.CreateTrainingJob(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -299,14 +314,14 @@ def doDownloadAsrVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAsrVocab(argv, arglist):
+def doStartNotebookInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteAsrVocab", g_param[OptionsDefine.Version])
+        show_help("StartNotebookInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VocabId": argv.get("--VocabId"),
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -317,12 +332,12 @@ def doDeleteAsrVocab(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAsrVocabRequest()
+    model = models.StartNotebookInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteAsrVocab(model)
+    rsp = client.StartNotebookInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -332,26 +347,14 @@ def doDeleteAsrVocab(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSentenceRecognition(argv, arglist):
+def doStopTrainingJob(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SentenceRecognition", g_param[OptionsDefine.Version])
+        show_help("StopTrainingJob", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SubServiceType": Utils.try_to_json(argv, "--SubServiceType"),
-        "EngSerViceType": argv.get("--EngSerViceType"),
-        "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "VoiceFormat": argv.get("--VoiceFormat"),
-        "UsrAudioKey": argv.get("--UsrAudioKey"),
-        "Url": argv.get("--Url"),
-        "Data": argv.get("--Data"),
-        "DataLen": Utils.try_to_json(argv, "--DataLen"),
-        "HotwordId": argv.get("--HotwordId"),
-        "FilterDirty": Utils.try_to_json(argv, "--FilterDirty"),
-        "FilterModal": Utils.try_to_json(argv, "--FilterModal"),
-        "FilterPunc": Utils.try_to_json(argv, "--FilterPunc"),
+        "TrainingJobName": argv.get("--TrainingJobName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -362,12 +365,45 @@ def doSentenceRecognition(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AsrClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SentenceRecognitionRequest()
+    model = models.StopTrainingJobRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SentenceRecognition(model)
+    rsp = client.StopTrainingJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteNotebookInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteNotebookInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteNotebookInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteNotebookInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -378,40 +414,41 @@ def doSentenceRecognition(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20190614": asr_client_v20190614,
+    "v20191022": tione_client_v20191022,
 
 }
 
 MODELS_MAP = {
-    "v20190614": models_v20190614,
+    "v20191022": models_v20191022,
 
 }
 
 ACTION_MAP = {
-    "GetAsrVocabList": doGetAsrVocabList,
-    "CreateRecTask": doCreateRecTask,
-    "GetAsrVocab": doGetAsrVocab,
-    "DescribeTaskStatus": doDescribeTaskStatus,
-    "SetVocabState": doSetVocabState,
-    "UpdateAsrVocab": doUpdateAsrVocab,
-    "CreateAsrVocab": doCreateAsrVocab,
-    "DownloadAsrVocab": doDownloadAsrVocab,
-    "DeleteAsrVocab": doDeleteAsrVocab,
-    "SentenceRecognition": doSentenceRecognition,
+    "DescribeTrainingJob": doDescribeTrainingJob,
+    "StopNotebookInstance": doStopNotebookInstance,
+    "UpdateNotebookInstance": doUpdateNotebookInstance,
+    "DescribeNotebookInstance": doDescribeNotebookInstance,
+    "CreatePresignedNotebookInstanceUrl": doCreatePresignedNotebookInstanceUrl,
+    "CreateNotebookInstance": doCreateNotebookInstance,
+    "DescribeNotebookInstances": doDescribeNotebookInstances,
+    "CreateTrainingJob": doCreateTrainingJob,
+    "StartNotebookInstance": doStartNotebookInstance,
+    "StopTrainingJob": doStopTrainingJob,
+    "DeleteNotebookInstance": doDeleteNotebookInstance,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190614.version,
+    v20191022.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20190614.version.replace('-', ''): {"help": v20190614_help.INFO,"desc": v20190614_help.DESC},
+     'v' + v20191022.version.replace('-', ''): {"help": v20191022_help.INFO,"desc": v20191022_help.DESC},
 
 }
 
 
-def asr_action(argv, arglist):
+def tione_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -427,7 +464,7 @@ def asr_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "asr", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "tione", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -448,7 +485,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("asr", asr_action)
+    cmd = NiceCommand("tione", tione_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -507,11 +544,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["asr"][OptionsDefine.Version]
+            version = config["tione"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["asr"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["tione"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -528,7 +565,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "asr", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tione", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -538,7 +575,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["asr"]["version"]
+        version = profile["tione"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

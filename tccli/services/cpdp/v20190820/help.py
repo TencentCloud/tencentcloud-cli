@@ -653,10 +653,6 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "计费签名"
-      },
-      {
-        "name": "PlatformId",
-        "desc": "平台参数，沙箱环境传sandbox，生产环境传release，默认release"
       }
     ],
     "desc": "聚鑫-查询子账户绑定银行卡"
@@ -1163,10 +1159,6 @@ INFO = {
       {
         "name": "ShortName",
         "desc": "不填则默认子商户名称"
-      },
-      {
-        "name": "PlatformId",
-        "desc": "平台参数，沙箱环境传sandbox，生产环境传release，默认release"
       }
     ],
     "desc": "子商户入驻聚鑫平台"
