@@ -633,6 +633,7 @@ def doCreateDBInstances(argv, arglist):
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
         "DBVersion": argv.get("--DBVersion"),
+        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -742,6 +743,8 @@ def doDescribeDBInstances(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
         "PayMode": Utils.try_to_json(argv, "--PayMode"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

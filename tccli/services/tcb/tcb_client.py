@@ -162,6 +162,8 @@ def doDescribeEnvs(argv, arglist):
 
     param = {
         "EnvId": argv.get("--EnvId"),
+        "IsVisible": Utils.try_to_json(argv, "--IsVisible"),
+        "Channels": Utils.try_to_json(argv, "--Channels"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

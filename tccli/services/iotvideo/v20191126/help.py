@@ -708,6 +708,31 @@ INFO = {
     ],
     "desc": "本接口（DeleteMessageQueue）用于删除物联网智能视频产品的转发消息配置信息。"
   },
+  "ModifyDeviceProperty": {
+    "params": [
+      {
+        "name": "Tid",
+        "desc": "设备TID"
+      },
+      {
+        "name": "Wakeup",
+        "desc": "如果设备处于休眠状态，是否唤醒设备"
+      },
+      {
+        "name": "Branch",
+        "desc": "物模型的分支路径"
+      },
+      {
+        "name": "Value",
+        "desc": "写入的物模型数据，如果是json需要转义成字符串"
+      },
+      {
+        "name": "IsNum",
+        "desc": "Value字段是否为数值（float、int）"
+      }
+    ],
+    "desc": "本接口（ModifyDeviceProperty）用于修改设备物模型的属性（ProWritable）。\n可对setVal数据属性进行写入,如:\nProWritable.Pos.setVal\n对于嵌套类型的可写属性，可以仅对其部分数据内容进行写入，如:\nProWritable.Pos.setVal.x;\n可写属性云端写入成功即返回;云端向设备端发布属性变更参数;若当前设备不在线,在设备下次上线时会自动更新这些属性参数;\n物模型写入数据时,不需要传入时标信息,平台以当前时标作为数据的时标更新物模型中的时标信息。"
+  },
   "RunDevice": {
     "params": [
       {

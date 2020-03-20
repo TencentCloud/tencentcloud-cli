@@ -330,6 +330,10 @@ INFO = {
       {
         "name": "DBVersion",
         "desc": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。"
       }
     ],
     "desc": "本接口（CreateDBInstances）用于创建实例。"
@@ -397,6 +401,14 @@ INFO = {
       {
         "name": "PayMode",
         "desc": "付费类型检索 1-包年包月，0-按量计费"
+      },
+      {
+        "name": "VpcId",
+        "desc": "实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。"
       }
     ],
     "desc": "本接口(DescribeDBInstances)用于查询实例列表。"

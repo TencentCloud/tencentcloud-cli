@@ -1,9 +1,35 @@
 # -*- coding: utf-8 -*-
 DESC = "tcr-2019-09-24"
 INFO = {
-  "DescribeImageLifecycleGlobalPersonal": {
-    "params": [],
-    "desc": "用于获取个人版全局镜像版本自动清理策略"
+  "ModifyNamespace": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例的Id"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间的名称"
+      },
+      {
+        "name": "IsPublic",
+        "desc": "访问级别，True为公开，False为私有"
+      }
+    ],
+    "desc": "更新命名空间信息"
+  },
+  "DescribeImageFilterPersonal": {
+    "params": [
+      {
+        "name": "RepoName",
+        "desc": "仓库名称"
+      },
+      {
+        "name": "Tag",
+        "desc": "Tag名"
+      }
+    ],
+    "desc": "用于在个人版中查询与指定tag镜像内容相同的tag列表"
   },
   "CreateImageLifecyclePersonal": {
     "params": [
@@ -43,80 +69,144 @@ INFO = {
     ],
     "desc": "用于获取个人版镜像仓库tag列表"
   },
-  "ModifyApplicationTriggerPersonal": {
-    "params": [
-      {
-        "name": "RepoName",
-        "desc": "触发器关联的镜像仓库，library/test格式"
-      },
-      {
-        "name": "TriggerName",
-        "desc": "触发器名称"
-      },
-      {
-        "name": "InvokeMethod",
-        "desc": "触发方式，\"all\"全部触发，\"taglist\"指定tag触发，\"regex\"正则触发"
-      },
-      {
-        "name": "InvokeExpr",
-        "desc": "触发方式对应的表达式"
-      },
-      {
-        "name": "ClusterId",
-        "desc": "应用所在TKE集群ID"
-      },
-      {
-        "name": "Namespace",
-        "desc": "应用所在TKE集群命名空间"
-      },
-      {
-        "name": "WorkloadType",
-        "desc": "应用所在TKE集群工作负载类型,支持Deployment、StatefulSet、DaemonSet、CronJob、Job。"
-      },
-      {
-        "name": "WorkloadName",
-        "desc": "应用所在TKE集群工作负载名称"
-      },
-      {
-        "name": "ContainerName",
-        "desc": "应用所在TKE集群工作负载下容器名称"
-      },
-      {
-        "name": "ClusterRegion",
-        "desc": "应用所在TKE集群地域数字ID，如1（广州）、16（成都）"
-      },
-      {
-        "name": "NewTriggerName",
-        "desc": "新触发器名称"
-      }
-    ],
-    "desc": "用于修改应用更新触发器"
-  },
-  "DescribeImageFilterPersonal": {
-    "params": [
-      {
-        "name": "RepoName",
-        "desc": "仓库名称"
-      },
-      {
-        "name": "Tag",
-        "desc": "Tag名"
-      }
-    ],
-    "desc": "用于在个人版中查询与指定tag镜像内容相同的tag列表"
-  },
-  "DeleteRepositoryPersonal": {
+  "DescribeImageLifecyclePersonal": {
     "params": [
       {
         "name": "RepoName",
         "desc": "仓库名称"
       }
     ],
-    "desc": "用于个人版镜像仓库中删除"
+    "desc": "用于获取个人版仓库中自动清理策略"
   },
-  "DescribeUserQuotaPersonal": {
-    "params": [],
-    "desc": "查询个人用户配额"
+  "DescribeImages": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "RepositoryName",
+        "desc": "镜像仓库名称"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间名称"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页个数，用于分页，默认20"
+      },
+      {
+        "name": "Offset",
+        "desc": "页数，默认值为1"
+      },
+      {
+        "name": "ImageVersion",
+        "desc": "镜像版本(Tag)，置空则返回仓库内全部的容器镜像"
+      }
+    ],
+    "desc": "用于在企业版中查询镜像仓库内容器镜像信息，获取镜像版本列表"
+  },
+  "CreateNamespace": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间的名称"
+      },
+      {
+        "name": "IsPublic",
+        "desc": "是否公开，true为公开，fale为私有"
+      }
+    ],
+    "desc": "用于在企业版中创建命名空间"
+  },
+  "ModifyRepository": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "RepositoryName",
+        "desc": "镜像仓库名称"
+      },
+      {
+        "name": "Description",
+        "desc": "仓库描述"
+      },
+      {
+        "name": "BriefDescription",
+        "desc": "仓库的简短描述"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间名称"
+      }
+    ],
+    "desc": "更新镜像仓库描述"
+  },
+  "DeleteNamespace": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间的名称"
+      }
+    ],
+    "desc": "删除命名空间"
+  },
+  "DeleteRepository": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间的名称"
+      },
+      {
+        "name": "RepositoryName",
+        "desc": "仓库名称的名称"
+      }
+    ],
+    "desc": "删除镜像仓库"
+  },
+  "DescribeRepositories": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "RepositoryName",
+        "desc": "仓库名称，用于查询"
+      },
+      {
+        "name": "Offset",
+        "desc": "页数，用于分页"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页个数，用于分页"
+      },
+      {
+        "name": "SortBy",
+        "desc": "基于字段排序，支持的值有-creation_time,-name, -update_time"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间名称，用于查询改命名空间下的仓库，如果不填写默认为所有命名空间下"
+      }
+    ],
+    "desc": "查询镜像仓库信息"
   },
   "DescribeInstances": {
     "params": [
@@ -172,6 +262,15 @@ INFO = {
       }
     ],
     "desc": "查询个人版命名空间信息"
+  },
+  "DeleteRepositoryPersonal": {
+    "params": [
+      {
+        "name": "RepoName",
+        "desc": "仓库名称"
+      }
+    ],
+    "desc": "用于个人版镜像仓库中删除"
   },
   "DescribeRepositoryPersonal": {
     "params": [
@@ -264,6 +363,19 @@ INFO = {
     ],
     "desc": "创建实例"
   },
+  "BatchDeleteImagePersonal": {
+    "params": [
+      {
+        "name": "RepoName",
+        "desc": "仓库名称"
+      },
+      {
+        "name": "Tags",
+        "desc": "Tag列表"
+      }
+    ],
+    "desc": "用于在个人版镜像仓库中批量删除Tag"
+  },
   "CreateApplicationTriggerPersonal": {
     "params": [
       {
@@ -309,14 +421,13 @@ INFO = {
     ],
     "desc": "用于创建应用更新触发器"
   },
-  "BatchDeleteRepositoryPersonal": {
-    "params": [
-      {
-        "name": "RepoNames",
-        "desc": "仓库名称数组"
-      }
-    ],
-    "desc": "用于个人版镜像仓库中批量删除镜像仓库"
+  "DescribeImageLifecycleGlobalPersonal": {
+    "params": [],
+    "desc": "用于获取个人版全局镜像版本自动清理策略"
+  },
+  "DescribeUserQuotaPersonal": {
+    "params": [],
+    "desc": "查询个人用户配额"
   },
   "ValidateRepositoryExistPersonal": {
     "params": [
@@ -327,14 +438,54 @@ INFO = {
     ],
     "desc": "用于判断个人版仓库是否存在"
   },
-  "DescribeImageLifecyclePersonal": {
+  "ModifyApplicationTriggerPersonal": {
     "params": [
       {
         "name": "RepoName",
-        "desc": "仓库名称"
+        "desc": "触发器关联的镜像仓库，library/test格式"
+      },
+      {
+        "name": "TriggerName",
+        "desc": "触发器名称"
+      },
+      {
+        "name": "InvokeMethod",
+        "desc": "触发方式，\"all\"全部触发，\"taglist\"指定tag触发，\"regex\"正则触发"
+      },
+      {
+        "name": "InvokeExpr",
+        "desc": "触发方式对应的表达式"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "应用所在TKE集群ID"
+      },
+      {
+        "name": "Namespace",
+        "desc": "应用所在TKE集群命名空间"
+      },
+      {
+        "name": "WorkloadType",
+        "desc": "应用所在TKE集群工作负载类型,支持Deployment、StatefulSet、DaemonSet、CronJob、Job。"
+      },
+      {
+        "name": "WorkloadName",
+        "desc": "应用所在TKE集群工作负载名称"
+      },
+      {
+        "name": "ContainerName",
+        "desc": "应用所在TKE集群工作负载下容器名称"
+      },
+      {
+        "name": "ClusterRegion",
+        "desc": "应用所在TKE集群地域数字ID，如1（广州）、16（成都）"
+      },
+      {
+        "name": "NewTriggerName",
+        "desc": "新触发器名称"
       }
     ],
-    "desc": "用于获取个人版仓库中自动清理策略"
+    "desc": "用于修改应用更新触发器"
   },
   "DescribeFavorRepositoryPersonal": {
     "params": [
@@ -396,18 +547,14 @@ INFO = {
     ],
     "desc": "用于在个人版仓库中创建镜像仓库"
   },
-  "BatchDeleteImagePersonal": {
+  "BatchDeleteRepositoryPersonal": {
     "params": [
       {
-        "name": "RepoName",
-        "desc": "仓库名称"
-      },
-      {
-        "name": "Tags",
-        "desc": "Tag列表"
+        "name": "RepoNames",
+        "desc": "仓库名称数组"
       }
     ],
-    "desc": "用于在个人版镜像仓库中批量删除Tag"
+    "desc": "用于个人版镜像仓库中批量删除镜像仓库"
   },
   "DuplicateImagePersonal": {
     "params": [
@@ -455,6 +602,31 @@ INFO = {
       }
     ],
     "desc": "查询个人版用户命名空间是否存在"
+  },
+  "CreateRepository": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间名称"
+      },
+      {
+        "name": "RepositoryName",
+        "desc": "仓库名称"
+      },
+      {
+        "name": "BriefDescription",
+        "desc": "仓库简短描述"
+      },
+      {
+        "name": "Description",
+        "desc": "仓库详细描述"
+      }
+    ],
+    "desc": "用于企业版创建镜像仓库"
   },
   "CreateNamespacePersonal": {
     "params": [

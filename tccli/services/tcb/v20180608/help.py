@@ -32,6 +32,14 @@ INFO = {
       {
         "name": "EnvId",
         "desc": "环境ID，如果传了这个参数则只返回该环境的相关信息"
+      },
+      {
+        "name": "IsVisible",
+        "desc": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]"
+      },
+      {
+        "name": "Channels",
+        "desc": "渠道列表，代表可见或不可见渠道由IsVisible参数指定"
       }
     ],
     "desc": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数"
