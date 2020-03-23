@@ -848,7 +848,7 @@ INFO = {
     "params": [
       {
         "name": "TopicId",
-        "desc": "主日志题ID"
+        "desc": "日志主题ID"
       },
       {
         "name": "LogsetId",

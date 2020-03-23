@@ -89,14 +89,14 @@ INFO = {
     ],
     "desc": "本接口（DescribeDBErrlogs）用于获取错误日志。"
   },
-  "RestartDBInstance": {
+  "DescribeDBInstanceAttribute": {
     "params": [
       {
         "name": "DBInstanceId",
-        "desc": "实例ID，形如postgres-6r233v55"
+        "desc": "实例ID"
       }
     ],
-    "desc": "本接口（RestartDBInstance）用于重启实例。"
+    "desc": "本接口 (DescribeDBInstanceAttribute) 用于查询某个实例的详情信息。"
   },
   "InquiryPriceCreateDBInstances": {
     "params": [
@@ -139,6 +139,19 @@ INFO = {
       }
     ],
     "desc": "本接口（OpenDBExtranetAccess）用于开通外网。"
+  },
+  "CloseServerlessDBExtranetAccess": {
+    "params": [
+      {
+        "name": "DBInstanceId",
+        "desc": "实例唯一标识符"
+      },
+      {
+        "name": "DBInstanceName",
+        "desc": "实例名称"
+      }
+    ],
+    "desc": "关闭serverlessDB实例外网"
   },
   "ModifyDBInstancesProject": {
     "params": [
@@ -208,14 +221,14 @@ INFO = {
     ],
     "desc": "本接口（SetAutoRenewFlag）用于设置自动续费。"
   },
-  "DescribeDBInstanceAttribute": {
+  "RestartDBInstance": {
     "params": [
       {
         "name": "DBInstanceId",
-        "desc": "实例ID"
+        "desc": "实例ID，形如postgres-6r233v55"
       }
     ],
-    "desc": "本接口 (DescribeDBInstanceAttribute) 用于查询某个实例的详情信息。"
+    "desc": "本接口（RestartDBInstance）用于重启实例。"
   },
   "ModifyDBInstanceName": {
     "params": [
@@ -230,30 +243,55 @@ INFO = {
     ],
     "desc": "本接口（ModifyDBInstanceName）用于修改postgresql实例名字。"
   },
-  "RenewInstance": {
+  "CreateServerlessDBInstance": {
     "params": [
       {
-        "name": "DBInstanceId",
-        "desc": "实例ID，形如postgres-6fego161"
+        "name": "Zone",
+        "desc": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。"
       },
       {
-        "name": "Period",
-        "desc": "续费多少个月"
+        "name": "DBInstanceName",
+        "desc": "DB实例名称，同一个账号下该值必须唯一。"
       },
       {
-        "name": "AutoVoucher",
-        "desc": "是否自动使用代金券,1是,0否，默认不使用"
+        "name": "DBVersion",
+        "desc": "PostgreSQL内核版本，目前只支持：9.3.5、9.5.4、10.4三种版本。"
       },
       {
-        "name": "VoucherIds",
-        "desc": "代金券ID列表，目前仅支持指定一张代金券"
+        "name": "DBCharset",
+        "desc": "PostgreSQL数据库字符集，目前支持UTF8、LATIN1两种。"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "项目ID。"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络ID。"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "私有网络子网ID。"
       }
     ],
-    "desc": "本接口（RenewInstance）用于续费实例。"
+    "desc": "本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。"
   },
   "DescribeZones": {
     "params": [],
     "desc": "本接口 (DescribeZones) 用于查询支持的可用区信息。"
+  },
+  "DeleteServerlessDBInstance": {
+    "params": [
+      {
+        "name": "DBInstanceName",
+        "desc": "DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。"
+      },
+      {
+        "name": "DBInstanceId",
+        "desc": "DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。"
+      }
+    ],
+    "desc": "本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。"
   },
   "InitDBInstances": {
     "params": [
@@ -347,6 +385,57 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeAccounts）用于获取实例用户列表。"
+  },
+  "OpenServerlessDBExtranetAccess": {
+    "params": [
+      {
+        "name": "DBInstanceId",
+        "desc": "实例的唯一标识符"
+      },
+      {
+        "name": "DBInstanceName",
+        "desc": "实例名称"
+      }
+    ],
+    "desc": "开通serverlessDB实例外网"
+  },
+  "DescribeServerlessDBInstances": {
+    "params": [
+      {
+        "name": "Filter",
+        "desc": "查询条件"
+      },
+      {
+        "name": "Limit",
+        "desc": "查询个数"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      }
+    ],
+    "desc": "用于查询一个或多个serverlessDB实例的详细信息"
+  },
+  "RenewInstance": {
+    "params": [
+      {
+        "name": "DBInstanceId",
+        "desc": "实例ID，形如postgres-6fego161"
+      },
+      {
+        "name": "Period",
+        "desc": "续费多少个月"
+      },
+      {
+        "name": "AutoVoucher",
+        "desc": "是否自动使用代金券,1是,0否，默认不使用"
+      },
+      {
+        "name": "VoucherIds",
+        "desc": "代金券ID列表，目前仅支持指定一张代金券"
+      }
+    ],
+    "desc": "本接口（RenewInstance）用于续费实例。"
   },
   "DescribeProductConfig": {
     "params": [

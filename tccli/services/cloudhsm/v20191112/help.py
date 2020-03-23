@@ -73,6 +73,24 @@ INFO = {
     ],
     "desc": "查询用户的私有网络列表"
   },
+  "DescribeHSMByVpcId": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "VPC标识符"
+      }
+    ],
+    "desc": "通过VpcId获取Hsm资源数"
+  },
+  "DescribeHSMBySubnetId": {
+    "params": [
+      {
+        "name": "SubnetId",
+        "desc": "Subnet标识符"
+      }
+    ],
+    "desc": "通过SubnetId获取Hsm资源数"
+  },
   "DescribeUsg": {
     "params": [
       {

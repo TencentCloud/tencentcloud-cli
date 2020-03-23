@@ -27,22 +27,14 @@ INFO = {
     ],
     "desc": "销毁环境"
   },
-  "DescribeEnvs": {
+  "DescribeAuthDomains": {
     "params": [
       {
         "name": "EnvId",
-        "desc": "环境ID，如果传了这个参数则只返回该环境的相关信息"
-      },
-      {
-        "name": "IsVisible",
-        "desc": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]"
-      },
-      {
-        "name": "Channels",
-        "desc": "渠道列表，代表可见或不可见渠道由IsVisible参数指定"
+        "desc": "环境ID"
       }
     ],
-    "desc": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数"
+    "desc": "获取安全域名列表"
   },
   "CreateHostingDomain": {
     "params": [
@@ -61,27 +53,35 @@ INFO = {
     ],
     "desc": "创建托管域名"
   },
-  "DescribeAuthDomains": {
+  "DescribeEnvs": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID，如果传了这个参数则只返回该环境的相关信息"
+      },
+      {
+        "name": "IsVisible",
+        "desc": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]"
+      },
+      {
+        "name": "Channels",
+        "desc": "渠道列表，代表可见或不可见渠道由IsVisible参数指定"
+      }
+    ],
+    "desc": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数"
+  },
+  "CreateAuthDomain": {
     "params": [
       {
         "name": "EnvId",
         "desc": "环境ID"
-      }
-    ],
-    "desc": "获取安全域名列表"
-  },
-  "DescribeEndUsers": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "开发者的环境ID"
       },
       {
-        "name": "UUIds",
-        "desc": "按照 uuid 列表过滤，最大个数为100"
+        "name": "Domains",
+        "desc": "安全域名"
       }
     ],
-    "desc": "获取终端用户列表"
+    "desc": "增加安全域名"
   },
   "DestroyStaticStore": {
     "params": [
@@ -156,14 +156,18 @@ INFO = {
     "params": [],
     "desc": "查询环境个数上限"
   },
-  "ReinstateEnv": {
+  "DescribeEndUsers": {
     "params": [
       {
         "name": "EnvId",
-        "desc": "环境ID"
+        "desc": "开发者的环境ID"
+      },
+      {
+        "name": "UUIds",
+        "desc": "按照 uuid 列表过滤，最大个数为100"
       }
     ],
-    "desc": "针对已隔离的免费环境，可以通过本接口将其恢复访问。"
+    "desc": "获取终端用户列表"
   },
   "DescribeDatabaseACL": {
     "params": [
@@ -194,5 +198,14 @@ INFO = {
       }
     ],
     "desc": "查询指定指标的配额使用量"
+  },
+  "ReinstateEnv": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      }
+    ],
+    "desc": "针对已隔离的免费环境，可以通过本接口将其恢复访问。"
   }
 }

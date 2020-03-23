@@ -5,18 +5,18 @@ INFO = {
     "params": [
       {
         "name": "RegistryId",
-        "desc": "实例的Id"
+        "desc": "实例Id"
       },
       {
         "name": "NamespaceName",
-        "desc": "命名空间的名称"
+        "desc": "命名空间名称"
       },
       {
         "name": "IsPublic",
         "desc": "访问级别，True为公开，False为私有"
       }
     ],
-    "desc": "更新命名空间信息"
+    "desc": "更新命名空间信息，当前仅支持修改命名空间访问级别"
   },
   "DescribeImageFilterPersonal": {
     "params": [
@@ -520,6 +520,27 @@ INFO = {
       }
     ],
     "desc": "用于在个人版中获取用户全部的镜像仓库列表"
+  },
+  "DescribeNamespaces": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "指定命名空间，不填写默认查询所有命名空间"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页个数"
+      },
+      {
+        "name": "Offset",
+        "desc": "页偏移"
+      }
+    ],
+    "desc": "查询命名空间列表或指定命名空间信息"
   },
   "DescribeInstanceStatus": {
     "params": [
