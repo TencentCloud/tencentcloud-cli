@@ -374,18 +374,14 @@ INFO = {
     ],
     "desc": "本接口（DescribeNetDetects）用于查询网络探测列表。"
   },
-  "ModifyCcnRegionBandwidthLimitsType": {
+  "DescribeSecurityGroupPolicies": {
     "params": [
       {
-        "name": "CcnId",
-        "desc": "云联网实例ID。"
-      },
-      {
-        "name": "BandwidthLimitType",
-        "desc": "云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
       }
     ],
-    "desc": "本接口（ModifyCcnRegionBandwidthLimitsType）用于修改后付费云联网实例修改带宽限速策略。"
+    "desc": "本接口（DescribeSecurityGroupPolicies）用于查询安全组规则。"
   },
   "DescribeGatewayFlowMonitorDetail": {
     "params": [
@@ -525,15 +521,6 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeClassicLinkInstances)用于查询私有网络和基础网络设备互通列表。"
-  },
-  "DescribeSecurityGroupPolicies": {
-    "params": [
-      {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
-      }
-    ],
-    "desc": "本接口（DescribeSecurityGroupPolicies）用于查询安全组规则。"
   },
   "ModifyServiceTemplateAttribute": {
     "params": [
@@ -716,6 +703,10 @@ INFO = {
       }
     ],
     "desc": "本接口（ReplaceRouteTableAssociation)用于修改子网（Subnet）关联的路由表（RouteTable）。\n* 一个子网只能关联一个路由表。"
+  },
+  "DescribeTemplateLimits": {
+    "params": [],
+    "desc": "本接口（DescribeTemplateLimits）用于查询参数模板配额列表。"
   },
   "CheckNetDetectState": {
     "params": [
@@ -1383,6 +1374,23 @@ INFO = {
     ],
     "desc": "本接口(DescribeNetDetectStates)用于查询网络探测验证结果列表。"
   },
+  "DescribeAddressTemplateInstances": {
+    "params": [
+      {
+        "name": "AddressTemplateId",
+        "desc": "IP地址实例ID。例如：ipm-12345678。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeAddressTemplateInstances）用于查询参数模板IP地址关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。"
+  },
   "DescribeCcns": {
     "params": [
       {
@@ -1464,6 +1472,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DetachNetworkInterface）用于弹性网卡解绑云主机。"
+  },
+  "ModifyCcnRegionBandwidthLimitsType": {
+    "params": [
+      {
+        "name": "CcnId",
+        "desc": "云联网实例ID。"
+      },
+      {
+        "name": "BandwidthLimitType",
+        "desc": "云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。"
+      }
+    ],
+    "desc": "本接口（ModifyCcnRegionBandwidthLimitsType）用于修改后付费云联网实例修改带宽限速策略。"
   },
   "DeleteNetworkInterface": {
     "params": [

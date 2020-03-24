@@ -2299,6 +2299,19 @@ INFO = {
     ],
     "desc": "资源实例重命名，支持独享包、共享包、高防IP、高防IP专业版；"
   },
+  "DescribeBGPIPL7RuleMaxCnt": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源实例ID"
+      }
+    ],
+    "desc": "获取高防IP可添加的最多7层规则数量\n"
+  },
   "ModifyResourceRenewFlag": {
     "params": [
       {

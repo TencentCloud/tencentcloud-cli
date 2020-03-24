@@ -382,6 +382,7 @@ def doLookUpEvents(argv, arglist):
         "StartTime": Utils.try_to_json(argv, "--StartTime"),
         "LookupAttributes": Utils.try_to_json(argv, "--LookupAttributes"),
         "MaxResults": Utils.try_to_json(argv, "--MaxResults"),
+        "Mode": argv.get("--Mode"),
         "NextToken": argv.get("--NextToken"),
 
     }

@@ -901,7 +901,7 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。\n域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "播放域名。\n域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       },
       {
         "name": "AppName",
@@ -1069,7 +1069,7 @@ INFO = {
       },
       {
         "name": "DomainName",
-        "desc": "您的加速域名。"
+        "desc": "您的推流域名。"
       },
       {
         "name": "StreamName",

@@ -201,6 +201,10 @@ INFO = {
         "desc": "返回日志的最大条数"
       },
       {
+        "name": "Mode",
+        "desc": "云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式"
+      },
+      {
         "name": "NextToken",
         "desc": "查看更多日志的凭证"
       }

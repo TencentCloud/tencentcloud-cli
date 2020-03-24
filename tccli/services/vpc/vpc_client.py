@@ -760,15 +760,14 @@ def doDescribeNetDetects(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCcnRegionBandwidthLimitsType(argv, arglist):
+def doDescribeSecurityGroupPolicies(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyCcnRegionBandwidthLimitsType", g_param[OptionsDefine.Version])
+        show_help("DescribeSecurityGroupPolicies", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CcnId": argv.get("--CcnId"),
-        "BandwidthLimitType": argv.get("--BandwidthLimitType"),
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -782,9 +781,9 @@ def doModifyCcnRegionBandwidthLimitsType(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCcnRegionBandwidthLimitsTypeRequest()
+    model = models.DescribeSecurityGroupPoliciesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyCcnRegionBandwidthLimitsType(model)
+    rsp = client.DescribeSecurityGroupPolicies(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1380,6 +1379,38 @@ def doReplaceRouteTableAssociation(argv, arglist):
     model = models.ReplaceRouteTableAssociationRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ReplaceRouteTableAssociation(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTemplateLimits(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTemplateLimits", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTemplateLimitsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTemplateLimits(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2906,6 +2937,40 @@ def doDetachNetworkInterface(argv, arglist):
     model = models.DetachNetworkInterfaceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DetachNetworkInterface(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCcnRegionBandwidthLimitsType(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyCcnRegionBandwidthLimitsType", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CcnId": argv.get("--CcnId"),
+        "BandwidthLimitType": argv.get("--BandwidthLimitType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCcnRegionBandwidthLimitsTypeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyCcnRegionBandwidthLimitsType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -5158,14 +5223,16 @@ def doCreateVpnGateway(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSecurityGroupPolicies(argv, arglist):
+def doDescribeAddressTemplateInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeSecurityGroupPolicies", g_param[OptionsDefine.Version])
+        show_help("DescribeAddressTemplateInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SecurityGroupId": argv.get("--SecurityGroupId"),
+        "AddressTemplateId": argv.get("--AddressTemplateId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -5179,9 +5246,9 @@ def doDescribeSecurityGroupPolicies(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSecurityGroupPoliciesRequest()
+    model = models.DescribeAddressTemplateInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSecurityGroupPolicies(model)
+    rsp = client.DescribeAddressTemplateInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -6432,7 +6499,7 @@ ACTION_MAP = {
     "ResetRoutes": doResetRoutes,
     "DescribeNetworkInterfaceLimit": doDescribeNetworkInterfaceLimit,
     "DescribeNetDetects": doDescribeNetDetects,
-    "ModifyCcnRegionBandwidthLimitsType": doModifyCcnRegionBandwidthLimitsType,
+    "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
     "DescribeGatewayFlowMonitorDetail": doDescribeGatewayFlowMonitorDetail,
     "UnassignIpv6Addresses": doUnassignIpv6Addresses,
     "DescribeNetworkAcls": doDescribeNetworkAcls,
@@ -6450,6 +6517,7 @@ ACTION_MAP = {
     "DescribeNatGateways": doDescribeNatGateways,
     "CreateSubnets": doCreateSubnets,
     "ReplaceRouteTableAssociation": doReplaceRouteTableAssociation,
+    "DescribeTemplateLimits": doDescribeTemplateLimits,
     "CheckNetDetectState": doCheckNetDetectState,
     "DescribeVpcs": doDescribeVpcs,
     "InquiryPriceResetVpnGatewayInternetMaxBandwidth": doInquiryPriceResetVpnGatewayInternetMaxBandwidth,
@@ -6493,6 +6561,7 @@ ACTION_MAP = {
     "ModifyNetworkAclEntries": doModifyNetworkAclEntries,
     "HaVipDisassociateAddressIp": doHaVipDisassociateAddressIp,
     "DetachNetworkInterface": doDetachNetworkInterface,
+    "ModifyCcnRegionBandwidthLimitsType": doModifyCcnRegionBandwidthLimitsType,
     "DeleteNetworkInterface": doDeleteNetworkInterface,
     "DescribeVpnConnections": doDescribeVpnConnections,
     "DescribeFlowLog": doDescribeFlowLog,
@@ -6558,7 +6627,7 @@ ACTION_MAP = {
     "ModifyVpnConnectionAttribute": doModifyVpnConnectionAttribute,
     "DescribeSecurityGroups": doDescribeSecurityGroups,
     "CreateVpnGateway": doCreateVpnGateway,
-    "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
+    "DescribeAddressTemplateInstances": doDescribeAddressTemplateInstances,
     "CreateDirectConnectGateway": doCreateDirectConnectGateway,
     "DescribeClassicLinkInstances": doDescribeClassicLinkInstances,
     "TransformAddress": doTransformAddress,
