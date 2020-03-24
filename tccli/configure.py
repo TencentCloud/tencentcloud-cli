@@ -49,8 +49,8 @@ class Configure(object):
             conf = {}
             if not data and not extra:
                 return
-            isexit, config_path = self._profile_existed(name)
-            if isexit:
+            isexist, config_path = self._profile_existed(name)
+            if isexist:
                 conf = self._load_json_msg(config_path)
 
             for k in data.keys():
@@ -72,7 +72,6 @@ class Configure(object):
                     conf[mod]["version"] = version
             for k in extra.keys():
                 try:
-
                     ks = k.split(".")
                     conf[ks[0]][ks[1]] = extra[k]
                 except Exception:
@@ -186,7 +185,7 @@ class Configure(object):
         else:
             vinput = raw_input
         config = {
-            OptionsDefine.Region: "None",
+            OptionsDefine.Region: "ap-guangzhou",
             OptionsDefine.Output: "json"
         }
 
@@ -195,16 +194,16 @@ class Configure(object):
             OptionsDefine.SecretKey: "None"
         }
 
-        is_conexit, config_path = self._profile_existed(profile + ".configure")
-        is_creexit, cred_path = self._profile_existed(profile + ".credential")
+        is_conexist, config_path = self._profile_existed(profile + ".configure")
+        is_creexist, cred_path = self._profile_existed(profile + ".credential")
         fileconf = {}
         filecred = {}
-        if is_conexit:
+        if is_conexist:
             fileconf = self._load_json_msg(config_path)
             for c in config.keys():
                 if c in fileconf and fileconf[c]:
                     config[c] = fileconf[c]
-        if is_creexit:
+        if is_creexist:
             filecred = self._load_json_msg(cred_path)
             for c in cred.keys():
                 if c in filecred and filecred[c]:
@@ -217,10 +216,10 @@ class Configure(object):
         if cmd: filecred["secretKey"] = cmd
 
         cmd = vinput("region[%s]: " % config[OptionsDefine.Region])
-        if cmd: fileconf["region"] = cmd
+        fileconf["region"] = cmd or "ap-guangzhou"
 
         cmd = vinput("output[%s]: " % config[OptionsDefine.Output])
-        if cmd: fileconf["output"] = cmd
+        fileconf["output"] = cmd or "json"
 
         self._modify_configure(config_path, fileconf)
         self._modify_configure(cred_path, filecred)
@@ -275,7 +274,6 @@ class Configure(object):
         if isexit:
             config = self._load_json_msg(config_path)
             self._modify_configure(name, config)
-
         else:
             config = {}
             self._modify_configure(name, config)
