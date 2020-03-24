@@ -9,6 +9,9 @@ Profile = "profile"
 Timeout = "timeout"
 Output = "output"
 
+ENV_SECRET_ID = "TENCENTCLOUD_SECRET_ID"
+ENV_SECRET_KEY = "TENCENTCLOUD_SECRET_KEY"
+ENV_REGION = "TENCENTCLOUD_REGION"
 
 Help = "help"
 CliVersion = "version"

@@ -47,8 +47,8 @@ def main():
             return
         services = Services.service_get_list()
 
-        #c = Configure(services)
-        #c.init_configures()
+        c = Configure(services)
+        c.init_configures()
 
         command = NiceCommand("tccli", tccli_action)
         command.reg_opt(OptionalsDefine.Help, "bool")

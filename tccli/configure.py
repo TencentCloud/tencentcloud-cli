@@ -265,15 +265,9 @@ class Configure(object):
         config_cmd.reg_cmd(list_cmd)
 
     def init_configures(self):
-        for f in os.listdir(self.cli_path):
-            if f.endswith(".configure"):
-                self.init_configure(f)
-
-    def init_configure(self, name):
-        isexit, config_path = self._profile_existed(name)
-        if isexit:
-            config = self._load_json_msg(config_path)
-            self._modify_configure(name, config)
-        else:
-            config = {}
-            self._modify_configure(name, config)
+        if not self._profile_existed("default.configure")[0]:
+            config = {
+                "region": "ap-guangzhou",
+                "output": "json",
+            }
+            self._modify_configure("default.configure", config)

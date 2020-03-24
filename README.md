@@ -30,6 +30,8 @@ region： 云产品地域，请移驾对应产品页面获取可用的region。
 output： 可选参数，请求回包输出格式，支持[json table text]三种格式，默认为json。
 更多信息请执行tccli configure help查看。
 
+注意：如果环境变量定义了相关配置，则会优先于配置文件生效。分别为 TENCENTCLOUD\_SECRET\_ID，TENCENTCLOUD\_SECRET\_KEY，TENCENTCLOUD\_REGION。
+
 2. 命令行模式，通过命令行模式您可以在自动化脚本中配置您的信息。
 ```bash
 # set子命令可以设置某一配置，也可同时配置多个。
