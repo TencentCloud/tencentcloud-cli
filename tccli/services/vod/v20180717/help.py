@@ -57,7 +57,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "对视频进行编辑（剪辑、拼接等），生成一个新的点播视频。编辑的功能包括：\n\n1. 对点播中的一个文件进行剪辑，生成一个新的视频；\n2. 对点播中的多个文件进行拼接，生成一个新的视频；\n3. 对点播中的多个文件进行剪辑，然后再拼接，生成一个新的视频；\n4. 对点播中的一个流，直接生成一个新的视频；\n5. 对点播中的一个流进行剪辑，生成一个新的视频；\n6. 对点播中的多个流进行拼接，生成一个新的视频；\n7. 对点播中的多个流进行剪辑，然后拼接，生成一个新的视频。\n\n对于生成的新视频，还可以指定生成后的视频是否要执行任务流。"
+    "desc": "对视频进行编辑（剪辑、拼接等），生成一个新的点播视频。编辑的功能包括：\n\n1. 对点播中的一个文件进行剪辑，生成一个新的视频；\n2. 对点播中的多个文件进行拼接，生成一个新的视频；\n3. 对点播中的多个文件进行剪辑，然后再拼接，生成一个新的视频；\n4. 对点播中的一个流，直接生成一个新的视频；\n5. 对点播中的一个流进行剪辑，生成一个新的视频；\n6. 对点播中的多个流进行拼接，生成一个新的视频；\n7. 对点播中的多个流进行剪辑，然后拼接，生成一个新的视频。\n\n对于生成的新视频，还可以指定生成后的视频是否要执行任务流。\n\n>当对直播流做剪辑、拼接等操作时，请确保流结束后再操作。否则生成的视频可能不完整。"
   },
   "ApplyUpload": {
     "params": [
@@ -674,11 +674,11 @@ INFO = {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。"
       },
       {
         "name": "EndTime",
-        "desc": "结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。"
       },
       {
         "name": "Type",
@@ -1418,11 +1418,11 @@ INFO = {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "起始时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，需大于开始日期，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+        "desc": "结束时间，需大于开始日期，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。"
       },
       {
         "name": "Interval",
@@ -2114,16 +2114,16 @@ INFO = {
         "desc": "人物名称，长度限制：20 个字符。"
       },
       {
-        "name": "FaceContents",
-        "desc": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。"
-      },
-      {
         "name": "Usages",
         "desc": "人物应用场景，可选值：\n1. Recognition：用于内容识别，等价于 Recognition.Face。\n2. Review：用于内容审核，等价于 Review.Face。\n3. All：用于内容识别、内容审核，等价于 1+2。"
       },
       {
         "name": "Description",
         "desc": "人物描述，长度限制：1024 个字符。"
+      },
+      {
+        "name": "FaceContents",
+        "desc": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。"
       },
       {
         "name": "Tags",

@@ -90,40 +90,6 @@ def doDisableOtaVersion(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateUploadTest(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateUploadTest", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "PkgId": argv.get("--PkgId"),
-        "Tid": argv.get("--Tid"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateUploadTestRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateUploadTest(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateGencode(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -916,14 +882,16 @@ def doCreateDevToken(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteDevice(argv, arglist):
+def doDeleteOtaVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteDevice", g_param[OptionsDefine.Version])
+        show_help("DeleteOtaVersion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Tids": Utils.try_to_json(argv, "--Tids"),
+        "ProductId": argv.get("--ProductId"),
+        "OtaVersion": argv.get("--OtaVersion"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -937,9 +905,9 @@ def doDeleteDevice(argv, arglist):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteDeviceRequest()
+    model = models.DeleteOtaVersionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteDevice(model)
+    rsp = client.DeleteOtaVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1014,6 +982,39 @@ def doDescribeLogs(argv, arglist):
     model = models.DescribeLogsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeLogs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tids": Utils.try_to_json(argv, "--Tids"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteDevice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1183,41 +1184,6 @@ def doDescribeRunLog(argv, arglist):
     model = models.DescribeRunLogRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeRunLog(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteOtaVersion(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteOtaVersion", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ProductId": argv.get("--ProductId"),
-        "OtaVersion": argv.get("--OtaVersion"),
-        "Operator": argv.get("--Operator"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteOtaVersionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteOtaVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1422,41 +1388,6 @@ def doRunDeviceStream(argv, arglist):
     model = models.RunDeviceStreamRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.RunDeviceStream(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doRenewUploadTest(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("RenewUploadTest", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "PkgId": argv.get("--PkgId"),
-        "Tid": argv.get("--Tid"),
-        "SessionKey": argv.get("--SessionKey"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenewUploadTestRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.RenewUploadTest(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1862,7 +1793,6 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DescribeOtaVersions": doDescribeOtaVersions,
     "DisableOtaVersion": doDisableOtaVersion,
-    "CreateUploadTest": doCreateUploadTest,
     "CreateGencode": doCreateGencode,
     "DescribeIotDataType": doDescribeIotDataType,
     "DisableDevice": doDisableDevice,
@@ -1886,22 +1816,21 @@ ACTION_MAP = {
     "CreateAppUsr": doCreateAppUsr,
     "CreateBinding": doCreateBinding,
     "CreateDevToken": doCreateDevToken,
-    "DeleteDevice": doDeleteDevice,
+    "DeleteOtaVersion": doDeleteOtaVersion,
     "ModifyProduct": doModifyProduct,
     "DescribeLogs": doDescribeLogs,
+    "DeleteDevice": doDeleteDevice,
     "DescribeIotModels": doDescribeIotModels,
     "DeleteProduct": doDeleteProduct,
     "DescribeTraceStatus": doDescribeTraceStatus,
     "RunOtaVersion": doRunOtaVersion,
     "DescribeRunLog": doDescribeRunLog,
-    "DeleteOtaVersion": doDeleteOtaVersion,
     "SetMessageQueue": doSetMessageQueue,
     "DisableDeviceStream": doDisableDeviceStream,
     "CreateUploadPath": doCreateUploadPath,
     "DescribeModelDataRet": doDescribeModelDataRet,
     "DescribePubVersions": doDescribePubVersions,
     "RunDeviceStream": doRunDeviceStream,
-    "RenewUploadTest": doRenewUploadTest,
     "DescribeDevices": doDescribeDevices,
     "DescribeBindDev": doDescribeBindDev,
     "DescribeDeviceModel": doDescribeDeviceModel,
@@ -2005,6 +1934,12 @@ def parse_global_arg(argv):
         config = config_handle._load_json_msg(conf_path)
     if is_creexist:
         cred = config_handle._load_json_msg(cred_path)
+    if os.environ.get(OptionsDefine.ENV_SECRET_ID):
+        cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
+    if os.environ.get(OptionsDefine.ENV_SECRET_KEY):
+        cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
+    if os.environ.get(OptionsDefine.ENV_REGION):
+        config[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
 
     for param in params.keys():
         if param == OptionsDefine.Version:

@@ -2982,9 +2982,9 @@ def doCreatePersonSample(argv, arglist):
 
     param = {
         "Name": argv.get("--Name"),
-        "FaceContents": Utils.try_to_json(argv, "--FaceContents"),
         "Usages": Utils.try_to_json(argv, "--Usages"),
         "Description": argv.get("--Description"),
+        "FaceContents": Utils.try_to_json(argv, "--FaceContents"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
@@ -3444,6 +3444,12 @@ def parse_global_arg(argv):
         config = config_handle._load_json_msg(conf_path)
     if is_creexist:
         cred = config_handle._load_json_msg(cred_path)
+    if os.environ.get(OptionsDefine.ENV_SECRET_ID):
+        cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
+    if os.environ.get(OptionsDefine.ENV_SECRET_KEY):
+        cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
+    if os.environ.get(OptionsDefine.ENV_REGION):
+        config[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
 
     for param in params.keys():
         if param == OptionsDefine.Version:

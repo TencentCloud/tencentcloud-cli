@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "每页数量,,0<取值范围<=100"
+        "desc": "每页数量，0<取值范围<=100"
       },
       {
         "name": "ProductId",
@@ -43,24 +43,11 @@ INFO = {
     ],
     "desc": "本接口（DisableOtaVersion）用于禁用固件版本。"
   },
-  "CreateUploadTest": {
-    "params": [
-      {
-        "name": "PkgId",
-        "desc": "package ID"
-      },
-      {
-        "name": "Tid",
-        "desc": "设备TID"
-      }
-    ],
-    "desc": "设备申请cos上传证书"
-  },
   "DescribeBindDev": {
     "params": [
       {
         "name": "AccessId",
-        "desc": "终端用户在IotVideo上的唯一标识id"
+        "desc": "终端用户在IoT Video上的唯一标识ID"
       }
     ],
     "desc": "本接口（DescribeBindDev）用于查询终端用户绑定的设备列表。"
@@ -156,24 +143,24 @@ INFO = {
     ],
     "desc": "本接口（SendOnlineMsg）用于向设备发送在线消息。\n注意：\n若设备当前不在线,会直接返回错误;\n若设备网络出现异常时,消息发送可能超时,超时等待最长时间为3秒.waitresp非0情况下,会导致本接口阻塞3秒。"
   },
-  "DescribeBindUsr": {
+  "RunIotModel": {
     "params": [
       {
-        "name": "AccessId",
-        "desc": "设备主人的AccessId"
+        "name": "ProductId",
+        "desc": "产品ID"
       },
       {
-        "name": "Tid",
-        "desc": "设备TID"
+        "name": "IotModel",
+        "desc": "物模型定义，json格式的字符串"
       }
     ],
-    "desc": "本接口（DescribeBindUsr）用于查询设备被分享的所有用户列表。"
+    "desc": "本接口（RunIotModel）用于对定义的物模型进行发布。"
   },
   "ModifyDeviceAction": {
     "params": [
       {
         "name": "Tid",
-        "desc": "设备Tid"
+        "desc": "设备TID"
       },
       {
         "name": "Wakeup",
@@ -279,10 +266,10 @@ INFO = {
     "params": [
       {
         "name": "CunionId",
-        "desc": "标识用户的唯一id，防止同一个用户多次注册"
+        "desc": "标识用户的唯一ID，防止同一个用户多次注册"
       }
     ],
-    "desc": "本接口（CreateAppUsr）用于接收由厂商云发送过来的注册请求,建立厂商云终端用户与IotVideo终端用户的映射关系。"
+    "desc": "本接口（CreateAppUsr）用于接收由厂商云发送过来的注册请求,建立厂商云终端用户与IoT Video终端用户的映射关系。"
   },
   "DescribeIotModel": {
     "params": [
@@ -331,18 +318,18 @@ INFO = {
     ],
     "desc": "本接口（CreateTraceIds）用于将设备加到日志跟踪白名单。"
   },
-  "RunIotModel": {
+  "DescribeBindUsr": {
     "params": [
       {
-        "name": "ProductId",
-        "desc": "产品ID"
+        "name": "AccessId",
+        "desc": "设备主人的AccessId"
       },
       {
-        "name": "IotModel",
-        "desc": "物模型定义，json格式的字符串"
+        "name": "Tid",
+        "desc": "设备TID"
       }
     ],
-    "desc": "本接口（RunIotModel）用于对定义的物模型进行发布。"
+    "desc": "本接口（DescribeBindUsr）用于查询设备被分享的所有用户列表。"
   },
   "DescribeMessageQueue": {
     "params": [
@@ -357,7 +344,7 @@ INFO = {
     "params": [
       {
         "name": "AccessId",
-        "desc": "终端用户在IotVideo上的唯一标识id"
+        "desc": "终端用户在IoT Video上的唯一标识ID"
       },
       {
         "name": "Tid",
@@ -378,7 +365,7 @@ INFO = {
     "params": [
       {
         "name": "AccessId",
-        "desc": "客户的终端用户在IotVideo上的唯一标识id"
+        "desc": "客户的终端用户在IoT Video上的唯一标识ID"
       },
       {
         "name": "Tids",
@@ -391,14 +378,22 @@ INFO = {
     ],
     "desc": "本接口（CreateDevToken）用于以下场景：\n终端用户与设备没有强绑定关联关系;\n允许终端用户短时或一次性临时访问设备;\n当终端用户与设备有强绑定关系时，可以不用调用此接口"
   },
-  "DeleteDevice": {
+  "DeleteOtaVersion": {
     "params": [
       {
-        "name": "Tids",
-        "desc": "设备TID列表"
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "OtaVersion",
+        "desc": "固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288"
+      },
+      {
+        "name": "Operator",
+        "desc": "操作人"
       }
     ],
-    "desc": "本接口（DeleteDevice）用于删除设备，可进行批量操作，每次操作最多100台设备。"
+    "desc": "本接口（DeleteOtaVersion）用于删除固件版本信息。"
   },
   "ModifyProduct": {
     "params": [
@@ -416,6 +411,15 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyProduct）用于编辑物联网智能视频产品的相关信息。"
+  },
+  "DeleteProduct": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      }
+    ],
+    "desc": "本接口（DeleteProduct）用于删除一个物联网智能视频产品。"
   },
   "DescribeLogs": {
     "params": [
@@ -450,14 +454,14 @@ INFO = {
     ],
     "desc": "本接口（DescribeLogs）用于查询设备日志列表。\n设备日志最长保留时长为15天,超期自动清除。"
   },
-  "DeleteProduct": {
+  "DeleteDevice": {
     "params": [
       {
-        "name": "ProductId",
-        "desc": "产品ID"
+        "name": "Tids",
+        "desc": "设备TID列表"
       }
     ],
-    "desc": "本接口（DeleteProduct）用于删除一个物联网智能视频产品。"
+    "desc": "本接口（DeleteDevice）用于删除设备，可进行批量操作，每次操作最多100台设备。"
   },
   "DescribeTraceStatus": {
     "params": [
@@ -501,23 +505,6 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeRunLog）用于获取设备运行日志。"
-  },
-  "DeleteOtaVersion": {
-    "params": [
-      {
-        "name": "ProductId",
-        "desc": "产品ID"
-      },
-      {
-        "name": "OtaVersion",
-        "desc": "固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288"
-      },
-      {
-        "name": "Operator",
-        "desc": "操作人"
-      }
-    ],
-    "desc": "本接口（DeleteOtaVersion）用于删除固件版本信息。"
   },
   "SetMessageQueue": {
     "params": [
@@ -597,23 +584,6 @@ INFO = {
     ],
     "desc": "本接口（RunDeviceStream）用于开启设备推流，可进行批量操作，每次操作最多100台设备。"
   },
-  "RenewUploadTest": {
-    "params": [
-      {
-        "name": "PkgId",
-        "desc": "package ID"
-      },
-      {
-        "name": "Tid",
-        "desc": "设备TID"
-      },
-      {
-        "name": "SessionKey",
-        "desc": "SessionKey"
-      }
-    ],
-    "desc": "设备刷新cos上传证书"
-  },
   "DescribeDevices": {
     "params": [
       {
@@ -682,7 +652,7 @@ INFO = {
     "params": [
       {
         "name": "AccessId",
-        "desc": "终端用户在IotVideo上的唯一标识id"
+        "desc": "终端用户在IoT Video上的唯一标识ID"
       },
       {
         "name": "Tid",
@@ -775,11 +745,11 @@ INFO = {
     "params": [
       {
         "name": "AccessId",
-        "desc": "终端用户在IotVideo上的唯一标识id"
+        "desc": "终端用户在IoT Video上的唯一标识ID"
       },
       {
         "name": "UniqueId",
-        "desc": "终端唯一id,用于区分同一个用户的多个终端"
+        "desc": "终端唯一ID，用于区分同一个用户的多个终端"
       },
       {
         "name": "TtlMinutes",
