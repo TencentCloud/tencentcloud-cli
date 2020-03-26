@@ -2147,6 +2147,7 @@ def doAllocateAddresses(argv, arglist):
         "AddressType": argv.get("--AddressType"),
         "AnycastZone": argv.get("--AnycastZone"),
         "ApplicableForCLB": Utils.try_to_json(argv, "--ApplicableForCLB"),
+        "BandwidthPackageId": argv.get("--BandwidthPackageId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -309,10 +309,10 @@ def doModifyRepository(argv, arglist):
 
     param = {
         "RegistryId": argv.get("--RegistryId"),
-        "RepositoryName": argv.get("--RepositoryName"),
-        "Description": argv.get("--Description"),
-        "BriefDescription": argv.get("--BriefDescription"),
         "NamespaceName": argv.get("--NamespaceName"),
+        "RepositoryName": argv.get("--RepositoryName"),
+        "BriefDescription": argv.get("--BriefDescription"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -414,11 +414,11 @@ def doDescribeRepositories(argv, arglist):
 
     param = {
         "RegistryId": argv.get("--RegistryId"),
+        "NamespaceName": argv.get("--NamespaceName"),
         "RepositoryName": argv.get("--RepositoryName"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "SortBy": argv.get("--SortBy"),
-        "NamespaceName": argv.get("--NamespaceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -523,11 +523,11 @@ def doDescribeImages(argv, arglist):
 
     param = {
         "RegistryId": argv.get("--RegistryId"),
-        "RepositoryName": argv.get("--RepositoryName"),
         "NamespaceName": argv.get("--NamespaceName"),
+        "RepositoryName": argv.get("--RepositoryName"),
+        "ImageVersion": argv.get("--ImageVersion"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
-        "ImageVersion": argv.get("--ImageVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -655,6 +655,41 @@ def doDescribeRepositoryPersonal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeInstanceToken(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceToken", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RegistryId": argv.get("--RegistryId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceTokenRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceToken(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doManageImageLifecycleGlobalPersonal(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -717,6 +752,40 @@ def doDescribeApplicationTriggerLogPersonal(argv, arglist):
     model = models.DescribeApplicationTriggerLogPersonalRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeApplicationTriggerLogPersonal(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteInstanceToken(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteInstanceToken", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RegistryId": argv.get("--RegistryId"),
+        "TokenId": argv.get("--TokenId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteInstanceTokenRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteInstanceToken(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -817,6 +886,41 @@ def doDeleteImagePersonal(argv, arglist):
     model = models.DeleteImagePersonalRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteImagePersonal(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyInstanceToken(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyInstanceToken", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TokenId": argv.get("--TokenId"),
+        "Enable": Utils.try_to_json(argv, "--Enable"),
+        "RegistryId": argv.get("--RegistryId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyInstanceTokenRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyInstanceToken(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1555,6 +1659,8 @@ def doCreateInstanceToken(argv, arglist):
 
     param = {
         "RegistryId": argv.get("--RegistryId"),
+        "TokenType": argv.get("--TokenType"),
+        "Desc": argv.get("--Desc"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1645,11 +1751,14 @@ ACTION_MAP = {
     "DescribeNamespacePersonal": doDescribeNamespacePersonal,
     "DeleteNamespace": doDeleteNamespace,
     "DescribeRepositoryPersonal": doDescribeRepositoryPersonal,
+    "DescribeInstanceToken": doDescribeInstanceToken,
     "ManageImageLifecycleGlobalPersonal": doManageImageLifecycleGlobalPersonal,
     "DescribeApplicationTriggerLogPersonal": doDescribeApplicationTriggerLogPersonal,
+    "DeleteInstanceToken": doDeleteInstanceToken,
     "ModifyUserPasswordPersonal": doModifyUserPasswordPersonal,
     "DeleteApplicationTriggerPersonal": doDeleteApplicationTriggerPersonal,
     "DeleteImagePersonal": doDeleteImagePersonal,
+    "ModifyInstanceToken": doModifyInstanceToken,
     "CreateInstance": doCreateInstance,
     "CreateApplicationTriggerPersonal": doCreateApplicationTriggerPersonal,
     "BatchDeleteRepositoryPersonal": doBatchDeleteRepositoryPersonal,

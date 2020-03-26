@@ -85,12 +85,16 @@ INFO = {
         "desc": "实例ID"
       },
       {
+        "name": "NamespaceName",
+        "desc": "命名空间名称"
+      },
+      {
         "name": "RepositoryName",
         "desc": "镜像仓库名称"
       },
       {
-        "name": "NamespaceName",
-        "desc": "命名空间名称"
+        "name": "ImageVersion",
+        "desc": "指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像"
       },
       {
         "name": "Limit",
@@ -99,13 +103,9 @@ INFO = {
       {
         "name": "Offset",
         "desc": "页数，默认值为1"
-      },
-      {
-        "name": "ImageVersion",
-        "desc": "镜像版本(Tag)，置空则返回仓库内全部的容器镜像"
       }
     ],
-    "desc": "用于在企业版中查询镜像仓库内容器镜像信息，获取镜像版本列表"
+    "desc": "查询镜像版本列表或指定容器镜像信息"
   },
   "CreateNamespace": {
     "params": [
@@ -131,23 +131,23 @@ INFO = {
         "desc": "实例ID"
       },
       {
+        "name": "NamespaceName",
+        "desc": "命名空间名称"
+      },
+      {
         "name": "RepositoryName",
         "desc": "镜像仓库名称"
       },
       {
-        "name": "Description",
-        "desc": "仓库描述"
-      },
-      {
         "name": "BriefDescription",
-        "desc": "仓库的简短描述"
+        "desc": "仓库简短描述"
       },
       {
-        "name": "NamespaceName",
-        "desc": "命名空间名称"
+        "name": "Description",
+        "desc": "仓库详细描述"
       }
     ],
-    "desc": "更新镜像仓库描述"
+    "desc": "更新镜像仓库信息，可修改仓库描述信息"
   },
   "DeleteNamespace": {
     "params": [
@@ -186,8 +186,12 @@ INFO = {
         "desc": "实例Id"
       },
       {
+        "name": "NamespaceName",
+        "desc": "指定命名空间，不填写默认为查询所有命名空间下镜像仓库"
+      },
+      {
         "name": "RepositoryName",
-        "desc": "仓库名称，用于查询"
+        "desc": "指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库"
       },
       {
         "name": "Offset",
@@ -200,13 +204,9 @@ INFO = {
       {
         "name": "SortBy",
         "desc": "基于字段排序，支持的值有-creation_time,-name, -update_time"
-      },
-      {
-        "name": "NamespaceName",
-        "desc": "命名空间名称，用于查询改命名空间下的仓库，如果不填写默认为所有命名空间下"
       }
     ],
-    "desc": "查询镜像仓库信息"
+    "desc": "查询镜像仓库列表或指定镜像仓库信息"
   },
   "DescribeInstances": {
     "params": [
@@ -281,6 +281,23 @@ INFO = {
     ],
     "desc": "查询个人版仓库信息"
   },
+  "DescribeInstanceToken": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例 ID"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页单页数量"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量"
+      }
+    ],
+    "desc": "查询长期访问凭证信息"
+  },
   "ManageImageLifecycleGlobalPersonal": {
     "params": [
       {
@@ -319,6 +336,19 @@ INFO = {
     ],
     "desc": "用于查询应用更新触发器触发日志"
   },
+  "DeleteInstanceToken": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例 ID"
+      },
+      {
+        "name": "TokenId",
+        "desc": "访问凭证 ID"
+      }
+    ],
+    "desc": "删除长期访问凭证"
+  },
   "ModifyUserPasswordPersonal": {
     "params": [
       {
@@ -349,6 +379,23 @@ INFO = {
       }
     ],
     "desc": "用于在个人版中删除tag"
+  },
+  "ModifyInstanceToken": {
+    "params": [
+      {
+        "name": "TokenId",
+        "desc": "实例长期访问凭证 ID"
+      },
+      {
+        "name": "Enable",
+        "desc": "启用或禁用实例长期访问凭证"
+      },
+      {
+        "name": "RegistryId",
+        "desc": "实例 ID"
+      }
+    ],
+    "desc": "更新实例内指定长期访问凭证的启用状态"
   },
   "CreateInstance": {
     "params": [
@@ -728,8 +775,16 @@ INFO = {
       {
         "name": "RegistryId",
         "desc": "实例Id"
+      },
+      {
+        "name": "TokenType",
+        "desc": "访问凭证类型，longterm 为长期访问凭证，temp 为临时访问凭证，默认是临时访问凭证，有效期1小时"
+      },
+      {
+        "name": "Desc",
+        "desc": "长期访问凭证描述信息"
       }
     ],
-    "desc": "获取临时登录密码"
+    "desc": "创建实例的临时或长期访问凭证"
   }
 }
