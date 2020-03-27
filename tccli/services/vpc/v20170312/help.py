@@ -374,14 +374,18 @@ INFO = {
     ],
     "desc": "本接口（DescribeNetDetects）用于查询网络探测列表。"
   },
-  "DescribeSecurityGroupPolicies": {
+  "ModifyCcnRegionBandwidthLimitsType": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "name": "CcnId",
+        "desc": "云联网实例ID。"
+      },
+      {
+        "name": "BandwidthLimitType",
+        "desc": "云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。"
       }
     ],
-    "desc": "本接口（DescribeSecurityGroupPolicies）用于查询安全组规则。"
+    "desc": "本接口（ModifyCcnRegionBandwidthLimitsType）用于修改后付费云联网实例修改带宽限速策略。"
   },
   "DescribeGatewayFlowMonitorDetail": {
     "params": [
@@ -521,6 +525,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeClassicLinkInstances)用于查询私有网络和基础网络设备互通列表。"
+  },
+  "DescribeSecurityGroupPolicies": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      }
+    ],
+    "desc": "本接口（DescribeSecurityGroupPolicies）用于查询安全组规则。"
   },
   "ModifyServiceTemplateAttribute": {
     "params": [
@@ -1378,23 +1391,6 @@ INFO = {
     ],
     "desc": "本接口(DescribeNetDetectStates)用于查询网络探测验证结果列表。"
   },
-  "DescribeAddressTemplateInstances": {
-    "params": [
-      {
-        "name": "AddressTemplateId",
-        "desc": "IP地址实例ID。例如：ipm-12345678。"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。"
-      }
-    ],
-    "desc": "本接口（DescribeAddressTemplateInstances）用于查询参数模板IP地址关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。"
-  },
   "DescribeCcns": {
     "params": [
       {
@@ -1476,19 +1472,6 @@ INFO = {
       }
     ],
     "desc": "本接口（DetachNetworkInterface）用于弹性网卡解绑云主机。"
-  },
-  "ModifyCcnRegionBandwidthLimitsType": {
-    "params": [
-      {
-        "name": "CcnId",
-        "desc": "云联网实例ID。"
-      },
-      {
-        "name": "BandwidthLimitType",
-        "desc": "云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。"
-      }
-    ],
-    "desc": "本接口（ModifyCcnRegionBandwidthLimitsType）用于修改后付费云联网实例修改带宽限速策略。"
   },
   "DeleteNetworkInterface": {
     "params": [
@@ -2226,6 +2209,15 @@ INFO = {
     ],
     "desc": "本接口（ModifyNatGatewayDestinationIpPortTranslationNatRule）用于修改NAT网关端口转发规则。"
   },
+  "DescribeVpcLimits": {
+    "params": [
+      {
+        "name": "LimitTypes",
+        "desc": "配额名称。每次最大查询100个配额类型。"
+      }
+    ],
+    "desc": "获取私有网络配额，部分私有网络的配额有地域属性。\nLimitTypes取值范围：\n* appid-max-vpcs （每个开发商每个地域可创建的VPC数）\n* vpc-max-subnets（每个VPC可创建的子网数）\n* vpc-max-route-tables（每个VPC可创建的路由表数）\n* route-table-max-policies（每个路由表可添加的策略数）\n* vpc-max-vpn-gateways（每个VPC可创建的VPN网关数）\n* appid-max-custom-gateways（每个开发商可创建的对端网关数）\n* appid-max-vpn-connections（每个开发商可创建的VPN通道数）\n* custom-gateway-max-vpn-connections（每个对端网关可创建的VPN通道数）\n* vpn-gateway-max-custom-gateways（每个VPNGW可以创建的通道数）\n* vpc-max-network-acls（每个VPC可创建的网络ACL数）\n* network-acl-max-inbound-policies（每个网络ACL可添加的入站规则数）\n* network-acl-max-outbound-policies（每个网络ACL可添加的出站规则数）\n* vpc-max-vpcpeers（每个VPC可创建的对等连接数）\n* vpc-max-available-vpcpeers（每个VPC可创建的有效对等连接数）\n* vpc-max-basic-network-interconnections（每个VPC可创建的基础网络云主机与VPC互通数）\n* direct-connection-max-snats（每个专线网关可创建的SNAT数）\n* direct-connection-max-dnats（每个专线网关可创建的DNAT数）\n* direct-connection-max-snapts（每个专线网关可创建的SNAPT数）\n* direct-connection-max-dnapts（每个专线网关可创建的DNAPT数）\n* vpc-max-nat-gateways（每个VPC可创建的NAT网关数）\n* nat-gateway-max-eips（每个NAT可以购买的外网IP数量）\n* vpc-max-enis（每个VPC可创建弹性网卡数）\n* vpc-max-havips（每个VPC可创建HAVIP数）\n* eni-max-private-ips（每个ENI可以绑定的内网IP数（ENI未绑定子机））\n* nat-gateway-max-dnapts（每个NAT网关可创建的DNAPT数）\n* vpc-max-ipv6s（每个VPC可分配的IPv6地址数）\n* eni-max-ipv6s（每个ENI可分配的IPv6地址数）\n* vpc-max-assistant_cidrs（每个VPC可分配的辅助CIDR数）"
+  },
   "HaVipAssociateAddressIp": {
     "params": [
       {
@@ -2251,6 +2243,15 @@ INFO = {
       }
     ],
     "desc": "1. 该接口用于删除IPV6转换规则\n2. 支持批量删除同一个转换实例下的多个转换规则"
+  },
+  "CheckDefaultSubnet": {
+    "params": [
+      {
+        "name": "Zone",
+        "desc": "子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。"
+      }
+    ],
+    "desc": "本接口（CheckDefaultSubnet）用于预判是否可建默认子网。"
   },
   "DescribeHaVips": {
     "params": [

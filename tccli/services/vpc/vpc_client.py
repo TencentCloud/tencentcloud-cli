@@ -760,14 +760,15 @@ def doDescribeNetDetects(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSecurityGroupPolicies(argv, arglist):
+def doModifyCcnRegionBandwidthLimitsType(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeSecurityGroupPolicies", g_param[OptionsDefine.Version])
+        show_help("ModifyCcnRegionBandwidthLimitsType", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SecurityGroupId": argv.get("--SecurityGroupId"),
+        "CcnId": argv.get("--CcnId"),
+        "BandwidthLimitType": argv.get("--BandwidthLimitType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -781,9 +782,9 @@ def doDescribeSecurityGroupPolicies(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSecurityGroupPoliciesRequest()
+    model = models.ModifyCcnRegionBandwidthLimitsTypeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSecurityGroupPolicies(model)
+    rsp = client.ModifyCcnRegionBandwidthLimitsType(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2947,40 +2948,6 @@ def doDetachNetworkInterface(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCcnRegionBandwidthLimitsType(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyCcnRegionBandwidthLimitsType", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CcnId": argv.get("--CcnId"),
-        "BandwidthLimitType": argv.get("--BandwidthLimitType"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCcnRegionBandwidthLimitsTypeRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyCcnRegionBandwidthLimitsType(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDeleteNetworkInterface(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -4698,6 +4665,39 @@ def doModifyNatGatewayDestinationIpPortTranslationNatRule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeVpcLimits(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpcLimits", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LimitTypes": Utils.try_to_json(argv, "--LimitTypes"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVpcLimitsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVpcLimits(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doHaVipAssociateAddressIp(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -4757,6 +4757,39 @@ def doRemoveIp6Rules(argv, arglist):
     model = models.RemoveIp6RulesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.RemoveIp6Rules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCheckDefaultSubnet(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CheckDefaultSubnet", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Zone": argv.get("--Zone"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CheckDefaultSubnetRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CheckDefaultSubnet(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -5224,16 +5257,14 @@ def doCreateVpnGateway(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAddressTemplateInstances(argv, arglist):
+def doDescribeSecurityGroupPolicies(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeAddressTemplateInstances", g_param[OptionsDefine.Version])
+        show_help("DescribeSecurityGroupPolicies", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "AddressTemplateId": argv.get("--AddressTemplateId"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -5247,9 +5278,9 @@ def doDescribeAddressTemplateInstances(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAddressTemplateInstancesRequest()
+    model = models.DescribeSecurityGroupPoliciesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAddressTemplateInstances(model)
+    rsp = client.DescribeSecurityGroupPolicies(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -6500,7 +6531,7 @@ ACTION_MAP = {
     "ResetRoutes": doResetRoutes,
     "DescribeNetworkInterfaceLimit": doDescribeNetworkInterfaceLimit,
     "DescribeNetDetects": doDescribeNetDetects,
-    "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
+    "ModifyCcnRegionBandwidthLimitsType": doModifyCcnRegionBandwidthLimitsType,
     "DescribeGatewayFlowMonitorDetail": doDescribeGatewayFlowMonitorDetail,
     "UnassignIpv6Addresses": doUnassignIpv6Addresses,
     "DescribeNetworkAcls": doDescribeNetworkAcls,
@@ -6562,7 +6593,6 @@ ACTION_MAP = {
     "ModifyNetworkAclEntries": doModifyNetworkAclEntries,
     "HaVipDisassociateAddressIp": doHaVipDisassociateAddressIp,
     "DetachNetworkInterface": doDetachNetworkInterface,
-    "ModifyCcnRegionBandwidthLimitsType": doModifyCcnRegionBandwidthLimitsType,
     "DeleteNetworkInterface": doDeleteNetworkInterface,
     "DescribeVpnConnections": doDescribeVpnConnections,
     "DescribeFlowLog": doDescribeFlowLog,
@@ -6613,8 +6643,10 @@ ACTION_MAP = {
     "DescribeServiceTemplates": doDescribeServiceTemplates,
     "UnassignIpv6CidrBlock": doUnassignIpv6CidrBlock,
     "ModifyNatGatewayDestinationIpPortTranslationNatRule": doModifyNatGatewayDestinationIpPortTranslationNatRule,
+    "DescribeVpcLimits": doDescribeVpcLimits,
     "HaVipAssociateAddressIp": doHaVipAssociateAddressIp,
     "RemoveIp6Rules": doRemoveIp6Rules,
+    "CheckDefaultSubnet": doCheckDefaultSubnet,
     "DescribeHaVips": doDescribeHaVips,
     "DeleteHaVip": doDeleteHaVip,
     "ModifyBandwidthPackageAttribute": doModifyBandwidthPackageAttribute,
@@ -6628,7 +6660,7 @@ ACTION_MAP = {
     "ModifyVpnConnectionAttribute": doModifyVpnConnectionAttribute,
     "DescribeSecurityGroups": doDescribeSecurityGroups,
     "CreateVpnGateway": doCreateVpnGateway,
-    "DescribeAddressTemplateInstances": doDescribeAddressTemplateInstances,
+    "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
     "CreateDirectConnectGateway": doCreateDirectConnectGateway,
     "DescribeClassicLinkInstances": doDescribeClassicLinkInstances,
     "TransformAddress": doTransformAddress,

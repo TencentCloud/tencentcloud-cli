@@ -38,6 +38,10 @@ INFO = {
     ],
     "desc": "创建集群"
   },
+  "DescribeImages": {
+    "params": [],
+    "desc": "获取镜像信息"
+  },
   "ModifyClusterAsGroupAttribute": {
     "params": [
       {
@@ -80,6 +84,27 @@ INFO = {
       }
     ],
     "desc": "扩展(新建)集群节点"
+  },
+  "ModifyClusterAttribute": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "集群ID"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "集群所属项目"
+      },
+      {
+        "name": "ClusterName",
+        "desc": "集群名称"
+      },
+      {
+        "name": "ClusterDesc",
+        "desc": "集群描述"
+      }
+    ],
+    "desc": "修改集群属性"
   },
   "DeleteClusterAsGroups": {
     "params": [
@@ -317,6 +342,10 @@ INFO = {
   "DescribeClusterRouteTables": {
     "params": [],
     "desc": "查询集群路由表"
+  },
+  "DescribeRegions": {
+    "params": [],
+    "desc": "获取容器服务支持的所有地域"
   },
   "AddExistedInstances": {
     "params": [

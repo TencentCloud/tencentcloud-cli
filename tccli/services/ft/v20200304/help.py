@@ -5,7 +5,7 @@ INFO = {
     "params": [
       {
         "name": "GenderInfos",
-        "desc": "人脸变化性别信息。 \n您可以输入最多3个 GenderInfo 来实现给一张图中的最多3张人脸变换性别。"
+        "desc": "人脸转化性别信息。 \n您可以输入最多3个 GenderInfo 来实现给一张图中的最多3张人脸转换性别。"
       },
       {
         "name": "Image",

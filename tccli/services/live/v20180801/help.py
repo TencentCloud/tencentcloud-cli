@@ -765,7 +765,7 @@ INFO = {
     "params": [
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
+        "desc": "推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。"
       },
       {
         "name": "DomainName",
@@ -1911,10 +1911,10 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "待启用的直播域名"
+        "desc": "待启用的直播域名。"
       }
     ],
-    "desc": "启用状态为停用的直播域名"
+    "desc": "启用状态为停用的直播域名。"
   },
   "DescribeLivePackageInfo": {
     "params": [
@@ -1929,11 +1929,11 @@ INFO = {
     "params": [
       {
         "name": "FromUrl",
-        "desc": "源 Url。目前可支持直播流及点播文件。\n注意：\n1. 多个点播url之间使用空格拼接。\n2. 目前上限支持10个url。\n3. 支持拉流文件格式：flv，rtmp，hls，mp4。"
+        "desc": "源 Url ，用于拉流的地址。目前可支持直播流及点播文件。\n注意：\n1. 多个点播url之间使用空格拼接。\n2. 目前上限支持10个url。\n3. 支持拉流文件格式：flv，rtmp，hls，mp4。"
       },
       {
         "name": "ToUrl",
-        "desc": "目的 Url，目前限制该目标地址为腾讯域名。\n仅支持：rtmp 协议。"
+        "desc": "目的 Url ，用于推流的地址，目前限制该目标地址为腾讯域名。\n仅支持：rtmp 协议。"
       },
       {
         "name": "AreaId",

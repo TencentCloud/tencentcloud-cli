@@ -116,7 +116,7 @@ INFO = {
       },
       {
         "name": "CertificateType",
-        "desc": "证书类型，可选值：CA，SVR，默认SVR。"
+        "desc": "证书类型，默认SVR。CA = 客户端证书，SVR = 服务器证书。"
       },
       {
         "name": "Alias",
@@ -137,11 +137,11 @@ INFO = {
       },
       {
         "name": "ValidType",
-        "desc": "验证类型 DNS,DNS_AUTO,FILE"
+        "desc": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。"
       },
       {
         "name": "CsrType",
-        "desc": "类型，可选项：Original、Upload、Online，默认original。"
+        "desc": "类型，默认Original。可选项：Original = 原证书csr，Upload = 手动上传，Online = 在线生成。"
       },
       {
         "name": "CsrContent",
@@ -158,7 +158,7 @@ INFO = {
     "params": [
       {
         "name": "DvAuthMethod",
-        "desc": "验证方式（'DNS_AUTO'， 'DNS'， 'FILE'）：DNS_AUTO = 自动DNS验证。"
+        "desc": "验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。"
       },
       {
         "name": "DomainName",
@@ -170,7 +170,7 @@ INFO = {
       },
       {
         "name": "PackageType",
-        "desc": "证书类型，默认2。免费证书目前只有 2 了。"
+        "desc": "证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。"
       },
       {
         "name": "ContactEmail",
@@ -182,7 +182,7 @@ INFO = {
       },
       {
         "name": "ValidityPeriod",
-        "desc": "有效期，默认12。"
+        "desc": "有效期，默认12个月，目前仅支持12个月。"
       },
       {
         "name": "CsrEncryptAlgo",
@@ -346,7 +346,7 @@ INFO = {
       },
       {
         "name": "Alias",
-        "desc": "证书备注。"
+        "desc": "备注名称。"
       }
     ],
     "desc": "用户传入证书id和备注来修改证书备注。"

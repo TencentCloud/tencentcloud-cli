@@ -58,6 +58,38 @@ def doCreateCluster(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeImages(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeImages", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeImagesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeImages(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyClusterAsGroupAttribute(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -151,6 +183,42 @@ def doDeleteCluster(argv, arglist):
     model = models.DeleteClusterRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteCluster(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyClusterAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyClusterAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ClusterId": argv.get("--ClusterId"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "ClusterName": argv.get("--ClusterName"),
+        "ClusterDesc": argv.get("--ClusterDesc"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyClusterAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyClusterAttribute(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -651,6 +719,38 @@ def doDescribeClusterAsGroupOption(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeRegions(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRegions", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRegionsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRegions(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAddExistedInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1009,9 +1109,11 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateCluster": doCreateCluster,
+    "DescribeImages": doDescribeImages,
     "ModifyClusterAsGroupAttribute": doModifyClusterAsGroupAttribute,
     "DeleteClusterEndpoint": doDeleteClusterEndpoint,
     "DeleteCluster": doDeleteCluster,
+    "ModifyClusterAttribute": doModifyClusterAttribute,
     "DeleteClusterAsGroups": doDeleteClusterAsGroups,
     "DeleteClusterRoute": doDeleteClusterRoute,
     "DescribeClusterEndpointVipStatus": doDescribeClusterEndpointVipStatus,
@@ -1026,6 +1128,7 @@ ACTION_MAP = {
     "DescribeClusterAsGroups": doDescribeClusterAsGroups,
     "CreateClusterEndpoint": doCreateClusterEndpoint,
     "DescribeClusterAsGroupOption": doDescribeClusterAsGroupOption,
+    "DescribeRegions": doDescribeRegions,
     "AddExistedInstances": doAddExistedInstances,
     "DescribeClusterSecurity": doDescribeClusterSecurity,
     "DescribeRouteTableConflicts": doDescribeRouteTableConflicts,
