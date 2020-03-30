@@ -596,7 +596,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",
@@ -967,7 +967,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",
@@ -1073,7 +1073,7 @@ INFO = {
       },
       {
         "name": "Id",
-        "desc": "资源ID"
+        "desc": "资源实例ID，比如高防IP实例的ID，高防IP专业版实例的ID"
       },
       {
         "name": "RuleId",
@@ -1827,7 +1827,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",
@@ -1907,7 +1907,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",
@@ -2111,7 +2111,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",
@@ -2210,7 +2210,7 @@ INFO = {
     "params": [
       {
         "name": "Business",
-        "desc": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）"
+        "desc": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）"
       },
       {
         "name": "Id",

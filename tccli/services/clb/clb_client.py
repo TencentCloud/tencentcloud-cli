@@ -844,6 +844,7 @@ def doDescribeLoadBalancers(argv, arglist):
         "VpcId": argv.get("--VpcId"),
         "SecurityGroup": argv.get("--SecurityGroup"),
         "MasterZone": argv.get("--MasterZone"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
