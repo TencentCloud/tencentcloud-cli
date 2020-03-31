@@ -790,7 +790,7 @@ INFO = {
     "params": [
       {
         "name": "DayTime",
-        "desc": "日期，\n格式：YYYY-mm-dd。"
+        "desc": "日期，格式：YYYY-mm-dd。\n第二天凌晨3点出昨天的数据，建议在这个时间点之后查询最新数据。"
       },
       {
         "name": "PlayDomain",
@@ -798,7 +798,7 @@ INFO = {
       },
       {
         "name": "PageNum",
-        "desc": "页号，范围[1,10]，默认值是1。"
+        "desc": "页号，范围[1,1000]，默认值是1。"
       },
       {
         "name": "PageSize",
@@ -1664,11 +1664,15 @@ INFO = {
       },
       {
         "name": "MainlandOrOversea",
-        "desc": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据。\n默认：查询国内+国外的数据。"
+        "desc": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据，\n默认：查询国内+国外的数据。\n注：LEB（快直播）只支持国内+国外数据查询。"
       },
       {
         "name": "Granularity",
         "desc": "数据粒度，支持如下粒度：\n5：5分钟粒度，（跨度不支持超过1天），\n60：1小时粒度（跨度不支持超过一个月），\n1440：天粒度（跨度不支持超过一个月）。\n默认值：5。"
+      },
+      {
+        "name": "ServiceName",
+        "desc": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。"
       }
     ],
     "desc": "直播计费带宽和流量数据查询。"

@@ -1175,6 +1175,8 @@ def doModifyRule(argv, arglist):
         "Scheduler": argv.get("--Scheduler"),
         "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
         "ForwardType": argv.get("--ForwardType"),
+        "TrpcCallee": argv.get("--TrpcCallee"),
+        "TrpcFunc": argv.get("--TrpcFunc"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

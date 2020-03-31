@@ -1481,6 +1481,7 @@ def doListGroupsForUser(argv, arglist):
         "Uid": Utils.try_to_json(argv, "--Uid"),
         "Rp": Utils.try_to_json(argv, "--Rp"),
         "Page": Utils.try_to_json(argv, "--Page"),
+        "SubUin": Utils.try_to_json(argv, "--SubUin"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

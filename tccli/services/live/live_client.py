@@ -2904,6 +2904,7 @@ def doDescribeBillBandwidthAndFluxList(argv, arglist):
         "PlayDomains": Utils.try_to_json(argv, "--PlayDomains"),
         "MainlandOrOversea": argv.get("--MainlandOrOversea"),
         "Granularity": Utils.try_to_json(argv, "--Granularity"),
+        "ServiceName": argv.get("--ServiceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -170,14 +170,20 @@ def doCreateSampleSnapshotTemplate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doParseLiveStreamProcessNotification(argv, arglist):
+def doEditMedia(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ParseLiveStreamProcessNotification", g_param[OptionsDefine.Version])
+        show_help("EditMedia", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Content": argv.get("--Content"),
+        "FileInfos": Utils.try_to_json(argv, "--FileInfos"),
+        "OutputStorage": Utils.try_to_json(argv, "--OutputStorage"),
+        "OutputObjectPath": argv.get("--OutputObjectPath"),
+        "TaskNotifyConfig": Utils.try_to_json(argv, "--TaskNotifyConfig"),
+        "TasksPriority": Utils.try_to_json(argv, "--TasksPriority"),
+        "SessionId": argv.get("--SessionId"),
+        "SessionContext": argv.get("--SessionContext"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -191,9 +197,9 @@ def doParseLiveStreamProcessNotification(argv, arglist):
     client = mod.MpsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ParseLiveStreamProcessNotificationRequest()
+    model = models.EditMediaRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ParseLiveStreamProcessNotification(model)
+    rsp = client.EditMedia(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -227,6 +233,39 @@ def doDeleteAIAnalysisTemplate(argv, arglist):
     model = models.DeleteAIAnalysisTemplateRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteAIAnalysisTemplate(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doParseLiveStreamProcessNotification(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ParseLiveStreamProcessNotification", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Content": argv.get("--Content"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MpsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ParseLiveStreamProcessNotificationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ParseLiveStreamProcessNotification(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2166,8 +2205,9 @@ ACTION_MAP = {
     "ParseNotification": doParseNotification,
     "CreateContentReviewTemplate": doCreateContentReviewTemplate,
     "CreateSampleSnapshotTemplate": doCreateSampleSnapshotTemplate,
-    "ParseLiveStreamProcessNotification": doParseLiveStreamProcessNotification,
+    "EditMedia": doEditMedia,
     "DeleteAIAnalysisTemplate": doDeleteAIAnalysisTemplate,
+    "ParseLiveStreamProcessNotification": doParseLiveStreamProcessNotification,
     "DescribeWorkflows": doDescribeWorkflows,
     "DescribeSnapshotByTimeOffsetTemplates": doDescribeSnapshotByTimeOffsetTemplates,
     "DescribeMediaMetaData": doDescribeMediaMetaData,

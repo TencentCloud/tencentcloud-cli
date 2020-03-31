@@ -329,6 +329,10 @@ INFO = {
       {
         "name": "Page",
         "desc": "页码。默认为1。"
+      },
+      {
+        "name": "SubUin",
+        "desc": "子账号UIN"
       }
     ],
     "desc": "列出用户关联的用户组"

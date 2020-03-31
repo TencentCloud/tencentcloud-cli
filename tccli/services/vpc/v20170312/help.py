@@ -98,11 +98,11 @@ INFO = {
     "params": [
       {
         "name": "TaskId",
-        "desc": "异步任务ID"
+        "desc": "异步任务ID。TaskId和DealName必填一个参数"
       },
       {
         "name": "DealName",
-        "desc": "计费订单号"
+        "desc": "计费订单号。TaskId和DealName必填一个参数"
       }
     ],
     "desc": "查询EIP异步任务执行结果"
@@ -657,11 +657,11 @@ INFO = {
       },
       {
         "name": "PrivateIpAddresses",
-        "desc": "指定的内网IP信息，单次最多指定10个。"
+        "desc": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。"
       },
       {
         "name": "SecondaryPrivateIpAddressCount",
-        "desc": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数，详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。"
+        "desc": "新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。"
       }
     ],
     "desc": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。"
@@ -2136,11 +2136,11 @@ INFO = {
       },
       {
         "name": "Ipv6Addresses",
-        "desc": "指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。"
+        "desc": "指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。"
       },
       {
         "name": "Ipv6AddressCount",
-        "desc": "自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配数。与入参`Ipv6Addresses`合并计算配额。"
+        "desc": "自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配数。与入参`Ipv6Addresses`合并计算配额。与Ipv6Addresses必填一个。"
       }
     ],
     "desc": "本接口（AssignIpv6Addresses）用于弹性网卡申请`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定`IPv6`地址申请，地址类型不能为主`IP`，`IPv6`地址暂时只支持作为辅助`IP`。\n* 地址必须要在弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助`IPv6`地址，接口会在弹性网卡所在子网段内返回指定数量的辅助`IPv6`地址。"

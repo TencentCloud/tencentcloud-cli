@@ -279,16 +279,16 @@ def doCreateTrainingJob(argv, arglist):
         return
 
     param = {
-        "TrainingJobName": argv.get("--TrainingJobName"),
         "AlgorithmSpecification": Utils.try_to_json(argv, "--AlgorithmSpecification"),
         "InputDataConfig": Utils.try_to_json(argv, "--InputDataConfig"),
         "OutputDataConfig": Utils.try_to_json(argv, "--OutputDataConfig"),
         "ResourceConfig": Utils.try_to_json(argv, "--ResourceConfig"),
+        "TrainingJobName": argv.get("--TrainingJobName"),
         "StoppingCondition": Utils.try_to_json(argv, "--StoppingCondition"),
         "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
         "HyperParameters": argv.get("--HyperParameters"),
-        "RoleName": argv.get("--RoleName"),
         "EnvConfig": Utils.try_to_json(argv, "--EnvConfig"),
+        "RoleName": argv.get("--RoleName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

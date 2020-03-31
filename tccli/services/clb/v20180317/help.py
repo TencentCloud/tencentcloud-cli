@@ -727,7 +727,15 @@ INFO = {
       },
       {
         "name": "ForwardType",
-        "desc": "负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS"
+        "desc": "负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC"
+      },
+      {
+        "name": "TrpcCallee",
+        "desc": "TRPC被调服务器路由，ForwardType为TRPC时必填"
+      },
+      {
+        "name": "TrpcFunc",
+        "desc": "TRPC调用服务接口，ForwardType为TRPC时必填"
       }
     ],
     "desc": "ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"

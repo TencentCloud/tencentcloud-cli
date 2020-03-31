@@ -159,10 +159,6 @@ INFO = {
   "CreateTrainingJob": {
     "params": [
       {
-        "name": "TrainingJobName",
-        "desc": "训练任务名称"
-      },
-      {
         "name": "AlgorithmSpecification",
         "desc": "算法镜像配置"
       },
@@ -179,6 +175,10 @@ INFO = {
         "desc": "资源实例配置"
       },
       {
+        "name": "TrainingJobName",
+        "desc": "训练任务名称"
+      },
+      {
         "name": "StoppingCondition",
         "desc": "中止条件"
       },
@@ -191,12 +191,12 @@ INFO = {
         "desc": "算法超级参数"
       },
       {
-        "name": "RoleName",
-        "desc": "角色名称"
-      },
-      {
         "name": "EnvConfig",
         "desc": "环境变量配置"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名称"
       }
     ],
     "desc": "创建训练任务"

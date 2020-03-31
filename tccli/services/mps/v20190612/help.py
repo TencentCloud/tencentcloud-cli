@@ -154,6 +154,39 @@ INFO = {
     ],
     "desc": "创建用户自定义采样截图模板，数量上限：16。"
   },
+  "EditMedia": {
+    "params": [
+      {
+        "name": "FileInfos",
+        "desc": "输入的视频文件信息。"
+      },
+      {
+        "name": "OutputStorage",
+        "desc": "视频处理输出文件的目标存储。"
+      },
+      {
+        "name": "OutputObjectPath",
+        "desc": "视频处理输出文件的目标路径。"
+      },
+      {
+        "name": "TaskNotifyConfig",
+        "desc": "任务的事件通知信息，不填代表不获取事件通知。"
+      },
+      {
+        "name": "TasksPriority",
+        "desc": "任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。"
+      },
+      {
+        "name": "SessionId",
+        "desc": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
+      },
+      {
+        "name": "SessionContext",
+        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
+      }
+    ],
+    "desc": "对视频进行编辑（剪辑、拼接等），生成一个新的点播视频。编辑的功能包括：\n\n1. 对一个文件进行剪辑，生成一个新的视频；\n2. 对多个文件进行拼接，生成一个新的视频；\n3. 对多个文件进行剪辑，然后再拼接，生成一个新的视频。"
+  },
   "DeleteAIAnalysisTemplate": {
     "params": [
       {
@@ -310,14 +343,14 @@ INFO = {
     ],
     "desc": "根据内容分析模板唯一标识，获取内容分析模板详情列表。返回结果包含符合条件的所有用户自定义内容分析模板及系统预置视频内容分析模板"
   },
-  "ParseLiveStreamProcessNotification": {
+  "DescribeTaskDetail": {
     "params": [
       {
-        "name": "Content",
-        "desc": "从 CMQ 获取到的直播流事件通知内容。"
+        "name": "TaskId",
+        "desc": "视频处理任务的任务 ID。"
       }
     ],
-    "desc": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。"
+    "desc": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。"
   },
   "ModifyAIRecognitionTemplate": {
     "params": [
@@ -480,14 +513,14 @@ INFO = {
     ],
     "desc": "重新设置一个已经存在且处于禁用状态的工作流。"
   },
-  "DescribeTaskDetail": {
+  "ParseLiveStreamProcessNotification": {
     "params": [
       {
-        "name": "TaskId",
-        "desc": "视频处理任务的任务 ID。"
+        "name": "Content",
+        "desc": "从 CMQ 获取到的直播流事件通知内容。"
       }
     ],
-    "desc": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。"
+    "desc": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。"
   },
   "DescribeWordSamples": {
     "params": [
