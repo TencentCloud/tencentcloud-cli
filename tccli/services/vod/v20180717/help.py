@@ -1848,51 +1848,6 @@ INFO = {
     ],
     "desc": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。"
   },
-  "ModifyEventNotificationConfigForConsole": {
-    "params": [
-      {
-        "name": "Mode",
-        "desc": "接收事件通知的方式。默认 \"PUSH\" 为[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83)，\"PULL\" 为[基于消息队列的可靠通知](https://cloud.tencent.com/document/product/266/7829#.E5.9F.BA.E4.BA.8E.E6.B6.88.E6.81.AF.E9.98.9F.E5.88.97.E7.9A.84.E5.8F.AF.E9.9D.A0.E9.80.9A.E7.9F.A5)。"
-      },
-      {
-        "name": "NotificationUrlV3",
-        "desc": "采用[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83)接收方式时，用于接收 V3 版本事件通知的地址。"
-      },
-      {
-        "name": "NotificationUrlV2",
-        "desc": "采用[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83)接收方式时，用于接收 V2 版本事件通知的地址。"
-      },
-      {
-        "name": "UploadMediaCompleteEventSwitch",
-        "desc": "是否接收[视频上传完成](https://cloud.tencent.com/document/product/266/7830)事件通知， 默认 \"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。"
-      },
-      {
-        "name": "TranscodeCompleteEventSwitch",
-        "desc": "是否接收[视频转码完成](https://cloud.tencent.com/document/product/266/7832)事件通知， 默认 \"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。"
-      },
-      {
-        "name": "CreateSnapshotByTimeOffsetCompleteEventSwitch",
-        "desc": "是否接收[指定时间点截图完成](https://cloud.tencent.com/document/product/266/8105)事件通知，  默认 \"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。"
-      },
-      {
-        "name": "CreateImageSpriteCompleteEventSwitch",
-        "desc": "是否接收[视频截取雪碧图完成](https://cloud.tencent.com/document/product/266/8104)事件通知，  默认 \"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。"
-      },
-      {
-        "name": "ConcatMediaCompleteEventSwitch",
-        "desc": "是否接收[视频拼接完成](https://cloud.tencent.com/document/product/266/7834)事件通知，  默认 \"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。"
-      },
-      {
-        "name": "DeleteMediaCompleteEventSwitch",
-        "desc": "是否接收[视频删除完成](https://cloud.tencent.com/document/product/266/13434)事件通知，  默认 \"OFF\" 为忽略该事件通知，\"ON\" 为接收事件通知。"
-      },
-      {
-        "name": "SubAppId",
-        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
-      }
-    ],
-    "desc": "腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。\n\n开发者可以通过修改事件通知通知配置接口来实现：\n- 设置接收回调通知的类型，目前有[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83)和[基于消息队列的可靠通知](https://cloud.tencent.com/document/product/266/7829#.E5.9F.BA.E4.BA.8E.E6.B6.88.E6.81.AF.E9.98.9F.E5.88.97.E7.9A.84.E5.8F.AF.E9.9D.A0.E9.80.9A.E7.9F.A5) 2 种类型。\n- 对于[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83)，设置 V2、V3 版本接收事件通知的地址（都指定时两个地址都会收到通知，都不指定时则表示不采用 HTTP 回调通知的接收方式）。\n- 对具体事件服务的通知事件选择设置接收或者忽略。"
-  },
   "DescribeSubAppIds": {
     "params": [],
     "desc": "该接口用于获取当前账号有权限的子应用列表，包含主应用。若尚未开通子应用功能，接口将返回 \n FailedOperation。"

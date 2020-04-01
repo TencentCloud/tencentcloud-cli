@@ -38,6 +38,7 @@ def doCreateService(argv, arglist):
         "GpuMemory": Utils.try_to_json(argv, "--GpuMemory"),
         "Description": argv.get("--Description"),
         "GpuType": argv.get("--GpuType"),
+        "LogTopicId": argv.get("--LogTopicId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -109,8 +110,10 @@ def doCreateRsgAsGroup(argv, arglist):
         "RsgId": argv.get("--RsgId"),
         "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
         "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "InstanceType": argv.get("--InstanceType"),
         "Cluster": argv.get("--Cluster"),
         "Name": argv.get("--Name"),
+        "DesiredSize": Utils.try_to_json(argv, "--DesiredSize"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -222,6 +225,7 @@ def doCreateJob(argv, arglist):
         "GpuMemory": Utils.try_to_json(argv, "--GpuMemory"),
         "GpuType": argv.get("--GpuType"),
         "QuantizationInput": Utils.try_to_json(argv, "--QuantizationInput"),
+        "LogTopicId": argv.get("--LogTopicId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -258,6 +262,7 @@ def doUpdateRsgAsGroup(argv, arglist):
         "Name": argv.get("--Name"),
         "MaxSize": Utils.try_to_json(argv, "--MaxSize"),
         "MinSize": Utils.try_to_json(argv, "--MinSize"),
+        "DesiredSize": Utils.try_to_json(argv, "--DesiredSize"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -370,6 +375,7 @@ def doUpdateService(argv, arglist):
         "Cpu": Utils.try_to_json(argv, "--Cpu"),
         "Memory": Utils.try_to_json(argv, "--Memory"),
         "Gpu": Utils.try_to_json(argv, "--Gpu"),
+        "LogTopicId": argv.get("--LogTopicId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

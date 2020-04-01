@@ -235,6 +235,35 @@ INFO = {
     ],
     "desc": "本接口(DescribeDatabases)用于查询云数据库实例的数据库信息。"
   },
+  "DescribeErrorLogData": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID 。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间戳。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间戳。"
+      },
+      {
+        "name": "KeyWords",
+        "desc": "要匹配的关键字列表，最多支持15个关键字。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页的返回数量，最大为400。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      }
+    ],
+    "desc": "根据检索条件查询实例错误日志详情。只能查询一个月之内的错误日志。"
+  },
   "DisassociateSecurityGroups": {
     "params": [
       {

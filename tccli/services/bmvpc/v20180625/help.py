@@ -1088,6 +1088,6 @@ INFO = {
         "desc": "子网信息"
       }
     ],
-    "desc": "创建黑石私有网络的子网\n访问管理: 用户可以对VpcId进行授权操作。比如设置资源为[\"qcs::bmvpc:::unVpc/vpc-xxxxx\"]"
+    "desc": "创建黑石私有网络的子网\n访问管理: 用户可以对VpcId进行授权操作。例如设置资源为[\"qcs::bmvpc:::unVpc/vpc-xxxxx\"]"
   }
 }

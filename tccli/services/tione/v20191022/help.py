@@ -1,23 +1,91 @@
 # -*- coding: utf-8 -*-
 DESC = "tione-2019-10-22"
 INFO = {
-  "DescribeTrainingJob": {
+  "UpdateCodeRepository": {
     "params": [
       {
-        "name": "TrainingJobName",
-        "desc": "训练任务名称"
+        "name": "CodeRepositoryName",
+        "desc": "查询存储库名称"
+      },
+      {
+        "name": "GitSecret",
+        "desc": "Git凭证"
       }
     ],
-    "desc": "查询训练任务"
+    "desc": "更新存储库"
   },
-  "StopNotebookInstance": {
+  "DeleteCodeRepository": {
     "params": [
       {
-        "name": "NotebookInstanceName",
-        "desc": "Notebook实例名称"
+        "name": "CodeRepositoryName",
+        "desc": "存储库名称"
       }
     ],
-    "desc": "停止Notebook实例"
+    "desc": "删除存储库"
+  },
+  "UpdateNotebookLifecycleScript": {
+    "params": [
+      {
+        "name": "NotebookLifecycleScriptsName",
+        "desc": "notebook生命周期脚本名称"
+      },
+      {
+        "name": "CreateScript",
+        "desc": "创建脚本"
+      },
+      {
+        "name": "StartScript",
+        "desc": "启动脚本"
+      }
+    ],
+    "desc": "更新notebook生命周期脚本"
+  },
+  "CreateNotebookLifecycleScript": {
+    "params": [
+      {
+        "name": "NotebookLifecycleScriptsName",
+        "desc": "Notebook生命周期脚本名称"
+      },
+      {
+        "name": "CreateScript",
+        "desc": "创建脚本，base64编码格式"
+      },
+      {
+        "name": "StartScript",
+        "desc": "启动脚本，base64编码格式"
+      }
+    ],
+    "desc": "创建Notebook生命周期脚本"
+  },
+  "DeleteNotebookLifecycleScript": {
+    "params": [
+      {
+        "name": "NotebookLifecycleScriptsName",
+        "desc": "生命周期脚本名称"
+      },
+      {
+        "name": "Forcible",
+        "desc": "是否忽略已关联的 notebook 实例强行删除生命周期脚本，默认 false"
+      }
+    ],
+    "desc": "删除Notebook生命周期脚本"
+  },
+  "CreateCodeRepository": {
+    "params": [
+      {
+        "name": "CodeRepositoryName",
+        "desc": "存储库名称"
+      },
+      {
+        "name": "GitConfig",
+        "desc": "Git相关配置"
+      },
+      {
+        "name": "GitSecret",
+        "desc": "Git凭证"
+      }
+    ],
+    "desc": "创建存储库"
   },
   "UpdateNotebookInstance": {
     "params": [
@@ -66,46 +134,56 @@ INFO = {
     ],
     "desc": "创建Notebook授权Url"
   },
-  "CreateNotebookInstance": {
+  "DescribeNotebookLifecycleScripts": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。"
+      },
+      {
+        "name": "SortOrder",
+        "desc": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序"
+      }
+    ],
+    "desc": "查看notebook生命周期脚本列表"
+  },
+  "DescribeCodeRepositories": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。"
+      },
+      {
+        "name": "SortOrder",
+        "desc": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序"
+      }
+    ],
+    "desc": "查询存储库列表"
+  },
+  "StopNotebookInstance": {
     "params": [
       {
         "name": "NotebookInstanceName",
         "desc": "Notebook实例名称"
-      },
-      {
-        "name": "InstanceType",
-        "desc": "Notebook算力类型"
-      },
-      {
-        "name": "RoleArn",
-        "desc": "角色的资源描述"
-      },
-      {
-        "name": "DirectInternetAccess",
-        "desc": "外网访问权限，可取值Enabled/Disabled"
-      },
-      {
-        "name": "RootAccess",
-        "desc": "Root用户权限，可取值Enabled/Disabled"
-      },
-      {
-        "name": "SecurityGroupIds",
-        "desc": "安全组ID"
-      },
-      {
-        "name": "SubnetId",
-        "desc": "子网ID"
-      },
-      {
-        "name": "VolumeSizeInGB",
-        "desc": "数据卷大小(GB)"
-      },
-      {
-        "name": "Tags",
-        "desc": "Notebook标签"
       }
     ],
-    "desc": "创建Notebook实例"
+    "desc": "停止Notebook实例"
   },
   "DescribeNotebookInstances": {
     "params": [
@@ -118,40 +196,16 @@ INFO = {
         "desc": "限制数目"
       },
       {
-        "name": "SortBy",
-        "desc": "排序字段"
-      },
-      {
         "name": "SortOrder",
-        "desc": "排序方式"
+        "desc": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序"
       },
       {
-        "name": "CreationTimeAfter",
-        "desc": "创建时间晚于"
+        "name": "Filters",
+        "desc": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。\nlifecycle-name - String - 是否必填：否 -（过滤条件）按照生命周期脚本名称过滤。\ndefault-code-repo-name - String - 是否必填：否 -（过滤条件）按照默认存储库名称过滤。\nadditional-code-repo-name - String - 是否必填：否 -（过滤条件）按照其他存储库名称过滤。"
       },
       {
-        "name": "CreationTimeBefore",
-        "desc": "创建时间早于"
-      },
-      {
-        "name": "LastModifiedTimeAfter",
-        "desc": "最近修改时间晚于"
-      },
-      {
-        "name": "LastModifiedTimeBefore",
-        "desc": "最近修改时间早于"
-      },
-      {
-        "name": "NameContains",
-        "desc": "根据名称过滤"
-      },
-      {
-        "name": "StatusEquals",
-        "desc": "根据状态过滤"
-      },
-      {
-        "name": "MaxResults",
-        "desc": "最大返回个数"
+        "name": "SortBy",
+        "desc": "【废弃字段】排序字段"
       }
     ],
     "desc": "查询Notebook实例列表"
@@ -201,6 +255,56 @@ INFO = {
     ],
     "desc": "创建训练任务"
   },
+  "CreateNotebookInstance": {
+    "params": [
+      {
+        "name": "NotebookInstanceName",
+        "desc": "Notebook实例名称"
+      },
+      {
+        "name": "InstanceType",
+        "desc": "Notebook算力类型"
+      },
+      {
+        "name": "RoleArn",
+        "desc": "角色的资源描述"
+      },
+      {
+        "name": "DirectInternetAccess",
+        "desc": "外网访问权限，可取值Enabled/Disabled"
+      },
+      {
+        "name": "RootAccess",
+        "desc": "Root用户权限，可取值Enabled/Disabled"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "安全组ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网ID"
+      },
+      {
+        "name": "VolumeSizeInGB",
+        "desc": "数据卷大小(GB)"
+      },
+      {
+        "name": "Tags",
+        "desc": "Notebook标签"
+      }
+    ],
+    "desc": "创建Notebook实例"
+  },
+  "DescribeCodeRepository": {
+    "params": [
+      {
+        "name": "CodeRepositoryName",
+        "desc": "存储库名称"
+      }
+    ],
+    "desc": "查询存储库详情"
+  },
   "StartNotebookInstance": {
     "params": [
       {
@@ -227,5 +331,23 @@ INFO = {
       }
     ],
     "desc": "删除notebook实例"
+  },
+  "DescribeNotebookLifecycleScript": {
+    "params": [
+      {
+        "name": "NotebookLifecycleScriptsName",
+        "desc": "生命周期脚本名称"
+      }
+    ],
+    "desc": "查看notebook生命周期脚本详情"
+  },
+  "DescribeTrainingJob": {
+    "params": [
+      {
+        "name": "TrainingJobName",
+        "desc": "训练任务名称"
+      }
+    ],
+    "desc": "查询训练任务"
   }
 }

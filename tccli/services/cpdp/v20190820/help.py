@@ -1202,10 +1202,6 @@ INFO = {
         "desc": "银行真实渠道.如:bank_pingan"
       },
       {
-        "name": "SubOrderList",
-        "desc": "子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)"
-      },
-      {
         "name": "OriginalAmt",
         "desc": "原始金额"
       },
@@ -1236,6 +1232,10 @@ INFO = {
       {
         "name": "SubAppId",
         "desc": "聚鑫计费SubAppId，代表子商户"
+      },
+      {
+        "name": "SubOrderList",
+        "desc": "子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)\n注：接入银行或其他支付渠道服务商模式下，必传"
       },
       {
         "name": "TotalMchIncome",

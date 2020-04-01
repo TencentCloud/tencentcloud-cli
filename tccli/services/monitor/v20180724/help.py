@@ -203,6 +203,23 @@ INFO = {
     ],
     "desc": "获取已绑定对象列表"
   },
+  "SendCustomAlarmMsg": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "接口模块名，当前取值monitor"
+      },
+      {
+        "name": "PolicyId",
+        "desc": "消息策略ID，在云监控自定义消息页面配置"
+      },
+      {
+        "name": "Msg",
+        "desc": "用户想要发送的自定义消息内容"
+      }
+    ],
+    "desc": "发送自定义消息告警"
+  },
   "DeletePolicyGroup": {
     "params": [
       {

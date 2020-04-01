@@ -54,6 +54,10 @@ INFO = {
       {
         "name": "GpuType",
         "desc": "GPU类型"
+      },
+      {
+        "name": "LogTopicId",
+        "desc": "Cls日志主题ID"
       }
     ],
     "desc": "创建服务"
@@ -94,12 +98,20 @@ INFO = {
         "desc": "伸缩组允许的最小节点数"
       },
       {
+        "name": "InstanceType",
+        "desc": "伸缩组的节点规格"
+      },
+      {
         "name": "Cluster",
         "desc": "资源组所在的集群名"
       },
       {
         "name": "Name",
         "desc": "伸缩组名称"
+      },
+      {
+        "name": "DesiredSize",
+        "desc": "伸缩组期望的节点数"
       }
     ],
     "desc": "创建资源组的伸缩组。当前一个资源组仅允许创建一个伸缩组。"
@@ -148,6 +160,10 @@ INFO = {
       {
         "name": "MinSize",
         "desc": "伸缩组最小节点数"
+      },
+      {
+        "name": "DesiredSize",
+        "desc": "伸缩组期望的节点数"
       }
     ],
     "desc": "更新资源组的伸缩组"
@@ -215,6 +231,10 @@ INFO = {
       {
         "name": "Gpu",
         "desc": "显卡配置，单位为 1/1000 卡"
+      },
+      {
+        "name": "LogTopicId",
+        "desc": "Cls日志主题ID"
       }
     ],
     "desc": "更新服务"
@@ -248,7 +268,7 @@ INFO = {
     "params": [
       {
         "name": "Filters",
-        "desc": "筛选选项，支持按照name等字段进行筛选"
+        "desc": "筛选选项，支持筛选的字段：id, region, zone, cluster, status, runtime, rsg_id"
       },
       {
         "name": "Offset",
@@ -434,6 +454,10 @@ INFO = {
       {
         "name": "QuantizationInput",
         "desc": "量化输入"
+      },
+      {
+        "name": "LogTopicId",
+        "desc": "Cls日志主题ID"
       }
     ],
     "desc": "创建任务"

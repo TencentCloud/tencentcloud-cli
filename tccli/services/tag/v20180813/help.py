@@ -68,6 +68,43 @@ INFO = {
     ],
     "desc": "用于查询已有资源标签键值对"
   },
+  "DescribeResourceTags": {
+    "params": [
+      {
+        "name": "CreateUin",
+        "desc": "创建者uin"
+      },
+      {
+        "name": "ResourceRegion",
+        "desc": "资源所在地域"
+      },
+      {
+        "name": "ServiceType",
+        "desc": "业务类型"
+      },
+      {
+        "name": "ResourcePrefix",
+        "desc": "资源前缀"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "资源唯一标识"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认为 0, 必须为Limit参数的整数倍"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页大小，默认为 15"
+      },
+      {
+        "name": "CosResourceId",
+        "desc": "是否是Cos的资源id"
+      }
+    ],
+    "desc": "查询资源关联标签"
+  },
   "AddResourceTag": {
     "params": [
       {
