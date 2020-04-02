@@ -108,6 +108,30 @@ INFO = {
       {
         "name": "InstanceType",
         "desc": "算力资源类型"
+      },
+      {
+        "name": "LifecycleScriptsName",
+        "desc": "notebook生命周期脚本名称"
+      },
+      {
+        "name": "DisassociateLifecycleScript",
+        "desc": "是否解绑生命周期脚本，默认 false。\n如果本来就没有绑定脚本，则忽略此参数；\n如果本来有绑定脚本，此参数为 true 则解绑；\n如果本来有绑定脚本，此参数为 false，则需要额外填入 LifecycleScriptsName"
+      },
+      {
+        "name": "DefaultCodeRepository",
+        "desc": "默认存储库名称\n可以是已创建的存储库名称或者已https://开头的公共git库"
+      },
+      {
+        "name": "AdditionalCodeRepositories",
+        "desc": "其他存储库列表\n每个元素可以是已创建的存储库名称或者已https://开头的公共git库"
+      },
+      {
+        "name": "DisassociateDefaultCodeRepository",
+        "desc": "是否取消关联默认存储库，默认false\n该值为true时，DefaultCodeRepository将被忽略"
+      },
+      {
+        "name": "DisassociateAdditionalCodeRepositories",
+        "desc": "是否取消关联其他存储库，默认false\n该值为true时，AdditionalCodeRepositories将被忽略"
       }
     ],
     "desc": "更新Notebook实例"
@@ -266,8 +290,8 @@ INFO = {
         "desc": "Notebook算力类型"
       },
       {
-        "name": "RoleArn",
-        "desc": "角色的资源描述"
+        "name": "VolumeSizeInGB",
+        "desc": "数据卷大小(GB)"
       },
       {
         "name": "DirectInternetAccess",
@@ -278,20 +302,20 @@ INFO = {
         "desc": "Root用户权限，可取值Enabled/Disabled"
       },
       {
-        "name": "SecurityGroupIds",
-        "desc": "安全组ID"
-      },
-      {
         "name": "SubnetId",
         "desc": "子网ID"
       },
       {
-        "name": "VolumeSizeInGB",
-        "desc": "数据卷大小(GB)"
+        "name": "LifecycleScriptsName",
+        "desc": "生命周期脚本名称"
       },
       {
-        "name": "Tags",
-        "desc": "Notebook标签"
+        "name": "DefaultCodeRepository",
+        "desc": "默认存储库名称\n可以是已创建的存储库名称或者已https://开头的公共git库"
+      },
+      {
+        "name": "AdditionalCodeRepositories",
+        "desc": "其他存储库列表\n每个元素可以是已创建的存储库名称或者已https://开头的公共git库"
       }
     ],
     "desc": "创建Notebook实例"

@@ -149,19 +149,6 @@ INFO = {
     ],
     "desc": "恢复回收站中，用户自行删除的表。对欠费待释放的表无效。"
   },
-  "ModifyAppName": {
-    "params": [
-      {
-        "name": "ApplicationId",
-        "desc": "需要修改名称的应用实例ID"
-      },
-      {
-        "name": "AppName",
-        "desc": "需要修改的应用名称，需要URLEncode"
-      }
-    ],
-    "desc": "修改指定的应用名称"
-  },
   "CreateBackup": {
     "params": [
       {

@@ -270,6 +270,12 @@ def doUpdateNotebookInstance(argv, arglist):
         "RootAccess": argv.get("--RootAccess"),
         "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
         "InstanceType": argv.get("--InstanceType"),
+        "LifecycleScriptsName": argv.get("--LifecycleScriptsName"),
+        "DisassociateLifecycleScript": Utils.try_to_json(argv, "--DisassociateLifecycleScript"),
+        "DefaultCodeRepository": argv.get("--DefaultCodeRepository"),
+        "AdditionalCodeRepositories": Utils.try_to_json(argv, "--AdditionalCodeRepositories"),
+        "DisassociateDefaultCodeRepository": Utils.try_to_json(argv, "--DisassociateDefaultCodeRepository"),
+        "DisassociateAdditionalCodeRepositories": Utils.try_to_json(argv, "--DisassociateAdditionalCodeRepositories"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -371,13 +377,13 @@ def doCreateNotebookInstance(argv, arglist):
     param = {
         "NotebookInstanceName": argv.get("--NotebookInstanceName"),
         "InstanceType": argv.get("--InstanceType"),
-        "RoleArn": argv.get("--RoleArn"),
+        "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
         "DirectInternetAccess": argv.get("--DirectInternetAccess"),
         "RootAccess": argv.get("--RootAccess"),
-        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
         "SubnetId": argv.get("--SubnetId"),
-        "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "LifecycleScriptsName": argv.get("--LifecycleScriptsName"),
+        "DefaultCodeRepository": argv.get("--DefaultCodeRepository"),
+        "AdditionalCodeRepositories": Utils.try_to_json(argv, "--AdditionalCodeRepositories"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

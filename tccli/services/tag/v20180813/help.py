@@ -1,6 +1,39 @@
 # -*- coding: utf-8 -*-
 DESC = "tag-2018-08-13"
 INFO = {
+  "DescribeResourceTagsByTagKeys": {
+    "params": [
+      {
+        "name": "ServiceType",
+        "desc": "业务类型"
+      },
+      {
+        "name": "ResourcePrefix",
+        "desc": "资源前缀"
+      },
+      {
+        "name": "ResourceRegion",
+        "desc": "资源地域"
+      },
+      {
+        "name": "ResourceIds",
+        "desc": "资源唯一标识"
+      },
+      {
+        "name": "TagKeys",
+        "desc": "资源标签键"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页大小，默认为 400"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认为 0, 必须为Limit参数的整数倍"
+      }
+    ],
+    "desc": "根据标签键获取资源标签"
+  },
   "UpdateResourceTagValue": {
     "params": [
       {
@@ -169,6 +202,10 @@ INFO = {
       {
         "name": "CreateUin",
         "desc": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询"
+      },
+      {
+        "name": "TagKeys",
+        "desc": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只会本值"
       }
     ],
     "desc": "用于查询已建立的标签列表。\n"
@@ -240,6 +277,10 @@ INFO = {
       {
         "name": "Limit",
         "desc": "每页大小，默认为 15"
+      },
+      {
+        "name": "ShowProject",
+        "desc": "是否展现项目"
       }
     ],
     "desc": "用于查询已建立的标签列表中的标签键。\n"

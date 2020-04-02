@@ -18,6 +18,45 @@ from tccli.services.tag import v20180813
 from tccli.services.tag.v20180813 import help as v20180813_help
 
 
+def doDescribeResourceTagsByTagKeys(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeResourceTagsByTagKeys", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceType": argv.get("--ServiceType"),
+        "ResourcePrefix": argv.get("--ResourcePrefix"),
+        "ResourceRegion": argv.get("--ResourceRegion"),
+        "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
+        "TagKeys": Utils.try_to_json(argv, "--TagKeys"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TagClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeResourceTagsByTagKeysRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeResourceTagsByTagKeys(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doUpdateResourceTagValue(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -212,6 +251,7 @@ def doDescribeTagKeys(argv, arglist):
         "CreateUin": Utils.try_to_json(argv, "--CreateUin"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "ShowProject": Utils.try_to_json(argv, "--ShowProject"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -283,6 +323,7 @@ def doDescribeTags(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "CreateUin": Utils.try_to_json(argv, "--CreateUin"),
+        "TagKeys": Utils.try_to_json(argv, "--TagKeys"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -462,6 +503,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeResourceTagsByTagKeys": doDescribeResourceTagsByTagKeys,
     "UpdateResourceTagValue": doUpdateResourceTagValue,
     "DescribeTagValues": doDescribeTagValues,
     "DescribeResourceTagsByResourceIds": doDescribeResourceTagsByResourceIds,

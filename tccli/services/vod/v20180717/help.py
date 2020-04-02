@@ -1,18 +1,42 @@
 # -*- coding: utf-8 -*-
 DESC = "vod-2018-07-17"
 INFO = {
-  "DeleteAnimatedGraphicsTemplate": {
+  "CreateSnapshotByTimeOffsetTemplate": {
     "params": [
       {
-        "name": "Definition",
-        "desc": "转动图模板唯一标识。"
+        "name": "Name",
+        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Width",
+        "desc": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "Height",
+        "desc": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
+      },
+      {
+        "name": "Format",
+        "desc": "图片格式，取值可以为 jpg 和 png。默认为 jpg。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "FillType",
+        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。"
       }
     ],
-    "desc": "删除用户自定义转动图模板。"
+    "desc": "创建用户自定义指定时间点截图模板，数量上限：16。"
   },
   "EditMedia": {
     "params": [
@@ -104,42 +128,18 @@ INFO = {
     ],
     "desc": "* 该接口用于申请媒体文件（和封面文件）的上传，获取文件上传到云点播的元信息（包括上传路径、上传签名等），用于后续上传接口。\n* 上传流程请参考 [服务端上传综述](/document/product/266/9759)。"
   },
-  "CreateSnapshotByTimeOffsetTemplate": {
+  "DeleteAnimatedGraphicsTemplate": {
     "params": [
       {
-        "name": "Name",
-        "desc": "指定时间点截图模板名称，长度限制：64 个字符。"
-      },
-      {
-        "name": "Width",
-        "desc": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
-      },
-      {
-        "name": "Height",
-        "desc": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
-      },
-      {
-        "name": "ResolutionAdaptive",
-        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
-      },
-      {
-        "name": "Format",
-        "desc": "图片格式，取值可以为 jpg 和 png。默认为 jpg。"
-      },
-      {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
+        "name": "Definition",
+        "desc": "转动图模板唯一标识。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
-      },
-      {
-        "name": "FillType",
-        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。"
       }
     ],
-    "desc": "创建用户自定义指定时间点截图模板，数量上限：16。"
+    "desc": "删除用户自定义转动图模板。"
   },
   "DescribeAIAnalysisTemplates": {
     "params": [
@@ -346,6 +346,48 @@ INFO = {
       }
     ],
     "desc": "删除用户自定义的任务流模板。  "
+  },
+  "DeleteAdaptiveDynamicStreamingTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "自适应转码模板唯一标识。"
+      }
+    ],
+    "desc": "删除自适应转码模板"
+  },
+  "CreateAdaptiveDynamicStreamingTemplate": {
+    "params": [
+      {
+        "name": "Format",
+        "desc": "自适应转码格式，取值范围：\n<li>HLS。</li>"
+      },
+      {
+        "name": "StreamInfos",
+        "desc": "自适应转码输出子流参数信息，最多输出10路子流。\n注意：各个子流的帧率必须保持一致；如果不一致，采用第一个子流的帧率作为输出帧率。"
+      },
+      {
+        "name": "Name",
+        "desc": "模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "DrmType",
+        "desc": "DRM方案类型，取值范围：\n<li>FairPlay；</li>\n<li>SimpleAES；</li>\n<li>Widevine。</li>\n如果取值为空字符串，代表不对视频做 DRM 保护。"
+      },
+      {
+        "name": "DisableHigherVideoBitrate",
+        "desc": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。"
+      },
+      {
+        "name": "DisableHigherVideoResolution",
+        "desc": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      }
+    ],
+    "desc": "创建自适应转码模板，数量上限：100。"
   },
   "DescribeSampleSnapshotTemplates": {
     "params": [
@@ -922,50 +964,54 @@ INFO = {
     ],
     "desc": "直播即时剪辑，是指在直播过程中（即直播尚未结束时），客户可以在过往直播内容中选择一段，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。\n\n腾讯云点播支持两种即时剪辑模式：\n- 剪辑固化：将剪辑出来的视频保存成独立的视频，拥有独立 FileId；适用于将精彩片段**长久保存**的场景；\n- 剪辑不固化：剪辑得到的视频附属于直播录制文件，没有独立 FileId；适用于将精彩片段**临时分享**的场景。\n\n注意：\n- 使用直播即时剪辑功能的前提是：目标直播流开启了[时移回看](https://cloud.tencent.com/document/product/267/32742)功能。\n- 直播即时剪辑是基于直播录制生成的 m3u8 文件进行的，故而其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。\n\n\n### 剪辑固化\n所谓剪辑固化，是指将剪辑出来的视频是保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始直播录制视频影响（即使原始录制视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。\n\n举例如下：一场完整的足球比赛，直播录制出来的原始视频可能长达 2 个小时，客户出于节省成本的目的可以对这个视频存储 2 个月，但对于直播即时剪辑的「精彩时刻」视频却可以指定存储更长时间，同时可以单独对「精彩时刻」视频进行转码、微信发布等额外的点播操作，这时候可以选择直播即时剪辑并且固化的方案。\n\n剪辑固化的优势在于其生命周期与原始录制视频相互独立，可以独立管理、长久保存。\n\n### 剪辑不固化\n所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与直播录制视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与直播录制的完整视频有效期是一致的。一旦直播录制出来的视频被删除，也会导致该片段无法播放。\n\n剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（例如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。\n\n剪辑不固化的优势在于其剪辑操作十分“轻量化”，不会产生额外的存储开销。但其不足之处在于生命周期与原始录制视频相同，且无法进一步进行转码等视频处理。"
   },
-  "ProcessMediaByUrl": {
+  "PullUpload": {
     "params": [
       {
-        "name": "InputInfo",
-        "desc": "输入视频信息，包括视频 URL ， 名称、视频自定义 ID。"
+        "name": "MediaUrl",
+        "desc": "要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。\n支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。"
       },
       {
-        "name": "OutputInfo",
-        "desc": "输出文件 COS 路径信息。"
+        "name": "MediaName",
+        "desc": "媒体名称。"
       },
       {
-        "name": "AiContentReviewTask",
-        "desc": "视频内容审核类型任务参数。"
+        "name": "CoverUrl",
+        "desc": "要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。"
       },
       {
-        "name": "AiAnalysisTask",
-        "desc": "视频内容分析类型任务参数。"
+        "name": "Procedure",
+        "desc": "媒体后续任务操作，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。"
       },
       {
-        "name": "AiRecognitionTask",
-        "desc": "视频内容识别类型任务参数。"
+        "name": "ExpireTime",
+        "desc": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
       },
       {
-        "name": "TasksPriority",
-        "desc": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。"
+        "name": "StorageRegion",
+        "desc": "指定上传园区，仅适用于对上传地域有特殊需求的用户（目前仅支持北京、上海和重庆园区）。"
       },
       {
-        "name": "TasksNotifyMode",
-        "desc": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。"
+        "name": "ClassId",
+        "desc": "分类ID，用于对媒体进行分类管理，可通过[创建分类](https://cloud.tencent.com/document/product/266/7812)接口，创建分类，获得分类 ID。"
       },
       {
         "name": "SessionContext",
-        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
+        "desc": "来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
       },
       {
         "name": "SessionId",
         "desc": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
       },
       {
+        "name": "ExtInfo",
+        "desc": "保留字段，特殊用途时使用。"
+      },
+      {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "对来源为 URL 的音视频媒体发起处理任务，功能包括：\n\n1. 智能内容审核（鉴黄、鉴恐、鉴政）；\n2. 智能内容分析（标签、分类、封面、按帧标签）；\n3. 智能内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。"
+    "desc": "该接口用于将一个网络上的视频拉取到云点播平台。"
   },
   "ModifySampleSnapshotTemplate": {
     "params": [
@@ -1015,6 +1061,19 @@ INFO = {
       }
     ],
     "desc": "修改用户自定义采样截图模板。"
+  },
+  "DeleteSuperPlayerConfig": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "播放器配置名称。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "删除超级播放器配置。  \n*注：系统预置播放器配置不允许删除。*"
   },
   "DescribeProcedureTemplates": {
     "params": [
@@ -1146,6 +1205,39 @@ INFO = {
     ],
     "desc": "* 删除媒体及其对应的视频处理文件（如转码视频、雪碧图、截图、微信发布视频等）；\n* 可单独删除指定 ID 的视频文件下的转码，或者微信发布文件；"
   },
+  "CreateSuperPlayerConfig": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "播放器配置名称，长度限制：64 个字符。只允许出现 [0-9a-zA-Z] 及 _- 字符（如 test_ABC-123），同一个用户该名称唯一。"
+      },
+      {
+        "name": "DrmSwitch",
+        "desc": "播放 DRM 保护的自适应码流开关：\n<li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>\n<li>OFF：关闭，表示播放未加密的自适应码流输出。</li>\n默认为 OFF。"
+      },
+      {
+        "name": "AdaptiveDynamicStreamingDefinition",
+        "desc": "允许输出的未加密的自适应码流模板 ID，当 DrmSwitch 为 OFF 时必填。"
+      },
+      {
+        "name": "DrmStreamingsInfo",
+        "desc": "允许输出的 DRM 自适应码流模板内容，当 DrmSwitch 为 ON 时必填。"
+      },
+      {
+        "name": "ImageSpriteDefinition",
+        "desc": "允许输出的雪碧图模板 ID。"
+      },
+      {
+        "name": "ResolutionNames",
+        "desc": "播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：\n<li>MinEdgeLength：240，Name：流畅；</li>\n<li>MinEdgeLength：480，Name：标清；</li>\n<li>MinEdgeLength：720，Name：高清；</li>\n<li>MinEdgeLength：1080，Name：全高清；</li>\n<li>MinEdgeLength：1440，Name：2K；</li>\n<li>MinEdgeLength：2160，Name：4K；</li>\n<li>MinEdgeLength：4320，Name：8K。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "创建超级播放器配置，数量上限：100。"
+  },
   "ModifyPersonSample": {
     "params": [
       {
@@ -1254,54 +1346,50 @@ INFO = {
     ],
     "desc": "查询指定时间点截图模板，支持根据条件，分页查询。"
   },
-  "PullUpload": {
+  "ProcessMediaByUrl": {
     "params": [
       {
-        "name": "MediaUrl",
-        "desc": "要拉取的媒体 URL，暂不支持拉取 HLS 和 Dash 格式。\n支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。"
+        "name": "InputInfo",
+        "desc": "输入视频信息，包括视频 URL ， 名称、视频自定义 ID。"
       },
       {
-        "name": "MediaName",
-        "desc": "媒体名称。"
+        "name": "OutputInfo",
+        "desc": "输出文件 COS 路径信息。"
       },
       {
-        "name": "CoverUrl",
-        "desc": "要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。"
+        "name": "AiContentReviewTask",
+        "desc": "视频内容审核类型任务参数。"
       },
       {
-        "name": "Procedure",
-        "desc": "媒体后续任务操作，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。"
+        "name": "AiAnalysisTask",
+        "desc": "视频内容分析类型任务参数。"
       },
       {
-        "name": "ExpireTime",
-        "desc": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
+        "name": "AiRecognitionTask",
+        "desc": "视频内容识别类型任务参数。"
       },
       {
-        "name": "StorageRegion",
-        "desc": "指定上传园区，仅适用于对上传地域有特殊需求的用户（目前仅支持北京、上海和重庆园区）。"
+        "name": "TasksPriority",
+        "desc": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。"
       },
       {
-        "name": "ClassId",
-        "desc": "分类ID，用于对媒体进行分类管理，可通过[创建分类](https://cloud.tencent.com/document/product/266/7812)接口，创建分类，获得分类 ID。"
+        "name": "TasksNotifyMode",
+        "desc": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。"
       },
       {
         "name": "SessionContext",
-        "desc": "来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
+        "desc": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。"
       },
       {
         "name": "SessionId",
         "desc": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。"
       },
       {
-        "name": "ExtInfo",
-        "desc": "保留字段，特殊用途时使用。"
-      },
-      {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "该接口用于将一个网络上的视频拉取到云点播平台。"
+    "desc": "对来源为 URL 的音视频媒体发起处理任务，功能包括：\n\n1. 智能内容审核（鉴黄、鉴恐、鉴政）；\n2. 智能内容分析（标签、分类、封面、按帧标签）；\n3. 智能内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。"
   },
   "ModifyTranscodeTemplate": {
     "params": [
@@ -1348,11 +1436,11 @@ INFO = {
     ],
     "desc": "修改用户自定义转码模板信息。"
   },
-  "DescribeAIRecognitionTemplates": {
+  "DescribeContentReviewTemplates": {
     "params": [
       {
         "name": "Definitions",
-        "desc": "视频内容识别模板唯一标识过滤条件，数组长度限制：100。"
+        "desc": "内容审核模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
         "name": "Offset",
@@ -1367,7 +1455,7 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据视频内容识别模板唯一标识，获取视频内容识别模板详情列表。返回结果包含符合条件的所有用户自定义视频内容识别模板及[系统预置视频内容识别模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF)。"
+    "desc": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。"
   },
   "ModifyWatermarkTemplate": {
     "params": [
@@ -1469,50 +1557,50 @@ INFO = {
     ],
     "desc": "该接口用于修改子应用信息，但不允许修改主应用信息。"
   },
-  "CreateImageSpriteTemplate": {
+  "CreateWatermarkTemplate": {
     "params": [
       {
-        "name": "SampleType",
-        "desc": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
-      },
-      {
-        "name": "SampleInterval",
-        "desc": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>"
-      },
-      {
-        "name": "RowCount",
-        "desc": "雪碧图中小图的行数。"
-      },
-      {
-        "name": "ColumnCount",
-        "desc": "雪碧图中小图的列数。"
+        "name": "Type",
+        "desc": "水印类型，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印；</li>\n<li>svg：SVG 水印。</li>"
       },
       {
         "name": "Name",
-        "desc": "雪碧图模板名称，长度限制：64 个字符。"
+        "desc": "水印模板名称，长度限制：64 个字符。"
       },
       {
-        "name": "Width",
-        "desc": "雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
       },
       {
-        "name": "Height",
-        "desc": "雪碧图中小图的高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+        "name": "CoordinateOrigin",
+        "desc": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>\n默认值：TopLeft。"
       },
       {
-        "name": "ResolutionAdaptive",
-        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
+        "name": "XPos",
+        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。"
+      },
+      {
+        "name": "YPos",
+        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。"
+      },
+      {
+        "name": "ImageTemplate",
+        "desc": "图片水印模板，当 Type 为 image，该字段必填。当 Type 为 text，该字段无效。"
+      },
+      {
+        "name": "TextTemplate",
+        "desc": "文字水印模板，当 Type 为 text，该字段必填。当 Type 为 image，该字段无效。"
+      },
+      {
+        "name": "SvgTemplate",
+        "desc": "SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
-      },
-      {
-        "name": "FillType",
-        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。"
       }
     ],
-    "desc": "创建用户自定义雪碧图模板，数量上限：16。"
+    "desc": "创建用户自定义水印模板，数量上限：1000。"
   },
   "DescribePersonSamples": {
     "params": [
@@ -1642,6 +1730,39 @@ INFO = {
       }
     ],
     "desc": "修改用户自定义指定时间点截图模板。"
+  },
+  "ModifySuperPlayerConfig": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "播放器配置名称。"
+      },
+      {
+        "name": "DrmSwitch",
+        "desc": "播放 DRM 保护的自适应码流开关：\n<li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>\n<li>OFF：关闭，表示播放未加密的自适应码流输出。</li>"
+      },
+      {
+        "name": "AdaptiveDynamicStreamingDefinition",
+        "desc": "允许输出的未加密的自适应码流模板 ID。"
+      },
+      {
+        "name": "DrmStreamingsInfo",
+        "desc": "允许输出的 DRM 自适应码流模板内容。"
+      },
+      {
+        "name": "ImageSpriteDefinition",
+        "desc": "允许输出的雪碧图模板 ID。"
+      },
+      {
+        "name": "ResolutionNames",
+        "desc": "播放器对不于不同分辨率的子流展示名字。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "修改超级播放器配置。"
   },
   "CreateClass": {
     "params": [
@@ -1782,56 +1903,56 @@ INFO = {
     ],
     "desc": "查询用户自定义水印模板，支持根据条件，分页查询。"
   },
-  "CreateWatermarkTemplate": {
+  "CreateImageSpriteTemplate": {
     "params": [
       {
-        "name": "Type",
-        "desc": "水印类型，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印；</li>\n<li>svg：SVG 水印。</li>"
+        "name": "SampleType",
+        "desc": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>"
+      },
+      {
+        "name": "SampleInterval",
+        "desc": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>"
+      },
+      {
+        "name": "RowCount",
+        "desc": "雪碧图中小图的行数。"
+      },
+      {
+        "name": "ColumnCount",
+        "desc": "雪碧图中小图的列数。"
       },
       {
         "name": "Name",
-        "desc": "水印模板名称，长度限制：64 个字符。"
+        "desc": "雪碧图模板名称，长度限制：64 个字符。"
       },
       {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
+        "name": "Width",
+        "desc": "雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
       },
       {
-        "name": "CoordinateOrigin",
-        "desc": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>\n默认值：TopLeft。"
+        "name": "Height",
+        "desc": "雪碧图中小图的高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
       },
       {
-        "name": "XPos",
-        "desc": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。"
-      },
-      {
-        "name": "YPos",
-        "desc": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。"
-      },
-      {
-        "name": "ImageTemplate",
-        "desc": "图片水印模板，当 Type 为 image，该字段必填。当 Type 为 text，该字段无效。"
-      },
-      {
-        "name": "TextTemplate",
-        "desc": "文字水印模板，当 Type 为 text，该字段必填。当 Type 为 image，该字段无效。"
-      },
-      {
-        "name": "SvgTemplate",
-        "desc": "SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。"
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "FillType",
+        "desc": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。"
       }
     ],
-    "desc": "创建用户自定义水印模板，数量上限：1000。"
+    "desc": "创建用户自定义雪碧图模板，数量上限：16。"
   },
-  "DescribeContentReviewTemplates": {
+  "DescribeAIRecognitionTemplates": {
     "params": [
       {
         "name": "Definitions",
-        "desc": "内容审核模板唯一标识过滤条件，数组长度限制：100。"
+        "desc": "视频内容识别模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
         "name": "Offset",
@@ -1846,7 +1967,32 @@ INFO = {
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }
     ],
-    "desc": "根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。"
+    "desc": "根据视频内容识别模板唯一标识，获取视频内容识别模板详情列表。返回结果包含符合条件的所有用户自定义视频内容识别模板及[系统预置视频内容识别模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF)。"
+  },
+  "DescribeSuperPlayerConfigs": {
+    "params": [
+      {
+        "name": "Names",
+        "desc": "播放器配置名字过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "播放器配置类型过滤条件，可选值：\n<li>Preset：系统预置配置；</li>\n<li>Custom：用户自定义配置。</li>"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "查询超级播放器配置，支持根据条件，分页查询。"
   },
   "DescribeSubAppIds": {
     "params": [],
@@ -1938,6 +2084,39 @@ INFO = {
       }
     ],
     "desc": "修改用户自定义视频内容识别模板。"
+  },
+  "ModifyAdaptiveDynamicStreamingTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "自适应转码模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Format",
+        "desc": "自适应转码格式，取值范围：\n<li>HLS。</li>"
+      },
+      {
+        "name": "DisableHigherVideoBitrate",
+        "desc": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>"
+      },
+      {
+        "name": "DisableHigherVideoResolution",
+        "desc": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>"
+      },
+      {
+        "name": "StreamInfos",
+        "desc": "自适应转码输入流参数信息，最多输入10路流。\n注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      }
+    ],
+    "desc": "修改自适应转码模板"
   },
   "SearchMedia": {
     "params": [

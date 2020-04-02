@@ -157,11 +157,11 @@ INFO = {
     "params": [
       {
         "name": "MinTime",
-        "desc": "区间开始时间"
+        "desc": "区间开始时间（Unix 时间戳，毫秒级）"
       },
       {
         "name": "MaxTime",
-        "desc": "区间结束时间"
+        "desc": "区间结束时间（Unix 时间戳，毫秒级）"
       },
       {
         "name": "ProductId",
@@ -173,7 +173,7 @@ INFO = {
       },
       {
         "name": "FieldName",
-        "desc": "属性字段名称"
+        "desc": "属性字段名称，对应数据模板中功能属性的标识符"
       },
       {
         "name": "Limit",
@@ -282,15 +282,15 @@ INFO = {
       },
       {
         "name": "Type",
-        "desc": "搜索的事件类型"
+        "desc": "搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件"
       },
       {
         "name": "StartTime",
-        "desc": "起始时间, 为0 表示 当前时间 - 24h"
+        "desc": "起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间, 为0 表示当前时间"
+        "desc": "结束时间（Unix 时间戳，秒级）, 为0 表示当前时间"
       },
       {
         "name": "Context",

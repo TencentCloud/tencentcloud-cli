@@ -737,19 +737,19 @@ INFO = {
       },
       {
         "name": "NetDetectId",
-        "desc": "网络探测实例ID。形如：netd-12345678。"
+        "desc": "网络探测实例ID。形如：netd-12345678。该参数与（VpcId，SubnetId，NetDetectName），至少要有一个。当NetDetectId存在时，使用NetDetectId。"
       },
       {
         "name": "VpcId",
-        "desc": "`VPC`实例`ID`。形如：`vpc-12345678`"
+        "desc": "`VPC`实例`ID`。形如：`vpc-12345678`。该参数与（SubnetId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。"
       },
       {
         "name": "SubnetId",
-        "desc": "子网实例ID。形如：subnet-12345678。"
+        "desc": "子网实例ID。形如：subnet-12345678。该参数与（VpcId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。"
       },
       {
         "name": "NetDetectName",
-        "desc": "网络探测名称，最大长度不能超过60个字节。"
+        "desc": "网络探测名称，最大长度不能超过60个字节。该参数与（VpcId，SubnetId）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。"
       }
     ],
     "desc": "本接口(CheckNetDetectState)用于验证网络探测。"

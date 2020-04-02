@@ -991,7 +991,7 @@ INFO = {
         "desc": "备份任务 ID。该任务 ID 为 [创建云数据库备份](https://cloud.tencent.com/document/api/236/15844) 接口返回的任务 ID。"
       }
     ],
-    "desc": "本接口(DeleteBackup)用于删除数据库备份。"
+    "desc": "本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。"
   },
   "ModifyInstanceParam": {
     "params": [
@@ -1474,6 +1474,51 @@ INFO = {
     ],
     "desc": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等"
   },
+  "DescribeSLowLogData": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间戳。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间戳。"
+      },
+      {
+        "name": "UserHosts",
+        "desc": "客户端 Host 列表。"
+      },
+      {
+        "name": "UserNames",
+        "desc": "客户端 用户名 列表。"
+      },
+      {
+        "name": "DataBases",
+        "desc": "访问的 数据库 列表。"
+      },
+      {
+        "name": "SortBy",
+        "desc": "排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "升序还是降序排列。当前支持：ASC,DESC 。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "一次性返回的记录数量，最大为400。"
+      }
+    ],
+    "desc": "条件检索实例的慢日志。只允许查看一个月之内的慢日志"
+  },
   "ModifyAutoRenewFlag": {
     "params": [
       {
@@ -1654,6 +1699,10 @@ INFO = {
       {
         "name": "LimitNum",
         "desc": "置放群组亲和性策略1中同台物理机上实例的限制个数。"
+      },
+      {
+        "name": "DevClass",
+        "desc": "置放群组机型属性，可选参数：SH12+SH02、TS85。"
       }
     ],
     "desc": "本接口(CreateDeployGroup)用于创建放置实例的置放群组"
