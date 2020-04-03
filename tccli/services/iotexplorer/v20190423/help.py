@@ -24,7 +24,7 @@ INFO = {
         "desc": "是否打开二进制转Json功能, 取值为字符串 true/false"
       }
     ],
-    "desc": "提供修改产品的名称和描述等信息的能力"
+    "desc": "提供修改产品的名称和描述等信息的能力，对于已发布产品不允许进行修改。"
   },
   "DeleteStudioProduct": {
     "params": [
@@ -85,7 +85,7 @@ INFO = {
       },
       {
         "name": "DataProtocol",
-        "desc": "数据协议 (1 使用物模型)"
+        "desc": "数据协议 (1 使用物模型 2 为自定义)"
       },
       {
         "name": "ProductDesc",

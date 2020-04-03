@@ -20,13 +20,13 @@ INFO = {
         "desc": "结束时间，默认现在时间。"
       }
     ],
-    "desc": "获取用户账号下有关证书的操作日志"
+    "desc": "获取用户账号下有关证书的操作日志。"
   },
   "DescribeCertificates": {
     "params": [
       {
         "name": "Offset",
-        "desc": "分页偏移量，从0开始"
+        "desc": "分页偏移量，从0开始。"
       },
       {
         "name": "Limit",
@@ -38,15 +38,15 @@ INFO = {
       },
       {
         "name": "CertificateType",
-        "desc": "证书类型，可选值：CA，SVR。"
+        "desc": "证书类型：CA = 客户端证书，SVR = 服务器证书。"
       },
       {
         "name": "ProjectId",
-        "desc": "项目ID。"
+        "desc": "项目 ID。"
       },
       {
         "name": "ExpirationSort",
-        "desc": "按到期时间排序：DESC降序， ASC 升序。"
+        "desc": "按到期时间排序：DESC = 降序， ASC = 升序。"
       },
       {
         "name": "CertificateStatus",
@@ -57,22 +57,22 @@ INFO = {
         "desc": "是否可部署，可选值：1 = 可部署，0 =  不可部署。"
       }
     ],
-    "desc": "本接口(DescribeCertificates)用于获取证书列表。"
+    "desc": "本接口（DescribeCertificates）用于获取证书列表。"
   },
   "DescribeCertificate": {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书ID。"
+        "desc": "证书 ID。"
       }
     ],
-    "desc": "本接口(DescribeCertificate)用于获取证书信息。"
+    "desc": "本接口（DescribeCertificate）用于获取证书信息。"
   },
   "CancelCertificateOrder": {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书id。"
+        "desc": "证书 ID。"
       }
     ],
     "desc": "取消证书订单。"
@@ -81,7 +81,7 @@ INFO = {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书id。"
+        "desc": "证书 ID。"
       }
     ],
     "desc": "提交证书订单。"
@@ -90,19 +90,19 @@ INFO = {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书ID。"
+        "desc": "证书 ID。"
       }
     ],
-    "desc": "本接口(DeleteCertificate)用于删除证书。"
+    "desc": "本接口（DeleteCertificate）用于删除证书。"
   },
   "DescribeCertificateDetail": {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书id"
+        "desc": "证书 ID。"
       }
     ],
-    "desc": "获取证书详情"
+    "desc": "获取证书详情。"
   },
   "UploadCertificate": {
     "params": [
@@ -112,28 +112,28 @@ INFO = {
       },
       {
         "name": "CertificatePrivateKey",
-        "desc": "私钥内容，证书类型为SVR时必填，为CA时可不填。"
+        "desc": "私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。"
       },
       {
         "name": "CertificateType",
-        "desc": "证书类型，默认SVR。CA = 客户端证书，SVR = 服务器证书。"
+        "desc": "证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。"
       },
       {
         "name": "Alias",
-        "desc": "证书别名。"
+        "desc": "备注名称。"
       },
       {
         "name": "ProjectId",
-        "desc": "项目id。"
+        "desc": "项目 ID。"
       }
     ],
-    "desc": "本接口(UploadCertificate)用于上传证书。"
+    "desc": "本接口（UploadCertificate）用于上传证书。"
   },
   "ReplaceCertificate": {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书ID。"
+        "desc": "证书 ID。"
       },
       {
         "name": "ValidType",
@@ -141,18 +141,18 @@ INFO = {
       },
       {
         "name": "CsrType",
-        "desc": "类型，默认Original。可选项：Original = 原证书csr，Upload = 手动上传，Online = 在线生成。"
+        "desc": "类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。"
       },
       {
         "name": "CsrContent",
-        "desc": "CSR内容。"
+        "desc": "CSR 内容。"
       },
       {
         "name": "CsrkeyPassword",
-        "desc": "key密码。"
+        "desc": "KEY 密码。"
       }
     ],
-    "desc": "本接口(ReplaceCertificate)用于重颁发证书。已申请的免费证书仅支持RSA算法、密钥对参数为2048的证书重颁发。"
+    "desc": "本接口（ReplaceCertificate）用于重颁发证书。已申请的免费证书仅支持 RSA 算法、密钥对参数为2048的证书重颁发。"
   },
   "ApplyCertificate": {
     "params": [
@@ -166,7 +166,7 @@ INFO = {
       },
       {
         "name": "ProjectId",
-        "desc": "项目ID。"
+        "desc": "项目 ID。"
       },
       {
         "name": "PackageType",
@@ -186,7 +186,7 @@ INFO = {
       },
       {
         "name": "CsrEncryptAlgo",
-        "desc": "加密算法，仅支持RSA。"
+        "desc": "加密算法，仅支持 RSA。"
       },
       {
         "name": "CsrKeyParameter",
@@ -194,7 +194,7 @@ INFO = {
       },
       {
         "name": "CsrKeyPassword",
-        "desc": "csr的加密密码。"
+        "desc": "CSR 的加密密码。"
       },
       {
         "name": "Alias",
@@ -202,33 +202,33 @@ INFO = {
       },
       {
         "name": "OldCertificateId",
-        "desc": "原证书id，用于重新申请。"
+        "desc": "原证书 ID，用于重新申请。"
       }
     ],
-    "desc": "本接口(ApplyCertificate)用于免费证书申请。"
+    "desc": "本接口（ApplyCertificate）用于免费证书申请。"
   },
   "DownloadCertificate": {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书ID。"
+        "desc": "证书 ID。"
       }
     ],
-    "desc": "本接口(DownloadCertificate)用于下载证书。"
+    "desc": "本接口（DownloadCertificate）用于下载证书。"
   },
   "SubmitCertificateInformation": {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书id。"
+        "desc": "证书 ID。"
       },
       {
         "name": "CsrType",
-        "desc": "Csr生成方式: online = 在线生成, parse = 手动上传 。"
+        "desc": "CSR 生成方式：online = 在线生成, parse = 手动上传 。"
       },
       {
         "name": "CsrContent",
-        "desc": "上传的Csr内容。"
+        "desc": "上传的 CSR 内容。"
       },
       {
         "name": "CertificateDomain",
@@ -256,7 +256,7 @@ INFO = {
       },
       {
         "name": "OrganizationCountry",
-        "desc": "国家名称 如中国:CN 。"
+        "desc": "国家名称 如中国：CN 。"
       },
       {
         "name": "OrganizationCity",
@@ -329,20 +329,20 @@ INFO = {
     "params": [
       {
         "name": "CertificateIdList",
-        "desc": "需要修改所属项目的证书id集合，最多100个证书"
+        "desc": "需要修改所属项目的证书 ID 集合，最多100个证书。"
       },
       {
         "name": "ProjectId",
-        "desc": "项目id。"
+        "desc": "项目 ID。"
       }
     ],
-    "desc": "批量修改证书所属项目"
+    "desc": "批量修改证书所属项目。"
   },
   "ModifyCertificateAlias": {
     "params": [
       {
         "name": "CertificateId",
-        "desc": "证书id。"
+        "desc": "证书 ID。"
       },
       {
         "name": "Alias",

@@ -1102,6 +1102,8 @@ def doComposeMedia(argv, arglist):
         "Tracks": Utils.try_to_json(argv, "--Tracks"),
         "Output": Utils.try_to_json(argv, "--Output"),
         "Canvas": Utils.try_to_json(argv, "--Canvas"),
+        "SessionContext": argv.get("--SessionContext"),
+        "SessionId": argv.get("--SessionId"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }

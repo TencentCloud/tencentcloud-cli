@@ -234,6 +234,7 @@ def doModifyHostsAttribute(argv, arglist):
         "HostIds": Utils.try_to_json(argv, "--HostIds"),
         "HostName": argv.get("--HostName"),
         "RenewFlag": argv.get("--RenewFlag"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

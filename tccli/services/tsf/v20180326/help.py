@@ -274,6 +274,23 @@ INFO = {
     ],
     "desc": "添加云主机节点至TSF集群"
   },
+  "DescribePodInstances": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "实例所属groupId"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，取值从0开始"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页个数，默认为20， 取值应为1~50"
+      }
+    ],
+    "desc": "获取部署组实例列表"
+  },
   "DescribeServerlessGroups": {
     "params": [
       {
