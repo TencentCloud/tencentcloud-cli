@@ -30,7 +30,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "每页数量。"
+        "desc": "每页数量，默认20。"
       },
       {
         "name": "SearchKey",
@@ -152,7 +152,7 @@ INFO = {
         "desc": "KEY 密码。"
       }
     ],
-    "desc": "本接口（ReplaceCertificate）用于重颁发证书。已申请的免费证书仅支持 RSA 算法、密钥对参数为2048的证书重颁发。"
+    "desc": "本接口（ReplaceCertificate）用于重颁发证书。已申请的免费证书仅支持 RSA 算法、密钥对参数为2048的证书重颁发，并且目前仅支持1次重颁发。"
   },
   "ApplyCertificate": {
     "params": [
@@ -224,7 +224,7 @@ INFO = {
       },
       {
         "name": "CsrType",
-        "desc": "CSR 生成方式：online = 在线生成, parse = 手动上传 。"
+        "desc": "CSR 生成方式：online = 在线生成, parse = 手动上传。"
       },
       {
         "name": "CsrContent",
@@ -232,7 +232,7 @@ INFO = {
       },
       {
         "name": "CertificateDomain",
-        "desc": "绑定证书的域名 。"
+        "desc": "绑定证书的域名。"
       },
       {
         "name": "DomainList",
@@ -240,11 +240,11 @@ INFO = {
       },
       {
         "name": "KeyPassword",
-        "desc": "私钥密码 。"
+        "desc": "私钥密码。"
       },
       {
         "name": "OrganizationName",
-        "desc": "公司名称 。"
+        "desc": "公司名称。"
       },
       {
         "name": "OrganizationDivision",
@@ -252,15 +252,15 @@ INFO = {
       },
       {
         "name": "OrganizationAddress",
-        "desc": "公司详细地址 。"
+        "desc": "公司详细地址。"
       },
       {
         "name": "OrganizationCountry",
-        "desc": "国家名称 如中国：CN 。"
+        "desc": "国家名称，如中国：CN 。"
       },
       {
         "name": "OrganizationCity",
-        "desc": "公司所在城市 。"
+        "desc": "公司所在城市。"
       },
       {
         "name": "OrganizationRegion",
@@ -268,19 +268,19 @@ INFO = {
       },
       {
         "name": "PostalCode",
-        "desc": "公司邮编 。"
+        "desc": "公司邮编。"
       },
       {
         "name": "PhoneAreaCode",
-        "desc": "公司座机区号 。"
+        "desc": "公司座机区号。"
       },
       {
         "name": "PhoneNumber",
-        "desc": "公司座机号码 。"
+        "desc": "公司座机号码。"
       },
       {
         "name": "VerifyType",
-        "desc": "证书验证方式 。"
+        "desc": "证书验证方式。"
       },
       {
         "name": "AdminFirstName",
@@ -312,11 +312,11 @@ INFO = {
       },
       {
         "name": "ContactEmail",
-        "desc": "联系人邮箱地址 。"
+        "desc": "联系人邮箱地址。"
       },
       {
         "name": "ContactNumber",
-        "desc": "联系人手机号码 。"
+        "desc": "联系人手机号码。"
       },
       {
         "name": "ContactPosition",

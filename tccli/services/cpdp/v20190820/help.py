@@ -1002,10 +1002,6 @@ INFO = {
         "desc": "退款金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额"
       },
       {
-        "name": "SubOrderRefundList",
-        "desc": "支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。"
-      },
-      {
         "name": "MidasSecretId",
         "desc": "聚鑫分配的安全ID"
       },
@@ -1028,6 +1024,10 @@ INFO = {
       {
         "name": "PlatformRefundAmt",
         "desc": "平台应收金额，单位：分"
+      },
+      {
+        "name": "SubOrderRefundList",
+        "desc": "支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。"
       }
     ],
     "desc": "如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 "

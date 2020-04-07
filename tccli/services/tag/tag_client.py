@@ -324,6 +324,7 @@ def doDescribeTags(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "CreateUin": Utils.try_to_json(argv, "--CreateUin"),
         "TagKeys": Utils.try_to_json(argv, "--TagKeys"),
+        "ShowProject": Utils.try_to_json(argv, "--ShowProject"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

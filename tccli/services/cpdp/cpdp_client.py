@@ -1074,13 +1074,13 @@ def doRefund(argv, arglist):
         "RefundId": argv.get("--RefundId"),
         "MidasAppId": argv.get("--MidasAppId"),
         "TotalRefundAmt": Utils.try_to_json(argv, "--TotalRefundAmt"),
-        "SubOrderRefundList": Utils.try_to_json(argv, "--SubOrderRefundList"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
         "OutTradeNo": argv.get("--OutTradeNo"),
         "MchRefundAmt": Utils.try_to_json(argv, "--MchRefundAmt"),
         "TransactionId": argv.get("--TransactionId"),
         "PlatformRefundAmt": Utils.try_to_json(argv, "--PlatformRefundAmt"),
+        "SubOrderRefundList": Utils.try_to_json(argv, "--SubOrderRefundList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

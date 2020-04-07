@@ -281,22 +281,18 @@ INFO = {
     ],
     "desc": "本接口（ModifyFlowLogAttribute）用于修改流日志属性"
   },
-  "ModifyServiceTemplateGroupAttribute": {
+  "DisassociateNetworkInterfaceSecurityGroups": {
     "params": [
       {
-        "name": "ServiceTemplateGroupId",
-        "desc": "协议端口模板集合实例ID，例如：ppmg-ei8hfd9a。"
+        "name": "NetworkInterfaceIds",
+        "desc": "弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。"
       },
       {
-        "name": "ServiceTemplateGroupName",
-        "desc": "协议端口模板集合名称。"
-      },
-      {
-        "name": "ServiceTemplateIds",
-        "desc": "协议端口模板实例ID，例如：ppm-4dw6agho。"
+        "name": "SecurityGroupIds",
+        "desc": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。"
       }
     ],
-    "desc": "本接口（ModifyServiceTemplateGroupAttribute）用于修改协议端口模板集合。"
+    "desc": "本接口（DisassociateNetworkInterfaceSecurityGroups）用于弹性网卡解绑安全组。支持弹性网卡完全解绑安全组。"
   },
   "DescribeCcnAttachedInstances": {
     "params": [
@@ -967,18 +963,22 @@ INFO = {
     ],
     "desc": "1. 该接口用于查询账户下的IPV6转换实例及其绑定的转换规则信息\n2. 支持过滤查询"
   },
-  "DeleteSecurityGroupPolicies": {
+  "ModifyServiceTemplateGroupAttribute": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "name": "ServiceTemplateGroupId",
+        "desc": "协议端口模板集合实例ID，例如：ppmg-ei8hfd9a。"
       },
       {
-        "name": "SecurityGroupPolicySet",
-        "desc": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。"
+        "name": "ServiceTemplateGroupName",
+        "desc": "协议端口模板集合名称。"
+      },
+      {
+        "name": "ServiceTemplateIds",
+        "desc": "协议端口模板实例ID，例如：ppm-4dw6agho。"
       }
     ],
-    "desc": "本接口（DeleteSecurityGroupPolicies）用于用于删除安全组规则（SecurityGroupPolicy）。\n* SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。"
+    "desc": "本接口（ModifyServiceTemplateGroupAttribute）用于修改协议端口模板集合。"
   },
   "CreateVpc": {
     "params": [
@@ -2274,6 +2274,19 @@ INFO = {
     ],
     "desc": "本接口（DescribeHaVips）用于查询高可用虚拟IP（HAVIP）列表。"
   },
+  "AssociateNetworkInterfaceSecurityGroups": {
+    "params": [
+      {
+        "name": "NetworkInterfaceIds",
+        "desc": "弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。"
+      }
+    ],
+    "desc": "本接口（AssociateNetworkInterfaceSecurityGroups）用于弹性网卡绑定安全组（SecurityGroup）。"
+  },
   "DeleteHaVip": {
     "params": [
       {
@@ -2656,6 +2669,19 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyRouteTableAttribute）用于修改路由表（RouteTable）属性。"
+  },
+  "DeleteSecurityGroupPolicies": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      },
+      {
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。"
+      }
+    ],
+    "desc": "本接口（DeleteSecurityGroupPolicies）用于用于删除安全组规则（SecurityGroupPolicy）。\n* SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。"
   },
   "ModifyNetDetect": {
     "params": [

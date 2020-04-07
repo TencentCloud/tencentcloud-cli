@@ -583,16 +583,15 @@ def doModifyFlowLogAttribute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyServiceTemplateGroupAttribute(argv, arglist):
+def doDisassociateNetworkInterfaceSecurityGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyServiceTemplateGroupAttribute", g_param[OptionsDefine.Version])
+        show_help("DisassociateNetworkInterfaceSecurityGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ServiceTemplateGroupId": argv.get("--ServiceTemplateGroupId"),
-        "ServiceTemplateGroupName": argv.get("--ServiceTemplateGroupName"),
-        "ServiceTemplateIds": Utils.try_to_json(argv, "--ServiceTemplateIds"),
+        "NetworkInterfaceIds": Utils.try_to_json(argv, "--NetworkInterfaceIds"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -606,9 +605,9 @@ def doModifyServiceTemplateGroupAttribute(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyServiceTemplateGroupAttributeRequest()
+    model = models.DisassociateNetworkInterfaceSecurityGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyServiceTemplateGroupAttribute(model)
+    rsp = client.DisassociateNetworkInterfaceSecurityGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2948,6 +2947,41 @@ def doDetachNetworkInterface(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyServiceTemplateGroupAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyServiceTemplateGroupAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceTemplateGroupId": argv.get("--ServiceTemplateGroupId"),
+        "ServiceTemplateGroupName": argv.get("--ServiceTemplateGroupName"),
+        "ServiceTemplateIds": Utils.try_to_json(argv, "--ServiceTemplateIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyServiceTemplateGroupAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyServiceTemplateGroupAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteNetworkInterface(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -4835,6 +4869,40 @@ def doDescribeHaVips(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAssociateNetworkInterfaceSecurityGroups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AssociateNetworkInterfaceSecurityGroups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NetworkInterfaceIds": Utils.try_to_json(argv, "--NetworkInterfaceIds"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssociateNetworkInterfaceSecurityGroupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AssociateNetworkInterfaceSecurityGroups(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteHaVip(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -6526,7 +6594,7 @@ ACTION_MAP = {
     "DeleteNetworkAcl": doDeleteNetworkAcl,
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": doDescribeNatGatewayDestinationIpPortTranslationNatRules,
     "ModifyFlowLogAttribute": doModifyFlowLogAttribute,
-    "ModifyServiceTemplateGroupAttribute": doModifyServiceTemplateGroupAttribute,
+    "DisassociateNetworkInterfaceSecurityGroups": doDisassociateNetworkInterfaceSecurityGroups,
     "DescribeCcnAttachedInstances": doDescribeCcnAttachedInstances,
     "ResetRoutes": doResetRoutes,
     "DescribeNetworkInterfaceLimit": doDescribeNetworkInterfaceLimit,
@@ -6593,6 +6661,7 @@ ACTION_MAP = {
     "ModifyNetworkAclEntries": doModifyNetworkAclEntries,
     "HaVipDisassociateAddressIp": doHaVipDisassociateAddressIp,
     "DetachNetworkInterface": doDetachNetworkInterface,
+    "ModifyServiceTemplateGroupAttribute": doModifyServiceTemplateGroupAttribute,
     "DeleteNetworkInterface": doDeleteNetworkInterface,
     "DescribeVpnConnections": doDescribeVpnConnections,
     "DescribeFlowLog": doDescribeFlowLog,
@@ -6648,6 +6717,7 @@ ACTION_MAP = {
     "RemoveIp6Rules": doRemoveIp6Rules,
     "CheckDefaultSubnet": doCheckDefaultSubnet,
     "DescribeHaVips": doDescribeHaVips,
+    "AssociateNetworkInterfaceSecurityGroups": doAssociateNetworkInterfaceSecurityGroups,
     "DeleteHaVip": doDeleteHaVip,
     "ModifyBandwidthPackageAttribute": doModifyBandwidthPackageAttribute,
     "DescribeAddressQuota": doDescribeAddressQuota,
