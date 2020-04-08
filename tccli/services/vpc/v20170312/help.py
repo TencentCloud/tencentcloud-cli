@@ -1103,6 +1103,10 @@ INFO = {
         "desc": "<b>[已废弃]</b> AnycastEIP不再区分是否负载均衡。原参数说明如下：\nAnycastEIP是否用于绑定负载均衡。\n<ul style=\"margin:0\"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>TRUE：AnycastEIP可绑定对象为负载均衡</li>\n<li>FALSE：AnycastEIP可绑定对象为云服务器、NAT网关、高可用虚拟IP等</li></ul>默认值：FALSE。</li></ul>"
       },
       {
+        "name": "Tags",
+        "desc": "需要关联的标签列表。"
+      },
+      {
         "name": "BandwidthPackageId",
         "desc": "BGP带宽包唯一ID参数。设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的EIP加入该BGP带宽包并采用带宽包计费"
       }

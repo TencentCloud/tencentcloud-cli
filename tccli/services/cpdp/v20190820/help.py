@@ -247,15 +247,19 @@ INFO = {
     ],
     "desc": "修改会员属性-普通商户子账户。修改会员的会员属性。"
   },
-  "CloseOrder": {
+  "QueryOrder": {
     "params": [
       {
         "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
+        "desc": "聚鑫分配的支付主 MidasAppId"
       },
       {
         "name": "UserId",
         "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
+      },
+      {
+        "name": "Type",
+        "desc": "type=by_order根据订单号 查订单；\ntype=by_user根据用户id 查订单 。"
       },
       {
         "name": "MidasSecretId",
@@ -266,15 +270,52 @@ INFO = {
         "desc": "按照聚鑫安全密钥计算的签名"
       },
       {
+        "name": "Count",
+        "desc": "每页返回的记录数。根据用户 号码查询订单列表时需要传。 用于分页展示。Type=by_order时必填"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录数偏移量，默认从0开 始。根据用户号码查询订单列 表时需要传。用于分页展示。Type=by_order时必填"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间，Unix时间戳。Type=by_order时必填"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，Unix时间戳。Type=by_order时必填"
+      },
+      {
         "name": "OutTradeNo",
-        "desc": "业务订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+        "desc": "业务订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
       },
       {
         "name": "TransactionId",
-        "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+        "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
       }
     ],
-    "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
+    "desc": "根据订单号，或者用户Id，查询支付订单状态 "
+  },
+  "QueryMerchantInfoForManagement": {
+    "params": [
+      {
+        "name": "InvoicePlatformId",
+        "desc": "开票平台ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "页码"
+      },
+      {
+        "name": "Limit",
+        "desc": "页大小"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox。"
+      }
+    ],
+    "desc": "智慧零售-查询管理端商户"
   },
   "CreateCustAcctId": {
     "params": [
@@ -586,6 +627,63 @@ INFO = {
     ],
     "desc": "会员间交易-不验证。此接口可以实现会员间的余额的交易，实现资金在会员之间流动。"
   },
+  "QueryInvoiceForManagement": {
+    "params": [
+      {
+        "name": "InvoicePlatformId",
+        "desc": "开票平台ID"
+      },
+      {
+        "name": "InvoiceStatus",
+        "desc": "开票状态"
+      },
+      {
+        "name": "RedInvoiceStatus",
+        "desc": "红冲状态"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "开始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间"
+      },
+      {
+        "name": "Offset",
+        "desc": "页码"
+      },
+      {
+        "name": "Limit",
+        "desc": "页大小"
+      },
+      {
+        "name": "OrderId",
+        "desc": "订单号"
+      },
+      {
+        "name": "InvoiceId",
+        "desc": "发票ID"
+      },
+      {
+        "name": "OrderSn",
+        "desc": "业务开票号"
+      },
+      {
+        "name": "InvoiceSn",
+        "desc": "发票号码"
+      },
+      {
+        "name": "InvoiceCode",
+        "desc": "发票代码"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填 sandbox。"
+      }
+    ],
+    "desc": "智慧零售-查询管理端发票"
+  },
   "QueryCommonTransferRecharge": {
     "params": [
       {
@@ -657,19 +755,15 @@ INFO = {
     ],
     "desc": "聚鑫-查询子账户绑定银行卡"
   },
-  "QueryOrder": {
+  "CloseOrder": {
     "params": [
       {
         "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主 MidasAppId"
+        "desc": "聚鑫分配的支付主MidasAppId"
       },
       {
         "name": "UserId",
         "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
-      },
-      {
-        "name": "Type",
-        "desc": "type=by_order根据订单号 查订单；\ntype=by_user根据用户id 查订单 。"
       },
       {
         "name": "MidasSecretId",
@@ -680,31 +774,144 @@ INFO = {
         "desc": "按照聚鑫安全密钥计算的签名"
       },
       {
-        "name": "Count",
-        "desc": "每页返回的记录数。根据用户 号码查询订单列表时需要传。 用于分页展示。Type=by_order时必填"
-      },
-      {
-        "name": "Offset",
-        "desc": "记录数偏移量，默认从0开 始。根据用户号码查询订单列 表时需要传。用于分页展示。Type=by_order时必填"
-      },
-      {
-        "name": "StartTime",
-        "desc": "查询开始时间，Unix时间戳。Type=by_order时必填"
-      },
-      {
-        "name": "EndTime",
-        "desc": "查询结束时间，Unix时间戳。Type=by_order时必填"
-      },
-      {
         "name": "OutTradeNo",
-        "desc": "业务订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
+        "desc": "业务订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
       },
       {
         "name": "TransactionId",
-        "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
+        "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
       }
     ],
-    "desc": "根据订单号，或者用户Id，查询支付订单状态 "
+    "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
+  },
+  "CreateInvoice": {
+    "params": [
+      {
+        "name": "InvoicePlatformId",
+        "desc": "开票平台ID。0：高灯"
+      },
+      {
+        "name": "TitleType",
+        "desc": "抬头类型：1：个人/政府事业单位；2：企业"
+      },
+      {
+        "name": "BuyerTitle",
+        "desc": "购方名称"
+      },
+      {
+        "name": "OrderId",
+        "desc": "业务开票号"
+      },
+      {
+        "name": "AmountHasTax",
+        "desc": "含税总金额（单位为分）"
+      },
+      {
+        "name": "TaxAmount",
+        "desc": "总税额（单位为分）"
+      },
+      {
+        "name": "AmountWithoutTax",
+        "desc": "不含税总金额（单位为分）"
+      },
+      {
+        "name": "SellerTaxpayerNum",
+        "desc": "销方纳税人识别号"
+      },
+      {
+        "name": "SellerName",
+        "desc": "销方名称。（不填默认读取商户注册时输入的信息）"
+      },
+      {
+        "name": "SellerAddress",
+        "desc": "销方地址。（不填默认读取商户注册时输入的信息）"
+      },
+      {
+        "name": "SellerPhone",
+        "desc": "销方电话。（不填默认读取商户注册时输入的信息）"
+      },
+      {
+        "name": "SellerBankName",
+        "desc": "销方银行名称。（不填默认读取商户注册时输入的信息）"
+      },
+      {
+        "name": "SellerBankAccount",
+        "desc": "销方银行账号。（不填默认读取商户注册时输入的信息）"
+      },
+      {
+        "name": "BuyerTaxpayerNum",
+        "desc": "购方纳税人识别号（购方票面信息）,若抬头类型为2时，必传"
+      },
+      {
+        "name": "BuyerAddress",
+        "desc": "购方地址。开具专用发票时必填"
+      },
+      {
+        "name": "BuyerBankName",
+        "desc": "购方银行名称。开具专用发票时必填"
+      },
+      {
+        "name": "BuyerBankAccount",
+        "desc": "购方银行账号。开具专用发票时必填"
+      },
+      {
+        "name": "BuyerPhone",
+        "desc": "购方电话。开具专用发票时必填"
+      },
+      {
+        "name": "BuyerEmail",
+        "desc": "收票人邮箱。若填入，会收到发票推送邮件"
+      },
+      {
+        "name": "TakerPhone",
+        "desc": "收票人手机号。若填入，会收到发票推送短信"
+      },
+      {
+        "name": "InvoiceType",
+        "desc": "开票类型：\n1：增值税专用发票；\n2：增值税普通发票；\n3：增值税电子发票；\n4：增值税卷式发票；\n5：区块链电子发票。\n若该字段不填，或值不为1-5，则认为开具”增值税电子发票”"
+      },
+      {
+        "name": "CallbackUrl",
+        "desc": "发票结果回传地址"
+      },
+      {
+        "name": "Drawer",
+        "desc": "开票人姓名。（不填默认读取商户注册时输入的信息）"
+      },
+      {
+        "name": "Payee",
+        "desc": "收款人姓名。（不填默认读取商户注册时输入的信息）"
+      },
+      {
+        "name": "Checker",
+        "desc": "复核人姓名。（不填默认读取商户注册时输入的信息）"
+      },
+      {
+        "name": "TerminalCode",
+        "desc": "税盘号"
+      },
+      {
+        "name": "LevyMethod",
+        "desc": "征收方式。开具差额征税发票时必填2。开具普通征税发票时为空"
+      },
+      {
+        "name": "Deduction",
+        "desc": "差额征税扣除额（单位为分）"
+      },
+      {
+        "name": "Remark",
+        "desc": "备注（票面信息）"
+      },
+      {
+        "name": "Items",
+        "desc": "项目商品明细"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox。"
+      }
+    ],
+    "desc": "智慧零售-发票开具"
   },
   "QueryCustAcctIdBalance": {
     "params": [
@@ -905,6 +1112,23 @@ INFO = {
     ],
     "desc": "会员绑定提现账户-回填银联鉴权短信码。用于会员填写动态验证码后，发往银行进行验证，验证成功则完成绑定。"
   },
+  "CreateRedInvoice": {
+    "params": [
+      {
+        "name": "InvoicePlatformId",
+        "desc": "开票平台ID"
+      },
+      {
+        "name": "Invoices",
+        "desc": "红冲明细"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填 sandbox。"
+      }
+    ],
+    "desc": "智慧零售-发票红冲"
+  },
   "CheckAmount": {
     "params": [
       {
@@ -933,6 +1157,47 @@ INFO = {
       }
     ],
     "desc": "验证鉴权金额。此接口可受理BindRelateAcctSmallAmount接口发起的转账金额（往账鉴权方式）的验证处理。若所回填的验证金额验证通过，则会绑定原申请中的银行账户作为提现账户。通过此接口也可以查得BindRelateAcctSmallAmount接口发起的来账鉴权方式的申请的当前状态。"
+  },
+  "RevResigterBillSupportWithdraw": {
+    "params": [
+      {
+        "name": "MrchCode",
+        "desc": "String(22)，商户号（签约客户号）"
+      },
+      {
+        "name": "TranNetMemberCode",
+        "desc": "STRING(32)，交易网会员代码"
+      },
+      {
+        "name": "OldOrderNo",
+        "desc": "STRING(30)，原订单号（RegisterBillSupportWithdraw接口中的订单号）"
+      },
+      {
+        "name": "CancelAmt",
+        "desc": "STRING(20)，撤销金额（支持部分撤销，不能大于原订单可用金额，包含交易费用）"
+      },
+      {
+        "name": "TranFee",
+        "desc": "STRING(20)，交易费用（暂未使用，默认传0.0）"
+      },
+      {
+        "name": "Remark",
+        "desc": "STRING(300)，备注"
+      },
+      {
+        "name": "ReservedMsgOne",
+        "desc": "STRING(300)，保留域1"
+      },
+      {
+        "name": "ReservedMsgTwo",
+        "desc": "STRING(300)，保留域2"
+      },
+      {
+        "name": "ReservedMsgThree",
+        "desc": "STRING(300)，保留域3"
+      }
+    ],
+    "desc": "登记挂账撤销。此接口可以实现把RegisterBillSupportWithdraw接口完成的登记挂账进行撤销，即调减普通会员子账户的可提现和可用余额，调增挂账子账户的可用余额。"
   },
   "RevokeMemberRechargeThirdPay": {
     "params": [
@@ -1069,11 +1334,11 @@ INFO = {
       },
       {
         "name": "Ccy",
-        "desc": "STRING(3)，币种"
+        "desc": "STRING(3)，币种。如RMB"
       },
       {
         "name": "PayChannelType",
-        "desc": "STRING(20)，支付渠道类型"
+        "desc": "STRING(20)，支付渠道类型。\n0001-微信\n0002-支付宝\n0003-京东支付"
       },
       {
         "name": "PayChannelAssignMerNo",
@@ -1113,6 +1378,120 @@ INFO = {
       }
     ],
     "desc": "见证宝-会员在途充值(经第三方支付渠道)"
+  },
+  "QueryInvoice": {
+    "params": [
+      {
+        "name": "InvoicePlatformId",
+        "desc": "开票平台ID"
+      },
+      {
+        "name": "OrderId",
+        "desc": "订单号"
+      },
+      {
+        "name": "OrderSn",
+        "desc": "业务开票号"
+      },
+      {
+        "name": "IsRed",
+        "desc": "发票种类：\n0：蓝票\n1：红票【该字段默认为0， 如果需要查询红票信息，本字段必须传1，否则可能查询不到需要的发票信息】。"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox。"
+      }
+    ],
+    "desc": "智慧零售-发票查询"
+  },
+  "CreateMerchant": {
+    "params": [
+      {
+        "name": "InvoicePlatformId",
+        "desc": "开票平台ID"
+      },
+      {
+        "name": "TaxpayerName",
+        "desc": "企业名称"
+      },
+      {
+        "name": "TaxpayerNum",
+        "desc": "销方纳税人识别号"
+      },
+      {
+        "name": "LegalPersonName",
+        "desc": "注册企业法人代表名称"
+      },
+      {
+        "name": "ContactsName",
+        "desc": "联系人"
+      },
+      {
+        "name": "Phone",
+        "desc": "联系人手机号"
+      },
+      {
+        "name": "Address",
+        "desc": "不包含省市名称的地址"
+      },
+      {
+        "name": "RegionCode",
+        "desc": "地区编码"
+      },
+      {
+        "name": "CityName",
+        "desc": "市（地区）名称"
+      },
+      {
+        "name": "Drawer",
+        "desc": "开票人"
+      },
+      {
+        "name": "TaxRegistrationCertificate",
+        "desc": "税务登记证图片（Base64）字符串，需小于 3M"
+      },
+      {
+        "name": "Email",
+        "desc": "联系人邮箱地址"
+      },
+      {
+        "name": "BusinessMobile",
+        "desc": "企业电话"
+      },
+      {
+        "name": "BankName",
+        "desc": "银行名称"
+      },
+      {
+        "name": "BankAccount",
+        "desc": "银行账号"
+      },
+      {
+        "name": "Reviewer",
+        "desc": "复核人"
+      },
+      {
+        "name": "Payee",
+        "desc": "收款人"
+      },
+      {
+        "name": "RegisterCode",
+        "desc": "注册邀请码"
+      },
+      {
+        "name": "State",
+        "desc": "不填默认为1，有效状态\n0：表示无效；\n1:表示有效；\n2:表示禁止开蓝票；\n3:表示禁止冲红。"
+      },
+      {
+        "name": "CallbackUrl",
+        "desc": "接收推送的消息地址"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填 sandbox。"
+      }
+    ],
+    "desc": "智慧零售-商户注册"
   },
   "CreateAcct": {
     "params": [
@@ -1159,6 +1538,10 @@ INFO = {
       {
         "name": "ShortName",
         "desc": "不填则默认子商户名称"
+      },
+      {
+        "name": "SubMerchantMemberType",
+        "desc": "子商户会员类型：\ngeneral:普通子账户\nmerchant:商户子账户\n缺省： general"
       }
     ],
     "desc": "子商户入驻聚鑫平台"

@@ -86,6 +86,23 @@ INFO = {
     "params": [],
     "desc": "获取机型配置列表"
   },
+  "TerminateInstances": {
+    "params": [
+      {
+        "name": "InstanceIdSet",
+        "desc": "待销毁的实例ID列表。"
+      },
+      {
+        "name": "TerminateDelay",
+        "desc": "是否定时销毁，默认为否。"
+      },
+      {
+        "name": "TerminateTime",
+        "desc": "定时销毁的时间，格式形如：\"2019-08-05 12:01:30\"，若非定时销毁，则此参数被忽略。"
+      }
+    ],
+    "desc": "销毁实例"
+  },
   "ModifyModuleImage": {
     "params": [
       {
@@ -180,22 +197,22 @@ INFO = {
     ],
     "desc": "展示模块详细信息"
   },
-  "TerminateInstances": {
+  "ImportImage": {
     "params": [
       {
-        "name": "InstanceIdSet",
-        "desc": "待销毁的实例ID列表。"
+        "name": "ImageId",
+        "desc": "镜像的Id。"
       },
       {
-        "name": "TerminateDelay",
-        "desc": "是否定时销毁，默认为否。"
+        "name": "ImageDescription",
+        "desc": "镜像的描述。"
       },
       {
-        "name": "TerminateTime",
-        "desc": "定时销毁的时间，格式形如：\"2019-08-05 12:01:30\"，若非定时销毁，则此参数被忽略。"
+        "name": "SourceRegion",
+        "desc": "源地域"
       }
     ],
-    "desc": "销毁实例"
+    "desc": "从CVM产品导入镜像到ECM"
   },
   "ResetInstances": {
     "params": [

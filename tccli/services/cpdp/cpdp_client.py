@@ -152,6 +152,51 @@ def doApplyWithdrawal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doWithdrawCashMembership(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("WithdrawCashMembership", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MrchCode": argv.get("--MrchCode"),
+        "TranWebName": argv.get("--TranWebName"),
+        "MemberGlobalType": argv.get("--MemberGlobalType"),
+        "MemberGlobalId": argv.get("--MemberGlobalId"),
+        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
+        "MemberName": argv.get("--MemberName"),
+        "TakeCashAcctNo": argv.get("--TakeCashAcctNo"),
+        "OutAmtAcctName": argv.get("--OutAmtAcctName"),
+        "Ccy": argv.get("--Ccy"),
+        "CashAmt": argv.get("--CashAmt"),
+        "Remark": argv.get("--Remark"),
+        "ReservedMsg": argv.get("--ReservedMsg"),
+        "WebSign": argv.get("--WebSign"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.WithdrawCashMembershipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.WithdrawCashMembership(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyMntMbrBindRelateAcctBankCode(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -274,22 +319,17 @@ def doCreateCustAcctId(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryOrder(argv, arglist):
+def doCloseOrder(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryOrder", g_param[OptionsDefine.Version])
+        show_help("CloseOrder", g_param[OptionsDefine.Version])
         return
 
     param = {
         "MidasAppId": argv.get("--MidasAppId"),
         "UserId": argv.get("--UserId"),
-        "Type": argv.get("--Type"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
-        "Count": Utils.try_to_json(argv, "--Count"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
         "OutTradeNo": argv.get("--OutTradeNo"),
         "TransactionId": argv.get("--TransactionId"),
 
@@ -305,9 +345,45 @@ def doQueryOrder(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryOrderRequest()
+    model = models.CloseOrderRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryOrder(model)
+    rsp = client.CloseOrder(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQueryMerchantInfoForManagement(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryMerchantInfoForManagement", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InvoicePlatformId": Utils.try_to_json(argv, "--InvoicePlatformId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryMerchantInfoForManagementRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryMerchantInfoForManagement(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -435,26 +511,18 @@ def doBindRelateAcctUnionPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doWithdrawCashMembership(argv, arglist):
+def doUnbindRelateAcct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("WithdrawCashMembership", g_param[OptionsDefine.Version])
+        show_help("UnbindRelateAcct", g_param[OptionsDefine.Version])
         return
 
     param = {
         "MrchCode": argv.get("--MrchCode"),
-        "TranWebName": argv.get("--TranWebName"),
-        "MemberGlobalType": argv.get("--MemberGlobalType"),
-        "MemberGlobalId": argv.get("--MemberGlobalId"),
+        "FunctionFlag": argv.get("--FunctionFlag"),
         "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberName": argv.get("--MemberName"),
-        "TakeCashAcctNo": argv.get("--TakeCashAcctNo"),
-        "OutAmtAcctName": argv.get("--OutAmtAcctName"),
-        "Ccy": argv.get("--Ccy"),
-        "CashAmt": argv.get("--CashAmt"),
-        "Remark": argv.get("--Remark"),
+        "MemberAcctNo": argv.get("--MemberAcctNo"),
         "ReservedMsg": argv.get("--ReservedMsg"),
-        "WebSign": argv.get("--WebSign"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -468,9 +536,9 @@ def doWithdrawCashMembership(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.WithdrawCashMembershipRequest()
+    model = models.UnbindRelateAcctRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.WithdrawCashMembership(model)
+    rsp = client.UnbindRelateAcct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -679,17 +747,22 @@ def doQueryAcctBinding(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCloseOrder(argv, arglist):
+def doQueryOrder(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CloseOrder", g_param[OptionsDefine.Version])
+        show_help("QueryOrder", g_param[OptionsDefine.Version])
         return
 
     param = {
         "MidasAppId": argv.get("--MidasAppId"),
         "UserId": argv.get("--UserId"),
+        "Type": argv.get("--Type"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
+        "Count": Utils.try_to_json(argv, "--Count"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
         "OutTradeNo": argv.get("--OutTradeNo"),
         "TransactionId": argv.get("--TransactionId"),
 
@@ -705,9 +778,72 @@ def doCloseOrder(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CloseOrderRequest()
+    model = models.QueryOrderRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CloseOrder(model)
+    rsp = client.QueryOrder(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateInvoice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateInvoice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InvoicePlatformId": Utils.try_to_json(argv, "--InvoicePlatformId"),
+        "TitleType": Utils.try_to_json(argv, "--TitleType"),
+        "BuyerTitle": argv.get("--BuyerTitle"),
+        "OrderId": argv.get("--OrderId"),
+        "AmountHasTax": Utils.try_to_json(argv, "--AmountHasTax"),
+        "TaxAmount": Utils.try_to_json(argv, "--TaxAmount"),
+        "AmountWithoutTax": Utils.try_to_json(argv, "--AmountWithoutTax"),
+        "SellerTaxpayerNum": argv.get("--SellerTaxpayerNum"),
+        "SellerName": argv.get("--SellerName"),
+        "SellerAddress": argv.get("--SellerAddress"),
+        "SellerPhone": argv.get("--SellerPhone"),
+        "SellerBankName": argv.get("--SellerBankName"),
+        "SellerBankAccount": argv.get("--SellerBankAccount"),
+        "BuyerTaxpayerNum": argv.get("--BuyerTaxpayerNum"),
+        "BuyerAddress": argv.get("--BuyerAddress"),
+        "BuyerBankName": argv.get("--BuyerBankName"),
+        "BuyerBankAccount": argv.get("--BuyerBankAccount"),
+        "BuyerPhone": argv.get("--BuyerPhone"),
+        "BuyerEmail": argv.get("--BuyerEmail"),
+        "TakerPhone": argv.get("--TakerPhone"),
+        "InvoiceType": Utils.try_to_json(argv, "--InvoiceType"),
+        "CallbackUrl": argv.get("--CallbackUrl"),
+        "Drawer": argv.get("--Drawer"),
+        "Payee": argv.get("--Payee"),
+        "Checker": argv.get("--Checker"),
+        "TerminalCode": argv.get("--TerminalCode"),
+        "LevyMethod": argv.get("--LevyMethod"),
+        "Deduction": Utils.try_to_json(argv, "--Deduction"),
+        "Remark": argv.get("--Remark"),
+        "Items": Utils.try_to_json(argv, "--Items"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInvoiceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateInvoice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -982,6 +1118,41 @@ def doBindRelateAccReUnionPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateRedInvoice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateRedInvoice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InvoicePlatformId": Utils.try_to_json(argv, "--InvoicePlatformId"),
+        "Invoices": Utils.try_to_json(argv, "--Invoices"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRedInvoiceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateRedInvoice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCheckAmount(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1011,6 +1182,47 @@ def doCheckAmount(argv, arglist):
     model = models.CheckAmountRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CheckAmount(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRevResigterBillSupportWithdraw(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RevResigterBillSupportWithdraw", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MrchCode": argv.get("--MrchCode"),
+        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
+        "OldOrderNo": argv.get("--OldOrderNo"),
+        "CancelAmt": argv.get("--CancelAmt"),
+        "TranFee": argv.get("--TranFee"),
+        "Remark": argv.get("--Remark"),
+        "ReservedMsgOne": argv.get("--ReservedMsgOne"),
+        "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
+        "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RevResigterBillSupportWithdrawRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RevResigterBillSupportWithdraw(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1188,6 +1400,96 @@ def doRechargeMemberThirdPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryInvoice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryInvoice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InvoicePlatformId": Utils.try_to_json(argv, "--InvoicePlatformId"),
+        "OrderId": argv.get("--OrderId"),
+        "OrderSn": argv.get("--OrderSn"),
+        "IsRed": Utils.try_to_json(argv, "--IsRed"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryInvoiceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryInvoice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateMerchant(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateMerchant", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InvoicePlatformId": Utils.try_to_json(argv, "--InvoicePlatformId"),
+        "TaxpayerName": argv.get("--TaxpayerName"),
+        "TaxpayerNum": argv.get("--TaxpayerNum"),
+        "LegalPersonName": argv.get("--LegalPersonName"),
+        "ContactsName": argv.get("--ContactsName"),
+        "Phone": argv.get("--Phone"),
+        "Address": argv.get("--Address"),
+        "RegionCode": Utils.try_to_json(argv, "--RegionCode"),
+        "CityName": argv.get("--CityName"),
+        "Drawer": argv.get("--Drawer"),
+        "TaxRegistrationCertificate": argv.get("--TaxRegistrationCertificate"),
+        "Email": argv.get("--Email"),
+        "BusinessMobile": argv.get("--BusinessMobile"),
+        "BankName": argv.get("--BankName"),
+        "BankAccount": argv.get("--BankAccount"),
+        "Reviewer": argv.get("--Reviewer"),
+        "Payee": argv.get("--Payee"),
+        "RegisterCode": argv.get("--RegisterCode"),
+        "State": argv.get("--State"),
+        "CallbackUrl": argv.get("--CallbackUrl"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateMerchantRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateMerchant(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateAcct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1206,6 +1508,7 @@ def doCreateAcct(argv, arglist):
         "MidasSignature": argv.get("--MidasSignature"),
         "SubMchType": argv.get("--SubMchType"),
         "ShortName": argv.get("--ShortName"),
+        "SubMerchantMemberType": argv.get("--SubMerchantMemberType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1326,18 +1629,26 @@ def doRevRegisterBillSupportWithdraw(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnbindRelateAcct(argv, arglist):
+def doQueryInvoiceForManagement(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UnbindRelateAcct", g_param[OptionsDefine.Version])
+        show_help("QueryInvoiceForManagement", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberAcctNo": argv.get("--MemberAcctNo"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "InvoicePlatformId": Utils.try_to_json(argv, "--InvoicePlatformId"),
+        "InvoiceStatus": Utils.try_to_json(argv, "--InvoiceStatus"),
+        "RedInvoiceStatus": Utils.try_to_json(argv, "--RedInvoiceStatus"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderId": argv.get("--OrderId"),
+        "InvoiceId": argv.get("--InvoiceId"),
+        "OrderSn": argv.get("--OrderSn"),
+        "InvoiceSn": argv.get("--InvoiceSn"),
+        "InvoiceCode": argv.get("--InvoiceCode"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1351,9 +1662,9 @@ def doUnbindRelateAcct(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnbindRelateAcctRequest()
+    model = models.QueryInvoiceForManagementRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UnbindRelateAcct(model)
+    rsp = client.QueryInvoiceForManagement(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1495,20 +1806,23 @@ ACTION_MAP = {
     "BindAcct": doBindAcct,
     "BindRelateAcctSmallAmount": doBindRelateAcctSmallAmount,
     "ApplyWithdrawal": doApplyWithdrawal,
+    "WithdrawCashMembership": doWithdrawCashMembership,
     "ModifyMntMbrBindRelateAcctBankCode": doModifyMntMbrBindRelateAcctBankCode,
     "QueryMemberBind": doQueryMemberBind,
     "CreateCustAcctId": doCreateCustAcctId,
-    "QueryOrder": doQueryOrder,
+    "CloseOrder": doCloseOrder,
+    "QueryMerchantInfoForManagement": doQueryMerchantInfoForManagement,
     "ReviseMbrProperty": doReviseMbrProperty,
     "QueryBalance": doQueryBalance,
     "BindRelateAcctUnionPay": doBindRelateAcctUnionPay,
-    "WithdrawCashMembership": doWithdrawCashMembership,
+    "UnbindRelateAcct": doUnbindRelateAcct,
     "QueryBankTransactionDetails": doQueryBankTransactionDetails,
     "QueryMemberTransaction": doQueryMemberTransaction,
     "QueryCommonTransferRecharge": doQueryCommonTransferRecharge,
     "DownloadBill": doDownloadBill,
     "QueryAcctBinding": doQueryAcctBinding,
-    "CloseOrder": doCloseOrder,
+    "QueryOrder": doQueryOrder,
+    "CreateInvoice": doCreateInvoice,
     "QueryCustAcctIdBalance": doQueryCustAcctIdBalance,
     "QueryRefund": doQueryRefund,
     "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
@@ -1516,15 +1830,19 @@ ACTION_MAP = {
     "QuerySingleTransactionStatus": doQuerySingleTransactionStatus,
     "UnBindAcct": doUnBindAcct,
     "BindRelateAccReUnionPay": doBindRelateAccReUnionPay,
+    "CreateRedInvoice": doCreateRedInvoice,
     "CheckAmount": doCheckAmount,
+    "RevResigterBillSupportWithdraw": doRevResigterBillSupportWithdraw,
     "RevokeMemberRechargeThirdPay": doRevokeMemberRechargeThirdPay,
     "Refund": doRefund,
     "QuerySmallAmountTransfer": doQuerySmallAmountTransfer,
     "RechargeMemberThirdPay": doRechargeMemberThirdPay,
+    "QueryInvoice": doQueryInvoice,
+    "CreateMerchant": doCreateMerchant,
     "CreateAcct": doCreateAcct,
     "UnifiedOrder": doUnifiedOrder,
     "RevRegisterBillSupportWithdraw": doRevRegisterBillSupportWithdraw,
-    "UnbindRelateAcct": doUnbindRelateAcct,
+    "QueryInvoiceForManagement": doQueryInvoiceForManagement,
     "QueryBankWithdrawCashDetails": doQueryBankWithdrawCashDetails,
     "QueryReconciliationDocument": doQueryReconciliationDocument,
     "CheckAcct": doCheckAcct,

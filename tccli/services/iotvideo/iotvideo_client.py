@@ -917,6 +917,39 @@ def doDeleteOtaVersion(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteAppUsr(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteAppUsr", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "AccessId": argv.get("--AccessId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteAppUsrRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteAppUsr(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyProduct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1817,6 +1850,7 @@ ACTION_MAP = {
     "CreateBinding": doCreateBinding,
     "CreateDevToken": doCreateDevToken,
     "DeleteOtaVersion": doDeleteOtaVersion,
+    "DeleteAppUsr": doDeleteAppUsr,
     "ModifyProduct": doModifyProduct,
     "DescribeLogs": doDescribeLogs,
     "DeleteDevice": doDeleteDevice,

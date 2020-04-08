@@ -2147,6 +2147,7 @@ def doAllocateAddresses(argv, arglist):
         "AddressType": argv.get("--AddressType"),
         "AnycastZone": argv.get("--AnycastZone"),
         "ApplicableForCLB": Utils.try_to_json(argv, "--ApplicableForCLB"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
         "BandwidthPackageId": argv.get("--BandwidthPackageId"),
 
     }

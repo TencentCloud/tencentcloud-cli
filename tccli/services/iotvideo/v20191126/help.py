@@ -395,6 +395,15 @@ INFO = {
     ],
     "desc": "本接口（DeleteOtaVersion）用于删除固件版本信息。"
   },
+  "DeleteAppUsr": {
+    "params": [
+      {
+        "name": "AccessId",
+        "desc": "客户的终端用户在IoT Video上的唯一标识ID"
+      }
+    ],
+    "desc": "本接口（DeleteAppUsr）用于删除终端用户。"
+  },
   "ModifyProduct": {
     "params": [
       {
