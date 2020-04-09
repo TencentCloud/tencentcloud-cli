@@ -751,8 +751,8 @@ def doDescribeBindUsr(argv, arglist):
         return
 
     param = {
-        "AccessId": argv.get("--AccessId"),
         "Tid": argv.get("--Tid"),
+        "AccessId": argv.get("--AccessId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

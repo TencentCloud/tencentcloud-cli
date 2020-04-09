@@ -18,15 +18,19 @@ from tccli.services.cme import v20191029
 from tccli.services.cme.v20191029 import help as v20191029_help
 
 
-def doDescribeTaskDetail(argv, arglist):
+def doDescribeTasks(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTaskDetail", g_param[OptionsDefine.Version])
+        show_help("DescribeTasks", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Platform": argv.get("--Platform"),
-        "TaskId": argv.get("--TaskId"),
+        "ProjectId": argv.get("--ProjectId"),
+        "TaskTypeSet": Utils.try_to_json(argv, "--TaskTypeSet"),
+        "StatusSet": Utils.try_to_json(argv, "--StatusSet"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -40,9 +44,43 @@ def doDescribeTaskDetail(argv, arglist):
     client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskDetailRequest()
+    model = models.DescribeTasksRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTaskDetail(model)
+    rsp = client.DescribeTasks(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTeams(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTeams", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "TeamIds": Utils.try_to_json(argv, "--TeamIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTeamsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTeams(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -90,18 +128,16 @@ def doExportVideoEditProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doImportMediaToProject(argv, arglist):
+def doDescribeSharedSpace(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ImportMediaToProject", g_param[OptionsDefine.Version])
+        show_help("DescribeSharedSpace", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Platform": argv.get("--Platform"),
-        "ProjectId": argv.get("--ProjectId"),
-        "VodFileId": argv.get("--VodFileId"),
-        "Name": argv.get("--Name"),
-        "PreProcessDefinition": Utils.try_to_json(argv, "--PreProcessDefinition"),
+        "Authorizee": Utils.try_to_json(argv, "--Authorizee"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -115,9 +151,9 @@ def doImportMediaToProject(argv, arglist):
     client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImportMediaToProjectRequest()
+    model = models.DescribeSharedSpaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ImportMediaToProject(model)
+    rsp = client.DescribeSharedSpace(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -127,18 +163,19 @@ def doImportMediaToProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateProject(argv, arglist):
+def doGrantResourceAuthorization(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateProject", g_param[OptionsDefine.Version])
+        show_help("GrantResourceAuthorization", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Platform": argv.get("--Platform"),
-        "Category": argv.get("--Category"),
-        "Name": argv.get("--Name"),
-        "AspectRatio": argv.get("--AspectRatio"),
         "Owner": Utils.try_to_json(argv, "--Owner"),
+        "Resources": Utils.try_to_json(argv, "--Resources"),
+        "Authorizees": Utils.try_to_json(argv, "--Authorizees"),
+        "Permissions": Utils.try_to_json(argv, "--Permissions"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -152,9 +189,492 @@ def doCreateProject(argv, arglist):
     client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateProjectRequest()
+    model = models.GrantResourceAuthorizationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateProject(model)
+    rsp = client.GrantResourceAuthorization(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSearchMaterial(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SearchMaterial", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "SearchScopes": Utils.try_to_json(argv, "--SearchScopes"),
+        "MaterialTypes": Utils.try_to_json(argv, "--MaterialTypes"),
+        "Text": argv.get("--Text"),
+        "Resolution": argv.get("--Resolution"),
+        "DurationRange": Utils.try_to_json(argv, "--DurationRange"),
+        "CreateTimeRange": Utils.try_to_json(argv, "--CreateTimeRange"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "Sort": Utils.try_to_json(argv, "--Sort"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchMaterialRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SearchMaterial(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRevokeResourceAuthorization(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RevokeResourceAuthorization", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "Resources": Utils.try_to_json(argv, "--Resources"),
+        "Authorizees": Utils.try_to_json(argv, "--Authorizees"),
+        "Permissions": Utils.try_to_json(argv, "--Permissions"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RevokeResourceAuthorizationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RevokeResourceAuthorization(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeJoinTeams(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeJoinTeams", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "MemberId": argv.get("--MemberId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeJoinTeamsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeJoinTeams(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeResourceAuthorization(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeResourceAuthorization", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "Resource": Utils.try_to_json(argv, "--Resource"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeResourceAuthorizationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeResourceAuthorization(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doImportMaterial(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ImportMaterial", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "VodFileId": argv.get("--VodFileId"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "Name": argv.get("--Name"),
+        "ClassPath": argv.get("--ClassPath"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "PreProcessDefinition": Utils.try_to_json(argv, "--PreProcessDefinition"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ImportMaterialRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ImportMaterial(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskDetail(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskDetail", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "TaskId": argv.get("--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskDetailRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskDetail(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTeam(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTeam", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "TeamId": argv.get("--TeamId"),
+        "Name": argv.get("--Name"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTeamRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyTeam(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteMaterial(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteMaterial", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "MaterialId": argv.get("--MaterialId"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteMaterialRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteMaterial(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyMaterial(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyMaterial", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "MaterialId": argv.get("--MaterialId"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "Name": argv.get("--Name"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "ClassPath": argv.get("--ClassPath"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyMaterialRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyMaterial(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteTeam(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteTeam", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "TeamId": argv.get("--TeamId"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTeamRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteTeam(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAddTeamMember(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AddTeamMember", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "TeamId": argv.get("--TeamId"),
+        "TeamMembers": Utils.try_to_json(argv, "--TeamMembers"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddTeamMemberRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AddTeamMember(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTeamMember(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTeamMember", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "TeamId": argv.get("--TeamId"),
+        "MemberId": argv.get("--MemberId"),
+        "Remark": argv.get("--Remark"),
+        "Role": argv.get("--Role"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTeamMemberRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyTeamMember(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteTeamMembers(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteTeamMembers", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "TeamId": argv.get("--TeamId"),
+        "MemberIds": Utils.try_to_json(argv, "--MemberIds"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTeamMembersRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteTeamMembers(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -209,6 +729,7 @@ def doDescribeProjects(argv, arglist):
         "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
         "AspectRatioSet": Utils.try_to_json(argv, "--AspectRatioSet"),
         "CategorySet": Utils.try_to_json(argv, "--CategorySet"),
+        "Sort": Utils.try_to_json(argv, "--Sort"),
         "Owner": Utils.try_to_json(argv, "--Owner"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
@@ -271,6 +792,335 @@ def doDescribeLoginStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeMaterials(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeMaterials", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "MaterialIds": Utils.try_to_json(argv, "--MaterialIds"),
+        "Sort": Utils.try_to_json(argv, "--Sort"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMaterialsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeMaterials(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeClass(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeClass", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClassRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeClass(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTeam(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateTeam", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "Name": argv.get("--Name"),
+        "OwnerId": argv.get("--OwnerId"),
+        "OwnerRemark": argv.get("--OwnerRemark"),
+        "TeamId": argv.get("--TeamId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTeamRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateTeam(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyProject(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyProject", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "ProjectId": argv.get("--ProjectId"),
+        "Name": argv.get("--Name"),
+        "AspectRatio": argv.get("--AspectRatio"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyProjectRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyProject(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateClass(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateClass", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "ClassPath": argv.get("--ClassPath"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClassRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateClass(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doImportMediaToProject(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ImportMediaToProject", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "ProjectId": argv.get("--ProjectId"),
+        "VodFileId": argv.get("--VodFileId"),
+        "Name": argv.get("--Name"),
+        "PreProcessDefinition": Utils.try_to_json(argv, "--PreProcessDefinition"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ImportMediaToProjectRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ImportMediaToProject(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListMedia(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListMedia", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "ClassPath": argv.get("--ClassPath"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListMediaRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListMedia(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateProject(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateProject", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "Category": argv.get("--Category"),
+        "Name": argv.get("--Name"),
+        "AspectRatio": argv.get("--AspectRatio"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateProjectRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateProject(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteClass(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteClass", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "ClassPath": argv.get("--ClassPath"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClassRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteClass(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteProject(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -305,19 +1155,19 @@ def doDeleteProject(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTasks(argv, arglist):
+def doFlattenListMedia(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTasks", g_param[OptionsDefine.Version])
+        show_help("FlattenListMedia", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Platform": argv.get("--Platform"),
-        "ProjectId": argv.get("--ProjectId"),
-        "TaskTypeSet": Utils.try_to_json(argv, "--TaskTypeSet"),
-        "StatusSet": Utils.try_to_json(argv, "--StatusSet"),
+        "ClassPath": argv.get("--ClassPath"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -331,9 +1181,9 @@ def doDescribeTasks(argv, arglist):
     client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTasksRequest()
+    model = models.FlattenListMediaRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTasks(model)
+    rsp = client.FlattenListMedia(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -343,17 +1193,19 @@ def doDescribeTasks(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyProject(argv, arglist):
+def doDescribeTeamMembers(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyProject", g_param[OptionsDefine.Version])
+        show_help("DescribeTeamMembers", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Platform": argv.get("--Platform"),
-        "ProjectId": argv.get("--ProjectId"),
-        "Name": argv.get("--Name"),
-        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "TeamId": argv.get("--TeamId"),
+        "MemberIds": Utils.try_to_json(argv, "--MemberIds"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -367,9 +1219,9 @@ def doModifyProject(argv, arglist):
     client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyProjectRequest()
+    model = models.DescribeTeamMembersRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyProject(model)
+    rsp = client.DescribeTeamMembers(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -390,16 +1242,39 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeTaskDetail": doDescribeTaskDetail,
+    "DescribeTasks": doDescribeTasks,
+    "DescribeTeams": doDescribeTeams,
     "ExportVideoEditProject": doExportVideoEditProject,
-    "ImportMediaToProject": doImportMediaToProject,
-    "CreateProject": doCreateProject,
+    "DescribeSharedSpace": doDescribeSharedSpace,
+    "GrantResourceAuthorization": doGrantResourceAuthorization,
+    "SearchMaterial": doSearchMaterial,
+    "RevokeResourceAuthorization": doRevokeResourceAuthorization,
+    "DescribeJoinTeams": doDescribeJoinTeams,
+    "DescribeResourceAuthorization": doDescribeResourceAuthorization,
+    "ImportMaterial": doImportMaterial,
+    "DescribeTaskDetail": doDescribeTaskDetail,
+    "ModifyTeam": doModifyTeam,
+    "DeleteMaterial": doDeleteMaterial,
+    "ModifyMaterial": doModifyMaterial,
+    "DeleteTeam": doDeleteTeam,
+    "AddTeamMember": doAddTeamMember,
+    "ModifyTeamMember": doModifyTeamMember,
+    "DeleteTeamMembers": doDeleteTeamMembers,
     "DeleteLoginStatus": doDeleteLoginStatus,
     "DescribeProjects": doDescribeProjects,
     "DescribeLoginStatus": doDescribeLoginStatus,
-    "DeleteProject": doDeleteProject,
-    "DescribeTasks": doDescribeTasks,
+    "DescribeMaterials": doDescribeMaterials,
+    "DescribeClass": doDescribeClass,
+    "CreateTeam": doCreateTeam,
     "ModifyProject": doModifyProject,
+    "CreateClass": doCreateClass,
+    "ImportMediaToProject": doImportMediaToProject,
+    "ListMedia": doListMedia,
+    "CreateProject": doCreateProject,
+    "DeleteClass": doDeleteClass,
+    "DeleteProject": doDeleteProject,
+    "FlattenListMedia": doFlattenListMedia,
+    "DescribeTeamMembers": doDescribeTeamMembers,
 
 }
 

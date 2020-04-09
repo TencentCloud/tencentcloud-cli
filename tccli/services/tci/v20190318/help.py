@@ -678,6 +678,10 @@ INFO = {
         "desc": "光照标准列表"
       },
       {
+        "name": "EventsCallBack",
+        "desc": "结果更新回调地址。"
+      },
+      {
         "name": "FrameInterval",
         "desc": "抽帧的时间间隔，单位毫秒，默认值1000，保留字段，当前不支持填写。"
       },

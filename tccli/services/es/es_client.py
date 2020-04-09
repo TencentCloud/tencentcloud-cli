@@ -255,6 +255,7 @@ def doUpdateInstance(argv, arglist):
         "EsPublicAcl": Utils.try_to_json(argv, "--EsPublicAcl"),
         "KibanaPublicAccess": argv.get("--KibanaPublicAccess"),
         "KibanaPrivateAccess": argv.get("--KibanaPrivateAccess"),
+        "BasicSecurityType": Utils.try_to_json(argv, "--BasicSecurityType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -48,7 +48,7 @@ INFO = {
     "params": [
       {
         "name": "BizAppId",
-        "desc": "appId 值测试时由腾讯统一分配"
+        "desc": "业务appid"
       },
       {
         "name": "Dst",

@@ -321,12 +321,12 @@ INFO = {
   "DescribeBindUsr": {
     "params": [
       {
-        "name": "AccessId",
-        "desc": "设备主人的AccessId"
-      },
-      {
         "name": "Tid",
         "desc": "设备TID"
+      },
+      {
+        "name": "AccessId",
+        "desc": "设备主人的AccessId"
       }
     ],
     "desc": "本接口（DescribeBindUsr）用于查询设备被分享的所有用户列表。"

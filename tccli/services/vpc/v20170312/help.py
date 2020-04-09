@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 DESC = "vpc-2017-03-12"
 INFO = {
-  "DescribeCcnRegionBandwidthLimits": {
+  "CreateDefaultSecurityGroup": {
     "params": [
       {
-        "name": "CcnId",
-        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
+        "name": "ProjectId",
+        "desc": "项目ID，默认0。可在qcloud控制台项目管理页面查询到。"
       }
     ],
-    "desc": "本接口（DescribeCcnRegionBandwidthLimits）用于查询云联网各地域出带宽上限，该接口只返回已关联网络实例包含的地域"
+    "desc": "本接口（CreateDefaultSecurityGroup）用于创建（如果项目下未存在默认安全组，则创建；已存在则获取。）默认安全组（SecurityGroup）。\n* 每个账户下每个地域的每个项目的<a href=\"https://cloud.tencent.com/document/product/213/12453\">安全组数量限制</a>。\n* 新建的安全组的入站和出站规则默认都是全部拒绝，在创建后通常您需要再调用CreateSecurityGroupPolicies将安全组的规则设置为需要的规则。\n* 创建安全组同时可以绑定标签, 应答里的标签列表代表添加成功的标签。"
   },
   "DescribeCustomerGateways": {
     "params": [
@@ -423,6 +423,15 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeGatewayFlowMonitorDetail）用于查询网关流量监控明细。\n* 只支持单个网关实例查询。即入参 `VpnId` `DirectConnectGatewayId` `PeeringConnectionId` `NatId` 最多只支持传一个，且必须传一个。\n* 如果网关有流量，但调用本接口没有返回数据，请在控制台对应网关详情页确认是否开启网关流量监控。"
+  },
+  "EnableGatewayFlowMonitor": {
+    "params": [
+      {
+        "name": "GatewayId",
+        "desc": "网关实例ID，目前我们支持的网关实例有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。"
+      }
+    ],
+    "desc": "本接口（EnableGatewayFlowMonitor）用于开启网关流量监控。"
   },
   "UnassignIpv6Addresses": {
     "params": [
@@ -840,26 +849,18 @@ INFO = {
     ],
     "desc": "本接口（ModifyAddressesBandwidth）用于调整[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)(简称EIP)带宽，包括后付费EIP, 预付费EIP和带宽包EIP"
   },
-  "DescribeVpnConnections": {
+  "CreateNatGatewayDestinationIpPortTranslationNatRule": {
     "params": [
       {
-        "name": "VpnConnectionIds",
-        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnConnectionIds和Filters。"
+        "name": "NatGatewayId",
+        "desc": "NAT网关的ID，形如：`nat-df45454`。"
       },
       {
-        "name": "Filters",
-        "desc": "过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>\n<li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>\n<li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>\n<li>vpn-connection-name - String - 通道名称，形如：`test-vpn`。</li>\n<li>vpn-connection-id - String - 通道实例ID，形如：`vpnx-5p7vkch8\"`。</li>"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。"
+        "name": "DestinationIpPortTranslationNatRules",
+        "desc": "NAT网关的端口转换规则。"
       }
     ],
-    "desc": " 本接口（DescribeVpnConnections）查询VPN通道列表。"
+    "desc": "本接口(CreateNatGatewayDestinationIpPortTranslationNatRule)用于创建NAT网关端口转发规则。"
   },
   "CreateSubnet": {
     "params": [
@@ -941,6 +942,27 @@ INFO = {
       }
     ],
     "desc": "本接口（DeleteServiceTemplateGroup）用于删除协议端口模板集合"
+  },
+  "DescribeGatewayFlowQos": {
+    "params": [
+      {
+        "name": "GatewayId",
+        "desc": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。"
+      },
+      {
+        "name": "IpAddresses",
+        "desc": "限流的云服务器内网IP。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeGatewayFlowQos）用于查询网关来访IP流控带宽。"
   },
   "DescribeIp6Translators": {
     "params": [
@@ -1112,6 +1134,23 @@ INFO = {
       }
     ],
     "desc": "本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* EIP 是专为动态云计算设计的静态 IP 地址。借助 EIP，您可以快速将 EIP 重新映射到您的另一个实例上，从而屏蔽实例故障。\n* 您的 EIP 与腾讯云账户相关联，而不是与某个实例相关联。在您选择显式释放该地址，或欠费超过24小时之前，它会一直与您的腾讯云账户保持关联。\n* 一个腾讯云账户在每个地域能申请的 EIP 最大配额有所限制，可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)，上述配额可通过 DescribeAddressQuota 接口获取。"
+  },
+  "CheckAssistantCidr": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`"
+      },
+      {
+        "name": "NewCidrBlocks",
+        "desc": "待添加的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]"
+      },
+      {
+        "name": "OldCidrBlocks",
+        "desc": "待删除的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]"
+      }
+    ],
+    "desc": "本接口(CheckAssistantCidr)用于检查辅助CIDR是否与存量路由、对等连接（对端VPC的CIDR）等资源存在冲突。如果存在重叠，则返回重叠的资源。（接口灰度中，如需使用请提工单。）\n* 检测辅助CIDR是否与当前VPC的主CIDR和辅助CIDR存在重叠。\n* 检测辅助CIDR是否与当前VPC的路由的目的端存在重叠。\n* 检测辅助CIDR是否与当前VPC的对等连接，对端VPC下的主CIDR或辅助CIDR存在重叠。"
   },
   "DescribeVpcIpv6Addresses": {
     "params": [
@@ -1477,6 +1516,19 @@ INFO = {
     ],
     "desc": "本接口（DetachNetworkInterface）用于弹性网卡解绑云主机。"
   },
+  "DeleteAssistantCidr": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`"
+      },
+      {
+        "name": "CidrBlocks",
+        "desc": "CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]"
+      }
+    ],
+    "desc": "本接口(DeleteAssistantCidr)用于删除辅助CIDR。（接口灰度中，如需使用请提工单。）"
+  },
   "DeleteNetworkInterface": {
     "params": [
       {
@@ -1486,18 +1538,35 @@ INFO = {
     ],
     "desc": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云服务器时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。"
   },
-  "CreateNatGatewayDestinationIpPortTranslationNatRule": {
+  "DescribeVpnConnections": {
     "params": [
       {
-        "name": "NatGatewayId",
-        "desc": "NAT网关的ID，形如：`nat-df45454`。"
+        "name": "VpnConnectionIds",
+        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnConnectionIds和Filters。"
       },
       {
-        "name": "DestinationIpPortTranslationNatRules",
-        "desc": "NAT网关的端口转换规则。"
+        "name": "Filters",
+        "desc": "过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>\n<li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>\n<li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>\n<li>vpn-connection-name - String - 通道名称，形如：`test-vpn`。</li>\n<li>vpn-connection-id - String - 通道实例ID，形如：`vpnx-5p7vkch8\"`。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "本接口(CreateNatGatewayDestinationIpPortTranslationNatRule)用于创建NAT网关端口转发规则。"
+    "desc": " 本接口（DescribeVpnConnections）查询VPN通道列表。"
+  },
+  "DescribeSecurityGroupReferences": {
+    "params": [
+      {
+        "name": "SecurityGroupIds",
+        "desc": "安全组实例ID数组。格式如：['sg-12345678']"
+      }
+    ],
+    "desc": "本接口（DescribeSecurityGroupReferences）用于查询安全组被引用信息。"
   },
   "DescribeFlowLog": {
     "params": [
@@ -1512,18 +1581,22 @@ INFO = {
     ],
     "desc": "本接口（DescribeFlowLog）用于查询流日志实例信息"
   },
-  "ReplaceRoutes": {
+  "ModifyGatewayFlowQos": {
     "params": [
       {
-        "name": "RouteTableId",
-        "desc": "路由表实例ID，例如：rtb-azd4dt1c。"
+        "name": "GatewayId",
+        "desc": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。"
       },
       {
-        "name": "Routes",
-        "desc": "路由策略对象。需要指定路由策略ID（RouteId）。"
+        "name": "Bandwidth",
+        "desc": "流控带宽值。"
+      },
+      {
+        "name": "IpAddresses",
+        "desc": "限流的云服务器内网IP。"
       }
     ],
-    "desc": "本接口（ReplaceRoutes）根据路由策略ID（RouteId）修改指定的路由策略（Route），支持批量修改。"
+    "desc": "本接口（ModifyGatewayFlowQos）用于调整网关流控带宽。"
   },
   "DeleteNatGateway": {
     "params": [
@@ -1560,26 +1633,14 @@ INFO = {
     ],
     "desc": "本接口（DisableRoutes）用于禁用已启用的子网路由"
   },
-  "DownloadCustomerGatewayConfiguration": {
+  "DescribeCcnRegionBandwidthLimits": {
     "params": [
       {
-        "name": "VpnGatewayId",
-        "desc": "VPN网关实例ID。"
-      },
-      {
-        "name": "VpnConnectionId",
-        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。"
-      },
-      {
-        "name": "CustomerGatewayVendor",
-        "desc": "对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。"
-      },
-      {
-        "name": "InterfaceName",
-        "desc": "通道接入设备物理接口名称。"
+        "name": "CcnId",
+        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
       }
     ],
-    "desc": "本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。"
+    "desc": "本接口（DescribeCcnRegionBandwidthLimits）用于查询云联网各地域出带宽上限，该接口只返回已关联网络实例包含的地域"
   },
   "AddIp6Rules": {
     "params": [
@@ -1682,6 +1743,19 @@ INFO = {
       }
     ],
     "desc": "1. 该接口用于创建IPV6转换IPV4实例，支持批量\n2. 同一个账户在一个地域最多允许创建10个转换实例"
+  },
+  "CreateAssistantCidr": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`"
+      },
+      {
+        "name": "CidrBlocks",
+        "desc": "CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]"
+      }
+    ],
+    "desc": "本接口(CreateAssistantCidr)用于批量创建辅助CIDR。（接口灰度中，如需使用请提工单。）"
   },
   "CreateDefaultVpc": {
     "params": [
@@ -1794,6 +1868,23 @@ INFO = {
     ],
     "desc": "本接口（DeleteAddressTemplate）用于删除IP地址模板"
   },
+  "ModifyAssistantCidr": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`"
+      },
+      {
+        "name": "NewCidrBlocks",
+        "desc": "待添加的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]"
+      },
+      {
+        "name": "OldCidrBlocks",
+        "desc": "待删除的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]"
+      }
+    ],
+    "desc": "本接口(ModifyAssistantCidr)用于批量修改辅助CIDR，支持新增和删除。（接口灰度中，如需使用请提工单。）"
+  },
   "DeleteVpnGateway": {
     "params": [
       {
@@ -1883,6 +1974,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeNetworkInterfaces）用于查询弹性网卡列表。"
+  },
+  "AssociateNetworkAclSubnets": {
+    "params": [
+      {
+        "name": "NetworkAclId",
+        "desc": "网络ACL实例ID。例如：acl-12345678。"
+      },
+      {
+        "name": "SubnetIds",
+        "desc": "子网实例ID数组。例如：[subnet-12345678]"
+      }
+    ],
+    "desc": "本接口（AssociateNetworkAclSubnets）用于网络ACL关联vpc下的子网。"
   },
   "DisableCcnRoutes": {
     "params": [
@@ -1978,18 +2082,26 @@ INFO = {
     ],
     "desc": "本接口（CreateSecurityGroup）用于创建新的安全组（SecurityGroup）。\n* 每个账户下每个地域的每个项目的<a href=\"https://cloud.tencent.com/document/product/213/12453\">安全组数量限制</a>。\n* 新建的安全组的入站和出站规则默认都是全部拒绝，在创建后通常您需要再调用CreateSecurityGroupPolicies将安全组的规则设置为需要的规则。\n* 创建安全组同时可以绑定标签, 应答里的标签列表代表添加成功的标签。"
   },
-  "AssociateNetworkAclSubnets": {
+  "ModifyNetworkInterfaceAttribute": {
     "params": [
       {
-        "name": "NetworkAclId",
-        "desc": "网络ACL实例ID。例如：acl-12345678。"
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-pxir56ns。"
       },
       {
-        "name": "SubnetIds",
-        "desc": "子网实例ID数组。例如：[subnet-12345678]"
+        "name": "NetworkInterfaceName",
+        "desc": "弹性网卡名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "NetworkInterfaceDescription",
+        "desc": "弹性网卡描述，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "指定绑定的安全组，例如:['sg-1dd51d']。"
       }
     ],
-    "desc": "本接口（AssociateNetworkAclSubnets）用于网络ACL关联vpc下的子网。"
+    "desc": "本接口（ModifyNetworkInterfaceAttribute）用于修改弹性网卡属性。"
   },
   "DescribeVpnGateways": {
     "params": [
@@ -2012,26 +2124,43 @@ INFO = {
     ],
     "desc": "本接口（DescribeVpnGateways）用于查询VPN网关列表。"
   },
-  "ModifyNetworkInterfaceAttribute": {
+  "DownloadCustomerGatewayConfiguration": {
     "params": [
       {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-pxir56ns。"
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID。"
       },
       {
-        "name": "NetworkInterfaceName",
-        "desc": "弹性网卡名称，最大长度不能超过60个字节。"
+        "name": "VpnConnectionId",
+        "desc": "VPN通道实例ID。形如：vpnx-f49l6u0z。"
       },
       {
-        "name": "NetworkInterfaceDescription",
-        "desc": "弹性网卡描述，可任意命名，但不得超过60个字符。"
+        "name": "CustomerGatewayVendor",
+        "desc": "对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。"
       },
       {
-        "name": "SecurityGroupIds",
-        "desc": "指定绑定的安全组，例如:['sg-1dd51d']。"
+        "name": "InterfaceName",
+        "desc": "通道接入设备物理接口名称。"
       }
     ],
-    "desc": "本接口（ModifyNetworkInterfaceAttribute）用于修改弹性网卡属性。"
+    "desc": "本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。"
+  },
+  "DescribeVpcInstances": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>instance-id - String - （过滤条件）云主机实例ID。</li>\n<li>instance-name - String - （过滤条件）云主机名称。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量。"
+      },
+      {
+        "name": "Limit",
+        "desc": "请求对象个数。"
+      }
+    ],
+    "desc": " 本接口（DescribeVpcInstances）用于查询VPC下的云主机实例列表。"
   },
   "CreateDirectConnectGatewayCcnRoutes": {
     "params": [
@@ -2515,6 +2644,27 @@ INFO = {
     ],
     "desc": "本接口（ModifyPrivateIpAddressesAttribute）用于修改弹性网卡内网IP属性。"
   },
+  "DescribeAssistantCidr": {
+    "params": [
+      {
+        "name": "VpcIds",
+        "desc": "`VPC`实例`ID`数组。形如：[`vpc-6v2ht8q5`]"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeAssistantCidr）用于查询辅助CIDR列表。（接口灰度中，如需使用请提工单。）"
+  },
   "CreateDirectConnectGateway": {
     "params": [
       {
@@ -2716,6 +2866,15 @@ INFO = {
     ],
     "desc": "本接口(ModifyNetDetect)用于修改网络探测参数。"
   },
+  "DisableGatewayFlowMonitor": {
+    "params": [
+      {
+        "name": "GatewayId",
+        "desc": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。"
+      }
+    ],
+    "desc": "本接口（DisableGatewayFlowMonitor）用于关闭网关流量监控。"
+  },
   "DeleteNatGatewayDestinationIpPortTranslationNatRule": {
     "params": [
       {
@@ -2851,6 +3010,19 @@ INFO = {
       }
     ],
     "desc": "该接口用于给弹性公网IPv6地址释放带宽。"
+  },
+  "ReplaceRoutes": {
+    "params": [
+      {
+        "name": "RouteTableId",
+        "desc": "路由表实例ID，例如：rtb-azd4dt1c。"
+      },
+      {
+        "name": "Routes",
+        "desc": "路由策略对象。需要指定路由策略ID（RouteId）。"
+      }
+    ],
+    "desc": "本接口（ReplaceRoutes）根据路由策略ID（RouteId）修改指定的路由策略（Route），支持批量修改。"
   },
   "ModifyCcnAttribute": {
     "params": [
@@ -2997,6 +3169,27 @@ INFO = {
       }
     ],
     "desc": "本接口 (TransformAddress) 用于将实例的普通公网 IP 转换为[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 平台对用户每地域每日解绑 EIP 重新分配普通公网 IP 次数有所限制（可参见 [EIP 产品简介](/document/product/213/1941)）。上述配额可通过 [DescribeAddressQuota](https://cloud.tencent.com/document/api/213/1378) 接口获取。"
+  },
+  "CreateSecurityGroupWithPolicies": {
+    "params": [
+      {
+        "name": "GroupName",
+        "desc": "安全组名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "GroupDescription",
+        "desc": "安全组备注，最多100个字符。"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "项目ID，默认0。可在qcloud控制台项目管理页面查询到。"
+      },
+      {
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。"
+      }
+    ],
+    "desc": "本接口（CreateSecurityGroupWithPolicies）用于创建新的安全组（SecurityGroup），并且可以同时添加安全组规则（SecurityGroupPolicy）。\n* 每个账户下每个地域的每个项目的<a href=\"https://cloud.tencent.com/document/product/213/12453\">安全组数量限制</a>。\n* 新建的安全组的入站和出站规则默认都是全部拒绝，在创建后通常您需要再调用CreateSecurityGroupPolicies将安全组的规则设置为需要的规则。\n\n安全组规则说明：\n* Version安全组规则版本号，用户每次更新安全规则版本会自动加1，防止您更新的路由规则已过期，不填不考虑冲突。\n* Protocol字段支持输入TCP, UDP, ICMP, ICMPV6, GRE, ALL。\n* CidrBlock字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* Ipv6CidrBlock字段允许输入符合IPv6 cidr格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock包含您的账户内的云服务器之外的设备在腾讯云的内网IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\n* SecurityGroupId字段允许输入与待修改的安全组位于相同项目中的安全组ID，包括这个安全组ID本身，代表安全组下所有云服务器的内网IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。\n* Port字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当Protocol字段是TCP或UDP时，Port字段才被接受，即Protocol字段不是TCP或UDP时，Protocol和Port排他关系，不允许同时输入，否则会接口报错。\n* Action字段只允许输入ACCEPT或DROP。\n* CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate四者是排他关系，不允许同时输入，Protocol + Port和ServiceTemplate二者是排他关系，不允许同时输入。\n* 一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。"
   },
   "CreateSecurityGroupPolicies": {
     "params": [

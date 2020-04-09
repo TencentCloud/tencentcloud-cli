@@ -765,6 +765,23 @@ INFO = {
     ],
     "desc": "DeleteRule 接口用来删除负载均衡实例七层监听器下的转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
   },
+  "SetLoadBalancerClsLog": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
+      },
+      {
+        "name": "LogSetId",
+        "desc": "日志服务(CLS)的日志集ID"
+      },
+      {
+        "name": "LogTopicId",
+        "desc": "日志服务(CLS)的日志主题ID"
+      }
+    ],
+    "desc": "增加、删除、更新负载均衡的日志服务(CLS)主题"
+  },
   "DescribeTargetGroupList": {
     "params": [
       {

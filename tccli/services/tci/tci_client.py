@@ -1055,6 +1055,7 @@ def doSubmitImageTask(argv, arglist):
         "FileType": argv.get("--FileType"),
         "Functions": Utils.try_to_json(argv, "--Functions"),
         "LightStandardSet": Utils.try_to_json(argv, "--LightStandardSet"),
+        "EventsCallBack": argv.get("--EventsCallBack"),
         "FrameInterval": Utils.try_to_json(argv, "--FrameInterval"),
         "LibrarySet": Utils.try_to_json(argv, "--LibrarySet"),
         "MaxVideoDuration": Utils.try_to_json(argv, "--MaxVideoDuration"),
