@@ -674,6 +674,23 @@ INFO = {
     ],
     "desc": "本接口（DeleteBinding）用于终端用户和设备进行解绑定。"
   },
+  "CreateStorage": {
+    "params": [
+      {
+        "name": "PkgId",
+        "desc": "云存套餐ID"
+      },
+      {
+        "name": "Tid",
+        "desc": "设备TID"
+      },
+      {
+        "name": "UserTag",
+        "desc": "用户唯一标识，由厂商保证内部唯一性"
+      }
+    ],
+    "desc": "本接口（CreateStorage）用于购买云存套餐。"
+  },
   "DescribeTraceIds": {
     "params": [],
     "desc": "本接口（DescribeTraceIds）用于查询设备日志跟踪白名单。"

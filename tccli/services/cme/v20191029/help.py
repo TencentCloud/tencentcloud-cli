@@ -1,34 +1,26 @@
 # -*- coding: utf-8 -*-
 DESC = "cme-2019-10-29"
 INFO = {
-  "DescribeTasks": {
+  "DescribeMaterials": {
     "params": [
       {
         "name": "Platform",
         "desc": "平台名称，指定访问的平台。"
       },
       {
-        "name": "ProjectId",
-        "desc": "项目 Id。"
+        "name": "MaterialIds",
+        "desc": "素材 ID 列表，N 从 0 开始取值，最大 19。"
       },
       {
-        "name": "TaskTypeSet",
-        "desc": "任务类型集合，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>"
+        "name": "Sort",
+        "desc": "列表排序，支持下列排序字段：\n<li>CreateTime：创建时间；</li>\n<li>UpdateTime：更新时间。</li>"
       },
       {
-        "name": "StatusSet",
-        "desc": "任务状态集合，取值有：\n<li>PROCESSING：处理中；</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页返回的起始偏移量，默认值：0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "分页返回的记录条数，默认值：10。"
+        "name": "Operator",
+        "desc": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。"
       }
     ],
-    "desc": "获取任务列表，支持条件筛选，返回对应的任务基础信息列表。"
+    "desc": "根据素材 Id 批量获取素材详情。"
   },
   "DescribeTeams": {
     "params": [
@@ -385,6 +377,31 @@ INFO = {
     ],
     "desc": "向一个团队中团队成员，并且指定成员的角色。"
   },
+  "MoveClass": {
+    "params": [
+      {
+        "name": "Platform",
+        "desc": "平台名称，指定访问的平台。"
+      },
+      {
+        "name": "Owner",
+        "desc": "归属者。"
+      },
+      {
+        "name": "SourceClassPath",
+        "desc": "源分类路径。"
+      },
+      {
+        "name": "DestinationClassPath",
+        "desc": "目标分类路径。"
+      },
+      {
+        "name": "Operator",
+        "desc": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。"
+      }
+    ],
+    "desc": "移动某一个分类到另外一个分类下，也可用于分类重命名。\n<li>如果 SourceClassPath = /素材/视频/NBA，DestinationClassPath = /素材/视频/篮球，当 DestinationClassPath 不存在时候，操作结果为重命名 ClassPath，如果 DestinationClassPath 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA。</li>"
+  },
   "ModifyTeamMember": {
     "params": [
       {
@@ -498,26 +515,34 @@ INFO = {
     ],
     "desc": "查询指定用户的登录态。"
   },
-  "DescribeMaterials": {
+  "DescribeTasks": {
     "params": [
       {
         "name": "Platform",
         "desc": "平台名称，指定访问的平台。"
       },
       {
-        "name": "MaterialIds",
-        "desc": "素材 ID 列表，N 从 0 开始取值，最大 19。"
+        "name": "ProjectId",
+        "desc": "项目 Id。"
       },
       {
-        "name": "Sort",
-        "desc": "列表排序，支持下列排序字段：\n<li>CreateTime：创建时间；</li>\n<li>UpdateTime：更新时间。</li>"
+        "name": "TaskTypeSet",
+        "desc": "任务类型集合，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>"
       },
       {
-        "name": "Operator",
-        "desc": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。"
+        "name": "StatusSet",
+        "desc": "任务状态集合，取值有：\n<li>PROCESSING：处理中；</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页返回的起始偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页返回的记录条数，默认值：10。"
       }
     ],
-    "desc": "根据素材 Id 批量获取素材详情。"
+    "desc": "获取任务列表，支持条件筛选，返回对应的任务基础信息列表。"
   },
   "DescribeClass": {
     "params": [

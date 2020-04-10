@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 DESC = "vpc-2017-03-12"
 INFO = {
+  "DescribeVpcResourceDashboard": {
+    "params": [
+      {
+        "name": "VpcIds",
+        "desc": "Vpc实例ID，例如：vpc-f1xjkw1b。"
+      }
+    ],
+    "desc": "查看VPC资源"
+  },
   "CreateDefaultSecurityGroup": {
     "params": [
       {

@@ -10,6 +10,15 @@ INFO = {
     ],
     "desc": "本接口（DescribeOrders）用于获取订单信息。"
   },
+  "DestroyDBInstance": {
+    "params": [
+      {
+        "name": "DBInstanceId",
+        "desc": "待删除实例标识符"
+      }
+    ],
+    "desc": "本接口 (DestroyDBInstance) 用于销毁指定DBInstanceId对应的实例。"
+  },
   "DescribeDBBackups": {
     "params": [
       {
@@ -243,6 +252,71 @@ INFO = {
     ],
     "desc": "本接口（ModifyDBInstanceName）用于修改postgresql实例名字。"
   },
+  "CreateDBInstances": {
+    "params": [
+      {
+        "name": "SpecCode",
+        "desc": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。"
+      },
+      {
+        "name": "DBVersion",
+        "desc": "PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。"
+      },
+      {
+        "name": "Storage",
+        "desc": "实例容量大小，单位：GB。"
+      },
+      {
+        "name": "InstanceCount",
+        "desc": "一次性购买的实例数量。取值1-100"
+      },
+      {
+        "name": "Period",
+        "desc": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。"
+      },
+      {
+        "name": "Zone",
+        "desc": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "项目ID。"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。"
+      },
+      {
+        "name": "AutoVoucher",
+        "desc": "是否自动使用代金券。1（是），0（否），默认不使用。"
+      },
+      {
+        "name": "VoucherIds",
+        "desc": "代金券ID列表，目前仅支持指定一张代金券。"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络ID。"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "私有网络子网ID。"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "续费标记：0-正常续费（默认）；1-自动续费；"
+      },
+      {
+        "name": "ActivityId",
+        "desc": "活动ID"
+      },
+      {
+        "name": "Name",
+        "desc": "实例名"
+      }
+    ],
+    "desc": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例。"
+  },
   "CreateServerlessDBInstance": {
     "params": [
       {
@@ -275,6 +349,31 @@ INFO = {
       }
     ],
     "desc": "本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。"
+  },
+  "DescribeDBInstances": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页显示数量，默认返回10条。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页序号，从0开始。"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime"
+      },
+      {
+        "name": "OrderByType",
+        "desc": "排序方式，包括升序、降序"
+      }
+    ],
+    "desc": "本接口 (DescribeDBInstances) 用于查询一个或多个实例的详细信息。"
   },
   "DescribeZones": {
     "params": [],
@@ -436,6 +535,44 @@ INFO = {
       }
     ],
     "desc": "本接口（RenewInstance）用于续费实例。"
+  },
+  "DescribeDatabases": {
+    "params": [
+      {
+        "name": "DBInstanceId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "接口（DescribeDatabases）用来拉取数据库列表"
+  },
+  "UpgradeDBInstance": {
+    "params": [
+      {
+        "name": "Memory",
+        "desc": "升级后的实例内存大小，单位GB"
+      },
+      {
+        "name": "Storage",
+        "desc": "升级后的实例磁盘大小，单位GB"
+      },
+      {
+        "name": "DBInstanceId",
+        "desc": "实例ID，形如postgres-lnp6j617"
+      },
+      {
+        "name": "AutoVoucher",
+        "desc": "是否自动使用代金券,1是,0否，默认不使用"
+      },
+      {
+        "name": "VoucherIds",
+        "desc": "代金券ID列表，目前仅支持指定一张代金券"
+      },
+      {
+        "name": "ActivityId",
+        "desc": "活动ID"
+      }
+    ],
+    "desc": "本接口（UpgradeDBInstance）用于升级实例。"
   },
   "DescribeProductConfig": {
     "params": [

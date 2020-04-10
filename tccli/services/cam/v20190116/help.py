@@ -131,7 +131,7 @@ INFO = {
     "params": [
       {
         "name": "PolicyId",
-        "desc": "策略ID"
+        "desc": "策略ID，入参PolicyId与PolicyName二选一"
       },
       {
         "name": "DetachRoleId",
@@ -140,6 +140,10 @@ INFO = {
       {
         "name": "DetachRoleName",
         "desc": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一"
+      },
+      {
+        "name": "PolicyName",
+        "desc": "策略名，入参PolicyId与PolicyName二选一"
       }
     ],
     "desc": "本接口（DetachRolePolicy）用于解除绑定角色的策略。"
@@ -397,7 +401,7 @@ INFO = {
       },
       {
         "name": "NeedResetMfa",
-        "desc": "是否需要充值mfa"
+        "desc": "是否需要重置mfa"
       }
     ],
     "desc": "设置用户的登录保护和敏感操作校验方式"
@@ -491,7 +495,7 @@ INFO = {
     "params": [
       {
         "name": "PolicyId",
-        "desc": "策略ID"
+        "desc": "策略ID，入参PolicyId与PolicyName二选一"
       },
       {
         "name": "AttachRoleId",
@@ -500,6 +504,10 @@ INFO = {
       {
         "name": "AttachRoleName",
         "desc": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一"
+      },
+      {
+        "name": "PolicyName",
+        "desc": "策略名，入参PolicyId与PolicyName二选一"
       }
     ],
     "desc": "本接口（AttachRolePolicy）用于绑定策略到角色。"

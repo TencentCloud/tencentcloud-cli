@@ -307,6 +307,7 @@ def doDetachRolePolicy(argv, arglist):
         "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
         "DetachRoleId": argv.get("--DetachRoleId"),
         "DetachRoleName": argv.get("--DetachRoleName"),
+        "PolicyName": argv.get("--PolicyName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -891,6 +892,7 @@ def doAttachRolePolicy(argv, arglist):
         "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
         "AttachRoleId": argv.get("--AttachRoleId"),
         "AttachRoleName": argv.get("--AttachRoleName"),
+        "PolicyName": argv.get("--PolicyName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
