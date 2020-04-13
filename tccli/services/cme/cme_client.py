@@ -18,19 +18,17 @@ from tccli.services.cme import v20191029
 from tccli.services.cme.v20191029 import help as v20191029_help
 
 
-def doDescribeTasks(argv, arglist):
+def doDescribeMaterials(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTasks", g_param[OptionsDefine.Version])
+        show_help("DescribeMaterials", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Platform": argv.get("--Platform"),
-        "ProjectId": argv.get("--ProjectId"),
-        "TaskTypeSet": Utils.try_to_json(argv, "--TaskTypeSet"),
-        "StatusSet": Utils.try_to_json(argv, "--StatusSet"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "MaterialIds": Utils.try_to_json(argv, "--MaterialIds"),
+        "Sort": Utils.try_to_json(argv, "--Sort"),
+        "Operator": argv.get("--Operator"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -44,9 +42,9 @@ def doDescribeTasks(argv, arglist):
     client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTasksRequest()
+    model = models.DescribeMaterialsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTasks(model)
+    rsp = client.DescribeMaterials(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -420,6 +418,47 @@ def doDescribeTaskDetail(argv, arglist):
     model = models.DescribeTaskDetailRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeTaskDetail(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateLink(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateLink", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Platform": argv.get("--Platform"),
+        "Type": argv.get("--Type"),
+        "Name": argv.get("--Name"),
+        "Owner": Utils.try_to_json(argv, "--Owner"),
+        "DestinationId": argv.get("--DestinationId"),
+        "DestinationOwner": Utils.try_to_json(argv, "--DestinationOwner"),
+        "ClassPath": argv.get("--ClassPath"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "Operator": argv.get("--Operator"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateLinkRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateLink(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -829,17 +868,19 @@ def doDescribeLoginStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMaterials(argv, arglist):
+def doDescribeTasks(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeMaterials", g_param[OptionsDefine.Version])
+        show_help("DescribeTasks", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Platform": argv.get("--Platform"),
-        "MaterialIds": Utils.try_to_json(argv, "--MaterialIds"),
-        "Sort": Utils.try_to_json(argv, "--Sort"),
-        "Operator": argv.get("--Operator"),
+        "ProjectId": argv.get("--ProjectId"),
+        "TaskTypeSet": Utils.try_to_json(argv, "--TaskTypeSet"),
+        "StatusSet": Utils.try_to_json(argv, "--StatusSet"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -853,9 +894,9 @@ def doDescribeMaterials(argv, arglist):
     client = mod.CmeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMaterialsRequest()
+    model = models.DescribeTasksRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeMaterials(model)
+    rsp = client.DescribeTasks(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1279,7 +1320,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeTasks": doDescribeTasks,
+    "DescribeMaterials": doDescribeMaterials,
     "DescribeTeams": doDescribeTeams,
     "ExportVideoEditProject": doExportVideoEditProject,
     "DescribeSharedSpace": doDescribeSharedSpace,
@@ -1290,6 +1331,7 @@ ACTION_MAP = {
     "DescribeResourceAuthorization": doDescribeResourceAuthorization,
     "ImportMaterial": doImportMaterial,
     "DescribeTaskDetail": doDescribeTaskDetail,
+    "CreateLink": doCreateLink,
     "ModifyTeam": doModifyTeam,
     "DeleteMaterial": doDeleteMaterial,
     "ModifyMaterial": doModifyMaterial,
@@ -1301,7 +1343,7 @@ ACTION_MAP = {
     "DeleteLoginStatus": doDeleteLoginStatus,
     "DescribeProjects": doDescribeProjects,
     "DescribeLoginStatus": doDescribeLoginStatus,
-    "DescribeMaterials": doDescribeMaterials,
+    "DescribeTasks": doDescribeTasks,
     "DescribeClass": doDescribeClass,
     "CreateTeam": doCreateTeam,
     "ModifyProject": doModifyProject,

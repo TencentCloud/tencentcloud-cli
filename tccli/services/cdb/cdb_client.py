@@ -193,6 +193,7 @@ def doDescribeAccounts(argv, arglist):
         "InstanceId": argv.get("--InstanceId"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "AccountRegexp": argv.get("--AccountRegexp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1157,6 +1158,7 @@ def doModifyDBInstanceVipVport(argv, arglist):
         "DstPort": Utils.try_to_json(argv, "--DstPort"),
         "UniqVpcId": argv.get("--UniqVpcId"),
         "UniqSubnetId": argv.get("--UniqSubnetId"),
+        "ReleaseDuration": Utils.try_to_json(argv, "--ReleaseDuration"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2544,6 +2546,48 @@ def doModifyAccountDescription(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSlowLogData(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSlowLogData", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "UserHosts": Utils.try_to_json(argv, "--UserHosts"),
+        "UserNames": Utils.try_to_json(argv, "--UserNames"),
+        "DataBases": Utils.try_to_json(argv, "--DataBases"),
+        "SortBy": argv.get("--SortBy"),
+        "OrderBy": argv.get("--OrderBy"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSlowLogDataRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSlowLogData(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyBackupConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2684,48 +2728,6 @@ def doDescribeDBPrice(argv, arglist):
     model = models.DescribeDBPriceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeDBPrice(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeSLowLogData(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeSLowLogData", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "UserHosts": Utils.try_to_json(argv, "--UserHosts"),
-        "UserNames": Utils.try_to_json(argv, "--UserNames"),
-        "DataBases": Utils.try_to_json(argv, "--DataBases"),
-        "SortBy": argv.get("--SortBy"),
-        "OrderBy": argv.get("--OrderBy"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSLowLogDataRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSLowLogData(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3266,11 +3268,11 @@ ACTION_MAP = {
     "ModifyAccountPassword": doModifyAccountPassword,
     "DescribeUploadedFiles": doDescribeUploadedFiles,
     "ModifyAccountDescription": doModifyAccountDescription,
+    "DescribeSlowLogData": doDescribeSlowLogData,
     "ModifyBackupConfig": doModifyBackupConfig,
     "ModifyDBInstanceProject": doModifyDBInstanceProject,
     "DescribeBackupDatabases": doDescribeBackupDatabases,
     "DescribeDBPrice": doDescribeDBPrice,
-    "DescribeSLowLogData": doDescribeSLowLogData,
     "ModifyAutoRenewFlag": doModifyAutoRenewFlag,
     "RenewDBInstance": doRenewDBInstance,
     "StartBatchRollback": doStartBatchRollback,

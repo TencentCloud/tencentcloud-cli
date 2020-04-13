@@ -59,6 +59,10 @@ INFO = {
       {
         "name": "Limit",
         "desc": "单次请求返回的数量，默认值为20，最小值为1，最大值为100。"
+      },
+      {
+        "name": "AccountRegexp",
+        "desc": "匹配账号名的正则表达式，规则同 MySQL 官网。"
       }
     ],
     "desc": "本接口(DescribeAccounts)用于查询云数据库的所有账户信息。"
@@ -594,6 +598,10 @@ INFO = {
       {
         "name": "UniqSubnetId",
         "desc": "子网统一 ID。"
+      },
+      {
+        "name": "ReleaseDuration",
+        "desc": "进行基础网络转 VPC 网络和 VPC 网络下的子网变更时，原网络中旧IP的回收时间，单位为小时，取值范围为0-168，默认值为24小时。"
       }
     ],
     "desc": "本接口(ModifyDBInstanceVipVport)用于修改云数据库实例的IP和端口号，也可进行基础网络转 VPC 网络和 VPC 网络下的子网变更。"
@@ -1386,6 +1394,51 @@ INFO = {
     ],
     "desc": "本接口(ModifyAccountDescription)用于修改云数据库账户的备注信息。"
   },
+  "DescribeSlowLogData": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间戳。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间戳。"
+      },
+      {
+        "name": "UserHosts",
+        "desc": "客户端 Host 列表。"
+      },
+      {
+        "name": "UserNames",
+        "desc": "客户端 用户名 列表。"
+      },
+      {
+        "name": "DataBases",
+        "desc": "访问的 数据库 列表。"
+      },
+      {
+        "name": "SortBy",
+        "desc": "排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "升序还是降序排列。当前支持：ASC,DESC 。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "一次性返回的记录数量，最大为400。"
+      }
+    ],
+    "desc": "条件检索实例的慢日志。只允许查看一个月之内的慢日志"
+  },
   "ModifyBackupConfig": {
     "params": [
       {
@@ -1473,51 +1526,6 @@ INFO = {
       }
     ],
     "desc": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等"
-  },
-  "DescribeSLowLogData": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "实例 ID。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "开始时间戳。"
-      },
-      {
-        "name": "EndTime",
-        "desc": "结束时间戳。"
-      },
-      {
-        "name": "UserHosts",
-        "desc": "客户端 Host 列表。"
-      },
-      {
-        "name": "UserNames",
-        "desc": "客户端 用户名 列表。"
-      },
-      {
-        "name": "DataBases",
-        "desc": "访问的 数据库 列表。"
-      },
-      {
-        "name": "SortBy",
-        "desc": "排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。"
-      },
-      {
-        "name": "OrderBy",
-        "desc": "升序还是降序排列。当前支持：ASC,DESC 。"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "一次性返回的记录数量，最大为400。"
-      }
-    ],
-    "desc": "条件检索实例的慢日志。只允许查看一个月之内的慢日志"
   },
   "ModifyAutoRenewFlag": {
     "params": [

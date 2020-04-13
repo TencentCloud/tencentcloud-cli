@@ -952,6 +952,39 @@ INFO = {
     ],
     "desc": "EnableClsLogTopic 用于启动日志主题投递。注意：启动后，所有绑定该日志主题域名的日志将继续投递至该主题。生效时间约为 5~15 分钟。"
   },
+  "DescribeReportData": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "查询起始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间"
+      },
+      {
+        "name": "ReportType",
+        "desc": "报表类型\ndaily：日报表\nweekly：周报表\nmonthly：月报表"
+      },
+      {
+        "name": "Area",
+        "desc": "域名加速区域\nmainland：中国境内\noverseas：中国境外"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "数据个数，默认1000。"
+      },
+      {
+        "name": "Project",
+        "desc": "按项目ID筛选"
+      }
+    ],
+    "desc": "DescribeReportData 用于查询域名/项目维度的日/周/月报表数据。"
+  },
   "UpdatePayType": {
     "params": [
       {

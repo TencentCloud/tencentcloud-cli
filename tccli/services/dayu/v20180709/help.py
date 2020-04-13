@@ -545,6 +545,23 @@ INFO = {
     "params": [],
     "desc": "获取本月安全统计"
   },
+  "DescribeSchedulingDomainList": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "一页条数，填0表示不分页"
+      },
+      {
+        "name": "Offset",
+        "desc": "页起始偏移，取值为(页码-1)*一页条数"
+      },
+      {
+        "name": "Domain",
+        "desc": "可选，筛选特定的域名"
+      }
+    ],
+    "desc": "获取调度域名列表"
+  },
   "DescribeCCFrequencyRules": {
     "params": [
       {
@@ -575,7 +592,7 @@ INFO = {
     ],
     "desc": "删除策略场景"
   },
-  "DescribeL7HealthConfig": {
+  "DeleteL7Rules": {
     "params": [
       {
         "name": "Business",
@@ -587,10 +604,10 @@ INFO = {
       },
       {
         "name": "RuleIdList",
-        "desc": "规则ID数组，当导出所有规则的健康检查配置则不填或填空数组；"
+        "desc": "规则ID列表"
       }
     ],
-    "desc": "导出七层健康检查配置"
+    "desc": "删除七层转发规则"
   },
   "CreateL4Rules": {
     "params": [
@@ -2107,7 +2124,7 @@ INFO = {
     ],
     "desc": "获取CC的Url白名单"
   },
-  "DeleteL7Rules": {
+  "DescribeL7HealthConfig": {
     "params": [
       {
         "name": "Business",
@@ -2119,10 +2136,10 @@ INFO = {
       },
       {
         "name": "RuleIdList",
-        "desc": "规则ID列表"
+        "desc": "规则ID数组，当导出所有规则的健康检查配置则不填或填空数组；"
       }
     ],
-    "desc": "删除七层转发规则"
+    "desc": "导出七层健康检查配置"
   },
   "DescribeCCTrend": {
     "params": [

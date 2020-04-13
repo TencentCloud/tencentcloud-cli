@@ -680,6 +680,47 @@ INFO = {
     ],
     "desc": "本接口（AssignPrivateIpAddresses）用于弹性网卡申请内网 IP。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定内网IP地址申请，内网IP地址类型不能为主IP，主IP已存在，不能修改，内网IP必须要弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助内网IP，接口会在弹性网卡所在子网网段内返回指定数量的辅助内网IP。"
   },
+  "CreateAndAttachNetworkInterface": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
+      },
+      {
+        "name": "NetworkInterfaceName",
+        "desc": "弹性网卡名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "云主机实例ID。"
+      },
+      {
+        "name": "PrivateIpAddresses",
+        "desc": "指定的内网IP信息，单次最多指定10个。"
+      },
+      {
+        "name": "SecondaryPrivateIpAddressCount",
+        "desc": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "指定绑定的安全组，例如：['sg-1dd51d']。"
+      },
+      {
+        "name": "NetworkInterfaceDescription",
+        "desc": "弹性网卡描述，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
+      }
+    ],
+    "desc": "本接口（CreateAndAttachNetworkInterface）用于创建弹性网卡并绑定云主机。\n* 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。\n* 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 创建弹性网卡同时可以绑定已有安全组。\n* 创建弹性网卡同时可以绑定标签, 应答里的标签列表代表添加成功的标签。"
+  },
   "DescribeNatGateways": {
     "params": [
       {
@@ -1805,42 +1846,18 @@ INFO = {
     ],
     "desc": "本接口（ReplaceDirectConnectGatewayCcnRoutes）根据路由ID（RouteId）修改指定的路由（Route），支持批量修改。"
   },
-  "CreateNatGateway": {
+  "DeleteSecurityGroupPolicies": {
     "params": [
       {
-        "name": "NatGatewayName",
-        "desc": "NAT网关名称"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
       },
       {
-        "name": "VpcId",
-        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
-      },
-      {
-        "name": "InternetMaxBandwidthOut",
-        "desc": "NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。"
-      },
-      {
-        "name": "MaxConcurrentConnection",
-        "desc": "NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。"
-      },
-      {
-        "name": "AddressCount",
-        "desc": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。"
-      },
-      {
-        "name": "PublicIpAddresses",
-        "desc": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。"
-      },
-      {
-        "name": "Zone",
-        "desc": "可用区，形如：`ap-guangzhou-1`。"
-      },
-      {
-        "name": "Tags",
-        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。"
       }
     ],
-    "desc": "本接口(CreateNatGateway)用于创建NAT网关。"
+    "desc": "本接口（DeleteSecurityGroupPolicies）用于用于删除安全组规则（SecurityGroupPolicy）。\n* SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。"
   },
   "DeleteNetDetect": {
     "params": [
@@ -2833,18 +2850,42 @@ INFO = {
     ],
     "desc": "本接口（ModifyRouteTableAttribute）用于修改路由表（RouteTable）属性。"
   },
-  "DeleteSecurityGroupPolicies": {
+  "CreateNatGateway": {
     "params": [
       {
-        "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "name": "NatGatewayName",
+        "desc": "NAT网关名称"
       },
       {
-        "name": "SecurityGroupPolicySet",
-        "desc": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。"
+        "name": "VpcId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。"
+      },
+      {
+        "name": "MaxConcurrentConnection",
+        "desc": "NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。"
+      },
+      {
+        "name": "AddressCount",
+        "desc": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。"
+      },
+      {
+        "name": "PublicIpAddresses",
+        "desc": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。"
+      },
+      {
+        "name": "Zone",
+        "desc": "可用区，形如：`ap-guangzhou-1`。"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
       }
     ],
-    "desc": "本接口（DeleteSecurityGroupPolicies）用于用于删除安全组规则（SecurityGroupPolicy）。\n* SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。"
+    "desc": "本接口(CreateNatGateway)用于创建NAT网关。"
   },
   "ModifyNetDetect": {
     "params": [

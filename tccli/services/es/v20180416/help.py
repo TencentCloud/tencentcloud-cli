@@ -188,7 +188,7 @@ INFO = {
       },
       {
         "name": "EsVersion",
-        "desc": "目标ES版本"
+        "desc": "目标ES版本，支持：”6.4.3“, \"6.8.2\"，\"7.5.1\""
       },
       {
         "name": "CheckOnly",
