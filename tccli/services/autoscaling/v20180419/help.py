@@ -123,7 +123,7 @@ INFO = {
       },
       {
         "name": "NotificationUserGroupIds",
-        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。\n如果需要清空通知用户组，需要在列表中传入特定字符串 \"NULL\"。"
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。\n如果需要清空通知用户组，需要在列表中传入特定字符串 \"NULL\"。"
       }
     ],
     "desc": "本接口（ModifyScalingPolicy）用于修改告警触发策略。"
@@ -651,7 +651,7 @@ INFO = {
       },
       {
         "name": "NotificationUserGroupIds",
-        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。"
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。"
       }
     ],
     "desc": "本接口（ModifyNotificationConfiguration）用于修改通知。"
@@ -741,7 +741,7 @@ INFO = {
       },
       {
         "name": "NotificationUserGroupIds",
-        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。"
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。"
       }
     ],
     "desc": "本接口（CreateNotificationConfiguration）用于创建通知。"
@@ -937,7 +937,7 @@ INFO = {
       },
       {
         "name": "NotificationUserGroupIds",
-        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。"
+        "desc": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。"
       }
     ],
     "desc": "本接口（CreateScalingPolicy）用于创建告警触发策略。"

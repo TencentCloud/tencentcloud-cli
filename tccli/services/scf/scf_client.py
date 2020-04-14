@@ -500,6 +500,10 @@ def doListVersionByFunction(argv, arglist):
     param = {
         "FunctionName": argv.get("--FunctionName"),
         "Namespace": argv.get("--Namespace"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Order": argv.get("--Order"),
+        "OrderBy": argv.get("--OrderBy"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

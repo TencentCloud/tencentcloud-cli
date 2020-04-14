@@ -918,17 +918,16 @@ def doAttachRolePolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdatePolicy(argv, arglist):
+def doUpdateRoleDescription(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdatePolicy", g_param[OptionsDefine.Version])
+        show_help("UpdateRoleDescription", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
-        "PolicyName": argv.get("--PolicyName"),
         "Description": argv.get("--Description"),
-        "PolicyDocument": argv.get("--PolicyDocument"),
+        "RoleId": argv.get("--RoleId"),
+        "RoleName": argv.get("--RoleName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -942,9 +941,9 @@ def doUpdatePolicy(argv, arglist):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdatePolicyRequest()
+    model = models.UpdateRoleDescriptionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdatePolicy(model)
+    rsp = client.UpdateRoleDescription(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1014,41 +1013,6 @@ def doGetRole(argv, arglist):
     model = models.GetRoleRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetRole(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateRoleDescription(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UpdateRoleDescription", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Description": argv.get("--Description"),
-        "RoleId": argv.get("--RoleId"),
-        "RoleName": argv.get("--RoleName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateRoleDescriptionRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.UpdateRoleDescription(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1546,10 +1510,9 @@ ACTION_MAP = {
     "ListGroups": doListGroups,
     "AddUserToGroup": doAddUserToGroup,
     "AttachRolePolicy": doAttachRolePolicy,
-    "UpdatePolicy": doUpdatePolicy,
+    "UpdateRoleDescription": doUpdateRoleDescription,
     "UpdateSAMLProvider": doUpdateSAMLProvider,
     "GetRole": doGetRole,
-    "UpdateRoleDescription": doUpdateRoleDescription,
     "ListAttachedUserPolicies": doListAttachedUserPolicies,
     "DeleteUser": doDeleteUser,
     "DetachGroupPolicy": doDetachGroupPolicy,

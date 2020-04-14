@@ -2527,11 +2527,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量"
+        "desc": "偏移量，默认为0。"
       },
       {
         "name": "Limit",
-        "desc": "返回数量"
+        "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
     "desc": "本接口（DescribeSubnets）用于查询子网列表。"

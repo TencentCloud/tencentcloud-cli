@@ -1275,6 +1275,43 @@ def doRevokeMemberRechargeThirdPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doApplyReWithdrawal(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ApplyReWithdrawal", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BusinessType": Utils.try_to_json(argv, "--BusinessType"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "Body": Utils.try_to_json(argv, "--Body"),
+        "MidasAppId": argv.get("--MidasAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ApplyReWithdrawalRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ApplyReWithdrawal(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRefund(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1588,6 +1625,42 @@ def doUnifiedOrder(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryAcctInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryAcctInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MidasAppId": argv.get("--MidasAppId"),
+        "SubMchId": argv.get("--SubMchId"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryAcctInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryAcctInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRevRegisterBillSupportWithdraw(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1705,6 +1778,44 @@ def doQueryBankWithdrawCashDetails(argv, arglist):
     model = models.QueryBankWithdrawCashDetailsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.QueryBankWithdrawCashDetails(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQueryAcctInfoList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryAcctInfoList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MidasAppId": argv.get("--MidasAppId"),
+        "QueryAcctBeginTime": argv.get("--QueryAcctBeginTime"),
+        "QueryAcctEndTime": argv.get("--QueryAcctEndTime"),
+        "PageOffset": argv.get("--PageOffset"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryAcctInfoListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryAcctInfoList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1834,6 +1945,7 @@ ACTION_MAP = {
     "CheckAmount": doCheckAmount,
     "RevResigterBillSupportWithdraw": doRevResigterBillSupportWithdraw,
     "RevokeMemberRechargeThirdPay": doRevokeMemberRechargeThirdPay,
+    "ApplyReWithdrawal": doApplyReWithdrawal,
     "Refund": doRefund,
     "QuerySmallAmountTransfer": doQuerySmallAmountTransfer,
     "RechargeMemberThirdPay": doRechargeMemberThirdPay,
@@ -1841,9 +1953,11 @@ ACTION_MAP = {
     "CreateMerchant": doCreateMerchant,
     "CreateAcct": doCreateAcct,
     "UnifiedOrder": doUnifiedOrder,
+    "QueryAcctInfo": doQueryAcctInfo,
     "RevRegisterBillSupportWithdraw": doRevRegisterBillSupportWithdraw,
     "QueryInvoiceForManagement": doQueryInvoiceForManagement,
     "QueryBankWithdrawCashDetails": doQueryBankWithdrawCashDetails,
+    "QueryAcctInfoList": doQueryAcctInfoList,
     "QueryReconciliationDocument": doQueryReconciliationDocument,
     "CheckAcct": doCheckAcct,
 

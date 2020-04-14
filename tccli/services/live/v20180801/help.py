@@ -277,14 +277,30 @@ INFO = {
     ],
     "desc": "用于查询推断流事件。<br>\n\n注意：该接口可通过使用IsFilter进行过滤，返回推流历史记录。"
   },
-  "DescribePullStreamConfigs": {
+  "CreateCommonMixStream": {
     "params": [
       {
-        "name": "ConfigId",
-        "desc": "配置id。"
+        "name": "MixStreamSessionId",
+        "desc": "混流会话（申请混流开始到取消混流结束）标识 ID。"
+      },
+      {
+        "name": "InputStreamList",
+        "desc": "混流输入流列表。"
+      },
+      {
+        "name": "OutputParams",
+        "desc": "混流输出流参数。"
+      },
+      {
+        "name": "MixStreamTemplateId",
+        "desc": "输入模板 ID，若设置该参数，将按默认模板布局输出，无需填入自定义位置参数。\n不填默认为0。\n两输入源支持10，20，30，40，50。\n三输入源支持310，390，391。\n四输入源支持410。\n五输入源支持510，590。\n六输入源支持610。"
+      },
+      {
+        "name": "ControlParams",
+        "desc": "混流的特殊控制参数。如无特殊需求，无需填写。"
       }
     ],
-    "desc": "查询直播拉流配置。"
+    "desc": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。"
   },
   "DescribeHttpStatusInfoList": {
     "params": [
@@ -705,6 +721,15 @@ INFO = {
       }
     ],
     "desc": "获取单个录制模板"
+  },
+  "DescribePullStreamConfigs": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "配置id。"
+      }
+    ],
+    "desc": "查询直播拉流配置。"
   },
   "DeleteLiveWatermark": {
     "params": [
@@ -1132,34 +1157,42 @@ INFO = {
     ],
     "desc": "修改回调模板。"
   },
-  "DescribeGroupProIspPlayInfoList": {
+  "DescribeProIspPlaySumInfoList": {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
+        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
+        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
+      },
+      {
+        "name": "StatType",
+        "desc": "统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。"
       },
       {
         "name": "PlayDomains",
-        "desc": "播放域名，默认为不填，表示求总体数据。"
+        "desc": "不填则为总体数据。"
       },
       {
-        "name": "ProvinceNames",
-        "desc": "省份列表，默认不填，则返回各省份的数据。"
+        "name": "PageNum",
+        "desc": "页号，范围是[1,1000]，默认值是1。"
       },
       {
-        "name": "IspNames",
-        "desc": "运营商列表，默认不填，则返回整个运营商的数据。"
+        "name": "PageSize",
+        "desc": "每页个数，范围是[1,1000]，默认值是20。"
       },
       {
         "name": "MainlandOrOversea",
-        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
+        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
+      },
+      {
+        "name": "OutLanguage",
+        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。"
       }
     ],
-    "desc": "查询按省份和运营商分组的下行播放数据。"
+    "desc": "查询某段时间内每个国家地区每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
   },
   "DescribeStreamPlayInfoList": {
     "params": [
@@ -1728,42 +1761,34 @@ INFO = {
     ],
     "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
   },
-  "DescribeProIspPlaySumInfoList": {
+  "DescribeGroupProIspPlayInfoList": {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
-      },
-      {
-        "name": "StatType",
-        "desc": "统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。"
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
       },
       {
         "name": "PlayDomains",
-        "desc": "不填则为总体数据。"
+        "desc": "播放域名，默认为不填，表示求总体数据。"
       },
       {
-        "name": "PageNum",
-        "desc": "页号，范围是[1,1000]，默认值是1。"
+        "name": "ProvinceNames",
+        "desc": "省份列表，默认不填，则返回各省份的数据。"
       },
       {
-        "name": "PageSize",
-        "desc": "每页个数，范围是[1,1000]，默认值是20。"
+        "name": "IspNames",
+        "desc": "运营商列表，默认不填，则返回整个运营商的数据。"
       },
       {
         "name": "MainlandOrOversea",
-        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
-      },
-      {
-        "name": "OutLanguage",
-        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。"
+        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
       }
     ],
-    "desc": "查询某段时间内每个国家地区每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
+    "desc": "查询按省份和运营商分组的下行播放数据。"
   },
   "DescribeLivePlayAuthKey": {
     "params": [
@@ -1910,6 +1935,15 @@ INFO = {
       }
     ],
     "desc": "启用状态为停用的直播域名。"
+  },
+  "CancelCommonMixStream": {
+    "params": [
+      {
+        "name": "MixStreamSessionId",
+        "desc": "混流会话（申请混流开始到取消混流结束）标识 ID。"
+      }
+    ],
+    "desc": "该接口用来取消混流。用法与 mix_streamv2.cancel_mix_stream 基本一致。"
   },
   "DescribeLivePackageInfo": {
     "params": [

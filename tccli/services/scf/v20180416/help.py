@@ -298,11 +298,27 @@ INFO = {
     "params": [
       {
         "name": "FunctionName",
-        "desc": "函数ID"
+        "desc": "函数名"
       },
       {
         "name": "Namespace",
-        "desc": "命名空间"
+        "desc": "函数所在命名空间"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认值为 0"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数据长度，默认值为 20"
+      },
+      {
+        "name": "Order",
+        "desc": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime"
       }
     ],
     "desc": "该接口根据传入的参数查询函数的版本。"

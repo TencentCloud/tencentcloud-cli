@@ -1145,6 +1145,43 @@ def doDescribeLiveRecordTemplate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateCommonMixStream(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateCommonMixStream", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MixStreamSessionId": argv.get("--MixStreamSessionId"),
+        "InputStreamList": Utils.try_to_json(argv, "--InputStreamList"),
+        "OutputParams": Utils.try_to_json(argv, "--OutputParams"),
+        "MixStreamTemplateId": Utils.try_to_json(argv, "--MixStreamTemplateId"),
+        "ControlParams": Utils.try_to_json(argv, "--ControlParams"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCommonMixStreamRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateCommonMixStream(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteLiveWatermark(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -3358,6 +3395,39 @@ def doEnableLiveDomain(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCancelCommonMixStream(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CancelCommonMixStream", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MixStreamSessionId": argv.get("--MixStreamSessionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelCommonMixStreamRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CancelCommonMixStream(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeLivePackageInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -3540,6 +3610,7 @@ ACTION_MAP = {
     "DeleteLiveCallbackTemplate": doDeleteLiveCallbackTemplate,
     "DescribeLivePushAuthKey": doDescribeLivePushAuthKey,
     "DescribeLiveRecordTemplate": doDescribeLiveRecordTemplate,
+    "CreateCommonMixStream": doCreateCommonMixStream,
     "DeleteLiveWatermark": doDeleteLiveWatermark,
     "DescribePlayErrorCodeSumInfoList": doDescribePlayErrorCodeSumInfoList,
     "AddDelayLiveStream": doAddDelayLiveStream,
@@ -3602,6 +3673,7 @@ ACTION_MAP = {
     "CreateLiveTranscodeTemplate": doCreateLiveTranscodeTemplate,
     "DescribeLiveCerts": doDescribeLiveCerts,
     "EnableLiveDomain": doEnableLiveDomain,
+    "CancelCommonMixStream": doCancelCommonMixStream,
     "DescribeLivePackageInfo": doDescribeLivePackageInfo,
     "CreatePullStreamConfig": doCreatePullStreamConfig,
     "DescribeLiveStreamPushInfoList": doDescribeLiveStreamPushInfoList,

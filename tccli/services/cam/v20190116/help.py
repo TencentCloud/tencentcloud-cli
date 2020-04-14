@@ -406,40 +406,6 @@ INFO = {
     ],
     "desc": "设置用户的登录保护和敏感操作校验方式"
   },
-  "UpdatePolicy": {
-    "params": [
-      {
-        "name": "PolicyId",
-        "desc": "策略ID"
-      },
-      {
-        "name": "PolicyName",
-        "desc": "策略名"
-      },
-      {
-        "name": "Description",
-        "desc": "策略描述"
-      },
-      {
-        "name": "PolicyDocument",
-        "desc": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo"
-      }
-    ],
-    "desc": "本接口（UpdatePolicy ）可用于更新策略。"
-  },
-  "GetRole": {
-    "params": [
-      {
-        "name": "RoleId",
-        "desc": "角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
-      },
-      {
-        "name": "RoleName",
-        "desc": "角色名，用于指定角色，入参 RoleId 与 RoleName 二选一"
-      }
-    ],
-    "desc": "本接口（GetRole）用于获取指定角色的详细信息。"
-  },
   "UpdateRoleDescription": {
     "params": [
       {
@@ -456,6 +422,19 @@ INFO = {
       }
     ],
     "desc": "本接口（UpdateRoleDescription）用于修改角色的描述信息。"
+  },
+  "GetRole": {
+    "params": [
+      {
+        "name": "RoleId",
+        "desc": "角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      }
+    ],
+    "desc": "本接口（GetRole）用于获取指定角色的详细信息。"
   },
   "ListAttachedUserPolicies": {
     "params": [

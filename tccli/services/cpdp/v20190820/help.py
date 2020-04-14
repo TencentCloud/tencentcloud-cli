@@ -1248,6 +1248,31 @@ INFO = {
     ],
     "desc": "撤销会员在途充值(经第三方支付渠道)"
   },
+  "ApplyReWithdrawal": {
+    "params": [
+      {
+        "name": "BusinessType",
+        "desc": "聚鑫业务类型"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "由平台客服提供的计费密钥Id"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      },
+      {
+        "name": "Body",
+        "desc": "提现信息"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫业务ID"
+      }
+    ],
+    "desc": "正常结算提现失败情况下，发起重新提现的请求接口"
+  },
   "Refund": {
     "params": [
       {
@@ -1639,6 +1664,27 @@ INFO = {
     ],
     "desc": "应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。"
   },
+  "QueryAcctInfo": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫平台分配的支付MidasAppId"
+      },
+      {
+        "name": "SubMchId",
+        "desc": "业务平台的子商户Id，唯一"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "由平台客服提供的计费密钥Id"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      }
+    ],
+    "desc": "聚鑫-开户信息查询"
+  },
   "RevRegisterBillSupportWithdraw": {
     "params": [
       {
@@ -1741,6 +1787,35 @@ INFO = {
       }
     ],
     "desc": "查询银行时间段内清分提现明细。查询银行时间段内清分提现明细接口：若为“见证+收单退款”“见证+收单充值”记录时备注Note为“见证+收单充值,订单号”“见证+收单退款,订单号”，此接口可以查到T0/T1的充值明细和退款记录。查询标志：充值记录仍用3清分选项查询，退款记录同提现用2选项查询。"
+  },
+  "QueryAcctInfoList": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "QueryAcctBeginTime",
+        "desc": "查询开始时间(以开户时间为准)"
+      },
+      {
+        "name": "QueryAcctEndTime",
+        "desc": "查询结束时间(以开户时间为准)"
+      },
+      {
+        "name": "PageOffset",
+        "desc": "分页号,  起始值为1，每次最多返回20条记录，第二页返回的记录数为第21至40条记录，第三页为41至60条记录，顺序均按照开户时间的先后"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "由平台客服提供的计费密钥Id"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      }
+    ],
+    "desc": "聚鑫-开户信息列表查询, 查询某一段时间的开户信息"
   },
   "QueryReconciliationDocument": {
     "params": [
