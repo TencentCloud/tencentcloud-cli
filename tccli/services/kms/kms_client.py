@@ -53,14 +53,15 @@ def doEncrypt(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImportedKeyMaterial(argv, arglist):
+def doDecrypt(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteImportedKeyMaterial", g_param[OptionsDefine.Version])
+        show_help("Decrypt", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "KeyId": argv.get("--KeyId"),
+        "CiphertextBlob": argv.get("--CiphertextBlob"),
+        "EncryptionContext": argv.get("--EncryptionContext"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -74,9 +75,9 @@ def doDeleteImportedKeyMaterial(argv, arglist):
     client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImportedKeyMaterialRequest()
+    model = models.DecryptRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteImportedKeyMaterial(model)
+    rsp = client.Decrypt(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -111,6 +112,39 @@ def doUpdateAlias(argv, arglist):
     model = models.UpdateAliasRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UpdateAlias(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteWhiteBoxKey(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteWhiteBoxKey", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyId": argv.get("--KeyId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteWhiteBoxKeyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteWhiteBoxKey(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -358,6 +392,39 @@ def doGetKeyRotationStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWhiteBoxKeyDetails(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWhiteBoxKeyDetails", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyStatus": Utils.try_to_json(argv, "--KeyStatus"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWhiteBoxKeyDetailsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWhiteBoxKeyDetails(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetServiceStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -381,6 +448,75 @@ def doGetServiceStatus(argv, arglist):
     model = models.GetServiceStatusRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetServiceStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReEncrypt(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ReEncrypt", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CiphertextBlob": argv.get("--CiphertextBlob"),
+        "DestinationKeyId": argv.get("--DestinationKeyId"),
+        "SourceEncryptionContext": argv.get("--SourceEncryptionContext"),
+        "DestinationEncryptionContext": argv.get("--DestinationEncryptionContext"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReEncryptRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ReEncrypt(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doEnableWhiteBoxKeys(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("EnableWhiteBoxKeys", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyIds": Utils.try_to_json(argv, "--KeyIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EnableWhiteBoxKeysRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.EnableWhiteBoxKeys(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -559,17 +695,14 @@ def doCreateKey(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReEncrypt(argv, arglist):
+def doDescribeWhiteBoxKey(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ReEncrypt", g_param[OptionsDefine.Version])
+        show_help("DescribeWhiteBoxKey", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CiphertextBlob": argv.get("--CiphertextBlob"),
-        "DestinationKeyId": argv.get("--DestinationKeyId"),
-        "SourceEncryptionContext": argv.get("--SourceEncryptionContext"),
-        "DestinationEncryptionContext": argv.get("--DestinationEncryptionContext"),
+        "KeyId": argv.get("--KeyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -583,9 +716,44 @@ def doReEncrypt(argv, arglist):
     client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReEncryptRequest()
+    model = models.DescribeWhiteBoxKeyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ReEncrypt(model)
+    rsp = client.DescribeWhiteBoxKey(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doEncryptByWhiteBox(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("EncryptByWhiteBox", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyId": argv.get("--KeyId"),
+        "PlainText": argv.get("--PlainText"),
+        "InitializationVector": argv.get("--InitializationVector"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EncryptByWhiteBoxRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.EncryptByWhiteBox(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -621,6 +789,39 @@ def doGetParametersForImport(argv, arglist):
     model = models.GetParametersForImportRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetParametersForImport(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisableWhiteBoxKeys(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisableWhiteBoxKeys", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyIds": Utils.try_to_json(argv, "--KeyIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisableWhiteBoxKeysRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisableWhiteBoxKeys(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -694,6 +895,39 @@ def doDisableKeyRotation(argv, arglist):
     model = models.DisableKeyRotationRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DisableKeyRotation(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisableWhiteBoxKey(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisableWhiteBoxKey", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyId": argv.get("--KeyId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisableWhiteBoxKeyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisableWhiteBoxKey(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -838,6 +1072,74 @@ def doEnableKeyRotation(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateWhiteBoxKey(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateWhiteBoxKey", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Alias": argv.get("--Alias"),
+        "Algorithm": argv.get("--Algorithm"),
+        "Description": argv.get("--Description"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateWhiteBoxKeyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateWhiteBoxKey(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doEnableWhiteBoxKey(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("EnableWhiteBoxKey", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyId": argv.get("--KeyId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EnableWhiteBoxKeyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.EnableWhiteBoxKey(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doEnableKey(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -871,15 +1173,14 @@ def doEnableKey(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDecrypt(argv, arglist):
+def doDeleteImportedKeyMaterial(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("Decrypt", g_param[OptionsDefine.Version])
+        show_help("DeleteImportedKeyMaterial", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "CiphertextBlob": argv.get("--CiphertextBlob"),
-        "EncryptionContext": argv.get("--EncryptionContext"),
+        "KeyId": argv.get("--KeyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -893,9 +1194,9 @@ def doDecrypt(argv, arglist):
     client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DecryptRequest()
+    model = models.DeleteImportedKeyMaterialRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.Decrypt(model)
+    rsp = client.DeleteImportedKeyMaterial(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -929,6 +1230,38 @@ def doDescribeKeys(argv, arglist):
     model = models.DescribeKeysRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeKeys(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWhiteBoxServiceStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWhiteBoxServiceStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWhiteBoxServiceStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWhiteBoxServiceStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1005,6 +1338,39 @@ def doDisableKeys(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWhiteBoxDecryptKey(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWhiteBoxDecryptKey", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KeyId": argv.get("--KeyId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.KmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWhiteBoxDecryptKeyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWhiteBoxDecryptKey(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20190118": kms_client_v20190118,
 
@@ -1017,8 +1383,9 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "Encrypt": doEncrypt,
-    "DeleteImportedKeyMaterial": doDeleteImportedKeyMaterial,
+    "Decrypt": doDecrypt,
     "UpdateAlias": doUpdateAlias,
+    "DeleteWhiteBoxKey": doDeleteWhiteBoxKey,
     "ImportKeyMaterial": doImportKeyMaterial,
     "GetPublicKey": doGetPublicKey,
     "DisableKey": doDisableKey,
@@ -1026,25 +1393,35 @@ ACTION_MAP = {
     "AsymmetricSm2Decrypt": doAsymmetricSm2Decrypt,
     "CancelKeyDeletion": doCancelKeyDeletion,
     "GetKeyRotationStatus": doGetKeyRotationStatus,
+    "DescribeWhiteBoxKeyDetails": doDescribeWhiteBoxKeyDetails,
     "GetServiceStatus": doGetServiceStatus,
+    "ReEncrypt": doReEncrypt,
+    "EnableWhiteBoxKeys": doEnableWhiteBoxKeys,
     "ListAlgorithms": doListAlgorithms,
     "DescribeKey": doDescribeKey,
     "ListKeys": doListKeys,
     "GenerateRandom": doGenerateRandom,
     "CreateKey": doCreateKey,
-    "ReEncrypt": doReEncrypt,
+    "DescribeWhiteBoxKey": doDescribeWhiteBoxKey,
+    "EncryptByWhiteBox": doEncryptByWhiteBox,
     "GetParametersForImport": doGetParametersForImport,
+    "DisableWhiteBoxKeys": doDisableWhiteBoxKeys,
     "ListKeyDetail": doListKeyDetail,
     "DisableKeyRotation": doDisableKeyRotation,
+    "DisableWhiteBoxKey": doDisableWhiteBoxKey,
     "EnableKeys": doEnableKeys,
     "ScheduleKeyDeletion": doScheduleKeyDeletion,
     "AsymmetricRsaDecrypt": doAsymmetricRsaDecrypt,
     "EnableKeyRotation": doEnableKeyRotation,
+    "CreateWhiteBoxKey": doCreateWhiteBoxKey,
+    "EnableWhiteBoxKey": doEnableWhiteBoxKey,
     "EnableKey": doEnableKey,
-    "Decrypt": doDecrypt,
+    "DeleteImportedKeyMaterial": doDeleteImportedKeyMaterial,
     "DescribeKeys": doDescribeKeys,
+    "DescribeWhiteBoxServiceStatus": doDescribeWhiteBoxServiceStatus,
     "UpdateKeyDescription": doUpdateKeyDescription,
     "DisableKeys": doDisableKeys,
+    "DescribeWhiteBoxDecryptKey": doDescribeWhiteBoxDecryptKey,
 
 }
 

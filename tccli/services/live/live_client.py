@@ -364,14 +364,18 @@ def doDescribeLiveStreamEventList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePullStreamConfigs(argv, arglist):
+def doCreateCommonMixStream(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribePullStreamConfigs", g_param[OptionsDefine.Version])
+        show_help("CreateCommonMixStream", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ConfigId": argv.get("--ConfigId"),
+        "MixStreamSessionId": argv.get("--MixStreamSessionId"),
+        "InputStreamList": Utils.try_to_json(argv, "--InputStreamList"),
+        "OutputParams": Utils.try_to_json(argv, "--OutputParams"),
+        "MixStreamTemplateId": Utils.try_to_json(argv, "--MixStreamTemplateId"),
+        "ControlParams": Utils.try_to_json(argv, "--ControlParams"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -385,9 +389,9 @@ def doDescribePullStreamConfigs(argv, arglist):
     client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePullStreamConfigsRequest()
+    model = models.CreateCommonMixStreamRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribePullStreamConfigs(model)
+    rsp = client.CreateCommonMixStream(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -648,40 +652,6 @@ def doDescribeTopClientIpSumInfoList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyPullStreamStatus(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyPullStreamStatus", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ConfigIds": Utils.try_to_json(argv, "--ConfigIds"),
-        "Status": argv.get("--Status"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyPullStreamStatusRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyPullStreamStatus(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeLiveRecordTemplates(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -929,45 +899,6 @@ def doDeleteLiveCallbackRule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyPullStreamConfig(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyPullStreamConfig", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "ConfigId": argv.get("--ConfigId"),
-        "FromUrl": argv.get("--FromUrl"),
-        "ToUrl": argv.get("--ToUrl"),
-        "AreaId": Utils.try_to_json(argv, "--AreaId"),
-        "IspId": Utils.try_to_json(argv, "--IspId"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyPullStreamConfigRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ModifyPullStreamConfig(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateLiveSnapshotTemplate(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1136,43 +1067,6 @@ def doDescribeLiveRecordTemplate(argv, arglist):
     model = models.DescribeLiveRecordTemplateRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeLiveRecordTemplate(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateCommonMixStream(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateCommonMixStream", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "MixStreamSessionId": argv.get("--MixStreamSessionId"),
-        "InputStreamList": Utils.try_to_json(argv, "--InputStreamList"),
-        "OutputParams": Utils.try_to_json(argv, "--OutputParams"),
-        "MixStreamTemplateId": Utils.try_to_json(argv, "--MixStreamTemplateId"),
-        "ControlParams": Utils.try_to_json(argv, "--ControlParams"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCommonMixStreamRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateCommonMixStream(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3588,7 +3482,7 @@ ACTION_MAP = {
     "ModifyLiveRecordTemplate": doModifyLiveRecordTemplate,
     "CreateLiveWatermarkRule": doCreateLiveWatermarkRule,
     "DescribeLiveStreamEventList": doDescribeLiveStreamEventList,
-    "DescribePullStreamConfigs": doDescribePullStreamConfigs,
+    "CreateCommonMixStream": doCreateCommonMixStream,
     "DescribeHttpStatusInfoList": doDescribeHttpStatusInfoList,
     "DescribeProvinceIspPlayInfoList": doDescribeProvinceIspPlayInfoList,
     "ModifyLivePlayDomain": doModifyLivePlayDomain,
@@ -3596,7 +3490,6 @@ ACTION_MAP = {
     "DescribeLiveSnapshotRules": doDescribeLiveSnapshotRules,
     "DeleteLiveTranscodeTemplate": doDeleteLiveTranscodeTemplate,
     "DescribeTopClientIpSumInfoList": doDescribeTopClientIpSumInfoList,
-    "ModifyPullStreamStatus": doModifyPullStreamStatus,
     "DescribeLiveRecordTemplates": doDescribeLiveRecordTemplates,
     "ModifyLiveDomainCert": doModifyLiveDomainCert,
     "DescribeVisitTopSumInfoList": doDescribeVisitTopSumInfoList,
@@ -3604,13 +3497,11 @@ ACTION_MAP = {
     "AddLiveWatermark": doAddLiveWatermark,
     "DeleteLiveWatermarkRule": doDeleteLiveWatermarkRule,
     "DeleteLiveCallbackRule": doDeleteLiveCallbackRule,
-    "ModifyPullStreamConfig": doModifyPullStreamConfig,
     "CreateLiveSnapshotTemplate": doCreateLiveSnapshotTemplate,
     "DescribeLiveStreamOnlineList": doDescribeLiveStreamOnlineList,
     "DeleteLiveCallbackTemplate": doDeleteLiveCallbackTemplate,
     "DescribeLivePushAuthKey": doDescribeLivePushAuthKey,
     "DescribeLiveRecordTemplate": doDescribeLiveRecordTemplate,
-    "CreateCommonMixStream": doCreateCommonMixStream,
     "DeleteLiveWatermark": doDeleteLiveWatermark,
     "DescribePlayErrorCodeSumInfoList": doDescribePlayErrorCodeSumInfoList,
     "AddDelayLiveStream": doAddDelayLiveStream,

@@ -459,7 +459,7 @@ INFO = {
       },
       {
         "name": "EventConditions",
-        "desc": "策略组中的时间告警规则"
+        "desc": "策略组中的事件告警规则"
       },
       {
         "name": "BackEndCall",

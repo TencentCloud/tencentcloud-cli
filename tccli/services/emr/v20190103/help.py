@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "TimeSpan",
-        "desc": "扩容的时长。需要结合TimeUnit一起使用。"
+        "desc": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>"
       },
       {
         "name": "InstanceId",
@@ -103,7 +103,7 @@ INFO = {
       },
       {
         "name": "TimeSpan",
-        "desc": "变配的时长。需要结合TimeUnit一起使用。\n<li>PayMode取值为0时，TimeSpan只能取值为3600。</li>"
+        "desc": "变配的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>"
       },
       {
         "name": "UpdateSpec",
@@ -149,7 +149,7 @@ INFO = {
     "params": [
       {
         "name": "TimeSpan",
-        "desc": "实例续费的时长。需要结合TimeUnit一起使用。"
+        "desc": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月"
       },
       {
         "name": "ResourceIds",
@@ -165,7 +165,7 @@ INFO = {
       },
       {
         "name": "TimeUnit",
-        "desc": "实例续费的时间单位。取值范围：\n<li>m：表示月份。\u0007</li>"
+        "desc": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>"
       },
       {
         "name": "Currency",
@@ -186,7 +186,7 @@ INFO = {
       },
       {
         "name": "Software",
-        "desc": "部署的组件列表。不同ProductId对应特定版本的组件。例如，当ProductId取值为4时，该参数可以填写Software.0=hadoop-2.8.4&Software.1=zookeeper-3.4.9；当ProductId取值为2时，该参数可以填写Software.0=hadoop-2.7.3&Software.1=zookeeper-3.4.9。"
+        "desc": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：\n<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>"
       },
       {
         "name": "ResourceSpec",
@@ -210,7 +210,7 @@ INFO = {
       },
       {
         "name": "TimeSpan",
-        "desc": "购买实例的时长。需要结合TimeUnit一起使用。\n<li>PayMode取值为0时，TimeSpan只能取值为3600。</li>"
+        "desc": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>"
       },
       {
         "name": "TimeUnit",
@@ -287,11 +287,11 @@ INFO = {
     "params": [
       {
         "name": "TimeUnit",
-        "desc": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。\u0007</li>"
+        "desc": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>"
       },
       {
         "name": "TimeSpan",
-        "desc": "购买实例的时长。需要结合TimeUnit一起使用。"
+        "desc": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>"
       },
       {
         "name": "ResourceSpec",
@@ -303,7 +303,7 @@ INFO = {
       },
       {
         "name": "PayMode",
-        "desc": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。\u0007</li>"
+        "desc": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>"
       },
       {
         "name": "SupportHA",
@@ -311,7 +311,7 @@ INFO = {
       },
       {
         "name": "Software",
-        "desc": "部署的组件列表。"
+        "desc": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：\n<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>"
       },
       {
         "name": "Placement",
@@ -344,11 +344,11 @@ INFO = {
     "params": [
       {
         "name": "TimeUnit",
-        "desc": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。\u0007</li>"
+        "desc": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>"
       },
       {
         "name": "TimeSpan",
-        "desc": "扩容的时长。需要结合TimeUnit一起使用。"
+        "desc": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>"
       },
       {
         "name": "ZoneId",
@@ -356,7 +356,7 @@ INFO = {
       },
       {
         "name": "PayMode",
-        "desc": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。\u0007</li>"
+        "desc": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>"
       },
       {
         "name": "InstanceId",

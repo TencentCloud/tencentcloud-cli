@@ -1046,6 +1046,7 @@ def doCreateDBInstanceHour(argv, arglist):
         "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
         "DeployGroupId": argv.get("--DeployGroupId"),
         "ClientToken": argv.get("--ClientToken"),
+        "DeviceType": argv.get("--DeviceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1393,6 +1394,7 @@ def doCreateDBInstance(argv, arglist):
         "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
         "DeployGroupId": argv.get("--DeployGroupId"),
         "ClientToken": argv.get("--ClientToken"),
+        "DeviceType": argv.get("--DeviceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

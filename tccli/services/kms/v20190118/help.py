@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 DESC = "kms-2019-01-18"
 INFO = {
+  "DeleteImportedKeyMaterial": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "指定需要删除密钥材料的EXTERNAL CMK。"
+      }
+    ],
+    "desc": "用于删除导入的密钥材料，仅对EXTERNAL类型的CMK有效，该接口将CMK设置为PendingImport 状态，并不会删除CMK，在重新进行密钥导入后可继续使用。彻底删除CMK请使用 ScheduleKeyDeletion 接口。"
+  },
   "Encrypt": {
     "params": [
       {
@@ -18,18 +27,14 @@ INFO = {
     ],
     "desc": "本接口用于加密最多为4KB任意数据，可用于加密数据库密码，RSA Key，或其它较小的敏感信息。对于应用的数据加密，使用GenerateDataKey生成的DataKey进行本地数据的加解密操作"
   },
-  "Decrypt": {
+  "EnableWhiteBoxKeys": {
     "params": [
       {
-        "name": "CiphertextBlob",
-        "desc": "待解密的密文数据"
-      },
-      {
-        "name": "EncryptionContext",
-        "desc": "key/value对的json字符串，如果Encrypt指定了该参数，则在调用Decrypt API时需要提供同样的参数，最大支持1024字符"
+        "name": "KeyIds",
+        "desc": "白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。"
       }
     ],
-    "desc": "本接口用于解密密文，得到明文数据。"
+    "desc": "批量启用白盒密钥"
   },
   "UpdateAlias": {
     "params": [
@@ -43,6 +48,15 @@ INFO = {
       }
     ],
     "desc": "用于修改CMK的别名。对于处于PendingDelete状态的CMK禁止修改。"
+  },
+  "DeleteWhiteBoxKey": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "白盒密钥的全局唯一标识符"
+      }
+    ],
+    "desc": "删除白盒密钥, 注意：必须先禁用后，才可以删除。"
   },
   "ImportKeyMaterial": {
     "params": [
@@ -135,6 +149,15 @@ INFO = {
     ],
     "desc": "查询指定的CMK是否开启了密钥轮换功能。"
   },
+  "DescribeWhiteBoxKeyDetails": {
+    "params": [
+      {
+        "name": "KeyStatus",
+        "desc": "过滤条件：密钥的状态，0：disabled，1：enabled"
+      }
+    ],
+    "desc": "获取白盒密钥列表"
+  },
   "DisableKeys": {
     "params": [
       {
@@ -144,18 +167,47 @@ INFO = {
     ],
     "desc": "该接口用于批量禁止CMK的使用。"
   },
+  "EncryptByWhiteBox": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "白盒密钥的全局唯一标识符"
+      },
+      {
+        "name": "PlainText",
+        "desc": "待加密的文本， base64编码，文本的原始长度最大不超过4KB"
+      },
+      {
+        "name": "InitializationVector",
+        "desc": "初始化向量，大小为 16 Bytes，加密算法会使用到, base64编码；如果不传，则由后端服务随机生成。用户需要自行保存该值，作为解密的参数。"
+      }
+    ],
+    "desc": "使用白盒密钥进行加密"
+  },
   "ListAlgorithms": {
     "params": [],
     "desc": "列出当前Region支持的加密方式"
   },
-  "DescribeKey": {
+  "ReEncrypt": {
     "params": [
       {
-        "name": "KeyId",
-        "desc": "CMK全局唯一标识符"
+        "name": "CiphertextBlob",
+        "desc": "需要重新加密的密文"
+      },
+      {
+        "name": "DestinationKeyId",
+        "desc": "重新加密使用的CMK，如果为空，则使用密文原有的CMK重新加密（若密钥没有轮换则密文不会刷新）"
+      },
+      {
+        "name": "SourceEncryptionContext",
+        "desc": "CiphertextBlob 密文加密时使用的key/value对的json字符串。如果加密时未使用，则为空"
+      },
+      {
+        "name": "DestinationEncryptionContext",
+        "desc": "重新加密使用的key/value对的json字符串，如果使用该字段，则返回的新密文在解密时需要填入相同的字符串"
       }
     ],
-    "desc": "用于获取指定KeyId的主密钥属性详情信息。"
+    "desc": "使用指定CMK对密文重新加密。"
   },
   "ListKeys": {
     "params": [
@@ -204,6 +256,15 @@ INFO = {
     ],
     "desc": "创建用户管理数据密钥的主密钥CMK（Custom Master Key）。"
   },
+  "DescribeWhiteBoxKey": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "白盒密钥的全局唯一标识符"
+      }
+    ],
+    "desc": "展示白盒密钥的信息"
+  },
   "GetParametersForImport": {
     "params": [
       {
@@ -220,6 +281,15 @@ INFO = {
       }
     ],
     "desc": "获取导入主密钥（CMK）材料的参数，返回的Token作为执行ImportKeyMaterial的参数之一，返回的PublicKey用于对自主导入密钥材料进行加密。返回的Token和PublicKey 24小时后失效，失效后如需重新导入，需要再次调用该接口获取新的Token和PublicKey。"
+  },
+  "DisableWhiteBoxKeys": {
+    "params": [
+      {
+        "name": "KeyIds",
+        "desc": "白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。"
+      }
+    ],
+    "desc": "批量禁用白盒密钥"
   },
   "ListKeyDetail": {
     "params": [
@@ -284,6 +354,15 @@ INFO = {
     ],
     "desc": "对指定的CMK禁止密钥轮换功能。"
   },
+  "DisableWhiteBoxKey": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "白盒密钥的全局唯一标识符"
+      }
+    ],
+    "desc": "禁用白盒密钥"
+  },
   "EnableKeys": {
     "params": [
       {
@@ -306,26 +385,14 @@ INFO = {
     ],
     "desc": "CMK计划删除接口，用于指定CMK删除的时间，可选时间区间为[7,30]天"
   },
-  "ReEncrypt": {
+  "DescribeKey": {
     "params": [
       {
-        "name": "CiphertextBlob",
-        "desc": "需要重新加密的密文"
-      },
-      {
-        "name": "DestinationKeyId",
-        "desc": "重新加密使用的CMK，如果为空，则使用密文原有的CMK重新加密（若密钥没有轮换则密文不会刷新）"
-      },
-      {
-        "name": "SourceEncryptionContext",
-        "desc": "CiphertextBlob 密文加密时使用的key/value对的json字符串。如果加密时未使用，则为空"
-      },
-      {
-        "name": "DestinationEncryptionContext",
-        "desc": "重新加密使用的key/value对的json字符串，如果使用该字段，则返回的新密文在解密时需要填入相同的字符串"
+        "name": "KeyId",
+        "desc": "CMK全局唯一标识符"
       }
     ],
-    "desc": "使用指定CMK对密文重新加密。"
+    "desc": "用于获取指定KeyId的主密钥属性详情信息。"
   },
   "EnableKeyRotation": {
     "params": [
@@ -336,6 +403,32 @@ INFO = {
     ],
     "desc": "对指定的CMK开启密钥轮换功能。"
   },
+  "CreateWhiteBoxKey": {
+    "params": [
+      {
+        "name": "Alias",
+        "desc": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。Alias不可重复。"
+      },
+      {
+        "name": "Algorithm",
+        "desc": "创建密钥所有的算法类型，支持的取值：AES_256,SM4"
+      },
+      {
+        "name": "Description",
+        "desc": "密钥的描述，最大1024字节"
+      }
+    ],
+    "desc": "创建白盒密钥。 密钥个数的上限为 50。"
+  },
+  "EnableWhiteBoxKey": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "白盒密钥的全局唯一标识符"
+      }
+    ],
+    "desc": "批量启用白盒密钥"
+  },
   "EnableKey": {
     "params": [
       {
@@ -345,14 +438,18 @@ INFO = {
     ],
     "desc": "用于启用一个指定的CMK。"
   },
-  "DeleteImportedKeyMaterial": {
+  "Decrypt": {
     "params": [
       {
-        "name": "KeyId",
-        "desc": "指定需要删除密钥材料的EXTERNAL CMK。"
+        "name": "CiphertextBlob",
+        "desc": "待解密的密文数据"
+      },
+      {
+        "name": "EncryptionContext",
+        "desc": "key/value对的json字符串，如果Encrypt指定了该参数，则在调用Decrypt API时需要提供同样的参数，最大支持1024字符"
       }
     ],
-    "desc": "用于删除导入的密钥材料，仅对EXTERNAL类型的CMK有效，该接口将CMK设置为PendingImport 状态，并不会删除CMK，在重新进行密钥导入后可继续使用。彻底删除CMK请使用 ScheduleKeyDeletion 接口。"
+    "desc": "本接口用于解密密文，得到明文数据。"
   },
   "DescribeKeys": {
     "params": [
@@ -362,6 +459,10 @@ INFO = {
       }
     ],
     "desc": "该接口用于批量获取主密钥属性信息。"
+  },
+  "DescribeWhiteBoxServiceStatus": {
+    "params": [],
+    "desc": "获取白盒密钥服务状态"
   },
   "UpdateKeyDescription": {
     "params": [
@@ -379,5 +480,14 @@ INFO = {
   "GetServiceStatus": {
     "params": [],
     "desc": "用于查询该用户是否已开通KMS服务"
+  },
+  "DescribeWhiteBoxDecryptKey": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "白盒密钥的全局唯一标识符"
+      }
+    ],
+    "desc": "获取白盒解密密钥"
   }
 }

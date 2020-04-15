@@ -79,6 +79,15 @@ INFO = {
     ],
     "desc": "本接口（DeleteTraceIds）用于将设备从日志跟踪白名单中删除，该接口可批量操作，最多支持同时操作100台设备。"
   },
+  "DescribeRegistrationStatus": {
+    "params": [
+      {
+        "name": "CunionIds",
+        "desc": "终端用户的唯一ID列表，0<元素数量<=100"
+      }
+    ],
+    "desc": "本接口（DescribeRegistrationStatus）用于查询终端用户的注册状态。"
+  },
   "DescribeDevice": {
     "params": [
       {
@@ -143,18 +152,18 @@ INFO = {
     ],
     "desc": "本接口（SendOnlineMsg）用于向设备发送在线消息。\n注意：\n若设备当前不在线,会直接返回错误;\n若设备网络出现异常时,消息发送可能超时,超时等待最长时间为3秒.waitresp非0情况下,会导致本接口阻塞3秒。"
   },
-  "RunIotModel": {
+  "DescribeBindUsr": {
     "params": [
       {
-        "name": "ProductId",
-        "desc": "产品ID"
+        "name": "Tid",
+        "desc": "设备TID"
       },
       {
-        "name": "IotModel",
-        "desc": "物模型定义，json格式的字符串"
+        "name": "AccessId",
+        "desc": "设备主人的AccessId"
       }
     ],
-    "desc": "本接口（RunIotModel）用于对定义的物模型进行发布。"
+    "desc": "本接口（DescribeBindUsr）用于查询设备被分享的所有用户列表。"
   },
   "ModifyDeviceAction": {
     "params": [
@@ -318,18 +327,18 @@ INFO = {
     ],
     "desc": "本接口（CreateTraceIds）用于将设备加到日志跟踪白名单。"
   },
-  "DescribeBindUsr": {
+  "RunIotModel": {
     "params": [
       {
-        "name": "Tid",
-        "desc": "设备TID"
+        "name": "ProductId",
+        "desc": "产品ID"
       },
       {
-        "name": "AccessId",
-        "desc": "设备主人的AccessId"
+        "name": "IotModel",
+        "desc": "物模型定义，json格式的字符串"
       }
     ],
-    "desc": "本接口（DescribeBindUsr）用于查询设备被分享的所有用户列表。"
+    "desc": "本接口（RunIotModel）用于对定义的物模型进行发布。"
   },
   "DescribeMessageQueue": {
     "params": [
@@ -417,6 +426,14 @@ INFO = {
       {
         "name": "ProductDescription",
         "desc": "产品描述"
+      },
+      {
+        "name": "ChipManufactureId",
+        "desc": "主芯片产商ID"
+      },
+      {
+        "name": "ChipId",
+        "desc": "主芯片ID"
       }
     ],
     "desc": "本接口（ModifyProduct）用于编辑物联网智能视频产品的相关信息。"

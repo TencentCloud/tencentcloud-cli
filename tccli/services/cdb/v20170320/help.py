@@ -234,7 +234,7 @@ INFO = {
       },
       {
         "name": "DatabaseRegexp",
-        "desc": "匹配数据库库名的正则表达式，规则同 MySQL 官网"
+        "desc": "匹配数据库库名的正则表达式。"
       }
     ],
     "desc": "本接口(DescribeDatabases)用于查询云数据库实例的数据库信息。"
@@ -519,6 +519,10 @@ INFO = {
       {
         "name": "ClientToken",
         "desc": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。"
+      },
+      {
+        "name": "DeviceType",
+        "desc": "实例类型。支持值包括： \"HA\" - 高可用版实例， \"BASIC\" - 基础版实例。 不指定则默认为高可用版。"
       }
     ],
     "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为 1，且 TaskStatus 为 0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5、MySQL 5.6 和 MySQL 5.7 版本；\n4. 支持创建主实例、灾备实例和只读实例；\n5. 当入参指定 Port，ParamList 或 Password 时，该实例会进行初始化操作；"
@@ -800,6 +804,10 @@ INFO = {
       {
         "name": "ClientToken",
         "desc": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。"
+      },
+      {
+        "name": "DeviceType",
+        "desc": "实例类型。支持值包括： \"HA\" - 高可用版实例， \"BASIC\" - 基础版实例。 不指定则默认为高可用版。"
       }
     ],
     "desc": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 Port，ParamList 或 Password 时，该实例会进行初始化操作；"

@@ -372,7 +372,7 @@ INFO = {
       },
       {
         "name": "DrmType",
-        "desc": "DRM方案类型，取值范围：\n<li>FairPlay；</li>\n<li>SimpleAES；</li>\n<li>Widevine。</li>\n如果取值为空字符串，代表不对视频做 DRM 保护。"
+        "desc": "DRM方案类型，取值范围：\n<li>SimpleAES。</li>\n如果取值为空字符串，代表不对视频做 DRM 保护。"
       },
       {
         "name": "DisableHigherVideoBitrate",

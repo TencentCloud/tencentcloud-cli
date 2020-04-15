@@ -59,14 +59,16 @@ def doAddUser(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetSAMLProvider(argv, arglist):
+def doDetectState(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetSAMLProvider", g_param[OptionsDefine.Version])
+        show_help("DetectState", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Name": argv.get("--Name"),
+        "ClientIP": argv.get("--ClientIP"),
+        "ClientUA": argv.get("--ClientUA"),
+        "FaceIdToken": argv.get("--FaceIdToken"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -80,9 +82,9 @@ def doGetSAMLProvider(argv, arglist):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetSAMLProviderRequest()
+    model = models.DetectStateRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetSAMLProvider(model)
+    rsp = client.DetectState(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -545,6 +547,44 @@ def doSetFlag(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeMfaCodeStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeMfaCodeStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Tmpcode": argv.get("--Tmpcode"),
+        "Skey": argv.get("--Skey"),
+        "ClientUA": argv.get("--ClientUA"),
+        "Interface": argv.get("--Interface"),
+        "ClientIP": argv.get("--ClientIP"),
+        "OwnerUin": Utils.try_to_json(argv, "--OwnerUin"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMfaCodeStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeMfaCodeStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetCustomMFATokenInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -748,6 +788,42 @@ def doListAttachedGroupPolicies(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doListGroupsForUser(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListGroupsForUser", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Uid": Utils.try_to_json(argv, "--Uid"),
+        "Rp": Utils.try_to_json(argv, "--Rp"),
+        "Page": Utils.try_to_json(argv, "--Page"),
+        "SubUin": Utils.try_to_json(argv, "--SubUin"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListGroupsForUserRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListGroupsForUser(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doConsumeCustomMFAToken(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -805,6 +881,121 @@ def doGetGroup(argv, arglist):
     model = models.GetGroupRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDetectMaskAuth(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DetectMaskAuth", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Skey": argv.get("--Skey"),
+        "ClientIP": argv.get("--ClientIP"),
+        "ClientUA": argv.get("--ClientUA"),
+        "Type": argv.get("--Type"),
+        "Name": argv.get("--Name"),
+        "Idcard": argv.get("--Idcard"),
+        "OwnerUin": Utils.try_to_json(argv, "--OwnerUin"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetectMaskAuthRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DetectMaskAuth(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetSAMLProvider(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetSAMLProvider", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Name": argv.get("--Name"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetSAMLProviderRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetSAMLProvider(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCheckNewMfaCode(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CheckNewMfaCode", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Skey": argv.get("--Skey"),
+        "Interface": argv.get("--Interface"),
+        "ClientIP": argv.get("--ClientIP"),
+        "ClientUA": argv.get("--ClientUA"),
+        "AuthType": Utils.try_to_json(argv, "--AuthType"),
+        "OwnerUin": Utils.try_to_json(argv, "--OwnerUin"),
+        "PhoneCode": Utils.try_to_json(argv, "--PhoneCode"),
+        "PhoneNumber": Utils.try_to_json(argv, "--PhoneNumber"),
+        "MailCode": Utils.try_to_json(argv, "--MailCode"),
+        "Mail": argv.get("--Mail"),
+        "CountryCode": Utils.try_to_json(argv, "--CountryCode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CheckNewMfaCodeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CheckNewMfaCode(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -979,6 +1170,47 @@ def doUpdateSAMLProvider(argv, arglist):
     model = models.UpdateSAMLProviderRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UpdateSAMLProvider(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDetectAuth(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DetectAuth", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Skey": argv.get("--Skey"),
+        "ClientIP": argv.get("--ClientIP"),
+        "ClientUA": argv.get("--ClientUA"),
+        "Type": argv.get("--Type"),
+        "Name": argv.get("--Name"),
+        "Idcard": argv.get("--Idcard"),
+        "UseAuthInfo": Utils.try_to_json(argv, "--UseAuthInfo"),
+        "Scene": argv.get("--Scene"),
+        "OwnerUin": Utils.try_to_json(argv, "--OwnerUin"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetectAuthRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DetectAuth(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1437,17 +1669,20 @@ def doDetachUserPolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListGroupsForUser(argv, arglist):
+def doCheck(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ListGroupsForUser", g_param[OptionsDefine.Version])
+        show_help("Check", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Uid": Utils.try_to_json(argv, "--Uid"),
-        "Rp": Utils.try_to_json(argv, "--Rp"),
-        "Page": Utils.try_to_json(argv, "--Page"),
-        "SubUin": Utils.try_to_json(argv, "--SubUin"),
+        "Skey": argv.get("--Skey"),
+        "ClientIP": argv.get("--ClientIP"),
+        "ClientUA": argv.get("--ClientUA"),
+        "Interface": argv.get("--Interface"),
+        "AuthType": Utils.try_to_json(argv, "--AuthType"),
+        "Code": argv.get("--Code"),
+        "OwnerUin": Utils.try_to_json(argv, "--OwnerUin"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1461,9 +1696,9 @@ def doListGroupsForUser(argv, arglist):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListGroupsForUserRequest()
+    model = models.CheckRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ListGroupsForUser(model)
+    rsp = client.Check(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1485,7 +1720,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "AddUser": doAddUser,
-    "GetSAMLProvider": doGetSAMLProvider,
+    "DetectState": doDetectState,
     "ListSAMLProviders": doListSAMLProviders,
     "CreateRole": doCreateRole,
     "ListUsers": doListUsers,
@@ -1499,19 +1734,25 @@ ACTION_MAP = {
     "UpdateUser": doUpdateUser,
     "GetPolicy": doGetPolicy,
     "SetFlag": doSetFlag,
+    "DescribeMfaCodeStatus": doDescribeMfaCodeStatus,
     "GetCustomMFATokenInfo": doGetCustomMFATokenInfo,
     "DeleteGroup": doDeleteGroup,
     "DeleteRole": doDeleteRole,
     "GetUser": doGetUser,
     "UpdateGroup": doUpdateGroup,
     "ListAttachedGroupPolicies": doListAttachedGroupPolicies,
+    "ListGroupsForUser": doListGroupsForUser,
     "ConsumeCustomMFAToken": doConsumeCustomMFAToken,
     "GetGroup": doGetGroup,
+    "DetectMaskAuth": doDetectMaskAuth,
+    "GetSAMLProvider": doGetSAMLProvider,
+    "CheckNewMfaCode": doCheckNewMfaCode,
     "ListGroups": doListGroups,
     "AddUserToGroup": doAddUserToGroup,
     "AttachRolePolicy": doAttachRolePolicy,
     "UpdateRoleDescription": doUpdateRoleDescription,
     "UpdateSAMLProvider": doUpdateSAMLProvider,
+    "DetectAuth": doDetectAuth,
     "GetRole": doGetRole,
     "ListAttachedUserPolicies": doListAttachedUserPolicies,
     "DeleteUser": doDeleteUser,
@@ -1525,7 +1766,7 @@ ACTION_MAP = {
     "UpdateAssumeRolePolicy": doUpdateAssumeRolePolicy,
     "CreatePolicy": doCreatePolicy,
     "DetachUserPolicy": doDetachUserPolicy,
-    "ListGroupsForUser": doListGroupsForUser,
+    "Check": doCheck,
 
 }
 
