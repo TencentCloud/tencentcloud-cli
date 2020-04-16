@@ -328,6 +328,7 @@ def doInvoke(argv, arglist):
         "ClientContext": argv.get("--ClientContext"),
         "LogType": argv.get("--LogType"),
         "Namespace": argv.get("--Namespace"),
+        "RoutingKey": argv.get("--RoutingKey"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -456,6 +456,19 @@ INFO = {
     ],
     "desc": "查询某段时间top n客户端ip汇总信息（暂支持top 1000）"
   },
+  "ModifyPullStreamStatus": {
+    "params": [
+      {
+        "name": "ConfigIds",
+        "desc": "配置id列表。"
+      },
+      {
+        "name": "Status",
+        "desc": "目标状态。0无效，2正在运行，4暂停。"
+      }
+    ],
+    "desc": "修改直播拉流配置的状态。"
+  },
   "DescribeLiveRecordTemplates": {
     "params": [
       {
@@ -583,6 +596,39 @@ INFO = {
     ],
     "desc": "删除回调规则"
   },
+  "ModifyPullStreamConfig": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "配置id。"
+      },
+      {
+        "name": "FromUrl",
+        "desc": "源Url。"
+      },
+      {
+        "name": "ToUrl",
+        "desc": "目的Url。"
+      },
+      {
+        "name": "AreaId",
+        "desc": "区域id：\n1-深圳，\n2-上海，\n3-天津，\n4-中国香港。\n如有改动，需同时传入IspId。"
+      },
+      {
+        "name": "IspId",
+        "desc": "运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
+      }
+    ],
+    "desc": "更新拉流配置。"
+  },
   "CreateLiveSnapshotTemplate": {
     "params": [
       {
@@ -667,6 +713,15 @@ INFO = {
     ],
     "desc": "查询直播推流鉴权key"
   },
+  "DeletePullStreamConfig": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "配置id。"
+      }
+    ],
+    "desc": "删除直播拉流配置"
+  },
   "DescribeLiveRecordTemplate": {
     "params": [
       {
@@ -675,6 +730,15 @@ INFO = {
       }
     ],
     "desc": "获取单个录制模板"
+  },
+  "DescribePullStreamConfigs": {
+    "params": [
+      {
+        "name": "ConfigId",
+        "desc": "配置id。"
+      }
+    ],
+    "desc": "查询直播拉流配置。"
   },
   "DeleteLiveWatermark": {
     "params": [
@@ -1102,34 +1166,42 @@ INFO = {
     ],
     "desc": "修改回调模板。"
   },
-  "DescribeGroupProIspPlayInfoList": {
+  "DescribeProIspPlaySumInfoList": {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
+        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
+        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
+      },
+      {
+        "name": "StatType",
+        "desc": "统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。"
       },
       {
         "name": "PlayDomains",
-        "desc": "播放域名，默认为不填，表示求总体数据。"
+        "desc": "不填则为总体数据。"
       },
       {
-        "name": "ProvinceNames",
-        "desc": "省份列表，默认不填，则返回各省份的数据。"
+        "name": "PageNum",
+        "desc": "页号，范围是[1,1000]，默认值是1。"
       },
       {
-        "name": "IspNames",
-        "desc": "运营商列表，默认不填，则返回整个运营商的数据。"
+        "name": "PageSize",
+        "desc": "每页个数，范围是[1,1000]，默认值是20。"
       },
       {
         "name": "MainlandOrOversea",
-        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
+        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
+      },
+      {
+        "name": "OutLanguage",
+        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。"
       }
     ],
-    "desc": "查询按省份和运营商分组的下行播放数据。"
+    "desc": "查询某段时间内每个国家地区每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
   },
   "DescribeStreamPlayInfoList": {
     "params": [
@@ -1698,42 +1770,34 @@ INFO = {
     ],
     "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
   },
-  "DescribeProIspPlaySumInfoList": {
+  "DescribeGroupProIspPlayInfoList": {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
+        "desc": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
-      },
-      {
-        "name": "StatType",
-        "desc": "统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。"
+        "desc": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。"
       },
       {
         "name": "PlayDomains",
-        "desc": "不填则为总体数据。"
+        "desc": "播放域名，默认为不填，表示求总体数据。"
       },
       {
-        "name": "PageNum",
-        "desc": "页号，范围是[1,1000]，默认值是1。"
+        "name": "ProvinceNames",
+        "desc": "省份列表，默认不填，则返回各省份的数据。"
       },
       {
-        "name": "PageSize",
-        "desc": "每页个数，范围是[1,1000]，默认值是20。"
+        "name": "IspNames",
+        "desc": "运营商列表，默认不填，则返回整个运营商的数据。"
       },
       {
         "name": "MainlandOrOversea",
-        "desc": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。"
-      },
-      {
-        "name": "OutLanguage",
-        "desc": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。"
+        "desc": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。"
       }
     ],
-    "desc": "查询某段时间内每个国家地区每个省份每个运营商的平均每秒流量，总流量，总请求数信息。"
+    "desc": "查询按省份和运营商分组的下行播放数据。"
   },
   "DescribeLivePlayAuthKey": {
     "params": [

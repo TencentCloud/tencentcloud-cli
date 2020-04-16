@@ -72,9 +72,13 @@ INFO = {
       {
         "name": "GroupDesc",
         "desc": "部署组描述"
+      },
+      {
+        "name": "GroupResourceType",
+        "desc": "部署组资源类型"
       }
     ],
-    "desc": "创建容器部署组"
+    "desc": "创建虚拟机部署组"
   },
   "CreateCluster": {
     "params": [
@@ -200,11 +204,11 @@ INFO = {
       },
       {
         "name": "CpuLimit",
-        "desc": "最大的 CPU 核数，对应 K8S 的 limit；不填时默认为 request 的 2 倍"
+        "desc": "业务容器最大的 CPU 核数，对应 K8S 的 limit；不填时默认为 request 的 2 倍"
       },
       {
         "name": "MemLimit",
-        "desc": "最大的内存 MiB 数，对应 K8S 的 limit；不填时默认为 request 的 2 倍"
+        "desc": "业务容器最大的内存 MiB 数，对应 K8S 的 limit；不填时默认为 request 的 2 倍"
       },
       {
         "name": "JvmOpts",
@@ -212,11 +216,11 @@ INFO = {
       },
       {
         "name": "CpuRequest",
-        "desc": "分配的 CPU 核数，对应 K8S 的 request"
+        "desc": "业务容器分配的 CPU 核数，对应 K8S 的 request"
       },
       {
         "name": "MemRequest",
-        "desc": "分配的内存 MiB 数，对应 K8S 的 request"
+        "desc": "业务容器分配的内存 MiB 数，对应 K8S 的 request"
       },
       {
         "name": "DoNotStart",
@@ -233,6 +237,38 @@ INFO = {
       {
         "name": "UpdateIvl",
         "desc": "滚动更新必填，更新间隔"
+      },
+      {
+        "name": "AgentCpuRequest",
+        "desc": "agent 容器分配的 CPU 核数，对应 K8S 的 request"
+      },
+      {
+        "name": "AgentCpuLimit",
+        "desc": "agent 容器最大的 CPU 核数，对应 K8S 的 limit"
+      },
+      {
+        "name": "AgentMemRequest",
+        "desc": "agent 容器分配的内存 MiB 数，对应 K8S 的 request"
+      },
+      {
+        "name": "AgentMemLimit",
+        "desc": "agent 容器最大的内存 MiB 数，对应 K8S 的 limit"
+      },
+      {
+        "name": "IstioCpuRequest",
+        "desc": "istioproxy 容器分配的 CPU 核数，对应 K8S 的 request"
+      },
+      {
+        "name": "IstioCpuLimit",
+        "desc": "istioproxy 容器最大的 CPU 核数，对应 K8S 的 limit"
+      },
+      {
+        "name": "IstioMemRequest",
+        "desc": "istioproxy 容器分配的内存 MiB 数，对应 K8S 的 request"
+      },
+      {
+        "name": "IstioMemLimit",
+        "desc": "istioproxy 容器最大的内存 MiB 数，对应 K8S 的 limit"
       }
     ],
     "desc": "部署容器应用"
@@ -919,6 +955,46 @@ INFO = {
       {
         "name": "MemRequest",
         "desc": "初始分配的内存 MiB 数，对应 K8S request"
+      },
+      {
+        "name": "GroupResourceType",
+        "desc": "部署组资源类型"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网ID"
+      },
+      {
+        "name": "AgentCpuRequest",
+        "desc": "agent 容器分配的 CPU 核数，对应 K8S 的 request"
+      },
+      {
+        "name": "AgentCpuLimit",
+        "desc": "agent 容器最大的 CPU 核数，对应 K8S 的 limit"
+      },
+      {
+        "name": "AgentMemRequest",
+        "desc": "agent 容器分配的内存 MiB 数，对应 K8S 的 request"
+      },
+      {
+        "name": "AgentMemLimit",
+        "desc": "agent 容器最大的内存 MiB 数，对应 K8S 的 limit"
+      },
+      {
+        "name": "IstioCpuRequest",
+        "desc": "istioproxy 容器分配的 CPU 核数，对应 K8S 的 request"
+      },
+      {
+        "name": "IstioCpuLimit",
+        "desc": "istioproxy 容器最大的 CPU 核数，对应 K8S 的 limit"
+      },
+      {
+        "name": "IstioMemRequest",
+        "desc": "istioproxy 容器分配的内存 MiB 数，对应 K8S 的 request"
+      },
+      {
+        "name": "IstioMemLimit",
+        "desc": "istioproxy 容器最大的内存 MiB 数，对应 K8S 的 limit"
       }
     ],
     "desc": "创建容器部署组"

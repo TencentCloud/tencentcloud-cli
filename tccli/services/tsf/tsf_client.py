@@ -96,6 +96,7 @@ def doCreateGroup(argv, arglist):
         "GroupName": argv.get("--GroupName"),
         "ClusterId": argv.get("--ClusterId"),
         "GroupDesc": argv.get("--GroupDesc"),
+        "GroupResourceType": argv.get("--GroupResourceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -323,6 +324,14 @@ def doDeployContainerGroup(argv, arglist):
         "RepoName": argv.get("--RepoName"),
         "UpdateType": Utils.try_to_json(argv, "--UpdateType"),
         "UpdateIvl": Utils.try_to_json(argv, "--UpdateIvl"),
+        "AgentCpuRequest": argv.get("--AgentCpuRequest"),
+        "AgentCpuLimit": argv.get("--AgentCpuLimit"),
+        "AgentMemRequest": argv.get("--AgentMemRequest"),
+        "AgentMemLimit": argv.get("--AgentMemLimit"),
+        "IstioCpuRequest": argv.get("--IstioCpuRequest"),
+        "IstioCpuLimit": argv.get("--IstioCpuLimit"),
+        "IstioMemRequest": argv.get("--IstioMemRequest"),
+        "IstioMemLimit": argv.get("--IstioMemLimit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1708,6 +1717,16 @@ def doCreateContainGroup(argv, arglist):
         "UpdateIvl": Utils.try_to_json(argv, "--UpdateIvl"),
         "CpuRequest": argv.get("--CpuRequest"),
         "MemRequest": argv.get("--MemRequest"),
+        "GroupResourceType": argv.get("--GroupResourceType"),
+        "SubnetId": argv.get("--SubnetId"),
+        "AgentCpuRequest": argv.get("--AgentCpuRequest"),
+        "AgentCpuLimit": argv.get("--AgentCpuLimit"),
+        "AgentMemRequest": argv.get("--AgentMemRequest"),
+        "AgentMemLimit": argv.get("--AgentMemLimit"),
+        "IstioCpuRequest": argv.get("--IstioCpuRequest"),
+        "IstioCpuLimit": argv.get("--IstioCpuLimit"),
+        "IstioMemRequest": argv.get("--IstioMemRequest"),
+        "IstioMemLimit": argv.get("--IstioMemLimit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

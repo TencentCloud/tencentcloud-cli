@@ -118,7 +118,7 @@ INFO = {
         "desc": "物理专线的ID。"
       }
     ],
-    "desc": "删除物理专线。\n只能删除处于状态的物理专线。"
+    "desc": "删除物理专线。\n只能删除处于已连接状态的物理专线。"
   },
   "AcceptDirectConnectTunnel": {
     "params": [

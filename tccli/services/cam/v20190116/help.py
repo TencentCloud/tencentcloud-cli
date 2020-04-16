@@ -1,6 +1,23 @@
 # -*- coding: utf-8 -*-
 DESC = "cam-2019-01-16"
 INFO = {
+  "ListUsersForGroup": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "用户组 ID。"
+      },
+      {
+        "name": "Page",
+        "desc": "页码。默认为1。"
+      },
+      {
+        "name": "Rp",
+        "desc": "每页数量。默认为20。"
+      }
+    ],
+    "desc": "查询用户组关联的用户列表"
+  },
   "AddUser": {
     "params": [
       {
@@ -165,22 +182,22 @@ INFO = {
     ],
     "desc": "本接口（GetPolicy）可用于查询查看策略详情。"
   },
-  "ListAttachedGroupPolicies": {
+  "CreateSAMLProvider": {
     "params": [
       {
-        "name": "TargetGroupId",
-        "desc": "用户组ID"
+        "name": "Name",
+        "desc": "SAML身份提供商名称"
       },
       {
-        "name": "Page",
-        "desc": "页码，默认值是 1，从 1 开始"
+        "name": "Description",
+        "desc": "SAML身份提供商描述"
       },
       {
-        "name": "Rp",
-        "desc": "每页大小，默认值是 20"
+        "name": "SAMLMetadataDocument",
+        "desc": "SAML身份提供商Base64编码的元数据文档"
       }
     ],
-    "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
+    "desc": "创建SAML身份提供商"
   },
   "DeleteSAMLProvider": {
     "params": [
@@ -361,22 +378,22 @@ INFO = {
     ],
     "desc": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。"
   },
-  "CreateSAMLProvider": {
+  "ListAttachedGroupPolicies": {
     "params": [
       {
-        "name": "Name",
-        "desc": "SAML身份提供商名称"
+        "name": "TargetGroupId",
+        "desc": "用户组ID"
       },
       {
-        "name": "Description",
-        "desc": "SAML身份提供商描述"
+        "name": "Page",
+        "desc": "页码，默认值是 1，从 1 开始"
       },
       {
-        "name": "SAMLMetadataDocument",
-        "desc": "SAML身份提供商Base64编码的元数据文档"
+        "name": "Rp",
+        "desc": "每页大小，默认值是 20"
       }
     ],
-    "desc": "创建SAML身份提供商"
+    "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
   },
   "ConsumeCustomMFAToken": {
     "params": [
@@ -672,6 +689,19 @@ INFO = {
     ],
     "desc": "查询用户组列表"
   },
+  "ListCollaborators": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "分页条数，缺省为20"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页起始值，缺省为0"
+      }
+    ],
+    "desc": "获取协作者列表"
+  },
   "AttachRolePolicy": {
     "params": [
       {
@@ -706,22 +736,22 @@ INFO = {
     "params": [],
     "desc": "查询SAML身份提供商列表"
   },
-  "ListUsersForGroup": {
+  "UpdateRoleConsoleLogin": {
     "params": [
       {
-        "name": "GroupId",
-        "desc": "用户组 ID。"
+        "name": "ConsoleLogin",
+        "desc": "是否可登录，可登录：1，不可登录：0"
       },
       {
-        "name": "Page",
-        "desc": "页码。默认为1。"
+        "name": "RoleId",
+        "desc": "角色ID"
       },
       {
-        "name": "Rp",
-        "desc": "每页数量。默认为20。"
+        "name": "RoleName",
+        "desc": "角色名"
       }
     ],
-    "desc": "查询用户组关联的用户列表"
+    "desc": "本接口（UpdateRoleConsoleLogin）用于修改角色是否可登录。"
   },
   "AttachUserPolicy": {
     "params": [

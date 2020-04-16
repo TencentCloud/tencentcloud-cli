@@ -474,6 +474,10 @@ INFO = {
     ],
     "desc": "本接口（ModifyDBSyncMode）用于修改云数据库实例的同步模式。"
   },
+  "DescribeProjects": {
+    "params": [],
+    "desc": "本接口（DescribeProjects）用于查询项目列表"
+  },
   "CloseDBExtranetAccess": {
     "params": [
       {
@@ -567,7 +571,7 @@ INFO = {
     "params": [
       {
         "name": "Zones",
-        "desc": "分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。"
+        "desc": "分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。\n注意当前可售卖的可用区需要通过DescribeDCDBSaleInfo接口拉取。"
       },
       {
         "name": "Period",
