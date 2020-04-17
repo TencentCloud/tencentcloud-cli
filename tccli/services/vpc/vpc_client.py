@@ -3083,6 +3083,40 @@ def doHaVipDisassociateAddressIp(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyVpnGatewayCcnRoutes(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyVpnGatewayCcnRoutes", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpnGatewayId": argv.get("--VpnGatewayId"),
+        "Routes": Utils.try_to_json(argv, "--Routes"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyVpnGatewayCcnRoutesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyVpnGatewayCcnRoutes(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDetachNetworkInterface(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -5685,6 +5719,7 @@ def doCreateVpnGateway(argv, arglist):
         "InstanceChargeType": argv.get("--InstanceChargeType"),
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
         "Zone": argv.get("--Zone"),
+        "Type": argv.get("--Type"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -7188,6 +7223,7 @@ ACTION_MAP = {
     "DeleteCcn": doDeleteCcn,
     "ModifyNetworkAclEntries": doModifyNetworkAclEntries,
     "HaVipDisassociateAddressIp": doHaVipDisassociateAddressIp,
+    "ModifyVpnGatewayCcnRoutes": doModifyVpnGatewayCcnRoutes,
     "DetachNetworkInterface": doDetachNetworkInterface,
     "ModifyServiceTemplateGroupAttribute": doModifyServiceTemplateGroupAttribute,
     "DeleteAssistantCidr": doDeleteAssistantCidr,

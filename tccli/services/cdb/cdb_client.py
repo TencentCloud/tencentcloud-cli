@@ -2782,6 +2782,7 @@ def doRenewDBInstance(argv, arglist):
     param = {
         "InstanceId": argv.get("--InstanceId"),
         "TimeSpan": Utils.try_to_json(argv, "--TimeSpan"),
+        "ModifyPayType": argv.get("--ModifyPayType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -82,6 +82,7 @@ def doCreateDirectConnectTunnel(argv, arglist):
         "Vlan": Utils.try_to_json(argv, "--Vlan"),
         "TencentAddress": argv.get("--TencentAddress"),
         "CustomerAddress": argv.get("--CustomerAddress"),
+        "TencentBackupAddress": argv.get("--TencentBackupAddress"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

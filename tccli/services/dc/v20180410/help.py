@@ -107,6 +107,10 @@ INFO = {
       {
         "name": "CustomerAddress",
         "desc": "CustomerAddress，用户侧互联 IP"
+      },
+      {
+        "name": "TencentBackupAddress",
+        "desc": "TencentBackupAddress，腾讯侧备用互联 IP"
       }
     ],
     "desc": "用于创建专用通道的接口"

@@ -266,6 +266,15 @@ INFO = {
     ],
     "desc": "本接口（ListPolicies）可用于查询策略列表"
   },
+  "DescribeMFADeviceColl": {
+    "params": [
+      {
+        "name": "SubUin",
+        "desc": "子用户Uin"
+      }
+    ],
+    "desc": "查询mfa设备"
+  },
   "DescribeRoleList": {
     "params": [
       {

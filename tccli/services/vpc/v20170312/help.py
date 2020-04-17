@@ -1553,6 +1553,19 @@ INFO = {
     ],
     "desc": "本接口（HaVipDisassociateAddressIp）用于将高可用虚拟IP（HAVIP）已绑定的弹性公网IP（EIP）解除绑定<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口"
   },
+  "ModifyVpnGatewayCcnRoutes": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID"
+      },
+      {
+        "name": "Routes",
+        "desc": "云联网路由（IDC网段）列表"
+      }
+    ],
+    "desc": "本接口（ModifyVpnGatewayCcnRoutes）用于修改VPN网关云联网路由"
+  },
   "DetachNetworkInterface": {
     "params": [
       {
@@ -2653,6 +2666,10 @@ INFO = {
       {
         "name": "Zone",
         "desc": "可用区，如：ap-guangzhou-2。"
+      },
+      {
+        "name": "Type",
+        "desc": "VPN网关类型。值“CCN”云联网类型VPN网关"
       }
     ],
     "desc": "本接口（CreateVpnGateway）用于创建VPN网关。"
