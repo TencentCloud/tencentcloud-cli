@@ -192,6 +192,12 @@ OPTIONS
 
         --timeout
         specify a request timeout
+        
+        --generate-cli-skeleton
+        set True if you want to output a parameter skeleton
+
+        --json-file
+        input parameters via a json file
 
 AVAILABLE PARAMS
 %(params)s

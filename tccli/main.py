@@ -64,3 +64,7 @@ def main():
 
     except Exception as err:
         print("tccli: " + str(err))
+
+
+if __name__ == '__main__':
+    main()
