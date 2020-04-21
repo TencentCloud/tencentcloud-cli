@@ -515,6 +515,43 @@ def doModifyRepositoryInfoPersonal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWebhookTriggerLog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWebhookTriggerLog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RegistryId": argv.get("--RegistryId"),
+        "Namespace": argv.get("--Namespace"),
+        "Id": Utils.try_to_json(argv, "--Id"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWebhookTriggerLogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWebhookTriggerLog(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeImages(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -646,6 +683,42 @@ def doDescribeRepositoryPersonal(argv, arglist):
     model = models.DescribeRepositoryPersonalRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeRepositoryPersonal(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeImageManifests(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeImageManifests", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RegistryId": argv.get("--RegistryId"),
+        "NamespaceName": argv.get("--NamespaceName"),
+        "RepositoryName": argv.get("--RepositoryName"),
+        "ImageVersion": argv.get("--ImageVersion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeImageManifestsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeImageManifests(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -861,6 +934,42 @@ def doDeleteApplicationTriggerPersonal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeWebhookTrigger(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWebhookTrigger", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RegistryId": argv.get("--RegistryId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWebhookTriggerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWebhookTrigger(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteImagePersonal(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -886,6 +995,41 @@ def doDeleteImagePersonal(argv, arglist):
     model = models.DeleteImagePersonalRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteImagePersonal(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyWebhookTrigger(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyWebhookTrigger", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RegistryId": argv.get("--RegistryId"),
+        "Trigger": Utils.try_to_json(argv, "--Trigger"),
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyWebhookTriggerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyWebhookTrigger(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -955,6 +1099,41 @@ def doCreateInstance(argv, arglist):
     model = models.CreateInstanceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateWebhookTrigger(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateWebhookTrigger", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RegistryId": argv.get("--RegistryId"),
+        "Trigger": Utils.try_to_json(argv, "--Trigger"),
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateWebhookTriggerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateWebhookTrigger(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1071,14 +1250,16 @@ def doDescribeUserQuotaPersonal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doValidateRepositoryExistPersonal(argv, arglist):
+def doDeleteWebhookTrigger(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ValidateRepositoryExistPersonal", g_param[OptionsDefine.Version])
+        show_help("DeleteWebhookTrigger", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RepoName": argv.get("--RepoName"),
+        "RegistryId": argv.get("--RegistryId"),
+        "Namespace": argv.get("--Namespace"),
+        "Id": Utils.try_to_json(argv, "--Id"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1092,9 +1273,9 @@ def doValidateRepositoryExistPersonal(argv, arglist):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ValidateRepositoryExistPersonalRequest()
+    model = models.DeleteWebhookTriggerRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ValidateRepositoryExistPersonal(model)
+    rsp = client.DeleteWebhookTrigger(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1651,16 +1832,14 @@ def doDeleteImageLifecyclePersonal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateInstanceToken(argv, arglist):
+def doValidateRepositoryExistPersonal(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateInstanceToken", g_param[OptionsDefine.Version])
+        show_help("ValidateRepositoryExistPersonal", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RegistryId": argv.get("--RegistryId"),
-        "TokenType": argv.get("--TokenType"),
-        "Desc": argv.get("--Desc"),
+        "RepoName": argv.get("--RepoName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1674,9 +1853,9 @@ def doCreateInstanceToken(argv, arglist):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateInstanceTokenRequest()
+    model = models.ValidateRepositoryExistPersonalRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateInstanceToken(model)
+    rsp = client.ValidateRepositoryExistPersonal(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1722,6 +1901,41 @@ def doDescribeApplicationTriggerPersonal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateInstanceToken(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateInstanceToken", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RegistryId": argv.get("--RegistryId"),
+        "TokenType": argv.get("--TokenType"),
+        "Desc": argv.get("--Desc"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInstanceTokenRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateInstanceToken(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20190924": tcr_client_v20190924,
 
@@ -1747,23 +1961,28 @@ ACTION_MAP = {
     "DescribeRepositories": doDescribeRepositories,
     "DescribeInstances": doDescribeInstances,
     "ModifyRepositoryInfoPersonal": doModifyRepositoryInfoPersonal,
+    "DescribeWebhookTriggerLog": doDescribeWebhookTriggerLog,
     "DescribeImages": doDescribeImages,
     "DescribeNamespacePersonal": doDescribeNamespacePersonal,
     "DeleteNamespace": doDeleteNamespace,
     "DescribeRepositoryPersonal": doDescribeRepositoryPersonal,
+    "DescribeImageManifests": doDescribeImageManifests,
     "DescribeInstanceToken": doDescribeInstanceToken,
     "ManageImageLifecycleGlobalPersonal": doManageImageLifecycleGlobalPersonal,
     "DescribeApplicationTriggerLogPersonal": doDescribeApplicationTriggerLogPersonal,
     "DeleteInstanceToken": doDeleteInstanceToken,
     "ModifyUserPasswordPersonal": doModifyUserPasswordPersonal,
     "DeleteApplicationTriggerPersonal": doDeleteApplicationTriggerPersonal,
+    "DescribeWebhookTrigger": doDescribeWebhookTrigger,
     "DeleteImagePersonal": doDeleteImagePersonal,
+    "ModifyWebhookTrigger": doModifyWebhookTrigger,
     "ModifyInstanceToken": doModifyInstanceToken,
     "CreateInstance": doCreateInstance,
+    "CreateWebhookTrigger": doCreateWebhookTrigger,
     "CreateApplicationTriggerPersonal": doCreateApplicationTriggerPersonal,
     "BatchDeleteRepositoryPersonal": doBatchDeleteRepositoryPersonal,
     "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
-    "ValidateRepositoryExistPersonal": doValidateRepositoryExistPersonal,
+    "DeleteWebhookTrigger": doDeleteWebhookTrigger,
     "CreateRepository": doCreateRepository,
     "DescribeFavorRepositoryPersonal": doDescribeFavorRepositoryPersonal,
     "DescribeRepositoryOwnerPersonal": doDescribeRepositoryOwnerPersonal,
@@ -1780,8 +1999,9 @@ ACTION_MAP = {
     "DeleteNamespacePersonal": doDeleteNamespacePersonal,
     "ModifyRepositoryAccessPersonal": doModifyRepositoryAccessPersonal,
     "DeleteImageLifecyclePersonal": doDeleteImageLifecyclePersonal,
-    "CreateInstanceToken": doCreateInstanceToken,
+    "ValidateRepositoryExistPersonal": doValidateRepositoryExistPersonal,
     "DescribeApplicationTriggerPersonal": doDescribeApplicationTriggerPersonal,
+    "CreateInstanceToken": doCreateInstanceToken,
 
 }
 

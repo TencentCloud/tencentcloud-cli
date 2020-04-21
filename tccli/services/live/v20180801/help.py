@@ -300,7 +300,7 @@ INFO = {
         "desc": "混流的特殊控制参数。如无特殊需求，无需填写。"
       }
     ],
-    "desc": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。"
+    "desc": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。\n注意：当前最多支持16路混流。"
   },
   "DescribeHttpStatusInfoList": {
     "params": [
@@ -1585,6 +1585,10 @@ INFO = {
       {
         "name": "IsDelayLive",
         "desc": "是否是慢直播：\n0： 普通直播，\n1 ：慢直播 。\n默认值： 0。"
+      },
+      {
+        "name": "IsMiniProgramLive",
+        "desc": "是否是小程序直播：\n0： 标准直播，\n1 ：小程序直播 。\n默认值： 0。"
       }
     ],
     "desc": "添加域名，一次只能提交一个域名。域名必须已备案。"

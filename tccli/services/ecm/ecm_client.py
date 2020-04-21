@@ -52,6 +52,41 @@ def doResetInstancesMaxBandwidth(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doTerminateInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TerminateInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "TerminateDelay": Utils.try_to_json(argv, "--TerminateDelay"),
+        "TerminateTime": argv.get("--TerminateTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TerminateInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TerminateInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeModule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -185,15 +220,16 @@ def doModifyModuleName(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyInstancesAttribute(argv, arglist):
+def doDisassociateAddress(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyInstancesAttribute", g_param[OptionsDefine.Version])
+        show_help("DisassociateAddress", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
-        "InstanceName": argv.get("--InstanceName"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressId": argv.get("--AddressId"),
+        "ReallocateNormalPublicIp": Utils.try_to_json(argv, "--ReallocateNormalPublicIp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -207,9 +243,294 @@ def doModifyInstancesAttribute(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyInstancesAttributeRequest()
+    model = models.DisassociateAddressRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyInstancesAttribute(model)
+    rsp = client.DisassociateAddress(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAttachNetworkInterface(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AttachNetworkInterface", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "InstanceId": argv.get("--InstanceId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AttachNetworkInterfaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AttachNetworkInterface(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReleaseAddresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ReleaseAddresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressIds": Utils.try_to_json(argv, "--AddressIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReleaseAddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ReleaseAddresses(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateVpc(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateVpc", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcName": argv.get("--VpcName"),
+        "CidrBlock": argv.get("--CidrBlock"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "EnableMulticast": argv.get("--EnableMulticast"),
+        "DnsServers": Utils.try_to_json(argv, "--DnsServers"),
+        "DomainName": argv.get("--DomainName"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateVpcRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateVpc(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAddressQuota(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAddressQuota", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAddressQuotaRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAddressQuota(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteVpc(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteVpc", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteVpcRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteVpc(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSubnets(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSubnets", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": argv.get("--Offset"),
+        "Limit": argv.get("--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSubnetsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSubnets(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyAddressAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyAddressAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressId": argv.get("--AddressId"),
+        "AddressName": argv.get("--AddressName"),
+        "EipDirectConnection": argv.get("--EipDirectConnection"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAddressAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyAddressAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAllocateAddresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AllocateAddresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressCount": Utils.try_to_json(argv, "--AddressCount"),
+        "InternetServiceProvider": argv.get("--InternetServiceProvider"),
+        "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AllocateAddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AllocateAddresses(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -286,16 +607,24 @@ def doDescribeInstanceTypeConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTerminateInstances(argv, arglist):
+def doRunInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TerminateInstances", g_param[OptionsDefine.Version])
+        show_help("RunInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
-        "TerminateDelay": Utils.try_to_json(argv, "--TerminateDelay"),
-        "TerminateTime": argv.get("--TerminateTime"),
+        "ZoneInstanceCountISPSet": Utils.try_to_json(argv, "--ZoneInstanceCountISPSet"),
+        "ModuleId": argv.get("--ModuleId"),
+        "Password": argv.get("--Password"),
+        "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
+        "ImageId": argv.get("--ImageId"),
+        "InstanceName": argv.get("--InstanceName"),
+        "HostName": argv.get("--HostName"),
+        "ClientToken": argv.get("--ClientToken"),
+        "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
+        "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
+        "UserData": argv.get("--UserData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -309,9 +638,190 @@ def doTerminateInstances(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateInstancesRequest()
+    model = models.RunInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TerminateInstances(model)
+    rsp = client.RunInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doImportImage(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ImportImage", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageId": argv.get("--ImageId"),
+        "ImageDescription": argv.get("--ImageDescription"),
+        "SourceRegion": argv.get("--SourceRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ImportImageRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ImportImage(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAddresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAddresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressIds": Utils.try_to_json(argv, "--AddressIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAddresses(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAssociateAddress(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AssociateAddress", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressId": argv.get("--AddressId"),
+        "InstanceId": argv.get("--InstanceId"),
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "PrivateIpAddress": argv.get("--PrivateIpAddress"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssociateAddressRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AssociateAddress(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskResult(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskResult", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "TaskId": argv.get("--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskResultRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskResult(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateModule(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateModule", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ModuleName": argv.get("--ModuleName"),
+        "DefaultBandWidth": Utils.try_to_json(argv, "--DefaultBandWidth"),
+        "DefaultImageId": argv.get("--DefaultImageId"),
+        "InstanceType": argv.get("--InstanceType"),
+        "DefaultSystemDiskSize": Utils.try_to_json(argv, "--DefaultSystemDiskSize"),
+        "DefaultDataDiskSize": Utils.try_to_json(argv, "--DefaultDataDiskSize"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateModuleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateModule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -355,19 +865,15 @@ def doModifyModuleImage(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateModule(argv, arglist):
+def doDeleteSubnet(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateModule", g_param[OptionsDefine.Version])
+        show_help("DeleteSubnet", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ModuleName": argv.get("--ModuleName"),
-        "DefaultBandWidth": Utils.try_to_json(argv, "--DefaultBandWidth"),
-        "DefaultImageId": argv.get("--DefaultImageId"),
-        "InstanceType": argv.get("--InstanceType"),
-        "DefaultSystemDiskSize": Utils.try_to_json(argv, "--DefaultSystemDiskSize"),
-        "DefaultDataDiskSize": Utils.try_to_json(argv, "--DefaultDataDiskSize"),
+        "SubnetId": argv.get("--SubnetId"),
+        "EcmRegion": argv.get("--EcmRegion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -381,9 +887,118 @@ def doCreateModule(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateModuleRequest()
+    model = models.DeleteSubnetRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateModule(model)
+    rsp = client.DeleteSubnet(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifySubnetAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySubnetAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SubnetId": argv.get("--SubnetId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "SubnetName": argv.get("--SubnetName"),
+        "EnableBroadcast": argv.get("--EnableBroadcast"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySubnetAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySubnetAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeNetworkInterfaces(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeNetworkInterfaces", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "NetworkInterfaceIds": Utils.try_to_json(argv, "--NetworkInterfaceIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeNetworkInterfacesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeNetworkInterfaces(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doMigrateNetworkInterface(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("MigrateNetworkInterface", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "SourceInstanceId": argv.get("--SourceInstanceId"),
+        "DestinationInstanceId": argv.get("--DestinationInstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.MigrateNetworkInterfaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.MigrateNetworkInterface(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -451,6 +1066,47 @@ def doDescribeInstancesDeniedActions(argv, arglist):
     model = models.DescribeInstancesDeniedActionsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeInstancesDeniedActions(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateNetworkInterface(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateNetworkInterface", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "NetworkInterfaceName": argv.get("--NetworkInterfaceName"),
+        "SubnetId": argv.get("--SubnetId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "NetworkInterfaceDescription": argv.get("--NetworkInterfaceDescription"),
+        "SecondaryPrivateIpAddressCount": Utils.try_to_json(argv, "--SecondaryPrivateIpAddressCount"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "PrivateIpAddresses": Utils.try_to_json(argv, "--PrivateIpAddresses"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateNetworkInterfaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateNetworkInterface(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -560,16 +1216,16 @@ def doDescribeModuleDetail(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doImportImage(argv, arglist):
+def doDetachNetworkInterface(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ImportImage", g_param[OptionsDefine.Version])
+        show_help("DetachNetworkInterface", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageId": argv.get("--ImageId"),
-        "ImageDescription": argv.get("--ImageDescription"),
-        "SourceRegion": argv.get("--SourceRegion"),
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "InstanceId": argv.get("--InstanceId"),
+        "EcmRegion": argv.get("--EcmRegion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -583,9 +1239,45 @@ def doImportImage(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImportImageRequest()
+    model = models.DetachNetworkInterfaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ImportImage(model)
+    rsp = client.DetachNetworkInterface(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAssignPrivateIpAddresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AssignPrivateIpAddresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "PrivateIpAddresses": Utils.try_to_json(argv, "--PrivateIpAddresses"),
+        "SecondaryPrivateIpAddressCount": Utils.try_to_json(argv, "--SecondaryPrivateIpAddressCount"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssignPrivateIpAddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AssignPrivateIpAddresses(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -631,6 +1323,75 @@ def doResetInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyVpcAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyVpcAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "VpcName": argv.get("--VpcName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyVpcAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyVpcAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyInstancesAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyInstancesAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "InstanceName": argv.get("--InstanceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyInstancesAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyInstancesAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePeakBaseOverview(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -656,6 +1417,40 @@ def doDescribePeakBaseOverview(argv, arglist):
     model = models.DescribePeakBaseOverviewRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePeakBaseOverview(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteNetworkInterface(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteNetworkInterface", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteNetworkInterfaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteNetworkInterface(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -733,6 +1528,42 @@ def doRebootInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doMigratePrivateIpAddress(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("MigratePrivateIpAddress", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "SourceNetworkInterfaceId": argv.get("--SourceNetworkInterfaceId"),
+        "DestinationNetworkInterfaceId": argv.get("--DestinationNetworkInterfaceId"),
+        "PrivateIpAddress": argv.get("--PrivateIpAddress"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.MigratePrivateIpAddressRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.MigratePrivateIpAddress(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeImage(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -801,6 +1632,114 @@ def doDeleteImage(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyAddressesBandwidth(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyAddressesBandwidth", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressIds": Utils.try_to_json(argv, "--AddressIds"),
+        "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyAddressesBandwidthRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyAddressesBandwidth(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRemovePrivateIpAddresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RemovePrivateIpAddresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "PrivateIpAddresses": Utils.try_to_json(argv, "--PrivateIpAddresses"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RemovePrivateIpAddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RemovePrivateIpAddresses(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateSubnet(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateSubnet", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetName": argv.get("--SubnetName"),
+        "CidrBlock": argv.get("--CidrBlock"),
+        "Zone": argv.get("--Zone"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateSubnetRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateSubnet(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20190719": ecm_client_v20190719,
 
@@ -813,28 +1752,54 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "ResetInstancesMaxBandwidth": doResetInstancesMaxBandwidth,
+    "TerminateInstances": doTerminateInstances,
     "DescribeModule": doDescribeModule,
     "DescribeConfig": doDescribeConfig,
     "DescribeBaseOverview": doDescribeBaseOverview,
     "ModifyModuleName": doModifyModuleName,
-    "ModifyInstancesAttribute": doModifyInstancesAttribute,
+    "DisassociateAddress": doDisassociateAddress,
+    "AttachNetworkInterface": doAttachNetworkInterface,
+    "ReleaseAddresses": doReleaseAddresses,
+    "CreateVpc": doCreateVpc,
+    "DescribeAddressQuota": doDescribeAddressQuota,
+    "DeleteVpc": doDeleteVpc,
+    "DescribeSubnets": doDescribeSubnets,
+    "ModifyAddressAttribute": doModifyAddressAttribute,
+    "AllocateAddresses": doAllocateAddresses,
     "DescribeInstances": doDescribeInstances,
     "DescribeInstanceTypeConfig": doDescribeInstanceTypeConfig,
-    "TerminateInstances": doTerminateInstances,
-    "ModifyModuleImage": doModifyModuleImage,
+    "RunInstances": doRunInstances,
+    "ImportImage": doImportImage,
+    "DescribeAddresses": doDescribeAddresses,
+    "AssociateAddress": doAssociateAddress,
+    "DescribeTaskResult": doDescribeTaskResult,
     "CreateModule": doCreateModule,
+    "ModifyModuleImage": doModifyModuleImage,
+    "DeleteSubnet": doDeleteSubnet,
+    "ModifySubnetAttribute": doModifySubnetAttribute,
+    "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
+    "MigrateNetworkInterface": doMigrateNetworkInterface,
     "ModifyModuleNetwork": doModifyModuleNetwork,
     "DescribeInstancesDeniedActions": doDescribeInstancesDeniedActions,
+    "CreateNetworkInterface": doCreateNetworkInterface,
     "DescribePeakNetworkOverview": doDescribePeakNetworkOverview,
     "DescribeNode": doDescribeNode,
     "DescribeModuleDetail": doDescribeModuleDetail,
-    "ImportImage": doImportImage,
+    "DetachNetworkInterface": doDetachNetworkInterface,
+    "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
     "ResetInstances": doResetInstances,
+    "ModifyVpcAttribute": doModifyVpcAttribute,
+    "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "DescribePeakBaseOverview": doDescribePeakBaseOverview,
+    "DeleteNetworkInterface": doDeleteNetworkInterface,
     "DeleteModule": doDeleteModule,
     "RebootInstances": doRebootInstances,
+    "MigratePrivateIpAddress": doMigratePrivateIpAddress,
     "DescribeImage": doDescribeImage,
     "DeleteImage": doDeleteImage,
+    "ModifyAddressesBandwidth": doModifyAddressesBandwidth,
+    "RemovePrivateIpAddresses": doRemovePrivateIpAddresses,
+    "CreateSubnet": doCreateSubnet,
 
 }
 

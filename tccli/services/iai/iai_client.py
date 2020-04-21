@@ -68,6 +68,7 @@ def doSearchFacesReturnsByGroup(argv, arglist):
         "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
         "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -244,6 +245,7 @@ def doCreateFace(argv, arglist):
         "Urls": Utils.try_to_json(argv, "--Urls"),
         "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -348,6 +350,7 @@ def doAnalyzeFace(argv, arglist):
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
         "FaceModelVersion": argv.get("--FaceModelVersion"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -424,6 +427,7 @@ def doSearchFaces(argv, arglist):
         "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
         "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -668,6 +672,7 @@ def doCreatePerson(argv, arglist):
         "Url": argv.get("--Url"),
         "UniquePersonControl": Utils.try_to_json(argv, "--UniquePersonControl"),
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -740,6 +745,7 @@ def doDetectFace(argv, arglist):
         "NeedFaceAttributes": Utils.try_to_json(argv, "--NeedFaceAttributes"),
         "NeedQualityDetection": Utils.try_to_json(argv, "--NeedQualityDetection"),
         "FaceModelVersion": argv.get("--FaceModelVersion"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -811,6 +817,7 @@ def doVerifyPerson(argv, arglist):
         "Url": argv.get("--Url"),
         "PersonId": argv.get("--PersonId"),
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -882,6 +889,7 @@ def doVerifyFace(argv, arglist):
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -923,6 +931,7 @@ def doSearchPersons(argv, arglist):
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
         "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
         "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -961,6 +970,7 @@ def doCompareFace(argv, arglist):
         "UrlB": argv.get("--UrlB"),
         "FaceModelVersion": argv.get("--FaceModelVersion"),
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1002,6 +1012,7 @@ def doSearchPersonsReturnsByGroup(argv, arglist):
         "QualityControl": Utils.try_to_json(argv, "--QualityControl"),
         "FaceMatchThreshold": Utils.try_to_json(argv, "--FaceMatchThreshold"),
         "NeedPersonInfo": Utils.try_to_json(argv, "--NeedPersonInfo"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

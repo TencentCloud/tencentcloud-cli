@@ -308,6 +308,10 @@ INFO = {
       {
         "name": "Bandwidth",
         "desc": "专用通道带宽值，单位为M。"
+      },
+      {
+        "name": "TencentBackupAddress",
+        "desc": "腾讯侧备用互联IP"
       }
     ],
     "desc": "修改专用通道属性"

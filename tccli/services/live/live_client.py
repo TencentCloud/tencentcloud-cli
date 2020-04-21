@@ -2729,6 +2729,7 @@ def doAddLiveDomain(argv, arglist):
         "DomainType": Utils.try_to_json(argv, "--DomainType"),
         "PlayType": Utils.try_to_json(argv, "--PlayType"),
         "IsDelayLive": Utils.try_to_json(argv, "--IsDelayLive"),
+        "IsMiniProgramLive": Utils.try_to_json(argv, "--IsMiniProgramLive"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

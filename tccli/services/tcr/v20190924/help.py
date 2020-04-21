@@ -246,6 +246,15 @@ INFO = {
     ],
     "desc": "用于在个人版镜像仓库中更新容器镜像描述"
   },
+  "DescribeRepositoryPersonal": {
+    "params": [
+      {
+        "name": "RepoName",
+        "desc": "仓库名字"
+      }
+    ],
+    "desc": "查询个人版仓库信息"
+  },
   "DescribeNamespacePersonal": {
     "params": [
       {
@@ -272,14 +281,51 @@ INFO = {
     ],
     "desc": "用于个人版镜像仓库中删除"
   },
-  "DescribeRepositoryPersonal": {
+  "DescribeWebhookTriggerLog": {
     "params": [
       {
-        "name": "RepoName",
-        "desc": "仓库名字"
+        "name": "RegistryId",
+        "desc": "实例 Id"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间"
+      },
+      {
+        "name": "Id",
+        "desc": "触发器 Id"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页单页数量"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量"
       }
     ],
-    "desc": "查询个人版仓库信息"
+    "desc": "获取触发器日志"
+  },
+  "DescribeImageManifests": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间名称"
+      },
+      {
+        "name": "RepositoryName",
+        "desc": "镜像仓库名称"
+      },
+      {
+        "name": "ImageVersion",
+        "desc": "镜像版本"
+      }
+    ],
+    "desc": "查询容器镜像Manifest信息"
   },
   "DescribeInstanceToken": {
     "params": [
@@ -367,6 +413,27 @@ INFO = {
     ],
     "desc": "用于删除应用更新触发器"
   },
+  "DescribeWebhookTrigger": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页单页数量"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间"
+      }
+    ],
+    "desc": "查询触发器"
+  },
   "DeleteImagePersonal": {
     "params": [
       {
@@ -379,6 +446,23 @@ INFO = {
       }
     ],
     "desc": "用于在个人版中删除tag"
+  },
+  "ModifyWebhookTrigger": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Trigger",
+        "desc": "触发器参数"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间"
+      }
+    ],
+    "desc": "更新触发器"
   },
   "ModifyInstanceToken": {
     "params": [
@@ -422,6 +506,23 @@ INFO = {
       }
     ],
     "desc": "用于在个人版镜像仓库中批量删除Tag"
+  },
+  "CreateWebhookTrigger": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例 Id"
+      },
+      {
+        "name": "Trigger",
+        "desc": "触发器参数"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间"
+      }
+    ],
+    "desc": "创建触发器"
   },
   "CreateApplicationTriggerPersonal": {
     "params": [
@@ -476,14 +577,22 @@ INFO = {
     "params": [],
     "desc": "查询个人用户配额"
   },
-  "ValidateRepositoryExistPersonal": {
+  "DeleteWebhookTrigger": {
     "params": [
       {
-        "name": "RepoName",
-        "desc": "仓库名称"
+        "name": "RegistryId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间"
+      },
+      {
+        "name": "Id",
+        "desc": "触发器 Id"
       }
     ],
-    "desc": "用于判断个人版仓库是否存在"
+    "desc": "删除触发器"
   },
   "ModifyApplicationTriggerPersonal": {
     "params": [
@@ -749,6 +858,32 @@ INFO = {
     ],
     "desc": "用于在个人版镜像仓库中删除仓库Tag自动清理策略"
   },
+  "ValidateRepositoryExistPersonal": {
+    "params": [
+      {
+        "name": "RepoName",
+        "desc": "仓库名称"
+      }
+    ],
+    "desc": "用于判断个人版仓库是否存在"
+  },
+  "CreateInstanceToken": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "TokenType",
+        "desc": "访问凭证类型，longterm 为长期访问凭证，temp 为临时访问凭证，默认是临时访问凭证，有效期1小时"
+      },
+      {
+        "name": "Desc",
+        "desc": "长期访问凭证描述信息"
+      }
+    ],
+    "desc": "创建实例的临时或长期访问凭证"
+  },
   "DescribeApplicationTriggerPersonal": {
     "params": [
       {
@@ -769,22 +904,5 @@ INFO = {
       }
     ],
     "desc": "用于查询应用更新触发器"
-  },
-  "CreateInstanceToken": {
-    "params": [
-      {
-        "name": "RegistryId",
-        "desc": "实例Id"
-      },
-      {
-        "name": "TokenType",
-        "desc": "访问凭证类型，longterm 为长期访问凭证，temp 为临时访问凭证，默认是临时访问凭证，有效期1小时"
-      },
-      {
-        "name": "Desc",
-        "desc": "长期访问凭证描述信息"
-      }
-    ],
-    "desc": "创建实例的临时或长期访问凭证"
   }
 }

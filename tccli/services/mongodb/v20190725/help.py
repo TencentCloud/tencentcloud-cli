@@ -1,6 +1,35 @@
 # -*- coding: utf-8 -*-
 DESC = "mongodb-2019-07-25"
 INFO = {
+  "DescribeSlowLogPatterns": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      },
+      {
+        "name": "StartTime",
+        "desc": "慢日志起始时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "慢日志终止时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-02 12:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。"
+      },
+      {
+        "name": "SlowMS",
+        "desc": "慢日志执行时间阈值，返回执行时间超过该阈值的慢日志，单位为毫秒(ms)，最小为100毫秒。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，最小值为0，最大值为10000，默认值为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小，最小值为1，最大值为100，默认值为20。"
+      }
+    ],
+    "desc": "本接口（DescribeSlowLogPatterns）用于获取数据库实例慢日志的统计信息。"
+  },
   "AssignProject": {
     "params": [
       {
@@ -14,26 +43,51 @@ INFO = {
     ],
     "desc": "本接口(AssignProject)用于指定云数据库实例的所属项目。\n"
   },
-  "ModifyDBInstanceSpec": {
+  "DescribeSlowLogs": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
       },
       {
-        "name": "Memory",
-        "desc": "实例配置变更后的内存大小，单位：GB。内存和磁盘必须同时升配或同时降配"
+        "name": "StartTime",
+        "desc": "慢日志起始时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。"
       },
       {
-        "name": "Volume",
-        "desc": "实例配置变更后的硬盘大小，单位：GB。内存和磁盘必须同时升配或同时降配。降配时，新的磁盘参数必须大于已用磁盘容量的1.2倍"
+        "name": "EndTime",
+        "desc": "慢日志终止时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-02 12:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。"
       },
       {
-        "name": "OplogSize",
-        "desc": "实例配置变更后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%"
+        "name": "SlowMS",
+        "desc": "慢日志执行时间阈值，返回执行时间超过该阈值的慢日志，单位为毫秒(ms)，最小为100毫秒。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，最小值为0，最大值为10000，默认值为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小，最小值为1，最大值为100，默认值为20。"
       }
     ],
-    "desc": "本接口(ModifyDBInstanceSpec)用于调整MongoDB云数据库实例配置。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。"
+    "desc": "本接口（DescribeSlowLogs）用于获取云数据库慢日志信息。接口只支持查询最近7天内慢日志。"
+  },
+  "DescribeClientConnections": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      },
+      {
+        "name": "Limit",
+        "desc": "查询返回记录条数，默认为10000。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认值为0。"
+      }
+    ],
+    "desc": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。"
   },
   "OfflineIsolatedDBInstance": {
     "params": [
@@ -113,14 +167,26 @@ INFO = {
     ],
     "desc": "本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。"
   },
-  "DescribeClientConnections": {
+  "ModifyDBInstanceSpec": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      },
+      {
+        "name": "Memory",
+        "desc": "实例配置变更后的内存大小，单位：GB。内存和磁盘必须同时升配或同时降配"
+      },
+      {
+        "name": "Volume",
+        "desc": "实例配置变更后的硬盘大小，单位：GB。内存和磁盘必须同时升配或同时降配。降配时，新的磁盘参数必须大于已用磁盘容量的1.2倍"
+      },
+      {
+        "name": "OplogSize",
+        "desc": "实例配置变更后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%"
       }
     ],
-    "desc": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。目前只支持3.2版本的MongoDB实例。"
+    "desc": "本接口(ModifyDBInstanceSpec)用于调整MongoDB云数据库实例配置。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。"
   },
   "CreateDBInstanceHour": {
     "params": [
@@ -195,6 +261,19 @@ INFO = {
       }
     ],
     "desc": "本接口(RenameInstance)用于修改云数据库实例的名称。"
+  },
+  "RenewDBInstances": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "一个或多个待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。每次请求批量实例的上限为100。"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。"
+      }
+    ],
+    "desc": "本接口(RenewDBInstance)用于续费云数据库实例，仅支持付费模式为包年包月的实例。按量计费实例不需要续费。"
   },
   "DescribeSpecInfo": {
     "params": [

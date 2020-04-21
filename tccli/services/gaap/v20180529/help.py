@@ -605,6 +605,10 @@ INFO = {
       {
         "name": "ClonedProxyId",
         "desc": "被复制的通道ID。只有处于运行中状态的通道可以被复制。\n当设置该参数时，表示复制该通道。"
+      },
+      {
+        "name": "BillingType",
+        "desc": "计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）"
       }
     ],
     "desc": "本接口（CreateProxy）用于创建/复制一个指定配置的加速通道。当复制通道时，需要设置新通道的基本配置参数，并设置ClonedProxyId来指定被复制的通道。"
@@ -1069,6 +1073,10 @@ INFO = {
       {
         "name": "ProxyId",
         "desc": "（新参数）通道的实例ID。"
+      },
+      {
+        "name": "BillingType",
+        "desc": "计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）"
       }
     ],
     "desc": "本接口（ModifyProxyConfiguration）用于修改通道的配置。根据当前业务的容量需求，扩容或缩容相关通道的配置。仅支持Scalarable为1的通道,Scalarable可通过接口DescribeProxies获取。"
@@ -1555,6 +1563,10 @@ INFO = {
       {
         "name": "Concurrent",
         "desc": "（新参数）通道并发量上限，表示同时在线的连接数，单位：万。"
+      },
+      {
+        "name": "BillingType",
+        "desc": "计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）"
       }
     ],
     "desc": "本接口（InquiryPriceCreateProxy）用于创建加速通道询价。"

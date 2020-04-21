@@ -1912,6 +1912,7 @@ def doModifyProxyConfiguration(argv, arglist):
         "Concurrent": Utils.try_to_json(argv, "--Concurrent"),
         "ClientToken": argv.get("--ClientToken"),
         "ProxyId": argv.get("--ProxyId"),
+        "BillingType": Utils.try_to_json(argv, "--BillingType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2730,6 +2731,7 @@ def doCreateProxy(argv, arglist):
         "GroupId": argv.get("--GroupId"),
         "TagSet": Utils.try_to_json(argv, "--TagSet"),
         "ClonedProxyId": argv.get("--ClonedProxyId"),
+        "BillingType": Utils.try_to_json(argv, "--BillingType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2905,6 +2907,7 @@ def doInquiryPriceCreateProxy(argv, arglist):
         "Concurrency": Utils.try_to_json(argv, "--Concurrency"),
         "RealServerRegion": argv.get("--RealServerRegion"),
         "Concurrent": Utils.try_to_json(argv, "--Concurrent"),
+        "BillingType": Utils.try_to_json(argv, "--BillingType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

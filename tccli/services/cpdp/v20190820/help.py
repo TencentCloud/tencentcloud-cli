@@ -1,6 +1,51 @@
 # -*- coding: utf-8 -*-
 DESC = "cpdp-2019-08-20"
 INFO = {
+  "ApplyPayerInfo": {
+    "params": [
+      {
+        "name": "PayerId",
+        "desc": "付款人ID"
+      },
+      {
+        "name": "PayerType",
+        "desc": "付款人类型 (个人: INDIVIDUAL, 企业: CORPORATE)"
+      },
+      {
+        "name": "PayerName",
+        "desc": "付款人姓名"
+      },
+      {
+        "name": "PayerIdType",
+        "desc": "付款人证件类型 (身份证: ID_CARD, 统一社会信用代码: UNIFIED_CREDIT_CODE)"
+      },
+      {
+        "name": "PayerIdNo",
+        "desc": "付款人证件号"
+      },
+      {
+        "name": "PayerCountryCode",
+        "desc": "付款人常驻国家或地区编码 (见常见问题-国家/地区编码)"
+      },
+      {
+        "name": "PayerContactName",
+        "desc": "付款人联系人名称"
+      },
+      {
+        "name": "PayerContactNumber",
+        "desc": "付款人联系电话 (PayerType=CORPORATE 必填)"
+      },
+      {
+        "name": "PayerEmailAddress",
+        "desc": "付款人联系邮箱"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "跨境-付款人申请"
+  },
   "BindAcct": {
     "params": [
       {
@@ -226,96 +271,18 @@ INFO = {
     ],
     "desc": "会员绑定信息查询。查询标志为“单个会员”的情况下，返回该会员的有效的绑定账户信息。\n查询标志为“全部会员”的情况下，返回市场下的全部的有效的绑定账户信息。查询标志为“单个会员的证件信息”的情况下，返回市场下的指定的会员的留存在电商见证宝系统的证件信息。"
   },
-  "ReviseMbrProperty": {
+  "QueryMerchantBalance": {
     "params": [
       {
-        "name": "MrchCode",
-        "desc": "String(22)，商户号（签约客户号）"
-      },
-      {
-        "name": "SubAcctNo",
-        "desc": "STRING(50)，见证子账户的账号"
-      },
-      {
-        "name": "MemberProperty",
-        "desc": "STRING(10)，会员属性（00-普通子账号; SH-商户子账户。暂时只支持00-普通子账号改为SH-商户子账户）"
-      },
-      {
-        "name": "ReservedMsg",
-        "desc": "STRING(1027)，保留域"
-      }
-    ],
-    "desc": "修改会员属性-普通商户子账户。修改会员的会员属性。"
-  },
-  "QueryOrder": {
-    "params": [
-      {
-        "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主 MidasAppId"
-      },
-      {
-        "name": "UserId",
-        "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
-      },
-      {
-        "name": "Type",
-        "desc": "type=by_order根据订单号 查订单；\ntype=by_user根据用户id 查订单 。"
-      },
-      {
-        "name": "MidasSecretId",
-        "desc": "聚鑫分配的安全ID"
-      },
-      {
-        "name": "MidasSignature",
-        "desc": "按照聚鑫安全密钥计算的签名"
-      },
-      {
-        "name": "Count",
-        "desc": "每页返回的记录数。根据用户 号码查询订单列表时需要传。 用于分页展示。Type=by_order时必填"
-      },
-      {
-        "name": "Offset",
-        "desc": "记录数偏移量，默认从0开 始。根据用户号码查询订单列 表时需要传。用于分页展示。Type=by_order时必填"
-      },
-      {
-        "name": "StartTime",
-        "desc": "查询开始时间，Unix时间戳。Type=by_order时必填"
-      },
-      {
-        "name": "EndTime",
-        "desc": "查询结束时间，Unix时间戳。Type=by_order时必填"
-      },
-      {
-        "name": "OutTradeNo",
-        "desc": "业务订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
-      },
-      {
-        "name": "TransactionId",
-        "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
-      }
-    ],
-    "desc": "根据订单号，或者用户Id，查询支付订单状态 "
-  },
-  "QueryMerchantInfoForManagement": {
-    "params": [
-      {
-        "name": "InvoicePlatformId",
-        "desc": "开票平台ID"
-      },
-      {
-        "name": "Offset",
-        "desc": "页码"
-      },
-      {
-        "name": "Limit",
-        "desc": "页大小"
+        "name": "Currency",
+        "desc": "余额币种"
       },
       {
         "name": "Profile",
-        "desc": "接入环境。沙箱环境填sandbox。"
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "智慧零售-查询管理端商户"
+    "desc": "跨境-对接方账户余额查询"
   },
   "CreateCustAcctId": {
     "params": [
@@ -377,6 +344,98 @@ INFO = {
       }
     ],
     "desc": "会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。\n平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。"
+  },
+  "CloseOrder": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "UserId",
+        "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "按照聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "OutTradeNo",
+        "desc": "业务订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+      },
+      {
+        "name": "TransactionId",
+        "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+      }
+    ],
+    "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
+  },
+  "QueryAcctInfo": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫平台分配的支付MidasAppId"
+      },
+      {
+        "name": "SubMchId",
+        "desc": "业务平台的子商户Id，唯一"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "由平台客服提供的计费密钥Id"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      }
+    ],
+    "desc": "聚鑫-开户信息查询"
+  },
+  "QueryMerchantInfoForManagement": {
+    "params": [
+      {
+        "name": "InvoicePlatformId",
+        "desc": "开票平台ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "页码"
+      },
+      {
+        "name": "Limit",
+        "desc": "页大小"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox。"
+      }
+    ],
+    "desc": "智慧零售-查询管理端商户"
+  },
+  "ReviseMbrProperty": {
+    "params": [
+      {
+        "name": "MrchCode",
+        "desc": "String(22)，商户号（签约客户号）"
+      },
+      {
+        "name": "SubAcctNo",
+        "desc": "STRING(50)，见证子账户的账号"
+      },
+      {
+        "name": "MemberProperty",
+        "desc": "STRING(10)，会员属性（00-普通子账号; SH-商户子账户。暂时只支持00-普通子账号改为SH-商户子账户）"
+      },
+      {
+        "name": "ReservedMsg",
+        "desc": "STRING(1027)，保留域"
+      }
+    ],
+    "desc": "修改会员属性-普通商户子账户。修改会员的会员属性。"
   },
   "QueryBalance": {
     "params": [
@@ -755,15 +814,19 @@ INFO = {
     ],
     "desc": "聚鑫-查询子账户绑定银行卡"
   },
-  "CloseOrder": {
+  "QueryOrder": {
     "params": [
       {
         "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
+        "desc": "聚鑫分配的支付主 MidasAppId"
       },
       {
         "name": "UserId",
         "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
+      },
+      {
+        "name": "Type",
+        "desc": "type=by_order根据订单号 查订单；\ntype=by_user根据用户id 查订单 。"
       },
       {
         "name": "MidasSecretId",
@@ -774,15 +837,116 @@ INFO = {
         "desc": "按照聚鑫安全密钥计算的签名"
       },
       {
+        "name": "Count",
+        "desc": "每页返回的记录数。根据用户 号码查询订单列表时需要传。 用于分页展示。Type=by_order时必填"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录数偏移量，默认从0开 始。根据用户号码查询订单列 表时需要传。用于分页展示。Type=by_order时必填"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间，Unix时间戳。Type=by_order时必填"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，Unix时间戳。Type=by_order时必填"
+      },
+      {
         "name": "OutTradeNo",
-        "desc": "业务订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+        "desc": "业务订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
       },
       {
         "name": "TransactionId",
-        "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+        "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
       }
     ],
-    "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
+    "desc": "根据订单号，或者用户Id，查询支付订单状态 "
+  },
+  "ApplyOutwardOrder": {
+    "params": [
+      {
+        "name": "TransactionId",
+        "desc": "对接方汇出指令编号"
+      },
+      {
+        "name": "PricingCurrency",
+        "desc": "定价币种"
+      },
+      {
+        "name": "SourceCurrency",
+        "desc": "源币种"
+      },
+      {
+        "name": "TargetCurrency",
+        "desc": "目的币种"
+      },
+      {
+        "name": "PayeeType",
+        "desc": "收款人类型"
+      },
+      {
+        "name": "PayeeAccount",
+        "desc": "收款人账号"
+      },
+      {
+        "name": "SourceAmount",
+        "desc": "源币种金额"
+      },
+      {
+        "name": "TargetAmount",
+        "desc": "目的金额"
+      },
+      {
+        "name": "PayeeName",
+        "desc": "收款人姓名"
+      },
+      {
+        "name": "PayeeAddress",
+        "desc": "收款人地址"
+      },
+      {
+        "name": "PayeeBankAccountType",
+        "desc": "收款人银行账号类型"
+      },
+      {
+        "name": "PayeeCountryCode",
+        "desc": "收款人国家或地区编码"
+      },
+      {
+        "name": "PayeeBankName",
+        "desc": "收款人开户银行名称"
+      },
+      {
+        "name": "PayeeBankAddress",
+        "desc": "收款人开户银行地址"
+      },
+      {
+        "name": "PayeeBankDistrict",
+        "desc": "收款人开户银行所在国家或地区编码"
+      },
+      {
+        "name": "PayeeBankSwiftCode",
+        "desc": "收款银行SwiftCode"
+      },
+      {
+        "name": "PayeeBankType",
+        "desc": "收款银行国际编码类型"
+      },
+      {
+        "name": "PayeeBankCode",
+        "desc": "收款银行国际编码"
+      },
+      {
+        "name": "ReferenceForBeneficiary",
+        "desc": "收款人附言"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "跨境-汇出指令申请"
   },
   "CreateInvoice": {
     "params": [
@@ -913,55 +1077,31 @@ INFO = {
     ],
     "desc": "智慧零售-发票开具"
   },
-  "QueryCustAcctIdBalance": {
+  "QueryOutwardOrder": {
     "params": [
       {
-        "name": "MrchCode",
-        "desc": "String(22)，商户号（签约客户号）"
+        "name": "TransactionId",
+        "desc": "对接方汇出指令编号"
       },
       {
-        "name": "QueryFlag",
-        "desc": "STRING(4)，查询标志（2: 普通会员子账号; 3: 功能子账号）"
-      },
-      {
-        "name": "PageNum",
-        "desc": "STRING(10)，页码（起始值为1，每次最多返回20条记录，第二页返回的记录数为第21至40条记录，第三页为41至60条记录，顺序均按照建立时间的先后）"
-      },
-      {
-        "name": "SubAcctNo",
-        "desc": "STRING(50)，见证子账户的账号（若SelectFlag为2时，子账号必输）"
-      },
-      {
-        "name": "ReservedMsg",
-        "desc": "STRING(1027)，保留域"
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "查询银行子账户余额。查询会员子账户以及平台的功能子账户的余额。"
+    "desc": "跨境-查询汇出结果"
   },
-  "QueryRefund": {
+  "QueryPayerInfo": {
     "params": [
       {
-        "name": "UserId",
-        "desc": "用户ID，长度不小于5位，仅支持字母和数字的组合。"
+        "name": "PayerId",
+        "desc": "付款人ID"
       },
       {
-        "name": "RefundId",
-        "desc": "退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合。"
-      },
-      {
-        "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
-      },
-      {
-        "name": "MidasSecretId",
-        "desc": "聚鑫分配的安全ID"
-      },
-      {
-        "name": "MidasSignature",
-        "desc": "按照聚鑫安全密钥计算的签名"
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时，用微信零钱支付的退款约20分钟内到账，银行卡支付的退款约3个工作日后到账。"
+    "desc": "跨境-付款人查询"
   },
   "RegisterBillSupportWithdraw": {
     "params": [
@@ -1003,6 +1143,84 @@ INFO = {
       }
     ],
     "desc": "登记挂账(支持撤销)。此接口可实现把不明来账或自有资金等已登记在挂账子账户下的资金调整到普通会员子账户。即通过申请调用此接口，将会减少挂账子账户的资金，调增指定的普通会员子账户的可提现余额及可用余额。此接口不支持把挂账子账户资金清分到功能子账户。"
+  },
+  "ApplyTrade": {
+    "params": [
+      {
+        "name": "TradeFileId",
+        "desc": "贸易材料流水号"
+      },
+      {
+        "name": "TradeOrderId",
+        "desc": "贸易材料订单号"
+      },
+      {
+        "name": "PayerId",
+        "desc": "付款人ID"
+      },
+      {
+        "name": "PayeeName",
+        "desc": "付款人姓名"
+      },
+      {
+        "name": "PayeeCountryCode",
+        "desc": "收款人常驻国家或地区编码 (见常见问题)"
+      },
+      {
+        "name": "TradeType",
+        "desc": "贸易类型 (GOODS: 商品, SERVICE: 服务)"
+      },
+      {
+        "name": "TradeTime",
+        "desc": "交易时间 (格式: yyyyMMdd)"
+      },
+      {
+        "name": "TradeCurrency",
+        "desc": "交易币种"
+      },
+      {
+        "name": "TradeAmount",
+        "desc": "交易金额"
+      },
+      {
+        "name": "TradeName",
+        "desc": "交易名称 \n(TradeType=GOODS时填写物品名称，可填写多个，格式无要求；\nTradeType=SERVICE时填写贸易类别，见常见问题-贸易类别)"
+      },
+      {
+        "name": "TradeCount",
+        "desc": "交易数量 (TradeType=GOODS 填写物品数量, TradeType=SERVICE填写服务次数)"
+      },
+      {
+        "name": "GoodsCarrier",
+        "desc": "货贸承运人 (TradeType=GOODS 必填)"
+      },
+      {
+        "name": "ServiceDetail",
+        "desc": "服贸交易细节 (TradeType=GOODS 必填, 见常见问题-交易细节)"
+      },
+      {
+        "name": "ServiceTime",
+        "desc": "服贸服务时间 (TradeType=GOODS 必填, 见常见问题-服务时间)"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "跨境-提交贸易材料"
+  },
+  "QueryTrade": {
+    "params": [
+      {
+        "name": "TradeFileId",
+        "desc": "贸易材料流水号"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "跨境-贸易材料明细查询"
   },
   "QueryBankClear": {
     "params": [
@@ -1248,6 +1466,19 @@ INFO = {
     ],
     "desc": "撤销会员在途充值(经第三方支付渠道)"
   },
+  "QueryApplicationMaterial": {
+    "params": [
+      {
+        "name": "DeclareId",
+        "desc": "申报流水号"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "跨境-成功申报材料查询"
+  },
   "ApplyReWithdrawal": {
     "params": [
       {
@@ -1321,6 +1552,31 @@ INFO = {
       }
     ],
     "desc": "如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 "
+  },
+  "QueryCustAcctIdBalance": {
+    "params": [
+      {
+        "name": "MrchCode",
+        "desc": "String(22)，商户号（签约客户号）"
+      },
+      {
+        "name": "QueryFlag",
+        "desc": "STRING(4)，查询标志（2: 普通会员子账号; 3: 功能子账号）"
+      },
+      {
+        "name": "PageNum",
+        "desc": "STRING(10)，页码（起始值为1，每次最多返回20条记录，第二页返回的记录数为第21至40条记录，第三页为41至60条记录，顺序均按照建立时间的先后）"
+      },
+      {
+        "name": "SubAcctNo",
+        "desc": "STRING(50)，见证子账户的账号（若SelectFlag为2时，子账号必输）"
+      },
+      {
+        "name": "ReservedMsg",
+        "desc": "STRING(1027)，保留域"
+      }
+    ],
+    "desc": "查询银行子账户余额。查询会员子账户以及平台的功能子账户的余额。"
   },
   "QuerySmallAmountTransfer": {
     "params": [
@@ -1664,26 +1920,22 @@ INFO = {
     ],
     "desc": "应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。"
   },
-  "QueryAcctInfo": {
+  "QueryExchangeRate": {
     "params": [
       {
-        "name": "MidasAppId",
-        "desc": "聚鑫平台分配的支付MidasAppId"
+        "name": "SourceCurrency",
+        "desc": "源币种 (默认CNY)"
       },
       {
-        "name": "SubMchId",
-        "desc": "业务平台的子商户Id，唯一"
+        "name": "TargetCurrency",
+        "desc": "目的币种 (见常见问题-汇出币种)"
       },
       {
-        "name": "MidasSecretId",
-        "desc": "由平台客服提供的计费密钥Id"
-      },
-      {
-        "name": "MidasSignature",
-        "desc": "计费签名"
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "聚鑫-开户信息查询"
+    "desc": "跨境-查询汇率"
   },
   "RevRegisterBillSupportWithdraw": {
     "params": [
@@ -1750,6 +2002,51 @@ INFO = {
       }
     ],
     "desc": "会员解绑提现账户。此接口可以支持会员解除名下的绑定账户关系。"
+  },
+  "ApplyApplicationMaterial": {
+    "params": [
+      {
+        "name": "TransactionId",
+        "desc": "对接方汇出指令编号"
+      },
+      {
+        "name": "DeclareId",
+        "desc": "申报流水号"
+      },
+      {
+        "name": "PayerId",
+        "desc": "付款人ID"
+      },
+      {
+        "name": "SourceCurrency",
+        "desc": "源币种"
+      },
+      {
+        "name": "TargetCurrency",
+        "desc": "目的币种"
+      },
+      {
+        "name": "TradeCode",
+        "desc": "贸易编码"
+      },
+      {
+        "name": "OriginalDeclareId",
+        "desc": "原申报流水号"
+      },
+      {
+        "name": "SourceAmount",
+        "desc": "源金额"
+      },
+      {
+        "name": "TargetAmount",
+        "desc": "目的金额"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "跨境-提交申报材料"
   },
   "QueryBankWithdrawCashDetails": {
     "params": [
@@ -1882,5 +2179,30 @@ INFO = {
       }
     ],
     "desc": "商户绑定提现银行卡的验证接口"
+  },
+  "QueryRefund": {
+    "params": [
+      {
+        "name": "UserId",
+        "desc": "用户ID，长度不小于5位，仅支持字母和数字的组合。"
+      },
+      {
+        "name": "RefundId",
+        "desc": "退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合。"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "按照聚鑫安全密钥计算的签名"
+      }
+    ],
+    "desc": "提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时，用微信零钱支付的退款约20分钟内到账，银行卡支付的退款约3个工作日后到账。"
   }
 }

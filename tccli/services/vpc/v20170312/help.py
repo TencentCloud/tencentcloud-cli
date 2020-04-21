@@ -1144,6 +1144,23 @@ INFO = {
     ],
     "desc": "本接口（AssignIpv6SubnetCidrBlock）用于分配IPv6子网段。\n* 给子网分配 `IPv6` 网段，要求子网所属 `VPC` 已获得 `IPv6` 网段。如果尚未分配，请先通过接口 `AssignIpv6CidrBlock` 给子网所属 `VPC` 分配一个 `IPv6` 网段。否则无法分配 `IPv6` 子网段。\n* 每个子网只能分配一个IPv6网段。"
   },
+  "DescribeVpnGatewayCcnRoutes": {
+    "params": [
+      {
+        "name": "VpnGatewayId",
+        "desc": "VPN网关实例ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
+      }
+    ],
+    "desc": "本接口（DescribeVpnGatewayCcnRoutes）用于查询VPN网关云联网路由"
+  },
   "AllocateAddresses": {
     "params": [
       {
@@ -2632,11 +2649,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量。"
+        "desc": "偏移量，默认为0。"
       },
       {
         "name": "Limit",
-        "desc": "返回数量。"
+        "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
     "desc": "本接口（DescribeSecurityGroups）用于查询安全组。"
