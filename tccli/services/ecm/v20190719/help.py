@@ -740,6 +740,31 @@ INFO = {
     ],
     "desc": "只有状态为RUNNING的实例才可以进行此操作；接口调用成功时，实例会进入REBOOTING状态；重启实例成功时，实例会进入RUNNING状态；支持强制重启，强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。"
   },
+  "DescribeVpcs": {
+    "params": [
+      {
+        "name": "VpcIds",
+        "desc": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定VpcIds和Filters。\nvpc-name - String - （过滤条件）VPC实例名称。\nis-default - String - （过滤条件）是否默认VPC。\nvpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。\ncidr-block - String - （过滤条件）vpc的cidr。\ntag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
+      },
+      {
+        "name": "EcmRegion",
+        "desc": "地域"
+      }
+    ],
+    "desc": "查询私有网络列表"
+  },
   "MigratePrivateIpAddress": {
     "params": [
       {

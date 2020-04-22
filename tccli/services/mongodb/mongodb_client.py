@@ -547,6 +547,41 @@ def doDescribeSlowLogPatterns(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doInquirePriceModifyDBInstanceSpec(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquirePriceModifyDBInstanceSpec", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Volume": Utils.try_to_json(argv, "--Volume"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquirePriceModifyDBInstanceSpecRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InquirePriceModifyDBInstanceSpec(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSlowLogs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -576,6 +611,73 @@ def doDescribeSlowLogs(argv, arglist):
     model = models.DescribeSlowLogsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeSlowLogs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquirePriceRenewDBInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquirePriceRenewDBInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquirePriceRenewDBInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InquirePriceRenewDBInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDBInstanceDeal(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDBInstanceDeal", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DealId": argv.get("--DealId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDBInstanceDealRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDBInstanceDeal(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -721,6 +823,48 @@ def doDescribeDBBackups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doInquirePriceCreateDBInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquirePriceCreateDBInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Zone": argv.get("--Zone"),
+        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
+        "Memory": Utils.try_to_json(argv, "--Memory"),
+        "Volume": Utils.try_to_json(argv, "--Volume"),
+        "MongoVersion": argv.get("--MongoVersion"),
+        "MachineCode": argv.get("--MachineCode"),
+        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "ClusterType": argv.get("--ClusterType"),
+        "ReplicateSetNum": Utils.try_to_json(argv, "--ReplicateSetNum"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquirePriceCreateDBInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InquirePriceCreateDBInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doIsolateDBInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -815,11 +959,15 @@ ACTION_MAP = {
     "UpgradeDBInstanceHour": doUpgradeDBInstanceHour,
     "DescribeDBInstances": doDescribeDBInstances,
     "DescribeSlowLogPatterns": doDescribeSlowLogPatterns,
+    "InquirePriceModifyDBInstanceSpec": doInquirePriceModifyDBInstanceSpec,
     "DescribeSlowLogs": doDescribeSlowLogs,
+    "InquirePriceRenewDBInstances": doInquirePriceRenewDBInstances,
+    "DescribeDBInstanceDeal": doDescribeDBInstanceDeal,
     "ModifyDBInstanceSpec": doModifyDBInstanceSpec,
     "OfflineIsolatedDBInstance": doOfflineIsolatedDBInstance,
     "RenewDBInstances": doRenewDBInstances,
     "DescribeDBBackups": doDescribeDBBackups,
+    "InquirePriceCreateDBInstances": doInquirePriceCreateDBInstances,
     "IsolateDBInstance": doIsolateDBInstance,
     "DescribeBackupAccess": doDescribeBackupAccess,
 

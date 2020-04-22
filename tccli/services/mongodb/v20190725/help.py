@@ -30,6 +30,23 @@ INFO = {
     ],
     "desc": "本接口（DescribeSlowLogPatterns）用于获取数据库实例慢日志的统计信息。"
   },
+  "InquirePriceModifyDBInstanceSpec": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。"
+      },
+      {
+        "name": "Memory",
+        "desc": "变更配置后实例内存大小，单位：GB。"
+      },
+      {
+        "name": "Volume",
+        "desc": "变更配置后实例磁盘大小，单位：GB。"
+      }
+    ],
+    "desc": "本接口 (InquirePriceModifyDBInstanceSpec) 用于调整实例的配置询价。"
+  },
   "AssignProject": {
     "params": [
       {
@@ -71,6 +88,15 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeSlowLogs）用于获取云数据库慢日志信息。接口只支持查询最近7天内慢日志。"
+  },
+  "DescribeDBInstanceDeal": {
+    "params": [
+      {
+        "name": "DealId",
+        "desc": "订单ID，通过CreateDBInstance等接口返回"
+      }
+    ],
+    "desc": "本接口（DescribeDBInstanceDeal）用于获取MongoDB购买、续费及变配订单详细。"
   },
   "DescribeClientConnections": {
     "params": [
@@ -262,6 +288,51 @@ INFO = {
     ],
     "desc": "本接口(RenameInstance)用于修改云数据库实例的名称。"
   },
+  "InquirePriceCreateDBInstances": {
+    "params": [
+      {
+        "name": "Zone",
+        "desc": "实例所属区域名称，格式如：ap-guangzhou-2"
+      },
+      {
+        "name": "NodeNum",
+        "desc": "每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数"
+      },
+      {
+        "name": "Memory",
+        "desc": "实例内存大小，单位：GB"
+      },
+      {
+        "name": "Volume",
+        "desc": "实例硬盘大小，单位：GB"
+      },
+      {
+        "name": "MongoVersion",
+        "desc": "版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本"
+      },
+      {
+        "name": "MachineCode",
+        "desc": "机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型"
+      },
+      {
+        "name": "GoodsNum",
+        "desc": "实例数量, 最小值1，最大值为10"
+      },
+      {
+        "name": "Period",
+        "desc": "实例时长，单位：月，可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]"
+      },
+      {
+        "name": "ClusterType",
+        "desc": "实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点"
+      },
+      {
+        "name": "ReplicateSetNum",
+        "desc": "副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0"
+      }
+    ],
+    "desc": "本接口用于创建数据库实例询价。本接口参数中必须传入region参数，否则无法通过校验。本接口仅允许针对购买限制范围内的实例配置进行询价。"
+  },
   "RenewDBInstances": {
     "params": [
       {
@@ -292,6 +363,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeDBBackups）用于查询实例备份列表，目前只支持7天内的备份查询。"
+  },
+  "InquirePriceRenewDBInstances": {
+    "params": [
+      {
+        "name": "InstanceIds",
+        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。"
+      },
+      {
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式（即包年包月）相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。"
+      }
+    ],
+    "desc": "本接口 (InquiryPriceRenewDBInstances) 用于续费包年包月实例询价。"
   },
   "DescribeDBInstances": {
     "params": [

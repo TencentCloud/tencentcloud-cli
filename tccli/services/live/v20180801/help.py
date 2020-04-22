@@ -20,7 +20,7 @@ INFO = {
   },
   "DescribeLiveWatermarks": {
     "params": [],
-    "desc": "查询水印列表"
+    "desc": "查询水印列表。"
   },
   "DescribeConcurrentRecordStreamNum": {
     "params": [
@@ -96,19 +96,19 @@ INFO = {
     "params": [
       {
         "name": "WatermarkId",
-        "desc": "水印ID。"
+        "desc": "水印 ID。\n在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。"
       },
       {
         "name": "PictureUrl",
-        "desc": "水印图片url。"
+        "desc": "水印图片 URL。"
       },
       {
         "name": "XPosition",
-        "desc": "显示位置，X轴偏移。"
+        "desc": "显示位置，X轴偏移，默认 0。"
       },
       {
         "name": "YPosition",
-        "desc": "显示位置，Y轴偏移。"
+        "desc": "显示位置，Y轴偏移，默认 0。"
       },
       {
         "name": "WatermarkName",
@@ -116,20 +116,20 @@ INFO = {
       },
       {
         "name": "Width",
-        "desc": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。"
+        "desc": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。"
       },
       {
         "name": "Height",
-        "desc": "水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。"
+        "desc": "水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。"
       }
     ],
-    "desc": "更新水印"
+    "desc": "更新水印。"
   },
   "ModifyLiveSnapshotTemplate": {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。"
       },
       {
         "name": "TemplateName",
@@ -153,11 +153,11 @@ INFO = {
       },
       {
         "name": "PornFlag",
-        "desc": "是否开启鉴黄，0：不开启，1：开启。"
+        "desc": "是否开启鉴黄，默认 0 。\n0：不开启。\n1：开启。"
       },
       {
         "name": "CosAppId",
-        "desc": "Cos AppId。"
+        "desc": "Cos 应用 ID。"
       },
       {
         "name": "CosBucket",
@@ -168,13 +168,13 @@ INFO = {
         "desc": "Cos 地域。"
       }
     ],
-    "desc": "修改截图模板配置"
+    "desc": "修改截图模板配置。"
   },
   "ModifyLiveRecordTemplate": {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。"
       },
       {
         "name": "TemplateName",
@@ -186,30 +186,30 @@ INFO = {
       },
       {
         "name": "FlvParam",
-        "desc": "Flv录制参数，开启Flv录制时设置。"
+        "desc": "FLV 录制参数，开启 FLV 录制时设置。"
       },
       {
         "name": "HlsParam",
-        "desc": "Hls录制参数，开启hls录制时设置。"
+        "desc": "HLS 录制参数，开启 HLS 录制时设置。"
       },
       {
         "name": "Mp4Param",
-        "desc": "Mp4录制参数，开启Mp4录制时设置。"
+        "desc": "MP4 录制参数，开启 MP4 录制时设置。"
       },
       {
         "name": "AacParam",
-        "desc": "Aac录制参数，开启Aac录制时设置。"
+        "desc": "AAC 录制参数，开启 AAC 录制时设置。"
       },
       {
         "name": "HlsSpecialParam",
-        "desc": "HLS录制定制参数"
+        "desc": "HLS 录制定制参数。"
       },
       {
         "name": "Mp3Param",
-        "desc": "Mp3录制参数，开启Mp3录制时设置。"
+        "desc": "MP3 录制参数，开启 MP3 录制时设置。"
       }
     ],
-    "desc": "修改录制模板配置"
+    "desc": "修改录制模板配置。"
   },
   "CreateLiveWatermarkRule": {
     "params": [
@@ -460,7 +460,7 @@ INFO = {
     "params": [
       {
         "name": "ConfigIds",
-        "desc": "配置id列表。"
+        "desc": "配置 ID 列表。"
       },
       {
         "name": "Status",
@@ -473,10 +473,10 @@ INFO = {
     "params": [
       {
         "name": "IsDelayLive",
-        "desc": "是否属于慢直播模板。默认：0。\n示例：\n0 - 标准直播。\n1 - 慢直播。"
+        "desc": "是否属于慢直播模板，默认：0。\n0： 标准直播。\n1：慢直播。"
       }
     ],
-    "desc": "获取录制模板列表"
+    "desc": "获取录制模板列表。"
   },
   "ModifyLiveDomainCert": {
     "params": [
@@ -549,19 +549,19 @@ INFO = {
       },
       {
         "name": "XPosition",
-        "desc": "显示位置, X轴偏移。"
+        "desc": "显示位置，X轴偏移，默认 0。"
       },
       {
         "name": "YPosition",
-        "desc": "显示位置,Y轴偏移。"
+        "desc": "显示位置，Y轴偏移，默认 0。"
       },
       {
         "name": "Width",
-        "desc": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。"
+        "desc": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。"
       },
       {
         "name": "Height",
-        "desc": "水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。"
+        "desc": "水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。"
       }
     ],
     "desc": "添加水印，成功返回水印 ID 后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印 ID 绑定到流使用。"
@@ -574,7 +574,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径。"
+        "desc": "推流路径。与推流和播放地址中的 AppName 保持一致，默认为live。"
       },
       {
         "name": "StreamName",
@@ -591,10 +591,10 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为live。"
+        "desc": "推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。"
       }
     ],
-    "desc": "删除回调规则"
+    "desc": "删除回调规则。"
   },
   "ModifyPullStreamConfig": {
     "params": [
@@ -633,11 +633,11 @@ INFO = {
     "params": [
       {
         "name": "TemplateName",
-        "desc": "模板名称，非空的字符串。\n长度上限：255字节。"
+        "desc": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。"
       },
       {
         "name": "CosAppId",
-        "desc": "Cos AppId。"
+        "desc": "Cos 应用 ID。"
       },
       {
         "name": "CosBucket",
@@ -649,7 +649,7 @@ INFO = {
       },
       {
         "name": "Description",
-        "desc": "描述信息。\n长度上限：1024字节。"
+        "desc": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。"
       },
       {
         "name": "SnapshotInterval",
@@ -674,11 +674,11 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "推流域名。多域名用户需要填写DomainName。"
+        "desc": "推流域名。多域名用户需要填写 DomainName。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。多路径用户需要填写AppName。"
+        "desc": "推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。多路径用户需要填写 AppName。"
       },
       {
         "name": "PageNum",
@@ -693,16 +693,16 @@ INFO = {
         "desc": "流名称，用于精确查询。"
       }
     ],
-    "desc": "返回正在直播中的流列表"
+    "desc": "返回正在直播中的流列表。"
   },
   "DeleteLiveCallbackTemplate": {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。\n1. 在创建回调模板接口 [CreateLiveCallbackTemplate](/document/product/267/32637) 调用的返回值中获取模板 ID。\n2. 可以从接口 [DescribeLiveCallbackTemplates](/document/product/267/32632) 查询已经创建的过的模板列表。"
       }
     ],
-    "desc": "删除回调模板"
+    "desc": "删除回调模板。"
   },
   "DescribeLivePushAuthKey": {
     "params": [
@@ -717,25 +717,25 @@ INFO = {
     "params": [
       {
         "name": "ConfigId",
-        "desc": "配置id。"
+        "desc": "配置 ID。\n1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。\n2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。"
       }
     ],
-    "desc": "删除直播拉流配置"
+    "desc": "删除直播拉流配置。"
   },
   "DescribeLiveRecordTemplate": {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。"
       }
     ],
-    "desc": "获取单个录制模板"
+    "desc": "获取单个录制模板。"
   },
   "DescribePullStreamConfigs": {
     "params": [
       {
         "name": "ConfigId",
-        "desc": "配置id。"
+        "desc": "配置 ID。"
       }
     ],
     "desc": "查询直播拉流配置。"
@@ -744,10 +744,10 @@ INFO = {
     "params": [
       {
         "name": "WatermarkId",
-        "desc": "水印ID。"
+        "desc": "水印 ID。\n在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。"
       }
     ],
-    "desc": "删除水印"
+    "desc": "删除水印。"
   },
   "DescribePlayErrorCodeSumInfoList": {
     "params": [
@@ -849,7 +849,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 Id。"
       },
       {
         "name": "Vcodec",
@@ -861,7 +861,7 @@ INFO = {
       },
       {
         "name": "AudioBitrate",
-        "desc": "音频码率，默认0。0-500"
+        "desc": "音频码率，默认0。\n范围：0-500。"
       },
       {
         "name": "Description",
@@ -869,11 +869,11 @@ INFO = {
       },
       {
         "name": "VideoBitrate",
-        "desc": "视频码率。100-8000"
+        "desc": "视频码率。\n范围：100-8000。"
       },
       {
         "name": "Width",
-        "desc": "宽。0-3000"
+        "desc": "宽。0-3000。"
       },
       {
         "name": "NeedVideo",
@@ -885,19 +885,19 @@ INFO = {
       },
       {
         "name": "Height",
-        "desc": "高。0-3000"
+        "desc": "高。0-3000。"
       },
       {
         "name": "Fps",
-        "desc": "帧率。0-200"
+        "desc": "帧率。0-200。"
       },
       {
         "name": "Gop",
-        "desc": "关键帧间隔，单位：秒。0-50"
+        "desc": "关键帧间隔，单位：秒。0-50。"
       },
       {
         "name": "Rotate",
-        "desc": "旋转角度。0 90 180 270"
+        "desc": "旋转角度。\n0 90 180 270。"
       },
       {
         "name": "Profile",
@@ -917,10 +917,10 @@ INFO = {
       },
       {
         "name": "AdaptBitratePercent",
-        "desc": "急速高清相比VideoBitrate少多少码率，0.1到0.5"
+        "desc": "极速高清相比 VideoBitrate 少多少码率，0.1到0.5。"
       }
     ],
-    "desc": "修改转码模板配置"
+    "desc": "修改转码模板配置。"
   },
   "DeleteLiveTranscodeRule": {
     "params": [
@@ -951,14 +951,14 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
+        "desc": "推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。"
       },
       {
         "name": "StreamName",
         "desc": "流名称。"
       }
     ],
-    "desc": "删除截图规则"
+    "desc": "删除截图规则。"
   },
   "DescribeLiveForbidStreamList": {
     "params": [
@@ -971,7 +971,7 @@ INFO = {
         "desc": "每页大小，最大100。 \n取值：1~100之前的任意整数。\n默认值：10。"
       }
     ],
-    "desc": "获取禁推流列表"
+    "desc": "获取禁推流列表。"
   },
   "DescribeLiveCert": {
     "params": [
@@ -1053,38 +1053,38 @@ INFO = {
     "params": [
       {
         "name": "TemplateName",
-        "desc": "模板名称，非空的字符串。\n长度上限：255字节。"
+        "desc": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。"
       },
       {
         "name": "Description",
-        "desc": "描述信息。\n长度上限：1024字节。"
+        "desc": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。"
       },
       {
         "name": "StreamBeginNotifyUrl",
-        "desc": "开播回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
+        "desc": "开播回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       },
       {
         "name": "StreamEndNotifyUrl",
-        "desc": "断流回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
+        "desc": "断流回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       },
       {
         "name": "RecordNotifyUrl",
-        "desc": "录制回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
+        "desc": "录制回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       },
       {
         "name": "SnapshotNotifyUrl",
-        "desc": "截图回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
+        "desc": "截图回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       },
       {
         "name": "PornCensorshipNotifyUrl",
-        "desc": "鉴黄回调URL，\n相关协议文档：[事件消息通知](/document/product/267/32741)。"
+        "desc": "鉴黄回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32741)。"
       },
       {
         "name": "CallbackKey",
-        "desc": "回调key，回调URL公用，鉴权回调说明详见回调格式文档"
+        "desc": "回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。\n[事件消息通知](/document/product/267/32744)。"
       }
     ],
-    "desc": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板id绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。"
+    "desc": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。"
   },
   "ResumeLiveStream": {
     "params": [
@@ -1107,10 +1107,10 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。\n1. 在创建回调模板接口 [CreateLiveCallbackTemplate](/document/product/267/32637) 调用的返回值中获取模板 ID。\n2. 可以从接口 [DescribeLiveCallbackTemplates](/document/product/267/32632) 查询已经创建的过的模板列表。"
       }
     ],
-    "desc": "获取单个回调模板"
+    "desc": "获取单个回调模板。"
   },
   "DeleteLiveDomain": {
     "params": [
@@ -1129,7 +1129,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。"
       },
       {
         "name": "TemplateName",
@@ -1141,27 +1141,27 @@ INFO = {
       },
       {
         "name": "StreamBeginNotifyUrl",
-        "desc": "开播回调URL。"
+        "desc": "开播回调 URL。"
       },
       {
         "name": "StreamEndNotifyUrl",
-        "desc": "断流回调URL。"
+        "desc": "断流回调 URL。"
       },
       {
         "name": "RecordNotifyUrl",
-        "desc": "录制回调URL。"
+        "desc": "录制回调 URL。"
       },
       {
         "name": "SnapshotNotifyUrl",
-        "desc": "截图回调URL。"
+        "desc": "截图回调 URL。"
       },
       {
         "name": "PornCensorshipNotifyUrl",
-        "desc": "鉴黄回调URL。"
+        "desc": "鉴黄回调 URL。"
       },
       {
         "name": "CallbackKey",
-        "desc": "回调key，回调URL公用，鉴权回调说明详见回调格式文档。"
+        "desc": "回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。\n[事件消息通知](/document/product/267/32744)。"
       }
     ],
     "desc": "修改回调模板。"
@@ -1265,10 +1265,10 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。\n调用 [CreateLiveSnapshotTemplate](/document/product/267/32624) 时返回的模板 ID。"
       }
     ],
-    "desc": "获取单个截图模板"
+    "desc": "获取单个截图模板。"
   },
   "DescribeLiveCallbackTemplates": {
     "params": [],
@@ -1276,7 +1276,7 @@ INFO = {
   },
   "DescribeLiveSnapshotTemplates": {
     "params": [],
-    "desc": "获取截图模板列表"
+    "desc": "获取截图模板列表。"
   },
   "StopLiveRecord": {
     "params": [
@@ -1433,7 +1433,7 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。"
+        "desc": "推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。不支持模糊匹配。"
       },
       {
         "name": "PageNum",
@@ -1541,7 +1541,7 @@ INFO = {
         "desc": "流名称。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
       }
     ],
-    "desc": "删除录制规则"
+    "desc": "删除录制规则。"
   },
   "ForbidLiveStream": {
     "params": [
@@ -1610,7 +1610,7 @@ INFO = {
       },
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。"
       },
       {
         "name": "AppName",
@@ -1627,10 +1627,10 @@ INFO = {
     "params": [
       {
         "name": "WatermarkId",
-        "desc": "水印ID。"
+        "desc": "水印 ID。"
       }
     ],
-    "desc": "获取单个水印信息"
+    "desc": "获取单个水印信息。"
   },
   "DescribeLiveTranscodeTemplates": {
     "params": [],
@@ -1640,7 +1640,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateName",
-        "desc": "模板名。非空的字符串"
+        "desc": "模板名。仅支持中文、英文、数字、_、-。"
       },
       {
         "name": "Description",
@@ -1664,7 +1664,7 @@ INFO = {
       },
       {
         "name": "IsDelayLive",
-        "desc": "0：普通直播，\n1：慢直播。"
+        "desc": "直播类型，默认 0。\n0：普通直播，\n1：慢直播。"
       },
       {
         "name": "HlsSpecialParam",
@@ -1738,7 +1738,7 @@ INFO = {
   },
   "DescribeLiveWatermarkRules": {
     "params": [],
-    "desc": "获取水印规则列表"
+    "desc": "获取水印规则列表。"
   },
   "DeleteLiveRecord": {
     "params": [
@@ -1748,7 +1748,7 @@ INFO = {
       },
       {
         "name": "TaskId",
-        "desc": "任务ID，全局唯一标识录制任务。"
+        "desc": "任务ID，全局唯一标识录制任务。\n从接口 [CreateLiveRecord](/document/product/267/30148) 的返回值中获取TaskId。"
       }
     ],
     "desc": "注：DeleteLiveRecord 接口仅用于删除录制任务记录，不具备停止录制的功能，也不能删除正在进行中的录制。如果需要停止录制任务，请使用终止录制[StopLiveRecord](/document/product/267/30146) 接口。"
@@ -1761,18 +1761,18 @@ INFO = {
       },
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
+        "desc": "推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。"
       },
       {
         "name": "StreamName",
         "desc": "流名称。\n注：如果本参数设置为非空字符串，规则将只对此推流起作用。"
       }
     ],
-    "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
+    "desc": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板 ID 绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。\n注意：单个域名仅支持关联一个截图模板。"
   },
   "DescribeGroupProIspPlayInfoList": {
     "params": [
@@ -1833,10 +1833,10 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板ID。"
+        "desc": "模板 ID。"
       }
     ],
-    "desc": "删除录制模板"
+    "desc": "删除录制模板。"
   },
   "ResumeDelayLiveStream": {
     "params": [
@@ -2021,7 +2021,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。\n1. 在创建截图模板接口 [CreateLiveSnapshotTemplate](/document/product/267/32624) 调用的返回值中获取。\n2. 可以从接口 [DescribeLiveSnapshotTemplates](/document/product/267/32619) 中查询已创建的截图模板列表。"
       }
     ],
     "desc": "删除截图模板"

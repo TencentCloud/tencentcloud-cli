@@ -543,6 +543,7 @@ def doDeleteAdaptiveDynamicStreamingTemplate(argv, arglist):
 
     param = {
         "Definition": Utils.try_to_json(argv, "--Definition"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -582,6 +583,7 @@ def doCreateAdaptiveDynamicStreamingTemplate(argv, arglist):
         "DisableHigherVideoBitrate": Utils.try_to_json(argv, "--DisableHigherVideoBitrate"),
         "DisableHigherVideoResolution": Utils.try_to_json(argv, "--DisableHigherVideoResolution"),
         "Comment": argv.get("--Comment"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2881,6 +2883,7 @@ def doModifyAdaptiveDynamicStreamingTemplate(argv, arglist):
         "DisableHigherVideoResolution": Utils.try_to_json(argv, "--DisableHigherVideoResolution"),
         "StreamInfos": Utils.try_to_json(argv, "--StreamInfos"),
         "Comment": argv.get("--Comment"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

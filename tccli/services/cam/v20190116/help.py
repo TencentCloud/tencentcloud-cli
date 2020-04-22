@@ -59,22 +59,14 @@ INFO = {
     ],
     "desc": "添加子用户"
   },
-  "DetectState": {
+  "GetSAMLProvider": {
     "params": [
       {
-        "name": "ClientIP",
-        "desc": "IP"
-      },
-      {
-        "name": "ClientUA",
-        "desc": "浏览器UA"
-      },
-      {
-        "name": "FaceIdToken",
-        "desc": "token"
+        "name": "Name",
+        "desc": "SAML身份提供商名称"
       }
     ],
-    "desc": "获取并且更新人联合身状态"
+    "desc": "查询SAML身份提供商详情"
   },
   "CreateRole": {
     "params": [
@@ -182,22 +174,22 @@ INFO = {
     ],
     "desc": "本接口（GetPolicy）可用于查询查看策略详情。"
   },
-  "CreateSAMLProvider": {
+  "ListAttachedGroupPolicies": {
     "params": [
       {
-        "name": "Name",
-        "desc": "SAML身份提供商名称"
+        "name": "TargetGroupId",
+        "desc": "用户组ID"
       },
       {
-        "name": "Description",
-        "desc": "SAML身份提供商描述"
+        "name": "Page",
+        "desc": "页码，默认值是 1，从 1 开始"
       },
       {
-        "name": "SAMLMetadataDocument",
-        "desc": "SAML身份提供商Base64编码的元数据文档"
+        "name": "Rp",
+        "desc": "每页大小，默认值是 20"
       }
     ],
-    "desc": "创建SAML身份提供商"
+    "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
   },
   "DeleteSAMLProvider": {
     "params": [
@@ -245,36 +237,6 @@ INFO = {
     ],
     "desc": "更新子用户"
   },
-  "ListPolicies": {
-    "params": [
-      {
-        "name": "Rp",
-        "desc": "每页数量，默认值是 20，必须大于 0 且小于或等于 200"
-      },
-      {
-        "name": "Page",
-        "desc": "页码，默认值是 1，从 1开始，不能大于 200"
-      },
-      {
-        "name": "Scope",
-        "desc": "可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'"
-      },
-      {
-        "name": "Keyword",
-        "desc": "按策略名匹配"
-      }
-    ],
-    "desc": "本接口（ListPolicies）可用于查询策略列表"
-  },
-  "DescribeMFADeviceColl": {
-    "params": [
-      {
-        "name": "SubUin",
-        "desc": "子用户Uin"
-      }
-    ],
-    "desc": "查询mfa设备"
-  },
   "DescribeRoleList": {
     "params": [
       {
@@ -304,35 +266,6 @@ INFO = {
       }
     ],
     "desc": "更新SAML身份提供商信息"
-  },
-  "DescribeMfaCodeStatus": {
-    "params": [
-      {
-        "name": "Tmpcode",
-        "desc": "mfaKey"
-      },
-      {
-        "name": "Skey",
-        "desc": "登录态skey"
-      },
-      {
-        "name": "ClientUA",
-        "desc": "用户浏览器UA"
-      },
-      {
-        "name": "Interface",
-        "desc": "接口名"
-      },
-      {
-        "name": "ClientIP",
-        "desc": "用户IP"
-      },
-      {
-        "name": "OwnerUin",
-        "desc": "主账号"
-      }
-    ],
-    "desc": "查询微信code状态"
   },
   "GetCustomMFATokenInfo": {
     "params": [
@@ -387,22 +320,43 @@ INFO = {
     ],
     "desc": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。"
   },
-  "ListAttachedGroupPolicies": {
+  "CreateSAMLProvider": {
     "params": [
       {
-        "name": "TargetGroupId",
-        "desc": "用户组ID"
+        "name": "Name",
+        "desc": "SAML身份提供商名称"
       },
       {
-        "name": "Page",
-        "desc": "页码，默认值是 1，从 1 开始"
+        "name": "Description",
+        "desc": "SAML身份提供商描述"
+      },
+      {
+        "name": "SAMLMetadataDocument",
+        "desc": "SAML身份提供商Base64编码的元数据文档"
+      }
+    ],
+    "desc": "创建SAML身份提供商"
+  },
+  "ListGroupsForUser": {
+    "params": [
+      {
+        "name": "Uid",
+        "desc": "子用户 UID"
       },
       {
         "name": "Rp",
-        "desc": "每页大小，默认值是 20"
+        "desc": "每页数量。默认为20。"
+      },
+      {
+        "name": "Page",
+        "desc": "页码。默认为1。"
+      },
+      {
+        "name": "SubUin",
+        "desc": "子账号UIN"
       }
     ],
-    "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
+    "desc": "列出用户关联的用户组"
   },
   "ConsumeCustomMFAToken": {
     "params": [
@@ -421,48 +375,6 @@ INFO = {
       }
     ],
     "desc": "查询用户组详情"
-  },
-  "Check": {
-    "params": [
-      {
-        "name": "Skey",
-        "desc": "登录态Skey"
-      },
-      {
-        "name": "ClientIP",
-        "desc": "IP"
-      },
-      {
-        "name": "ClientUA",
-        "desc": "浏览器UA"
-      },
-      {
-        "name": "Interface",
-        "desc": "接口名"
-      },
-      {
-        "name": "AuthType",
-        "desc": "验证类型"
-      },
-      {
-        "name": "Code",
-        "desc": "验证码"
-      },
-      {
-        "name": "OwnerUin",
-        "desc": "主账号"
-      }
-    ],
-    "desc": "mfa校验"
-  },
-  "GetSAMLProvider": {
-    "params": [
-      {
-        "name": "Name",
-        "desc": "SAML身份提供商名称"
-      }
-    ],
-    "desc": "查询SAML身份提供商详情"
   },
   "CheckNewMfaCode": {
     "params": [
@@ -576,80 +488,6 @@ INFO = {
       }
     ],
     "desc": "本接口（UpdateRoleDescription）用于修改角色的描述信息。"
-  },
-  "DetectMaskAuth": {
-    "params": [
-      {
-        "name": "Skey",
-        "desc": "登录态Skey"
-      },
-      {
-        "name": "ClientIP",
-        "desc": "IP"
-      },
-      {
-        "name": "ClientUA",
-        "desc": "浏览器UA"
-      },
-      {
-        "name": "Type",
-        "desc": "人脸类型"
-      },
-      {
-        "name": "Name",
-        "desc": "用户名称"
-      },
-      {
-        "name": "Idcard",
-        "desc": "用户Idcard"
-      },
-      {
-        "name": "OwnerUin",
-        "desc": "主账号"
-      }
-    ],
-    "desc": "获取并更新人脸核身校验状态实名传递参数比对"
-  },
-  "DetectAuth": {
-    "params": [
-      {
-        "name": "Skey",
-        "desc": "登录态Skey"
-      },
-      {
-        "name": "ClientIP",
-        "desc": "IP"
-      },
-      {
-        "name": "ClientUA",
-        "desc": "浏览器UA"
-      },
-      {
-        "name": "Type",
-        "desc": "人脸类型"
-      },
-      {
-        "name": "Name",
-        "desc": "名称"
-      },
-      {
-        "name": "Idcard",
-        "desc": "身份证号"
-      },
-      {
-        "name": "UseAuthInfo",
-        "desc": "是否使用用户提交信息"
-      },
-      {
-        "name": "Scene",
-        "desc": "场景"
-      },
-      {
-        "name": "OwnerUin",
-        "desc": "主账号uin"
-      }
-    ],
-    "desc": "发起人脸核身"
   },
   "GetRole": {
     "params": [
@@ -873,25 +711,25 @@ INFO = {
     ],
     "desc": "本接口（DetachUserPolicy）可用于解除绑定到用户的策略。"
   },
-  "ListGroupsForUser": {
+  "ListPolicies": {
     "params": [
       {
-        "name": "Uid",
-        "desc": "子用户 UID"
-      },
-      {
         "name": "Rp",
-        "desc": "每页数量。默认为20。"
+        "desc": "每页数量，默认值是 20，必须大于 0 且小于或等于 200"
       },
       {
         "name": "Page",
-        "desc": "页码。默认为1。"
+        "desc": "页码，默认值是 1，从 1开始，不能大于 200"
       },
       {
-        "name": "SubUin",
-        "desc": "子账号UIN"
+        "name": "Scope",
+        "desc": "可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'"
+      },
+      {
+        "name": "Keyword",
+        "desc": "按策略名匹配"
       }
     ],
-    "desc": "列出用户关联的用户组"
+    "desc": "本接口（ListPolicies）可用于查询策略列表"
   }
 }
