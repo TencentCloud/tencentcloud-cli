@@ -1902,7 +1902,7 @@ INFO = {
       },
       {
         "name": "Type",
-        "desc": "水印类型过滤条件，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>"
+        "desc": "水印类型过滤条件，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印；</li>\n<li>svg：SVG 水印。</li>"
       },
       {
         "name": "Offset",

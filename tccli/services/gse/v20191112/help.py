@@ -219,6 +219,35 @@ INFO = {
     ],
     "desc": "本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL"
   },
+  "SearchGameServerSessions": {
+    "params": [
+      {
+        "name": "AliasId",
+        "desc": "别名ID"
+      },
+      {
+        "name": "FleetId",
+        "desc": "舰队ID"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次查询记录数上限"
+      },
+      {
+        "name": "NextToken",
+        "desc": "页偏移，用于查询下一页"
+      },
+      {
+        "name": "FilterExpression",
+        "desc": "搜索条件表达式，支持如下变量\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number\nhasAvailablePlayerSessions 是否有可用玩家数 String 取值true或false\ngameServerSessionProperties 游戏会话属性 String\n\n表达式String类型 等于=，不等于<>判断\n表示Number类型支持 =,<>,>,>=,<,<="
+      },
+      {
+        "name": "SortExpression",
+        "desc": "排序条件关键字\n支持排序字段\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number"
+      }
+    ],
+    "desc": "本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表"
+  },
   "StopGameServerSessionPlacement": {
     "params": [
       {

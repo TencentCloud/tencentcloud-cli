@@ -18,6 +18,15 @@ INFO = {
     ],
     "desc": "查询用户组关联的用户列表"
   },
+  "DeleteServiceLinkedRole": {
+    "params": [
+      {
+        "name": "RoleName",
+        "desc": "要删除的服务相关角色的名称。"
+      }
+    ],
+    "desc": "删除服务相关角色"
+  },
   "AddUser": {
     "params": [
       {
@@ -58,6 +67,23 @@ INFO = {
       }
     ],
     "desc": "添加子用户"
+  },
+  "CreateServiceLinkedRole": {
+    "params": [
+      {
+        "name": "QCSServiceName",
+        "desc": "授权服务，附加了此角色的腾讯云服务主体。"
+      },
+      {
+        "name": "CustomSuffix",
+        "desc": "自定义后缀，根据您提供的字符串，与服务提供的前缀组合在一起以形成完整的角色名称。"
+      },
+      {
+        "name": "Description",
+        "desc": "角色说明。"
+      }
+    ],
+    "desc": "创建服务相关角色"
   },
   "GetSAMLProvider": {
     "params": [
@@ -174,22 +200,22 @@ INFO = {
     ],
     "desc": "本接口（GetPolicy）可用于查询查看策略详情。"
   },
-  "ListAttachedGroupPolicies": {
+  "CreateSAMLProvider": {
     "params": [
       {
-        "name": "TargetGroupId",
-        "desc": "用户组ID"
+        "name": "Name",
+        "desc": "SAML身份提供商名称"
       },
       {
-        "name": "Page",
-        "desc": "页码，默认值是 1，从 1 开始"
+        "name": "Description",
+        "desc": "SAML身份提供商描述"
       },
       {
-        "name": "Rp",
-        "desc": "每页大小，默认值是 20"
+        "name": "SAMLMetadataDocument",
+        "desc": "SAML身份提供商Base64编码的元数据文档"
       }
     ],
-    "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
+    "desc": "创建SAML身份提供商"
   },
   "DeleteSAMLProvider": {
     "params": [
@@ -250,23 +276,6 @@ INFO = {
     ],
     "desc": "本接口（DescribeRoleList）用于获取账号下的角色列表。"
   },
-  "UpdateSAMLProvider": {
-    "params": [
-      {
-        "name": "Name",
-        "desc": "SAML身份提供商名称"
-      },
-      {
-        "name": "Description",
-        "desc": "SAML身份提供商描述"
-      },
-      {
-        "name": "SAMLMetadataDocument",
-        "desc": "SAML身份提供商Base64编码的元数据文档"
-      }
-    ],
-    "desc": "更新SAML身份提供商信息"
-  },
   "GetCustomMFATokenInfo": {
     "params": [
       {
@@ -320,22 +329,22 @@ INFO = {
     ],
     "desc": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。"
   },
-  "CreateSAMLProvider": {
+  "ListAttachedGroupPolicies": {
     "params": [
       {
-        "name": "Name",
-        "desc": "SAML身份提供商名称"
+        "name": "TargetGroupId",
+        "desc": "用户组ID"
       },
       {
-        "name": "Description",
-        "desc": "SAML身份提供商描述"
+        "name": "Page",
+        "desc": "页码，默认值是 1，从 1 开始"
       },
       {
-        "name": "SAMLMetadataDocument",
-        "desc": "SAML身份提供商Base64编码的元数据文档"
+        "name": "Rp",
+        "desc": "每页大小，默认值是 20"
       }
     ],
-    "desc": "创建SAML身份提供商"
+    "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
   },
   "ListGroupsForUser": {
     "params": [
@@ -358,6 +367,15 @@ INFO = {
     ],
     "desc": "列出用户关联的用户组"
   },
+  "GetServiceLinkedRoleDeletionStatus": {
+    "params": [
+      {
+        "name": "DeletionTaskId",
+        "desc": "删除任务ID"
+      }
+    ],
+    "desc": "根据删除TaskId获取服务相关角色删除状态"
+  },
   "ConsumeCustomMFAToken": {
     "params": [
       {
@@ -375,55 +393,6 @@ INFO = {
       }
     ],
     "desc": "查询用户组详情"
-  },
-  "CheckNewMfaCode": {
-    "params": [
-      {
-        "name": "Skey",
-        "desc": "登录态Skey"
-      },
-      {
-        "name": "Interface",
-        "desc": "接口名"
-      },
-      {
-        "name": "ClientIP",
-        "desc": "IP"
-      },
-      {
-        "name": "ClientUA",
-        "desc": "浏览器UA"
-      },
-      {
-        "name": "AuthType",
-        "desc": "验证类型"
-      },
-      {
-        "name": "OwnerUin",
-        "desc": "主账号uin"
-      },
-      {
-        "name": "PhoneCode",
-        "desc": "手机验证码"
-      },
-      {
-        "name": "PhoneNumber",
-        "desc": "手机号码"
-      },
-      {
-        "name": "MailCode",
-        "desc": "邮箱验证码"
-      },
-      {
-        "name": "Mail",
-        "desc": "邮箱"
-      },
-      {
-        "name": "CountryCode",
-        "desc": "手机国码"
-      }
-    ],
-    "desc": "校验新手机新邮箱接口"
   },
   "DeleteUser": {
     "params": [
@@ -447,30 +416,22 @@ INFO = {
     ],
     "desc": "用户加入到用户组"
   },
-  "SetFlag": {
+  "UpdateSAMLProvider": {
     "params": [
       {
-        "name": "OpUin",
-        "desc": "设置用户的uin"
+        "name": "Name",
+        "desc": "SAML身份提供商名称"
       },
       {
-        "name": "LoginFlag",
-        "desc": "登录设置"
+        "name": "Description",
+        "desc": "SAML身份提供商描述"
       },
       {
-        "name": "ActionFlag",
-        "desc": "敏感操作设置"
-      },
-      {
-        "name": "OffsiteFlag",
-        "desc": "异地登录设置"
-      },
-      {
-        "name": "NeedResetMfa",
-        "desc": "是否需要重置mfa"
+        "name": "SAMLMetadataDocument",
+        "desc": "SAML身份提供商Base64编码的元数据文档"
       }
     ],
-    "desc": "设置用户的登录保护和敏感操作校验方式"
+    "desc": "更新SAML身份提供商信息"
   },
   "UpdateRoleDescription": {
     "params": [
@@ -730,6 +691,6 @@ INFO = {
         "desc": "按策略名匹配"
       }
     ],
-    "desc": "本接口（ListPolicies）可用于查询策略列表"
+    "desc": "本接口（ListPolicies）可用于查询策略列表。"
   }
 }

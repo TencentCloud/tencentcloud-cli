@@ -58,7 +58,7 @@ INFO = {
         "desc": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，例如1400006666。"
       }
     ],
-    "desc": "拉取短信下发状态。"
+    "desc": "拉取短信下发状态。\n>- 目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。"
   },
   "SendSms": {
     "params": [
@@ -229,7 +229,7 @@ INFO = {
         "desc": "短信 SdkAppid 在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际 SdkAppid，例如1400006666。"
       }
     ],
-    "desc": "拉取短信回复状态。"
+    "desc": "拉取短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。"
   },
   "DescribeSmsSignList": {
     "params": [
@@ -267,7 +267,7 @@ INFO = {
         "desc": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，例如1400006666。"
       }
     ],
-    "desc": "拉取单个号码短信下发状态。"
+    "desc": "拉取单个号码短信下发状态。\n>- 目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。"
   },
   "ModifySmsTemplate": {
     "params": [
@@ -321,7 +321,7 @@ INFO = {
         "desc": "短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，例如1400006666。"
       }
     ],
-    "desc": "拉取单个号码短信回复状态。"
+    "desc": "拉取单个号码短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。"
   },
   "DeleteSmsSign": {
     "params": [

@@ -48,6 +48,15 @@ INFO = {
     "params": [],
     "desc": "获取概览页统计的基本数据"
   },
+  "StartInstances": {
+    "params": [
+      {
+        "name": "InstanceIdSet",
+        "desc": "待开启的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。"
+      }
+    ],
+    "desc": "只有状态为STOPPED的实例才可以进行此操作；接口调用成功时，实例会进入STARTING状态；启动实例成功时，实例会进入RUNNING状态。"
+  },
   "ModifyModuleName": {
     "params": [
       {
@@ -519,6 +528,27 @@ INFO = {
     ],
     "desc": "修改模块默认带宽上限"
   },
+  "ResetInstancesPassword": {
+    "params": [
+      {
+        "name": "InstanceIdSet",
+        "desc": "待重置密码的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。"
+      },
+      {
+        "name": "Password",
+        "desc": "新密码，Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。\nWindows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9]和[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]中的符号。密码不允许以/符号开头。\n如果实例即包含Linux实例又包含Windows实例，则密码复杂度限制按照Windows实例的限制。"
+      },
+      {
+        "name": "ForceStop",
+        "desc": "是否强制关机，默认为false。"
+      },
+      {
+        "name": "UserName",
+        "desc": "待重置密码的实例的用户名，不得超过64个字符。若未指定用户名，则对于Linux而言，默认重置root用户的密码，对于Windows而言，默认重置administrator的密码。"
+      }
+    ],
+    "desc": "重置处于运行中状态的实例的密码，需要显式指定强制关机参数ForceStop。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。"
+  },
   "DescribeInstancesDeniedActions": {
     "params": [
       {
@@ -585,6 +615,23 @@ INFO = {
       }
     ],
     "desc": "获取网络峰值数据"
+  },
+  "StopInstances": {
+    "params": [
+      {
+        "name": "InstanceIdSet",
+        "desc": "需要关机的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。"
+      },
+      {
+        "name": "ForceStop",
+        "desc": "是否在正常关闭失败后选择强制关闭实例，默认为false，即否。"
+      },
+      {
+        "name": "StopType",
+        "desc": "实例的关闭模式。取值范围：\nSOFT_FIRST：表示在正常关闭失败后进行强制关闭;\nHARD：直接强制关闭;\nSOFT：仅软关机；\n默认为SOFT。"
+      }
+    ],
+    "desc": "只有处于\"RUNNING\"状态的实例才能够进行关机操作；\n调用成功时，实例会进入STOPPING状态；关闭实例成功时，实例会进入STOPPED状态；\n支持强制关闭，强制关机的效果等同于关闭物理计算机的电源开关，强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。"
   },
   "DescribeNode": {
     "params": [],

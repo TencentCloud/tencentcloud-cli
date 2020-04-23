@@ -8,7 +8,7 @@ INFO = {
         "desc": "Vpc实例ID，例如：vpc-f1xjkw1b。"
       }
     ],
-    "desc": "查看VPC资源"
+    "desc": "本接口(DescribeVpcResourceDashboard)用于查看VPC资源信息。"
   },
   "CreateDefaultSecurityGroup": {
     "params": [
