@@ -34,7 +34,7 @@ INFO = {
       },
       {
         "name": "SearchKey",
-        "desc": "搜索关键词。"
+        "desc": "搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。"
       },
       {
         "name": "CertificateType",

@@ -1803,6 +1803,15 @@ INFO = {
     ],
     "desc": "查询按省份和运营商分组的下行播放数据。"
   },
+  "DescribeAllStreamPlayInfoList": {
+    "params": [
+      {
+        "name": "QueryTime",
+        "desc": "查询时间点，精确到分钟粒度，支持最近1个月的数据查询，数据延迟为5分钟左右，如果要查询实时的数据，建议传递5分钟前的时间点，格式为yyyy-mm-dd HH:MM:SS。"
+      }
+    ],
+    "desc": "输入某个时间点（1分钟维度），查询该时间点所有流的下行信息。"
+  },
   "DescribeLivePlayAuthKey": {
     "params": [
       {

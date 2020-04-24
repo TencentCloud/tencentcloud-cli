@@ -91,6 +91,43 @@ def doUploadFile(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUploadDataJson(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UploadDataJson", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "Data": argv.get("--Data"),
+        "UploadModel": argv.get("--UploadModel"),
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UploadDataJsonRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UploadDataJson(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeRecords(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -282,6 +319,44 @@ def doUploadDataFile(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryInstantData(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryInstantData", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Module": argv.get("--Module"),
+        "Operation": argv.get("--Operation"),
+        "ProductId": argv.get("--ProductId"),
+        "InstanceId": argv.get("--InstanceId"),
+        "QueryModel": argv.get("--QueryModel"),
+        "Data": argv.get("--Data"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryInstantDataRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryInstantData(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDownloadRecordList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -406,11 +481,13 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DownloadReport": doDownloadReport,
     "UploadFile": doUploadFile,
+    "UploadDataJson": doUploadDataJson,
     "DescribeRecords": doDescribeRecords,
     "DescribeCreditResult": doDescribeCreditResult,
     "DownloadDialogueText": doDownloadDialogueText,
     "DescribeTaskStatus": doDescribeTaskStatus,
     "UploadDataFile": doUploadDataFile,
+    "QueryInstantData": doQueryInstantData,
     "DownloadRecordList": doDownloadRecordList,
     "ApplyBlackList": doApplyBlackList,
     "ApplyCreditAudit": doApplyCreditAudit,

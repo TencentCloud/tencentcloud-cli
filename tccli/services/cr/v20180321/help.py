@@ -47,6 +47,27 @@ INFO = {
     ],
     "desc": "客户通过调用该接口上传需催收文档，格式需为excel格式。接口返回任务ID。"
   },
+  "ApplyBlackList": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，本接口取值：account"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，本接口取值：ApplyBlackList"
+      },
+      {
+        "name": "BlackList",
+        "desc": "黑名单列表"
+      },
+      {
+        "name": "InstId",
+        "desc": "实例ID，不传默认为系统分配的初始实例"
+      }
+    ],
+    "desc": "提交黑名单后，黑名单中有效期内的号码将停止拨打，适用于到期/逾期提醒、回访场景。"
+  },
   "DescribeRecords": {
     "params": [
       {
@@ -196,6 +217,35 @@ INFO = {
     ],
     "desc": "上传文件，接口返回数据任务ID，支持xlsx、xls、csv、zip格式。"
   },
+  "QueryInstantData": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "模块名，本接口取值：Data"
+      },
+      {
+        "name": "Operation",
+        "desc": "操作名，本接口取值：Query"
+      },
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，不传默认为系统分配的初始实例"
+      },
+      {
+        "name": "QueryModel",
+        "desc": "查询类型：callRecord 通话记录"
+      },
+      {
+        "name": "Data",
+        "desc": "查询参数"
+      }
+    ],
+    "desc": "实时数据查询"
+  },
   "DownloadRecordList": {
     "params": [
       {
@@ -217,26 +267,30 @@ INFO = {
     ],
     "desc": "<p>用于获取录音下载链接清单，次日早上8:00后可查询前日录音清单。</p>\n<p>注意：录音清单中的录音下载链接仅次日20:00之前有效，请及时下载。</p>"
   },
-  "ApplyBlackList": {
+  "UploadDataJson": {
     "params": [
       {
         "name": "Module",
-        "desc": "模块名，本接口取值：account"
+        "desc": "模块名，本接口取值：Data"
       },
       {
         "name": "Operation",
-        "desc": "操作名，本接口取值：ApplyBlackList"
+        "desc": "操作名，本接口取值：UploadJson"
       },
       {
-        "name": "BlackList",
-        "desc": "黑名单列表"
+        "name": "Data",
+        "desc": "报文信息"
       },
       {
-        "name": "InstId",
-        "desc": "实例ID，不传默认为系统分配的初始实例"
+        "name": "UploadModel",
+        "desc": "<p>上传类型，不填默认到期/逾期提醒数据，取值范围：</p><ul style=\"margin-bottom:0px;\"><li>data：到期/逾期提醒数据</li><li>repay：到期/逾期提醒停拨数据</li></ul>"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，不传默认为系统分配的初始实例。"
       }
     ],
-    "desc": "提交黑名单后，黑名单中有效期内的号码将停止拨打，适用于到期/逾期提醒、回访场景。"
+    "desc": "上传Json格式数据，接口返回数据任务ID"
   },
   "ApplyCreditAudit": {
     "params": [

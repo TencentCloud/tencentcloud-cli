@@ -1029,6 +1029,9 @@ def doCreateDBInstance(argv, arglist):
         "SubnetId": argv.get("--SubnetId"),
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "DbVersionId": argv.get("--DbVersionId"),
+        "InstanceName": argv.get("--InstanceName"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1239,6 +1242,7 @@ def doDescribePrice(argv, arglist):
         "Storage": Utils.try_to_json(argv, "--Storage"),
         "Period": Utils.try_to_json(argv, "--Period"),
         "Count": Utils.try_to_json(argv, "--Count"),
+        "Paymode": argv.get("--Paymode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

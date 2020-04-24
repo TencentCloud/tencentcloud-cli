@@ -472,6 +472,18 @@ INFO = {
       {
         "name": "DbVersionId",
         "desc": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。如果不传的话，默认为 Mariadb 10.1.9。"
+      },
+      {
+        "name": "InstanceName",
+        "desc": "实例名称， 可以通过该字段自主的设置实例的名字"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "安全组ID列表"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "自动续费标志，1:自动续费，2:不自动续费"
       }
     ],
     "desc": "本接口（CreateDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长和数量等信息创建云数据库实例。"
@@ -687,6 +699,10 @@ INFO = {
       {
         "name": "Count",
         "desc": "欲购买的数量，默认查询购买1个实例的价格。"
+      },
+      {
+        "name": "Paymode",
+        "desc": "付费类型。postpaid：按量付费   prepaid：预付费"
       }
     ],
     "desc": "本接口（DescribePrice）用于在购买实例前，查询实例的价格。"

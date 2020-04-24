@@ -410,15 +410,15 @@ INFO = {
       },
       {
         "name": "MemorySize",
-        "desc": "函数运行时内存大小，默认为 128 M，可选范 128 M-1536 M"
+        "desc": "函数运行时内存大小，默认为 128 M，可选范64M、128 M-3072 M，以 128MB 为阶梯。"
       },
       {
         "name": "Timeout",
-        "desc": "函数最长执行时间，单位为秒，可选值范 1-300 秒，默认为 3 秒"
+        "desc": "函数最长执行时间，单位为秒，可选值范 1-900 秒，默认为 3 秒"
       },
       {
         "name": "Runtime",
-        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，PHP5， PHP7，Golang1 和 Java8"
+        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，PHP5， PHP7，Golang1 和 Java8"
       },
       {
         "name": "Environment",
@@ -529,11 +529,11 @@ INFO = {
       },
       {
         "name": "MemorySize",
-        "desc": "函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯"
+        "desc": "函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯"
       },
       {
         "name": "Timeout",
-        "desc": "函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒"
+        "desc": "函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒"
       },
       {
         "name": "Environment",
@@ -541,7 +541,7 @@ INFO = {
       },
       {
         "name": "Runtime",
-        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7"
+        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15， PHP5， PHP7，Golang1 和 Java8，默认Python2.7"
       },
       {
         "name": "VpcConfig",
