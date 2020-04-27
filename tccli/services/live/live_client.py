@@ -220,6 +220,8 @@ def doModifyLiveSnapshotTemplate(argv, arglist):
         "CosAppId": Utils.try_to_json(argv, "--CosAppId"),
         "CosBucket": argv.get("--CosBucket"),
         "CosRegion": argv.get("--CosRegion"),
+        "CosPrefix": argv.get("--CosPrefix"),
+        "CosFileName": argv.get("--CosFileName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -984,6 +986,8 @@ def doCreateLiveSnapshotTemplate(argv, arglist):
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
         "PornFlag": Utils.try_to_json(argv, "--PornFlag"),
+        "CosPrefix": argv.get("--CosPrefix"),
+        "CosFileName": argv.get("--CosFileName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

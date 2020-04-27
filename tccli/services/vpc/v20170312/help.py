@@ -303,6 +303,27 @@ INFO = {
     ],
     "desc": "本接口（DisassociateNetworkInterfaceSecurityGroups）用于弹性网卡解绑安全组。支持弹性网卡完全解绑安全组。"
   },
+  "ModifyAddressInternetChargeType": {
+    "params": [
+      {
+        "name": "AddressId",
+        "desc": "弹性公网IP的唯一ID，形如eip-xxx"
+      },
+      {
+        "name": "InternetChargeType",
+        "desc": "弹性公网IP调整目标计费模式，只支持\"BANDWIDTH_PREPAID_BY_MONTH\"和\"TRAFFIC_POSTPAID_BY_HOUR\""
+      },
+      {
+        "name": "InternetMaxBandwidthOut",
+        "desc": "弹性公网IP调整目标带宽值"
+      },
+      {
+        "name": "AddressChargePrepaid",
+        "desc": "包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是\"BANDWIDTH_PREPAID_BY_MONTH\"时，必传该参数。"
+      }
+    ],
+    "desc": "该接口用于调整具有带宽属性弹性公网IP的网络计费模式\n* 支持BANDWIDTH_PREPAID_BY_MONTH和TRAFFIC_POSTPAID_BY_HOUR两种网络计费模式之间的切换。\n* 每个弹性公网IP支持调整两次，次数超出则无法调整。"
+  },
   "DescribeCcnAttachedInstances": {
     "params": [
       {

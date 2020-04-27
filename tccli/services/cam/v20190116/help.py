@@ -18,6 +18,19 @@ INFO = {
     ],
     "desc": "查询用户组关联的用户列表"
   },
+  "CreateGroup": {
+    "params": [
+      {
+        "name": "GroupName",
+        "desc": "用户组名"
+      },
+      {
+        "name": "Remark",
+        "desc": "用户组描述"
+      }
+    ],
+    "desc": "创建用户组"
+  },
   "DeleteServiceLinkedRole": {
     "params": [
       {
@@ -157,18 +170,18 @@ INFO = {
     ],
     "desc": "本接口（DeletePolicy）可用于删除策略。"
   },
-  "CreateGroup": {
+  "DeletePolicyVersion": {
     "params": [
       {
-        "name": "GroupName",
-        "desc": "用户组名"
+        "name": "PolicyId",
+        "desc": "策略ID"
       },
       {
-        "name": "Remark",
-        "desc": "用户组描述"
+        "name": "VersionId",
+        "desc": "策略版本号"
       }
     ],
-    "desc": "创建用户组"
+    "desc": "本接口（DeletePolicyVersion）可用于删除一个策略的策略版本。"
   },
   "DetachRolePolicy": {
     "params": [
@@ -394,6 +407,32 @@ INFO = {
     ],
     "desc": "查询用户组详情"
   },
+  "GetPolicyVersion": {
+    "params": [
+      {
+        "name": "PolicyId",
+        "desc": "策略ID"
+      },
+      {
+        "name": "VersionId",
+        "desc": "策略版本号"
+      }
+    ],
+    "desc": "该接口（GetPolicyVersion）用于查询策略版本详情"
+  },
+  "SetDefaultPolicyVersion": {
+    "params": [
+      {
+        "name": "PolicyId",
+        "desc": "策略ID"
+      },
+      {
+        "name": "VersionId",
+        "desc": "策略版本号"
+      }
+    ],
+    "desc": "本接口（SetDefaultPolicyVersion）可用于设置生效的策略版本。"
+  },
   "DeleteUser": {
     "params": [
       {
@@ -450,6 +489,27 @@ INFO = {
     ],
     "desc": "本接口（UpdateRoleDescription）用于修改角色的描述信息。"
   },
+  "ListEntitiesForPolicy": {
+    "params": [
+      {
+        "name": "PolicyId",
+        "desc": "策略 id"
+      },
+      {
+        "name": "Page",
+        "desc": "页码，默认值是 1，从 1 开始"
+      },
+      {
+        "name": "Rp",
+        "desc": "每页大小，默认值是 20"
+      },
+      {
+        "name": "EntityFilter",
+        "desc": "可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'"
+      }
+    ],
+    "desc": "本接口（ListEntitiesForPolicy）可用于查询策略关联的实体列表。"
+  },
   "GetRole": {
     "params": [
       {
@@ -496,6 +556,23 @@ INFO = {
       }
     ],
     "desc": "查询用户组列表"
+  },
+  "CreatePolicyVersion": {
+    "params": [
+      {
+        "name": "PolicyId",
+        "desc": "策略ID"
+      },
+      {
+        "name": "PolicyDocument",
+        "desc": "策略文本信息"
+      },
+      {
+        "name": "SetAsDefault",
+        "desc": "是否设置为当前策略的版本"
+      }
+    ],
+    "desc": "该接口（CreatePolicyVersion）用于新增策略版本，用户创建了一个策略版本之后可以方便的通过变更策略版本的方式来变更策略。"
   },
   "ListCollaborators": {
     "params": [
@@ -574,26 +651,14 @@ INFO = {
     ],
     "desc": "本接口（AttachUserPolicy）可用于绑定到用户的策略。"
   },
-  "ListEntitiesForPolicy": {
+  "ListPolicyVersions": {
     "params": [
       {
         "name": "PolicyId",
-        "desc": "策略 id"
-      },
-      {
-        "name": "Page",
-        "desc": "页码，默认值是 1，从 1 开始"
-      },
-      {
-        "name": "Rp",
-        "desc": "每页大小，默认值是 20"
-      },
-      {
-        "name": "EntityFilter",
-        "desc": "可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'"
+        "desc": "策略ID"
       }
     ],
-    "desc": "本接口（ListEntitiesForPolicy）可用于查询策略关联的实体列表。"
+    "desc": "该接口（ListPolicyVersions）用于获取策略版本列表"
   },
   "UpdateGroup": {
     "params": [

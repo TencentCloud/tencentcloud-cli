@@ -797,6 +797,7 @@ def doResetProcedureTemplate(argv, arglist):
 
     param = {
         "Name": argv.get("--Name"),
+        "Comment": argv.get("--Comment"),
         "MediaProcessTask": Utils.try_to_json(argv, "--MediaProcessTask"),
         "AiContentReviewTask": Utils.try_to_json(argv, "--AiContentReviewTask"),
         "AiAnalysisTask": Utils.try_to_json(argv, "--AiAnalysisTask"),
@@ -922,8 +923,9 @@ def doModifyImageSpriteTemplate(argv, arglist):
         "SampleInterval": Utils.try_to_json(argv, "--SampleInterval"),
         "RowCount": Utils.try_to_json(argv, "--RowCount"),
         "ColumnCount": Utils.try_to_json(argv, "--ColumnCount"),
-        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
         "FillType": argv.get("--FillType"),
+        "Comment": argv.get("--Comment"),
+        "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1565,6 +1567,7 @@ def doCreateProcedureTemplate(argv, arglist):
 
     param = {
         "Name": argv.get("--Name"),
+        "Comment": argv.get("--Comment"),
         "MediaProcessTask": Utils.try_to_json(argv, "--MediaProcessTask"),
         "AiContentReviewTask": Utils.try_to_json(argv, "--AiContentReviewTask"),
         "AiAnalysisTask": Utils.try_to_json(argv, "--AiAnalysisTask"),
@@ -1672,6 +1675,7 @@ def doCreateSuperPlayerConfig(argv, arglist):
 
     param = {
         "Name": argv.get("--Name"),
+        "Comment": argv.get("--Comment"),
         "DrmSwitch": argv.get("--DrmSwitch"),
         "AdaptiveDynamicStreamingDefinition": Utils.try_to_json(argv, "--AdaptiveDynamicStreamingDefinition"),
         "DrmStreamingsInfo": Utils.try_to_json(argv, "--DrmStreamingsInfo"),
@@ -2131,11 +2135,12 @@ def doCreateImageSpriteTemplate(argv, arglist):
         "RowCount": Utils.try_to_json(argv, "--RowCount"),
         "ColumnCount": Utils.try_to_json(argv, "--ColumnCount"),
         "Name": argv.get("--Name"),
+        "Comment": argv.get("--Comment"),
+        "FillType": argv.get("--FillType"),
         "Width": Utils.try_to_json(argv, "--Width"),
         "Height": Utils.try_to_json(argv, "--Height"),
         "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
-        "FillType": argv.get("--FillType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2394,6 +2399,7 @@ def doModifySuperPlayerConfig(argv, arglist):
         "DrmStreamingsInfo": Utils.try_to_json(argv, "--DrmStreamingsInfo"),
         "ImageSpriteDefinition": Utils.try_to_json(argv, "--ImageSpriteDefinition"),
         "ResolutionNames": Utils.try_to_json(argv, "--ResolutionNames"),
+        "Comment": argv.get("--Comment"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }

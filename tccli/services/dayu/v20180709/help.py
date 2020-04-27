@@ -67,6 +67,19 @@ INFO = {
     ],
     "desc": "获取DDoS攻击占比分析"
   },
+  "DeleteNewL4Rules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "Rule",
+        "desc": "删除接口结构体"
+      }
+    ],
+    "desc": "删除L4转发规则"
+  },
   "DescribeRuleSets": {
     "params": [
       {
@@ -159,7 +172,7 @@ INFO = {
     ],
     "desc": "获取七层转发规则"
   },
-  "ModifyCCPolicySwitch": {
+  "ModifyResBindDDoSPolicy": {
     "params": [
       {
         "name": "Business",
@@ -170,15 +183,28 @@ INFO = {
         "desc": "资源ID"
       },
       {
-        "name": "SetId",
+        "name": "PolicyId",
         "desc": "策略ID"
       },
       {
-        "name": "Switch",
-        "desc": "开关状态"
+        "name": "Method",
+        "desc": "绑定或解绑，bind表示绑定策略，unbind表示解绑策略"
       }
     ],
-    "desc": "修改CC自定义策略开关"
+    "desc": "资源实例绑定DDoS高级策略"
+  },
+  "DescribeNewL7RulesErrHealth": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP)"
+      },
+      {
+        "name": "RuleIdList",
+        "desc": "规则Id列表"
+      }
+    ],
+    "desc": "获取L7转发规则健康检查异常结果"
   },
   "CreateDDoSPolicyCase": {
     "params": [
@@ -424,6 +450,52 @@ INFO = {
     ],
     "desc": "下载攻击事件的pcap包"
   },
+  "DescribeNewL4Rules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "Ip",
+        "desc": "指定IP查询"
+      },
+      {
+        "name": "VirtualPort",
+        "desc": "指定高防IP端口查询"
+      },
+      {
+        "name": "Limit",
+        "desc": "一页条数，填0表示不分页"
+      },
+      {
+        "name": "Offset",
+        "desc": "页起始偏移，取值为(页码-1)*一页条数"
+      }
+    ],
+    "desc": "获取L4转发规则"
+  },
+  "CreateNewL7Rules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "IdList",
+        "desc": "资源ID列表"
+      },
+      {
+        "name": "VipList",
+        "desc": "资源IP列表"
+      },
+      {
+        "name": "Rules",
+        "desc": "规则列表"
+      }
+    ],
+    "desc": "添加7层转发规则"
+  },
   "ModifyElasticLimit": {
     "params": [
       {
@@ -609,6 +681,27 @@ INFO = {
     ],
     "desc": "删除七层转发规则"
   },
+  "CreateNewL4Rules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "高防产品代号：bgpip"
+      },
+      {
+        "name": "IdList",
+        "desc": "添加规则资源列表"
+      },
+      {
+        "name": "VipList",
+        "desc": "添加规则IP列表"
+      },
+      {
+        "name": "Rules",
+        "desc": "规则列表"
+      }
+    ],
+    "desc": "添加L4转发规则"
+  },
   "CreateL4Rules": {
     "params": [
       {
@@ -745,7 +838,7 @@ INFO = {
     ],
     "desc": "添加DDoS高级策略"
   },
-  "ModifyResBindDDoSPolicy": {
+  "ModifyCCPolicySwitch": {
     "params": [
       {
         "name": "Business",
@@ -756,15 +849,15 @@ INFO = {
         "desc": "资源ID"
       },
       {
-        "name": "PolicyId",
+        "name": "SetId",
         "desc": "策略ID"
       },
       {
-        "name": "Method",
-        "desc": "绑定或解绑，bind表示绑定策略，unbind表示解绑策略"
+        "name": "Switch",
+        "desc": "开关状态"
       }
     ],
-    "desc": "资源实例绑定DDoS高级策略"
+    "desc": "修改CC自定义策略开关"
   },
   "ModifyNetReturnSwitch": {
     "params": [
@@ -786,6 +879,19 @@ INFO = {
       }
     ],
     "desc": "在客户收攻击或者被封堵时，切回到源站，并设置回切的时长"
+  },
+  "DescribeNewL4RulesErrHealth": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "RuleIdList",
+        "desc": "规则ID列表"
+      }
+    ],
+    "desc": "获取L4转发规则健康检查异常结果"
   },
   "DescribeSourceIpSegment": {
     "params": [
@@ -1043,6 +1149,39 @@ INFO = {
       }
     ],
     "desc": "获取产品总览统计，支持高防包、高防IP、高防IP专业版；"
+  },
+  "DescribleNewL7Rules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "Limit",
+        "desc": "一页条数，填0表示不分页"
+      },
+      {
+        "name": "Offset",
+        "desc": "页起始偏移，取值为(页码-1)*一页条数"
+      },
+      {
+        "name": "Domain",
+        "desc": "域名搜索，选填，当需要搜索域名请填写"
+      },
+      {
+        "name": "ProtocolList",
+        "desc": "转发协议搜索，选填，取值[http, https, http/https]"
+      },
+      {
+        "name": "StatusList",
+        "desc": "状态搜索，选填，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]"
+      },
+      {
+        "name": "Ip",
+        "desc": "IP搜索，选填，当需要搜索IP请填写"
+      }
+    ],
+    "desc": "获取7层规则"
   },
   "CreateBasicDDoSAlarmThreshold": {
     "params": [
@@ -1776,6 +1915,19 @@ INFO = {
       }
     ],
     "desc": "获取DDoS攻击源列表"
+  },
+  "DeleteNewL7Rules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP)"
+      },
+      {
+        "name": "Rule",
+        "desc": "删除规则列表"
+      }
+    ],
+    "desc": "删除L7转发规则"
   },
   "DescribeCCEvList": {
     "params": [

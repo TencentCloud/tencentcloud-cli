@@ -53,6 +53,40 @@ def doUpdateRoleConsoleLogin(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupName": argv.get("--GroupName"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteServiceLinkedRole(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -366,15 +400,15 @@ def doDeletePolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateGroup(argv, arglist):
+def doDeletePolicyVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateGroup", g_param[OptionsDefine.Version])
+        show_help("DeletePolicyVersion", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GroupName": argv.get("--GroupName"),
-        "Remark": argv.get("--Remark"),
+        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
+        "VersionId": Utils.try_to_json(argv, "--VersionId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -388,9 +422,9 @@ def doCreateGroup(argv, arglist):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateGroupRequest()
+    model = models.DeletePolicyVersionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateGroup(model)
+    rsp = client.DeletePolicyVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -948,6 +982,74 @@ def doGetGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetPolicyVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetPolicyVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
+        "VersionId": Utils.try_to_json(argv, "--VersionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetPolicyVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetPolicyVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSetDefaultPolicyVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SetDefaultPolicyVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
+        "VersionId": Utils.try_to_json(argv, "--VersionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetDefaultPolicyVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SetDefaultPolicyVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doListGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1087,6 +1189,39 @@ def doUpdateRoleDescription(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doListPolicyVersions(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListPolicyVersions", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListPolicyVersionsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListPolicyVersions(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetRole(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1181,6 +1316,41 @@ def doDeleteUser(argv, arglist):
     model = models.DeleteUserRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteUser(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreatePolicyVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreatePolicyVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
+        "PolicyDocument": argv.get("--PolicyDocument"),
+        "SetAsDefault": Utils.try_to_json(argv, "--SetAsDefault"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreatePolicyVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreatePolicyVersion(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1618,6 +1788,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "UpdateRoleConsoleLogin": doUpdateRoleConsoleLogin,
+    "CreateGroup": doCreateGroup,
     "DeleteServiceLinkedRole": doDeleteServiceLinkedRole,
     "AddUser": doAddUser,
     "CreateServiceLinkedRole": doCreateServiceLinkedRole,
@@ -1627,7 +1798,7 @@ ACTION_MAP = {
     "ListUsers": doListUsers,
     "ListAttachedRolePolicies": doListAttachedRolePolicies,
     "DeletePolicy": doDeletePolicy,
-    "CreateGroup": doCreateGroup,
+    "DeletePolicyVersion": doDeletePolicyVersion,
     "DetachRolePolicy": doDetachRolePolicy,
     "DescribeRoleList": doDescribeRoleList,
     "CreateSAMLProvider": doCreateSAMLProvider,
@@ -1644,13 +1815,17 @@ ACTION_MAP = {
     "GetServiceLinkedRoleDeletionStatus": doGetServiceLinkedRoleDeletionStatus,
     "ConsumeCustomMFAToken": doConsumeCustomMFAToken,
     "GetGroup": doGetGroup,
+    "GetPolicyVersion": doGetPolicyVersion,
+    "SetDefaultPolicyVersion": doSetDefaultPolicyVersion,
     "ListGroups": doListGroups,
     "AddUserToGroup": doAddUserToGroup,
     "AttachRolePolicy": doAttachRolePolicy,
     "UpdateRoleDescription": doUpdateRoleDescription,
+    "ListPolicyVersions": doListPolicyVersions,
     "GetRole": doGetRole,
     "ListAttachedUserPolicies": doListAttachedUserPolicies,
     "DeleteUser": doDeleteUser,
+    "CreatePolicyVersion": doCreatePolicyVersion,
     "ListCollaborators": doListCollaborators,
     "DetachGroupPolicy": doDetachGroupPolicy,
     "RemoveUserFromGroup": doRemoveUserFromGroup,

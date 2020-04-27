@@ -1805,6 +1805,7 @@ def doModifyImageSpriteTemplate(argv, arglist):
         "RowCount": Utils.try_to_json(argv, "--RowCount"),
         "ColumnCount": Utils.try_to_json(argv, "--ColumnCount"),
         "FillType": argv.get("--FillType"),
+        "Comment": argv.get("--Comment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2059,6 +2060,7 @@ def doCreateImageSpriteTemplate(argv, arglist):
         "Height": Utils.try_to_json(argv, "--Height"),
         "ResolutionAdaptive": argv.get("--ResolutionAdaptive"),
         "FillType": argv.get("--FillType"),
+        "Comment": argv.get("--Comment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

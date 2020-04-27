@@ -166,6 +166,14 @@ INFO = {
       {
         "name": "CosRegion",
         "desc": "Cos 地域。"
+      },
+      {
+        "name": "CosPrefix",
+        "desc": "Cos Bucket文件夹前缀。"
+      },
+      {
+        "name": "CosFileName",
+        "desc": "Cos 文件名称。"
       }
     ],
     "desc": "修改截图模板配置。"
@@ -666,6 +674,14 @@ INFO = {
       {
         "name": "PornFlag",
         "desc": "是否开启鉴黄，0：不开启，1：开启。默认：0。"
+      },
+      {
+        "name": "CosPrefix",
+        "desc": "Cos Bucket文件夹前缀。"
+      },
+      {
+        "name": "CosFileName",
+        "desc": "Cos 文件名称。"
       }
     ],
     "desc": "创建截图模板，成功返回模板id后，需要调用[CreateLiveSnapshotRule](/document/product/267/32625)接口，将模板id绑定到流使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"

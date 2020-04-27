@@ -575,6 +575,39 @@ def doDescribePurgeQuota(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeImageConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeImageConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Domain": argv.get("--Domain"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeImageConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeImageConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSearchClsLog(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1111,6 +1144,42 @@ def doPushUrlsCache(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpdateImageConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateImageConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Domain": argv.get("--Domain"),
+        "WebpAdapter": Utils.try_to_json(argv, "--WebpAdapter"),
+        "TpgAdapter": Utils.try_to_json(argv, "--TpgAdapter"),
+        "GuetzliAdapter": Utils.try_to_json(argv, "--GuetzliAdapter"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateImageConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateImageConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDisableClsLogTopic(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1526,6 +1595,7 @@ ACTION_MAP = {
     "StartCdnDomain": doStartCdnDomain,
     "StopCdnDomain": doStopCdnDomain,
     "DescribePurgeQuota": doDescribePurgeQuota,
+    "DescribeImageConfig": doDescribeImageConfig,
     "SearchClsLog": doSearchClsLog,
     "ListTopData": doListTopData,
     "DescribeOriginData": doDescribeOriginData,
@@ -1540,6 +1610,7 @@ ACTION_MAP = {
     "DescribeCertDomains": doDescribeCertDomains,
     "CreateClsLogTopic": doCreateClsLogTopic,
     "PushUrlsCache": doPushUrlsCache,
+    "UpdateImageConfig": doUpdateImageConfig,
     "DisableClsLogTopic": doDisableClsLogTopic,
     "ListClsTopicDomains": doListClsTopicDomains,
     "ListClsLogTopics": doListClsLogTopics,

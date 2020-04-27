@@ -207,5 +207,18 @@ INFO = {
       }
     ],
     "desc": "针对已隔离的免费环境，可以通过本接口将其恢复访问。"
+  },
+  "DescribeEnvFreeQuota": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      },
+      {
+        "name": "ResourceTypes",
+        "desc": "资源类型：可选值：CDN, COS, FLEXDB, HOSTING, SCF\n不传则返回全部资源指标"
+      }
+    ],
+    "desc": "查询后付费免费配额信息"
   }
 }

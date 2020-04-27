@@ -1,6 +1,27 @@
 # -*- coding: utf-8 -*-
 DESC = "gs-2019-11-18"
 INFO = {
+  "EnterQueue": {
+    "params": [
+      {
+        "name": "First",
+        "desc": "true：第一次请求排队 false：已在排队中，查询当前排名"
+      },
+      {
+        "name": "GameId",
+        "desc": "游戏ID"
+      },
+      {
+        "name": "UserId",
+        "desc": "用户ID"
+      },
+      {
+        "name": "SetNumber",
+        "desc": "资源池编号"
+      }
+    ],
+    "desc": "进入排队锁定机器"
+  },
   "TrylockWorker": {
     "params": [
       {
@@ -34,6 +55,19 @@ INFO = {
       }
     ],
     "desc": "强制退出游戏"
+  },
+  "QuitQueue": {
+    "params": [
+      {
+        "name": "UserId",
+        "desc": "用户ID"
+      },
+      {
+        "name": "SetNumber",
+        "desc": "资源池编号"
+      }
+    ],
+    "desc": "退出排队"
   },
   "DescribeWorkers": {
     "params": [

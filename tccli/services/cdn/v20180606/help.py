@@ -407,6 +407,15 @@ INFO = {
     "params": [],
     "desc": "DescribePushQuota  用于查询预热配额和每日可用量。"
   },
+  "DescribeImageConfig": {
+    "params": [
+      {
+        "name": "Domain",
+        "desc": "域名"
+      }
+    ],
+    "desc": "获取域名图片优化的当前配置，支持Webp、TPG、Guetzli "
+  },
   "ListTopData": {
     "params": [
       {
@@ -771,6 +780,27 @@ INFO = {
       }
     ],
     "desc": "DisableClsLogTopic 用于停止日志主题投递。注意：停止后，所有绑定该日志主题域名的日志将不再继续投递至该主题，已经投递的日志将会继续保留。生效时间约为 5~15 分钟。\n"
+  },
+  "UpdateImageConfig": {
+    "params": [
+      {
+        "name": "Domain",
+        "desc": "域名"
+      },
+      {
+        "name": "WebpAdapter",
+        "desc": "WebpAdapter配置项"
+      },
+      {
+        "name": "TpgAdapter",
+        "desc": "TpgAdapter配置项"
+      },
+      {
+        "name": "GuetzliAdapter",
+        "desc": "GuetzliAdapter配置项"
+      }
+    ],
+    "desc": "更新控制台图片优化的相关配置，支持Webp、TPG、Guetzli "
   },
   "PushUrlsCache": {
     "params": [

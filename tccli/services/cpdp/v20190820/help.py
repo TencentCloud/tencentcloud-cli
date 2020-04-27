@@ -98,11 +98,11 @@ INFO = {
       },
       {
         "name": "CnapsBranchId",
-        "desc": "超级网银行号和大小额行号\n二选一"
+        "desc": "大小额行号，超级网银行号和大小额行号\n二选一"
       },
       {
         "name": "EiconBankBranchId",
-        "desc": "超级网银行号和大小额行号\n二选一"
+        "desc": "超级网银行号，超级网银行号和大小额行号\n二选一"
       }
     ],
     "desc": "商户绑定提现银行卡，每个商户只能绑定一张提现银行卡"
@@ -345,15 +345,19 @@ INFO = {
     ],
     "desc": "会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。\n平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。"
   },
-  "CloseOrder": {
+  "QueryOrder": {
     "params": [
       {
         "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
+        "desc": "聚鑫分配的支付主 MidasAppId"
       },
       {
         "name": "UserId",
         "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
+      },
+      {
+        "name": "Type",
+        "desc": "type=by_order根据订单号 查订单；\ntype=by_user根据用户id 查订单 。"
       },
       {
         "name": "MidasSecretId",
@@ -364,15 +368,31 @@ INFO = {
         "desc": "按照聚鑫安全密钥计算的签名"
       },
       {
+        "name": "Count",
+        "desc": "每页返回的记录数。根据用户 号码查询订单列表时需要传。 用于分页展示。Type=by_order时必填"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录数偏移量，默认从0开 始。根据用户号码查询订单列 表时需要传。用于分页展示。Type=by_order时必填"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间，Unix时间戳。Type=by_order时必填"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，Unix时间戳。Type=by_order时必填"
+      },
+      {
         "name": "OutTradeNo",
-        "desc": "业务订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+        "desc": "业务订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
       },
       {
         "name": "TransactionId",
-        "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+        "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
       }
     ],
-    "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
+    "desc": "根据订单号，或者用户Id，查询支付订单状态 "
   },
   "QueryAcctInfo": {
     "params": [
@@ -394,27 +414,6 @@ INFO = {
       }
     ],
     "desc": "聚鑫-开户信息查询"
-  },
-  "QueryMerchantInfoForManagement": {
-    "params": [
-      {
-        "name": "InvoicePlatformId",
-        "desc": "开票平台ID"
-      },
-      {
-        "name": "Offset",
-        "desc": "页码"
-      },
-      {
-        "name": "Limit",
-        "desc": "页大小"
-      },
-      {
-        "name": "Profile",
-        "desc": "接入环境。沙箱环境填sandbox。"
-      }
-    ],
-    "desc": "智慧零售-查询管理端商户"
   },
   "ReviseMbrProperty": {
     "params": [
@@ -686,63 +685,6 @@ INFO = {
     ],
     "desc": "会员间交易-不验证。此接口可以实现会员间的余额的交易，实现资金在会员之间流动。"
   },
-  "QueryInvoiceForManagement": {
-    "params": [
-      {
-        "name": "InvoicePlatformId",
-        "desc": "开票平台ID"
-      },
-      {
-        "name": "InvoiceStatus",
-        "desc": "开票状态"
-      },
-      {
-        "name": "RedInvoiceStatus",
-        "desc": "红冲状态"
-      },
-      {
-        "name": "BeginTime",
-        "desc": "开始时间"
-      },
-      {
-        "name": "EndTime",
-        "desc": "结束时间"
-      },
-      {
-        "name": "Offset",
-        "desc": "页码"
-      },
-      {
-        "name": "Limit",
-        "desc": "页大小"
-      },
-      {
-        "name": "OrderId",
-        "desc": "订单号"
-      },
-      {
-        "name": "InvoiceId",
-        "desc": "发票ID"
-      },
-      {
-        "name": "OrderSn",
-        "desc": "业务开票号"
-      },
-      {
-        "name": "InvoiceSn",
-        "desc": "发票号码"
-      },
-      {
-        "name": "InvoiceCode",
-        "desc": "发票代码"
-      },
-      {
-        "name": "Profile",
-        "desc": "接入环境。沙箱环境填 sandbox。"
-      }
-    ],
-    "desc": "智慧零售-查询管理端发票"
-  },
   "QueryCommonTransferRecharge": {
     "params": [
       {
@@ -814,19 +756,15 @@ INFO = {
     ],
     "desc": "聚鑫-查询子账户绑定银行卡"
   },
-  "QueryOrder": {
+  "CloseOrder": {
     "params": [
       {
         "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主 MidasAppId"
+        "desc": "聚鑫分配的支付主MidasAppId"
       },
       {
         "name": "UserId",
         "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
-      },
-      {
-        "name": "Type",
-        "desc": "type=by_order根据订单号 查订单；\ntype=by_user根据用户id 查订单 。"
       },
       {
         "name": "MidasSecretId",
@@ -837,116 +775,15 @@ INFO = {
         "desc": "按照聚鑫安全密钥计算的签名"
       },
       {
-        "name": "Count",
-        "desc": "每页返回的记录数。根据用户 号码查询订单列表时需要传。 用于分页展示。Type=by_order时必填"
-      },
-      {
-        "name": "Offset",
-        "desc": "记录数偏移量，默认从0开 始。根据用户号码查询订单列 表时需要传。用于分页展示。Type=by_order时必填"
-      },
-      {
-        "name": "StartTime",
-        "desc": "查询开始时间，Unix时间戳。Type=by_order时必填"
-      },
-      {
-        "name": "EndTime",
-        "desc": "查询结束时间，Unix时间戳。Type=by_order时必填"
-      },
-      {
         "name": "OutTradeNo",
-        "desc": "业务订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
+        "desc": "业务订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
       },
       {
         "name": "TransactionId",
-        "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
+        "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
       }
     ],
-    "desc": "根据订单号，或者用户Id，查询支付订单状态 "
-  },
-  "ApplyOutwardOrder": {
-    "params": [
-      {
-        "name": "TransactionId",
-        "desc": "对接方汇出指令编号"
-      },
-      {
-        "name": "PricingCurrency",
-        "desc": "定价币种"
-      },
-      {
-        "name": "SourceCurrency",
-        "desc": "源币种"
-      },
-      {
-        "name": "TargetCurrency",
-        "desc": "目的币种"
-      },
-      {
-        "name": "PayeeType",
-        "desc": "收款人类型"
-      },
-      {
-        "name": "PayeeAccount",
-        "desc": "收款人账号"
-      },
-      {
-        "name": "SourceAmount",
-        "desc": "源币种金额"
-      },
-      {
-        "name": "TargetAmount",
-        "desc": "目的金额"
-      },
-      {
-        "name": "PayeeName",
-        "desc": "收款人姓名"
-      },
-      {
-        "name": "PayeeAddress",
-        "desc": "收款人地址"
-      },
-      {
-        "name": "PayeeBankAccountType",
-        "desc": "收款人银行账号类型"
-      },
-      {
-        "name": "PayeeCountryCode",
-        "desc": "收款人国家或地区编码"
-      },
-      {
-        "name": "PayeeBankName",
-        "desc": "收款人开户银行名称"
-      },
-      {
-        "name": "PayeeBankAddress",
-        "desc": "收款人开户银行地址"
-      },
-      {
-        "name": "PayeeBankDistrict",
-        "desc": "收款人开户银行所在国家或地区编码"
-      },
-      {
-        "name": "PayeeBankSwiftCode",
-        "desc": "收款银行SwiftCode"
-      },
-      {
-        "name": "PayeeBankType",
-        "desc": "收款银行国际编码类型"
-      },
-      {
-        "name": "PayeeBankCode",
-        "desc": "收款银行国际编码"
-      },
-      {
-        "name": "ReferenceForBeneficiary",
-        "desc": "收款人附言"
-      },
-      {
-        "name": "Profile",
-        "desc": "接入环境。沙箱环境填sandbox"
-      }
-    ],
-    "desc": "跨境-汇出指令申请"
+    "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
   },
   "CreateInvoice": {
     "params": [
@@ -1076,6 +913,91 @@ INFO = {
       }
     ],
     "desc": "智慧零售-发票开具"
+  },
+  "ApplyOutwardOrder": {
+    "params": [
+      {
+        "name": "TransactionId",
+        "desc": "对接方汇出指令编号"
+      },
+      {
+        "name": "PricingCurrency",
+        "desc": "定价币种"
+      },
+      {
+        "name": "SourceCurrency",
+        "desc": "源币种"
+      },
+      {
+        "name": "TargetCurrency",
+        "desc": "目的币种"
+      },
+      {
+        "name": "PayeeType",
+        "desc": "收款人类型"
+      },
+      {
+        "name": "PayeeAccount",
+        "desc": "收款人账号"
+      },
+      {
+        "name": "SourceAmount",
+        "desc": "源币种金额"
+      },
+      {
+        "name": "TargetAmount",
+        "desc": "目的金额"
+      },
+      {
+        "name": "PayeeName",
+        "desc": "收款人姓名"
+      },
+      {
+        "name": "PayeeAddress",
+        "desc": "收款人地址"
+      },
+      {
+        "name": "PayeeBankAccountType",
+        "desc": "收款人银行账号类型"
+      },
+      {
+        "name": "PayeeCountryCode",
+        "desc": "收款人国家或地区编码"
+      },
+      {
+        "name": "PayeeBankName",
+        "desc": "收款人开户银行名称"
+      },
+      {
+        "name": "PayeeBankAddress",
+        "desc": "收款人开户银行地址"
+      },
+      {
+        "name": "PayeeBankDistrict",
+        "desc": "收款人开户银行所在国家或地区编码"
+      },
+      {
+        "name": "PayeeBankSwiftCode",
+        "desc": "收款银行SwiftCode"
+      },
+      {
+        "name": "PayeeBankType",
+        "desc": "收款银行国际编码类型"
+      },
+      {
+        "name": "PayeeBankCode",
+        "desc": "收款银行国际编码"
+      },
+      {
+        "name": "ReferenceForBeneficiary",
+        "desc": "收款人附言"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "跨境-汇出指令申请"
   },
   "QueryOutwardOrder": {
     "params": [
@@ -1701,7 +1623,7 @@ INFO = {
       },
       {
         "name": "LegalPersonName",
-        "desc": "注册企业法人代表名称"
+        "desc": "注册企业法定代表人名称"
       },
       {
         "name": "ContactsName",
