@@ -1004,10 +1004,10 @@ INFO = {
       },
       {
         "name": "SpanType",
-        "desc": "请求类型：1——string类型，2——所有类型"
+        "desc": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时"
       }
     ],
-    "desc": "查询实例大Key大小分布"
+    "desc": "查询实例访问的耗时分布"
   },
   "SwitchInstanceVip": {
     "params": [

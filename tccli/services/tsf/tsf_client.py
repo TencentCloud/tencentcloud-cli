@@ -2062,6 +2062,7 @@ def doCreateConfig(argv, arglist):
         "ApplicationId": argv.get("--ApplicationId"),
         "ConfigVersionDesc": argv.get("--ConfigVersionDesc"),
         "ConfigType": argv.get("--ConfigType"),
+        "EncodeWithBase64": Utils.try_to_json(argv, "--EncodeWithBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2205,6 +2206,7 @@ def doCreatePublicConfig(argv, arglist):
         "ConfigValue": argv.get("--ConfigValue"),
         "ConfigVersionDesc": argv.get("--ConfigVersionDesc"),
         "ConfigType": argv.get("--ConfigType"),
+        "EncodeWithBase64": Utils.try_to_json(argv, "--EncodeWithBase64"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

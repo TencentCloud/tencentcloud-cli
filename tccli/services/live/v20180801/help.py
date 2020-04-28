@@ -1387,7 +1387,7 @@ INFO = {
       },
       {
         "name": "DayTime",
-        "desc": "查询时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近3个月内某天的详细数据。"
+        "desc": "查询时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近1个月内某天的详细数据。"
       },
       {
         "name": "PageNum",
@@ -1399,11 +1399,11 @@ INFO = {
       },
       {
         "name": "StartDayTime",
-        "desc": "起始天时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近3个月内的详细数据。"
+        "desc": "起始天时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近1个月内的详细数据。"
       },
       {
         "name": "EndDayTime",
-        "desc": "结束天时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近3个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。"
+        "desc": "结束天时间，北京时间，\n格式：yyyymmdd。\n注意：支持查询近1个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。"
       }
     ],
     "desc": "支持查询某天或某段时间的转码详细信息。"

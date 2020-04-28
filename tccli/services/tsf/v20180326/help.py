@@ -765,6 +765,10 @@ INFO = {
       {
         "name": "ConfigType",
         "desc": "配置项类型"
+      },
+      {
+        "name": "EncodeWithBase64",
+        "desc": "Base64编码的配置项"
       }
     ],
     "desc": "创建公共配置项"
@@ -1228,6 +1232,10 @@ INFO = {
       {
         "name": "ConfigType",
         "desc": "配置项值类型"
+      },
+      {
+        "name": "EncodeWithBase64",
+        "desc": "Base64编码的配置项"
       }
     ],
     "desc": "创建配置项"

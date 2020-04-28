@@ -422,31 +422,6 @@ INFO = {
     ],
     "desc": "查询采样截图模板，支持根据条件，分页查询。"
   },
-  "DescribeAudioTrackTemplates": {
-    "params": [
-      {
-        "name": "Definitions",
-        "desc": "模板唯一标识过滤条件，数组长度限制：100。"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页偏移量，默认值：0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：100。"
-      },
-      {
-        "name": "Type",
-        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
-      },
-      {
-        "name": "SubAppId",
-        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
-      }
-    ],
-    "desc": "获取转自适应码流音频轨模板列表，支持根据条件，分页查询。"
-  },
   "CreateAnimatedGraphicsTemplate": {
     "params": [
       {
@@ -2296,31 +2271,6 @@ INFO = {
       }
     ],
     "desc": "将点播视频发布到微信小程序，供微信小程序播放器播放。"
-  },
-  "DescribeVideoTrackTemplates": {
-    "params": [
-      {
-        "name": "Definitions",
-        "desc": "模板唯一标识过滤条件，数组长度限制：100。"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页偏移量，默认值：0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：100。"
-      },
-      {
-        "name": "Type",
-        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
-      },
-      {
-        "name": "SubAppId",
-        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
-      }
-    ],
-    "desc": "获取转自适应码流视频轨模板列表，支持根据条件，分页查询。"
   },
   "SimpleHlsClip": {
     "params": [
