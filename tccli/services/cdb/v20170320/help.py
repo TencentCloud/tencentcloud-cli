@@ -124,6 +124,27 @@ INFO = {
     ],
     "desc": "本接口(OpenDBInstanceGTID)用于开启云数据库实例的 GTID，只支持版本为 5.6 以及以上的实例。"
   },
+  "DescribeRollbackTaskDetail": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表] (https://cloud.tencent.com/document/api/236/15872)。"
+      },
+      {
+        "name": "AsyncRequestId",
+        "desc": "异步任务 ID。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页参数，每次请求返回的记录数。默认值为 20，最大值为 100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量。默认为 0。"
+      }
+    ],
+    "desc": "本接口(DescribeRollbackTaskDetail)用于查询云数据库实例回档任务详情。"
+  },
   "ModifyDBInstanceSecurityGroups": {
     "params": [
       {

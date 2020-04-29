@@ -245,6 +245,23 @@ INFO = {
     ],
     "desc": "该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。"
   },
+  "DeleteAlias": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数名称"
+      },
+      {
+        "name": "Name",
+        "desc": "别名的名称"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数所在的命名空间"
+      }
+    ],
+    "desc": "删除一个函数版本的别名"
+  },
   "GetFunctionLogs": {
     "params": [
       {
@@ -449,20 +466,12 @@ INFO = {
         "desc": "在更新时是否同步发布新版本，默认为：FALSE，不发布"
       },
       {
-        "name": "L5Enable",
-        "desc": "是否开启L5访问能力，TRUE 为开启，FALSE为关闭"
-      },
-      {
         "name": "Layers",
         "desc": "函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。"
       },
       {
         "name": "DeadLetterConfig",
         "desc": "函数关联的死信队列信息"
-      },
-      {
-        "name": "OnsEnable",
-        "desc": "是否开启Ons访问能力，TRUE 为开启，FALSE为关闭"
       }
     ],
     "desc": "该接口根据传入参数更新函数配置。"

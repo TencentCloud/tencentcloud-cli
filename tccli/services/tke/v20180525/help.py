@@ -158,6 +158,10 @@ INFO = {
       {
         "name": "InstanceDeleteMode",
         "desc": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）"
+      },
+      {
+        "name": "ResourceDeleteOptions",
+        "desc": "集群删除时资源的删除策略，目前支持CBS（默认保留CBS）"
       }
     ],
     "desc": "删除集群(YUNAPI V3版本)"

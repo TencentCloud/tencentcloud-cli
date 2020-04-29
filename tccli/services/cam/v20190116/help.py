@@ -472,22 +472,30 @@ INFO = {
     ],
     "desc": "更新SAML身份提供商信息"
   },
-  "UpdateRoleDescription": {
+  "UpdatePolicy": {
     "params": [
       {
+        "name": "PolicyId",
+        "desc": "策略ID"
+      },
+      {
+        "name": "PolicyName",
+        "desc": "策略名"
+      },
+      {
         "name": "Description",
-        "desc": "角色描述"
+        "desc": "策略描述"
       },
       {
-        "name": "RoleId",
-        "desc": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
+        "name": "PolicyDocument",
+        "desc": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo"
       },
       {
-        "name": "RoleName",
-        "desc": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一"
+        "name": "Alias",
+        "desc": "预设策略备注"
       }
     ],
-    "desc": "本接口（UpdateRoleDescription）用于修改角色的描述信息。"
+    "desc": "本接口（UpdatePolicy ）可用于更新策略。\n如果已存在策略版本，本接口会直接更新策略的默认版本，不会创建新版本，如果不存在任何策略版本，则直接创建一个默认版本。"
   },
   "ListEntitiesForPolicy": {
     "params": [
@@ -522,6 +530,23 @@ INFO = {
       }
     ],
     "desc": "本接口（GetRole）用于获取指定角色的详细信息。"
+  },
+  "UpdateRoleDescription": {
+    "params": [
+      {
+        "name": "Description",
+        "desc": "角色描述"
+      },
+      {
+        "name": "RoleId",
+        "desc": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      }
+    ],
+    "desc": "本接口（UpdateRoleDescription）用于修改角色的描述信息。"
   },
   "ListAttachedUserPolicies": {
     "params": [

@@ -422,10 +422,10 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。\n1. 在创建转码模板接口 [CreateLiveTranscodeTemplate](/document/product/267/32646) 调用的返回值中获取模板 ID。\n2. 可以从接口 [DescribeLiveTranscodeTemplates](/document/product/267/32641) 查询已经创建的过的模板列表。"
       }
     ],
-    "desc": "删除转码模板"
+    "desc": "删除转码模板。"
   },
   "DescribeTopClientIpSumInfoList": {
     "params": [
@@ -885,7 +885,7 @@ INFO = {
       },
       {
         "name": "VideoBitrate",
-        "desc": "视频码率。\n范围：100-8000。"
+        "desc": "视频码率。范围：100kbps - 8000kbps。\n注意：码率必须是100的倍数。"
       },
       {
         "name": "Width",
@@ -942,22 +942,22 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "播放域名。\n域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "播放域名。"
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。"
       },
       {
         "name": "StreamName",
-        "desc": "流名称。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "流名称。"
       },
       {
         "name": "TemplateId",
-        "desc": "模板ID。\n域名+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。"
+        "desc": "模板ID。"
       }
     ],
-    "desc": "删除转码规则"
+    "desc": "删除转码规则。\nDomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配。其中TemplateId必填，其余参数为空时也需要传空字符串进行强匹配。"
   },
   "DeleteLiveSnapshotRule": {
     "params": [
@@ -1336,10 +1336,10 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板Id。"
+        "desc": "模板 ID。\n注意：在创建转码模板接口 [CreateLiveTranscodeTemplate](/document/product/267/32646) 调用的返回值中获取模板 ID。"
       }
     ],
-    "desc": "获取单个转码模板"
+    "desc": "获取单个转码模板。"
   },
   "DescribeScreenShotSheetNumList": {
     "params": [
@@ -1650,7 +1650,7 @@ INFO = {
   },
   "DescribeLiveTranscodeTemplates": {
     "params": [],
-    "desc": "获取转码模板列表"
+    "desc": "获取转码模板列表。"
   },
   "CreateLiveRecordTemplate": {
     "params": [
