@@ -68,6 +68,7 @@ def doCreateRecTask(argv, arglist):
         "HotwordId": argv.get("--HotwordId"),
         "FilterDirty": Utils.try_to_json(argv, "--FilterDirty"),
         "FilterModal": Utils.try_to_json(argv, "--FilterModal"),
+        "ConvertNumMode": Utils.try_to_json(argv, "--ConvertNumMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -352,6 +353,7 @@ def doSentenceRecognition(argv, arglist):
         "FilterDirty": Utils.try_to_json(argv, "--FilterDirty"),
         "FilterModal": Utils.try_to_json(argv, "--FilterModal"),
         "FilterPunc": Utils.try_to_json(argv, "--FilterPunc"),
+        "ConvertNumMode": Utils.try_to_json(argv, "--ConvertNumMode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

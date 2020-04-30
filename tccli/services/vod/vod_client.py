@@ -116,6 +116,7 @@ def doApplyUpload(argv, arglist):
         "ClassId": Utils.try_to_json(argv, "--ClassId"),
         "SourceContext": argv.get("--SourceContext"),
         "SessionContext": argv.get("--SessionContext"),
+        "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }

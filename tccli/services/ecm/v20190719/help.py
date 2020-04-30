@@ -705,6 +705,15 @@ INFO = {
     ],
     "desc": "重装实例，若指定了ImageId参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装；若未指定密码，则密码通过站内信形式随后发送。"
   },
+  "DescribeInstanceVncUrl": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "一个操作的实例ID。可通过DescribeInstances API返回值中的InstanceId获取。"
+      }
+    ],
+    "desc": "查询实例管理终端地址"
+  },
   "DeleteImage": {
     "params": [
       {

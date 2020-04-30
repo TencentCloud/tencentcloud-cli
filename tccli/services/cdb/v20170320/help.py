@@ -128,7 +128,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表] (https://cloud.tencent.com/document/api/236/15872)。"
+        "desc": "实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。"
       },
       {
         "name": "AsyncRequestId",
@@ -1003,6 +1003,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DeleteAccounts)用于删除云数据库的账户。"
+  },
+  "DescribeDBInstanceInfo": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID 。"
+      }
+    ],
+    "desc": "查询实例基本信息（实例 ID ，实例名称，是否开通加密 ）"
   },
   "DescribeRollbackRangeTime": {
     "params": [

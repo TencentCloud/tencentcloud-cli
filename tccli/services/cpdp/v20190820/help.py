@@ -910,6 +910,10 @@ INFO = {
       {
         "name": "Profile",
         "desc": "接入环境。沙箱环境填sandbox。"
+      },
+      {
+        "name": "UndoPart",
+        "desc": "撤销部分商品。0-不撤销，1-撤销"
       }
     ],
     "desc": "智慧零售-发票开具"

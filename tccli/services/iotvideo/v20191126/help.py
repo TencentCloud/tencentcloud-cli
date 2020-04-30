@@ -365,7 +365,7 @@ INFO = {
       },
       {
         "name": "ForceBind",
-        "desc": "是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为owner时，可以不填"
+        "desc": "是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填"
       }
     ],
     "desc": "本接口（CreateBinding）用于终端用户和设备进行绑定，具体的应用场景如下：\n    终端用户与设备具有“强关联”关系。用户与设备绑定之后，用户终端即具备了该设备的访问权限,访问或操作设备时，无需获取设备访问Token。"

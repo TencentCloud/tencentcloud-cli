@@ -22,6 +22,23 @@ INFO = {
     ],
     "desc": "查询sdkappid维度下实时质量数据，包括：进房成功率，首帧秒开率，音频卡顿率，视频卡顿率。可查询24小时内数据，查询起止时间不超过1个小时。"
   },
+  "DescribeHistoryScale": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "用户sdkappid"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间"
+      }
+    ],
+    "desc": "查询历史房间和用户数，每分钟1次，可查询最近5天的数据"
+  },
   "DescribeRealtimeScale": {
     "params": [
       {

@@ -275,6 +275,39 @@ INFO = {
     ],
     "desc": "将云点播媒资文件导入到云剪素材库。"
   },
+  "ExportVideoByEditorTrackData": {
+    "params": [
+      {
+        "name": "Platform",
+        "desc": "平台名称，指定访问的平台。"
+      },
+      {
+        "name": "Definition",
+        "desc": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>"
+      },
+      {
+        "name": "ExportDestination",
+        "desc": "导出目标。\n<li>CME：云剪，即导出为云剪素材；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>"
+      },
+      {
+        "name": "TrackData",
+        "desc": "在线编辑轨道数据。"
+      },
+      {
+        "name": "CMEExportInfo",
+        "desc": "导出的云剪素材信息。指定 ExportDestination = CME 时有效。"
+      },
+      {
+        "name": "VODExportInfo",
+        "desc": "导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。"
+      },
+      {
+        "name": "Operator",
+        "desc": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。"
+      }
+    ],
+    "desc": "使用在线编辑轨道数据直接导出视频。"
+  },
   "DescribeTaskDetail": {
     "params": [
       {

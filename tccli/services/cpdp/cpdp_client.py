@@ -936,6 +936,7 @@ def doCreateInvoice(argv, arglist):
         "Remark": argv.get("--Remark"),
         "Items": Utils.try_to_json(argv, "--Items"),
         "Profile": argv.get("--Profile"),
+        "UndoPart": Utils.try_to_json(argv, "--UndoPart"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

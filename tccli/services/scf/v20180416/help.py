@@ -14,6 +14,35 @@ INFO = {
     ],
     "desc": "该接口根据传入参数删除函数。"
   },
+  "UpdateAlias": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数名称"
+      },
+      {
+        "name": "Name",
+        "desc": "别名的名称"
+      },
+      {
+        "name": "FunctionVersion",
+        "desc": "别名指向的主版本"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数所在的命名空间"
+      },
+      {
+        "name": "RoutingConfig",
+        "desc": "别名的路由信息，需要为别名指定附加版本时，必须提供此参数"
+      },
+      {
+        "name": "Description",
+        "desc": "别名的描述"
+      }
+    ],
+    "desc": "更新别名的配置"
+  },
   "GetLayerVersion": {
     "params": [
       {
@@ -138,6 +167,31 @@ INFO = {
       }
     ],
     "desc": "该接口根据参数传入删除已有的触发方式。"
+  },
+  "ListAliases": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数名称"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数所在的命名空间"
+      },
+      {
+        "name": "FunctionVersion",
+        "desc": "如果提供此参数，则只返回与该函数版本有关联的别名"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认值为 0"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数据长度，默认值为 20"
+      }
+    ],
+    "desc": "返回一个函数下的全部别名，可以根据特定函数版本过滤。"
   },
   "DeleteNamespace": {
     "params": [
@@ -315,6 +369,35 @@ INFO = {
     ],
     "desc": "该接口根据指定的日志查询条件返回函数运行日志。"
   },
+  "CreateAlias": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "别名的名称，在函数级别中唯一，只能包含字母、数字、'_'和‘-’，且必须以字母开头，长度限制为1-64"
+      },
+      {
+        "name": "FunctionName",
+        "desc": "函数名称"
+      },
+      {
+        "name": "FunctionVersion",
+        "desc": "别名指向的主版本"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数所在的命名空间"
+      },
+      {
+        "name": "RoutingConfig",
+        "desc": "别名的请求路由配置"
+      },
+      {
+        "name": "Description",
+        "desc": "别名的描述信息"
+      }
+    ],
+    "desc": "为某个函数版本创建一个别名，您可以使用别名来标记特定的函数版本，如DEV/RELEASE版本，也可以随时修改别名指向的版本。\n一个别名必须指向一个主版本，此外还可以同时指向一个附加版本。调用函数时指定特定的别名，则请求会被发送到别名指向的版本上，您可以配置请求发送到主版本和附加版本的比例。"
+  },
   "ListVersionByFunction": {
     "params": [
       {
@@ -466,6 +549,10 @@ INFO = {
         "desc": "在更新时是否同步发布新版本，默认为：FALSE，不发布"
       },
       {
+        "name": "L5Enable",
+        "desc": "是否开启L5访问能力，TRUE 为开启，FALSE为关闭"
+      },
+      {
         "name": "Layers",
         "desc": "函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。"
       },
@@ -517,6 +604,23 @@ INFO = {
       }
     ],
     "desc": "该接口用于获取函数代码包的下载地址。"
+  },
+  "GetAlias": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数名称"
+      },
+      {
+        "name": "Name",
+        "desc": "别名的名称"
+      },
+      {
+        "name": "Namespace",
+        "desc": "函数所在的命名空间"
+      }
+    ],
+    "desc": "获取别名的详细信息，包括名称、描述、版本、路由信息等。"
   },
   "CreateFunction": {
     "params": [

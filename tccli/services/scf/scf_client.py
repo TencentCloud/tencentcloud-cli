@@ -52,6 +52,44 @@ def doDeleteFunction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpdateAlias(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateAlias", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "Name": argv.get("--Name"),
+        "FunctionVersion": argv.get("--FunctionVersion"),
+        "Namespace": argv.get("--Namespace"),
+        "RoutingConfig": Utils.try_to_json(argv, "--RoutingConfig"),
+        "Description": argv.get("--Description"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateAliasRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateAlias(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetLayerVersion(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -228,6 +266,43 @@ def doDeleteTrigger(argv, arglist):
     model = models.DeleteTriggerRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteTrigger(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doListAliases(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListAliases", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "Namespace": argv.get("--Namespace"),
+        "FunctionVersion": argv.get("--FunctionVersion"),
+        "Offset": argv.get("--Offset"),
+        "Limit": argv.get("--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListAliasesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListAliases(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -527,6 +602,44 @@ def doDeleteNamespace(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateAlias(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateAlias", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Name": argv.get("--Name"),
+        "FunctionName": argv.get("--FunctionName"),
+        "FunctionVersion": argv.get("--FunctionVersion"),
+        "Namespace": argv.get("--Namespace"),
+        "RoutingConfig": Utils.try_to_json(argv, "--RoutingConfig"),
+        "Description": argv.get("--Description"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateAliasRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateAlias(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doListVersionByFunction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -694,6 +807,7 @@ def doUpdateFunctionConfiguration(argv, arglist):
         "ClsLogsetId": argv.get("--ClsLogsetId"),
         "ClsTopicId": argv.get("--ClsTopicId"),
         "Publish": argv.get("--Publish"),
+        "L5Enable": argv.get("--L5Enable"),
         "Layers": Utils.try_to_json(argv, "--Layers"),
         "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
 
@@ -784,6 +898,41 @@ def doGetFunctionAddress(argv, arglist):
     model = models.GetFunctionAddressRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetFunctionAddress(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetAlias(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetAlias", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FunctionName": argv.get("--FunctionName"),
+        "Name": argv.get("--Name"),
+        "Namespace": argv.get("--Namespace"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ScfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetAliasRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetAlias(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -933,11 +1082,13 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DeleteFunction": doDeleteFunction,
+    "UpdateAlias": doUpdateAlias,
     "GetLayerVersion": doGetLayerVersion,
     "CreateTrigger": doCreateTrigger,
     "CreateNamespace": doCreateNamespace,
     "CopyFunction": doCopyFunction,
     "DeleteTrigger": doDeleteTrigger,
+    "ListAliases": doListAliases,
     "GetFunctionLogs": doGetFunctionLogs,
     "UpdateNamespace": doUpdateNamespace,
     "Invoke": doInvoke,
@@ -946,6 +1097,7 @@ ACTION_MAP = {
     "GetFunction": doGetFunction,
     "DeleteAlias": doDeleteAlias,
     "DeleteNamespace": doDeleteNamespace,
+    "CreateAlias": doCreateAlias,
     "ListVersionByFunction": doListVersionByFunction,
     "ListLayers": doListLayers,
     "ListLayerVersions": doListLayerVersions,
@@ -953,6 +1105,7 @@ ACTION_MAP = {
     "UpdateFunctionConfiguration": doUpdateFunctionConfiguration,
     "PublishLayerVersion": doPublishLayerVersion,
     "GetFunctionAddress": doGetFunctionAddress,
+    "GetAlias": doGetAlias,
     "CreateFunction": doCreateFunction,
     "ListNamespaces": doListNamespaces,
     "UpdateFunctionCode": doUpdateFunctionCode,
