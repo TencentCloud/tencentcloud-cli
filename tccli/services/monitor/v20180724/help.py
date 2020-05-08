@@ -365,6 +365,10 @@ INFO = {
       {
         "name": "InstanceGroupIds",
         "desc": "根据实例组ID过滤"
+      },
+      {
+        "name": "MetricNames",
+        "desc": "根据指标名过滤"
       }
     ],
     "desc": "获取基础告警列表"

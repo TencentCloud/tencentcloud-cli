@@ -43,6 +43,39 @@ INFO = {
     ],
     "desc": "更新别名的配置"
   },
+  "ListTriggers": {
+    "params": [
+      {
+        "name": "FunctionName",
+        "desc": "函数名称"
+      },
+      {
+        "name": "Namespace",
+        "desc": "命名空间，默认是default"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认值为 0"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数据长度，默认值为 20"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime，默认ModTime"
+      },
+      {
+        "name": "Order",
+        "desc": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC，默认DESC"
+      },
+      {
+        "name": "Filters",
+        "desc": "* Qualifier:\n函数版本，别名"
+      }
+    ],
+    "desc": "获取函数触发器列表"
+  },
   "GetLayerVersion": {
     "params": [
       {

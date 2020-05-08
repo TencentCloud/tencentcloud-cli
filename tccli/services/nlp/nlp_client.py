@@ -298,6 +298,7 @@ def doSentimentAnalysis(argv, arglist):
     param = {
         "Text": argv.get("--Text"),
         "Flag": Utils.try_to_json(argv, "--Flag"),
+        "Mode": argv.get("--Mode"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

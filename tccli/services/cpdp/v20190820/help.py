@@ -213,6 +213,23 @@ INFO = {
     ],
     "desc": "商户提现"
   },
+  "ModifyAgentTaxPaymentInfo": {
+    "params": [
+      {
+        "name": "BatchNum",
+        "desc": "批次号"
+      },
+      {
+        "name": "RawElectronicCertUrl",
+        "desc": "新源电子凭证地址"
+      },
+      {
+        "name": "FileName",
+        "desc": "新的文件名"
+      }
+    ],
+    "desc": "直播平台-修改代理商完税信息"
+  },
   "ModifyMntMbrBindRelateAcctBankCode": {
     "params": [
       {
@@ -345,179 +362,6 @@ INFO = {
     ],
     "desc": "会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。\n平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。"
   },
-  "QueryOrder": {
-    "params": [
-      {
-        "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主 MidasAppId"
-      },
-      {
-        "name": "UserId",
-        "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
-      },
-      {
-        "name": "Type",
-        "desc": "type=by_order根据订单号 查订单；\ntype=by_user根据用户id 查订单 。"
-      },
-      {
-        "name": "MidasSecretId",
-        "desc": "聚鑫分配的安全ID"
-      },
-      {
-        "name": "MidasSignature",
-        "desc": "按照聚鑫安全密钥计算的签名"
-      },
-      {
-        "name": "Count",
-        "desc": "每页返回的记录数。根据用户 号码查询订单列表时需要传。 用于分页展示。Type=by_order时必填"
-      },
-      {
-        "name": "Offset",
-        "desc": "记录数偏移量，默认从0开 始。根据用户号码查询订单列 表时需要传。用于分页展示。Type=by_order时必填"
-      },
-      {
-        "name": "StartTime",
-        "desc": "查询开始时间，Unix时间戳。Type=by_order时必填"
-      },
-      {
-        "name": "EndTime",
-        "desc": "查询结束时间，Unix时间戳。Type=by_order时必填"
-      },
-      {
-        "name": "OutTradeNo",
-        "desc": "业务订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
-      },
-      {
-        "name": "TransactionId",
-        "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
-      }
-    ],
-    "desc": "根据订单号，或者用户Id，查询支付订单状态 "
-  },
-  "QueryAcctInfo": {
-    "params": [
-      {
-        "name": "MidasAppId",
-        "desc": "聚鑫平台分配的支付MidasAppId"
-      },
-      {
-        "name": "SubMchId",
-        "desc": "业务平台的子商户Id，唯一"
-      },
-      {
-        "name": "MidasSecretId",
-        "desc": "由平台客服提供的计费密钥Id"
-      },
-      {
-        "name": "MidasSignature",
-        "desc": "计费签名"
-      }
-    ],
-    "desc": "聚鑫-开户信息查询"
-  },
-  "ReviseMbrProperty": {
-    "params": [
-      {
-        "name": "MrchCode",
-        "desc": "String(22)，商户号（签约客户号）"
-      },
-      {
-        "name": "SubAcctNo",
-        "desc": "STRING(50)，见证子账户的账号"
-      },
-      {
-        "name": "MemberProperty",
-        "desc": "STRING(10)，会员属性（00-普通子账号; SH-商户子账户。暂时只支持00-普通子账号改为SH-商户子账户）"
-      },
-      {
-        "name": "ReservedMsg",
-        "desc": "STRING(1027)，保留域"
-      }
-    ],
-    "desc": "修改会员属性-普通商户子账户。修改会员的会员属性。"
-  },
-  "QueryBalance": {
-    "params": [
-      {
-        "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
-      },
-      {
-        "name": "SubAppId",
-        "desc": "聚鑫计费SubAppId，代表子商户"
-      },
-      {
-        "name": "QueryFlag",
-        "desc": "2：普通会员子账号\n3：功能子账号"
-      },
-      {
-        "name": "PageOffset",
-        "desc": "起始值为1，每次最多返回20条记录，第二页返回的记录数为第21至40条记录，第三页为41至60条记录，顺序均按照建立时间的先后"
-      },
-      {
-        "name": "MidasSecretId",
-        "desc": "聚鑫分配的安全ID"
-      },
-      {
-        "name": "MidasSignature",
-        "desc": "按照聚鑫安全密钥计算的签名"
-      }
-    ],
-    "desc": "子商户余额查询"
-  },
-  "BindRelateAcctUnionPay": {
-    "params": [
-      {
-        "name": "TranNetMemberCode",
-        "desc": "STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）"
-      },
-      {
-        "name": "MemberName",
-        "desc": "STRING(150)，见证子账户的户名（首次绑定的情况下，此字段即为待绑定的提现账户的户名。非首次绑定的情况下，须注意带绑定的提现账户的户名须与留存在后台系统的会员户名一致）"
-      },
-      {
-        "name": "MemberGlobalType",
-        "desc": "STRING(5)，会员证件类型（详情见“常见问题”）"
-      },
-      {
-        "name": "MemberGlobalId",
-        "desc": "STRING(32)，会员证件号码"
-      },
-      {
-        "name": "MemberAcctNo",
-        "desc": "STRING(50)，会员的待绑定账户的账号（提现的银行卡）"
-      },
-      {
-        "name": "BankType",
-        "desc": "STRING(10)，会员的待绑定账户的本他行类型（1: 本行; 2: 他行）"
-      },
-      {
-        "name": "AcctOpenBranchName",
-        "desc": "STRING(150)，会员的待绑定账户的开户行名称（若大小额行号不填则送超级网银号对应的银行名称，若填大小额行号则送大小额行号对应的银行名称）"
-      },
-      {
-        "name": "Mobile",
-        "desc": "STRING(30)，会员的手机号（手机号须由长度为11位的数字构成）"
-      },
-      {
-        "name": "MrchCode",
-        "desc": "String(22)，商户号（签约客户号）"
-      },
-      {
-        "name": "CnapsBranchId",
-        "desc": "STRING(20)，会员的待绑定账户的开户行的联行号（本他行类型为他行的情况下，此字段和下一个字段至少一个不为空）"
-      },
-      {
-        "name": "EiconBankBranchId",
-        "desc": "STRING(20)，会员的待绑定账户的开户行的超级网银行号（本他行类型为他行的情况下，此字段和上一个字段至少一个不为空）"
-      },
-      {
-        "name": "ReservedMsg",
-        "desc": "STRING(1027)，保留域"
-      }
-    ],
-    "desc": "会员绑定提现账户-银联鉴权。用于会员申请绑定提现账户，申请后银行前往银联验证卡信息：姓名、证件、卡号、银行预留手机是否相符，相符则发送给会员手机动态验证码并返回成功，不相符则返回失败。\n平台接收到银行返回成功后，进入输入动态验证码的页面，有效期120秒，若120秒未输入，客户可点击重新发送动态验证码，这个步骤重新调用该接口即可。\n平安银行的账户，大小额行号和超级网银号都不用送。\n超级网银号：单笔转账金额不超过5万，不限制笔数，只用选XX银行，不用具体到支行，可实时知道对方是否收款成功。\n大小额联行号：单笔转账可超过5万，需具体到支行，不能实时知道对方是否收款成功。金额超过5万的，在工作日的8点30-17点间才会成功。"
-  },
   "WithdrawCashMembership": {
     "params": [
       {
@@ -574,6 +418,215 @@ INFO = {
       }
     ],
     "desc": "会员提现-不验证。此接口受理会员发起的提现申请。会员子账户的可提现余额、可用余额会减少，市场的资金汇总账户(监管账户)会减少相应的发生金额，提现到会员申请的收款账户。\t\t"
+  },
+  "CloseOrder": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "UserId",
+        "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "按照聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "OutTradeNo",
+        "desc": "业务订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+      },
+      {
+        "name": "TransactionId",
+        "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+      }
+    ],
+    "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
+  },
+  "DeleteAgentTaxPaymentInfos": {
+    "params": [
+      {
+        "name": "BatchNum",
+        "desc": "批次号"
+      }
+    ],
+    "desc": "直播平台-删除代理商完税信息"
+  },
+  "ReviseMbrProperty": {
+    "params": [
+      {
+        "name": "MrchCode",
+        "desc": "String(22)，商户号（签约客户号）"
+      },
+      {
+        "name": "SubAcctNo",
+        "desc": "STRING(50)，见证子账户的账号"
+      },
+      {
+        "name": "MemberProperty",
+        "desc": "STRING(10)，会员属性（00-普通子账号; SH-商户子账户。暂时只支持00-普通子账号改为SH-商户子账户）"
+      },
+      {
+        "name": "ReservedMsg",
+        "desc": "STRING(1027)，保留域"
+      }
+    ],
+    "desc": "修改会员属性-普通商户子账户。修改会员的会员属性。"
+  },
+  "QueryBalance": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "聚鑫计费SubAppId，代表子商户"
+      },
+      {
+        "name": "QueryFlag",
+        "desc": "2：普通会员子账号\n3：功能子账号"
+      },
+      {
+        "name": "PageOffset",
+        "desc": "起始值为1，每次最多返回20条记录，第二页返回的记录数为第21至40条记录，第三页为41至60条记录，顺序均按照建立时间的先后"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "按照聚鑫安全密钥计算的签名"
+      }
+    ],
+    "desc": "子商户余额查询"
+  },
+  "QueryAcctInfo": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫平台分配的支付MidasAppId"
+      },
+      {
+        "name": "SubMchId",
+        "desc": "业务平台的子商户Id，唯一"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "由平台客服提供的计费密钥Id"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      }
+    ],
+    "desc": "聚鑫-开户信息查询"
+  },
+  "QueryAgentTaxPaymentBatch": {
+    "params": [
+      {
+        "name": "BatchNum",
+        "desc": "批次号"
+      }
+    ],
+    "desc": "直播平台-查询批次信息"
+  },
+  "DeleteAgentTaxPaymentInfo": {
+    "params": [
+      {
+        "name": "BatchNum",
+        "desc": "批次号"
+      }
+    ],
+    "desc": "直播平台-删除代理商完税信息"
+  },
+  "BindRelateAcctUnionPay": {
+    "params": [
+      {
+        "name": "TranNetMemberCode",
+        "desc": "STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）"
+      },
+      {
+        "name": "MemberName",
+        "desc": "STRING(150)，见证子账户的户名（首次绑定的情况下，此字段即为待绑定的提现账户的户名。非首次绑定的情况下，须注意带绑定的提现账户的户名须与留存在后台系统的会员户名一致）"
+      },
+      {
+        "name": "MemberGlobalType",
+        "desc": "STRING(5)，会员证件类型（详情见“常见问题”）"
+      },
+      {
+        "name": "MemberGlobalId",
+        "desc": "STRING(32)，会员证件号码"
+      },
+      {
+        "name": "MemberAcctNo",
+        "desc": "STRING(50)，会员的待绑定账户的账号（提现的银行卡）"
+      },
+      {
+        "name": "BankType",
+        "desc": "STRING(10)，会员的待绑定账户的本他行类型（1: 本行; 2: 他行）"
+      },
+      {
+        "name": "AcctOpenBranchName",
+        "desc": "STRING(150)，会员的待绑定账户的开户行名称（若大小额行号不填则送超级网银号对应的银行名称，若填大小额行号则送大小额行号对应的银行名称）"
+      },
+      {
+        "name": "Mobile",
+        "desc": "STRING(30)，会员的手机号（手机号须由长度为11位的数字构成）"
+      },
+      {
+        "name": "MrchCode",
+        "desc": "String(22)，商户号（签约客户号）"
+      },
+      {
+        "name": "CnapsBranchId",
+        "desc": "STRING(20)，会员的待绑定账户的开户行的联行号（本他行类型为他行的情况下，此字段和下一个字段至少一个不为空）"
+      },
+      {
+        "name": "EiconBankBranchId",
+        "desc": "STRING(20)，会员的待绑定账户的开户行的超级网银行号（本他行类型为他行的情况下，此字段和上一个字段至少一个不为空）"
+      },
+      {
+        "name": "ReservedMsg",
+        "desc": "STRING(1027)，保留域"
+      }
+    ],
+    "desc": "会员绑定提现账户-银联鉴权。用于会员申请绑定提现账户，申请后银行前往银联验证卡信息：姓名、证件、卡号、银行预留手机是否相符，相符则发送给会员手机动态验证码并返回成功，不相符则返回失败。\n平台接收到银行返回成功后，进入输入动态验证码的页面，有效期120秒，若120秒未输入，客户可点击重新发送动态验证码，这个步骤重新调用该接口即可。\n平安银行的账户，大小额行号和超级网银号都不用送。\n超级网银号：单笔转账金额不超过5万，不限制笔数，只用选XX银行，不用具体到支行，可实时知道对方是否收款成功。\n大小额联行号：单笔转账可超过5万，需具体到支行，不能实时知道对方是否收款成功。金额超过5万的，在工作日的8点30-17点间才会成功。"
+  },
+  "CreateAgentTaxPaymentInfos": {
+    "params": [
+      {
+        "name": "AgentId",
+        "desc": "代理商ID"
+      },
+      {
+        "name": "Channel",
+        "desc": "平台渠道"
+      },
+      {
+        "name": "Type",
+        "desc": "类型。0-视同，1-个体工商户"
+      },
+      {
+        "name": "RawElectronicCertUrl",
+        "desc": "源电子凭证下载地址"
+      },
+      {
+        "name": "FileName",
+        "desc": "文件名"
+      },
+      {
+        "name": "AgentTaxPaymentInfos",
+        "desc": "完税信息"
+      }
+    ],
+    "desc": "直播平台-代理商完税信息录入"
   },
   "QueryBankTransactionDetails": {
     "params": [
@@ -756,15 +809,19 @@ INFO = {
     ],
     "desc": "聚鑫-查询子账户绑定银行卡"
   },
-  "CloseOrder": {
+  "QueryOrder": {
     "params": [
       {
         "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
+        "desc": "聚鑫分配的支付主 MidasAppId"
       },
       {
         "name": "UserId",
         "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
+      },
+      {
+        "name": "Type",
+        "desc": "type=by_order根据订单号 查订单；\ntype=by_user根据用户id 查订单 。"
       },
       {
         "name": "MidasSecretId",
@@ -775,15 +832,31 @@ INFO = {
         "desc": "按照聚鑫安全密钥计算的签名"
       },
       {
+        "name": "Count",
+        "desc": "每页返回的记录数。根据用户 号码查询订单列表时需要传。 用于分页展示。Type=by_order时必填"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录数偏移量，默认从0开 始。根据用户号码查询订单列 表时需要传。用于分页展示。Type=by_order时必填"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间，Unix时间戳。Type=by_order时必填"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，Unix时间戳。Type=by_order时必填"
+      },
+      {
         "name": "OutTradeNo",
-        "desc": "业务订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+        "desc": "业务订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
       },
       {
         "name": "TransactionId",
-        "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+        "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
       }
     ],
-    "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
+    "desc": "根据订单号，或者用户Id，查询支付订单状态 "
   },
   "CreateInvoice": {
     "params": [

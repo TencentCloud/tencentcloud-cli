@@ -18,6 +18,55 @@ from tccli.services.cpdp import v20190820
 from tccli.services.cpdp.v20190820 import help as v20190820_help
 
 
+def doQueryMemberTransaction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryMemberTransaction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MrchCode": argv.get("--MrchCode"),
+        "FunctionFlag": argv.get("--FunctionFlag"),
+        "OutSubAcctNo": argv.get("--OutSubAcctNo"),
+        "OutMemberCode": argv.get("--OutMemberCode"),
+        "OutSubAcctName": argv.get("--OutSubAcctName"),
+        "InSubAcctNo": argv.get("--InSubAcctNo"),
+        "InMemberCode": argv.get("--InMemberCode"),
+        "InSubAcctName": argv.get("--InSubAcctName"),
+        "TranAmt": argv.get("--TranAmt"),
+        "TranFee": argv.get("--TranFee"),
+        "TranType": argv.get("--TranType"),
+        "Ccy": argv.get("--Ccy"),
+        "OrderNo": argv.get("--OrderNo"),
+        "OrderContent": argv.get("--OrderContent"),
+        "Remark": argv.get("--Remark"),
+        "ReservedMsg": argv.get("--ReservedMsg"),
+        "WebSign": argv.get("--WebSign"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryMemberTransactionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryMemberTransaction(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doQueryPayerInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -226,26 +275,16 @@ def doApplyWithdrawal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doWithdrawCashMembership(argv, arglist):
+def doModifyAgentTaxPaymentInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("WithdrawCashMembership", g_param[OptionsDefine.Version])
+        show_help("ModifyAgentTaxPaymentInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "TranWebName": argv.get("--TranWebName"),
-        "MemberGlobalType": argv.get("--MemberGlobalType"),
-        "MemberGlobalId": argv.get("--MemberGlobalId"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberName": argv.get("--MemberName"),
-        "TakeCashAcctNo": argv.get("--TakeCashAcctNo"),
-        "OutAmtAcctName": argv.get("--OutAmtAcctName"),
-        "Ccy": argv.get("--Ccy"),
-        "CashAmt": argv.get("--CashAmt"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-        "WebSign": argv.get("--WebSign"),
+        "BatchNum": Utils.try_to_json(argv, "--BatchNum"),
+        "RawElectronicCertUrl": argv.get("--RawElectronicCertUrl"),
+        "FileName": argv.get("--FileName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -259,9 +298,9 @@ def doWithdrawCashMembership(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.WithdrawCashMembershipRequest()
+    model = models.ModifyAgentTaxPaymentInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.WithdrawCashMembership(model)
+    rsp = client.ModifyAgentTaxPaymentInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -301,6 +340,43 @@ def doModifyMntMbrBindRelateAcctBankCode(argv, arglist):
     model = models.ModifyMntMbrBindRelateAcctBankCodeRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyMntMbrBindRelateAcctBankCode(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnbindRelateAcct(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnbindRelateAcct", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MrchCode": argv.get("--MrchCode"),
+        "FunctionFlag": argv.get("--FunctionFlag"),
+        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
+        "MemberAcctNo": argv.get("--MemberAcctNo"),
+        "ReservedMsg": argv.get("--ReservedMsg"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnbindRelateAcctRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnbindRelateAcct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -425,6 +501,51 @@ def doCreateCustAcctId(argv, arglist):
     model = models.CreateCustAcctIdRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateCustAcctId(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doWithdrawCashMembership(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("WithdrawCashMembership", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MrchCode": argv.get("--MrchCode"),
+        "TranWebName": argv.get("--TranWebName"),
+        "MemberGlobalType": argv.get("--MemberGlobalType"),
+        "MemberGlobalId": argv.get("--MemberGlobalId"),
+        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
+        "MemberName": argv.get("--MemberName"),
+        "TakeCashAcctNo": argv.get("--TakeCashAcctNo"),
+        "OutAmtAcctName": argv.get("--OutAmtAcctName"),
+        "Ccy": argv.get("--Ccy"),
+        "CashAmt": argv.get("--CashAmt"),
+        "Remark": argv.get("--Remark"),
+        "ReservedMsg": argv.get("--ReservedMsg"),
+        "WebSign": argv.get("--WebSign"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.WithdrawCashMembershipRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.WithdrawCashMembership(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -581,6 +702,72 @@ def doQueryBalance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryAgentTaxPaymentBatch(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryAgentTaxPaymentBatch", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BatchNum": Utils.try_to_json(argv, "--BatchNum"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryAgentTaxPaymentBatchRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryAgentTaxPaymentBatch(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteAgentTaxPaymentInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteAgentTaxPaymentInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BatchNum": Utils.try_to_json(argv, "--BatchNum"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteAgentTaxPaymentInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteAgentTaxPaymentInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doBindRelateAcctUnionPay(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -625,18 +812,19 @@ def doBindRelateAcctUnionPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnbindRelateAcct(argv, arglist):
+def doCreateAgentTaxPaymentInfos(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UnbindRelateAcct", g_param[OptionsDefine.Version])
+        show_help("CreateAgentTaxPaymentInfos", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberAcctNo": argv.get("--MemberAcctNo"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "AgentId": argv.get("--AgentId"),
+        "Channel": Utils.try_to_json(argv, "--Channel"),
+        "Type": Utils.try_to_json(argv, "--Type"),
+        "RawElectronicCertUrl": argv.get("--RawElectronicCertUrl"),
+        "FileName": argv.get("--FileName"),
+        "AgentTaxPaymentInfos": Utils.try_to_json(argv, "--AgentTaxPaymentInfos"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -650,9 +838,9 @@ def doUnbindRelateAcct(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnbindRelateAcctRequest()
+    model = models.CreateAgentTaxPaymentInfosRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UnbindRelateAcct(model)
+    rsp = client.CreateAgentTaxPaymentInfos(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -696,30 +884,14 @@ def doQueryApplicationMaterial(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryMemberTransaction(argv, arglist):
+def doDeleteAgentTaxPaymentInfos(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryMemberTransaction", g_param[OptionsDefine.Version])
+        show_help("DeleteAgentTaxPaymentInfos", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "OutSubAcctNo": argv.get("--OutSubAcctNo"),
-        "OutMemberCode": argv.get("--OutMemberCode"),
-        "OutSubAcctName": argv.get("--OutSubAcctName"),
-        "InSubAcctNo": argv.get("--InSubAcctNo"),
-        "InMemberCode": argv.get("--InMemberCode"),
-        "InSubAcctName": argv.get("--InSubAcctName"),
-        "TranAmt": argv.get("--TranAmt"),
-        "TranFee": argv.get("--TranFee"),
-        "TranType": argv.get("--TranType"),
-        "Ccy": argv.get("--Ccy"),
-        "OrderNo": argv.get("--OrderNo"),
-        "OrderContent": argv.get("--OrderContent"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-        "WebSign": argv.get("--WebSign"),
+        "BatchNum": Utils.try_to_json(argv, "--BatchNum"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -733,9 +905,9 @@ def doQueryMemberTransaction(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryMemberTransactionRequest()
+    model = models.DeleteAgentTaxPaymentInfosRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryMemberTransaction(model)
+    rsp = client.DeleteAgentTaxPaymentInfos(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2222,24 +2394,29 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "QueryMemberTransaction": doQueryMemberTransaction,
     "QueryPayerInfo": doQueryPayerInfo,
     "QueryBankTransactionDetails": doQueryBankTransactionDetails,
     "BindAcct": doBindAcct,
     "BindRelateAcctSmallAmount": doBindRelateAcctSmallAmount,
     "ApplyWithdrawal": doApplyWithdrawal,
-    "WithdrawCashMembership": doWithdrawCashMembership,
+    "ModifyAgentTaxPaymentInfo": doModifyAgentTaxPaymentInfo,
     "ModifyMntMbrBindRelateAcctBankCode": doModifyMntMbrBindRelateAcctBankCode,
+    "UnbindRelateAcct": doUnbindRelateAcct,
     "QueryMemberBind": doQueryMemberBind,
     "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
     "CreateCustAcctId": doCreateCustAcctId,
+    "WithdrawCashMembership": doWithdrawCashMembership,
     "CloseOrder": doCloseOrder,
     "QueryExchangeRate": doQueryExchangeRate,
     "ReviseMbrProperty": doReviseMbrProperty,
     "QueryBalance": doQueryBalance,
+    "QueryAgentTaxPaymentBatch": doQueryAgentTaxPaymentBatch,
+    "DeleteAgentTaxPaymentInfo": doDeleteAgentTaxPaymentInfo,
     "BindRelateAcctUnionPay": doBindRelateAcctUnionPay,
-    "UnbindRelateAcct": doUnbindRelateAcct,
+    "CreateAgentTaxPaymentInfos": doCreateAgentTaxPaymentInfos,
     "QueryApplicationMaterial": doQueryApplicationMaterial,
-    "QueryMemberTransaction": doQueryMemberTransaction,
+    "DeleteAgentTaxPaymentInfos": doDeleteAgentTaxPaymentInfos,
     "QueryCommonTransferRecharge": doQueryCommonTransferRecharge,
     "DownloadBill": doDownloadBill,
     "QueryAcctBinding": doQueryAcctBinding,

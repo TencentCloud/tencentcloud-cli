@@ -454,6 +454,7 @@ def doDescribeBasicAlarmList(argv, arglist):
         "AlarmStatus": Utils.try_to_json(argv, "--AlarmStatus"),
         "ObjLike": argv.get("--ObjLike"),
         "InstanceGroupIds": Utils.try_to_json(argv, "--InstanceGroupIds"),
+        "MetricNames": Utils.try_to_json(argv, "--MetricNames"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
