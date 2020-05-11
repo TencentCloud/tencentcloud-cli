@@ -298,7 +298,7 @@ INFO = {
         "desc": "带宽生效的终止时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。"
       }
     ],
-    "desc": "本接口 (InquiryPriceResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限询价。\n\n* 不同机型带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n* 对于`BANDWIDTH_PREPAID`计费方式的带宽，需要输入参数`StartTime`和`EndTime`，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR`、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整`BANDWIDTH_POSTPAID_BY_MONTH`计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整`TRAFFIC_POSTPAID_BY_HOUR`和`BANDWIDTH_PACKAGE`计费方式的带宽。"
+    "desc": "本接口 (InquiryPriceResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限询价。\n\n* 不同机型带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n* 对于`BANDWIDTH_PREPAID`计费方式的带宽，目前不支持调小带宽，且需要输入参数`StartTime`和`EndTime`，指定调整后的带宽的生效时间段。在这种场景下会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR`、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整`BANDWIDTH_POSTPAID_BY_MONTH`计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整`TRAFFIC_POSTPAID_BY_HOUR`和`BANDWIDTH_PACKAGE`计费方式的带宽。"
   },
   "DeleteImages": {
     "params": [
@@ -551,7 +551,7 @@ INFO = {
       },
       {
         "name": "VirtualPrivateCloud",
-        "desc": "私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。不指定`PrivateIpAddresses`时随机分配私有网络子网IP。"
+        "desc": "私有网络相关信息配置，通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。<br><li>当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。<br><li>可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。<br><li>不指定`PrivateIpAddresses`时随机分配私有网络子网IP。"
       },
       {
         "name": "ForceStop",
@@ -605,7 +605,7 @@ INFO = {
       },
       {
         "name": "UserName",
-        "desc": "待重置密码的实例操作系统的管理员账户。不得超过64个字符。"
+        "desc": "待重置密码的实例操作系统的用户名。不得超过64个字符。"
       },
       {
         "name": "ForceStop",
@@ -711,7 +711,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceIds",
-        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。本接口每次请求批量实例的上限为1。"
+        "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。本接口目前仅支持每次操作1个实例。"
       },
       {
         "name": "InstanceType",
@@ -880,7 +880,7 @@ INFO = {
         "desc": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。"
       }
     ],
-    "desc": "本接口 (TerminateInstances) 用于主动退还实例。\n\n* 不再使用的实例，可通过本接口主动退还。\n* 按量计费的实例通过本接口可直接退还；包年包月实例如符合[退还规则](https://cloud.tencent.com/document/product/213/9711)，也可通过本接口主动退还。\n* 首次调用本接口，实例将被移至回收站，再次调用本接口，实例将被销毁，且不可恢复。\n* 支持批量操作，每次请求批量实例的上限为100。"
+    "desc": "本接口 (TerminateInstances) 用于主动退还实例。\n\n* 不再使用的实例，可通过本接口主动退还。\n* 按量计费的实例通过本接口可直接退还；包年包月实例如符合[退还规则](https://cloud.tencent.com/document/product/213/9711)，也可通过本接口主动退还。\n* 包年包月实例首次调用本接口，实例将被移至回收站，再次调用本接口，实例将被销毁，且不可恢复。按量计费实例调用本接口将被直接销毁\n* 支持批量操作，每次请求批量实例的上限为100。"
   },
   "RenewInstances": {
     "params": [
@@ -1067,7 +1067,7 @@ INFO = {
         "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。"
       }
     ],
-    "desc": "本接口 (InquiryPriceModifyInstancesChargeType) 用于切换实例的计费模式询价。\n\n* 只支持从 `POSTPAID_BY_HOUR` 计费模式切换为`PREPAID`计费模式。\n* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例不支持该操作。"
+    "desc": "本接口 (InquiryPriceModifyInstancesChargeType) 用于切换实例的计费模式询价。\n\n* 只支持从 `POSTPAID_BY_HOUR` 计费模式切换为`PREPAID`计费模式。\n* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例、竞价实例不支持该操作。"
   },
   "ModifyDisasterRecoverGroupAttribute": {
     "params": [

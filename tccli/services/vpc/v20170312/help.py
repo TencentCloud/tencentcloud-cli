@@ -1690,7 +1690,7 @@ INFO = {
       },
       {
         "name": "Bandwidth",
-        "desc": "流控带宽值。"
+        "desc": "流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。"
       },
       {
         "name": "IpAddresses",

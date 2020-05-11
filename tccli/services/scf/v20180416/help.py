@@ -592,6 +592,10 @@ INFO = {
       {
         "name": "DeadLetterConfig",
         "desc": "函数关联的死信队列信息"
+      },
+      {
+        "name": "PublicNetConfig",
+        "desc": "公网访问配置"
       }
     ],
     "desc": "该接口根据传入参数更新函数配置。"
@@ -724,6 +728,10 @@ INFO = {
       {
         "name": "DeadLetterConfig",
         "desc": "死信队列参数"
+      },
+      {
+        "name": "PublicNetConfig",
+        "desc": "公网访问配置"
       }
     ],
     "desc": "该接口根据传入参数创建新的函数。"

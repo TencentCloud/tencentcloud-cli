@@ -849,6 +849,7 @@ def doUpdateFunctionConfiguration(argv, arglist):
         "L5Enable": argv.get("--L5Enable"),
         "Layers": Utils.try_to_json(argv, "--Layers"),
         "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
+        "PublicNetConfig": Utils.try_to_json(argv, "--PublicNetConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1005,6 +1006,7 @@ def doCreateFunction(argv, arglist):
         "CodeSource": argv.get("--CodeSource"),
         "Layers": Utils.try_to_json(argv, "--Layers"),
         "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
+        "PublicNetConfig": Utils.try_to_json(argv, "--PublicNetConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

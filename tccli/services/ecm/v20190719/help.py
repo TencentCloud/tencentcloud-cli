@@ -774,7 +774,7 @@ INFO = {
     "params": [
       {
         "name": "ModuleId",
-        "desc": "模块ID。如：es-qn46snq8"
+        "desc": "模块ID。如：em-qn46snq8"
       }
     ],
     "desc": "删除业务模块"

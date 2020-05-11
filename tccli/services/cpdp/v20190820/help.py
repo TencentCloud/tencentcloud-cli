@@ -226,6 +226,10 @@ INFO = {
       {
         "name": "FileName",
         "desc": "新的文件名"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
     "desc": "直播平台-修改代理商完税信息"
@@ -533,6 +537,10 @@ INFO = {
       {
         "name": "BatchNum",
         "desc": "批次号"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
     "desc": "直播平台-查询批次信息"
@@ -542,6 +550,10 @@ INFO = {
       {
         "name": "BatchNum",
         "desc": "批次号"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
     "desc": "直播平台-删除代理商完税信息"
@@ -624,6 +636,10 @@ INFO = {
       {
         "name": "AgentTaxPaymentInfos",
         "desc": "完税信息"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
     "desc": "直播平台-代理商完税信息录入"

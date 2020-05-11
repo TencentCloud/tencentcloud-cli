@@ -285,6 +285,7 @@ def doModifyAgentTaxPaymentInfo(argv, arglist):
         "BatchNum": Utils.try_to_json(argv, "--BatchNum"),
         "RawElectronicCertUrl": argv.get("--RawElectronicCertUrl"),
         "FileName": argv.get("--FileName"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -710,6 +711,7 @@ def doQueryAgentTaxPaymentBatch(argv, arglist):
 
     param = {
         "BatchNum": Utils.try_to_json(argv, "--BatchNum"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -743,6 +745,7 @@ def doDeleteAgentTaxPaymentInfo(argv, arglist):
 
     param = {
         "BatchNum": Utils.try_to_json(argv, "--BatchNum"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -825,6 +828,7 @@ def doCreateAgentTaxPaymentInfos(argv, arglist):
         "RawElectronicCertUrl": argv.get("--RawElectronicCertUrl"),
         "FileName": argv.get("--FileName"),
         "AgentTaxPaymentInfos": Utils.try_to_json(argv, "--AgentTaxPaymentInfos"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

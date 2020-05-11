@@ -259,6 +259,27 @@ INFO = {
     ],
     "desc": "获取基础策略组详情"
   },
+  "DescribeProductList": {
+    "params": [
+      {
+        "name": "Module",
+        "desc": "固定传值monitor"
+      },
+      {
+        "name": "Order",
+        "desc": "排序方式：DESC/ASC（区分大小写），默认值DESC"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页查询的偏移量，默认值0"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页查询的每页数据量，默认值20"
+      }
+    ],
+    "desc": "查询云监控产品列表"
+  },
   "DescribePolicyGroupList": {
     "params": [
       {
