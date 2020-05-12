@@ -1,6 +1,51 @@
 # -*- coding: utf-8 -*-
 DESC = "cpdp-2019-08-20"
 INFO = {
+  "CheckAcct": {
+    "params": [
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "聚鑫计费SubAppId，代表子商户"
+      },
+      {
+        "name": "BindType",
+        "desc": "1：小额鉴权\n2：短信校验鉴权"
+      },
+      {
+        "name": "SettleAcctNo",
+        "desc": "结算账户账号\n<敏感信息>加密详见《商户端接口敏感信息加密说明》"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "按照聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "CheckCode",
+        "desc": "短信验证码\nBindType==2必填"
+      },
+      {
+        "name": "CurrencyType",
+        "desc": "币种 RMB\nBindType==1必填"
+      },
+      {
+        "name": "CurrencyUnit",
+        "desc": "单位\n1：元，2：角，3：分\nBindType==1必填"
+      },
+      {
+        "name": "CurrencyAmt",
+        "desc": "金额\nBindType==1必填"
+      }
+    ],
+    "desc": "商户绑定提现银行卡的验证接口"
+  },
   "ApplyPayerInfo": {
     "params": [
       {
@@ -2150,50 +2195,82 @@ INFO = {
     ],
     "desc": "查询对账文件信息。平台调用该接口获取需下载对账文件的文件名称以及密钥。 平台获取到信息后， 可以再调用OPENAPI的文件下载功能。"
   },
-  "CheckAcct": {
+  "RegisterBill": {
     "params": [
       {
-        "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
+        "name": "RequestType",
+        "desc": "请求类型此接口固定填：RegBillSupportWithdrawReq"
       },
       {
-        "name": "SubAppId",
-        "desc": "聚鑫计费SubAppId，代表子商户"
+        "name": "MerchantCode",
+        "desc": "商户号"
       },
       {
-        "name": "BindType",
-        "desc": "1：小额鉴权\n2：短信校验鉴权"
+        "name": "PayChannel",
+        "desc": "支付渠道"
       },
       {
-        "name": "SettleAcctNo",
-        "desc": "结算账户账号\n<敏感信息>加密详见《商户端接口敏感信息加密说明》"
+        "name": "PayChannelSubId",
+        "desc": "子渠道"
+      },
+      {
+        "name": "OrderId",
+        "desc": "交易订单号"
+      },
+      {
+        "name": "BankAccountNo",
+        "desc": "父账户账号，资金汇总账号"
+      },
+      {
+        "name": "PlatformShortNo",
+        "desc": "平台短号(银行分配)"
       },
       {
         "name": "MidasSecretId",
         "desc": "聚鑫分配的安全ID"
       },
       {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
         "name": "MidasSignature",
-        "desc": "按照聚鑫安全密钥计算的签名"
+        "desc": "计费签名"
       },
       {
-        "name": "CheckCode",
-        "desc": "短信验证码\nBindType==2必填"
+        "name": "TransSeqNo",
+        "desc": "交易流水号"
       },
       {
-        "name": "CurrencyType",
-        "desc": "币种 RMB\nBindType==1必填"
+        "name": "TranFee",
+        "desc": "暂未使用，默认传0.0"
       },
       {
-        "name": "CurrencyUnit",
-        "desc": "单位\n1：元，2：角，3：分\nBindType==1必填"
+        "name": "OrderAmt",
+        "desc": "挂账金额"
       },
       {
-        "name": "CurrencyAmt",
-        "desc": "金额\nBindType==1必填"
+        "name": "BankSubAccountNo",
+        "desc": "子账户账号"
+      },
+      {
+        "name": "TranNetMemberCode",
+        "desc": "交易网会员代码"
+      },
+      {
+        "name": "TranType",
+        "desc": "0,登记挂账，1，撤销挂账"
+      },
+      {
+        "name": "ReservedMessage",
+        "desc": "保留域"
+      },
+      {
+        "name": "Remark",
+        "desc": "备注"
       }
     ],
-    "desc": "商户绑定提现银行卡的验证接口"
+    "desc": "登记挂账(支持撤销)"
   },
   "QueryRefund": {
     "params": [

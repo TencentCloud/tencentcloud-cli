@@ -2083,6 +2083,56 @@ def doUnifiedOrder(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRegisterBill(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RegisterBill", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RequestType": argv.get("--RequestType"),
+        "MerchantCode": argv.get("--MerchantCode"),
+        "PayChannel": argv.get("--PayChannel"),
+        "PayChannelSubId": Utils.try_to_json(argv, "--PayChannelSubId"),
+        "OrderId": argv.get("--OrderId"),
+        "BankAccountNo": argv.get("--BankAccountNo"),
+        "PlatformShortNo": argv.get("--PlatformShortNo"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasAppId": argv.get("--MidasAppId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "TransSeqNo": argv.get("--TransSeqNo"),
+        "TranFee": argv.get("--TranFee"),
+        "OrderAmt": argv.get("--OrderAmt"),
+        "BankSubAccountNo": argv.get("--BankSubAccountNo"),
+        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
+        "TranType": argv.get("--TranType"),
+        "ReservedMessage": argv.get("--ReservedMessage"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RegisterBillRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RegisterBill(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doQueryAcctInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2449,6 +2499,7 @@ ACTION_MAP = {
     "CreateMerchant": doCreateMerchant,
     "CreateAcct": doCreateAcct,
     "UnifiedOrder": doUnifiedOrder,
+    "RegisterBill": doRegisterBill,
     "QueryAcctInfo": doQueryAcctInfo,
     "RevRegisterBillSupportWithdraw": doRevRegisterBillSupportWithdraw,
     "QueryOutwardOrder": doQueryOutwardOrder,
