@@ -543,7 +543,7 @@ INFO = {
         "desc": "播放域名。"
       }
     ],
-    "desc": "获取域名证书信息"
+    "desc": "获取域名证书信息。"
   },
   "AddLiveWatermark": {
     "params": [
