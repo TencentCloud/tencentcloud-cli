@@ -1,6 +1,23 @@
 # -*- coding: utf-8 -*-
 DESC = "cam-2019-01-16"
 INFO = {
+  "SetMfaFlag": {
+    "params": [
+      {
+        "name": "OpUin",
+        "desc": "设置用户的uin"
+      },
+      {
+        "name": "LoginFlag",
+        "desc": "登录保护设置"
+      },
+      {
+        "name": "ActionFlag",
+        "desc": "操作保护设置"
+      }
+    ],
+    "desc": "设置用户的登录保护和敏感操作校验方式"
+  },
   "ListUsersForGroup": {
     "params": [
       {

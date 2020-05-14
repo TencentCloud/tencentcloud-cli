@@ -18,14 +18,16 @@ from tccli.services.tsf import v20180326
 from tccli.services.tsf.v20180326 import help as v20180326_help
 
 
-def doStopContainerGroup(argv, arglist):
+def doReleasePublicConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("StopContainerGroup", g_param[OptionsDefine.Version])
+        show_help("ReleasePublicConfig", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GroupId": argv.get("--GroupId"),
+        "ConfigId": argv.get("--ConfigId"),
+        "NamespaceId": argv.get("--NamespaceId"),
+        "ReleaseDesc": argv.get("--ReleaseDesc"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -39,9 +41,9 @@ def doStopContainerGroup(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopContainerGroupRequest()
+    model = models.ReleasePublicConfigRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.StopContainerGroup(model)
+    rsp = client.ReleasePublicConfig(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -200,15 +202,14 @@ def doDescribePkgs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyContainerReplicas(argv, arglist):
+def doDescribeContainerGroupDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyContainerReplicas", g_param[OptionsDefine.Version])
+        show_help("DescribeContainerGroupDetail", g_param[OptionsDefine.Version])
         return
 
     param = {
         "GroupId": argv.get("--GroupId"),
-        "InstanceNum": Utils.try_to_json(argv, "--InstanceNum"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -222,9 +223,9 @@ def doModifyContainerReplicas(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyContainerReplicasRequest()
+    model = models.DescribeContainerGroupDetailRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyContainerReplicas(model)
+    rsp = client.DescribeContainerGroupDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1137,6 +1138,74 @@ def doDescribeGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doStopContainerGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StopContainerGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": argv.get("--GroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopContainerGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StopContainerGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReleaseConfig(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ReleaseConfig", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ConfigId": argv.get("--ConfigId"),
+        "GroupId": argv.get("--GroupId"),
+        "ReleaseDesc": argv.get("--ReleaseDesc"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReleaseConfigRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ReleaseConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doExpandGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1162,6 +1231,43 @@ def doExpandGroup(argv, arglist):
     model = models.ExpandGroupRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ExpandGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyUploadInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyUploadInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ApplicationId": argv.get("--ApplicationId"),
+        "PkgId": argv.get("--PkgId"),
+        "Result": Utils.try_to_json(argv, "--Result"),
+        "Md5": argv.get("--Md5"),
+        "Size": Utils.try_to_json(argv, "--Size"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyUploadInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyUploadInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1204,14 +1310,18 @@ def doDescribePublicConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeContainerGroupDetail(argv, arglist):
+def doCreateLaneRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeContainerGroupDetail", g_param[OptionsDefine.Version])
+        show_help("CreateLaneRule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GroupId": argv.get("--GroupId"),
+        "RuleName": argv.get("--RuleName"),
+        "Remark": argv.get("--Remark"),
+        "RuleTagList": Utils.try_to_json(argv, "--RuleTagList"),
+        "RuleTagRelationship": argv.get("--RuleTagRelationship"),
+        "LaneId": argv.get("--LaneId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1225,9 +1335,9 @@ def doDescribeContainerGroupDetail(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeContainerGroupDetailRequest()
+    model = models.CreateLaneRuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeContainerGroupDetail(model)
+    rsp = client.CreateLaneRule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1304,15 +1414,14 @@ def doRollbackConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyMicroservice(argv, arglist):
+def doDeleteLane(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyMicroservice", g_param[OptionsDefine.Version])
+        show_help("DeleteLane", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MicroserviceId": argv.get("--MicroserviceId"),
-        "MicroserviceDesc": argv.get("--MicroserviceDesc"),
+        "LaneId": argv.get("--LaneId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1326,9 +1435,9 @@ def doModifyMicroservice(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyMicroserviceRequest()
+    model = models.DeleteLaneRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyMicroservice(model)
+    rsp = client.DeleteLane(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1454,6 +1563,41 @@ def doDescribeConfigReleases(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateLane(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateLane", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LaneName": argv.get("--LaneName"),
+        "Remark": argv.get("--Remark"),
+        "LaneGroupList": Utils.try_to_json(argv, "--LaneGroupList"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateLaneRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateLane(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRevocationPublicConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1478,6 +1622,40 @@ def doRevocationPublicConfig(argv, arglist):
     model = models.RevocationPublicConfigRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.RevocationPublicConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyContainerReplicas(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyContainerReplicas", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": argv.get("--GroupId"),
+        "InstanceNum": Utils.try_to_json(argv, "--InstanceNum"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyContainerReplicasRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyContainerReplicas(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1593,16 +1771,17 @@ def doDescribeSimpleClusters(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReleasePublicConfig(argv, arglist):
+def doDescribeLaneRules(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ReleasePublicConfig", g_param[OptionsDefine.Version])
+        show_help("DescribeLaneRules", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ConfigId": argv.get("--ConfigId"),
-        "NamespaceId": argv.get("--NamespaceId"),
-        "ReleaseDesc": argv.get("--ReleaseDesc"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "SearchWord": argv.get("--SearchWord"),
+        "RuleId": argv.get("--RuleId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1616,9 +1795,9 @@ def doReleasePublicConfig(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReleasePublicConfigRequest()
+    model = models.DescribeLaneRulesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ReleasePublicConfig(model)
+    rsp = client.DescribeLaneRules(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1628,16 +1807,20 @@ def doReleasePublicConfig(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReleaseConfig(argv, arglist):
+def doModifyLaneRule(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ReleaseConfig", g_param[OptionsDefine.Version])
+        show_help("ModifyLaneRule", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ConfigId": argv.get("--ConfigId"),
-        "GroupId": argv.get("--GroupId"),
-        "ReleaseDesc": argv.get("--ReleaseDesc"),
+        "RuleId": argv.get("--RuleId"),
+        "RuleName": argv.get("--RuleName"),
+        "Remark": argv.get("--Remark"),
+        "RuleTagList": Utils.try_to_json(argv, "--RuleTagList"),
+        "RuleTagRelationship": argv.get("--RuleTagRelationship"),
+        "LaneId": argv.get("--LaneId"),
+        "Enable": Utils.try_to_json(argv, "--Enable"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1651,9 +1834,9 @@ def doReleaseConfig(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReleaseConfigRequest()
+    model = models.ModifyLaneRuleRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ReleaseConfig(model)
+    rsp = client.ModifyLaneRule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1830,6 +2013,41 @@ def doDescribeGroups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyLane(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyLane", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LaneId": argv.get("--LaneId"),
+        "LaneName": argv.get("--LaneName"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyLaneRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyLane(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSimpleNamespaces(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1872,18 +2090,16 @@ def doDescribeSimpleNamespaces(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyUploadInfo(argv, arglist):
+def doDescribeLanes(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyUploadInfo", g_param[OptionsDefine.Version])
+        show_help("DescribeLanes", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ApplicationId": argv.get("--ApplicationId"),
-        "PkgId": argv.get("--PkgId"),
-        "Result": Utils.try_to_json(argv, "--Result"),
-        "Md5": argv.get("--Md5"),
-        "Size": Utils.try_to_json(argv, "--Size"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "SearchWord": argv.get("--SearchWord"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1897,9 +2113,9 @@ def doModifyUploadInfo(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyUploadInfoRequest()
+    model = models.DescribeLanesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyUploadInfo(model)
+    rsp = client.DescribeLanes(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2007,6 +2223,40 @@ def doDeployServerlessGroup(argv, arglist):
     model = models.DeployServerlessGroupRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeployServerlessGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyMicroservice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyMicroservice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MicroserviceId": argv.get("--MicroserviceId"),
+        "MicroserviceDesc": argv.get("--MicroserviceDesc"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyMicroserviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyMicroservice(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2717,12 +2967,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "StopContainerGroup": doStopContainerGroup,
+    "ReleasePublicConfig": doReleasePublicConfig,
     "DeletePublicConfig": doDeletePublicConfig,
     "CreateGroup": doCreateGroup,
     "CreateCluster": doCreateCluster,
     "DescribePkgs": doDescribePkgs,
-    "ModifyContainerReplicas": doModifyContainerReplicas,
+    "DescribeContainerGroupDetail": doDescribeContainerGroupDetail,
     "StartContainerGroup": doStartContainerGroup,
     "DescribeConfigSummary": doDescribeConfigSummary,
     "DeployContainerGroup": doDeployContainerGroup,
@@ -2748,30 +2998,37 @@ ACTION_MAP = {
     "DescribeMicroservices": doDescribeMicroservices,
     "DeleteGroup": doDeleteGroup,
     "DescribeGroup": doDescribeGroup,
+    "StopContainerGroup": doStopContainerGroup,
+    "ReleaseConfig": doReleaseConfig,
     "ExpandGroup": doExpandGroup,
+    "ModifyUploadInfo": doModifyUploadInfo,
     "DescribePublicConfig": doDescribePublicConfig,
-    "DescribeContainerGroupDetail": doDescribeContainerGroupDetail,
+    "CreateLaneRule": doCreateLaneRule,
     "DeleteContainerGroup": doDeleteContainerGroup,
     "RollbackConfig": doRollbackConfig,
-    "ModifyMicroservice": doModifyMicroservice,
+    "DeleteLane": doDeleteLane,
     "CreateApplication": doCreateApplication,
     "DescribeImageTags": doDescribeImageTags,
     "DescribeConfigReleases": doDescribeConfigReleases,
+    "CreateLane": doCreateLane,
     "RevocationPublicConfig": doRevocationPublicConfig,
+    "ModifyContainerReplicas": doModifyContainerReplicas,
     "ShrinkInstances": doShrinkInstances,
     "DeployGroup": doDeployGroup,
     "DescribeSimpleClusters": doDescribeSimpleClusters,
-    "ReleasePublicConfig": doReleasePublicConfig,
-    "ReleaseConfig": doReleaseConfig,
+    "DescribeLaneRules": doDescribeLaneRules,
+    "ModifyLaneRule": doModifyLaneRule,
     "DescribeReleasedConfig": doDescribeReleasedConfig,
     "CreateContainGroup": doCreateContainGroup,
     "DescribePublicConfigReleases": doDescribePublicConfigReleases,
     "DescribeGroups": doDescribeGroups,
+    "ModifyLane": doModifyLane,
     "DescribeSimpleNamespaces": doDescribeSimpleNamespaces,
-    "ModifyUploadInfo": doModifyUploadInfo,
+    "DescribeLanes": doDescribeLanes,
     "ModifyContainerGroup": doModifyContainerGroup,
     "ShrinkGroup": doShrinkGroup,
     "DeployServerlessGroup": doDeployServerlessGroup,
+    "ModifyMicroservice": doModifyMicroservice,
     "StartGroup": doStartGroup,
     "CreateConfig": doCreateConfig,
     "CreateMicroservice": doCreateMicroservice,

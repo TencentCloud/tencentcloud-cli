@@ -365,7 +365,6 @@ def doImportMaterial(argv, arglist):
         "Owner": Utils.try_to_json(argv, "--Owner"),
         "Name": argv.get("--Name"),
         "ClassPath": argv.get("--ClassPath"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
         "PreProcessDefinition": Utils.try_to_json(argv, "--PreProcessDefinition"),
         "Operator": argv.get("--Operator"),
 
@@ -589,7 +588,6 @@ def doModifyMaterial(argv, arglist):
         "MaterialId": argv.get("--MaterialId"),
         "Owner": Utils.try_to_json(argv, "--Owner"),
         "Name": argv.get("--Name"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
         "ClassPath": argv.get("--ClassPath"),
         "Operator": argv.get("--Operator"),
 

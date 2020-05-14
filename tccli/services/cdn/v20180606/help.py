@@ -52,7 +52,7 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）"
+        "desc": "分页查询偏移量，默认为 0"
       },
       {
         "name": "Limit",
@@ -327,7 +327,7 @@ INFO = {
     "params": [
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）"
+        "desc": "分页查询偏移量，默认为 0"
       },
       {
         "name": "Limit",
@@ -524,7 +524,7 @@ INFO = {
     "params": [
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）"
+        "desc": "分页查询偏移量，默认为 0"
       },
       {
         "name": "Limit",
@@ -550,14 +550,14 @@ INFO = {
     "params": [
       {
         "name": "Offset",
-        "desc": "分页查询起始地址，默认 0（第一页）"
+        "desc": "分页查询起始地址，默认 0"
       },
       {
         "name": "Limit",
         "desc": "分页查询记录个数，默认100，最大1000"
       }
     ],
-    "desc": "DescribeTrafficPackages 用于查询境内 CDN 流量包详情。"
+    "desc": "DescribeTrafficPackages 用于查询中国境内 CDN 流量包详情。"
   },
   "UpdateDomainConfig": {
     "params": [
@@ -700,7 +700,7 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）"
+        "desc": "分页查询偏移量，默认为 0"
       },
       {
         "name": "Limit",
@@ -709,6 +709,10 @@ INFO = {
       {
         "name": "Area",
         "desc": "指定区域下载日志\nmainland：获取境内加速日志包下载链接\noverseas：获取境外加速日志包下载链接\nglobal：同时获取境内、境外加速日志包下载链接（分开打包）\n不指定时默认为 mainland"
+      },
+      {
+        "name": "LogType",
+        "desc": "指定下载日志的类型。\naccess：获取访问日志"
       }
     ],
     "desc": "DescribeCdnDomainLogs 用于查询访问日志下载地址，仅支持 30 天以内的境内、境外访问日志下载链接查询。"
@@ -865,7 +869,7 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）。"
+        "desc": "分页查询偏移量，默认为 0"
       },
       {
         "name": "Limit",
@@ -948,7 +952,7 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）"
+        "desc": "分页查询偏移量，默认为 0"
       },
       {
         "name": "Limit",

@@ -51,34 +51,55 @@ INFO = {
     ],
     "desc": "查询简单部署组列表"
   },
-  "CreateGroup": {
+  "CreateNamespace": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "部署组所属的应用ID"
-      },
-      {
-        "name": "NamespaceId",
-        "desc": "部署组所属命名空间ID"
-      },
-      {
-        "name": "GroupName",
-        "desc": "部署组名称"
+        "name": "NamespaceName",
+        "desc": "命名空间名称"
       },
       {
         "name": "ClusterId",
         "desc": "集群ID"
       },
       {
-        "name": "GroupDesc",
-        "desc": "部署组描述"
+        "name": "NamespaceDesc",
+        "desc": "命名空间描述"
       },
       {
-        "name": "GroupResourceType",
-        "desc": "部署组资源类型"
+        "name": "NamespaceResourceType",
+        "desc": "命名空间资源类型(默认值为DEF)"
+      },
+      {
+        "name": "NamespaceType",
+        "desc": "是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID"
       }
     ],
-    "desc": "创建虚拟机部署组"
+    "desc": "创建命名空间"
+  },
+  "DescribeLaneRules": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "每页展示的条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "翻页偏移量"
+      },
+      {
+        "name": "SearchWord",
+        "desc": "搜索关键词"
+      },
+      {
+        "name": "RuleId",
+        "desc": "泳道规则ID（用于精确搜索）"
+      }
+    ],
+    "desc": "查询泳道规则列表"
   },
   "CreateCluster": {
     "params": [
@@ -273,6 +294,43 @@ INFO = {
     ],
     "desc": "部署容器应用"
   },
+  "DescribeConfigReleases": {
+    "params": [
+      {
+        "name": "ConfigName",
+        "desc": "配置项名称，不传入时查询全量"
+      },
+      {
+        "name": "GroupId",
+        "desc": "部署组ID，不传入时查询全量"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "命名空间ID，不传入时查询全量"
+      },
+      {
+        "name": "ClusterId",
+        "desc": "集群ID，不传入时查询全量"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "ConfigId",
+        "desc": "配置ID，不传入时查询全量"
+      },
+      {
+        "name": "ApplicationId",
+        "desc": "应用ID，不传入时查询全量"
+      }
+    ],
+    "desc": "查询配置发布信息"
+  },
   "AddClusterInstances": {
     "params": [
       {
@@ -364,34 +422,34 @@ INFO = {
     ],
     "desc": "查询Serverless部署组列表"
   },
-  "CreateNamespace": {
+  "CreateGroup": {
     "params": [
       {
-        "name": "NamespaceName",
-        "desc": "命名空间名称"
+        "name": "ApplicationId",
+        "desc": "部署组所属的应用ID"
+      },
+      {
+        "name": "NamespaceId",
+        "desc": "部署组所属命名空间ID"
+      },
+      {
+        "name": "GroupName",
+        "desc": "部署组名称"
       },
       {
         "name": "ClusterId",
         "desc": "集群ID"
       },
       {
-        "name": "NamespaceDesc",
-        "desc": "命名空间描述"
+        "name": "GroupDesc",
+        "desc": "部署组描述"
       },
       {
-        "name": "NamespaceResourceType",
-        "desc": "命名空间资源类型(默认值为DEF)"
-      },
-      {
-        "name": "NamespaceType",
-        "desc": "是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)"
-      },
-      {
-        "name": "NamespaceId",
-        "desc": "命名空间ID"
+        "name": "GroupResourceType",
+        "desc": "部署组资源类型"
       }
     ],
-    "desc": "创建命名空间"
+    "desc": "创建虚拟机部署组"
   },
   "DeleteApplication": {
     "params": [
@@ -419,6 +477,31 @@ INFO = {
       }
     ],
     "desc": "启动分组"
+  },
+  "CreateLaneRule": {
+    "params": [
+      {
+        "name": "RuleName",
+        "desc": "泳道规则名称"
+      },
+      {
+        "name": "Remark",
+        "desc": "泳道规则备注"
+      },
+      {
+        "name": "RuleTagList",
+        "desc": "泳道规则标签列表"
+      },
+      {
+        "name": "RuleTagRelationship",
+        "desc": "泳道规则标签关系"
+      },
+      {
+        "name": "LaneId",
+        "desc": "泳道Id"
+      }
+    ],
+    "desc": "创建泳道规则"
   },
   "DeleteNamespace": {
     "params": [
@@ -471,22 +554,22 @@ INFO = {
     ],
     "desc": "删除配置项"
   },
-  "DescribePublicConfigSummary": {
+  "ReleasePublicConfig": {
     "params": [
       {
-        "name": "SearchWord",
-        "desc": "查询关键字，模糊查询：配置项名称，不传入时查询全量"
+        "name": "ConfigId",
+        "desc": "配置ID"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量，默认为0"
+        "name": "NamespaceId",
+        "desc": "命名空间ID"
       },
       {
-        "name": "Limit",
-        "desc": "每页条数，默认为20"
+        "name": "ReleaseDesc",
+        "desc": "发布描述"
       }
     ],
-    "desc": "查询公共配置汇总列表"
+    "desc": "发布公共配置"
   },
   "DeletePkgs": {
     "params": [
@@ -618,6 +701,19 @@ INFO = {
     ],
     "desc": "查询配置项列表"
   },
+  "ModifyMicroservice": {
+    "params": [
+      {
+        "name": "MicroserviceId",
+        "desc": "微服务 ID"
+      },
+      {
+        "name": "MicroserviceDesc",
+        "desc": "微服务备注信息"
+      }
+    ],
+    "desc": "修改微服务详情"
+  },
   "DescribeConfig": {
     "params": [
       {
@@ -678,6 +774,39 @@ INFO = {
     ],
     "desc": "从 TSF 集群中批量移除云主机节点"
   },
+  "ModifyLaneRule": {
+    "params": [
+      {
+        "name": "RuleId",
+        "desc": "泳道规则ID"
+      },
+      {
+        "name": "RuleName",
+        "desc": "泳道规则名称"
+      },
+      {
+        "name": "Remark",
+        "desc": "泳道规则备注"
+      },
+      {
+        "name": "RuleTagList",
+        "desc": "泳道规则标签列表"
+      },
+      {
+        "name": "RuleTagRelationship",
+        "desc": "泳道规则标签关系"
+      },
+      {
+        "name": "LaneId",
+        "desc": "泳道ID"
+      },
+      {
+        "name": "Enable",
+        "desc": "开启状态"
+      }
+    ],
+    "desc": "更新泳道规则"
+  },
   "ExpandGroup": {
     "params": [
       {
@@ -731,18 +860,14 @@ INFO = {
     ],
     "desc": "回滚配置"
   },
-  "ModifyMicroservice": {
+  "DeleteLane": {
     "params": [
       {
-        "name": "MicroserviceId",
-        "desc": "微服务 ID"
-      },
-      {
-        "name": "MicroserviceDesc",
-        "desc": "微服务备注信息"
+        "name": "LaneId",
+        "desc": "泳道Idl"
       }
     ],
-    "desc": "修改微服务详情"
+    "desc": "删除泳道"
   },
   "CreatePublicConfig": {
     "params": [
@@ -807,22 +932,22 @@ INFO = {
     ],
     "desc": "查询Serverless部署组明细"
   },
-  "DescribeMicroservice": {
+  "CreateLane": {
     "params": [
       {
-        "name": "MicroserviceId",
-        "desc": "微服务ID"
+        "name": "LaneName",
+        "desc": "泳道名称"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量"
+        "name": "Remark",
+        "desc": "泳道备注"
       },
       {
-        "name": "Limit",
-        "desc": "分页个数"
+        "name": "LaneGroupList",
+        "desc": "泳道部署组信息"
       }
     ],
-    "desc": "查询微服务详情"
+    "desc": "创建泳道"
   },
   "DescribePublicConfigReleaseLogs": {
     "params": [
@@ -859,22 +984,22 @@ INFO = {
     ],
     "desc": "撤回已发布的配置"
   },
-  "ReleasePublicConfig": {
+  "DescribePublicConfigSummary": {
     "params": [
       {
-        "name": "ConfigId",
-        "desc": "配置ID"
+        "name": "SearchWord",
+        "desc": "查询关键字，模糊查询：配置项名称，不传入时查询全量"
       },
       {
-        "name": "NamespaceId",
-        "desc": "命名空间ID"
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
       },
       {
-        "name": "ReleaseDesc",
-        "desc": "发布描述"
+        "name": "Limit",
+        "desc": "每页条数，默认为20"
       }
     ],
-    "desc": "发布公共配置"
+    "desc": "查询公共配置汇总列表"
   },
   "ReleaseConfig": {
     "params": [
@@ -1069,6 +1194,23 @@ INFO = {
     ],
     "desc": "获取虚拟机部署组列表"
   },
+  "ModifyLane": {
+    "params": [
+      {
+        "name": "LaneId",
+        "desc": "泳道ID"
+      },
+      {
+        "name": "LaneName",
+        "desc": "泳道名称"
+      },
+      {
+        "name": "Remark",
+        "desc": "备注"
+      }
+    ],
+    "desc": "更新泳道信息"
+  },
   "DescribeSimpleNamespaces": {
     "params": [
       {
@@ -1113,6 +1255,23 @@ INFO = {
       }
     ],
     "desc": "查询简单命名空间列表 "
+  },
+  "DescribeLanes": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "每页展示的条数"
+      },
+      {
+        "name": "Offset",
+        "desc": "翻页偏移量"
+      },
+      {
+        "name": "SearchWord",
+        "desc": "搜索关键字"
+      }
+    ],
+    "desc": "查询泳道列表"
   },
   "DescribeConfigReleaseLogs": {
     "params": [
@@ -1366,6 +1525,23 @@ INFO = {
     ],
     "desc": "下线部署组所有机器实例"
   },
+  "DescribeMicroservice": {
+    "params": [
+      {
+        "name": "MicroserviceId",
+        "desc": "微服务ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页个数"
+      }
+    ],
+    "desc": "查询微服务详情"
+  },
   "DeployGroup": {
     "params": [
       {
@@ -1420,15 +1596,6 @@ INFO = {
     ],
     "desc": "获取应用列表"
   },
-  "DeleteServerlessGroup": {
-    "params": [
-      {
-        "name": "GroupId",
-        "desc": "groupId，分组唯一标识"
-      }
-    ],
-    "desc": "删除Serverless部署组"
-  },
   "DescribeUploadInfo": {
     "params": [
       {
@@ -1454,42 +1621,30 @@ INFO = {
     ],
     "desc": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436"
   },
-  "DescribeConfigReleases": {
+  "ModifyUploadInfo": {
     "params": [
       {
-        "name": "ConfigName",
-        "desc": "配置项名称，不传入时查询全量"
-      },
-      {
-        "name": "GroupId",
-        "desc": "部署组ID，不传入时查询全量"
-      },
-      {
-        "name": "NamespaceId",
-        "desc": "命名空间ID，不传入时查询全量"
-      },
-      {
-        "name": "ClusterId",
-        "desc": "集群ID，不传入时查询全量"
-      },
-      {
-        "name": "Limit",
-        "desc": "每页条数"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量"
-      },
-      {
-        "name": "ConfigId",
-        "desc": "配置ID，不传入时查询全量"
-      },
-      {
         "name": "ApplicationId",
-        "desc": "应用ID，不传入时查询全量"
+        "desc": "应用ID"
+      },
+      {
+        "name": "PkgId",
+        "desc": "调用DescribeUploadInfo接口时返回的软件包ID"
+      },
+      {
+        "name": "Result",
+        "desc": "COS返回上传结果（默认为0：成功，其他值表示失败）"
+      },
+      {
+        "name": "Md5",
+        "desc": "程序包MD5"
+      },
+      {
+        "name": "Size",
+        "desc": "程序包大小（单位字节）"
       }
     ],
-    "desc": "查询配置发布信息"
+    "desc": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。"
   },
   "StopContainerGroup": {
     "params": [
@@ -1589,30 +1744,14 @@ INFO = {
     ],
     "desc": "虚拟机部署组下线实例"
   },
-  "ModifyUploadInfo": {
+  "DeleteServerlessGroup": {
     "params": [
       {
-        "name": "ApplicationId",
-        "desc": "应用ID"
-      },
-      {
-        "name": "PkgId",
-        "desc": "调用DescribeUploadInfo接口时返回的软件包ID"
-      },
-      {
-        "name": "Result",
-        "desc": "COS返回上传结果（默认为0：成功，其他值表示失败）"
-      },
-      {
-        "name": "Md5",
-        "desc": "程序包MD5"
-      },
-      {
-        "name": "Size",
-        "desc": "程序包大小（单位字节）"
+        "name": "GroupId",
+        "desc": "groupId，分组唯一标识"
       }
     ],
-    "desc": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。"
+    "desc": "删除Serverless部署组"
   },
   "AddInstances": {
     "params": [

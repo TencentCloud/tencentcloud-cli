@@ -975,6 +975,7 @@ def doDescribeCdnDomainLogs(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Area": argv.get("--Area"),
+        "LogType": argv.get("--LogType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
