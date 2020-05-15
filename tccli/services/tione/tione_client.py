@@ -276,6 +276,7 @@ def doUpdateNotebookInstance(argv, arglist):
         "AdditionalCodeRepositories": Utils.try_to_json(argv, "--AdditionalCodeRepositories"),
         "DisassociateDefaultCodeRepository": Utils.try_to_json(argv, "--DisassociateDefaultCodeRepository"),
         "DisassociateAdditionalCodeRepositories": Utils.try_to_json(argv, "--DisassociateAdditionalCodeRepositories"),
+        "ClsAccess": argv.get("--ClsAccess"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -384,6 +385,7 @@ def doCreateNotebookInstance(argv, arglist):
         "LifecycleScriptsName": argv.get("--LifecycleScriptsName"),
         "DefaultCodeRepository": argv.get("--DefaultCodeRepository"),
         "AdditionalCodeRepositories": Utils.try_to_json(argv, "--AdditionalCodeRepositories"),
+        "ClsAccess": argv.get("--ClsAccess"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

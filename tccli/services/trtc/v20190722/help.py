@@ -5,11 +5,11 @@ INFO = {
     "params": [
       {
         "name": "StartTime",
-        "desc": "查询开始时间"
+        "desc": "查询开始时间，24小时内。本地unix时间戳（1588031999s）"
       },
       {
         "name": "EndTime",
-        "desc": "查询结束时间"
+        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
       },
       {
         "name": "SdkAppId",
@@ -30,11 +30,11 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "查询开始时间"
+        "desc": "查询开始时间，5天内。本地unix时间戳（1588031999s）"
       },
       {
         "name": "EndTime",
-        "desc": "查询结束时间"
+        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
       }
     ],
     "desc": "查询历史房间和用户数，每分钟1次，可查询最近5天的数据"
@@ -68,11 +68,11 @@ INFO = {
     "params": [
       {
         "name": "StartTime",
-        "desc": "查询开始时间"
+        "desc": "查询开始时间，24小时内。本地unix时间戳（1588031999s）"
       },
       {
         "name": "EndTime",
-        "desc": "查询结束时间"
+        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
       },
       {
         "name": "SdkAppId",
@@ -89,11 +89,11 @@ INFO = {
     "params": [
       {
         "name": "StartTime",
-        "desc": "查询开始时间"
+        "desc": "查询开始时间，24小时内，，本地unix时间戳（1588031999s）"
       },
       {
         "name": "EndTime",
-        "desc": "查询结束时间"
+        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
       },
       {
         "name": "SdkAppId",
@@ -114,11 +114,11 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "查询开始时间"
+        "desc": "查询开始时间，5天内。本地unix时间戳（1588031999s）"
       },
       {
         "name": "EndTime",
-        "desc": "查询结束时间"
+        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
       },
       {
         "name": "RoomId",
@@ -133,7 +133,7 @@ INFO = {
         "desc": "分页大小（不填默认返回10个,最多不超过100条）"
       }
     ],
-    "desc": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询最近5天的数据。"
+    "desc": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询5天内的数据。"
   },
   "RemoveUser": {
     "params": [
@@ -160,11 +160,11 @@ INFO = {
       },
       {
         "name": "StartTime",
-        "desc": "查询开始时间"
+        "desc": "查询开始时间，5天内。本地unix时间戳（1588031999s）"
       },
       {
         "name": "EndTime",
-        "desc": "查询结束时间"
+        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
       },
       {
         "name": "SdkAppId",
@@ -179,7 +179,7 @@ INFO = {
         "desc": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；\naBlock：音频卡顿时长；\nvBit：上/下行视频码率；\nvCapFps：视频采集帧率；\nvEncFps：视频发送帧率；\nvDecFps：渲染帧率；\nvBlock：视频卡顿时长；\naLoss：上/下行音频丢包；\nvLoss：上/下行视频丢包；\nvWidth：上/下行分辨率宽；\nvHeight：上/下行分辨率高"
       }
     ],
-    "desc": "查询指定时间内的用户列表及用户通话质量数据。"
+    "desc": "查询指定时间内的用户列表及用户通话质量数据。可查询5天内数据，查询起止时间不超过1个小时，查询用户不超过6个"
   },
   "StopMCUMixTranscode": {
     "params": [

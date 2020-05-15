@@ -205,6 +205,9 @@ def doTextModeration(argv, arglist):
 
     param = {
         "Content": argv.get("--Content"),
+        "BizType": Utils.try_to_json(argv, "--BizType"),
+        "DataId": argv.get("--DataId"),
+        "SdkAppId": Utils.try_to_json(argv, "--SdkAppId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

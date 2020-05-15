@@ -16,7 +16,7 @@ INFO = {
         "desc": "操作保护设置"
       }
     ],
-    "desc": "设置用户的登录保护和敏感操作校验方式"
+    "desc": "设置子用户的登录保护和敏感操作校验方式"
   },
   "ListUsersForGroup": {
     "params": [

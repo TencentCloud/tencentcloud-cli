@@ -77,7 +77,7 @@ INFO = {
       },
       {
         "name": "VideoBase64",
-        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过5M，支持mp4、avi、flv格式。"
+        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。"
       },
       {
         "name": "LivenessType",
@@ -89,7 +89,7 @@ INFO = {
       },
       {
         "name": "Optional",
-        "desc": "本接口不需要传递此参数。"
+        "desc": "额外配置，传入JSON字符串。"
       }
     ],
     "desc": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。"
@@ -148,7 +148,7 @@ INFO = {
       },
       {
         "name": "VideoBase64",
-        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过5M，支持mp4、avi、flv格式。"
+        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。"
       },
       {
         "name": "LivenessType",
@@ -160,7 +160,7 @@ INFO = {
       },
       {
         "name": "Optional",
-        "desc": "本接口不需要传递此参数。"
+        "desc": "额外配置，传入JSON字符串。"
       }
     ],
     "desc": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与公安权威库的证件照是否属于同一个人。"

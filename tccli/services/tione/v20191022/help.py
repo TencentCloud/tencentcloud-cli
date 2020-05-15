@@ -132,6 +132,10 @@ INFO = {
       {
         "name": "DisassociateAdditionalCodeRepositories",
         "desc": "是否取消关联其他存储库，默认false\n该值为true时，AdditionalCodeRepositories将被忽略"
+      },
+      {
+        "name": "ClsAccess",
+        "desc": "是否开启CLS日志服务，可取值Enabled/Disabled"
       }
     ],
     "desc": "更新Notebook实例"
@@ -316,6 +320,10 @@ INFO = {
       {
         "name": "AdditionalCodeRepositories",
         "desc": "其他存储库列表\n每个元素可以是已创建的存储库名称或者已https://开头的公共git库"
+      },
+      {
+        "name": "ClsAccess",
+        "desc": "是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled"
       }
     ],
     "desc": "创建Notebook实例"

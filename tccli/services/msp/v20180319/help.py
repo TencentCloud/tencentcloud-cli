@@ -33,14 +33,6 @@ INFO = {
         "desc": "服务提供商名称"
       },
       {
-        "name": "SrcInfo",
-        "desc": "迁移任务源信息"
-      },
-      {
-        "name": "DstInfo",
-        "desc": "迁移任务目的信息"
-      },
-      {
         "name": "CreateTime",
         "desc": "迁移任务创建时间"
       },
@@ -51,6 +43,14 @@ INFO = {
       {
         "name": "MigrateClass",
         "desc": "迁移类别，如数据库迁移中mysql:mysql代表从mysql迁移到mysql，文件迁移中oss:cos代表从阿里云oss迁移到腾讯云cos"
+      },
+      {
+        "name": "SrcInfo",
+        "desc": "迁移任务源信息"
+      },
+      {
+        "name": "DstInfo",
+        "desc": "迁移任务目的信息"
       },
       {
         "name": "SrcAccessType",
