@@ -190,11 +190,11 @@ INFO = {
       },
       {
         "name": "MetricName",
-        "desc": "<li> 指标名: </li>\n<li> StorageSizepkg: 当月存储空间容量, 单位MB </li>\n<li> StorageReadpkg: 当月存储读请求次数 </li>\n<li> StorageWritepkg: 当月存储写请求次数 </li>\n<li> StorageCdnOriginFluxpkg: 当月CDN回源流量, 单位字节 </li>\n<li> StorageCdnOriginFluxpkgDay: 当日CDN回源流量, 单位字节 </li>\n<li> StorageReadpkgDay: 当日存储读请求次数 </li>\n<li> StorageWritepkgDay: 当日写请求次数 </li>\n<li> CDNFluxpkg: 当月CDN流量, 单位为字节 </li>\n<li> CDNFluxpkgDay: 当日CDN流量, 单位为字节 </li>\n<li> FunctionInvocationpkg: 当月云函数调用次数 </li>\n<li> FunctionGBspkg: 当月云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkg: 当月云函数流量, 单位千字节(KB) </li>\n<li> FunctionInvocationpkgDay: 当日云函数调用次数 </li>\n<li> FunctionGBspkgDay: 当日云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkgDay: 当日云函数流量, 单位千字节(KB) </li>\n<li> DbSizepkg: 当月数据库容量大小, 单位MB </li>\n<li> DbReadpkg: 当日数据库读请求数 </li>\n<li> DbWritepkg: 当日数据库写请求数 </li>\n<li> StaticFsFluxPkgDay: 当日静态托管流量 </li>\n<li> StaticFsFluxPkg: 当月静态托管流量</li>\n<li> StaticFsSizePkg: 当月静态托管容量 </li>"
+        "desc": "<li> 指标名: </li>\n<li> StorageSizepkg: 当月存储空间容量, 单位MB </li>\n<li> StorageReadpkg: 当月存储读请求次数 </li>\n<li> StorageWritepkg: 当月存储写请求次数 </li>\n<li> StorageCdnOriginFluxpkg: 当月CDN回源流量, 单位字节 </li>\n<li> StorageCdnOriginFluxpkgDay: 当日CDN回源流量, 单位字节 </li>\n<li> StorageReadpkgDay: 当日存储读请求次数 </li>\n<li> StorageWritepkgDay: 当日写请求次数 </li>\n<li> CDNFluxpkg: 当月CDN流量, 单位为字节 </li>\n<li> CDNFluxpkgDay: 当日CDN流量, 单位为字节 </li>\n<li> FunctionInvocationpkg: 当月云函数调用次数 </li>\n<li> FunctionGBspkg: 当月云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkg: 当月云函数流量, 单位千字节(KB) </li>\n<li> FunctionInvocationpkgDay: 当日云函数调用次数 </li>\n<li> FunctionGBspkgDay: 当日云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkgDay: 当日云函数流量, 单位千字节(KB) </li>\n<li> DbSizepkg: 当月数据库容量大小, 单位MB </li>\n<li> DbReadpkg: 当日数据库读请求数 </li>\n<li> DbWritepkg: 当日数据库写请求数 </li>\n<li> StaticFsFluxPkgDay: 当日静态托管流量 </li>\n<li> StaticFsFluxPkg: 当月静态托管流量</li>\n<li> StaticFsSizePkg: 当月静态托管容量 </li>\n<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核 </li>\n<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB </li>"
       },
       {
         "name": "ResourceID",
-        "desc": "资源ID, 目前仅对云函数相关的指标(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)有意义, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传."
+        "desc": "资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)、容器托管（服务名称）。如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传。"
       }
     ],
     "desc": "查询指定指标的配额使用量"

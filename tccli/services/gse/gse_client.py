@@ -18,18 +18,17 @@ from tccli.services.gse import v20191112
 from tccli.services.gse.v20191112 import help as v20191112_help
 
 
-def doUpdateGameServerSession(argv, arglist):
+def doDescribeScalingPolicies(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateGameServerSession", g_param[OptionsDefine.Version])
+        show_help("DescribeScalingPolicies", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GameServerSessionId": argv.get("--GameServerSessionId"),
-        "MaximumPlayerSessionCount": Utils.try_to_json(argv, "--MaximumPlayerSessionCount"),
-        "Name": argv.get("--Name"),
-        "PlayerSessionCreationPolicy": argv.get("--PlayerSessionCreationPolicy"),
-        "ProtectionPolicy": argv.get("--ProtectionPolicy"),
+        "FleetId": argv.get("--FleetId"),
+        "StatusFilter": argv.get("--StatusFilter"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -43,9 +42,9 @@ def doUpdateGameServerSession(argv, arglist):
     client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateGameServerSessionRequest()
+    model = models.DescribeScalingPoliciesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateGameServerSession(model)
+    rsp = client.DescribeScalingPolicies(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -269,6 +268,48 @@ def doDescribeGameServerSessionDetails(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doPutScalingPolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PutScalingPolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FleetId": argv.get("--FleetId"),
+        "Name": argv.get("--Name"),
+        "ScalingAdjustment": Utils.try_to_json(argv, "--ScalingAdjustment"),
+        "ScalingAdjustmentType": argv.get("--ScalingAdjustmentType"),
+        "Threshold": Utils.try_to_json(argv, "--Threshold"),
+        "ComparisonOperator": argv.get("--ComparisonOperator"),
+        "EvaluationPeriods": Utils.try_to_json(argv, "--EvaluationPeriods"),
+        "MetricName": argv.get("--MetricName"),
+        "PolicyType": argv.get("--PolicyType"),
+        "TargetConfiguration": Utils.try_to_json(argv, "--TargetConfiguration"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PutScalingPolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PutScalingPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doStartGameServerSessionPlacement(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -300,6 +341,111 @@ def doStartGameServerSessionPlacement(argv, arglist):
     model = models.StartGameServerSessionPlacementRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.StartGameServerSessionPlacement(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSetServerWeight(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SetServerWeight", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "FleetId": argv.get("--FleetId"),
+        "InstanceId": argv.get("--InstanceId"),
+        "Weight": Utils.try_to_json(argv, "--Weight"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetServerWeightRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SetServerWeight(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateGameServerSession(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateGameServerSession", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GameServerSessionId": argv.get("--GameServerSessionId"),
+        "MaximumPlayerSessionCount": Utils.try_to_json(argv, "--MaximumPlayerSessionCount"),
+        "Name": argv.get("--Name"),
+        "PlayerSessionCreationPolicy": argv.get("--PlayerSessionCreationPolicy"),
+        "ProtectionPolicy": argv.get("--ProtectionPolicy"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateGameServerSessionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateGameServerSession(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStopGameServerSessionPlacement(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StopGameServerSessionPlacement", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PlacementId": argv.get("--PlacementId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopGameServerSessionPlacementRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StopGameServerSessionPlacement(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -418,14 +564,15 @@ def doSearchGameServerSessions(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopGameServerSessionPlacement(argv, arglist):
+def doDeleteScalingPolicy(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("StopGameServerSessionPlacement", g_param[OptionsDefine.Version])
+        show_help("DeleteScalingPolicy", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "PlacementId": argv.get("--PlacementId"),
+        "FleetId": argv.get("--FleetId"),
+        "Name": argv.get("--Name"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -439,9 +586,9 @@ def doStopGameServerSessionPlacement(argv, arglist):
     client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopGameServerSessionPlacementRequest()
+    model = models.DeleteScalingPolicyRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.StopGameServerSessionPlacement(model)
+    rsp = client.DeleteScalingPolicy(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -492,6 +639,41 @@ def doCreateGameServerSession(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeGameServerSessionQueues(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeGameServerSessionQueues", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Names": Utils.try_to_json(argv, "--Names"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeGameServerSessionQueuesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeGameServerSessionQueues(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20191112": gse_client_v20191112,
 
@@ -503,19 +685,24 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "UpdateGameServerSession": doUpdateGameServerSession,
+    "DescribeScalingPolicies": doDescribeScalingPolicies,
     "DescribeInstances": doDescribeInstances,
     "DescribeGameServerSessions": doDescribeGameServerSessions,
     "GetInstanceAccess": doGetInstanceAccess,
     "JoinGameServerSession": doJoinGameServerSession,
     "DescribeGameServerSessionPlacement": doDescribeGameServerSessionPlacement,
     "DescribeGameServerSessionDetails": doDescribeGameServerSessionDetails,
+    "PutScalingPolicy": doPutScalingPolicy,
     "StartGameServerSessionPlacement": doStartGameServerSessionPlacement,
+    "SetServerWeight": doSetServerWeight,
+    "UpdateGameServerSession": doUpdateGameServerSession,
+    "StopGameServerSessionPlacement": doStopGameServerSessionPlacement,
     "DescribePlayerSessions": doDescribePlayerSessions,
     "GetGameServerSessionLogUrl": doGetGameServerSessionLogUrl,
     "SearchGameServerSessions": doSearchGameServerSessions,
-    "StopGameServerSessionPlacement": doStopGameServerSessionPlacement,
+    "DeleteScalingPolicy": doDeleteScalingPolicy,
     "CreateGameServerSession": doCreateGameServerSession,
+    "DescribeGameServerSessionQueues": doDescribeGameServerSessionQueues,
 
 }
 

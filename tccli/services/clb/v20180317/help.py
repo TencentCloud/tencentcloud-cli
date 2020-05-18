@@ -167,15 +167,15 @@ INFO = {
     "params": [
       {
         "name": "LoadBalancerId",
-        "desc": "负载均衡实例ID"
+        "desc": "负载均衡实例ID。"
       },
       {
         "name": "ListenerId",
-        "desc": "HTTPS:443监听器的ID"
+        "desc": "HTTPS:443监听器的ID。"
       },
       {
         "name": "Domains",
-        "desc": "HTTPS:443监听器下需要重定向的域名"
+        "desc": "HTTPS:443监听器下需要重定向的域名，若不填，对HTTPS:443监听器下的所有域名都设置重定向。"
       }
     ],
     "desc": "用户需要先创建出一个HTTPS:443监听器，并在其下创建转发规则。通过调用本接口，系统会自动创建出一个HTTP:80监听器（如果之前不存在），并在其下创建转发规则，与HTTPS:443监听器下的Domains（在入参中指定）对应。创建成功后可以通过HTTP:80地址自动跳转为HTTPS:443地址进行访问。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
@@ -377,6 +377,10 @@ INFO = {
       {
         "name": "DefaultServer",
         "desc": "是否设为默认域名，注意，一个监听器下只能设置一个默认域名。"
+      },
+      {
+        "name": "NewDefaultServerDomain",
+        "desc": "监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。"
       }
     ],
     "desc": "ModifyDomainAttributes接口用于修改负载均衡7层监听器转发规则的域名级别属性，如修改域名、修改DefaultServer、开启/关闭Http2、修改证书。\n本接口为异步接口，本接口返回成功后，需以返回的RequestId为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
@@ -761,6 +765,10 @@ INFO = {
       {
         "name": "Url",
         "desc": "要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效"
+      },
+      {
+        "name": "NewDefaultServerDomain",
+        "desc": "监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。"
       }
     ],
     "desc": "DeleteRule 接口用来删除负载均衡实例七层监听器下的转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。"
