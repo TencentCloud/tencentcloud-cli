@@ -1402,6 +1402,7 @@ def doResetInstances(argv, arglist):
         "ImageId": argv.get("--ImageId"),
         "Password": argv.get("--Password"),
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
+        "KeepData": argv.get("--KeepData"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

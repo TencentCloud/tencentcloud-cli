@@ -875,6 +875,7 @@ def doInquiryPriceResizeInstanceDisks(argv, arglist):
         "InstanceId": argv.get("--InstanceId"),
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
+        "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1154,6 +1155,7 @@ def doResizeInstanceDisks(argv, arglist):
         "InstanceId": argv.get("--InstanceId"),
         "DataDisks": Utils.try_to_json(argv, "--DataDisks"),
         "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
+        "SystemDisk": Utils.try_to_json(argv, "--SystemDisk"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -103,7 +103,7 @@ INFO = {
       },
       {
         "name": "BindType",
-        "desc": "1 – 小额转账验证\n2 – 短信验证\n每个结算账户每天只能使用一次小额转账验证"
+        "desc": "1 – 小额转账验证\n2 – 短信验证\n3 - 一分钱转账验证，无需再调CheckAcct验证绑卡\n4 - 银行四要素验证，无需再调CheckAcct验证绑卡\n每个结算账户每天只能使用一次小额转账验证"
       },
       {
         "name": "SettleAcctNo",
@@ -148,6 +148,10 @@ INFO = {
       {
         "name": "EiconBankBranchId",
         "desc": "超级网银行号，超级网银行号和大小额行号\n二选一"
+      },
+      {
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA, rsa非对称加密，使用RSA-PKCS1-v1_5\nAES,  aes对称加密，使用AES256-CBC-PCKS7padding\n默认RSA"
       }
     ],
     "desc": "商户绑定提现银行卡，每个商户只能绑定一张提现银行卡"
@@ -1882,7 +1886,23 @@ INFO = {
       },
       {
         "name": "SubMerchantMemberType",
-        "desc": "子商户会员类型：\ngeneral:普通子账户\nmerchant:商户子账户\n缺省： general"
+        "desc": "子商户会员类型：\ngeneral: 普通子账户\nmerchant: 商户子账户\n缺省: general"
+      },
+      {
+        "name": "SubMerchantKey",
+        "desc": "子商户密钥\n<敏感信息>加密详见《商户端接口敏感信息加密说明》"
+      },
+      {
+        "name": "SubMerchantPrivateKey",
+        "desc": "子商户私钥\n<敏感信息>加密详见《商户端接口敏感信息加密说明》"
+      },
+      {
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA, rsa非对称加密，使用RSA-PKCS1-v1_5\nAES,  aes对称加密，使用AES256-CBC-PCKS7padding\n默认RSA"
+      },
+      {
+        "name": "SubAcctNo",
+        "desc": "银行生成的子商户账户，已开户的场景需要录入"
       }
     ],
     "desc": "子商户入驻聚鑫平台"

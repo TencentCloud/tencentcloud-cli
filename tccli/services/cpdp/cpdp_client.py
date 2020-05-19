@@ -162,6 +162,7 @@ def doBindAcct(argv, arglist):
         "Mobile": argv.get("--Mobile"),
         "CnapsBranchId": argv.get("--CnapsBranchId"),
         "EiconBankBranchId": argv.get("--EiconBankBranchId"),
+        "EncryptType": argv.get("--EncryptType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2004,6 +2005,10 @@ def doCreateAcct(argv, arglist):
         "SubMchType": argv.get("--SubMchType"),
         "ShortName": argv.get("--ShortName"),
         "SubMerchantMemberType": argv.get("--SubMerchantMemberType"),
+        "SubMerchantKey": argv.get("--SubMerchantKey"),
+        "SubMerchantPrivateKey": argv.get("--SubMerchantPrivateKey"),
+        "EncryptType": argv.get("--EncryptType"),
+        "SubAcctNo": argv.get("--SubAcctNo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

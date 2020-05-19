@@ -194,6 +194,43 @@ INFO = {
     ],
     "desc": "接口说明：结束云端混流"
   },
+  "CreateTroubleInfo": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "应用的ID"
+      },
+      {
+        "name": "RoomId",
+        "desc": "房间ID"
+      },
+      {
+        "name": "TeacherUserId",
+        "desc": "老师用户ID"
+      },
+      {
+        "name": "StudentUserId",
+        "desc": "学生用户ID"
+      },
+      {
+        "name": "TroubleUserId",
+        "desc": "体验异常端（老师或学生）的用户 ID。"
+      },
+      {
+        "name": "TroubleType",
+        "desc": "异常类型"
+      },
+      {
+        "name": "TroubleTime",
+        "desc": "异常发生的UNIX 时间戳，单位为秒。"
+      },
+      {
+        "name": "TroubleMsg",
+        "desc": "异常详情"
+      }
+    ],
+    "desc": "创建异常信息"
+  },
   "DismissRoom": {
     "params": [
       {

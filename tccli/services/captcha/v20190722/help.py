@@ -134,7 +134,7 @@ INFO = {
       },
       {
         "name": "Ticket",
-        "desc": "验证码返回给用户的票据"
+        "desc": "前端回调函数返回的用户验证票据"
       },
       {
         "name": "UserIp",
@@ -142,7 +142,7 @@ INFO = {
       },
       {
         "name": "Randstr",
-        "desc": "验证票据需要的随机字符串"
+        "desc": "前端回调函数返回的随机字符串"
       },
       {
         "name": "CaptchaAppId",
