@@ -86,6 +86,39 @@ def doCreateAuthDomain(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeEndUserStatistic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeEndUserStatistic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvId": argv.get("--EnvId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeEndUserStatisticRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeEndUserStatistic(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDestroyEnv(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -425,6 +458,40 @@ def doDeleteEndUser(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeEndUserLoginStatistic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeEndUserLoginStatistic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvId": argv.get("--EnvId"),
+        "Source": argv.get("--Source"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeEndUserLoginStatisticRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeEndUserLoginStatistic(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCommonServiceAPI(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -627,6 +694,39 @@ def doDescribeEnvFreeQuota(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeExtraPkgBillingInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeExtraPkgBillingInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvId": argv.get("--EnvId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeExtraPkgBillingInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeExtraPkgBillingInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180608": tcb_client_v20180608,
 
@@ -640,6 +740,7 @@ MODELS_MAP = {
 ACTION_MAP = {
     "ModifyEnv": doModifyEnv,
     "CreateAuthDomain": doCreateAuthDomain,
+    "DescribeEndUserStatistic": doDescribeEndUserStatistic,
     "DestroyEnv": doDestroyEnv,
     "DescribeAuthDomains": doDescribeAuthDomains,
     "CreateHostingDomain": doCreateHostingDomain,
@@ -650,12 +751,14 @@ ACTION_MAP = {
     "DescribeEndUsers": doDescribeEndUsers,
     "CheckTcbService": doCheckTcbService,
     "DeleteEndUser": doDeleteEndUser,
+    "DescribeEndUserLoginStatistic": doDescribeEndUserLoginStatistic,
     "CommonServiceAPI": doCommonServiceAPI,
     "DescribeEnvLimit": doDescribeEnvLimit,
     "ReinstateEnv": doReinstateEnv,
     "DescribeDatabaseACL": doDescribeDatabaseACL,
     "DescribeQuotaData": doDescribeQuotaData,
     "DescribeEnvFreeQuota": doDescribeEnvFreeQuota,
+    "DescribeExtraPkgBillingInfo": doDescribeExtraPkgBillingInfo,
 
 }
 

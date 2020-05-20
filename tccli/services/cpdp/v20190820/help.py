@@ -510,6 +510,27 @@ INFO = {
     ],
     "desc": "直播平台-删除代理商完税信息"
   },
+  "QueryMerchantInfoForManagement": {
+    "params": [
+      {
+        "name": "InvoicePlatformId",
+        "desc": "开票平台ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "页码"
+      },
+      {
+        "name": "Limit",
+        "desc": "页大小"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox。"
+      }
+    ],
+    "desc": "智慧零售-查询管理端商户"
+  },
   "ReviseMbrProperty": {
     "params": [
       {

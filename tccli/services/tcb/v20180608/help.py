@@ -14,6 +14,19 @@ INFO = {
     ],
     "desc": "更新环境信息"
   },
+  "DescribeDatabaseACL": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      },
+      {
+        "name": "CollectionName",
+        "desc": "集合名称"
+      }
+    ],
+    "desc": "获取数据库权限"
+  },
   "DestroyEnv": {
     "params": [
       {
@@ -130,6 +143,19 @@ INFO = {
     ],
     "desc": "删除终端用户"
   },
+  "DescribeEndUserLoginStatistic": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境id"
+      },
+      {
+        "name": "Source",
+        "desc": "终端用户来源\n<li> qcloud </li>\n<li>miniapp</li>"
+      }
+    ],
+    "desc": "获取环境终端用户新增与登录信息"
+  },
   "CommonServiceAPI": {
     "params": [
       {
@@ -169,18 +195,14 @@ INFO = {
     ],
     "desc": "获取终端用户列表"
   },
-  "DescribeDatabaseACL": {
+  "DescribeEndUserStatistic": {
     "params": [
       {
         "name": "EnvId",
-        "desc": "环境ID"
-      },
-      {
-        "name": "CollectionName",
-        "desc": "集合名称"
+        "desc": "环境id"
       }
     ],
-    "desc": "获取数据库权限"
+    "desc": "获取终端用户总量与平台分布情况"
   },
   "DescribeQuotaData": {
     "params": [
@@ -220,5 +242,14 @@ INFO = {
       }
     ],
     "desc": "查询后付费免费配额信息"
+  },
+  "DescribeExtraPkgBillingInfo": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "已购买增值包的环境ID"
+      }
+    ],
+    "desc": "获取增值包计费相关信息"
   }
 }

@@ -630,6 +630,42 @@ def doQueryExchangeRate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryMerchantInfoForManagement(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryMerchantInfoForManagement", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InvoicePlatformId": Utils.try_to_json(argv, "--InvoicePlatformId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryMerchantInfoForManagementRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryMerchantInfoForManagement(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doReviseMbrProperty(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2468,6 +2504,7 @@ ACTION_MAP = {
     "WithdrawCashMembership": doWithdrawCashMembership,
     "CloseOrder": doCloseOrder,
     "QueryExchangeRate": doQueryExchangeRate,
+    "QueryMerchantInfoForManagement": doQueryMerchantInfoForManagement,
     "ReviseMbrProperty": doReviseMbrProperty,
     "QueryBalance": doQueryBalance,
     "QueryAgentTaxPaymentBatch": doQueryAgentTaxPaymentBatch,

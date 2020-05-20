@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "DomainName",
-        "desc": "您的加速域名。"
+        "desc": "您的推流域名。"
       },
       {
         "name": "AppName",
