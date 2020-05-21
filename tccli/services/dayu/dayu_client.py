@@ -3378,6 +3378,7 @@ def doModifyCCThreshold(argv, arglist):
         "BasicDeviceType": argv.get("--BasicDeviceType"),
         "BasicIpInstance": argv.get("--BasicIpInstance"),
         "BasicIspCode": Utils.try_to_json(argv, "--BasicIspCode"),
+        "Domain": argv.get("--Domain"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -2218,6 +2218,10 @@ INFO = {
       {
         "name": "BasicIspCode",
         "desc": "仅基础防护提供。可选，运营商线路（如果查询的设备类型是NAT服务器，需要传此参数为5）"
+      },
+      {
+        "name": "Domain",
+        "desc": "可选字段，当协议取值HTTPS时，必填"
       }
     ],
     "desc": "修改CC的防护阈值"
