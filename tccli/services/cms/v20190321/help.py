@@ -52,31 +52,6 @@ INFO = {
     ],
     "desc": "本文档适用于图片内容安全、视频内容安全自定义识别库的管理。\n<br>\n通过该接口可以将图片新增到样本库。"
   },
-  "DescribeTextSample": {
-    "params": [
-      {
-        "name": "Filters",
-        "desc": "支持通过标签值进行筛选"
-      },
-      {
-        "name": "Limit",
-        "desc": "数量限制，默认为20，最大值为100"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0"
-      },
-      {
-        "name": "OrderDirection",
-        "desc": "升序（asc）还是降序（desc），默认：desc"
-      },
-      {
-        "name": "OrderField",
-        "desc": "按某个字段排序，目前仅支持CreatedAt排序"
-      }
-    ],
-    "desc": "本文档适用于文本内容安全、音频内容安全自定义识别库的管理。\n<br>\n支持批量查询文本样本库。"
-  },
   "DescribeFileSample": {
     "params": [
       {
@@ -101,6 +76,32 @@ INFO = {
       }
     ],
     "desc": "本文档适用于图片内容安全、视频内容安全自定义识别库的管理。\n<br>\n查询图片样本库，支持批量查询。"
+  },
+  "DeleteFileSample": {
+    "params": [
+      {
+        "name": "Ids",
+        "desc": "唯一标识数组"
+      }
+    ],
+    "desc": "本文档适用于图片内容安全、视频内容安全自定义识别库的管理。\n<br>\n删除图片样本库，支持批量删除，一次提交不超过20个。"
+  },
+  "CommonMediaRecognition": {
+    "params": [
+      {
+        "name": "MessageCommon",
+        "desc": "公共参数Common类"
+      },
+      {
+        "name": "MessageContent",
+        "desc": "内容相关参数"
+      },
+      {
+        "name": "MessageId",
+        "desc": "内容ID参数"
+      }
+    ],
+    "desc": "广交会商品企业信息发布内容审核"
   },
   "TextModeration": {
     "params": [
@@ -140,13 +141,29 @@ INFO = {
     ],
     "desc": "图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别涉黄、涉恐、涉政、涉毒等有害内容，同时支持用户配置图片黑名单，打击自定义的违规图片。"
   },
-  "DeleteFileSample": {
+  "DescribeTextSample": {
     "params": [
       {
-        "name": "Ids",
-        "desc": "唯一标识数组"
+        "name": "Filters",
+        "desc": "支持通过标签值进行筛选"
+      },
+      {
+        "name": "Limit",
+        "desc": "数量限制，默认为20，最大值为100"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "升序（asc）还是降序（desc），默认：desc"
+      },
+      {
+        "name": "OrderField",
+        "desc": "按某个字段排序，目前仅支持CreatedAt排序"
       }
     ],
-    "desc": "本文档适用于图片内容安全、视频内容安全自定义识别库的管理。\n<br>\n删除图片样本库，支持批量删除，一次提交不超过20个。"
+    "desc": "本文档适用于文本内容安全、音频内容安全自定义识别库的管理。\n<br>\n支持批量查询文本样本库。"
   }
 }

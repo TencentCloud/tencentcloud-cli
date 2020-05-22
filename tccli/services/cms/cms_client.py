@@ -87,6 +87,42 @@ def doCreateTextSample(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doTextModeration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TextModeration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Content": argv.get("--Content"),
+        "BizType": Utils.try_to_json(argv, "--BizType"),
+        "DataId": argv.get("--DataId"),
+        "SdkAppId": Utils.try_to_json(argv, "--SdkAppId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TextModerationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TextModeration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateFileSample(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -114,43 +150,6 @@ def doCreateFileSample(argv, arglist):
     model = models.CreateFileSampleRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateFileSample(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTextSample(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeTextSample", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderDirection": argv.get("--OrderDirection"),
-        "OrderField": argv.get("--OrderField"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTextSampleRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTextSample(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -197,42 +196,6 @@ def doDescribeFileSample(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTextModeration(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TextModeration", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Content": argv.get("--Content"),
-        "BizType": Utils.try_to_json(argv, "--BizType"),
-        "DataId": argv.get("--DataId"),
-        "SdkAppId": Utils.try_to_json(argv, "--SdkAppId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextModerationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TextModeration(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doImageModeration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -259,6 +222,78 @@ def doImageModeration(argv, arglist):
     model = models.ImageModerationRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ImageModeration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTextSample(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTextSample", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "OrderDirection": argv.get("--OrderDirection"),
+        "OrderField": argv.get("--OrderField"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTextSampleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTextSample(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCommonMediaRecognition(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CommonMediaRecognition", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MessageCommon": Utils.try_to_json(argv, "--MessageCommon"),
+        "MessageContent": Utils.try_to_json(argv, "--MessageContent"),
+        "MessageId": Utils.try_to_json(argv, "--MessageId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CmsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CommonMediaRecognitionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CommonMediaRecognition(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -314,11 +349,12 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DeleteTextSample": doDeleteTextSample,
     "CreateTextSample": doCreateTextSample,
-    "CreateFileSample": doCreateFileSample,
-    "DescribeTextSample": doDescribeTextSample,
-    "DescribeFileSample": doDescribeFileSample,
     "TextModeration": doTextModeration,
+    "CreateFileSample": doCreateFileSample,
+    "DescribeFileSample": doDescribeFileSample,
     "ImageModeration": doImageModeration,
+    "DescribeTextSample": doDescribeTextSample,
+    "CommonMediaRecognition": doCommonMediaRecognition,
     "DeleteFileSample": doDeleteFileSample,
 
 }

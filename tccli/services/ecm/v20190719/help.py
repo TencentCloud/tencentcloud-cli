@@ -18,7 +18,7 @@ INFO = {
     "params": [
       {
         "name": "Filters",
-        "desc": "过滤条件。\nmodule-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。\nmodule-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。\n每次请求的Filters的上限为10，Filter.Values的上限为5。"
+        "desc": "过滤条件。\nmodule-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。\nmodule-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。\nimage-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。\ninstance-family      String      是否必填：否      （过滤条件）按照机型family过滤。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。"
       },
       {
         "name": "Offset",
@@ -27,6 +27,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。"
+      },
+      {
+        "name": "OrderByField",
+        "desc": "指定排序字段。目前支持的可选值如下\ninstance-num 按实例数量排序。\nnode-num 按节点数量排序。\ntimestamp 按实例创建时间排序。\n如果不传，默认按实例创建时间排序"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序"
       }
     ],
     "desc": "获取模块列表"
@@ -247,7 +255,7 @@ INFO = {
     "params": [
       {
         "name": "Filters",
-        "desc": "过滤条件。\nzone      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。\nmodule-id      String      是否必填：否     （过滤条件）按照模块ID过滤。\ninstance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。\ninstance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。\nip-address      String      是否必填：否      （过滤条件）按照实例的内网/公网IP过滤。\ninstance-uuid   string 是否必填：否 （过滤条件）按照uuid过滤实例列表。\ninstance-state  string  是否必填：否 （过滤条件）按照实例状态更新实例列表。\ninternet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。\ntag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。\ntag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n若不传Filters参数则表示查询所有相关的实例信息。\n单次请求的Filter.Values的上限为5。"
+        "desc": "过滤条件。\nzone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。\nzone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。\nmodule-id      String      是否必填：否     （过滤条件）按照模块ID过滤。\ninstance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。\ninstance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。\nip-address      String      是否必填：否      （过滤条件）按照实例的内网/公网IP过滤。\ninstance-uuid   string 是否必填：否 （过滤条件）按照uuid过滤实例列表。\ninstance-state  string  是否必填：否 （过滤条件）按照实例状态更新实例列表。\ninternet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。\ntag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。\ntag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\ninstance-family      String      是否必填：否      （过滤条件）按照机型family过滤。\nmodule-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。\nimage-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。\n\n若不传Filters参数则表示查询所有相关的实例信息。\n单次请求的Filter.Values的上限为5。"
       },
       {
         "name": "Offset",
@@ -256,6 +264,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量，默认为20(如果查询结果数目大于等于20)，最大值为100。"
+      },
+      {
+        "name": "OrderByField",
+        "desc": "指定排序字段。目前支持的可选值如下\ntimestamp 按实例创建时间排序。\n注意：目前仅支持按创建时间排序，后续可能会有扩展。\n如果不传，默认按实例创建时间排序"
+      },
+      {
+        "name": "OrderDirection",
+        "desc": "指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序"
       }
     ],
     "desc": "获取实例的相关信息。"

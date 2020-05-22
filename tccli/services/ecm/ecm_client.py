@@ -97,6 +97,8 @@ def doDescribeModule(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderByField": argv.get("--OrderByField"),
+        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -583,6 +585,8 @@ def doDescribeInstances(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderByField": argv.get("--OrderByField"),
+        "OrderDirection": Utils.try_to_json(argv, "--OrderDirection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
