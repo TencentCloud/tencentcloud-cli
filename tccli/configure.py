@@ -210,16 +210,20 @@ class Configure(object):
                     cred[c] = "*" + filecred[c][-4:]
 
         cmd = vinput("TencentCloud API secretId[%s]: " % cred[OptionsDefine.SecretId])
-        if cmd: filecred["secretId"] = cmd
+        if cmd:
+            filecred["secretId"] = cmd
 
         cmd = vinput("TencentCloud API secretKey[%s]: " % cred[OptionsDefine.SecretKey])
-        if cmd: filecred["secretKey"] = cmd
+        if cmd:
+            filecred["secretKey"] = cmd
 
         cmd = vinput("region[%s]: " % config[OptionsDefine.Region])
-        fileconf["region"] = cmd or "ap-guangzhou"
+        if cmd:
+            fileconf["region"] = cmd
 
         cmd = vinput("output[%s]: " % config[OptionsDefine.Output])
-        fileconf["output"] = cmd or "json"
+        if cmd:
+            fileconf["output"] = cmd
 
         self._modify_configure(config_path, fileconf)
         self._modify_configure(cred_path, filecred)
