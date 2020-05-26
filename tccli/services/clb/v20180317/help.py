@@ -346,7 +346,7 @@ INFO = {
         "desc": "要删除的负载均衡实例 ID数组，数组大小最大支持20"
       }
     ],
-    "desc": "DeleteLoadBalancer 接口用以删除指定的一个或多个负载均衡实例。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+    "desc": "DeleteLoadBalancer 接口用以删除指定的一个或多个负载均衡实例。成功删除后，会把负载均衡实例下的监听器、转发规则一起删除，并把后端服务解绑。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
   "ModifyDomainAttributes": {
     "params": [

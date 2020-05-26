@@ -19,15 +19,6 @@ INFO = {
     ],
     "desc": "流量反欺诈-流量验准"
   },
-  "DetectAccountActivity": {
-    "params": [
-      {
-        "name": "BusinessSecurityData",
-        "desc": "业务入参"
-      }
-    ],
-    "desc": "DetectAccountActivity"
-  },
   "RecognizeCustomizedAudience": {
     "params": [
       {

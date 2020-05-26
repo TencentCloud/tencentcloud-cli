@@ -213,6 +213,7 @@ def doSearchMaterial(argv, arglist):
         "Resolution": argv.get("--Resolution"),
         "DurationRange": Utils.try_to_json(argv, "--DurationRange"),
         "CreateTimeRange": Utils.try_to_json(argv, "--CreateTimeRange"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
         "Sort": Utils.try_to_json(argv, "--Sort"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),

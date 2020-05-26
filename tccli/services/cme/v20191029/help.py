@@ -149,6 +149,10 @@ INFO = {
         "desc": "按照素材创建时间检索。"
       },
       {
+        "name": "Tags",
+        "desc": "按标签检索，填入检索的标签名。"
+      },
+      {
         "name": "Sort",
         "desc": "排序方式。Sort.Field 可选值：CreateTime。指定 Text 搜索时，将根据匹配度排序，该字段无效。"
       },

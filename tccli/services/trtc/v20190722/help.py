@@ -156,7 +156,7 @@ INFO = {
     "params": [
       {
         "name": "CommId",
-        "desc": "通话ID（唯一标识一次通话）= sdkappid+roomgString（房间号）+房间创建时间（unix时间戳，s）。通过 DescribeRoomInformation（查询房间列表）接口获取。"
+        "desc": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）。通过 DescribeRoomInformation（查询房间列表）接口获取。"
       },
       {
         "name": "StartTime",
@@ -180,6 +180,31 @@ INFO = {
       }
     ],
     "desc": "查询指定时间内的用户列表及用户通话质量数据。可查询5天内数据，查询起止时间不超过1个小时，查询用户不超过6个"
+  },
+  "DescribeDetailEvent": {
+    "params": [
+      {
+        "name": "CommId",
+        "desc": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间，5天内。本地unix时间戳（1588031999s）"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
+      },
+      {
+        "name": "UserId",
+        "desc": "用户id"
+      },
+      {
+        "name": "RoomId",
+        "desc": "房间号"
+      }
+    ],
+    "desc": "查询用户某次通话内的进退房，视频开关等详细事件。可查询5天内数据。"
   },
   "StopMCUMixTranscode": {
     "params": [
@@ -218,7 +243,7 @@ INFO = {
       },
       {
         "name": "TroubleType",
-        "desc": "异常类型"
+        "desc": "异常类型。\n1. 仅视频异常\n2. 仅声音异常\n3. 音视频都异常\n5. 进房异常\n4. 切课\n6. 求助\n7. 问题反馈\n8. 投诉"
       },
       {
         "name": "TroubleTime",

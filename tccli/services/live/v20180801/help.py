@@ -709,7 +709,7 @@ INFO = {
         "desc": "流名称，用于精确查询。"
       }
     ],
-    "desc": "返回正在直播中的流列表。"
+    "desc": "返回正在直播中的流列表。适用于推流成功后查询在线流信息。"
   },
   "DeleteLiveCallbackTemplate": {
     "params": [
