@@ -163,6 +163,7 @@ def doBindAcct(argv, arglist):
         "CnapsBranchId": argv.get("--CnapsBranchId"),
         "EiconBankBranchId": argv.get("--EiconBankBranchId"),
         "EncryptType": argv.get("--EncryptType"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -251,6 +252,8 @@ def doApplyWithdrawal(argv, arglist):
         "IdCode": argv.get("--IdCode"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
+        "EncryptType": argv.get("--EncryptType"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -715,6 +718,7 @@ def doQueryBalance(argv, arglist):
         "PageOffset": argv.get("--PageOffset"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1043,6 +1047,8 @@ def doQueryAcctBinding(argv, arglist):
         "SubAppId": argv.get("--SubAppId"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
+        "EncryptType": argv.get("--EncryptType"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1445,18 +1451,15 @@ def doQuerySingleTransactionStatus(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnBindAcct(argv, arglist):
+def doQueryAgentStatements(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UnBindAcct", g_param[OptionsDefine.Version])
+        show_help("QueryAgentStatements", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MidasAppId": argv.get("--MidasAppId"),
-        "SubAppId": argv.get("--SubAppId"),
-        "SettleAcctNo": argv.get("--SettleAcctNo"),
-        "MidasSecretId": argv.get("--MidasSecretId"),
-        "MidasSignature": argv.get("--MidasSignature"),
+        "Date": argv.get("--Date"),
+        "Type": argv.get("--Type"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1470,9 +1473,9 @@ def doUnBindAcct(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnBindAcctRequest()
+    model = models.QueryAgentStatementsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UnBindAcct(model)
+    rsp = client.QueryAgentStatements(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2045,6 +2048,7 @@ def doCreateAcct(argv, arglist):
         "SubMerchantPrivateKey": argv.get("--SubMerchantPrivateKey"),
         "EncryptType": argv.get("--EncryptType"),
         "SubAcctNo": argv.get("--SubAcctNo"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2185,6 +2189,8 @@ def doQueryAcctInfo(argv, arglist):
         "SubMchId": argv.get("--SubMchId"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
+        "EncryptType": argv.get("--EncryptType"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2285,6 +2291,45 @@ def doQueryOutwardOrder(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUnBindAcct(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnBindAcct", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MidasAppId": argv.get("--MidasAppId"),
+        "SubAppId": argv.get("--SubAppId"),
+        "SettleAcctNo": argv.get("--SettleAcctNo"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "EncryptType": argv.get("--EncryptType"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnBindAcctRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnBindAcct(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doQueryBankWithdrawCashDetails(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2338,6 +2383,8 @@ def doQueryAcctInfoList(argv, arglist):
         "PageOffset": argv.get("--PageOffset"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
+        "EncryptType": argv.get("--EncryptType"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2416,6 +2463,8 @@ def doCheckAcct(argv, arglist):
         "CurrencyType": argv.get("--CurrencyType"),
         "CurrencyUnit": Utils.try_to_json(argv, "--CurrencyUnit"),
         "CurrencyAmt": argv.get("--CurrencyAmt"),
+        "EncryptType": argv.get("--EncryptType"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2525,7 +2574,7 @@ ACTION_MAP = {
     "ApplyTrade": doApplyTrade,
     "QueryBankClear": doQueryBankClear,
     "QuerySingleTransactionStatus": doQuerySingleTransactionStatus,
-    "UnBindAcct": doUnBindAcct,
+    "QueryAgentStatements": doQueryAgentStatements,
     "BindRelateAccReUnionPay": doBindRelateAccReUnionPay,
     "CreateRedInvoice": doCreateRedInvoice,
     "CheckAmount": doCheckAmount,
@@ -2545,6 +2594,7 @@ ACTION_MAP = {
     "QueryAcctInfo": doQueryAcctInfo,
     "RevRegisterBillSupportWithdraw": doRevRegisterBillSupportWithdraw,
     "QueryOutwardOrder": doQueryOutwardOrder,
+    "UnBindAcct": doUnBindAcct,
     "QueryBankWithdrawCashDetails": doQueryBankWithdrawCashDetails,
     "QueryAcctInfoList": doQueryAcctInfoList,
     "QueryReconciliationDocument": doQueryReconciliationDocument,

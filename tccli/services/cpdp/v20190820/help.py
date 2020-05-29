@@ -13,7 +13,7 @@ INFO = {
       },
       {
         "name": "BindType",
-        "desc": "1：小额鉴权\n2：短信校验鉴权"
+        "desc": "1 – 小额转账验证\n2 – 短信验证\n每个结算账户每天只能使用一次小额转账验证"
       },
       {
         "name": "SettleAcctNo",
@@ -42,6 +42,14 @@ INFO = {
       {
         "name": "CurrencyAmt",
         "desc": "金额\nBindType==1必填"
+      },
+      {
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "商户绑定提现银行卡的验证接口"
@@ -151,7 +159,11 @@ INFO = {
       },
       {
         "name": "EncryptType",
-        "desc": "敏感信息加密类型:\nRSA, rsa非对称加密，使用RSA-PKCS1-v1_5\nAES,  aes对称加密，使用AES256-CBC-PCKS7padding\n默认RSA"
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "商户绑定提现银行卡，每个商户只能绑定一张提现银行卡"
@@ -258,6 +270,14 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "按照聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "商户提现"
@@ -577,6 +597,10 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "按照聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "子商户余额查询"
@@ -598,6 +622,14 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "计费签名"
+      },
+      {
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "聚鑫-开户信息查询"
@@ -891,6 +923,14 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "计费签名"
+      },
+      {
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "聚鑫-查询子账户绑定银行卡"
@@ -1386,6 +1426,14 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "按照聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "商户解除绑定的提现银行卡"
@@ -1899,7 +1947,7 @@ INFO = {
       },
       {
         "name": "SubMchType",
-        "desc": "子商户类型：\n个人: personal\n企业：enterprise\n缺省： enterprise"
+        "desc": "子商户类型：\n个人: personal\n企业: enterprise\n缺省: enterprise"
       },
       {
         "name": "ShortName",
@@ -1919,11 +1967,15 @@ INFO = {
       },
       {
         "name": "EncryptType",
-        "desc": "敏感信息加密类型:\nRSA, rsa非对称加密，使用RSA-PKCS1-v1_5\nAES,  aes对称加密，使用AES256-CBC-PCKS7padding\n默认RSA"
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
       },
       {
         "name": "SubAcctNo",
         "desc": "银行生成的子商户账户，已开户的场景需要录入"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "子商户入驻聚鑫平台"
@@ -2211,9 +2263,30 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "计费签名"
+      },
+      {
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "聚鑫-开户信息列表查询, 查询某一段时间的开户信息"
+  },
+  "QueryAgentStatements": {
+    "params": [
+      {
+        "name": "Date",
+        "desc": "结算单日期，月结算单填每月1日"
+      },
+      {
+        "name": "Type",
+        "desc": "日结算单:daily\n月结算单:monthly"
+      }
+    ],
+    "desc": "直播平台-查询代理商结算单链接"
   },
   "QueryReconciliationDocument": {
     "params": [

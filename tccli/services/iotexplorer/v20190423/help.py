@@ -198,14 +198,14 @@ INFO = {
       },
       {
         "name": "ActionId",
-        "desc": "动作Id"
+        "desc": "产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义"
       },
       {
         "name": "InputParams",
         "desc": "输入参数"
       }
     ],
-    "desc": "为用户提供同步调用设备动作的能力。"
+    "desc": "为用户提供同步调用设备行为的能力。"
   },
   "DeleteDevice": {
     "params": [
@@ -389,14 +389,14 @@ INFO = {
       },
       {
         "name": "ActionId",
-        "desc": "动作Id"
+        "desc": "产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义"
       },
       {
         "name": "InputParams",
         "desc": "输入参数"
       }
     ],
-    "desc": "提供给用户异步调用设备动作的能力"
+    "desc": "提供给用户异步调用设备行为的能力"
   },
   "DeleteProject": {
     "params": [
