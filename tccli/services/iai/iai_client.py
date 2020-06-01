@@ -12,8 +12,12 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.iai.v20200303 import iai_client as iai_client_v20200303
+from tencentcloud.iai.v20200303 import models as models_v20200303
 from tencentcloud.iai.v20180301 import iai_client as iai_client_v20180301
 from tencentcloud.iai.v20180301 import models as models_v20180301
+from tccli.services.iai import v20200303
+from tccli.services.iai.v20200303 import help as v20200303_help
 from tccli.services.iai import v20180301
 from tccli.services.iai.v20180301 import help as v20180301_help
 
@@ -1140,11 +1144,13 @@ def doDeleteFace(argv, arglist):
 
 
 CLIENT_MAP = {
+    "v20200303": iai_client_v20200303,
     "v20180301": iai_client_v20180301,
 
 }
 
 MODELS_MAP = {
+    "v20200303": models_v20200303,
     "v20180301": models_v20180301,
 
 }
@@ -1185,10 +1191,12 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    v20200303.version,
     v20180301.version,
 
 ]
 AVAILABLE_VERSIONS = {
+     'v' + v20200303.version.replace('-', ''): {"help": v20200303_help.INFO,"desc": v20200303_help.DESC},
      'v' + v20180301.version.replace('-', ''): {"help": v20180301_help.INFO,"desc": v20180301_help.DESC},
 
 }

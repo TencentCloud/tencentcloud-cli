@@ -1,54 +1,6 @@
 # -*- coding: utf-8 -*-
 DESC = "tcb-2018-06-08"
 INFO = {
-  "ModifyEnv": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "环境ID"
-      },
-      {
-        "name": "Alias",
-        "desc": "环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符"
-      }
-    ],
-    "desc": "更新环境信息"
-  },
-  "DescribeDatabaseACL": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "环境ID"
-      },
-      {
-        "name": "CollectionName",
-        "desc": "集合名称"
-      }
-    ],
-    "desc": "获取数据库权限"
-  },
-  "DestroyEnv": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "环境Id"
-      },
-      {
-        "name": "IsForce",
-        "desc": "针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除"
-      }
-    ],
-    "desc": "销毁环境"
-  },
-  "DescribeAuthDomains": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "环境ID"
-      }
-    ],
-    "desc": "获取安全域名列表"
-  },
   "CreateHostingDomain": {
     "params": [
       {
@@ -66,22 +18,18 @@ INFO = {
     ],
     "desc": "创建托管域名"
   },
-  "DescribeEnvs": {
+  "DescribeEndUsers": {
     "params": [
       {
         "name": "EnvId",
-        "desc": "环境ID，如果传了这个参数则只返回该环境的相关信息"
+        "desc": "开发者的环境ID"
       },
       {
-        "name": "IsVisible",
-        "desc": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]"
-      },
-      {
-        "name": "Channels",
-        "desc": "渠道列表，代表可见或不可见渠道由IsVisible参数指定"
+        "name": "UUIds",
+        "desc": "按照 uuid 列表过滤，最大个数为100"
       }
     ],
-    "desc": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数"
+    "desc": "获取终端用户列表"
   },
   "CreateAuthDomain": {
     "params": [
@@ -96,20 +44,25 @@ INFO = {
     ],
     "desc": "增加安全域名"
   },
-  "DestroyStaticStore": {
+  "DescribeAuthDomains": {
     "params": [
       {
         "name": "EnvId",
         "desc": "环境ID"
-      },
-      {
-        "name": "CdnDomain",
-        "desc": "cdn域名"
       }
     ],
-    "desc": "销毁静态托管资源，该接口创建异步销毁任务，资源最终状态可从DestroyStaticStore接口查看"
+    "desc": "获取安全域名列表"
   },
-  "ModifyDatabaseACL": {
+  "ReinstateEnv": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      }
+    ],
+    "desc": "针对已隔离的免费环境，可以通过本接口将其恢复访问。"
+  },
+  "DescribeDatabaseACL": {
     "params": [
       {
         "name": "EnvId",
@@ -118,13 +71,35 @@ INFO = {
       {
         "name": "CollectionName",
         "desc": "集合名称"
-      },
-      {
-        "name": "AclTag",
-        "desc": "权限标签。包含以下取值：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>"
       }
     ],
-    "desc": "修改数据库权限"
+    "desc": "获取数据库权限"
+  },
+  "DescribePostpayPackageFreeQuotas": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      },
+      {
+        "name": "FreeQuotaType",
+        "desc": "免费额度类型标识"
+      }
+    ],
+    "desc": "获取后付费免费额度"
+  },
+  "CommonServiceAPI": {
+    "params": [
+      {
+        "name": "Service",
+        "desc": "Service名，需要转发访问的接口名"
+      },
+      {
+        "name": "JSONData",
+        "desc": "需要转发的云API参数，要转成JSON格式"
+      }
+    ],
+    "desc": "TCB云API统一入口"
   },
   "CheckTcbService": {
     "params": [],
@@ -156,54 +131,6 @@ INFO = {
     ],
     "desc": "获取环境终端用户新增与登录信息"
   },
-  "CommonServiceAPI": {
-    "params": [
-      {
-        "name": "Service",
-        "desc": "Service名，需要转发访问的接口名"
-      },
-      {
-        "name": "JSONData",
-        "desc": "需要转发的云API参数，要转成JSON格式"
-      }
-    ],
-    "desc": "TCB云API统一入口"
-  },
-  "CreateStaticStore": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "环境ID"
-      }
-    ],
-    "desc": "创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看"
-  },
-  "DescribeEnvLimit": {
-    "params": [],
-    "desc": "查询环境个数上限"
-  },
-  "DescribeEndUsers": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "开发者的环境ID"
-      },
-      {
-        "name": "UUIds",
-        "desc": "按照 uuid 列表过滤，最大个数为100"
-      }
-    ],
-    "desc": "获取终端用户列表"
-  },
-  "DescribeEndUserStatistic": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "环境id"
-      }
-    ],
-    "desc": "获取终端用户总量与平台分布情况"
-  },
   "DescribeQuotaData": {
     "params": [
       {
@@ -221,14 +148,109 @@ INFO = {
     ],
     "desc": "查询指定指标的配额使用量"
   },
-  "ReinstateEnv": {
+  "DescribeExtraPkgBillingInfo": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "已购买增值包的环境ID"
+      }
+    ],
+    "desc": "获取增值包计费相关信息"
+  },
+  "ModifyEnv": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      },
+      {
+        "name": "Alias",
+        "desc": "环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符"
+      }
+    ],
+    "desc": "更新环境信息"
+  },
+  "DescribeEndUserStatistic": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境id"
+      }
+    ],
+    "desc": "获取终端用户总量与平台分布情况"
+  },
+  "DestroyEnv": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境Id"
+      },
+      {
+        "name": "IsForce",
+        "desc": "针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除"
+      }
+    ],
+    "desc": "销毁环境"
+  },
+  "DescribeEnvs": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID，如果传了这个参数则只返回该环境的相关信息"
+      },
+      {
+        "name": "IsVisible",
+        "desc": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]"
+      },
+      {
+        "name": "Channels",
+        "desc": "渠道列表，代表可见或不可见渠道由IsVisible参数指定"
+      }
+    ],
+    "desc": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数"
+  },
+  "DestroyStaticStore": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      },
+      {
+        "name": "CdnDomain",
+        "desc": "cdn域名"
+      }
+    ],
+    "desc": "销毁静态托管资源，该接口创建异步销毁任务，资源最终状态可从DestroyStaticStore接口查看"
+  },
+  "ModifyDatabaseACL": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      },
+      {
+        "name": "CollectionName",
+        "desc": "集合名称"
+      },
+      {
+        "name": "AclTag",
+        "desc": "权限标签。包含以下取值：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>"
+      }
+    ],
+    "desc": "修改数据库权限"
+  },
+  "CreateStaticStore": {
     "params": [
       {
         "name": "EnvId",
         "desc": "环境ID"
       }
     ],
-    "desc": "针对已隔离的免费环境，可以通过本接口将其恢复访问。"
+    "desc": "创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看"
+  },
+  "DescribeEnvLimit": {
+    "params": [],
+    "desc": "查询环境个数上限"
   },
   "DescribeEnvFreeQuota": {
     "params": [
@@ -242,14 +264,5 @@ INFO = {
       }
     ],
     "desc": "查询后付费免费配额信息"
-  },
-  "DescribeExtraPkgBillingInfo": {
-    "params": [
-      {
-        "name": "EnvId",
-        "desc": "已购买增值包的环境ID"
-      }
-    ],
-    "desc": "获取增值包计费相关信息"
   }
 }

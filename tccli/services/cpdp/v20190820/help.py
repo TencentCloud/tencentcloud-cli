@@ -86,7 +86,7 @@ INFO = {
       },
       {
         "name": "PayerContactNumber",
-        "desc": "付款人联系电话 (PayerType=CORPORATE 必填)"
+        "desc": "付款人联系电话"
       },
       {
         "name": "PayerEmailAddress",
@@ -97,7 +97,7 @@ INFO = {
         "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "跨境-付款人申请"
+    "desc": "跨境-付款人申请。通过该接口提交付款人信息并进行 kyc 审核。"
   },
   "BindAcct": {
     "params": [
@@ -1137,7 +1137,7 @@ INFO = {
       },
       {
         "name": "PayeeType",
-        "desc": "收款人类型"
+        "desc": "收款人类型（银行卡填\"BANK_ACCOUNT\"）"
       },
       {
         "name": "PayeeAccount",
@@ -1153,35 +1153,35 @@ INFO = {
       },
       {
         "name": "PayeeName",
-        "desc": "收款人姓名"
+        "desc": "收款人姓名（PayeeType为\"BANK_COUNT\"时必填）"
       },
       {
         "name": "PayeeAddress",
-        "desc": "收款人地址"
+        "desc": "收款人地址（PayeeType为\"BANK_COUNT\"时必填）"
       },
       {
         "name": "PayeeBankAccountType",
-        "desc": "收款人银行账号类型"
+        "desc": "收款人银行账号类型（PayeeType为\"BANK_COUNT\"时必填）\n个人填\"INDIVIDUAL\"\n企业填\"CORPORATE\""
       },
       {
         "name": "PayeeCountryCode",
-        "desc": "收款人国家或地区编码"
+        "desc": "收款人国家或地区编码（PayeeType为\"BANK_COUNT\"时必填）"
       },
       {
         "name": "PayeeBankName",
-        "desc": "收款人开户银行名称"
+        "desc": "收款人开户银行名称（PayeeType为\"BANK_COUNT\"时必填）"
       },
       {
         "name": "PayeeBankAddress",
-        "desc": "收款人开户银行地址"
+        "desc": "收款人开户银行地址（PayeeType为\"BANK_COUNT\"时必填）"
       },
       {
         "name": "PayeeBankDistrict",
-        "desc": "收款人开户银行所在国家或地区编码"
+        "desc": "收款人开户银行所在国家或地区编码（PayeeType为\"BANK_COUNT\"时必填）"
       },
       {
         "name": "PayeeBankSwiftCode",
-        "desc": "收款银行SwiftCode"
+        "desc": "收款银行SwiftCode（PayeeType为\"BANK_COUNT\"时必填）"
       },
       {
         "name": "PayeeBankType",
@@ -1200,7 +1200,7 @@ INFO = {
         "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "跨境-汇出指令申请"
+    "desc": "跨境-汇出指令申请。通过该接口可将对接方账户中的人民币余额汇兑成外币，再汇出至指定银行账户。"
   },
   "QueryOutwardOrder": {
     "params": [
@@ -1285,7 +1285,7 @@ INFO = {
       },
       {
         "name": "PayeeName",
-        "desc": "付款人姓名"
+        "desc": "收款人姓名"
       },
       {
         "name": "PayeeCountryCode",
@@ -1332,7 +1332,7 @@ INFO = {
         "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "跨境-提交贸易材料"
+    "desc": "跨境-提交贸易材料。通过提交贸易材料接口可为对接方累计贸易额度，在额度范围内可发起汇兑汇出交易。"
   },
   "QueryTrade": {
     "params": [
@@ -1345,7 +1345,7 @@ INFO = {
         "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "跨境-贸易材料明细查询"
+    "desc": "跨境-贸易材料明细查询。"
   },
   "QueryBankClear": {
     "params": [
@@ -1610,7 +1610,7 @@ INFO = {
         "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "跨境-成功申报材料查询"
+    "desc": "跨境-成功申报材料查询。查询成功入库的申报材料。"
   },
   "ApplyReWithdrawal": {
     "params": [
@@ -2199,7 +2199,7 @@ INFO = {
         "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "跨境-提交申报材料"
+    "desc": "跨境-提交申报材料。申报材料的主体是付款人，需要提前调用【跨境-付款人申请】接口提交付款人信息且审核通过后调用。"
   },
   "QueryBankWithdrawCashDetails": {
     "params": [

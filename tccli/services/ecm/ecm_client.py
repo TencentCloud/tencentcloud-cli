@@ -722,18 +722,15 @@ def doImportImage(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAddresses(argv, arglist):
+def doDescribeDefaultSubnet(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeAddresses", g_param[OptionsDefine.Version])
+        show_help("DescribeDefaultSubnet", g_param[OptionsDefine.Version])
         return
 
     param = {
         "EcmRegion": argv.get("--EcmRegion"),
-        "AddressIds": Utils.try_to_json(argv, "--AddressIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Zone": argv.get("--Zone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -747,9 +744,9 @@ def doDescribeAddresses(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAddressesRequest()
+    model = models.DescribeDefaultSubnetRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAddresses(model)
+    rsp = client.DescribeDefaultSubnet(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -868,15 +865,18 @@ def doCreateModule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyModuleImage(argv, arglist):
+def doDescribeAddresses(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyModuleImage", g_param[OptionsDefine.Version])
+        show_help("DescribeAddresses", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "DefaultImageId": argv.get("--DefaultImageId"),
-        "ModuleId": argv.get("--ModuleId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressIds": Utils.try_to_json(argv, "--AddressIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -890,9 +890,9 @@ def doModifyModuleImage(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyModuleImageRequest()
+    model = models.DescribeAddressesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyModuleImage(model)
+    rsp = client.DescribeAddresses(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1500,6 +1500,40 @@ def doModifyVpcAttribute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyModuleImage(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyModuleImage", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DefaultImageId": argv.get("--DefaultImageId"),
+        "ModuleId": argv.get("--ModuleId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyModuleImageRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyModuleImage(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyInstancesAttribute(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1559,6 +1593,42 @@ def doDescribePeakBaseOverview(argv, arglist):
     model = models.DescribePeakBaseOverviewRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePeakBaseOverview(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDefaultSubnet(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyDefaultSubnet", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "Zone": argv.get("--Zone"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDefaultSubnetRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyDefaultSubnet(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1950,11 +2020,11 @@ ACTION_MAP = {
     "DescribeInstanceTypeConfig": doDescribeInstanceTypeConfig,
     "RunInstances": doRunInstances,
     "ImportImage": doImportImage,
-    "DescribeAddresses": doDescribeAddresses,
+    "DescribeDefaultSubnet": doDescribeDefaultSubnet,
     "AssociateAddress": doAssociateAddress,
     "DescribeTaskResult": doDescribeTaskResult,
     "CreateModule": doCreateModule,
-    "ModifyModuleImage": doModifyModuleImage,
+    "DescribeAddresses": doDescribeAddresses,
     "DeleteSubnet": doDeleteSubnet,
     "ModifySubnetAttribute": doModifySubnetAttribute,
     "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
@@ -1972,8 +2042,10 @@ ACTION_MAP = {
     "ResetInstances": doResetInstances,
     "DescribeInstanceVncUrl": doDescribeInstanceVncUrl,
     "ModifyVpcAttribute": doModifyVpcAttribute,
+    "ModifyModuleImage": doModifyModuleImage,
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "DescribePeakBaseOverview": doDescribePeakBaseOverview,
+    "ModifyDefaultSubnet": doModifyDefaultSubnet,
     "DeleteNetworkInterface": doDeleteNetworkInterface,
     "DeleteModule": doDeleteModule,
     "RebootInstances": doRebootInstances,

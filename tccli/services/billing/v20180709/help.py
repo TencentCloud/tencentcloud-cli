@@ -174,6 +174,10 @@ INFO = {
       {
         "name": "OrderId",
         "desc": "订单号"
+      },
+      {
+        "name": "BigDealId",
+        "desc": "大订单号"
       }
     ],
     "desc": "查询订单"
@@ -428,7 +432,7 @@ INFO = {
     "params": [
       {
         "name": "OrderIds",
-        "desc": "需要支付的一个或者多个订单号"
+        "desc": "需要支付的一个或者多个子订单号，与BigDealIds字段两者必须且仅传一个参数"
       },
       {
         "name": "AutoVoucher",
@@ -437,6 +441,10 @@ INFO = {
       {
         "name": "VoucherIds",
         "desc": "代金券ID列表,目前仅支持指定一张代金券"
+      },
+      {
+        "name": "BigDealIds",
+        "desc": "需要支付的一个或者多个大订单号，与OrderIds字段两者必须且仅传一个参数"
       }
     ],
     "desc": "支付订单"

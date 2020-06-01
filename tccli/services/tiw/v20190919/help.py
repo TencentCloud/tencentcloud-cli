@@ -14,6 +14,19 @@ INFO = {
     ],
     "desc": "设置实时录制回调地址"
   },
+  "SetTranscodeCallbackKey": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "应用的SdkAppId"
+      },
+      {
+        "name": "CallbackKey",
+        "desc": "设置文档转码回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥"
+      }
+    ],
+    "desc": "设置文档转码回调鉴权密钥"
+  },
   "DescribeTranscode": {
     "params": [
       {
@@ -140,18 +153,18 @@ INFO = {
     ],
     "desc": "设置文档转码回调地址"
   },
-  "DescribeOnlineRecord": {
+  "SetOnlineRecordCallbackKey": {
     "params": [
       {
         "name": "SdkAppId",
-        "desc": "客户的SdkAppId"
+        "desc": "应用的SdkAppId"
       },
       {
-        "name": "TaskId",
-        "desc": "实时录制任务Id"
+        "name": "CallbackKey",
+        "desc": "设置实时录制回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥"
       }
     ],
-    "desc": "查询实时录制任务状态与结果"
+    "desc": "设置实时录制回调鉴权密钥"
   },
   "ResumeOnlineRecord": {
     "params": [
@@ -183,5 +196,18 @@ INFO = {
       }
     ],
     "desc": "查询文档转码回调地址"
+  },
+  "DescribeOnlineRecord": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "客户的SdkAppId"
+      },
+      {
+        "name": "TaskId",
+        "desc": "实时录制任务Id"
+      }
+    ],
+    "desc": "查询实时录制任务状态与结果"
   }
 }

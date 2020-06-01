@@ -346,30 +346,18 @@ INFO = {
     ],
     "desc": "销毁实例"
   },
-  "DescribeAddresses": {
+  "DescribeDefaultSubnet": {
     "params": [
       {
         "name": "EcmRegion",
-        "desc": "ECM 地域"
+        "desc": "ECM地域"
       },
       {
-        "name": "AddressIds",
-        "desc": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：eip-11112222。参数不支持同时指定AddressIds和Filters。"
-      },
-      {
-        "name": "Filters",
-        "desc": "每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定AddressIds和Filters。详细的过滤条件如下：\naddress-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。\naddress-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。\naddress-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。\naddress-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。取值范围：详见EIP状态列表。\ninstance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。\nprivate-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。\nnetwork-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。\nis-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。"
+        "name": "Zone",
+        "desc": "ECM可用区"
       }
     ],
-    "desc": "查询弹性公网IP列表"
+    "desc": "查询可用区的默认子网"
   },
   "AssociateAddress": {
     "params": [
@@ -438,18 +426,30 @@ INFO = {
     ],
     "desc": "创建模块"
   },
-  "ModifyModuleImage": {
+  "DescribeAddresses": {
     "params": [
       {
-        "name": "DefaultImageId",
-        "desc": "默认镜像ID"
+        "name": "EcmRegion",
+        "desc": "ECM 地域"
       },
       {
-        "name": "ModuleId",
-        "desc": "模块ID"
+        "name": "AddressIds",
+        "desc": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：eip-11112222。参数不支持同时指定AddressIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定AddressIds和Filters。详细的过滤条件如下：\naddress-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。\naddress-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。\naddress-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。\naddress-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。取值范围：详见EIP状态列表。\ninstance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。\nprivate-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。\nnetwork-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。\nis-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "ModifyModuleImage"
+    "desc": "查询弹性公网IP列表"
   },
   "DeleteSubnet": {
     "params": [
@@ -462,7 +462,7 @@ INFO = {
         "desc": "ECM 地域"
       }
     ],
-    "desc": "删除子网"
+    "desc": "删除子网，若子网为可用区下的默认子网，则默认子网会回退到系统自动创建的默认子网，非用户最新创建的子网。若默认子网不满足需求，可调用设置默认子网接口设置。"
   },
   "ModifySubnetAttribute": {
     "params": [
@@ -743,6 +743,19 @@ INFO = {
     ],
     "desc": "删除镜像"
   },
+  "ModifyModuleImage": {
+    "params": [
+      {
+        "name": "DefaultImageId",
+        "desc": "默认镜像ID"
+      },
+      {
+        "name": "ModuleId",
+        "desc": "模块ID"
+      }
+    ],
+    "desc": "ModifyModuleImage"
+  },
   "ModifyInstancesAttribute": {
     "params": [
       {
@@ -768,6 +781,27 @@ INFO = {
       }
     ],
     "desc": "CPU 内存 硬盘等基础信息峰值数据"
+  },
+  "ModifyDefaultSubnet": {
+    "params": [
+      {
+        "name": "EcmRegion",
+        "desc": "ECM地域"
+      },
+      {
+        "name": "Zone",
+        "desc": "ECM可用区"
+      },
+      {
+        "name": "VpcId",
+        "desc": "私有网络ID"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网ID"
+      }
+    ],
+    "desc": "修改在一个可用区下创建实例时使用的默认子网（创建实例时，未填写VPC参数时使用的sunbetId）"
   },
   "ModifyAddressAttribute": {
     "params": [
@@ -957,6 +991,6 @@ INFO = {
         "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
       }
     ],
-    "desc": "创建子网"
+    "desc": "创建子网，若创建成功，则此子网会成为此可用区的默认子网。"
   }
 }

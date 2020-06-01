@@ -222,6 +222,7 @@ def doDescribeDealsByCond(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Status": Utils.try_to_json(argv, "--Status"),
         "OrderId": argv.get("--OrderId"),
+        "BigDealId": argv.get("--BigDealId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -626,6 +627,7 @@ def doPayDeals(argv, arglist):
         "OrderIds": Utils.try_to_json(argv, "--OrderIds"),
         "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
         "VoucherIds": Utils.try_to_json(argv, "--VoucherIds"),
+        "BigDealIds": Utils.try_to_json(argv, "--BigDealIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
