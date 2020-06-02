@@ -161,6 +161,7 @@ def doGetActionSequence(argv, arglist):
         return
 
     param = {
+        "ActionType": argv.get("--ActionType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

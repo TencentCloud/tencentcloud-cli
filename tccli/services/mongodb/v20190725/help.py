@@ -333,18 +333,14 @@ INFO = {
     ],
     "desc": "本接口用于创建数据库实例询价。本接口参数中必须传入region参数，否则无法通过校验。本接口仅允许针对购买限制范围内的实例配置进行询价。"
   },
-  "RenewDBInstances": {
+  "FlushInstanceRouterConfig": {
     "params": [
       {
-        "name": "InstanceIds",
-        "desc": "一个或多个待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。每次请求批量实例的上限为100。"
-      },
-      {
-        "name": "InstanceChargePrepaid",
-        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。"
+        "name": "InstanceId",
+        "desc": "实例ID"
       }
     ],
-    "desc": "本接口(RenewDBInstance)用于续费云数据库实例，仅支持付费模式为包年包月的实例。按量计费实例不需要续费。"
+    "desc": "在所有mongos上执行FlushRouterConfig命令"
   },
   "DescribeSpecInfo": {
     "params": [
@@ -376,6 +372,19 @@ INFO = {
       }
     ],
     "desc": "本接口 (InquiryPriceRenewDBInstances) 用于续费包年包月实例询价。"
+  },
+  "DescribeBackupAccess": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      },
+      {
+        "name": "BackupName",
+        "desc": "需要获取下载授权的备份文件名"
+      }
+    ],
+    "desc": "本接口（DescribeBackupAccess）用于获取备份文件的下载授权，具体的备份文件信息可通过查询实例备份列表（DescribeDBBackups）接口获取"
   },
   "DescribeDBInstances": {
     "params": [
@@ -443,17 +452,17 @@ INFO = {
     ],
     "desc": "本接口(IsolateDBInstance)用于隔离MongoDB云数据库按量计费实例。隔离后实例保留在回收站中，不能再写入数据。隔离一定时间后，实例会彻底删除，回收站保存时间请参考按量计费的服务条款。在隔离中的按量计费实例无法恢复，请谨慎操作。"
   },
-  "DescribeBackupAccess": {
+  "RenewDBInstances": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+        "name": "InstanceIds",
+        "desc": "一个或多个待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。每次请求批量实例的上限为100。"
       },
       {
-        "name": "BackupName",
-        "desc": "需要获取下载授权的备份文件名"
+        "name": "InstanceChargePrepaid",
+        "desc": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。"
       }
     ],
-    "desc": "本接口（DescribeBackupAccess）用于获取备份文件的下载授权，具体的备份文件信息可通过查询实例备份列表（DescribeDBBackups）接口获取"
+    "desc": "本接口(RenewDBInstance)用于续费云数据库实例，仅支持付费模式为包年包月的实例。按量计费实例不需要续费。"
   }
 }

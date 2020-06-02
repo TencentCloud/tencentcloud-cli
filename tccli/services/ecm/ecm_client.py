@@ -652,9 +652,9 @@ def doRunInstances(argv, arglist):
 
     param = {
         "ZoneInstanceCountISPSet": Utils.try_to_json(argv, "--ZoneInstanceCountISPSet"),
-        "ModuleId": argv.get("--ModuleId"),
         "Password": argv.get("--Password"),
         "InternetMaxBandwidthOut": Utils.try_to_json(argv, "--InternetMaxBandwidthOut"),
+        "ModuleId": argv.get("--ModuleId"),
         "ImageId": argv.get("--ImageId"),
         "InstanceName": argv.get("--InstanceName"),
         "HostName": argv.get("--HostName"),
@@ -662,6 +662,8 @@ def doRunInstances(argv, arglist):
         "EnhancedService": Utils.try_to_json(argv, "--EnhancedService"),
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
         "UserData": argv.get("--UserData"),
+        "InstanceType": argv.get("--InstanceType"),
+        "DataDiskSize": Utils.try_to_json(argv, "--DataDiskSize"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

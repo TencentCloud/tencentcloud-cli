@@ -1,6 +1,44 @@
 # -*- coding: utf-8 -*-
 DESC = "tcaplusdb-2019-08-23"
 INFO = {
+  "DescribeTableTags": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "表格所属集群ID"
+      },
+      {
+        "name": "SelectedTables",
+        "desc": "表格列表"
+      }
+    ],
+    "desc": "获取表格标签"
+  },
+  "DescribeTasks": {
+    "params": [
+      {
+        "name": "ClusterIds",
+        "desc": "需要查询任务所属的集群ID列表"
+      },
+      {
+        "name": "TaskIds",
+        "desc": "需要查询的任务ID列表"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，本接口支持：Content，TaskType, Operator, Time"
+      },
+      {
+        "name": "Offset",
+        "desc": "查询列表偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "查询列表返回记录数"
+      }
+    ],
+    "desc": "查询任务列表"
+  },
   "CreateCluster": {
     "params": [
       {
@@ -22,6 +60,10 @@ INFO = {
       {
         "name": "Password",
         "desc": "集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母"
+      },
+      {
+        "name": "ResourceTags",
+        "desc": "集群标签列表"
       }
     ],
     "desc": "本接口用于创建TcaplusDB集群"
@@ -179,6 +221,10 @@ INFO = {
       {
         "name": "SelectedTables",
         "desc": "待创建表格信息列表"
+      },
+      {
+        "name": "ResourceTags",
+        "desc": "表格标签列表"
       }
     ],
     "desc": "根据选择的IDL文件列表，批量创建表格"
@@ -196,26 +242,22 @@ INFO = {
     ],
     "desc": "表格扩缩容"
   },
-  "DescribeClusters": {
+  "ModifyClusterTags": {
     "params": [
       {
-        "name": "ClusterIds",
-        "desc": "指定查询的集群ID列表"
+        "name": "ClusterId",
+        "desc": "待修改标签的集群ID"
       },
       {
-        "name": "Filters",
-        "desc": "查询过滤条件"
+        "name": "ReplaceTags",
+        "desc": "待增加或修改的标签列表"
       },
       {
-        "name": "Offset",
-        "desc": "查询列表偏移量"
-      },
-      {
-        "name": "Limit",
-        "desc": "查询列表返回记录数，默认值20"
+        "name": "DeleteTags",
+        "desc": "待删除的标签"
       }
     ],
-    "desc": "查询TcaplusDB集群列表，包含集群详细信息。"
+    "desc": "修改集群标签"
   },
   "DeleteTableGroup": {
     "params": [
@@ -260,6 +302,10 @@ INFO = {
       {
         "name": "TableGroupId",
         "desc": "表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式"
+      },
+      {
+        "name": "ResourceTags",
+        "desc": "表格组标签列表"
       }
     ],
     "desc": "在TcaplusDB集群下创建表格组"
@@ -268,19 +314,36 @@ INFO = {
     "params": [],
     "desc": "查询TcaplusDB服务支持的地域列表"
   },
-  "DescribeTasks": {
+  "ModifyTableTags": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "待修改标签表格所属集群ID"
+      },
+      {
+        "name": "SelectedTables",
+        "desc": "待修改标签表格列表"
+      },
+      {
+        "name": "ReplaceTags",
+        "desc": "待增加或修改的标签列表"
+      },
+      {
+        "name": "DeleteTags",
+        "desc": "待删除的标签列表"
+      }
+    ],
+    "desc": "修改表格标签"
+  },
+  "DescribeClusters": {
     "params": [
       {
         "name": "ClusterIds",
-        "desc": "需要查询任务所属的集群ID列表"
-      },
-      {
-        "name": "TaskIds",
-        "desc": "需要查询的任务ID列表"
+        "desc": "指定查询的集群ID列表"
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，本接口支持：Content，TaskType, Operator, Time"
+        "desc": "查询过滤条件"
       },
       {
         "name": "Offset",
@@ -288,10 +351,44 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "查询列表返回记录数"
+        "desc": "查询列表返回记录数，默认值20"
       }
     ],
-    "desc": "查询任务列表"
+    "desc": "查询TcaplusDB集群列表，包含集群详细信息。"
+  },
+  "ModifyTableGroupTags": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "待修改标签表格组所属集群ID"
+      },
+      {
+        "name": "TableGroupId",
+        "desc": "待修改标签表格组ID"
+      },
+      {
+        "name": "ReplaceTags",
+        "desc": "待增加或修改的标签列表"
+      },
+      {
+        "name": "DeleteTags",
+        "desc": "待删除的标签"
+      }
+    ],
+    "desc": "修改表格组标签"
+  },
+  "DescribeTableGroupTags": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "待查询标签表格组所属集群ID"
+      },
+      {
+        "name": "TableGroupIds",
+        "desc": "待查询标签表格组ID列表"
+      }
+    ],
+    "desc": "获取表格组关联的标签列表"
   },
   "DescribeTableGroups": {
     "params": [
@@ -410,6 +507,15 @@ INFO = {
       }
     ],
     "desc": "上传并校验创建表格文件，返回校验合法的表格定义"
+  },
+  "DescribeClusterTags": {
+    "params": [
+      {
+        "name": "ClusterIds",
+        "desc": "集群ID列表"
+      }
+    ],
+    "desc": "获取集群关联的标签列表"
   },
   "ModifyTables": {
     "params": [

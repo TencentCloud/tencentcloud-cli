@@ -53,7 +53,12 @@ INFO = {
     "desc": "本接口用于查询手机号在网时长，输入手机号进行查询。"
   },
   "GetActionSequence": {
-    "params": [],
+    "params": [
+      {
+        "name": "ActionType",
+        "desc": "取值FourAction时 返回四种动作的动作序列"
+      }
+    ],
     "desc": "使用动作活体检测模式前，需调用本接口获取动作顺序。"
   },
   "BankCard2EVerification": {
@@ -89,7 +94,7 @@ INFO = {
       },
       {
         "name": "Optional",
-        "desc": "额外配置，传入JSON字符串。"
+        "desc": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}"
       }
     ],
     "desc": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。"
@@ -119,7 +124,7 @@ INFO = {
     "params": [
       {
         "name": "VideoBase64",
-        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过5M，支持mp4、avi、flv格式。"
+        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。"
       },
       {
         "name": "LivenessType",
@@ -131,7 +136,7 @@ INFO = {
       },
       {
         "name": "Optional",
-        "desc": "本接口不需要传递此参数。"
+        "desc": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}"
       }
     ],
     "desc": "活体检测"
@@ -160,7 +165,7 @@ INFO = {
       },
       {
         "name": "Optional",
-        "desc": "额外配置，传入JSON字符串。"
+        "desc": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}"
       }
     ],
     "desc": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与公安权威库的证件照是否属于同一个人。"

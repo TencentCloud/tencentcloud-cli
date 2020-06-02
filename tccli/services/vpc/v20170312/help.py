@@ -780,6 +780,15 @@ INFO = {
     ],
     "desc": "本接口(CreateSubnets)用于批量创建子网。\n* 创建子网前必须创建好 VPC。\n* 子网创建成功后，子网网段不能修改。子网网段必须在VPC网段内，可以和VPC网段相同（VPC有且只有一个子网时），建议子网网段在VPC网段内，预留网段给其他子网使用。\n* 您可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）。\n* 同一个VPC内，多个子网的网段不能重叠。\n* 子网创建后会自动关联到默认路由表。\n* 创建子网同时可以绑定标签, 应答里的标签列表代表添加成功的标签。"
   },
+  "DisassociateDhcpIpWithAddressIp": {
+    "params": [
+      {
+        "name": "DhcpIpId",
+        "desc": "`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是已绑定`EIP`的`DhcpIp`。"
+      }
+    ],
+    "desc": "本接口（DisassociateDhcpIpWithAddressIp）用于将DhcpIp已绑定的弹性公网IP（EIP）解除绑定<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口"
+  },
   "ReplaceRouteTableAssociation": {
     "params": [
       {
@@ -974,6 +983,15 @@ INFO = {
       }
     ],
     "desc": "该接口用于给IPv6地址初次分配公网带宽"
+  },
+  "DeleteDhcpIp": {
+    "params": [
+      {
+        "name": "DhcpIpId",
+        "desc": "`DhcpIp`的`ID`，是`DhcpIp`的唯一标识。"
+      }
+    ],
+    "desc": "本接口（DeleteDhcpIp）用于删除DhcpIp"
   },
   "ModifyAddressTemplateAttribute": {
     "params": [
@@ -1285,6 +1303,27 @@ INFO = {
   "DescribeAccountAttributes": {
     "params": [],
     "desc": "本接口（DescribeAccountAttributes）用于查询用户账号私有属性。"
+  },
+  "DescribeDhcpIps": {
+    "params": [
+      {
+        "name": "DhcpIpIds",
+        "desc": "DhcpIp实例ID。形如：dhcpip-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定DhcpIpIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定DhcpIpIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>dhcpip-id - String - （过滤条件）DhcpIp实例ID，形如：dhcpip-pxir56ns。</li>\n<li>dhcpip-name - String - （过滤条件）DhcpIp实例名称。</li>\n<li>address-ip - String - （过滤条件）DhcpIp实例的IP，根据IP精确查找。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeDhcpIps）用于查询DhcpIp列表"
   },
   "AttachCcnInstances": {
     "params": [
@@ -1630,6 +1669,19 @@ INFO = {
     ],
     "desc": "本接口(DeleteAssistantCidr)用于删除辅助CIDR。（接口灰度中，如需使用请提工单。）"
   },
+  "ModifyDhcpIpAttribute": {
+    "params": [
+      {
+        "name": "DhcpIpId",
+        "desc": "`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。"
+      },
+      {
+        "name": "DhcpIpName",
+        "desc": "`DhcpIp`名称，可任意命名，但不得超过60个字符。"
+      }
+    ],
+    "desc": "本接口（ModifyDhcpIpAttribute）用于修改DhcpIp属性"
+  },
   "DeleteNetworkInterface": {
     "params": [
       {
@@ -1759,6 +1811,19 @@ INFO = {
       }
     ],
     "desc": "1. 该接口用于在转换实例下添加IPV6转换规则。\n2. 支持在同一个转换实例下批量添加转换规则，一个账户在一个地域最多50个。\n3. 一个完整的转换规则包括vip6:vport6:protocol:vip:vport，其中vip6:vport6:protocol必须是唯一。"
+  },
+  "AssociateDhcpIpWithAddressIp": {
+    "params": [
+      {
+        "name": "DhcpIpId",
+        "desc": "`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是没有绑定`EIP`的`DhcpIp`"
+      },
+      {
+        "name": "AddressIp",
+        "desc": "弹性公网`IP`。必须是没有绑定`DhcpIp`的`EIP`"
+      }
+    ],
+    "desc": "本接口（AssociateDhcpIpWithAddressIp）用于DhcpIp绑定弹性公网IP（EIP）<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口"
   },
   "DeleteServiceTemplate": {
     "params": [
@@ -3115,6 +3180,27 @@ INFO = {
       }
     ],
     "desc": "该接口用于给弹性公网IPv6地址释放带宽。"
+  },
+  "CreateDhcpIp": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "私有网络`ID`。"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网`ID`。"
+      },
+      {
+        "name": "DhcpIpName",
+        "desc": "`DhcpIp`名称。"
+      },
+      {
+        "name": "SecondaryPrivateIpAddressCount",
+        "desc": "新申请的内网IP地址个数。总数不能超过64个。"
+      }
+    ],
+    "desc": "本接口（CreateDhcpIp）用于创建DhcpIp"
   },
   "ReplaceRoutes": {
     "params": [
