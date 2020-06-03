@@ -414,7 +414,7 @@ INFO = {
         "desc": "域名"
       }
     ],
-    "desc": "获取域名图片优化的当前配置，支持Webp、TPG、Guetzli "
+    "desc": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG 和 Guetzli。 "
   },
   "ListTopData": {
     "params": [
@@ -745,7 +745,7 @@ INFO = {
         "desc": "PEM格式证书Base64编码后的字符串"
       }
     ],
-    "desc": "校验证书并提取SSL证书中包含的域名，返回CDN已接入的域名列表，及已配置证书的域名列表"
+    "desc": "DescribeCertDomains 用于校验SSL证书并提取证书中包含的域名。"
   },
   "CreateClsLogTopic": {
     "params": [
@@ -804,7 +804,7 @@ INFO = {
         "desc": "GuetzliAdapter配置项"
       }
     ],
-    "desc": "更新控制台图片优化的相关配置，支持Webp、TPG、Guetzli "
+    "desc": "UpdateImageConfig 用于更新控制台图片优化的相关配置，支持Webp、TPG 和 Guetzli。 "
   },
   "PushUrlsCache": {
     "params": [

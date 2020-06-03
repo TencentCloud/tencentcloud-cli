@@ -787,7 +787,7 @@ INFO = {
         "desc": "`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是已绑定`EIP`的`DhcpIp`。"
       }
     ],
-    "desc": "本接口（DisassociateDhcpIpWithAddressIp）用于将DhcpIp已绑定的弹性公网IP（EIP）解除绑定<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口"
+    "desc": "本接口（DisassociateDhcpIpWithAddressIp）用于将DhcpIp已绑定的弹性公网IP（EIP）解除绑定。<br />"
   },
   "ReplaceRouteTableAssociation": {
     "params": [
@@ -1249,11 +1249,11 @@ INFO = {
       },
       {
         "name": "NewCidrBlocks",
-        "desc": "待添加的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]"
+        "desc": "待添加的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]。入参NewCidrBlocks和OldCidrBlocks至少需要其一。"
       },
       {
         "name": "OldCidrBlocks",
-        "desc": "待删除的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]"
+        "desc": "待删除的负载CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]。入参NewCidrBlocks和OldCidrBlocks至少需要其一。"
       }
     ],
     "desc": "本接口(CheckAssistantCidr)用于检查辅助CIDR是否与存量路由、对等连接（对端VPC的CIDR）等资源存在冲突。如果存在重叠，则返回重叠的资源。（接口灰度中，如需使用请提工单。）\n* 检测辅助CIDR是否与当前VPC的主CIDR和辅助CIDR存在重叠。\n* 检测辅助CIDR是否与当前VPC的路由的目的端存在重叠。\n* 检测辅助CIDR是否与当前VPC的对等连接，对端VPC下的主CIDR或辅助CIDR存在重叠。"
@@ -1823,7 +1823,7 @@ INFO = {
         "desc": "弹性公网`IP`。必须是没有绑定`DhcpIp`的`EIP`"
       }
     ],
-    "desc": "本接口（AssociateDhcpIpWithAddressIp）用于DhcpIp绑定弹性公网IP（EIP）<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口"
+    "desc": "本接口（AssociateDhcpIpWithAddressIp）用于DhcpIp绑定弹性公网IP（EIP）。<br />"
   },
   "DeleteServiceTemplate": {
     "params": [

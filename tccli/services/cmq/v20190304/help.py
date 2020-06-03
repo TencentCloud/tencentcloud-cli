@@ -281,18 +281,18 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "目前只支持过滤TopicName ， 且只能填一个过滤值"
+        "desc": "目前只支持过滤TopicName ， 且只能填一个过滤值。"
       },
       {
         "name": "TagKey",
-        "desc": "标签匹配"
+        "desc": "标签匹配。"
       },
       {
         "name": "TopicName",
-        "desc": "精确匹配TopicName"
+        "desc": "精确匹配TopicName。"
       }
     ],
-    "desc": "查询主题详情"
+    "desc": "查询主题详情 "
   },
   "DescribeSubscriptionDetail": {
     "params": [

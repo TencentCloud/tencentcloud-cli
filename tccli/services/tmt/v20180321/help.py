@@ -80,7 +80,7 @@ INFO = {
       },
       {
         "name": "Target",
-        "desc": "翻译目标语⾔言类型 ，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>"
+        "desc": "翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>"
       },
       {
         "name": "AudioFormat",

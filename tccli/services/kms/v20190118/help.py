@@ -252,6 +252,10 @@ INFO = {
       {
         "name": "Type",
         "desc": "指定key类型，默认为1，1表示默认类型，由KMS创建CMK密钥，2 表示EXTERNAL 类型，该类型需要用户导入密钥材料，参考 GetParametersForImport 和 ImportKeyMaterial 接口"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签列表"
       }
     ],
     "desc": "创建用户管理数据密钥的主密钥CMK（Custom Master Key）。"
@@ -416,6 +420,10 @@ INFO = {
       {
         "name": "Description",
         "desc": "密钥的描述，最大1024字节"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签列表"
       }
     ],
     "desc": "创建白盒密钥。 密钥个数的上限为 50。"

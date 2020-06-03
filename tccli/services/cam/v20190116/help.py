@@ -315,6 +315,15 @@ INFO = {
     ],
     "desc": "获取自定义多因子Token关联信息"
   },
+  "ListAccessKeys": {
+    "params": [
+      {
+        "name": "TargetUin",
+        "desc": "指定用户Uin，不填默认列出当前用户访问密钥"
+      }
+    ],
+    "desc": "列出指定CAM用户的访问密钥"
+  },
   "DeleteGroup": {
     "params": [
       {

@@ -56,7 +56,7 @@ INFO = {
     "params": [
       {
         "name": "ActionType",
-        "desc": "取值FourAction时 返回四种动作的动作序列"
+        "desc": "默认不需要使用"
       }
     ],
     "desc": "使用动作活体检测模式前，需调用本接口获取动作顺序。"

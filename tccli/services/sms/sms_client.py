@@ -429,6 +429,7 @@ def doPullSmsSendStatusByPhoneNumber(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "PhoneNumber": argv.get("--PhoneNumber"),
         "SmsSdkAppid": argv.get("--SmsSdkAppid"),
+        "EndDateTime": Utils.try_to_json(argv, "--EndDateTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -504,6 +505,7 @@ def doPullSmsReplyStatusByPhoneNumber(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "PhoneNumber": argv.get("--PhoneNumber"),
         "SmsSdkAppid": argv.get("--SmsSdkAppid"),
+        "EndDateTime": Utils.try_to_json(argv, "--EndDateTime"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
