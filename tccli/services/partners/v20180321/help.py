@@ -252,6 +252,15 @@ INFO = {
     ],
     "desc": "为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额"
   },
+  "DescribeAgentClientGrade": {
+    "params": [
+      {
+        "name": "ClientUin",
+        "desc": "代客uin"
+      }
+    ],
+    "desc": "传入代客uin，查客户级别，客户审核状态，客户实名认证状态"
+  },
   "DescribeAgentAuditedClients": {
     "params": [
       {

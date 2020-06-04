@@ -551,7 +551,7 @@ INFO = {
       },
       {
         "name": "Runtime",
-        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，PHP5， PHP7，Golang1 和 Java8"
+        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.15，PHP5， PHP7，Golang1 和 Java8"
       },
       {
         "name": "Environment",
@@ -691,7 +691,7 @@ INFO = {
       },
       {
         "name": "Runtime",
-        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15， PHP5， PHP7，Golang1 和 Java8，默认Python2.7"
+        "desc": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.15， PHP5， PHP7，Golang1 和 Java8，默认Python2.7"
       },
       {
         "name": "VpcConfig",
@@ -761,7 +761,7 @@ INFO = {
     "params": [
       {
         "name": "Handler",
-        "desc": "函数处理方法名称。名称格式支持“文件名称.函数名称”形式，文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求 2-60 个字符"
+        "desc": "函数处理方法名称。名称格式支持“文件名称.函数名称”形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求 2-60 个字符"
       },
       {
         "name": "FunctionName",

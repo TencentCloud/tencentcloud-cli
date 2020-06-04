@@ -53,6 +53,39 @@ INFO = {
     ],
     "desc": "获取安全域名列表"
   },
+  "CreatePostpayPackage": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      },
+      {
+        "name": "WxAppId",
+        "desc": "微信 AppId，微信必传"
+      },
+      {
+        "name": "Source",
+        "desc": "付费来源\n<li>miniapp</li>\n<li>qcloud</li>"
+      },
+      {
+        "name": "FreeQuota",
+        "desc": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。"
+      },
+      {
+        "name": "Alias",
+        "desc": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符"
+      },
+      {
+        "name": "EnvSource",
+        "desc": "环境创建来源，取值：\n<li>miniapp</li>\n<li>qcloud</li>\n用法同CreateEnv接口的Source参数"
+      },
+      {
+        "name": "Channel",
+        "desc": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud"
+      }
+    ],
+    "desc": "开通后付费资源"
+  },
   "ReinstateEnv": {
     "params": [
       {

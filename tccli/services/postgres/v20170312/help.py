@@ -39,7 +39,7 @@ INFO = {
       },
       {
         "name": "Limit",
-        "desc": "备份列表分页返回，每页返回数量，默认为 20，最小为1，最大值为 100。"
+        "desc": "备份列表分页返回，每页返回数量，默认为 20，最小为1，最大值为 100。（当该参数不传或者传0时按默认值处理）"
       },
       {
         "name": "Offset",
@@ -312,7 +312,7 @@ INFO = {
       },
       {
         "name": "Name",
-        "desc": "实例名"
+        "desc": "实例名(后续支持)"
       }
     ],
     "desc": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例。"
@@ -321,7 +321,7 @@ INFO = {
     "params": [
       {
         "name": "Zone",
-        "desc": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。"
+        "desc": "可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2."
       },
       {
         "name": "DBInstanceName",
@@ -329,11 +329,11 @@ INFO = {
       },
       {
         "name": "DBVersion",
-        "desc": "PostgreSQL内核版本，目前只支持：9.3.5、9.5.4、10.4三种版本。"
+        "desc": "PostgreSQL内核版本，目前只支持：10.4。"
       },
       {
         "name": "DBCharset",
-        "desc": "PostgreSQL数据库字符集，目前支持UTF8、LATIN1两种。"
+        "desc": "PostgreSQL数据库字符集，目前支持UTF8。"
       },
       {
         "name": "ProjectId",
