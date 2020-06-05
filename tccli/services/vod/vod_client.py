@@ -2931,6 +2931,7 @@ def doSearchMedia(argv, arglist):
         "Sort": Utils.try_to_json(argv, "--Sort"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Categories": Utils.try_to_json(argv, "--Categories"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }

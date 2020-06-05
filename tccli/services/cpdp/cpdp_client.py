@@ -1193,6 +1193,7 @@ def doApplyReWithdrawal(argv, arglist):
         "MidasSignature": argv.get("--MidasSignature"),
         "Body": Utils.try_to_json(argv, "--Body"),
         "MidasAppId": argv.get("--MidasAppId"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

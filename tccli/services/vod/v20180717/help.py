@@ -2201,6 +2201,10 @@ INFO = {
         "desc": "<div id=\"p_limit\">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。\n<li>取值范围：Offset + Limit 不超过5000。（参见：<a href=\"#maxResultsDesc\">接口返回结果数限制</a>）</li></div>"
       },
       {
+        "name": "Categories",
+        "desc": "文件类型：\n<li>Video: 视频文件</li>\n<li>Audio: 音频文件</li>\n<li>Image: 图片文件</li>"
+      },
+      {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
       }

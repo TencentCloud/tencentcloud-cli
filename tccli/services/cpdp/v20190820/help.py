@@ -1633,6 +1633,10 @@ INFO = {
       {
         "name": "MidasAppId",
         "desc": "聚鑫业务ID"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "正常结算提现失败情况下，发起重新提现的请求接口"

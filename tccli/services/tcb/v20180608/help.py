@@ -77,11 +77,11 @@ INFO = {
       },
       {
         "name": "EnvSource",
-        "desc": "环境创建来源，取值：\n<li>miniapp</li>\n<li>qcloud</li>\n用法同CreateEnv接口的Source参数"
+        "desc": "环境创建来源，取值：\n<li>miniapp</li>\n<li>qcloud</li>\n用法同CreateEnv接口的Source参数\n和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。"
       },
       {
         "name": "Channel",
-        "desc": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud"
+        "desc": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud\n和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。"
       }
     ],
     "desc": "开通后付费资源"

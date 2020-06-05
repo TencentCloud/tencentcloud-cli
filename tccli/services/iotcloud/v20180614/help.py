@@ -109,7 +109,7 @@ INFO = {
         "desc": "设备名"
       }
     ],
-    "desc": "本接口（DescribeDevice）用于查看设备信息 "
+    "desc": "本接口（DescribeDevice）用于查看设备信息"
   },
   "CreateMultiDevice": {
     "params": [
@@ -209,6 +209,35 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeProducts）用于列出产品列表。 "
+  },
+  "CreateMultiDevicesTask": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "ParametersType",
+        "desc": "参数类型 cosfile-文件上传 random-随机创建"
+      },
+      {
+        "name": "FileName",
+        "desc": "文件上传类型时文件名"
+      },
+      {
+        "name": "FileSize",
+        "desc": "文件上传类型时文件大小"
+      },
+      {
+        "name": "BatchCount",
+        "desc": "随机创建时设备创建个数"
+      },
+      {
+        "name": "Hash",
+        "desc": "文件上传类型时文件md5值"
+      }
+    ],
+    "desc": "本接口（CreateMultiDevicesTask）用于创建产品级别的批量创建设备任务"
   },
   "DescribeLoraDevice": {
     "params": [
@@ -340,6 +369,15 @@ INFO = {
       }
     ],
     "desc": "本接口（CancelTask）用于取消一个未被调度的任务。 "
+  },
+  "CreateTaskFileUrl": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      }
+    ],
+    "desc": "本接口（CreateTaskFileUrl）用于获取产品级任务文件上传链接"
   },
   "ResetDeviceState": {
     "params": [
@@ -538,6 +576,23 @@ INFO = {
     ],
     "desc": "本接口（UnbindDevices）用于网关设备批量解绑子设备"
   },
+  "DescribeProductTasks": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "产品级别任务列表偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "产品级别任务列表拉取个数"
+      }
+    ],
+    "desc": "本接口（DescribeProductTasks）用于查看产品级别的任务列表"
+  },
   "DescribeDevices": {
     "params": [
       {
@@ -605,6 +660,19 @@ INFO = {
       }
     ],
     "desc": "本接口（EnableTopicRule）用于启用规则"
+  },
+  "DescribeProductTask": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "TaskId",
+        "desc": "任务ID"
+      }
+    ],
+    "desc": "本接口（DescribeProductTask）用于查看产品级别的任务信息"
   },
   "DeleteTopicRule": {
     "params": [
