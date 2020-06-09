@@ -284,11 +284,11 @@ INFO = {
       },
       {
         "name": "AdminFirstName",
-        "desc": "管理人姓。"
+        "desc": "管理人名。"
       },
       {
         "name": "AdminLastName",
-        "desc": "管理人名。"
+        "desc": "管理人姓。"
       },
       {
         "name": "AdminPhoneNum",
@@ -304,11 +304,11 @@ INFO = {
       },
       {
         "name": "ContactFirstName",
-        "desc": "联系人姓。"
+        "desc": "联系人名。"
       },
       {
         "name": "ContactLastName",
-        "desc": "联系人名。"
+        "desc": "联系人姓。"
       },
       {
         "name": "ContactEmail",

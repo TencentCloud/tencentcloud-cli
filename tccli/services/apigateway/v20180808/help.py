@@ -264,7 +264,7 @@ INFO = {
         "desc": "环境名称。"
       }
     ],
-    "desc": "本接口（DemoteServiceUsagePlan）用于将某个服务在某个环境的使用计划，降级到API上。\n服务若需要鉴权限流生效，则需要绑定使用计划到此服务中，本接口用于查询绑定到一个服务的所有使用计划。\n如果服务内没有API不允许进行此操作。\n如果当前环境没有发布，不允许进行此操作。"
+    "desc": "本接口（DemoteServiceUsagePlan）用于将某个服务在某个环境的使用计划，降级到API上。\n如果服务内没有API不允许进行此操作。\n如果当前环境没有发布，不允许进行此操作。"
   },
   "DescribeApiKeysStatus": {
     "params": [

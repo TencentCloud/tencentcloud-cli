@@ -124,14 +124,14 @@ INFO = {
     "params": [
       {
         "name": "ImageBase64",
-        "desc": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
+        "desc": "图片的 Base64 值。要求图片经Base64编码后不超过 3M，支持PNG、JPG、JPEG格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
       },
       {
         "name": "ImageUrl",
-        "desc": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。"
+        "desc": "图片的 Url 地址。要求图片经Base64编码后不超过 3M，支持PNG、JPG、JPEG格式。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。"
       }
     ],
-    "desc": "本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect) "
+    "desc": "本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。"
   },
   "GeneralAccurateOCR": {
     "params": [
