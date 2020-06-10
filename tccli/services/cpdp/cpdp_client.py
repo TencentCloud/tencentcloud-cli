@@ -42,6 +42,7 @@ def doQueryMemberTransaction(argv, arglist):
         "Remark": argv.get("--Remark"),
         "ReservedMsg": argv.get("--ReservedMsg"),
         "WebSign": argv.get("--WebSign"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -116,6 +117,7 @@ def doQueryBankTransactionDetails(argv, arglist):
         "StartDate": argv.get("--StartDate"),
         "EndDate": argv.get("--EndDate"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -208,6 +210,7 @@ def doBindRelateAcctSmallAmount(argv, arglist):
         "CnapsBranchId": argv.get("--CnapsBranchId"),
         "EiconBankBranchId": argv.get("--EiconBankBranchId"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -329,6 +332,7 @@ def doModifyMntMbrBindRelateAcctBankCode(argv, arglist):
         "CnapsBranchId": argv.get("--CnapsBranchId"),
         "EiconBankBranchId": argv.get("--EiconBankBranchId"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -366,6 +370,7 @@ def doUnbindRelateAcct(argv, arglist):
         "TranNetMemberCode": argv.get("--TranNetMemberCode"),
         "MemberAcctNo": argv.get("--MemberAcctNo"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -403,6 +408,7 @@ def doQueryMemberBind(argv, arglist):
         "PageNum": argv.get("--PageNum"),
         "SubAcctNo": argv.get("--SubAcctNo"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -444,6 +450,7 @@ def doRegisterBillSupportWithdraw(argv, arglist):
         "ReservedMsgOne": argv.get("--ReservedMsgOne"),
         "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
         "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -490,6 +497,7 @@ def doCreateCustAcctId(argv, arglist):
         "UserNickname": argv.get("--UserNickname"),
         "Email": argv.get("--Email"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -535,6 +543,7 @@ def doWithdrawCashMembership(argv, arglist):
         "Remark": argv.get("--Remark"),
         "ReservedMsg": argv.get("--ReservedMsg"),
         "WebSign": argv.get("--WebSign"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -680,6 +689,7 @@ def doReviseMbrProperty(argv, arglist):
         "SubAcctNo": argv.get("--SubAcctNo"),
         "MemberProperty": argv.get("--MemberProperty"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -831,6 +841,7 @@ def doBindRelateAcctUnionPay(argv, arglist):
         "CnapsBranchId": argv.get("--CnapsBranchId"),
         "EiconBankBranchId": argv.get("--EiconBankBranchId"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -975,6 +986,7 @@ def doQueryCommonTransferRecharge(argv, arglist):
         "EndDate": argv.get("--EndDate"),
         "PageNum": argv.get("--PageNum"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1389,6 +1401,7 @@ def doQueryBankClear(argv, arglist):
         "StartDate": argv.get("--StartDate"),
         "EndDate": argv.get("--EndDate"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1427,6 +1440,7 @@ def doQuerySingleTransactionStatus(argv, arglist):
         "SubAcctNo": argv.get("--SubAcctNo"),
         "TranDate": argv.get("--TranDate"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1498,6 +1512,7 @@ def doBindRelateAccReUnionPay(argv, arglist):
         "MemberAcctNo": argv.get("--MemberAcctNo"),
         "MessageCheckCode": argv.get("--MessageCheckCode"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1571,6 +1586,7 @@ def doCheckAmount(argv, arglist):
         "AuthAmt": argv.get("--AuthAmt"),
         "Ccy": argv.get("--Ccy"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1612,6 +1628,7 @@ def doRevResigterBillSupportWithdraw(argv, arglist):
         "ReservedMsgOne": argv.get("--ReservedMsgOne"),
         "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
         "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1655,6 +1672,7 @@ def doRevokeMemberRechargeThirdPay(argv, arglist):
         "ReservedMsgOne": argv.get("--ReservedMsgOne"),
         "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
         "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1829,6 +1847,7 @@ def doQueryCustAcctIdBalance(argv, arglist):
         "PageNum": argv.get("--PageNum"),
         "SubAcctNo": argv.get("--SubAcctNo"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1865,6 +1884,7 @@ def doQuerySmallAmountTransfer(argv, arglist):
         "OldTranSeqNo": argv.get("--OldTranSeqNo"),
         "TranDate": argv.get("--TranDate"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1911,6 +1931,7 @@ def doRechargeMemberThirdPay(argv, arglist):
         "ReservedMsgOne": argv.get("--ReservedMsgOne"),
         "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
         "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2346,6 +2367,7 @@ def doQueryBankWithdrawCashDetails(argv, arglist):
         "BeginDate": argv.get("--BeginDate"),
         "EndDate": argv.get("--EndDate"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2422,6 +2444,7 @@ def doQueryReconciliationDocument(argv, arglist):
         "FileType": argv.get("--FileType"),
         "FileDate": argv.get("--FileDate"),
         "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

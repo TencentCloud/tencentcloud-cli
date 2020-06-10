@@ -46,26 +46,14 @@ INFO = {
     ],
     "desc": "本接口(IsolateDBInstance)用于隔离云数据库实例，隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。"
   },
-  "DescribeAccounts": {
+  "RestartDBInstances": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
-      },
-      {
-        "name": "Offset",
-        "desc": "记录偏移量，默认值为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "单次请求返回的数量，默认值为20，最小值为1，最大值为100。"
-      },
-      {
-        "name": "AccountRegexp",
-        "desc": "匹配账号名的正则表达式，规则同 MySQL 官网。"
+        "name": "InstanceIds",
+        "desc": "实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
       }
     ],
-    "desc": "本接口(DescribeAccounts)用于查询云数据库的所有账户信息。"
+    "desc": "本接口(RestartDBInstances)用于重启云数据库实例。\n\n注意：\n1、本接口只支持主实例进行重启操作；\n2、实例状态必须为正常，并且没有其他异步任务在执行中。"
   },
   "ModifyInstanceTag": {
     "params": [
@@ -83,6 +71,27 @@ INFO = {
       }
     ],
     "desc": "本接口(ModifyInstanceTag)用于对实例标签进行添加、修改或者删除。"
+  },
+  "CreateAuditPolicy": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "审计策略名称。"
+      },
+      {
+        "name": "RuleId",
+        "desc": "审计规则 ID。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      },
+      {
+        "name": "LogExpireDay",
+        "desc": "审计日志保存时长。支持值包括：\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；\n实例首次开通审计策略时，可传该值，用于设置存储日志保存天数，默认为 30 天。若实例已存在审计策略，则此参数无效，可使用 更改审计服务配置 接口修改日志存储时长。"
+      }
+    ],
+    "desc": "本接口(CreateAuditPolicy)用于创建云数据库实例的审计策略，即将审计规则绑定到具体的云数据库实例上。"
   },
   "DescribeBackupOverview": {
     "params": [
@@ -114,6 +123,35 @@ INFO = {
       }
     ],
     "desc": "本接口(OfflineIsolatedInstances)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态，即通过 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询到 Status 值为 5 的实例。\n\n该接口为异步操作，部分资源的回收可能存在延迟。您可以通过使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口，指定实例 InstanceId 和状态 Status 为 [5,6,7] 进行查询，若返回实例为空，则实例资源已全部释放。\n\n注意，实例下线后，相关资源和数据将无法找回，请谨慎操作。"
+  },
+  "CreateAuditLogFile": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间，格式为：\"2017-07-12 10:29:20\"。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，格式为：\"2017-07-12 10:29:20\"。"
+      },
+      {
+        "name": "Order",
+        "desc": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序。"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "排序字段。支持值包括：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。"
+      },
+      {
+        "name": "Filter",
+        "desc": "过滤条件。可按设置的过滤条件过滤日志。"
+      }
+    ],
+    "desc": "本接口(CreateAuditLogFile)用于创建云数据库实例的审计日志文件。"
   },
   "OpenDBInstanceGTID": {
     "params": [
@@ -221,6 +259,35 @@ INFO = {
       }
     ],
     "desc": "该接口（DescribeDefaultParams）用于查询默认的可设置参数列表。"
+  },
+  "DescribeAuditPolicies": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      },
+      {
+        "name": "PolicyId",
+        "desc": "审计策略 ID。"
+      },
+      {
+        "name": "PolicyName",
+        "desc": "审计策略名称。支持按审计策略名称进行模糊匹配查询。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量。"
+      },
+      {
+        "name": "RuleId",
+        "desc": "审计规则 ID。可使用该审计规则 ID 查询到其关联的审计策略。\n注意，参数 RuleId，InstanceId，PolicyId，PolicyName 必须至少传一个。"
+      }
+    ],
+    "desc": "本接口(DescribeAuditPolicies)用于查询云数据库实例的审计策略。"
   },
   "DescribeTagsOfInstanceIds": {
     "params": [
@@ -352,6 +419,23 @@ INFO = {
       }
     ],
     "desc": "本接口（ReleaseIsolatedDBInstances）用于恢复已隔离云数据库实例。"
+  },
+  "ModifyAuditConfig": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID。"
+      },
+      {
+        "name": "LogExpireDay",
+        "desc": "审计日志保存时长。支持值包括：\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；"
+      },
+      {
+        "name": "CloseAudit",
+        "desc": "是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。\n当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。"
+      }
+    ],
+    "desc": "本接口(ModifyAuditConfig)用于修改云数据库审计策略的服务配置，包括审计日志保存时长等。"
   },
   "ModifyTimeWindow": {
     "params": [
@@ -669,6 +753,15 @@ INFO = {
     ],
     "desc": "本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。"
   },
+  "DeleteAuditPolicy": {
+    "params": [
+      {
+        "name": "PolicyId",
+        "desc": "审计策略 ID。"
+      }
+    ],
+    "desc": "本接口(DeleteAuditPolicy)用于删除用户的审计策略。"
+  },
   "DescribeProjectSecurityGroups": {
     "params": [
       {
@@ -931,6 +1024,27 @@ INFO = {
     ],
     "desc": "本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例。"
   },
+  "DescribeAuditLogFiles": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量。"
+      },
+      {
+        "name": "FileName",
+        "desc": "审计日志文件名。"
+      }
+    ],
+    "desc": "本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。"
+  },
   "DescribeInstanceParamRecords": {
     "params": [
       {
@@ -1038,6 +1152,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。"
+  },
+  "DescribeAuditConfig": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      }
+    ],
+    "desc": "本接口(DescribeAuditConfig)用于查询云数据库审计策略的服务配置，包括审计日志保存时长等。"
   },
   "ModifyInstanceParam": {
     "params": [
@@ -1183,18 +1306,47 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目 ID、实例 ID、访问地址、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。"
   },
-  "VerifyRootAccount": {
+  "ModifyRoGroupInfo": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+        "name": "RoGroupId",
+        "desc": "RO 组的 ID。"
       },
       {
-        "name": "Password",
-        "desc": "实例 ROOT 账号的密码。"
+        "name": "RoGroupInfo",
+        "desc": "RO 组的详细信息。"
+      },
+      {
+        "name": "RoWeightValues",
+        "desc": "RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。"
+      },
+      {
+        "name": "IsBalanceRoLoad",
+        "desc": "是否重新均衡 RO 组内的 RO 实例的负载。支持值包括：1 - 重新均衡负载；0 - 不重新均衡负载。默认值为 0。注意，设置为重新均衡负载是，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库。"
       }
     ],
-    "desc": "本接口(VerifyRootAccount)用于校验云数据库实例的 ROOT 账号是否有足够的权限进行授权操作。"
+    "desc": "本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重等。"
+  },
+  "CreateAuditRule": {
+    "params": [
+      {
+        "name": "RuleName",
+        "desc": "审计规则名称。"
+      },
+      {
+        "name": "Description",
+        "desc": "审计规则描述。"
+      },
+      {
+        "name": "RuleFilters",
+        "desc": "审计规则过滤条件。若设置了过滤条件，则不会开启全审计。"
+      },
+      {
+        "name": "AuditAll",
+        "desc": "是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。"
+      }
+    ],
+    "desc": "本接口(CreateAuditRule)用于创建用户在当前地域的审计规则。"
   },
   "DescribeDBInstanceCharset": {
     "params": [
@@ -1218,42 +1370,26 @@ INFO = {
     ],
     "desc": "本接口(AssociateSecurityGroups)用于安全组批量绑定实例。"
   },
-  "DescribeDBPrice": {
+  "InitDBInstances": {
     "params": [
       {
-        "name": "Zone",
-        "desc": "可用区信息，格式如 \"ap-guangzhou-2\"。具体能设置的值请通过 <a href=\"https://cloud.tencent.com/document/api/236/17229\">DescribeDBZoneConfig</a> 接口查询。"
+        "name": "InstanceIds",
+        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
       },
       {
-        "name": "GoodsNum",
-        "desc": "实例数量，默认值为 1，最小值 1，最大值为 100。"
+        "name": "NewPassword",
+        "desc": "实例新的密码，密码规则：8-64个字符，至少包含字母、数字、字符（支持的字符：!@#$%^*()）中的两种。"
       },
       {
-        "name": "Memory",
-        "desc": "实例内存大小，单位：MB。"
+        "name": "Parameters",
+        "desc": "实例的参数列表，目前支持设置“character_set_server”、“lower_case_table_names”参数。其中，“character_set_server”参数可选值为[\"utf8\",\"latin1\",\"gbk\",\"utf8mb4\"]；“lower_case_table_names”可选值为[“0”,“1”]。"
       },
       {
-        "name": "Volume",
-        "desc": "实例硬盘大小，单位：GB。"
-      },
-      {
-        "name": "PayType",
-        "desc": "付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。"
-      },
-      {
-        "name": "Period",
-        "desc": "实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。"
-      },
-      {
-        "name": "InstanceRole",
-        "desc": "实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。"
-      },
-      {
-        "name": "ProtectMode",
-        "desc": "数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。"
+        "name": "Vport",
+        "desc": "实例的端口，取值范围为[1024, 65535]"
       }
     ],
-    "desc": "本接口(DescribeDBPrice)用于查询云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。\n\n注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照 <a href=\"https://cloud.tencent.com/document/api/236/15832\">服务地址</a> 文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com。"
+    "desc": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等"
   },
   "ModifyAccountPrivileges": {
     "params": [
@@ -1351,35 +1487,60 @@ INFO = {
     ],
     "desc": "本接口(CreateDBImportJob)用于创建云数据库数据导入任务。\n\n注意，用户进行数据导入任务的文件，必须提前上传到腾讯云。用户须在控制台进行文件导入。"
   },
-  "RestartDBInstances": {
+  "DescribeAccounts": {
     "params": [
       {
-        "name": "InstanceIds",
-        "desc": "实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      },
+      {
+        "name": "Offset",
+        "desc": "记录偏移量，默认值为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次请求返回的数量，默认值为20，最小值为1，最大值为100。"
+      },
+      {
+        "name": "AccountRegexp",
+        "desc": "匹配账号名的正则表达式，规则同 MySQL 官网。"
       }
     ],
-    "desc": "本接口(RestartDBInstances)用于重启云数据库实例。\n\n注意：\n1、本接口只支持主实例进行重启操作；\n2、实例状态必须为正常，并且没有其他异步任务在执行中。"
+    "desc": "本接口(DescribeAccounts)用于查询云数据库的所有账户信息。"
   },
-  "ModifyRoGroupInfo": {
+  "DescribeAuditRules": {
     "params": [
       {
-        "name": "RoGroupId",
-        "desc": "RO 组的 ID。"
+        "name": "RuleId",
+        "desc": "审计规则 ID。"
       },
       {
-        "name": "RoGroupInfo",
-        "desc": "RO 组的详细信息。"
+        "name": "RuleName",
+        "desc": "审计规则名称。支持按审计规则名称进行模糊匹配查询。"
       },
       {
-        "name": "RoWeightValues",
-        "desc": "RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。"
+        "name": "Limit",
+        "desc": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。"
       },
       {
-        "name": "IsBalanceRoLoad",
-        "desc": "是否重新均衡 RO 组内的 RO 实例的负载。支持值包括：1 - 重新均衡负载；0 - 不重新均衡负载。默认值为 0。注意，设置为重新均衡负载是，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库。"
+        "name": "Offset",
+        "desc": "分页偏移量。"
       }
     ],
-    "desc": "本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重等。"
+    "desc": "本接口(DescribeAuditRules)用于查询用户在当前地域的审计规则。"
+  },
+  "VerifyRootAccount": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      },
+      {
+        "name": "Password",
+        "desc": "实例 ROOT 账号的密码。"
+      }
+    ],
+    "desc": "本接口(VerifyRootAccount)用于校验云数据库实例的 ROOT 账号是否有足够的权限进行授权操作。"
   },
   "ModifyAccountPassword": {
     "params": [
@@ -1477,6 +1638,19 @@ INFO = {
     ],
     "desc": "条件检索实例的慢日志。只允许查看一个月之内的慢日志"
   },
+  "DeleteAuditLogFile": {
+    "params": [
+      {
+        "name": "FileName",
+        "desc": "审计日志文件名称。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID。"
+      }
+    ],
+    "desc": "本接口(DeleteAuditLogFile)用于删除云数据库实例的审计日志文件。"
+  },
   "ModifyBackupConfig": {
     "params": [
       {
@@ -1544,26 +1718,42 @@ INFO = {
     ],
     "desc": "本接口(DescribeBackupDatabases)用于查询备份文件包含的库 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。"
   },
-  "InitDBInstances": {
+  "DescribeDBPrice": {
     "params": [
       {
-        "name": "InstanceIds",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。"
+        "name": "Zone",
+        "desc": "可用区信息，格式如 \"ap-guangzhou-2\"。具体能设置的值请通过 <a href=\"https://cloud.tencent.com/document/api/236/17229\">DescribeDBZoneConfig</a> 接口查询。"
       },
       {
-        "name": "NewPassword",
-        "desc": "实例新的密码，密码规则：8-64个字符，至少包含字母、数字、字符（支持的字符：!@#$%^*()）中的两种。"
+        "name": "GoodsNum",
+        "desc": "实例数量，默认值为 1，最小值 1，最大值为 100。"
       },
       {
-        "name": "Parameters",
-        "desc": "实例的参数列表，目前支持设置“character_set_server”、“lower_case_table_names”参数。其中，“character_set_server”参数可选值为[\"utf8\",\"latin1\",\"gbk\",\"utf8mb4\"]；“lower_case_table_names”可选值为[“0”,“1”]。"
+        "name": "Memory",
+        "desc": "实例内存大小，单位：MB。"
       },
       {
-        "name": "Vport",
-        "desc": "实例的端口，取值范围为[1024, 65535]"
+        "name": "Volume",
+        "desc": "实例硬盘大小，单位：GB。"
+      },
+      {
+        "name": "PayType",
+        "desc": "付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。"
+      },
+      {
+        "name": "Period",
+        "desc": "实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。"
+      },
+      {
+        "name": "InstanceRole",
+        "desc": "实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。"
+      },
+      {
+        "name": "ProtectMode",
+        "desc": "数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。"
       }
     ],
-    "desc": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等"
+    "desc": "本接口(DescribeDBPrice)用于查询云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。\n\n注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照 <a href=\"https://cloud.tencent.com/document/api/236/15832\">服务地址</a> 文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com。"
   },
   "ModifyAutoRenewFlag": {
     "params": [
@@ -1625,6 +1815,40 @@ INFO = {
       }
     ],
     "desc": "本接口(OpenWanService)用于开通实例外网访问。\n\n注意，实例开通外网访问之前，需要先将实例进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作。"
+  },
+  "ModifyAuditRule": {
+    "params": [
+      {
+        "name": "RuleId",
+        "desc": "审计规则 ID。"
+      },
+      {
+        "name": "RuleName",
+        "desc": "审计规则名称。"
+      },
+      {
+        "name": "Description",
+        "desc": "审计规则描述。"
+      },
+      {
+        "name": "RuleFilters",
+        "desc": "审计规则过滤条件。若设置了过滤条件，则不会开启全审计。"
+      },
+      {
+        "name": "AuditAll",
+        "desc": "是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。"
+      }
+    ],
+    "desc": "本接口(ModifyAuditRule)用于修改用户的审计规则。"
+  },
+  "DeleteAuditRule": {
+    "params": [
+      {
+        "name": "RuleId",
+        "desc": "审计规则 ID。"
+      }
+    ],
+    "desc": "本接口(DeleteAuditRule)用于删除用户的审计规则。"
   },
   "DescribeSupportedPrivileges": {
     "params": [

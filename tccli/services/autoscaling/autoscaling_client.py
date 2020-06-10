@@ -27,6 +27,7 @@ def doExecuteScalingPolicy(argv, arglist):
     param = {
         "AutoScalingPolicyId": argv.get("--AutoScalingPolicyId"),
         "HonorCooldown": Utils.try_to_json(argv, "--HonorCooldown"),
+        "TriggerSource": argv.get("--TriggerSource"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

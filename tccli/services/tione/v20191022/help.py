@@ -31,11 +31,11 @@ INFO = {
       },
       {
         "name": "CreateScript",
-        "desc": "创建脚本"
+        "desc": "创建脚本，base64编码\nbase64后的脚本长度不能超过16384个字符"
       },
       {
         "name": "StartScript",
-        "desc": "启动脚本"
+        "desc": "启动脚本，base64编码\nbase64后的脚本长度不能超过16384个字符"
       }
     ],
     "desc": "更新notebook生命周期脚本"
@@ -48,11 +48,11 @@ INFO = {
       },
       {
         "name": "CreateScript",
-        "desc": "创建脚本，base64编码格式"
+        "desc": "创建脚本，base64编码\nbase64后的脚本长度不能超过16384个字符"
       },
       {
         "name": "StartScript",
-        "desc": "启动脚本，base64编码格式"
+        "desc": "启动脚本，base64编码\nbase64后的脚本长度不能超过16384个字符"
       }
     ],
     "desc": "创建Notebook生命周期脚本"
@@ -153,11 +153,11 @@ INFO = {
     "params": [
       {
         "name": "NotebookInstanceName",
-        "desc": "Notebook实例名称"
+        "desc": "Notebook实例名称\n规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
       },
       {
         "name": "SessionExpirationDurationInSeconds",
-        "desc": "session有效时间，秒"
+        "desc": "session有效时间，秒，取值范围[1800, 43200]"
       }
     ],
     "desc": "创建Notebook授权Url"

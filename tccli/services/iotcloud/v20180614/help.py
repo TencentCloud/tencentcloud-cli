@@ -659,7 +659,7 @@ INFO = {
         "desc": "规则名称"
       }
     ],
-    "desc": "本接口（EnableTopicRule）用于启用规则"
+    "desc": "本接口（EnableTopicRule）用于启用规则 "
   },
   "DescribeProductTask": {
     "params": [
