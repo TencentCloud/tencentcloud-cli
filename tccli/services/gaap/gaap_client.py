@@ -63,6 +63,7 @@ def doOpenSecurityPolicy(argv, arglist):
 
     param = {
         "ProxyId": argv.get("--ProxyId"),
+        "PolicyId": argv.get("--PolicyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -206,6 +207,7 @@ def doDescribeHTTPSListeners(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "SearchValue": argv.get("--SearchValue"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -246,6 +248,7 @@ def doCreateHTTPSListener(argv, arglist):
         "AuthType": Utils.try_to_json(argv, "--AuthType"),
         "ClientCertificateId": argv.get("--ClientCertificateId"),
         "PolyClientCertificateIds": Utils.try_to_json(argv, "--PolyClientCertificateIds"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -818,6 +821,7 @@ def doCheckProxyCreate(argv, arglist):
         "RealServerRegion": argv.get("--RealServerRegion"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
         "Concurrent": Utils.try_to_json(argv, "--Concurrent"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1084,8 +1088,9 @@ def doCreateSecurityPolicy(argv, arglist):
         return
 
     param = {
-        "ProxyId": argv.get("--ProxyId"),
         "DefaultAction": argv.get("--DefaultAction"),
+        "ProxyId": argv.get("--ProxyId"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1158,6 +1163,7 @@ def doDeleteProxyGroup(argv, arglist):
 
     param = {
         "GroupId": argv.get("--GroupId"),
+        "Force": Utils.try_to_json(argv, "--Force"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1518,6 +1524,7 @@ def doCloseSecurityPolicy(argv, arglist):
 
     param = {
         "ProxyId": argv.get("--ProxyId"),
+        "PolicyId": argv.get("--PolicyId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1842,6 +1849,7 @@ def doCreateHTTPListener(argv, arglist):
         "ListenerName": argv.get("--ListenerName"),
         "Port": Utils.try_to_json(argv, "--Port"),
         "ProxyId": argv.get("--ProxyId"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1973,6 +1981,39 @@ def doDescribeResourcesByTag(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCloseProxyGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CloseProxyGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": argv.get("--GroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CloseProxyGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CloseProxyGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyTCPListenerAttribute(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2022,6 +2063,7 @@ def doModifyProxyGroupAttribute(argv, arglist):
     param = {
         "GroupId": argv.get("--GroupId"),
         "GroupName": argv.get("--GroupName"),
+        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2160,6 +2202,7 @@ def doDescribeHTTPListeners(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "SearchValue": argv.get("--SearchValue"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2196,6 +2239,7 @@ def doCreateProxyGroup(argv, arglist):
         "GroupName": argv.get("--GroupName"),
         "RealServerRegion": argv.get("--RealServerRegion"),
         "TagSet": Utils.try_to_json(argv, "--TagSet"),
+        "AccessRegionSet": Utils.try_to_json(argv, "--AccessRegionSet"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2389,6 +2433,39 @@ def doDescribeRealServersStatus(argv, arglist):
     model = models.DescribeRealServersStatusRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeRealServersStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doOpenProxyGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("OpenProxyGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": argv.get("--GroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.OpenProxyGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.OpenProxyGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2999,6 +3076,7 @@ ACTION_MAP = {
     "CreateProxyGroupDomain": doCreateProxyGroupDomain,
     "ModifyProxyConfiguration": doModifyProxyConfiguration,
     "DescribeResourcesByTag": doDescribeResourcesByTag,
+    "CloseProxyGroup": doCloseProxyGroup,
     "ModifyTCPListenerAttribute": doModifyTCPListenerAttribute,
     "ModifyProxyGroupAttribute": doModifyProxyGroupAttribute,
     "DescribeGroupAndStatisticsProxy": doDescribeGroupAndStatisticsProxy,
@@ -3011,6 +3089,7 @@ ACTION_MAP = {
     "CreateCertificate": doCreateCertificate,
     "DescribeListenerStatistics": doDescribeListenerStatistics,
     "DescribeRealServersStatus": doDescribeRealServersStatus,
+    "OpenProxyGroup": doOpenProxyGroup,
     "CloseProxies": doCloseProxies,
     "DescribeDomainErrorPageInfoByIds": doDescribeDomainErrorPageInfoByIds,
     "DescribeProxiesStatus": doDescribeProxiesStatus,

@@ -361,6 +361,7 @@ def doDescribeLogSearch(argv, arglist):
         "ConText": argv.get("--ConText"),
         "Sort": argv.get("--Sort"),
         "Query": argv.get("--Query"),
+        "LogQuerys": Utils.try_to_json(argv, "--LogQuerys"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

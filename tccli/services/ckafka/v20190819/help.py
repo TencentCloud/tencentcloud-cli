@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 DESC = "ckafka-2019-08-19"
 INFO = {
+  "DescribeRoute": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例唯一id"
+      }
+    ],
+    "desc": "查看路由信息"
+  },
   "DescribeGroupInfo": {
     "params": [
       {

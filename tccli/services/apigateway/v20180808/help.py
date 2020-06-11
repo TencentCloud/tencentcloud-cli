@@ -320,7 +320,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "精确查询，支持apiid/reqid搜索"
+        "desc": "保留字段"
       },
       {
         "name": "Limit",
@@ -336,10 +336,14 @@ INFO = {
       },
       {
         "name": "Query",
-        "desc": "模糊查询，根据关键字检索日志"
+        "desc": "保留字段"
+      },
+      {
+        "name": "LogQuerys",
+        "desc": "检索条件,支持的检索条件如下：\nreq_id：“=”\napi_id：“=”\ncip：“=”\nuip：“:”\nerr_msg：“:”\nrsp_st：“=” 、“!=” 、 “:” 、 “>” 、 “<”\nreq_t：”>=“ 、 ”<=“\n\n说明：\n“:”表示包含，“!=”表示不等于，字段含义见输出参数的LogSet说明"
       }
     ],
-    "desc": "用于搜索日志"
+    "desc": "本接口DescribeLogSearch用于搜索日志"
   },
   "DescribeUsagePlanSecretIds": {
     "params": [

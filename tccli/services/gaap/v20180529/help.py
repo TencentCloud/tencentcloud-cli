@@ -31,6 +31,10 @@ INFO = {
       {
         "name": "ProxyId",
         "desc": "需开启安全策略的通道ID"
+      },
+      {
+        "name": "PolicyId",
+        "desc": "安全策略ID"
       }
     ],
     "desc": "开启安全策略"
@@ -103,6 +107,10 @@ INFO = {
       {
         "name": "SearchValue",
         "desc": "过滤条件，支持按照端口或监听器名称进行模糊查询"
+      },
+      {
+        "name": "GroupId",
+        "desc": "过滤条件，通道组ID"
       }
     ],
     "desc": "本接口（DescribeHTTPSListeners）用来查询HTTPS监听器信息。"
@@ -127,7 +135,7 @@ INFO = {
       },
       {
         "name": "ProxyId",
-        "desc": "通道ID"
+        "desc": "通道ID，与GroupId之间只能设置一个。表示创建通道的监听器。"
       },
       {
         "name": "AuthType",
@@ -140,6 +148,10 @@ INFO = {
       {
         "name": "PolyClientCertificateIds",
         "desc": "新的客户端多CA证书ID，仅当双向认证时设置该参数或设置ClientCertificateId参数"
+      },
+      {
+        "name": "GroupId",
+        "desc": "通道组ID，与ProxyId之间只能设置一个。表示创建通道组的监听器。"
       }
     ],
     "desc": "该接口（CreateHTTPSListener）用于在通道实例下创建HTTPS协议类型的监听器。"
@@ -504,6 +516,10 @@ INFO = {
       {
         "name": "SearchValue",
         "desc": "过滤条件，支持按照端口或监听器名称进行模糊查询，该参数不能与ListenerName和Port同时使用"
+      },
+      {
+        "name": "GroupId",
+        "desc": "通道组ID"
       }
     ],
     "desc": "该接口（DescribeHTTPListeners）用来查询HTTP监听器信息。"
@@ -525,18 +541,22 @@ INFO = {
       {
         "name": "Concurrent",
         "desc": "通道并发量上限，表示同时在线的连接数，单位：万。"
+      },
+      {
+        "name": "GroupId",
+        "desc": "如果在通道组下创建通道，需要填写通道组的ID"
       }
     ],
     "desc": "本接口(CheckProxyCreate)用于查询能否创建指定配置的加速通道。"
   },
-  "DescribeRules": {
+  "OpenProxyGroup": {
     "params": [
       {
-        "name": "ListenerId",
-        "desc": "7层监听器Id。"
+        "name": "GroupId",
+        "desc": "通道组实例 ID"
       }
     ],
-    "desc": "本接口（DescribeRules）用于查询监听器下的所有规则信息，包括规则域名，路径以及该规则下所绑定的源站列表。当通道版本为3.0时，该接口会返回该域名对应的高级认证配置信息。"
+    "desc": "该接口（OpenProxyGroup）用于开启一条通道组中的所有通道"
   },
   "DescribeAccessRegions": {
     "params": [],
@@ -625,12 +645,16 @@ INFO = {
   "CreateSecurityPolicy": {
     "params": [
       {
+        "name": "DefaultAction",
+        "desc": "默认策略：ACCEPT或DROP"
+      },
+      {
         "name": "ProxyId",
         "desc": "加速通道ID"
       },
       {
-        "name": "DefaultAction",
-        "desc": "默认策略：ACCEPT或DROP"
+        "name": "GroupId",
+        "desc": "通道组ID"
       }
     ],
     "desc": "创建安全策略"
@@ -733,6 +757,10 @@ INFO = {
       {
         "name": "GroupId",
         "desc": "需要删除的通道组ID。"
+      },
+      {
+        "name": "Force",
+        "desc": "强制删除标识。其中：\n0，不强制删除，\n1，强制删除。\n默认为0，当通道组中存在通道或通道组中存在监听器/规则绑定了源站时，且Force为0时，该操作会返回失败。"
       }
     ],
     "desc": "本接口（DeleteProxyGroup）用于删除通道组。"
@@ -855,6 +883,10 @@ INFO = {
       {
         "name": "ProxyId",
         "desc": "通道ID"
+      },
+      {
+        "name": "PolicyId",
+        "desc": "安全组策略ID"
       }
     ],
     "desc": "关闭安全策略"
@@ -1010,7 +1042,11 @@ INFO = {
       },
       {
         "name": "ProxyId",
-        "desc": "通道ID"
+        "desc": "通道ID，与GroupId不能同时设置，对应为通道创建监听器"
+      },
+      {
+        "name": "GroupId",
+        "desc": "通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器"
       }
     ],
     "desc": "该接口（CreateHTTPListener）用于在通道实例下创建HTTP协议类型的监听器。"
@@ -1081,6 +1117,15 @@ INFO = {
     ],
     "desc": "本接口（ModifyProxyConfiguration）用于修改通道的配置。根据当前业务的容量需求，扩容或缩容相关通道的配置。仅支持Scalarable为1的通道,Scalarable可通过接口DescribeProxies获取。"
   },
+  "CloseProxyGroup": {
+    "params": [
+      {
+        "name": "GroupId",
+        "desc": "通道组的实例 ID。"
+      }
+    ],
+    "desc": "本接口（CloseProxyGroup）用于关闭通道组。通道组关闭后，不再产生流量，但每天仍然收取通道基础配置费用。"
+  },
   "ModifyTCPListenerAttribute": {
     "params": [
       {
@@ -1127,6 +1172,10 @@ INFO = {
       {
         "name": "GroupName",
         "desc": "修改后的通道组名称：不超过30个字符，超过部分会被截断。"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "项目ID"
       }
     ],
     "desc": "本接口（ModifyProxyGroupAttribute）用于修改通道组属性，目前仅支持修改通道组名称。"
@@ -1200,6 +1249,10 @@ INFO = {
       {
         "name": "TagSet",
         "desc": "标签列表"
+      },
+      {
+        "name": "AccessRegionSet",
+        "desc": "加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。"
       }
     ],
     "desc": "本接口（CreateProxyGroup）用于创建通道组。"
@@ -1427,6 +1480,15 @@ INFO = {
     ],
     "desc": "该接口（CreateTCPListeners）用于批量创建单通道或者通道组的TCP协议类型的监听器。"
   },
+  "DescribeRules": {
+    "params": [
+      {
+        "name": "ListenerId",
+        "desc": "7层监听器Id。"
+      }
+    ],
+    "desc": "本接口（DescribeRules）用于查询监听器下的所有规则信息，包括规则域名，路径以及该规则下所绑定的源站列表。当通道版本为3.0时，该接口会返回该域名对应的高级认证配置信息。"
+  },
   "ModifyProxiesAttribute": {
     "params": [
       {
@@ -1566,7 +1628,7 @@ INFO = {
       },
       {
         "name": "BillingType",
-        "desc": "计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）"
+        "desc": "计费方式，0表示按带宽计费，1表示按流量计费。默认按带宽计费"
       }
     ],
     "desc": "本接口（InquiryPriceCreateProxy）用于创建加速通道询价。"

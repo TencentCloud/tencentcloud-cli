@@ -657,6 +657,23 @@ INFO = {
     ],
     "desc": "只有处于\"RUNNING\"状态的实例才能够进行关机操作；\n调用成功时，实例会进入STOPPING状态；关闭实例成功时，实例会进入STOPPED状态；\n支持强制关闭，强制关机的效果等同于关闭物理计算机的电源开关，强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。"
   },
+  "CreateSecurityGroup": {
+    "params": [
+      {
+        "name": "GroupName",
+        "desc": "安全组名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "GroupDescription",
+        "desc": "安全组备注，最多100个字符。"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
+      }
+    ],
+    "desc": "创建安全组"
+  },
   "DescribeNode": {
     "params": [],
     "desc": "获取节点列表"

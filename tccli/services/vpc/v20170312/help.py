@@ -1962,6 +1962,35 @@ INFO = {
     ],
     "desc": "本接口（ReplaceDirectConnectGatewayCcnRoutes）根据路由ID（RouteId）修改指定的路由（Route），支持批量修改。"
   },
+  "GetCcnRegionBandwidthLimits": {
+    "params": [
+      {
+        "name": "CcnId",
+        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\n<li>sregion - String - （过滤条件）源地域，形如：ap-guangzhou。</li>\n<li>dregion - String - （过滤条件）目的地域，形如：ap-shanghai-bm</li>"
+      },
+      {
+        "name": "SortedBy",
+        "desc": "排序条件，目前支持带宽（BandwidthLimit）和过期时间（ExpireTime）"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "排序方式，'ASC':升序,'DESC':降序。"
+      }
+    ],
+    "desc": "本接口（GetCcnRegionBandwidthLimits）用于查询云联网相关地域带宽信息，其中预付费模式的云联网仅支持地域间限速，后付费模式的云联网支持地域间限速和地域出口限速。"
+  },
   "DeleteSecurityGroupPolicies": {
     "params": [
       {

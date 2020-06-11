@@ -230,6 +230,7 @@ def doLexicalAnalysis(argv, arglist):
 
     param = {
         "Text": argv.get("--Text"),
+        "DictId": argv.get("--DictId"),
         "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
