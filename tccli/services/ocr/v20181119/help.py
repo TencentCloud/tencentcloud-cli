@@ -14,26 +14,14 @@ INFO = {
     ],
     "desc": "本接口支持病案首页、费用清单、结算单、医疗发票四种保险理赔单据的文本识别和结构化输出。"
   },
-  "GeneralBasicOCR": {
+  "QueryBarCode": {
     "params": [
       {
-        "name": "ImageBase64",
-        "desc": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
-      },
-      {
-        "name": "ImageUrl",
-        "desc": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。"
-      },
-      {
-        "name": "Scene",
-        "desc": "保留字段。"
-      },
-      {
-        "name": "LanguageType",
-        "desc": "识别语言类型。\n支持自动识别语言类型，同时支持自选语言种类，默认中英文混合(zh)，各种语言均支持与英文混合的文字识别。\n可选值：\nzh\\auto\\jap\\kor\\\nspa\\fre\\ger\\por\\\nvie\\may\\rus\\ita\\\nhol\\swe\\fin\\dan\\\nnor\\hun\\tha\\lat\n可选值分别表示：\n中英文混合、自动识别、日语、韩语、\n西班牙语、法语、德语、葡萄牙语、\n越南语、马来语、俄语、意大利语、\n荷兰语、瑞典语、芬兰语、丹麦语、\n挪威语、匈牙利语、泰语、拉丁语系。"
+        "name": "BarCode",
+        "desc": "条形码"
       }
     ],
-    "desc": "本接口支持图像整体文字的检测和识别。可以识别中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语19种语言，且各种语言均支持与英文混合的文字识别。\n\n适用于印刷文档识别、网络图片识别、广告图文字识别、街景店招牌识别、菜单识别、视频标题识别、头像文字识别等场景。\n\n产品优势：支持自动识别语言类型，可返回文本框坐标信息，对于倾斜文本支持自动旋转纠正。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th style=\"width:200px\">【荐】通用印刷体识别</th>\n          <th ><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/37831\">通用印刷体识别（精简版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>96%</td>\n          <td>99%</td>\n          <td>91%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>中</td>\n          <td>高</td>\n          <td>低</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，不支持角度返回</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>"
+    "desc": "本接口支持条形码备案信息查询，返回条形码查询结果的相关信息，包括产品名称、产品英文名称、品牌名称、规格型号、宽度、高度、深度、关键字、产品描述、厂家名称、厂家地址、企业社会信用代码13个字段信息。\n\n产品优势：直联中国物品编码中心，查询结果更加准确、可靠。\n\n本接口目前为内测阶段，如需使用服务，请<a href=\"https://cloud.tencent.com/act/event/connect-service\" target=\"_blank\">联系商务</a>开通。"
   },
   "EnterpriseLicenseOCR": {
     "params": [
@@ -81,7 +69,7 @@ INFO = {
       },
       {
         "name": "Config",
-        "desc": "以下可选字段均为bool 类型，默认false：\nCropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）\nCropPortrait，人像照片裁剪（自动抠取身份证头像区域）\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警\nTempIdWarn，临时身份证告警\nInvalidDateWarn，身份证有效日期不合法告警\nQuality，图片质量分数（评价图片的模糊程度）\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CropIdCard\":true,\"CropPortrait\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CropIdCard\":true,\"CropPortrait\":true}"
+        "desc": "以下可选字段均为bool 类型，默认false：\nCropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）\nCropPortrait，人像照片裁剪（自动抠取身份证头像区域）\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警\nTempIdWarn，临时身份证告警\nInvalidDateWarn，身份证有效日期不合法告警\nQuality，图片质量分数（评价图片的模糊程度）\nMultiCardDetect，是否开启多卡证检测\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CropIdCard\":true,\"CropPortrait\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CropIdCard\":true,\"CropPortrait\":true}"
       }
     ],
     "desc": "本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别准确度达到99%以上。\n\n另外，本接口还支持多种增值能力，满足不同场景的需求。如身份证照片、人像照片的裁剪功能，同时具备9种告警功能，如下表所示。\n\n<table style=\"width:650px\">\n      <thead>\n        <tr>\n       <th width=\"150\">增值能力</th>\n          <th width=\"500\">能力项</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td rowspan=\"2\">裁剪功能</td>\n          <td>身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）</td>\n        </tr>\n        <tr>\n          <td>人像照片裁剪（自动抠取身份证头像区域）</td>\n        </tr>\n        <tr>\n          <td rowspan=\"9\">告警功能</td>\n          <td>身份证有效日期不合法告警</td>\n        </tr>\n        <tr>\n          <td>身份证边框不完整告警</td>\n        </tr>\n        <tr>\n          <td>身份证复印件告警</td>\n        </tr>\n        <tr>\n          <td>身份证翻拍告警</td>\n        </tr>\n          <tr>\n          <td>身份证框内遮挡告警</td>\n        </tr>\n         <tr>\n          <td>临时身份证告警</td>\n        </tr>\n          <tr>\n          <td>身份证 PS 告警</td>\n        </tr>\n          <tr>\n          <td>图片模糊告警</td>\n        </tr>\n      </tbody>\n    </table>"
@@ -655,6 +643,27 @@ INFO = {
       }
     ],
     "desc": "本接口支持识别轮船票的发票代码、发票号码、日期、姓名、票价等字段。"
+  },
+  "GeneralBasicOCR": {
+    "params": [
+      {
+        "name": "ImageBase64",
+        "desc": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
+      },
+      {
+        "name": "ImageUrl",
+        "desc": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。"
+      },
+      {
+        "name": "Scene",
+        "desc": "保留字段。"
+      },
+      {
+        "name": "LanguageType",
+        "desc": "识别语言类型。\n支持自动识别语言类型，同时支持自选语言种类，默认中英文混合(zh)，各种语言均支持与英文混合的文字识别。\n可选值：\nzh\\auto\\jap\\kor\\\nspa\\fre\\ger\\por\\\nvie\\may\\rus\\ita\\\nhol\\swe\\fin\\dan\\\nnor\\hun\\tha\\lat\n可选值分别表示：\n中英文混合、自动识别、日语、韩语、\n西班牙语、法语、德语、葡萄牙语、\n越南语、马来语、俄语、意大利语、\n荷兰语、瑞典语、芬兰语、丹麦语、\n挪威语、匈牙利语、泰语、拉丁语系。"
+      }
+    ],
+    "desc": "本接口支持图像整体文字的检测和识别。可以识别中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语19种语言，且各种语言均支持与英文混合的文字识别。\n\n适用于印刷文档识别、网络图片识别、广告图文字识别、街景店招牌识别、菜单识别、视频标题识别、头像文字识别等场景。\n\n产品优势：支持自动识别语言类型，可返回文本框坐标信息，对于倾斜文本支持自动旋转纠正。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th style=\"width:200px\">【荐】通用印刷体识别</th>\n          <th ><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/37831\">通用印刷体识别（精简版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>96%</td>\n          <td>99%</td>\n          <td>91%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>中</td>\n          <td>高</td>\n          <td>低</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，不支持角度返回</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>"
   },
   "MixedInvoiceOCR": {
     "params": [

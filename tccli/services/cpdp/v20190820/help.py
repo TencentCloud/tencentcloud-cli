@@ -537,6 +537,10 @@ INFO = {
       {
         "name": "TransactionId",
         "desc": "聚鑫订单号，OutTradeNo ， TransactionId二选一，不能都为空,优先使用 OutTradeNo"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单"
@@ -1020,6 +1024,10 @@ INFO = {
       {
         "name": "TransactionId",
         "desc": "聚鑫订单号，OutTradeNo与 TransactionId不能同时为 空，都传优先使用 OutTradeNo"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "根据订单号，或者用户Id，查询支付订单状态 "
@@ -1153,6 +1161,18 @@ INFO = {
       {
         "name": "UndoPart",
         "desc": "撤销部分商品。0-不撤销，1-撤销"
+      },
+      {
+        "name": "OrderDate",
+        "desc": "订单下单时间（格式 YYYMMDD）"
+      },
+      {
+        "name": "Discount",
+        "desc": "订单级别（单位为分）"
+      },
+      {
+        "name": "StoreNo",
+        "desc": "门店编码"
       }
     ],
     "desc": "智慧零售-发票开具"
@@ -1754,6 +1774,10 @@ INFO = {
       {
         "name": "SubOrderRefundList",
         "desc": "支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 "
@@ -2153,6 +2177,10 @@ INFO = {
       {
         "name": "WxSubOpenId",
         "desc": "在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。"
@@ -2503,6 +2531,10 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "按照聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时，用微信零钱支付的退款约20分钟内到账，银行卡支付的退款约3个工作日后到账。"

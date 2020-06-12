@@ -462,7 +462,7 @@ INFO = {
         "desc": "过滤条件。支持 ApiPath、ApiName、KeyWord（模糊查询Path 和Name）。"
       }
     ],
-    "desc": "本接口（DescribeIPStrategyApisStatus）用于查询IP策略绑定的API列表"
+    "desc": "本接口（DescribeIPStrategyApisStatus）用于查询IP策略可以绑定的API列表。即服务下所有API和该策略已绑定API的差集。"
   },
   "UnReleaseService": {
     "params": [
@@ -903,7 +903,7 @@ INFO = {
       },
       {
         "name": "AccessKeyType",
-        "desc": "密钥类型，支持 auto 和 manunal（自定义密钥），默认为 auto。"
+        "desc": "密钥类型，支持 auto 和 manual（自定义密钥），默认为 auto。"
       },
       {
         "name": "AccessKeyId",

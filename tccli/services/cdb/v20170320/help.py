@@ -1020,6 +1020,10 @@ INFO = {
       {
         "name": "WaitSwitch",
         "desc": "切换访问新实例的方式，默认为 0。支持值包括：0 - 立刻切换，1 - 时间窗切换；当该值为 1 时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口 [切换访问新实例](https://cloud.tencent.com/document/product/236/15864) 触发该流程。"
+      },
+      {
+        "name": "UpgradeSubversion",
+        "desc": "是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。"
       }
     ],
     "desc": "本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例。"

@@ -582,6 +582,7 @@ def doCloseOrder(argv, arglist):
         "MidasSignature": argv.get("--MidasSignature"),
         "OutTradeNo": argv.get("--OutTradeNo"),
         "TransactionId": argv.get("--TransactionId"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1104,6 +1105,7 @@ def doQueryOrder(argv, arglist):
         "EndTime": argv.get("--EndTime"),
         "OutTradeNo": argv.get("--OutTradeNo"),
         "TransactionId": argv.get("--TransactionId"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1168,6 +1170,9 @@ def doCreateInvoice(argv, arglist):
         "Items": Utils.try_to_json(argv, "--Items"),
         "Profile": argv.get("--Profile"),
         "UndoPart": Utils.try_to_json(argv, "--UndoPart"),
+        "OrderDate": argv.get("--OrderDate"),
+        "Discount": Utils.try_to_json(argv, "--Discount"),
+        "StoreNo": argv.get("--StoreNo"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1810,6 +1815,7 @@ def doRefund(argv, arglist):
         "TransactionId": argv.get("--TransactionId"),
         "PlatformRefundAmt": Utils.try_to_json(argv, "--PlatformRefundAmt"),
         "SubOrderRefundList": Utils.try_to_json(argv, "--SubOrderRefundList"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2125,6 +2131,7 @@ def doUnifiedOrder(argv, arglist):
         "TotalPlatformIncome": Utils.try_to_json(argv, "--TotalPlatformIncome"),
         "WxOpenId": argv.get("--WxOpenId"),
         "WxSubOpenId": argv.get("--WxSubOpenId"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2526,6 +2533,7 @@ def doQueryRefund(argv, arglist):
         "MidasAppId": argv.get("--MidasAppId"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

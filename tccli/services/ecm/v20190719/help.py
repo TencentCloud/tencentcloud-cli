@@ -333,6 +333,10 @@ INFO = {
       {
         "name": "DataDiskSize",
         "desc": "数据盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值"
+      },
+      {
+        "name": "SecurityGroupIds",
+        "desc": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。"
       }
     ],
     "desc": "创建ECM实例"

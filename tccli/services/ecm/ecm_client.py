@@ -664,6 +664,7 @@ def doRunInstances(argv, arglist):
         "UserData": argv.get("--UserData"),
         "InstanceType": argv.get("--InstanceType"),
         "DataDiskSize": Utils.try_to_json(argv, "--DataDiskSize"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

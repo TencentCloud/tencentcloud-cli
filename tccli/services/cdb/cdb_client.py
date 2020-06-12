@@ -1817,6 +1817,7 @@ def doUpgradeDBInstanceEngineVersion(argv, arglist):
         "InstanceId": argv.get("--InstanceId"),
         "EngineVersion": argv.get("--EngineVersion"),
         "WaitSwitch": Utils.try_to_json(argv, "--WaitSwitch"),
+        "UpgradeSubversion": Utils.try_to_json(argv, "--UpgradeSubversion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
