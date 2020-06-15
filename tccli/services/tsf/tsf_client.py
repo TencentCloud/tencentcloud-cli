@@ -124,6 +124,42 @@ def doCreateGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeLaneRules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeLaneRules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "SearchWord": argv.get("--SearchWord"),
+        "RuleId": argv.get("--RuleId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLaneRulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeLaneRules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateCluster(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -935,14 +971,17 @@ def doDescribeConfigs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeServerlessGroup(argv, arglist):
+def doDescribeMsApiList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeServerlessGroup", g_param[OptionsDefine.Version])
+        show_help("DescribeMsApiList", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GroupId": argv.get("--GroupId"),
+        "MicroserviceId": argv.get("--MicroserviceId"),
+        "SearchWord": argv.get("--SearchWord"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -956,9 +995,9 @@ def doDescribeServerlessGroup(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessGroupRequest()
+    model = models.DescribeMsApiListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeServerlessGroup(model)
+    rsp = client.DescribeMsApiList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1771,17 +1810,18 @@ def doDescribeSimpleClusters(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLaneRules(argv, arglist):
+def doDescribeApiDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeLaneRules", g_param[OptionsDefine.Version])
+        show_help("DescribeApiDetail", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "SearchWord": argv.get("--SearchWord"),
-        "RuleId": argv.get("--RuleId"),
+        "MicroserviceId": argv.get("--MicroserviceId"),
+        "Path": argv.get("--Path"),
+        "Method": argv.get("--Method"),
+        "PkgVersion": argv.get("--PkgVersion"),
+        "ApplicationId": argv.get("--ApplicationId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1795,9 +1835,9 @@ def doDescribeLaneRules(argv, arglist):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLaneRulesRequest()
+    model = models.DescribeApiDetailRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeLaneRules(model)
+    rsp = client.DescribeApiDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2630,6 +2670,41 @@ def doDescribeApplications(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeApiVersions(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeApiVersions", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MicroserviceId": argv.get("--MicroserviceId"),
+        "Path": argv.get("--Path"),
+        "Method": argv.get("--Method"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeApiVersionsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeApiVersions(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeUploadInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2770,6 +2845,39 @@ def doDescribeSimpleApplications(argv, arglist):
     model = models.DescribeSimpleApplicationsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeSimpleApplications(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServerlessGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeServerlessGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": argv.get("--GroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServerlessGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeServerlessGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2970,6 +3078,7 @@ ACTION_MAP = {
     "ReleasePublicConfig": doReleasePublicConfig,
     "DeletePublicConfig": doDeletePublicConfig,
     "CreateGroup": doCreateGroup,
+    "DescribeLaneRules": doDescribeLaneRules,
     "CreateCluster": doCreateCluster,
     "DescribePkgs": doDescribePkgs,
     "DescribeContainerGroupDetail": doDescribeContainerGroupDetail,
@@ -2992,7 +3101,7 @@ ACTION_MAP = {
     "DescribePublicConfigs": doDescribePublicConfigs,
     "RevocationConfig": doRevocationConfig,
     "DescribeConfigs": doDescribeConfigs,
-    "DescribeServerlessGroup": doDescribeServerlessGroup,
+    "DescribeMsApiList": doDescribeMsApiList,
     "DescribeApplicationAttribute": doDescribeApplicationAttribute,
     "DescribeConfig": doDescribeConfig,
     "DescribeMicroservices": doDescribeMicroservices,
@@ -3016,7 +3125,7 @@ ACTION_MAP = {
     "ShrinkInstances": doShrinkInstances,
     "DeployGroup": doDeployGroup,
     "DescribeSimpleClusters": doDescribeSimpleClusters,
-    "DescribeLaneRules": doDescribeLaneRules,
+    "DescribeApiDetail": doDescribeApiDetail,
     "ModifyLaneRule": doModifyLaneRule,
     "DescribeReleasedConfig": doDescribeReleasedConfig,
     "CreateContainGroup": doCreateContainGroup,
@@ -3039,10 +3148,12 @@ ACTION_MAP = {
     "DescribeDownloadInfo": doDescribeDownloadInfo,
     "DescribeSimpleGroups": doDescribeSimpleGroups,
     "DescribeApplications": doDescribeApplications,
+    "DescribeApiVersions": doDescribeApiVersions,
     "DescribeUploadInfo": doDescribeUploadInfo,
     "DescribePublicConfigReleaseLogs": doDescribePublicConfigReleaseLogs,
     "DescribeConfigReleaseLogs": doDescribeConfigReleaseLogs,
     "DescribeSimpleApplications": doDescribeSimpleApplications,
+    "DescribeServerlessGroup": doDescribeServerlessGroup,
     "CreateServerlessGroup": doCreateServerlessGroup,
     "DescribeApplication": doDescribeApplication,
     "DescribeMicroservice": doDescribeMicroservice,

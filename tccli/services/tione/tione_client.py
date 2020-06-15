@@ -18,6 +18,52 @@ from tccli.services.tione import v20191022
 from tccli.services.tione.v20191022 import help as v20191022_help
 
 
+def doUpdateNotebookInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateNotebookInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+        "RoleArn": argv.get("--RoleArn"),
+        "RootAccess": argv.get("--RootAccess"),
+        "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
+        "InstanceType": argv.get("--InstanceType"),
+        "LifecycleScriptsName": argv.get("--LifecycleScriptsName"),
+        "DisassociateLifecycleScript": Utils.try_to_json(argv, "--DisassociateLifecycleScript"),
+        "DefaultCodeRepository": argv.get("--DefaultCodeRepository"),
+        "AdditionalCodeRepositories": Utils.try_to_json(argv, "--AdditionalCodeRepositories"),
+        "DisassociateDefaultCodeRepository": Utils.try_to_json(argv, "--DisassociateDefaultCodeRepository"),
+        "DisassociateAdditionalCodeRepositories": Utils.try_to_json(argv, "--DisassociateAdditionalCodeRepositories"),
+        "ClsAccess": argv.get("--ClsAccess"),
+        "AutoStopping": argv.get("--AutoStopping"),
+        "StoppingCondition": Utils.try_to_json(argv, "--StoppingCondition"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateNotebookInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateNotebookInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeNotebookLifecycleScripts(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -45,6 +91,354 @@ def doDescribeNotebookLifecycleScripts(argv, arglist):
     model = models.DescribeNotebookLifecycleScriptsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeNotebookLifecycleScripts(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStartNotebookInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StartNotebookInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+        "AutoStopping": argv.get("--AutoStopping"),
+        "StoppingCondition": Utils.try_to_json(argv, "--StoppingCondition"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StartNotebookInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StartNotebookInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteNotebookInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteNotebookInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteNotebookInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteNotebookInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeNotebookLifecycleScript(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeNotebookLifecycleScript", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookLifecycleScriptsName": argv.get("--NotebookLifecycleScriptsName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeNotebookLifecycleScriptRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeNotebookLifecycleScript(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreatePresignedNotebookInstanceUrl(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreatePresignedNotebookInstanceUrl", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+        "SessionExpirationDurationInSeconds": Utils.try_to_json(argv, "--SessionExpirationDurationInSeconds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreatePresignedNotebookInstanceUrlRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreatePresignedNotebookInstanceUrl(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCodeRepository(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateCodeRepository", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CodeRepositoryName": argv.get("--CodeRepositoryName"),
+        "GitConfig": Utils.try_to_json(argv, "--GitConfig"),
+        "GitSecret": Utils.try_to_json(argv, "--GitSecret"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCodeRepositoryRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateCodeRepository(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateNotebookLifecycleScript(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateNotebookLifecycleScript", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookLifecycleScriptsName": argv.get("--NotebookLifecycleScriptsName"),
+        "CreateScript": argv.get("--CreateScript"),
+        "StartScript": argv.get("--StartScript"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateNotebookLifecycleScriptRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateNotebookLifecycleScript(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTrainingJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTrainingJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TrainingJobName": argv.get("--TrainingJobName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTrainingJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTrainingJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStopNotebookInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StopNotebookInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopNotebookInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StopNotebookInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateNotebookInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateNotebookInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
+        "InstanceType": argv.get("--InstanceType"),
+        "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
+        "DirectInternetAccess": argv.get("--DirectInternetAccess"),
+        "RootAccess": argv.get("--RootAccess"),
+        "SubnetId": argv.get("--SubnetId"),
+        "LifecycleScriptsName": argv.get("--LifecycleScriptsName"),
+        "DefaultCodeRepository": argv.get("--DefaultCodeRepository"),
+        "AdditionalCodeRepositories": Utils.try_to_json(argv, "--AdditionalCodeRepositories"),
+        "ClsAccess": argv.get("--ClsAccess"),
+        "StoppingCondition": Utils.try_to_json(argv, "--StoppingCondition"),
+        "AutoStopping": argv.get("--AutoStopping"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateNotebookInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateNotebookInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCodeRepository(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCodeRepository", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CodeRepositoryName": argv.get("--CodeRepositoryName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCodeRepositoryRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCodeRepository(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -87,16 +481,13 @@ def doDeleteCodeRepository(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateNotebookLifecycleScript(argv, arglist):
+def doDescribeNotebookSummary(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateNotebookLifecycleScript", g_param[OptionsDefine.Version])
+        show_help("DescribeNotebookSummary", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "NotebookLifecycleScriptsName": argv.get("--NotebookLifecycleScriptsName"),
-        "CreateScript": argv.get("--CreateScript"),
-        "StartScript": argv.get("--StartScript"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -110,9 +501,9 @@ def doUpdateNotebookLifecycleScript(argv, arglist):
     client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateNotebookLifecycleScriptRequest()
+    model = models.DescribeNotebookSummaryRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateNotebookLifecycleScript(model)
+    rsp = client.DescribeNotebookSummary(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -191,14 +582,14 @@ def doDeleteNotebookLifecycleScript(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTrainingJob(argv, arglist):
+def doDescribeNotebookInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeTrainingJob", g_param[OptionsDefine.Version])
+        show_help("DescribeNotebookInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TrainingJobName": argv.get("--TrainingJobName"),
+        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -212,9 +603,9 @@ def doDescribeTrainingJob(argv, arglist):
     client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTrainingJobRequest()
+    model = models.DescribeNotebookInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeTrainingJob(model)
+    rsp = client.DescribeNotebookInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -249,192 +640,6 @@ def doUpdateCodeRepository(argv, arglist):
     model = models.UpdateCodeRepositoryRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UpdateCodeRepository(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateNotebookInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UpdateNotebookInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
-        "RoleArn": argv.get("--RoleArn"),
-        "RootAccess": argv.get("--RootAccess"),
-        "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
-        "InstanceType": argv.get("--InstanceType"),
-        "LifecycleScriptsName": argv.get("--LifecycleScriptsName"),
-        "DisassociateLifecycleScript": Utils.try_to_json(argv, "--DisassociateLifecycleScript"),
-        "DefaultCodeRepository": argv.get("--DefaultCodeRepository"),
-        "AdditionalCodeRepositories": Utils.try_to_json(argv, "--AdditionalCodeRepositories"),
-        "DisassociateDefaultCodeRepository": Utils.try_to_json(argv, "--DisassociateDefaultCodeRepository"),
-        "DisassociateAdditionalCodeRepositories": Utils.try_to_json(argv, "--DisassociateAdditionalCodeRepositories"),
-        "ClsAccess": argv.get("--ClsAccess"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateNotebookInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.UpdateNotebookInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeNotebookInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeNotebookInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeNotebookInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeNotebookInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreatePresignedNotebookInstanceUrl(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreatePresignedNotebookInstanceUrl", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
-        "SessionExpirationDurationInSeconds": Utils.try_to_json(argv, "--SessionExpirationDurationInSeconds"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreatePresignedNotebookInstanceUrlRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreatePresignedNotebookInstanceUrl(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateNotebookInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateNotebookInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
-        "InstanceType": argv.get("--InstanceType"),
-        "VolumeSizeInGB": Utils.try_to_json(argv, "--VolumeSizeInGB"),
-        "DirectInternetAccess": argv.get("--DirectInternetAccess"),
-        "RootAccess": argv.get("--RootAccess"),
-        "SubnetId": argv.get("--SubnetId"),
-        "LifecycleScriptsName": argv.get("--LifecycleScriptsName"),
-        "DefaultCodeRepository": argv.get("--DefaultCodeRepository"),
-        "AdditionalCodeRepositories": Utils.try_to_json(argv, "--AdditionalCodeRepositories"),
-        "ClsAccess": argv.get("--ClsAccess"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateNotebookInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateNotebookInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doStopNotebookInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("StopNotebookInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopNotebookInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.StopNotebookInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -559,72 +764,6 @@ def doDescribeCodeRepositories(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCodeRepository(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeCodeRepository", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CodeRepositoryName": argv.get("--CodeRepositoryName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCodeRepositoryRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCodeRepository(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doStartNotebookInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("StartNotebookInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartNotebookInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.StartNotebookInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doStopTrainingJob(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -658,107 +797,6 @@ def doStopTrainingJob(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteNotebookInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteNotebookInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NotebookInstanceName": argv.get("--NotebookInstanceName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteNotebookInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DeleteNotebookInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeNotebookLifecycleScript(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeNotebookLifecycleScript", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NotebookLifecycleScriptsName": argv.get("--NotebookLifecycleScriptsName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeNotebookLifecycleScriptRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeNotebookLifecycleScript(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateCodeRepository(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateCodeRepository", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "CodeRepositoryName": argv.get("--CodeRepositoryName"),
-        "GitConfig": Utils.try_to_json(argv, "--GitConfig"),
-        "GitSecret": Utils.try_to_json(argv, "--GitSecret"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCodeRepositoryRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateCodeRepository(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 CLIENT_MAP = {
     "v20191022": tione_client_v20191022,
 
@@ -770,27 +808,28 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "UpdateNotebookInstance": doUpdateNotebookInstance,
     "DescribeNotebookLifecycleScripts": doDescribeNotebookLifecycleScripts,
-    "DeleteCodeRepository": doDeleteCodeRepository,
+    "StartNotebookInstance": doStartNotebookInstance,
+    "DeleteNotebookInstance": doDeleteNotebookInstance,
+    "DescribeNotebookLifecycleScript": doDescribeNotebookLifecycleScript,
+    "CreatePresignedNotebookInstanceUrl": doCreatePresignedNotebookInstanceUrl,
+    "CreateCodeRepository": doCreateCodeRepository,
     "UpdateNotebookLifecycleScript": doUpdateNotebookLifecycleScript,
+    "DescribeTrainingJob": doDescribeTrainingJob,
+    "StopNotebookInstance": doStopNotebookInstance,
+    "CreateNotebookInstance": doCreateNotebookInstance,
+    "DescribeCodeRepository": doDescribeCodeRepository,
+    "DeleteCodeRepository": doDeleteCodeRepository,
+    "DescribeNotebookSummary": doDescribeNotebookSummary,
     "CreateNotebookLifecycleScript": doCreateNotebookLifecycleScript,
     "DeleteNotebookLifecycleScript": doDeleteNotebookLifecycleScript,
-    "DescribeTrainingJob": doDescribeTrainingJob,
-    "UpdateCodeRepository": doUpdateCodeRepository,
-    "UpdateNotebookInstance": doUpdateNotebookInstance,
     "DescribeNotebookInstance": doDescribeNotebookInstance,
-    "CreatePresignedNotebookInstanceUrl": doCreatePresignedNotebookInstanceUrl,
-    "CreateNotebookInstance": doCreateNotebookInstance,
-    "StopNotebookInstance": doStopNotebookInstance,
+    "UpdateCodeRepository": doUpdateCodeRepository,
     "DescribeNotebookInstances": doDescribeNotebookInstances,
     "CreateTrainingJob": doCreateTrainingJob,
     "DescribeCodeRepositories": doDescribeCodeRepositories,
-    "DescribeCodeRepository": doDescribeCodeRepository,
-    "StartNotebookInstance": doStartNotebookInstance,
     "StopTrainingJob": doStopTrainingJob,
-    "DeleteNotebookInstance": doDeleteNotebookInstance,
-    "DescribeNotebookLifecycleScript": doDescribeNotebookLifecycleScript,
-    "CreateCodeRepository": doCreateCodeRepository,
 
 }
 

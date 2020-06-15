@@ -1164,11 +1164,11 @@ INFO = {
       },
       {
         "name": "OrderDate",
-        "desc": "订单下单时间（格式 YYYMMDD）"
+        "desc": "订单下单时间（格式 YYYYMMDD）"
       },
       {
         "name": "Discount",
-        "desc": "订单级别（单位为分）"
+        "desc": "订单级别折扣（单位为分）"
       },
       {
         "name": "StoreNo",
