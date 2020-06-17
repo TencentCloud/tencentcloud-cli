@@ -104,15 +104,15 @@ INFO = {
       },
       {
         "name": "XPosition",
-        "desc": "显示位置，X轴偏移，默认 0。"
+        "desc": "显示位置，X轴偏移，单位是百分比，默认 0。"
       },
       {
         "name": "YPosition",
-        "desc": "显示位置，Y轴偏移，默认 0。"
+        "desc": "显示位置，Y轴偏移，单位是百分比，默认 0。"
       },
       {
         "name": "WatermarkName",
-        "desc": "水印名称。"
+        "desc": "水印名称。\n最长16字节。"
       },
       {
         "name": "Width",
@@ -182,7 +182,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板 ID。"
+        "desc": "DescribeRecordTemplates接口获取到的模板 ID。"
       },
       {
         "name": "TemplateName",
@@ -372,15 +372,15 @@ INFO = {
       },
       {
         "name": "Enable",
-        "desc": "是否启用，0：关闭，1：启用。"
+        "desc": "是否启用，0：关闭，1：启用。\n不传表示不修改当前值。"
       },
       {
         "name": "MasterAuthKey",
-        "desc": "主鉴权key。"
+        "desc": "主鉴权key。\n不传表示不修改当前值。"
       },
       {
         "name": "BackupAuthKey",
-        "desc": "备鉴权key。"
+        "desc": "备鉴权key。\n不传表示不修改当前值。"
       },
       {
         "name": "AuthDelta",
@@ -553,15 +553,15 @@ INFO = {
       },
       {
         "name": "WatermarkName",
-        "desc": "水印名称。"
+        "desc": "水印名称。\n最长16字节。"
       },
       {
         "name": "XPosition",
-        "desc": "显示位置，X轴偏移，默认 0。"
+        "desc": "显示位置，X轴偏移，单位是百分比，默认 0。"
       },
       {
         "name": "YPosition",
-        "desc": "显示位置，Y轴偏移，默认 0。"
+        "desc": "显示位置，Y轴偏移，单位是百分比，默认 0。"
       },
       {
         "name": "Width",
@@ -742,7 +742,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板 ID。"
+        "desc": "DescribeRecordTemplates接口获取到的模板 ID。"
       }
     ],
     "desc": "获取单个录制模板。"
@@ -760,7 +760,7 @@ INFO = {
     "params": [
       {
         "name": "WatermarkId",
-        "desc": "水印 ID。\n在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。"
+        "desc": "水印 ID。\n在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。\n或DescribeLiveWatermarks接口返回的水印ID。"
       }
     ],
     "desc": "删除水印。"
@@ -993,7 +993,7 @@ INFO = {
     "params": [
       {
         "name": "CertId",
-        "desc": "证书Id。"
+        "desc": "DescribeLiveCerts接口获取到的证书Id。"
       }
     ],
     "desc": "获取证书信息"
@@ -1060,7 +1060,7 @@ INFO = {
     "params": [
       {
         "name": "CertId",
-        "desc": "证书Id。"
+        "desc": "DescribeLiveCerts接口获取到的证书Id。"
       }
     ],
     "desc": "删除域名对应的证书"
@@ -1311,23 +1311,23 @@ INFO = {
     "params": [
       {
         "name": "DomainName",
-        "desc": "域名。"
+        "desc": "播放域名。"
       },
       {
         "name": "Enable",
-        "desc": "是否启用，0：关闭，1：启用。"
+        "desc": "是否启用，0：关闭，1：启用。\n不传表示不修改当前值。"
       },
       {
         "name": "AuthKey",
-        "desc": "鉴权key。"
+        "desc": "鉴权key。\n不传表示不修改当前值。"
       },
       {
         "name": "AuthDelta",
-        "desc": "有效时间，单位：秒。"
+        "desc": "有效时间，单位：秒。\n不传表示不修改当前值。"
       },
       {
         "name": "AuthBackKey",
-        "desc": "鉴权backkey。"
+        "desc": "鉴权备用key。\n不传表示不修改当前值。"
       }
     ],
     "desc": "修改播放鉴权key"
@@ -1504,7 +1504,7 @@ INFO = {
       },
       {
         "name": "Status",
-        "desc": "状态，0： 关闭  1：打开。"
+        "desc": "HTTPS开启状态，0： 关闭  1：打开。"
       }
     ],
     "desc": "域名绑定证书。\n注意：需先调用添加证书接口进行证书添加。获取到证书Id后再调用该接口进行绑定。"
@@ -1643,7 +1643,7 @@ INFO = {
     "params": [
       {
         "name": "WatermarkId",
-        "desc": "水印 ID。"
+        "desc": "DescribeLiveWatermarks接口返回的水印 ID。"
       }
     ],
     "desc": "获取单个水印信息。"
@@ -1858,7 +1858,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板 ID。"
+        "desc": "DescribeRecordTemplates接口获取到的模板 ID。"
       }
     ],
     "desc": "删除录制模板。"
@@ -1978,7 +1978,7 @@ INFO = {
     "params": [
       {
         "name": "MixStreamSessionId",
-        "desc": "混流会话（申请混流开始到取消混流结束）标识 ID。"
+        "desc": "混流会话（申请混流开始到取消混流结束）标识 ID。\n该值与CreateCommonMixStream中的MixStreamSessionId保持一致。"
       }
     ],
     "desc": "该接口用来取消混流。用法与 mix_streamv2.cancel_mix_stream 基本一致。"

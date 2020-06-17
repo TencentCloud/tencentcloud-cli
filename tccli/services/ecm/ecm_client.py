@@ -255,6 +255,41 @@ def doModifyModuleName(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doImportImage(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ImportImage", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageId": argv.get("--ImageId"),
+        "ImageDescription": argv.get("--ImageDescription"),
+        "SourceRegion": argv.get("--SourceRegion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ImportImageRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ImportImage(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDisassociateAddress(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -690,16 +725,17 @@ def doRunInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doImportImage(argv, arglist):
+def doAssignPrivateIpAddresses(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ImportImage", g_param[OptionsDefine.Version])
+        show_help("AssignPrivateIpAddresses", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageId": argv.get("--ImageId"),
-        "ImageDescription": argv.get("--ImageDescription"),
-        "SourceRegion": argv.get("--SourceRegion"),
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "PrivateIpAddresses": Utils.try_to_json(argv, "--PrivateIpAddresses"),
+        "SecondaryPrivateIpAddressCount": Utils.try_to_json(argv, "--SecondaryPrivateIpAddressCount"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -713,9 +749,9 @@ def doImportImage(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImportImageRequest()
+    model = models.AssignPrivateIpAddressesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ImportImage(model)
+    rsp = client.AssignPrivateIpAddresses(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1262,6 +1298,38 @@ def doStopInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeImportImageOs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeImportImageOs", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeImportImageOsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeImportImageOs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateSecurityGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1320,6 +1388,45 @@ def doDescribeNode(argv, arglist):
     model = models.DescribeNodeRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeNode(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doImportCustomImage(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ImportCustomImage", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageName": argv.get("--ImageName"),
+        "Architecture": argv.get("--Architecture"),
+        "OsType": argv.get("--OsType"),
+        "OsVersion": argv.get("--OsVersion"),
+        "ImageDescription": argv.get("--ImageDescription"),
+        "InitFlag": argv.get("--InitFlag"),
+        "ImageUrls": Utils.try_to_json(argv, "--ImageUrls"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ImportCustomImageRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ImportCustomImage(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1397,17 +1504,14 @@ def doDetachNetworkInterface(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAssignPrivateIpAddresses(argv, arglist):
+def doDescribeCustomImageTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AssignPrivateIpAddresses", g_param[OptionsDefine.Version])
+        show_help("DescribeCustomImageTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
-        "EcmRegion": argv.get("--EcmRegion"),
-        "PrivateIpAddresses": Utils.try_to_json(argv, "--PrivateIpAddresses"),
-        "SecondaryPrivateIpAddressCount": Utils.try_to_json(argv, "--SecondaryPrivateIpAddressCount"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1421,9 +1525,9 @@ def doAssignPrivateIpAddresses(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AssignPrivateIpAddressesRequest()
+    model = models.DescribeCustomImageTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AssignPrivateIpAddresses(model)
+    rsp = client.DescribeCustomImageTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1785,11 +1889,11 @@ def doDescribeVpcs(argv, arglist):
         return
 
     param = {
+        "EcmRegion": argv.get("--EcmRegion"),
         "VpcIds": Utils.try_to_json(argv, "--VpcIds"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "EcmRegion": argv.get("--EcmRegion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2045,6 +2149,7 @@ ACTION_MAP = {
     "DescribeBaseOverview": doDescribeBaseOverview,
     "StartInstances": doStartInstances,
     "ModifyModuleName": doModifyModuleName,
+    "ImportImage": doImportImage,
     "DisassociateAddress": doDisassociateAddress,
     "AttachNetworkInterface": doAttachNetworkInterface,
     "ReleaseAddresses": doReleaseAddresses,
@@ -2057,7 +2162,7 @@ ACTION_MAP = {
     "DescribeInstances": doDescribeInstances,
     "DescribeInstanceTypeConfig": doDescribeInstanceTypeConfig,
     "RunInstances": doRunInstances,
-    "ImportImage": doImportImage,
+    "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
     "DescribeDefaultSubnet": doDescribeDefaultSubnet,
     "AssociateAddress": doAssociateAddress,
     "DescribeTaskResult": doDescribeTaskResult,
@@ -2073,11 +2178,13 @@ ACTION_MAP = {
     "CreateNetworkInterface": doCreateNetworkInterface,
     "DescribePeakNetworkOverview": doDescribePeakNetworkOverview,
     "StopInstances": doStopInstances,
+    "DescribeImportImageOs": doDescribeImportImageOs,
     "CreateSecurityGroup": doCreateSecurityGroup,
     "DescribeNode": doDescribeNode,
+    "ImportCustomImage": doImportCustomImage,
     "DescribeModuleDetail": doDescribeModuleDetail,
     "DetachNetworkInterface": doDetachNetworkInterface,
-    "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
+    "DescribeCustomImageTask": doDescribeCustomImageTask,
     "ResetInstances": doResetInstances,
     "DescribeInstanceVncUrl": doDescribeInstanceVncUrl,
     "ModifyVpcAttribute": doModifyVpcAttribute,

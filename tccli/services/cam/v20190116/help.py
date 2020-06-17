@@ -502,11 +502,11 @@ INFO = {
     "params": [
       {
         "name": "PolicyId",
-        "desc": "策略ID"
+        "desc": "策略ID，与PolicyName二选一必填"
       },
       {
         "name": "PolicyName",
-        "desc": "策略名"
+        "desc": "策略名，与PolicyId二选一必填"
       },
       {
         "name": "Description",

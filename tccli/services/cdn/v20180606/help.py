@@ -481,7 +481,7 @@ INFO = {
       },
       {
         "name": "Project",
-        "desc": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主"
+        "desc": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，最多可一次性查询 30 个加速域名明细\n若填充了具体域名信息，以域名为主"
       },
       {
         "name": "Interval",

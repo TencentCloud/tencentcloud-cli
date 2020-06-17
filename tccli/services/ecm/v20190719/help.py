@@ -14,6 +14,23 @@ INFO = {
     ],
     "desc": "重置实例的最大带宽上限。"
   },
+  "TerminateInstances": {
+    "params": [
+      {
+        "name": "InstanceIdSet",
+        "desc": "待销毁的实例ID列表。"
+      },
+      {
+        "name": "TerminateDelay",
+        "desc": "是否定时销毁，默认为否。"
+      },
+      {
+        "name": "TerminateTime",
+        "desc": "定时销毁的时间，格式形如：\"2019-08-05 12:01:30\"，若非定时销毁，则此参数被忽略。"
+      }
+    ],
+    "desc": "销毁实例"
+  },
   "DescribeModule": {
     "params": [
       {
@@ -77,27 +94,6 @@ INFO = {
       }
     ],
     "desc": "修改模块名称"
-  },
-  "AssignPrivateIpAddresses": {
-    "params": [
-      {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
-      },
-      {
-        "name": "EcmRegion",
-        "desc": "ECM 地域"
-      },
-      {
-        "name": "PrivateIpAddresses",
-        "desc": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。"
-      },
-      {
-        "name": "SecondaryPrivateIpAddressCount",
-        "desc": "新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数"
-      }
-    ],
-    "desc": "弹性网卡申请内网 IP"
   },
   "DisassociateAddress": {
     "params": [
@@ -341,22 +337,31 @@ INFO = {
     ],
     "desc": "创建ECM实例"
   },
-  "TerminateInstances": {
+  "DescribeCustomImageTask": {
     "params": [
       {
-        "name": "InstanceIdSet",
-        "desc": "待销毁的实例ID列表。"
-      },
-      {
-        "name": "TerminateDelay",
-        "desc": "是否定时销毁，默认为否。"
-      },
-      {
-        "name": "TerminateTime",
-        "desc": "定时销毁的时间，格式形如：\"2019-08-05 12:01:30\"，若非定时销毁，则此参数被忽略。"
+        "name": "Filters",
+        "desc": "支持key,value查询\ntask-id: 异步任务ID\nimage-id: 镜像ID\nimage-name: 镜像名称"
       }
     ],
-    "desc": "销毁实例"
+    "desc": "查询导入镜像任务"
+  },
+  "ImportImage": {
+    "params": [
+      {
+        "name": "ImageId",
+        "desc": "镜像的Id。"
+      },
+      {
+        "name": "ImageDescription",
+        "desc": "镜像的描述。"
+      },
+      {
+        "name": "SourceRegion",
+        "desc": "源地域"
+      }
+    ],
+    "desc": "从CVM产品导入镜像到ECM"
   },
   "DescribeDefaultSubnet": {
     "params": [
@@ -661,6 +666,10 @@ INFO = {
     ],
     "desc": "只有处于\"RUNNING\"状态的实例才能够进行关机操作；\n调用成功时，实例会进入STOPPING状态；关闭实例成功时，实例会进入STOPPED状态；\n支持强制关闭，强制关机的效果等同于关闭物理计算机的电源开关，强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。"
   },
+  "DescribeImportImageOs": {
+    "params": [],
+    "desc": "查询外部导入镜像支持的OS列表"
+  },
   "CreateSecurityGroup": {
     "params": [
       {
@@ -681,6 +690,39 @@ INFO = {
   "DescribeNode": {
     "params": [],
     "desc": "获取节点列表"
+  },
+  "ImportCustomImage": {
+    "params": [
+      {
+        "name": "ImageName",
+        "desc": "镜像名称"
+      },
+      {
+        "name": "Architecture",
+        "desc": "导入镜像的操作系统架构，x86_64 或 i386"
+      },
+      {
+        "name": "OsType",
+        "desc": "导入镜像的操作系统类型，通过DescribeImportImageOs获取"
+      },
+      {
+        "name": "OsVersion",
+        "desc": "导入镜像的操作系统版本，通过DescribeImportImageOs获取"
+      },
+      {
+        "name": "ImageDescription",
+        "desc": "镜像描述"
+      },
+      {
+        "name": "InitFlag",
+        "desc": "镜像启动方式，cloudinit或nbd， 默认cloudinit"
+      },
+      {
+        "name": "ImageUrls",
+        "desc": "镜像描述，多层镜像按顺序传入"
+      }
+    ],
+    "desc": "从腾讯云COS导入自定义镜像"
   },
   "ReleaseAddresses": {
     "params": [
@@ -712,22 +754,26 @@ INFO = {
     ],
     "desc": "弹性网卡解绑云主机"
   },
-  "ImportImage": {
+  "AssignPrivateIpAddresses": {
     "params": [
       {
-        "name": "ImageId",
-        "desc": "镜像的Id。"
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
       },
       {
-        "name": "ImageDescription",
-        "desc": "镜像的描述。"
+        "name": "EcmRegion",
+        "desc": "ECM 地域"
       },
       {
-        "name": "SourceRegion",
-        "desc": "源地域"
+        "name": "PrivateIpAddresses",
+        "desc": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。"
+      },
+      {
+        "name": "SecondaryPrivateIpAddressCount",
+        "desc": "新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数"
       }
     ],
-    "desc": "从CVM产品导入镜像到ECM"
+    "desc": "弹性网卡申请内网 IP"
   },
   "ResetInstances": {
     "params": [
@@ -882,6 +928,10 @@ INFO = {
   "DescribeVpcs": {
     "params": [
       {
+        "name": "EcmRegion",
+        "desc": "地域"
+      },
+      {
         "name": "VpcIds",
         "desc": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。"
       },
@@ -896,10 +946,6 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量"
-      },
-      {
-        "name": "EcmRegion",
-        "desc": "地域"
       }
     ],
     "desc": "查询私有网络列表"

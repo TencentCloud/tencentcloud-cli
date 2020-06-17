@@ -47,7 +47,7 @@ INFO = {
       },
       {
         "name": "Privilege",
-        "desc": "读写策略：填写r、w、rw，表示只读、只写、读写"
+        "desc": "读写策略：填写r、rw，表示只读、读写"
       },
       {
         "name": "Remark",
