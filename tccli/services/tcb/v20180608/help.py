@@ -108,6 +108,23 @@ INFO = {
     ],
     "desc": "获取数据库权限"
   },
+  "ModifyEndUser": {
+    "params": [
+      {
+        "name": "EnvId",
+        "desc": "环境ID"
+      },
+      {
+        "name": "UUId",
+        "desc": "C端用户端的唯一ID"
+      },
+      {
+        "name": "Status",
+        "desc": "帐号的状态"
+      }
+    ],
+    "desc": "管理终端用户"
+  },
   "DescribePostpayPackageFreeQuotas": {
     "params": [
       {
