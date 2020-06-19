@@ -2177,6 +2177,7 @@ def doModifyContainerGroup(argv, arglist):
         "ProtocolPorts": Utils.try_to_json(argv, "--ProtocolPorts"),
         "UpdateType": Utils.try_to_json(argv, "--UpdateType"),
         "UpdateIvl": Utils.try_to_json(argv, "--UpdateIvl"),
+        "SubnetId": argv.get("--SubnetId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

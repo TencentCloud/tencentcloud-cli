@@ -64,6 +64,7 @@ def doDetectBody(argv, arglist):
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
         "MaxBodyNum": Utils.try_to_json(argv, "--MaxBodyNum"),
+        "AttributesOptions": Utils.try_to_json(argv, "--AttributesOptions"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

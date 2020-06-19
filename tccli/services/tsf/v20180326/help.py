@@ -1781,6 +1781,10 @@ INFO = {
       {
         "name": "UpdateIvl",
         "desc": "更新间隔,单位秒"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网ID"
       }
     ],
     "desc": "修改容器部署组"

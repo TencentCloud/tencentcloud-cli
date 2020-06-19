@@ -598,6 +598,10 @@ INFO = {
       {
         "name": "SniSwitch",
         "desc": "是否开启SNI特性，此参数仅适用于HTTPS监听器。"
+      },
+      {
+        "name": "TargetType",
+        "desc": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。"
       }
     ],
     "desc": "在一个负载均衡实例下创建监听器。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"

@@ -35,6 +35,10 @@ INFO = {
       {
         "name": "MaxBodyNum",
         "desc": "最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。"
+      },
+      {
+        "name": "AttributesOptions",
+        "desc": "是否返回年龄、性别、朝向等属性。 \n可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  \n如果此参数为空则为不需要返回。 \n需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 \n关于各属性的详细描述，参见下文出参。 \n最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。"
       }
     ],
     "desc": "检测给定图片中的人体（Body）的位置信息（属性信息将在后续开放）。\n"
