@@ -8,7 +8,7 @@ INFO = {
         "desc": "业务数据"
       }
     ],
-    "desc": "EnhanceTaDegree"
+    "desc": "流量反欺诈-虚假TA识别"
   },
   "RecognizeTargetAudience": {
     "params": [
@@ -44,7 +44,7 @@ INFO = {
         "desc": "业务数据"
       }
     ],
-    "desc": "RecognizePreciseTargetAudience"
+    "desc": "流量反欺诈-流量验准高级版"
   },
   "SendTrafficSecuritySmsMessage": {
     "params": [

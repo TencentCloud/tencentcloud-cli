@@ -688,7 +688,12 @@ INFO = {
     "desc": "创建安全组"
   },
   "DescribeNode": {
-    "params": [],
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件，name取值为： InstanceFamily-实例系列"
+      }
+    ],
     "desc": "获取节点列表"
   },
   "ImportCustomImage": {

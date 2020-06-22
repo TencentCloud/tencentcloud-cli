@@ -1372,6 +1372,7 @@ def doDescribeNode(argv, arglist):
         return
 
     param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

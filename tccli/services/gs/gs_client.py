@@ -29,6 +29,7 @@ def doEnterQueue(argv, arglist):
         "GameId": argv.get("--GameId"),
         "UserId": argv.get("--UserId"),
         "SetNumber": Utils.try_to_json(argv, "--SetNumber"),
+        "UserIp": argv.get("--UserIp"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

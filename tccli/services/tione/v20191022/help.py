@@ -5,7 +5,7 @@ INFO = {
     "params": [
       {
         "name": "NotebookInstanceName",
-        "desc": "Notebook实例名称\n规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
+        "desc": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”"
       },
       {
         "name": "RoleArn",
@@ -122,7 +122,7 @@ INFO = {
     "params": [
       {
         "name": "NotebookInstanceName",
-        "desc": "Notebook实例名称\n规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
+        "desc": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”"
       },
       {
         "name": "SessionExpirationDurationInSeconds",
@@ -187,7 +187,7 @@ INFO = {
     "params": [
       {
         "name": "NotebookInstanceName",
-        "desc": "Notebook实例名称，不能超过63个字符\n规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
+        "desc": "Notebook实例名称，不能超过63个字符\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”"
       },
       {
         "name": "InstanceType",
@@ -292,7 +292,7 @@ INFO = {
     "params": [
       {
         "name": "NotebookInstanceName",
-        "desc": "Notebook实例名称\n规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
+        "desc": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”"
       }
     ],
     "desc": "查询Notebook实例详情"

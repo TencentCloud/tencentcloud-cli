@@ -1229,7 +1229,7 @@ INFO = {
       },
       {
         "name": "Id",
-        "desc": "资源实例ID，比如高防IP实例的ID，高防IP专业版实例的ID"
+        "desc": "资源实例ID，例如高防IP实例的ID，高防IP专业版实例的ID"
       },
       {
         "name": "RuleId",

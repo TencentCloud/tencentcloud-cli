@@ -18,15 +18,15 @@ from tccli.services.nlp import v20190408
 from tccli.services.nlp.v20190408 import help as v20190408_help
 
 
-def doWordSimilarity(argv, arglist):
+def doDescribeDict(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("WordSimilarity", g_param[OptionsDefine.Version])
+        show_help("DescribeDict", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SrcWord": argv.get("--SrcWord"),
-        "TargetWord": argv.get("--TargetWord"),
+        "DictId": argv.get("--DictId"),
+        "Name": argv.get("--Name"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -40,9 +40,9 @@ def doWordSimilarity(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.WordSimilarityRequest()
+    model = models.DescribeDictRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.WordSimilarity(model)
+    rsp = client.DescribeDict(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -85,153 +85,15 @@ def doDescribeEntity(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTextSimilarity(argv, arglist):
+def doSearchWordItems(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TextSimilarity", g_param[OptionsDefine.Version])
+        show_help("SearchWordItems", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SrcText": argv.get("--SrcText"),
-        "TargetText": Utils.try_to_json(argv, "--TargetText"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextSimilarityRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TextSimilarity(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSentenceSimilarity(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SentenceSimilarity", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "SrcText": argv.get("--SrcText"),
-        "TargetText": argv.get("--TargetText"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SentenceSimilarityRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SentenceSimilarity(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doChatBot(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ChatBot", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Query": argv.get("--Query"),
-        "Flag": Utils.try_to_json(argv, "--Flag"),
-        "OpenId": argv.get("--OpenId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ChatBotRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.ChatBot(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTextClassification(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TextClassification", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Text": argv.get("--Text"),
-        "Flag": Utils.try_to_json(argv, "--Flag"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextClassificationRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TextClassification(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doLexicalAnalysis(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("LexicalAnalysis", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Text": argv.get("--Text"),
+        "WordItems": Utils.try_to_json(argv, "--WordItems"),
         "DictId": argv.get("--DictId"),
-        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -245,9 +107,212 @@ def doLexicalAnalysis(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LexicalAnalysisRequest()
+    model = models.SearchWordItemsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LexicalAnalysis(model)
+    rsp = client.SearchWordItems(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteWordItems(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteWordItems", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "WordItems": Utils.try_to_json(argv, "--WordItems"),
+        "DictId": argv.get("--DictId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteWordItemsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteWordItems(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateDict(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateDict", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DictId": argv.get("--DictId"),
+        "Description": argv.get("--Description"),
+        "Name": argv.get("--Name"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateDictRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateDict(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDependencyParsing(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DependencyParsing", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": argv.get("--Text"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DependencyParsingRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DependencyParsing(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doWordEmbedding(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("WordEmbedding", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": argv.get("--Text"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.WordEmbeddingRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.WordEmbedding(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDicts(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeDicts", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDictsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeDicts(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateDict(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateDict", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Name": argv.get("--Name"),
+        "Description": argv.get("--Description"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDictRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateDict(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -291,10 +356,112 @@ def doDescribeRelation(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDependencyParsing(argv, arglist):
+def doTextClassification(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DependencyParsing", g_param[OptionsDefine.Version])
+        show_help("TextClassification", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": argv.get("--Text"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TextClassificationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TextClassification(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doWordSimilarity(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("WordSimilarity", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SrcWord": argv.get("--SrcWord"),
+        "TargetWord": argv.get("--TargetWord"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.WordSimilarityRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.WordSimilarity(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSentenceSimilarity(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SentenceSimilarity", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SrcText": argv.get("--SrcText"),
+        "TargetText": argv.get("--TargetText"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SentenceSimilarityRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SentenceSimilarity(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSentenceEmbedding(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SentenceEmbedding", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -312,9 +479,146 @@ def doDependencyParsing(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DependencyParsingRequest()
+    model = models.SentenceEmbeddingRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DependencyParsing(model)
+    rsp = client.SentenceEmbedding(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWordItems(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeWordItems", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DictId": argv.get("--DictId"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Text": argv.get("--Text"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWordItemsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeWordItems(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTextCorrection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TextCorrection", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Text": argv.get("--Text"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TextCorrectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TextCorrection(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateWordItems(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateWordItems", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "WordItems": Utils.try_to_json(argv, "--WordItems"),
+        "DictId": argv.get("--DictId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateWordItemsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateWordItems(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTextSimilarity(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TextSimilarity", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SrcText": argv.get("--SrcText"),
+        "TargetText": Utils.try_to_json(argv, "--TargetText"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TextSimilarityRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TextSimilarity(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -359,14 +663,16 @@ def doSentimentAnalysis(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doWordEmbedding(argv, arglist):
+def doChatBot(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("WordEmbedding", g_param[OptionsDefine.Version])
+        show_help("ChatBot", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Text": argv.get("--Text"),
+        "Query": argv.get("--Query"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
+        "OpenId": argv.get("--OpenId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -380,9 +686,9 @@ def doWordEmbedding(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.WordEmbeddingRequest()
+    model = models.ChatBotRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.WordEmbedding(model)
+    rsp = client.ChatBot(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -392,14 +698,16 @@ def doWordEmbedding(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTextCorrection(argv, arglist):
+def doLexicalAnalysis(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TextCorrection", g_param[OptionsDefine.Version])
+        show_help("LexicalAnalysis", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Text": argv.get("--Text"),
+        "DictId": argv.get("--DictId"),
+        "Flag": Utils.try_to_json(argv, "--Flag"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -413,9 +721,9 @@ def doTextCorrection(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextCorrectionRequest()
+    model = models.LexicalAnalysisRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TextCorrection(model)
+    rsp = client.LexicalAnalysis(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -492,14 +800,14 @@ def doKeywordsExtraction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSentenceEmbedding(argv, arglist):
+def doDeleteDict(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("SentenceEmbedding", g_param[OptionsDefine.Version])
+        show_help("DeleteDict", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Text": argv.get("--Text"),
+        "DictId": argv.get("--DictId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -513,9 +821,9 @@ def doSentenceEmbedding(argv, arglist):
     client = mod.NlpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SentenceEmbeddingRequest()
+    model = models.DeleteDictRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.SentenceEmbedding(model)
+    rsp = client.DeleteDict(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -604,21 +912,30 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "WordSimilarity": doWordSimilarity,
+    "DescribeDict": doDescribeDict,
     "DescribeEntity": doDescribeEntity,
-    "TextSimilarity": doTextSimilarity,
-    "SentenceSimilarity": doSentenceSimilarity,
-    "ChatBot": doChatBot,
-    "TextClassification": doTextClassification,
-    "LexicalAnalysis": doLexicalAnalysis,
-    "DescribeRelation": doDescribeRelation,
+    "SearchWordItems": doSearchWordItems,
+    "DeleteWordItems": doDeleteWordItems,
+    "UpdateDict": doUpdateDict,
     "DependencyParsing": doDependencyParsing,
-    "SentimentAnalysis": doSentimentAnalysis,
     "WordEmbedding": doWordEmbedding,
+    "DescribeDicts": doDescribeDicts,
+    "CreateDict": doCreateDict,
+    "DescribeRelation": doDescribeRelation,
+    "TextClassification": doTextClassification,
+    "WordSimilarity": doWordSimilarity,
+    "SentenceSimilarity": doSentenceSimilarity,
+    "SentenceEmbedding": doSentenceEmbedding,
+    "DescribeWordItems": doDescribeWordItems,
     "TextCorrection": doTextCorrection,
+    "CreateWordItems": doCreateWordItems,
+    "TextSimilarity": doTextSimilarity,
+    "SentimentAnalysis": doSentimentAnalysis,
+    "ChatBot": doChatBot,
+    "LexicalAnalysis": doLexicalAnalysis,
     "DescribeTriple": doDescribeTriple,
     "KeywordsExtraction": doKeywordsExtraction,
-    "SentenceEmbedding": doSentenceEmbedding,
+    "DeleteDict": doDeleteDict,
     "SimilarWords": doSimilarWords,
     "AutoSummarization": doAutoSummarization,
 
