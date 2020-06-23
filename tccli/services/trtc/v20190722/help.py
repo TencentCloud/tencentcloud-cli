@@ -1,6 +1,60 @@
 # -*- coding: utf-8 -*-
 DESC = "trtc-2019-07-22"
 INFO = {
+  "CreateTroubleInfo": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "应用的ID"
+      },
+      {
+        "name": "RoomId",
+        "desc": "房间ID"
+      },
+      {
+        "name": "TeacherUserId",
+        "desc": "老师用户ID"
+      },
+      {
+        "name": "StudentUserId",
+        "desc": "学生用户ID"
+      },
+      {
+        "name": "TroubleUserId",
+        "desc": "体验异常端（老师或学生）的用户 ID。"
+      },
+      {
+        "name": "TroubleType",
+        "desc": "异常类型。\n1. 仅视频异常\n2. 仅声音异常\n3. 音视频都异常\n5. 进房异常\n4. 切课\n6. 求助\n7. 问题反馈\n8. 投诉"
+      },
+      {
+        "name": "TroubleTime",
+        "desc": "异常发生的UNIX 时间戳，单位为秒。"
+      },
+      {
+        "name": "TroubleMsg",
+        "desc": "异常详情"
+      }
+    ],
+    "desc": "创建异常信息"
+  },
+  "DescribeHistoryScale": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "用户sdkappid"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间，5天内。本地unix时间戳（1588031999s）"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
+      }
+    ],
+    "desc": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近5天的数据。当天未结束，无法查到当天的房间数与用户数。"
+  },
   "DescribeRealtimeQuality": {
     "params": [
       {
@@ -21,23 +75,6 @@ INFO = {
       }
     ],
     "desc": "查询sdkappid维度下实时质量数据，包括：进房成功率，首帧秒开率，音频卡顿率，视频卡顿率。可查询24小时内数据，查询起止时间不超过1个小时。"
-  },
-  "DescribeHistoryScale": {
-    "params": [
-      {
-        "name": "SdkAppId",
-        "desc": "用户sdkappid"
-      },
-      {
-        "name": "StartTime",
-        "desc": "查询开始时间，5天内。本地unix时间戳（1588031999s）"
-      },
-      {
-        "name": "EndTime",
-        "desc": "查询结束时间，本地unix时间戳（1588031999s）"
-      }
-    ],
-    "desc": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近5天的数据。当天未结束，无法查到当天的房间数与用户数。"
   },
   "StartMCUMixTranscode": {
     "params": [
@@ -206,6 +243,27 @@ INFO = {
     ],
     "desc": "查询用户某次通话内的进退房，视频开关等详细事件。可查询5天内数据。"
   },
+  "DescribeAbnormalEvent": {
+    "params": [
+      {
+        "name": "SdkAppId",
+        "desc": "用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间"
+      },
+      {
+        "name": "RoomId",
+        "desc": "房间号，查询房间内任意20条以内异常体验事件"
+      }
+    ],
+    "desc": "查询SDKAppID下用户的异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询24小时内数据，查询起止时间不超过1个小时。支持跨天查询。异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916"
+  },
   "StopMCUMixTranscode": {
     "params": [
       {
@@ -218,43 +276,6 @@ INFO = {
       }
     ],
     "desc": "接口说明：结束云端混流"
-  },
-  "CreateTroubleInfo": {
-    "params": [
-      {
-        "name": "SdkAppId",
-        "desc": "应用的ID"
-      },
-      {
-        "name": "RoomId",
-        "desc": "房间ID"
-      },
-      {
-        "name": "TeacherUserId",
-        "desc": "老师用户ID"
-      },
-      {
-        "name": "StudentUserId",
-        "desc": "学生用户ID"
-      },
-      {
-        "name": "TroubleUserId",
-        "desc": "体验异常端（老师或学生）的用户 ID。"
-      },
-      {
-        "name": "TroubleType",
-        "desc": "异常类型。\n1. 仅视频异常\n2. 仅声音异常\n3. 音视频都异常\n5. 进房异常\n4. 切课\n6. 求助\n7. 问题反馈\n8. 投诉"
-      },
-      {
-        "name": "TroubleTime",
-        "desc": "异常发生的UNIX 时间戳，单位为秒。"
-      },
-      {
-        "name": "TroubleMsg",
-        "desc": "异常详情"
-      }
-    ],
-    "desc": "创建异常信息"
   },
   "DismissRoom": {
     "params": [

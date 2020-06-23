@@ -53,17 +53,21 @@ def doRemoveUser(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRealtimeQuality(argv, arglist):
+def doCreateTroubleInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeRealtimeQuality", g_param[OptionsDefine.Version])
+        show_help("CreateTroubleInfo", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
         "SdkAppId": argv.get("--SdkAppId"),
-        "DataType": Utils.try_to_json(argv, "--DataType"),
+        "RoomId": argv.get("--RoomId"),
+        "TeacherUserId": argv.get("--TeacherUserId"),
+        "StudentUserId": argv.get("--StudentUserId"),
+        "TroubleUserId": argv.get("--TroubleUserId"),
+        "TroubleType": Utils.try_to_json(argv, "--TroubleType"),
+        "TroubleTime": Utils.try_to_json(argv, "--TroubleTime"),
+        "TroubleMsg": argv.get("--TroubleMsg"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,9 +81,9 @@ def doDescribeRealtimeQuality(argv, arglist):
     client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRealtimeQualityRequest()
+    model = models.CreateTroubleInfoRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeRealtimeQuality(model)
+    rsp = client.CreateTroubleInfo(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -380,21 +384,17 @@ def doStopMCUMixTranscode(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateTroubleInfo(argv, arglist):
+def doDescribeAbnormalEvent(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateTroubleInfo", g_param[OptionsDefine.Version])
+        show_help("DescribeAbnormalEvent", g_param[OptionsDefine.Version])
         return
 
     param = {
         "SdkAppId": argv.get("--SdkAppId"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
         "RoomId": argv.get("--RoomId"),
-        "TeacherUserId": argv.get("--TeacherUserId"),
-        "StudentUserId": argv.get("--StudentUserId"),
-        "TroubleUserId": argv.get("--TroubleUserId"),
-        "TroubleType": Utils.try_to_json(argv, "--TroubleType"),
-        "TroubleTime": Utils.try_to_json(argv, "--TroubleTime"),
-        "TroubleMsg": argv.get("--TroubleMsg"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -408,9 +408,45 @@ def doCreateTroubleInfo(argv, arglist):
     client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTroubleInfoRequest()
+    model = models.DescribeAbnormalEventRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateTroubleInfo(model)
+    rsp = client.DescribeAbnormalEvent(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeRealtimeQuality(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRealtimeQuality", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "SdkAppId": argv.get("--SdkAppId"),
+        "DataType": Utils.try_to_json(argv, "--DataType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRealtimeQualityRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRealtimeQuality(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -466,7 +502,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "RemoveUser": doRemoveUser,
-    "DescribeRealtimeQuality": doDescribeRealtimeQuality,
+    "CreateTroubleInfo": doCreateTroubleInfo,
     "DescribeHistoryScale": doDescribeHistoryScale,
     "StartMCUMixTranscode": doStartMCUMixTranscode,
     "DescribeRealtimeScale": doDescribeRealtimeScale,
@@ -475,7 +511,8 @@ ACTION_MAP = {
     "DescribeDetailEvent": doDescribeDetailEvent,
     "DescribeCallDetail": doDescribeCallDetail,
     "StopMCUMixTranscode": doStopMCUMixTranscode,
-    "CreateTroubleInfo": doCreateTroubleInfo,
+    "DescribeAbnormalEvent": doDescribeAbnormalEvent,
+    "DescribeRealtimeQuality": doDescribeRealtimeQuality,
     "DismissRoom": doDismissRoom,
 
 }
