@@ -35,15 +35,6 @@ INFO = {
     ],
     "desc": "提供删除某个项目下产品的能力"
   },
-  "DescribeStudioProduct": {
-    "params": [
-      {
-        "name": "ProductId",
-        "desc": "产品ID"
-      }
-    ],
-    "desc": "提供查看茶品详细信息的能力，包括产品的ID、数据协议、认证类型等重要参数"
-  },
   "DescribeDeviceData": {
     "params": [
       {
@@ -114,6 +105,39 @@ INFO = {
       }
     ],
     "desc": "用于查看某个设备的详细信息"
+  },
+  "CreateLoRaGateway": {
+    "params": [
+      {
+        "name": "GatewayId",
+        "desc": "LoRa 网关Id"
+      },
+      {
+        "name": "Name",
+        "desc": "网关名称"
+      },
+      {
+        "name": "Description",
+        "desc": "详情描述"
+      },
+      {
+        "name": "Location",
+        "desc": "位置坐标"
+      },
+      {
+        "name": "Position",
+        "desc": "位置信息"
+      },
+      {
+        "name": "PositionDetails",
+        "desc": "位置详情"
+      },
+      {
+        "name": "IsPublic",
+        "desc": "是否公开"
+      }
+    ],
+    "desc": "创建新 LoRa 网关设备接口"
   },
   "SearchStudioProduct": {
     "params": [
@@ -237,6 +261,23 @@ INFO = {
     ],
     "desc": "修改项目"
   },
+  "GetDeviceList": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "需要查看设备列表的产品 ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页的大小，数值范围 10-100"
+      }
+    ],
+    "desc": "用于查询某个产品下的设备列表"
+  },
   "CreateDevice": {
     "params": [
       {
@@ -303,22 +344,31 @@ INFO = {
     ],
     "desc": "获取设备的历史事件"
   },
-  "GetDeviceList": {
+  "DescribeStudioProduct": {
     "params": [
       {
         "name": "ProductId",
-        "desc": "需要查看设备列表的产品 ID"
+        "desc": "产品ID"
+      }
+    ],
+    "desc": "提供查看茶品详细信息的能力，包括产品的ID、数据协议、认证类型等重要参数"
+  },
+  "GetLoRaGatewayList": {
+    "params": [
+      {
+        "name": "IsCommunity",
+        "desc": "是否是社区网关"
       },
       {
         "name": "Offset",
-        "desc": "分页偏移"
+        "desc": "偏移量"
       },
       {
         "name": "Limit",
-        "desc": "分页的大小，数值范围 10-100"
+        "desc": "限制个数"
       }
     ],
-    "desc": "用于查询某个产品下的设备列表"
+    "desc": "获取 LoRa 网关列表接口"
   },
   "ReleaseStudioProduct": {
     "params": [

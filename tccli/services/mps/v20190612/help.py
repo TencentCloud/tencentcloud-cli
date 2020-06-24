@@ -80,6 +80,27 @@ INFO = {
     ],
     "desc": "创建用户自定义转动图模板，数量上限：16。"
   },
+  "DescribeAdaptiveDynamicStreamingTemplates": {
+    "params": [
+      {
+        "name": "Definitions",
+        "desc": "转自适应码流模板唯一标识过滤条件，数组长度限制：100。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
+      },
+      {
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
+      }
+    ],
+    "desc": "查询转自适应码流模板，支持根据条件，分页查询。"
+  },
   "CreateContentReviewTemplate": {
     "params": [
       {
@@ -205,46 +226,26 @@ INFO = {
     ],
     "desc": "该接口用于根据人物 ID，删除人物样本。"
   },
-  "ModifyAnimatedGraphicsTemplate": {
+  "DescribeSnapshotByTimeOffsetTemplates": {
     "params": [
       {
-        "name": "Definition",
-        "desc": "转动图模板唯一标识。"
+        "name": "Definitions",
+        "desc": "指定时间点截图模板唯一标识过滤条件，数组长度限制：100。"
       },
       {
-        "name": "Name",
-        "desc": "转动图模板名称，长度限制：64 个字符。"
+        "name": "Offset",
+        "desc": "分页偏移量，默认值：0。"
       },
       {
-        "name": "Width",
-        "desc": "动图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+        "name": "Limit",
+        "desc": "返回记录条数，默认值：10，最大值：100。"
       },
       {
-        "name": "Height",
-        "desc": "动图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
-      },
-      {
-        "name": "ResolutionAdaptive",
-        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
-      },
-      {
-        "name": "Format",
-        "desc": "动图格式，取值为 gif 和 webp。"
-      },
-      {
-        "name": "Fps",
-        "desc": "帧率，取值范围：[1, 30]，单位：Hz。"
-      },
-      {
-        "name": "Quality",
-        "desc": "图片质量，取值范围：[1, 100]，默认值为 75。"
-      },
-      {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
+        "name": "Type",
+        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
       }
     ],
-    "desc": "修改用户自定义转动图模板。"
+    "desc": "查询指定时间点截图模板，支持根据条件，分页查询。"
   },
   "DeleteTranscodeTemplate": {
     "params": [
@@ -304,27 +305,6 @@ INFO = {
       }
     ],
     "desc": "删除用户自定义转动图模板。"
-  },
-  "DescribeSnapshotByTimeOffsetTemplates": {
-    "params": [
-      {
-        "name": "Definitions",
-        "desc": "指定时间点截图模板唯一标识过滤条件，数组长度限制：100。"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页偏移量，默认值：0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回记录条数，默认值：10，最大值：100。"
-      },
-      {
-        "name": "Type",
-        "desc": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>"
-      }
-    ],
-    "desc": "查询指定时间点截图模板，支持根据条件，分页查询。"
   },
   "DescribeAIAnalysisTemplates": {
     "params": [
@@ -388,6 +368,39 @@ INFO = {
       }
     ],
     "desc": "修改用户自定义内容识别模板。"
+  },
+  "ModifyAdaptiveDynamicStreamingTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "转自适应码流模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Format",
+        "desc": "转自适应码流格式，取值范围：\n<li>HLS，</li>\n<li>MPEG-DASH。</li>"
+      },
+      {
+        "name": "DisableHigherVideoBitrate",
+        "desc": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>"
+      },
+      {
+        "name": "DisableHigherVideoResolution",
+        "desc": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>"
+      },
+      {
+        "name": "StreamInfos",
+        "desc": "转自适应码流输入流参数信息，最多输入10路流。\n注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      }
+    ],
+    "desc": "修改转自适应码流模板"
   },
   "ModifySampleSnapshotTemplate": {
     "params": [
@@ -522,6 +535,47 @@ INFO = {
     ],
     "desc": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。"
   },
+  "ModifyAnimatedGraphicsTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "转动图模板唯一标识。"
+      },
+      {
+        "name": "Name",
+        "desc": "转动图模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "Width",
+        "desc": "动图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "Height",
+        "desc": "动图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。"
+      },
+      {
+        "name": "ResolutionAdaptive",
+        "desc": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。"
+      },
+      {
+        "name": "Format",
+        "desc": "动图格式，取值为 gif 和 webp。"
+      },
+      {
+        "name": "Fps",
+        "desc": "帧率，取值范围：[1, 30]，单位：Hz。"
+      },
+      {
+        "name": "Quality",
+        "desc": "图片质量，取值范围：[1, 100]，默认值为 75。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      }
+    ],
+    "desc": "修改用户自定义转动图模板。"
+  },
   "DescribeWordSamples": {
     "params": [
       {
@@ -605,6 +659,44 @@ INFO = {
       }
     ],
     "desc": "删除工作流。对于已启用的工作流，需要禁用后才能删除。"
+  },
+  "DeleteAdaptiveDynamicStreamingTemplate": {
+    "params": [
+      {
+        "name": "Definition",
+        "desc": "自适应转码模板唯一标识。"
+      }
+    ],
+    "desc": "删除转自适应码流模板"
+  },
+  "CreateAdaptiveDynamicStreamingTemplate": {
+    "params": [
+      {
+        "name": "Format",
+        "desc": "自适应转码格式，取值范围：\n<li>HLS，</li>\n<li>MPEG-DASH。</li>"
+      },
+      {
+        "name": "StreamInfos",
+        "desc": "转自适应码流输出子流参数信息，最多输出10路子流。\n注意：各个子流的帧率必须保持一致；如果不一致，采用第一个子流的帧率作为输出帧率。"
+      },
+      {
+        "name": "Name",
+        "desc": "模板名称，长度限制：64 个字符。"
+      },
+      {
+        "name": "DisableHigherVideoBitrate",
+        "desc": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。"
+      },
+      {
+        "name": "DisableHigherVideoResolution",
+        "desc": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
+      }
+    ],
+    "desc": "创建转自适应码流模板，数量上限：100。"
   },
   "DisableWorkflow": {
     "params": [
