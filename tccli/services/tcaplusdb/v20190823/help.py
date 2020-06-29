@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
 DESC = "tcaplusdb-2019-08-23"
 INFO = {
+  "DeleteTableIndex": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "表格所属集群实例ID"
+      },
+      {
+        "name": "SelectedTables",
+        "desc": "待删除分布式索引的表格列表"
+      }
+    ],
+    "desc": "删除表格的分布式索引"
+  },
   "DescribeTableTags": {
     "params": [
       {
@@ -191,6 +204,19 @@ INFO = {
     ],
     "desc": "恢复回收站中，用户自行删除的表。对欠费待释放的表无效。"
   },
+  "SetTableIndex": {
+    "params": [
+      {
+        "name": "ClusterId",
+        "desc": "表所属集群实例ID"
+      },
+      {
+        "name": "SelectedTables",
+        "desc": "待创建分布式索引表格列表"
+      }
+    ],
+    "desc": "设置表格分布式索引"
+  },
   "CreateBackup": {
     "params": [
       {
@@ -242,22 +268,26 @@ INFO = {
     ],
     "desc": "表格扩缩容"
   },
-  "ModifyClusterTags": {
+  "DescribeClusters": {
     "params": [
       {
-        "name": "ClusterId",
-        "desc": "待修改标签的集群ID"
+        "name": "ClusterIds",
+        "desc": "指定查询的集群ID列表"
       },
       {
-        "name": "ReplaceTags",
-        "desc": "待增加或修改的标签列表"
+        "name": "Filters",
+        "desc": "查询过滤条件"
       },
       {
-        "name": "DeleteTags",
-        "desc": "待删除的标签"
+        "name": "Offset",
+        "desc": "查询列表偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "查询列表返回记录数，默认值20"
       }
     ],
-    "desc": "修改集群标签"
+    "desc": "查询TcaplusDB集群列表，包含集群详细信息。"
   },
   "DeleteTableGroup": {
     "params": [
@@ -335,26 +365,22 @@ INFO = {
     ],
     "desc": "修改表格标签"
   },
-  "DescribeClusters": {
+  "ModifyClusterTags": {
     "params": [
       {
-        "name": "ClusterIds",
-        "desc": "指定查询的集群ID列表"
+        "name": "ClusterId",
+        "desc": "待修改标签的集群ID"
       },
       {
-        "name": "Filters",
-        "desc": "查询过滤条件"
+        "name": "ReplaceTags",
+        "desc": "待增加或修改的标签列表"
       },
       {
-        "name": "Offset",
-        "desc": "查询列表偏移量"
-      },
-      {
-        "name": "Limit",
-        "desc": "查询列表返回记录数，默认值20"
+        "name": "DeleteTags",
+        "desc": "待删除的标签"
       }
     ],
-    "desc": "查询TcaplusDB集群列表，包含集群详细信息。"
+    "desc": "修改集群标签"
   },
   "ModifyTableGroupTags": {
     "params": [

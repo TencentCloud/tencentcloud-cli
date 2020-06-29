@@ -235,6 +235,19 @@ INFO = {
     ],
     "desc": "随机数生成接口。"
   },
+  "OverwriteWhiteBoxDeviceFingerprints": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "白盒密钥ID"
+      },
+      {
+        "name": "DeviceFingerprints",
+        "desc": "设备指纹列表，如果列表为空，则表示删除该密钥对应的所有指纹信息。列表最大长度不超过200。"
+      }
+    ],
+    "desc": "覆盖指定密钥的设备指纹信息"
+  },
   "CreateKey": {
     "params": [
       {
@@ -388,6 +401,15 @@ INFO = {
       }
     ],
     "desc": "CMK计划删除接口，用于指定CMK删除的时间，可选时间区间为[7,30]天"
+  },
+  "DescribeWhiteBoxDeviceFingerprints": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "白盒密钥ID"
+      }
+    ],
+    "desc": "获取指定密钥的设备指纹列表"
   },
   "DescribeKey": {
     "params": [

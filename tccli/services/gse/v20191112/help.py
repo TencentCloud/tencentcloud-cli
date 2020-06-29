@@ -102,6 +102,31 @@ INFO = {
     ],
     "desc": "本接口（JoinGameServerSession）用于加入游戏服务器会话"
   },
+  "UpdateGameServerSession": {
+    "params": [
+      {
+        "name": "GameServerSessionId",
+        "desc": "游戏服务器会话ID"
+      },
+      {
+        "name": "MaximumPlayerSessionCount",
+        "desc": "最大玩家数量"
+      },
+      {
+        "name": "Name",
+        "desc": "游戏服务器会话名称"
+      },
+      {
+        "name": "PlayerSessionCreationPolicy",
+        "desc": "玩家会话创建策略（ACCEPT_ALL,DENY_ALL）"
+      },
+      {
+        "name": "ProtectionPolicy",
+        "desc": "保护策略(NoProtection,TimeLimitProtection,FullProtection)"
+      }
+    ],
+    "desc": "本接口（UpdateGameServerSession）用于更新游戏服务器会话"
+  },
   "DescribeGameServerSessionPlacement": {
     "params": [
       {
@@ -239,34 +264,46 @@ INFO = {
     ],
     "desc": "设置服务器权重"
   },
-  "SearchGameServerSessions": {
+  "StartMatchPlacement": {
     "params": [
       {
-        "name": "AliasId",
-        "desc": "别名ID"
+        "name": "PlacementId",
+        "desc": "开始部署游戏服务器会话的唯一标识符"
       },
       {
-        "name": "FleetId",
-        "desc": "舰队ID"
+        "name": "GameServerSessionQueueName",
+        "desc": "游戏服务器会话队列名称"
       },
       {
-        "name": "Limit",
-        "desc": "单次查询记录数上限"
+        "name": "MaximumPlayerSessionCount",
+        "desc": "游戏服务器允许同时连接到游戏会话的最大玩家数量"
       },
       {
-        "name": "NextToken",
-        "desc": "页偏移，用于查询下一页"
+        "name": "DesiredPlayerSessions",
+        "desc": "玩家游戏会话信息"
       },
       {
-        "name": "FilterExpression",
-        "desc": "搜索条件表达式，支持如下变量\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number\nhasAvailablePlayerSessions 是否有可用玩家数 String 取值true或false\ngameServerSessionProperties 游戏会话属性 String\n\n表达式String类型 等于=，不等于<>判断\n表示Number类型支持 =,<>,>,>=,<,<="
+        "name": "GameProperties",
+        "desc": "玩家游戏会话属性"
       },
       {
-        "name": "SortExpression",
-        "desc": "排序条件关键字\n支持排序字段\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number"
+        "name": "GameServerSessionData",
+        "desc": "游戏服务器会话数据"
+      },
+      {
+        "name": "GameServerSessionName",
+        "desc": "游戏服务器会话名称"
+      },
+      {
+        "name": "PlayerLatencies",
+        "desc": "玩家延迟"
+      },
+      {
+        "name": "MatchmakerData",
+        "desc": "游戏匹配数据"
       }
     ],
-    "desc": "本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表"
+    "desc": "本接口（StartMatchPlacement）用于开始匹配放置游戏服务器会话"
   },
   "DescribePlayerSessions": {
     "params": [
@@ -319,30 +356,34 @@ INFO = {
     ],
     "desc": "用于删除扩缩容配置"
   },
-  "UpdateGameServerSession": {
+  "SearchGameServerSessions": {
     "params": [
       {
-        "name": "GameServerSessionId",
-        "desc": "游戏服务器会话ID"
+        "name": "AliasId",
+        "desc": "别名ID"
       },
       {
-        "name": "MaximumPlayerSessionCount",
-        "desc": "最大玩家数量"
+        "name": "FleetId",
+        "desc": "舰队ID"
       },
       {
-        "name": "Name",
-        "desc": "游戏服务器会话名称"
+        "name": "Limit",
+        "desc": "单次查询记录数上限"
       },
       {
-        "name": "PlayerSessionCreationPolicy",
-        "desc": "玩家会话创建策略（ACCEPT_ALL,DENY_ALL）"
+        "name": "NextToken",
+        "desc": "页偏移，用于查询下一页"
       },
       {
-        "name": "ProtectionPolicy",
-        "desc": "保护策略(NoProtection,TimeLimitProtection,FullProtection)"
+        "name": "FilterExpression",
+        "desc": "搜索条件表达式，支持如下变量\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number\nhasAvailablePlayerSessions 是否有可用玩家数 String 取值true或false\ngameServerSessionProperties 游戏会话属性 String\n\n表达式String类型 等于=，不等于<>判断\n表示Number类型支持 =,<>,>,>=,<,<="
+      },
+      {
+        "name": "SortExpression",
+        "desc": "排序条件关键字\n支持排序字段\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number"
       }
     ],
-    "desc": "本接口（UpdateGameServerSession）用于更新游戏服务器会话"
+    "desc": "本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表"
   },
   "StopGameServerSessionPlacement": {
     "params": [

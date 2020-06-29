@@ -87,7 +87,7 @@ INFO = {
     "params": [
       {
         "name": "NotebookInstanceName",
-        "desc": "Notebook实例名称\n规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
+        "desc": "Notebook实例名称"
       },
       {
         "name": "AutoStopping",
