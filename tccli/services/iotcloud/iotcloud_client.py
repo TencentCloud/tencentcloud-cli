@@ -1165,6 +1165,7 @@ def doDescribeDevices(argv, arglist):
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "FirmwareVersion": argv.get("--FirmwareVersion"),
+        "DeviceName": argv.get("--DeviceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

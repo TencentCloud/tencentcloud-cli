@@ -122,7 +122,7 @@ INFO = {
         "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
       }
     ],
-    "desc": "本接口(OfflineIsolatedInstances)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态。"
+    "desc": "本接口(OfflineIsolatedDBInstance)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态。"
   },
   "CreateDBInstance": {
     "params": [

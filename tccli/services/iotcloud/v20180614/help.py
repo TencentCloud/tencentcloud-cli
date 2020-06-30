@@ -609,7 +609,11 @@ INFO = {
       },
       {
         "name": "FirmwareVersion",
-        "desc": "设备固件版本号，若不带此参数会返回所有固件版本的设备"
+        "desc": "设备固件版本号，若不带此参数会返回所有固件版本的设备。传\"None-FirmwareVersion\"查询无版本号的设备"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "需要过滤的设备名称"
       }
     ],
     "desc": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 "
