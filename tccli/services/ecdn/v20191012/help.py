@@ -61,7 +61,7 @@ INFO = {
         "desc": "刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。"
       }
     ],
-    "desc": "PurgeUrlsCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。"
+    "desc": "PurgePathCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。"
   },
   "StartEcdnDomain": {
     "params": [

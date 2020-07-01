@@ -830,7 +830,7 @@ INFO = {
       },
       {
         "name": "ProhibitedConfigure",
-        "desc": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>\n注意：此参数尚未支持。"
+        "desc": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>"
       },
       {
         "name": "UserDefineConfigure",
@@ -2371,7 +2371,7 @@ INFO = {
       },
       {
         "name": "ProhibitedConfigure",
-        "desc": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>\n注意：此参数尚未支持。"
+        "desc": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>"
       },
       {
         "name": "UserDefineConfigure",

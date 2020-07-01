@@ -989,6 +989,23 @@ INFO = {
     ],
     "desc": "IP解封操作"
   },
+  "ModifyNewL4Rule": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源ID"
+      },
+      {
+        "name": "Rule",
+        "desc": "转发规则"
+      }
+    ],
+    "desc": "修改4层转发规则"
+  },
   "DeleteDDoSPolicy": {
     "params": [
       {
@@ -2250,6 +2267,23 @@ INFO = {
       }
     ],
     "desc": "获取四层转发规则"
+  },
+  "ModifyNewDomainRules": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "Id",
+        "desc": "资源ID"
+      },
+      {
+        "name": "Rule",
+        "desc": "域名转发规则"
+      }
+    ],
+    "desc": "修改7层转发规则"
   },
   "DescribeCCUrlAllow": {
     "params": [

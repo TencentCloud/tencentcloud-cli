@@ -1591,6 +1591,41 @@ def doDeleteDDoSPolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyNewL4Rule(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyNewL4Rule", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Rule": Utils.try_to_json(argv, "--Rule"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyNewL4RuleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyNewL4Rule(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeResourceList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -3441,6 +3476,41 @@ def doDescribleL4Rules(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyNewDomainRules(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyNewDomainRules", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Business": argv.get("--Business"),
+        "Id": argv.get("--Id"),
+        "Rule": Utils.try_to_json(argv, "--Rule"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DayuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyNewDomainRulesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyNewDomainRules(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeCCUrlAllow(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -4003,6 +4073,7 @@ ACTION_MAP = {
     "DescribeBasicDeviceThreshold": doDescribeBasicDeviceThreshold,
     "CreateUnblockIp": doCreateUnblockIp,
     "DeleteDDoSPolicy": doDeleteDDoSPolicy,
+    "ModifyNewL4Rule": doModifyNewL4Rule,
     "DescribeResourceList": doDescribeResourceList,
     "DeleteCCSelfDefinePolicy": doDeleteCCSelfDefinePolicy,
     "DescribePolicyCase": doDescribePolicyCase,
@@ -4053,6 +4124,7 @@ ACTION_MAP = {
     "ModifyCCFrequencyRulesStatus": doModifyCCFrequencyRulesStatus,
     "ModifyCCThreshold": doModifyCCThreshold,
     "DescribleL4Rules": doDescribleL4Rules,
+    "ModifyNewDomainRules": doModifyNewDomainRules,
     "DescribeCCUrlAllow": doDescribeCCUrlAllow,
     "DescribeL7HealthConfig": doDescribeL7HealthConfig,
     "DescribeCCTrend": doDescribeCCTrend,

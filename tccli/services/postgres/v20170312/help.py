@@ -145,6 +145,10 @@ INFO = {
       {
         "name": "DBInstanceId",
         "desc": "实例ID，形如postgres-hez4fh0v"
+      },
+      {
+        "name": "IsIpv6",
+        "desc": "是否开通Ipv6外网，1：是，0：否"
       }
     ],
     "desc": "本接口（OpenDBExtranetAccess）用于开通外网。"
@@ -313,6 +317,10 @@ INFO = {
       {
         "name": "Name",
         "desc": "实例名(后续支持)"
+      },
+      {
+        "name": "NeedSupportIpv6",
+        "desc": "是否需要支持Ipv6，1：是，0：否"
       }
     ],
     "desc": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例。"
@@ -456,6 +464,10 @@ INFO = {
       {
         "name": "DBInstanceId",
         "desc": "实例ID，形如postgres-6r233v55"
+      },
+      {
+        "name": "IsIpv6",
+        "desc": "是否关闭Ipv6外网，1：是，0：否"
       }
     ],
     "desc": "本接口（CloseDBExtranetAccess）用于关闭实例外网链接。"
