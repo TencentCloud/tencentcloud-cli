@@ -1,6 +1,28 @@
 # -*- coding: utf-8 -*-
 DESC = "ic-2019-03-07"
 INFO = {
+  "DescribeApp": {
+    "params": [
+      {
+        "name": "Sdkappid",
+        "desc": "物联卡应用ID"
+      }
+    ],
+    "desc": "根据应用id查询物联卡应用详情"
+  },
+  "DescribeCard": {
+    "params": [
+      {
+        "name": "Sdkappid",
+        "desc": "应用ID"
+      },
+      {
+        "name": "Iccid",
+        "desc": "卡片ID"
+      }
+    ],
+    "desc": "查询卡片详细信息"
+  },
   "SendSms": {
     "params": [
       {
@@ -17,15 +39,6 @@ INFO = {
       }
     ],
     "desc": "发送短信息接口"
-  },
-  "DescribeApp": {
-    "params": [
-      {
-        "name": "Sdkappid",
-        "desc": "物联卡应用ID"
-      }
-    ],
-    "desc": "根据应用id查询物联卡应用详情"
   },
   "SendMultiSms": {
     "params": [
@@ -44,18 +57,22 @@ INFO = {
     ],
     "desc": "群发短信"
   },
-  "DescribeCard": {
+  "RenewCards": {
     "params": [
       {
         "name": "Sdkappid",
         "desc": "应用ID"
       },
       {
-        "name": "Iccid",
-        "desc": "卡片ID"
+        "name": "Iccids",
+        "desc": "续费的iccid"
+      },
+      {
+        "name": "RenewNum",
+        "desc": "续费的周期"
       }
     ],
-    "desc": "查询卡片详细信息"
+    "desc": "批量为卡片续费，此接口建议调用至少间隔10s,如果出现返回deal lock failed相关的错误，请过10s再重试。\n续费的必要条件：\n1、单次续费的卡片不可以超过 100张。\n2、只对单卡续费，不支持池卡\n3、销户和未激活的卡片不支持续费。"
   },
   "DescribeCards": {
     "params": [

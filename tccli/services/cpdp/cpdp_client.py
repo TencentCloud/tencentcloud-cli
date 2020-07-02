@@ -143,6 +143,40 @@ def doQueryBankTransactionDetails(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryAnchorContractInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryAnchorContractInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryAnchorContractInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryAnchorContractInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doBindAcct(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -257,6 +291,7 @@ def doApplyWithdrawal(argv, arglist):
         "MidasSignature": argv.get("--MidasSignature"),
         "EncryptType": argv.get("--EncryptType"),
         "MidasEnvironment": argv.get("--MidasEnvironment"),
+        "CommissionAmount": argv.get("--CommissionAmount"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -309,6 +344,44 @@ def doModifyAgentTaxPaymentInfo(argv, arglist):
     model = models.ModifyAgentTaxPaymentInfoRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyAgentTaxPaymentInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQueryMemberBind(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryMemberBind", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MrchCode": argv.get("--MrchCode"),
+        "QueryFlag": argv.get("--QueryFlag"),
+        "PageNum": argv.get("--PageNum"),
+        "SubAcctNo": argv.get("--SubAcctNo"),
+        "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryMemberBindRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryMemberBind(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -396,19 +469,27 @@ def doUnbindRelateAcct(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryMemberBind(argv, arglist):
+def doDescribeChargeDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryMemberBind", g_param[OptionsDefine.Version])
+        show_help("DescribeChargeDetail", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "QueryFlag": argv.get("--QueryFlag"),
-        "PageNum": argv.get("--PageNum"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-        "Profile": argv.get("--Profile"),
+        "RequestType": argv.get("--RequestType"),
+        "MerchantCode": argv.get("--MerchantCode"),
+        "PayChannel": argv.get("--PayChannel"),
+        "PayChannelSubId": Utils.try_to_json(argv, "--PayChannelSubId"),
+        "OrderId": argv.get("--OrderId"),
+        "BankAccountNumber": argv.get("--BankAccountNumber"),
+        "AcquiringChannelType": argv.get("--AcquiringChannelType"),
+        "PlatformShortNumber": argv.get("--PlatformShortNumber"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasAppId": argv.get("--MidasAppId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "TransSequenceNumber": argv.get("--TransSequenceNumber"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
+        "ReservedMessage": argv.get("--ReservedMessage"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -422,9 +503,9 @@ def doQueryMemberBind(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryMemberBindRequest()
+    model = models.DescribeChargeDetailRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryMemberBind(model)
+    rsp = client.DescribeChargeDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -746,6 +827,59 @@ def doQueryBalance(argv, arglist):
     model = models.QueryBalanceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.QueryBalance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRevokeRechargeByThirdPay(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RevokeRechargeByThirdPay", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RequestType": argv.get("--RequestType"),
+        "MerchantCode": argv.get("--MerchantCode"),
+        "PayChannel": argv.get("--PayChannel"),
+        "PayChannelSubId": Utils.try_to_json(argv, "--PayChannelSubId"),
+        "OrderId": argv.get("--OrderId"),
+        "BankAccountNumber": argv.get("--BankAccountNumber"),
+        "PlatformShortNumber": argv.get("--PlatformShortNumber"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasAppId": argv.get("--MidasAppId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "TransSequenceNumber": argv.get("--TransSequenceNumber"),
+        "TransFee": argv.get("--TransFee"),
+        "ThirdPayChannel": argv.get("--ThirdPayChannel"),
+        "ThirdPayChannelOrderId": argv.get("--ThirdPayChannelOrderId"),
+        "OldFrontSequenceNumber": argv.get("--OldFrontSequenceNumber"),
+        "CurrencyAmount": argv.get("--CurrencyAmount"),
+        "CurrencyUnit": argv.get("--CurrencyUnit"),
+        "CurrencyType": argv.get("--CurrencyType"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
+        "ReservedMessage": argv.get("--ReservedMessage"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RevokeRechargeByThirdPayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RevokeRechargeByThirdPay(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1173,6 +1307,7 @@ def doCreateInvoice(argv, arglist):
         "OrderDate": argv.get("--OrderDate"),
         "Discount": Utils.try_to_json(argv, "--Discount"),
         "StoreNo": argv.get("--StoreNo"),
+        "InvoiceChannel": Utils.try_to_json(argv, "--InvoiceChannel"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1337,6 +1472,62 @@ def doQueryTrade(argv, arglist):
     model = models.QueryTradeRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.QueryTrade(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRefundMemberTransaction(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RefundMemberTransaction", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "OutSubAccountName": argv.get("--OutSubAccountName"),
+        "InSubAccountName": argv.get("--InSubAccountName"),
+        "PayChannelSubId": Utils.try_to_json(argv, "--PayChannelSubId"),
+        "OutSubAccountNumber": argv.get("--OutSubAccountNumber"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "InSubAccountNumber": argv.get("--InSubAccountNumber"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "BankAccountNumber": argv.get("--BankAccountNumber"),
+        "OldTransSequenceNumber": argv.get("--OldTransSequenceNumber"),
+        "MerchantCode": argv.get("--MerchantCode"),
+        "RequestType": argv.get("--RequestType"),
+        "CurrencyAmount": argv.get("--CurrencyAmount"),
+        "TransSequenceNumber": argv.get("--TransSequenceNumber"),
+        "PayChannel": argv.get("--PayChannel"),
+        "OldOrderId": argv.get("--OldOrderId"),
+        "MidasAppId": argv.get("--MidasAppId"),
+        "OrderId": argv.get("--OrderId"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
+        "OutTransNetMemberCode": argv.get("--OutTransNetMemberCode"),
+        "InTransNetMemberCode": argv.get("--InTransNetMemberCode"),
+        "ReservedMessage": argv.get("--ReservedMessage"),
+        "PlatformShortNumber": argv.get("--PlatformShortNumber"),
+        "TransType": argv.get("--TransType"),
+        "TransFee": argv.get("--TransFee"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RefundMemberTransactionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RefundMemberTransaction(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1553,6 +1744,7 @@ def doCreateRedInvoice(argv, arglist):
         "InvoicePlatformId": Utils.try_to_json(argv, "--InvoicePlatformId"),
         "Invoices": Utils.try_to_json(argv, "--Invoices"),
         "Profile": argv.get("--Profile"),
+        "InvoiceChannel": Utils.try_to_json(argv, "--InvoiceChannel"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1916,6 +2108,61 @@ def doQuerySmallAmountTransfer(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRechargeByThirdPay(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RechargeByThirdPay", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RequestType": argv.get("--RequestType"),
+        "MerchantCode": argv.get("--MerchantCode"),
+        "PayChannel": argv.get("--PayChannel"),
+        "PayChannelSubId": Utils.try_to_json(argv, "--PayChannelSubId"),
+        "OrderId": argv.get("--OrderId"),
+        "BankAccountNumber": argv.get("--BankAccountNumber"),
+        "PlatformShortNumber": argv.get("--PlatformShortNumber"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasAppId": argv.get("--MidasAppId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "TransSequenceNumber": argv.get("--TransSequenceNumber"),
+        "BankSubAccountNumber": argv.get("--BankSubAccountNumber"),
+        "TransFee": argv.get("--TransFee"),
+        "ThirdPayChannel": argv.get("--ThirdPayChannel"),
+        "ThirdPayChannelMerchantCode": argv.get("--ThirdPayChannelMerchantCode"),
+        "ThirdPayChannelOrderId": argv.get("--ThirdPayChannelOrderId"),
+        "CurrencyAmount": argv.get("--CurrencyAmount"),
+        "CurrencyUnit": argv.get("--CurrencyUnit"),
+        "CurrencyType": argv.get("--CurrencyType"),
+        "TransNetMemberCode": argv.get("--TransNetMemberCode"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
+        "ReservedMessage": argv.get("--ReservedMessage"),
+        "Remark": argv.get("--Remark"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RechargeByThirdPayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RechargeByThirdPay(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRechargeMemberThirdPay(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1975,6 +2222,8 @@ def doQueryInvoice(argv, arglist):
         "OrderSn": argv.get("--OrderSn"),
         "IsRed": Utils.try_to_json(argv, "--IsRed"),
         "Profile": argv.get("--Profile"),
+        "InvoiceChannel": Utils.try_to_json(argv, "--InvoiceChannel"),
+        "SellerTaxpayerNum": argv.get("--SellerTaxpayerNum"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2182,6 +2431,7 @@ def doRegisterBill(argv, arglist):
         "TranType": argv.get("--TranType"),
         "ReservedMessage": argv.get("--ReservedMessage"),
         "Remark": argv.get("--Remark"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2245,22 +2495,37 @@ def doQueryAcctInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRevRegisterBillSupportWithdraw(argv, arglist):
+def doExecuteMemberTransaction(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RevRegisterBillSupportWithdraw", g_param[OptionsDefine.Version])
+        show_help("ExecuteMemberTransaction", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "OldOrderNo": argv.get("--OldOrderNo"),
-        "CancelAmt": argv.get("--CancelAmt"),
-        "TranFee": argv.get("--TranFee"),
-        "Remark": argv.get("--Remark"),
-        "ReservedMsgOne": argv.get("--ReservedMsgOne"),
-        "ReservedMsgTwo": argv.get("--ReservedMsgTwo"),
-        "ReservedMsgThree": argv.get("--ReservedMsgThree"),
+        "RequestType": argv.get("--RequestType"),
+        "MerchantCode": argv.get("--MerchantCode"),
+        "PayChannel": argv.get("--PayChannel"),
+        "PayChannelSubId": Utils.try_to_json(argv, "--PayChannelSubId"),
+        "OutTransNetMemberCode": argv.get("--OutTransNetMemberCode"),
+        "OutSubAccountName": argv.get("--OutSubAccountName"),
+        "InSubAccountName": argv.get("--InSubAccountName"),
+        "OutSubAccountNumber": argv.get("--OutSubAccountNumber"),
+        "InSubAccountNumber": argv.get("--InSubAccountNumber"),
+        "BankAccountNumber": argv.get("--BankAccountNumber"),
+        "CurrencyUnit": argv.get("--CurrencyUnit"),
+        "CurrencyType": argv.get("--CurrencyType"),
+        "CurrencyAmount": argv.get("--CurrencyAmount"),
+        "OrderId": argv.get("--OrderId"),
+        "MidasAppId": argv.get("--MidasAppId"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "TransSequenceNumber": argv.get("--TransSequenceNumber"),
+        "InTransNetMemberCode": argv.get("--InTransNetMemberCode"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
+        "PlatformShortNumber": argv.get("--PlatformShortNumber"),
+        "TransType": argv.get("--TransType"),
+        "TransFee": argv.get("--TransFee"),
+        "ReservedMessage": argv.get("--ReservedMessage"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2274,9 +2539,9 @@ def doRevRegisterBillSupportWithdraw(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RevRegisterBillSupportWithdrawRequest()
+    model = models.ExecuteMemberTransactionRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RevRegisterBillSupportWithdraw(model)
+    rsp = client.ExecuteMemberTransaction(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2573,13 +2838,15 @@ ACTION_MAP = {
     "QueryMemberTransaction": doQueryMemberTransaction,
     "QueryPayerInfo": doQueryPayerInfo,
     "QueryBankTransactionDetails": doQueryBankTransactionDetails,
+    "QueryAnchorContractInfo": doQueryAnchorContractInfo,
     "BindAcct": doBindAcct,
     "BindRelateAcctSmallAmount": doBindRelateAcctSmallAmount,
     "ApplyWithdrawal": doApplyWithdrawal,
     "ModifyAgentTaxPaymentInfo": doModifyAgentTaxPaymentInfo,
+    "QueryMemberBind": doQueryMemberBind,
     "ModifyMntMbrBindRelateAcctBankCode": doModifyMntMbrBindRelateAcctBankCode,
     "UnbindRelateAcct": doUnbindRelateAcct,
-    "QueryMemberBind": doQueryMemberBind,
+    "DescribeChargeDetail": doDescribeChargeDetail,
     "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
     "CreateCustAcctId": doCreateCustAcctId,
     "WithdrawCashMembership": doWithdrawCashMembership,
@@ -2588,6 +2855,7 @@ ACTION_MAP = {
     "QueryMerchantInfoForManagement": doQueryMerchantInfoForManagement,
     "ReviseMbrProperty": doReviseMbrProperty,
     "QueryBalance": doQueryBalance,
+    "RevokeRechargeByThirdPay": doRevokeRechargeByThirdPay,
     "QueryAgentTaxPaymentBatch": doQueryAgentTaxPaymentBatch,
     "DeleteAgentTaxPaymentInfo": doDeleteAgentTaxPaymentInfo,
     "BindRelateAcctUnionPay": doBindRelateAcctUnionPay,
@@ -2603,6 +2871,7 @@ ACTION_MAP = {
     "ApplyPayerInfo": doApplyPayerInfo,
     "QueryMerchantBalance": doQueryMerchantBalance,
     "QueryTrade": doQueryTrade,
+    "RefundMemberTransaction": doRefundMemberTransaction,
     "ApplyTrade": doApplyTrade,
     "QueryBankClear": doQueryBankClear,
     "QuerySingleTransactionStatus": doQuerySingleTransactionStatus,
@@ -2617,6 +2886,7 @@ ACTION_MAP = {
     "Refund": doRefund,
     "QueryCustAcctIdBalance": doQueryCustAcctIdBalance,
     "QuerySmallAmountTransfer": doQuerySmallAmountTransfer,
+    "RechargeByThirdPay": doRechargeByThirdPay,
     "RechargeMemberThirdPay": doRechargeMemberThirdPay,
     "QueryInvoice": doQueryInvoice,
     "CreateMerchant": doCreateMerchant,
@@ -2624,7 +2894,7 @@ ACTION_MAP = {
     "UnifiedOrder": doUnifiedOrder,
     "RegisterBill": doRegisterBill,
     "QueryAcctInfo": doQueryAcctInfo,
-    "RevRegisterBillSupportWithdraw": doRevRegisterBillSupportWithdraw,
+    "ExecuteMemberTransaction": doExecuteMemberTransaction,
     "QueryOutwardOrder": doQueryOutwardOrder,
     "UnBindAcct": doUnBindAcct,
     "QueryBankWithdrawCashDetails": doQueryBankWithdrawCashDetails,

@@ -245,19 +245,6 @@ INFO = {
     ],
     "desc": "查询存储库详情"
   },
-  "DeleteCodeRepository": {
-    "params": [
-      {
-        "name": "CodeRepositoryName",
-        "desc": "存储库名称"
-      }
-    ],
-    "desc": "删除存储库"
-  },
-  "DescribeNotebookSummary": {
-    "params": [],
-    "desc": "查询Notebook概览数据"
-  },
   "CreateNotebookLifecycleScript": {
     "params": [
       {
@@ -274,6 +261,52 @@ INFO = {
       }
     ],
     "desc": "创建Notebook生命周期脚本"
+  },
+  "DeleteCodeRepository": {
+    "params": [
+      {
+        "name": "CodeRepositoryName",
+        "desc": "存储库名称"
+      }
+    ],
+    "desc": "删除存储库"
+  },
+  "DescribeNotebookSummary": {
+    "params": [],
+    "desc": "查询Notebook概览数据"
+  },
+  "DescribeTrainingJobs": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "偏移量"
+      },
+      {
+        "name": "Limit",
+        "desc": "限制数目"
+      },
+      {
+        "name": "CreationTimeAfter",
+        "desc": "创建时间晚于"
+      },
+      {
+        "name": "CreationTimeBefore",
+        "desc": "创建时间早于"
+      },
+      {
+        "name": "NameContains",
+        "desc": "根据名称过滤"
+      },
+      {
+        "name": "StatusEquals",
+        "desc": "根据状态过滤"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。"
+      }
+    ],
+    "desc": "查询训练任务列表"
   },
   "DeleteNotebookLifecycleScript": {
     "params": [

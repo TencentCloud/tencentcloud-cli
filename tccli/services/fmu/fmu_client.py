@@ -129,6 +129,7 @@ def doTryLipstickPic(argv, arglist):
         "LipColorInfos": Utils.try_to_json(argv, "--LipColorInfos"),
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
+        "RspImgType": argv.get("--RspImgType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -167,6 +168,7 @@ def doBeautifyPic(argv, arglist):
         "Smoothing": Utils.try_to_json(argv, "--Smoothing"),
         "FaceLifting": Utils.try_to_json(argv, "--FaceLifting"),
         "EyeEnlarging": Utils.try_to_json(argv, "--EyeEnlarging"),
+        "RspImgType": argv.get("--RspImgType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

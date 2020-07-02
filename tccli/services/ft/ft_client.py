@@ -28,6 +28,7 @@ def doSwapGenderPic(argv, arglist):
         "GenderInfos": Utils.try_to_json(argv, "--GenderInfos"),
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
+        "RspImgType": argv.get("--RspImgType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -63,6 +64,7 @@ def doChangeAgePic(argv, arglist):
         "AgeInfos": Utils.try_to_json(argv, "--AgeInfos"),
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
+        "RspImgType": argv.get("--RspImgType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

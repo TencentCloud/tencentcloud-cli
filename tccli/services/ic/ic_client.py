@@ -18,6 +18,73 @@ from tccli.services.ic import v20190307
 from tccli.services.ic.v20190307 import help as v20190307_help
 
 
+def doDescribeApp(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeApp", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Sdkappid": Utils.try_to_json(argv, "--Sdkappid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAppRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeApp(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCard(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCard", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Sdkappid": Utils.try_to_json(argv, "--Sdkappid"),
+        "Iccid": argv.get("--Iccid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCardRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCard(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSendSms(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -44,39 +111,6 @@ def doSendSms(argv, arglist):
     model = models.SendSmsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.SendSms(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeApp(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeApp", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Sdkappid": Utils.try_to_json(argv, "--Sdkappid"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAppRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeApp(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -121,15 +155,16 @@ def doSendMultiSms(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCard(argv, arglist):
+def doRenewCards(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeCard", g_param[OptionsDefine.Version])
+        show_help("RenewCards", g_param[OptionsDefine.Version])
         return
 
     param = {
         "Sdkappid": Utils.try_to_json(argv, "--Sdkappid"),
-        "Iccid": argv.get("--Iccid"),
+        "Iccids": Utils.try_to_json(argv, "--Iccids"),
+        "RenewNum": Utils.try_to_json(argv, "--RenewNum"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -143,9 +178,9 @@ def doDescribeCard(argv, arglist):
     client = mod.IcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCardRequest()
+    model = models.RenewCardsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCard(model)
+    rsp = client.RenewCards(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -201,10 +236,11 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "SendSms": doSendSms,
     "DescribeApp": doDescribeApp,
-    "SendMultiSms": doSendMultiSms,
     "DescribeCard": doDescribeCard,
+    "SendSms": doSendSms,
+    "SendMultiSms": doSendMultiSms,
+    "RenewCards": doRenewCards,
     "DescribeCards": doDescribeCards,
 
 }

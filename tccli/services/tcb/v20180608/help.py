@@ -25,6 +25,14 @@ INFO = {
         "desc": "开发者的环境ID"
       },
       {
+        "name": "Offset",
+        "desc": "可选参数，偏移量，默认 0"
+      },
+      {
+        "name": "Limit",
+        "desc": "可选参数，拉取数量，默认 20"
+      },
+      {
         "name": "UUIds",
         "desc": "按照 uuid 列表过滤，最大个数为100"
       }

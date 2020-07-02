@@ -99,6 +99,19 @@ INFO = {
     ],
     "desc": "跨境-付款人申请。通过该接口提交付款人信息并进行 kyc 审核。"
   },
+  "QueryAnchorContractInfo": {
+    "params": [
+      {
+        "name": "BeginTime",
+        "desc": "起始时间，格式为yyyy-MM-dd"
+      },
+      {
+        "name": "EndTime",
+        "desc": "起始时间，格式为yyyy-MM-dd"
+      }
+    ],
+    "desc": "直播平台-查询主播签约信息"
+  },
   "BindAcct": {
     "params": [
       {
@@ -282,6 +295,10 @@ INFO = {
       {
         "name": "MidasEnvironment",
         "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
+      },
+      {
+        "name": "CommissionAmount",
+        "desc": "手续费金额"
       }
     ],
     "desc": "商户提现"
@@ -306,6 +323,35 @@ INFO = {
       }
     ],
     "desc": "直播平台-修改代理商完税信息"
+  },
+  "QueryMemberBind": {
+    "params": [
+      {
+        "name": "MrchCode",
+        "desc": "String(22)，商户号（签约客户号）"
+      },
+      {
+        "name": "QueryFlag",
+        "desc": "STRING(4)，查询标志（1: 全部会员; 2: 单个会员; 3: 单个会员的证件信息）"
+      },
+      {
+        "name": "PageNum",
+        "desc": "STRING (10)，页码（起始值为1，每次最多返回20条记录，第二页返回的记录数为第21至40条记录，第三页为41至60条记录，顺序均按照建立时间的先后）"
+      },
+      {
+        "name": "SubAcctNo",
+        "desc": "STRING(50)，见证子账户的账号（若SelectFlag为2或3时，子账户账号必输）"
+      },
+      {
+        "name": "ReservedMsg",
+        "desc": "STRING(1027)，保留域"
+      },
+      {
+        "name": "Profile",
+        "desc": "STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填\"prod\""
+      }
+    ],
+    "desc": "会员绑定信息查询。查询标志为“单个会员”的情况下，返回该会员的有效的绑定账户信息。\n查询标志为“全部会员”的情况下，返回市场下的全部的有效的绑定账户信息。查询标志为“单个会员的证件信息”的情况下，返回市场下的指定的会员的留存在电商见证宝系统的证件信息。"
   },
   "ModifyMntMbrBindRelateAcctBankCode": {
     "params": [
@@ -344,34 +390,66 @@ INFO = {
     ],
     "desc": "维护会员绑定提现账户联行号。此接口可以支持市场修改会员的提现账户的开户行信息，具体包括开户行行名、开户行的银行联行号（大小额联行号）和超级网银行号。"
   },
-  "QueryMemberBind": {
+  "DescribeChargeDetail": {
     "params": [
       {
-        "name": "MrchCode",
-        "desc": "String(22)，商户号（签约客户号）"
+        "name": "RequestType",
+        "desc": "请求类型"
       },
       {
-        "name": "QueryFlag",
-        "desc": "STRING(4)，查询标志（1: 全部会员; 2: 单个会员; 3: 单个会员的证件信息）"
+        "name": "MerchantCode",
+        "desc": "商户号"
       },
       {
-        "name": "PageNum",
-        "desc": "STRING (10)，页码（起始值为1，每次最多返回20条记录，第二页返回的记录数为第21至40条记录，第三页为41至60条记录，顺序均按照建立时间的先后）"
+        "name": "PayChannel",
+        "desc": "支付渠道"
       },
       {
-        "name": "SubAcctNo",
-        "desc": "STRING(50)，见证子账户的账号（若SelectFlag为2或3时，子账户账号必输）"
+        "name": "PayChannelSubId",
+        "desc": "子渠道"
       },
       {
-        "name": "ReservedMsg",
-        "desc": "STRING(1027)，保留域"
+        "name": "OrderId",
+        "desc": "原始交易订单号或者流水号"
       },
       {
-        "name": "Profile",
-        "desc": "STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填\"prod\""
+        "name": "BankAccountNumber",
+        "desc": "父账户账号，资金汇总账号"
+      },
+      {
+        "name": "AcquiringChannelType",
+        "desc": "收单渠道类型"
+      },
+      {
+        "name": "PlatformShortNumber",
+        "desc": "平台短号(银行分配)"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      },
+      {
+        "name": "TransSequenceNumber",
+        "desc": "交易流水号"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "Midas环境参数"
+      },
+      {
+        "name": "ReservedMessage",
+        "desc": "保留域"
       }
     ],
-    "desc": "会员绑定信息查询。查询标志为“单个会员”的情况下，返回该会员的有效的绑定账户信息。\n查询标志为“全部会员”的情况下，返回市场下的全部的有效的绑定账户信息。查询标志为“单个会员的证件信息”的情况下，返回市场下的指定的会员的留存在电商见证宝系统的证件信息。"
+    "desc": "查询充值明细接口"
   },
   "QueryMerchantBalance": {
     "params": [
@@ -451,66 +529,34 @@ INFO = {
     ],
     "desc": "会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。\n平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。"
   },
-  "WithdrawCashMembership": {
+  "QueryAcctInfo": {
     "params": [
       {
-        "name": "MrchCode",
-        "desc": "String(22)，商户号（签约客户号）"
+        "name": "MidasAppId",
+        "desc": "聚鑫平台分配的支付MidasAppId"
       },
       {
-        "name": "TranWebName",
-        "desc": "STRING(150)，交易网名称（市场名称）"
+        "name": "SubMchId",
+        "desc": "业务平台的子商户Id，唯一"
       },
       {
-        "name": "MemberGlobalType",
-        "desc": "STRING(5)，会员证件类型（详情见“常见问题”）"
+        "name": "MidasSecretId",
+        "desc": "由平台客服提供的计费密钥Id"
       },
       {
-        "name": "MemberGlobalId",
-        "desc": "STRING(32)，会员证件号码"
+        "name": "MidasSignature",
+        "desc": "计费签名"
       },
       {
-        "name": "TranNetMemberCode",
-        "desc": "STRING(32)，交易网会员代码"
+        "name": "EncryptType",
+        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
       },
       {
-        "name": "MemberName",
-        "desc": "STRING(150)，会员名称"
-      },
-      {
-        "name": "TakeCashAcctNo",
-        "desc": "STRING(50)，提现账号（银行卡）"
-      },
-      {
-        "name": "OutAmtAcctName",
-        "desc": "STRING(150)，出金账户名称（银行卡户名）"
-      },
-      {
-        "name": "Ccy",
-        "desc": "STRING(3)，币种（默认为RMB）"
-      },
-      {
-        "name": "CashAmt",
-        "desc": "STRING(20)，可提现金额"
-      },
-      {
-        "name": "Remark",
-        "desc": "STRING(300)，备注（建议可送订单号，可在对账文件的备注字段获取到）"
-      },
-      {
-        "name": "ReservedMsg",
-        "desc": "STRING(1027)，保留域"
-      },
-      {
-        "name": "WebSign",
-        "desc": "STRING(300)，网银签名"
-      },
-      {
-        "name": "Profile",
-        "desc": "STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填\"prod\""
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
-    "desc": "会员提现-不验证。此接口受理会员发起的提现申请。会员子账户的可提现余额、可用余额会减少，市场的资金汇总账户(监管账户)会减少相应的发生金额，提现到会员申请的收款账户。\t\t"
+    "desc": "聚鑫-开户信息查询"
   },
   "CloseOrder": {
     "params": [
@@ -633,34 +679,94 @@ INFO = {
     ],
     "desc": "子商户余额查询"
   },
-  "QueryAcctInfo": {
+  "RevokeRechargeByThirdPay": {
     "params": [
       {
-        "name": "MidasAppId",
-        "desc": "聚鑫平台分配的支付MidasAppId"
+        "name": "RequestType",
+        "desc": "请求类型此接口固定填：RevokeMemberRechargeThirdPayReq"
       },
       {
-        "name": "SubMchId",
-        "desc": "业务平台的子商户Id，唯一"
+        "name": "MerchantCode",
+        "desc": "商户号"
+      },
+      {
+        "name": "PayChannel",
+        "desc": "支付渠道"
+      },
+      {
+        "name": "PayChannelSubId",
+        "desc": "子渠道"
+      },
+      {
+        "name": "OrderId",
+        "desc": "原始充值交易订单号"
+      },
+      {
+        "name": "BankAccountNumber",
+        "desc": "父账户账号，资金汇总账号"
+      },
+      {
+        "name": "PlatformShortNumber",
+        "desc": "平台短号(银行分配)"
       },
       {
         "name": "MidasSecretId",
-        "desc": "由平台客服提供的计费密钥Id"
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
       },
       {
         "name": "MidasSignature",
         "desc": "计费签名"
       },
       {
-        "name": "EncryptType",
-        "desc": "敏感信息加密类型:\nRSA: rsa非对称加密，使用RSA-PKCS1-v1_5\nAES: aes对称加密，使用AES256-CBC-PCKS7padding\n缺省: RSA"
+        "name": "TransSequenceNumber",
+        "desc": "交易流水号"
+      },
+      {
+        "name": "TransFee",
+        "desc": "申请撤销的手续费金额"
+      },
+      {
+        "name": "ThirdPayChannel",
+        "desc": "第三方支付渠道类型 0001-微信 0002-支付宝 0003-京东支付"
+      },
+      {
+        "name": "ThirdPayChannelOrderId",
+        "desc": "第三方渠道订单号或流水号"
+      },
+      {
+        "name": "OldFrontSequenceNumber",
+        "desc": "充值接口银行返回的流水号(FrontSeqNo)"
+      },
+      {
+        "name": "CurrencyAmount",
+        "desc": "申请撤销的金额"
+      },
+      {
+        "name": "CurrencyUnit",
+        "desc": "单位，1：元，2：角，3：分 目前固定填1"
+      },
+      {
+        "name": "CurrencyType",
+        "desc": "币种 目前固定填RMB"
       },
       {
         "name": "MidasEnvironment",
-        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
+        "desc": "Midas环境标识"
+      },
+      {
+        "name": "ReservedMessage",
+        "desc": "保留域"
+      },
+      {
+        "name": "Remark",
+        "desc": "备注"
       }
     ],
-    "desc": "聚鑫-开户信息查询"
+    "desc": "撤销会员在途充值(经第三方支付渠道)接口"
   },
   "QueryAgentTaxPaymentBatch": {
     "params": [
@@ -745,38 +851,66 @@ INFO = {
     ],
     "desc": "会员绑定提现账户-银联鉴权。用于会员申请绑定提现账户，申请后银行前往银联验证卡信息：姓名、证件、卡号、银行预留手机是否相符，相符则发送给会员手机动态验证码并返回成功，不相符则返回失败。\n平台接收到银行返回成功后，进入输入动态验证码的页面，有效期120秒，若120秒未输入，客户可点击重新发送动态验证码，这个步骤重新调用该接口即可。\n平安银行的账户，大小额行号和超级网银号都不用送。\n超级网银号：单笔转账金额不超过5万，不限制笔数，只用选XX银行，不用具体到支行，可实时知道对方是否收款成功。\n大小额联行号：单笔转账可超过5万，需具体到支行，不能实时知道对方是否收款成功。金额超过5万的，在工作日的8点30-17点间才会成功。"
   },
-  "CreateAgentTaxPaymentInfos": {
+  "WithdrawCashMembership": {
     "params": [
       {
-        "name": "AgentId",
-        "desc": "代理商ID"
+        "name": "MrchCode",
+        "desc": "String(22)，商户号（签约客户号）"
       },
       {
-        "name": "Channel",
-        "desc": "平台渠道"
+        "name": "TranWebName",
+        "desc": "STRING(150)，交易网名称（市场名称）"
       },
       {
-        "name": "Type",
-        "desc": "类型。0-视同，1-个体工商户"
+        "name": "MemberGlobalType",
+        "desc": "STRING(5)，会员证件类型（详情见“常见问题”）"
       },
       {
-        "name": "RawElectronicCertUrl",
-        "desc": "源电子凭证下载地址"
+        "name": "MemberGlobalId",
+        "desc": "STRING(32)，会员证件号码"
       },
       {
-        "name": "FileName",
-        "desc": "文件名"
+        "name": "TranNetMemberCode",
+        "desc": "STRING(32)，交易网会员代码"
       },
       {
-        "name": "AgentTaxPaymentInfos",
-        "desc": "完税信息"
+        "name": "MemberName",
+        "desc": "STRING(150)，会员名称"
+      },
+      {
+        "name": "TakeCashAcctNo",
+        "desc": "STRING(50)，提现账号（银行卡）"
+      },
+      {
+        "name": "OutAmtAcctName",
+        "desc": "STRING(150)，出金账户名称（银行卡户名）"
+      },
+      {
+        "name": "Ccy",
+        "desc": "STRING(3)，币种（默认为RMB）"
+      },
+      {
+        "name": "CashAmt",
+        "desc": "STRING(20)，可提现金额"
+      },
+      {
+        "name": "Remark",
+        "desc": "STRING(300)，备注（建议可送订单号，可在对账文件的备注字段获取到）"
+      },
+      {
+        "name": "ReservedMsg",
+        "desc": "STRING(1027)，保留域"
+      },
+      {
+        "name": "WebSign",
+        "desc": "STRING(300)，网银签名"
       },
       {
         "name": "Profile",
-        "desc": "接入环境。沙箱环境填sandbox"
+        "desc": "STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填\"prod\""
       }
     ],
-    "desc": "直播平台-代理商完税信息录入"
+    "desc": "会员提现-不验证。此接口受理会员发起的提现申请。会员子账户的可提现余额、可用余额会减少，市场的资金汇总账户(监管账户)会减少相应的发生金额，提现到会员申请的收款账户。\t\t"
   },
   "QueryBankTransactionDetails": {
     "params": [
@@ -1173,6 +1307,10 @@ INFO = {
       {
         "name": "StoreNo",
         "desc": "门店编码"
+      },
+      {
+        "name": "InvoiceChannel",
+        "desc": "开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道"
       }
     ],
     "desc": "智慧零售-发票开具"
@@ -1261,6 +1399,35 @@ INFO = {
       }
     ],
     "desc": "跨境-汇出指令申请。通过该接口可将对接方账户中的人民币余额汇兑成外币，再汇出至指定银行账户。"
+  },
+  "BindRelateAccReUnionPay": {
+    "params": [
+      {
+        "name": "MrchCode",
+        "desc": "String(22)，商户号（签约客户号）"
+      },
+      {
+        "name": "TranNetMemberCode",
+        "desc": "STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）"
+      },
+      {
+        "name": "MemberAcctNo",
+        "desc": "STRING(50)，会员的待绑定账户的账号（即 BindRelateAcctUnionPay接口中的“会员的待绑定账户的账号”）"
+      },
+      {
+        "name": "MessageCheckCode",
+        "desc": "STRING(20)，短信验证码（即 BindRelateAcctUnionPay接口中的手机所接收到的短信验证码）"
+      },
+      {
+        "name": "ReservedMsg",
+        "desc": "STRING(1027)，保留域"
+      },
+      {
+        "name": "Profile",
+        "desc": "STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填\"prod\""
+      }
+    ],
+    "desc": "会员绑定提现账户-回填银联鉴权短信码。用于会员填写动态验证码后，发往银行进行验证，验证成功则完成绑定。"
   },
   "QueryOutwardOrder": {
     "params": [
@@ -1398,6 +1565,107 @@ INFO = {
     ],
     "desc": "跨境-提交贸易材料。通过提交贸易材料接口可为对接方累计贸易额度，在额度范围内可发起汇兑汇出交易。"
   },
+  "RefundMemberTransaction": {
+    "params": [
+      {
+        "name": "OutSubAccountName",
+        "desc": "转出见证子账户的户名"
+      },
+      {
+        "name": "InSubAccountName",
+        "desc": "转入见证子账户的户名"
+      },
+      {
+        "name": "PayChannelSubId",
+        "desc": "子渠道"
+      },
+      {
+        "name": "OutSubAccountNumber",
+        "desc": "转出见证子账户账号"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      },
+      {
+        "name": "InSubAccountNumber",
+        "desc": "转入见证子账户账号"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "计费秘钥"
+      },
+      {
+        "name": "BankAccountNumber",
+        "desc": "父账户账号，资金汇总账号"
+      },
+      {
+        "name": "OldTransSequenceNumber",
+        "desc": "原老订单流水号"
+      },
+      {
+        "name": "MerchantCode",
+        "desc": "银行注册商户号"
+      },
+      {
+        "name": "RequestType",
+        "desc": "请求类型，固定为MemberTransactionRefundReq"
+      },
+      {
+        "name": "CurrencyAmount",
+        "desc": "交易金额"
+      },
+      {
+        "name": "TransSequenceNumber",
+        "desc": "交易流水号"
+      },
+      {
+        "name": "PayChannel",
+        "desc": "渠道"
+      },
+      {
+        "name": "OldOrderId",
+        "desc": "原订单号"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "OrderId",
+        "desc": "订单号"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "Midas环境标识 release 现网环境 sandbox 沙箱环境\ndevelopment 开发环境"
+      },
+      {
+        "name": "OutTransNetMemberCode",
+        "desc": "转出子账户交易网会员代码"
+      },
+      {
+        "name": "InTransNetMemberCode",
+        "desc": "转入子账户交易网会员代码"
+      },
+      {
+        "name": "ReservedMessage",
+        "desc": "保留域"
+      },
+      {
+        "name": "PlatformShortNumber",
+        "desc": "平台短号(银行分配)"
+      },
+      {
+        "name": "TransType",
+        "desc": "0-登记挂账，1-撤销挂账"
+      },
+      {
+        "name": "TransFee",
+        "desc": "交易手续费"
+      }
+    ],
+    "desc": "会员间交易退款"
+  },
   "QueryTrade": {
     "params": [
       {
@@ -1510,34 +1778,38 @@ INFO = {
     ],
     "desc": "商户解除绑定的提现银行卡"
   },
-  "BindRelateAccReUnionPay": {
+  "CreateAgentTaxPaymentInfos": {
     "params": [
       {
-        "name": "MrchCode",
-        "desc": "String(22)，商户号（签约客户号）"
+        "name": "AgentId",
+        "desc": "代理商ID"
       },
       {
-        "name": "TranNetMemberCode",
-        "desc": "STRING(32)，交易网会员代码（若需要把一个待绑定账户关联到两个会员名下，此字段可上送两个会员的交易网代码，并且须用“|::|”（右侧）进行分隔）"
+        "name": "Channel",
+        "desc": "平台渠道"
       },
       {
-        "name": "MemberAcctNo",
-        "desc": "STRING(50)，会员的待绑定账户的账号（即 BindRelateAcctUnionPay接口中的“会员的待绑定账户的账号”）"
+        "name": "Type",
+        "desc": "类型。0-视同，1-个体工商户"
       },
       {
-        "name": "MessageCheckCode",
-        "desc": "STRING(20)，短信验证码（即 BindRelateAcctUnionPay接口中的手机所接收到的短信验证码）"
+        "name": "RawElectronicCertUrl",
+        "desc": "源电子凭证下载地址"
       },
       {
-        "name": "ReservedMsg",
-        "desc": "STRING(1027)，保留域"
+        "name": "FileName",
+        "desc": "文件名"
+      },
+      {
+        "name": "AgentTaxPaymentInfos",
+        "desc": "完税信息"
       },
       {
         "name": "Profile",
-        "desc": "STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填\"prod\""
+        "desc": "接入环境。沙箱环境填sandbox"
       }
     ],
-    "desc": "会员绑定提现账户-回填银联鉴权短信码。用于会员填写动态验证码后，发往银行进行验证，验证成功则完成绑定。"
+    "desc": "直播平台-代理商完税信息录入"
   },
   "CreateRedInvoice": {
     "params": [
@@ -1552,6 +1824,10 @@ INFO = {
       {
         "name": "Profile",
         "desc": "接入环境。沙箱环境填 sandbox。"
+      },
+      {
+        "name": "InvoiceChannel",
+        "desc": "开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道"
       }
     ],
     "desc": "智慧零售-发票红冲"
@@ -1836,6 +2112,103 @@ INFO = {
     ],
     "desc": "查询小额鉴权转账结果。查询小额往账鉴权的转账状态。"
   },
+  "RechargeByThirdPay": {
+    "params": [
+      {
+        "name": "RequestType",
+        "desc": "请求类型"
+      },
+      {
+        "name": "MerchantCode",
+        "desc": "商户号"
+      },
+      {
+        "name": "PayChannel",
+        "desc": "支付渠道"
+      },
+      {
+        "name": "PayChannelSubId",
+        "desc": "子渠道"
+      },
+      {
+        "name": "OrderId",
+        "desc": "交易订单号"
+      },
+      {
+        "name": "BankAccountNumber",
+        "desc": "父账户账号，资金汇总账号"
+      },
+      {
+        "name": "PlatformShortNumber",
+        "desc": "平台短号(银行分配)"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      },
+      {
+        "name": "TransSequenceNumber",
+        "desc": "交易流水号"
+      },
+      {
+        "name": "BankSubAccountNumber",
+        "desc": "子账户账号"
+      },
+      {
+        "name": "TransFee",
+        "desc": "交易手续费"
+      },
+      {
+        "name": "ThirdPayChannel",
+        "desc": "第三方支付渠道类型 0001-微信 0002-支付宝 0003-京东支付"
+      },
+      {
+        "name": "ThirdPayChannelMerchantCode",
+        "desc": "第三方渠道商户号"
+      },
+      {
+        "name": "ThirdPayChannelOrderId",
+        "desc": "第三方渠道订单号或流水号"
+      },
+      {
+        "name": "CurrencyAmount",
+        "desc": "交易金额"
+      },
+      {
+        "name": "CurrencyUnit",
+        "desc": "单位，1：元，2：角，3：分"
+      },
+      {
+        "name": "CurrencyType",
+        "desc": "币种"
+      },
+      {
+        "name": "TransNetMemberCode",
+        "desc": "交易网会员代码"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "midas环境参数"
+      },
+      {
+        "name": "ReservedMessage",
+        "desc": "保留域"
+      },
+      {
+        "name": "Remark",
+        "desc": "备注"
+      }
+    ],
+    "desc": "会员在途充值(经第三方支付渠道)接口"
+  },
   "RechargeMemberThirdPay": {
     "params": [
       {
@@ -1922,6 +2295,14 @@ INFO = {
       {
         "name": "Profile",
         "desc": "接入环境。沙箱环境填sandbox。"
+      },
+      {
+        "name": "InvoiceChannel",
+        "desc": "开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道"
+      },
+      {
+        "name": "SellerTaxpayerNum",
+        "desc": "当渠道为线下渠道时，必填"
       }
     ],
     "desc": "智慧零售-发票查询"
@@ -2202,46 +2583,106 @@ INFO = {
     ],
     "desc": "跨境-查询汇率"
   },
-  "RevRegisterBillSupportWithdraw": {
+  "ExecuteMemberTransaction": {
     "params": [
       {
-        "name": "MrchCode",
-        "desc": "String(22)，商户号（签约客户号）"
+        "name": "RequestType",
+        "desc": "请求类型此接口固定填：MemberTransactionReq"
       },
       {
-        "name": "TranNetMemberCode",
-        "desc": "STRING(32)，交易网会员代码"
+        "name": "MerchantCode",
+        "desc": "银行注册商户号"
       },
       {
-        "name": "OldOrderNo",
-        "desc": "STRING(30)，原订单号（RegisterBillSupportWithdraw接口中的订单号）"
+        "name": "PayChannel",
+        "desc": "支付渠道"
       },
       {
-        "name": "CancelAmt",
-        "desc": "STRING(20)，撤销金额（支持部分撤销，不能大于原订单可用金额，包含交易费用）"
+        "name": "PayChannelSubId",
+        "desc": "子渠道"
       },
       {
-        "name": "TranFee",
-        "desc": "STRING(20)，交易费用（暂未使用，默认传0.0）"
+        "name": "OutTransNetMemberCode",
+        "desc": "转出交易网会员代码"
       },
       {
-        "name": "Remark",
-        "desc": "STRING(300)，备注"
+        "name": "OutSubAccountName",
+        "desc": "转出见证子账户的户名"
       },
       {
-        "name": "ReservedMsgOne",
-        "desc": "STRING(300)，保留域1"
+        "name": "InSubAccountName",
+        "desc": "转入见证子账户的户名"
       },
       {
-        "name": "ReservedMsgTwo",
-        "desc": "STRING(300)，保留域2"
+        "name": "OutSubAccountNumber",
+        "desc": "转出子账户账号"
       },
       {
-        "name": "ReservedMsgThree",
-        "desc": "STRING(300)，保留域3"
+        "name": "InSubAccountNumber",
+        "desc": "转入子账户账号"
+      },
+      {
+        "name": "BankAccountNumber",
+        "desc": "父账户账号，资金汇总账号"
+      },
+      {
+        "name": "CurrencyUnit",
+        "desc": "货币单位 单位，1：元，2：角，3：分"
+      },
+      {
+        "name": "CurrencyType",
+        "desc": "币种"
+      },
+      {
+        "name": "CurrencyAmount",
+        "desc": "交易金额"
+      },
+      {
+        "name": "OrderId",
+        "desc": "订单号"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      },
+      {
+        "name": "TransSequenceNumber",
+        "desc": "交易流水号"
+      },
+      {
+        "name": "InTransNetMemberCode",
+        "desc": "转入交易网会员代码"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "Midas环境标识 release 现网环境 sandbox 沙箱环境\ndevelopment 开发环境"
+      },
+      {
+        "name": "PlatformShortNumber",
+        "desc": "平台短号(银行分配)"
+      },
+      {
+        "name": "TransType",
+        "desc": "0,登记挂账，1，撤销挂账"
+      },
+      {
+        "name": "TransFee",
+        "desc": "交易手续费"
+      },
+      {
+        "name": "ReservedMessage",
+        "desc": "保留域"
       }
     ],
-    "desc": "登记挂账撤销。此接口可以实现把RegisterBillSupportWithdraw接口完成的登记挂账进行撤销，即调减普通会员子账户的可提现和可用余额，调增挂账子账户的可用余额。"
+    "desc": "会员间交易接口"
   },
   "UnbindRelateAcct": {
     "params": [
@@ -2506,6 +2947,10 @@ INFO = {
       {
         "name": "Remark",
         "desc": "备注"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "Midas环境参数"
       }
     ],
     "desc": "登记挂账(支持撤销)"

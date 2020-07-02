@@ -157,6 +157,10 @@ INFO = {
       {
         "name": "InstanceId",
         "desc": "待开放外网访问的实例ID。形如：dcdbt-ow728lmc。"
+      },
+      {
+        "name": "Ipv6Flag",
+        "desc": "是否IPv6，默认0"
       }
     ],
     "desc": "本接口（OpenDBExtranetAccess）用于开通云数据库实例的外网访问。开通外网访问后，您可通过外网域名和端口访问实例，可使用查询实例列表接口获取外网域名和端口信息。"
@@ -483,6 +487,10 @@ INFO = {
       {
         "name": "InstanceId",
         "desc": "待关闭外网访问的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。"
+      },
+      {
+        "name": "Ipv6Flag",
+        "desc": "是否IPv6，默认0"
       }
     ],
     "desc": "本接口(CloseDBExtranetAccess)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问，查询实例列表接口将不返回对应实例的外网域名和端口信息。"
@@ -628,6 +636,10 @@ INFO = {
       {
         "name": "InstanceName",
         "desc": "实例名称， 可以通过该字段自主的设置实例的名字"
+      },
+      {
+        "name": "Ipv6Flag",
+        "desc": "是否支持IPv6"
       }
     ],
     "desc": "本接口（CreateDCDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长等信息创建云数据库实例。"

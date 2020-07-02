@@ -61,6 +61,8 @@ def doDescribeEndUsers(argv, arglist):
 
     param = {
         "EnvId": argv.get("--EnvId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
         "UUIds": Utils.try_to_json(argv, "--UUIds"),
 
     }
