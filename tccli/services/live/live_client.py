@@ -2094,6 +2094,39 @@ def doDescribeLiveCallbackTemplates(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doStopRecordTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StopRecordTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": argv.get("--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopRecordTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StopRecordTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeLiveSnapshotTemplates(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2291,6 +2324,39 @@ def doUnBindLiveDomainCert(argv, arglist):
     model = models.UnBindLiveDomainCertRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UnBindLiveDomainCert(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteRecordTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteRecordTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": argv.get("--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteRecordTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteRecordTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3350,6 +3416,46 @@ def doResumeDelayLiveStream(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateRecordTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateRecordTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "StreamName": argv.get("--StreamName"),
+        "DomainName": argv.get("--DomainName"),
+        "AppName": argv.get("--AppName"),
+        "EndTime": Utils.try_to_json(argv, "--EndTime"),
+        "StartTime": Utils.try_to_json(argv, "--StartTime"),
+        "StreamType": Utils.try_to_json(argv, "--StreamType"),
+        "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
+        "Extension": argv.get("--Extension"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LiveClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRecordTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateRecordTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateLiveTranscodeTemplate(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -3707,12 +3813,14 @@ ACTION_MAP = {
     "DescribeLiveTranscodeRules": doDescribeLiveTranscodeRules,
     "DescribeLiveSnapshotTemplate": doDescribeLiveSnapshotTemplate,
     "DescribeLiveCallbackTemplates": doDescribeLiveCallbackTemplates,
+    "StopRecordTask": doStopRecordTask,
     "DescribeLiveSnapshotTemplates": doDescribeLiveSnapshotTemplates,
     "StopLiveRecord": doStopLiveRecord,
     "ModifyLivePlayAuthKey": doModifyLivePlayAuthKey,
     "DescribeLiveTranscodeTemplate": doDescribeLiveTranscodeTemplate,
     "DescribeScreenShotSheetNumList": doDescribeScreenShotSheetNumList,
     "UnBindLiveDomainCert": doUnBindLiveDomainCert,
+    "DeleteRecordTask": doDeleteRecordTask,
     "DescribeLiveTranscodeDetailInfo": doDescribeLiveTranscodeDetailInfo,
     "DescribeLogDownloadList": doDescribeLogDownloadList,
     "DescribeLiveRecordRules": doDescribeLiveRecordRules,
@@ -3743,6 +3851,7 @@ ACTION_MAP = {
     "DescribeLiveStreamState": doDescribeLiveStreamState,
     "DeleteLiveRecordTemplate": doDeleteLiveRecordTemplate,
     "ResumeDelayLiveStream": doResumeDelayLiveStream,
+    "CreateRecordTask": doCreateRecordTask,
     "CreateLiveTranscodeTemplate": doCreateLiveTranscodeTemplate,
     "DescribeLiveCerts": doDescribeLiveCerts,
     "EnableLiveDomain": doEnableLiveDomain,

@@ -132,7 +132,7 @@ INFO = {
       },
       {
         "name": "ProductCode",
-        "desc": "查询指定产品信息"
+        "desc": "查询指定产品信息（暂时未开放获取）"
       },
       {
         "name": "PayMode",

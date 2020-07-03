@@ -825,7 +825,7 @@ INFO = {
         "desc": "延播设置的过期时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认7天后过期，且最长支持7天内生效。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。"
       }
     ],
-    "desc": "对流设置延播时间\n注意：如果在推流前设置延播，需要提前5分钟设置。\n目前该接口只支持流粒度的，域名及应用粒度功能支持当前开发中。\n"
+    "desc": "对流设置延播时间\n注意：如果在推流前设置延播，需要提前5分钟设置。\n目前该接口只支持流粒度的，域名及应用粒度功能支持当前开发中。\n使用场景：对重要直播，避免出现突发状况，可通过设置延迟播放，提前做好把控。\n"
   },
   "DescribeStreamDayPlayInfoList": {
     "params": [
@@ -1290,6 +1290,15 @@ INFO = {
     "params": [],
     "desc": "获取回调模板列表"
   },
+  "StopRecordTask": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "录制任务ID。"
+      }
+    ],
+    "desc": "提前结束录制，并中止运行中的录制任务。任务被成功中止后将不再启动。"
+  },
   "DescribeLiveSnapshotTemplates": {
     "params": [],
     "desc": "获取截图模板列表。"
@@ -1374,6 +1383,15 @@ INFO = {
       }
     ],
     "desc": "解绑域名证书"
+  },
+  "DeleteRecordTask": {
+    "params": [
+      {
+        "name": "TaskId",
+        "desc": "任务ID，CreateRecordTask返回。删除TaskId指定的录制任务。"
+      }
+    ],
+    "desc": "删除录制任务配置。删除操作不影响正在运行当中的任务，仅对删除之后新的推流有效。"
   },
   "DescribeLiveTranscodeDetailInfo": {
     "params": [
@@ -1879,6 +1897,43 @@ INFO = {
       }
     ],
     "desc": "恢复延迟播放设置"
+  },
+  "CreateRecordTask": {
+    "params": [
+      {
+        "name": "StreamName",
+        "desc": "流名称。"
+      },
+      {
+        "name": "DomainName",
+        "desc": "推流域名。"
+      },
+      {
+        "name": "AppName",
+        "desc": "推流路径。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且不能超过从当前时刻开始24小时之内的时间。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始24小时之内的时间。"
+      },
+      {
+        "name": "StreamType",
+        "desc": "推流类型，默认0。取值：\n0-直播推流。\n1-合成流，即 A+B=C 类型混流。"
+      },
+      {
+        "name": "TemplateId",
+        "desc": "录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制HLS格式、永久存储。"
+      },
+      {
+        "name": "Extension",
+        "desc": "扩展字段，默认空。"
+      }
+    ],
+    "desc": "创建一个在指定时间启动、结束的录制任务，并使用指定录制模板ID对应的配置进行录制。\n- 使用前提\n1. 录制文件存放于点播平台，所以用户如需使用录制功能，需首先自行开通点播服务。\n2. 录制文件存放后相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，具体请参考 对应文档。\n- 注意事项\n1. 断流会结束当前录制并生成录制文件。在结束时间到达之前任务仍然有效，期间只要正常推流都会正常录制，与是否多次推、断流无关。\n2. 使用上避免创建时间段相互重叠的录制任务。若同一条流当前存在多个时段重叠的任务，为避免重复录制系统将启动最多3个录制任务。\n3. 创建的录制任务记录在平台侧只保留3个月。\n4. 当前录制任务管理API（CreateRecordTask/StopRecordTask/DeleteRecordTask）与旧API（CreateLiveRecord/StopLiveRecord/DeleteLiveRecord）不兼容，两套接口不能混用。"
   },
   "CreateLiveTranscodeTemplate": {
     "params": [

@@ -1781,7 +1781,11 @@ INFO = {
       },
       {
         "name": "RouteIds",
-        "desc": "路由策略唯一ID。"
+        "desc": "路由策略ID。不能和RouteItemIds同时使用。"
+      },
+      {
+        "name": "RouteItemIds",
+        "desc": "路由策略唯一ID。不能和RouteIds同时使用。"
       }
     ],
     "desc": "本接口（DisableRoutes）用于禁用已启用的子网路由"
@@ -2895,7 +2899,11 @@ INFO = {
       },
       {
         "name": "RouteIds",
-        "desc": "路由策略唯一ID。"
+        "desc": "路由策略ID。不能和RouteItemIds同时使用。"
+      },
+      {
+        "name": "RouteItemIds",
+        "desc": "路由策略唯一ID。不能和RouteIds同时使用。"
       }
     ],
     "desc": "本接口（EnableRoutes）用于启用已禁用的子网路由。<br />\n本接口会校验启用后，是否与已有路由冲突，如果冲突，则无法启用，失败处理。路由冲突时，需要先禁用与之冲突的路由，才能启用该路由。"

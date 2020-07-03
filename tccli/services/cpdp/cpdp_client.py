@@ -102,22 +102,29 @@ def doQueryPayerInfo(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryBankTransactionDetails(argv, arglist):
+def doDescribeOrderStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("QueryBankTransactionDetails", g_param[OptionsDefine.Version])
+        show_help("DescribeOrderStatus", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "SubAcctNo": argv.get("--SubAcctNo"),
-        "QueryFlag": argv.get("--QueryFlag"),
-        "PageNum": argv.get("--PageNum"),
-        "StartDate": argv.get("--StartDate"),
-        "EndDate": argv.get("--EndDate"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
-        "Profile": argv.get("--Profile"),
+        "RequestType": argv.get("--RequestType"),
+        "MerchantCode": argv.get("--MerchantCode"),
+        "PayChannel": argv.get("--PayChannel"),
+        "PayChannelSubId": Utils.try_to_json(argv, "--PayChannelSubId"),
+        "OrderId": argv.get("--OrderId"),
+        "BankAccountNumber": argv.get("--BankAccountNumber"),
+        "PlatformShortNumber": argv.get("--PlatformShortNumber"),
+        "QueryType": argv.get("--QueryType"),
+        "TransSequenceNumber": argv.get("--TransSequenceNumber"),
+        "MidasSignature": argv.get("--MidasSignature"),
+        "MidasAppId": argv.get("--MidasAppId"),
+        "MidasSecretId": argv.get("--MidasSecretId"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
+        "ReservedMessage": argv.get("--ReservedMessage"),
+        "BankSubAccountNumber": argv.get("--BankSubAccountNumber"),
+        "TransDate": argv.get("--TransDate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -131,9 +138,9 @@ def doQueryBankTransactionDetails(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryBankTransactionDetailsRequest()
+    model = models.DescribeOrderStatusRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.QueryBankTransactionDetails(model)
+    rsp = client.DescribeOrderStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1895,6 +1902,47 @@ def doRevokeMemberRechargeThirdPay(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryBankTransactionDetails(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryBankTransactionDetails", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MrchCode": argv.get("--MrchCode"),
+        "FunctionFlag": argv.get("--FunctionFlag"),
+        "SubAcctNo": argv.get("--SubAcctNo"),
+        "QueryFlag": argv.get("--QueryFlag"),
+        "PageNum": argv.get("--PageNum"),
+        "StartDate": argv.get("--StartDate"),
+        "EndDate": argv.get("--EndDate"),
+        "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryBankTransactionDetailsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryBankTransactionDetails(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doApplyApplicationMaterial(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -2837,7 +2885,7 @@ MODELS_MAP = {
 ACTION_MAP = {
     "QueryMemberTransaction": doQueryMemberTransaction,
     "QueryPayerInfo": doQueryPayerInfo,
-    "QueryBankTransactionDetails": doQueryBankTransactionDetails,
+    "DescribeOrderStatus": doDescribeOrderStatus,
     "QueryAnchorContractInfo": doQueryAnchorContractInfo,
     "BindAcct": doBindAcct,
     "BindRelateAcctSmallAmount": doBindRelateAcctSmallAmount,
@@ -2881,6 +2929,7 @@ ACTION_MAP = {
     "CheckAmount": doCheckAmount,
     "RevResigterBillSupportWithdraw": doRevResigterBillSupportWithdraw,
     "RevokeMemberRechargeThirdPay": doRevokeMemberRechargeThirdPay,
+    "QueryBankTransactionDetails": doQueryBankTransactionDetails,
     "ApplyApplicationMaterial": doApplyApplicationMaterial,
     "ApplyOutwardOrder": doApplyOutwardOrder,
     "Refund": doRefund,

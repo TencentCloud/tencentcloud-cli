@@ -126,7 +126,7 @@ INFO = {
     "params": [
       {
         "name": "StartTime",
-        "desc": "查询开始时间，24小时内，，本地unix时间戳（1588031999s）"
+        "desc": "查询开始时间，24小时内，本地unix时间戳（1588031999s）"
       },
       {
         "name": "EndTime",
@@ -138,7 +138,7 @@ INFO = {
       },
       {
         "name": "DataType",
-        "desc": "需查询的数据类型\nsendLossRateRaw：上行丢包率；\nrecvLossRateRaw：下行丢包率"
+        "desc": "需查询的数据类型\nsendLossRateRaw：上行丢包率\nrecvLossRateRaw：下行丢包率"
       }
     ],
     "desc": "查询sdkappid维度下实时网络状态，包括上行丢包与下行丢包。可查询24小时内数据，查询起止时间不超过1个小时。"
@@ -193,7 +193,7 @@ INFO = {
     "params": [
       {
         "name": "CommId",
-        "desc": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）。通过 DescribeRoomInformation（查询房间列表）接口获取。"
+        "desc": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）"
       },
       {
         "name": "StartTime",
@@ -205,7 +205,7 @@ INFO = {
       },
       {
         "name": "SdkAppId",
-        "desc": "用户sdkappid"
+        "desc": "用户sdkappid（1400188366）"
       },
       {
         "name": "UserIds",
@@ -222,7 +222,7 @@ INFO = {
     "params": [
       {
         "name": "CommId",
-        "desc": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。"
+        "desc": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）"
       },
       {
         "name": "StartTime",

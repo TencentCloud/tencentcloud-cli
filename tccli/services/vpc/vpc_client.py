@@ -3642,6 +3642,7 @@ def doDisableRoutes(argv, arglist):
     param = {
         "RouteTableId": argv.get("--RouteTableId"),
         "RouteIds": Utils.try_to_json(argv, "--RouteIds"),
+        "RouteItemIds": Utils.try_to_json(argv, "--RouteItemIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -6207,6 +6208,7 @@ def doEnableRoutes(argv, arglist):
     param = {
         "RouteTableId": argv.get("--RouteTableId"),
         "RouteIds": Utils.try_to_json(argv, "--RouteIds"),
+        "RouteItemIds": Utils.try_to_json(argv, "--RouteItemIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
