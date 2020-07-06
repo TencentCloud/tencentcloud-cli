@@ -299,6 +299,7 @@ def doApplyWithdrawal(argv, arglist):
         "EncryptType": argv.get("--EncryptType"),
         "MidasEnvironment": argv.get("--MidasEnvironment"),
         "CommissionAmount": argv.get("--CommissionAmount"),
+        "WithdrawOrderId": argv.get("--WithdrawOrderId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

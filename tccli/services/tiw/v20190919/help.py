@@ -9,10 +9,10 @@ INFO = {
       },
       {
         "name": "Callback",
-        "desc": "实时录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头"
+        "desc": "实时录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头。回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258"
       }
     ],
-    "desc": "设置实时录制回调地址"
+    "desc": "设置实时录制回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258"
   },
   "SetTranscodeCallbackKey": {
     "params": [
@@ -22,10 +22,10 @@ INFO = {
       },
       {
         "name": "CallbackKey",
-        "desc": "设置文档转码回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥"
+        "desc": "设置文档转码回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257"
       }
     ],
-    "desc": "设置文档转码回调鉴权密钥"
+    "desc": "设置文档转码回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257"
   },
   "DescribeTranscode": {
     "params": [
@@ -148,10 +148,10 @@ INFO = {
       },
       {
         "name": "Callback",
-        "desc": "文档转码进度回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头"
+        "desc": "文档转码进度回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。\n回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260"
       }
     ],
-    "desc": "设置文档转码回调地址"
+    "desc": "设置文档转码回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260"
   },
   "SetOnlineRecordCallbackKey": {
     "params": [
@@ -161,10 +161,10 @@ INFO = {
       },
       {
         "name": "CallbackKey",
-        "desc": "设置实时录制回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥"
+        "desc": "设置实时录制回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥。回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257"
       }
     ],
-    "desc": "设置实时录制回调鉴权密钥"
+    "desc": "设置实时录制回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257"
   },
   "ResumeOnlineRecord": {
     "params": [

@@ -30,6 +30,22 @@ INFO = {
       {
         "name": "IsAsync",
         "desc": "异步模式标识，0：同步模式，1：异步模式。默认为同步模式"
+      },
+      {
+        "name": "EnableDispRelatedVertical",
+        "desc": "是否展开耦合算式中的竖式计算"
+      },
+      {
+        "name": "EnableDispMidresult",
+        "desc": "是否展示竖式算式的中间结果和格式控制字符"
+      },
+      {
+        "name": "EnablePdfRecognize",
+        "desc": "是否开启pdf识别，默认开启"
+      },
+      {
+        "name": "PdfPageIndex",
+        "desc": "pdf页码，从0开始，默认为0"
       }
     ],
     "desc": "速算题目批改接口，根据用户上传的图片或图片的URL识别图片中的数学算式，进而给出算式的正确性评估。"

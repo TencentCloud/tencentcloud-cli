@@ -1311,6 +1311,7 @@ def doPullUpload(argv, arglist):
         "SessionId": argv.get("--SessionId"),
         "ExtInfo": argv.get("--ExtInfo"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "SourceContext": argv.get("--SourceContext"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

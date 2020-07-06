@@ -356,6 +356,10 @@ INFO = {
       {
         "name": "CommissionAmount",
         "desc": "手续费金额"
+      },
+      {
+        "name": "WithdrawOrderId",
+        "desc": "提现单号，长度32字节"
       }
     ],
     "desc": "商户提现"

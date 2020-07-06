@@ -32,6 +32,10 @@ def doEvaluation(argv, arglist):
         "SupportHorizontalImage": Utils.try_to_json(argv, "--SupportHorizontalImage"),
         "RejectNonArithmeticImage": Utils.try_to_json(argv, "--RejectNonArithmeticImage"),
         "IsAsync": Utils.try_to_json(argv, "--IsAsync"),
+        "EnableDispRelatedVertical": Utils.try_to_json(argv, "--EnableDispRelatedVertical"),
+        "EnableDispMidresult": Utils.try_to_json(argv, "--EnableDispMidresult"),
+        "EnablePdfRecognize": Utils.try_to_json(argv, "--EnablePdfRecognize"),
+        "PdfPageIndex": Utils.try_to_json(argv, "--PdfPageIndex"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
