@@ -52,6 +52,15 @@ INFO = {
     ],
     "desc": "根据设备产品ID、设备名称，获取设备上报的属性数据。"
   },
+  "DeleteLoRaGateway": {
+    "params": [
+      {
+        "name": "GatewayId",
+        "desc": "LoRa 网关 Id"
+      }
+    ],
+    "desc": "删除  LoRa 网关的接口"
+  },
   "CreateStudioProduct": {
     "params": [
       {
@@ -138,6 +147,27 @@ INFO = {
       }
     ],
     "desc": "创建新 LoRa 网关设备接口"
+  },
+  "CallDeviceActionAsync": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品Id"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      },
+      {
+        "name": "ActionId",
+        "desc": "产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义"
+      },
+      {
+        "name": "InputParams",
+        "desc": "输入参数"
+      }
+    ],
+    "desc": "提供给用户异步调用设备行为的能力"
   },
   "SearchStudioProduct": {
     "params": [
@@ -427,26 +457,38 @@ INFO = {
     ],
     "desc": "为用户提供新建项目的能力，用于集中管理产品和应用。"
   },
-  "CallDeviceActionAsync": {
+  "ModifyLoRaGateway": {
     "params": [
       {
-        "name": "ProductId",
-        "desc": "产品Id"
+        "name": "Description",
+        "desc": "描述信息"
       },
       {
-        "name": "DeviceName",
-        "desc": "设备名称"
+        "name": "GatewayId",
+        "desc": "LoRa网关Id"
       },
       {
-        "name": "ActionId",
-        "desc": "产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义"
+        "name": "Location",
+        "desc": "LoRa网关位置坐标"
       },
       {
-        "name": "InputParams",
-        "desc": "输入参数"
+        "name": "Name",
+        "desc": "LoRa网关名称"
+      },
+      {
+        "name": "IsPublic",
+        "desc": "是否公开可见"
+      },
+      {
+        "name": "Position",
+        "desc": "位置信息"
+      },
+      {
+        "name": "PositionDetails",
+        "desc": "位置详情"
       }
     ],
-    "desc": "提供给用户异步调用设备行为的能力"
+    "desc": "修改 LoRa 网关信息"
   },
   "DeleteProject": {
     "params": [

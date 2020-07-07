@@ -1157,6 +1157,19 @@ INFO = {
     ],
     "desc": "本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。"
   },
+  "DescribeRoMinScale": {
+    "params": [
+      {
+        "name": "RoInstanceId",
+        "desc": "只读实例ID，格式如：cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与MasterInstanceId参数不能同时为空。"
+      },
+      {
+        "name": "MasterInstanceId",
+        "desc": "主实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与RoInstanceId参数不能同时为空。注意，当传入参数包含RoInstanceId时，返回值为只读实例升级时的最小规格；当传入参数只包含MasterInstanceId时，返回值为只读实例购买时的最小规格。"
+      }
+    ],
+    "desc": "本接口(DescribeRoMinScale)用于获取只读实例购买、升级时的最小规格。"
+  },
   "DescribeAuditConfig": {
     "params": [
       {
@@ -1310,26 +1323,18 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目 ID、实例 ID、访问地址、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。"
   },
-  "ModifyRoGroupInfo": {
+  "VerifyRootAccount": {
     "params": [
       {
-        "name": "RoGroupId",
-        "desc": "RO 组的 ID。"
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
       },
       {
-        "name": "RoGroupInfo",
-        "desc": "RO 组的详细信息。"
-      },
-      {
-        "name": "RoWeightValues",
-        "desc": "RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。"
-      },
-      {
-        "name": "IsBalanceRoLoad",
-        "desc": "是否重新均衡 RO 组内的 RO 实例的负载。支持值包括：1 - 重新均衡负载；0 - 不重新均衡负载。默认值为 0。注意，设置为重新均衡负载是，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库。"
+        "name": "Password",
+        "desc": "实例 ROOT 账号的密码。"
       }
     ],
-    "desc": "本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重等。"
+    "desc": "本接口(VerifyRootAccount)用于校验云数据库实例的 ROOT 账号是否有足够的权限进行授权操作。"
   },
   "CreateAuditRule": {
     "params": [
@@ -1533,18 +1538,26 @@ INFO = {
     ],
     "desc": "本接口(DescribeAuditRules)用于查询用户在当前地域的审计规则。"
   },
-  "VerifyRootAccount": {
+  "ModifyRoGroupInfo": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+        "name": "RoGroupId",
+        "desc": "RO 组的 ID。"
       },
       {
-        "name": "Password",
-        "desc": "实例 ROOT 账号的密码。"
+        "name": "RoGroupInfo",
+        "desc": "RO 组的详细信息。"
+      },
+      {
+        "name": "RoWeightValues",
+        "desc": "RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。"
+      },
+      {
+        "name": "IsBalanceRoLoad",
+        "desc": "是否重新均衡 RO 组内的 RO 实例的负载。支持值包括：1 - 重新均衡负载；0 - 不重新均衡负载。默认值为 0。注意，设置为重新均衡负载是，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库。"
       }
     ],
-    "desc": "本接口(VerifyRootAccount)用于校验云数据库实例的 ROOT 账号是否有足够的权限进行授权操作。"
+    "desc": "本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重等。"
   },
   "ModifyAccountPassword": {
     "params": [

@@ -135,6 +135,7 @@ def doCreateCluster(argv, arglist):
         "SubnetId": argv.get("--SubnetId"),
         "Password": argv.get("--Password"),
         "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
+        "Ipv6Enable": Utils.try_to_json(argv, "--Ipv6Enable"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -587,6 +588,7 @@ def doDescribeClusters(argv, arglist):
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Ipv6Enable": Utils.try_to_json(argv, "--Ipv6Enable"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

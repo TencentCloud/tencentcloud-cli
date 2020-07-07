@@ -77,6 +77,10 @@ INFO = {
       {
         "name": "ResourceTags",
         "desc": "集群标签列表"
+      },
+      {
+        "name": "Ipv6Enable",
+        "desc": "集群是否开启IPv6功能"
       }
     ],
     "desc": "本接口用于创建TcaplusDB集群"
@@ -285,6 +289,10 @@ INFO = {
       {
         "name": "Limit",
         "desc": "查询列表返回记录数，默认值20"
+      },
+      {
+        "name": "Ipv6Enable",
+        "desc": "是否启用Ipv6"
       }
     ],
     "desc": "查询TcaplusDB集群列表，包含集群详细信息。"
