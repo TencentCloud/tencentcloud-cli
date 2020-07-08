@@ -2292,6 +2292,8 @@ def doModifyInstanceParam(argv, arglist):
     param = {
         "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
         "ParamList": Utils.try_to_json(argv, "--ParamList"),
+        "TemplateId": Utils.try_to_json(argv, "--TemplateId"),
+        "WaitSwitch": Utils.try_to_json(argv, "--WaitSwitch"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
