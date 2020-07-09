@@ -788,7 +788,7 @@ INFO = {
       },
       {
         "name": "TransFee",
-        "desc": "申请撤销的手续费金额"
+        "desc": "申请撤销的手续费金额,以元为单位"
       },
       {
         "name": "ThirdPayChannel",
@@ -1666,7 +1666,7 @@ INFO = {
       },
       {
         "name": "MidasSecretId",
-        "desc": "计费秘钥"
+        "desc": "聚鑫分配的安全ID"
       },
       {
         "name": "BankAccountNumber",
@@ -2237,7 +2237,7 @@ INFO = {
       },
       {
         "name": "TransFee",
-        "desc": "交易手续费"
+        "desc": "交易手续费，以元为单位"
       },
       {
         "name": "ThirdPayChannel",
@@ -2728,7 +2728,7 @@ INFO = {
       },
       {
         "name": "TransSequenceNumber",
-        "desc": "交易流水号"
+        "desc": "交易流水号 \n生成方式：用户短号+日期（6位）+ 随机编号（10位）例如：F088722005120904930798\n短号：F08872  日期： 200512   随机编号：0904930798"
       },
       {
         "name": "InTransNetMemberCode",
@@ -2744,7 +2744,7 @@ INFO = {
       },
       {
         "name": "TransType",
-        "desc": "0,登记挂账，1，撤销挂账"
+        "desc": "1：下单预支付 \n2：确认并付款\n3：退款\n6：直接支付T+1\n9：直接支付T+0"
       },
       {
         "name": "TransFee",
@@ -2999,7 +2999,7 @@ INFO = {
       },
       {
         "name": "OrderAmt",
-        "desc": "挂账金额"
+        "desc": "挂账金额，以元为单位"
       },
       {
         "name": "BankSubAccountNo",

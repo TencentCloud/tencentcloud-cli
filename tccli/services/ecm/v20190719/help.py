@@ -727,7 +727,7 @@ INFO = {
         "desc": "镜像描述，多层镜像按顺序传入"
       }
     ],
-    "desc": "从腾讯云COS导入自定义镜像"
+    "desc": "导入自定义镜像，支持 RAW、VHD、QCOW2、VMDK 镜像格式"
   },
   "ReleaseAddresses": {
     "params": [

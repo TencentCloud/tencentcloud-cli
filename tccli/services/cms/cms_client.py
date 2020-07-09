@@ -205,6 +205,8 @@ def doTextModeration(argv, arglist):
 
     param = {
         "Content": argv.get("--Content"),
+        "Device": Utils.try_to_json(argv, "--Device"),
+        "User": Utils.try_to_json(argv, "--User"),
         "BizType": Utils.try_to_json(argv, "--BizType"),
         "DataId": argv.get("--DataId"),
         "SdkAppId": Utils.try_to_json(argv, "--SdkAppId"),
