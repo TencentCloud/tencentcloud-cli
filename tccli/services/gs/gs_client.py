@@ -67,6 +67,7 @@ def doTrylockWorker(argv, arglist):
         "GameRegion": argv.get("--GameRegion"),
         "SetNo": Utils.try_to_json(argv, "--SetNo"),
         "UserIp": argv.get("--UserIp"),
+        "GroupId": argv.get("--GroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

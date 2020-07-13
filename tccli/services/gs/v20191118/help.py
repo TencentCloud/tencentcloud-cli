@@ -47,6 +47,10 @@ INFO = {
       {
         "name": "UserIp",
         "desc": "游戏用户IP，用于就近调度，例如125.127.178.228"
+      },
+      {
+        "name": "GroupId",
+        "desc": "分组ID"
       }
     ],
     "desc": "尝试锁定机器"
