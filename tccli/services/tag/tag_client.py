@@ -57,16 +57,17 @@ def doDescribeResourceTagsByTagKeys(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateResourceTagValue(argv, arglist):
+def doDescribeTagValuesSeq(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateResourceTagValue", g_param[OptionsDefine.Version])
+        show_help("DescribeTagValuesSeq", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TagKey": argv.get("--TagKey"),
-        "TagValue": argv.get("--TagValue"),
-        "Resource": argv.get("--Resource"),
+        "TagKeys": Utils.try_to_json(argv, "--TagKeys"),
+        "CreateUin": Utils.try_to_json(argv, "--CreateUin"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -80,9 +81,46 @@ def doUpdateResourceTagValue(argv, arglist):
     client = mod.TagClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateResourceTagValueRequest()
+    model = models.DescribeTagValuesSeqRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateResourceTagValue(model)
+    rsp = client.DescribeTagValuesSeq(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDetachResourcesTag(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DetachResourcesTag", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceType": argv.get("--ServiceType"),
+        "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
+        "TagKey": argv.get("--TagKey"),
+        "ResourceRegion": argv.get("--ResourceRegion"),
+        "ResourcePrefix": argv.get("--ResourcePrefix"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TagClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetachResourcesTagRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DetachResourcesTag(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -277,6 +315,41 @@ def doDescribeTagKeys(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpdateResourceTagValue(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateResourceTagValue", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
+        "Resource": argv.get("--Resource"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TagClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateResourceTagValueRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateResourceTagValue(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteResourceTag(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -302,6 +375,44 @@ def doDeleteResourceTag(argv, arglist):
     model = models.DeleteResourceTagRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteResourceTag(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeResourceTagsByResourceIdsSeq(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeResourceTagsByResourceIdsSeq", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceType": argv.get("--ServiceType"),
+        "ResourcePrefix": argv.get("--ResourcePrefix"),
+        "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
+        "ResourceRegion": argv.get("--ResourceRegion"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TagClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeResourceTagsByResourceIdsSeqRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeResourceTagsByResourceIdsSeq(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -341,6 +452,45 @@ def doDescribeTags(argv, arglist):
     model = models.DescribeTagsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeTags(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTagsSeq(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTagsSeq", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "CreateUin": Utils.try_to_json(argv, "--CreateUin"),
+        "TagKeys": Utils.try_to_json(argv, "--TagKeys"),
+        "ShowProject": Utils.try_to_json(argv, "--ShowProject"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TagClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTagsSeqRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTagsSeq(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -459,6 +609,44 @@ def doDeleteTag(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAttachResourcesTag(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AttachResourcesTag", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceType": argv.get("--ServiceType"),
+        "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
+        "ResourceRegion": argv.get("--ResourceRegion"),
+        "ResourcePrefix": argv.get("--ResourcePrefix"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TagClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AttachResourcesTagRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AttachResourcesTag(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateTag(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -493,6 +681,44 @@ def doCreateTag(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyResourcesTagValue(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyResourcesTagValue", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceType": argv.get("--ServiceType"),
+        "ResourceIds": Utils.try_to_json(argv, "--ResourceIds"),
+        "TagKey": argv.get("--TagKey"),
+        "TagValue": argv.get("--TagValue"),
+        "ResourceRegion": argv.get("--ResourceRegion"),
+        "ResourcePrefix": argv.get("--ResourcePrefix"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TagClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyResourcesTagValueRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyResourcesTagValue(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180813": tag_client_v20180813,
 
@@ -505,18 +731,24 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeResourceTagsByTagKeys": doDescribeResourceTagsByTagKeys,
-    "UpdateResourceTagValue": doUpdateResourceTagValue,
+    "DescribeTagValuesSeq": doDescribeTagValuesSeq,
+    "DetachResourcesTag": doDetachResourcesTag,
     "DescribeTagValues": doDescribeTagValues,
     "DescribeResourceTagsByResourceIds": doDescribeResourceTagsByResourceIds,
     "DescribeResourceTags": doDescribeResourceTags,
     "ModifyResourceTags": doModifyResourceTags,
     "DescribeTagKeys": doDescribeTagKeys,
+    "UpdateResourceTagValue": doUpdateResourceTagValue,
     "DeleteResourceTag": doDeleteResourceTag,
+    "DescribeResourceTagsByResourceIdsSeq": doDescribeResourceTagsByResourceIdsSeq,
     "DescribeTags": doDescribeTags,
+    "DescribeTagsSeq": doDescribeTagsSeq,
     "DescribeResourcesByTags": doDescribeResourcesByTags,
     "AddResourceTag": doAddResourceTag,
     "DeleteTag": doDeleteTag,
+    "AttachResourcesTag": doAttachResourcesTag,
     "CreateTag": doCreateTag,
+    "ModifyResourcesTagValue": doModifyResourcesTagValue,
 
 }
 

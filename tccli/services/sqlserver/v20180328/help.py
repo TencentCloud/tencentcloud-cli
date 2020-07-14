@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 DESC = "sqlserver-2018-03-28"
 INFO = {
+  "DescribeFlowStatus": {
+    "params": [
+      {
+        "name": "FlowId",
+        "desc": "流程ID"
+      }
+    ],
+    "desc": "本接口(DescribeFlowStatus)用于查询流程状态。"
+  },
   "ModifyMigration": {
     "params": [
       {
@@ -43,6 +52,19 @@ INFO = {
     ],
     "desc": "本接口（DescribeOrders）用于查询订单信息"
   },
+  "DeletePublishSubscribe": {
+    "params": [
+      {
+        "name": "PublishSubscribeId",
+        "desc": "发布订阅ID，可通过DescribePublishSubscribe接口获得"
+      },
+      {
+        "name": "DatabaseTupleSet",
+        "desc": "待删除的数据库的订阅发布关系集合"
+      }
+    ],
+    "desc": "本接口（DeletePublishSubscribe）用于删除两个数据库间的发布订阅关系。"
+  },
   "DescribeMigrations": {
     "params": [
       {
@@ -72,6 +94,19 @@ INFO = {
     ],
     "desc": "本接口（DescribeMigrations）根据输入的限定条件，查询符合条件的迁移任务列表"
   },
+  "ResetAccountPassword": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "数据库实例ID，形如mssql-njj2mtpl"
+      },
+      {
+        "name": "Accounts",
+        "desc": "更新后的账户密码信息数组"
+      }
+    ],
+    "desc": "本接口（ResetAccountPassword）用于重置实例的账户密码。"
+  },
   "ModifyDBName": {
     "params": [
       {
@@ -88,19 +123,6 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyDBName）用于更新数据库名。"
-  },
-  "ResetAccountPassword": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "数据库实例ID，形如mssql-njj2mtpl"
-      },
-      {
-        "name": "Accounts",
-        "desc": "更新后的账户密码信息数组"
-      }
-    ],
-    "desc": "本接口（ResetAccountPassword）用于重置实例的账户密码。"
   },
   "InquiryPriceCreateDBInstances": {
     "params": [
@@ -131,6 +153,18 @@ INFO = {
       {
         "name": "DBVersion",
         "desc": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本"
+      },
+      {
+        "name": "Cpu",
+        "desc": "预购买实例的CPU核心数"
+      },
+      {
+        "name": "InstanceType",
+        "desc": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本，SI-基础版，默认取值HA"
+      },
+      {
+        "name": "MachineType",
+        "desc": "购买实例的宿主机类型，PM-物理机, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘，默认取值PM"
       }
     ],
     "desc": "本接口（InquiryPriceCreateDBInstances）用于查询申请实例价格。"
@@ -198,14 +232,39 @@ INFO = {
     ],
     "desc": "本接口(DescribeBackups)用于查询备份列表。"
   },
-  "DescribeFlowStatus": {
+  "ModifyPublishSubscribeName": {
     "params": [
       {
-        "name": "FlowId",
-        "desc": "流程ID"
+        "name": "PublishSubscribeId",
+        "desc": "发布订阅ID"
+      },
+      {
+        "name": "PublishSubscribeName",
+        "desc": "待修改的发布订阅名称"
       }
     ],
-    "desc": "本接口(DescribeFlowStatus)用于查询流程状态。"
+    "desc": "本接口（ModifyPublishSubscribeName）修改发布订阅的名称。"
+  },
+  "ModifyBackupStrategy": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "BackupType",
+        "desc": "备份类型，当前只支持按天备份，取值为daily"
+      },
+      {
+        "name": "BackupTime",
+        "desc": "备份时间点，取值为0-23的整数"
+      },
+      {
+        "name": "BackupDay",
+        "desc": "BackupType取值为daily时，表示备份间隔天数。当前取值只能为1"
+      }
+    ],
+    "desc": "本接口（ModifyBackupStrategy）用于修改备份策略"
   },
   "ModifyAccountRemark": {
     "params": [
@@ -334,6 +393,30 @@ INFO = {
       {
         "name": "AutoRenewFlag",
         "desc": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。"
+      },
+      {
+        "name": "SecurityGroupList",
+        "desc": "安全组列表，填写形如sg-xxx的安全组ID"
+      },
+      {
+        "name": "Weekly",
+        "desc": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末"
+      },
+      {
+        "name": "StartTime",
+        "desc": "可维护时间窗配置，每天可维护的开始时间"
+      },
+      {
+        "name": "Span",
+        "desc": "可维护时间窗配置，持续时间，单位：小时"
+      },
+      {
+        "name": "HAType",
+        "desc": "购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL"
+      },
+      {
+        "name": "MultiZones",
+        "desc": "是否跨可用区部署，默认值为false"
       }
     ],
     "desc": "本接口（CreateDBInstances）用于创建实例。"
@@ -477,6 +560,10 @@ INFO = {
       {
         "name": "Storage",
         "desc": "实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小"
+      },
+      {
+        "name": "Cpu",
+        "desc": "实例升级后的CPU核心数，其值不能比当前实例CPU小"
       }
     ],
     "desc": "本接口（InquiryPriceUpgradeDBInstance）用于查询升级实例的价格。"
@@ -540,6 +627,89 @@ INFO = {
     ],
     "desc": "本接口（DeleteMigration）用于删除迁移任务"
   },
+  "ModifyMaintenanceSpan": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-k8voqdlz"
+      },
+      {
+        "name": "Weekly",
+        "desc": "以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。"
+      },
+      {
+        "name": "Span",
+        "desc": "每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。"
+      }
+    ],
+    "desc": "本接口（ModifyMaintenanceSpan）用于修改实例的可维护时间窗"
+  },
+  "CreatePublishSubscribe": {
+    "params": [
+      {
+        "name": "PublishInstanceId",
+        "desc": "发布实例ID，形如mssql-j8kv137v"
+      },
+      {
+        "name": "SubscribeInstanceId",
+        "desc": "订阅实例ID，形如mssql-j8kv137v"
+      },
+      {
+        "name": "DatabaseTupleSet",
+        "desc": "数据库的订阅发布关系集合"
+      },
+      {
+        "name": "PublishSubscribeName",
+        "desc": "发布订阅的名称，默认值为：default_name"
+      }
+    ],
+    "desc": "本接口（CreatePublishSubscribe）用于创建两个数据库之间的发布订阅关系。作为订阅者，不能再充当发布者，作为发布者可以有多个订阅者实例。"
+  },
+  "DescribePublishSubscribe": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-j8kv137v"
+      },
+      {
+        "name": "PubOrSubInstanceId",
+        "desc": "订阅/发布实例ID，与InstanceId是发布实例还是订阅实例有关；当InstanceId为发布实例时，本字段按照订阅实例ID做筛选；当InstanceId为订阅实例时，本字段按照发布实例ID做筛选；"
+      },
+      {
+        "name": "PubOrSubInstanceIp",
+        "desc": "订阅/发布实例内网IP，与InstanceId是发布实例还是订阅实例有关；当InstanceId为发布实例时，本字段按照订阅实例内网IP做筛选；当InstanceId为订阅实例时，本字段按照发布实例内网IP做筛选；"
+      },
+      {
+        "name": "PublishSubscribeId",
+        "desc": "订阅发布ID，用于筛选"
+      },
+      {
+        "name": "PublishSubscribeName",
+        "desc": "订阅发布名字，用于筛选"
+      },
+      {
+        "name": "PublishDBName",
+        "desc": "发布库名字，用于筛选"
+      },
+      {
+        "name": "SubscribeDBName",
+        "desc": "订阅库名字，用于筛选"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页，页数"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页，页大小"
+      }
+    ],
+    "desc": "本接口（DescribePublishSubscribe）用于查询发布订阅关系列表。"
+  },
   "DescribeAccounts": {
     "params": [
       {
@@ -556,6 +726,24 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeAccounts）用于拉取实例账户列表。"
+  },
+  "CompleteExpansion": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-j8kv137v"
+      }
+    ],
+    "desc": "本接口（CompleteExpansion）在实例发起扩容后，实例状态处于“升级待切换”时，可立即完成实例升级切换操作，无需等待可维护时间窗。本接口需要在实例低峰时调用，在完全切换成功前，存在部分库不可访问的风险。"
+  },
+  "DescribeMaintenanceSpan": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-k8voqdlz"
+      }
+    ],
+    "desc": "本接口（DescribeMaintenanceSpan）根据实例ID查询该实例的可维护时间窗。"
   },
   "DescribeRollbackTime": {
     "params": [
@@ -582,6 +770,19 @@ INFO = {
       }
     ],
     "desc": "本接口(DeleteDB)用于删除数据库。"
+  },
+  "RemoveBackups": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-j8kv137v"
+      },
+      {
+        "name": "BackupNames",
+        "desc": "待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。"
+      }
+    ],
+    "desc": "本接口（RemoveBackups）可以删除用户手动创建的备份文件。待删除的备份策略可以是实例备份，也可以是多库备份。"
   },
   "CreateDB": {
     "params": [
@@ -652,6 +853,10 @@ INFO = {
       {
         "name": "VoucherIds",
         "desc": "代金券ID，目前单个订单只能使用一张代金券"
+      },
+      {
+        "name": "Cpu",
+        "desc": "实例升级后的CPU核心数"
       }
     ],
     "desc": "本接口（UpgradeDBInstance）用于升级实例"

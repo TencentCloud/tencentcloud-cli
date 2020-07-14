@@ -1,22 +1,30 @@
 # -*- coding: utf-8 -*-
 DESC = "dbbrain-2019-10-16"
 INFO = {
-  "DescribeSlowLogTimeSeriesStats": {
+  "DescribeTopSpaceTableTimeSeries": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例 ID 。"
       },
       {
-        "name": "StartTime",
-        "desc": "开始时间。"
+        "name": "Limit",
+        "desc": "返回的Top表数量，最大值为20，默认为最大值。"
       },
       {
-        "name": "EndTime",
-        "desc": "结束时间。"
+        "name": "SortBy",
+        "desc": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize，默认为 PhysicalFileSize。"
+      },
+      {
+        "name": "StartDate",
+        "desc": "开始日期，最早为当日的前第6天，默认为截止日期的前第6天。"
+      },
+      {
+        "name": "EndDate",
+        "desc": "截止日期，最早为当日的前第6天，默认为当日。"
       }
     ],
-    "desc": "获取慢日志统计柱状图"
+    "desc": "获取实例占用空间最大的前几张表在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。"
   },
   "DescribeDBDiagEvent": {
     "params": [
@@ -77,6 +85,23 @@ INFO = {
       }
     ],
     "desc": "获取实例Top表的实时空间统计信息，默认返回按大小排序。"
+  },
+  "DescribeSlowLogTimeSeriesStats": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID 。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "开始时间。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间。"
+      }
+    ],
+    "desc": "获取慢日志统计柱状图"
   },
   "DescribeSlowLogTopSqls": {
     "params": [

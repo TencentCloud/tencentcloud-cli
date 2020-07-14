@@ -1166,6 +1166,7 @@ def doDownloadBill(argv, arglist):
         "MidasAppId": argv.get("--MidasAppId"),
         "MidasSecretId": argv.get("--MidasSecretId"),
         "MidasSignature": argv.get("--MidasSignature"),
+        "MidasEnvironment": argv.get("--MidasEnvironment"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

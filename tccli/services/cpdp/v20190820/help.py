@@ -1153,6 +1153,10 @@ INFO = {
       {
         "name": "MidasSignature",
         "desc": "使用聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
     "desc": "账单下载接口，根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。"
