@@ -1640,12 +1640,14 @@ def doCreateSuperPlayerConfig(argv, arglist):
 
     param = {
         "Name": argv.get("--Name"),
-        "Comment": argv.get("--Comment"),
         "DrmSwitch": argv.get("--DrmSwitch"),
         "AdaptiveDynamicStreamingDefinition": Utils.try_to_json(argv, "--AdaptiveDynamicStreamingDefinition"),
         "DrmStreamingsInfo": Utils.try_to_json(argv, "--DrmStreamingsInfo"),
         "ImageSpriteDefinition": Utils.try_to_json(argv, "--ImageSpriteDefinition"),
         "ResolutionNames": Utils.try_to_json(argv, "--ResolutionNames"),
+        "Domain": argv.get("--Domain"),
+        "Scheme": argv.get("--Scheme"),
+        "Comment": argv.get("--Comment"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 
     }
@@ -2364,6 +2366,8 @@ def doModifySuperPlayerConfig(argv, arglist):
         "DrmStreamingsInfo": Utils.try_to_json(argv, "--DrmStreamingsInfo"),
         "ImageSpriteDefinition": Utils.try_to_json(argv, "--ImageSpriteDefinition"),
         "ResolutionNames": Utils.try_to_json(argv, "--ResolutionNames"),
+        "Domain": argv.get("--Domain"),
+        "Scheme": argv.get("--Scheme"),
         "Comment": argv.get("--Comment"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
 

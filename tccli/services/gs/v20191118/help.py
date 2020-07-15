@@ -1,95 +1,6 @@
 # -*- coding: utf-8 -*-
 DESC = "gs-2019-11-18"
 INFO = {
-  "EnterQueue": {
-    "params": [
-      {
-        "name": "First",
-        "desc": "true：第一次请求排队 false：已在排队中，查询当前排名"
-      },
-      {
-        "name": "GameId",
-        "desc": "游戏ID"
-      },
-      {
-        "name": "UserId",
-        "desc": "用户ID"
-      },
-      {
-        "name": "SetNumber",
-        "desc": "资源池编号"
-      },
-      {
-        "name": "UserIp",
-        "desc": "游戏用户IP，用于就近调度，例如125.127.178.228"
-      }
-    ],
-    "desc": "进入排队锁定机器"
-  },
-  "TrylockWorker": {
-    "params": [
-      {
-        "name": "UserId",
-        "desc": "游戏用户ID"
-      },
-      {
-        "name": "GameId",
-        "desc": "游戏ID"
-      },
-      {
-        "name": "GameRegion",
-        "desc": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等"
-      },
-      {
-        "name": "SetNo",
-        "desc": "资源池编号，1表示共用，2表示测试"
-      },
-      {
-        "name": "UserIp",
-        "desc": "游戏用户IP，用于就近调度，例如125.127.178.228"
-      },
-      {
-        "name": "GroupId",
-        "desc": "分组ID"
-      }
-    ],
-    "desc": "尝试锁定机器"
-  },
-  "StopGame": {
-    "params": [
-      {
-        "name": "UserId",
-        "desc": "游戏用户ID"
-      }
-    ],
-    "desc": "强制退出游戏"
-  },
-  "QuitQueue": {
-    "params": [
-      {
-        "name": "UserId",
-        "desc": "用户ID"
-      },
-      {
-        "name": "SetNumber",
-        "desc": "资源池编号"
-      }
-    ],
-    "desc": "退出排队"
-  },
-  "DescribeWorkers": {
-    "params": [
-      {
-        "name": "SetNo",
-        "desc": "资源池编号，1表示正式，2表示测试"
-      }
-    ],
-    "desc": "查询空闲机器数量"
-  },
-  "DescribeWorkersInfo": {
-    "params": [],
-    "desc": "获取机器信息"
-  },
   "CreateSession": {
     "params": [
       {
@@ -151,17 +62,42 @@ INFO = {
     ],
     "desc": "创建会话"
   },
-  "ModifyWorkers": {
+  "StopGame": {
     "params": [
       {
-        "name": "InstanceIds",
-        "desc": "批量机器ID，最多不超过100个"
+        "name": "UserId",
+        "desc": "游戏用户ID"
+      }
+    ],
+    "desc": "强制退出游戏"
+  },
+  "TrylockWorker": {
+    "params": [
+      {
+        "name": "UserId",
+        "desc": "游戏用户ID"
+      },
+      {
+        "name": "GameId",
+        "desc": "游戏ID"
+      },
+      {
+        "name": "GameRegion",
+        "desc": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等"
       },
       {
         "name": "SetNo",
-        "desc": "资源池编号，修改有效范围为[1,100]，在idle状态下才能修改成功"
+        "desc": "资源池编号，1表示共用，2表示测试"
+      },
+      {
+        "name": "UserIp",
+        "desc": "游戏用户IP，用于就近调度，例如125.127.178.228"
+      },
+      {
+        "name": "GroupId",
+        "desc": "分组ID"
       }
     ],
-    "desc": "修改机器信息"
+    "desc": "尝试锁定机器"
   }
 }

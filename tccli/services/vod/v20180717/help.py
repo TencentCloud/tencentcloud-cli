@@ -1223,10 +1223,6 @@ INFO = {
         "desc": "播放器配置名称，长度限制：64 个字符。只允许出现 [0-9a-zA-Z] 及 _- 字符（如 test_ABC-123），同一个用户该名称唯一。"
       },
       {
-        "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字符。"
-      },
-      {
         "name": "DrmSwitch",
         "desc": "播放 DRM 保护的自适应码流开关：\n<li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>\n<li>OFF：关闭，表示播放未加密的自适应码流输出。</li>\n默认为 OFF。"
       },
@@ -1245,6 +1241,18 @@ INFO = {
       {
         "name": "ResolutionNames",
         "desc": "播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：\n<li>MinEdgeLength：240，Name：流畅；</li>\n<li>MinEdgeLength：480，Name：标清；</li>\n<li>MinEdgeLength：720，Name：高清；</li>\n<li>MinEdgeLength：1080，Name：全高清；</li>\n<li>MinEdgeLength：1440，Name：2K；</li>\n<li>MinEdgeLength：2160，Name：4K；</li>\n<li>MinEdgeLength：4320，Name：8K。</li>"
+      },
+      {
+        "name": "Domain",
+        "desc": "播放时使用的域名。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。"
+      },
+      {
+        "name": "Scheme",
+        "desc": "播放时使用的 Scheme。不填或者填 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme。其他可选值：\n<li>HTTP；</li>\n<li>HTTPS。</li>"
+      },
+      {
+        "name": "Comment",
+        "desc": "模板描述信息，长度限制：256 个字符。"
       },
       {
         "name": "SubAppId",
@@ -1784,6 +1792,14 @@ INFO = {
       {
         "name": "ResolutionNames",
         "desc": "播放器对不于不同分辨率的子流展示名字。"
+      },
+      {
+        "name": "Domain",
+        "desc": "播放时使用的域名。填 Default 表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。"
+      },
+      {
+        "name": "Scheme",
+        "desc": "播放时使用的 Scheme。取值范围：\n<li>Default：使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme；</li>\n<li>HTTP；</li>\n<li>HTTPS。</li>"
       },
       {
         "name": "Comment",

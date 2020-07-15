@@ -14,18 +14,18 @@ INFO = {
     ],
     "desc": "清空Redis实例的实例数据。"
   },
-  "InquiryPriceRenewInstance": {
+  "DescribeInstanceMonitorBigKeySizeDist": {
     "params": [
       {
-        "name": "Period",
-        "desc": "购买时长，单位：月"
+        "name": "InstanceId",
+        "desc": "实例Id"
       },
       {
-        "name": "InstanceId",
-        "desc": "实例ID"
+        "name": "Date",
+        "desc": "时间；例如：\"20190219\""
       }
     ],
-    "desc": "查询实例续费价格（包年包月）"
+    "desc": "查询实例大Key大小分布"
   },
   "CreateInstanceAccount": {
     "params": [
@@ -55,6 +55,23 @@ INFO = {
       }
     ],
     "desc": "创建实例子账号"
+  },
+  "ModifyMaintenanceWindow": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "StartTime",
+        "desc": "维护时间窗起始时间，如：17:00"
+      },
+      {
+        "name": "EndTime",
+        "desc": "维护时间窗结束时间，如：19:00"
+      }
+    ],
+    "desc": "修改实例维护时间窗时间，需要进行版本升级或者架构升级的实例，会在维护时间窗内进行时间切换。注意：已经发起版本升级或者架构升级的实例，无法修改维护时间窗。"
   },
   "ModifyInstanceAccount": {
     "params": [
@@ -327,6 +344,32 @@ INFO = {
     ],
     "desc": "查询Redis实例列表"
   },
+  "ModifyInstanceParams": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      },
+      {
+        "name": "InstanceParams",
+        "desc": "实例修改的参数列表"
+      }
+    ],
+    "desc": "修改实例参数"
+  },
+  "DescribeInstanceMonitorTopNCmd": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "SpanType",
+        "desc": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时"
+      }
+    ],
+    "desc": "查询实例访问命令"
+  },
   "DescribeInstanceParamRecords": {
     "params": [
       {
@@ -343,19 +386,6 @@ INFO = {
       }
     ],
     "desc": "查询参数修改历史列表"
-  },
-  "DescribeInstanceMonitorTopNCmd": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "实例Id"
-      },
-      {
-        "name": "SpanType",
-        "desc": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时"
-      }
-    ],
-    "desc": "查询实例访问命令"
   },
   "DisableReplicaReadonly": {
     "params": [
@@ -414,18 +444,35 @@ INFO = {
     ],
     "desc": "查询实例参数列表"
   },
-  "DescribeInstanceMonitorBigKeySizeDist": {
+  "UpgradeInstanceVersion": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例Id"
+        "name": "TargetInstanceType",
+        "desc": "目标实例类型，同CreateInstances接口的Type，即实例要变更的目标类型"
       },
       {
-        "name": "Date",
-        "desc": "时间；例如：\"20190219\""
+        "name": "SwitchOption",
+        "desc": "切换模式：1-维护时间窗切换，2-立即切换"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
       }
     ],
-    "desc": "查询实例大Key大小分布"
+    "desc": "将原本实例升级到高版本实例，或者将主从版实例升级到集群版实例"
+  },
+  "InquiryPriceRenewInstance": {
+    "params": [
+      {
+        "name": "Period",
+        "desc": "购买时长，单位：月"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "查询实例续费价格（包年包月）"
   },
   "InquiryPriceUpgradeInstance": {
     "params": [
@@ -784,18 +831,14 @@ INFO = {
     ],
     "desc": "恢复 CRS 实例"
   },
-  "ModifyInstanceParams": {
+  "DescribeMaintenanceWindow": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例ID"
-      },
-      {
-        "name": "InstanceParams",
-        "desc": "实例修改的参数列表"
       }
     ],
-    "desc": "修改实例参数"
+    "desc": "查询实例维护时间窗，在实例需要进行版本升级或者架构升级的时候，会在维护时间窗时间内进行切换"
   },
   "CreateInstances": {
     "params": [
