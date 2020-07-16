@@ -308,7 +308,7 @@ INFO = {
         "desc": "混流的特殊控制参数。如无特殊需求，无需填写。"
       }
     ],
-    "desc": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。\n注意：当前最多支持16路混流。"
+    "desc": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。\n注意：当前最多支持16路混流。\n最佳实践：https://cloud.tencent.com/document/product/267/45566"
   },
   "DescribeHttpStatusInfoList": {
     "params": [
@@ -1145,7 +1145,7 @@ INFO = {
     "params": [
       {
         "name": "TemplateId",
-        "desc": "模板 ID。"
+        "desc": "DescribeLiveCallbackTemplates接口返回的模板 ID。"
       },
       {
         "name": "TemplateName",

@@ -185,6 +185,43 @@ INFO = {
     ],
     "desc": "本接口{MisAlarmNonlocalLoginPlaces}将设置当前地点为常用登录地。"
   },
+  "CreateBaselineStrategy": {
+    "params": [
+      {
+        "name": "StrategyName",
+        "desc": "策略名称"
+      },
+      {
+        "name": "ScanCycle",
+        "desc": "检测周期"
+      },
+      {
+        "name": "ScanAt",
+        "desc": "定期检测时间，该时间下发扫描"
+      },
+      {
+        "name": "CategoryIds",
+        "desc": "该策略下选择的基线id数组"
+      },
+      {
+        "name": "IsGlobal",
+        "desc": "扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机"
+      },
+      {
+        "name": "MachineType",
+        "desc": "云主机类型：cvm：虚拟主机，bms：裸金属，ecm：边缘计算主机"
+      },
+      {
+        "name": "RegionCode",
+        "desc": "主机地域"
+      },
+      {
+        "name": "Quuids",
+        "desc": "主机id数组"
+      }
+    ],
+    "desc": "根据策略信息创建基线策略"
+  },
   "DescribeBashRules": {
     "params": [
       {

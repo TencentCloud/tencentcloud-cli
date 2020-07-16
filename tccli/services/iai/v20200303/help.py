@@ -5,11 +5,11 @@ INFO = {
     "params": [
       {
         "name": "PersonId",
-        "desc": "人员ID"
+        "desc": "人员ID，取值为创建人员接口中的PersonId"
       },
       {
         "name": "GroupId",
-        "desc": "人员库ID"
+        "desc": "人员库ID，取值为创建人员库接口中的GroupId"
       }
     ],
     "desc": "从某人员库中删除人员，此操作仅影响该人员库。若该人员仅存在于指定的人员库中，该人员将被删除，其所有的人脸信息也将被删除。"
@@ -18,7 +18,7 @@ INFO = {
     "params": [
       {
         "name": "GroupIds",
-        "desc": "希望搜索的人员库列表，上限60个。"
+        "desc": "希望搜索的人员库列表，上限60个。数组元素取值为创建人员库接口中的GroupId"
       },
       {
         "name": "Image",
@@ -101,7 +101,7 @@ INFO = {
     "params": [
       {
         "name": "PersonId",
-        "desc": "人员ID"
+        "desc": "人员ID，创建人员接口中的PersonId"
       }
     ],
     "desc": "获取指定人员的信息，包括姓名、性别、人脸等。"
@@ -127,7 +127,7 @@ INFO = {
     "params": [
       {
         "name": "PersonId",
-        "desc": "人员ID。"
+        "desc": "人员ID，取值为创建人员接口中的PersonId"
       },
       {
         "name": "Images",
@@ -156,7 +156,7 @@ INFO = {
     "params": [
       {
         "name": "GroupId",
-        "desc": "人员库ID"
+        "desc": "人员库ID，取值为创建人员库接口中的GroupId"
       }
     ],
     "desc": "获取指定人员库中人员数量。"
@@ -165,7 +165,7 @@ INFO = {
     "params": [
       {
         "name": "PersonId",
-        "desc": "人员ID"
+        "desc": "人员ID，取值为创建人员接口中的PersonId"
       },
       {
         "name": "Offset",
@@ -207,7 +207,7 @@ INFO = {
     "params": [
       {
         "name": "PersonId",
-        "desc": "人员ID"
+        "desc": "人员ID，取值为创建人员接口中的PersonId"
       },
       {
         "name": "PersonName",
@@ -215,7 +215,7 @@ INFO = {
       },
       {
         "name": "Gender",
-        "desc": "需要修改的人员性别"
+        "desc": "需要修改的人员性别，1代表男性，2代表女性"
       }
     ],
     "desc": "修改人员信息，包括名称、性别等。人员名称和性别修改会同步到包含该人员的所有人员库。"
@@ -224,7 +224,7 @@ INFO = {
     "params": [
       {
         "name": "GroupIds",
-        "desc": "希望搜索的人员库列表，上限100个。"
+        "desc": "希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId"
       },
       {
         "name": "Image",
@@ -269,11 +269,11 @@ INFO = {
     "params": [
       {
         "name": "PersonId",
-        "desc": "人员ID"
+        "desc": "人员ID，取值为创建人员接口中的PersonId"
       },
       {
         "name": "GroupIds",
-        "desc": "待加入的人员库列表"
+        "desc": "待加入的人员库列表，数组元素取值为创建人员库接口中的GroupId"
       }
     ],
     "desc": "将已存在于某人员库的人员复制到其他人员库，该人员的描述信息不会被复制。单个人员最多只能同时存在100个人员库中。\n>     \n- 注：若该人员创建时算法模型版本为2.0，复制到非2.0算法模型版本的Group中时，复制操作将会失败。"
@@ -295,7 +295,7 @@ INFO = {
     "params": [
       {
         "name": "GroupId",
-        "desc": "人员库ID。"
+        "desc": "人员库ID，取值为创建人员库接口中的GroupId"
       }
     ],
     "desc": "删除该人员库及包含的所有的人员。同时，人员对应的所有人脸信息将被删除。若某人员同时存在多个人员库中，该人员不会被删除，但属于该人员库中的自定义描述字段信息会被删除，属于其他人员库的自定义描述字段信息不受影响。\n"
@@ -304,7 +304,7 @@ INFO = {
     "params": [
       {
         "name": "PersonId",
-        "desc": "人员ID"
+        "desc": "人员ID，取值为创建人员接口中的PersonId"
       }
     ],
     "desc": "删除该人员信息，此操作会导致所有人员库均删除此人员。同时，该人员的所有人脸信息将被删除。"
@@ -313,7 +313,7 @@ INFO = {
     "params": [
       {
         "name": "GroupId",
-        "desc": "人员库ID"
+        "desc": "人员库ID，取值为创建人员库接口中的GroupId"
       },
       {
         "name": "GroupName",
@@ -343,7 +343,7 @@ INFO = {
     "params": [
       {
         "name": "GroupId",
-        "desc": "待加入的人员库ID。"
+        "desc": "待加入的人员库ID，取值为创建人员库接口中的GroupId"
       },
       {
         "name": "PersonName",
@@ -388,7 +388,7 @@ INFO = {
     "params": [
       {
         "name": "GroupId",
-        "desc": "人员库 ID。"
+        "desc": "人员库 ID，取值为创建人员库接口中的GroupId"
       }
     ],
     "desc": "获取人员库信息。"
@@ -476,11 +476,11 @@ INFO = {
     "params": [
       {
         "name": "GroupId",
-        "desc": "人员库ID"
+        "desc": "人员库ID，取值为创建人员库接口中的GroupId"
       },
       {
         "name": "PersonId",
-        "desc": "人员ID"
+        "desc": "人员ID，取值为创建人员接口中的PersonId"
       },
       {
         "name": "PersonExDescriptionInfos",
@@ -518,7 +518,7 @@ INFO = {
     "params": [
       {
         "name": "GroupIds",
-        "desc": "希望搜索的人员库列表，上限100个。"
+        "desc": "希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId"
       },
       {
         "name": "Image",
@@ -663,11 +663,11 @@ INFO = {
     "params": [
       {
         "name": "PersonId",
-        "desc": "人员ID"
+        "desc": "人员ID，取值为创建人员接口中的PersonId"
       },
       {
         "name": "FaceIds",
-        "desc": "待删除的人脸ID列表"
+        "desc": "待删除的人脸ID列表，数组元素取值为增加人脸接口返回的FaceId"
       }
     ],
     "desc": "删除一个人员下的人脸图片。如果该人员只有一张人脸图片，则返回错误。"

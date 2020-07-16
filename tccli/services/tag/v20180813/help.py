@@ -187,7 +187,7 @@ INFO = {
       },
       {
         "name": "Resource",
-        "desc": "资源六段式描述"
+        "desc": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)"
       }
     ],
     "desc": "本接口用于给标签关联资源"
@@ -204,7 +204,7 @@ INFO = {
       },
       {
         "name": "Resource",
-        "desc": "资源的六段式描述"
+        "desc": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)"
       }
     ],
     "desc": "本接口用于修改资源已关联的标签值（标签键不变）"
@@ -217,7 +217,7 @@ INFO = {
       },
       {
         "name": "Resource",
-        "desc": "资源六段式描述"
+        "desc": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)"
       }
     ],
     "desc": "本接口用于解除标签和资源的关联关系"
@@ -326,7 +326,7 @@ INFO = {
     "params": [
       {
         "name": "Resource",
-        "desc": "资源的六段式描述"
+        "desc": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)"
       },
       {
         "name": "ReplaceTags",

@@ -58,6 +58,14 @@ INFO = {
       {
         "name": "Tags",
         "desc": "扩容节点绑定标签列表。"
+      },
+      {
+        "name": "HardwareResourceType",
+        "desc": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群提供的资源"
+      },
+      {
+        "name": "PodSpec",
+        "desc": "使用Pod资源扩容时，指定的Pod规格以及来源等信息"
       }
     ],
     "desc": "实例扩容"
@@ -141,6 +149,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "每页返回数量，默认值为100，最大值为100。"
+      },
+      {
+        "name": "HardwareResourceType",
+        "desc": "资源类型:支持all/host/pod，默认为all"
+      },
+      {
+        "name": "SearchFields",
+        "desc": "支持搜索的字段"
       }
     ],
     "desc": "查询硬件节点信息"

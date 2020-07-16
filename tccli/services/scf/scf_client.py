@@ -850,6 +850,7 @@ def doUpdateFunctionConfiguration(argv, arglist):
         "Layers": Utils.try_to_json(argv, "--Layers"),
         "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
         "PublicNetConfig": Utils.try_to_json(argv, "--PublicNetConfig"),
+        "CfsConfig": Utils.try_to_json(argv, "--CfsConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1007,6 +1008,7 @@ def doCreateFunction(argv, arglist):
         "Layers": Utils.try_to_json(argv, "--Layers"),
         "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
         "PublicNetConfig": Utils.try_to_json(argv, "--PublicNetConfig"),
+        "CfsConfig": Utils.try_to_json(argv, "--CfsConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

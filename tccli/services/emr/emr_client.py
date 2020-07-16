@@ -140,6 +140,8 @@ def doDescribeClusterNodes(argv, arglist):
         "NodeFlag": argv.get("--NodeFlag"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "HardwareResourceType": argv.get("--HardwareResourceType"),
+        "SearchFields": Utils.try_to_json(argv, "--SearchFields"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -368,6 +370,8 @@ def doScaleOutInstance(argv, arglist):
         "ServiceNodeInfo": Utils.try_to_json(argv, "--ServiceNodeInfo"),
         "DisasterRecoverGroupIds": Utils.try_to_json(argv, "--DisasterRecoverGroupIds"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
+        "HardwareResourceType": argv.get("--HardwareResourceType"),
+        "PodSpec": Utils.try_to_json(argv, "--PodSpec"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

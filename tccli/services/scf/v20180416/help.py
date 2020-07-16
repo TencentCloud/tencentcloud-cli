@@ -596,6 +596,10 @@ INFO = {
       {
         "name": "PublicNetConfig",
         "desc": "公网访问配置"
+      },
+      {
+        "name": "CfsConfig",
+        "desc": "文件系统配置入参，用于云函数绑定文件系统"
       }
     ],
     "desc": "该接口根据传入参数更新函数配置。"
@@ -732,6 +736,10 @@ INFO = {
       {
         "name": "PublicNetConfig",
         "desc": "公网访问配置"
+      },
+      {
+        "name": "CfsConfig",
+        "desc": "文件系统配置参数，用于云函数挂载文件系统"
       }
     ],
     "desc": "该接口根据传入参数创建新的函数。"
