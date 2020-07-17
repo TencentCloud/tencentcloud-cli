@@ -841,6 +841,7 @@ def doPurgeUrlsCache(argv, arglist):
 
     param = {
         "Urls": Utils.try_to_json(argv, "--Urls"),
+        "Area": argv.get("--Area"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

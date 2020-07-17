@@ -93,6 +93,27 @@ INFO = {
     ],
     "desc": "获取资源的规则数"
   },
+  "CreateNewL7RulesUpload": {
+    "params": [
+      {
+        "name": "Business",
+        "desc": "大禹子产品代号（bgpip表示高防IP）"
+      },
+      {
+        "name": "IdList",
+        "desc": "资源ID列表"
+      },
+      {
+        "name": "VipList",
+        "desc": "资源IP列表"
+      },
+      {
+        "name": "Rules",
+        "desc": "规则列表"
+      }
+    ],
+    "desc": "批量上传7层转发规则"
+  },
   "CreateL7CCRule": {
     "params": [
       {

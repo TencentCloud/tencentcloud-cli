@@ -1963,7 +1963,7 @@ INFO = {
       },
       {
         "name": "Width",
-        "desc": "宽，默认0。"
+        "desc": "宽，默认0。\n范围[0-3000]"
       },
       {
         "name": "NeedVideo",
@@ -1975,7 +1975,7 @@ INFO = {
       },
       {
         "name": "Height",
-        "desc": "高，默认0。"
+        "desc": "高，默认0。\n范围[0-3000]"
       },
       {
         "name": "Fps",
