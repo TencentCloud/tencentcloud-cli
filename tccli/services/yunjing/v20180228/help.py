@@ -58,6 +58,14 @@ INFO = {
       {
         "name": "Filters",
         "desc": "过滤条件。\n<li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>\n<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月[\"2019-11-17\", \"2019-12-17\"]</li>"
+      },
+      {
+        "name": "Uuid",
+        "desc": "主机安全客户端ID"
+      },
+      {
+        "name": "Quuid",
+        "desc": "云主机机器ID"
       }
     ],
     "desc": "按分页形式展示网络攻击日志列表"
@@ -1171,7 +1179,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询"
+        "desc": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询"
       }
     ],
     "desc": "本接口 (DescribeMachines) 用于获取区域主机列表。"
@@ -1230,7 +1238,16 @@ INFO = {
     "desc": "本接口 (RescanImpactedHost) 用于漏洞重新检测。"
   },
   "DescribeTags": {
-    "params": [],
+    "params": [
+      {
+        "name": "MachineType",
+        "desc": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>"
+      },
+      {
+        "name": "MachineRegion",
+        "desc": "机器所属地域。如：ap-guangzhou，ap-shanghai"
+      }
+    ],
     "desc": "获取所有主机标签"
   },
   "DescribeSecurityTrends": {

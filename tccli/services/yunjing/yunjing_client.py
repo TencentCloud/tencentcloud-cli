@@ -162,6 +162,8 @@ def doDescribeAttackLogs(argv, arglist):
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Uuid": argv.get("--Uuid"),
+        "Quuid": argv.get("--Quuid"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3162,6 +3164,8 @@ def doDescribeTags(argv, arglist):
         return
 
     param = {
+        "MachineType": argv.get("--MachineType"),
+        "MachineRegion": argv.get("--MachineRegion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

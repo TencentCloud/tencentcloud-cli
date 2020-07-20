@@ -140,7 +140,7 @@ INFO = {
       },
       {
         "name": "MongoVersion",
-        "desc": "版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本"
+        "desc": "版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本"
       },
       {
         "name": "GoodsNum",
@@ -156,15 +156,15 @@ INFO = {
       },
       {
         "name": "MachineCode",
-        "desc": "机器类型，HIO：高IO型；HIO10G：高IO万兆型"
+        "desc": "机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型"
       },
       {
         "name": "ClusterType",
-        "desc": "实例类型，REPLSET-副本集，SHARD-分片集群"
+        "desc": "实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点"
       },
       {
         "name": "ReplicateSetNum",
-        "desc": "副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数"
+        "desc": "副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0"
       },
       {
         "name": "ProjectId",
@@ -189,6 +189,22 @@ INFO = {
       {
         "name": "AutoRenewFlag",
         "desc": "自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为不自动续费"
+      },
+      {
+        "name": "AutoVoucher",
+        "desc": "是否自动选择代金券，可选值为：1 - 是；0 - 否； 默认为0"
+      },
+      {
+        "name": "Clone",
+        "desc": "1:正式实例,2:临时实例,3:只读实例，4：灾备实例"
+      },
+      {
+        "name": "Father",
+        "desc": "若是只读，灾备实例，Father必须填写，即主实例ID"
+      },
+      {
+        "name": "SecurityGroup",
+        "desc": "安全组"
       }
     ],
     "desc": "本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。"
@@ -271,6 +287,18 @@ INFO = {
       {
         "name": "Tags",
         "desc": "实例标签信息"
+      },
+      {
+        "name": "Clone",
+        "desc": "1:正式实例,2:临时实例,3:只读实例，4：灾备实例"
+      },
+      {
+        "name": "Father",
+        "desc": "父实例Id，当Clone为3或者4时，这个必须填"
+      },
+      {
+        "name": "SecurityGroup",
+        "desc": "安全组"
       }
     ],
     "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例。"
