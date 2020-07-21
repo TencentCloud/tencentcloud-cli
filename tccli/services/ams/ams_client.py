@@ -12,24 +12,24 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tmt.v20180321 import tmt_client as tmt_client_v20180321
-from tencentcloud.tmt.v20180321 import models as models_v20180321
-from tccli.services.tmt import v20180321
-from tccli.services.tmt.v20180321 import help as v20180321_help
+from tencentcloud.ams.v20200608 import ams_client as ams_client_v20200608
+from tencentcloud.ams.v20200608 import models as models_v20200608
+from tccli.services.ams import v20200608
+from tccli.services.ams.v20200608 import help as v20200608_help
 
 
-def doTextTranslate(argv, arglist):
+def doCreateAudioModerationTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TextTranslate", g_param[OptionsDefine.Version])
+        show_help("CreateAudioModerationTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SourceText": argv.get("--SourceText"),
-        "Source": argv.get("--Source"),
-        "Target": argv.get("--Target"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "UntranslatedText": argv.get("--UntranslatedText"),
+        "BizType": argv.get("--BizType"),
+        "Type": argv.get("--Type"),
+        "Seed": argv.get("--Seed"),
+        "CallbackUrl": argv.get("--CallbackUrl"),
+        "Tasks": Utils.try_to_json(argv, "--Tasks"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -40,12 +40,12 @@ def doTextTranslate(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextTranslateRequest()
+    model = models.CreateAudioModerationTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TextTranslate(model)
+    rsp = client.CreateAudioModerationTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -55,19 +55,15 @@ def doTextTranslate(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doImageTranslate(argv, arglist):
+def doDescribeTaskDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ImageTranslate", g_param[OptionsDefine.Version])
+        show_help("DescribeTaskDetail", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SessionUuid": argv.get("--SessionUuid"),
-        "Scene": argv.get("--Scene"),
-        "Data": argv.get("--Data"),
-        "Source": argv.get("--Source"),
-        "Target": argv.get("--Target"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
+        "TaskId": argv.get("--TaskId"),
+        "ShowAllSegments": Utils.try_to_json(argv, "--ShowAllSegments"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -78,124 +74,12 @@ def doImageTranslate(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.AmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ImageTranslateRequest()
+    model = models.DescribeTaskDetailRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ImageTranslate(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSpeechTranslate(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SpeechTranslate", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "SessionUuid": argv.get("--SessionUuid"),
-        "Source": argv.get("--Source"),
-        "Target": argv.get("--Target"),
-        "AudioFormat": Utils.try_to_json(argv, "--AudioFormat"),
-        "Seq": Utils.try_to_json(argv, "--Seq"),
-        "IsEnd": Utils.try_to_json(argv, "--IsEnd"),
-        "Data": argv.get("--Data"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "Mode": argv.get("--Mode"),
-        "TransType": Utils.try_to_json(argv, "--TransType"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SpeechTranslateRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SpeechTranslate(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTextTranslateBatch(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TextTranslateBatch", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Source": argv.get("--Source"),
-        "Target": argv.get("--Target"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "SourceTextList": Utils.try_to_json(argv, "--SourceTextList"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TextTranslateBatchRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TextTranslateBatch(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doLanguageDetect(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("LanguageDetect", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Text": argv.get("--Text"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TmtClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LanguageDetectRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.LanguageDetect(model)
+    rsp = client.DescribeTaskDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -206,35 +90,32 @@ def doLanguageDetect(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20180321": tmt_client_v20180321,
+    "v20200608": ams_client_v20200608,
 
 }
 
 MODELS_MAP = {
-    "v20180321": models_v20180321,
+    "v20200608": models_v20200608,
 
 }
 
 ACTION_MAP = {
-    "TextTranslate": doTextTranslate,
-    "ImageTranslate": doImageTranslate,
-    "SpeechTranslate": doSpeechTranslate,
-    "TextTranslateBatch": doTextTranslateBatch,
-    "LanguageDetect": doLanguageDetect,
+    "CreateAudioModerationTask": doCreateAudioModerationTask,
+    "DescribeTaskDetail": doDescribeTaskDetail,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180321.version,
+    v20200608.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20180321.version.replace('-', ''): {"help": v20180321_help.INFO,"desc": v20180321_help.DESC},
+     'v' + v20200608.version.replace('-', ''): {"help": v20200608_help.INFO,"desc": v20200608_help.DESC},
 
 }
 
 
-def tmt_action(argv, arglist):
+def ams_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -250,7 +131,7 @@ def tmt_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "tmt", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "ams", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -271,7 +152,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("tmt", tmt_action)
+    cmd = NiceCommand("ams", ams_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -336,11 +217,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["tmt"][OptionsDefine.Version]
+            version = config["ams"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["tmt"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["ams"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -357,7 +238,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "tmt", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "ams", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -367,7 +248,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["tmt"]["version"]
+        version = profile["ams"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

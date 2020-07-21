@@ -333,6 +333,10 @@ INFO = {
       {
         "name": "SecurityGroupIds",
         "desc": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。"
+      },
+      {
+        "name": "SystemDiskSize",
+        "desc": "系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值"
       }
     ],
     "desc": "创建ECM实例"
@@ -548,6 +552,27 @@ INFO = {
     ],
     "desc": "弹性网卡迁移"
   },
+  "CreateImage": {
+    "params": [
+      {
+        "name": "ImageName",
+        "desc": "镜像名称"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "需要制作镜像的实例ID。"
+      },
+      {
+        "name": "ImageDescription",
+        "desc": "镜像描述"
+      },
+      {
+        "name": "ForcePoweroff",
+        "desc": "是否执行强制关机以制作镜像。取值范围：\nTRUE：表示自动关机后制作镜像\nFALSE：表示开机状态制作，目前不支持，需要先手动关机\n默认取值：FALSE。"
+      }
+    ],
+    "desc": "本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。"
+  },
   "ModifyModuleNetwork": {
     "params": [
       {
@@ -582,6 +607,23 @@ INFO = {
     ],
     "desc": "重置处于运行中状态的实例的密码，需要显式指定强制关机参数ForceStop。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。"
   },
+  "ModifyImageAttribute": {
+    "params": [
+      {
+        "name": "ImageId",
+        "desc": "镜像ID，形如img-gvbnzy6f"
+      },
+      {
+        "name": "ImageName",
+        "desc": "设置新的镜像名称；必须满足下列限制：\n不得超过20个字符。\n- 镜像名称不能与已有镜像重复。"
+      },
+      {
+        "name": "ImageDescription",
+        "desc": "设置新的镜像描述；必须满足下列限制：\n- 不得超过60个字符。"
+      }
+    ],
+    "desc": "本接口（ModifyImageAttribute）用于修改镜像属性。"
+  },
   "DescribeInstancesDeniedActions": {
     "params": [
       {
@@ -590,6 +632,15 @@ INFO = {
       }
     ],
     "desc": "通过实例id获取当前禁止的操作"
+  },
+  "DescribeTaskStatus": {
+    "params": [
+      {
+        "name": "TaskSet",
+        "desc": "任务描述"
+      }
+    ],
+    "desc": "本接口(DescribeTaskStatus)用于获取异步任务状态"
   },
   "CreateNetworkInterface": {
     "params": [

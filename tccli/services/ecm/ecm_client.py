@@ -700,6 +700,7 @@ def doRunInstances(argv, arglist):
         "InstanceType": argv.get("--InstanceType"),
         "DataDiskSize": Utils.try_to_json(argv, "--DataDiskSize"),
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "SystemDiskSize": Utils.try_to_json(argv, "--SystemDiskSize"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1084,6 +1085,42 @@ def doMigrateNetworkInterface(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateImage(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateImage", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageName": argv.get("--ImageName"),
+        "InstanceId": argv.get("--InstanceId"),
+        "ImageDescription": argv.get("--ImageDescription"),
+        "ForcePoweroff": argv.get("--ForcePoweroff"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateImageRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateImage(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyModuleNetwork(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1154,6 +1191,41 @@ def doResetInstancesPassword(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyImageAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyImageAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ImageId": argv.get("--ImageId"),
+        "ImageName": argv.get("--ImageName"),
+        "ImageDescription": argv.get("--ImageDescription"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyImageAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyImageAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeInstancesDeniedActions(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1178,6 +1250,39 @@ def doDescribeInstancesDeniedActions(argv, arglist):
     model = models.DescribeInstancesDeniedActionsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeInstancesDeniedActions(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskSet": Utils.try_to_json(argv, "--TaskSet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2173,9 +2278,12 @@ ACTION_MAP = {
     "ModifySubnetAttribute": doModifySubnetAttribute,
     "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
     "MigrateNetworkInterface": doMigrateNetworkInterface,
+    "CreateImage": doCreateImage,
     "ModifyModuleNetwork": doModifyModuleNetwork,
     "ResetInstancesPassword": doResetInstancesPassword,
+    "ModifyImageAttribute": doModifyImageAttribute,
     "DescribeInstancesDeniedActions": doDescribeInstancesDeniedActions,
+    "DescribeTaskStatus": doDescribeTaskStatus,
     "CreateNetworkInterface": doCreateNetworkInterface,
     "DescribePeakNetworkOverview": doDescribePeakNetworkOverview,
     "StopInstances": doStopInstances,
