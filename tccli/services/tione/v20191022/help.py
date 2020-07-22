@@ -375,10 +375,6 @@ INFO = {
         "desc": "算法镜像配置"
       },
       {
-        "name": "InputDataConfig",
-        "desc": "输入数据配置"
-      },
-      {
         "name": "OutputDataConfig",
         "desc": "输出数据配置"
       },
@@ -389,6 +385,10 @@ INFO = {
       {
         "name": "TrainingJobName",
         "desc": "训练任务名称"
+      },
+      {
+        "name": "InputDataConfig",
+        "desc": "输入数据配置"
       },
       {
         "name": "StoppingCondition",

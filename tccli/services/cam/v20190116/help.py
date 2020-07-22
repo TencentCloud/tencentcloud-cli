@@ -35,18 +35,22 @@ INFO = {
     ],
     "desc": "查询用户组关联的用户列表"
   },
-  "CreateGroup": {
+  "PutRolePermissionsBoundary": {
     "params": [
       {
-        "name": "GroupName",
-        "desc": "用户组名"
+        "name": "PolicyId",
+        "desc": "策略ID"
       },
       {
-        "name": "Remark",
-        "desc": "用户组描述"
+        "name": "RoleId",
+        "desc": "角色ID（与角色名至少填一个）"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名（与角色ID至少填一个）"
       }
     ],
-    "desc": "创建用户组"
+    "desc": "设置角色权限边界"
   },
   "DeleteServiceLinkedRole": {
     "params": [
@@ -186,6 +190,19 @@ INFO = {
       }
     ],
     "desc": "本接口（DeletePolicy）可用于删除策略。"
+  },
+  "DeleteRolePermissionsBoundary": {
+    "params": [
+      {
+        "name": "RoleId",
+        "desc": "角色ID（与角色名至少填一个）"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名（与角色ID至少填一个）"
+      }
+    ],
+    "desc": "删除角色权限边界"
   },
   "DeletePolicyVersion": {
     "params": [
@@ -355,18 +372,14 @@ INFO = {
     ],
     "desc": "查询子用户"
   },
-  "AttachGroupPolicy": {
+  "DeleteUserPermissionsBoundary": {
     "params": [
       {
-        "name": "PolicyId",
-        "desc": "策略 id"
-      },
-      {
-        "name": "AttachGroupId",
-        "desc": "用户组 id"
+        "name": "TargetUin",
+        "desc": "子账号Uin"
       }
     ],
-    "desc": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。"
+    "desc": "删除用户权限边界"
   },
   "ListAttachedGroupPolicies": {
     "params": [
@@ -385,26 +398,18 @@ INFO = {
     ],
     "desc": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。"
   },
-  "ListGroupsForUser": {
+  "PutUserPermissionsBoundary": {
     "params": [
       {
-        "name": "Uid",
-        "desc": "子用户 UID"
+        "name": "TargetUin",
+        "desc": "子账号Uin"
       },
       {
-        "name": "Rp",
-        "desc": "每页数量。默认为20。"
-      },
-      {
-        "name": "Page",
-        "desc": "页码。默认为1。"
-      },
-      {
-        "name": "SubUin",
-        "desc": "子账号UIN"
+        "name": "PolicyId",
+        "desc": "策略ID"
       }
     ],
-    "desc": "列出用户关联的用户组"
+    "desc": "设置用户权限边界"
   },
   "GetServiceLinkedRoleDeletionStatus": {
     "params": [
@@ -433,18 +438,35 @@ INFO = {
     ],
     "desc": "查询用户组详情"
   },
-  "GetPolicyVersion": {
+  "CreateGroup": {
     "params": [
       {
-        "name": "PolicyId",
-        "desc": "策略ID"
+        "name": "GroupName",
+        "desc": "用户组名"
       },
       {
-        "name": "VersionId",
-        "desc": "策略版本号"
+        "name": "Remark",
+        "desc": "用户组描述"
       }
     ],
-    "desc": "该接口（GetPolicyVersion）用于查询策略版本详情"
+    "desc": "创建用户组"
+  },
+  "UpdateAssumeRolePolicy": {
+    "params": [
+      {
+        "name": "PolicyDocument",
+        "desc": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo"
+      },
+      {
+        "name": "RoleId",
+        "desc": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      },
+      {
+        "name": "RoleName",
+        "desc": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一"
+      }
+    ],
+    "desc": "本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。"
   },
   "SetDefaultPolicyVersion": {
     "params": [
@@ -711,6 +733,40 @@ INFO = {
     ],
     "desc": "该接口（ListPolicyVersions）用于获取策略版本列表"
   },
+  "ListGroupsForUser": {
+    "params": [
+      {
+        "name": "Uid",
+        "desc": "子用户 UID"
+      },
+      {
+        "name": "Rp",
+        "desc": "每页数量。默认为20。"
+      },
+      {
+        "name": "Page",
+        "desc": "页码。默认为1。"
+      },
+      {
+        "name": "SubUin",
+        "desc": "子账号UIN"
+      }
+    ],
+    "desc": "列出用户关联的用户组"
+  },
+  "AttachGroupPolicy": {
+    "params": [
+      {
+        "name": "PolicyId",
+        "desc": "策略 id"
+      },
+      {
+        "name": "AttachGroupId",
+        "desc": "用户组 id"
+      }
+    ],
+    "desc": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。"
+  },
   "UpdateGroup": {
     "params": [
       {
@@ -728,22 +784,18 @@ INFO = {
     ],
     "desc": "更新用户组"
   },
-  "UpdateAssumeRolePolicy": {
+  "GetPolicyVersion": {
     "params": [
       {
-        "name": "PolicyDocument",
-        "desc": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo"
+        "name": "PolicyId",
+        "desc": "策略ID"
       },
       {
-        "name": "RoleId",
-        "desc": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一"
-      },
-      {
-        "name": "RoleName",
-        "desc": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一"
+        "name": "VersionId",
+        "desc": "策略版本号"
       }
     ],
-    "desc": "本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。"
+    "desc": "该接口（GetPolicyVersion）用于查询策略版本详情"
   },
   "CreatePolicy": {
     "params": [

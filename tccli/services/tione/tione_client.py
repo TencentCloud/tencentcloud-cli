@@ -733,10 +733,10 @@ def doCreateTrainingJob(argv, arglist):
 
     param = {
         "AlgorithmSpecification": Utils.try_to_json(argv, "--AlgorithmSpecification"),
-        "InputDataConfig": Utils.try_to_json(argv, "--InputDataConfig"),
         "OutputDataConfig": Utils.try_to_json(argv, "--OutputDataConfig"),
         "ResourceConfig": Utils.try_to_json(argv, "--ResourceConfig"),
         "TrainingJobName": argv.get("--TrainingJobName"),
+        "InputDataConfig": Utils.try_to_json(argv, "--InputDataConfig"),
         "StoppingCondition": Utils.try_to_json(argv, "--StoppingCondition"),
         "VpcConfig": Utils.try_to_json(argv, "--VpcConfig"),
         "HyperParameters": argv.get("--HyperParameters"),

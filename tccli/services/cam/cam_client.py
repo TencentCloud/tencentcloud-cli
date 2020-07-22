@@ -333,6 +333,41 @@ def doCreateRole(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doPutRolePermissionsBoundary(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PutRolePermissionsBoundary", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
+        "RoleId": argv.get("--RoleId"),
+        "RoleName": argv.get("--RoleName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PutRolePermissionsBoundaryRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PutRolePermissionsBoundary(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doListUsers(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -426,6 +461,40 @@ def doDeletePolicy(argv, arglist):
     model = models.DeletePolicyRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeletePolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteRolePermissionsBoundary(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteRolePermissionsBoundary", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RoleId": argv.get("--RoleId"),
+        "RoleName": argv.get("--RoleName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteRolePermissionsBoundaryRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteRolePermissionsBoundary(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -881,16 +950,14 @@ def doGetUser(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateGroup(argv, arglist):
+def doDeleteUserPermissionsBoundary(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateGroup", g_param[OptionsDefine.Version])
+        show_help("DeleteUserPermissionsBoundary", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GroupId": Utils.try_to_json(argv, "--GroupId"),
-        "GroupName": argv.get("--GroupName"),
-        "Remark": argv.get("--Remark"),
+        "TargetUin": Utils.try_to_json(argv, "--TargetUin"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -904,9 +971,9 @@ def doUpdateGroup(argv, arglist):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateGroupRequest()
+    model = models.DeleteUserPermissionsBoundaryRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateGroup(model)
+    rsp = client.DeleteUserPermissionsBoundary(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1075,6 +1142,41 @@ def doGetPolicyVersion(argv, arglist):
     model = models.GetPolicyVersionRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.GetPolicyVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateAssumeRolePolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpdateAssumeRolePolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "PolicyDocument": argv.get("--PolicyDocument"),
+        "RoleId": argv.get("--RoleId"),
+        "RoleName": argv.get("--RoleName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateAssumeRolePolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpdateAssumeRolePolicy(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1741,16 +1843,16 @@ def doAttachGroupPolicy(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateAssumeRolePolicy(argv, arglist):
+def doUpdateGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UpdateAssumeRolePolicy", g_param[OptionsDefine.Version])
+        show_help("UpdateGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "PolicyDocument": argv.get("--PolicyDocument"),
-        "RoleId": argv.get("--RoleId"),
-        "RoleName": argv.get("--RoleName"),
+        "GroupId": Utils.try_to_json(argv, "--GroupId"),
+        "GroupName": argv.get("--GroupName"),
+        "Remark": argv.get("--Remark"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1764,9 +1866,43 @@ def doUpdateAssumeRolePolicy(argv, arglist):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateAssumeRolePolicyRequest()
+    model = models.UpdateGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UpdateAssumeRolePolicy(model)
+    rsp = client.UpdateGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doPutUserPermissionsBoundary(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("PutUserPermissionsBoundary", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TargetUin": Utils.try_to_json(argv, "--TargetUin"),
+        "PolicyId": Utils.try_to_json(argv, "--PolicyId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.PutUserPermissionsBoundaryRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.PutUserPermissionsBoundary(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1901,9 +2037,11 @@ ACTION_MAP = {
     "GetSAMLProvider": doGetSAMLProvider,
     "ListSAMLProviders": doListSAMLProviders,
     "CreateRole": doCreateRole,
+    "PutRolePermissionsBoundary": doPutRolePermissionsBoundary,
     "ListUsers": doListUsers,
     "ListAttachedRolePolicies": doListAttachedRolePolicies,
     "DeletePolicy": doDeletePolicy,
+    "DeleteRolePermissionsBoundary": doDeleteRolePermissionsBoundary,
     "DeletePolicyVersion": doDeletePolicyVersion,
     "DetachRolePolicy": doDetachRolePolicy,
     "DescribeRoleList": doDescribeRoleList,
@@ -1917,12 +2055,13 @@ ACTION_MAP = {
     "DeleteGroup": doDeleteGroup,
     "DeleteRole": doDeleteRole,
     "GetUser": doGetUser,
-    "UpdateGroup": doUpdateGroup,
+    "DeleteUserPermissionsBoundary": doDeleteUserPermissionsBoundary,
     "ListAttachedGroupPolicies": doListAttachedGroupPolicies,
     "GetServiceLinkedRoleDeletionStatus": doGetServiceLinkedRoleDeletionStatus,
     "ConsumeCustomMFAToken": doConsumeCustomMFAToken,
     "GetGroup": doGetGroup,
     "GetPolicyVersion": doGetPolicyVersion,
+    "UpdateAssumeRolePolicy": doUpdateAssumeRolePolicy,
     "SetDefaultPolicyVersion": doSetDefaultPolicyVersion,
     "ListGroups": doListGroups,
     "AddUserToGroup": doAddUserToGroup,
@@ -1942,7 +2081,8 @@ ACTION_MAP = {
     "AttachUserPolicy": doAttachUserPolicy,
     "ListEntitiesForPolicy": doListEntitiesForPolicy,
     "AttachGroupPolicy": doAttachGroupPolicy,
-    "UpdateAssumeRolePolicy": doUpdateAssumeRolePolicy,
+    "UpdateGroup": doUpdateGroup,
+    "PutUserPermissionsBoundary": doPutUserPermissionsBoundary,
     "CreatePolicy": doCreatePolicy,
     "DetachUserPolicy": doDetachUserPolicy,
     "ListGroupsForUser": doListGroupsForUser,

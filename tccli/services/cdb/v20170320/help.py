@@ -10,14 +10,43 @@ INFO = {
     ],
     "desc": "本接口(DescribeDBInstanceGTID)用于查询云数据库实例是否开通了 GTID，不支持版本为 5.5 以及以下的实例。"
   },
-  "DescribeTimeWindow": {
+  "CreateRoInstanceIp": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+        "desc": "只读实例ID，格式如：cdbro-3i70uj0k，与云数据库控制台页面中显示的只读实例ID相同。"
+      },
+      {
+        "name": "UniqSubnetId",
+        "desc": "子网描述符，例如：subnet-1typ0s7d。"
+      },
+      {
+        "name": "UniqVpcId",
+        "desc": "vpc描述符，例如：vpc-xxx,如果传了该字段则UniqSubnetId必传"
       }
     ],
-    "desc": "本接口(DescribeTimeWindow)用于查询云数据库实例的维护时间窗口。"
+    "desc": "本接口(CreateRoInstanceIp)用于创建云数据库只读实例的独立VIP。"
+  },
+  "CreateAuditPolicy": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "审计策略名称。"
+      },
+      {
+        "name": "RuleId",
+        "desc": "审计规则 ID。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      },
+      {
+        "name": "LogExpireDay",
+        "desc": "审计日志保存时长。支持值包括：\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；\n实例首次开通审计策略时，可传该值，用于设置存储日志保存天数，默认为 30 天。若实例已存在审计策略，则此参数无效，可使用 更改审计服务配置 接口修改日志存储时长。"
+      }
+    ],
+    "desc": "本接口(CreateAuditPolicy)用于创建云数据库实例的审计策略，即将审计规则绑定到具体的云数据库实例上。"
   },
   "DescribeDataBackupOverview": {
     "params": [
@@ -72,26 +101,14 @@ INFO = {
     ],
     "desc": "本接口(ModifyInstanceTag)用于对实例标签进行添加、修改或者删除。"
   },
-  "CreateAuditPolicy": {
+  "DescribeTimeWindow": {
     "params": [
       {
-        "name": "Name",
-        "desc": "审计策略名称。"
-      },
-      {
-        "name": "RuleId",
-        "desc": "审计规则 ID。"
-      },
-      {
         "name": "InstanceId",
-        "desc": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
-      },
-      {
-        "name": "LogExpireDay",
-        "desc": "审计日志保存时长。支持值包括：\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；\n实例首次开通审计策略时，可传该值，用于设置存储日志保存天数，默认为 30 天。若实例已存在审计策略，则此参数无效，可使用 更改审计服务配置 接口修改日志存储时长。"
+        "desc": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
       }
     ],
-    "desc": "本接口(CreateAuditPolicy)用于创建云数据库实例的审计策略，即将审计规则绑定到具体的云数据库实例上。"
+    "desc": "本接口(DescribeTimeWindow)用于查询云数据库实例的维护时间窗口。"
   },
   "DescribeBackupOverview": {
     "params": [
@@ -758,6 +775,10 @@ INFO = {
       {
         "name": "PolicyId",
         "desc": "审计策略 ID。"
+      },
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID。"
       }
     ],
     "desc": "本接口(DeleteAuditPolicy)用于删除用户的审计策略。"
