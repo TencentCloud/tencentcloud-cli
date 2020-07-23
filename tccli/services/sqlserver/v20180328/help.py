@@ -648,6 +648,19 @@ INFO = {
     ],
     "desc": "本接口（ModifyMaintenanceSpan）用于修改实例的可维护时间窗"
   },
+  "DescribeReadOnlyGroupDetails": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "主实例ID，格式如：mssql-3l3fgqn7"
+      },
+      {
+        "name": "ReadOnlyGroupId",
+        "desc": "只读组ID，格式如：mssqlrg-3l3fgqn7"
+      }
+    ],
+    "desc": "本接口（DescribeReadOnlyGroupDetails）用于查询只读组详情。"
+  },
   "CreatePublishSubscribe": {
     "params": [
       {
@@ -727,6 +740,15 @@ INFO = {
     ],
     "desc": "本接口（DescribeAccounts）用于拉取实例账户列表。"
   },
+  "DescribeReadOnlyGroupByReadOnlyInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：mssqlro-3l3fgqn7"
+      }
+    ],
+    "desc": "本接口（DescribeReadOnlyGroupByReadOnlyInstance）用于通过只读副本实例ID查询其所在的只读组。"
+  },
   "CompleteExpansion": {
     "params": [
       {
@@ -797,18 +819,14 @@ INFO = {
     ],
     "desc": "本接口（CreateDB）用于创建数据库。"
   },
-  "DeleteAccount": {
+  "DescribeReadOnlyGroupList": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "数据库实例ID，形如mssql-njj2mtpl"
-      },
-      {
-        "name": "UserNames",
-        "desc": "实例用户名数组"
+        "desc": "主实例ID，格式如：mssql-3l3fgqn7"
       }
     ],
-    "desc": "本接口（DeleteAccount）用于删除实例账号。"
+    "desc": "本接口（DescribeReadOnlyGroupList）用于查询只读组列表。"
   },
   "DescribeMigrationDetail": {
     "params": [
@@ -831,6 +849,19 @@ INFO = {
       }
     ],
     "desc": "本接口（RestoreInstance）用于根据备份文件恢复实例。"
+  },
+  "DeleteAccount": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "数据库实例ID，形如mssql-njj2mtpl"
+      },
+      {
+        "name": "UserNames",
+        "desc": "实例用户名数组"
+      }
+    ],
+    "desc": "本接口（DeleteAccount）用于删除实例账号。"
   },
   "UpgradeDBInstance": {
     "params": [
@@ -878,6 +909,47 @@ INFO = {
       }
     ],
     "desc": "本接口 (DescribeProductConfig) 用于查询售卖规格配置。"
+  },
+  "ModifyReadOnlyGroupDetails": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "主实例ID，格式如：mssql-3l3fgqn7"
+      },
+      {
+        "name": "ReadOnlyGroupId",
+        "desc": "只读组ID"
+      },
+      {
+        "name": "ReadOnlyGroupName",
+        "desc": "只读组名称，不填此参数，则不修改"
+      },
+      {
+        "name": "IsOfflineDelay",
+        "desc": "是否启动超时剔除功能,0-不开启剔除功能，1-开启剔除功能，不填此参数，则不修改"
+      },
+      {
+        "name": "ReadOnlyMaxDelayTime",
+        "desc": "启动超时剔除功能后，使用的超时阈值，不填此参数，则不修改"
+      },
+      {
+        "name": "MinReadOnlyInGroup",
+        "desc": "启动超时剔除功能后，只读组至少保留的只读副本数，不填此参数，则不修改"
+      },
+      {
+        "name": "WeightPairs",
+        "desc": "只读组实例权重修改集合，不填此参数，则不修改"
+      },
+      {
+        "name": "AutoWeight",
+        "desc": "0-用户自定义权重（根据WeightPairs调整）,1-系统自动分配权重(WeightPairs无效)， 默认为0"
+      },
+      {
+        "name": "BalanceWeight",
+        "desc": "0-不重新均衡负载，1-重新均衡负载，默认为0"
+      }
+    ],
+    "desc": "本接口（ModifyReadOnlyGroupDetails）用于修改只读组详情。"
   },
   "ModifyDBInstanceRenewFlag": {
     "params": [

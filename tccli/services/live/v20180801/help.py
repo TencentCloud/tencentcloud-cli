@@ -1627,6 +1627,19 @@ INFO = {
     ],
     "desc": "添加域名，一次只能提交一个域名。域名必须已备案。"
   },
+  "DescribeDeliverBandwidthList": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "起始时间，格式为%Y-%m-%d %H:%M:%S。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间，格式为%Y-%m-%d %H:%M:%S，支持最近三个月的数据查询，时间跨度最大是1个月。"
+      }
+    ],
+    "desc": "查询直播转推计费带宽，查询时间范围最大支持3个月内的数据，时间跨度最长31天。"
+  },
   "DescribeLiveDomainPlayInfoList": {
     "params": [
       {

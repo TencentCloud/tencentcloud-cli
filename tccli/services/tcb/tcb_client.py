@@ -170,6 +170,7 @@ def doCreatePostpayPackage(argv, arglist):
         "Alias": argv.get("--Alias"),
         "EnvSource": argv.get("--EnvSource"),
         "Channel": argv.get("--Channel"),
+        "ExtensionId": argv.get("--ExtensionId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -1247,7 +1247,7 @@ INFO = {
     "params": [
       {
         "name": "InvoicePlatformId",
-        "desc": "开票平台ID。0：高灯"
+        "desc": "开票平台ID。0：高灯，1：票易通"
       },
       {
         "name": "TitleType",
@@ -1271,7 +1271,7 @@ INFO = {
       },
       {
         "name": "AmountWithoutTax",
-        "desc": "不含税总金额（单位为分）"
+        "desc": "不含税总金额（单位为分）。InvoicePlatformId 为1时，传默认值-1"
       },
       {
         "name": "SellerTaxpayerNum",

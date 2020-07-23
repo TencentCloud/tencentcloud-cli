@@ -90,6 +90,10 @@ INFO = {
       {
         "name": "Channel",
         "desc": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud\n和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。"
+      },
+      {
+        "name": "ExtensionId",
+        "desc": "扩展ID"
       }
     ],
     "desc": "开通后付费资源"

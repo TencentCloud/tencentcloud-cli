@@ -18,17 +18,14 @@ from tccli.services.sqlserver import v20180328
 from tccli.services.sqlserver.v20180328 import help as v20180328_help
 
 
-def doModifyBackupStrategy(argv, arglist):
+def doDescribeReadOnlyGroupList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyBackupStrategy", g_param[OptionsDefine.Version])
+        show_help("DescribeReadOnlyGroupList", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
-        "BackupType": argv.get("--BackupType"),
-        "BackupTime": Utils.try_to_json(argv, "--BackupTime"),
-        "BackupDay": Utils.try_to_json(argv, "--BackupDay"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -42,9 +39,9 @@ def doModifyBackupStrategy(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyBackupStrategyRequest()
+    model = models.DescribeReadOnlyGroupListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyBackupStrategy(model)
+    rsp = client.DescribeReadOnlyGroupList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -117,6 +114,42 @@ def doDescribeOrders(argv, arglist):
     model = models.DescribeOrdersRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeOrders(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyBackupStrategy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyBackupStrategy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "BackupType": argv.get("--BackupType"),
+        "BackupTime": Utils.try_to_json(argv, "--BackupTime"),
+        "BackupDay": Utils.try_to_json(argv, "--BackupDay"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyBackupStrategyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyBackupStrategy(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1229,6 +1262,40 @@ def doModifyMaintenanceSpan(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeReadOnlyGroupDetails(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeReadOnlyGroupDetails", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "ReadOnlyGroupId": argv.get("--ReadOnlyGroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeReadOnlyGroupDetailsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeReadOnlyGroupDetails(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreatePublishSubscribe(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1576,6 +1643,47 @@ def doDescribeMigrationDetail(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyReadOnlyGroupDetails(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyReadOnlyGroupDetails", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "ReadOnlyGroupId": argv.get("--ReadOnlyGroupId"),
+        "ReadOnlyGroupName": argv.get("--ReadOnlyGroupName"),
+        "IsOfflineDelay": Utils.try_to_json(argv, "--IsOfflineDelay"),
+        "ReadOnlyMaxDelayTime": Utils.try_to_json(argv, "--ReadOnlyMaxDelayTime"),
+        "MinReadOnlyInGroup": Utils.try_to_json(argv, "--MinReadOnlyInGroup"),
+        "WeightPairs": Utils.try_to_json(argv, "--WeightPairs"),
+        "AutoWeight": Utils.try_to_json(argv, "--AutoWeight"),
+        "BalanceWeight": Utils.try_to_json(argv, "--BalanceWeight"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyReadOnlyGroupDetailsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyReadOnlyGroupDetails(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doRestoreInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1747,6 +1855,39 @@ def doModifyDBInstanceRenewFlag(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeReadOnlyGroupByReadOnlyInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeReadOnlyGroupByReadOnlyInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeReadOnlyGroupByReadOnlyInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeReadOnlyGroupByReadOnlyInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180328": sqlserver_client_v20180328,
 
@@ -1758,9 +1899,10 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "ModifyBackupStrategy": doModifyBackupStrategy,
+    "DescribeReadOnlyGroupList": doDescribeReadOnlyGroupList,
     "ModifyMigration": doModifyMigration,
     "DescribeOrders": doDescribeOrders,
+    "ModifyBackupStrategy": doModifyBackupStrategy,
     "DescribeBackups": doDescribeBackups,
     "DeletePublishSubscribe": doDeletePublishSubscribe,
     "ModifyAccountPrivilege": doModifyAccountPrivilege,
@@ -1792,6 +1934,7 @@ ACTION_MAP = {
     "InquiryPriceRenewDBInstance": doInquiryPriceRenewDBInstance,
     "DeleteMigration": doDeleteMigration,
     "ModifyMaintenanceSpan": doModifyMaintenanceSpan,
+    "DescribeReadOnlyGroupDetails": doDescribeReadOnlyGroupDetails,
     "CreatePublishSubscribe": doCreatePublishSubscribe,
     "DescribeRollbackTime": doDescribeRollbackTime,
     "DescribeAccounts": doDescribeAccounts,
@@ -1802,11 +1945,13 @@ ACTION_MAP = {
     "CreateDB": doCreateDB,
     "DeleteDB": doDeleteDB,
     "DescribeMigrationDetail": doDescribeMigrationDetail,
+    "ModifyReadOnlyGroupDetails": doModifyReadOnlyGroupDetails,
     "RestoreInstance": doRestoreInstance,
     "UpgradeDBInstance": doUpgradeDBInstance,
     "RunMigration": doRunMigration,
     "DescribeProductConfig": doDescribeProductConfig,
     "ModifyDBInstanceRenewFlag": doModifyDBInstanceRenewFlag,
+    "DescribeReadOnlyGroupByReadOnlyInstance": doDescribeReadOnlyGroupByReadOnlyInstance,
 
 }
 
