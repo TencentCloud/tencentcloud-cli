@@ -68,6 +68,40 @@ def doQueryMemberTransaction(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQuerySinglePay(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QuerySinglePay", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SerialNumber": argv.get("--SerialNumber"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QuerySinglePayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QuerySinglePay(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doQueryPayerInfo(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -439,18 +473,30 @@ def doModifyMntMbrBindRelateAcctBankCode(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnbindRelateAcct(argv, arglist):
+def doCreateSinglePay(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("UnbindRelateAcct", g_param[OptionsDefine.Version])
+        show_help("CreateSinglePay", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MrchCode": argv.get("--MrchCode"),
-        "FunctionFlag": argv.get("--FunctionFlag"),
-        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
-        "MemberAcctNo": argv.get("--MemberAcctNo"),
-        "ReservedMsg": argv.get("--ReservedMsg"),
+        "SerialNumber": argv.get("--SerialNumber"),
+        "PayAccountNumber": argv.get("--PayAccountNumber"),
+        "PayAccountName": argv.get("--PayAccountName"),
+        "Amount": Utils.try_to_json(argv, "--Amount"),
+        "RecvAccountNumber": argv.get("--RecvAccountNumber"),
+        "RecvAccountName": argv.get("--RecvAccountName"),
+        "PayBankCnaps": argv.get("--PayBankCnaps"),
+        "PayBankType": argv.get("--PayBankType"),
+        "PayBankProvince": argv.get("--PayBankProvince"),
+        "PayBankCity": argv.get("--PayBankCity"),
+        "RecvBankCnaps": argv.get("--RecvBankCnaps"),
+        "RecvBankType": argv.get("--RecvBankType"),
+        "RecvBankProvince": argv.get("--RecvBankProvince"),
+        "RecvBankCity": argv.get("--RecvBankCity"),
+        "RecvCertType": argv.get("--RecvCertType"),
+        "RecvCertNo": argv.get("--RecvCertNo"),
+        "Summary": argv.get("--Summary"),
         "Profile": argv.get("--Profile"),
 
     }
@@ -465,9 +511,9 @@ def doUnbindRelateAcct(argv, arglist):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnbindRelateAcctRequest()
+    model = models.CreateSinglePayRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.UnbindRelateAcct(model)
+    rsp = client.CreateSinglePay(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1040,6 +1086,44 @@ def doCreateAgentTaxPaymentInfos(argv, arglist):
     model = models.CreateAgentTaxPaymentInfosRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateAgentTaxPaymentInfos(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnbindRelateAcct(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnbindRelateAcct", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MrchCode": argv.get("--MrchCode"),
+        "FunctionFlag": argv.get("--FunctionFlag"),
+        "TranNetMemberCode": argv.get("--TranNetMemberCode"),
+        "MemberAcctNo": argv.get("--MemberAcctNo"),
+        "ReservedMsg": argv.get("--ReservedMsg"),
+        "Profile": argv.get("--Profile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnbindRelateAcctRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnbindRelateAcct(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2886,6 +2970,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "QueryMemberTransaction": doQueryMemberTransaction,
+    "QuerySinglePay": doQuerySinglePay,
     "QueryPayerInfo": doQueryPayerInfo,
     "DescribeOrderStatus": doDescribeOrderStatus,
     "QueryAnchorContractInfo": doQueryAnchorContractInfo,
@@ -2895,7 +2980,7 @@ ACTION_MAP = {
     "ModifyAgentTaxPaymentInfo": doModifyAgentTaxPaymentInfo,
     "QueryMemberBind": doQueryMemberBind,
     "ModifyMntMbrBindRelateAcctBankCode": doModifyMntMbrBindRelateAcctBankCode,
-    "UnbindRelateAcct": doUnbindRelateAcct,
+    "CreateSinglePay": doCreateSinglePay,
     "DescribeChargeDetail": doDescribeChargeDetail,
     "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
     "CreateCustAcctId": doCreateCustAcctId,
@@ -2910,6 +2995,7 @@ ACTION_MAP = {
     "DeleteAgentTaxPaymentInfo": doDeleteAgentTaxPaymentInfo,
     "BindRelateAcctUnionPay": doBindRelateAcctUnionPay,
     "CreateAgentTaxPaymentInfos": doCreateAgentTaxPaymentInfos,
+    "UnbindRelateAcct": doUnbindRelateAcct,
     "QueryApplicationMaterial": doQueryApplicationMaterial,
     "DeleteAgentTaxPaymentInfos": doDeleteAgentTaxPaymentInfos,
     "QueryCommonTransferRecharge": doQueryCommonTransferRecharge,

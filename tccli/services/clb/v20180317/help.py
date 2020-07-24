@@ -77,6 +77,51 @@ INFO = {
     ],
     "desc": "根据 ModifyBlockIPList 接口返回的异步任务的ID，查询封禁IP（黑名单）异步任务的执行状态。（接口灰度中，如需使用请提工单）"
   },
+  "CreateListener": {
+    "params": [
+      {
+        "name": "LoadBalancerId",
+        "desc": "负载均衡实例 ID"
+      },
+      {
+        "name": "Ports",
+        "desc": "要将监听器创建到哪些端口，每个端口对应一个新的监听器"
+      },
+      {
+        "name": "Protocol",
+        "desc": "监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）"
+      },
+      {
+        "name": "ListenerNames",
+        "desc": "要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数"
+      },
+      {
+        "name": "HealthCheck",
+        "desc": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器"
+      },
+      {
+        "name": "Certificate",
+        "desc": "证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。"
+      },
+      {
+        "name": "SessionExpireTime",
+        "desc": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。"
+      },
+      {
+        "name": "Scheduler",
+        "desc": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。"
+      },
+      {
+        "name": "SniSwitch",
+        "desc": "是否开启SNI特性，此参数仅适用于HTTPS监听器。"
+      },
+      {
+        "name": "TargetType",
+        "desc": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。"
+      }
+    ],
+    "desc": "在一个负载均衡实例下创建监听器。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+  },
   "DeleteLoadBalancerSnatIps": {
     "params": [
       {
@@ -394,22 +439,18 @@ INFO = {
     ],
     "desc": "解除规则的目标组关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
-  "DescribeTargetGroupInstances": {
+  "CreateLoadBalancerSnatIps": {
     "params": [
       {
-        "name": "Filters",
-        "desc": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤"
+        "name": "LoadBalancerId",
+        "desc": "负载均衡唯一性Id，如lb-12345678"
       },
       {
-        "name": "Limit",
-        "desc": "显示数量限制，默认20"
-      },
-      {
-        "name": "Offset",
-        "desc": "显示的偏移量，默认为0"
+        "name": "SnatIps",
+        "desc": "添加SnatIp信息，可指定Ip申请，或者指定子网自动申请"
       }
     ],
-    "desc": "获取目标组绑定的服务器信息"
+    "desc": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启"
   },
   "AssociateTargetGroups": {
     "params": [
@@ -561,50 +602,18 @@ INFO = {
     ],
     "desc": "DescribeClassicalLBTargets用于获取传统型负载均衡绑定的后端服务"
   },
-  "CreateListener": {
+  "CreateTopic": {
     "params": [
       {
-        "name": "LoadBalancerId",
-        "desc": "负载均衡实例 ID"
+        "name": "TopicName",
+        "desc": "日志主题的名字"
       },
       {
-        "name": "Ports",
-        "desc": "要将监听器创建到哪些端口，每个端口对应一个新的监听器"
-      },
-      {
-        "name": "Protocol",
-        "desc": "监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）"
-      },
-      {
-        "name": "ListenerNames",
-        "desc": "要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数"
-      },
-      {
-        "name": "HealthCheck",
-        "desc": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器"
-      },
-      {
-        "name": "Certificate",
-        "desc": "证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。"
-      },
-      {
-        "name": "SessionExpireTime",
-        "desc": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。"
-      },
-      {
-        "name": "Scheduler",
-        "desc": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。"
-      },
-      {
-        "name": "SniSwitch",
-        "desc": "是否开启SNI特性，此参数仅适用于HTTPS监听器。"
-      },
-      {
-        "name": "TargetType",
-        "desc": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。"
+        "name": "PartitionCount",
+        "desc": "主题分区 partition个数，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。"
       }
     ],
-    "desc": "在一个负载均衡实例下创建监听器。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
+    "desc": "创建主题，默认开启全文索引和键值索引。如果不存在clb专有日志集，则创建失败。"
   },
   "BatchRegisterTargets": {
     "params": [
@@ -618,6 +627,10 @@ INFO = {
       }
     ],
     "desc": "批量绑定虚拟主机或弹性网卡，支持跨域绑定，支持四层、七层（TCP、UDP、HTTP、HTTPS）协议绑定。"
+  },
+  "DescribeClsLogSet": {
+    "params": [],
+    "desc": "获取用户的clb独占日志集。"
   },
   "DeleteRewrite": {
     "params": [
@@ -865,6 +878,23 @@ INFO = {
     ],
     "desc": "创建目标组。该功能正在内测中，如需使用，请通过[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。"
   },
+  "DescribeTargetGroupInstances": {
+    "params": [
+      {
+        "name": "Filters",
+        "desc": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤"
+      },
+      {
+        "name": "Limit",
+        "desc": "显示数量限制，默认20"
+      },
+      {
+        "name": "Offset",
+        "desc": "显示的偏移量，默认为0"
+      }
+    ],
+    "desc": "获取目标组绑定的服务器信息"
+  },
   "DescribeTargets": {
     "params": [
       {
@@ -1037,18 +1067,18 @@ INFO = {
     ],
     "desc": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。"
   },
-  "CreateLoadBalancerSnatIps": {
+  "CreateClsLogSet": {
     "params": [
       {
-        "name": "LoadBalancerId",
-        "desc": "负载均衡唯一性Id，如lb-12345678"
+        "name": "Period",
+        "desc": "日志集的保存周期，单位：天，最大 90。"
       },
       {
-        "name": "SnatIps",
-        "desc": "添加SnatIp信息，可指定Ip申请，或者指定子网自动申请"
+        "name": "LogsetName",
+        "desc": "日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。"
       }
     ],
-    "desc": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启"
+    "desc": "创建clb专有日志集，此日志集用于存储clb的日志。"
   },
   "DescribeClassicalLBByInstanceId": {
     "params": [

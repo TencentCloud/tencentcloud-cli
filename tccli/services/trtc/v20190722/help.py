@@ -163,11 +163,11 @@ INFO = {
       },
       {
         "name": "PageNumber",
-        "desc": "分页index（不填默认只返回10个）"
+        "desc": "分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）"
       },
       {
         "name": "PageSize",
-        "desc": "分页大小（不填默认返回10个,最多不超过100条）"
+        "desc": "分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）"
       }
     ],
     "desc": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询5天内的数据。"

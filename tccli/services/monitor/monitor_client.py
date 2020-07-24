@@ -447,6 +447,7 @@ def doDescribePolicyGroupList(argv, arglist):
         "Dimensions": argv.get("--Dimensions"),
         "ConditionTempGroupId": argv.get("--ConditionTempGroupId"),
         "ReceiverType": argv.get("--ReceiverType"),
+        "IsOpen": Utils.try_to_json(argv, "--IsOpen"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

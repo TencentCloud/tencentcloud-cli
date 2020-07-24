@@ -337,6 +337,10 @@ INFO = {
       {
         "name": "ReceiverType",
         "desc": "过滤条件, 接收人或者接收组, user表示接收人, group表示接收组"
+      },
+      {
+        "name": "IsOpen",
+        "desc": "过滤条件，告警策略是否已启动或停止"
       }
     ],
     "desc": "获取基础策略告警组列表"

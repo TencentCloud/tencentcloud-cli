@@ -1,6 +1,19 @@
 # -*- coding: utf-8 -*-
 DESC = "cpdp-2019-08-20"
 INFO = {
+  "QuerySinglePay": {
+    "params": [
+      {
+        "name": "SerialNumber",
+        "desc": "业务流水号"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "银企直连-单笔支付状态查询接口"
+  },
   "CheckAcct": {
     "params": [
       {
@@ -450,6 +463,83 @@ INFO = {
       }
     ],
     "desc": "维护会员绑定提现账户联行号。此接口可以支持市场修改会员的提现账户的开户行信息，具体包括开户行行名、开户行的银行联行号（大小额联行号）和超级网银行号。"
+  },
+  "CreateSinglePay": {
+    "params": [
+      {
+        "name": "SerialNumber",
+        "desc": "业务流水号，历史唯一"
+      },
+      {
+        "name": "PayAccountNumber",
+        "desc": "付方账户号"
+      },
+      {
+        "name": "PayAccountName",
+        "desc": "付方账户名称"
+      },
+      {
+        "name": "Amount",
+        "desc": "金额"
+      },
+      {
+        "name": "RecvAccountNumber",
+        "desc": "收方账户号"
+      },
+      {
+        "name": "RecvAccountName",
+        "desc": "收方账户名称"
+      },
+      {
+        "name": "PayBankCnaps",
+        "desc": "付方账户CNAPS号"
+      },
+      {
+        "name": "PayBankType",
+        "desc": "付方账户银行大类，PayBankCnaps为空时必传（见常见问题-银企直连银行类型）"
+      },
+      {
+        "name": "PayBankProvince",
+        "desc": "付方账户银行所在省，PayBankCnaps为空时必传（见常见问题-银企直连省份枚举信息）"
+      },
+      {
+        "name": "PayBankCity",
+        "desc": "付方账户银行所在地区，PayBankCnaps为空时必传（见常见问题-银企直连城市枚举信息）"
+      },
+      {
+        "name": "RecvBankCnaps",
+        "desc": "收方账户CNAPS号"
+      },
+      {
+        "name": "RecvBankType",
+        "desc": "收方账户银行大类，RecvBankCnaps为空时必传（见常见问题-银企直连银行类型）"
+      },
+      {
+        "name": "RecvBankProvince",
+        "desc": "收方账户银行所在省，RecvBankCnaps为空时必传（见常见问题-银企直连省份枚举信息）"
+      },
+      {
+        "name": "RecvBankCity",
+        "desc": "收方账户银行所在地区，RecvBankCnaps为空时必传（见常见问题-银企直连城市枚举信息）"
+      },
+      {
+        "name": "RecvCertType",
+        "desc": "收款方证件类型（见常见问题-银企直连证件类型枚举信息）"
+      },
+      {
+        "name": "RecvCertNo",
+        "desc": "收款方证件号码"
+      },
+      {
+        "name": "Summary",
+        "desc": "摘要信息"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填sandbox"
+      }
+    ],
+    "desc": "银企直连-单笔支付接口"
   },
   "DescribeChargeDetail": {
     "params": [

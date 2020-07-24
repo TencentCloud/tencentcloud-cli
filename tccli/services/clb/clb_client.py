@@ -126,6 +126,40 @@ def doDescribeClassicalLBListeners(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateTopic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateTopic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TopicName": argv.get("--TopicName"),
+        "PartitionCount": Utils.try_to_json(argv, "--PartitionCount"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTopicRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateTopic(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteLoadBalancerSnatIps(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -536,6 +570,44 @@ def doDeleteTargetGroups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyBlockIPList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyBlockIPList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
+        "Type": argv.get("--Type"),
+        "ClientIPField": argv.get("--ClientIPField"),
+        "BlockIPList": Utils.try_to_json(argv, "--BlockIPList"),
+        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
+        "AddStrategy": argv.get("--AddStrategy"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyBlockIPListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyBlockIPList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeregisterTargetsFromClassicalLB(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -570,15 +642,15 @@ def doDeregisterTargetsFromClassicalLB(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateLoadBalancerSnatIps(argv, arglist):
+def doCreateClsLogSet(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateLoadBalancerSnatIps", g_param[OptionsDefine.Version])
+        show_help("CreateClsLogSet", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LoadBalancerId": argv.get("--LoadBalancerId"),
-        "SnatIps": Utils.try_to_json(argv, "--SnatIps"),
+        "Period": Utils.try_to_json(argv, "--Period"),
+        "LogsetName": argv.get("--LogsetName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -592,9 +664,9 @@ def doCreateLoadBalancerSnatIps(argv, arglist):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateLoadBalancerSnatIpsRequest()
+    model = models.CreateClsLogSetRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateLoadBalancerSnatIps(model)
+    rsp = client.CreateClsLogSet(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1087,6 +1159,38 @@ def doBatchRegisterTargets(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeClsLogSet(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeClsLogSet", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClsLogSetRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeClsLogSet(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyTargetPort(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1309,19 +1413,14 @@ def doDescribeTargetGroupList(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyBlockIPList(argv, arglist):
+def doDescribeBlockIPTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyBlockIPList", g_param[OptionsDefine.Version])
+        show_help("DescribeBlockIPTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LoadBalancerIds": Utils.try_to_json(argv, "--LoadBalancerIds"),
-        "Type": argv.get("--Type"),
-        "ClientIPField": argv.get("--ClientIPField"),
-        "BlockIPList": Utils.try_to_json(argv, "--BlockIPList"),
-        "ExpireTime": Utils.try_to_json(argv, "--ExpireTime"),
-        "AddStrategy": argv.get("--AddStrategy"),
+        "TaskId": argv.get("--TaskId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1335,9 +1434,9 @@ def doModifyBlockIPList(argv, arglist):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyBlockIPListRequest()
+    model = models.DescribeBlockIPTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyBlockIPList(model)
+    rsp = client.DescribeBlockIPTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1739,14 +1838,15 @@ def doModifyTargetGroupInstancesWeight(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBlockIPTask(argv, arglist):
+def doCreateLoadBalancerSnatIps(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeBlockIPTask", g_param[OptionsDefine.Version])
+        show_help("CreateLoadBalancerSnatIps", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "TaskId": argv.get("--TaskId"),
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "SnatIps": Utils.try_to_json(argv, "--SnatIps"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1760,9 +1860,9 @@ def doDescribeBlockIPTask(argv, arglist):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBlockIPTaskRequest()
+    model = models.CreateLoadBalancerSnatIpsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeBlockIPTask(model)
+    rsp = client.CreateLoadBalancerSnatIps(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2039,6 +2139,7 @@ ACTION_MAP = {
     "RegisterTargets": doRegisterTargets,
     "DescribeLoadBalancerListByCertId": doDescribeLoadBalancerListByCertId,
     "DescribeClassicalLBListeners": doDescribeClassicalLBListeners,
+    "CreateTopic": doCreateTopic,
     "DeleteLoadBalancerSnatIps": doDeleteLoadBalancerSnatIps,
     "DeleteListener": doDeleteListener,
     "SetSecurityGroupForLoadbalancers": doSetSecurityGroupForLoadbalancers,
@@ -2051,8 +2152,9 @@ ACTION_MAP = {
     "DeleteLoadBalancerListeners": doDeleteLoadBalancerListeners,
     "SetLoadBalancerSecurityGroups": doSetLoadBalancerSecurityGroups,
     "DeleteTargetGroups": doDeleteTargetGroups,
+    "ModifyBlockIPList": doModifyBlockIPList,
     "DeregisterTargetsFromClassicalLB": doDeregisterTargetsFromClassicalLB,
-    "CreateLoadBalancerSnatIps": doCreateLoadBalancerSnatIps,
+    "CreateClsLogSet": doCreateClsLogSet,
     "ModifyListener": doModifyListener,
     "DeleteLoadBalancer": doDeleteLoadBalancer,
     "ModifyDomainAttributes": doModifyDomainAttributes,
@@ -2066,13 +2168,14 @@ ACTION_MAP = {
     "DescribeClassicalLBTargets": doDescribeClassicalLBTargets,
     "CreateListener": doCreateListener,
     "BatchRegisterTargets": doBatchRegisterTargets,
+    "DescribeClsLogSet": doDescribeClsLogSet,
     "ModifyTargetPort": doModifyTargetPort,
     "ModifyTargetWeight": doModifyTargetWeight,
     "DescribeTaskStatus": doDescribeTaskStatus,
     "ModifyRule": doModifyRule,
     "DescribeTargetHealth": doDescribeTargetHealth,
     "DescribeTargetGroupList": doDescribeTargetGroupList,
-    "ModifyBlockIPList": doModifyBlockIPList,
+    "DescribeBlockIPTask": doDescribeBlockIPTask,
     "CreateTargetGroup": doCreateTargetGroup,
     "DescribeTargets": doDescribeTargets,
     "ModifyDomain": doModifyDomain,
@@ -2084,7 +2187,7 @@ ACTION_MAP = {
     "DeregisterTargets": doDeregisterTargets,
     "ModifyLoadBalancerAttributes": doModifyLoadBalancerAttributes,
     "ModifyTargetGroupInstancesWeight": doModifyTargetGroupInstancesWeight,
-    "DescribeBlockIPTask": doDescribeBlockIPTask,
+    "CreateLoadBalancerSnatIps": doCreateLoadBalancerSnatIps,
     "DescribeClassicalLBByInstanceId": doDescribeClassicalLBByInstanceId,
     "DescribeTargetGroupInstances": doDescribeTargetGroupInstances,
     "ModifyTargetGroupInstancesPort": doModifyTargetGroupInstancesPort,

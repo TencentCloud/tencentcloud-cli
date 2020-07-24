@@ -77,6 +77,15 @@ INFO = {
     ],
     "desc": "本文档适用于文本内容安全、音频内容安全自定义识别库的管理。\n<br>\n支持批量查询文本样本库。"
   },
+  "ManualReview": {
+    "params": [
+      {
+        "name": "ReviewContent",
+        "desc": "人工审核信息"
+      }
+    ],
+    "desc": "人工审核对外接口"
+  },
   "DescribeFileSample": {
     "params": [
       {

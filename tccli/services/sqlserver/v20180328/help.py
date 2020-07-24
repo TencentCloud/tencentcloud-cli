@@ -52,6 +52,28 @@ INFO = {
     ],
     "desc": "本接口（DescribeOrders）用于查询订单信息"
   },
+  "DeleteDBInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：mssql-3l3fgqn7 或 mssqlro-3l3fgqn7"
+      }
+    ],
+    "desc": "本接口（DeleteDBInstance）用于释放回收站中的SQL server实例。释放后的实例将保存一段时间后物理销毁。其发布订阅将自动解除，其ro副本将自动释放。"
+  },
+  "AssociateSecurityGroups": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组ID。"
+      },
+      {
+        "name": "InstanceIdSet",
+        "desc": "实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。"
+      }
+    ],
+    "desc": "本接口(AssociateSecurityGroups)用于安全组批量绑定实例。"
+  },
   "DeletePublishSubscribe": {
     "params": [
       {
@@ -534,6 +556,105 @@ INFO = {
     ],
     "desc": "本接口（RenewDBInstance）用于续费实例。"
   },
+  "DescribeReadOnlyGroupList": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "主实例ID，格式如：mssql-3l3fgqn7"
+      }
+    ],
+    "desc": "本接口（DescribeReadOnlyGroupList）用于查询只读组列表。"
+  },
+  "DescribeProjectSecurityGroups": {
+    "params": [
+      {
+        "name": "ProjectId",
+        "desc": "项目ID。"
+      }
+    ],
+    "desc": "本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。"
+  },
+  "CreateBasicDBInstances": {
+    "params": [
+      {
+        "name": "Zone",
+        "desc": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取"
+      },
+      {
+        "name": "Cpu",
+        "desc": "实例的CPU核心数"
+      },
+      {
+        "name": "Memory",
+        "desc": "实例内存大小，单位GB"
+      },
+      {
+        "name": "Storage",
+        "desc": "实例磁盘大小，单位GB"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "VPC子网ID，形如subnet-bdoe83fa"
+      },
+      {
+        "name": "VpcId",
+        "desc": "VPC网络ID，形如vpc-dsp338hz"
+      },
+      {
+        "name": "MachineType",
+        "desc": "购买实例的宿主机类型, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。"
+      },
+      {
+        "name": "ProjectId",
+        "desc": "项目ID"
+      },
+      {
+        "name": "GoodsNum",
+        "desc": "本次购买几个实例，默认值为1。取值不超过10"
+      },
+      {
+        "name": "DBVersion",
+        "desc": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard），2017（SQL Server 2017 Enterprise），201202（SQL Server 2012 Standard），201402（SQL Server 2014 Standard），2014SP2（SQL Server 2014 Enterprise），201702（SQL Server 2017 Standard）版本。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。"
+      },
+      {
+        "name": "Period",
+        "desc": "购买实例周期，默认取值为1，表示一个月。取值不超过48"
+      },
+      {
+        "name": "SecurityGroupList",
+        "desc": "安全组列表，填写形如sg-xxx的安全组ID"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。"
+      },
+      {
+        "name": "AutoVoucher",
+        "desc": "是否自动使用代金券；1 - 是，0 - 否，默认不使用"
+      },
+      {
+        "name": "VoucherIds",
+        "desc": "代金券ID数组，目前单个订单只能使用一张"
+      },
+      {
+        "name": "Weekly",
+        "desc": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末"
+      },
+      {
+        "name": "StartTime",
+        "desc": "可维护时间窗配置，每天可维护的开始时间"
+      },
+      {
+        "name": "Span",
+        "desc": "可维护时间窗配置，持续时间，单位：小时"
+      }
+    ],
+    "desc": "本接口（CreateBasicDBInstances）用于创建SQL server基础版实例。"
+  },
   "CreateAccount": {
     "params": [
       {
@@ -819,14 +940,14 @@ INFO = {
     ],
     "desc": "本接口（CreateDB）用于创建数据库。"
   },
-  "DescribeReadOnlyGroupList": {
+  "DescribeDBSecurityGroups": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "主实例ID，格式如：mssql-3l3fgqn7"
+        "desc": "实例ID，格式如：mssql-c1nl9rpv或者mssqlro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
       }
     ],
-    "desc": "本接口（DescribeReadOnlyGroupList）用于查询只读组列表。"
+    "desc": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。"
   },
   "DescribeMigrationDetail": {
     "params": [
@@ -910,6 +1031,100 @@ INFO = {
     ],
     "desc": "本接口 (DescribeProductConfig) 用于查询售卖规格配置。"
   },
+  "CreateReadOnlyDBInstances": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "主实例ID，格式如：mssql-3l3fgqn7"
+      },
+      {
+        "name": "Zone",
+        "desc": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取"
+      },
+      {
+        "name": "ReadOnlyGroupType",
+        "desc": "只读组类型选项，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货，所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面"
+      },
+      {
+        "name": "Memory",
+        "desc": "实例内存大小，单位GB"
+      },
+      {
+        "name": "Storage",
+        "desc": "实例磁盘大小，单位GB"
+      },
+      {
+        "name": "ReadOnlyGroupForcedUpgrade",
+        "desc": "0-默认不升级主实例，1-强制升级主实例完成ro部署；主实例为非集群版时需要填1，强制升级为集群版。填1 说明您已同意将主实例升级到集群版实例。"
+      },
+      {
+        "name": "ReadOnlyGroupId",
+        "desc": "ReadOnlyGroupType=3时必填,已存在的只读组ID"
+      },
+      {
+        "name": "ReadOnlyGroupName",
+        "desc": "ReadOnlyGroupType=2时必填，新建的只读组名称"
+      },
+      {
+        "name": "ReadOnlyGroupIsOfflineDelay",
+        "desc": "ReadOnlyGroupType=2时必填，新建的只读组是否开启延迟剔除功能，1-开启，0-关闭。当只读副本与主实例延迟大于阈值后，自动剔除。"
+      },
+      {
+        "name": "ReadOnlyGroupMaxDelayTime",
+        "desc": "ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除的阈值。"
+      },
+      {
+        "name": "ReadOnlyGroupMinInGroup",
+        "desc": "ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除后至少保留只读副本的个数。"
+      },
+      {
+        "name": "InstanceChargeType",
+        "desc": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。"
+      },
+      {
+        "name": "GoodsNum",
+        "desc": "本次购买几个只读实例，默认值为1。"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置"
+      },
+      {
+        "name": "VpcId",
+        "desc": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置"
+      },
+      {
+        "name": "Period",
+        "desc": "购买实例周期，默认取值为1，表示一个月。取值不超过48"
+      },
+      {
+        "name": "SecurityGroupList",
+        "desc": "安全组列表，填写形如sg-xxx的安全组ID"
+      },
+      {
+        "name": "AutoVoucher",
+        "desc": "是否自动使用代金券；1 - 是，0 - 否，默认不使用"
+      },
+      {
+        "name": "VoucherIds",
+        "desc": "代金券ID数组，目前单个订单只能使用一张"
+      }
+    ],
+    "desc": "本接口（CreateReadOnlyDBInstances）用于添加只读副本实例。"
+  },
+  "DisassociateSecurityGroups": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组ID。"
+      },
+      {
+        "name": "InstanceIdSet",
+        "desc": "实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。"
+      }
+    ],
+    "desc": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。"
+  },
   "ModifyReadOnlyGroupDetails": {
     "params": [
       {
@@ -950,6 +1165,28 @@ INFO = {
       }
     ],
     "desc": "本接口（ModifyReadOnlyGroupDetails）用于修改只读组详情。"
+  },
+  "RenewPostpaidDBInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：mssql-3l3fgqn7 或 mssqlro-3l3fgqn7"
+      }
+    ],
+    "desc": "本接口（RenewPostpaidDBInstance）用于将通过接口TerminateDBInstance手动隔离的按量计费实例从回收站中恢复。"
+  },
+  "ModifyDBInstanceSecurityGroups": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例 ID，格式如：mssql-c1nl9rpv 或者 mssqlro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。"
+      },
+      {
+        "name": "SecurityGroupIdSet",
+        "desc": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。"
+      }
+    ],
+    "desc": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。"
   },
   "ModifyDBInstanceRenewFlag": {
     "params": [
