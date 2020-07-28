@@ -469,6 +469,46 @@ def doDisassociateTargetGroups(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyListener(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyListener", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "LoadBalancerId": argv.get("--LoadBalancerId"),
+        "ListenerId": argv.get("--ListenerId"),
+        "ListenerName": argv.get("--ListenerName"),
+        "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
+        "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
+        "Certificate": Utils.try_to_json(argv, "--Certificate"),
+        "Scheduler": argv.get("--Scheduler"),
+        "SniSwitch": Utils.try_to_json(argv, "--SniSwitch"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyListenerRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyListener(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteLoadBalancerListeners(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -676,21 +716,18 @@ def doCreateClsLogSet(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyListener(argv, arglist):
+def doDescribeLoadBalancersDetail(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyListener", g_param[OptionsDefine.Version])
+        show_help("DescribeLoadBalancersDetail", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "LoadBalancerId": argv.get("--LoadBalancerId"),
-        "ListenerId": argv.get("--ListenerId"),
-        "ListenerName": argv.get("--ListenerName"),
-        "SessionExpireTime": Utils.try_to_json(argv, "--SessionExpireTime"),
-        "HealthCheck": Utils.try_to_json(argv, "--HealthCheck"),
-        "Certificate": Utils.try_to_json(argv, "--Certificate"),
-        "Scheduler": argv.get("--Scheduler"),
-        "SniSwitch": Utils.try_to_json(argv, "--SniSwitch"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Fields": Utils.try_to_json(argv, "--Fields"),
+        "TargetType": argv.get("--TargetType"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -704,9 +741,9 @@ def doModifyListener(argv, arglist):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyListenerRequest()
+    model = models.DescribeLoadBalancersDetailRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyListener(model)
+    rsp = client.DescribeLoadBalancersDetail(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2149,13 +2186,14 @@ ACTION_MAP = {
     "SetLoadBalancerClsLog": doSetLoadBalancerClsLog,
     "AutoRewrite": doAutoRewrite,
     "DisassociateTargetGroups": doDisassociateTargetGroups,
+    "ModifyListener": doModifyListener,
     "DeleteLoadBalancerListeners": doDeleteLoadBalancerListeners,
     "SetLoadBalancerSecurityGroups": doSetLoadBalancerSecurityGroups,
     "DeleteTargetGroups": doDeleteTargetGroups,
     "ModifyBlockIPList": doModifyBlockIPList,
     "DeregisterTargetsFromClassicalLB": doDeregisterTargetsFromClassicalLB,
     "CreateClsLogSet": doCreateClsLogSet,
-    "ModifyListener": doModifyListener,
+    "DescribeLoadBalancersDetail": doDescribeLoadBalancersDetail,
     "DeleteLoadBalancer": doDeleteLoadBalancer,
     "ModifyDomainAttributes": doModifyDomainAttributes,
     "DeleteRule": doDeleteRule,

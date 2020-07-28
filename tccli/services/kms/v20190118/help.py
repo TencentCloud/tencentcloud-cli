@@ -158,6 +158,23 @@ INFO = {
     ],
     "desc": "获取白盒密钥列表"
   },
+  "BindCloudResource": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "cmk的ID"
+      },
+      {
+        "name": "ProductId",
+        "desc": "云产品的唯一性标识符"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "资源/实例ID，由调用方根据自己的云产品特征来定义，以字符串形式做存储。"
+      }
+    ],
+    "desc": "记录当前key被哪个云产品的那个资源所使用。如果当前key设置了自动过期，则取消该设置，确保当前key不会自动失效。如果当前关联关系已经创建，也返回成功。"
+  },
   "DisableKeys": {
     "params": [
       {
@@ -419,6 +436,23 @@ INFO = {
       }
     ],
     "desc": "用于获取指定KeyId的主密钥属性详情信息。"
+  },
+  "UnbindCloudResource": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "cmk的ID"
+      },
+      {
+        "name": "ProductId",
+        "desc": "云产品的唯一性标识符"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "资源/实例ID，由调用方根据自己的云产品特征来定义，以字符串形式做存储。"
+      }
+    ],
+    "desc": "删除指定（key, 资源，云产品）的记录，以表明：指定的云产品的资源已不再使用当前的key。"
   },
   "EnableKeyRotation": {
     "params": [

@@ -461,6 +461,31 @@ INFO = {
     ],
     "desc": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡的监听器（四层协议）或转发规则（七层协议）上。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
+  "DescribeLoadBalancersDetail": {
+    "params": [
+      {
+        "name": "Limit",
+        "desc": "返回负载均衡列表数目，默认20，最大值1000。"
+      },
+      {
+        "name": "Offset",
+        "desc": "返回负载均衡列表起始偏移量，默认0"
+      },
+      {
+        "name": "Fields",
+        "desc": "选择返回的Fields列表，默认添加LoadBalancerId和LoadBalancerName。"
+      },
+      {
+        "name": "TargetType",
+        "desc": "当Fields包含TargetId、TargetAddress、TargetPort、TargetWeight等Fields时，必选选择导出目标组的Target或者非目标组Target，值范围NODE、GROUP。"
+      },
+      {
+        "name": "Filters",
+        "desc": "查询负载均衡详细信息列表条件，详细的过滤条件如下：\n<li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 负载均衡ID 过滤，如：\"lb-12345678\"。</li>\n<li> project-id - String - 是否必填：否 - （过滤条件）按照 项目ID 过滤，如：\"0\",\"123\"。</li>\n<li> network - String - 是否必填：否 - （过滤条件）按照 负载均衡网络类型 过滤，如：\"Public\",\"Private\"。</li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip 过滤，如：\"1.1.1.1\",\"2204::22:3\"。</li>\n<li> target-ip - String - 是否必填：否 - （过滤条件）按照 后端目标内网Ip 过滤，如：\"1.1.1.1\",\"2203::214:4\"。</li>\n<li> vpcid - String - 是否必填：否 - （过滤条件）按照 负载均衡所属vpcId 过滤，如：\"vpc-12345678\"。</li>\n<li> zone - String - 是否必填：否 - （过滤条件）按照 负载均衡所属的可用区 过滤，如：\"ap-guangzhou-1\"。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 负载均衡标签的标签键 过滤，如：\"name\"。</li>\n<li> tag:* - String - 是否必填：否 - （过滤条件）按照 负载均衡的标签 过滤，':' 后面跟的是标签键。如：过滤标签键name，标签值zhangsan,lisi，{\"Name\": \"tag:name\",\"Values\": [\"zhangsan\", \"lisi\"]}。</li>\n<li> fuzzy-search - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip，负载均衡名称 模糊搜索，如：\"1.1\"。</li>"
+      }
+    ],
+    "desc": "查询负载均衡的详细信息，包括监听器，规则及后端目标。"
+  },
   "DeregisterTargetGroupInstances": {
     "params": [
       {
