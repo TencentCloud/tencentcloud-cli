@@ -201,15 +201,15 @@ INFO = {
       },
       {
         "name": "ScanCycle",
-        "desc": "检测周期"
+        "desc": "检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次."
       },
       {
         "name": "ScanAt",
-        "desc": "定期检测时间，该时间下发扫描"
+        "desc": "定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测"
       },
       {
         "name": "CategoryIds",
-        "desc": "该策略下选择的基线id数组"
+        "desc": "该策略下选择的基线id数组. 示例: [1,3,5,7]"
       },
       {
         "name": "IsGlobal",
@@ -217,15 +217,15 @@ INFO = {
       },
       {
         "name": "MachineType",
-        "desc": "云主机类型：cvm：虚拟主机，bms：裸金属，ecm：边缘计算主机"
+        "desc": "云主机类型：“CVM”：虚拟主机，\"BMS\"：裸金属，\"ECM\"：边缘计算主机"
       },
       {
         "name": "RegionCode",
-        "desc": "主机地域"
+        "desc": "主机地域. 示例: \"ap-bj\""
       },
       {
         "name": "Quuids",
-        "desc": "主机id数组"
+        "desc": "主机id数组. 示例: [\"quuid1\",\"quuid2\"]"
       }
     ],
     "desc": "根据策略信息创建基线策略"

@@ -1083,6 +1083,7 @@ def doCreateInstance(argv, arglist):
     param = {
         "RegistryName": argv.get("--RegistryName"),
         "RegistryType": argv.get("--RegistryType"),
+        "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

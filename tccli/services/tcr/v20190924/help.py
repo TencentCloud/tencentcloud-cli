@@ -490,6 +490,10 @@ INFO = {
       {
         "name": "RegistryType",
         "desc": "企业版实例类型"
+      },
+      {
+        "name": "TagSpecification",
+        "desc": "云标签描述"
       }
     ],
     "desc": "创建实例"

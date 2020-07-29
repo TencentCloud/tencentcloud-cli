@@ -141,7 +141,7 @@ INFO = {
       },
       {
         "name": "SnapshotInterval",
-        "desc": "截图间隔，单位s，默认10s。\n范围： 5s ~ 600s。"
+        "desc": "截图间隔，单位s，默认10s。\n范围： 5s ~ 300s。"
       },
       {
         "name": "Width",
@@ -661,7 +661,7 @@ INFO = {
       },
       {
         "name": "SnapshotInterval",
-        "desc": "截图间隔，单位s，默认10s。\n范围： 5s ~ 600s。"
+        "desc": "截图间隔，单位s，默认10s。\n范围： 5s ~ 300s。"
       },
       {
         "name": "Width",
