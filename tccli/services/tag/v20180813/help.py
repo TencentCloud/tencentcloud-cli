@@ -222,18 +222,42 @@ INFO = {
     ],
     "desc": "本接口用于解除标签和资源的关联关系"
   },
-  "CreateTag": {
+  "DescribeResourcesByTagsUnion": {
     "params": [
       {
-        "name": "TagKey",
-        "desc": "标签键"
+        "name": "TagFilters",
+        "desc": "标签过滤数组"
       },
       {
-        "name": "TagValue",
-        "desc": "标签值"
+        "name": "CreateUin",
+        "desc": "创建标签者uin"
+      },
+      {
+        "name": "Offset",
+        "desc": "数据偏移量，默认为 0, 必须为Limit参数的整数倍"
+      },
+      {
+        "name": "Limit",
+        "desc": "每页大小，默认为 15"
+      },
+      {
+        "name": "ResourcePrefix",
+        "desc": "资源前缀"
+      },
+      {
+        "name": "ResourceId",
+        "desc": "资源唯一标记"
+      },
+      {
+        "name": "ResourceRegion",
+        "desc": "资源所在地域"
+      },
+      {
+        "name": "ServiceType",
+        "desc": "业务类型"
       }
     ],
-    "desc": "本接口用于创建一对标签键和标签值"
+    "desc": "通过标签查询资源列表并集"
   },
   "DescribeTagValuesSeq": {
     "params": [
@@ -280,7 +304,7 @@ INFO = {
       },
       {
         "name": "TagKeys",
-        "desc": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只会本值"
+        "desc": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值"
       },
       {
         "name": "ShowProject",
@@ -313,7 +337,7 @@ INFO = {
       },
       {
         "name": "TagKeys",
-        "desc": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只会本值"
+        "desc": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值"
       },
       {
         "name": "ShowProject",
@@ -438,6 +462,19 @@ INFO = {
       }
     ],
     "desc": "本接口用于删除一对标签键和标签值"
+  },
+  "CreateTag": {
+    "params": [
+      {
+        "name": "TagKey",
+        "desc": "标签键"
+      },
+      {
+        "name": "TagValue",
+        "desc": "标签值"
+      }
+    ],
+    "desc": "本接口用于创建一对标签键和标签值"
   },
   "ModifyResourcesTagValue": {
     "params": [

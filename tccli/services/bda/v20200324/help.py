@@ -100,6 +100,23 @@ INFO = {
     ],
     "desc": "删除人员。"
   },
+  "SegmentCustomizedPortraitPic": {
+    "params": [
+      {
+        "name": "SegmentationOptions",
+        "desc": "此参数为分割选项，请根据需要选择自己所想从图片中分割的部分。注意所有选项均为非必选，如未选择则值默认为false, 但是必须要保证多于一个选项的描述为true。"
+      },
+      {
+        "name": "Image",
+        "desc": "图片 base64 数据，base64 编码后大小不可超过5M。\n图片分辨率须小于2000*2000。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+      },
+      {
+        "name": "Url",
+        "desc": "图片的 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片分辨率须小于2000*2000 ，图片 base64 编码后大小不可超过5M。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+      }
+    ],
+    "desc": "在前后景分割的基础上优化多分类分割，支持对头发、五官等的分割，既作为换发型、挂件等底层技术，也可用于扣人头、扣人脸等玩法"
+  },
   "ModifyGroup": {
     "params": [
       {

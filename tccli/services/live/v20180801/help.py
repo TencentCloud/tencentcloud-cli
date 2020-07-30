@@ -608,23 +608,23 @@ INFO = {
     "params": [
       {
         "name": "ConfigId",
-        "desc": "配置id。"
+        "desc": "配置 ID。\n获取来源：\n1. 创建拉流配置接口CreatePullStreamConfig返回的配置 ID。\n2. 通过查询接口DescribePullStreamConfigs获取配置 ID。"
       },
       {
         "name": "FromUrl",
-        "desc": "源Url。"
+        "desc": "源 URL，用于拉流的地址。目前可支持直播流及点播文件。\n注意：\n1. 多个点播 URL 之间使用空格拼接。\n2. 目前上限支持10个 URL。\n3. 支持拉流文件格式：FLV，RTMP，HLS，MP4。\n4. 使用标准三层样式，如：http://test.com/live/stream.flv。"
       },
       {
         "name": "ToUrl",
-        "desc": "目的Url。"
+        "desc": "目的 URL，用于推流的地址，目前限制该目标地址为腾讯域名。\n1. 仅支持 RTMP 协议。\n2. 使用标准三层样式，如：http://test.com/live/stream.flv。"
       },
       {
         "name": "AreaId",
-        "desc": "区域id：\n1-深圳，\n2-上海，\n3-天津，\n4-中国香港。\n如有改动，需同时传入IspId。"
+        "desc": "区域 ID：\n1-深圳。\n2-上海。\n3-天津。\n4-中国香港。\n如有改动，需同时传入IspId。"
       },
       {
         "name": "IspId",
-        "desc": "运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。如有改动，需同时传入AreaId。"
+        "desc": "运营商 ID，\n1：电信。\n2：移动。\n3：联通。\n4：其他。\nAreaId为4的时候，IspId只能为其他。如有改动，需同时传入AreaId。"
       },
       {
         "name": "StartTime",
@@ -751,7 +751,7 @@ INFO = {
     "params": [
       {
         "name": "ConfigId",
-        "desc": "配置 ID。"
+        "desc": "配置 ID。\n获取途径：从 CreatePullStreamConfig 接口返回值获取。"
       }
     ],
     "desc": "查询直播拉流配置。"

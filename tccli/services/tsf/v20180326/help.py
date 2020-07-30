@@ -801,7 +801,7 @@ INFO = {
       },
       {
         "name": "RepositoryType",
-        "desc": "仓库类型"
+        "desc": "仓库类型（默认仓库：default，私有仓库：private）"
       },
       {
         "name": "BucketName",
