@@ -1999,6 +1999,31 @@ INFO = {
     ],
     "desc": "智慧零售-发票红冲"
   },
+  "MigrateOrderRefundQuery": {
+    "params": [
+      {
+        "name": "MerchantId",
+        "desc": "商户号"
+      },
+      {
+        "name": "PayChannel",
+        "desc": "支付渠道，ALIPAY对应支付宝渠道；UNIONPAY对应银联渠道"
+      },
+      {
+        "name": "RefundOrderId",
+        "desc": "退款订单号，最长64位，仅支持数字、 字母"
+      },
+      {
+        "name": "TradeSerialNo",
+        "desc": "退款流水号"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填 sandbox。"
+      }
+    ],
+    "desc": "提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时。"
+  },
   "CheckAmount": {
     "params": [
       {
@@ -2278,6 +2303,43 @@ INFO = {
       }
     ],
     "desc": "查询小额鉴权转账结果。查询小额往账鉴权的转账状态。"
+  },
+  "MigrateOrderRefund": {
+    "params": [
+      {
+        "name": "MerchantId",
+        "desc": "商户代码"
+      },
+      {
+        "name": "PayChannel",
+        "desc": "支付渠道，ALIPAY对应支付宝渠道；UNIONPAY对应银联渠道"
+      },
+      {
+        "name": "PayOrderId",
+        "desc": "正向支付商户订单号"
+      },
+      {
+        "name": "RefundOrderId",
+        "desc": "退款订单号，最长64位，仅支持数字、 字母"
+      },
+      {
+        "name": "RefundAmt",
+        "desc": "退款金额，单位：分。备注：改字段必须大于0 和小于10000000000的整数。"
+      },
+      {
+        "name": "ThirdChannelOrderId",
+        "desc": "第三方支付机构支付交易号"
+      },
+      {
+        "name": "PayAmt",
+        "desc": "原始支付金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额"
+      },
+      {
+        "name": "Profile",
+        "desc": "接入环境。沙箱环境填 sandbox。"
+      }
+    ],
+    "desc": "山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。"
   },
   "RechargeByThirdPay": {
     "params": [
