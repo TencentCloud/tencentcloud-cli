@@ -556,7 +556,7 @@ INFO = {
     "params": [
       {
         "name": "ImageName",
-        "desc": "镜像名称"
+        "desc": "镜像名称。"
       },
       {
         "name": "InstanceId",
@@ -564,7 +564,7 @@ INFO = {
       },
       {
         "name": "ImageDescription",
-        "desc": "镜像描述"
+        "desc": "镜像描述。"
       },
       {
         "name": "ForcePoweroff",

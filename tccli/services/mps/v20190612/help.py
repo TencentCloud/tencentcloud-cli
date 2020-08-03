@@ -272,7 +272,7 @@ INFO = {
       },
       {
         "name": "Comment",
-        "desc": "模板描述信息，长度限制：256 个字节。"
+        "desc": "模板描述信息，长度限制：256 个字符。"
       },
       {
         "name": "RemoveVideo",

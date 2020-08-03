@@ -51,6 +51,23 @@ INFO = {
     ],
     "desc": "本接口（ReplaceTopicRule）用于修改替换规则"
   },
+  "PublishRRPCMessage": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "设备名称"
+      },
+      {
+        "name": "Payload",
+        "desc": "消息内容，utf8编码"
+      }
+    ],
+    "desc": "发布RRPC消息"
+  },
   "DeleteLoraDevice": {
     "params": [
       {
@@ -261,6 +278,15 @@ INFO = {
     ],
     "desc": "本接口（DescribeTask）用于查询一个已创建任务的详情，任务保留一个月 "
   },
+  "CancelTask": {
+    "params": [
+      {
+        "name": "Id",
+        "desc": "任务 ID"
+      }
+    ],
+    "desc": "本接口（CancelTask）用于取消一个未被调度的任务。 "
+  },
   "DeleteDevice": {
     "params": [
       {
@@ -277,19 +303,6 @@ INFO = {
       }
     ],
     "desc": "本接口（DeleteDevice）用于删除物联网通信设备。 "
-  },
-  "DeleteProduct": {
-    "params": [
-      {
-        "name": "ProductId",
-        "desc": "需要删除的产品 ID"
-      },
-      {
-        "name": "Skey",
-        "desc": "删除LoRa产品需要skey"
-      }
-    ],
-    "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品"
   },
   "CreateDevice": {
     "params": [
@@ -361,14 +374,18 @@ INFO = {
     ],
     "desc": "本接口（PublishMessage）用于向某个主题发消息。 "
   },
-  "CancelTask": {
+  "DeleteProduct": {
     "params": [
       {
-        "name": "Id",
-        "desc": "任务 ID"
+        "name": "ProductId",
+        "desc": "需要删除的产品 ID"
+      },
+      {
+        "name": "Skey",
+        "desc": "删除LoRa产品需要skey"
       }
     ],
-    "desc": "本接口（CancelTask）用于取消一个未被调度的任务。 "
+    "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品"
   },
   "CreateTaskFileUrl": {
     "params": [
@@ -576,6 +593,19 @@ INFO = {
     ],
     "desc": "本接口（UnbindDevices）用于网关设备批量解绑子设备"
   },
+  "DescribeProductTask": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "产品ID"
+      },
+      {
+        "name": "TaskId",
+        "desc": "任务ID"
+      }
+    ],
+    "desc": "本接口（DescribeProductTask）用于查看产品级别的任务信息"
+  },
   "DescribeProductTasks": {
     "params": [
       {
@@ -665,18 +695,22 @@ INFO = {
     ],
     "desc": "本接口（EnableTopicRule）用于启用规则 "
   },
-  "DescribeProductTask": {
+  "PublishBroadcastMessage": {
     "params": [
       {
         "name": "ProductId",
         "desc": "产品ID"
       },
       {
-        "name": "TaskId",
-        "desc": "任务ID"
+        "name": "Payload",
+        "desc": "消息内容"
+      },
+      {
+        "name": "Qos",
+        "desc": "消息质量等级"
       }
     ],
-    "desc": "本接口（DescribeProductTask）用于查看产品级别的任务信息"
+    "desc": "发布广播消息"
   },
   "DeleteTopicRule": {
     "params": [

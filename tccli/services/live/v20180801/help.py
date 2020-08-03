@@ -933,7 +933,7 @@ INFO = {
       },
       {
         "name": "AdaptBitratePercent",
-        "desc": "极速高清相比 VideoBitrate 少多少码率，0.1到0.5。"
+        "desc": "极速高清视频码率压缩比。\n极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)\n\n取值范围：0.0到0.5"
       }
     ],
     "desc": "修改转码模板配置。"
@@ -2024,7 +2024,7 @@ INFO = {
       },
       {
         "name": "AdaptBitratePercent",
-        "desc": "极速高清相比VideoBitrate少多少码率，0.1到0.5"
+        "desc": "极速高清视频码率压缩比。\n极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)\n\n取值范围：0.0到0.5"
       }
     ],
     "desc": "创建转码模板，成功返回模板id后，需要调用[CreateLiveTranscodeRule](/document/product/267/32647)接口，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。"
