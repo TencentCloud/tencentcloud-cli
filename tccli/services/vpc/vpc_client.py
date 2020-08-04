@@ -967,17 +967,16 @@ def doUnassignIpv6Addresses(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeNetworkAcls(argv, arglist):
+def doAssociateDirectConnectGatewayNatGateway(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeNetworkAcls", g_param[OptionsDefine.Version])
+        show_help("AssociateDirectConnectGatewayNatGateway", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "NetworkAclIds": Utils.try_to_json(argv, "--NetworkAclIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "VpcId": argv.get("--VpcId"),
+        "NatGatewayId": argv.get("--NatGatewayId"),
+        "DirectConnectGatewayId": argv.get("--DirectConnectGatewayId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -991,9 +990,9 @@ def doDescribeNetworkAcls(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeNetworkAclsRequest()
+    model = models.AssociateDirectConnectGatewayNatGatewayRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeNetworkAcls(model)
+    rsp = client.AssociateDirectConnectGatewayNatGateway(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2110,6 +2109,41 @@ def doDescribeGatewayFlowQos(argv, arglist):
     model = models.DescribeGatewayFlowQosRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeGatewayFlowQos(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisassociateDirectConnectGatewayNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DisassociateDirectConnectGatewayNatGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "NatGatewayId": argv.get("--NatGatewayId"),
+        "DirectConnectGatewayId": argv.get("--DirectConnectGatewayId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisassociateDirectConnectGatewayNatGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DisassociateDirectConnectGatewayNatGateway(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -3907,20 +3941,13 @@ def doDescribeCcnRoutes(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateNetDetect(argv, arglist):
+def doDescribeBandwidthPackageQuota(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateNetDetect", g_param[OptionsDefine.Version])
+        show_help("DescribeBandwidthPackageQuota", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "VpcId": argv.get("--VpcId"),
-        "SubnetId": argv.get("--SubnetId"),
-        "NetDetectName": argv.get("--NetDetectName"),
-        "DetectDestinationIp": Utils.try_to_json(argv, "--DetectDestinationIp"),
-        "NextHopType": argv.get("--NextHopType"),
-        "NextHopDestination": argv.get("--NextHopDestination"),
-        "NetDetectDescription": argv.get("--NetDetectDescription"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -3934,9 +3961,9 @@ def doCreateNetDetect(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateNetDetectRequest()
+    model = models.DescribeBandwidthPackageQuotaRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateNetDetect(model)
+    rsp = client.DescribeBandwidthPackageQuota(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -4170,6 +4197,7 @@ def doCreateNatGateway(argv, arglist):
         "PublicIpAddresses": Utils.try_to_json(argv, "--PublicIpAddresses"),
         "Zone": argv.get("--Zone"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
+        "SubnetId": argv.get("--SubnetId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -5913,6 +5941,42 @@ def doModifyCustomerGatewayAttribute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeNetworkAcls(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeNetworkAcls", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NetworkAclIds": Utils.try_to_json(argv, "--NetworkAclIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeNetworkAclsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeNetworkAcls(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyVpnConnectionAttribute(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -6612,13 +6676,20 @@ def doCreateRoutes(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBandwidthPackageQuota(argv, arglist):
+def doCreateNetDetect(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeBandwidthPackageQuota", g_param[OptionsDefine.Version])
+        show_help("CreateNetDetect", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+        "NetDetectName": argv.get("--NetDetectName"),
+        "DetectDestinationIp": Utils.try_to_json(argv, "--DetectDestinationIp"),
+        "NextHopType": argv.get("--NextHopType"),
+        "NextHopDestination": argv.get("--NextHopDestination"),
+        "NetDetectDescription": argv.get("--NetDetectDescription"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -6632,9 +6703,9 @@ def doDescribeBandwidthPackageQuota(argv, arglist):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBandwidthPackageQuotaRequest()
+    model = models.CreateNetDetectRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeBandwidthPackageQuota(model)
+    rsp = client.CreateNetDetect(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -7480,7 +7551,7 @@ ACTION_MAP = {
     "DescribeGatewayFlowMonitorDetail": doDescribeGatewayFlowMonitorDetail,
     "EnableGatewayFlowMonitor": doEnableGatewayFlowMonitor,
     "UnassignIpv6Addresses": doUnassignIpv6Addresses,
-    "DescribeNetworkAcls": doDescribeNetworkAcls,
+    "AssociateDirectConnectGatewayNatGateway": doAssociateDirectConnectGatewayNatGateway,
     "DeleteVpnConnection": doDeleteVpnConnection,
     "ModifyAddressTemplateGroupAttribute": doModifyAddressTemplateGroupAttribute,
     "DescribeCustomerGatewayVendors": doDescribeCustomerGatewayVendors,
@@ -7513,6 +7584,7 @@ ACTION_MAP = {
     "AcceptAttachCcnInstances": doAcceptAttachCcnInstances,
     "DeleteServiceTemplateGroup": doDeleteServiceTemplateGroup,
     "DescribeGatewayFlowQos": doDescribeGatewayFlowQos,
+    "DisassociateDirectConnectGatewayNatGateway": doDisassociateDirectConnectGatewayNatGateway,
     "DescribeIp6Translators": doDescribeIp6Translators,
     "ResetAttachCcnInstances": doResetAttachCcnInstances,
     "DeleteSecurityGroupPolicies": doDeleteSecurityGroupPolicies,
@@ -7564,7 +7636,7 @@ ACTION_MAP = {
     "UnassignPrivateIpAddresses": doUnassignPrivateIpAddresses,
     "DeleteAddressTemplateGroup": doDeleteAddressTemplateGroup,
     "DescribeCcnRoutes": doDescribeCcnRoutes,
-    "CreateNetDetect": doCreateNetDetect,
+    "DescribeBandwidthPackageQuota": doDescribeBandwidthPackageQuota,
     "CreateIp6Translators": doCreateIp6Translators,
     "CreateAssistantCidr": doCreateAssistantCidr,
     "CreateDefaultVpc": doCreateDefaultVpc,
@@ -7622,6 +7694,7 @@ ACTION_MAP = {
     "DescribeSubnets": doDescribeSubnets,
     "CreateCcn": doCreateCcn,
     "ModifyCustomerGatewayAttribute": doModifyCustomerGatewayAttribute,
+    "DescribeNetworkAcls": doDescribeNetworkAcls,
     "ModifyVpnConnectionAttribute": doModifyVpnConnectionAttribute,
     "DescribeSecurityGroups": doDescribeSecurityGroups,
     "CreateVpnGateway": doCreateVpnGateway,
@@ -7642,7 +7715,7 @@ ACTION_MAP = {
     "DisableGatewayFlowMonitor": doDisableGatewayFlowMonitor,
     "DeleteNatGatewayDestinationIpPortTranslationNatRule": doDeleteNatGatewayDestinationIpPortTranslationNatRule,
     "CreateRoutes": doCreateRoutes,
-    "DescribeBandwidthPackageQuota": doDescribeBandwidthPackageQuota,
+    "CreateNetDetect": doCreateNetDetect,
     "ModifyHaVipAttribute": doModifyHaVipAttribute,
     "ReleaseAddresses": doReleaseAddresses,
     "DescribeBandwidthPackages": doDescribeBandwidthPackages,

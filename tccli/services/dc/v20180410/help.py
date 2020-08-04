@@ -46,6 +46,10 @@ INFO = {
       {
         "name": "FaultReportContactNumber",
         "desc": "报障联系电话。"
+      },
+      {
+        "name": "SignLaw",
+        "desc": "物理专线申请者补签用户使用协议"
       }
     ],
     "desc": "修改物理专线的属性。"
@@ -157,16 +161,16 @@ INFO = {
         "desc": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。"
       },
       {
-        "name": "Location",
-        "desc": "本地数据中心的地理位置。"
-      },
-      {
         "name": "PortType",
         "desc": "物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。"
       },
       {
         "name": "CircuitCode",
         "desc": "运营商或者服务商为物理专线提供的电路编码。"
+      },
+      {
+        "name": "Location",
+        "desc": "本地数据中心的地理位置。"
       },
       {
         "name": "Bandwidth",
@@ -207,6 +211,10 @@ INFO = {
       {
         "name": "FaultReportContactNumber",
         "desc": "报障联系电话。"
+      },
+      {
+        "name": "SignLaw",
+        "desc": "物理专线申请者是否签署了用户使用协议。默认已签署"
       }
     ],
     "desc": "申请物理专线接入。\n调用该接口时，请注意：\n账号要进行实名认证，否则不允许申请物理专线；\n若账户下存在欠费状态的物理专线，则不能申请更多的物理专线。"

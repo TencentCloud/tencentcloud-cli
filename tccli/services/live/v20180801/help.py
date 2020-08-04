@@ -314,11 +314,11 @@ INFO = {
     "params": [
       {
         "name": "StartTime",
-        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\nStartTime不能为3个月前。"
+        "desc": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。"
       },
       {
         "name": "EndTime",
-        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。"
+        "desc": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：最大时间跨度支持1天，支持最近3个月的数据查询。"
       },
       {
         "name": "PlayDomains",
@@ -1194,11 +1194,11 @@ INFO = {
       },
       {
         "name": "StatType",
-        "desc": "统计的类型，可选值：”Province”，”Isp”，“CountryOrArea”。"
+        "desc": "统计的类型，可选值：”Province”(省份)，”Isp”(运营商)，“CountryOrArea”(国家或地区)。"
       },
       {
         "name": "PlayDomains",
-        "desc": "不填则为总体数据。"
+        "desc": "播放域名列表，不填则为全部。"
       },
       {
         "name": "PageNum",
@@ -1239,10 +1239,10 @@ INFO = {
       },
       {
         "name": "AppName",
-        "desc": "推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。\n若不填，则为查询总体播放数据。\n注意：按AppName查询，需要联系客服同学提单支持。"
+        "desc": "推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。\n若不填，则为查询总体播放数据。\n注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。"
       }
     ],
-    "desc": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据，数据延迟4分钟左右。\n注意：按AppName查询，需要联系客服同学提单支持。"
+    "desc": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据，数据延迟4分钟左右。\n注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。"
   },
   "CreateLiveCert": {
     "params": [

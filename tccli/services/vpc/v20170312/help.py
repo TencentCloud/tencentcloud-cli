@@ -370,6 +370,15 @@ INFO = {
     ],
     "desc": "本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。<br />\n注意: 调用本接口是先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。"
   },
+  "DeleteServiceTemplate": {
+    "params": [
+      {
+        "name": "ServiceTemplateId",
+        "desc": "协议端口模板实例ID，例如：ppm-e6dy460g。"
+      }
+    ],
+    "desc": "本接口（DeleteServiceTemplate）用于删除协议端口模板"
+  },
   "DescribeNetworkInterfaceLimit": {
     "params": [
       {
@@ -476,26 +485,22 @@ INFO = {
     ],
     "desc": "本接口（UnassignIpv6Addresses）用于释放弹性网卡`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口。"
   },
-  "DescribeNetworkAcls": {
+  "AssociateDirectConnectGatewayNatGateway": {
     "params": [
       {
-        "name": "NetworkAclIds",
-        "desc": "网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。"
+        "name": "VpcId",
+        "desc": "专线网关ID。"
       },
       {
-        "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定NetworkAclIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>\n<li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>\n<li>network-acl-name - String - （过滤条件）网络ACL实例名称。</li>"
+        "name": "NatGatewayId",
+        "desc": "NAT网关ID。"
       },
       {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最小值为1，最大值为100。"
+        "name": "DirectConnectGatewayId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
       }
     ],
-    "desc": "本接口（DescribeNetworkAcls）用于查询网络ACL列表。"
+    "desc": "将专线网关与NAT网关绑定，专线网关默认路由指向NAT网关"
   },
   "DeleteVpnConnection": {
     "params": [
@@ -1599,14 +1604,22 @@ INFO = {
     ],
     "desc": "1. 该接口用于释放IPV6转换实例，支持批量。\n2.  如果IPV6转换实例建立有转换规则，会一并删除。"
   },
-  "DeleteCcn": {
+  "DisassociateDirectConnectGatewayNatGateway": {
     "params": [
       {
-        "name": "CcnId",
-        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
+        "name": "VpcId",
+        "desc": "专线网关ID。"
+      },
+      {
+        "name": "NatGatewayId",
+        "desc": "NAT网关ID。"
+      },
+      {
+        "name": "DirectConnectGatewayId",
+        "desc": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。"
       }
     ],
-    "desc": "本接口（DeleteCcn）用于删除云联网。\n* 删除后，云联网关联的所有实例间路由将被删除，网络将会中断，请务必确认\n* 删除云联网是不可逆的操作，请谨慎处理。\n"
+    "desc": "将专线网关与NAT网关解绑，解绑之后，专线网关将不能通过NAT网关访问公网"
   },
   "ModifyNetworkAclEntries": {
     "params": [
@@ -1829,14 +1842,14 @@ INFO = {
     ],
     "desc": "本接口（AssociateDhcpIpWithAddressIp）用于DhcpIp绑定弹性公网IP（EIP）。<br />"
   },
-  "DeleteServiceTemplate": {
+  "DeleteCcn": {
     "params": [
       {
-        "name": "ServiceTemplateId",
-        "desc": "协议端口模板实例ID，例如：ppm-e6dy460g。"
+        "name": "CcnId",
+        "desc": "CCN实例ID。形如：ccn-f49l6u0z。"
       }
     ],
-    "desc": "本接口（DeleteServiceTemplate）用于删除协议端口模板"
+    "desc": "本接口（DeleteCcn）用于删除云联网。\n* 删除后，云联网关联的所有实例间路由将被删除，网络将会中断，请务必确认\n* 删除云联网是不可逆的操作，请谨慎处理。\n"
   },
   "UnassignPrivateIpAddresses": {
     "params": [
@@ -1893,9 +1906,38 @@ INFO = {
     ],
     "desc": "本接口（DescribeCcnRoutes）用于查询已加入云联网（CCN）的路由"
   },
-  "DescribeBandwidthPackageQuota": {
-    "params": [],
-    "desc": "接口用于查询账户在当前地域的带宽包上限数量以及使用数量"
+  "CreateNetDetect": {
+    "params": [
+      {
+        "name": "VpcId",
+        "desc": "`VPC`实例`ID`。形如：`vpc-12345678`"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "子网实例ID。形如：subnet-12345678。"
+      },
+      {
+        "name": "NetDetectName",
+        "desc": "网络探测名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "DetectDestinationIp",
+        "desc": "探测目的IPv4地址数组。最多两个。"
+      },
+      {
+        "name": "NextHopType",
+        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；"
+      },
+      {
+        "name": "NextHopDestination",
+        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；"
+      },
+      {
+        "name": "NetDetectDescription",
+        "desc": "网络探测描述。"
+      }
+    ],
+    "desc": "本接口(CreateNetDetect)用于创建网络探测。"
   },
   "CreateIp6Translators": {
     "params": [
@@ -2727,6 +2769,27 @@ INFO = {
     ],
     "desc": "本接口（ModifyCustomerGatewayAttribute）用于修改对端网关信息。"
   },
+  "DescribeNetworkAcls": {
+    "params": [
+      {
+        "name": "NetworkAclIds",
+        "desc": "网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定NetworkAclIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>\n<li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>\n<li>network-acl-name - String - （过滤条件）网络ACL实例名称。</li>"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最小值为1，最大值为100。"
+      }
+    ],
+    "desc": "本接口（DescribeNetworkAcls）用于查询网络ACL列表。"
+  },
   "ModifyVpnConnectionAttribute": {
     "params": [
       {
@@ -3040,6 +3103,10 @@ INFO = {
       {
         "name": "Tags",
         "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
+      },
+      {
+        "name": "SubnetId",
+        "desc": "NAT网关所属子网"
       }
     ],
     "desc": "本接口(CreateNatGateway)用于创建NAT网关。"
@@ -3108,38 +3175,9 @@ INFO = {
     ],
     "desc": "本接口(CreateRoutes)用于创建路由策略。\n* 向指定路由表批量新增路由策略。"
   },
-  "CreateNetDetect": {
-    "params": [
-      {
-        "name": "VpcId",
-        "desc": "`VPC`实例`ID`。形如：`vpc-12345678`"
-      },
-      {
-        "name": "SubnetId",
-        "desc": "子网实例ID。形如：subnet-12345678。"
-      },
-      {
-        "name": "NetDetectName",
-        "desc": "网络探测名称，最大长度不能超过60个字节。"
-      },
-      {
-        "name": "DetectDestinationIp",
-        "desc": "探测目的IPv4地址数组。最多两个。"
-      },
-      {
-        "name": "NextHopType",
-        "desc": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；"
-      },
-      {
-        "name": "NextHopDestination",
-        "desc": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；"
-      },
-      {
-        "name": "NetDetectDescription",
-        "desc": "网络探测描述。"
-      }
-    ],
-    "desc": "本接口(CreateNetDetect)用于创建网络探测。"
+  "DescribeBandwidthPackageQuota": {
+    "params": [],
+    "desc": "接口用于查询账户在当前地域的带宽包上限数量以及使用数量"
   },
   "ModifyHaVipAttribute": {
     "params": [

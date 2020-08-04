@@ -402,7 +402,7 @@ INFO = {
       },
       {
         "name": "AliasId",
-        "desc": "别名ID"
+        "desc": "别名ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID"
       },
       {
         "name": "CreatorId",
@@ -410,7 +410,7 @@ INFO = {
       },
       {
         "name": "FleetId",
-        "desc": "舰队ID"
+        "desc": "舰队ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID"
       },
       {
         "name": "GameProperties",

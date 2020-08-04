@@ -36,6 +36,7 @@ def doModifyDirectConnectAttribute(argv, arglist):
         "CustomerContactNumber": argv.get("--CustomerContactNumber"),
         "FaultReportContactPerson": argv.get("--FaultReportContactPerson"),
         "FaultReportContactNumber": argv.get("--FaultReportContactNumber"),
+        "SignLaw": Utils.try_to_json(argv, "--SignLaw"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -288,9 +289,9 @@ def doCreateDirectConnect(argv, arglist):
         "DirectConnectName": argv.get("--DirectConnectName"),
         "AccessPointId": argv.get("--AccessPointId"),
         "LineOperator": argv.get("--LineOperator"),
-        "Location": argv.get("--Location"),
         "PortType": argv.get("--PortType"),
         "CircuitCode": argv.get("--CircuitCode"),
+        "Location": argv.get("--Location"),
         "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
         "RedundantDirectConnectId": argv.get("--RedundantDirectConnectId"),
         "Vlan": Utils.try_to_json(argv, "--Vlan"),
@@ -301,6 +302,7 @@ def doCreateDirectConnect(argv, arglist):
         "CustomerContactNumber": argv.get("--CustomerContactNumber"),
         "FaultReportContactPerson": argv.get("--FaultReportContactPerson"),
         "FaultReportContactNumber": argv.get("--FaultReportContactNumber"),
+        "SignLaw": Utils.try_to_json(argv, "--SignLaw"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
