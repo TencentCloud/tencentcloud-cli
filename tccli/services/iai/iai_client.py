@@ -627,6 +627,40 @@ def doModifyGroup(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpgradeGroupFaceModelVersion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpgradeGroupFaceModelVersion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": argv.get("--GroupId"),
+        "FaceModelVersion": argv.get("--FaceModelVersion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeGroupFaceModelVersionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpgradeGroupFaceModelVersion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetSimilarPersonResult(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -693,6 +727,40 @@ def doCreatePerson(argv, arglist):
     model = models.CreatePersonRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreatePerson(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetUpgradeGroupFaceModelVersionJobList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetUpgradeGroupFaceModelVersionJobList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetUpgradeGroupFaceModelVersionJobListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetUpgradeGroupFaceModelVersionJobList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -838,6 +906,39 @@ def doVerifyPerson(argv, arglist):
     model = models.VerifyPersonRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.VerifyPerson(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetUpgradeGroupFaceModelVersionResult(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetUpgradeGroupFaceModelVersionResult", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetUpgradeGroupFaceModelVersionResultRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetUpgradeGroupFaceModelVersionResult(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1173,12 +1274,15 @@ ACTION_MAP = {
     "DeleteGroup": doDeleteGroup,
     "DeletePerson": doDeletePerson,
     "ModifyGroup": doModifyGroup,
+    "UpgradeGroupFaceModelVersion": doUpgradeGroupFaceModelVersion,
     "GetSimilarPersonResult": doGetSimilarPersonResult,
     "CreatePerson": doCreatePerson,
+    "GetUpgradeGroupFaceModelVersionJobList": doGetUpgradeGroupFaceModelVersionJobList,
     "GetGroupInfo": doGetGroupInfo,
     "DetectFace": doDetectFace,
     "GetPersonList": doGetPersonList,
     "VerifyPerson": doVerifyPerson,
+    "GetUpgradeGroupFaceModelVersionResult": doGetUpgradeGroupFaceModelVersionResult,
     "ModifyPersonGroupInfo": doModifyPersonGroupInfo,
     "VerifyFace": doVerifyFace,
     "SearchPersons": doSearchPersons,

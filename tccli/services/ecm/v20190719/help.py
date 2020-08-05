@@ -171,6 +171,23 @@ INFO = {
     ],
     "desc": "查询您账户的弹性公网IP（简称 EIP）在当前地域的配额信息"
   },
+  "ModifyModuleConfig": {
+    "params": [
+      {
+        "name": "ModuleId",
+        "desc": "模块ID。"
+      },
+      {
+        "name": "InstanceType",
+        "desc": "机型ID。"
+      },
+      {
+        "name": "DefaultDataDiskSize",
+        "desc": "默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。"
+      }
+    ],
+    "desc": "修改模块配置，已关联实例的模块不支持调整配置。"
+  },
   "DeleteVpc": {
     "params": [
       {
