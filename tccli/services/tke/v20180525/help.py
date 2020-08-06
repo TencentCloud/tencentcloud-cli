@@ -501,6 +501,10 @@ INFO = {
       {
         "name": "RouteTableName",
         "desc": "路由表名称。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）"
       }
     ],
     "desc": "查询集群路由"

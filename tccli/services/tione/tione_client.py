@@ -39,6 +39,7 @@ def doUpdateNotebookInstance(argv, arglist):
         "ClsAccess": argv.get("--ClsAccess"),
         "AutoStopping": argv.get("--AutoStopping"),
         "StoppingCondition": Utils.try_to_json(argv, "--StoppingCondition"),
+        "ClsConfig": Utils.try_to_json(argv, "--ClsConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -390,6 +391,7 @@ def doCreateNotebookInstance(argv, arglist):
         "ClsAccess": argv.get("--ClsAccess"),
         "StoppingCondition": Utils.try_to_json(argv, "--StoppingCondition"),
         "AutoStopping": argv.get("--AutoStopping"),
+        "ClsConfig": Utils.try_to_json(argv, "--ClsConfig"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

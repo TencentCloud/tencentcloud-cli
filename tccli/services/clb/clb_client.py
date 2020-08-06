@@ -2101,6 +2101,7 @@ def doCreateLoadBalancer(argv, arglist):
         "InternetAccessible": Utils.try_to_json(argv, "--InternetAccessible"),
         "VipIsp": argv.get("--VipIsp"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
+        "ClientToken": argv.get("--ClientToken"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

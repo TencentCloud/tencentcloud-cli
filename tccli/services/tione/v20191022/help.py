@@ -58,6 +58,10 @@ INFO = {
       {
         "name": "StoppingCondition",
         "desc": "自动停止配置，只在AutoStopping为Enabled的时候生效"
+      },
+      {
+        "name": "ClsConfig",
+        "desc": "接入日志的配置"
       }
     ],
     "desc": "更新Notebook实例"
@@ -232,6 +236,10 @@ INFO = {
       {
         "name": "AutoStopping",
         "desc": "自动停止，可取值Enabled/Disabled\n取值为Disabled的时候StoppingCondition将被忽略\n取值为Enabled的时候读取StoppingCondition作为自动停止的配置"
+      },
+      {
+        "name": "ClsConfig",
+        "desc": "接入日志的配置"
       }
     ],
     "desc": "创建Notebook实例"
