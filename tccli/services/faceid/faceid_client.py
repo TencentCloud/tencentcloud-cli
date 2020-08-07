@@ -631,6 +631,8 @@ def doPhoneVerification(argv, arglist):
         "IdCard": argv.get("--IdCard"),
         "Name": argv.get("--Name"),
         "Phone": argv.get("--Phone"),
+        "CiphertextBlob": argv.get("--CiphertextBlob"),
+        "EncryptList": Utils.try_to_json(argv, "--EncryptList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

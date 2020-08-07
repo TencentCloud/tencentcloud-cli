@@ -191,6 +191,15 @@ INFO = {
     ],
     "desc": "本接口（InquiryPriceCreateDBInstances）用于查询申请实例价格。"
   },
+  "DescribeCrossRegionZone": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：mssql-3l3fgqn7"
+      }
+    ],
+    "desc": "本接口(DescribeCrossRegionZone)根据主实例查询备机的容灾地域和可用区。"
+  },
   "ModifyDBInstanceProject": {
     "params": [
       {
@@ -229,6 +238,47 @@ INFO = {
     ],
     "desc": "本接口（DescribeSlowlogs）用于获取慢查询日志文件信息"
   },
+  "DescribePublishSubscribe": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-j8kv137v"
+      },
+      {
+        "name": "PubOrSubInstanceId",
+        "desc": "订阅/发布实例ID，与InstanceId是发布实例还是订阅实例有关；当InstanceId为发布实例时，本字段按照订阅实例ID做筛选；当InstanceId为订阅实例时，本字段按照发布实例ID做筛选；"
+      },
+      {
+        "name": "PubOrSubInstanceIp",
+        "desc": "订阅/发布实例内网IP，与InstanceId是发布实例还是订阅实例有关；当InstanceId为发布实例时，本字段按照订阅实例内网IP做筛选；当InstanceId为订阅实例时，本字段按照发布实例内网IP做筛选；"
+      },
+      {
+        "name": "PublishSubscribeId",
+        "desc": "订阅发布ID，用于筛选"
+      },
+      {
+        "name": "PublishSubscribeName",
+        "desc": "订阅发布名字，用于筛选"
+      },
+      {
+        "name": "PublishDBName",
+        "desc": "发布库名字，用于筛选"
+      },
+      {
+        "name": "SubscribeDBName",
+        "desc": "订阅库名字，用于筛选"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页，页数"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页，页大小"
+      }
+    ],
+    "desc": "本接口（DescribePublishSubscribe）用于查询发布订阅关系列表。"
+  },
   "DescribeBackups": {
     "params": [
       {
@@ -250,9 +300,30 @@ INFO = {
       {
         "name": "Offset",
         "desc": "分页返回，页编号，默认值为第0页"
+      },
+      {
+        "name": "BackupName",
+        "desc": "按照备份名称筛选，不填则不筛选此项"
+      },
+      {
+        "name": "Strategy",
+        "desc": "按照备份策略筛选，0-实例备份，1-多库备份，不填则不筛选此项"
+      },
+      {
+        "name": "BackupWay",
+        "desc": "按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项"
       }
     ],
     "desc": "本接口(DescribeBackups)用于查询备份列表。"
+  },
+  "DescribeDBSecurityGroups": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：mssql-c1nl9rpv或者mssqlro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+      }
+    ],
+    "desc": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。"
   },
   "ModifyPublishSubscribeName": {
     "params": [
@@ -336,14 +407,18 @@ INFO = {
     ],
     "desc": "本接口（ModifyDBInstanceName）用于修改实例名字。"
   },
-  "TerminateDBInstance": {
+  "DeleteDB": {
     "params": [
       {
-        "name": "InstanceIdSet",
-        "desc": "主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同"
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-rljoi3bf"
+      },
+      {
+        "name": "Names",
+        "desc": "数据库名数组"
       }
     ],
-    "desc": "本接口(TerminateDBInstance)用于主动销毁按量计费实例。"
+    "desc": "本接口(DeleteDB)用于删除数据库。"
   },
   "CreateBackup": {
     "params": [
@@ -358,6 +433,10 @@ INFO = {
       {
         "name": "InstanceId",
         "desc": "实例ID，形如mssql-i1z41iwd"
+      },
+      {
+        "name": "BackupName",
+        "desc": "备份名称，若不填则自动生成“实例ID_备份开始时间戳”"
       }
     ],
     "desc": "本接口(CreateBackup)用于创建备份。"
@@ -464,22 +543,34 @@ INFO = {
     ],
     "desc": "本接口（RollbackInstance）用于回档实例"
   },
-  "DescribeDBs": {
+  "CreateMigration": {
     "params": [
       {
-        "name": "InstanceIdSet",
-        "desc": "实例ID"
+        "name": "MigrateName",
+        "desc": "迁移任务的名称"
       },
       {
-        "name": "Limit",
-        "desc": "分页返回，每页返回的数目，取值为1-100，默认值为20"
+        "name": "MigrateType",
+        "desc": "迁移类型（1:结构迁移 2:数据迁移 3:增量同步）"
       },
       {
-        "name": "Offset",
-        "desc": "分页返回，页编号，默认值为第0页"
+        "name": "SourceType",
+        "desc": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）"
+      },
+      {
+        "name": "Source",
+        "desc": "迁移源"
+      },
+      {
+        "name": "Target",
+        "desc": "迁移目标"
+      },
+      {
+        "name": "MigrateDBSet",
+        "desc": "迁移DB对象 ，离线迁移不使用（SourceType=4或SourceType=5）。"
       }
     ],
-    "desc": "本接口（DescribeDBs）用于查询数据库列表。"
+    "desc": "本接口（CreateMigration）作用是创建一个迁移任务"
   },
   "DescribeDBInstances": {
     "params": [
@@ -556,14 +647,14 @@ INFO = {
     ],
     "desc": "本接口（RenewDBInstance）用于续费实例。"
   },
-  "DescribeReadOnlyGroupList": {
+  "TerminateDBInstance": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "主实例ID，格式如：mssql-3l3fgqn7"
+        "name": "InstanceIdSet",
+        "desc": "主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同"
       }
     ],
-    "desc": "本接口（DescribeReadOnlyGroupList）用于查询只读组列表。"
+    "desc": "本接口(TerminateDBInstance)用于主动销毁按量计费实例。"
   },
   "DescribeProjectSecurityGroups": {
     "params": [
@@ -689,34 +780,22 @@ INFO = {
     ],
     "desc": "本接口（InquiryPriceUpgradeDBInstance）用于查询升级实例的价格。"
   },
-  "CreateMigration": {
+  "DescribeDBs": {
     "params": [
       {
-        "name": "MigrateName",
-        "desc": "迁移任务的名称"
+        "name": "InstanceIdSet",
+        "desc": "实例ID"
       },
       {
-        "name": "MigrateType",
-        "desc": "迁移类型（1:结构迁移 2:数据迁移 3:增量同步）"
+        "name": "Limit",
+        "desc": "分页返回，每页返回的数目，取值为1-100，默认值为20"
       },
       {
-        "name": "SourceType",
-        "desc": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）"
-      },
-      {
-        "name": "Source",
-        "desc": "迁移源"
-      },
-      {
-        "name": "Target",
-        "desc": "迁移目标"
-      },
-      {
-        "name": "MigrateDBSet",
-        "desc": "迁移DB对象 ，离线迁移不使用（SourceType=4或SourceType=5）。"
+        "name": "Offset",
+        "desc": "分页返回，页编号，默认值为第0页"
       }
     ],
-    "desc": "本接口（CreateMigration）作用是创建一个迁移任务"
+    "desc": "本接口（DescribeDBs）用于查询数据库列表。"
   },
   "DescribeRegions": {
     "params": [],
@@ -769,6 +848,19 @@ INFO = {
     ],
     "desc": "本接口（ModifyMaintenanceSpan）用于修改实例的可维护时间窗"
   },
+  "DescribeBackupByFlowId": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：mssql-3l3fgqn7"
+      },
+      {
+        "name": "FlowId",
+        "desc": "创建备份流程ID"
+      }
+    ],
+    "desc": "本接口(DescribeBackupByFlowId)用于通过备份创建流程的ID查询创建的备份详情，流程ID可从接口CreateBackup中获得。"
+  },
   "DescribeReadOnlyGroupDetails": {
     "params": [
       {
@@ -803,46 +895,22 @@ INFO = {
     ],
     "desc": "本接口（CreatePublishSubscribe）用于创建两个数据库之间的发布订阅关系。作为订阅者，不能再充当发布者，作为发布者可以有多个订阅者实例。"
   },
-  "DescribePublishSubscribe": {
+  "ModifyBackupName": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例ID，形如mssql-j8kv137v"
+        "desc": "实例ID，格式如：mssql-3l3fgqn7"
       },
       {
-        "name": "PubOrSubInstanceId",
-        "desc": "订阅/发布实例ID，与InstanceId是发布实例还是订阅实例有关；当InstanceId为发布实例时，本字段按照订阅实例ID做筛选；当InstanceId为订阅实例时，本字段按照发布实例ID做筛选；"
+        "name": "BackupId",
+        "desc": "要修改名称的备份ID，可通过DescribeBackups 接口获取。"
       },
       {
-        "name": "PubOrSubInstanceIp",
-        "desc": "订阅/发布实例内网IP，与InstanceId是发布实例还是订阅实例有关；当InstanceId为发布实例时，本字段按照订阅实例内网IP做筛选；当InstanceId为订阅实例时，本字段按照发布实例内网IP做筛选；"
-      },
-      {
-        "name": "PublishSubscribeId",
-        "desc": "订阅发布ID，用于筛选"
-      },
-      {
-        "name": "PublishSubscribeName",
-        "desc": "订阅发布名字，用于筛选"
-      },
-      {
-        "name": "PublishDBName",
-        "desc": "发布库名字，用于筛选"
-      },
-      {
-        "name": "SubscribeDBName",
-        "desc": "订阅库名字，用于筛选"
-      },
-      {
-        "name": "Offset",
-        "desc": "分页，页数"
-      },
-      {
-        "name": "Limit",
-        "desc": "分页，页大小"
+        "name": "BackupName",
+        "desc": "修改的备份名称"
       }
     ],
-    "desc": "本接口（DescribePublishSubscribe）用于查询发布订阅关系列表。"
+    "desc": "本接口(ModifyBackupName)用于修改备份名称。"
   },
   "DescribeAccounts": {
     "params": [
@@ -901,19 +969,6 @@ INFO = {
     ],
     "desc": "本接口（DescribeRollbackTime）用于查询实例可回档时间范围"
   },
-  "DeleteDB": {
-    "params": [
-      {
-        "name": "InstanceId",
-        "desc": "实例ID，形如mssql-rljoi3bf"
-      },
-      {
-        "name": "Names",
-        "desc": "数据库名数组"
-      }
-    ],
-    "desc": "本接口(DeleteDB)用于删除数据库。"
-  },
   "RemoveBackups": {
     "params": [
       {
@@ -940,14 +995,14 @@ INFO = {
     ],
     "desc": "本接口（CreateDB）用于创建数据库。"
   },
-  "DescribeDBSecurityGroups": {
+  "DescribeReadOnlyGroupList": {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "实例ID，格式如：mssql-c1nl9rpv或者mssqlro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。"
+        "desc": "主实例ID，格式如：mssql-3l3fgqn7"
       }
     ],
-    "desc": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。"
+    "desc": "本接口（DescribeReadOnlyGroupList）用于查询只读组列表。"
   },
   "DescribeMigrationDetail": {
     "params": [

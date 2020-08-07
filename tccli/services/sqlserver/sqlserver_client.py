@@ -18,10 +18,10 @@ from tccli.services.sqlserver import v20180328
 from tccli.services.sqlserver.v20180328 import help as v20180328_help
 
 
-def doDescribeDBSecurityGroups(argv, arglist):
+def doDescribeReadOnlyGroupList(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDBSecurityGroups", g_param[OptionsDefine.Version])
+        show_help("DescribeReadOnlyGroupList", g_param[OptionsDefine.Version])
         return
 
     param = {
@@ -39,9 +39,9 @@ def doDescribeDBSecurityGroups(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBSecurityGroupsRequest()
+    model = models.DescribeReadOnlyGroupListRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDBSecurityGroups(model)
+    rsp = client.DescribeReadOnlyGroupList(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -205,6 +205,9 @@ def doDescribeBackups(argv, arglist):
         "InstanceId": argv.get("--InstanceId"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
+        "BackupName": argv.get("--BackupName"),
+        "Strategy": Utils.try_to_json(argv, "--Strategy"),
+        "BackupWay": Utils.try_to_json(argv, "--BackupWay"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -335,15 +338,16 @@ def doDescribeMigrations(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResetAccountPassword(argv, arglist):
+def doModifyBackupName(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResetAccountPassword", g_param[OptionsDefine.Version])
+        show_help("ModifyBackupName", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
-        "Accounts": Utils.try_to_json(argv, "--Accounts"),
+        "BackupId": Utils.try_to_json(argv, "--BackupId"),
+        "BackupName": argv.get("--BackupName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -357,9 +361,42 @@ def doResetAccountPassword(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetAccountPasswordRequest()
+    model = models.ModifyBackupNameRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResetAccountPassword(model)
+    rsp = client.ModifyBackupName(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRunMigration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RunMigration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RunMigrationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RunMigration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -437,6 +474,39 @@ def doInquiryPriceCreateDBInstances(argv, arglist):
     model = models.InquiryPriceCreateDBInstancesRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.InquiryPriceCreateDBInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCrossRegionZone(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCrossRegionZone", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCrossRegionZoneRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCrossRegionZone(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -770,14 +840,15 @@ def doModifyDBInstanceName(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTerminateDBInstance(argv, arglist):
+def doDeleteDB(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TerminateDBInstance", g_param[OptionsDefine.Version])
+        show_help("DeleteDB", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "InstanceId": argv.get("--InstanceId"),
+        "Names": Utils.try_to_json(argv, "--Names"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -791,9 +862,9 @@ def doTerminateDBInstance(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateDBInstanceRequest()
+    model = models.DeleteDBRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TerminateDBInstance(model)
+    rsp = client.DeleteDB(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -813,6 +884,7 @@ def doCreateBackup(argv, arglist):
         "Strategy": Utils.try_to_json(argv, "--Strategy"),
         "DBNames": Utils.try_to_json(argv, "--DBNames"),
         "InstanceId": argv.get("--InstanceId"),
+        "BackupName": argv.get("--BackupName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -925,16 +997,19 @@ def doRollbackInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDBs(argv, arglist):
+def doCreateMigration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDBs", g_param[OptionsDefine.Version])
+        show_help("CreateMigration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "MigrateName": argv.get("--MigrateName"),
+        "MigrateType": Utils.try_to_json(argv, "--MigrateType"),
+        "SourceType": Utils.try_to_json(argv, "--SourceType"),
+        "Source": Utils.try_to_json(argv, "--Source"),
+        "Target": Utils.try_to_json(argv, "--Target"),
+        "MigrateDBSet": Utils.try_to_json(argv, "--MigrateDBSet"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -948,9 +1023,9 @@ def doDescribeDBs(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBsRequest()
+    model = models.CreateMigrationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDBs(model)
+    rsp = client.CreateMigration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1102,14 +1177,14 @@ def doRenewDBInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeReadOnlyGroupList(argv, arglist):
+def doTerminateDBInstance(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeReadOnlyGroupList", g_param[OptionsDefine.Version])
+        show_help("TerminateDBInstance", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1123,9 +1198,9 @@ def doDescribeReadOnlyGroupList(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeReadOnlyGroupListRequest()
+    model = models.TerminateDBInstanceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeReadOnlyGroupList(model)
+    rsp = client.TerminateDBInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1272,14 +1347,15 @@ def doInquiryPriceUpgradeDBInstance(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRunMigration(argv, arglist):
+def doResetAccountPassword(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RunMigration", g_param[OptionsDefine.Version])
+        show_help("ResetAccountPassword", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
+        "InstanceId": argv.get("--InstanceId"),
+        "Accounts": Utils.try_to_json(argv, "--Accounts"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1293,9 +1369,9 @@ def doRunMigration(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RunMigrationRequest()
+    model = models.ResetAccountPasswordRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RunMigration(model)
+    rsp = client.ResetAccountPassword(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1305,19 +1381,16 @@ def doRunMigration(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateMigration(argv, arglist):
+def doDescribeDBs(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateMigration", g_param[OptionsDefine.Version])
+        show_help("DescribeDBs", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "MigrateName": argv.get("--MigrateName"),
-        "MigrateType": Utils.try_to_json(argv, "--MigrateType"),
-        "SourceType": Utils.try_to_json(argv, "--SourceType"),
-        "Source": Utils.try_to_json(argv, "--Source"),
-        "Target": Utils.try_to_json(argv, "--Target"),
-        "MigrateDBSet": Utils.try_to_json(argv, "--MigrateDBSet"),
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1331,9 +1404,9 @@ def doCreateMigration(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateMigrationRequest()
+    model = models.DescribeDBsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateMigration(model)
+    rsp = client.DescribeDBs(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1470,6 +1543,39 @@ def doModifyMaintenanceSpan(argv, arglist):
     model = models.ModifyMaintenanceSpanRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyMaintenanceSpan(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMaintenanceSpan(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeMaintenanceSpan", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMaintenanceSpanRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeMaintenanceSpan(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1651,14 +1757,15 @@ def doCompleteExpansion(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMaintenanceSpan(argv, arglist):
+def doDescribeBackupByFlowId(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeMaintenanceSpan", g_param[OptionsDefine.Version])
+        show_help("DescribeBackupByFlowId", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
+        "FlowId": argv.get("--FlowId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1672,9 +1779,9 @@ def doDescribeMaintenanceSpan(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMaintenanceSpanRequest()
+    model = models.DescribeBackupByFlowIdRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeMaintenanceSpan(model)
+    rsp = client.DescribeBackupByFlowId(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1793,15 +1900,14 @@ def doCreateDB(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteDB(argv, arglist):
+def doDescribeDBSecurityGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteDB", g_param[OptionsDefine.Version])
+        show_help("DescribeDBSecurityGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
-        "Names": Utils.try_to_json(argv, "--Names"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1815,9 +1921,9 @@ def doDeleteDB(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteDBRequest()
+    model = models.DescribeDBSecurityGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteDB(model)
+    rsp = client.DescribeDBSecurityGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2235,7 +2341,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
+    "DescribeReadOnlyGroupList": doDescribeReadOnlyGroupList,
     "ModifyMigration": doModifyMigration,
     "DescribeOrders": doDescribeOrders,
     "ModifyAccountPrivilege": doModifyAccountPrivilege,
@@ -2244,9 +2350,11 @@ ACTION_MAP = {
     "DeleteDBInstance": doDeleteDBInstance,
     "DeletePublishSubscribe": doDeletePublishSubscribe,
     "DescribeMigrations": doDescribeMigrations,
-    "ResetAccountPassword": doResetAccountPassword,
+    "ModifyBackupName": doModifyBackupName,
+    "RunMigration": doRunMigration,
     "ModifyDBName": doModifyDBName,
     "InquiryPriceCreateDBInstances": doInquiryPriceCreateDBInstances,
+    "DescribeCrossRegionZone": doDescribeCrossRegionZone,
     "ModifyDBInstanceProject": doModifyDBInstanceProject,
     "DescribeSlowlogs": doDescribeSlowlogs,
     "DeleteAccount": doDeleteAccount,
@@ -2256,36 +2364,37 @@ ACTION_MAP = {
     "CreateBasicDBInstances": doCreateBasicDBInstances,
     "RestartDBInstance": doRestartDBInstance,
     "ModifyDBInstanceName": doModifyDBInstanceName,
-    "TerminateDBInstance": doTerminateDBInstance,
+    "DeleteDB": doDeleteDB,
     "CreateBackup": doCreateBackup,
     "CreateDBInstances": doCreateDBInstances,
     "RollbackInstance": doRollbackInstance,
-    "DescribeDBs": doDescribeDBs,
+    "CreateMigration": doCreateMigration,
     "DescribeDBInstances": doDescribeDBInstances,
     "DescribeZones": doDescribeZones,
     "ModifyDBRemark": doModifyDBRemark,
     "RenewDBInstance": doRenewDBInstance,
-    "DescribeReadOnlyGroupList": doDescribeReadOnlyGroupList,
+    "TerminateDBInstance": doTerminateDBInstance,
     "DescribeProjectSecurityGroups": doDescribeProjectSecurityGroups,
     "AssociateSecurityGroups": doAssociateSecurityGroups,
     "CreateAccount": doCreateAccount,
     "InquiryPriceUpgradeDBInstance": doInquiryPriceUpgradeDBInstance,
-    "RunMigration": doRunMigration,
-    "CreateMigration": doCreateMigration,
+    "ResetAccountPassword": doResetAccountPassword,
+    "DescribeDBs": doDescribeDBs,
     "DescribeRegions": doDescribeRegions,
     "InquiryPriceRenewDBInstance": doInquiryPriceRenewDBInstance,
     "DeleteMigration": doDeleteMigration,
     "ModifyMaintenanceSpan": doModifyMaintenanceSpan,
+    "DescribeMaintenanceSpan": doDescribeMaintenanceSpan,
     "DescribeReadOnlyGroupDetails": doDescribeReadOnlyGroupDetails,
     "CreatePublishSubscribe": doCreatePublishSubscribe,
     "DescribeRollbackTime": doDescribeRollbackTime,
     "DescribeAccounts": doDescribeAccounts,
     "CompleteExpansion": doCompleteExpansion,
-    "DescribeMaintenanceSpan": doDescribeMaintenanceSpan,
+    "DescribeBackupByFlowId": doDescribeBackupByFlowId,
     "DescribePublishSubscribe": doDescribePublishSubscribe,
     "RemoveBackups": doRemoveBackups,
     "CreateDB": doCreateDB,
-    "DeleteDB": doDeleteDB,
+    "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
     "DescribeMigrationDetail": doDescribeMigrationDetail,
     "ModifyReadOnlyGroupDetails": doModifyReadOnlyGroupDetails,
     "RestoreInstance": doRestoreInstance,

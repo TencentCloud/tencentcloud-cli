@@ -334,6 +334,14 @@ INFO = {
       {
         "name": "Phone",
         "desc": "手机号"
+      },
+      {
+        "name": "CiphertextBlob",
+        "desc": "有加密需求的用户，接入传入kms的CiphertextBlob"
+      },
+      {
+        "name": "EncryptList",
+        "desc": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个"
       }
     ],
     "desc": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。"

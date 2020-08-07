@@ -9,7 +9,7 @@ INFO = {
     "params": [
       {
         "name": "EngineModelType",
-        "desc": "引擎模型类型。\n电话场景：\n• 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；\n• 8k_zh_s：电话 8k 中文普通话话者分离（仅适用于单声道音频）；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_jp：16k 日语；"
+        "desc": "引擎模型类型。\n电话场景：\n• 8k_zh：电话 8k 中文普通话通用（可用于双声道音频）；\n• 8k_zh_s：电话 8k 中文普通话话者分离（仅适用于单声道音频）；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；"
       },
       {
         "name": "ChannelNum",
@@ -177,7 +177,7 @@ INFO = {
       },
       {
         "name": "EngSerViceType",
-        "desc": "引擎模型类型。\n电话场景：\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_jp：16k 日语；"
+        "desc": "引擎模型类型。\n电话场景：\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；"
       },
       {
         "name": "SourceType",
