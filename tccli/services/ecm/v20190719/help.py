@@ -35,7 +35,7 @@ INFO = {
     "params": [
       {
         "name": "Filters",
-        "desc": "过滤条件。\nmodule-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。\nmodule-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。\nimage-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。\ninstance-family      String      是否必填：否      （过滤条件）按照机型family过滤。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。"
+        "desc": "过滤条件。\nmodule-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。\nmodule-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。\nimage-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。\ninstance-family      String      是否必填：否      （过滤条件）按照机型family过滤。\nsecurity-group-id - string 是否必填：否 - （过滤条件）按照模块绑定的安全组id过滤。\n每次请求的Filters的上限为10，Filter.Values的上限为5。"
       },
       {
         "name": "Offset",
@@ -460,6 +460,14 @@ INFO = {
       {
         "name": "DefaultDataDiskSize",
         "desc": "默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。"
+      },
+      {
+        "name": "CloseIpDirect",
+        "desc": "是否关闭IP直通。取值范围：\n1：表示关闭IP直通\n0：表示开通IP直通"
+      },
+      {
+        "name": "TagSpecification",
+        "desc": "标签列表。"
       }
     ],
     "desc": "创建模块"
@@ -902,7 +910,7 @@ INFO = {
         "desc": "模块ID"
       }
     ],
-    "desc": "ModifyModuleImage"
+    "desc": "修改模块的默认镜像"
   },
   "ModifyInstancesAttribute": {
     "params": [
@@ -1060,6 +1068,19 @@ INFO = {
       }
     ],
     "desc": "展示镜像列表"
+  },
+  "ModifyModuleIpDirect": {
+    "params": [
+      {
+        "name": "ModuleId",
+        "desc": "模块ID。"
+      },
+      {
+        "name": "CloseIpDirect",
+        "desc": "是否关闭IP直通。取值范围：\n1：表示关闭IP直通\n0：表示开通IP直通"
+      }
+    ],
+    "desc": "修改模块IP直通。"
   },
   "ModifyVpcAttribute": {
     "params": [

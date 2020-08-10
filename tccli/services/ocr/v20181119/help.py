@@ -14,6 +14,39 @@ INFO = {
     ],
     "desc": "本接口支持病案首页、费用清单、结算单、医疗发票四种保险理赔单据的文本识别和结构化输出。"
   },
+  "VerifyBasicBizLicense": {
+    "params": [
+      {
+        "name": "ImageBase64",
+        "desc": "用于入参是营业执照图片的场景，ImageBase64和ImageUrl必选一个输入。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
+      },
+      {
+        "name": "ImageUrl",
+        "desc": "用于入参是营业执照图片的场景，ImageBase64和ImageUrl必选一个输入。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
+      },
+      {
+        "name": "ImageConfig",
+        "desc": "用于入参是营业执照图片的场景，表示需要校验的参数：RegNum（注册号或者统一社会信用代码），Name（企业名称），Address（经营地址）。选择后会返回相关参数校验结果。RegNum为必选，Name和Address可选。\n格式为{RegNum: true, Name:true/false, Address:true/false}\n\n设置方式参考：\nConfig = Json.stringify({\"Name\":true,\"Address\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"Name\":true,\"Address\":true}"
+      },
+      {
+        "name": "RegNum",
+        "desc": "用于入参是文本的场景，RegNum表示注册号或者统一社会信用代码。RegNum为必选项。"
+      },
+      {
+        "name": "Name",
+        "desc": "用于入参是文本的场景，Name表示企业名称。Name为可选项，填写后会返回Name的校验结果。"
+      },
+      {
+        "name": "Address",
+        "desc": "用于入参是文本的场景，Address表示经营地址，填写后会返回Name的校验结果。"
+      },
+      {
+        "name": "RegCapital",
+        "desc": "1表示输出注册资本字段（单位：万元），其他值表示不输出。默认不输出。"
+      }
+    ],
+    "desc": "本接口支持营业执照信息的识别与准确性核验。您可以通过输入营业执照关键字段或传入营业执照图片提供所需的验证信息，接口返回真实的企业工商照面信息及核验结果，包括统一社会信用代码、经营期限、法人姓名、经营状态、经营业务范围、状态信息、原注册号、要核验的工商注册号、工商注册号、要核验的企业名称、企业名称、要核验的注册住址、注册住址、核验结果、注册资本共16个基础字段。"
+  },
   "QueryBarCode": {
     "params": [
       {
@@ -232,6 +265,19 @@ INFO = {
       }
     ],
     "desc": "本接口支持图片中整体文字的检测和识别，返回文字框位置与文字内容。相比通用印刷体识别接口，识别速度更快、支持的 QPS 更高。"
+  },
+  "ResidenceBookletOCR": {
+    "params": [
+      {
+        "name": "ImageBase64",
+        "desc": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
+      },
+      {
+        "name": "ImageUrl",
+        "desc": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。"
+      }
+    ],
+    "desc": "本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。"
   },
   "PropOwnerCertOCR": {
     "params": [
@@ -573,18 +619,34 @@ INFO = {
     ],
     "desc": "本接口支持出租车发票关键字段的识别，包括发票号码、发票代码、金额、日期、上下车时间、里程、车牌号、发票类型及所属地区等字段。"
   },
-  "ResidenceBookletOCR": {
+  "VerifyBizLicense": {
     "params": [
       {
         "name": "ImageBase64",
-        "desc": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
+        "desc": "用于入参是营业执照图片的场景，ImageBase64和ImageUrl必选一个输入。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
       },
       {
         "name": "ImageUrl",
-        "desc": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。"
+        "desc": "用于入参是营业执照图片的场景，ImageBase64和ImageUrl必选一个输入。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。"
+      },
+      {
+        "name": "ImageConfig",
+        "desc": "用于入参是营业执照图片的场景，表示需要校验的参数：RegNum（注册号或者统一社会信用代码），Name（企业名称），Address（经营地址）。选择后会返回相关参数校验结果。RegNum为必选，Name和Address可选。\n格式为{RegNum: true, Name:true/false, Address:true/false}\n\n设置方式参考：\nConfig = Json.stringify({\"Name\":true,\"Address\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"Name\":true,\"Address\":true}"
+      },
+      {
+        "name": "RegNum",
+        "desc": "用于入参是文本的场景，RegNum表示注册号或者统一社会信用代码。RegNum为必选项。"
+      },
+      {
+        "name": "Name",
+        "desc": "用于入参是文本的场景，Name表示企业名称。Name为可选项，填写后会返回Name的校验结果。"
+      },
+      {
+        "name": "Address",
+        "desc": "用于入参是文本的场景，Address表示经营地址，填写后会返回Name的校验结果。"
       }
     ],
-    "desc": "本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。"
+    "desc": "本接口支持营业执照信息的识别与准确性核验，返回的营业执照信息比营业执照识别及核验（基础版）接口更详细。\n您可以通过输入营业执照关键字段或传入营业执照图片提供所需的验证信息，接口返回真实的企业工商照面信息及核验结果，包括统一社会信用代码、组织机构代码、经营期限、法人姓名、经营状态、经营业务范围及方式、注册资金、注册币种、登记机关、开业日期、企业（机构）类型、注销日期、吊销日期、许可经营项目、一般经营项目、核准时间、省、地级市、区/县、住所所在行政区划代码、行业门类代码、行业门类名称、国民经济行业代码、国民经济行业名称、经营（业务）范围、要核验的工商注册号、工商注册号、要核验的企业名称、企业名称、要核验的注册住址、注册住址、核验结果共33个详细字段。"
   },
   "InstitutionOCR": {
     "params": [
@@ -610,7 +672,7 @@ INFO = {
         "desc": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。"
       }
     ],
-    "desc": "本接口支持网约车驾驶证重要字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n网约车驾驶证：包括姓名、证号、起始日期、截止日期、发证日期。"
+    "desc": "本接口支持网约车驾驶证关键字段的识别，包括姓名、证号、起始日期、截止日期、发证日期。"
   },
   "VehicleRegCertOCR": {
     "params": [

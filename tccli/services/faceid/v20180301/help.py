@@ -61,43 +61,22 @@ INFO = {
     ],
     "desc": "使用动作活体检测模式前，需调用本接口获取动作顺序。"
   },
-  "BankCard2EVerification": {
-    "params": [
-      {
-        "name": "Name",
-        "desc": "姓名"
-      },
-      {
-        "name": "BankCard",
-        "desc": "银行卡"
-      }
-    ],
-    "desc": "本接口用于校验姓名和银行卡号的真实性和一致性。"
-  },
-  "LivenessCompare": {
+  "CheckIdCardInformation": {
     "params": [
       {
         "name": "ImageBase64",
-        "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
+        "desc": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\nImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按照ImageUrl>ImageBase64的优先级使用参数。"
       },
       {
-        "name": "VideoBase64",
-        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。"
+        "name": "ImageUrl",
+        "desc": "身份证人像面的 Url 地址\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。"
       },
       {
-        "name": "LivenessType",
-        "desc": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。"
-      },
-      {
-        "name": "ValidateData",
-        "desc": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：空。"
-      },
-      {
-        "name": "Optional",
-        "desc": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}"
+        "name": "Config",
+        "desc": "以下可选字段均为bool 类型，默认false：\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警\nTempIdWarn，临时身份证告警\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CopyWarn\":true,\"ReshootWarn\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CopyWarn\":true,\"ReshootWarn\":true}"
       }
     ],
-    "desc": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。"
+    "desc": "传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与公安权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。"
   },
   "BankCardVerification": {
     "params": [
@@ -238,27 +217,6 @@ INFO = {
     ],
     "desc": "本接口用于输入银行卡号、姓名、开户证件号、开户手机号，校验信息的真实性和一致性。"
   },
-  "ImageRecognition": {
-    "params": [
-      {
-        "name": "IdCard",
-        "desc": "身份证号"
-      },
-      {
-        "name": "Name",
-        "desc": "姓名。中文请使用UTF-8编码。"
-      },
-      {
-        "name": "ImageBase64",
-        "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
-      },
-      {
-        "name": "Optional",
-        "desc": "本接口不需要传递此参数。"
-      }
-    ],
-    "desc": "传入照片和身份信息，判断该照片与公安权威库的证件照是否属于同一个人。"
-  },
   "DetectAuth": {
     "params": [
       {
@@ -291,6 +249,40 @@ INFO = {
       }
     ],
     "desc": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。"
+  },
+  "ImageRecognition": {
+    "params": [
+      {
+        "name": "IdCard",
+        "desc": "身份证号"
+      },
+      {
+        "name": "Name",
+        "desc": "姓名。中文请使用UTF-8编码。"
+      },
+      {
+        "name": "ImageBase64",
+        "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
+      },
+      {
+        "name": "Optional",
+        "desc": "本接口不需要传递此参数。"
+      }
+    ],
+    "desc": "传入照片和身份信息，判断该照片与公安权威库的证件照是否属于同一个人。"
+  },
+  "BankCard2EVerification": {
+    "params": [
+      {
+        "name": "Name",
+        "desc": "姓名"
+      },
+      {
+        "name": "BankCard",
+        "desc": "银行卡"
+      }
+    ],
+    "desc": "本接口用于校验姓名和银行卡号的真实性和一致性。"
   },
   "GetDetectInfoEnhanced": {
     "params": [
@@ -345,5 +337,30 @@ INFO = {
       }
     ],
     "desc": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。"
+  },
+  "LivenessCompare": {
+    "params": [
+      {
+        "name": "ImageBase64",
+        "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
+      },
+      {
+        "name": "VideoBase64",
+        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。"
+      },
+      {
+        "name": "LivenessType",
+        "desc": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。"
+      },
+      {
+        "name": "ValidateData",
+        "desc": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：空。"
+      },
+      {
+        "name": "Optional",
+        "desc": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}"
+      }
+    ],
+    "desc": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。"
   }
 }

@@ -851,6 +851,7 @@ def doUpdateFunctionConfiguration(argv, arglist):
         "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
         "PublicNetConfig": Utils.try_to_json(argv, "--PublicNetConfig"),
         "CfsConfig": Utils.try_to_json(argv, "--CfsConfig"),
+        "InitTimeout": Utils.try_to_json(argv, "--InitTimeout"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1009,6 +1010,7 @@ def doCreateFunction(argv, arglist):
         "DeadLetterConfig": Utils.try_to_json(argv, "--DeadLetterConfig"),
         "PublicNetConfig": Utils.try_to_json(argv, "--PublicNetConfig"),
         "CfsConfig": Utils.try_to_json(argv, "--CfsConfig"),
+        "InitTimeout": Utils.try_to_json(argv, "--InitTimeout"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
