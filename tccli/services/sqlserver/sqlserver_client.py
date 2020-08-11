@@ -1516,17 +1516,14 @@ def doDeleteMigration(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyMaintenanceSpan(argv, arglist):
+def doCompleteMigration(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyMaintenanceSpan", g_param[OptionsDefine.Version])
+        show_help("CompleteMigration", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Weekly": Utils.try_to_json(argv, "--Weekly"),
-        "StartTime": argv.get("--StartTime"),
-        "Span": Utils.try_to_json(argv, "--Span"),
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1540,9 +1537,9 @@ def doModifyMaintenanceSpan(argv, arglist):
     client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyMaintenanceSpanRequest()
+    model = models.CompleteMigrationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyMaintenanceSpan(model)
+    rsp = client.CompleteMigration(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1689,6 +1686,39 @@ def doDescribeRollbackTime(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doStopMigration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StopMigration", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopMigrationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StopMigration(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAccounts(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1715,6 +1745,39 @@ def doDescribeAccounts(argv, arglist):
     model = models.DescribeAccountsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeAccounts(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQueryMigrationCheckProcess(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryMigrationCheckProcess", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryMigrationCheckProcessRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryMigrationCheckProcess(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1823,6 +1886,39 @@ def doDescribePublishSubscribe(argv, arglist):
     model = models.DescribePublishSubscribeRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribePublishSubscribe(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStartMigrationCheck(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("StartMigrationCheck", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MigrateId": Utils.try_to_json(argv, "--MigrateId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StartMigrationCheckRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.StartMigrationCheck(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2070,6 +2166,77 @@ def doUpgradeDBInstance(argv, arglist):
     model = models.UpgradeDBInstanceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.UpgradeDBInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMigrationDatabases(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeMigrationDatabases", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "UserName": argv.get("--UserName"),
+        "Password": argv.get("--Password"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMigrationDatabasesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeMigrationDatabases(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyMaintenanceSpan(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyMaintenanceSpan", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Weekly": Utils.try_to_json(argv, "--Weekly"),
+        "StartTime": argv.get("--StartTime"),
+        "Span": Utils.try_to_json(argv, "--Span"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyMaintenanceSpanRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyMaintenanceSpan(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2383,15 +2550,18 @@ ACTION_MAP = {
     "DescribeRegions": doDescribeRegions,
     "InquiryPriceRenewDBInstance": doInquiryPriceRenewDBInstance,
     "DeleteMigration": doDeleteMigration,
-    "ModifyMaintenanceSpan": doModifyMaintenanceSpan,
+    "CompleteMigration": doCompleteMigration,
     "DescribeMaintenanceSpan": doDescribeMaintenanceSpan,
     "DescribeReadOnlyGroupDetails": doDescribeReadOnlyGroupDetails,
     "CreatePublishSubscribe": doCreatePublishSubscribe,
     "DescribeRollbackTime": doDescribeRollbackTime,
+    "StopMigration": doStopMigration,
     "DescribeAccounts": doDescribeAccounts,
+    "QueryMigrationCheckProcess": doQueryMigrationCheckProcess,
     "CompleteExpansion": doCompleteExpansion,
     "DescribeBackupByFlowId": doDescribeBackupByFlowId,
     "DescribePublishSubscribe": doDescribePublishSubscribe,
+    "StartMigrationCheck": doStartMigrationCheck,
     "RemoveBackups": doRemoveBackups,
     "CreateDB": doCreateDB,
     "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
@@ -2399,6 +2569,8 @@ ACTION_MAP = {
     "ModifyReadOnlyGroupDetails": doModifyReadOnlyGroupDetails,
     "RestoreInstance": doRestoreInstance,
     "UpgradeDBInstance": doUpgradeDBInstance,
+    "DescribeMigrationDatabases": doDescribeMigrationDatabases,
+    "ModifyMaintenanceSpan": doModifyMaintenanceSpan,
     "RenewPostpaidDBInstance": doRenewPostpaidDBInstance,
     "DescribeProductConfig": doDescribeProductConfig,
     "CreateReadOnlyDBInstances": doCreateReadOnlyDBInstances,

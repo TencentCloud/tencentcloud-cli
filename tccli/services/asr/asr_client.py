@@ -72,6 +72,7 @@ def doCreateRecTask(argv, arglist):
         "Extra": argv.get("--Extra"),
         "SpeakerDiarization": Utils.try_to_json(argv, "--SpeakerDiarization"),
         "SpeakerNumber": Utils.try_to_json(argv, "--SpeakerNumber"),
+        "FilterPunc": Utils.try_to_json(argv, "--FilterPunc"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

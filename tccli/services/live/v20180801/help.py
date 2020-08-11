@@ -161,7 +161,7 @@ INFO = {
       },
       {
         "name": "CosBucket",
-        "desc": "Cos Bucket名称。"
+        "desc": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。"
       },
       {
         "name": "CosRegion",
@@ -649,7 +649,7 @@ INFO = {
       },
       {
         "name": "CosBucket",
-        "desc": "Cos Bucket名称。"
+        "desc": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。"
       },
       {
         "name": "CosRegion",

@@ -505,7 +505,7 @@ INFO = {
         "desc": "需要查询的 IP 列表"
       }
     ],
-    "desc": "DescribeCdnIp 用于查询 CDN IP 归属。"
+    "desc": "DescribeCdnIp 用于查询 CDN IP 归属。\n（注意：此接口请求频率限制以 CDN 侧限制为准：200次/10分钟）"
   },
   "PurgePathCache": {
     "params": [
@@ -827,6 +827,10 @@ INFO = {
       {
         "name": "Area",
         "desc": "预热生效区域\nmainland：预热至境内节点\noverseas：预热至境外节点\nglobal：预热全球节点\n不填充情况下，默认为 mainland， URL 中域名必须在对应区域启用了加速服务才能提交对应区域的预热任务"
+      },
+      {
+        "name": "Layer",
+        "desc": "填写\"middle\"或不填充时预热至中间层节点"
       }
     ],
     "desc": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，支持指定加速区域预热。\n默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 20 条。\n接口灰度中，暂未全量开放，敬请期待。"

@@ -1122,6 +1122,7 @@ def doPushUrlsCache(argv, arglist):
         "Urls": Utils.try_to_json(argv, "--Urls"),
         "UserAgent": argv.get("--UserAgent"),
         "Area": argv.get("--Area"),
+        "Layer": argv.get("--Layer"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

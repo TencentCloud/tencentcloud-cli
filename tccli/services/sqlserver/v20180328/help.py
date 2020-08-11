@@ -780,6 +780,15 @@ INFO = {
     ],
     "desc": "本接口（InquiryPriceUpgradeDBInstance）用于查询升级实例的价格。"
   },
+  "StopMigration": {
+    "params": [
+      {
+        "name": "MigrateId",
+        "desc": "迁移任务ID"
+      }
+    ],
+    "desc": "本接口（StopMigration）作用是中止一个迁移任务"
+  },
   "DescribeDBs": {
     "params": [
       {
@@ -827,26 +836,14 @@ INFO = {
     ],
     "desc": "本接口（DeleteMigration）用于删除迁移任务"
   },
-  "ModifyMaintenanceSpan": {
+  "CompleteMigration": {
     "params": [
       {
-        "name": "InstanceId",
-        "desc": "实例ID，形如mssql-k8voqdlz"
-      },
-      {
-        "name": "Weekly",
-        "desc": "以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。"
-      },
-      {
-        "name": "StartTime",
-        "desc": "每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。"
-      },
-      {
-        "name": "Span",
-        "desc": "每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。"
+        "name": "MigrateId",
+        "desc": "迁移任务ID"
       }
     ],
-    "desc": "本接口（ModifyMaintenanceSpan）用于修改实例的可维护时间窗"
+    "desc": "本接口（CompleteMigration）作用是完成一个迁移任务"
   },
   "DescribeBackupByFlowId": {
     "params": [
@@ -938,6 +935,15 @@ INFO = {
     ],
     "desc": "本接口（DescribeReadOnlyGroupByReadOnlyInstance）用于通过只读副本实例ID查询其所在的只读组。"
   },
+  "QueryMigrationCheckProcess": {
+    "params": [
+      {
+        "name": "MigrateId",
+        "desc": "迁移任务ID"
+      }
+    ],
+    "desc": "本接口（QueryMigrationCheckProcess）的作用是查询迁移检查任务的进度，适用于迁移源的类型为TencentDB for SQLServer 的迁移方式"
+  },
   "CompleteExpansion": {
     "params": [
       {
@@ -968,6 +974,15 @@ INFO = {
       }
     ],
     "desc": "本接口（DescribeRollbackTime）用于查询实例可回档时间范围"
+  },
+  "StartMigrationCheck": {
+    "params": [
+      {
+        "name": "MigrateId",
+        "desc": "迁移任务id"
+      }
+    ],
+    "desc": "本接口（StartMigrationCheck）的作用是启动一个迁移前的校验任务，适用于迁移源的类型为TencentDB for SQLServer 的迁移方式"
   },
   "RemoveBackups": {
     "params": [
@@ -1067,6 +1082,44 @@ INFO = {
       }
     ],
     "desc": "本接口（UpgradeDBInstance）用于升级实例"
+  },
+  "DescribeMigrationDatabases": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "迁移源实例的ID，格式如：mssql-si2823jyl"
+      },
+      {
+        "name": "UserName",
+        "desc": "迁移源实例用户名"
+      },
+      {
+        "name": "Password",
+        "desc": "迁移源实例密码"
+      }
+    ],
+    "desc": "本接口（DescribeMigrationDatabases）的作用是查询待迁移数据库列表"
+  },
+  "ModifyMaintenanceSpan": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，形如mssql-k8voqdlz"
+      },
+      {
+        "name": "Weekly",
+        "desc": "以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。"
+      },
+      {
+        "name": "Span",
+        "desc": "每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。"
+      }
+    ],
+    "desc": "本接口（ModifyMaintenanceSpan）用于修改实例的可维护时间窗"
   },
   "RunMigration": {
     "params": [

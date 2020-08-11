@@ -2068,6 +2068,7 @@ def doDeployGroup(argv, arglist):
         "GroupId": argv.get("--GroupId"),
         "PkgId": argv.get("--PkgId"),
         "StartupParameters": argv.get("--StartupParameters"),
+        "DeployDesc": argv.get("--DeployDesc"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2477,6 +2478,9 @@ def doDeployContainerGroup(argv, arglist):
         "IstioMemLimit": argv.get("--IstioMemLimit"),
         "MaxSurge": argv.get("--MaxSurge"),
         "MaxUnavailable": argv.get("--MaxUnavailable"),
+        "HealthCheckSettings": Utils.try_to_json(argv, "--HealthCheckSettings"),
+        "Envs": Utils.try_to_json(argv, "--Envs"),
+        "ServiceSetting": Utils.try_to_json(argv, "--ServiceSetting"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

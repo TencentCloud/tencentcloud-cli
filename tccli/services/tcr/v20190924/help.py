@@ -577,6 +577,23 @@ INFO = {
     "params": [],
     "desc": "用于获取个人版全局镜像版本自动清理策略"
   },
+  "CreateInstanceToken": {
+    "params": [
+      {
+        "name": "RegistryId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "TokenType",
+        "desc": "访问凭证类型，longterm 为长期访问凭证，temp 为临时访问凭证，默认是临时访问凭证，有效期1小时"
+      },
+      {
+        "name": "Desc",
+        "desc": "长期访问凭证描述信息"
+      }
+    ],
+    "desc": "创建实例的临时或长期访问凭证"
+  },
   "DescribeUserQuotaPersonal": {
     "params": [],
     "desc": "查询个人用户配额"
@@ -871,22 +888,26 @@ INFO = {
     ],
     "desc": "用于判断个人版仓库是否存在"
   },
-  "CreateInstanceToken": {
+  "DeleteImage": {
     "params": [
       {
         "name": "RegistryId",
         "desc": "实例Id"
       },
       {
-        "name": "TokenType",
-        "desc": "访问凭证类型，longterm 为长期访问凭证，temp 为临时访问凭证，默认是临时访问凭证，有效期1小时"
+        "name": "RepositoryName",
+        "desc": "镜像仓库名称"
       },
       {
-        "name": "Desc",
-        "desc": "长期访问凭证描述信息"
+        "name": "ImageVersion",
+        "desc": "镜像版本"
+      },
+      {
+        "name": "NamespaceName",
+        "desc": "命名空间名称"
       }
     ],
-    "desc": "创建实例的临时或长期访问凭证"
+    "desc": "删除指定镜像"
   },
   "DescribeApplicationTriggerPersonal": {
     "params": [

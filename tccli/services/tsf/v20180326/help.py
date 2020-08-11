@@ -1282,6 +1282,10 @@ INFO = {
       {
         "name": "StartupParameters",
         "desc": "部署组启动参数"
+      },
+      {
+        "name": "DeployDesc",
+        "desc": "部署应用描述信息"
       }
     ],
     "desc": "部署虚拟机部署组应用"
@@ -1561,6 +1565,18 @@ INFO = {
       {
         "name": "MaxUnavailable",
         "desc": "kubernetes滚动更新策略的MaxUnavailable参数"
+      },
+      {
+        "name": "HealthCheckSettings",
+        "desc": "健康检查配置信息，若不指定该参数，则默认不设置健康检查。"
+      },
+      {
+        "name": "Envs",
+        "desc": "部署组应用运行的环境变量。若不指定该参数，则默认不设置额外的环境变量。"
+      },
+      {
+        "name": "ServiceSetting",
+        "desc": "容器部署组的网络设置。"
       }
     ],
     "desc": "部署容器应用"
