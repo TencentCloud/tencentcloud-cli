@@ -1137,6 +1137,7 @@ def doCreateListener(argv, arglist):
         "Scheduler": argv.get("--Scheduler"),
         "SniSwitch": Utils.try_to_json(argv, "--SniSwitch"),
         "TargetType": argv.get("--TargetType"),
+        "SessionType": argv.get("--SessionType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

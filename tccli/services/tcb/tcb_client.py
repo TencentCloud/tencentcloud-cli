@@ -167,8 +167,8 @@ def doCreatePostpayPackage(argv, arglist):
         "WxAppId": argv.get("--WxAppId"),
         "Source": argv.get("--Source"),
         "FreeQuota": argv.get("--FreeQuota"),
-        "Alias": argv.get("--Alias"),
         "EnvSource": argv.get("--EnvSource"),
+        "Alias": argv.get("--Alias"),
         "Channel": argv.get("--Channel"),
         "ExtensionId": argv.get("--ExtensionId"),
 

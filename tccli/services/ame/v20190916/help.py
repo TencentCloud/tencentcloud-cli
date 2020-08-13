@@ -10,14 +10,18 @@ INFO = {
     ],
     "desc": "根据歌曲ID查询歌曲信息"
   },
-  "ReportData": {
+  "DescribePackages": {
     "params": [
       {
-        "name": "ReportData",
-        "desc": "上报数据\n注:reportData为客户端压缩后的上报数据进行16进制转换的字符串数据\n压缩说明：\na) 上报的json格式字符串通过流的转换（ByteArrayInputStream, java.util.zip.GZIPOutputStream），获取到压缩后的字节数组。\nb) 将压缩后的字节数组转成16进制字符串。\n\nreportData由两部分数据组成：\n1）report_type（上报类型）\n2）data（歌曲上报数据）\n不同的report_type对应的data数据结构不一样。\n\n详细说明请参考文档reportdata.docx：\nhttps://github.com/ame-demo/doc"
+        "name": "Offset",
+        "desc": "默认0"
+      },
+      {
+        "name": "Length",
+        "desc": "默认20"
       }
     ],
-    "desc": "客户上报用户数据功能，为了更好的为用户提供优质服务"
+    "desc": "查询已购曲库包列表接口"
   },
   "DescribeLyric": {
     "params": [
@@ -73,6 +77,32 @@ INFO = {
       }
     ],
     "desc": "根据接口的模式及歌曲ID来取得对应权限的歌曲播放地址等信息。"
+  },
+  "DescribePackageItems": {
+    "params": [
+      {
+        "name": "OrderId",
+        "desc": "订单id"
+      },
+      {
+        "name": "Offset",
+        "desc": "默认0"
+      },
+      {
+        "name": "Length",
+        "desc": "默认20"
+      }
+    ],
+    "desc": "查询曲库包已核验歌曲列表接口"
+  },
+  "ReportData": {
+    "params": [
+      {
+        "name": "ReportData",
+        "desc": "上报数据\n注:reportData为客户端压缩后的上报数据进行16进制转换的字符串数据\n压缩说明：\na) 上报的json格式字符串通过流的转换（ByteArrayInputStream, java.util.zip.GZIPOutputStream），获取到压缩后的字节数组。\nb) 将压缩后的字节数组转成16进制字符串。\n\nreportData由两部分数据组成：\n1）report_type（上报类型）\n2）data（歌曲上报数据）\n不同的report_type对应的data数据结构不一样。\n\n详细说明请参考文档reportdata.docx：\nhttps://github.com/ame-demo/doc"
+      }
+    ],
+    "desc": "客户上报用户数据功能，为了更好的为用户提供优质服务"
   },
   "DescribeStations": {
     "params": [

@@ -275,6 +275,39 @@ def doCreateFace(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteGroup(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteGroup", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "GroupId": argv.get("--GroupId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteGroupRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetPersonListNum(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -525,14 +558,18 @@ def doCheckSimilarPerson(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteGroup(argv, arglist):
+def doAnalyzeDenseLandmarks(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DeleteGroup", g_param[OptionsDefine.Version])
+        show_help("AnalyzeDenseLandmarks", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "GroupId": argv.get("--GroupId"),
+        "Mode": Utils.try_to_json(argv, "--Mode"),
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "FaceModelVersion": argv.get("--FaceModelVersion"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -546,9 +583,9 @@ def doDeleteGroup(argv, arglist):
     client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteGroupRequest()
+    model = models.AnalyzeDenseLandmarksRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DeleteGroup(model)
+    rsp = client.AnalyzeDenseLandmarks(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -948,6 +985,44 @@ def doVerifyPerson(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDetectFaceAttributes(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DetectFaceAttributes", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "MaxFaceNum": Utils.try_to_json(argv, "--MaxFaceNum"),
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "FaceAttributesType": argv.get("--FaceAttributesType"),
+        "NeedRotateDetection": Utils.try_to_json(argv, "--NeedRotateDetection"),
+        "FaceModelVersion": argv.get("--FaceModelVersion"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IaiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetectFaceAttributesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DetectFaceAttributes(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetUpgradeGroupFaceModelVersionResult(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1297,6 +1372,7 @@ ACTION_MAP = {
     "GetPersonBaseInfo": doGetPersonBaseInfo,
     "DetectLiveFace": doDetectLiveFace,
     "CreateFace": doCreateFace,
+    "DeleteGroup": doDeleteGroup,
     "GetPersonListNum": doGetPersonListNum,
     "GetPersonGroupInfo": doGetPersonGroupInfo,
     "AnalyzeFace": doAnalyzeFace,
@@ -1304,7 +1380,7 @@ ACTION_MAP = {
     "SearchFaces": doSearchFaces,
     "CopyPerson": doCopyPerson,
     "CheckSimilarPerson": doCheckSimilarPerson,
-    "DeleteGroup": doDeleteGroup,
+    "AnalyzeDenseLandmarks": doAnalyzeDenseLandmarks,
     "DeletePerson": doDeletePerson,
     "ModifyGroup": doModifyGroup,
     "UpgradeGroupFaceModelVersion": doUpgradeGroupFaceModelVersion,
@@ -1316,6 +1392,7 @@ ACTION_MAP = {
     "DetectFace": doDetectFace,
     "GetPersonList": doGetPersonList,
     "VerifyPerson": doVerifyPerson,
+    "DetectFaceAttributes": doDetectFaceAttributes,
     "GetUpgradeGroupFaceModelVersionResult": doGetUpgradeGroupFaceModelVersionResult,
     "ModifyPersonGroupInfo": doModifyPersonGroupInfo,
     "VerifyFace": doVerifyFace,

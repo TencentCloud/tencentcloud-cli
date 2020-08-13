@@ -1031,6 +1031,43 @@ INFO = {
     ],
     "desc": "DescribeReportData 用于查询域名/项目维度的日/周/月报表数据。"
   },
+  "DescribeDistrictIspData": {
+    "params": [
+      {
+        "name": "Domains",
+        "desc": "域名列表，最多支持20个域名"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间\n支持近 60 天内的数据查询，每次查询时间区间为 3 小时"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间\n结束时间与起始时间区间最大为 3 小时"
+      },
+      {
+        "name": "Metric",
+        "desc": "指定查询指标，支持:\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次"
+      },
+      {
+        "name": "Districts",
+        "desc": "指定省份查询，不填充表示查询所有省份\n省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)"
+      },
+      {
+        "name": "Isps",
+        "desc": "指定运营商查询，不填充表示查询所有运营商\n运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)"
+      },
+      {
+        "name": "Protocol",
+        "desc": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标"
+      },
+      {
+        "name": "IpProtocol",
+        "desc": "指定IP协议查询，不填充表示查询所有协议\nall：所有协议\nipv4：指定查询 ipv4 对应指标\nipv6：指定查询 ipv6 对应指标\n指定IP协议查询时，不可同时指定省份、运营商查询"
+      }
+    ],
+    "desc": "查询指定域名的区域、运营商明细数据\n注意事项：接口尚未全量开放，未在内测名单中的账号不支持调用"
+  },
   "UpdatePayType": {
     "params": [
       {

@@ -65,7 +65,7 @@ INFO = {
     "params": [
       {
         "name": "EnvId",
-        "desc": "环境ID"
+        "desc": "环境ID，需要系统自动创建环境时，此字段不传"
       },
       {
         "name": "WxAppId",
@@ -80,16 +80,16 @@ INFO = {
         "desc": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。"
       },
       {
-        "name": "Alias",
-        "desc": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符"
-      },
-      {
         "name": "EnvSource",
         "desc": "环境创建来源，取值：\n<li>miniapp</li>\n<li>qcloud</li>\n用法同CreateEnv接口的Source参数\n和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。"
       },
       {
+        "name": "Alias",
+        "desc": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符"
+      },
+      {
         "name": "Channel",
-        "desc": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud\n和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。"
+        "desc": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework\n和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。"
       },
       {
         "name": "ExtensionId",

@@ -152,6 +152,31 @@ INFO = {
     ],
     "desc": "将一组人脸图片添加到一个人员中。一个人员最多允许包含 5 张图片。若该人员存在多个人员库中，所有人员库中该人员图片均会增加。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。"
   },
+  "AnalyzeDenseLandmarks": {
+    "params": [
+      {
+        "name": "Mode",
+        "desc": "检测模式。0 为检测所有出现的人脸， 1 为检测面积最大的人脸。 \n默认为 0。 \n最多返回 5 张人脸的五官定位（人脸关键点）具体信息。"
+      },
+      {
+        "name": "Image",
+        "desc": "图片 base64 数据，base64 编码后大小不可超过5M。  \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+      },
+      {
+        "name": "Url",
+        "desc": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。  \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。  \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+      },
+      {
+        "name": "FaceModelVersion",
+        "desc": "人脸识别服务所用的算法模型版本。本接口仅支持 “3.0“ 输入。"
+      },
+      {
+        "name": "NeedRotateDetection",
+        "desc": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。"
+      }
+    ],
+    "desc": "对请求图片进行五官定位（也称人脸关键点定位），获得人脸的精准信息，返回多达888点关键信息，对五官和脸部轮廓进行精确定位。"
+  },
   "GetPersonListNum": {
     "params": [
       {
@@ -506,6 +531,35 @@ INFO = {
       }
     ],
     "desc": "给定一张人脸图片和一个 PersonId，判断图片中的人和 PersonId 对应的人是否为同一人。PersonId 请参考[人员库管理相关接口](https://cloud.tencent.com/document/product/867/45015)。\n本接口会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使人员验证（确定待识别的人脸图片是某人员）更加准确。\n\n 和人脸比对相关接口不同的是，人脸验证相关接口用于判断 “此人是否是此人”，“此人”的信息已存于人员库中，“此人”可能存在多张人脸图片；而人脸比对相关接口用于判断两张人脸的相似度。\n\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。\n- 仅支持算法模型版本（FaceModelVersion）为3.0的人员库。"
+  },
+  "DetectFaceAttributes": {
+    "params": [
+      {
+        "name": "MaxFaceNum",
+        "desc": "最多处理的人脸数目。 \n默认值为1（仅检测图片中面积最大的那张人脸），最大值为120。 \n此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。"
+      },
+      {
+        "name": "Image",
+        "desc": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+      },
+      {
+        "name": "Url",
+        "desc": "图片的 Url 。 \n对应图片 base64 编码后大小不可超过5M。 \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。"
+      },
+      {
+        "name": "FaceAttributesType",
+        "desc": "是否返回年龄、性别、情绪等属性。 \n合法值为（大小写不敏感）：None、Age、Beauty、Emotion、Eye、Eyebrow \nGender、Hair、Hat、Headpose、Mask、Mouth、Moustache、Nose、Shape、Skin、Smile。 \nNone为不需要返回。默认为 None。 \n需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 \n关于各属性的详细描述，参见下文出参。 \n最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 AttributesInfo 不具备参考意义。"
+      },
+      {
+        "name": "NeedRotateDetection",
+        "desc": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。"
+      },
+      {
+        "name": "FaceModelVersion",
+        "desc": "人脸识别服务所用的算法模型版本。本接口仅支持“3.0”输入"
+      }
+    ],
+    "desc": "检测给定图片中的人脸（Face）的位置、相应的面部属性和人脸质量信息，位置包括 (x，y，w，h)，面部属性包括性别（gender）、年龄（age）、表情（expression）、魅力（beauty）、眼镜（glass）、发型（hair）、口罩（mask）和姿态 (pitch，roll，yaw)，人脸质量信息包括整体质量分（score）、模糊分（sharpness）、光照分（brightness）和五官遮挡分（completeness）。\n\n \n其中，人脸质量信息主要用于评价输入的人脸图片的质量。在使用人脸识别服务时，建议您对输入的人脸图片进行质量检测，提升后续业务处理的效果。该功能的应用场景包括：\n\n1） 人员库[创建人员](https://cloud.tencent.com/document/product/867/32793)/[增加人脸](https://cloud.tencent.com/document/product/867/32795)：保证人员人脸信息的质量，便于后续的业务处理。\n\n2） [人脸搜索](https://cloud.tencent.com/document/product/867/32798)：保证输入的图片质量，快速准确匹配到对应的人员。\n\n3） [人脸验证](https://cloud.tencent.com/document/product/867/32806)：保证人脸信息的质量，避免明明是本人却认证不通过的情况。\n\n4） [人脸融合](https://cloud.tencent.com/product/facefusion)：保证上传的人脸质量，人脸融合的效果更好。\n\n>     \n- 本接口是[人脸检测与分析](https://cloud.tencent.com/document/product/867/32800)的升级，具体在于：\n\n1.本接口可以指定需要计算返回的人脸属性，避免无效计算，降低耗时；\n\n2.本接口支持更多属性细项数，也会持续增加更多功能。\n\n请您使用本接口完成相应的人脸检测与属性分析需求。\n\n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。"
   },
   "GetUpgradeGroupFaceModelVersionResult": {
     "params": [

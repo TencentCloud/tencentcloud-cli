@@ -118,6 +118,10 @@ INFO = {
       {
         "name": "TargetType",
         "desc": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。"
+      },
+      {
+        "name": "SessionType",
+        "desc": "会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。"
       }
     ],
     "desc": "在一个负载均衡实例下创建监听器。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
