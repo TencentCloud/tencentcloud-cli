@@ -744,6 +744,7 @@ def doCreateTrainingJob(argv, arglist):
         "HyperParameters": argv.get("--HyperParameters"),
         "EnvConfig": Utils.try_to_json(argv, "--EnvConfig"),
         "RoleName": argv.get("--RoleName"),
+        "RetryWhenResourceInsufficient": argv.get("--RetryWhenResourceInsufficient"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

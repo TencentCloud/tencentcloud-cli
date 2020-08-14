@@ -919,6 +919,107 @@ INFO = {
     ],
     "desc": "撤销会员在途充值(经第三方支付渠道)接口"
   },
+  "ExecuteMemberTransaction": {
+    "params": [
+      {
+        "name": "RequestType",
+        "desc": "请求类型此接口固定填：MemberTransactionReq"
+      },
+      {
+        "name": "MerchantCode",
+        "desc": "银行注册商户号"
+      },
+      {
+        "name": "PayChannel",
+        "desc": "支付渠道"
+      },
+      {
+        "name": "PayChannelSubId",
+        "desc": "子渠道"
+      },
+      {
+        "name": "OutTransNetMemberCode",
+        "desc": "转出交易网会员代码"
+      },
+      {
+        "name": "OutSubAccountName",
+        "desc": "转出见证子账户的户名"
+      },
+      {
+        "name": "InSubAccountName",
+        "desc": "转入见证子账户的户名"
+      },
+      {
+        "name": "OutSubAccountNumber",
+        "desc": "转出子账户账号"
+      },
+      {
+        "name": "InSubAccountNumber",
+        "desc": "转入子账户账号"
+      },
+      {
+        "name": "BankAccountNumber",
+        "desc": "父账户账号，资金汇总账号"
+      },
+      {
+        "name": "CurrencyUnit",
+        "desc": "货币单位 单位，1：元，2：角，3：分"
+      },
+      {
+        "name": "CurrencyType",
+        "desc": "币种"
+      },
+      {
+        "name": "CurrencyAmount",
+        "desc": "交易金额"
+      },
+      {
+        "name": "OrderId",
+        "desc": "订单号"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "计费签名"
+      },
+      {
+        "name": "TransSequenceNumber",
+        "desc": "交易流水号 \n生成方式：用户短号+日期（6位）+ 随机编号（10位）例如：F088722005120904930798\n短号：F08872  日期： 200512   随机编号：0904930798"
+      },
+      {
+        "name": "InTransNetMemberCode",
+        "desc": "转入交易网会员代码"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "Midas环境标识 release 现网环境 sandbox 沙箱环境\ndevelopment 开发环境"
+      },
+      {
+        "name": "PlatformShortNumber",
+        "desc": "平台短号(银行分配)"
+      },
+      {
+        "name": "TransType",
+        "desc": "1：下单预支付 \n2：确认并付款\n3：退款\n6：直接支付T+1\n9：直接支付T+0"
+      },
+      {
+        "name": "TransFee",
+        "desc": "交易手续费"
+      },
+      {
+        "name": "ReservedMessage",
+        "desc": "保留域"
+      }
+    ],
+    "desc": "会员间交易接口"
+  },
   "QueryAgentTaxPaymentBatch": {
     "params": [
       {
@@ -1879,6 +1980,35 @@ INFO = {
     ],
     "desc": "查询银行在途清算结果。查询时间段内交易网的在途清算结果。"
   },
+  "QueryTransferDetail": {
+    "params": [
+      {
+        "name": "MerchantId",
+        "desc": "商户号。\n示例值：129284394"
+      },
+      {
+        "name": "MerchantBatchNo",
+        "desc": "商家批次单号。\n商户系统内部的商家批次单号，此参数只能由数字、字母组成，商户系统内部唯一，UTF8编码，最多32个字符。\n示例值：plfk2020042013"
+      },
+      {
+        "name": "MerchantDetailNo",
+        "desc": "商家明细单号。\n商户系统内部的商家明细单号\n示例值：plfk2020042013"
+      },
+      {
+        "name": "BatchId",
+        "desc": "微信批次单号。\n微信商家转账系统返回的唯一标识。\n商家单号（包含批次号和明细单号）和微信单号（包含批次号和明细单号）二者必填其一。\n示例值：1030000071100999991182020050700019480001"
+      },
+      {
+        "name": "DetailId",
+        "desc": "微信明细单号。\n微信区分明细单返回的唯一标识。\n示例值：1030000071100999991182020050700019480001"
+      },
+      {
+        "name": "Profile",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
+      }
+    ],
+    "desc": "通过商家或者微信批次明细单号查询明细单"
+  },
   "QuerySingleTransactionStatus": {
     "params": [
       {
@@ -2197,58 +2327,46 @@ INFO = {
     ],
     "desc": "正常结算提现失败情况下，发起重新提现的请求接口"
   },
-  "Refund": {
+  "CreateTransferBatch": {
     "params": [
       {
-        "name": "UserId",
-        "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
+        "name": "MerchantId",
+        "desc": "商户号。\n示例值：129284394"
       },
       {
-        "name": "RefundId",
-        "desc": "退款订单号，仅支持数字、 字母、下划线（_）、横杠字 符（-）、点（.）的组合"
+        "name": "TransferDetails",
+        "desc": "转账明细列表。\n发起批量转账的明细列表，最多三千笔"
       },
       {
-        "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
+        "name": "MerchantAppId",
+        "desc": "直连商户appId。\n即商户号绑定的appid。\n示例值：wxf636efh567hg4356"
       },
       {
-        "name": "TotalRefundAmt",
-        "desc": "退款金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额"
+        "name": "MerchantBatchNo",
+        "desc": "商家批次单号。\n商户系统内部的商家批次单号，此参数只能由数字、字母组成，商户系统内部唯一，UTF8编码，最多32个字符。\n示例值：plfk2020042013"
       },
       {
-        "name": "MidasSecretId",
-        "desc": "聚鑫分配的安全ID"
+        "name": "BatchName",
+        "desc": "批次名称。\n批量转账的名称。\n示例值：2019年1月深圳分部报销单"
       },
       {
-        "name": "MidasSignature",
-        "desc": "按照聚鑫安全密钥计算的签名"
+        "name": "BatchRemark",
+        "desc": "转账说明。\nUTF8编码，最多32个字符。\n示例值：2019年深圳分部报销单"
       },
       {
-        "name": "OutTradeNo",
-        "desc": "商品订单，仅支持数字、字 母、下划线（_）、横杠字符 （-）、点（.）的组合。  OutTradeNo ,TransactionId 二选一,不能都为空,优先使用 OutTradeNo"
+        "name": "TotalAmount",
+        "desc": "转账总金额。\n转账金额，单位为分。\n示例值：4000000"
       },
       {
-        "name": "MchRefundAmt",
-        "desc": "结算应收金额，单位：分"
+        "name": "TotalNum",
+        "desc": "转账总笔数。\n一个转账批次最多允许发起三千笔转账。\n示例值：200"
       },
       {
-        "name": "TransactionId",
-        "desc": "调用下单接口获取的聚鑫交 易订单。  OutTradeNo ,TransactionId 二选一,不能都为空,优先使用 OutTradeNo"
-      },
-      {
-        "name": "PlatformRefundAmt",
-        "desc": "平台应收金额，单位：分"
-      },
-      {
-        "name": "SubOrderRefundList",
-        "desc": "支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。"
-      },
-      {
-        "name": "MidasEnvironment",
-        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
+        "name": "Profile",
+        "desc": "环境名。\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       }
     ],
-    "desc": "如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 "
+    "desc": "微信商户发起批量转账"
   },
   "QueryCustAcctIdBalance": {
     "params": [
@@ -2812,106 +2930,42 @@ INFO = {
     ],
     "desc": "跨境-查询汇率"
   },
-  "ExecuteMemberTransaction": {
+  "QueryTransferBatch": {
     "params": [
       {
-        "name": "RequestType",
-        "desc": "请求类型此接口固定填：MemberTransactionReq"
+        "name": "MerchantId",
+        "desc": "商户号。\n示例值：129284394"
       },
       {
-        "name": "MerchantCode",
-        "desc": "银行注册商户号"
+        "name": "NeedQueryDetail",
+        "desc": "微信明细单号。\n微信区分明细单返回的唯一标识。\n示例值：1030000071100999991182020050700019480101"
       },
       {
-        "name": "PayChannel",
-        "desc": "支付渠道"
+        "name": "MerchantBatchNo",
+        "desc": "商家批次单号。\n商户系统内部的商家批次单号，此参数只能由数字、字母组成，商户系统内部唯一，UTF8编码，最多32个字符。\n示例值：plfk2020042013"
       },
       {
-        "name": "PayChannelSubId",
-        "desc": "子渠道"
+        "name": "BatchId",
+        "desc": "是否查询账单明细。\ntrue-是；\nfalse-否，默认否。\n商户可选择是否查询指定状态的转账明细单，当转账批次单状态为“FINISHED”（已完成）时，才会返回满足条件的转账明细单。\n示例值：true"
       },
       {
-        "name": "OutTransNetMemberCode",
-        "desc": "转出交易网会员代码"
+        "name": "Profile",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
       },
       {
-        "name": "OutSubAccountName",
-        "desc": "转出见证子账户的户名"
+        "name": "Offset",
+        "desc": "请求资源起始位置。\n从0开始，默认值为0。\n示例值：20"
       },
       {
-        "name": "InSubAccountName",
-        "desc": "转入见证子账户的户名"
+        "name": "Limit",
+        "desc": "最大资源条数。\n该次请求可返回的最大资源（转账明细单）条数，最小20条，最大100条，不传则默认20条。不足20条按实际条数返回\n示例值：20"
       },
       {
-        "name": "OutSubAccountNumber",
-        "desc": "转出子账户账号"
-      },
-      {
-        "name": "InSubAccountNumber",
-        "desc": "转入子账户账号"
-      },
-      {
-        "name": "BankAccountNumber",
-        "desc": "父账户账号，资金汇总账号"
-      },
-      {
-        "name": "CurrencyUnit",
-        "desc": "货币单位 单位，1：元，2：角，3：分"
-      },
-      {
-        "name": "CurrencyType",
-        "desc": "币种"
-      },
-      {
-        "name": "CurrencyAmount",
-        "desc": "交易金额"
-      },
-      {
-        "name": "OrderId",
-        "desc": "订单号"
-      },
-      {
-        "name": "MidasAppId",
-        "desc": "聚鑫分配的支付主MidasAppId"
-      },
-      {
-        "name": "MidasSecretId",
-        "desc": "聚鑫分配的安全ID"
-      },
-      {
-        "name": "MidasSignature",
-        "desc": "计费签名"
-      },
-      {
-        "name": "TransSequenceNumber",
-        "desc": "交易流水号 \n生成方式：用户短号+日期（6位）+ 随机编号（10位）例如：F088722005120904930798\n短号：F08872  日期： 200512   随机编号：0904930798"
-      },
-      {
-        "name": "InTransNetMemberCode",
-        "desc": "转入交易网会员代码"
-      },
-      {
-        "name": "MidasEnvironment",
-        "desc": "Midas环境标识 release 现网环境 sandbox 沙箱环境\ndevelopment 开发环境"
-      },
-      {
-        "name": "PlatformShortNumber",
-        "desc": "平台短号(银行分配)"
-      },
-      {
-        "name": "TransType",
-        "desc": "1：下单预支付 \n2：确认并付款\n3：退款\n6：直接支付T+1\n9：直接支付T+0"
-      },
-      {
-        "name": "TransFee",
-        "desc": "交易手续费"
-      },
-      {
-        "name": "ReservedMessage",
-        "desc": "保留域"
+        "name": "DetailStatus",
+        "desc": "明细状态。\nALL：全部，需要同时查询转账成功喝失败的明细单；\nSUCCESS：转账成功，只查询成功的明细单；\nFAIL：转账失败，只查询转账失败的明细单。\n示例值：FAIL"
       }
     ],
-    "desc": "会员间交易接口"
+    "desc": "通过商家批次单号或者微信批次号查询批次单"
   },
   "UnbindRelateAcct": {
     "params": [
@@ -3183,6 +3237,59 @@ INFO = {
       }
     ],
     "desc": "登记挂账(支持撤销)"
+  },
+  "Refund": {
+    "params": [
+      {
+        "name": "UserId",
+        "desc": "用户ID，长度不小于5位， 仅支持字母和数字的组合"
+      },
+      {
+        "name": "RefundId",
+        "desc": "退款订单号，仅支持数字、 字母、下划线（_）、横杠字 符（-）、点（.）的组合"
+      },
+      {
+        "name": "MidasAppId",
+        "desc": "聚鑫分配的支付主MidasAppId"
+      },
+      {
+        "name": "TotalRefundAmt",
+        "desc": "退款金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额"
+      },
+      {
+        "name": "MidasSecretId",
+        "desc": "聚鑫分配的安全ID"
+      },
+      {
+        "name": "MidasSignature",
+        "desc": "按照聚鑫安全密钥计算的签名"
+      },
+      {
+        "name": "OutTradeNo",
+        "desc": "商品订单，仅支持数字、字 母、下划线（_）、横杠字符 （-）、点（.）的组合。  OutTradeNo ,TransactionId 二选一,不能都为空,优先使用 OutTradeNo"
+      },
+      {
+        "name": "MchRefundAmt",
+        "desc": "结算应收金额，单位：分"
+      },
+      {
+        "name": "TransactionId",
+        "desc": "调用下单接口获取的聚鑫交 易订单。  OutTradeNo ,TransactionId 二选一,不能都为空,优先使用 OutTradeNo"
+      },
+      {
+        "name": "PlatformRefundAmt",
+        "desc": "平台应收金额，单位：分"
+      },
+      {
+        "name": "SubOrderRefundList",
+        "desc": "支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。"
+      },
+      {
+        "name": "MidasEnvironment",
+        "desc": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release"
+      }
+    ],
+    "desc": "如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 "
   },
   "QueryRefund": {
     "params": [

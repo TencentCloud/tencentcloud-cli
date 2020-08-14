@@ -610,6 +610,7 @@ def doDestroyEnv(argv, arglist):
     param = {
         "EnvId": argv.get("--EnvId"),
         "IsForce": Utils.try_to_json(argv, "--IsForce"),
+        "BypassCheck": Utils.try_to_json(argv, "--BypassCheck"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

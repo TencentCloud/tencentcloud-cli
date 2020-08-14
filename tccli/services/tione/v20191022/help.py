@@ -417,6 +417,10 @@ INFO = {
       {
         "name": "RoleName",
         "desc": "角色名称"
+      },
+      {
+        "name": "RetryWhenResourceInsufficient",
+        "desc": "在资源不足（ResourceInsufficient）时后台不定时尝试重新创建训练任务。可取值Enabled/Disabled\n默认值为Disabled即不重新尝试。设为Enabled时重新尝试有一定的时间期限，定义在 StoppingCondition 中 MaxWaitTimeInSecond中 ，默认值为1天，超过该期限创建失败。"
       }
     ],
     "desc": "创建训练任务"

@@ -86,7 +86,7 @@ INFO = {
     "params": [
       {
         "name": "Offset",
-        "desc": "分页查询偏移量，默认为 0 （第一页）"
+        "desc": "分页查询偏移量，默认为 0"
       },
       {
         "name": "Limit",
@@ -688,6 +688,18 @@ INFO = {
       {
         "name": "UserAgentFilter",
         "desc": "UA黑白名单配置"
+      },
+      {
+        "name": "AccessControl",
+        "desc": "访问控制"
+      },
+      {
+        "name": "UrlRedirect",
+        "desc": "URL重定向配置"
+      },
+      {
+        "name": "AccessPort",
+        "desc": "访问端口配置"
       }
     ],
     "desc": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。"

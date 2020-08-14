@@ -939,6 +939,9 @@ def doUpdateDomainConfig(argv, arglist):
         "OriginPullTimeout": Utils.try_to_json(argv, "--OriginPullTimeout"),
         "AwsPrivateAccess": Utils.try_to_json(argv, "--AwsPrivateAccess"),
         "UserAgentFilter": Utils.try_to_json(argv, "--UserAgentFilter"),
+        "AccessControl": Utils.try_to_json(argv, "--AccessControl"),
+        "UrlRedirect": Utils.try_to_json(argv, "--UrlRedirect"),
+        "AccessPort": Utils.try_to_json(argv, "--AccessPort"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

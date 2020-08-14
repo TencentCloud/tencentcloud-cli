@@ -36,6 +36,7 @@ def doEvaluation(argv, arglist):
         "EnableDispMidresult": Utils.try_to_json(argv, "--EnableDispMidresult"),
         "EnablePdfRecognize": Utils.try_to_json(argv, "--EnablePdfRecognize"),
         "PdfPageIndex": Utils.try_to_json(argv, "--PdfPageIndex"),
+        "LaTex": Utils.try_to_json(argv, "--LaTex"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
