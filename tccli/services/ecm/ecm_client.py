@@ -408,6 +408,7 @@ def doCreateVpc(argv, arglist):
         "DnsServers": Utils.try_to_json(argv, "--DnsServers"),
         "DomainName": argv.get("--DomainName"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -542,11 +543,12 @@ def doDescribeSubnets(argv, arglist):
         return
 
     param = {
-        "EcmRegion": argv.get("--EcmRegion"),
         "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": argv.get("--Offset"),
         "Limit": argv.get("--Limit"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "Sort": argv.get("--Sort"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1024,6 +1026,7 @@ def doModifySubnetAttribute(argv, arglist):
         "EcmRegion": argv.get("--EcmRegion"),
         "SubnetName": argv.get("--SubnetName"),
         "EnableBroadcast": argv.get("--EnableBroadcast"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1760,6 +1763,8 @@ def doModifyVpcAttribute(argv, arglist):
         "VpcId": argv.get("--VpcId"),
         "EcmRegion": argv.get("--EcmRegion"),
         "VpcName": argv.get("--VpcName"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "Description": argv.get("--Description"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2032,11 +2037,12 @@ def doDescribeVpcs(argv, arglist):
         return
 
     param = {
-        "EcmRegion": argv.get("--EcmRegion"),
         "VpcIds": Utils.try_to_json(argv, "--VpcIds"),
         "Filters": Utils.try_to_json(argv, "--Filters"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "Sort": argv.get("--Sort"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

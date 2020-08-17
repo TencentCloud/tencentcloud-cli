@@ -547,11 +547,13 @@ def doCreateProduct(argv, arglist):
 
     param = {
         "ProductModel": argv.get("--ProductModel"),
-        "Features": Utils.try_to_json(argv, "--Features"),
         "ProductName": argv.get("--ProductName"),
         "ProductDescription": argv.get("--ProductDescription"),
+        "Features": Utils.try_to_json(argv, "--Features"),
         "ChipManufactureId": argv.get("--ChipManufactureId"),
         "ChipId": argv.get("--ChipId"),
+        "ProductRegion": argv.get("--ProductRegion"),
+        "ProductCate": Utils.try_to_json(argv, "--ProductCate"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

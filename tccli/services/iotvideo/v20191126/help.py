@@ -227,10 +227,6 @@ INFO = {
         "desc": "产器型号(APP产品,为APP包名)"
       },
       {
-        "name": "Features",
-        "desc": "设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）"
-      },
-      {
         "name": "ProductName",
         "desc": "产品名称\n仅支持中文、英文、数字、下划线，不超过32个字符"
       },
@@ -239,12 +235,24 @@ INFO = {
         "desc": "产品描述信息\n不支持单引号、双引号、退格符、回车符、换行符、制表符、反斜杠、下划线、“%”、“#”、“$”，不超过128字符"
       },
       {
+        "name": "Features",
+        "desc": "设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）"
+      },
+      {
         "name": "ChipManufactureId",
         "desc": "主芯片产商ID"
       },
       {
         "name": "ChipId",
         "desc": "主芯片ID"
+      },
+      {
+        "name": "ProductRegion",
+        "desc": "地域：\nChina-Mainland（中国大陆）\nChina-Hong Kong, Macao and Taiwan（港澳台地区）\nAmerica（美国）\nEurope（欧洲）\nIndia（印度）\nOther-Overseas（其他境外地区）"
+      },
+      {
+        "name": "ProductCate",
+        "desc": "设备类型, 0-普通视频设备，1-NVR设备"
       }
     ],
     "desc": "本接口（CreateProduct）用于创建一个新的物联网智能视频产品。"

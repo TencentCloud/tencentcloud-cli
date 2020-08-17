@@ -154,6 +154,18 @@ INFO = {
       {
         "name": "KeyStatus",
         "desc": "过滤条件：密钥的状态，0：disabled，1：enabled"
+      },
+      {
+        "name": "Offset",
+        "desc": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0"
+      },
+      {
+        "name": "Limit",
+        "desc": "含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为0, 表示不分页"
+      },
+      {
+        "name": "TagFilters",
+        "desc": "标签过滤条件"
       }
     ],
     "desc": "获取白盒密钥列表"
@@ -358,6 +370,10 @@ INFO = {
       {
         "name": "KeyUsage",
         "desc": "根据CMK的KeyUsage筛选，ALL表示筛选全部，可使用的参数为：ALL 或 ENCRYPT_DECRYPT 或 ASYMMETRIC_DECRYPT_RSA_2048 或 ASYMMETRIC_DECRYPT_SM2，为空则默认筛选ENCRYPT_DECRYPT类型"
+      },
+      {
+        "name": "TagFilters",
+        "desc": "标签过滤条件"
       }
     ],
     "desc": "根据指定Offset和Limit获取主密钥列表详情。"

@@ -400,6 +400,9 @@ def doDescribeWhiteBoxKeyDetails(argv, arglist):
 
     param = {
         "KeyStatus": Utils.try_to_json(argv, "--KeyStatus"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "TagFilters": Utils.try_to_json(argv, "--TagFilters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -916,6 +919,7 @@ def doListKeyDetail(argv, arglist):
         "SearchKeyAlias": argv.get("--SearchKeyAlias"),
         "Origin": argv.get("--Origin"),
         "KeyUsage": argv.get("--KeyUsage"),
+        "TagFilters": Utils.try_to_json(argv, "--TagFilters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

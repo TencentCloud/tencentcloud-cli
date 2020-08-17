@@ -137,7 +137,7 @@ INFO = {
       },
       {
         "name": "CidrBlock",
-        "desc": "vpc的cidr，只能为10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。"
+        "desc": "vpc的cidr，只能为10.*.0.0/16，172.[16-31].0.0/16，192.168.0.0/16这三个内网网段内。"
       },
       {
         "name": "EcmRegion",
@@ -145,19 +145,23 @@ INFO = {
       },
       {
         "name": "EnableMulticast",
-        "desc": "是否开启组播。true: 开启, false: 不开启。"
+        "desc": "是否开启组播。true: 开启, false: 不开启。暂不支持"
       },
       {
         "name": "DnsServers",
-        "desc": "DNS地址，最多支持4个"
+        "desc": "DNS地址，最多支持4个，暂不支持"
       },
       {
         "name": "DomainName",
-        "desc": "域名"
+        "desc": "域名，暂不支持"
       },
       {
         "name": "Tags",
         "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
+      },
+      {
+        "name": "Description",
+        "desc": "描述信息"
       }
     ],
     "desc": "创建私有网络"
@@ -204,16 +208,12 @@ INFO = {
   "DescribeSubnets": {
     "params": [
       {
-        "name": "EcmRegion",
-        "desc": "ECM 地域"
-      },
-      {
         "name": "SubnetIds",
         "desc": "子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。"
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nsubnet-id - String - （过滤条件）Subnet实例名称。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\ncidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。\nis-default - Boolean - （过滤条件）是否是默认子网。\nis-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。\nsubnet-name - String - （过滤条件）子网名称。\nzone - String - （过滤条件）可用区。\ntag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例"
+        "desc": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nsubnet-id - String - Subnet实例名称。\nsubnet-name - String - 子网名称。只支持单值的模糊查询。\ncidr-block - String - 子网网段，形如: 192.168.1.0 。只支持单值的模糊查询。\nvpc-id - String - VPC实例ID，形如：vpc-f49l6u0z。\nvpc-cidr-block  - String - vpc网段，形如: 192.168.1.0 。只支持单值的模糊查询。\nregion - String - ECM地域\nzone - String - 可用区。\ntag-key - String -是否必填：否- 按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。"
       },
       {
         "name": "Offset",
@@ -222,6 +222,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量"
+      },
+      {
+        "name": "EcmRegion",
+        "desc": "ECM 地域"
+      },
+      {
+        "name": "Sort",
+        "desc": "排序方式：time时间倒序, default按照网络规划排序"
       }
     ],
     "desc": "查询子网列表"
@@ -268,7 +276,7 @@ INFO = {
     "params": [
       {
         "name": "Filters",
-        "desc": "过滤条件。\nzone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。\nzone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。\nmodule-id      String      是否必填：否     （过滤条件）按照模块ID过滤。\ninstance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。\ninstance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。\nip-address      String      是否必填：否      （过滤条件）按照实例的内网/公网IP过滤。\ninstance-uuid   string 是否必填：否 （过滤条件）按照uuid过滤实例列表。\ninstance-state  string  是否必填：否 （过滤条件）按照实例状态更新实例列表。\ninternet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。\ntag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。\ntag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\ninstance-family      String      是否必填：否      （过滤条件）按照机型family过滤。\nmodule-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。\nimage-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。\n\n若不传Filters参数则表示查询所有相关的实例信息。\n单次请求的Filter.Values的上限为5。"
+        "desc": "过滤条件。\nzone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。\nzone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。\nmodule-id      String      是否必填：否     （过滤条件）按照模块ID过滤。\ninstance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。\ninstance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。\nip-address      String      是否必填：否      （过滤条件）按照实例的内网/公网IP过滤。\ninstance-uuid   string 是否必填：否 （过滤条件）按照uuid过滤实例列表。\ninstance-state  string  是否必填：否 （过滤条件）按照实例状态更新实例列表。\ninternet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。\ntag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。\ntag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\ninstance-family      String      是否必填：否      （过滤条件）按照机型family过滤。\nmodule-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。\nimage-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。\nvpc-id String      是否必填：否      （过滤条件）按照实例的vpc id过滤。\nsubnet-id String      是否必填：否      （过滤条件）按照实例的subnet id过滤。\n\n若不传Filters参数则表示查询所有相关的实例信息。\n单次请求的Filter.Values的上限为5。"
       },
       {
         "name": "Offset",
@@ -527,6 +535,10 @@ INFO = {
       {
         "name": "EnableBroadcast",
         "desc": "子网是否开启广播。"
+      },
+      {
+        "name": "Tags",
+        "desc": "子网的标签键值"
       }
     ],
     "desc": "修改子网属性"
@@ -1009,16 +1021,12 @@ INFO = {
   "DescribeVpcs": {
     "params": [
       {
-        "name": "EcmRegion",
-        "desc": "地域"
-      },
-      {
         "name": "VpcIds",
         "desc": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。"
       },
       {
         "name": "Filters",
-        "desc": "过滤条件，参数不支持同时指定VpcIds和Filters。\nvpc-name - String - （过滤条件）VPC实例名称。\nis-default - String - （过滤条件）是否默认VPC。\nvpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。\ncidr-block - String - （过滤条件）vpc的cidr。\ntag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例"
+        "desc": "过滤条件，参数不支持同时指定VpcIds和Filters。\nvpc-name - String - VPC实例名称，只支持单值的模糊查询。\nvpc-id - String - VPC实例ID形如：vpc-f49l6u0z。\ncidr-block - String - vpc的cidr，只支持单值的模糊查询。\nregion - String - vpc的region。\ntag-key - String -是否必填：否- 按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。"
       },
       {
         "name": "Offset",
@@ -1027,6 +1035,14 @@ INFO = {
       {
         "name": "Limit",
         "desc": "返回数量"
+      },
+      {
+        "name": "EcmRegion",
+        "desc": "地域"
+      },
+      {
+        "name": "Sort",
+        "desc": "排序方式：time时间倒序, default按照网络规划排序"
       }
     ],
     "desc": "查询私有网络列表"
@@ -1095,6 +1111,14 @@ INFO = {
       {
         "name": "VpcName",
         "desc": "私有网络名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签"
+      },
+      {
+        "name": "Description",
+        "desc": "私有网络描述"
       }
     ],
     "desc": "修改私有网络（VPC）的相关属性"
