@@ -49,7 +49,7 @@ INFO = {
       },
       {
         "name": "Fps",
-        "desc": "帧率，可设置为30、45或60"
+        "desc": "帧率，可设置为30、45、60、90、120、144"
       },
       {
         "name": "UserIp",
@@ -58,6 +58,10 @@ INFO = {
       {
         "name": "Optimization",
         "desc": "优化项，便于客户灰度开启新的优化项，默认为0"
+      },
+      {
+        "name": "HostUserId",
+        "desc": "用于多人游戏，游戏主机用户ID"
       }
     ],
     "desc": "创建会话"
@@ -67,6 +71,10 @@ INFO = {
       {
         "name": "UserId",
         "desc": "游戏用户ID"
+      },
+      {
+        "name": "HostUserId",
+        "desc": "用于多人游戏，游戏主机用户ID"
       }
     ],
     "desc": "强制退出游戏"

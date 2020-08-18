@@ -56,17 +56,15 @@ def doCreateTask(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReplaceTopicRule(argv, arglist):
+def doDescribeAllDevices(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ReplaceTopicRule", g_param[OptionsDefine.Version])
+        show_help("DescribeAllDevices", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "RuleName": argv.get("--RuleName"),
-        "TopicRulePayload": Utils.try_to_json(argv, "--TopicRulePayload"),
-        "ModifyType": Utils.try_to_json(argv, "--ModifyType"),
-        "ActionIndex": Utils.try_to_json(argv, "--ActionIndex"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -80,9 +78,9 @@ def doReplaceTopicRule(argv, arglist):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReplaceTopicRuleRequest()
+    model = models.DescribeAllDevicesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ReplaceTopicRule(model)
+    rsp = client.DescribeAllDevices(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -673,6 +671,42 @@ def doDeleteDevice(argv, arglist):
     model = models.DeleteDeviceRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doReplaceTopicRule(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ReplaceTopicRule", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RuleName": argv.get("--RuleName"),
+        "TopicRulePayload": Utils.try_to_json(argv, "--TopicRulePayload"),
+        "ModifyType": Utils.try_to_json(argv, "--ModifyType"),
+        "ActionIndex": Utils.try_to_json(argv, "--ActionIndex"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReplaceTopicRuleRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ReplaceTopicRule(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1440,7 +1474,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateTask": doCreateTask,
-    "ReplaceTopicRule": doReplaceTopicRule,
+    "DescribeAllDevices": doDescribeAllDevices,
     "PublishRRPCMessage": doPublishRRPCMessage,
     "DeleteLoraDevice": doDeleteLoraDevice,
     "PublishToDevice": doPublishToDevice,
@@ -1458,6 +1492,7 @@ ACTION_MAP = {
     "DescribeLoraDevice": doDescribeLoraDevice,
     "DescribeTask": doDescribeTask,
     "DeleteDevice": doDeleteDevice,
+    "ReplaceTopicRule": doReplaceTopicRule,
     "CreateDevice": doCreateDevice,
     "PublishMessage": doPublishMessage,
     "DeleteProduct": doDeleteProduct,

@@ -73,7 +73,7 @@ INFO = {
       },
       {
         "name": "Config",
-        "desc": "以下可选字段均为bool 类型，默认false：\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警\nTempIdWarn，临时身份证告警\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CopyWarn\":true,\"ReshootWarn\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CopyWarn\":true,\"ReshootWarn\":true}"
+        "desc": "以下可选字段均为bool 类型，默认false：\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警\nTempIdWarn，临时身份证告警\nQuality，图片质量告警（评价图片模糊程度）\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CopyWarn\":true,\"ReshootWarn\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CopyWarn\":true,\"ReshootWarn\":true}"
       }
     ],
     "desc": "传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与公安权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。"

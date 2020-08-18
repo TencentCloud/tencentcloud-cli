@@ -251,6 +251,10 @@ INFO = {
       {
         "name": "ExclusterIds",
         "desc": "独享集群ID"
+      },
+      {
+        "name": "TagKeys",
+        "desc": "按标签key查询"
       }
     ],
     "desc": "查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回10条实例记录，单次请求最多支持返回100条实例记录。"
@@ -640,6 +644,10 @@ INFO = {
       {
         "name": "Ipv6Flag",
         "desc": "是否支持IPv6"
+      },
+      {
+        "name": "ResourceTags",
+        "desc": "标签键值对数组"
       }
     ],
     "desc": "本接口（CreateDCDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长等信息创建云数据库实例。"
@@ -698,6 +706,15 @@ INFO = {
       }
     ],
     "desc": "本接口(InitDCDBInstances)用于初始化云数据库实例，包括设置默认字符集、表名大小写敏感等。"
+  },
+  "FlushBinlog": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "无"
+      }
+    ],
+    "desc": "相当于在所有分片的mysqld中执行flush logs，完成切分的binlog将展示在各个分片控制台binlog列表里。"
   },
   "DescribeDCDBRenewalPrice": {
     "params": [

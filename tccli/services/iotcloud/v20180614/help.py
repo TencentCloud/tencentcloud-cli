@@ -260,14 +260,14 @@ INFO = {
     "params": [
       {
         "name": "ProductId",
-        "desc": "产品id"
+        "desc": "产品ID"
       },
       {
         "name": "DeviceName",
         "desc": "设备名称"
       }
     ],
-    "desc": "获取lora类型设备的详细信息"
+    "desc": "获取lora类型设备的详细信息 "
   },
   "DescribeTask": {
     "params": [
@@ -287,22 +287,18 @@ INFO = {
     ],
     "desc": "本接口（CancelTask）用于取消一个未被调度的任务。 "
   },
-  "DeleteDevice": {
+  "DeleteProduct": {
     "params": [
       {
         "name": "ProductId",
-        "desc": "设备所属的产品 ID"
-      },
-      {
-        "name": "DeviceName",
-        "desc": "需要删除的设备名称"
+        "desc": "需要删除的产品 ID"
       },
       {
         "name": "Skey",
-        "desc": "删除LoRa设备以及LoRa网关设备需要skey"
+        "desc": "删除LoRa产品需要skey"
       }
     ],
-    "desc": "本接口（DeleteDevice）用于删除物联网通信设备。 "
+    "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品"
   },
   "CreateDevice": {
     "params": [
@@ -374,18 +370,22 @@ INFO = {
     ],
     "desc": "本接口（PublishMessage）用于向某个主题发消息。 "
   },
-  "DeleteProduct": {
+  "DeleteDevice": {
     "params": [
       {
         "name": "ProductId",
-        "desc": "需要删除的产品 ID"
+        "desc": "设备所属的产品 ID"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "需要删除的设备名称"
       },
       {
         "name": "Skey",
-        "desc": "删除LoRa产品需要skey"
+        "desc": "删除LoRa设备以及LoRa网关设备需要skey"
       }
     ],
-    "desc": "本接口（DeleteProduct）用于删除一个物联网通信产品"
+    "desc": "本接口（DeleteDevice）用于删除物联网通信设备。 "
   },
   "CreateTaskFileUrl": {
     "params": [
@@ -459,6 +459,31 @@ INFO = {
       }
     ],
     "desc": "启用或者禁用设备"
+  },
+  "DescribeDevices": {
+    "params": [
+      {
+        "name": "ProductId",
+        "desc": "需要查看设备列表的产品 ID"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，Offset从0开始"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页的大小，数值范围 10-250"
+      },
+      {
+        "name": "FirmwareVersion",
+        "desc": "设备固件版本号，若不带此参数会返回所有固件版本的设备。传\"None-FirmwareVersion\"查询无版本号的设备"
+      },
+      {
+        "name": "DeviceName",
+        "desc": "需要过滤的设备名称"
+      }
+    ],
+    "desc": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 "
   },
   "PublishAsDevice": {
     "params": [
@@ -623,30 +648,18 @@ INFO = {
     ],
     "desc": "本接口（DescribeProductTasks）用于查看产品级别的任务列表"
   },
-  "DescribeDevices": {
+  "DescribeAllDevices": {
     "params": [
       {
-        "name": "ProductId",
-        "desc": "需要查看设备列表的产品 ID"
-      },
-      {
         "name": "Offset",
-        "desc": "偏移量，Offset从0开始"
+        "desc": "查询偏移量。"
       },
       {
         "name": "Limit",
-        "desc": "分页的大小，数值范围 10-250"
-      },
-      {
-        "name": "FirmwareVersion",
-        "desc": "设备固件版本号，若不带此参数会返回所有固件版本的设备。传\"None-FirmwareVersion\"查询无版本号的设备"
-      },
-      {
-        "name": "DeviceName",
-        "desc": "需要过滤的设备名称"
+        "desc": "查询设备数量。最大支持250个"
       }
     ],
-    "desc": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 "
+    "desc": "查询所有设备列表"
   },
   "UpdateDeviceShadow": {
     "params": [

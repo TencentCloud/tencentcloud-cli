@@ -381,6 +381,10 @@ INFO = {
       {
         "name": "ExclusterIds",
         "desc": "按独享集群ID过滤实例，独享集群ID形如dbdc-4ih6uct9"
+      },
+      {
+        "name": "TagKeys",
+        "desc": "按标签key查询"
       }
     ],
     "desc": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回20条实例记录，单次请求最多支持返回100条实例记录。"
@@ -488,6 +492,10 @@ INFO = {
       {
         "name": "Ipv6Flag",
         "desc": "是否支持IPv6"
+      },
+      {
+        "name": "ResourceTags",
+        "desc": "标签键值对数组"
       }
     ],
     "desc": "本接口（CreateDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长和数量等信息创建云数据库实例。"
@@ -823,5 +831,14 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeDBResourceUsage)用于查看数据库实例资源的使用情况。"
+  },
+  "FlushBinlog": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID"
+      }
+    ],
+    "desc": "相当于在mysqld中执行flush logs，完成切分的binlog将展示在实例控制台binlog列表里。"
   }
 }

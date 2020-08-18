@@ -12,34 +12,23 @@ from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.gs.v20191118 import gs_client as gs_client_v20191118
-from tencentcloud.gs.v20191118 import models as models_v20191118
-from tccli.services.gs import v20191118
-from tccli.services.gs.v20191118 import help as v20191118_help
+from tencentcloud.lighthouse.v20200324 import lighthouse_client as lighthouse_client_v20200324
+from tencentcloud.lighthouse.v20200324 import models as models_v20200324
+from tccli.services.lighthouse import v20200324
+from tccli.services.lighthouse.v20200324 import help as v20200324_help
 
 
-def doCreateSession(argv, arglist):
+def doDescribeInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("CreateSession", g_param[OptionsDefine.Version])
+        show_help("DescribeInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ClientSession": argv.get("--ClientSession"),
-        "UserId": argv.get("--UserId"),
-        "GameId": argv.get("--GameId"),
-        "GameRegion": argv.get("--GameRegion"),
-        "GameParas": argv.get("--GameParas"),
-        "Resolution": argv.get("--Resolution"),
-        "ImageUrl": argv.get("--ImageUrl"),
-        "SetNo": Utils.try_to_json(argv, "--SetNo"),
-        "Bitrate": Utils.try_to_json(argv, "--Bitrate"),
-        "MaxBitrate": Utils.try_to_json(argv, "--MaxBitrate"),
-        "MinBitrate": Utils.try_to_json(argv, "--MinBitrate"),
-        "Fps": Utils.try_to_json(argv, "--Fps"),
-        "UserIp": argv.get("--UserIp"),
-        "Optimization": Utils.try_to_json(argv, "--Optimization"),
-        "HostUserId": argv.get("--HostUserId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -50,12 +39,12 @@ def doCreateSession(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.LighthouseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateSessionRequest()
+    model = models.DescribeInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.CreateSession(model)
+    rsp = client.DescribeInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -65,15 +54,14 @@ def doCreateSession(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopGame(argv, arglist):
+def doStartInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("StopGame", g_param[OptionsDefine.Version])
+        show_help("StartInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "UserId": argv.get("--UserId"),
-        "HostUserId": argv.get("--HostUserId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -84,12 +72,12 @@ def doStopGame(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.LighthouseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopGameRequest()
+    model = models.StartInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.StopGame(model)
+    rsp = client.StartInstances(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -99,19 +87,14 @@ def doStopGame(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTrylockWorker(argv, arglist):
+def doStopInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("TrylockWorker", g_param[OptionsDefine.Version])
+        show_help("StopInstances", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "UserId": argv.get("--UserId"),
-        "GameId": argv.get("--GameId"),
-        "GameRegion": argv.get("--GameRegion"),
-        "SetNo": Utils.try_to_json(argv, "--SetNo"),
-        "UserIp": argv.get("--UserIp"),
-        "GroupId": argv.get("--GroupId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -122,12 +105,115 @@ def doTrylockWorker(argv, arglist):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.GsClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.LighthouseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TrylockWorkerRequest()
+    model = models.StopInstancesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.TrylockWorker(model)
+    rsp = client.StopInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRebootInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RebootInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LighthouseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RebootInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RebootInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ResetInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "BlueprintId": argv.get("--BlueprintId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LighthouseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ResetInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBundles(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeBundles", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BundleIds": Utils.try_to_json(argv, "--BundleIds"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.LighthouseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBundlesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeBundles(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -138,33 +224,36 @@ def doTrylockWorker(argv, arglist):
 
 
 CLIENT_MAP = {
-    "v20191118": gs_client_v20191118,
+    "v20200324": lighthouse_client_v20200324,
 
 }
 
 MODELS_MAP = {
-    "v20191118": models_v20191118,
+    "v20200324": models_v20200324,
 
 }
 
 ACTION_MAP = {
-    "CreateSession": doCreateSession,
-    "StopGame": doStopGame,
-    "TrylockWorker": doTrylockWorker,
+    "DescribeInstances": doDescribeInstances,
+    "StartInstances": doStartInstances,
+    "StopInstances": doStopInstances,
+    "RebootInstances": doRebootInstances,
+    "ResetInstance": doResetInstance,
+    "DescribeBundles": doDescribeBundles,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20191118.version,
+    v20200324.version,
 
 ]
 AVAILABLE_VERSIONS = {
-     'v' + v20191118.version.replace('-', ''): {"help": v20191118_help.INFO,"desc": v20191118_help.DESC},
+     'v' + v20200324.version.replace('-', ''): {"help": v20200324_help.INFO,"desc": v20200324_help.DESC},
 
 }
 
 
-def gs_action(argv, arglist):
+def lighthouse_action(argv, arglist):
     if "help" in argv:
         versions = sorted(AVAILABLE_VERSIONS.keys())
         opt_v = "--" + OptionsDefine.Version
@@ -180,7 +269,7 @@ def gs_action(argv, arglist):
         for action, info in docs.items():
             action_str += "        %s\n" % action
             action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "gs", "desc": desc, "actions": action_str}
+        helpstr = HelpTemplate.SERVICE % {"name": "lighthouse", "desc": desc, "actions": action_str}
         print(helpstr)
     else:
         print(ErrorMsg.FEW_ARG)
@@ -201,7 +290,7 @@ def version_merge():
 
 
 def register_arg(command):
-    cmd = NiceCommand("gs", gs_action)
+    cmd = NiceCommand("lighthouse", lighthouse_action)
     command.reg_cmd(cmd)
     cmd.reg_opt("help", "bool")
     cmd.reg_opt(OptionsDefine.Version, "string")
@@ -266,11 +355,11 @@ def parse_global_arg(argv):
                     raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
         if params[OptionsDefine.Version] is None:
-            version = config["gs"][OptionsDefine.Version]
+            version = config["lighthouse"][OptionsDefine.Version]
             params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["gs"][OptionsDefine.Endpoint]
+            params[OptionsDefine.Endpoint] = config["lighthouse"][OptionsDefine.Endpoint]
     except Exception as err:
         raise Exception("config file:%s error, %s" % (conf_path, str(err)))
     versions = sorted(AVAILABLE_VERSIONS.keys())
@@ -287,7 +376,7 @@ def show_help(action, version):
         docstr += "        %s\n" % ("--" + param["name"])
         docstr += Utils.split_str("        ", param["desc"], 120)
 
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "gs", "desc": desc, "params": docstr}
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "lighthouse", "desc": desc, "params": docstr}
     print(helpmsg)
 
 
@@ -297,7 +386,7 @@ def get_actions_info():
     version = new_version
     try:
         profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["gs"]["version"]
+        version = profile["lighthouse"]["version"]
         version = "v" + version.replace('-', '')
     except Exception:
         pass

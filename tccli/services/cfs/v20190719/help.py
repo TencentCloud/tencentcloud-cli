@@ -260,6 +260,15 @@ INFO = {
     ],
     "desc": "本接口（DeleteCfsRule）用于删除权限组规则。"
   },
+  "DescribeCfsFileSystemClients": {
+    "params": [
+      {
+        "name": "FileSystemId",
+        "desc": "文件系统 ID。"
+      }
+    ],
+    "desc": "查询挂载该文件系统的客户端。此功能需要客户端安装CFS监控插件。"
+  },
   "DescribeCfsServiceStatus": {
     "params": [],
     "desc": "本接口（DescribeCfsServiceStatus）用于查询用户使用CFS的服务状态。"

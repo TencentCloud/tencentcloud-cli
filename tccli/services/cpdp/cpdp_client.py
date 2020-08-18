@@ -2369,6 +2369,7 @@ def doMigrateOrderRefund(argv, arglist):
         "ThirdChannelOrderId": argv.get("--ThirdChannelOrderId"),
         "PayAmt": Utils.try_to_json(argv, "--PayAmt"),
         "Profile": argv.get("--Profile"),
+        "RefundReason": argv.get("--RefundReason"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

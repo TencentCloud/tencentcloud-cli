@@ -773,6 +773,7 @@ def doDescribeDBInstances(argv, arglist):
         "IsFilterExcluster": Utils.try_to_json(argv, "--IsFilterExcluster"),
         "ExclusterType": Utils.try_to_json(argv, "--ExclusterType"),
         "ExclusterIds": Utils.try_to_json(argv, "--ExclusterIds"),
+        "TagKeys": Utils.try_to_json(argv, "--TagKeys"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1034,6 +1035,7 @@ def doCreateDBInstance(argv, arglist):
         "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
         "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
         "Ipv6Flag": Utils.try_to_json(argv, "--Ipv6Flag"),
+        "ResourceTags": Utils.try_to_json(argv, "--ResourceTags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1451,6 +1453,39 @@ def doDescribeDBResourceUsage(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doFlushBinlog(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("FlushBinlog", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MariadbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.FlushBinlogRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.FlushBinlog(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyLogFileRetentionPeriod(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1536,6 +1571,7 @@ ACTION_MAP = {
     "DescribeDBPerformance": doDescribeDBPerformance,
     "DescribeLogFileRetentionPeriod": doDescribeLogFileRetentionPeriod,
     "DescribeDBResourceUsage": doDescribeDBResourceUsage,
+    "FlushBinlog": doFlushBinlog,
     "ModifyLogFileRetentionPeriod": doModifyLogFileRetentionPeriod,
 
 }
