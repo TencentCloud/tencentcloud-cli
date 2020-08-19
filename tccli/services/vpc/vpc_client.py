@@ -4714,6 +4714,7 @@ def doCreateCustomerGateway(argv, arglist):
     param = {
         "CustomerGatewayName": argv.get("--CustomerGatewayName"),
         "IpAddress": argv.get("--IpAddress"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -6065,6 +6066,7 @@ def doCreateVpnGateway(argv, arglist):
         "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
         "Zone": argv.get("--Zone"),
         "Type": argv.get("--Type"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -7176,6 +7178,7 @@ def doCreateVpnConnection(argv, arglist):
         "SecurityPolicyDatabases": Utils.try_to_json(argv, "--SecurityPolicyDatabases"),
         "IKEOptionsSpecification": Utils.try_to_json(argv, "--IKEOptionsSpecification"),
         "IPSECOptionsSpecification": Utils.try_to_json(argv, "--IPSECOptionsSpecification"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -677,11 +677,11 @@ INFO = {
       },
       {
         "name": "CosPrefix",
-        "desc": "Cos Bucket文件夹前缀。"
+        "desc": "Cos Bucket文件夹前缀。\n如不传，实际按默认值\n/{Year}-{Month}-{Day}\n生效"
       },
       {
         "name": "CosFileName",
-        "desc": "Cos 文件名称。"
+        "desc": "Cos 文件名称。\n如不传，实际按默认值\n{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}\n生效"
       }
     ],
     "desc": "创建截图模板，成功返回模板id后，需要调用[CreateLiveSnapshotRule](/document/product/267/32625)接口，将模板id绑定到流使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。"
@@ -1098,9 +1098,13 @@ INFO = {
       {
         "name": "CallbackKey",
         "desc": "回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。\n[事件消息通知](/document/product/267/32744)。"
+      },
+      {
+        "name": "StreamMixNotifyUrl",
+        "desc": "混流回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。"
       }
     ],
-    "desc": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。"
+    "desc": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。\n注意：至少填写一个回调 URL。"
   },
   "ResumeLiveStream": {
     "params": [

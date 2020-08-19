@@ -1714,6 +1714,7 @@ def doCreateLiveCallbackTemplate(argv, arglist):
         "SnapshotNotifyUrl": argv.get("--SnapshotNotifyUrl"),
         "PornCensorshipNotifyUrl": argv.get("--PornCensorshipNotifyUrl"),
         "CallbackKey": argv.get("--CallbackKey"),
+        "StreamMixNotifyUrl": argv.get("--StreamMixNotifyUrl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

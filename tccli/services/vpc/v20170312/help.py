@@ -646,6 +646,10 @@ INFO = {
       {
         "name": "IPSECOptionsSpecification",
         "desc": "IPSec配置，腾讯云提供IPSec安全会话设置"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
       }
     ],
     "desc": "本接口（CreateVpnConnection）用于创建VPN通道。"
@@ -2257,6 +2261,10 @@ INFO = {
       {
         "name": "IpAddress",
         "desc": "对端网关公网IP。"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
       }
     ],
     "desc": "本接口（CreateCustomerGateway）用于创建对端网关。"
@@ -2869,6 +2877,10 @@ INFO = {
       {
         "name": "Type",
         "desc": "VPN网关类型。值“CCN”云联网类型VPN网关"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
       }
     ],
     "desc": "本接口（CreateVpnGateway）用于创建VPN网关。"
