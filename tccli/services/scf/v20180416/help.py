@@ -10,6 +10,10 @@ INFO = {
       {
         "name": "Namespace",
         "desc": "函数所属命名空间"
+      },
+      {
+        "name": "Qualifier",
+        "desc": "函数版本"
       }
     ],
     "desc": "该接口根据传入参数删除函数。"
@@ -468,11 +472,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "Offset"
+        "desc": "偏移位置"
       },
       {
         "name": "Limit",
-        "desc": "Limit"
+        "desc": "查询数目限制"
       },
       {
         "name": "SearchKey",

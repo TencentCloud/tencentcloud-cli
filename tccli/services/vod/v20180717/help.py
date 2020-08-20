@@ -2177,40 +2177,52 @@ INFO = {
   "SearchMedia": {
     "params": [
       {
-        "name": "Text",
-        "desc": "搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。"
-      },
-      {
         "name": "Tags",
         "desc": "标签集合，匹配集合中任意元素。\n<li>单个标签长度限制：8个字符。</li>\n<li>数组长度限制：10。</li>"
       },
       {
         "name": "ClassIds",
-        "desc": "分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。数组长度限制：10。"
+        "desc": "分类 ID 集合，匹配集合指定 ID 的分类及其所有子类。\n<li>数组长度限制：10。</li>"
       },
       {
-        "name": "StartTime",
-        "desc": "创建时间的开始时间。\n<li>大于等于开始时间。</li>\n<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>"
+        "name": "StreamIds",
+        "desc": "推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。\n<li>数组长度限制：10。</li>"
       },
       {
-        "name": "EndTime",
-        "desc": "创建时间的结束时间。\n<li>小于结束时间。</li>\n<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>"
+        "name": "Vids",
+        "desc": "直播录制文件的唯一标识。匹配集合中的任意元素。\n<li>数组长度限制：10。</li>"
       },
       {
-        "name": "SourceType",
-        "desc": "媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。"
+        "name": "SourceTypes",
+        "desc": "媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。\n<li>数组长度限制：10。</li>"
       },
       {
-        "name": "StreamId",
-        "desc": "推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。"
+        "name": "Categories",
+        "desc": "文件类型。匹配集合中的任意元素：\n<li>Video: 视频文件</li>\n<li>Audio: 音频文件</li>\n<li>Image: 图片文件</li>"
       },
       {
-        "name": "Vid",
-        "desc": "直播录制文件的唯一标识。"
+        "name": "CreateTime",
+        "desc": "匹配创建时间在此时间段内的文件。\n<li>包含所指定的头尾时间点。</li>"
+      },
+      {
+        "name": "FileIds",
+        "desc": "文件 ID 集合，匹配集合中的任意元素。\n<li>数组长度限制：10。</li>\n<li>单个 ID 长度限制：40个字符。</li>"
+      },
+      {
+        "name": "Names",
+        "desc": "文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。\n<li>单个文件名长度限制：40个字符。</li>\n<li>数组长度限制：10。</li>"
+      },
+      {
+        "name": "NamePrefixes",
+        "desc": "文件名前缀，前缀匹配媒体文件的文件名。\n<li>单个文件名前缀长度限制：20个字符。</li>\n<li>数组长度限制：10。</li>"
+      },
+      {
+        "name": "Descriptions",
+        "desc": "文件描述集合，匹配集合中的任意元素。\n<li>单个描述长度限制：100个字符。</li>\n<li>数组长度限制：10。</li>"
       },
       {
         "name": "Sort",
-        "desc": "排序方式。\n<li>Sort.Field 可选值：CreateTime</li>\n<li>指定 Text 搜索时，将根据匹配度排序，该字段无效</li>"
+        "desc": "排序方式。\n<li>Sort.Field 可选 CreateTime 。</li>\n<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>"
       },
       {
         "name": "Offset",
@@ -2221,15 +2233,39 @@ INFO = {
         "desc": "<div id=\"p_limit\">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。\n<li>取值范围：Offset + Limit 不超过5000。（参见：<a href=\"#maxResultsDesc\">接口返回结果数限制</a>）</li></div>"
       },
       {
-        "name": "Categories",
-        "desc": "文件类型：\n<li>Video: 视频文件</li>\n<li>Audio: 音频文件</li>\n<li>Image: 图片文件</li>"
+        "name": "Filters",
+        "desc": "指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：\n<li>basicInfo（视频基础信息）。</li>\n<li>metaData（视频元信息）。</li>\n<li>transcodeInfo（视频转码结果信息）。</li>\n<li>animatedGraphicsInfo（视频转动图结果信息）。</li>\n<li>imageSpriteInfo（视频雪碧图信息）。</li>\n<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>\n<li>sampleSnapshotInfo（采样截图信息）。</li>\n<li>keyFrameDescInfo（打点信息）。</li>\n<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>\n<li>miniProgramReviewInfo（小程序审核信息）。</li>"
       },
       {
         "name": "SubAppId",
         "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      },
+      {
+        "name": "StreamId",
+        "desc": "（不推荐：应使用 StreamIds 替代）\n推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。"
+      },
+      {
+        "name": "Vid",
+        "desc": "（不推荐：应使用 Vids 替代）\n直播录制文件的唯一标识。"
+      },
+      {
+        "name": "Text",
+        "desc": "（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）\n搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "（不推荐：应使用 CreateTime 替代）\n创建时间的开始时间。\n<li>大于等于开始时间。</li>\n<li>当 CreateTime.After 也存在时，将优先使用 CreateTime.After。</li>\n<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>"
+      },
+      {
+        "name": "EndTime",
+        "desc": "（不推荐：应使用 CreateTime 替代）\n创建时间的结束时间。\n<li>小于结束时间。</li>\n<li>当 CreateTime.Before 也存在时，将优先使用 CreateTime.Before。</li>\n<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>"
+      },
+      {
+        "name": "SourceType",
+        "desc": "（不推荐：应使用 SourceTypes 替代）\n媒体文件来源，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。"
       }
     ],
-    "desc": "搜索媒体信息，支持多种条件筛选，以及支持对返回结果排序、过滤等功能，具体包括：\n- 根据媒体文件名或描述信息进行模糊搜索。\n- 根据媒体分类、标签进行检索。\n    - 指定分类集合 ClassIds（见输入参数），返回满足集合中任意分类的媒体。例如：媒体分类有电影、电视剧、综艺，其中电影分类下又有子分类历史片、动作片、言情片。如果 ClassIds 指定了电影、电视剧，那么电影和电视剧下的所有子分类都会返回；而如果 ClassIds 指定的是历史片、动作片，那么只有这2个子分类下的媒体才会返回。\n    - 指定标签集合 Tags（见输入参数），返回满足集合中任意标签的媒体。例如：媒体标签有二次元、宫斗、鬼畜，如果 Tags 指定了二次元、鬼畜2个标签，那么只要符合这2个标签中任意一个的媒体都会被检索出来。\n- 允许指定筛选某一来源 Source（见输入参数）的媒体。\n- 允许根据直播推流码、Vid（见输入参数）筛选直播录制的媒体。\n- 允许根据媒体的创建范围筛选媒体。\n- 允许对上述条件进行任意组合，检索同时满足以上条件的媒体。例如：筛选创建时间在2018年12月1日到2018年12月8日之间、分类为电影、带有宫斗标签的媒体。\n- 允许对结果进行排序并分页返回，通过 Offset 和 Limit （见输入参数）来控制分页。\n\n<div id=\"maxResultsDesc\">接口返回结果数限制：</div>\n- <b><a href=\"#p_offset\">Offset</a> 和 <a href=\"#p_limit\">Limit</a> 两个参数影响单次分页查询结果数。特别注意：当这2个值都缺省时，本接口最多只返回10条查询结果。</b>\n- <b>最大支持返回5000条搜索结果，超出部分不再支持查询。如果搜索结果量太大，建议使用更精细的筛选条件来减少搜索结果。</b>"
+    "desc": "搜索媒体信息，支持多种条件筛选，以及支持对返回结果排序、过滤等功能，具体包括：\n- 根据多个媒体文件名 Names 或描述信息 Descriptions 进行模糊搜索。\n- 根据多个文件名前缀 NamePrefixes 进行搜索。\n- 指定分类集合 ClassIds（见输入参数），返回满足集合中任意分类的媒体。例如：媒体分类有电影、电视剧、综艺等，其中电影分类下又有子分类历史片、动作片、言情片。如果 ClassIds 指定了电影、电视剧，那么电影和电视剧下的所有子分类都会返回；而如果 ClassIds 指定的是历史片、动作片，那么只有这2个子分类下的媒体才会返回。\n- 指定标签集合 Tags（见输入参数），返回满足集合中任意标签的媒体。例如：媒体标签有二次元、宫斗、鬼畜，如果 Tags 指定了二次元、鬼畜2个标签，那么只要符合这2个标签中任意一个的媒体都会被检索出来。\n- 指定来源集合 SourceTypes（见输入参数），返回满足集合中任意来源的媒体。例如：媒体来源有 Record (直播录制)、Upload （上传）等。如果 SourceTypes 指定了 Record 和 Upload ，那么符合这些来源的媒体都会被检索出来。\n- 指定媒体的创建时间范围筛选媒体。\n- 指定文件类型集合 Categories（见输入参数），返回满足集合中任意类型的媒体。例如：文件类型有 Video（视频）、 Audio （音频）、 Image （图片）。如果Categories指定了 Video 和 Audio 2个文件类型，那么符合这些类型的媒体都会被检索出来。\n- 指定文件 ID 集合 FileIds ，返回匹配集合中任意 ID 的媒体。\n- 指定直播推流码集合 StreamIds（见输入参数）筛选直播录制的媒体。\n- 指定视频 ID 集合 Vids （见输入参数）筛选直播录制的媒体。\n- （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）指定单个文本 Text 对媒体文件名或描述信息进行模糊搜索。\n- （不推荐：应使用 StreamIds 替代）指定单个推流直播码 StreamId 进行搜索。\n- （不推荐：应使用 Vids 替代）指定单个视频 ID Vid 进行搜索。\n- （不推荐：应使用 CreateTime 替代）指定单个起始创建时间 StartTime 进行搜索。\n- （不推荐：应使用 CreateTime 替代）指定单个结尾创建时间 EndTime 进行搜索。\n- （不推荐： 应使用 SourceTypes 替代）指定单个媒体文件来源 SourceType 进行搜索。\n\n- 以上参数之间可以任意组合进行检索。例如：筛选创建时间在2018年12月1日12:00:00到2018年12月8日12:00:00之间、分类为电影或电视剧、带有宫斗和悬疑标签的媒体。注意，任何支持数组输入的参数，其元素之间的搜索逻辑为‘或’。所有参数之间的逻辑关系为‘与’。\n- 允许对结果根据创建时间进行排序并分页返回，通过 Offset 和 Limit （见输入参数）来控制分页。\n- 允许通过 Filters 控制返回的媒体信息种类（默认返回所有信息）。可选输入包括：\n    1. 基础信息（basicInfo）：包括媒体名称、分类、播放地址、封面图片等。\n    2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该媒体转码生成的各种规格的媒体地址、视频流参数、音频流参数等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后的动图信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后的截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图后的雪碧图信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，的截图信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的打点信息。\n    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。\n\n<div id=\"maxResultsDesc\">接口返回结果数限制：</div>\n- <b><a href=\"#p_offset\">Offset</a> 和 <a href=\"#p_limit\">Limit</a> 两个参数影响单次分页查询结果数。特别注意：当这2个值都缺省时，本接口最多只返回10条查询结果。</b>\n- <b>最大支持返回5000条搜索结果，超出部分不再支持查询。如果搜索结果量太大，建议使用更精细的筛选条件来减少搜索结果。</b>"
   },
   "DeleteWatermarkTemplate": {
     "params": [

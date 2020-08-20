@@ -663,7 +663,7 @@ INFO = {
   },
   "DescribeClsLogSet": {
     "params": [],
-    "desc": "获取用户的clb独占日志集。"
+    "desc": "获取用户的clb专有日志集"
   },
   "DeleteRewrite": {
     "params": [

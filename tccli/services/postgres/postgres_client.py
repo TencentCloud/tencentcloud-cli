@@ -566,6 +566,7 @@ def doCreateDBInstances(argv, arglist):
         "ActivityId": Utils.try_to_json(argv, "--ActivityId"),
         "Name": argv.get("--Name"),
         "NeedSupportIpv6": Utils.try_to_json(argv, "--NeedSupportIpv6"),
+        "TagList": Utils.try_to_json(argv, "--TagList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -605,6 +606,7 @@ def doCreateServerlessDBInstance(argv, arglist):
         "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
         "VpcId": argv.get("--VpcId"),
         "SubnetId": argv.get("--SubnetId"),
+        "TagList": Utils.try_to_json(argv, "--TagList"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -986,6 +988,8 @@ def doDescribeServerlessDBInstances(argv, arglist):
         "Filter": Utils.try_to_json(argv, "--Filter"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
+        "OrderBy": argv.get("--OrderBy"),
+        "OrderByType": argv.get("--OrderByType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

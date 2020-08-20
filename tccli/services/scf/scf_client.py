@@ -27,6 +27,7 @@ def doDeleteFunction(argv, arglist):
     param = {
         "FunctionName": argv.get("--FunctionName"),
         "Namespace": argv.get("--Namespace"),
+        "Qualifier": argv.get("--Qualifier"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

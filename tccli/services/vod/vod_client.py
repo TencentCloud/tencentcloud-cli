@@ -2925,19 +2925,28 @@ def doSearchMedia(argv, arglist):
         return
 
     param = {
-        "Text": argv.get("--Text"),
         "Tags": Utils.try_to_json(argv, "--Tags"),
         "ClassIds": Utils.try_to_json(argv, "--ClassIds"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "SourceType": argv.get("--SourceType"),
-        "StreamId": argv.get("--StreamId"),
-        "Vid": argv.get("--Vid"),
+        "StreamIds": Utils.try_to_json(argv, "--StreamIds"),
+        "Vids": Utils.try_to_json(argv, "--Vids"),
+        "SourceTypes": Utils.try_to_json(argv, "--SourceTypes"),
+        "Categories": Utils.try_to_json(argv, "--Categories"),
+        "CreateTime": Utils.try_to_json(argv, "--CreateTime"),
+        "FileIds": Utils.try_to_json(argv, "--FileIds"),
+        "Names": Utils.try_to_json(argv, "--Names"),
+        "NamePrefixes": Utils.try_to_json(argv, "--NamePrefixes"),
+        "Descriptions": Utils.try_to_json(argv, "--Descriptions"),
         "Sort": Utils.try_to_json(argv, "--Sort"),
         "Offset": Utils.try_to_json(argv, "--Offset"),
         "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Categories": Utils.try_to_json(argv, "--Categories"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
         "SubAppId": Utils.try_to_json(argv, "--SubAppId"),
+        "StreamId": argv.get("--StreamId"),
+        "Vid": argv.get("--Vid"),
+        "Text": argv.get("--Text"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "SourceType": argv.get("--SourceType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

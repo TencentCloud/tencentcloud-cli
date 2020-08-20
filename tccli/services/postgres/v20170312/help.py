@@ -321,6 +321,10 @@ INFO = {
       {
         "name": "NeedSupportIpv6",
         "desc": "是否需要支持Ipv6，1：是，0：否"
+      },
+      {
+        "name": "TagList",
+        "desc": "实例需要绑定的Tag信息，默认为空"
       }
     ],
     "desc": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例。"
@@ -354,6 +358,10 @@ INFO = {
       {
         "name": "SubnetId",
         "desc": "私有网络子网ID。"
+      },
+      {
+        "name": "TagList",
+        "desc": "实例需要绑定的标签数组信息"
       }
     ],
     "desc": "本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。"
@@ -362,7 +370,7 @@ INFO = {
     "params": [
       {
         "name": "Filters",
-        "desc": "过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。"
+        "desc": "过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。"
       },
       {
         "name": "Limit",
@@ -523,6 +531,14 @@ INFO = {
       {
         "name": "Offset",
         "desc": "偏移量"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "排序指标，目前支持实例创建时间CreateTime"
+      },
+      {
+        "name": "OrderByType",
+        "desc": "排序方式，包括升序、降序"
       }
     ],
     "desc": "用于查询一个或多个serverlessDB实例的详细信息"

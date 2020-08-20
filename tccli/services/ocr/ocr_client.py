@@ -999,6 +999,8 @@ def doGeneralBasicOCR(argv, arglist):
         "ImageUrl": argv.get("--ImageUrl"),
         "Scene": argv.get("--Scene"),
         "LanguageType": argv.get("--LanguageType"),
+        "IsPdf": Utils.try_to_json(argv, "--IsPdf"),
+        "PdfPageNumber": Utils.try_to_json(argv, "--PdfPageNumber"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

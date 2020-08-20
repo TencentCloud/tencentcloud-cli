@@ -732,7 +732,7 @@ INFO = {
       },
       {
         "name": "Filters",
-        "desc": "过滤条件。\nregion    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。"
+        "desc": "过滤条件。\nregion    String      是否必填：否     （过滤条件）按照region过滤,不支持模糊匹配。注意 region 填上需要查询ecm region才能返回数据。"
       }
     ],
     "desc": "获取网络峰值数据"
