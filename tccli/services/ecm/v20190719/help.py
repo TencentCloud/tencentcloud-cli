@@ -14,22 +14,18 @@ INFO = {
     ],
     "desc": "重置实例的最大带宽上限。"
   },
-  "TerminateInstances": {
+  "ReplaceSecurityGroupPolicy": {
     "params": [
       {
-        "name": "InstanceIdSet",
-        "desc": "待销毁的实例ID列表。"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取"
       },
       {
-        "name": "TerminateDelay",
-        "desc": "是否定时销毁，默认为否。"
-      },
-      {
-        "name": "TerminateTime",
-        "desc": "定时销毁的时间，格式形如：\"2019-08-05 12:01:30\"，若非定时销毁，则此参数被忽略。"
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合对象。"
       }
     ],
-    "desc": "销毁实例"
+    "desc": "替换单条安全组路由规则, 单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。"
   },
   "DescribeModule": {
     "params": [
@@ -95,6 +91,27 @@ INFO = {
     ],
     "desc": "修改模块名称"
   },
+  "AssignPrivateIpAddresses": {
+    "params": [
+      {
+        "name": "NetworkInterfaceId",
+        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+      },
+      {
+        "name": "EcmRegion",
+        "desc": "ECM 地域"
+      },
+      {
+        "name": "PrivateIpAddresses",
+        "desc": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。"
+      },
+      {
+        "name": "SecondaryPrivateIpAddressCount",
+        "desc": "新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数"
+      }
+    ],
+    "desc": "弹性网卡申请内网 IP"
+  },
   "DisassociateAddress": {
     "params": [
       {
@@ -111,6 +128,32 @@ INFO = {
       }
     ],
     "desc": "解绑弹性公网IP（简称 EIP）\n只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\nEIP 如果被封堵，则不能进行解绑定操作。"
+  },
+  "AssociateSecurityGroups": {
+    "params": [
+      {
+        "name": "SecurityGroupIds",
+        "desc": "要绑定的安全组ID，类似esg-efil73jd，只支持绑定单个安全组。"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "被绑定的实例ID，类似ein-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。"
+      }
+    ],
+    "desc": "绑定安全组"
+  },
+  "DisassociateSecurityGroups": {
+    "params": [
+      {
+        "name": "SecurityGroupIds",
+        "desc": "要解绑的安全组ID，类似esg-efil73jd，只支持解绑单个安全组。"
+      },
+      {
+        "name": "InstanceIds",
+        "desc": "被解绑的实例ID，类似ein-lesecurk，支持指定多个实例 。"
+      }
+    ],
+    "desc": "解绑安全组"
   },
   "AttachNetworkInterface": {
     "params": [
@@ -165,6 +208,19 @@ INFO = {
       }
     ],
     "desc": "创建私有网络"
+  },
+  "DeleteSecurityGroupPolicies": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      },
+      {
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。"
+      }
+    ],
+    "desc": "SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。"
   },
   "DescribeAddressQuota": {
     "params": [
@@ -301,6 +357,27 @@ INFO = {
     "params": [],
     "desc": "获取机型配置列表"
   },
+  "DescribeSecurityGroups": {
+    "params": [
+      {
+        "name": "SecurityGroupIds",
+        "desc": "安全组实例ID，例如：esg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "过滤条件，参数不支持同时指定SecurityGroupIds和Filters。\nsecurity-group-id - String - （过滤条件）安全组ID。\nsecurity-group-name - String - （过滤条件）安全组名称。\ntag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
+      }
+    ],
+    "desc": "查看安全组"
+  },
   "RunInstances": {
     "params": [
       {
@@ -375,35 +452,56 @@ INFO = {
     ],
     "desc": "查询导入镜像任务"
   },
-  "ImportImage": {
+  "TerminateInstances": {
     "params": [
       {
-        "name": "ImageId",
-        "desc": "镜像的Id。"
+        "name": "InstanceIdSet",
+        "desc": "待销毁的实例ID列表。"
       },
       {
-        "name": "ImageDescription",
-        "desc": "镜像的描述。"
+        "name": "TerminateDelay",
+        "desc": "是否定时销毁，默认为否。"
       },
       {
-        "name": "SourceRegion",
-        "desc": "源地域"
+        "name": "TerminateTime",
+        "desc": "定时销毁的时间，格式形如：\"2019-08-05 12:01:30\"，若非定时销毁，则此参数被忽略。"
       }
     ],
-    "desc": "从CVM产品导入镜像到ECM"
+    "desc": "销毁实例"
   },
-  "DescribeDefaultSubnet": {
+  "DescribeSecurityGroupPolicies": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如：esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      }
+    ],
+    "desc": "查询安全组规则"
+  },
+  "DescribeAddresses": {
     "params": [
       {
         "name": "EcmRegion",
-        "desc": "ECM地域"
+        "desc": "ECM 地域"
       },
       {
-        "name": "Zone",
-        "desc": "ECM可用区"
+        "name": "AddressIds",
+        "desc": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：eip-11112222。参数不支持同时指定AddressIds和Filters。"
+      },
+      {
+        "name": "Filters",
+        "desc": "每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定AddressIds和Filters。详细的过滤条件如下：\naddress-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。\naddress-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。\naddress-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。\naddress-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。取值范围：详见EIP状态列表。\ninstance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。\nprivate-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。\nnetwork-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。\nis-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认为20，最大值为100。"
       }
     ],
-    "desc": "查询可用区的默认子网"
+    "desc": "查询弹性公网IP列表"
   },
   "AssociateAddress": {
     "params": [
@@ -476,34 +574,26 @@ INFO = {
       {
         "name": "TagSpecification",
         "desc": "标签列表。"
+      },
+      {
+        "name": "SecurityGroups",
+        "desc": "模块默认安全组列表"
       }
     ],
     "desc": "创建模块"
   },
-  "DescribeAddresses": {
+  "DescribeDefaultSubnet": {
     "params": [
       {
         "name": "EcmRegion",
-        "desc": "ECM 地域"
+        "desc": "ECM地域"
       },
       {
-        "name": "AddressIds",
-        "desc": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：eip-11112222。参数不支持同时指定AddressIds和Filters。"
-      },
-      {
-        "name": "Filters",
-        "desc": "每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定AddressIds和Filters。详细的过滤条件如下：\naddress-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。\naddress-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。\naddress-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。\naddress-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。取值范围：详见EIP状态列表。\ninstance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。\nprivate-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。\nnetwork-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。\nis-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）"
-      },
-      {
-        "name": "Offset",
-        "desc": "偏移量，默认为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认为20，最大值为100。"
+        "name": "Zone",
+        "desc": "ECM可用区"
       }
     ],
-    "desc": "查询弹性公网IP列表"
+    "desc": "查询可用区的默认子网"
   },
   "DeleteSubnet": {
     "params": [
@@ -518,30 +608,22 @@ INFO = {
     ],
     "desc": "删除子网，若子网为可用区下的默认子网，则默认子网会回退到系统自动创建的默认子网，非用户最新创建的子网。若默认子网不满足需求，可调用设置默认子网接口设置。"
   },
-  "ModifySubnetAttribute": {
+  "ModifySecurityGroupAttribute": {
     "params": [
       {
-        "name": "SubnetId",
-        "desc": "子网实例ID。形如：subnet-pxir56ns。"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
       },
       {
-        "name": "EcmRegion",
-        "desc": "ECM 地域"
+        "name": "GroupName",
+        "desc": "安全组名称，可任意命名，但不得超过60个字符。"
       },
       {
-        "name": "SubnetName",
-        "desc": "子网名称，最大长度不能超过60个字节。"
-      },
-      {
-        "name": "EnableBroadcast",
-        "desc": "子网是否开启广播。"
-      },
-      {
-        "name": "Tags",
-        "desc": "子网的标签键值"
+        "name": "GroupDescription",
+        "desc": "安全组备注，最多100个字符。"
       }
     ],
-    "desc": "修改子网属性"
+    "desc": "修改安全组属性"
   },
   "DescribeNetworkInterfaces": {
     "params": [
@@ -622,6 +704,31 @@ INFO = {
       }
     ],
     "desc": "修改模块默认带宽上限"
+  },
+  "ModifySubnetAttribute": {
+    "params": [
+      {
+        "name": "SubnetId",
+        "desc": "子网实例ID。形如：subnet-pxir56ns。"
+      },
+      {
+        "name": "EcmRegion",
+        "desc": "ECM 地域"
+      },
+      {
+        "name": "SubnetName",
+        "desc": "子网名称，最大长度不能超过60个字节。"
+      },
+      {
+        "name": "EnableBroadcast",
+        "desc": "子网是否开启广播。"
+      },
+      {
+        "name": "Tags",
+        "desc": "子网的标签键值"
+      }
+    ],
+    "desc": "修改子网属性"
   },
   "ResetInstancesPassword": {
     "params": [
@@ -758,6 +865,23 @@ INFO = {
     "params": [],
     "desc": "查询外部导入镜像支持的OS列表"
   },
+  "ModifySecurityGroupPolicies": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      },
+      {
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。"
+      },
+      {
+        "name": "SortPolicys",
+        "desc": "排序安全组标识。值为True时，支持安全组排序；SortPolicys不存在或SortPolicys为False时，为修改安全组规则。"
+      }
+    ],
+    "desc": "修改安全组出站和入站规则"
+  },
   "CreateSecurityGroup": {
     "params": [
       {
@@ -774,6 +898,19 @@ INFO = {
       }
     ],
     "desc": "创建安全组"
+  },
+  "ModifyModuleSecurityGroups": {
+    "params": [
+      {
+        "name": "SecurityGroupIdSet",
+        "desc": "安全组列表。不超过5个。"
+      },
+      {
+        "name": "ModuleId",
+        "desc": "模块id。"
+      }
+    ],
+    "desc": "修改模块默认安全组"
   },
   "DescribeNode": {
     "params": [
@@ -847,26 +984,22 @@ INFO = {
     ],
     "desc": "弹性网卡解绑云主机"
   },
-  "AssignPrivateIpAddresses": {
+  "ImportImage": {
     "params": [
       {
-        "name": "NetworkInterfaceId",
-        "desc": "弹性网卡实例ID，例如：eni-m6dyj72l。"
+        "name": "ImageId",
+        "desc": "镜像的Id。"
       },
       {
-        "name": "EcmRegion",
-        "desc": "ECM 地域"
+        "name": "ImageDescription",
+        "desc": "镜像的描述。"
       },
       {
-        "name": "PrivateIpAddresses",
-        "desc": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。"
-      },
-      {
-        "name": "SecondaryPrivateIpAddressCount",
-        "desc": "新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数"
+        "name": "SourceRegion",
+        "desc": "源地域"
       }
     ],
-    "desc": "弹性网卡申请内网 IP"
+    "desc": "从CVM产品导入镜像到ECM"
   },
   "ResetInstances": {
     "params": [
@@ -902,14 +1035,43 @@ INFO = {
     ],
     "desc": "查询实例管理终端地址"
   },
-  "DeleteImage": {
+  "ModifyVpcAttribute": {
     "params": [
       {
-        "name": "ImageIDSet",
-        "desc": "镜像ID列表。"
+        "name": "VpcId",
+        "desc": "VPC实例ID。形如：vpc-f49l6u0z。"
+      },
+      {
+        "name": "EcmRegion",
+        "desc": "ECM 地域"
+      },
+      {
+        "name": "VpcName",
+        "desc": "私有网络名称，可任意命名，但不得超过60个字符。"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签"
+      },
+      {
+        "name": "Description",
+        "desc": "私有网络描述"
       }
     ],
-    "desc": "删除镜像"
+    "desc": "修改私有网络（VPC）的相关属性"
+  },
+  "DescribeSecurityGroupLimits": {
+    "params": [],
+    "desc": "查询用户安全组配额"
+  },
+  "DescribeSecurityGroupAssociationStatistics": {
+    "params": [
+      {
+        "name": "SecurityGroupIds",
+        "desc": "安全实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      }
+    ],
+    "desc": "查询安全组关联实例统计"
   },
   "ModifyModuleImage": {
     "params": [
@@ -933,6 +1095,10 @@ INFO = {
       {
         "name": "InstanceName",
         "desc": "修改成功后显示的实例名称，不得超过60个字符，不传则名称显示为空。"
+      },
+      {
+        "name": "SecurityGroups",
+        "desc": "指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。限制不超过5个。"
       }
     ],
     "desc": "修改实例的属性。"
@@ -970,6 +1136,15 @@ INFO = {
       }
     ],
     "desc": "修改在一个可用区下创建实例时使用的默认子网（创建实例时，未填写VPC参数时使用的sunbetId）"
+  },
+  "DeleteImage": {
+    "params": [
+      {
+        "name": "ImageIDSet",
+        "desc": "镜像ID列表。"
+      }
+    ],
+    "desc": "删除镜像"
   },
   "ModifyAddressAttribute": {
     "params": [
@@ -1085,6 +1260,19 @@ INFO = {
     ],
     "desc": "展示镜像列表"
   },
+  "CreateSecurityGroupPolicies": {
+    "params": [
+      {
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+      },
+      {
+        "name": "SecurityGroupPolicySet",
+        "desc": "安全组规则集合。"
+      }
+    ],
+    "desc": "在 SecurityGroupPolicySet 参数中：\n\nVersion 安全组规则版本号，用户每次更新安全规则版本会自动加1，防止您更新的路由规则已过期，不填不考虑冲突。\n在创建出站和入站规则（Egress 和 Ingress）时：\nProtocol 字段支持输入TCP, UDP, ICMP, ICMPV6, GRE, ALL。\nCidrBlock 字段允许输入符合cidr格式标准的任意字符串。(展开)在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\nIpv6CidrBlock 字段允许输入符合IPv6 cidr格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。\nSecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个 ID 所关联的云服务器变化而变化，不需要重新修改。\nPort 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受，即 Protocol 字段不是 TCP 或 UDP 时，Protocol 和 Port 排他关系，不允许同时输入，否则会接口报错。\nAction 字段只允许输入 ACCEPT 或 DROP。\nCidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。\n一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。"
+  },
   "ModifyModuleIpDirect": {
     "params": [
       {
@@ -1098,30 +1286,14 @@ INFO = {
     ],
     "desc": "修改模块IP直通。"
   },
-  "ModifyVpcAttribute": {
+  "DeleteSecurityGroup": {
     "params": [
       {
-        "name": "VpcId",
-        "desc": "VPC实例ID。形如：vpc-f49l6u0z。"
-      },
-      {
-        "name": "EcmRegion",
-        "desc": "ECM 地域"
-      },
-      {
-        "name": "VpcName",
-        "desc": "私有网络名称，可任意命名，但不得超过60个字符。"
-      },
-      {
-        "name": "Tags",
-        "desc": "标签"
-      },
-      {
-        "name": "Description",
-        "desc": "私有网络描述"
+        "name": "SecurityGroupId",
+        "desc": "安全组实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
       }
     ],
-    "desc": "修改私有网络（VPC）的相关属性"
+    "desc": "只有当前账号下的安全组允许被删除。\n安全组实例ID如果在其他安全组的规则中被引用，则无法直接删除。这种情况下，需要先进行规则修改，再删除安全组。\n删除的安全组无法再找回，请谨慎调用。"
   },
   "ModifyAddressesBandwidth": {
     "params": [

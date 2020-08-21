@@ -467,6 +467,27 @@ INFO = {
     ],
     "desc": "创建用户自定义转动图模板，数量上限：16。"
   },
+  "DescribeCdnLogs": {
+    "params": [
+      {
+        "name": "DomainName",
+        "desc": "域名。"
+      },
+      {
+        "name": "StartTime",
+        "desc": "获取日志起始时间点，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间需大于起始时间；使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。"
+      },
+      {
+        "name": "SubAppId",
+        "desc": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。"
+      }
+    ],
+    "desc": "查询点播域名的 CDN 访问日志的下载链接。\n    1. 可以查询最近30天内的 CDN 日志下载链接。\n    2. 默认情况下 CDN 每小时生成一个日志文件，如果某一个小时没有 CDN 访问，不会生成日志文件。    \n    3. CDN 日志下载链接的有效期为24小时。"
+  },
   "ModifyClass": {
     "params": [
       {

@@ -243,6 +243,7 @@ def doStartOnlineRecord(argv, arglist):
         "MixStream": Utils.try_to_json(argv, "--MixStream"),
         "Extras": Utils.try_to_json(argv, "--Extras"),
         "AudioFileNeeded": Utils.try_to_json(argv, "--AudioFileNeeded"),
+        "RecordControl": Utils.try_to_json(argv, "--RecordControl"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

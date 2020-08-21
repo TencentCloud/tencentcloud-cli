@@ -1,6 +1,39 @@
 # -*- coding: utf-8 -*-
 DESC = "tms-2020-07-13"
 INFO = {
+  "AccountTipoffAccess": {
+    "params": [
+      {
+        "name": "ReportedAccount",
+        "desc": "被举报账号，长度低于 128 个字符"
+      },
+      {
+        "name": "ReportedAccountType",
+        "desc": "被举报账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)"
+      },
+      {
+        "name": "EvilType",
+        "desc": "被举报账号所属恶意类型(1-诈骗，2-骚扰，3-广告，4-违法违规，5-赌博传销，0-其他)"
+      },
+      {
+        "name": "SenderAccount",
+        "desc": "举报者账号，长度低于 128 个字符"
+      },
+      {
+        "name": "SenderAccountType",
+        "desc": "举报者账号类型(1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-手机号 8-微信号 0-其它string)"
+      },
+      {
+        "name": "SenderIP",
+        "desc": "举报者IP地址"
+      },
+      {
+        "name": "EvilContent",
+        "desc": "包含被举报账号的恶意内容（比如文本、图片链接，长度低于1024个字符）"
+      }
+    ],
+    "desc": "举报恶意账号"
+  },
   "TextModeration": {
     "params": [
       {

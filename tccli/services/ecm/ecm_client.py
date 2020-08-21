@@ -52,6 +52,40 @@ def doResetInstancesMaxBandwidth(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doReplaceSecurityGroupPolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ReplaceSecurityGroupPolicy", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
+        "SecurityGroupPolicySet": Utils.try_to_json(argv, "--SecurityGroupPolicySet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ReplaceSecurityGroupPolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ReplaceSecurityGroupPolicy(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doTerminateInstances(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -434,6 +468,40 @@ def doCreateVpc(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteSecurityGroupPolicies(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteSecurityGroupPolicies", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
+        "SecurityGroupPolicySet": Utils.try_to_json(argv, "--SecurityGroupPolicySet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSecurityGroupPoliciesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteSecurityGroupPolicies(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAddressQuota(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -684,6 +752,76 @@ def doDescribeInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doMigrateNetworkInterface(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("MigrateNetworkInterface", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "SourceInstanceId": argv.get("--SourceInstanceId"),
+        "DestinationInstanceId": argv.get("--DestinationInstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.MigrateNetworkInterfaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.MigrateNetworkInterface(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyModuleIpDirect(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyModuleIpDirect", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ModuleId": argv.get("--ModuleId"),
+        "CloseIpDirect": Utils.try_to_json(argv, "--CloseIpDirect"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyModuleIpDirectRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyModuleIpDirect(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeInstanceTypeConfig(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -707,6 +845,42 @@ def doDescribeInstanceTypeConfig(argv, arglist):
     model = models.DescribeInstanceTypeConfigRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeInstanceTypeConfig(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSecurityGroups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSecurityGroups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityGroupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSecurityGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -763,17 +937,14 @@ def doRunInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAssignPrivateIpAddresses(argv, arglist):
+def doDescribeCustomImageTask(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("AssignPrivateIpAddresses", g_param[OptionsDefine.Version])
+        show_help("DescribeCustomImageTask", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
-        "EcmRegion": argv.get("--EcmRegion"),
-        "PrivateIpAddresses": Utils.try_to_json(argv, "--PrivateIpAddresses"),
-        "SecondaryPrivateIpAddressCount": Utils.try_to_json(argv, "--SecondaryPrivateIpAddressCount"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -787,9 +958,9 @@ def doAssignPrivateIpAddresses(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AssignPrivateIpAddressesRequest()
+    model = models.DescribeCustomImageTaskRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.AssignPrivateIpAddresses(model)
+    rsp = client.DescribeCustomImageTask(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -799,15 +970,14 @@ def doAssignPrivateIpAddresses(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDefaultSubnet(argv, arglist):
+def doDescribeSecurityGroupPolicies(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeDefaultSubnet", g_param[OptionsDefine.Version])
+        show_help("DescribeSecurityGroupPolicies", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "EcmRegion": argv.get("--EcmRegion"),
-        "Zone": argv.get("--Zone"),
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -821,9 +991,46 @@ def doDescribeDefaultSubnet(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDefaultSubnetRequest()
+    model = models.DescribeSecurityGroupPoliciesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDefaultSubnet(model)
+    rsp = client.DescribeSecurityGroupPolicies(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAddresses(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAddresses", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "AddressIds": Utils.try_to_json(argv, "--AddressIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAddressesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAddresses(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -919,6 +1126,7 @@ def doCreateModule(argv, arglist):
         "DefaultDataDiskSize": Utils.try_to_json(argv, "--DefaultDataDiskSize"),
         "CloseIpDirect": Utils.try_to_json(argv, "--CloseIpDirect"),
         "TagSpecification": Utils.try_to_json(argv, "--TagSpecification"),
+        "SecurityGroups": Utils.try_to_json(argv, "--SecurityGroups"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -944,18 +1152,15 @@ def doCreateModule(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAddresses(argv, arglist):
+def doDescribeDefaultSubnet(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeAddresses", g_param[OptionsDefine.Version])
+        show_help("DescribeDefaultSubnet", g_param[OptionsDefine.Version])
         return
 
     param = {
         "EcmRegion": argv.get("--EcmRegion"),
-        "AddressIds": Utils.try_to_json(argv, "--AddressIds"),
-        "Filters": Utils.try_to_json(argv, "--Filters"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Zone": argv.get("--Zone"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -969,9 +1174,9 @@ def doDescribeAddresses(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAddressesRequest()
+    model = models.DescribeDefaultSubnetRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeAddresses(model)
+    rsp = client.DescribeDefaultSubnet(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1015,18 +1220,16 @@ def doDeleteSubnet(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySubnetAttribute(argv, arglist):
+def doModifySecurityGroupAttribute(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifySubnetAttribute", g_param[OptionsDefine.Version])
+        show_help("ModifySecurityGroupAttribute", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "SubnetId": argv.get("--SubnetId"),
-        "EcmRegion": argv.get("--EcmRegion"),
-        "SubnetName": argv.get("--SubnetName"),
-        "EnableBroadcast": argv.get("--EnableBroadcast"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
+        "GroupName": argv.get("--GroupName"),
+        "GroupDescription": argv.get("--GroupDescription"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1040,9 +1243,43 @@ def doModifySubnetAttribute(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySubnetAttributeRequest()
+    model = models.ModifySecurityGroupAttributeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifySubnetAttribute(model)
+    rsp = client.ModifySecurityGroupAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyModuleNetwork(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyModuleNetwork", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ModuleId": argv.get("--ModuleId"),
+        "DefaultBandwidth": Utils.try_to_json(argv, "--DefaultBandwidth"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyModuleNetworkRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyModuleNetwork(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1089,17 +1326,14 @@ def doDescribeNetworkInterfaces(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMigrateNetworkInterface(argv, arglist):
+def doDeleteSecurityGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("MigrateNetworkInterface", g_param[OptionsDefine.Version])
+        show_help("DeleteSecurityGroup", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "EcmRegion": argv.get("--EcmRegion"),
-        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
-        "SourceInstanceId": argv.get("--SourceInstanceId"),
-        "DestinationInstanceId": argv.get("--DestinationInstanceId"),
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1113,9 +1347,9 @@ def doMigrateNetworkInterface(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MigrateNetworkInterfaceRequest()
+    model = models.DeleteSecurityGroupRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.MigrateNetworkInterface(model)
+    rsp = client.DeleteSecurityGroup(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1161,15 +1395,15 @@ def doCreateImage(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyModuleNetwork(argv, arglist):
+def doAssociateSecurityGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyModuleNetwork", g_param[OptionsDefine.Version])
+        show_help("AssociateSecurityGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ModuleId": argv.get("--ModuleId"),
-        "DefaultBandwidth": Utils.try_to_json(argv, "--DefaultBandwidth"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1183,9 +1417,9 @@ def doModifyModuleNetwork(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyModuleNetworkRequest()
+    model = models.AssociateSecurityGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyModuleNetwork(model)
+    rsp = client.AssociateSecurityGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1195,17 +1429,18 @@ def doModifyModuleNetwork(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResetInstancesPassword(argv, arglist):
+def doModifySubnetAttribute(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ResetInstancesPassword", g_param[OptionsDefine.Version])
+        show_help("ModifySubnetAttribute", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
-        "Password": argv.get("--Password"),
-        "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
-        "UserName": argv.get("--UserName"),
+        "SubnetId": argv.get("--SubnetId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "SubnetName": argv.get("--SubnetName"),
+        "EnableBroadcast": argv.get("--EnableBroadcast"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1219,9 +1454,45 @@ def doResetInstancesPassword(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetInstancesPasswordRequest()
+    model = models.ModifySubnetAttributeRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ResetInstancesPassword(model)
+    rsp = client.ModifySubnetAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doMigratePrivateIpAddress(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("MigratePrivateIpAddress", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EcmRegion": argv.get("--EcmRegion"),
+        "SourceNetworkInterfaceId": argv.get("--SourceNetworkInterfaceId"),
+        "DestinationNetworkInterfaceId": argv.get("--DestinationNetworkInterfaceId"),
+        "PrivateIpAddress": argv.get("--PrivateIpAddress"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.MigratePrivateIpAddressRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.MigratePrivateIpAddress(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1475,6 +1746,41 @@ def doDescribeImportImageOs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifySecurityGroupPolicies(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySecurityGroupPolicies", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
+        "SecurityGroupPolicySet": Utils.try_to_json(argv, "--SecurityGroupPolicySet"),
+        "SortPolicys": Utils.try_to_json(argv, "--SortPolicys"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySecurityGroupPoliciesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySecurityGroupPolicies(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateSecurityGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1501,6 +1807,40 @@ def doCreateSecurityGroup(argv, arglist):
     model = models.CreateSecurityGroupRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateSecurityGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyModuleSecurityGroups(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyModuleSecurityGroups", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupIdSet": Utils.try_to_json(argv, "--SecurityGroupIdSet"),
+        "ModuleId": argv.get("--ModuleId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyModuleSecurityGroupsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyModuleSecurityGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1650,14 +1990,17 @@ def doDetachNetworkInterface(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCustomImageTask(argv, arglist):
+def doAssignPrivateIpAddresses(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeCustomImageTask", g_param[OptionsDefine.Version])
+        show_help("AssignPrivateIpAddresses", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "NetworkInterfaceId": argv.get("--NetworkInterfaceId"),
+        "EcmRegion": argv.get("--EcmRegion"),
+        "PrivateIpAddresses": Utils.try_to_json(argv, "--PrivateIpAddresses"),
+        "SecondaryPrivateIpAddressCount": Utils.try_to_json(argv, "--SecondaryPrivateIpAddressCount"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1671,9 +2014,9 @@ def doDescribeCustomImageTask(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCustomImageTaskRequest()
+    model = models.AssignPrivateIpAddressesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeCustomImageTask(model)
+    rsp = client.AssignPrivateIpAddresses(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1790,6 +2133,107 @@ def doModifyVpcAttribute(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSecurityGroupLimits(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSecurityGroupLimits", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityGroupLimitsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSecurityGroupLimits(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetInstancesPassword(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ResetInstancesPassword", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
+        "Password": argv.get("--Password"),
+        "ForceStop": Utils.try_to_json(argv, "--ForceStop"),
+        "UserName": argv.get("--UserName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetInstancesPasswordRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ResetInstancesPassword(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSecurityGroupAssociationStatistics(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSecurityGroupAssociationStatistics", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityGroupAssociationStatisticsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSecurityGroupAssociationStatistics(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyModuleImage(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1833,6 +2277,7 @@ def doModifyInstancesAttribute(argv, arglist):
     param = {
         "InstanceIdSet": Utils.try_to_json(argv, "--InstanceIdSet"),
         "InstanceName": argv.get("--InstanceName"),
+        "SecurityGroups": Utils.try_to_json(argv, "--SecurityGroups"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2068,17 +2513,15 @@ def doDescribeVpcs(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMigratePrivateIpAddress(argv, arglist):
+def doCreateSecurityGroupPolicies(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("MigratePrivateIpAddress", g_param[OptionsDefine.Version])
+        show_help("CreateSecurityGroupPolicies", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "EcmRegion": argv.get("--EcmRegion"),
-        "SourceNetworkInterfaceId": argv.get("--SourceNetworkInterfaceId"),
-        "DestinationNetworkInterfaceId": argv.get("--DestinationNetworkInterfaceId"),
-        "PrivateIpAddress": argv.get("--PrivateIpAddress"),
+        "SecurityGroupId": argv.get("--SecurityGroupId"),
+        "SecurityGroupPolicySet": Utils.try_to_json(argv, "--SecurityGroupPolicySet"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2092,9 +2535,9 @@ def doMigratePrivateIpAddress(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MigratePrivateIpAddressRequest()
+    model = models.CreateSecurityGroupPoliciesRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.MigratePrivateIpAddress(model)
+    rsp = client.CreateSecurityGroupPolicies(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2139,15 +2582,15 @@ def doDescribeImage(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyModuleIpDirect(argv, arglist):
+def doDisassociateSecurityGroups(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("ModifyModuleIpDirect", g_param[OptionsDefine.Version])
+        show_help("DisassociateSecurityGroups", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ModuleId": argv.get("--ModuleId"),
-        "CloseIpDirect": Utils.try_to_json(argv, "--CloseIpDirect"),
+        "SecurityGroupIds": Utils.try_to_json(argv, "--SecurityGroupIds"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2161,9 +2604,9 @@ def doModifyModuleIpDirect(argv, arglist):
     client = mod.EcmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyModuleIpDirectRequest()
+    model = models.DisassociateSecurityGroupsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.ModifyModuleIpDirect(model)
+    rsp = client.DisassociateSecurityGroups(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2326,6 +2769,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "ResetInstancesMaxBandwidth": doResetInstancesMaxBandwidth,
+    "ReplaceSecurityGroupPolicy": doReplaceSecurityGroupPolicy,
     "TerminateInstances": doTerminateInstances,
     "DescribeModule": doDescribeModule,
     "DescribeConfig": doDescribeConfig,
@@ -2337,6 +2781,7 @@ ACTION_MAP = {
     "AttachNetworkInterface": doAttachNetworkInterface,
     "ReleaseAddresses": doReleaseAddresses,
     "CreateVpc": doCreateVpc,
+    "DeleteSecurityGroupPolicies": doDeleteSecurityGroupPolicies,
     "DescribeAddressQuota": doDescribeAddressQuota,
     "ModifyModuleConfig": doModifyModuleConfig,
     "DeleteVpc": doDeleteVpc,
@@ -2344,21 +2789,27 @@ ACTION_MAP = {
     "ModifyAddressAttribute": doModifyAddressAttribute,
     "AllocateAddresses": doAllocateAddresses,
     "DescribeInstances": doDescribeInstances,
+    "MigrateNetworkInterface": doMigrateNetworkInterface,
+    "ModifyModuleIpDirect": doModifyModuleIpDirect,
     "DescribeInstanceTypeConfig": doDescribeInstanceTypeConfig,
+    "DescribeSecurityGroups": doDescribeSecurityGroups,
     "RunInstances": doRunInstances,
-    "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
-    "DescribeDefaultSubnet": doDescribeDefaultSubnet,
+    "DescribeCustomImageTask": doDescribeCustomImageTask,
+    "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
+    "DescribeAddresses": doDescribeAddresses,
     "AssociateAddress": doAssociateAddress,
     "DescribeTaskResult": doDescribeTaskResult,
     "CreateModule": doCreateModule,
-    "DescribeAddresses": doDescribeAddresses,
+    "DescribeDefaultSubnet": doDescribeDefaultSubnet,
     "DeleteSubnet": doDeleteSubnet,
-    "ModifySubnetAttribute": doModifySubnetAttribute,
-    "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
-    "MigrateNetworkInterface": doMigrateNetworkInterface,
-    "CreateImage": doCreateImage,
+    "ModifySecurityGroupAttribute": doModifySecurityGroupAttribute,
     "ModifyModuleNetwork": doModifyModuleNetwork,
-    "ResetInstancesPassword": doResetInstancesPassword,
+    "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
+    "DeleteSecurityGroup": doDeleteSecurityGroup,
+    "CreateImage": doCreateImage,
+    "AssociateSecurityGroups": doAssociateSecurityGroups,
+    "ModifySubnetAttribute": doModifySubnetAttribute,
+    "MigratePrivateIpAddress": doMigratePrivateIpAddress,
     "ModifyImageAttribute": doModifyImageAttribute,
     "DescribeInstancesDeniedActions": doDescribeInstancesDeniedActions,
     "DescribeTaskStatus": doDescribeTaskStatus,
@@ -2366,15 +2817,20 @@ ACTION_MAP = {
     "DescribePeakNetworkOverview": doDescribePeakNetworkOverview,
     "StopInstances": doStopInstances,
     "DescribeImportImageOs": doDescribeImportImageOs,
+    "ModifySecurityGroupPolicies": doModifySecurityGroupPolicies,
     "CreateSecurityGroup": doCreateSecurityGroup,
+    "ModifyModuleSecurityGroups": doModifyModuleSecurityGroups,
     "DescribeNode": doDescribeNode,
     "ImportCustomImage": doImportCustomImage,
     "DescribeModuleDetail": doDescribeModuleDetail,
     "DetachNetworkInterface": doDetachNetworkInterface,
-    "DescribeCustomImageTask": doDescribeCustomImageTask,
+    "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
     "ResetInstances": doResetInstances,
     "DescribeInstanceVncUrl": doDescribeInstanceVncUrl,
     "ModifyVpcAttribute": doModifyVpcAttribute,
+    "DescribeSecurityGroupLimits": doDescribeSecurityGroupLimits,
+    "ResetInstancesPassword": doResetInstancesPassword,
+    "DescribeSecurityGroupAssociationStatistics": doDescribeSecurityGroupAssociationStatistics,
     "ModifyModuleImage": doModifyModuleImage,
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "DescribePeakBaseOverview": doDescribePeakBaseOverview,
@@ -2383,9 +2839,9 @@ ACTION_MAP = {
     "DeleteModule": doDeleteModule,
     "RebootInstances": doRebootInstances,
     "DescribeVpcs": doDescribeVpcs,
-    "MigratePrivateIpAddress": doMigratePrivateIpAddress,
+    "CreateSecurityGroupPolicies": doCreateSecurityGroupPolicies,
     "DescribeImage": doDescribeImage,
-    "ModifyModuleIpDirect": doModifyModuleIpDirect,
+    "DisassociateSecurityGroups": doDisassociateSecurityGroups,
     "DeleteImage": doDeleteImage,
     "ModifyAddressesBandwidth": doModifyAddressesBandwidth,
     "RemovePrivateIpAddresses": doRemovePrivateIpAddresses,

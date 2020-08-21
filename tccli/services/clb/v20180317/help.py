@@ -1161,6 +1161,10 @@ INFO = {
     ],
     "desc": "本接口(BatchModifyTargetWeight)用于批量修改负载均衡监听器绑定的后端机器的转发权重，支持负载均衡的4层和7层监听器；不支持传统型负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。"
   },
+  "DescribeQuota": {
+    "params": [],
+    "desc": "查询用户当前地域下的各项配额"
+  },
   "DescribeTargetHealth": {
     "params": [
       {
