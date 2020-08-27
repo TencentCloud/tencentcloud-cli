@@ -340,6 +340,10 @@ INFO = {
       {
         "name": "TypeList",
         "desc": "内部参数，用户可忽略"
+      },
+      {
+        "name": "MonitorVersion",
+        "desc": "内部参数，用户可忽略"
       }
     ],
     "desc": "查询Redis实例列表"

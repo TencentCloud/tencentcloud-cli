@@ -1174,6 +1174,8 @@ def doCreateProject(argv, arglist):
         "Name": argv.get("--Name"),
         "AspectRatio": argv.get("--AspectRatio"),
         "Owner": Utils.try_to_json(argv, "--Owner"),
+        "Description": argv.get("--Description"),
+        "SwitcherProjectInput": Utils.try_to_json(argv, "--SwitcherProjectInput"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

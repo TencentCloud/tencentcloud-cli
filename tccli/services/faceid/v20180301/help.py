@@ -43,23 +43,39 @@ INFO = {
     "params": [],
     "desc": "使用数字活体检测模式前，需调用本接口获取数字验证码。"
   },
-  "MobileNetworkTimeVerification": {
+  "Liveness": {
     "params": [
       {
-        "name": "Mobile",
-        "desc": "手机号码"
+        "name": "VideoBase64",
+        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。"
+      },
+      {
+        "name": "LivenessType",
+        "desc": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。"
+      },
+      {
+        "name": "ValidateData",
+        "desc": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：不需要传递此参数。"
+      },
+      {
+        "name": "Optional",
+        "desc": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}"
       }
     ],
-    "desc": "本接口用于查询手机号在网时长，输入手机号进行查询。"
+    "desc": "活体检测"
   },
-  "GetActionSequence": {
+  "BankCard2EVerification": {
     "params": [
       {
-        "name": "ActionType",
-        "desc": "默认不需要使用"
+        "name": "Name",
+        "desc": "姓名"
+      },
+      {
+        "name": "BankCard",
+        "desc": "银行卡"
       }
     ],
-    "desc": "使用动作活体检测模式前，需调用本接口获取动作顺序。"
+    "desc": "本接口用于校验姓名和银行卡号的真实性和一致性。"
   },
   "CheckIdCardInformation": {
     "params": [
@@ -99,8 +115,12 @@ INFO = {
     ],
     "desc": "本接口用于银行卡号、姓名、开户证件号信息的真实性和一致性。"
   },
-  "Liveness": {
+  "LivenessCompare": {
     "params": [
+      {
+        "name": "ImageBase64",
+        "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
+      },
       {
         "name": "VideoBase64",
         "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。"
@@ -111,14 +131,14 @@ INFO = {
       },
       {
         "name": "ValidateData",
-        "desc": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：不需要传递此参数。"
+        "desc": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：空。"
       },
       {
         "name": "Optional",
         "desc": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}"
       }
     ],
-    "desc": "活体检测"
+    "desc": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。"
   },
   "LivenessRecognition": {
     "params": [
@@ -171,6 +191,15 @@ INFO = {
     ],
     "desc": "传入姓名和身份证号，校验两者的真实性和一致性。"
   },
+  "MobileNetworkTimeVerification": {
+    "params": [
+      {
+        "name": "Mobile",
+        "desc": "手机号码"
+      }
+    ],
+    "desc": "本接口用于查询手机号在网时长，输入手机号进行查询。"
+  },
   "IdCardOCRVerification": {
     "params": [
       {
@@ -217,6 +246,27 @@ INFO = {
     ],
     "desc": "本接口用于输入银行卡号、姓名、开户证件号、开户手机号，校验信息的真实性和一致性。"
   },
+  "ImageRecognition": {
+    "params": [
+      {
+        "name": "IdCard",
+        "desc": "身份证号"
+      },
+      {
+        "name": "Name",
+        "desc": "姓名。中文请使用UTF-8编码。"
+      },
+      {
+        "name": "ImageBase64",
+        "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
+      },
+      {
+        "name": "Optional",
+        "desc": "本接口不需要传递此参数。"
+      }
+    ],
+    "desc": "传入照片和身份信息，判断该照片与公安权威库的证件照是否属于同一个人。"
+  },
   "DetectAuth": {
     "params": [
       {
@@ -250,7 +300,16 @@ INFO = {
     ],
     "desc": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。"
   },
-  "ImageRecognition": {
+  "GetActionSequence": {
+    "params": [
+      {
+        "name": "ActionType",
+        "desc": "默认不需要使用"
+      }
+    ],
+    "desc": "使用动作活体检测模式前，需调用本接口获取动作顺序。"
+  },
+  "PhoneVerification": {
     "params": [
       {
         "name": "IdCard",
@@ -258,31 +317,22 @@ INFO = {
       },
       {
         "name": "Name",
-        "desc": "姓名。中文请使用UTF-8编码。"
-      },
-      {
-        "name": "ImageBase64",
-        "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
-      },
-      {
-        "name": "Optional",
-        "desc": "本接口不需要传递此参数。"
-      }
-    ],
-    "desc": "传入照片和身份信息，判断该照片与公安权威库的证件照是否属于同一个人。"
-  },
-  "BankCard2EVerification": {
-    "params": [
-      {
-        "name": "Name",
         "desc": "姓名"
       },
       {
-        "name": "BankCard",
-        "desc": "银行卡"
+        "name": "Phone",
+        "desc": "手机号"
+      },
+      {
+        "name": "CiphertextBlob",
+        "desc": "有加密需求的用户，接入传入kms的CiphertextBlob"
+      },
+      {
+        "name": "EncryptList",
+        "desc": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个"
       }
     ],
-    "desc": "本接口用于校验姓名和银行卡号的真实性和一致性。"
+    "desc": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。"
   },
   "GetDetectInfoEnhanced": {
     "params": [
@@ -313,54 +363,13 @@ INFO = {
     ],
     "desc": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。"
   },
-  "PhoneVerification": {
+  "CheckBankCardInformation": {
     "params": [
       {
-        "name": "IdCard",
-        "desc": "身份证号"
-      },
-      {
-        "name": "Name",
-        "desc": "姓名"
-      },
-      {
-        "name": "Phone",
-        "desc": "手机号"
-      },
-      {
-        "name": "CiphertextBlob",
-        "desc": "有加密需求的用户，接入传入kms的CiphertextBlob"
-      },
-      {
-        "name": "EncryptList",
-        "desc": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个"
+        "name": "BankCard",
+        "desc": "银行卡号。"
       }
     ],
-    "desc": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。"
-  },
-  "LivenessCompare": {
-    "params": [
-      {
-        "name": "ImageBase64",
-        "desc": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。"
-      },
-      {
-        "name": "VideoBase64",
-        "desc": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。"
-      },
-      {
-        "name": "LivenessType",
-        "desc": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。"
-      },
-      {
-        "name": "ValidateData",
-        "desc": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：空。"
-      },
-      {
-        "name": "Optional",
-        "desc": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}"
-      }
-    ],
-    "desc": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。"
+    "desc": "银行卡基础信息查询"
   }
 }

@@ -824,7 +824,7 @@ INFO = {
       },
       {
         "name": "NotificationMetadata",
-        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为空字符串“”。最大长度不能超过1024个字节。"
+        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为空字符串\"\"。最大长度不能超过1024个字节。"
       },
       {
         "name": "NotificationTarget",
@@ -861,7 +861,7 @@ INFO = {
       },
       {
         "name": "NotificationMetadata",
-        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为''"
+        "desc": "弹性伸缩向通知目标发送的附加信息，默认值为空字符串\"\""
       },
       {
         "name": "NotificationTarget",

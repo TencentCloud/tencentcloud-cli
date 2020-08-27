@@ -4740,6 +4740,54 @@ def doCreateCustomerGateway(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCrossBorderCompliance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCrossBorderCompliance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceProvider": argv.get("--ServiceProvider"),
+        "ComplianceId": Utils.try_to_json(argv, "--ComplianceId"),
+        "Company": argv.get("--Company"),
+        "UniformSocialCreditCode": argv.get("--UniformSocialCreditCode"),
+        "LegalPerson": argv.get("--LegalPerson"),
+        "IssuingAuthority": argv.get("--IssuingAuthority"),
+        "BusinessAddress": argv.get("--BusinessAddress"),
+        "PostCode": Utils.try_to_json(argv, "--PostCode"),
+        "Manager": argv.get("--Manager"),
+        "ManagerId": argv.get("--ManagerId"),
+        "ManagerAddress": argv.get("--ManagerAddress"),
+        "ManagerTelephone": argv.get("--ManagerTelephone"),
+        "Email": argv.get("--Email"),
+        "ServiceStartDate": argv.get("--ServiceStartDate"),
+        "ServiceEndDate": argv.get("--ServiceEndDate"),
+        "State": argv.get("--State"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCrossBorderComplianceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCrossBorderCompliance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateAddressTemplateGroup(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -4835,6 +4883,41 @@ def doCreateSecurityGroup(argv, arglist):
     model = models.CreateSecurityGroupRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.CreateSecurityGroup(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAuditCrossBorderCompliance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AuditCrossBorderCompliance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ServiceProvider": argv.get("--ServiceProvider"),
+        "ComplianceId": Utils.try_to_json(argv, "--ComplianceId"),
+        "AuditBehavior": argv.get("--AuditBehavior"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AuditCrossBorderComplianceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AuditCrossBorderCompliance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -7662,9 +7745,11 @@ ACTION_MAP = {
     "InquiryPriceCreateVpnGateway": doInquiryPriceCreateVpnGateway,
     "ResetVpnConnection": doResetVpnConnection,
     "CreateCustomerGateway": doCreateCustomerGateway,
+    "DescribeCrossBorderCompliance": doDescribeCrossBorderCompliance,
     "CreateAddressTemplateGroup": doCreateAddressTemplateGroup,
     "CreateAddressTemplate": doCreateAddressTemplate,
     "CreateSecurityGroup": doCreateSecurityGroup,
+    "AuditCrossBorderCompliance": doAuditCrossBorderCompliance,
     "AssociateNetworkAclSubnets": doAssociateNetworkAclSubnets,
     "DescribeVpnGateways": doDescribeVpnGateways,
     "DownloadCustomerGatewayConfiguration": doDownloadCustomerGatewayConfiguration,

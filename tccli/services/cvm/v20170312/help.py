@@ -1182,5 +1182,9 @@ INFO = {
       }
     ],
     "desc": "本接口 (DescribeHosts) 用于获取一个或多个CDH实例的详细信息。"
+  },
+  "DescribeSpotTypeConfig": {
+    "params": [],
+    "desc": "查询用户可购买的竞价机型信息列表"
   }
 }

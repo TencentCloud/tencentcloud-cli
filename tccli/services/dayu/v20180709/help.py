@@ -2381,6 +2381,10 @@ INFO = {
       {
         "name": "Id",
         "desc": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）"
+      },
+      {
+        "name": "Domain",
+        "desc": "域名，可选"
       }
     ],
     "desc": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)"

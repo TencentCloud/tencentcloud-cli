@@ -604,11 +604,11 @@ INFO = {
       },
       {
         "name": "PublicIpAddresses",
-        "desc": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。。"
+        "desc": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。"
       },
       {
         "name": "Zone",
-        "desc": "弹性IP可以区，自动分配弹性IP时传递。"
+        "desc": "弹性IP可用区，自动分配弹性IP时传递。"
       }
     ],
     "desc": "本接口(AssociateNatGatewayAddress)用于NAT网关绑定弹性IP（EIP）。"
@@ -1411,7 +1411,7 @@ INFO = {
       },
       {
         "name": "PublicIpAddresses",
-        "desc": "绑定NAT网关的弹性IP数组。"
+        "desc": "待解绑NAT网关的弹性IP数组。"
       }
     ],
     "desc": "本接口（DisassociateNatGatewayAddress）用于NAT网关解绑弹性IP。"
@@ -2269,6 +2269,75 @@ INFO = {
     ],
     "desc": "本接口（CreateCustomerGateway）用于创建对端网关。"
   },
+  "DescribeCrossBorderCompliance": {
+    "params": [
+      {
+        "name": "ServiceProvider",
+        "desc": "（精确匹配）服务商，可选值：`UNICOM`。"
+      },
+      {
+        "name": "ComplianceId",
+        "desc": "（精确匹配）合规化审批单`ID`。"
+      },
+      {
+        "name": "Company",
+        "desc": "（模糊查询）公司名称。"
+      },
+      {
+        "name": "UniformSocialCreditCode",
+        "desc": "（精确匹配）统一社会信用代码。"
+      },
+      {
+        "name": "LegalPerson",
+        "desc": "（模糊查询）法人。"
+      },
+      {
+        "name": "IssuingAuthority",
+        "desc": "（模糊查询）发证机关。"
+      },
+      {
+        "name": "BusinessAddress",
+        "desc": "（模糊查询）营业执照住所。"
+      },
+      {
+        "name": "PostCode",
+        "desc": "（精确匹配）邮编。"
+      },
+      {
+        "name": "Manager",
+        "desc": "（模糊查询）经办人。"
+      },
+      {
+        "name": "ManagerId",
+        "desc": "（精确查询）经办人身份证号。"
+      },
+      {
+        "name": "ManagerAddress",
+        "desc": "（模糊查询）经办人身份证地址。"
+      },
+      {
+        "name": "ManagerTelephone",
+        "desc": "（精确匹配）经办人联系电话。"
+      },
+      {
+        "name": "Email",
+        "desc": "（精确匹配）电子邮箱。"
+      },
+      {
+        "name": "ServiceStartDate",
+        "desc": "（精确匹配）服务开始时间。"
+      },
+      {
+        "name": "ServiceEndDate",
+        "desc": "（精确匹配）服务开始时间。"
+      },
+      {
+        "name": "State",
+        "desc": "（精确匹配）状态。待审批：`PENDING`，通过：`APPROVED `，拒绝：`DENY`。"
+      }
+    ],
+    "desc": "本接口用于查询用户创建跨境专线合规化资质审批单。\n服务商可以查询服务名下的任意 `APPID` 创建的审批单；非服务商，只能查询自己审批单。"
+  },
   "ModifyDirectConnectGatewayAttribute": {
     "params": [
       {
@@ -2306,6 +2375,23 @@ INFO = {
       }
     ],
     "desc": "本接口（CreateSecurityGroup）用于创建新的安全组（SecurityGroup）。\n* 每个账户下每个地域的每个项目的<a href=\"https://cloud.tencent.com/document/product/213/12453\">安全组数量限制</a>。\n* 新建的安全组的入站和出站规则默认都是全部拒绝，在创建后通常您需要再调用CreateSecurityGroupPolicies将安全组的规则设置为需要的规则。\n* 创建安全组同时可以绑定标签, 应答里的标签列表代表添加成功的标签。"
+  },
+  "AuditCrossBorderCompliance": {
+    "params": [
+      {
+        "name": "ServiceProvider",
+        "desc": "服务商, 可选值：`UNICOM`。"
+      },
+      {
+        "name": "ComplianceId",
+        "desc": "表单唯一`ID`。"
+      },
+      {
+        "name": "AuditBehavior",
+        "desc": "通过：`APPROVED `，拒绝：`DENY`。"
+      }
+    ],
+    "desc": "本接口用于服务商操作跨境专线合规化资质审批。\n* 服务商只能操作提交到本服务商的审批单，后台会校验身份。即只授权给服务商的`APPID` 调用本接口。\n* 只有当审批单为 `PENDING` 状态时，才能审批操作。\n* `APPROVED` 状态的审批单，可以再次操作为 `DENY`；`DENY` 状态的审批单，也可以再次操作为 `APPROVED`。"
   },
   "ModifyNetworkInterfaceAttribute": {
     "params": [

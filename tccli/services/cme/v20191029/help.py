@@ -179,7 +179,7 @@ INFO = {
       },
       {
         "name": "Category",
-        "desc": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>"
+        "desc": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>"
       },
       {
         "name": "Name",
@@ -192,9 +192,17 @@ INFO = {
       {
         "name": "Owner",
         "desc": "归属者。"
+      },
+      {
+        "name": "Description",
+        "desc": "项目描述信息。"
+      },
+      {
+        "name": "SwitcherProjectInput",
+        "desc": "导播台信息，仅当项目类型为 SWITCHER 时有效。"
       }
     ],
-    "desc": "创建云剪的编辑项目，支持创建视频剪辑及直播剪辑两大类项目。\n"
+    "desc": "创建云剪的编辑项目，支持创建视频剪辑、直播剪辑及导播台项目。\n"
   },
   "DescribeJoinTeams": {
     "params": [

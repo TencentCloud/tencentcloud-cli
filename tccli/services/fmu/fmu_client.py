@@ -52,15 +52,17 @@ def doCreateModel(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetModelList(argv, arglist):
+def doTryLipstickPic(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetModelList", g_param[OptionsDefine.Version])
+        show_help("TryLipstickPic", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "LipColorInfos": Utils.try_to_json(argv, "--LipColorInfos"),
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "RspImgType": argv.get("--RspImgType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -74,9 +76,75 @@ def doGetModelList(argv, arglist):
     client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetModelListRequest()
+    model = models.TryLipstickPicRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetModelList(model)
+    rsp = client.TryLipstickPic(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCancelBeautifyVideoJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CancelBeautifyVideoJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelBeautifyVideoJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CancelBeautifyVideoJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQueryBeautifyVideoJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryBeautifyVideoJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryBeautifyVideoJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryBeautifyVideoJob(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -110,42 +178,6 @@ def doDeleteModel(argv, arglist):
     model = models.DeleteModelRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DeleteModel(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTryLipstickPic(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TryLipstickPic", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "LipColorInfos": Utils.try_to_json(argv, "--LipColorInfos"),
-        "Image": argv.get("--Image"),
-        "Url": argv.get("--Url"),
-        "RspImgType": argv.get("--RspImgType"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TryLipstickPicRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TryLipstickPic(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -194,6 +226,75 @@ def doBeautifyPic(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetModelList(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("GetModelList", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetModelListRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.GetModelList(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doBeautifyVideo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("BeautifyVideo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Url": argv.get("--Url"),
+        "BeautyParam": Utils.try_to_json(argv, "--BeautyParam"),
+        "OutputVideoType": argv.get("--OutputVideoType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BeautifyVideoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.BeautifyVideo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20191213": fmu_client_v20191213,
 
@@ -206,10 +307,13 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateModel": doCreateModel,
-    "GetModelList": doGetModelList,
-    "DeleteModel": doDeleteModel,
     "TryLipstickPic": doTryLipstickPic,
+    "CancelBeautifyVideoJob": doCancelBeautifyVideoJob,
+    "QueryBeautifyVideoJob": doQueryBeautifyVideoJob,
+    "DeleteModel": doDeleteModel,
     "BeautifyPic": doBeautifyPic,
+    "GetModelList": doGetModelList,
+    "BeautifyVideo": doBeautifyVideo,
 
 }
 

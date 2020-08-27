@@ -173,6 +173,10 @@ INFO = {
       {
         "name": "InstanceImportMode",
         "desc": "云主机导入方式，虚拟机集群必填，容器集群不填写此字段，R：重装TSF系统镜像，M：手动安装agent"
+      },
+      {
+        "name": "OsCustomizeType",
+        "desc": "镜像定制类型"
       }
     ],
     "desc": "添加云主机节点至TSF集群"

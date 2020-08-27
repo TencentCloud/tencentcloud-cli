@@ -9,7 +9,7 @@ INFO = {
       },
       {
         "name": "Type",
-        "desc": "异步检测结果回调通知接收URL。支持HTTP和HTTPS"
+        "desc": "审核类型，这里可选：AUDIO (点播音频)和 LIVE_AUDIO（直播音频）"
       },
       {
         "name": "Seed",

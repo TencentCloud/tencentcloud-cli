@@ -121,14 +121,18 @@ def doGetLiveCode(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doMobileNetworkTimeVerification(argv, arglist):
+def doLivenessCompare(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("MobileNetworkTimeVerification", g_param[OptionsDefine.Version])
+        show_help("LivenessCompare", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Mobile": argv.get("--Mobile"),
+        "ImageBase64": argv.get("--ImageBase64"),
+        "VideoBase64": argv.get("--VideoBase64"),
+        "LivenessType": argv.get("--LivenessType"),
+        "ValidateData": argv.get("--ValidateData"),
+        "Optional": argv.get("--Optional"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -142,9 +146,9 @@ def doMobileNetworkTimeVerification(argv, arglist):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MobileNetworkTimeVerificationRequest()
+    model = models.LivenessCompareRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.MobileNetworkTimeVerification(model)
+    rsp = client.LivenessCompare(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -154,14 +158,15 @@ def doMobileNetworkTimeVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetActionSequence(argv, arglist):
+def doBankCard2EVerification(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetActionSequence", g_param[OptionsDefine.Version])
+        show_help("BankCard2EVerification", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ActionType": argv.get("--ActionType"),
+        "Name": argv.get("--Name"),
+        "BankCard": argv.get("--BankCard"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -175,9 +180,9 @@ def doGetActionSequence(argv, arglist):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetActionSequenceRequest()
+    model = models.BankCard2EVerificationRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetActionSequence(model)
+    rsp = client.BankCard2EVerification(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -294,6 +299,39 @@ def doLiveness(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doMobileNetworkTimeVerification(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("MobileNetworkTimeVerification", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Mobile": argv.get("--Mobile"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.MobileNetworkTimeVerificationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.MobileNetworkTimeVerification(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doLivenessRecognition(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -332,15 +370,14 @@ def doLivenessRecognition(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBankCard2EVerification(argv, arglist):
+def doMobileStatus(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("BankCard2EVerification", g_param[OptionsDefine.Version])
+        show_help("MobileStatus", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Name": argv.get("--Name"),
-        "BankCard": argv.get("--BankCard"),
+        "Mobile": argv.get("--Mobile"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -354,9 +391,9 @@ def doBankCard2EVerification(argv, arglist):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BankCard2EVerificationRequest()
+    model = models.MobileStatusRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.BankCard2EVerification(model)
+    rsp = client.MobileStatus(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -548,19 +585,14 @@ def doDetectAuth(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetDetectInfoEnhanced(argv, arglist):
+def doGetActionSequence(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("GetDetectInfoEnhanced", g_param[OptionsDefine.Version])
+        show_help("GetActionSequence", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "BizToken": argv.get("--BizToken"),
-        "RuleId": argv.get("--RuleId"),
-        "InfoType": argv.get("--InfoType"),
-        "BestFramesCount": Utils.try_to_json(argv, "--BestFramesCount"),
-        "IsCutIdCardImage": Utils.try_to_json(argv, "--IsCutIdCardImage"),
-        "IsNeedIdCardAvatar": Utils.try_to_json(argv, "--IsNeedIdCardAvatar"),
+        "ActionType": argv.get("--ActionType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -574,42 +606,9 @@ def doGetDetectInfoEnhanced(argv, arglist):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetDetectInfoEnhancedRequest()
+    model = models.GetActionSequenceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.GetDetectInfoEnhanced(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doMobileStatus(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("MobileStatus", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Mobile": argv.get("--Mobile"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.MobileStatusRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.MobileStatus(model)
+    rsp = client.GetActionSequence(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -656,18 +655,19 @@ def doPhoneVerification(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLivenessCompare(argv, arglist):
+def doGetDetectInfoEnhanced(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("LivenessCompare", g_param[OptionsDefine.Version])
+        show_help("GetDetectInfoEnhanced", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "ImageBase64": argv.get("--ImageBase64"),
-        "VideoBase64": argv.get("--VideoBase64"),
-        "LivenessType": argv.get("--LivenessType"),
-        "ValidateData": argv.get("--ValidateData"),
-        "Optional": argv.get("--Optional"),
+        "BizToken": argv.get("--BizToken"),
+        "RuleId": argv.get("--RuleId"),
+        "InfoType": argv.get("--InfoType"),
+        "BestFramesCount": Utils.try_to_json(argv, "--BestFramesCount"),
+        "IsCutIdCardImage": Utils.try_to_json(argv, "--IsCutIdCardImage"),
+        "IsNeedIdCardAvatar": Utils.try_to_json(argv, "--IsNeedIdCardAvatar"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -681,9 +681,42 @@ def doLivenessCompare(argv, arglist):
     client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LivenessCompareRequest()
+    model = models.GetDetectInfoEnhancedRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.LivenessCompare(model)
+    rsp = client.GetDetectInfoEnhanced(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCheckBankCardInformation(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CheckBankCardInformation", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "BankCard": argv.get("--BankCard"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FaceidClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CheckBankCardInformationRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CheckBankCardInformation(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -707,22 +740,23 @@ ACTION_MAP = {
     "GetDetectInfo": doGetDetectInfo,
     "MinorsVerification": doMinorsVerification,
     "GetLiveCode": doGetLiveCode,
-    "MobileNetworkTimeVerification": doMobileNetworkTimeVerification,
-    "GetActionSequence": doGetActionSequence,
+    "LivenessCompare": doLivenessCompare,
+    "BankCard2EVerification": doBankCard2EVerification,
     "CheckIdCardInformation": doCheckIdCardInformation,
     "BankCardVerification": doBankCardVerification,
     "Liveness": doLiveness,
+    "MobileNetworkTimeVerification": doMobileNetworkTimeVerification,
     "LivenessRecognition": doLivenessRecognition,
-    "BankCard2EVerification": doBankCard2EVerification,
+    "MobileStatus": doMobileStatus,
     "IdCardVerification": doIdCardVerification,
     "IdCardOCRVerification": doIdCardOCRVerification,
     "BankCard4EVerification": doBankCard4EVerification,
     "ImageRecognition": doImageRecognition,
     "DetectAuth": doDetectAuth,
-    "GetDetectInfoEnhanced": doGetDetectInfoEnhanced,
-    "MobileStatus": doMobileStatus,
+    "GetActionSequence": doGetActionSequence,
     "PhoneVerification": doPhoneVerification,
-    "LivenessCompare": doLivenessCompare,
+    "GetDetectInfoEnhanced": doGetDetectInfoEnhanced,
+    "CheckBankCardInformation": doCheckBankCardInformation,
 
 }
 

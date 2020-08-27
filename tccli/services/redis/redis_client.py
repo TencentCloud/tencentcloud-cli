@@ -511,6 +511,7 @@ def doDescribeInstances(argv, arglist):
         "Type": Utils.try_to_json(argv, "--Type"),
         "SearchKeys": Utils.try_to_json(argv, "--SearchKeys"),
         "TypeList": Utils.try_to_json(argv, "--TypeList"),
+        "MonitorVersion": argv.get("--MonitorVersion"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

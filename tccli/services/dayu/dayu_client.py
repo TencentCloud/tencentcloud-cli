@@ -3634,6 +3634,7 @@ def doDescribeCCTrend(argv, arglist):
         "StartTime": argv.get("--StartTime"),
         "EndTime": argv.get("--EndTime"),
         "Id": argv.get("--Id"),
+        "Domain": argv.get("--Domain"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

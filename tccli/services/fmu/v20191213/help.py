@@ -14,28 +14,6 @@ INFO = {
     ],
     "desc": "在使用LUT素材的modelid实现试唇色前，您需要先上传 LUT 格式的cube文件注册唇色ID。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。\n\n注：您也可以直接使用 [试唇色接口](https://cloud.tencent.com/document/product/1172/40706)，通过输入RGBA模型数值的方式指定唇色，更简单易用。\n"
   },
-  "DeleteModel": {
-    "params": [
-      {
-        "name": "ModelId",
-        "desc": "素材ID。"
-      }
-    ],
-    "desc": "删除已注册的唇色素材。"
-  },
-  "GetModelList": {
-    "params": [
-      {
-        "name": "Offset",
-        "desc": "起始序号，默认值为0。"
-      },
-      {
-        "name": "Limit",
-        "desc": "返回数量，默认值为10，最大值为100。"
-      }
-    ],
-    "desc": "查询已注册的唇色素材。"
-  },
   "TryLipstickPic": {
     "params": [
       {
@@ -56,6 +34,41 @@ INFO = {
       }
     ],
     "desc": "对图片中的人脸嘴唇进行着色，最多支持同时对一张图中的3张人脸进行试唇色。\n\n您可以通过事先注册在腾讯云的唇色素材（LUT文件）改变图片中的人脸唇色，也可以输入RGBA模型数值。\n\n为了更好的效果，建议您使用事先注册在腾讯云的唇色素材（LUT文件）。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。"
+  },
+  "BeautifyVideo": {
+    "params": [
+      {
+        "name": "Url",
+        "desc": "视频url地址"
+      },
+      {
+        "name": "BeautyParam",
+        "desc": "美颜参数 - 美白、平滑、大眼和瘦脸。参数值范围[0, 100]。参数值为0，则不做美颜。参数默认值为0。目前默认取数组第一个元素是对所有人脸美颜。"
+      },
+      {
+        "name": "OutputVideoType",
+        "desc": "目前只支持mp4"
+      }
+    ],
+    "desc": "视频美颜"
+  },
+  "QueryBeautifyVideoJob": {
+    "params": [
+      {
+        "name": "JobId",
+        "desc": "视频美颜Job id"
+      }
+    ],
+    "desc": "查询视频美颜处理进度"
+  },
+  "DeleteModel": {
+    "params": [
+      {
+        "name": "ModelId",
+        "desc": "素材ID。"
+      }
+    ],
+    "desc": "删除已注册的唇色素材。"
   },
   "BeautifyPic": {
     "params": [
@@ -89,5 +102,27 @@ INFO = {
       }
     ],
     "desc": "用户上传一张人脸图片，精准定位五官，实现美肤、亮肤、祛痘等美颜功能。"
+  },
+  "GetModelList": {
+    "params": [
+      {
+        "name": "Offset",
+        "desc": "起始序号，默认值为0。"
+      },
+      {
+        "name": "Limit",
+        "desc": "返回数量，默认值为10，最大值为100。"
+      }
+    ],
+    "desc": "查询已注册的唇色素材。"
+  },
+  "CancelBeautifyVideoJob": {
+    "params": [
+      {
+        "name": "JobId",
+        "desc": "美颜视频的Job id"
+      }
+    ],
+    "desc": "撤销视频美颜任务请求"
   }
 }

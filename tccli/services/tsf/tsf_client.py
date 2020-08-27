@@ -248,6 +248,7 @@ def doAddClusterInstances(argv, arglist):
         "KeyId": argv.get("--KeyId"),
         "SgId": argv.get("--SgId"),
         "InstanceImportMode": argv.get("--InstanceImportMode"),
+        "OsCustomizeType": argv.get("--OsCustomizeType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -105,7 +105,7 @@ INFO = {
       },
       {
         "name": "Type",
-        "desc": "触发器类型，目前支持 cos 、cmq、 timer、 ckafka类型"
+        "desc": "触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型"
       },
       {
         "name": "TriggerDesc",
