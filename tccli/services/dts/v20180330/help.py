@@ -187,6 +187,19 @@ INFO = {
     ],
     "desc": "将灾备升级为主实例，停止从原来所属主实例的同步，断开主备关系。"
   },
+  "ModifySubscribeAutoRenewFlag": {
+    "params": [
+      {
+        "name": "SubscribeId",
+        "desc": "订阅实例ID，例如：subs-8uey736k"
+      },
+      {
+        "name": "AutoRenewFlag",
+        "desc": "自动续费标识。1-自动续费，0-不自动续费"
+      }
+    ],
+    "desc": "修改订阅实例自动续费标识"
+  },
   "StopMigrateJob": {
     "params": [
       {
@@ -274,6 +287,10 @@ INFO = {
       {
         "name": "OrderDirection",
         "desc": "排序方向，可选的值为\"DESC\"和\"ASC\"，默认为\"DESC\"，按创建时间逆序排序"
+      },
+      {
+        "name": "TagFilters",
+        "desc": "标签过滤条件"
       }
     ],
     "desc": "本接口(DescribeSubscribes)获取数据订阅实例信息列表，默认分页，每次返回20条"
@@ -414,6 +431,10 @@ INFO = {
       {
         "name": "AutoRenew",
         "desc": "是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。"
+      },
+      {
+        "name": "Tags",
+        "desc": "实例资源标签"
       }
     ],
     "desc": "本接口(CreateSubscribe)用于创建一个数据订阅实例。"

@@ -243,6 +243,31 @@ INFO = {
     ],
     "desc": "查询用户信息"
   },
+  "FetchMessageListByOffset": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Topic",
+        "desc": "主题名"
+      },
+      {
+        "name": "Partition",
+        "desc": "分区id"
+      },
+      {
+        "name": "Offset",
+        "desc": "位点信息"
+      },
+      {
+        "name": "SinglePartitionRecordNumber",
+        "desc": "最大查询条数，默认20"
+      }
+    ],
+    "desc": "根据位点查询消息列表"
+  },
   "DescribeACL": {
     "params": [
       {
@@ -333,6 +358,27 @@ INFO = {
       }
     ],
     "desc": "创建实例(预付费包年包月)"
+  },
+  "FetchMessageByOffset": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Topic",
+        "desc": "主题名"
+      },
+      {
+        "name": "Partition",
+        "desc": "分区id"
+      },
+      {
+        "name": "Offset",
+        "desc": "位点信息"
+      }
+    ],
+    "desc": "根据指定offset位置的消息"
   },
   "DeleteTopicIpWhiteList": {
     "params": [
@@ -609,6 +655,31 @@ INFO = {
       }
     ],
     "desc": "获取主题属性\n"
+  },
+  "FetchMessageListByTimestamp": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "Topic",
+        "desc": "主题名"
+      },
+      {
+        "name": "Partition",
+        "desc": "分区id"
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询开始时间，13位时间戳"
+      },
+      {
+        "name": "SinglePartitionRecordNumber",
+        "desc": "最大查询条数，默认20"
+      }
+    ],
+    "desc": "根据时间戳查询消息列表"
   },
   "DescribeTopic": {
     "params": [

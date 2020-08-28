@@ -53,7 +53,7 @@ INFO = {
         "desc": "查询结束时间，本地unix时间戳（1588031999s）"
       }
     ],
-    "desc": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近5天的数据。当天未结束，无法查到当天的房间数与用户数。"
+    "desc": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近14天的数据。当天未结束，无法查到当天的房间数与用户数。"
   },
   "DescribeRealtimeQuality": {
     "params": [
@@ -170,7 +170,7 @@ INFO = {
         "desc": "分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）"
       }
     ],
-    "desc": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询5天内的数据。"
+    "desc": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。"
   },
   "RemoveUser": {
     "params": [
@@ -216,7 +216,7 @@ INFO = {
         "desc": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；\naBlock：音频卡顿时长；\nbigvBit：上/下行视频码率；\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；\naLoss：上/下行音频丢包；\nbigvLoss：上/下行视频丢包；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高"
       }
     ],
-    "desc": "查询指定时间内的用户列表及用户通话质量数据。可查询5天内数据，查询起止时间不超过1个小时，查询用户不超过6个，不支持跨天查询。"
+    "desc": "查询指定时间内的用户列表及用户通话质量数据。可查询14天内数据，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。"
   },
   "DescribeDetailEvent": {
     "params": [
@@ -241,7 +241,7 @@ INFO = {
         "desc": "房间号"
       }
     ],
-    "desc": "查询用户某次通话内的进退房，视频开关等详细事件。可查询5天内数据。"
+    "desc": "查询用户某次通话内的进退房，视频开关等详细事件。可查询14天内数据。"
   },
   "DescribeAbnormalEvent": {
     "params": [
@@ -262,7 +262,7 @@ INFO = {
         "desc": "房间号，查询房间内任意20条以内异常体验事件"
       }
     ],
-    "desc": "查询SDKAppID下用户的异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询24小时内数据，查询起止时间不超过1个小时。支持跨天查询。异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916"
+    "desc": "查询SDKAppID下用户的异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询5天内数据，查询起止时间不超过1个小时。支持跨天查询。异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916"
   },
   "StopMCUMixTranscode": {
     "params": [
