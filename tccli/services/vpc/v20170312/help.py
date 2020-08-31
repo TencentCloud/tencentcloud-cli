@@ -2289,7 +2289,7 @@ INFO = {
       },
       {
         "name": "LegalPerson",
-        "desc": "（模糊查询）法人。"
+        "desc": "（模糊查询）法定代表人。"
       },
       {
         "name": "IssuingAuthority",
@@ -2325,18 +2325,18 @@ INFO = {
       },
       {
         "name": "ServiceStartDate",
-        "desc": "（精确匹配）服务开始时间。"
+        "desc": "（精确匹配）服务开始日期，如：`2020-07-28`。"
       },
       {
         "name": "ServiceEndDate",
-        "desc": "（精确匹配）服务开始时间。"
+        "desc": "（精确匹配）服务结束日期，如：`2021-07-28`。"
       },
       {
         "name": "State",
         "desc": "（精确匹配）状态。待审批：`PENDING`，通过：`APPROVED `，拒绝：`DENY`。"
       }
     ],
-    "desc": "本接口用于查询用户创建跨境专线合规化资质审批单。\n服务商可以查询服务名下的任意 `APPID` 创建的审批单；非服务商，只能查询自己审批单。"
+    "desc": "本接口（DescribeCrossBorderCompliance）用于查询用户创建的合规化资质审批单。\n服务商可以查询服务名下的任意 `APPID` 创建的审批单；非服务商，只能查询自己审批单。"
   },
   "ModifyDirectConnectGatewayAttribute": {
     "params": [
@@ -2391,7 +2391,7 @@ INFO = {
         "desc": "通过：`APPROVED `，拒绝：`DENY`。"
       }
     ],
-    "desc": "本接口用于服务商操作跨境专线合规化资质审批。\n* 服务商只能操作提交到本服务商的审批单，后台会校验身份。即只授权给服务商的`APPID` 调用本接口。\n* 只有当审批单为 `PENDING` 状态时，才能审批操作。\n* `APPROVED` 状态的审批单，可以再次操作为 `DENY`；`DENY` 状态的审批单，也可以再次操作为 `APPROVED`。"
+    "desc": "本接口（AuditCrossBorderCompliance）用于服务商操作合规化资质审批。\n* 服务商只能操作提交到本服务商的审批单，后台会校验身份。即只授权给服务商的`APPID` 调用本接口。\n* `APPROVED` 状态的审批单，可以再次操作为 `DENY`；`DENY` 状态的审批单，也可以再次操作为 `APPROVED`。"
   },
   "ModifyNetworkInterfaceAttribute": {
     "params": [

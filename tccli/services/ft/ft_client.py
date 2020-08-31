@@ -18,6 +18,39 @@ from tccli.services.ft import v20200304
 from tccli.services.ft.v20200304 import help as v20200304_help
 
 
+def doCancelFaceMorphJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CancelFaceMorphJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FtClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelFaceMorphJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CancelFaceMorphJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSwapGenderPic(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -54,16 +87,20 @@ def doSwapGenderPic(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doFaceCartoonPic(argv, arglist):
+def doMorphFace(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("FaceCartoonPic", g_param[OptionsDefine.Version])
+        show_help("MorphFace", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "Image": argv.get("--Image"),
-        "Url": argv.get("--Url"),
-        "RspImgType": argv.get("--RspImgType"),
+        "Images": Utils.try_to_json(argv, "--Images"),
+        "Urls": Utils.try_to_json(argv, "--Urls"),
+        "GradientInfos": Utils.try_to_json(argv, "--GradientInfos"),
+        "Fps": Utils.try_to_json(argv, "--Fps"),
+        "OutputType": Utils.try_to_json(argv, "--OutputType"),
+        "OutputWidth": Utils.try_to_json(argv, "--OutputWidth"),
+        "OutputHeight": Utils.try_to_json(argv, "--OutputHeight"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,9 +114,9 @@ def doFaceCartoonPic(argv, arglist):
     client = mod.FtClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.FaceCartoonPicRequest()
+    model = models.MorphFaceRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.FaceCartoonPic(model)
+    rsp = client.MorphFace(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -125,6 +162,74 @@ def doChangeAgePic(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doQueryFaceMorphJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("QueryFaceMorphJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FtClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryFaceMorphJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.QueryFaceMorphJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doFaceCartoonPic(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("FaceCartoonPic", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Image": argv.get("--Image"),
+        "Url": argv.get("--Url"),
+        "RspImgType": argv.get("--RspImgType"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FtClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.FaceCartoonPicRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.FaceCartoonPic(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20200304": ft_client_v20200304,
 
@@ -136,9 +241,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "CancelFaceMorphJob": doCancelFaceMorphJob,
     "SwapGenderPic": doSwapGenderPic,
-    "FaceCartoonPic": doFaceCartoonPic,
+    "MorphFace": doMorphFace,
     "ChangeAgePic": doChangeAgePic,
+    "QueryFaceMorphJob": doQueryFaceMorphJob,
+    "FaceCartoonPic": doFaceCartoonPic,
 
 }
 

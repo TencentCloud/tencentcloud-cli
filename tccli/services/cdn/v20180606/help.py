@@ -403,6 +403,43 @@ INFO = {
     "params": [],
     "desc": "DescribePurgeQuota 用于查询账户刷新配额和每日可用量。"
   },
+  "CreateScdnLogTask": {
+    "params": [
+      {
+        "name": "Mode",
+        "desc": "防护类型\nMode 映射如下：\n  waf = \"Web攻击\"\n  cc = \"CC攻击\""
+      },
+      {
+        "name": "StartTime",
+        "desc": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间"
+      },
+      {
+        "name": "Domain",
+        "desc": "指定域名查询, 不填默认查询全部域名"
+      },
+      {
+        "name": "AttackType",
+        "desc": "指定攻击类型, 不填默认查询全部攻击类型\nAttackType 映射如下:\n  other = '未知类型'\n  malicious_scan = \"恶意扫描\"\n  sql_inject = \"SQL注入攻击\"\n  xss = \"XSS攻击\"\n  cmd_inject = \"命令注入攻击\"\n  ldap_inject = \"LDAP注入攻击\"\n  ssi_inject = \"SSI注入攻击\"\n  xml_inject = \"XML注入攻击\"\n  web_service = \"WEB服务漏洞攻击\"\n  web_app = \"WEB应用漏洞攻击\"\n  path_traversal = \"路径跨越攻击\"\n  illegal_access_core_file = \"核心文件非法访问\"\n  trojan_horse = \"木马后门攻击\"\n  csrf = \"CSRF攻击\"\n  malicious_file_upload= '恶意文件上传'"
+      },
+      {
+        "name": "DefenceMode",
+        "desc": "指定执行动作, 不填默认查询全部执行动作\nDefenceMode 映射如下：\n  observe = '观察模式'\n  intercept = '拦截模式'"
+      },
+      {
+        "name": "Ip",
+        "desc": "不填为全部ip"
+      },
+      {
+        "name": "Domains",
+        "desc": "指定域名查询, 与 Domain 参数同时有值时使用 Domains 参数，不填默认查询全部域名，指定域名查询时最多支持同时选择 5 个域名查询"
+      }
+    ],
+    "desc": "CreateScdnLogTask 用于创建事件日志任务"
+  },
   "DescribePushQuota": {
     "params": [],
     "desc": "DescribePushQuota  用于查询预热配额和每日可用量。"
@@ -415,6 +452,43 @@ INFO = {
       }
     ],
     "desc": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG 和 Guetzli。 "
+  },
+  "DescribeScdnTopData": {
+    "params": [
+      {
+        "name": "StartTime",
+        "desc": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间"
+      },
+      {
+        "name": "Mode",
+        "desc": "查询的SCDN TOP攻击数据类型：\nwaf：Web 攻击防护TOP数据"
+      },
+      {
+        "name": "Metric",
+        "desc": "排序对象，支持以下几种形式：\nurl：攻击目标 url 排序\nip：攻击源 IP 排序\nattackType：攻击类型排序"
+      },
+      {
+        "name": "Filter",
+        "desc": "排序使用的指标名称：\nrequest：请求次数"
+      },
+      {
+        "name": "Domain",
+        "desc": "指定域名查询"
+      },
+      {
+        "name": "AttackType",
+        "desc": "指定攻击类型, 仅 Mode=waf 时有效\n不填则查询所有攻击类型的数据总和\nAttackType 映射如下:\n  other = '未知类型'\n  malicious_scan = \"恶意扫描\"\n  sql_inject = \"SQL注入攻击\"\n  xss = \"XSS攻击\"\n  cmd_inject = \"命令注入攻击\"\n  ldap_inject = \"LDAP注入攻击\"\n  ssi_inject = \"SSI注入攻击\"\n  xml_inject = \"XML注入攻击\"\n  web_service = \"WEB服务漏洞攻击\"\n  web_app = \"WEB应用漏洞攻击\"\n  path_traversal = \"路径跨越攻击\"\n  illegal_access_core_file = \"核心文件非法访问\"\n  trojan_horse = \"木马后门攻击\"\n  csrf = \"CSRF攻击\"\n  malicious_file_upload= '恶意文件上传'"
+      },
+      {
+        "name": "DefenceMode",
+        "desc": "指定防御模式,仅 Mode=waf 时有效\n不填则查询所有防御模式的数据总和\nDefenceMode 映射如下：\n  observe = '观察模式'\n  intercept = '拦截模式'"
+      }
+    ],
+    "desc": "获取SCDN的Top数据"
   },
   "ListTopData": {
     "params": [

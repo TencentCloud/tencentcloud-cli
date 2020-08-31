@@ -13,11 +13,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量，默认为 0。"
+        "desc": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。"
       },
       {
         "name": "Limit",
-        "desc": "返回数量，默认为 20，最大值为 100。"
+        "desc": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。"
       }
     ],
     "desc": "本接口（DescribeInstances）用于查询一个或多个实例的详细信息。\n\n* 可以根据实例 ID、实例名称或者实例的内网 IP 查询实例的详细信息。\n* 过滤信息详细请见过滤器 [Filters](https://cloud.tencent.com/document/product/1207/47576#Filter) 。\n* 如果参数为空，返回当前用户一定数量（Limit 所指定的数量，默认为 20）的实例。\n* 支持查询实例的最新操作（LatestOperation）以及最新操作状态（LatestOperationState）。"
@@ -57,11 +57,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量，默认为 0。"
+        "desc": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。"
       },
       {
         "name": "Limit",
-        "desc": "返回数量，默认为 20，最大值为 100。"
+        "desc": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。"
       },
       {
         "name": "Filters",
@@ -91,11 +91,11 @@ INFO = {
       },
       {
         "name": "Offset",
-        "desc": "偏移量，默认为 0。"
+        "desc": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。"
       },
       {
         "name": "Limit",
-        "desc": "返回数量，默认为 20，最大值为 100。"
+        "desc": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。"
       },
       {
         "name": "Filters",

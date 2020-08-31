@@ -361,7 +361,7 @@ INFO = {
     "params": [
       {
         "name": "SecurityGroupIds",
-        "desc": "安全组实例ID，例如：esg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。"
+        "desc": "安全组实例ID，例如：esg-33ocnj9n，可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/1108/47697)获取。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。"
       },
       {
         "name": "Filters",
@@ -473,7 +473,7 @@ INFO = {
     "params": [
       {
         "name": "SecurityGroupId",
-        "desc": "安全组实例ID，例如：esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "desc": "安全组实例ID，例如：esg-33ocnj9n，可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/1108/47697)获取。"
       }
     ],
     "desc": "查询安全组规则"
@@ -1068,7 +1068,7 @@ INFO = {
     "params": [
       {
         "name": "SecurityGroupIds",
-        "desc": "安全实例ID，例如esg-33ocnj9n，可通过DescribeSecurityGroups获取。"
+        "desc": "安全实例ID，例如esg-33ocnj9n，可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/1108/47697)获取。"
       }
     ],
     "desc": "查询安全组关联实例统计"
@@ -1281,7 +1281,7 @@ INFO = {
       },
       {
         "name": "CloseIpDirect",
-        "desc": "是否关闭IP直通。取值范围：\n1：表示关闭IP直通\n0：表示开通IP直通"
+        "desc": "是否关闭IP直通。取值范围：\ntrue：表示关闭IP直通\nfalse：表示开通IP直通"
       }
     ],
     "desc": "修改模块IP直通。"
