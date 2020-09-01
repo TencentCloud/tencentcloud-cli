@@ -21,7 +21,7 @@ INFO = {
       },
       {
         "name": "VpcId",
-        "desc": "VpcId"
+        "desc": "虚拟专网Id"
       },
       {
         "name": "SubnetId",

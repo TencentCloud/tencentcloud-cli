@@ -33,6 +33,7 @@ def doCreateCluster(argv, arglist):
         "InstanceAdvancedSettings": Utils.try_to_json(argv, "--InstanceAdvancedSettings"),
         "ExistedInstancesForNode": Utils.try_to_json(argv, "--ExistedInstancesForNode"),
         "InstanceDataDiskMountSettings": Utils.try_to_json(argv, "--InstanceDataDiskMountSettings"),
+        "ExtensionAddons": Utils.try_to_json(argv, "--ExtensionAddons"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -22,6 +22,19 @@ INFO = {
     ],
     "desc": "安全验证码分类查询数据接口，请求量type=0、验证量type=1、通过量type=2、拦截量type=3  分钟级查询"
   },
+  "DescribeCaptchaTicketData": {
+    "params": [
+      {
+        "name": "CaptchaAppId",
+        "desc": "验证码应用ID"
+      },
+      {
+        "name": "Start",
+        "desc": "查询开始时间"
+      }
+    ],
+    "desc": "验证码控制台票据验证信息"
+  },
   "DescribeCaptchaDataSum": {
     "params": [
       {

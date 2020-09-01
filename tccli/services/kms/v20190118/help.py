@@ -196,6 +196,19 @@ INFO = {
     ],
     "desc": "该接口用于批量禁止CMK的使用。"
   },
+  "ArchiveKey": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "CMK唯一标识符"
+      }
+    ],
+    "desc": "对密钥进行归档，被归档的密钥只能用于解密，不能加密"
+  },
+  "GetServiceStatus": {
+    "params": [],
+    "desc": "用于查询该用户是否已开通KMS服务"
+  },
   "EncryptByWhiteBox": {
     "params": [
       {
@@ -357,7 +370,7 @@ INFO = {
       },
       {
         "name": "KeyState",
-        "desc": "根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK"
+        "desc": "根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK，5 表示查询 Archived 状态的 CMK"
       },
       {
         "name": "SearchKeyAlias",
@@ -557,9 +570,14 @@ INFO = {
     ],
     "desc": "该接口用于对指定的cmk修改描述信息。对于处于PendingDelete状态的CMK禁止修改。"
   },
-  "GetServiceStatus": {
-    "params": [],
-    "desc": "用于查询该用户是否已开通KMS服务"
+  "CancelKeyArchive": {
+    "params": [
+      {
+        "name": "KeyId",
+        "desc": "CMK唯一标识符"
+      }
+    ],
+    "desc": "取消密钥归档，取消后密钥的状态变为Enabled。"
   },
   "DescribeWhiteBoxDecryptKey": {
     "params": [

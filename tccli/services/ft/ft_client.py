@@ -205,6 +205,7 @@ def doFaceCartoonPic(argv, arglist):
         "Image": argv.get("--Image"),
         "Url": argv.get("--Url"),
         "RspImgType": argv.get("--RspImgType"),
+        "DisableGlobalEffect": argv.get("--DisableGlobalEffect"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

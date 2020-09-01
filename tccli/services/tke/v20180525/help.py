@@ -34,6 +34,10 @@ INFO = {
       {
         "name": "InstanceDataDiskMountSettings",
         "desc": "CVM类型和其对应的数据盘挂载配置信息"
+      },
+      {
+        "name": "ExtensionAddons",
+        "desc": "需要安装的扩展组件信息"
       }
     ],
     "desc": "创建集群"
