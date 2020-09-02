@@ -42,7 +42,7 @@ def doModifySmsSign(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -82,7 +82,7 @@ def doAddSmsSign(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -116,7 +116,7 @@ def doPullSmsSendStatus(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -156,7 +156,7 @@ def doSendSms(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -189,7 +189,7 @@ def doDeleteSmsTemplate(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -224,7 +224,7 @@ def doSmsPackagesStatistics(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -261,7 +261,7 @@ def doSendStatusStatistics(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -298,7 +298,7 @@ def doCallbackStatusStatistics(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -332,7 +332,7 @@ def doDescribeSmsTemplateList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -366,7 +366,7 @@ def doPullSmsReplyStatus(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -400,7 +400,7 @@ def doDescribeSmsSignList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -438,7 +438,7 @@ def doPullSmsSendStatusByPhoneNumber(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -476,7 +476,7 @@ def doModifySmsTemplate(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -514,7 +514,7 @@ def doPullSmsReplyStatusByPhoneNumber(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -547,7 +547,7 @@ def doDeleteSmsSign(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -584,7 +584,7 @@ def doAddSmsTemplate(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.SmsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)

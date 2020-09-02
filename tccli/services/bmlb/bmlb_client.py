@@ -35,7 +35,7 @@ def doDescribeL7Listeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -69,7 +69,7 @@ def doUnbindTrafficMirrorReceivers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -109,7 +109,7 @@ def doModifyL7BackendWeight(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -147,7 +147,7 @@ def doModifyL4BackendWeight(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -181,7 +181,7 @@ def doCreateL4Listeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -217,7 +217,7 @@ def doUnbindL4Backends(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -262,7 +262,7 @@ def doModifyL7Listener(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -295,7 +295,7 @@ def doDeleteTrafficMirror(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -330,7 +330,7 @@ def doCreateL7Rules(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -364,7 +364,7 @@ def doDescribeTrafficMirrorReceiverHealthStatus(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -402,7 +402,7 @@ def doUnbindL7Backends(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -438,7 +438,7 @@ def doDeleteL7Rules(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -473,7 +473,7 @@ def doDescribeL4ListenerInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -515,7 +515,7 @@ def doDescribeTrafficMirrorListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -550,7 +550,7 @@ def doModifyL7Locations(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -588,7 +588,7 @@ def doModifyL4BackendPort(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -621,7 +621,7 @@ def doDeleteLoadBalancer(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -664,7 +664,7 @@ def doCreateLoadBalancers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -699,7 +699,7 @@ def doDescribeL7Rules(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -732,7 +732,7 @@ def doDescribeLoadBalancerTaskResult(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -768,7 +768,7 @@ def doDescribeL7ListenerInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -802,7 +802,7 @@ def doDescribeL4Listeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -842,7 +842,7 @@ def doSetTrafficMirrorHealthSwitch(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -890,7 +890,7 @@ def doDescribeLoadBalancers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -924,7 +924,7 @@ def doDeleteListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -957,7 +957,7 @@ def doDescribeCertDetail(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -991,7 +991,7 @@ def doUnbindTrafficMirrorListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1031,7 +1031,7 @@ def doModifyL7BackendPort(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1068,7 +1068,7 @@ def doDescribeL7Backends(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1102,7 +1102,7 @@ def doCreateTrafficMirror(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1140,7 +1140,7 @@ def doModifyL4BackendProbePort(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1176,7 +1176,7 @@ def doBindL4Backends(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1210,7 +1210,7 @@ def doBindTrafficMirrorReceivers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1247,7 +1247,7 @@ def doReplaceCert(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1282,7 +1282,7 @@ def doDeleteL7Domains(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1322,7 +1322,7 @@ def doDescribeTrafficMirrors(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1359,7 +1359,7 @@ def doDescribeL7ListenersEx(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1395,7 +1395,7 @@ def doUploadCert(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1433,7 +1433,7 @@ def doBindL7Backends(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1468,7 +1468,7 @@ def doDescribeL4Backends(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1502,7 +1502,7 @@ def doBindTrafficMirrorListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1537,7 +1537,7 @@ def doModifyLoadBalancer(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1571,7 +1571,7 @@ def doSetTrafficMirrorAlias(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1604,7 +1604,7 @@ def doDescribeLoadBalancerPortInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1639,7 +1639,7 @@ def doModifyLoadBalancerChargeMode(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1673,7 +1673,7 @@ def doCreateL7Listeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1707,7 +1707,7 @@ def doDescribeDevicesBindInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1756,7 +1756,7 @@ def doModifyL4Listener(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1796,7 +1796,7 @@ def doDescribeTrafficMirrorReceivers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmlbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)

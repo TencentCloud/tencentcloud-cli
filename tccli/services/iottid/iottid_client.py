@@ -34,7 +34,7 @@ def doAuthTestTid(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -68,7 +68,7 @@ def doUploadDeviceUniqueCode(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -101,7 +101,7 @@ def doVerifyChipBurnInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -135,7 +135,7 @@ def doDeliverTids(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -169,7 +169,7 @@ def doBurnTidNotify(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -201,7 +201,7 @@ def doDescribePermission(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -235,7 +235,7 @@ def doDeliverTidNotify(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -269,7 +269,7 @@ def doDownloadTids(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -302,7 +302,7 @@ def doDescribeAvailableLibCount(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.IottidClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)

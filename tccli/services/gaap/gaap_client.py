@@ -38,7 +38,7 @@ def doDescribeProxyGroupList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -72,7 +72,7 @@ def doOpenSecurityPolicy(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -107,7 +107,7 @@ def doDescribeCertificates(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -141,7 +141,7 @@ def doCreateSecurityRules(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -176,7 +176,7 @@ def doModifySecurityRule(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -216,7 +216,7 @@ def doDescribeHTTPSListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -257,7 +257,7 @@ def doCreateHTTPSListener(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -290,7 +290,7 @@ def doDeleteSecurityPolicy(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -326,7 +326,7 @@ def doDescribeRealServerStatistics(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -359,7 +359,7 @@ def doDescribeProxyGroupDetails(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -392,7 +392,7 @@ def doDeleteDomainErrorPageInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -429,7 +429,7 @@ def doModifyCertificate(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -469,7 +469,7 @@ def doDescribeTCPListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -510,7 +510,7 @@ def doCreateRule(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -549,7 +549,7 @@ def doCreateDomainErrorPageInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -586,7 +586,7 @@ def doDescribeProxyGroupStatistics(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -619,7 +619,7 @@ def doDescribeSecurityPolicyDetail(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -657,7 +657,7 @@ def doModifyDomain(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -691,7 +691,7 @@ def doModifyCertificateAttributes(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -726,7 +726,7 @@ def doOpenProxies(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -759,7 +759,7 @@ def doDescribeRuleRealServers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -793,7 +793,7 @@ def doModifyRealServerName(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -830,7 +830,7 @@ def doCheckProxyCreate(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -862,7 +862,7 @@ def doDescribeCountryAreaMapping(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -894,7 +894,7 @@ def doDescribeAccessRegions(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -928,7 +928,7 @@ def doDeleteSecurityRules(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -963,7 +963,7 @@ def doModifyHTTPListenerAttribute(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -998,7 +998,7 @@ def doDeleteRule(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1031,7 +1031,7 @@ def doDescribeProxyDetail(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1064,7 +1064,7 @@ def doDeleteCertificate(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1099,7 +1099,7 @@ def doCreateSecurityPolicy(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1138,7 +1138,7 @@ def doDescribeProxies(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1172,7 +1172,7 @@ def doDeleteProxyGroup(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1208,7 +1208,7 @@ def doModifyProxiesProject(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1241,7 +1241,7 @@ def doDescribeGroupDomainConfig(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1281,7 +1281,7 @@ def doDescribeUDPListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1317,7 +1317,7 @@ def doAddRealServers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1350,7 +1350,7 @@ def doDescribeAccessRegionsByDestRegion(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1389,7 +1389,7 @@ def doModifyHTTPSListenerAttribute(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1426,7 +1426,7 @@ def doCreateDomain(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1466,7 +1466,7 @@ def doModifyRuleAttribute(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1499,7 +1499,7 @@ def doDescribeCertificateDetail(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1533,7 +1533,7 @@ def doCloseSecurityPolicy(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1568,7 +1568,7 @@ def doModifyGroupDomainConfig(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1605,7 +1605,7 @@ def doDescribeProxyStatistics(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1638,7 +1638,7 @@ def doRemoveRealServers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1672,7 +1672,7 @@ def doDescribeDomainErrorPageInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1710,7 +1710,7 @@ def doDescribeRealServers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1752,7 +1752,7 @@ def doSetAuthentication(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1789,7 +1789,7 @@ def doModifyUDPListenerAttribute(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1822,7 +1822,7 @@ def doDescribeProxyAndStatisticsListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1858,7 +1858,7 @@ def doCreateHTTPListener(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1891,7 +1891,7 @@ def doCreateProxyGroupDomain(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1929,7 +1929,7 @@ def doModifyProxyConfiguration(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1964,7 +1964,7 @@ def doDescribeResourcesByTag(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -1997,7 +1997,7 @@ def doCloseProxyGroup(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2037,7 +2037,7 @@ def doModifyTCPListenerAttribute(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2072,7 +2072,7 @@ def doModifyProxyGroupAttribute(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2105,7 +2105,7 @@ def doDescribeGroupAndStatisticsProxy(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2137,7 +2137,7 @@ def doDescribeDestRegions(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2171,7 +2171,7 @@ def doBindListenerRealServers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2211,7 +2211,7 @@ def doDescribeHTTPListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2248,7 +2248,7 @@ def doCreateProxyGroup(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2287,7 +2287,7 @@ def doCreateUDPListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2319,7 +2319,7 @@ def doDescribeRegionAndPrice(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2355,7 +2355,7 @@ def doCreateCertificate(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2392,7 +2392,7 @@ def doDescribeListenerStatistics(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2425,7 +2425,7 @@ def doDescribeRealServersStatus(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2458,7 +2458,7 @@ def doOpenProxyGroup(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2493,7 +2493,7 @@ def doCloseProxies(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2526,7 +2526,7 @@ def doDescribeDomainErrorPageInfoByIds(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2560,7 +2560,7 @@ def doDescribeProxiesStatus(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2593,7 +2593,7 @@ def doDescribeSecurityRules(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2626,7 +2626,7 @@ def doDescribeRules(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2668,7 +2668,7 @@ def doCreateTCPListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2704,7 +2704,7 @@ def doDestroyProxies(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2740,7 +2740,7 @@ def doModifyProxiesAttribute(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2774,7 +2774,7 @@ def doBindRuleRealServers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2817,7 +2817,7 @@ def doCreateProxy(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2852,7 +2852,7 @@ def doDeleteDomain(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2885,7 +2885,7 @@ def doDescribeListenerRealServers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2921,7 +2921,7 @@ def doDeleteListeners(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2954,7 +2954,7 @@ def doDescribeRulesByRuleIds(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -2993,7 +2993,7 @@ def doInquiryPriceCreateProxy(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.GaapClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)

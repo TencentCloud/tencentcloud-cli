@@ -48,7 +48,7 @@ def doDescribeProductEventList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -92,7 +92,7 @@ def doDescribeAccidentEventList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -128,7 +128,7 @@ def doUnBindingPolicyObject(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -164,7 +164,7 @@ def doBindingPolicyObject(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -199,7 +199,7 @@ def doModifyAlarmReceivers(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -236,7 +236,7 @@ def doDescribeBindingPolicyObjectList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -271,7 +271,7 @@ def doSendCustomAlarmMsg(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -305,7 +305,7 @@ def doDeletePolicyGroup(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -339,7 +339,7 @@ def doDescribeBaseMetrics(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -373,7 +373,7 @@ def doDescribePolicyGroupInfo(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -409,7 +409,7 @@ def doDescribeProductList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -456,7 +456,7 @@ def doDescribePolicyGroupList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -500,7 +500,7 @@ def doDescribeBasicAlarmList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -538,7 +538,7 @@ def doGetMonitorData(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -578,7 +578,7 @@ def doModifyPolicyGroup(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -622,7 +622,7 @@ def doCreatePolicyGroup(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -656,7 +656,7 @@ def doUnBindingAllPolicyObject(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -692,7 +692,7 @@ def doPutMonitorData(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
@@ -725,7 +725,7 @@ def doDescribePolicyConditionList(argv, arglist):
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MonitorClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)

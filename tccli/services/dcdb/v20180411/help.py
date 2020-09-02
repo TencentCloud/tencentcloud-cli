@@ -711,7 +711,7 @@ INFO = {
     "params": [
       {
         "name": "InstanceId",
-        "desc": "无"
+        "desc": "实例ID"
       }
     ],
     "desc": "相当于在所有分片的mysqld中执行flush logs，完成切分的binlog将展示在各个分片控制台binlog列表里。"
