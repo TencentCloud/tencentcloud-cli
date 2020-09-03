@@ -65,6 +65,10 @@ INFO = {
       {
         "name": "SecretString",
         "desc": "文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，，最大支持4096字节。"
+      },
+      {
+        "name": "Tags",
+        "desc": "标签列表"
       }
     ],
     "desc": "创建新的凭据信息，通过KMS进行加密保护。每个Region最多可创建存储1000个凭据信息。"
@@ -133,6 +137,10 @@ INFO = {
       {
         "name": "SearchSecretName",
         "desc": "根据凭据名称进行过滤，为空表示不过滤。"
+      },
+      {
+        "name": "TagFilters",
+        "desc": "标签过滤条件"
       }
     ],
     "desc": "该接口用于获取所有凭据的详细列表，可以指定过滤字段、排序方式等。"

@@ -136,6 +136,7 @@ def doCreateSecret(argv, arglist):
         "KmsKeyId": argv.get("--KmsKeyId"),
         "SecretBinary": argv.get("--SecretBinary"),
         "SecretString": argv.get("--SecretString"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -273,6 +274,7 @@ def doListSecrets(argv, arglist):
         "OrderType": Utils.try_to_json(argv, "--OrderType"),
         "State": Utils.try_to_json(argv, "--State"),
         "SearchSecretName": argv.get("--SearchSecretName"),
+        "TagFilters": Utils.try_to_json(argv, "--TagFilters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

@@ -80,7 +80,7 @@ INFO = {
       },
       {
         "name": "RunInstancePara",
-        "desc": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。"
+        "desc": "CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。"
       },
       {
         "name": "InstanceAdvancedSettings",

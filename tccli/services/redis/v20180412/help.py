@@ -359,7 +359,7 @@ INFO = {
         "desc": "实例修改的参数列表"
       }
     ],
-    "desc": "修改实例参数"
+    "desc": "本接口(ModifyInstanceParams)用于修改实例参数。"
   },
   "DescribeInstanceMonitorTopNCmd": {
     "params": [
@@ -452,7 +452,7 @@ INFO = {
     "params": [
       {
         "name": "TargetInstanceType",
-        "desc": "目标实例类型，同CreateInstances接口的Type，即实例要变更的目标类型"
+        "desc": "目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型"
       },
       {
         "name": "SwitchOption",
@@ -538,7 +538,7 @@ INFO = {
     "params": [
       {
         "name": "DealIds",
-        "desc": "订单ID数组"
+        "desc": "订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的输出参数DealId。"
       }
     ],
     "desc": "查询订单信息"
@@ -780,7 +780,7 @@ INFO = {
     "params": [
       {
         "name": "Product",
-        "desc": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。"
+        "desc": "数据库引擎名称，本接口取值：redis。"
       },
       {
         "name": "InstanceId",
@@ -848,23 +848,23 @@ INFO = {
     "params": [
       {
         "name": "ZoneId",
-        "desc": "实例所属的可用区ID"
+        "desc": "实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。"
       },
       {
         "name": "TypeId",
-        "desc": "实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），"
+        "desc": "实例类型：2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）。"
       },
       {
         "name": "MemSize",
-        "desc": "实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准"
+        "desc": "实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。"
       },
       {
         "name": "GoodsNum",
-        "desc": "实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准"
+        "desc": "实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。"
       },
       {
         "name": "Period",
-        "desc": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]"
+        "desc": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。"
       },
       {
         "name": "BillingMode",
@@ -876,31 +876,31 @@ INFO = {
       },
       {
         "name": "VpcId",
-        "desc": "私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk"
+        "desc": "私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk。"
       },
       {
         "name": "SubnetId",
-        "desc": "基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2"
+        "desc": "基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2。"
       },
       {
         "name": "ProjectId",
-        "desc": "项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准"
+        "desc": "项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。"
       },
       {
         "name": "AutoRenew",
-        "desc": "自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费"
+        "desc": "自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费。"
       },
       {
         "name": "SecurityGroupIdList",
-        "desc": "安全组id数组"
+        "desc": "安全组id数组。"
       },
       {
         "name": "VPort",
-        "desc": "用户自定义的端口 不填则默认为6379，范围[1024,65535]"
+        "desc": "用户自定义的端口 不填则默认为6379，范围[1024,65535]。"
       },
       {
         "name": "RedisShardNum",
-        "desc": "实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]"
+        "desc": "实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]。"
       },
       {
         "name": "RedisReplicasNum",
@@ -908,18 +908,18 @@ INFO = {
       },
       {
         "name": "ReplicasReadonly",
-        "desc": "是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2."
+        "desc": "是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2。"
       },
       {
         "name": "InstanceName",
-        "desc": "实例名称，长度小于60的中文/英文/数字/\"-\"/\"_\""
+        "desc": "实例名称，长度小于60的中文/英文/数字/\"-\"/\"_\"。"
       },
       {
         "name": "NoAuth",
         "desc": "是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例，仅VPC网络的实例支持免密码访问。"
       }
     ],
-    "desc": "创建redis实例"
+    "desc": "本接口(CreateInstances)用于创建redis实例。"
   },
   "DescribeBackupUrl": {
     "params": [
