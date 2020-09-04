@@ -1,6 +1,35 @@
 # -*- coding: utf-8 -*-
 DESC = "redis-2018-04-12"
 INFO = {
+  "DescribeProxySlowLog": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例Id"
+      },
+      {
+        "name": "BeginTime",
+        "desc": "开始时间"
+      },
+      {
+        "name": "EndTime",
+        "desc": "结束时间"
+      },
+      {
+        "name": "MinQueryTime",
+        "desc": "慢查询阈值（单位：毫秒）"
+      },
+      {
+        "name": "Limit",
+        "desc": "页面大小"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，取Limit整数倍"
+      }
+    ],
+    "desc": "本接口（DescribeProxySlowLog）用于查询代理慢查询。"
+  },
   "ClearInstance": {
     "params": [
       {

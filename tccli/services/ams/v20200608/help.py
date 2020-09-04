@@ -39,22 +39,22 @@ INFO = {
     "params": [
       {
         "name": "BizType",
-        "desc": "业务ID"
+        "desc": "业务类型，仅限英文字母、数字和下划线（_）组成，长度不超过8位"
       },
       {
         "name": "MediaModeration",
-        "desc": "审核分类信息"
+        "desc": "配置信息，"
       },
       {
         "name": "BizName",
-        "desc": "页面名称"
+        "desc": "业务名称，用于标识业务场景，长度不超过32位"
       },
       {
         "name": "ModerationCategories",
         "desc": "审核内容，可选：Polity (政治); Porn (色情); Illegal(违法);Abuse (谩骂); Terror (暴恐); Ad (广告);"
       }
     ],
-    "desc": "创建业务配置，1个账号最多可以创建20个配置。在创建业务配置之前，你需要以下步骤：\n1. 开通COS存储捅功能，新建存储桶，cms_segments\n2. 授权天御对 cms_segments存储桶对读写权限。\n这个存储桶用来存储 视频转换过程中生成对音频和图片。"
+    "desc": "创建业务配置，1个账号最多可以创建20个配置，可定义音频审核的场景，如色情、谩骂等，\n\n在创建业务配置之前，你需要以下步骤：\n1. 开通COS存储捅功能，新建存储桶，例如 cms_segments，用来存储 视频转换过程中生成对音频和图片。\n2. 然后在COS控制台，授权天御内容安全主账号 对 cms_segments 存储桶对读写权限。具体授权操作，参考https://cloud.tencent.com/document/product/436/38648\n"
   },
   "DescribeTaskDetail": {
     "params": [

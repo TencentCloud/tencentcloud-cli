@@ -32,6 +32,15 @@ INFO = {
     ],
     "desc": "DeleteCdnDomain 用于删除指定加速域名"
   },
+  "VerifyDomainRecord": {
+    "params": [
+      {
+        "name": "Domain",
+        "desc": "域名"
+      }
+    ],
+    "desc": "验证域名解析值"
+  },
   "DescribePurgeTasks": {
     "params": [
       {
@@ -340,46 +349,35 @@ INFO = {
     ],
     "desc": "DescribeDomains 用于查询内容分发网络加速域名（含境内、境外）基本配置信息，包括项目ID、服务状态，业务类型、创建时间、更新时间等信息。"
   },
-  "SearchClsLog": {
+  "CreateVerifyRecord": {
+    "params": [
+      {
+        "name": "Domain",
+        "desc": "要取回的域名"
+      }
+    ],
+    "desc": "生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权"
+  },
+  "ManageClsTopicDomains": {
     "params": [
       {
         "name": "LogsetId",
-        "desc": "需要查询的日志集ID"
+        "desc": "日志集ID"
       },
       {
-        "name": "TopicIds",
-        "desc": "需要查询的日志主题ID组合，以逗号分隔"
-      },
-      {
-        "name": "StartTime",
-        "desc": "需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS"
-      },
-      {
-        "name": "EndTime",
-        "desc": "需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS"
-      },
-      {
-        "name": "Limit",
-        "desc": "单次要返回的日志条数，单次返回的最大条数为100"
+        "name": "TopicId",
+        "desc": "日志主题ID"
       },
       {
         "name": "Channel",
         "desc": "接入渠道，默认值为cdn"
       },
       {
-        "name": "Query",
-        "desc": "需要查询的内容，详情请参考https://cloud.tencent.com/document/product/614/16982"
-      },
-      {
-        "name": "Context",
-        "desc": "加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围"
-      },
-      {
-        "name": "Sort",
-        "desc": "按日志时间排序， asc（升序）或者 desc（降序），默认为 desc"
+        "name": "DomainAreaConfigs",
+        "desc": "域名区域配置，注意：如果此字段为空，则表示解绑对应主题下的所有域名"
       }
     ],
-    "desc": "SearchClsLog 用于 CLS 日志检索。支持检索今天，24小时（可选近7中的某一天），近7天的日志数据。"
+    "desc": "ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。"
   },
   "StartCdnDomain": {
     "params": [
@@ -811,26 +809,46 @@ INFO = {
     ],
     "desc": "DescribeCdnDomainLogs 用于查询访问日志下载地址，仅支持 30 天以内的境内、境外访问日志下载链接查询。"
   },
-  "ManageClsTopicDomains": {
+  "SearchClsLog": {
     "params": [
       {
         "name": "LogsetId",
-        "desc": "日志集ID"
+        "desc": "需要查询的日志集ID"
       },
       {
-        "name": "TopicId",
-        "desc": "日志主题ID"
+        "name": "TopicIds",
+        "desc": "需要查询的日志主题ID组合，以逗号分隔"
+      },
+      {
+        "name": "StartTime",
+        "desc": "需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS"
+      },
+      {
+        "name": "EndTime",
+        "desc": "需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次要返回的日志条数，单次返回的最大条数为100"
       },
       {
         "name": "Channel",
         "desc": "接入渠道，默认值为cdn"
       },
       {
-        "name": "DomainAreaConfigs",
-        "desc": "域名区域配置，注意：如果此字段为空，则表示解绑对应主题下的所有域名"
+        "name": "Query",
+        "desc": "需要查询的内容，详情请参考https://cloud.tencent.com/document/product/614/16982"
+      },
+      {
+        "name": "Context",
+        "desc": "加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围"
+      },
+      {
+        "name": "Sort",
+        "desc": "按日志时间排序， asc（升序）或者 desc（降序），默认为 desc"
       }
     ],
-    "desc": "ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。"
+    "desc": "SearchClsLog 用于 CLS 日志检索。支持检索今天，24小时（可选近7中的某一天），近7天的日志数据。"
   },
   "DescribeCertDomains": {
     "params": [

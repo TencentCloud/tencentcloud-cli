@@ -549,14 +549,23 @@ def doDescribeDBInstanceDeal(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doOfflineIsolatedDBInstance(argv, arglist):
+def doDescribeCurrentOp(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("OfflineIsolatedDBInstance", g_param[OptionsDefine.Version])
+        show_help("DescribeCurrentOp", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
+        "Ns": argv.get("--Ns"),
+        "MillisecondRunning": Utils.try_to_json(argv, "--MillisecondRunning"),
+        "Op": argv.get("--Op"),
+        "ReplicaSetName": argv.get("--ReplicaSetName"),
+        "State": argv.get("--State"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "OrderBy": argv.get("--OrderBy"),
+        "OrderByType": argv.get("--OrderByType"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -570,9 +579,9 @@ def doOfflineIsolatedDBInstance(argv, arglist):
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.OfflineIsolatedDBInstanceRequest()
+    model = models.DescribeCurrentOpRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.OfflineIsolatedDBInstance(model)
+    rsp = client.DescribeCurrentOp(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -658,6 +667,9 @@ def doDescribeDBBackups(argv, arglist):
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
+        "BackupMethod": Utils.try_to_json(argv, "--BackupMethod"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -809,6 +821,73 @@ def doDescribeAsyncRequestInfo(argv, arglist):
     model = models.DescribeAsyncRequestInfoRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeAsyncRequestInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRenewDBInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RenewDBInstances", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RenewDBInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RenewDBInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doOfflineIsolatedDBInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("OfflineIsolatedDBInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.OfflineIsolatedDBInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.OfflineIsolatedDBInstance(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -972,15 +1051,15 @@ def doInquirePriceCreateDBInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRenewDBInstances(argv, arglist):
+def doKillOps(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("RenewDBInstances", g_param[OptionsDefine.Version])
+        show_help("KillOps", g_param[OptionsDefine.Version])
         return
 
     param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
+        "InstanceId": argv.get("--InstanceId"),
+        "Operations": Utils.try_to_json(argv, "--Operations"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -994,9 +1073,9 @@ def doRenewDBInstances(argv, arglist):
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenewDBInstancesRequest()
+    model = models.KillOpsRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.RenewDBInstances(model)
+    rsp = client.KillOps(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1102,7 +1181,7 @@ ACTION_MAP = {
     "UpgradeDBInstanceHour": doUpgradeDBInstanceHour,
     "DescribeDBInstances": doDescribeDBInstances,
     "DescribeDBInstanceDeal": doDescribeDBInstanceDeal,
-    "OfflineIsolatedDBInstance": doOfflineIsolatedDBInstance,
+    "DescribeCurrentOp": doDescribeCurrentOp,
     "ResetDBInstancePassword": doResetDBInstancePassword,
     "FlushInstanceRouterConfig": doFlushInstanceRouterConfig,
     "DescribeDBBackups": doDescribeDBBackups,
@@ -1110,11 +1189,13 @@ ACTION_MAP = {
     "DescribeBackupAccess": doDescribeBackupAccess,
     "InquirePriceModifyDBInstanceSpec": doInquirePriceModifyDBInstanceSpec,
     "DescribeAsyncRequestInfo": doDescribeAsyncRequestInfo,
+    "RenewDBInstances": doRenewDBInstances,
+    "OfflineIsolatedDBInstance": doOfflineIsolatedDBInstance,
     "DescribeSlowLogPatterns": doDescribeSlowLogPatterns,
     "DescribeSlowLogs": doDescribeSlowLogs,
     "ModifyDBInstanceSpec": doModifyDBInstanceSpec,
     "InquirePriceCreateDBInstances": doInquirePriceCreateDBInstances,
-    "RenewDBInstances": doRenewDBInstances,
+    "KillOps": doKillOps,
     "CreateBackupDBInstance": doCreateBackupDBInstance,
     "InquirePriceRenewDBInstances": doInquirePriceRenewDBInstances,
 

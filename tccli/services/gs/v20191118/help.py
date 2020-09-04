@@ -17,7 +17,7 @@ INFO = {
       },
       {
         "name": "GameRegion",
-        "desc": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等"
+        "desc": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing、ap-chengdu、ap-chongqing、ap-nanjing等"
       },
       {
         "name": "GameParas",
@@ -33,7 +33,7 @@ INFO = {
       },
       {
         "name": "SetNo",
-        "desc": "资源池编号，1表示正式，2表示测试"
+        "desc": "【将废弃】资源池编号，比如1表示正式，2表示测试"
       },
       {
         "name": "Bitrate",
@@ -61,7 +61,11 @@ INFO = {
       },
       {
         "name": "HostUserId",
-        "desc": "用于多人游戏，游戏主机用户ID"
+        "desc": "【多人云游】游戏主机用户ID"
+      },
+      {
+        "name": "Role",
+        "desc": "【多人云游】角色；Player表示玩家；Viewer表示观察者"
       }
     ],
     "desc": "创建会话"

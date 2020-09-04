@@ -40,6 +40,7 @@ def doCreateSession(argv, arglist):
         "UserIp": argv.get("--UserIp"),
         "Optimization": Utils.try_to_json(argv, "--Optimization"),
         "HostUserId": argv.get("--HostUserId"),
+        "Role": argv.get("--Role"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

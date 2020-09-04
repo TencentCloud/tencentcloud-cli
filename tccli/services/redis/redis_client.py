@@ -18,6 +18,40 @@ from tccli.services.redis import v20180412
 from tccli.services.redis.v20180412 import help as v20180412_help
 
 
+def doEnableReplicaReadonly(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("EnableReplicaReadonly", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "ReadonlyPolicy": Utils.try_to_json(argv, "--ReadonlyPolicy"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EnableReplicaReadonlyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.EnableReplicaReadonly(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeInstanceMonitorBigKeySizeDist(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -1065,15 +1099,19 @@ def doDescribeBackupUrl(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doEnableReplicaReadonly(argv, arglist):
+def doDescribeProxySlowLog(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("EnableReplicaReadonly", g_param[OptionsDefine.Version])
+        show_help("DescribeProxySlowLog", g_param[OptionsDefine.Version])
         return
 
     param = {
         "InstanceId": argv.get("--InstanceId"),
-        "ReadonlyPolicy": Utils.try_to_json(argv, "--ReadonlyPolicy"),
+        "BeginTime": argv.get("--BeginTime"),
+        "EndTime": argv.get("--EndTime"),
+        "MinQueryTime": Utils.try_to_json(argv, "--MinQueryTime"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1087,9 +1125,9 @@ def doEnableReplicaReadonly(argv, arglist):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EnableReplicaReadonlyRequest()
+    model = models.DescribeProxySlowLogRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.EnableReplicaReadonly(model)
+    rsp = client.DescribeProxySlowLog(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2052,6 +2090,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "EnableReplicaReadonly": doEnableReplicaReadonly,
     "DescribeInstanceMonitorBigKeySizeDist": doDescribeInstanceMonitorBigKeySizeDist,
     "CreateInstanceAccount": doCreateInstanceAccount,
     "ModifyMaintenanceWindow": doModifyMaintenanceWindow,
@@ -2081,7 +2120,7 @@ ACTION_MAP = {
     "DescribeInstanceMonitorHotKey": doDescribeInstanceMonitorHotKey,
     "DescribeTaskInfo": doDescribeTaskInfo,
     "DescribeBackupUrl": doDescribeBackupUrl,
-    "EnableReplicaReadonly": doEnableReplicaReadonly,
+    "DescribeProxySlowLog": doDescribeProxySlowLog,
     "DescribeProjectSecurityGroups": doDescribeProjectSecurityGroups,
     "AssociateSecurityGroups": doAssociateSecurityGroups,
     "ModifyInstanceParams": doModifyInstanceParams,

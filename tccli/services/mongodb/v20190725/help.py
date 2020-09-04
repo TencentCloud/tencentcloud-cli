@@ -10,14 +10,50 @@ INFO = {
     ],
     "desc": "本接口（DescribeDBInstanceDeal）用于获取MongoDB购买、续费及变配订单详细。"
   },
-  "OfflineIsolatedDBInstance": {
+  "DescribeCurrentOp": {
     "params": [
       {
         "name": "InstanceId",
         "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      },
+      {
+        "name": "Ns",
+        "desc": "筛选条件，操作所属的命名空间namespace，格式为db.collection"
+      },
+      {
+        "name": "MillisecondRunning",
+        "desc": "筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]"
+      },
+      {
+        "name": "Op",
+        "desc": "筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors"
+      },
+      {
+        "name": "ReplicaSetName",
+        "desc": "筛选条件，分片名称"
+      },
+      {
+        "name": "State",
+        "desc": "筛选条件，节点状态，可能的取值为：primary\nsecondary"
+      },
+      {
+        "name": "Limit",
+        "desc": "单次请求返回的数量，默认值为100，取值范围为[0,100]"
+      },
+      {
+        "name": "Offset",
+        "desc": "偏移量，默认值为0，取值范围为[0,10000]"
+      },
+      {
+        "name": "OrderBy",
+        "desc": "返回结果集排序的字段，目前支持：\"MicrosecsRunning\"/\"microsecsrunning\"，默认为升序排序"
+      },
+      {
+        "name": "OrderByType",
+        "desc": "返回结果集排序方式，可能的取值：\"ASC\"/\"asc\"或\"DESC\"/\"desc\""
       }
     ],
-    "desc": "本接口(OfflineIsolatedDBInstance)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态。"
+    "desc": "本接口(DescribeCurrentOp)用于查询MongoDB云数据库实例的当前正在执行的操作。"
   },
   "DescribeClientConnections": {
     "params": [
@@ -67,9 +103,21 @@ INFO = {
       {
         "name": "InstanceId",
         "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      },
+      {
+        "name": "BackupMethod",
+        "desc": "备份方式，当前支持：0-逻辑备份，1-物理备份，2-所有备份。默认为逻辑备份。"
+      },
+      {
+        "name": "Limit",
+        "desc": "分页大小，最大值为100，不设置默认查询所有。"
+      },
+      {
+        "name": "Offset",
+        "desc": "分页偏移量，最小值为0，默认值为0。"
       }
     ],
-    "desc": "本接口（DescribeDBBackups）用于查询实例备份列表，目前只支持7天内的备份查询。"
+    "desc": "本接口（DescribeDBBackups）用于查询实例备份列表，目前只支持查询7天内的备份记录。"
   },
   "IsolateDBInstance": {
     "params": [
@@ -192,6 +240,19 @@ INFO = {
     ],
     "desc": "本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例。"
   },
+  "KillOps": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      },
+      {
+        "name": "Operations",
+        "desc": "待终止的操作"
+      }
+    ],
+    "desc": "本接口(KillOps)用于终止MongoDB云数据库实例上执行的特定操作。"
+  },
   "DescribeDBInstances": {
     "params": [
       {
@@ -248,6 +309,15 @@ INFO = {
       }
     ],
     "desc": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。"
+  },
+  "OfflineIsolatedDBInstance": {
+    "params": [
+      {
+        "name": "InstanceId",
+        "desc": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同"
+      }
+    ],
+    "desc": "本接口(OfflineIsolatedDBInstance)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态。"
   },
   "DescribeSlowLogPatterns": {
     "params": [

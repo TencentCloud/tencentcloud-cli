@@ -316,8 +316,11 @@ def doDescribeRealServerStatistics(argv, arglist):
     param = {
         "RealServerId": argv.get("--RealServerId"),
         "ListenerId": argv.get("--ListenerId"),
-        "WithinTime": Utils.try_to_json(argv, "--WithinTime"),
         "RuleId": argv.get("--RuleId"),
+        "WithinTime": Utils.try_to_json(argv, "--WithinTime"),
+        "StartTime": argv.get("--StartTime"),
+        "EndTime": argv.get("--EndTime"),
+        "Granularity": Utils.try_to_json(argv, "--Granularity"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

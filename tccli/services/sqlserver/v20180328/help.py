@@ -312,6 +312,10 @@ INFO = {
       {
         "name": "BackupWay",
         "desc": "按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项"
+      },
+      {
+        "name": "BackupId",
+        "desc": "按照备份ID筛选，不填则不筛选此项"
       }
     ],
     "desc": "本接口(DescribeBackups)用于查询备份列表。"
@@ -539,6 +543,14 @@ INFO = {
       {
         "name": "Time",
         "desc": "回档目标时间点"
+      },
+      {
+        "name": "TargetInstanceId",
+        "desc": "备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID"
+      },
+      {
+        "name": "RenameRestore",
+        "desc": "按照ReNameRestoreDatabase中的库进行重命名，仅在Type = 1重命名回档方式有效；不填则按照默认方式命名库，DBs参数确定要恢复的库"
       }
     ],
     "desc": "本接口（RollbackInstance）用于回档实例"
@@ -568,6 +580,10 @@ INFO = {
       {
         "name": "MigrateDBSet",
         "desc": "迁移DB对象 ，离线迁移不使用（SourceType=4或SourceType=5）。"
+      },
+      {
+        "name": "RenameRestore",
+        "desc": "按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。SourceType=5的情况下有效。"
       }
     ],
     "desc": "本接口（CreateMigration）作用是创建一个迁移任务"
@@ -1037,6 +1053,14 @@ INFO = {
       {
         "name": "BackupId",
         "desc": "备份文件ID，该ID可以通过DescribeBackups接口返回数据中的Id字段获得"
+      },
+      {
+        "name": "TargetInstanceId",
+        "desc": "备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID"
+      },
+      {
+        "name": "RenameRestore",
+        "desc": "按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。"
       }
     ],
     "desc": "本接口（RestoreInstance）用于根据备份文件恢复实例。"

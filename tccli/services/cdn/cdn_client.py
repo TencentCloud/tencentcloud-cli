@@ -118,6 +118,39 @@ def doDeleteCdnDomain(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doVerifyDomainRecord(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("VerifyDomainRecord", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Domain": argv.get("--Domain"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.VerifyDomainRecordRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.VerifyDomainRecord(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePurgeTasks(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -432,6 +465,39 @@ def doDescribeDomains(argv, arglist):
     model = models.DescribeDomainsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeDomains(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateVerifyRecord(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateVerifyRecord", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Domain": argv.get("--Domain"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdnClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateVerifyRecordRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateVerifyRecord(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1710,6 +1776,7 @@ ACTION_MAP = {
     "DescribeIpStatus": doDescribeIpStatus,
     "DescribeMapInfo": doDescribeMapInfo,
     "DeleteCdnDomain": doDeleteCdnDomain,
+    "VerifyDomainRecord": doVerifyDomainRecord,
     "DescribePurgeTasks": doDescribePurgeTasks,
     "DescribePayType": doDescribePayType,
     "DescribeDomainsConfig": doDescribeDomainsConfig,
@@ -1718,6 +1785,7 @@ ACTION_MAP = {
     "DescribeCdnData": doDescribeCdnData,
     "DisableCaches": doDisableCaches,
     "DescribeDomains": doDescribeDomains,
+    "CreateVerifyRecord": doCreateVerifyRecord,
     "ManageClsTopicDomains": doManageClsTopicDomains,
     "StartCdnDomain": doStartCdnDomain,
     "StopCdnDomain": doStopCdnDomain,

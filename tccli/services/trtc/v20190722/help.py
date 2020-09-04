@@ -214,9 +214,17 @@ INFO = {
       {
         "name": "DataType",
         "desc": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；\naBlock：音频卡顿时长；\nbigvBit：上/下行视频码率；\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；\naLoss：上/下行音频丢包；\nbigvLoss：上/下行视频丢包；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高"
+      },
+      {
+        "name": "PageNumber",
+        "desc": "只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）"
+      },
+      {
+        "name": "PageSize",
+        "desc": "只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,最大不超过100）"
       }
     ],
-    "desc": "查询指定时间内的用户列表及用户通话质量数据。可查询14天内数据，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。"
+    "desc": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，不填PageSize，PageNumber默认查询6个用户，否则支持每页100内的用户数。"
   },
   "DescribeDetailEvent": {
     "params": [

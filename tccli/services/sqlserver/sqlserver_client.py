@@ -208,6 +208,7 @@ def doDescribeBackups(argv, arglist):
         "BackupName": argv.get("--BackupName"),
         "Strategy": Utils.try_to_json(argv, "--Strategy"),
         "BackupWay": Utils.try_to_json(argv, "--BackupWay"),
+        "BackupId": Utils.try_to_json(argv, "--BackupId"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -972,6 +973,8 @@ def doRollbackInstance(argv, arglist):
         "Type": Utils.try_to_json(argv, "--Type"),
         "DBs": Utils.try_to_json(argv, "--DBs"),
         "Time": argv.get("--Time"),
+        "TargetInstanceId": argv.get("--TargetInstanceId"),
+        "RenameRestore": Utils.try_to_json(argv, "--RenameRestore"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1010,6 +1013,7 @@ def doCreateMigration(argv, arglist):
         "Source": Utils.try_to_json(argv, "--Source"),
         "Target": Utils.try_to_json(argv, "--Target"),
         "MigrateDBSet": Utils.try_to_json(argv, "--MigrateDBSet"),
+        "RenameRestore": Utils.try_to_json(argv, "--RenameRestore"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2112,6 +2116,8 @@ def doRestoreInstance(argv, arglist):
     param = {
         "InstanceId": argv.get("--InstanceId"),
         "BackupId": Utils.try_to_json(argv, "--BackupId"),
+        "TargetInstanceId": argv.get("--TargetInstanceId"),
+        "RenameRestore": Utils.try_to_json(argv, "--RenameRestore"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
