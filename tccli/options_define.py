@@ -4,10 +4,13 @@ SecretKey = "secretKey"
 Region = "region"
 Endpoint = "endpoint"
 Version = "version"
+ServiceVersion = "service_version"
 Filter = "filter"
 Profile = "profile"
 Timeout = "timeout"
 Output = "output"
+GenerateCliSkeleton = "generate-cli-skeleton"
+CliInputJson = "cli-input-json"
 
 ENV_SECRET_ID = "TENCENTCLOUD_SECRET_ID"
 ENV_SECRET_KEY = "TENCENTCLOUD_SECRET_KEY"
@@ -17,7 +20,8 @@ Help = "help"
 CliVersion = "version"
 
 
-ACTION_GLOBAL_OPT = [SecretId, SecretKey, Region, Endpoint, Version, Filter, Profile, Timeout, Output]
+ACTION_GLOBAL_OPT = [SecretId, SecretKey, Region, Endpoint, Version, Filter, Profile, Timeout,
+                     Output, GenerateCliSkeleton, CliInputJson]
 
 
 

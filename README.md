@@ -7,7 +7,7 @@
 ```bash
 pip install tccli
 ```
-4. 安装完成之后执行tccli version检测是否安装成功。
+4. 安装完成之后执行tccli --version检测是否安装成功。
 5. 如果您的环境是linux环境，您可以通过以下命令启动自动补全功能：
 ```bash
 complete -C 'tccli_completer' tccli
@@ -191,3 +191,16 @@ tccli cvm DescribeZones --endpoint cvm.ap-guangzhou.tencentcloudapi.com
     }
 ]
 ```
+## 输出入参骨架到json文件
+```bash
+[root@VM_180_248_centos ~]# tccli cvm RunInstances  --generate-cli-skeleton > /tmp/RunIntances.json
+```
+## 从json文件读取参数，--cli-input-json后接file://+文件路径
+```bash
+[root@VM_180_248_centos ~]# tccli cvm RunInstances --cli-input-json file:///tmp/RunInstances.json
+{
+    "RequestId": "20e2b42d-3260-4750-9293-79116208330e", 
+    "InstanceIdSet": null
+}
+```
+

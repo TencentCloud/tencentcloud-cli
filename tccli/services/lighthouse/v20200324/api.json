@@ -1,0 +1,944 @@
+{
+  "actions": {
+    "DescribeBlueprints": {
+      "document": "本接口（DescribeBlueprints）用于查询镜像信息。",
+      "input": "DescribeBlueprintsRequest",
+      "name": "查询镜像信息",
+      "output": "DescribeBlueprintsResponse"
+    },
+    "DescribeBundles": {
+      "document": "本接口（DescribeBundles）用于查询套餐信息。",
+      "input": "DescribeBundlesRequest",
+      "name": "查询套餐",
+      "output": "DescribeBundlesResponse"
+    },
+    "DescribeInstances": {
+      "document": "本接口（DescribeInstances）用于查询一个或多个实例的详细信息。\n\n* 可以根据实例 ID、实例名称或者实例的内网 IP 查询实例的详细信息。\n* 过滤信息详细请见过滤器 [Filters](https://cloud.tencent.com/document/product/1207/47576#Filter) 。\n* 如果参数为空，返回当前用户一定数量（Limit 所指定的数量，默认为 20）的实例。\n* 支持查询实例的最新操作（LatestOperation）以及最新操作状态（LatestOperationState）。",
+      "input": "DescribeInstancesRequest",
+      "name": "查看实例列表",
+      "output": "DescribeInstancesResponse"
+    },
+    "RebootInstances": {
+      "document": "本接口（RebootInstances）用于重启实例。\n\n* 只有状态为 RUNNING 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 REBOOTING 状态；重启实例成功时，实例会进入 RUNNING 状态。\n* 支持批量操作，每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "input": "RebootInstancesRequest",
+      "name": "重启实例",
+      "output": "RebootInstancesResponse"
+    },
+    "ResetInstance": {
+      "document": "本接口（ResetInstance）用于重装指定实例上的镜像。\n\n* 如果指定了 BlueprintId 参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 目前不支持实例使用该接口实现 LINUX_UNIX 和 WINDOWS 操作系统切换。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "input": "ResetInstanceRequest",
+      "name": "重置应用",
+      "output": "ResetInstanceResponse"
+    },
+    "StartInstances": {
+      "document": "本接口（StartInstances）用于启动一个或多个实例。\n\n* 只有状态为 STOPPED 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 STARTING 状态；启动实例成功时，实例会进入 RUNNING 状态。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "input": "StartInstancesRequest",
+      "name": "启动实例",
+      "output": "StartInstancesResponse"
+    },
+    "StopInstances": {
+      "document": "本接口（StopInstances）用于关闭一个或多个实例。\n* 只有状态为 RUNNING 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 STOPPING 状态；关闭实例成功时，实例会进入 STOPPED 状态。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "input": "StopInstancesRequest",
+      "name": "关闭实例",
+      "output": "StopInstancesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-03-24",
+    "api_brief": "介绍如何使用API对 lighthouse 实例资源进行相关操作，如启动实例、关闭实例、重启实例、查询实例列表等。",
+    "serviceNameCN": "轻量应用服务器",
+    "serviceShortName": "lighthouse"
+  },
+  "objects": {
+    "Blueprint": {
+      "document": "描述了镜像信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像 ID  ，是 blueprint 的唯一标识。",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像对外展示标题。",
+          "member": "string",
+          "name": "DisplayTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像对外展示版本。",
+          "member": "string",
+          "name": "DisplayVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像描述信息。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统名称。",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
+          "member": "string",
+          "name": "PlatformType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像类型，如 APP_OS、PURE_OS。",
+          "member": "string",
+          "name": "BlueprintType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像图片 URL。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Bundle": {
+      "document": "套餐信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐 ID。",
+          "member": "string",
+          "name": "BundleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存大小，单位 GB。",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统盘类型。\n取值范围： \n<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>",
+          "member": "string",
+          "name": "SystemDiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统盘大小。",
+          "member": "int64",
+          "name": "SystemDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每月网络流量，单位 Gb。",
+          "member": "int64",
+          "name": "MonthlyTraffic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持 Linux/Unix 平台。",
+          "member": "bool",
+          "name": "SupportLinuxUnixPlatform",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持 Windows 平台。",
+          "member": "bool",
+          "name": "SupportWindowsPlatform",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐当前单位价格信息。",
+          "member": "Price",
+          "name": "Price",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU 核数。",
+          "member": "int64",
+          "name": "CPU",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "峰值带宽，单位 Mbps。",
+          "member": "uint64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络计费类型。",
+          "member": "string",
+          "name": "InternetChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐售卖状态,取值:‘AVAILABLE’(可用) , ‘SOLD_OUT’(售罄)",
+          "member": "string",
+          "name": "BundleSalesState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeBlueprintsRequest": {
+      "document": "DescribeBlueprints请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像 ID 列表。",
+          "member": "string",
+          "name": "BlueprintIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（预置应用的系统 ）；PURE_OS（纯净的 OS 系统）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlueprintsResponse": {
+      "document": "DescribeBlueprints返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的镜像数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "镜像详细信息列表。",
+          "member": "Blueprint",
+          "name": "BlueprintSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBundlesRequest": {
+      "document": "DescribeBundles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐 ID 列表。",
+          "member": "string",
+          "name": "BundleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤器列表。\n<li>bundle-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BundleIds 和 Filters。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBundlesResponse": {
+      "document": "DescribeBundles返回参数结构体",
+      "members": [
+        {
+          "document": "套餐详细信息列表。",
+          "member": "Bundle",
+          "name": "BundleSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合要求的套餐总数，用于分页展示。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例详细信息列表。",
+          "member": "Instance",
+          "name": "InstanceSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤名称等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以DescribeInstances接口的`Filter`为例。若我们需要查询实例名称（`instance-name`）为test ***并且*** 实例内网IP（`private-ip-address`）为10.10.10.10的实例时，可如下实现：\n```\nFilters.0.Name=instance-name\n&Filters.0.Values.0=test\n&Filters.1.Name=private-ip-address\n&Filters.1.Values.0=10.10.10.10\n```",
+      "members": [
+        {
+          "default": "",
+          "document": "需要过滤的字段。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Instance": {
+      "document": "描述了实例信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐 ID。",
+          "member": "string",
+          "name": "BundleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像 ID。",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的 CPU 核数，单位：核。",
+          "member": "int64",
+          "name": "CPU",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内存容量，单位：GB 。",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围： \nPREPAID：表示预付费，即包年包月。",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例系统盘信息。",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例主网卡的内网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
+          "member": "string",
+          "name": "PrivateAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例主网卡的公网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
+          "member": "string",
+          "name": "PublicAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例带宽信息。",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标识。取值范围： \nNOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  \nNOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例登录设置。",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态。取值范围： \n<li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li>",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例全局唯一 ID。",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的最新操作。例：StopInstances、ResetInstance。注意：此字段可能返回 空值，表示取不到有效值。",
+          "member": "string",
+          "name": "LatestOperation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的最新操作状态。取值范围： \nSUCCESS：表示操作成功 \nOPERATING：表示操作执行中 \nFAILED：表示操作失败 \n注意：此字段可能返回 空值，表示取不到有效值。",
+          "member": "string",
+          "name": "LatestOperationState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例最新操作的唯一请求 ID。 \n注意：此字段可能返回 空值，表示取不到有效值。",
+          "member": "string",
+          "name": "LatestOperationRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime_iso",
+          "name": "IsolatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
+          "member": "string",
+          "name": "PlatformType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统名称。",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstancePrice": {
+      "document": "关于Lighthouse Instance实例的价格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐单价原价。",
+          "member": "float",
+          "name": "OriginalBundlePrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价。",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣。",
+          "member": "int64",
+          "name": "Discount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后价。",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InternetAccessible": {
+      "document": "描述了启动配置创建实例的公网可访问性，声明了实例的公网使用计费模式，最大带宽等。",
+      "members": [
+        {
+          "default": "",
+          "document": "网络计费类型。",
+          "member": "string",
+          "name": "InternetChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公网出带宽上限，单位：Mbps。",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否分配公网 IP。",
+          "member": "bool",
+          "name": "PublicIpAssigned",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoginSettings": {
+      "document": "描述了实例登录相关配置与信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。",
+          "member": "string",
+          "name": "KeyIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Price": {
+      "document": "价格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例价格。",
+          "member": "InstancePrice",
+          "name": "InstancePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RebootInstancesRequest": {
+      "document": "RebootInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RebootInstancesResponse": {
+      "document": "RebootInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstanceRequest": {
+      "document": "ResetInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstanceResponse": {
+      "document": "ResetInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartInstancesRequest": {
+      "document": "StartInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartInstancesResponse": {
+      "document": "StartInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstancesRequest": {
+      "document": "StopInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstancesResponse": {
+      "document": "StopInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SystemDisk": {
+      "document": "描述了操作系统所在块设备即系统盘的信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "系统盘类型。\n取值范围： \n<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统盘大小，单位：GB。",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统盘ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

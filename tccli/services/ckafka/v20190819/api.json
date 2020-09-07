@@ -1,0 +1,4120 @@
+{
+  "actions": {
+    "CreateAcl": {
+      "document": "添加 ACL 策略",
+      "input": "CreateAclRequest",
+      "name": "添加 ACL 策略",
+      "output": "CreateAclResponse"
+    },
+    "CreateInstancePre": {
+      "document": "创建实例(预付费包年包月)",
+      "input": "CreateInstancePreRequest",
+      "name": "创建实例(预付费包年包月)",
+      "output": "CreateInstancePreResponse"
+    },
+    "CreatePartition": {
+      "document": "本接口用于增加主题中的分区",
+      "input": "CreatePartitionRequest",
+      "name": "增加主题分区",
+      "output": "CreatePartitionResponse"
+    },
+    "CreateTopic": {
+      "document": "创建ckafka主题",
+      "input": "CreateTopicRequest",
+      "name": "创建主题",
+      "output": "CreateTopicResponse"
+    },
+    "CreateTopicIpWhiteList": {
+      "document": "创建主题ip白名单",
+      "input": "CreateTopicIpWhiteListRequest",
+      "name": "创建主题IP白名单",
+      "output": "CreateTopicIpWhiteListResponse"
+    },
+    "CreateUser": {
+      "document": "添加用户",
+      "input": "CreateUserRequest",
+      "name": "添加用户",
+      "output": "CreateUserResponse"
+    },
+    "DeleteAcl": {
+      "document": "删除ACL",
+      "input": "DeleteAclRequest",
+      "name": "删除ACL",
+      "output": "DeleteAclResponse"
+    },
+    "DeleteTopic": {
+      "document": "删除ckafka主题",
+      "input": "DeleteTopicRequest",
+      "name": "删除主题",
+      "output": "DeleteTopicResponse"
+    },
+    "DeleteTopicIpWhiteList": {
+      "document": "删除主题IP白名单",
+      "input": "DeleteTopicIpWhiteListRequest",
+      "name": "删除主题IP白名单",
+      "output": "DeleteTopicIpWhiteListResponse"
+    },
+    "DeleteUser": {
+      "document": "删除用户",
+      "input": "DeleteUserRequest",
+      "name": "删除用户",
+      "output": "DeleteUserResponse"
+    },
+    "DescribeACL": {
+      "document": "枚举ACL",
+      "input": "DescribeACLRequest",
+      "name": "枚举ACL",
+      "output": "DescribeACLResponse"
+    },
+    "DescribeAppInfo": {
+      "document": "查询用户列表",
+      "input": "DescribeAppInfoRequest",
+      "name": "查询用户列表",
+      "output": "DescribeAppInfoResponse"
+    },
+    "DescribeConsumerGroup": {
+      "document": "查询消费分组信息",
+      "input": "DescribeConsumerGroupRequest",
+      "name": "查询消费分组信息",
+      "output": "DescribeConsumerGroupResponse"
+    },
+    "DescribeGroup": {
+      "document": "枚举消费分组(精简版)",
+      "input": "DescribeGroupRequest",
+      "name": "枚举消费分组(精简版)",
+      "output": "DescribeGroupResponse"
+    },
+    "DescribeGroupInfo": {
+      "document": "获取消费分组信息",
+      "input": "DescribeGroupInfoRequest",
+      "name": "获取消费分组信息",
+      "output": "DescribeGroupInfoResponse"
+    },
+    "DescribeGroupOffsets": {
+      "document": "获取消费分组offset",
+      "input": "DescribeGroupOffsetsRequest",
+      "name": "获取消费分组offset",
+      "output": "DescribeGroupOffsetsResponse"
+    },
+    "DescribeInstanceAttributes": {
+      "document": "获取实例属性",
+      "input": "DescribeInstanceAttributesRequest",
+      "name": "获取实例属性",
+      "output": "DescribeInstanceAttributesResponse"
+    },
+    "DescribeInstances": {
+      "document": "本接口（DescribeInstance）用于在用户账户下获取消息队列 CKafka 实例列表",
+      "input": "DescribeInstancesRequest",
+      "name": "获取实例列表",
+      "output": "DescribeInstancesResponse"
+    },
+    "DescribeInstancesDetail": {
+      "document": "用户账户下获取实例列表详情",
+      "input": "DescribeInstancesDetailRequest",
+      "name": "获取实例列表详情",
+      "output": "DescribeInstancesDetailResponse"
+    },
+    "DescribeRoute": {
+      "document": "查看路由信息",
+      "input": "DescribeRouteRequest",
+      "name": "查看路由信息",
+      "output": "DescribeRouteResponse"
+    },
+    "DescribeTopic": {
+      "document": "接口请求域名：https://ckafka.tencentcloudapi.com\n本接口（DescribeTopic）用于在用户获取消息队列 CKafka 实例的主题列表",
+      "input": "DescribeTopicRequest",
+      "name": "获取主题列表",
+      "output": "DescribeTopicResponse"
+    },
+    "DescribeTopicAttributes": {
+      "document": "获取主题属性\n",
+      "input": "DescribeTopicAttributesRequest",
+      "name": "获取主题属性",
+      "output": "DescribeTopicAttributesResponse"
+    },
+    "DescribeTopicDetail": {
+      "document": "获取主题列表详情（仅控制台调用）",
+      "input": "DescribeTopicDetailRequest",
+      "name": "获取主题列表详情",
+      "output": "DescribeTopicDetailResponse"
+    },
+    "DescribeUser": {
+      "document": "查询用户信息",
+      "input": "DescribeUserRequest",
+      "name": "查询用户信息",
+      "output": "DescribeUserResponse"
+    },
+    "FetchMessageByOffset": {
+      "document": "根据指定offset位置的消息",
+      "input": "FetchMessageByOffsetRequest",
+      "name": "查询消息",
+      "output": "FetchMessageByOffsetResponse"
+    },
+    "FetchMessageListByOffset": {
+      "document": "根据位点查询消息列表",
+      "input": "FetchMessageListByOffsetRequest",
+      "name": "根据位点查询消息列表",
+      "output": "FetchMessageListByOffsetResponse"
+    },
+    "FetchMessageListByTimestamp": {
+      "document": "根据时间戳查询消息列表",
+      "input": "FetchMessageListByTimestampRequest",
+      "name": "根据时间戳查询消息列表",
+      "output": "FetchMessageListByTimestampResponse"
+    },
+    "ModifyGroupOffsets": {
+      "document": "设置Groups 消费分组offset",
+      "input": "ModifyGroupOffsetsRequest",
+      "name": "设置Groups 消费分组offset",
+      "output": "ModifyGroupOffsetsResponse"
+    },
+    "ModifyInstanceAttributes": {
+      "document": "设置实例属性",
+      "input": "ModifyInstanceAttributesRequest",
+      "name": "设置实例属性",
+      "output": "ModifyInstanceAttributesResponse"
+    },
+    "ModifyPassword": {
+      "document": "修改密码",
+      "input": "ModifyPasswordRequest",
+      "name": "修改密码",
+      "output": "ModifyPasswordResponse"
+    },
+    "ModifyTopicAttributes": {
+      "document": "本接口用于修改主题属性。",
+      "input": "ModifyTopicAttributesRequest",
+      "name": "设置主题属性",
+      "output": "ModifyTopicAttributesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-08-19",
+    "api_brief": "介绍如何使用API对消息队列CKafka进行操作，包括管理实例等。",
+    "serviceNameCN": "消息队列 Ckafka",
+    "serviceShortName": "ckafka"
+  },
+  "objects": {
+    "Acl": {
+      "document": "ACL对象实体",
+      "members": [
+        {
+          "default": "",
+          "document": "Acl资源类型，（0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID）当前只有TOPIC，",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称，和resourceType相关如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Principal",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认为*，表示任何host都可以访问，当前ckafka不支持host为*，但是后面开源kafka的产品化会直接支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Acl操作方式(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTEN_WRITE)",
+          "member": "int64",
+          "name": "Operation",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权限类型(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)",
+          "member": "int64",
+          "name": "PermissionType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AclResponse": {
+      "document": "ACL返回结果集",
+      "members": [
+        {
+          "default": "",
+          "document": "符合条件的总数据条数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ACL列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Acl",
+          "name": "AclList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AppIdResponse": {
+      "document": "AppId的查询结果",
+      "members": [
+        {
+          "default": "",
+          "document": "符合要求的所有AppId数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "符合要求的App Id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AppIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Assignment": {
+      "document": "存储着分配给该消费者的 partition 信息",
+      "members": [
+        {
+          "default": "",
+          "document": "assingment版本信息",
+          "member": "int64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GroupInfoTopics",
+          "name": "Topics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Config": {
+      "document": "高级配置对象",
+      "members": [
+        {
+          "default": "",
+          "document": "消息保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Retention",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小同步复制数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MinInsyncReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志清理模式，默认 delete。\ndelete：日志按保存时间删除；compact：日志按 key 压缩；compact, delete：日志按 key 压缩且会保存时间删除。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CleanUpPolicy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Segment 分片滚动的时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SegmentMs",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0表示 false。 1表示 true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "UncleanLeaderElectionEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Segment 分片滚动的字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SegmentBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大消息字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxMessageBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerGroup": {
+      "document": "用户组实体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组名称",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订阅信息实体",
+          "member": "SubscribedInfo",
+          "name": "SubscribedInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerGroupResponse": {
+      "document": "消费组返回结果实体",
+      "members": [
+        {
+          "default": "",
+          "document": "符合条件的消费组数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConsumerGroupTopic",
+          "name": "TopicList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费分组List\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConsumerGroup",
+          "name": "GroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所有分区数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalPartition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监控的分区列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Partition",
+          "name": "PartitionListForMonitor",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主题总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalTopic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监控的主题列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConsumerGroupTopic",
+          "name": "TopicListForMonitor",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监控的组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Group",
+          "name": "GroupListForMonitor",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerGroupTopic": {
+      "document": "消费组主题对象",
+      "members": [
+        {
+          "default": "",
+          "document": "主题ID",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerRecord": {
+      "document": "消息记录",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位点",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateAclRequest": {
+      "document": "CreateAcl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id信息",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Acl资源类型，(0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID)，当前只有TOPIC，其它字段用于后续兼容开源kafka的acl时使用",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Acl操作方式，(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS)",
+          "member": "int64",
+          "name": "Operation",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "权限类型，(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用",
+          "member": "int64",
+          "name": "PermissionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认为\\*，表示任何host都可以访问，当前ckafka不支持host为\\*，但是后面开源kafka的产品化会直接支持",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户",
+          "member": "string",
+          "name": "Principal",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAclResponse": {
+      "document": "CreateAcl返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancePreData": {
+      "document": "创建预付费接口返回的Data",
+      "members": [
+        {
+          "default": "",
+          "document": "CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateInstancePreRequest": {
+      "document": "CreateInstancePre请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预付费购买时长，例如 \"1m\",就是一个月",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例规格，1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "vpcId，不填默认基础网络",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网id，vpc网络需要传该参数，基础网络可以不传",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略",
+          "member": "int64",
+          "name": "MsgRetentionTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建实例时可以选择集群Id, 该入参表示集群Id",
+          "member": "int64",
+          "name": "ClusterId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预付费自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancePreResponse": {
+      "document": "创建预付费实例返回结构",
+      "members": [
+        {
+          "default": "",
+          "document": "返回的code，0为正常，非0为错误",
+          "member": "string",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成功消息",
+          "member": "string",
+          "name": "ReturnMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作型返回的Data数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CreateInstancePreData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreatePartitionRequest": {
+      "document": "CreatePartition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题分区个数",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartitionResponse": {
+      "document": "CreatePartition返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果集",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicIpWhiteListRequest": {
+      "document": "CreateTopicIpWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ip白名单列表",
+          "member": "string",
+          "name": "IpWhiteList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicIpWhiteListResponse": {
+      "document": "CreateTopicIpWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "删除主题IP白名单结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRequest": {
+      "document": "CreateTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Partition个数，大于0",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "副本个数，不能多于 broker 数，最大为3",
+          "member": "int64",
+          "name": "ReplicaNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ip白名单开关, 1:打开  0:关闭，默认不打开",
+          "member": "int64",
+          "name": "EnableWhiteList",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Ip白名单列表，配额限制，enableWhileList=1时必选",
+          "member": "string",
+          "name": "IpWhiteList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "清理日志策略，日志清理模式，默认为\"delete\"。\"delete\"：日志按保存时间删除，\"compact\"：日志按 key 压缩，\"compact, delete\"：日志按 key 压缩且会按保存时间删除。",
+          "member": "string",
+          "name": "CleanUpPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认为1",
+          "member": "int64",
+          "name": "MinInsyncReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否允许未同步的副本选为leader，false:不允许，true:允许，默认不允许",
+          "member": "int64",
+          "name": "UncleanLeaderElectionEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可消息选。保留时间，单位ms，当前最小值为60000ms",
+          "member": "int64",
+          "name": "RetentionMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Segment分片滚动的时长，单位ms，当前最小为3600000ms",
+          "member": "int64",
+          "name": "SegmentMs",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicResp": {
+      "document": "创建主题返回",
+      "members": [
+        {
+          "default": "",
+          "document": "主题Id",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateTopicResponse": {
+      "document": "CreateTopic返回参数结构体",
+      "members": [
+        {
+          "document": "返回创建结果",
+          "member": "CreateTopicResp",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户密码",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAclRequest": {
+      "document": "DeleteAcl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id信息",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Acl资源类型，(0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID)，当前只有TOPIC，其它字段用于后续兼容开源kafka的acl时使用",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Acl操作方式，(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTEN_WRITE)，当前ckafka只支持READ,WRITE，其它用于后续兼容开源kafka的acl时使用",
+          "member": "int64",
+          "name": "Operation",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "权限类型，(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用",
+          "member": "int64",
+          "name": "PermissionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认为\\*，表示任何host都可以访问，当前ckafka不支持host为\\*，但是后面开源kafka的产品化会直接支持",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户",
+          "member": "string",
+          "name": "Principal",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAclResponse": {
+      "document": "DeleteAcl返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicIpWhiteListRequest": {
+      "document": "DeleteTopicIpWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ip白名单列表",
+          "member": "string",
+          "name": "IpWhiteList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicIpWhiteListResponse": {
+      "document": "DeleteTopicIpWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "删除主题IP白名单结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicRequest": {
+      "document": "DeleteTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ckafka 实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ckafka 主题名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicResponse": {
+      "document": "DeleteTopic返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果集",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeACLRequest": {
+      "document": "DescribeACL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Acl资源类型，(0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID)，当前只有TOPIC，其它字段用于后续兼容开源kafka的acl时使用",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移位置",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "个数限制",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "关键字匹配",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeACLResponse": {
+      "document": "DescribeACL返回参数结构体",
+      "members": [
+        {
+          "document": "返回的ACL结果集对象",
+          "member": "AclResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppInfoRequest": {
+      "document": "DescribeAppInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移位置",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本次查询用户数目最大数量限制，最大值为50，默认50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppInfoResponse": {
+      "document": "DescribeAppInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的符合要求的App Id列表",
+          "member": "AppIdResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerGroupRequest": {
+      "document": "DescribeConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ckafka实例id。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选，用户需要查询的group名称。",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本次返回个数限制",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移位置",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerGroupResponse": {
+      "document": "DescribeConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "返回的消费分组信息",
+          "member": "ConsumerGroupResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroup": {
+      "document": "DescribeGroup返回实体",
+      "members": [
+        {
+          "default": "",
+          "document": "groupId",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该 group 使用的协议。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeGroupInfoRequest": {
+      "document": "DescribeGroupInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "（过滤条件）按照实例 ID 过滤。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。",
+          "member": "string",
+          "name": "GroupList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupInfoResponse": {
+      "document": "DescribeGroupInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GroupInfoResponse",
+          "name": "Result",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupOffsetsRequest": {
+      "document": "DescribeGroupOffsets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "（过滤条件）按照实例 ID 过滤",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kafka 消费分组",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息",
+          "member": "string",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模糊匹配 topicName",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本次查询的偏移位置，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本次返回结果的最大个数，默认为50，最大值为50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupOffsetsResponse": {
+      "document": "DescribeGroupOffsets返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果对象",
+          "member": "GroupOffsetResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupRequest": {
+      "document": "DescribeGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大返回数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupResponse": {
+      "document": "DescribeGroup返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果集列表",
+          "member": "GroupResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAttributesRequest": {
+      "document": "DescribeInstanceAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAttributesResponse": {
+      "document": "DescribeInstanceAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "实例属性返回结果对象",
+          "member": "InstanceAttributesResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesDetailRequest": {
+      "document": "DescribeInstancesDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "（过滤条件）按照实例ID过滤",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，不填默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认10，最大值20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "匹配标签key值。",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤器",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesDetailResponse": {
+      "document": "DescribeInstancesDetail返回参数结构体",
+      "members": [
+        {
+          "document": "返回的实例详情结果对象",
+          "member": "InstanceDetailResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "（过滤条件）按照实例ID过滤",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，不填默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认10，最大值100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "匹配标签key值。",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果",
+          "member": "InstanceResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteRequest": {
+      "document": "DescribeRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例唯一id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteResponse": {
+      "document": "DescribeRoute返回参数结构体",
+      "members": [
+        {
+          "document": "返回的路由信息结果集",
+          "member": "RouteResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicAttributesRequest": {
+      "document": "DescribeTopicAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicAttributesResponse": {
+      "document": "DescribeTopicAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果对象",
+          "member": "TopicAttributesResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicDetailRequest": {
+      "document": "DescribeTopicDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "（过滤条件）按照topicName过滤，支持模糊查询",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，不填默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认 10，最大值20，取值要大于0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicDetailResponse": {
+      "document": "DescribeTopicDetail返回参数结构体",
+      "members": [
+        {
+          "document": "返回的主题详情实体",
+          "member": "TopicDetailResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicRequest": {
+      "document": "DescribeTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，按照 topicName 过滤，支持模糊查询",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，不填默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicResponse": {
+      "document": "DescribeTopic返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TopicResult",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserRequest": {
+      "document": "DescribeUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照名称过滤",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本次返回个数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserResponse": {
+      "document": "DescribeUser返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果列表",
+          "member": "UserResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageByOffsetRequest": {
+      "document": "FetchMessageByOffset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "位点信息",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageByOffsetResponse": {
+      "document": "FetchMessageByOffset返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "ConsumerRecord",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageListByOffsetRequest": {
+      "document": "FetchMessageListByOffset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "位点信息",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大查询条数，默认20",
+          "member": "int64",
+          "name": "SinglePartitionRecordNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageListByOffsetResponse": {
+      "document": "FetchMessageListByOffset返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "ConsumerRecord",
+          "name": "Result",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageListByTimestampRequest": {
+      "document": "FetchMessageListByTimestamp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，13位时间戳",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大查询条数，默认20",
+          "member": "int64",
+          "name": "SinglePartitionRecordNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageListByTimestampResponse": {
+      "document": "FetchMessageListByTimestamp返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "ConsumerRecord",
+          "name": "Result",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "查询过滤器\n>描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n",
+      "members": [
+        {
+          "default": "",
+          "document": "需要过滤的字段。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Group": {
+      "document": "组实体",
+      "members": [
+        {
+          "default": "",
+          "document": "组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupInfoMember": {
+      "document": "consumer信息",
+      "members": [
+        {
+          "default": "",
+          "document": "coordinator 为消费分组中的消费者生成的唯一 ID",
+          "member": "string",
+          "name": "MemberId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户消费者 SDK 自己设置的 client.id 信息",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一般存储客户的 IP 地址",
+          "member": "string",
+          "name": "ClientHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储着分配给该消费者的 partition 信息",
+          "member": "Assignment",
+          "name": "Assignment",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupInfoResponse": {
+      "document": "GroupInfo返回数据的实体",
+      "members": [
+        {
+          "default": "",
+          "document": "错误码，正常为0",
+          "member": "string",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "group 状态描述（常见的为 Empty、Stable、Dead 三种状态）：\nDead：消费分组不存在\nEmpty：消费分组，当前没有任何消费者订阅\nPreparingRebalance：消费分组处于 rebalance 状态\nCompletingRebalance：消费分组处于 rebalance 状态\nStable：消费分组中各个消费者已经加入，处于稳定状态",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费分组选择的协议类型正常的消费者一般为 consumer 但有些系统采用了自己的协议如 kafka-connect 用的就是 connect。只有标准的 consumer 协议，本接口才知道具体的分配方式的格式，才能解析到具体的 partition 的分配情况",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费者 partition 分配算法常见的有如下几种(Kafka 消费者 SDK 默认的选择项为 range)：range、 roundrobin、 sticky",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仅当 state 为 Stable 且 protocol_type 为 consumer 时， 该数组才包含信息",
+          "member": "GroupInfoMember",
+          "name": "Members",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kafka 消费分组",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupInfoTopics": {
+      "document": "GroupInfo内部topic对象",
+      "members": [
+        {
+          "default": "",
+          "document": "分配的 topic 名称",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分配的 partition 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Partitions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupOffsetPartition": {
+      "document": "组偏移量分区对象",
+      "members": [
+        {
+          "default": "",
+          "document": "topic 的 partitionId",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "consumer 提交的 offset 位置",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持消费者提交消息时，传入 metadata 作为它用，当前一般为空字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Metadata",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误码",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前 partition 最新的 offset",
+          "member": "int64",
+          "name": "LogEndOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "未消费的消息个数",
+          "member": "int64",
+          "name": "Lag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupOffsetResponse": {
+      "document": "消费组偏移量返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "符合调节的总结果数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该主题分区数组，其中每个元素为一个 json object\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GroupOffsetTopic",
+          "name": "TopicList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupOffsetTopic": {
+      "document": "消费分组主题对象",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名称",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该主题分区数组，其中每个元素为一个 json object\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GroupOffsetPartition",
+          "name": "Partitions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupResponse": {
+      "document": "DescribeGroup的返回",
+      "members": [
+        {
+          "default": "",
+          "document": "计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GroupList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DescribeGroup",
+          "name": "GroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Instance": {
+      "document": "实例对象",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的状态。0：创建中，1：运行中，2：删除中 ， 5 隔离中，-1 创建失败",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开源实例。开源：true，不开源：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IfCommunity",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceAttributesResponse": {
+      "document": "实例属性返回结果对象",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入点 VIP 列表信息",
+          "member": "VipEntity",
+          "name": "VipList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟IP",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟端口",
+          "member": "string",
+          "name": "Vport",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的状态。0：创建中，1：运行中，2：删除中",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例带宽，单位：Mbps",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的存储大小，单位：GB",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC 的 ID，为空表示是基础网络",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网 ID， 为空表示基础网络",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例健康状态， 1：健康，2：告警，3：异常",
+          "member": "int64",
+          "name": "Healthy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例健康信息，当前会展示磁盘利用率，最大长度为256",
+          "member": "string",
+          "name": "HealthyMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息保存时间,单位为分钟",
+          "member": "int64",
+          "name": "MsgRetentionTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建",
+          "member": "InstanceConfigDO",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余创建分区数",
+          "member": "int64",
+          "name": "RemainderPartitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余创建主题数",
+          "member": "int64",
+          "name": "RemainderTopics",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前创建分区数",
+          "member": "int64",
+          "name": "CreatedPartitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前创建主题数",
+          "member": "int64",
+          "name": "CreatedTopics",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跨可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kafka版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大分组数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxGroupNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "售卖类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Cvm",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceConfigDO": {
+      "document": "实例配置实体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否自动创建主题",
+          "member": "bool",
+          "name": "AutoCreateTopicsEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区数",
+          "member": "int64",
+          "name": "DefaultNumPartitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认的复制Factor",
+          "member": "int64",
+          "name": "DefaultReplicationFactor",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceDetail": {
+      "document": "实例详情",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问实例的vip 信息",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问实例的端口信息",
+          "member": "string",
+          "name": "Vport",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟IP列表",
+          "member": "VipEntity",
+          "name": "VipList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例带宽，单位Mbps",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的存储大小，单位GB",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区域ID",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "vpcId，如果为空，说明是基础网络",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例是否续费，int  枚举值：1表示自动续费，2表示明确不自动续费",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态 int：0表示健康，1表示告警，2 表示实例状态异常",
+          "member": "int64",
+          "name": "Healthy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态信息",
+          "member": "string",
+          "name": "HealthyMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间时间",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例过期时间",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为内部客户。值为1 表示内部客户",
+          "member": "int64",
+          "name": "IsInternal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic个数",
+          "member": "int64",
+          "name": "TopicNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标识tag",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "kafka版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跨可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ckafka售卖类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Cvm",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceDetailResponse": {
+      "document": "实例详情返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "符合条件的实例总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "符合条件的实例详情列表",
+          "member": "InstanceDetail",
+          "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceResponse": {
+      "document": "聚合的实例状态返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "符合条件的实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Instance",
+          "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "符合条件的结果总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "JgwOperateResponse": {
+      "document": "操作型结果返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "返回的code，0为正常，非0为错误",
+          "member": "string",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成功消息",
+          "member": "string",
+          "name": "ReturnMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作型返回的Data数据,可能有flowId等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OperateResponseData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyGroupOffsetsRequest": {
+      "document": "ModifyGroupOffsets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "kafka实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "kafka 消费分组",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重置offset的策略，入参含义 0. 对齐shift-by参数，代表把offset向前或向后移动shift条 1. 对齐参考(by-duration,to-datetime,to-earliest,to-latest),代表把offset移动到指定timestamp的位置 2. 对齐参考(to-offset)，代表把offset移动到指定的offset位置",
+          "member": "int64",
+          "name": "Strategy",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "表示需要重置的topics， 不填表示全部",
+          "member": "string",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当strategy为0时，必须包含该字段，可以大于零代表会把offset向后移动shift条，小于零则将offset向前回溯shift条数。正确重置后新的offset应该是(old_offset + shift)，需要注意的是如果新的offset小于partition的earliest则会设置为earliest，如果大于partition 的latest则会设置为latest",
+          "member": "int64",
+          "name": "Shift",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单位ms。当strategy为1时，必须包含该字段，其中-2表示重置offset到最开始的位置，-1表示重置到最新的位置(相当于清空)，其它值则代表指定的时间，会获取topic中指定时间的offset然后进行重置，需要注意的时，如果指定的时间不存在消息，则获取最末尾的offset。",
+          "member": "int64",
+          "name": "ShiftTimestamp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要重新设置的offset位置。当strategy为2，必须包含该字段。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGroupOffsetsResponse": {
+      "document": "ModifyGroupOffsets返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceAttributesConfig": {
+      "document": "修改实例属性的配置对象",
+      "members": [
+        {
+          "default": "",
+          "document": "自动创建 true 表示开启，false 表示不开启",
+          "member": "bool",
+          "name": "AutoCreateTopicEnable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可选，如果auto.create.topic.enable设置为true没有设置该值时，默认设置为3",
+          "member": "int64",
+          "name": "DefaultNumPartitions",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如歌auto.create.topic.enable设置为true没有指定该值时默认设置为2",
+          "member": "int64",
+          "name": "DefaultReplicationFactor",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyInstanceAttributesRequest": {
+      "document": "ModifyInstanceAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例日志的最长保留时间，单位分钟，最大30天，0代表不开启日志保留时间回收策略",
+          "member": "int64",
+          "name": "MsgRetentionTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例配置",
+          "member": "ModifyInstanceAttributesConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceAttributesResponse": {
+      "document": "ModifyInstanceAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPasswordRequest": {
+      "document": "ModifyPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户当前密码",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户新密码",
+          "member": "string",
+          "name": "PasswordNew",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPasswordResponse": {
+      "document": "ModifyPassword返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicAttributesRequest": {
+      "document": "ModifyTopicAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP 白名单开关，1：打开；0：关闭。",
+          "member": "int64",
+          "name": "EnableWhiteList",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认为1。",
+          "member": "int64",
+          "name": "MinInsyncReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认为 0，0：false；1：true。",
+          "member": "int64",
+          "name": "UncleanLeaderElectionEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息保留时间，单位：ms，当前最小值为60000ms。",
+          "member": "int64",
+          "name": "RetentionMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Segment 分片滚动的时长，单位：ms，当前最小为86400000ms。",
+          "member": "int64",
+          "name": "SegmentMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主题消息最大值，单位为 Byte，最大值为8388608Byte（即8MB）。",
+          "member": "int64",
+          "name": "MaxMessageBytes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息删除策略，可以选择delete 或者compact",
+          "member": "string",
+          "name": "CleanUpPolicy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicAttributesResponse": {
+      "document": "ModifyTopicAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果集",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateResponseData": {
+      "document": "操作类型返回的Data结构",
+      "members": [
+        {
+          "default": "",
+          "document": "FlowId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Partition": {
+      "document": "分区实体",
+      "members": [
+        {
+          "default": "",
+          "document": "分区ID",
+          "member": "int64",
+          "name": "PartitionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PartitionOffset": {
+      "document": "分区和位移",
+      "members": [
+        {
+          "default": "",
+          "document": "Partition,例如\"0\"或\"1\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Partition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Offset,例如100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Route": {
+      "document": "路由实体对象",
+      "members": [
+        {
+          "default": "",
+          "document": "实例接入方式\n0：PLAINTEXT (明文方式，没有带用户信息老版本及社区版本都支持)\n1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）\n2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）\n3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）",
+          "member": "int64",
+          "name": "AccessType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由ID",
+          "member": "int64",
+          "name": "RouteId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:腾讯云支持环境(一般用于内部实例) 5:SSL外网访问方式访问 6:黑石环境vpc）",
+          "member": "int64",
+          "name": "VipType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟IP列表",
+          "member": "VipEntity",
+          "name": "VipList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DomainPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RouteResponse": {
+      "document": "路由信息返回对象",
+      "members": [
+        {
+          "default": "",
+          "document": "路由信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Route",
+          "name": "Routers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubscribedInfo": {
+      "document": "订阅信息实体",
+      "members": [
+        {
+          "default": "",
+          "document": "订阅的主题名",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订阅的分区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分区offset信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PartitionOffset",
+          "name": "PartitionOffset",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "实例详情中的标签对象",
+      "members": [
+        {
+          "default": "",
+          "document": "标签的key",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签的值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Topic": {
+      "document": "返回的topic对象",
+      "members": [
+        {
+          "default": "",
+          "document": "主题的ID",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题的名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicAttributesResponse": {
+      "document": "主题属性返回结果实体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题 ID",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分区个数",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP 白名单开关，1：打开； 0：关闭",
+          "member": "int64",
+          "name": "EnableWhiteList",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP 白名单列表",
+          "member": "string",
+          "name": "IpWhiteList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic 配置数组",
+          "member": "Config",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区详情",
+          "member": "TopicPartitionDO",
+          "name": "Partitions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicDetail": {
+      "document": "主题详情",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题ID",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区数",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副本数",
+          "member": "int64",
+          "name": "ReplicaNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启ip鉴权白名单，true表示开启，false表示不开启",
+          "member": "bool",
+          "name": "EnableWhiteList",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip白名单中ip个数",
+          "member": "int64",
+          "name": "IpWhiteListCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据备份cos bucket: 转存到cos 的bucket地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ForwardCosBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据备份cos 状态： 1 不开启数据备份，0 开启数据备份",
+          "member": "int64",
+          "name": "ForwardStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据备份到cos的周期频率",
+          "member": "int64",
+          "name": "ForwardInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Config",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicDetailResponse": {
+      "document": "主题详情返回实体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回的主题详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TopicDetail",
+          "name": "TopicList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "符合条件的所有主题详情数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicPartitionDO": {
+      "document": "分区详情",
+      "members": [
+        {
+          "default": "",
+          "document": "Partition ID",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Leader 运行状态",
+          "member": "int64",
+          "name": "LeaderStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ISR 个数",
+          "member": "int64",
+          "name": "IsrNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副本个数",
+          "member": "int64",
+          "name": "ReplicaNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicResult": {
+      "document": "统一返回的TopicResponse",
+      "members": [
+        {
+          "default": "",
+          "document": "返回的主题信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Topic",
+          "name": "TopicList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "符合条件的 topic 数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "User": {
+      "document": "用户实体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户id",
+          "member": "int64",
+          "name": "UserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserResponse": {
+      "document": "用户返回实体",
+      "members": [
+        {
+          "default": "",
+          "document": "符合条件的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "User",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "符合条件的总用户数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VipEntity": {
+      "document": "虚拟IP实体",
+      "members": [
+        {
+          "default": "",
+          "document": "虚拟IP",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟端口",
+          "member": "string",
+          "name": "Vport",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

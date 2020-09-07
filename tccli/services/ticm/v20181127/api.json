@@ -1,0 +1,1524 @@
+{
+  "actions": {
+    "DescribeVideoTask": {
+      "document": "提交完视频审核任务后，可以通过本接口来获取当前处理的进度和结果",
+      "input": "DescribeVideoTaskRequest",
+      "name": "查询视频内容审核的结果",
+      "output": "DescribeVideoTaskResponse"
+    },
+    "ImageModeration": {
+      "document": "本接口提供多种维度的图像审核能力，支持色情和性感内容识别，政治人物和涉政敏感场景识别，以及暴恐人物、场景、旗帜标识等违禁内容的识别。",
+      "input": "ImageModerationRequest",
+      "name": "图像内容审核",
+      "output": "ImageModerationResponse"
+    },
+    "VideoModeration": {
+      "document": "本接口提供多种维度的视频审核能力，支持色情和性感内容识别，政治人物和涉政敏感场景识别，以及暴恐人物、场景、旗帜标识等违禁内容的识别。",
+      "input": "VideoModerationRequest",
+      "name": "视频内容识别",
+      "output": "VideoModerationResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-11-27",
+    "api_brief": null,
+    "serviceNameCN": "智能鉴黄",
+    "serviceShortName": "ticm"
+  },
+  "objects": {
+    "Candidate": {
+      "document": "识别出人脸对应的候选人。",
+      "members": [
+        {
+          "default": "",
+          "document": "识别出人脸对应的候选人数组。当前返回相似度最高的候选人。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "相似度，0-100之间。",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeVideoTaskRequest": {
+      "document": "DescribeVideoTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询的视频审核的任务ID",
+          "member": "string",
+          "name": "VodTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoTaskResponse": {
+      "document": "DescribeVideoTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务状态，取值：\nWAITING：等待中；\nPROCESSING：处理中；\nFINISH：已完成。",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务开始执行的时间，采用 ISO 日期格式。",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务执行完毕的时间，采用 ISO 日期格式。",
+          "member": "string",
+          "name": "FinishTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频内容审核智能画面鉴黄任务的查询结果。",
+          "member": "VodPornReviewResult",
+          "name": "PornResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频内容审核智能画面鉴恐任务的查询结果。",
+          "member": "VodTerrorismReviewResult",
+          "name": "TerrorismResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频内容审核智能画面鉴政任务的查询结果。",
+          "member": "VodPoliticalReviewResult",
+          "name": "PoliticalResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频内容审核 Ocr 文字鉴政任务的查询结果。",
+          "member": "VodPoliticalOcrReviewResult",
+          "name": "PoliticalOcrResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频内容审核 Asr 文字鉴黄任务的查询结果。",
+          "member": "VodPornAsrReviewResult",
+          "name": "PornAsrResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频内容审核 Asr 文字鉴政任务的查询结果。",
+          "member": "VodPoliticalAsrReviewResult",
+          "name": "PoliticalAsrResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频内容审核 Ocr 文字鉴黄任务的查询结果。",
+          "member": "VodPornOcrResult",
+          "name": "PornOcrResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "原始视频的元信息。",
+          "member": "VodMetaData",
+          "name": "MetaData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisgustResult": {
+      "document": "恶心识别结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "该识别场景的错误码：\n0表示成功，\n-1表示系统错误，\n-2表示引擎错误。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码描述信息。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别场景的审核结论：\nPASS：正常\nREVIEW：疑似\nBLOCK：违规",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图像恶心的分数，0-100之间，分数越高恶心几率越大。",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceRect": {
+      "document": "识别出的人脸在图片中的位置。\n",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸区域左上角横坐标。",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸区域左上角纵坐标。",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸区域宽度。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸区域高度。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceResult": {
+      "document": "人脸识别结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "检测出的人脸框位置。",
+          "member": "FaceRect",
+          "name": "FaceRect",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "候选人列表。当前返回相似度最高的候选人。",
+          "member": "Candidate",
+          "name": "Candidates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageModerationRequest": {
+      "document": "ImageModeration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本次调用支持的识别场景，可选值如下：\n1. PORN，即色情识别\n2. TERRORISM，即暴恐识别\n3. POLITICS，即政治敏感识别\n\n支持多场景（Scenes）一起检测。例如，使用 Scenes=[\"PORN\", \"TERRORISM\"]，即对一张图片同时进行色情识别和暴恐识别。",
+          "member": "string",
+          "name": "Scenes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n • 图片格式：PNG、JPG、JPEG。 \n • 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n • 图片像素：大于50*50像素，否则影响识别效果； \n • 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预留字段，后期用于展示更多识别信息。",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传字段，透传简单信息。",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageModerationResponse": {
+      "document": "ImageModeration返回参数结构体",
+      "members": [
+        {
+          "document": "识别场景的审核结论：\nPASS：正常\nREVIEW：疑似\nBLOCK：违规",
+          "member": "string",
+          "name": "Suggestion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "色情识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PornResult",
+          "name": "PornResult",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "暴恐识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TerrorismResult",
+          "name": "TerrorismResult",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "政治敏感识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PoliticsResult",
+          "name": "PoliticsResult",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "透传字段，透传简单信息。",
+          "member": "string",
+          "name": "Extra",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恶心内容识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DisgustResult",
+          "name": "DisgustResult",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PoliticsResult": {
+      "document": "政治敏感识别结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "该识别场景的错误码：\n0表示成功，\n-1表示系统错误，\n-2表示引擎错误，\n-1400表示图片解码失败，\n-1401表示图片不符合规范。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码描述信息。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别场景的审核结论：\nPASS：正常\nREVIEW：疑似\nBLOCK：违规",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图像涉政的分数，0-100之间，分数越高涉政几率越大。\nType为DNA时：\n0到75，Suggestion建议为PASS\n75到90，Suggestion建议为REVIEW\n90到100，Suggestion建议为BLOCK\nType为FACE时：\n0到55，Suggestion建议为PASS\n55到60，Suggestion建议为REVIEW\n60到100，Suggestion建议为BLOCK",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type取值为‘FACE’时，人脸识别的结果列表。基于图片中实际检测到的人脸数，返回数组最大值不超过5个。",
+          "member": "FaceResult",
+          "name": "FaceResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值'DNA' 或‘FACE’。DNA表示结论和置信度来自图像指纹，FACE表示结论和置信度来自人脸识别。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴政识别返回的详细标签后期开放。",
+          "member": "string",
+          "name": "AdvancedInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PornResult": {
+      "document": "色情识别结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "该识别场景的错误码：\n0表示成功，\n-1表示系统错误，\n-2表示引擎错误，\n-1400表示图片解码失败。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码描述信息。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别场景的审核结论：\nPASS：正常\nREVIEW：疑似\nBLOCK：违规",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算法对于Suggestion的置信度，0-100之间，值越高，表示对于Suggestion越确定。",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预留字段，后期用于展示更多识别信息。",
+          "member": "string",
+          "name": "AdvancedInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值'LABEL‘，LABEL表示结论和置信度来自标签分类。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TerrorismResult": {
+      "document": "暴恐识别结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "该识别场景的错误码：\n0表示成功，\n-1表示系统错误，\n-2表示引擎错误，\n-1400表示图片解码失败。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码描述信息。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别场景的审核结论：\nPASS：正常\nREVIEW：疑似\nBLOCK：违规",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图像涉恐的分数，0-100之间，分数越高涉恐几率越大。\nType为LABEL时：\n0到86，Suggestion建议为PASS\n86到91，Suggestion建议为REVIEW\n91到100，Suggestion建议为BLOCK\nType为FACE时：\n0到55，Suggestion建议为PASS\n55到60，Suggestion建议为REVIEW\n60到100，Suggestion建议为BLOCK",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type取值为‘FACE’时，人脸识别的结果列表。基于图片中实际检测到的人脸数，返回数组最大值不超过5个。",
+          "member": "FaceResult",
+          "name": "FaceResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暴恐识别返回的详细标签后期开放。",
+          "member": "string",
+          "name": "AdvancedInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值'LABEL' 或‘FACE’，LABEL表示结论和置信度来自标签分类，FACE表示结论和置信度来自人脸识别。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoModerationRequest": {
+      "document": "VideoModeration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要审核的视频的URL地址",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开发者标识",
+          "member": "string",
+          "name": "DeveloperId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "审核完成后回调地址",
+          "member": "string",
+          "name": "CBUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传字段，透传简单信息。",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VideoModerationResponse": {
+      "document": "VideoModeration返回参数结构体",
+      "members": [
+        {
+          "document": "视频审核任务ID",
+          "member": "string",
+          "name": "VodTaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VodAsrTextSegmentItem": {
+      "document": "内容审核 Asr 文字审核嫌疑片段",
+      "members": [
+        {
+          "default": "",
+          "document": "嫌疑片段起始的偏移时间，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段结束的偏移时间，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段置信度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段审核结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑关键词列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeywordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodAudioStreamItem": {
+      "document": "文件音频流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频流的码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流的采样率，单位：hz。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SamplingRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流的编码格式，例如 aac。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodMetaData": {
+      "document": "媒体文件元信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "上传的媒体文件大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器类型，例如 m4a，mp4 等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Container",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流码率平均值与音频流码率平均值之和，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流高度的最大值，单位：px。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流宽度的最大值，单位：px。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频拍摄时的选择角度，单位：度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Rotate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodVideoStreamItem",
+          "name": "VideoStreamSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodAudioStreamItem",
+          "name": "AudioStreamSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "VideoDuration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频时长，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "AudioDuration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodOcrTextSegmentItem": {
+      "document": "内容审核 Ocr 文字审核嫌疑片段",
+      "members": [
+        {
+          "default": "",
+          "document": "嫌疑片段起始的偏移时间，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段结束的偏移时间，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段置信度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段审核结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑关键词列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeywordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodPoliticalAsrReviewResult": {
+      "document": "内容审核 Asr 文字鉴政、敏感任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0：成功，其他值：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段审核结果建议，取值范围：\npass。\nreview。\nblock。\n\nAsr 文字涉政、敏感评分，分值为0到100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字涉政、敏感结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字有涉政、敏感嫌疑的视频片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodAsrTextSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodPoliticalOcrReviewResult": {
+      "document": "内容审核 Ocr 文字鉴政、敏感任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0：成功，其他值：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字涉政、敏感评分，分值为0到100。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字涉政、敏感结果建议，取值范围：\npass。\nreview。\nblock。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉政、敏感嫌疑的视频片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodOcrTextSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodPoliticalReviewResult": {
+      "document": "涉政信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0：成功，其他值：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频涉政评分，分值为0到100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉政结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频鉴政结果标签，取值范围：\npolitician：政治人物。\nviolation_photo：违规图标。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有涉政嫌疑的视频片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodPoliticalReviewSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodPoliticalReviewSegmentItem": {
+      "document": "内容审核鉴政任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "嫌疑片段起始的偏移时间，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段结束的偏移时间，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段涉政分数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段鉴政结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉政人物、违规图标名字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段鉴政结果标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑图片 URL （图片不会永久存储，到达\nPicUrlExpireTime 时间点后图片将被删除）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑图片 URL 失效时间，使用 ISO 日期格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PicUrlExpireTimeStamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodPornAsrReviewResult": {
+      "document": "Asr 文字涉黄信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0：成功，其他值：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字涉黄评分，分值为0到100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字涉黄结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字有涉黄嫌疑的视频片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodAsrTextSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodPornOcrResult": {
+      "document": "内容审核 Ocr 文字鉴黄任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0：成功，其他值：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字涉黄评分，分值为0到100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字涉黄结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉黄嫌疑的视频片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodOcrTextSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodPornReviewResult": {
+      "document": "内容审核鉴黄任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0：成功，其他值：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频鉴黄评分，分值为0到100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴黄结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频鉴黄结果标签，取值范围：\nporn：色情。\nsexy：性感。\nvulgar：低俗。\nintimacy：亲密行为。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有涉黄嫌疑的视频片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodPornReviewSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodPornReviewSegmentItem": {
+      "document": "内容审核涉黄/暴恐嫌疑片段",
+      "members": [
+        {
+          "default": "",
+          "document": "嫌疑片段起始的偏移时间，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段结束的偏移时间，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段涉黄分数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段鉴黄结果标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段鉴黄结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑图片 URL （图片不会永久存储，到达\nPicUrlExpireTime 时间点后图片将被删除）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑图片 URL 失效时间，使用 ISO 日期格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PicUrlExpireTimeStamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodTerrorismReviewResult": {
+      "document": "暴恐信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频暴恐评分，分值为0到100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暴恐结果建议，取值范围：\npass。\nreview。\nblock。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频暴恐结果标签，取值范围：\nguns：武器枪支。\ncrowd：人群聚集。\npolice：警察部队。\nbloody：血腥画面。\nbanners：暴恐旗帜。\nmilitant：武装分子。\nexplosion：爆炸火灾。\nterrorists：暴恐人物。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0：成功，其他值：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有暴恐嫌疑的视频片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VodPornReviewSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VodVideoStreamItem": {
+      "document": "文件视频流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频流的码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流的高度，单位：px。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流的宽度，单位：px。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流的编码格式，例如 h264。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帧率，单位：hz。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,1776 @@
+{
+  "actions": {
+    "CreateEnvironment": {
+      "document": "用于在用户账户下创建消息队列 Tdmq环境（命名空间）",
+      "input": "CreateEnvironmentRequest",
+      "name": "创建环境",
+      "output": "CreateEnvironmentResponse"
+    },
+    "CreateSubscription": {
+      "document": "创建一个主题的订阅关系",
+      "input": "CreateSubscriptionRequest",
+      "name": "创建订阅关系",
+      "output": "CreateSubscriptionResponse"
+    },
+    "CreateTopic": {
+      "document": "新增指定分区、类型的消息主题",
+      "input": "CreateTopicRequest",
+      "name": "新增主题",
+      "output": "CreateTopicResponse"
+    },
+    "DeleteEnvironments": {
+      "document": "批量删除租户下的环境",
+      "input": "DeleteEnvironmentsRequest",
+      "name": "删除环境",
+      "output": "DeleteEnvironmentsResponse"
+    },
+    "DeleteSubscriptions": {
+      "document": "删除订阅关系",
+      "input": "DeleteSubscriptionsRequest",
+      "name": "删除订阅关系",
+      "output": "DeleteSubscriptionsResponse"
+    },
+    "DeleteTopics": {
+      "document": "批量删除topics",
+      "input": "DeleteTopicsRequest",
+      "name": "删除主题",
+      "output": "DeleteTopicsResponse"
+    },
+    "DescribeEnvironmentAttributes": {
+      "document": "获取指定环境的属性",
+      "input": "DescribeEnvironmentAttributesRequest",
+      "name": "获取环境属性",
+      "output": "DescribeEnvironmentAttributesResponse"
+    },
+    "DescribeEnvironments": {
+      "document": "获取租户下环境列表",
+      "input": "DescribeEnvironmentsRequest",
+      "name": "获取环境列表",
+      "output": "DescribeEnvironmentsResponse"
+    },
+    "DescribeProducers": {
+      "document": "获取生产者列表，仅显示在线的生产者",
+      "input": "DescribeProducersRequest",
+      "name": "生产者列表",
+      "output": "DescribeProducersResponse"
+    },
+    "DescribeSubscriptions": {
+      "document": "查询指定环境和主题下的订阅者列表",
+      "input": "DescribeSubscriptionsRequest",
+      "name": "消费订阅列表",
+      "output": "DescribeSubscriptionsResponse"
+    },
+    "DescribeTopics": {
+      "document": "获取环境下主题列表",
+      "input": "DescribeTopicsRequest",
+      "name": "查询主题列表",
+      "output": "DescribeTopicsResponse"
+    },
+    "ModifyEnvironmentAttributes": {
+      "document": "修改指定环境的属性值",
+      "input": "ModifyEnvironmentAttributesRequest",
+      "name": "修改环境属性",
+      "output": "ModifyEnvironmentAttributesResponse"
+    },
+    "ModifyTopic": {
+      "document": "修改主题备注和分区数",
+      "input": "ModifyTopicRequest",
+      "name": "修改主题",
+      "output": "ModifyTopicResponse"
+    },
+    "ResetMsgSubOffsetByTimestamp": {
+      "document": "根据时间戳进行消息回溯，精确到毫秒",
+      "input": "ResetMsgSubOffsetByTimestampRequest",
+      "name": "消息回溯",
+      "output": "ResetMsgSubOffsetByTimestampResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-02-17",
+    "api_brief": "介绍如何使用API对消息队列 TDMQ进行操作，包括消息回溯，修改主题，创建订阅关系等。",
+    "serviceNameCN": "分布式消息队列",
+    "serviceShortName": "tdmq"
+  },
+  "objects": {
+    "Connection": {
+      "document": "生产者连接实例",
+      "members": [
+        {
+          "default": "",
+          "document": "生产者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主题分区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Partitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClientVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProducerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProducerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息平均大小(byte)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AverageMsgSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生成速率(byte/秒)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgThroughputIn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Consumer": {
+      "document": " 消费者",
+      "members": [
+        {
+          "default": "",
+          "document": "消费者开始连接的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConnectedSince",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConsumerAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConsumerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClientVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumersSchedule": {
+      "document": "消费进度详情",
+      "members": [
+        {
+          "default": "",
+          "document": "当前分区id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Partitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "NumberOfEntries",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息积压数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MsgBacklog",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者每秒分发消息的数量之和。",
+          "member": "string",
+          "name": "MsgRateOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费者每秒消息的byte。",
+          "member": "string",
+          "name": "MsgThroughputOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超时丢弃比例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgRateExpired",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateEnvironmentRequest": {
+      "document": "CreateEnvironment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "未消费消息过期时间，单位：秒，最小60，最大1296000，（15天）。",
+          "member": "uint64",
+          "name": "MsgTTL",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "说明，128个字符以内。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnvironmentResponse": {
+      "document": "CreateEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未消费消息过期时间，单位：秒。",
+          "member": "uint64",
+          "name": "MsgTTL",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "说明，128个字符以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubscriptionRequest": {
+      "document": "CreateSubscription请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅者名称，不支持中字以及除了短线和下划线外的特殊字符且不超过150个字符。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否幂等创建，若否不允许创建同名的订阅关系。",
+          "member": "bool",
+          "name": "IsIdempotent",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "备注，128个字符以内。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubscriptionResponse": {
+      "document": "CreateSubscription返回参数结构体",
+      "members": [
+        {
+          "document": "创建结果。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRequest": {
+      "document": "CreateTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过32个字符。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。",
+          "member": "uint64",
+          "name": "Partitions",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0： 普通消息；\n1 ：全局顺序消息；\n2 ：局部顺序消息；\n3 ：重试队列；\n4 ：死信队列；\n5 ：事务消息。",
+          "member": "uint64",
+          "name": "TopicType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备注，128字符以内。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicResponse": {
+      "document": "CreateTopic返回参数结构体",
+      "members": [
+        {
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主题名。",
+          "member": "string",
+          "name": "TopicName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0：非分区topic，无分区；非0：具体分区topic的分区数。",
+          "member": "uint64",
+          "name": "Partitions",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注，128字符以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "0： 普通消息；\n1 ：全局顺序消息；\n2 ：局部顺序消息；\n3 ：重试队列；\n4 ：死信队列；\n5 ：事务消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TopicType",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentsRequest": {
+      "document": "DeleteEnvironments请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）数组，每次最多删除20个。",
+          "member": "string",
+          "name": "EnvironmentIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentsResponse": {
+      "document": "DeleteEnvironments返回参数结构体",
+      "members": [
+        {
+          "document": "成功删除的环境（命名空间）数组。",
+          "member": "string",
+          "name": "EnvironmentIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSubscriptionsRequest": {
+      "document": "DeleteSubscriptions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "订阅关系集合，每次最多删除20个。",
+          "member": "SubscriptionTopic",
+          "name": "SubscriptionTopicSets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSubscriptionsResponse": {
+      "document": "DeleteSubscriptions返回参数结构体",
+      "members": [
+        {
+          "document": "成功删除的订阅关系数组。",
+          "member": "SubscriptionTopic",
+          "name": "SubscriptionTopicSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicsRequest": {
+      "document": "DeleteTopics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题集合，每次最多删除20个。",
+          "member": "TopicRecord",
+          "name": "TopicSets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicsResponse": {
+      "document": "DeleteTopics返回参数结构体",
+      "members": [
+        {
+          "document": "被删除的主题数组。",
+          "member": "TopicRecord",
+          "name": "TopicSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentAttributesRequest": {
+      "document": "DescribeEnvironmentAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentAttributesResponse": {
+      "document": "DescribeEnvironmentAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "未消费消息过期时间，单位：秒，最大1296000（15天）。",
+          "member": "uint64",
+          "name": "MsgTTL",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消费速率限制，单位：byte/秒，0：不限速。",
+          "member": "uint64",
+          "name": "RateInByte",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消费速率限制，单位：个数/秒，0：不限速。",
+          "member": "uint64",
+          "name": "RateInSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已消费消息保存策略，单位：小时，0：消费完马上删除。",
+          "member": "uint64",
+          "name": "RetentionHours",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已消费消息保存策略，单位：G，0：消费完马上删除。",
+          "member": "uint64",
+          "name": "RetentionSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "副本数。",
+          "member": "uint64",
+          "name": "Replicas",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注。",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsRequest": {
+      "document": "DescribeEnvironments请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称，模糊搜索。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始下标，不填默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsResponse": {
+      "document": "DescribeEnvironments返回参数结构体",
+      "members": [
+        {
+          "document": "环境（命名空间）记录数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境（命名空间）集合数组。",
+          "member": "Environment",
+          "name": "EnvironmentSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProducersRequest": {
+      "document": "DescribeProducers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始下标，不填默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "生产者名称，模糊匹配。",
+          "member": "string",
+          "name": "ProducerName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProducersResponse": {
+      "document": "DescribeProducers返回参数结构体",
+      "members": [
+        {
+          "document": "生产者集合数组。",
+          "member": "Producer",
+          "name": "ProducerSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscriptionsRequest": {
+      "document": "DescribeSubscriptions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始下标，不填默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订阅者名称，模糊匹配。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据过滤条件。",
+          "member": "FilterSubscription",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscriptionsResponse": {
+      "document": "DescribeSubscriptions返回参数结构体",
+      "members": [
+        {
+          "document": "订阅者集合数组。",
+          "member": "Subscription",
+          "name": "SubscriptionSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicsRequest": {
+      "document": "DescribeTopics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名模糊匹配。",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始下标，不填默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "topic类型描述：\n0：普通消息；\n1：全局顺序消息；\n2：局部顺序消息；\n3：重试队列；\n4：死信队列；\n5：事务消息。",
+          "member": "uint64",
+          "name": "TopicType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicsResponse": {
+      "document": "DescribeTopics返回参数结构体",
+      "members": [
+        {
+          "document": "主题集合数组。",
+          "member": "Topic",
+          "name": "TopicSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主题数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Environment": {
+      "document": "环境信息",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "未消费消息过期时间，单位：秒，最大1296000（15天）",
+          "member": "int64",
+          "name": "MsgTTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近修改时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FilterSubscription": {
+      "document": "过滤订阅列表",
+      "members": [
+        {
+          "default": "",
+          "document": "是否仅展示包含真实消费者的订阅。",
+          "member": "bool",
+          "name": "ConsumerHasCount",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否仅展示消息堆积的订阅。",
+          "member": "bool",
+          "name": "ConsumerHasBacklog",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否仅展示存在消息超期丢弃的订阅。",
+          "member": "bool",
+          "name": "ConsumerHasExpired",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyEnvironmentAttributesRequest": {
+      "document": "ModifyEnvironmentAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "未消费消息过期时间，单位：秒，最大1296000。",
+          "member": "uint64",
+          "name": "MsgTTL",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备注，字符串最长不超过128。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvironmentAttributesResponse": {
+      "document": "ModifyEnvironmentAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未消费消息过期时间，单位：秒。",
+          "member": "uint64",
+          "name": "MsgTTL",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注，字符串最长不超过128。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicRequest": {
+      "document": "ModifyTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区数，必须大于或者等于原分区数，若想维持原分区数请输入原数目，修改分区数仅对非全局顺序消息起效果，不允许超过128个分区。",
+          "member": "uint64",
+          "name": "Partitions",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备注，128字符以内。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicResponse": {
+      "document": "ModifyTopic返回参数结构体",
+      "members": [
+        {
+          "document": "分区数",
+          "member": "uint64",
+          "name": "Partitions",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注，128字符以内。",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PartitionsTopic": {
+      "document": "分区topic",
+      "members": [
+        {
+          "default": "",
+          "document": "最后一次间隔内发布消息的平均byte大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AverageMsgSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConsumerCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastConfirmedEntry",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一个ledger创建的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastLedgerCreatedTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地和复制的发布者每秒发布消息的速率。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgRateIn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地和复制的消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgRateOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地和复制的发布者每秒发布消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgThroughputIn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地和复制的消费者每秒分发消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgThroughputOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NumberOfEntries",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子分区id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Partitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProducerCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "以byte计算的所有消息存储总量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TotalSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "topic类型描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TopicType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Producer": {
+      "document": "生产者",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CountConnect",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Connection",
+          "name": "ConnectionSets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResetMsgSubOffsetByTimestampRequest": {
+      "document": "ResetMsgSubOffsetByTimestamp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅者名称。",
+          "member": "string",
+          "name": "Subscription",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间戳，精确到毫秒。",
+          "member": "uint64",
+          "name": "ToTimestamp",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetMsgSubOffsetByTimestampResponse": {
+      "document": "ResetMsgSubOffsetByTimestamp返回参数结构体",
+      "members": [
+        {
+          "document": "结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Subscription": {
+      "document": "订阅者",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费者开始连接的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConnectedSince",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConsumerAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConsumerCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConsumerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "堆积的消息数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgBacklog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "于TTL，此订阅下没有被发送而是被丢弃的比例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgRateExpired",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgRateOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者每秒消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgThroughputOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订阅名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Consumer",
+          "name": "ConsumerSets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否在线。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsOnline",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费进度集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConsumersSchedule",
+          "name": "ConsumersScheduleSets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubscriptionTopic": {
+      "document": "订阅关系",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订阅名称。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Topic": {
+      "document": "主题实例",
+      "members": [
+        {
+          "default": "",
+          "document": "最后一次间隔内发布消息的平均byte大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AverageMsgSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConsumerCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastConfirmedEntry",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一个ledger创建的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastLedgerCreatedTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地和复制的发布者每秒发布消息的速率。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgRateIn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地和复制的消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgRateOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地和复制的发布者每秒发布消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgThroughputIn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地和复制的消费者每秒分发消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MsgThroughputOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NumberOfEntries",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分区数<=0：topic下无子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Partitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProducerCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "以byte计算的所有消息存储总量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TotalSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分区topic里面的子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PartitionsTopic",
+          "name": "SubTopicSets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "topic类型描述：\n0：普通消息；\n1：全局顺序消息；\n2：局部顺序消息；\n3：重试队列；\n4：死信队列；\n5：事务消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TopicType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "说明，128个字符以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicRecord": {
+      "document": "主题关键信息",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题名称。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

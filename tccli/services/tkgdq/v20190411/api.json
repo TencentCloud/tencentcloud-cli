@@ -1,0 +1,266 @@
+{
+  "actions": {
+    "DescribeEntity": {
+      "document": "输入实体名称，返回实体相关的信息如实体别名、实体英文名、实体详细信息、相关实体等",
+      "input": "DescribeEntityRequest",
+      "name": "实体信息查询",
+      "output": "DescribeEntityResponse"
+    },
+    "DescribeRelation": {
+      "document": "输入两个实体，返回两个实体间的关系，例如马化腾与腾讯公司不仅是相关实体，二者还存在隶属关系（马化腾属于腾讯公司）。",
+      "input": "DescribeRelationRequest",
+      "name": "实体关系查询",
+      "output": "DescribeRelationResponse"
+    },
+    "DescribeTriple": {
+      "document": "三元组查询，主要分为两类，SP查询和PO查询。SP查询表示已知主语和谓语查询宾语，PO查询表示已知宾语和谓语查询主语。每一个SP或PO查询都是一个可独立执行的查询，TQL支持SP查询的嵌套查询，即主语可以是一个嵌套的子查询。其他复杂的三元组查询方法，请参考官网API文档示例。",
+      "input": "DescribeTripleRequest",
+      "name": "三元组查询",
+      "output": "DescribeTripleResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-04-11",
+    "serviceNameCN": "腾讯知识图谱数据查询",
+    "serviceShortName": "tkgdq"
+  },
+  "objects": {
+    "DescribeEntityRequest": {
+      "document": "DescribeEntity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实体名称",
+          "is_public": true,
+          "member": "string",
+          "name": "EntityName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEntityResponse": {
+      "document": "DescribeEntity返回参数结构体",
+      "members": [
+        {
+          "document": "返回查询实体相关信息",
+          "member": "string",
+          "name": "Content",
+          "type": "string"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRelationRequest": {
+      "document": "DescribeRelation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "输入第一个实体",
+          "is_public": true,
+          "member": "string",
+          "name": "LeftEntityName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入第二个实体",
+          "is_public": true,
+          "member": "string",
+          "name": "RightEntityName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRelationResponse": {
+      "document": "DescribeRelation返回参数结构体",
+      "members": [
+        {
+          "document": "返回查询实体间的关系",
+          "member": "EntityRelationContent",
+          "name": "Content",
+          "type": "list"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTripleRequest": {
+      "document": "DescribeTriple请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "三元组查询条件",
+          "is_public": true,
+          "member": "string",
+          "name": "TripleCondition",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTripleResponse": {
+      "document": "DescribeTriple返回参数结构体",
+      "members": [
+        {
+          "document": "返回三元组信息",
+          "member": "TripleContent",
+          "name": "Content",
+          "type": "list"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EntityRelationContent": {
+      "document": "返回的实体关系查询结果详细内容",
+      "members": [
+        {
+          "default": "",
+          "document": "实体关系查询返回关系的object",
+          "member": "EntityRelationObject",
+          "name": "Object",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实体关系查询返回关系的subject",
+          "member": "EntityRelationSubject",
+          "name": "Subject",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实体关系查询返回的关系名称",
+          "member": "string",
+          "name": "Relation",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "EntityRelationObject": {
+      "document": "实体关系查询返回的Object类型",
+      "members": [
+        {
+          "default": "",
+          "document": "object对应id",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "object对应name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "object对应popular值",
+          "member": "int64",
+          "name": "Popular",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "EntityRelationSubject": {
+      "document": "实体关系查询返回Subject",
+      "members": [
+        {
+          "default": "",
+          "document": "Subject对应id",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Subject对应name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Subject对应popular",
+          "member": "int64",
+          "name": "Popular",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "TripleContent": {
+      "document": "三元组查询返回的元记录",
+      "members": [
+        {
+          "default": "",
+          "document": "实体id",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实体名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实体order",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实体流行度",
+          "member": "int64",
+          "name": "Popular",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

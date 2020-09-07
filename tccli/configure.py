@@ -1,170 +1,134 @@
 # -*- coding: utf-8 -*-
+
 import os
 import sys
-import json
-from tccli.nice_command import NiceCommand
-import tccli.services as Services
-import tccli.help_template as HelpTmplate
 import tccli.options_define as OptionsDefine
-import tccli.error_msg as ErrorMsg
+from tccli.base_command import BasicCommand
+from tccli.exceptions import ConfigurationError, ParamError
+from tccli.help_command import BaseHelpCommand
+from tccli.utils import Utils
+from tccli.loaders import Loader
 PY2 = sys.version_info[0] == 2
 
 
-class Configure(object):
+class BasicConfigure(BasicCommand):
+    NAME = ''
+    DESCRIPTION = ''
+    USEAGE = ''
+    OPTIONS = {
+        "help": "show the tccli configure help info",
+        "--profile": "specify a profile name"
+    }
+    EXAMPLES = ''
 
-    def __init__(self, service_list=None):
-        self.profile = "default"
-        self.credential = "credential"
-        self.configure = "configure"
+    def __init__(self):
+        super(BasicConfigure, self).__init__()
         self.config_list = [OptionsDefine.Region, OptionsDefine.Output]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
-        self.service_list = service_list
-        if not service_list:
-            self.service_list = Services.service_get_list()
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
-        if not os.path.exists(self.cli_path):
+        self._cli_data = Loader()
+
+    def _run_main(self, parsed_args, parsed_globals):
+        raise NotImplementedError("_run_main")
+
+    def _init_configure(self, profile_name, input_data, extra={}):
+        conf_data = {}
+        is_exist, config_path = self._profile_existed(profile_name)
+        if is_exist:
+            conf_data = Utils.load_json_msg(config_path)
+
+        for k in input_data.keys():
+            conf_data[k] = input_data[k]
+        if profile_name.endswith(".configure"):
+            for mod in self._cli_data.get_available_services().keys():
+                # we have to check autoscaling because we did it wrong in 3.0.30.1
+                # consider remove it in 3.1.x
+                if mod in conf_data and mod != 'autoscaling':
+                    continue
+                conf_data[mod] = {}
+                conf_data[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
+                # we have to do this because as is a keyword in python
+                # as has been changed to autoscaling only in python sdk & cli
+                if mod == 'autoscaling':
+                    conf_data[mod]["endpoint"] = "as.tencentcloudapi.com"
+                versions = self._cli_data.get_service_all_version_actions(mod).keys()
+                version = sorted(versions)[-1]
+                conf_data[mod]["version"] = version
+        for k in extra.keys():
             try:
-                os.mkdir(self.cli_path)
+                ks = k.split(".")
+                conf_data[ks[0]][ks[1]] = extra[k]
             except Exception as err:
-                pass
+                raise ConfigurationError("Unexpected format: %s\n "
+                                         "Received input format: %s\n "
+                                         "Valid input format eg. set cvm.version 2017-03-12"
+                                         % (err, k))
+        Utils.dump_json_msg(config_path, conf_data)
 
-    def _load_json_msg(self, filename):
-        with open(filename, "r") as f:
-            data = json.load(f)
-            return data
+    def _checkout_config(self, profile_name):
+        is_conexit, config_path = self._profile_existed(profile_name + ".configure")
+        is_creexit, cred_path = self._profile_existed(profile_name + ".credential")
+        if not is_conexit and not is_creexit:
+            raise ConfigurationError(
+                "not exist config file: %s or %s "
+                % (profile_name + ".configure", profile_name + ".credential"))
 
-    def _dump_json_msg(self, filename, data):
-        with open(filename, "w") as f:
-            json.dump(data, f, indent=2, separators=(',', ': '), ensure_ascii=False, sort_keys=True)
+        conf = Utils.load_json_msg(config_path)
+        cred = Utils.load_json_msg(cred_path)
+        if not (isinstance(conf, dict) and isinstance(cred, dict)):
+            raise ConfigurationError(
+                "not exist config file: %s or %s "
+                % (profile_name + ".configure", profile_name + ".credential"))
+
 
     def _profile_existed(self, profile_name):
-        file_path = os.path.join(self.cli_path, profile_name)
-        if os.path.exists(file_path):
-            return True, file_path
-        return False, file_path
+        return Utils.file_existed(self.cli_path, profile_name)
 
-    def _modify_configure(self, name, data, extra={}):
-        try:
-            conf = {}
-            if not data and not extra:
-                return
-            isexist, config_path = self._profile_existed(name)
-            if isexist:
-                conf = self._load_json_msg(config_path)
+    def create_help_command(self):
+        return ConfigureHelp(self.NAME, self)
 
-            for k in data.keys():
-                conf[k] = data[k]
-            if name.endswith(".configure"):
-                for mod in self.service_list:
-                    # we have to check autoscaling because we did it wrong in 3.0.30.1
-                    # consider remove it in 3.1.x
-                    if mod in conf and mod != 'autoscaling':
-                        continue
-                    conf[mod] = {}
-                    conf[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
-                    # we have to do this because as is a keyword in python
-                    # as has been changed to autoscaling only in python sdk & cli
-                    if mod == 'autoscaling':
-                        conf[mod]["endpoint"] = "as.tencentcloudapi.com"
-                    module = Services.dynamic_load_module(mod)
-                    version = sorted(module.AVAILABLE_VERSION_LIST)[-1]
-                    conf[mod]["version"] = version
-            for k in extra.keys():
-                try:
-                    ks = k.split(".")
-                    conf[ks[0]][ks[1]] = extra[k]
-                except Exception:
-                    pass
-            self._dump_json_msg(config_path, conf)
-        except Exception as err:
-            raise Exception("modify file %s failed %s" % (config_path, str(err)))
 
-    def _get_configure(self, argv, arglist):
+class ConfigureListCommand(BasicConfigure):
+    NAME = 'list'
+    DESCRIPTION = 'list your profile(eg:secretId, secretKey, region, output).'
+    USEAGE = 'tccli configure list [--profile profile-name]'
+    EXAMPLES = "$ tccli configure list\n" \
+               "credential:\n" \
+               "secretId =  ********************************\n" \
+               "secretKey =  ********************************\n" \
+               "configure:\n" \
+               "region = ap-guangzhou\n" \
+               "output = json\n" \
+               "cvm.version = 2017-03-12\n" \
+               "cvm.endpoint = cvm.tencentcloudapi.com\n" \
+               "...\n" \
+               "..."
 
-        if OptionsDefine.Help in argv:
-            print(HelpTmplate.GET_CONFIGURE)
-            return
-        name = "default"
-        if ("--" + OptionsDefine.Profile) in argv:
-            name = argv["--" + OptionsDefine.Profile]
+    def __init__(self, stream=sys.stdout):
+        super(ConfigureListCommand, self).__init__()
+        self._stream = stream
 
-        is_conexit, config_path = self._profile_existed(name + ".configure")
-        is_creexit, cred_path = self._profile_existed(name + ".credential")
-        conf = {}
-        cred = {}
-        if is_conexit:
-            conf = self._load_json_msg(config_path)
-        if is_creexit:
-            cred = self._load_json_msg(cred_path)
-        if not arglist:
-             raise Exception(ErrorMsg.FEW_ARG)
-        for arg in arglist:
-            if arg in [OptionsDefine.Help, OptionsDefine.Profile]:
-                continue
-            if arg in conf.keys() and conf[arg]:
-                if arg not in self.config_list:
-                    continue
-                print("%s = %s" % (arg, conf[arg]))
-            elif arg in cred.keys() and cred[arg]:
-                print("%s = %s" % (arg, cred[arg]))
-            else:
-                try:
-                    ks = arg.split(".")
-                    print("%s.%s = %s" % (ks[0], ks[1], conf[ks[0]][ks[1]]))
-                except Exception:
-                    pass
+    def _run_main(self, args, parsed_globals):
+        profile_name = parsed_globals.profile \
+            if parsed_globals.profile else "default"
 
-    def _set_configure(self, argv, arglist):
-        if OptionsDefine.Help in argv:
-            print(HelpTmplate.SET_CONFIGURE)
-            return
-        name = "default"
-        if ("--" + OptionsDefine.Profile) in argv:
-            name = argv["--" + OptionsDefine.Profile]
-            del argv["--" + OptionsDefine.Profile]
-        config = {}
-        cred = {}
-        extra = {}
-        if not argv:
-             raise Exception(ErrorMsg.FEW_ARG)
-        for k in argv.keys():
-            if k in self.cred_list:
-                cred[k] = argv[k]
-            elif k in self.config_list:
-                config[k] = argv[k]
-            else:
-                extra[k] = argv[k]
-        if config or extra:
-            self._modify_configure(name + ".configure", config, extra)
-        if cred:
-            self._modify_configure(name + ".credential", cred)
-
-    def _list_configure(self, argv, arglist):
-        if OptionsDefine.Help in argv:
-            print(HelpTmplate.LIST_CONFIGURE)
-            return
-        name = "default"
-        if ("--" + OptionsDefine.Profile) in argv:
-            name = argv["--" + OptionsDefine.Profile]
-
-        # SecretId SecretKey in x.credential
-        is_exit, cred_path = self._profile_existed(name + ".credential")
-        print("credential:")
+        is_exit, cred_path = self._profile_existed(profile_name + ".credential")
+        self._stream.write("credential:\n")
         if is_exit:
-            cred = self._load_json_msg(cred_path)
+            cred = Utils.load_json_msg(cred_path)
             for config in self.cred_list:
                 if config in cred and cred[config]:
-                    print("%s =  %s" % (config, cred[config]))
+                    self._stream.write("%s =  %s\n" % (config, cred[config]))
 
         # other in x.configure
-        is_exit, config_path = self._profile_existed(name + ".configure")
-        print("configure:")
+        is_exit, config_path = self._profile_existed(profile_name + ".configure")
+        self._stream.write("configure:\n")
         if is_exit:
-            config = self._load_json_msg(config_path)
+            config = Utils.load_json_msg(config_path)
             for c in self.config_list:
                 if c in config and config[c]:
-                    print("%s =  %s" % (c, config[c]))
+                    self._stream.write("%s =  %s\n" % (c, config[c]))
 
             modlist = sorted(config.keys())
             for c in modlist:
@@ -173,17 +137,174 @@ class Configure(object):
                 if c in self.config_list:
                     continue
                 try:
-                    print("%s.version =  %s" % (c, config[c]["version"]))
-                    print("%s.endpoint =  %s" % (c, config[c]["endpoint"]))
+                    self._stream.write("%s.version =  %s\n" % (c, config[c]["version"]))
+                    self._stream.write("%s.endpoint =  %s\n" % (c, config[c]["endpoint"]))
                 except Exception:
                     pass
 
-    def _interactive_configure(self, profile):
-        vinput = None
-        if not PY2:
-            vinput = input
-        else:
-            vinput = raw_input
+
+class ConfigureSetCommand(BasicConfigure):
+    NAME = 'set'
+    DESCRIPTION = 'set your profile(eg:secretId, secretKey, region, output).'
+    USEAGE = 'tccli configure set [CONFIG] [--profile profile-name]'
+    AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
+                      "secretKey: TencentCloud API SecretKey\n" \
+                      "region: which the region you want to work with belongs.\n" \
+                      "output: TencentCloud API response format[json, text, table]\n" \
+                      "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
+                      "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point domain name"
+    EXAMPLES = "$ tccli configure set secretId ******\n" \
+               "$ tccli configure set region ap-guangzhou\n" \
+               "$ tccli configure set cvm.endpoint cvm.ap-guangzhou.tencentcloudapi.com"
+    # 批量设置
+    ARG_TABLE = [
+        {'name': 'varname',
+         'help_text': 'The name of the config value to set.',
+         'action': 'store',
+         'nargs': '+',
+         'cli_type_name': 'string', 'positional_arg': True},
+        # {'name': 'value',
+        #  'help_text': 'The value to set.',
+        #  'action': 'store',
+        #  'no_paramfile': True,
+        #  'cli_type_name': 'string', 'positional_arg': True},
+    ]
+
+    def __init__(self):
+        super(ConfigureSetCommand, self).__init__()
+
+    def _run_main(self, args, parsed_globals):
+        varname_value = args.varname
+        if len(varname_value) % 2 != 0:
+            raise ParamError("Unexpected format\n"
+                             "Expected input format：\n\n"
+                             "   $tccli configure set region ap-guangzhou\n"
+                             "   $tccli configure set region ap-guangzhou output json\n")
+        varnames = varname_value[::2]
+        values = varname_value[1::2]
+
+        profile_name = parsed_globals.profile \
+            if parsed_globals.profile else "default"
+
+        config = {}
+        cred = {}
+        extra = {}
+
+        for varname, value in zip(varnames, values):
+            if varname in self.cred_list:
+                cred[varname] = value
+            elif varname in self.config_list:
+                config[varname] = value
+            else:
+                extra[varname] = value
+
+        if config or extra:
+            self._init_configure(profile_name + '.configure', config, extra)
+        if cred:
+            self._init_configure(profile_name + '.credential', cred)
+
+
+class ConfigureGetCommand(BasicConfigure):
+    NAME = 'get'
+    DESCRIPTION = "get your profile(eg:SecretId, SecretKey, Region)."
+    USEAGE = "tccli configure get [CONFIG] [--profile profile-name]"
+    AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
+                      "secretKey: TencentCloud API SecretKey\n" \
+                      "region: which the region you want to work with belongs.\n" \
+                      "output: TencentCloud API response format[json, text, table]\n" \
+                      "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
+                      "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point domain name"
+    EXAMPLES = "$ tccli configure get region\n" \
+               "region = ap-guangzhou\n" \
+               "\n" \
+               "$ tccli configure get cvm.version\n" \
+               "cvm.version = 2017-03-12"
+
+    ARG_TABLE = [
+        {'name': 'varname',
+         'help_text': 'The name of the config value to retrieve.',
+         'action': 'store',
+         'nargs': '+',
+         'cli_type_name': 'string', 'positional_arg': True},
+    ]
+
+    def __init__(self, stream=sys.stdout, error_stream=sys.stderr):
+        super(ConfigureGetCommand, self).__init__()
+        self._stream = stream
+        self._error_stream = error_stream
+
+    def _run_main(self, args, parsed_globals):
+        varname_list = args.varname
+        profile_name = parsed_globals.profile \
+            if parsed_globals.profile else "default"
+
+        conf = {}
+        cred = {}
+
+        is_conf_exit, config_path = self._profile_existed(profile_name + ".configure")
+        is_cred_exit, cred_path = self._profile_existed(profile_name + ".credential")
+
+        if is_conf_exit:
+            conf = Utils.load_json_msg(config_path)
+        if is_cred_exit:
+            cred = Utils.load_json_msg(cred_path)
+
+        for varname in varname_list:
+            if varname in conf.keys() and conf[varname]:
+                value = conf[varname]
+            elif varname in cred.keys() and cred[varname]:
+                value = cred[varname]
+            else:
+                try:
+                    kv = varname.split(".")
+                    value = conf[kv[0]][kv[1]]
+                except Exception as err:
+                    raise ConfigurationError(
+                    "%s in %s.configure not exist" % (varname, profile_name))
+            self._stream.write("%s = %s" % (varname, value))
+            self._stream.write('\n')
+
+
+class ConfigureCommand(BasicConfigure):
+    NAME = "configure"
+    DESCRIPTION = "configure your profile(eg:secretId, secretKey, region, output)."
+    USEAGE = "tccli configure [--profile profile-name]"
+    AVAILABLESUBCOMMAND = ["set", 'get', 'list']
+    EXAMPLES = "To create a new configuration::\n" \
+               "    $ tccli configure\n" \
+               "    TencentCloud API secretId [None]: secretId\n" \
+               "    TencentCloud API secretKey [None]: secretKey\n" \
+               "    Default region name [ap-guangzhou]:\n" \
+               "    Default output format [json]:\n" \
+               "\n\n" \
+               "To update just the region name::\n" \
+               "    $ tccli configure\n" \
+               "    TencentCloud API secretId [****]:\n" \
+               "    TencentCloud API secretKey [****]:\n" \
+               "    Default region name [ap-guangzhou]: ap-beijing\n" \
+               "    Default output format [json]:\n"
+    SUBCOMMANDS = [
+        {'name': 'list', 'command_class': ConfigureListCommand},
+        {'name': 'get', 'command_class': ConfigureGetCommand},
+        {'name': 'set', 'command_class': ConfigureSetCommand}
+    ]
+
+    VALUES_TO_PROMPT = [
+        ('secretId', "TencentCloud API secretId"),
+        ('secretKey', "TencentCloud API secretKey"),
+        ('region', "Default region name"),
+        ('output', "Default output format"),
+    ]
+
+    def __init__(self):
+        super(ConfigureCommand, self).__init__()
+        self.init_configures()
+
+    def _run_main(self, parsed_args, parsed_globals):
+        # tccli configure
+        profile_name = parsed_globals.profile \
+            if parsed_globals.profile else "default"
+
         config = {
             OptionsDefine.Region: "ap-guangzhou",
             OptionsDefine.Output: "json"
@@ -194,79 +315,33 @@ class Configure(object):
             OptionsDefine.SecretKey: "None"
         }
 
-        is_conexist, config_path = self._profile_existed(profile + ".configure")
-        is_creexist, cred_path = self._profile_existed(profile + ".credential")
-        fileconf = {}
-        filecred = {}
-        if is_conexist:
-            fileconf = self._load_json_msg(config_path)
-            for c in config.keys():
-                if c in fileconf and fileconf[c]:
-                    config[c] = fileconf[c]
-        if is_creexist:
-            filecred = self._load_json_msg(cred_path)
-            for c in cred.keys():
-                if c in filecred and filecred[c]:
-                    cred[c] = "*" + filecred[c][-4:]
+        is_conf_exist, config_path = self._profile_existed(profile_name + ".configure")
+        is_cred_exist, cred_path = self._profile_existed(profile_name + ".credential")
 
-        cmd = vinput("TencentCloud API secretId[%s]: " % cred[OptionsDefine.SecretId])
-        if cmd:
-            filecred["secretId"] = cmd
+        conf_data = {}
+        cred_data = {}
+        if is_conf_exist:
+            conf_data = Utils.load_json_msg(config_path)
+            for c in config:
+                if c in conf_data and conf_data[c]:
+                    config[c] = conf_data[c]
+        if is_cred_exist:
+            cred_data = Utils.load_json_msg(cred_path)
+            for c in cred:
+                if c in cred_data and cred_data[c]:
+                    cred[c] = cred_data[c]
 
-        cmd = vinput("TencentCloud API secretKey[%s]: " % cred[OptionsDefine.SecretKey])
-        if cmd:
-            filecred["secretKey"] = cmd
+        for index, prompt_text in self.VALUES_TO_PROMPT:
+            if index in config:
+                response = self._compat_input("%s[%s]: " % (prompt_text, config[index]))
+                conf_data[index] = response if response else config[index]
+            else:
+                response = self._compat_input(
+                    "%s[%s]: " % (prompt_text, "*"+cred[index][-4:] if cred[index]!="None" else cred[index]))
+                cred_data[index] = response if response else cred[index]
 
-        cmd = vinput("region[%s]: " % config[OptionsDefine.Region])
-        if cmd:
-            fileconf["region"] = cmd
-
-        cmd = vinput("output[%s]: " % config[OptionsDefine.Output])
-        if cmd:
-            fileconf["output"] = cmd
-
-        self._modify_configure(config_path, fileconf)
-        self._modify_configure(cred_path, filecred)
-
-    def _configure(self, argv, arglist):
-        if OptionsDefine.Help in argv:
-            print(HelpTmplate.CONFIGURE_HELP)
-            return
-        name = "default"
-        if ("--" + OptionsDefine.Profile) in argv:
-            name = argv["--" + OptionsDefine.Profile]
-        self._interactive_configure(name)
-
-    def register_arg(self, command):
-        # 增加cmd  profile
-        config_cmd = NiceCommand("configure", self._configure)
-        command.reg_cmd(config_cmd)
-        config_cmd.reg_opt(OptionsDefine.Help, "bool")
-        config_cmd.reg_opt("--" + OptionsDefine.Profile, "string")
-
-        get_cmd = NiceCommand("get", self._get_configure)
-        set_cmd = NiceCommand("set", self._set_configure)
-        list_cmd = NiceCommand("list", self._list_configure)
-        get_cmd.reg_opt("--" + OptionsDefine.Profile, "string")
-        set_cmd.reg_opt("--" + OptionsDefine.Profile, "string")
-        list_cmd.reg_opt("--" + OptionsDefine.Profile, "string")
-
-        get_cmd.reg_opt(OptionsDefine.Help, "bool")
-        set_cmd.reg_opt(OptionsDefine.Help, "bool")
-        list_cmd.reg_opt(OptionsDefine.Help, "bool")
-
-        for s in (self.config_list + self.cred_list):
-            get_cmd.reg_opt(s, "bool")
-            set_cmd.reg_opt(s, "string")
-
-        for module in self.service_list:
-            for opt in self.conf_service_list:
-                get_cmd.reg_opt("%s.%s" % (module, opt), "bool")
-                set_cmd.reg_opt("%s.%s" % (module, opt), "string")
-
-        config_cmd.reg_cmd(get_cmd)
-        config_cmd.reg_cmd(set_cmd)
-        config_cmd.reg_cmd(list_cmd)
+        self._init_configure(profile_name + ".configure", conf_data)
+        self._init_configure(profile_name + ".credential", cred_data)
 
     def init_configures(self):
         if not self._profile_existed("default.configure")[0]:
@@ -274,4 +349,73 @@ class Configure(object):
                 "region": "ap-guangzhou",
                 "output": "json",
             }
-            self._modify_configure("default.configure", config)
+            self._init_configure("default.configure", config)
+
+    def _compat_input(self, prompt):
+        sys.stdout.write(prompt)
+        sys.stdout.flush()
+        if PY2:
+            return raw_input()
+        else:
+            return input()
+
+
+class ConfigureHelp(BaseHelpCommand):
+
+    def __init__(self, name, command_obj):
+        self._name = name
+        self.command_obj = command_obj
+        super(ConfigureHelp, self).__init__()
+
+    def _get_document_handler(self):
+        return ConfigureDocumentHandler(self.doc, self.command_obj)
+
+
+class ConfigureDocumentHandler(object):
+
+    def __init__(self, doc, command_obj):
+        self.doc = doc
+        self.command_obj = command_obj
+
+    def description(self):
+        self.doc.style.h2('Description')
+        self.doc.doc_description_indent(self.command_obj.DESCRIPTION)
+
+    def useage(self):
+        self.doc.style.h2('Useage')
+        self.doc.doc_description_indent(self.command_obj.USEAGE)
+
+    def options(self):
+        self.doc.style.h2('Options')
+        for option, content in self.command_obj.OPTIONS.items():
+            self.doc.doc_title_indent('%s' % option)
+            self.doc.doc_description_indent(content)
+
+    def available_subcommand(self):
+        if hasattr(self.command_obj, "AVAILABLESUBCOMMAND"):
+            self.doc.style.h2('Available Subcommand')
+            for sub_command in self.command_obj.AVAILABLESUBCOMMAND:
+                self.doc.doc_title_indent(sub_command)
+
+    def available_config(self):
+        if hasattr(self.command_obj, "AVAILABLECONFIG"):
+            self.doc.style.h2('Available config')
+            self.doc.doc_description_indent(self.command_obj.AVAILABLECONFIG)
+
+    def example(self):
+        if hasattr(self.command_obj, "EXAMPLES"):
+            self.doc.style.h2('Example')
+            self.doc.doc_description_indent(self.command_obj.EXAMPLES)
+
+    def doc_help(self):
+        self.doc.style.h1(self.command_obj.NAME)
+        self.description()
+        self.useage()
+        self.options()
+        self.available_subcommand()
+        self.available_config()
+        self.example()
+
+
+
+

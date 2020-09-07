@@ -1,0 +1,1031 @@
+{
+  "actions": {
+    "CreateSecret": {
+      "document": "创建新的凭据信息，通过KMS进行加密保护。每个Region最多可创建存储1000个凭据信息。",
+      "input": "CreateSecretRequest",
+      "name": "创建凭据",
+      "output": "CreateSecretResponse"
+    },
+    "DeleteSecret": {
+      "document": "删除指定的凭据信息，可以通过RecoveryWindowInDays参数设置立即删除或者计划删除。对于计划删除的凭据，在删除日期到达之前状态为 PendingDelete，并可以通过RestoreSecret 进行恢复，超出指定删除日期之后会被彻底删除。您必须先通过 DisableSecret 停用凭据后才可以进行（计划）删除操作。",
+      "input": "DeleteSecretRequest",
+      "name": "删除凭据信息",
+      "output": "DeleteSecretResponse"
+    },
+    "DeleteSecretVersion": {
+      "document": "该接口用于直接删除指定凭据下的单个版本凭据，删除操作立即生效，对所有状态下的凭据版本都可以删除。",
+      "input": "DeleteSecretVersionRequest",
+      "name": "删除指定版本的凭据",
+      "output": "DeleteSecretVersionResponse"
+    },
+    "DescribeSecret": {
+      "document": "获取凭据的详细属性信息。",
+      "input": "DescribeSecretRequest",
+      "name": "获取凭据详细信息",
+      "output": "DescribeSecretResponse"
+    },
+    "DisableSecret": {
+      "document": "停用指定的凭据，停用后状态为 Disabled，无法通过接口获取该凭据的明文。",
+      "input": "DisableSecretRequest",
+      "name": "停用凭据",
+      "output": "DisableSecretResponse"
+    },
+    "EnableSecret": {
+      "document": "该接口用于开启凭据，状态为Enabled。可以通过 GetSecretValue 接口获取凭据明文。处于PendingDelete状态的凭据不能直接开启，需要通过RestoreSecret 恢复后再开启使用。",
+      "input": "EnableSecretRequest",
+      "name": "启用凭据",
+      "output": "EnableSecretResponse"
+    },
+    "GetRegions": {
+      "document": "获取控制台展示region列表",
+      "input": "GetRegionsRequest",
+      "name": "获取控制台展示region列表",
+      "output": "GetRegionsResponse"
+    },
+    "GetSecretValue": {
+      "document": "获取指定凭据名称和版本的凭据明文信息，只能获取启用状态的凭据明文。",
+      "input": "GetSecretValueRequest",
+      "name": "获取凭据明文",
+      "output": "GetSecretValueResponse"
+    },
+    "GetServiceStatus": {
+      "document": "该接口用户获取用户SecretsManager服务开通状态。",
+      "input": "GetServiceStatusRequest",
+      "name": "获取用户服务开通状态",
+      "output": "GetServiceStatusResponse"
+    },
+    "ListSecretVersionIds": {
+      "document": "该接口用于获取指定凭据下的版本列表信息",
+      "input": "ListSecretVersionIdsRequest",
+      "name": "获取指定凭据下的版本列表信息。",
+      "output": "ListSecretVersionIdsResponse"
+    },
+    "ListSecrets": {
+      "document": "该接口用于获取所有凭据的详细列表，可以指定过滤字段、排序方式等。",
+      "input": "ListSecretsRequest",
+      "name": "获取凭据的详细信息列表",
+      "output": "ListSecretsResponse"
+    },
+    "PutSecretValue": {
+      "document": "该接口在指定名称的凭据下增加新版本的凭据内容，一个凭据下最多可以支持10个版本。只能对处于Enabled 和 Disabled 状态的凭据添加新的版本。",
+      "input": "PutSecretValueRequest",
+      "name": "增加新版本凭据",
+      "output": "PutSecretValueResponse"
+    },
+    "RestoreSecret": {
+      "document": "该接口用于恢复计划删除（PendingDelete状态）中的凭据，取消计划删除。取消计划删除的凭据将处于Disabled 状态，如需恢复使用，通过EnableSecret 接口开启凭据。",
+      "input": "RestoreSecretRequest",
+      "name": "恢复计划删除中的凭据",
+      "output": "RestoreSecretResponse"
+    },
+    "UpdateDescription": {
+      "document": "该接口用于修改指定凭据的描述信息，仅能修改Enabled 和 Disabled 状态的凭据。",
+      "input": "UpdateDescriptionRequest",
+      "name": "更新凭据描述信息",
+      "output": "UpdateDescriptionResponse"
+    },
+    "UpdateSecret": {
+      "document": "该接口用于更新指定凭据名称和版本号的内容，调用该接口会对新的凭据内容加密后覆盖旧的内容。仅允许更新Enabled 和 Disabled 状态的凭据。",
+      "input": "UpdateSecretRequest",
+      "name": "更新凭据内容",
+      "output": "UpdateSecretResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-09-23",
+    "api_brief": "介绍如何使用API对凭据管理系统进行操作，包括凭据启用、停用等。",
+    "serviceNameCN": "凭据管理系统",
+    "serviceShortName": "ssm"
+  },
+  "objects": {
+    "CreateSecretRequest": {
+      "document": "CreateSecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。",
+          "member": "string",
+          "name": "KmsKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持4096字节。",
+          "member": "string",
+          "name": "SecretBinary",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，，最大支持4096字节。",
+          "member": "string",
+          "name": "SecretString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecretResponse": {
+      "document": "CreateSecret返回参数结构体",
+      "members": [
+        {
+          "document": "新创建的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "新创建的凭据版本。",
+          "member": "string",
+          "name": "VersionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TagCode",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "标签操作的返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecretRequest": {
+      "document": "DeleteSecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定需要删除的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。",
+          "member": "uint64",
+          "name": "RecoveryWindowInDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecretResponse": {
+      "document": "DeleteSecret返回参数结构体",
+      "members": [
+        {
+          "document": "指定删除的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭据删除的日期，unix时间戳。",
+          "member": "int64",
+          "name": "DeleteTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecretVersionRequest": {
+      "document": "DeleteSecretVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定该名称下需要删除的凭据的版本号。",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecretVersionResponse": {
+      "document": "DeleteSecretVersion返回参数结构体",
+      "members": [
+        {
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭据版本号。",
+          "member": "string",
+          "name": "VersionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecretRequest": {
+      "document": "DescribeSecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定需要获取凭据详细信息的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecretResponse": {
+      "document": "DescribeSecret返回参数结构体",
+      "members": [
+        {
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭据描述信息。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用于加密的KMS CMK ID。",
+          "member": "string",
+          "name": "KmsKeyId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建者UIN。",
+          "member": "uint64",
+          "name": "CreateUin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭据状态：Enabled、Disabled、PendingDelete",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "删除日期，uinx 时间戳，非计划删除状态的凭据为0。",
+          "member": "uint64",
+          "name": "DeleteTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建日期。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableSecretRequest": {
+      "document": "DisableSecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定停用的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableSecretResponse": {
+      "document": "DisableSecret返回参数结构体",
+      "members": [
+        {
+          "document": "停用的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableSecretRequest": {
+      "document": "EnableSecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定启用凭据的名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableSecretResponse": {
+      "document": "EnableSecret返回参数结构体",
+      "members": [
+        {
+          "document": "启用的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRegionsRequest": {
+      "document": "GetRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetRegionsResponse": {
+      "document": "GetRegions返回参数结构体",
+      "members": [
+        {
+          "document": "region列表。",
+          "member": "string",
+          "name": "Regions",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSecretValueRequest": {
+      "document": "GetSecretValue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定凭据的名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定对应凭据的版本号。",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSecretValueResponse": {
+      "document": "GetSecretValue返回参数结构体",
+      "members": [
+        {
+          "document": "凭据的名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该凭据对应的版本号。",
+          "member": "string",
+          "name": "VersionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。SecretBinary和SecretString只有一个不为空。",
+          "member": "string",
+          "name": "SecretBinary",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。SecretBinary和SecretString只有一个不为空。",
+          "member": "string",
+          "name": "SecretString",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetServiceStatusRequest": {
+      "document": "GetServiceStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetServiceStatusResponse": {
+      "document": "GetServiceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "true表示服务已开通，false 表示服务尚未开通。",
+          "member": "bool",
+          "name": "ServiceEnabled",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。",
+          "member": "int64",
+          "name": "InvalidType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSecretVersionIdsRequest": {
+      "document": "ListSecretVersionIds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSecretVersionIdsResponse": {
+      "document": "ListSecretVersionIds返回参数结构体",
+      "members": [
+        {
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "VersionId列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VersionInfo",
+          "name": "Versions",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSecretsRequest": {
+      "document": "ListSecrets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询列表的起始位置，以0开始，不设置默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单次查询返回的最大数量，0或不设置则使用默认值 20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。",
+          "member": "uint64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据凭据状态进行过滤，默认为0表示查询全部，1 表示查询Enabed 凭据列表，2表示查询Disabled 凭据列表， 3 表示查询PendingDelete 凭据列表。",
+          "member": "uint64",
+          "name": "State",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据凭据名称进行过滤，为空表示不过滤。",
+          "member": "string",
+          "name": "SearchSecretName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签过滤条件",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSecretsResponse": {
+      "document": "ListSecrets返回参数结构体",
+      "members": [
+        {
+          "document": "根据State和SearchSecretName 筛选的凭据总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回凭据信息列表。",
+          "member": "SecretMetadata",
+          "name": "SecretMetadatas",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutSecretValueRequest": {
+      "document": "PutSecretValue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定需要增加版本的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "二进制凭据信息，使用base64编码。SecretBinary 和 SecretString 必须且只能设置一个。",
+          "member": "string",
+          "name": "SecretBinary",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。",
+          "member": "string",
+          "name": "SecretString",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutSecretValueResponse": {
+      "document": "PutSecretValue返回参数结构体",
+      "members": [
+        {
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "新增加的版本号。",
+          "member": "string",
+          "name": "VersionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreSecretRequest": {
+      "document": "RestoreSecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定需要恢复的凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreSecretResponse": {
+      "document": "RestoreSecret返回参数结构体",
+      "members": [
+        {
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SecretMetadata": {
+      "document": "凭据的基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭据的描述信息。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于加密凭据的KMS KeyId。",
+          "member": "string",
+          "name": "KmsKeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者UIN。",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭据状态：Enabled、Disabled、PendingDelete",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭据删除日期，对于status为PendingDelete 的有效，unix时间戳。",
+          "member": "uint64",
+          "name": "DeleteTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭据创建时间，unix时间戳。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥。",
+          "member": "string",
+          "name": "KmsKeyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "标签键和标签值",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TagFilter": {
+      "document": "标签过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UpdateDescriptionRequest": {
+      "document": "UpdateDescription请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定需要更新描述信息的凭据名。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的描述信息，最大长度2048个字节。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDescriptionResponse": {
+      "document": "UpdateDescription返回参数结构体",
+      "members": [
+        {
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSecretRequest": {
+      "document": "UpdateSecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定需要更新凭据内容的名称。",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定需要更新凭据内容的版本号。",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。SecretBinary 和 SecretString 只能一个不为空。",
+          "member": "string",
+          "name": "SecretBinary",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的凭据内容为文本的场景使用该字段，不需要base64编码。SecretBinary 和 SecretString 只能一个不为空。",
+          "member": "string",
+          "name": "SecretString",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSecretResponse": {
+      "document": "UpdateSecret返回参数结构体",
+      "members": [
+        {
+          "document": "凭据名称。",
+          "member": "string",
+          "name": "SecretName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭据版本号。",
+          "member": "string",
+          "name": "VersionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VersionInfo": {
+      "document": "凭据版本号列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "版本号。",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，unix时间戳。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

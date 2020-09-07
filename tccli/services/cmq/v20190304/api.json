@@ -1,0 +1,1744 @@
+{
+  "actions": {
+    "ClearQueue": {
+      "document": "清除queue中的所有消息",
+      "input": "ClearQueueRequest",
+      "name": "清空消息队列中的消息",
+      "output": "ClearQueueResponse"
+    },
+    "ClearSubscriptionFilterTags": {
+      "document": "清空订阅者消息标签",
+      "input": "ClearSubscriptionFilterTagsRequest",
+      "name": "清空订阅者消息标签",
+      "output": "ClearSubscriptionFilterTagsResponse"
+    },
+    "CreateQueue": {
+      "document": "创建队列接口\n",
+      "input": "CreateQueueRequest",
+      "name": "创建队列接口",
+      "output": "CreateQueueResponse"
+    },
+    "CreateSubscribe": {
+      "document": "创建订阅接口",
+      "input": "CreateSubscribeRequest",
+      "name": "创建订阅接口",
+      "output": "CreateSubscribeResponse"
+    },
+    "CreateTopic": {
+      "document": "创建主题",
+      "input": "CreateTopicRequest",
+      "name": "创建主题",
+      "output": "CreateTopicResponse"
+    },
+    "DeleteQueue": {
+      "document": "DeleteQueue",
+      "input": "DeleteQueueRequest",
+      "name": "删除队列",
+      "output": "DeleteQueueResponse"
+    },
+    "DeleteSubscribe": {
+      "document": "删除订阅",
+      "input": "DeleteSubscribeRequest",
+      "name": "删除订阅",
+      "output": "DeleteSubscribeResponse"
+    },
+    "DeleteTopic": {
+      "document": "删除主题",
+      "input": "DeleteTopicRequest",
+      "name": "删除主题",
+      "output": "DeleteTopicResponse"
+    },
+    "DescribeDeadLetterSourceQueues": {
+      "document": "枚举死信队列源队列",
+      "input": "DescribeDeadLetterSourceQueuesRequest",
+      "name": "枚举死信队列源队列",
+      "output": "DescribeDeadLetterSourceQueuesResponse"
+    },
+    "DescribeQueueDetail": {
+      "document": "枚举队列",
+      "input": "DescribeQueueDetailRequest",
+      "name": "枚举队列",
+      "output": "DescribeQueueDetailResponse"
+    },
+    "DescribeSubscriptionDetail": {
+      "document": "查询订阅详情",
+      "input": "DescribeSubscriptionDetailRequest",
+      "name": "查询订阅详情",
+      "output": "DescribeSubscriptionDetailResponse"
+    },
+    "DescribeTopicDetail": {
+      "document": "查询主题详情 ",
+      "input": "DescribeTopicDetailRequest",
+      "name": "查询主题详情",
+      "output": "DescribeTopicDetailResponse"
+    },
+    "ModifyQueueAttribute": {
+      "document": "修改队列属性",
+      "input": "ModifyQueueAttributeRequest",
+      "name": "修改队列属性",
+      "output": "ModifyQueueAttributeResponse"
+    },
+    "ModifySubscriptionAttribute": {
+      "document": "修改订阅属性",
+      "input": "ModifySubscriptionAttributeRequest",
+      "name": "修改订阅属性",
+      "output": "ModifySubscriptionAttributeResponse"
+    },
+    "ModifyTopicAttribute": {
+      "document": "修改主题属性",
+      "input": "ModifyTopicAttributeRequest",
+      "name": "修改主题属性",
+      "output": "ModifyTopicAttributeResponse"
+    },
+    "RewindQueue": {
+      "document": "回溯队列",
+      "input": "RewindQueueRequest",
+      "name": "回溯队列",
+      "output": "RewindQueueResponse"
+    },
+    "UnbindDeadLetter": {
+      "document": "解绑死信队列",
+      "input": "UnbindDeadLetterRequest",
+      "name": "解绑死信队列",
+      "output": "UnbindDeadLetterResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-04",
+    "api_brief": "介绍如何使用API对消息队列CMQ进行操作，包括队列、订阅、主题等。",
+    "serviceNameCN": "消息队列 CMQ",
+    "serviceShortName": "cmq"
+  },
+  "objects": {
+    "ClearQueueRequest": {
+      "document": "ClearQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClearQueueResponse": {
+      "document": "ClearQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClearSubscriptionFilterTagsRequest": {
+      "document": "ClearSubscriptionFilterTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClearSubscriptionFilterTagsResponse": {
+      "document": "ClearSubscriptionFilterTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQueueRequest": {
+      "document": "CreateQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。",
+          "member": "uint64",
+          "name": "MaxMsgHeapNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息接收长轮询等待时间。取值范围 0-30 秒，默认值 0。",
+          "member": "uint64",
+          "name": "PollingWaitSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息可见性超时。取值范围 1-43200 秒（即12小时内），默认值 30。",
+          "member": "uint64",
+          "name": "VisibilityTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。",
+          "member": "uint64",
+          "name": "MaxMsgSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。",
+          "member": "uint64",
+          "name": "MsgRetentionSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "队列是否开启回溯消息能力，该参数取值范围0-msgRetentionSeconds,即最大的回溯时间为消息在队列中的保留周期，0表示不开启。",
+          "member": "uint64",
+          "name": "RewindSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "1 表示事务队列，0 表示普通队列",
+          "member": "uint64",
+          "name": "Transaction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "第一次回查间隔",
+          "member": "uint64",
+          "name": "FirstQueryInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大回查次数",
+          "member": "uint64",
+          "name": "MaxQueryCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "死信队列名称",
+          "member": "string",
+          "name": "DeadLetterQueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "死信策略。0为消息被多次消费未删除，1为Time-To-Live过期",
+          "member": "uint64",
+          "name": "Policy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大接收次数 1-1000",
+          "member": "uint64",
+          "name": "MaxReceiveCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间msgRetentionSeconds",
+          "member": "uint64",
+          "name": "MaxTimeToLive",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启消息轨迹追踪，当不设置字段时，默认为不开启，该字段为true表示开启，为false表示不开启",
+          "member": "bool",
+          "name": "Trace",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQueueResponse": {
+      "document": "CreateQueue返回参数结构体",
+      "members": [
+        {
+          "document": "创建成功的queueId",
+          "member": "string",
+          "name": "QueueId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubscribeRequest": {
+      "document": "CreateSubscribe请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅的协议，目前支持两种协议：http、queue。使用http协议，用户需自己搭建接受消息的web server。使用queue，消息会自动推送到CMQ queue，用户可以并发地拉取消息。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接收通知的Endpoint，根据协议Protocol区分：对于http，Endpoint必须以“`http://`”开头，host可以是域名或IP；对于Queue，则填QueueName。 请注意，目前推送服务不能推送到私有网络中，因此Endpoint填写为私有网络域名或地址将接收不到推送的消息，目前支持推送到公网和基础网络。",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "向Endpoint推送消息出现错误时，CMQ推送服务器的重试策略。取值有：1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始1s，后面是2s，4s，8s...由于Topic消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是EXPONENTIAL_DECAY_RETRY。",
+          "member": "string",
+          "name": "NotifyStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息正文。消息标签（用于消息过滤)。标签数量不能超过5个，每个标签不超过16个字符。与(Batch)PublishMessage的MsgTag参数配合使用，规则：1）如果FilterTag没有设置，则无论MsgTag是否有设置，订阅接收所有发布到Topic的消息；2）如果FilterTag数组有值，则只有数组中至少有一个值在MsgTag数组中也存在时（即FilterTag和MsgTag有交集），订阅才接收该发布到Topic的消息；3）如果FilterTag数组有值，但MsgTag没设置，则不接收任何发布到Topic的消息，可以认为是2）的一种特例，此时FilterTag和MsgTag没有交集。规则整体的设计思想是以订阅者的意愿为主。",
+          "member": "string",
+          "name": "FilterTag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
+          "member": "string",
+          "name": "BindingKey",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "推送内容的格式。取值：1）JSON；2）SIMPLIFIED，即raw格式。如果Protocol是queue，则取值必须为SIMPLIFIED。如果Protocol是http，两个值均可以，默认值是JSON。",
+          "member": "string",
+          "name": "NotifyContentFormat",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubscribeResponse": {
+      "document": "CreateSubscribe返回参数结构体",
+      "members": [
+        {
+          "document": "SubscriptionId",
+          "member": "string",
+          "name": "SubscriptionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRequest": {
+      "document": "CreateTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。",
+          "member": "uint64",
+          "name": "MaxMsgSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于指定主题的消息匹配策略。1：表示标签匹配策略；2：表示路由匹配策略，默认值为标签匹配策略。",
+          "member": "uint64",
+          "name": "FilterType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息保存时间。取值范围60 - 86400 s（即1分钟 - 1天），默认值86400。",
+          "member": "uint64",
+          "name": "MsgRetentionSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启消息轨迹标识，true表示开启，false表示不开启，不填表示不开启。",
+          "member": "bool",
+          "name": "Trace",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicResponse": {
+      "document": "CreateTopic返回参数结构体",
+      "members": [
+        {
+          "document": "TopicName",
+          "member": "string",
+          "name": "TopicId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeadLetterPolicy": {
+      "document": "DeadLetterPolicy",
+      "members": [
+        {
+          "default": "",
+          "document": "死信队列名字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeadLetterQueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "死信队列。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeadLetterQueue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "死信队列策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Policy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxTimeToLive",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大接收次数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxReceiveCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeadLetterSource": {
+      "document": "DeadLetterSource",
+      "members": [
+        {
+          "default": "",
+          "document": "消息队列ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "QueueId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息队列名字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteQueueRequest": {
+      "document": "DeleteQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQueueResponse": {
+      "document": "DeleteQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSubscribeRequest": {
+      "document": "DeleteSubscribe请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSubscribeResponse": {
+      "document": "DeleteSubscribe返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicRequest": {
+      "document": "DeleteTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicResponse": {
+      "document": "DeleteTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeadLetterSourceQueuesRequest": {
+      "document": "DescribeDeadLetterSourceQueues请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "死信队列名称",
+          "member": "string",
+          "name": "DeadLetterQueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤死信队列源队列名称，目前仅支持SourceQueueName过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeadLetterSourceQueuesResponse": {
+      "document": "DescribeDeadLetterSourceQueues返回参数结构体",
+      "members": [
+        {
+          "document": "满足本次条件的队列个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "死信队列源队列",
+          "member": "DeadLetterSource",
+          "name": "QueueSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueueDetailRequest": {
+      "document": "DescribeQueueDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选参数，目前支持QueueName筛选，且仅支持一个关键字",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签搜索",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "精确匹配QueueName",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueueDetailResponse": {
+      "document": "DescribeQueueDetail返回参数结构体",
+      "members": [
+        {
+          "document": "总队列数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列详情列表。",
+          "member": "QueueSet",
+          "name": "QueueSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscriptionDetailRequest": {
+      "document": "DescribeSubscriptionDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选参数，目前只支持SubscriptionName，且仅支持一个关键字。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscriptionDetailResponse": {
+      "document": "DescribeSubscriptionDetail返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Subscription属性集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Subscription",
+          "name": "SubscriptionSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicDetailRequest": {
+      "document": "DescribeTopicDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "目前只支持过滤TopicName ， 且只能填一个过滤值。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签匹配。",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "精确匹配TopicName。",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicDetailResponse": {
+      "document": "DescribeTopicDetail返回参数结构体",
+      "members": [
+        {
+          "document": "主题列表总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主题详情列表。",
+          "member": "TopicSet",
+          "name": "TopicSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "过滤参数",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数的名字",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数值",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyQueueAttributeRequest": {
+      "document": "ModifyQueueAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。",
+          "member": "uint64",
+          "name": "MaxMsgHeapNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息接收长轮询等待时间。取值范围 0-30 秒，默认值 0。",
+          "member": "uint64",
+          "name": "PollingWaitSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息可见性超时。取值范围 1-43200 秒（即12小时内），默认值 30。",
+          "member": "uint64",
+          "name": "VisibilityTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。",
+          "member": "uint64",
+          "name": "MaxMsgSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。",
+          "member": "uint64",
+          "name": "MsgRetentionSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。",
+          "member": "uint64",
+          "name": "RewindSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "第一次查询时间",
+          "member": "uint64",
+          "name": "FirstQueryInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大查询次数",
+          "member": "uint64",
+          "name": "MaxQueryCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "死信队列名称",
+          "member": "string",
+          "name": "DeadLetterQueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "MaxTimeToLivepolicy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds",
+          "member": "uint64",
+          "name": "MaxTimeToLive",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大接收次数",
+          "member": "uint64",
+          "name": "MaxReceiveCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "死信队列策略",
+          "member": "uint64",
+          "name": "Policy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启消息轨迹标识，true表示开启，false表示不开启，不填表示不开启。",
+          "member": "bool",
+          "name": "Trace",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyQueueAttributeResponse": {
+      "document": "ModifyQueueAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscriptionAttributeRequest": {
+      "document": "ModifySubscriptionAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "向 Endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值如下：\n（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息。\n（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始1s，后面是2s，4s，8s···由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。",
+          "member": "string",
+          "name": "NotifyStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 Protocol 是 queue，则取值必须为 SIMPLIFIED。如果 Protocol 是 HTTP，两个值均可以，默认值是 JSON。",
+          "member": "string",
+          "name": "NotifyContentFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息正文。消息标签（用于消息过滤)。标签数量不能超过5个，每个标签不超过16个字符。与(Batch)PublishMessage的MsgTag参数配合使用，规则：1）如果FilterTag没有设置，则无论MsgTag是否有设置，订阅接收所有发布到Topic的消息；2）如果FilterTag数组有值，则只有数组中至少有一个值在MsgTag数组中也存在时（即FilterTag和MsgTag有交集），订阅才接收该发布到Topic的消息；3）如果FilterTag数组有值，但MsgTag没设置，则不接收任何发布到Topic的消息，可以认为是2）的一种特例，此时FilterTag和MsgTag没有交集。规则整体的设计思想是以订阅者的意愿为主。",
+          "member": "string",
+          "name": "FilterTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
+          "member": "string",
+          "name": "BindingKey",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscriptionAttributeResponse": {
+      "document": "ModifySubscriptionAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicAttributeRequest": {
+      "document": "ModifyTopicAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息最大长度。取值范围1024 - 65536 Byte（即1 - 64K），默认值65536。",
+          "member": "uint64",
+          "name": "MaxMsgSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息保存时间。取值范围60 - 86400 s（即1分钟 - 1天），默认值86400。",
+          "member": "uint64",
+          "name": "MsgRetentionSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启消息轨迹标识，true表示开启，false表示不开启，不填表示不开启。",
+          "member": "bool",
+          "name": "Trace",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicAttributeResponse": {
+      "document": "ModifyTopicAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueueSet": {
+      "document": "批量queue属性信息",
+      "members": [
+        {
+          "default": "",
+          "document": "消息队列ID。",
+          "member": "string",
+          "name": "QueueId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息队列名字。",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Qps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带宽限制。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Bps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "飞行消息最大保留时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxDelaySeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxMsgHeapNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "PollingWaitSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MsgRetentionSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VisibilityTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxMsgSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RewindSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "队列的创建时间。返回 Unix 时间戳，精确到秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一次修改队列属性的时间。返回 Unix 时间戳，精确到秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "LastModifyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ActiveMsgNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "InactiveMsgNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟消息数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "DelayMsgNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已调用 DelMsg 接口删除，但还在回溯保留时间内的消息数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RewindMsgNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息最小未消费时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MinMsgTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事务消息队列。true表示是事务消息，false表示不是事务消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Transaction",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "死信队列。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DeadLetterSource",
+          "name": "DeadLetterSource",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "死信队列策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DeadLetterPolicy",
+          "name": "DeadLetterPolicy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事务消息策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TransactionPolicy",
+          "name": "TransactionPolicy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联的标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息轨迹。true表示开启，false表示不开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Trace",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RewindQueueRequest": {
+      "document": "RewindQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设定该时间，则（Batch）receiveMessage接口，会按照生产消息的先后顺序消费该时间戳以后的消息。",
+          "member": "uint64",
+          "name": "StartConsumeTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RewindQueueResponse": {
+      "document": "RewindQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Subscription": {
+      "document": "订阅返回参数",
+      "members": [
+        {
+          "default": "",
+          "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订阅 ID。订阅 ID 在拉取监控数据时会用到。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubscriptionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订阅拥有者的 APPID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TopicOwner",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该订阅待投递的消息数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MsgCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "LastModifyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订阅的创建时间。返回 Unix 时间戳，精确到秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示订阅接收消息的过滤策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BindingKey",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述用户创建订阅时选择的过滤策略：\nfilterType = 1表示用户使用 filterTag 标签过滤\nfilterType = 2表示用户使用 bindingKey 过滤。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FilterTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：\n（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；\n（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NotifyStrategy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NotifyContentFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicSet": {
+      "document": "topic返回信息展示字段",
+      "members": [
+        {
+          "default": "",
+          "document": "主题的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MsgRetentionSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxMsgSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每秒钟发布消息的条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Qps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述用户创建订阅时选择的过滤策略：\nFilterType = 1表示用户使用 FilterTag 标签过滤;\nFilterType = 2表示用户使用 BindingKey 过滤。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "FilterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主题的创建时间。返回 Unix 时间戳，精确到秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一次修改主题属性的时间。返回 Unix 时间戳，精确到秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "LastModifyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前该主题中消息数目（消息堆积数）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MsgCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者 Uin，CAM 鉴权 resource 由该字段组合而成。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联的标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息轨迹。true表示开启，false表示不开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Trace",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TransactionPolicy": {
+      "document": "TransactionPolicy",
+      "members": [
+        {
+          "default": "",
+          "document": "第一次回查时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "FirstQueryInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大查询次数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxQueryCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UnbindDeadLetterRequest": {
+      "document": "UnbindDeadLetter请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "死信策略源队列名称，调用本接口会清空该队列的死信队列策略。",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindDeadLetterResponse": {
+      "document": "UnbindDeadLetter返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

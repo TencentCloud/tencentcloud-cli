@@ -1,0 +1,740 @@
+{
+  "actions": {
+    "CorrectMultiImage": {
+      "document": "https://ecc.tencentcloudapi.com/?Action=CorrectMultiImage\n多图像识别批改接口",
+      "input": "CorrectMultiImageRequest",
+      "name": "多图像识别批改",
+      "output": "CorrectMultiImageResponse"
+    },
+    "DescribeTask": {
+      "document": "异步任务结果查询接口",
+      "input": "DescribeTaskRequest",
+      "name": "查询异步任务结果",
+      "output": "DescribeTaskResponse"
+    },
+    "ECC": {
+      "document": "接口请求域名： ecc.tencentcloudapi.com \n纯文本英语作文批改",
+      "input": "ECCRequest",
+      "name": "纯文本英语作文批改",
+      "output": "ECCResponse"
+    },
+    "EHOCR": {
+      "document": "https://ecc.tencentcloudapi.com/?Action=EHOCR\n图像识别批改接口",
+      "input": "EHOCRRequest",
+      "name": "图像识别批改",
+      "output": "EHOCRResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-12-13",
+    "api_brief": "介绍如何使用API对英文作文批改进行操作，包括纯文本英语作文批改、图像识别批改等。",
+    "serviceNameCN": "英文作文批改",
+    "serviceShortName": "ecc"
+  },
+  "objects": {
+    "Aspect": {
+      "document": "作文批改每个维度名字与得分",
+      "members": [
+        {
+          "default": "",
+          "document": "维度名字",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度得分",
+          "member": "float",
+          "name": "Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度分数占比",
+          "member": "float",
+          "name": "Percentage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CompostionContext": {
+      "document": "图像识别批改接口返回的作文文本信息或批改信息",
+      "members": [
+        {
+          "default": "",
+          "document": "作文内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批改结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CorrectData",
+          "name": "CorrectData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务 id，用于查询接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图像识别唯一标识，一次识别一个 SessionId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CorrectData": {
+      "document": "批改的结果",
+      "members": [
+        {
+          "default": "",
+          "document": "总得分",
+          "member": "float",
+          "name": "Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "各项得分详情",
+          "member": "ScoreCategory",
+          "name": "ScoreCat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "综合评价",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "句子点评",
+          "member": "SentenceCom",
+          "name": "SentenceComments",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CorrectMultiImageRequest": {
+      "document": "CorrectMultiImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的url链接或base64数据。每张图片数据作为数组的一个元素，数组个数与图片个数保持一致。存放类别依据InputType而定，url与base64编码不能混合使用。",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "输出图片类型，0 表示 Image 字段是图片所在的 url，1 表示 Image 字段是 base64 编码后的图像数据。",
+          "member": "int64",
+          "name": "InputType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数。",
+          "member": "string",
+          "name": "EccAppid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图像识别唯一标识，一次识别一个 SessionId，使用识别功能时 SessionId 可用于使用文本批改接口，此时按图像批改价格收费；如使用文本批改接口时没有传入 SessionId，则需要收取文本批改的费用。",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务类型，0：“多图像识别”，只返回识别结果；1：“多图像批改”，同时返回识别结果与批改结果。默认为 0。",
+          "member": "int64",
+          "name": "ServerType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "作文题目，可选参数",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "年级标准， 默认以 cet4 为标准，取值与意义如下：elementary 小学，grade7 grade8 grade9分别对应初一，初二，初三。 grade10 grade11 grade12 分别对应高一，高二，高三，以及 cet4 和 cet6 分别表示 英语4级和6级。",
+          "member": "string",
+          "name": "Grade",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作文提纲，可选参数，作文的写作要求。",
+          "member": "string",
+          "name": "Requirement",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。",
+          "member": "string",
+          "name": "ModelTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "范文内容，可选参数，同上，范文的正文部分。",
+          "member": "string",
+          "name": "ModelContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异步模式标识，0：同步模式，1：异步模式。默认为同步模式",
+          "member": "int64",
+          "name": "IsAsync",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CorrectMultiImageResponse": {
+      "document": "CorrectMultiImage返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回数据",
+          "member": "CompostionContext",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskRequest": {
+      "document": "DescribeTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。",
+          "member": "string",
+          "name": "EccAppid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResponse": {
+      "document": "DescribeTask返回参数结构体",
+      "members": [
+        {
+          "document": "作文识别文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Content",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "整体的批改结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CorrectData",
+          "name": "CorrectData",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务状态，“Progressing”: 处理中（此时无结果返回）、“Finished”: 处理完成",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ECCRequest": {
+      "document": "ECC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作文文本，必填",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作文题目，可选参数",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "年级标准， 默认以cet4为标准，取值与意义如下：elementary 小学，grade7 grade8 grade9分别对应初一，初二，初三。 grade10 grade11 grade12 分别对应高一，高二，高三，以及cet4和cet6 分别表示 英语4级和6级。",
+          "member": "string",
+          "name": "Grade",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作文提纲，可选参数，作文的写作要求。",
+          "member": "string",
+          "name": "Requirement",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。",
+          "member": "string",
+          "name": "ModelTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "范文内容，可选参数，同上，范文的正文部分。",
+          "member": "string",
+          "name": "ModelContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。",
+          "member": "string",
+          "name": "EccAppid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异步模式标识，0：同步模式，1：异步模式，默认为同步模式",
+          "member": "int64",
+          "name": "IsAsync",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图像识别唯一标识，一次识别一个 SessionId。当传入此前识别接口使用过的 SessionId，则本次批改按图像批改价格收费；如使用了识别接口且本次没有传入 SessionId，则需要加取文本批改的费用；如果直接使用文本批改接口，则只收取文本批改的费用",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ECCResponse": {
+      "document": "ECC返回参数结构体",
+      "members": [
+        {
+          "document": "整体的批改结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CorrectData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务 id，用于查询接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EHOCRRequest": {
+      "document": "EHOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片所在的url或base64编码后的图像数据，依据InputType而定",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输出图片类型，0 表示 Image 字段是图片所在的 url，1 表示 Image 字段是 base64 编码后的图像数据",
+          "member": "int64",
+          "name": "InputType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。",
+          "member": "string",
+          "name": "EccAppid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图像识别唯一标识，一次识别一个 SessionId，使用识别功能时 SessionId 可用于使用文本批改接口，此时按图像批改价格收费；如使用文本批改接口时没有传入 SessionId，则需要收取文本批改的费用",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务类型，0：“图像识别”，只返回识别结果，1：“图像批改”，同时返回识别结果与批改结果。默认为 0",
+          "member": "int64",
+          "name": "ServerType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "作文题目，可选参数",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "年级标准， 默认以 cet4 为标准，取值与意义如下：elementary 小学，grade7 grade8 grade9分别对应初一，初二，初三。 grade10 grade11 grade12 分别对应高一，高二，高三，以及 cet4 和 cet6 分别表示 英语4级和6级。",
+          "member": "string",
+          "name": "Grade",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作文提纲，可选参数，作文的写作要求。",
+          "member": "string",
+          "name": "Requirement",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。",
+          "member": "string",
+          "name": "ModelTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "范文内容，可选参数，同上，范文的正文部分。",
+          "member": "string",
+          "name": "ModelContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异步模式标识，0：同步模式，1：异步模式。默认为同步模式",
+          "member": "int64",
+          "name": "IsAsync",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EHOCRResponse": {
+      "document": "EHOCR返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回数据",
+          "member": "CompostionContext",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ErrorCoordinate": {
+      "document": "维度单词坐标",
+      "members": [
+        {
+          "default": "",
+          "document": "维度单词坐标",
+          "member": "int64",
+          "name": "Coordinate",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ScoreCategory": {
+      "document": "四个维度的得分",
+      "members": [
+        {
+          "default": "",
+          "document": "词汇维度",
+          "member": "Aspect",
+          "name": "Words",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "句子维度",
+          "member": "Aspect",
+          "name": "Sentences",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "篇章结构维度",
+          "member": "Aspect",
+          "name": "Structure",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容维度",
+          "member": "Aspect",
+          "name": "Content",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度得分",
+          "member": "float",
+          "name": "Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度分数占比",
+          "member": "float",
+          "name": "Percentage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SentenceCom": {
+      "document": "批改结果按句点评的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "句子错误纠正信息",
+          "member": "SentenceSuggest",
+          "name": "Suggestions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "句子信息",
+          "member": "SentenceItem",
+          "name": "Sentence",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SentenceItem": {
+      "document": "句子的相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "英语句子",
+          "member": "string",
+          "name": "Sentence",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "段落id",
+          "member": "int64",
+          "name": "ParaID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "句子id",
+          "member": "int64",
+          "name": "SentenceID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SentenceSuggest": {
+      "document": "句子批阅建议",
+      "members": [
+        {
+          "default": "",
+          "document": "类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误类型",
+          "member": "string",
+          "name": "ErrorType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原始单词",
+          "member": "string",
+          "name": "Origin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换成 的单词",
+          "member": "string",
+          "name": "Replace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提示信息",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度单词位置，在句子的第几个到第几个单词之间",
+          "member": "int64",
+          "name": "ErrorPosition",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度单词坐标，错误单词在图片中的坐标，只有传图片时正常返回，传文字时返回[ ]",
+          "member": "ErrorCoordinate",
+          "name": "ErrorCoordinates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

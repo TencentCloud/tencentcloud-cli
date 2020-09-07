@@ -1,0 +1,247 @@
+{
+  "actions": {
+    "DescribeTelCdr": {
+      "document": "获取电话服务记录与录音",
+      "input": "DescribeTelCdrRequest",
+      "name": "获取电话服务记录与录音",
+      "output": "DescribeTelCdrResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-02-10",
+    "api_brief": "介绍如何使用API对腾讯云呼叫中心进行操作，包括拉取会话记录、管理坐席信息和管理呼叫中心参数等。",
+    "serviceNameCN": "云呼叫中心",
+    "serviceShortName": "ccc"
+  },
+  "objects": {
+    "DescribeTelCdrRequest": {
+      "document": "DescribeTelCdr请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始时间戳，Unix 时间戳",
+          "member": "int64",
+          "name": "StartTimeStamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，Unix 时间戳",
+          "member": "int64",
+          "name": "EndTimeStamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTelCdrResponse": {
+      "document": "DescribeTelCdr返回参数结构体",
+      "members": [
+        {
+          "document": "话单记录总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "话单记录",
+          "member": "TelCdrInfo",
+          "name": "TelCdrs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SeatUserInfo": {
+      "document": "坐席用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "坐席电话号码",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席邮箱",
+          "member": "string",
+          "name": "Mail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席昵称",
+          "member": "string",
+          "name": "Nick",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席关联的技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SkillGroupNameList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TelCdrInfo": {
+      "document": "电话话单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主叫号码",
+          "member": "string",
+          "name": "Caller",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被叫号码",
+          "member": "string",
+          "name": "Callee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "呼叫发起时间戳，Unix 时间戳",
+          "member": "int64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "呼入呼出方向 0 呼入 1 呼出",
+          "member": "int64",
+          "name": "Direction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通话时长",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录音信息",
+          "member": "string",
+          "name": "RecordURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席信息",
+          "member": "SeatUserInfo",
+          "name": "SeatUser",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束状态 0 未知 1 正常通话 2 未接通",
+          "member": "int64",
+          "name": "EndStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "技能组",
+          "member": "string",
+          "name": "SkillGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主叫归属地",
+          "member": "string",
+          "name": "CallerLocation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

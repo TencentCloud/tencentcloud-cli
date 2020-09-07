@@ -1,0 +1,4034 @@
+{
+  "actions": {
+    "CopyFunction": {
+      "document": "复制一个函数，您可以选择将复制出的新函数放置在特定的Region和Namespace。\n注：本接口**不会**复制函数的以下对象或属性：\n1. 函数的触发器\n2. 除了$LATEST以外的其它版本\n3. 函数配置的日志投递到的CLS目标。\n\n如有需要，您可以在复制后手动配置新函数。",
+      "input": "CopyFunctionRequest",
+      "name": "复制函数",
+      "output": "CopyFunctionResponse"
+    },
+    "CreateAlias": {
+      "document": "为某个函数版本创建一个别名，您可以使用别名来标记特定的函数版本，如DEV/RELEASE版本，也可以随时修改别名指向的版本。\n一个别名必须指向一个主版本，此外还可以同时指向一个附加版本。调用函数时指定特定的别名，则请求会被发送到别名指向的版本上，您可以配置请求发送到主版本和附加版本的比例。",
+      "input": "CreateAliasRequest",
+      "name": "创建函数版本别名",
+      "output": "CreateAliasResponse"
+    },
+    "CreateFunction": {
+      "document": "该接口根据传入参数创建新的函数。",
+      "input": "CreateFunctionRequest",
+      "name": "创建函数",
+      "output": "CreateFunctionResponse"
+    },
+    "CreateNamespace": {
+      "document": "该接口根据传入的参数创建命名空间。",
+      "input": "CreateNamespaceRequest",
+      "name": "创建命名空间",
+      "output": "CreateNamespaceResponse"
+    },
+    "CreateTrigger": {
+      "document": "该接口根据参数输入设置新的触发方式。",
+      "input": "CreateTriggerRequest",
+      "name": "设置函数触发方式",
+      "output": "CreateTriggerResponse"
+    },
+    "DeleteAlias": {
+      "document": "删除一个函数版本的别名",
+      "input": "DeleteAliasRequest",
+      "name": "删除别名",
+      "output": "DeleteAliasResponse"
+    },
+    "DeleteFunction": {
+      "document": "该接口根据传入参数删除函数。",
+      "input": "DeleteFunctionRequest",
+      "name": "删除函数",
+      "output": "DeleteFunctionResponse"
+    },
+    "DeleteLayerVersion": {
+      "document": "删除指定层的指定版本，被删除的版本无法再关联到函数上，但不会影响正在引用这个层的函数。",
+      "input": "DeleteLayerVersionRequest",
+      "name": "删除层版本",
+      "output": "DeleteLayerVersionResponse"
+    },
+    "DeleteNamespace": {
+      "document": "该接口根据传入的参数创建命名空间。",
+      "input": "DeleteNamespaceRequest",
+      "name": "删除命名空间",
+      "output": "DeleteNamespaceResponse"
+    },
+    "DeleteTrigger": {
+      "document": "该接口根据参数传入删除已有的触发方式。",
+      "input": "DeleteTriggerRequest",
+      "name": "删除触发器",
+      "output": "DeleteTriggerResponse"
+    },
+    "GetAlias": {
+      "document": "获取别名的详细信息，包括名称、描述、版本、路由信息等。",
+      "input": "GetAliasRequest",
+      "name": "获取别名详细信息",
+      "output": "GetAliasResponse"
+    },
+    "GetFunction": {
+      "document": "该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。",
+      "input": "GetFunctionRequest",
+      "name": "获取函数详细信息",
+      "output": "GetFunctionResponse"
+    },
+    "GetFunctionAddress": {
+      "document": "该接口用于获取函数代码包的下载地址。",
+      "input": "GetFunctionAddressRequest",
+      "name": "获取函数代码下载地址",
+      "output": "GetFunctionAddressResponse"
+    },
+    "GetFunctionLogs": {
+      "document": "该接口根据指定的日志查询条件返回函数运行日志。",
+      "input": "GetFunctionLogsRequest",
+      "name": "获取函数运行日志",
+      "output": "GetFunctionLogsResponse"
+    },
+    "GetLayerVersion": {
+      "document": "获取层版本详细信息，包括用于下载层中文件的链接。",
+      "input": "GetLayerVersionRequest",
+      "name": "获取层版本详细信息",
+      "output": "GetLayerVersionResponse"
+    },
+    "Invoke": {
+      "document": "该接口用于运行函数。",
+      "input": "InvokeRequest",
+      "name": "运行函数",
+      "output": "InvokeResponse"
+    },
+    "ListAliases": {
+      "document": "返回一个函数下的全部别名，可以根据特定函数版本过滤。",
+      "input": "ListAliasesRequest",
+      "name": "获取别名列表",
+      "output": "ListAliasesResponse"
+    },
+    "ListFunctions": {
+      "document": "该接口根据传入的查询参数返回相关函数信息。",
+      "input": "ListFunctionsRequest",
+      "name": "获取函数列表",
+      "output": "ListFunctionsResponse"
+    },
+    "ListLayerVersions": {
+      "document": "返回指定层的全部版本的信息",
+      "input": "ListLayerVersionsRequest",
+      "name": "获取层版本列表",
+      "output": "ListLayerVersionsResponse"
+    },
+    "ListLayers": {
+      "document": "返回全部层的列表，其中包含了每个层最新版本的信息，可以通过适配运行时进行过滤。",
+      "input": "ListLayersRequest",
+      "name": "返回层列表",
+      "output": "ListLayersResponse"
+    },
+    "ListNamespaces": {
+      "document": "列出命名空间列表",
+      "input": "ListNamespacesRequest",
+      "name": "列出命名空间列表",
+      "output": "ListNamespacesResponse"
+    },
+    "ListTriggers": {
+      "document": "获取函数触发器列表",
+      "input": "ListTriggersRequest",
+      "name": "获取函数触发器列表",
+      "output": "ListTriggersResponse"
+    },
+    "ListVersionByFunction": {
+      "document": "该接口根据传入的参数查询函数的版本。",
+      "input": "ListVersionByFunctionRequest",
+      "name": "查询函数版本",
+      "output": "ListVersionByFunctionResponse"
+    },
+    "PublishLayerVersion": {
+      "document": "使用给定的zip文件或cos对象创建一个层的新版本，每次使用相同的层的名称调用本接口，都会生成一个新版本。",
+      "input": "PublishLayerVersionRequest",
+      "name": "发布层版本",
+      "output": "PublishLayerVersionResponse"
+    },
+    "PublishVersion": {
+      "document": "该接口用于用户发布新版本函数。",
+      "input": "PublishVersionRequest",
+      "name": "发布新版本",
+      "output": "PublishVersionResponse"
+    },
+    "UpdateAlias": {
+      "document": "更新别名的配置",
+      "input": "UpdateAliasRequest",
+      "name": "更新别名的配置",
+      "output": "UpdateAliasResponse"
+    },
+    "UpdateFunctionCode": {
+      "document": "该接口根据传入参数更新函数代码。",
+      "input": "UpdateFunctionCodeRequest",
+      "name": "更新函数代码",
+      "output": "UpdateFunctionCodeResponse"
+    },
+    "UpdateFunctionConfiguration": {
+      "document": "该接口根据传入参数更新函数配置。",
+      "input": "UpdateFunctionConfigurationRequest",
+      "name": "更新函数配置",
+      "output": "UpdateFunctionConfigurationResponse"
+    },
+    "UpdateNamespace": {
+      "document": "更新命名空间",
+      "input": "UpdateNamespaceRequest",
+      "name": "更新命名空间",
+      "output": "UpdateNamespaceResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-04-16",
+    "api_brief": "介绍如何使用API对云函数计算进行操作，包括层管理、函数、触发器等。",
+    "serviceNameCN": "云函数",
+    "serviceShortName": "scf"
+  },
+  "objects": {
+    "AccessInfo": {
+      "document": "HTTP域名相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VIP",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Alias": {
+      "document": "函数的版本别名",
+      "members": [
+        {
+          "default": "",
+          "document": "别名指向的主版本",
+          "member": "string",
+          "name": "FunctionVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "别名的名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "别名的路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RoutingConfig",
+          "name": "RoutingConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "ModTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CfsConfig": {
+      "document": "文件系统(cfs)配置描述",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统信息列表",
+          "member": "CfsInsInfo",
+          "name": "CfsInsList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CfsInsInfo": {
+      "document": "云函数关联的cfs配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统实例id",
+          "member": "string",
+          "name": "CfsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统挂载点id",
+          "member": "string",
+          "name": "MountInsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地挂载点",
+          "member": "string",
+          "name": "LocalMountDir",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "远程挂载点",
+          "member": "string",
+          "name": "RemoteMountDir",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统ip，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IpAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统所在的私有网络id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MountVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统所在私有网络的子网id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MountSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Code": {
+      "document": "函数代码",
+      "members": [
+        {
+          "default": "",
+          "document": "对象存储桶名称",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对象存储对象路径",
+          "member": "string",
+          "name": "CosObjectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包含函数代码文件及其依赖项的 zip 格式文件，使用该接口时要求将 zip 文件的内容转成 base64 编码，最大支持20M",
+          "member": "string",
+          "name": "ZipFile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对象存储的地域，地域为北京时需要传入ap-beijing,北京一区时需要传递ap-beijing-1，其他的地域不需要传递。",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果是通过Demo创建的话，需要传入DemoId",
+          "member": "string",
+          "name": "DemoId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果是从TempCos创建的话，需要传入TempCosObjectName",
+          "member": "string",
+          "name": "TempCosObjectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Git地址",
+          "member": "string",
+          "name": "GitUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Git用户名",
+          "member": "string",
+          "name": "GitUserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Git密码",
+          "member": "string",
+          "name": "GitPassword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密后的Git密码，一般无需指定",
+          "member": "string",
+          "name": "GitPasswordSecret",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Git分支",
+          "member": "string",
+          "name": "GitBranch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代码在Git仓库中的路径",
+          "member": "string",
+          "name": "GitDirectory",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定要拉取的版本",
+          "member": "string",
+          "name": "GitCommitId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密后的Git用户名，一般无需指定",
+          "member": "string",
+          "name": "GitUserNameSecret",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CopyFunctionRequest": {
+      "document": "CopyFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要复制的函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新函数的名称",
+          "member": "string",
+          "name": "NewFunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要复制的函数所在的命名空间，默认为default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "将函数复制到的命名空间，默认为default",
+          "member": "string",
+          "name": "TargetNamespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新函数的描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要将函数复制到的地域，不填则默认为当前地域",
+          "member": "string",
+          "name": "TargetRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "FALSE",
+          "document": "如果目标Namespace下已有同名函数，是否覆盖，默认为否\n（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）\nTRUE：覆盖同名函数\nFALSE：不覆盖同名函数",
+          "member": "bool",
+          "name": "Override",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "TRUE",
+          "document": "是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。\nTRUE：复制函数配置\nFALSE：不复制函数配置",
+          "member": "bool",
+          "name": "CopyConfiguration",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyFunctionResponse": {
+      "document": "CopyFunction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAliasRequest": {
+      "document": "CreateAlias请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "别名的名称，在函数级别中唯一，只能包含字母、数字、'_'和‘-’，且必须以字母开头，长度限制为1-64",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别名指向的主版本",
+          "member": "string",
+          "name": "FunctionVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所在的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别名的请求路由配置",
+          "member": "RoutingConfig",
+          "name": "RoutingConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "别名的描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAliasResponse": {
+      "document": "CreateAlias返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFunctionRequest": {
+      "document": "CreateFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的代码. 注意：不能同时指定Cos与ZipFile",
+          "member": "Code",
+          "name": "Code",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数处理方法名称，名称格式支持 \"文件名称.方法名称\" 形式，文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符",
+          "member": "string",
+          "name": "Handler",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯",
+          "member": "int64",
+          "name": "MemorySize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "函数的环境变量",
+          "member": "Environment",
+          "name": "Environment",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime，默认Python2.7",
+          "member": "string",
+          "name": "Runtime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的私有网络配置",
+          "member": "VpcConfig",
+          "name": "VpcConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数绑定的角色",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数日志投递到的CLS LogsetID",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数日志投递到的CLS TopicID",
+          "member": "string",
+          "name": "ClsTopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段",
+          "member": "string",
+          "name": "CodeSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。",
+          "member": "LayerVersionSimple",
+          "name": "Layers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "死信队列参数",
+          "member": "DeadLetterConfig",
+          "name": "DeadLetterConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "公网访问配置",
+          "member": "PublicNetConfigIn",
+          "name": "PublicNetConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "文件系统配置参数，用于云函数挂载文件系统",
+          "member": "CfsConfig",
+          "name": "CfsConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数初始化超时时间",
+          "member": "int64",
+          "name": "InitTimeout",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFunctionResponse": {
+      "document": "CreateFunction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNamespaceRequest": {
+      "document": "CreateNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNamespaceResponse": {
+      "document": "CreateNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTriggerRequest": {
+      "document": "CreateTrigger请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "新建触发器绑定的函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新建触发器名称。如果是定时触发器，名称支持英文字母、数字、连接符和下划线，最长100个字符；如果是cos触发器，需要是对应cos存储桶适用于XML API的访问域名(例如:5401-5ff414-12345.cos.ap-shanghai.myqcloud.com);如果是其他触发器，见具体触发器绑定参数的说明",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器对应的参数，可见具体[触发器描述说明](https://cloud.tencent.com/document/product/583/39901)",
+          "member": "string",
+          "name": "TriggerDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的版本",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器的初始是能状态 OPEN表示开启 CLOSE表示关闭",
+          "member": "string",
+          "name": "Enable",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTriggerResponse": {
+      "document": "CreateTrigger返回参数结构体",
+      "members": [
+        {
+          "document": "触发器信息",
+          "member": "Trigger",
+          "name": "TriggerInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeadLetterConfig": {
+      "document": "死信队列参数",
+      "members": [
+        {
+          "default": "",
+          "document": "死信队列模式",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "死信队列名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "死信队列主题模式的标签形式",
+          "member": "string",
+          "name": "FilterType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteAliasRequest": {
+      "document": "DeleteAlias请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别名的名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所在的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAliasResponse": {
+      "document": "DeleteAlias返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFunctionRequest": {
+      "document": "DeleteFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数版本",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFunctionResponse": {
+      "document": "DeleteFunction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLayerVersionRequest": {
+      "document": "DeleteLayerVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "层名称",
+          "member": "string",
+          "name": "LayerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本号",
+          "member": "int64",
+          "name": "LayerVersion",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLayerVersionResponse": {
+      "document": "DeleteLayerVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNamespaceRequest": {
+      "document": "DeleteNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNamespaceResponse": {
+      "document": "DeleteNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTriggerRequest": {
+      "document": "DeleteTrigger请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的触发器名称",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的触发器类型，目前支持 cos 、cmq、 timer、ckafka 类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "如果删除的触发器类型为 COS 触发器，该字段为必填值，存放 JSON 格式的数据 {\"event\":\"cos:ObjectCreated:*\"}，数据内容和 SetTrigger 接口中该字段的格式相同；如果删除的触发器类型为定时触发器或 CMQ 触发器，可以不指定该字段",
+          "member": "string",
+          "name": "TriggerDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的版本信息",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTriggerResponse": {
+      "document": "DeleteTrigger返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EipConfigIn": {
+      "document": "公网访问固定ip配置",
+      "members": [
+        {
+          "default": "",
+          "document": "Eip开启状态，取值['ENABLE','DISABLE']",
+          "member": "string",
+          "name": "EipStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EipConfigOut": {
+      "document": "公网访问固定ip配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否是固定IP，[\"ENABLE\",\"DISABLE\"]",
+          "member": "string",
+          "name": "EipStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EipAddress",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EipOutConfig": {
+      "document": "EipOutConfig",
+      "members": [
+        {
+          "default": "",
+          "document": "是否是固定IP，[\"TRUE\",\"FALSE\"]",
+          "member": "string",
+          "name": "EipFixed",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP列表",
+          "member": "string",
+          "name": "Eips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Environment": {
+      "document": "函数的环境变量参数",
+      "members": [
+        {
+          "default": "",
+          "document": "环境变量数组",
+          "member": "Variable",
+          "name": "Variables",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "default": "",
+          "document": "需要过滤的字段。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Function": {
+      "document": "函数列表",
+      "members": [
+        {
+          "default": "",
+          "document": "修改时间",
+          "member": "string",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时",
+          "member": "string",
+          "name": "Runtime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数ID",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数状态详情",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数标签",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数类型，取值为 HTTP 或者 Event",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FunctionLog": {
+      "document": "日志信息",
+      "members": [
+        {
+          "default": "",
+          "document": "函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数执行完成后的返回值",
+          "member": "string",
+          "name": "RetMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行该函数对应的requestId",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数开始执行时的时间点",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数执行结果，如果是 0 表示执行成功，其他值表示失败",
+          "member": "int64",
+          "name": "RetCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数调用是否结束，如果是 1 表示执行结束，其他值表示调用异常",
+          "member": "int64",
+          "name": "InvokeFinished",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数执行耗时，单位为 ms",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数计费时间，根据 duration 向上取最近的 100ms，单位为ms",
+          "member": "int64",
+          "name": "BillDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数执行时消耗实际内存大小，单位为 Byte",
+          "member": "int64",
+          "name": "MemUsage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数执行过程中的日志输出",
+          "member": "string",
+          "name": "Log",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志来源",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重试次数",
+          "member": "uint64",
+          "name": "RetryNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FunctionVersion": {
+      "document": "函数版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "函数版本名称",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "ModTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GetAliasRequest": {
+      "document": "GetAlias请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别名的名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所在的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAliasResponse": {
+      "document": "GetAlias返回参数结构体",
+      "members": [
+        {
+          "document": "别名指向的主版本",
+          "member": "string",
+          "name": "FunctionVersion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "别名的名称",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "别名的路由信息",
+          "member": "RoutingConfig",
+          "name": "RoutingConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "别名的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "AddTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "ModTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionAddressRequest": {
+      "document": "GetFunctionAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的版本",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionAddressResponse": {
+      "document": "GetFunctionAddress返回参数结构体",
+      "members": [
+        {
+          "document": "函数的Cos地址",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的SHA256编码",
+          "member": "string",
+          "name": "CodeSha256",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionLogsRequest": {
+      "document": "GetFunctionLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据的偏移量，Offset+Limit不能大于10000",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据的长度，Offset+Limit不能大于10000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "以升序还是降序的方式对日志进行排序，可选值 desc和 asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据某个字段排序日志,支持以下字段：function_name, duration, mem_usage, start_time",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志过滤条件。可用来区分正确和错误日志，filter.RetCode=not0 表示只返回错误日志，filter.RetCode=is0 表示只返回正确日志，不传，则返回所有日志",
+          "member": "LogFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的版本",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行该函数对应的requestId",
+          "member": "string",
+          "name": "FunctionRequestId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的具体日期，例如：2017-05-16 20:00:00，只能与endtime相差一天之内",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的具体日期，例如：2017-05-16 20:59:59，只能与startTime相差一天之内",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写",
+          "member": "LogSearchContext",
+          "name": "SearchContext",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionLogsResponse": {
+      "document": "GetFunctionLogs返回参数结构体",
+      "members": [
+        {
+          "document": "函数日志的总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数日志信息",
+          "member": "FunctionLog",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志服务分页参数",
+          "member": "LogSearchContext",
+          "name": "SearchContext",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionRequest": {
+      "document": "GetFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要获取详情的函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的版本号",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示",
+          "member": "string",
+          "name": "ShowCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionResponse": {
+      "document": "GetFunction返回参数结构体",
+      "members": [
+        {
+          "document": "函数的最后修改时间",
+          "member": "datetime",
+          "name": "ModTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的代码",
+          "member": "string",
+          "name": "CodeInfo",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的描述信息",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的触发器列表",
+          "member": "Trigger",
+          "name": "Triggers",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的入口",
+          "member": "string",
+          "name": "Handler",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数代码大小",
+          "member": "int64",
+          "name": "CodeSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的超时时间",
+          "member": "int64",
+          "name": "Timeout",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的版本",
+          "member": "string",
+          "name": "FunctionVersion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的最大可用内存",
+          "member": "int64",
+          "name": "MemorySize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的运行环境",
+          "member": "string",
+          "name": "Runtime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的私有网络",
+          "member": "VpcConfig",
+          "name": "VpcConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否使用GPU",
+          "member": "string",
+          "name": "UseGpu",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的环境变量",
+          "member": "Environment",
+          "name": "Environment",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代码是否正确",
+          "member": "string",
+          "name": "CodeResult",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代码错误信息",
+          "member": "string",
+          "name": "CodeError",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代码错误码",
+          "member": "int64",
+          "name": "ErrNo",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数绑定的角色",
+          "member": "string",
+          "name": "Role",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否自动安装依赖",
+          "member": "string",
+          "name": "InstallDependency",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态描述",
+          "member": "string",
+          "name": "StatusDesc",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志投递到的Cls日志集",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志投递到的Cls Topic",
+          "member": "string",
+          "name": "ClsTopicId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数ID",
+          "member": "string",
+          "name": "FunctionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的标签列表",
+          "member": "Tag",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "EipConfig配置",
+          "member": "EipOutConfig",
+          "name": "EipConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名信息",
+          "member": "AccessInfo",
+          "name": "AccessInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数类型，取值为HTTP或者Event",
+          "member": "string",
+          "name": "Type",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否启用L5",
+          "member": "string",
+          "name": "L5Enable",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数关联的Layer版本信息",
+          "member": "LayerVersionInfo",
+          "name": "Layers",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数关联的死信队列信息",
+          "member": "DeadLetterConfig",
+          "name": "DeadLetterConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数创建回见",
+          "member": "datetime",
+          "name": "AddTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公网访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PublicNetConfigOut",
+          "name": "PublicNetConfig",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否启用Ons\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OnsEnable",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件系统配置参数，用于云函数挂载文件系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CfsConfig",
+          "name": "CfsConfig",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AvailableStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "函数版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Qualifier",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "函数初始化超时时间",
+          "member": "int64",
+          "name": "InitTimeout",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLayerVersionRequest": {
+      "document": "GetLayerVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "层名称",
+          "member": "string",
+          "name": "LayerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本号",
+          "member": "int64",
+          "name": "LayerVersion",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLayerVersionResponse": {
+      "document": "GetLayerVersion返回参数结构体",
+      "members": [
+        {
+          "document": "适配的运行时",
+          "member": "string",
+          "name": "CompatibleRuntimes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "层中版本文件的SHA256编码",
+          "member": "string",
+          "name": "CodeSha256",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "层中版本文件的下载地址",
+          "member": "string",
+          "name": "Location",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本的创建时间",
+          "member": "string",
+          "name": "AddTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本的描述",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "许可证信息",
+          "member": "string",
+          "name": "LicenseInfo",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本号",
+          "member": "int64",
+          "name": "LayerVersion",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "层名称",
+          "member": "string",
+          "name": "LayerName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "层的具体版本当前状态，可能取值：\nActive 正常\nPublishing  发布中\nPublishFailed  发布失败\nDeleted 已删除",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeRequest": {
+      "document": "Invoke请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RequestResponse(同步) 和 Event(异步)，默认为同步",
+          "member": "string",
+          "name": "InvocationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发函数的版本号",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运行函数时的参数，以json格式传入，最大支持的参数长度是 1M",
+          "member": "string",
+          "name": "ClientContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数灰度流量控制调用，以json格式传入，例如{\"k\":\"v\"}，注意kv都需要是字符串类型，最大支持的参数长度是1024字节",
+          "member": "string",
+          "name": "RoutingKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeResponse": {
+      "document": "Invoke返回参数结构体",
+      "members": [
+        {
+          "document": "函数执行结果",
+          "member": "Result",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LayerVersionInfo": {
+      "document": "层版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "版本适用的运行时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CompatibleRuntimes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "AddTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "许可证信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LicenseInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本号",
+          "member": "int64",
+          "name": "LayerVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "层名称",
+          "member": "string",
+          "name": "LayerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LayerVersionSimple": {
+      "document": "指定某个Layer版本",
+      "members": [
+        {
+          "default": "",
+          "document": "layer名称",
+          "member": "string",
+          "name": "LayerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本号",
+          "member": "int64",
+          "name": "LayerVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ListAliasesRequest": {
+      "document": "ListAliases请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所在的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "如果提供此参数，则只返回与该函数版本有关联的别名",
+          "member": "string",
+          "name": "FunctionVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认值为 0",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数据长度，默认值为 20",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAliasesResponse": {
+      "document": "ListAliases返回参数结构体",
+      "members": [
+        {
+          "document": "别名列表",
+          "member": "Alias",
+          "name": "Aliases",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "别名总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFunctionsRequest": {
+      "document": "ListFunctions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName",
+          "member": "string",
+          "name": "Orderby",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认值为 0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据长度，默认值为 20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "支持FunctionName模糊匹配",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数描述，支持模糊搜索",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFunctionsResponse": {
+      "document": "ListFunctions返回参数结构体",
+      "members": [
+        {
+          "document": "函数列表",
+          "member": "Function",
+          "name": "Functions",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLayerVersionsRequest": {
+      "document": "ListLayerVersions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "层名称",
+          "member": "string",
+          "name": "LayerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "适配的运行时",
+          "member": "string",
+          "name": "CompatibleRuntime",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLayerVersionsResponse": {
+      "document": "ListLayerVersions返回参数结构体",
+      "members": [
+        {
+          "document": "层版本列表",
+          "member": "LayerVersionInfo",
+          "name": "LayerVersions",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLayersRequest": {
+      "document": "ListLayers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "适配的运行时",
+          "member": "string",
+          "name": "CompatibleRuntime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移位置",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询数目限制",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询key，模糊匹配名称",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLayersResponse": {
+      "document": "ListLayers返回参数结构体",
+      "members": [
+        {
+          "document": "层列表",
+          "member": "LayerVersionInfo",
+          "name": "Layers",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "层总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListNamespacesRequest": {
+      "document": "ListNamespaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数据长度，默认值为 20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据的偏移量，默认值为 0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：Name,Updatetime",
+          "member": "string",
+          "name": "Orderby",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListNamespacesResponse": {
+      "document": "ListNamespaces返回参数结构体",
+      "members": [
+        {
+          "document": "namespace详情",
+          "member": "Namespace",
+          "name": "Namespaces",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的namespace数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTriggersRequest": {
+      "document": "ListTriggers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间，默认是default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认值为 0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据长度，默认值为 20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime，默认ModTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC，默认DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "* Qualifier:\n函数版本，别名",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTriggersResponse": {
+      "document": "ListTriggers返回参数结构体",
+      "members": [
+        {
+          "document": "触发器总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "触发器列表",
+          "member": "TriggerInfo",
+          "name": "Triggers",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVersionByFunctionRequest": {
+      "document": "ListVersionByFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所在命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认值为 0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据长度，默认值为 20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVersionByFunctionResponse": {
+      "document": "ListVersionByFunction返回参数结构体",
+      "members": [
+        {
+          "document": "函数版本。",
+          "member": "string",
+          "name": "FunctionVersion",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数版本列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FunctionVersion",
+          "name": "Versions",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "函数版本总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LogFilter": {
+      "document": "日志过滤条件，用于区分正确与错误日志",
+      "members": [
+        {
+          "default": "",
+          "document": "filter.RetCode的取值有：\nnot0 表示只返回错误日志，\nis0 表示只返回正确日志，\nTimeLimitExceeded 返回函数调用发生超时的日志，\nResourceLimitExceeded 返回函数调用发生资源超限的日志，\nUserCodeException 返回函数调用发生用户代码错误的日志，\n无输入则返回所有日志。",
+          "member": "string",
+          "name": "RetCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LogSearchContext": {
+      "document": "日志搜索上下文",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "string",
+          "name": "Offset",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志条数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志关键词",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志类型，支持Application和Platform，默认为Application",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Namespace": {
+      "document": "命名空间",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间创建时间",
+          "member": "datetime",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间修改时间",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认default，TCB表示是小程序云开发创建的",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PublicNetConfigIn": {
+      "document": "公网访问配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启公网访问能力取值['DISABLE','ENABLE']",
+          "member": "string",
+          "name": "PublicNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Eip配置",
+          "member": "EipConfigIn",
+          "name": "EipConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PublicNetConfigOut": {
+      "document": "公网访问配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启公网访问能力取值['DISABLE','ENABLE']",
+          "member": "string",
+          "name": "PublicNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Eip配置",
+          "member": "EipConfigOut",
+          "name": "EipConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PublishLayerVersionRequest": {
+      "document": "PublishLayerVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "层名称，支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度1-64",
+          "member": "string",
+          "name": "LayerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "层适用的运行时，可多选，可选的值对应函数的 Runtime 可选值。",
+          "member": "string",
+          "name": "CompatibleRuntimes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "层的文件来源或文件内容",
+          "member": "Code",
+          "name": "Content",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "层的版本的描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "层的软件许可证",
+          "member": "string",
+          "name": "LicenseInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishLayerVersionResponse": {
+      "document": "PublishLayerVersion返回参数结构体",
+      "members": [
+        {
+          "document": "本次创建的层的版本号",
+          "member": "int64",
+          "name": "LayerVersion",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishVersionRequest": {
+      "document": "PublishVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发布函数的名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishVersionResponse": {
+      "document": "PublishVersion返回参数结构体",
+      "members": [
+        {
+          "document": "函数的版本",
+          "member": "string",
+          "name": "FunctionVersion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代码大小",
+          "member": "int64",
+          "name": "CodeSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最大可用内存",
+          "member": "int64",
+          "name": "MemorySize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的描述",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的入口",
+          "member": "string",
+          "name": "Handler",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的超时时间",
+          "member": "int64",
+          "name": "Timeout",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的运行环境",
+          "member": "string",
+          "name": "Runtime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Result": {
+      "document": "运行函数的返回",
+      "members": [
+        {
+          "default": "",
+          "document": "表示执行过程中的日志输出，异步调用返回为空",
+          "member": "string",
+          "name": "Log",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示执行函数的返回，异步调用返回为空",
+          "member": "string",
+          "name": "RetMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示执行函数的错误返回信息，异步调用返回为空",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行函数时的内存大小，单位为Byte，异步调用返回为空",
+          "member": "int64",
+          "name": "MemUsage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示执行函数的耗时，单位是毫秒，异步调用返回为空",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示函数的计费耗时，单位是毫秒，异步调用返回为空",
+          "member": "int64",
+          "name": "BillDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此次函数执行的Id",
+          "member": "string",
+          "name": "FunctionRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0为正确，异步调用返回为空",
+          "member": "int64",
+          "name": "InvokeResult",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RoutingConfig": {
+      "document": "别名的版本路由配置",
+      "members": [
+        {
+          "default": "",
+          "document": "随机权重路由附加版本",
+          "member": "VersionWeight",
+          "name": "AdditionalVersionWeights",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则路由附加版本",
+          "member": "VersionMatch",
+          "name": "AddtionVersionMatchs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Tag": {
+      "document": "函数标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签的key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签的value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Trigger": {
+      "document": "触发器类型",
+      "members": [
+        {
+          "default": "",
+          "document": "触发器最后修改时间",
+          "member": "datetime",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器详细配置",
+          "member": "string",
+          "name": "TriggerDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器名称",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器创建时间",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使能开关",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户自定义参数",
+          "member": "string",
+          "name": "CustomArgument",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器状态",
+          "member": "string",
+          "name": "AvailableStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TriggerInfo": {
+      "document": "触发器信息",
+      "members": [
+        {
+          "default": "",
+          "document": "使能开关",
+          "member": "uint64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数版本或别名",
+          "member": "string",
+          "name": "Qualifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器名称",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器详细配置",
+          "member": "string",
+          "name": "TriggerDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器是否可用",
+          "member": "string",
+          "name": "AvailableStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CustomArgument",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发器创建时间",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器最后修改时间",
+          "member": "datetime",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateAliasRequest": {
+      "document": "UpdateAlias请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别名的名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别名指向的主版本",
+          "member": "string",
+          "name": "FunctionVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所在的命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别名的路由信息，需要为别名指定附加版本时，必须提供此参数",
+          "member": "RoutingConfig",
+          "name": "RoutingConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "别名的描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAliasResponse": {
+      "document": "UpdateAlias返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionCodeRequest": {
+      "document": "UpdateFunctionCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数处理方法名称。名称格式支持“文件名称.函数名称”形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求 2-60 个字符",
+          "member": "string",
+          "name": "Handler",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对象存储桶名称",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对象存储对象路径",
+          "member": "string",
+          "name": "CosObjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "包含函数代码文件及其依赖项的 zip 格式文件，使用该接口时要求将 zip 文件的内容转成 base64 编码，最大支持20M",
+          "member": "string",
+          "name": "ZipFile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对象存储的地域，注：北京分为ap-beijing和ap-beijing-1",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数所属环境",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在更新时是否同步发布新版本，默认为：FALSE，不发布",
+          "member": "string",
+          "name": "Publish",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数代码",
+          "member": "Code",
+          "name": "Code",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段",
+          "member": "string",
+          "name": "CodeSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionCodeResponse": {
+      "document": "UpdateFunctionCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionConfigurationRequest": {
+      "document": "UpdateFunctionConfiguration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要修改的函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数描述。最大支持 1000 个英文字母、数字、空格、逗号和英文句号，支持中文",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数运行时内存大小，默认为 128 M，可选范64M、128 M-3072 M，以 128MB 为阶梯。",
+          "member": "int64",
+          "name": "MemorySize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "函数最长执行时间，单位为秒，可选值范 1-900 秒，默认为 3 秒",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Golang1 ， Java8和CustomRuntime",
+          "member": "string",
+          "name": "Runtime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的环境变量",
+          "member": "Environment",
+          "name": "Environment",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数所属命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的私有网络配置",
+          "member": "VpcConfig",
+          "name": "VpcConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数绑定的角色",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志投递到的cls日志集ID",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志投递到的cls Topic ID",
+          "member": "string",
+          "name": "ClsTopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在更新时是否同步发布新版本，默认为：FALSE，不发布",
+          "member": "string",
+          "name": "Publish",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启L5访问能力，TRUE 为开启，FALSE为关闭",
+          "member": "string",
+          "name": "L5Enable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。",
+          "member": "LayerVersionSimple",
+          "name": "Layers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "函数关联的死信队列信息",
+          "member": "DeadLetterConfig",
+          "name": "DeadLetterConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "公网访问配置",
+          "member": "PublicNetConfigIn",
+          "name": "PublicNetConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "文件系统配置入参，用于云函数绑定文件系统",
+          "member": "CfsConfig",
+          "name": "CfsConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "函数初始化执行超时时间，默认15秒",
+          "member": "int64",
+          "name": "InitTimeout",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionConfigurationResponse": {
+      "document": "UpdateFunctionConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNamespaceRequest": {
+      "document": "UpdateNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNamespaceResponse": {
+      "document": "UpdateNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Variable": {
+      "document": "变量参数",
+      "members": [
+        {
+          "default": "",
+          "document": "变量的名称",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变量的值",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VersionMatch": {
+      "document": "带有匹配规则的函数版本",
+      "members": [
+        {
+          "default": "",
+          "document": "函数版本名称",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配规则的key，调用时通过传key来匹配规则路由到指定版本\nheader方式：\nkey填写\"invoke.headers.User\"，并在 invoke 调用函数时传参 RoutingKey：{\"User\":\"value\"}规则匹配调用",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配方式。取值范围：\nrange：范围匹配\nexact：字符串精确匹配",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "range 匹配规则要求：\n需要为开区间或闭区间描述 (a,b) [a,b]，其中 a、b 均为整数\nexact 匹配规则要求：\n字符串精确匹配",
+          "member": "string",
+          "name": "Expression",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VersionWeight": {
+      "document": "带有权重的函数版本",
+      "members": [
+        {
+          "default": "",
+          "document": "函数版本名称",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该版本的权重",
+          "member": "float",
+          "name": "Weight",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcConfig": {
+      "document": "私有网络参数配置",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络 的 Id",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网的 Id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

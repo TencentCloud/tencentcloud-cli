@@ -1,0 +1,1918 @@
+{
+  "actions": {
+    "BankCard2EVerification": {
+      "document": "本接口用于校验姓名和银行卡号的真实性和一致性。",
+      "input": "BankCard2EVerificationRequest",
+      "name": "银行卡二要素核验",
+      "output": "BankCard2EVerificationResponse"
+    },
+    "BankCard4EVerification": {
+      "document": "本接口用于输入银行卡号、姓名、开户证件号、开户手机号，校验信息的真实性和一致性。",
+      "input": "BankCard4EVerificationRequest",
+      "name": "银行卡四要素核验",
+      "output": "BankCard4EVerificationResponse"
+    },
+    "BankCardVerification": {
+      "document": "本接口用于银行卡号、姓名、开户证件号信息的真实性和一致性。",
+      "input": "BankCardVerificationRequest",
+      "name": "银行卡三要素核验",
+      "output": "BankCardVerificationResponse"
+    },
+    "CheckBankCardInformation": {
+      "document": "银行卡基础信息查询",
+      "input": "CheckBankCardInformationRequest",
+      "name": "银行卡基础信息查询",
+      "output": "CheckBankCardInformationResponse"
+    },
+    "CheckIdCardInformation": {
+      "document": "传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与公安权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。",
+      "input": "CheckIdCardInformationRequest",
+      "name": "身份证人像照片验真",
+      "output": "CheckIdCardInformationResponse"
+    },
+    "DetectAuth": {
+      "document": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
+      "input": "DetectAuthRequest",
+      "name": "实名核身鉴权",
+      "output": "DetectAuthResponse"
+    },
+    "GetActionSequence": {
+      "document": "使用动作活体检测模式前，需调用本接口获取动作顺序。",
+      "input": "GetActionSequenceRequest",
+      "name": "获取动作顺序",
+      "output": "GetActionSequenceResponse"
+    },
+    "GetDetectInfo": {
+      "document": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
+      "input": "GetDetectInfoRequest",
+      "name": "获取实名核身结果信息",
+      "output": "GetDetectInfoResponse"
+    },
+    "GetDetectInfoEnhanced": {
+      "document": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
+      "input": "GetDetectInfoEnhancedRequest",
+      "name": "获取实名核身结果信息增强版",
+      "output": "GetDetectInfoEnhancedResponse"
+    },
+    "GetLiveCode": {
+      "document": "使用数字活体检测模式前，需调用本接口获取数字验证码。",
+      "input": "GetLiveCodeRequest",
+      "name": "获取数字验证码",
+      "output": "GetLiveCodeResponse"
+    },
+    "IdCardOCRVerification": {
+      "document": "本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。",
+      "input": "IdCardOCRVerificationRequest",
+      "name": "身份证识别及信息核验",
+      "output": "IdCardOCRVerificationResponse"
+    },
+    "IdCardVerification": {
+      "document": "传入姓名和身份证号，校验两者的真实性和一致性。",
+      "input": "IdCardVerificationRequest",
+      "name": "身份信息认证",
+      "output": "IdCardVerificationResponse"
+    },
+    "ImageRecognition": {
+      "document": "传入照片和身份信息，判断该照片与公安权威库的证件照是否属于同一个人。",
+      "input": "ImageRecognitionRequest",
+      "name": "照片人脸核身",
+      "output": "ImageRecognitionResponse"
+    },
+    "Liveness": {
+      "document": "活体检测",
+      "input": "LivenessRequest",
+      "name": "活体检测",
+      "output": "LivenessResponse"
+    },
+    "LivenessCompare": {
+      "document": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
+      "input": "LivenessCompareRequest",
+      "name": "活体人脸比对",
+      "output": "LivenessCompareResponse"
+    },
+    "LivenessRecognition": {
+      "document": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与公安权威库的证件照是否属于同一个人。",
+      "input": "LivenessRecognitionRequest",
+      "name": "活体人脸核身",
+      "output": "LivenessRecognitionResponse"
+    },
+    "MinorsVerification": {
+      "document": "未成年人守护接口是通过传入手机号或姓名和身份证号，结合权威数据源和腾讯健康守护可信模型，判断该信息是否真实且年满18周岁。腾讯健康守护可信模型覆盖了上十亿手机库源，覆盖率高、准确率高，如果不在库中的手机号，还可以通过姓名+身份证进行兜底验证。",
+      "input": "MinorsVerificationRequest",
+      "name": "未成年人守护",
+      "output": "MinorsVerificationResponse"
+    },
+    "MobileNetworkTimeVerification": {
+      "document": "本接口用于查询手机号在网时长，输入手机号进行查询。",
+      "input": "MobileNetworkTimeVerificationRequest",
+      "name": "手机号在网时长核验",
+      "output": "MobileNetworkTimeVerificationResponse"
+    },
+    "MobileStatus": {
+      "document": "本接口用于验证手机号的状态，您可以输入手机号进行查询。",
+      "input": "MobileStatusRequest",
+      "name": "手机号状态查询",
+      "output": "MobileStatusResponse"
+    },
+    "PhoneVerification": {
+      "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。",
+      "input": "PhoneVerificationRequest",
+      "name": "手机号三要素核验",
+      "output": "PhoneVerificationResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-03-01",
+    "api_brief": "介绍如何使用API对人脸核身操作，包括验证结果拉取信息、实名信息核验服务等。",
+    "serviceNameCN": "人脸核身",
+    "serviceShortName": "faceid"
+  },
+  "objects": {
+    "BankCard2EVerificationRequest": {
+      "document": "BankCard2EVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "银行卡",
+          "member": "string",
+          "name": "BankCard",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BankCard2EVerificationResponse": {
+      "document": "BankCard2EVerification返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码\n计费结果码：\n  '0': '认证通过'\n  '-1': '认证未通过'\n '-4': '持卡人信息有误'\n  '-5': '未开通无卡支付'\n  '-6': '此卡被没收'\n  '-7': '无效卡号'\n  '-8': '此卡无对应发卡行'\n  '-9': '该卡未初始化或睡眠卡'\n  '-10': '作弊卡、吞卡'\n  '-11': '此卡已挂失'\n  '-12': '该卡已过期'\n  '-13': '受限制的卡'\n  '-14': '密码错误次数超限'\n  '-15': '发卡行不支持此交易'\n不计费结果码：\n  '-2': '姓名校验不通过'\n  '-3': '银行卡号码有误'\n  '-16': '验证中心服务繁忙'",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BankCard4EVerificationRequest": {
+      "document": "BankCard4EVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "银行卡",
+          "member": "string",
+          "name": "BankCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。\n目前默认：0 身份证，其他证件类型需求可以联系小助手faceid001确认。",
+          "member": "int64",
+          "name": "CertType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BankCard4EVerificationResponse": {
+      "document": "BankCard4EVerification返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码\n收费结果码：\n'0': '认证通过'\n'-1': '认证未通过'\n'-6': '持卡人信息有误'\n'-7': '未开通无卡支付'\n'-8': '此卡被没收'\n'-9': '无效卡号'\n'-10': '此卡无对应发卡行'\n'-11': '该卡未初始化或睡眠卡'\n'-12': '作弊卡、吞卡'\n'-13': '此卡已挂失'\n'-14': '该卡已过期'\n'-15': '受限制的卡'\n'-16': '密码错误次数超限'\n'-17': '发卡行不支持此交易'\n不收费结果码：\n'-2': '姓名校验不通过'\n'-3': '身份证号码有误'\n'-4': '银行卡号码有误'\n'-5': '手机号码不合法'\n'-18': '验证中心服务繁忙'",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BankCardVerificationRequest": {
+      "document": "BankCardVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "银行卡",
+          "member": "string",
+          "name": "BankCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。\n目前默认：0 身份证，其他证件类型需求可以联系小助手faceid001确认。",
+          "member": "int64",
+          "name": "CertType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BankCardVerificationResponse": {
+      "document": "BankCardVerification返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码\n收费结果码：\n'0': '认证通过'\n'-1': '认证未通过'\n'-5': '持卡人信息有误'\n'-6': '未开通无卡支付'\n'-7': '此卡被没收'\n'-8': '无效卡号'\n'-9': '此卡无对应发卡行'\n'-10': '该卡未初始化或睡眠卡'\n'-11': '作弊卡、吞卡'\n'-12': '此卡已挂失'\n'-13': '该卡已过期'\n'-14': '受限制的卡'\n'-15': '密码错误次数超限'\n'-16': '发卡行不支持此交易'\n不收费结果码：\n'-2': '姓名校验不通过'\n'-3': '身份证号码有误'\n'-4': '银行卡号码有误'\n'-17': '验证中心服务繁忙'",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCardInformationRequest": {
+      "document": "CheckBankCardInformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "银行卡号。",
+          "member": "string",
+          "name": "BankCard",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCardInformationResponse": {
+      "document": "CheckBankCardInformation返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 查询成功\n-1: 未查到信息\n不收费结果码\n-2：验证中心服务繁忙\n-3：银行卡不存在",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开户行",
+          "member": "string",
+          "name": "AccountBank",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "卡性质：1. 借记卡；2. 贷记卡",
+          "member": "int64",
+          "name": "AccountType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIdCardInformationRequest": {
+      "document": "CheckIdCardInformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\nImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按照ImageUrl>ImageBase64的优先级使用参数。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证人像面的 Url 地址\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "以下可选字段均为bool 类型，默认false：\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警\nTempIdWarn，临时身份证告警\nQuality，图片质量告警（评价图片模糊程度）\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CopyWarn\":true,\"ReshootWarn\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CopyWarn\":true,\"ReshootWarn\":true}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIdCardInformationResponse": {
+      "document": "CheckIdCardInformation返回参数结构体",
+      "members": [
+        {
+          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）",
+          "member": "float",
+          "name": "Sim",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "性别",
+          "member": "string",
+          "name": "Sex",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "民族",
+          "member": "string",
+          "name": "Nation",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "出生日期",
+          "member": "string",
+          "name": "Birth",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地址",
+          "member": "string",
+          "name": "Address",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "身份证号",
+          "member": "string",
+          "name": "IdNum",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。",
+          "member": "string",
+          "name": "Portrait",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警信息，当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息，Code 告警码列表和释义：\n\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警。\n-8001 图片模糊告警\n多个会 |  隔开如 \"-9101|-9106|-9104\"",
+          "member": "string",
+          "name": "Warnings",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片质量分数，当请求Config中配置图片模糊告警该参数才有意义，取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。",
+          "member": "float",
+          "name": "Quality",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectAuthRequest": {
+      "document": "DetectAuth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本接口不需要传递此参数。",
+          "member": "string",
+          "name": "TerminalType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份标识（未使用OCR服务时，必须传入）。\n规则：a-zA-Z0-9组合。最长长度32位。",
+          "member": "string",
+          "name": "IdCard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "认证结束后重定向的回调链接地址。最长长度1024位。",
+          "member": "string",
+          "name": "RedirectUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传字段，在获取验证结果时返回。",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectAuthResponse": {
+      "document": "DetectAuth返回参数结构体",
+      "members": [
+        {
+          "document": "用于发起核身流程的URL，仅微信H5场景使用。",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "一次核身流程的标识，有效时间为7,200秒；\n完成核身后，可用该标识获取验证结果信息。",
+          "member": "string",
+          "name": "BizToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectDetail": {
+      "document": "活体一比一详情",
+      "members": [
+        {
+          "default": "",
+          "document": "请求时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReqTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Seq",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参与本次活体一比一的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Idcard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参与本次活体一比一的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次活体一比一的相似度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Sim",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次活体一比一是否收费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsNeedCharge",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次活体一比一最终结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Errcode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Errmsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Livestatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Livemsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次一比一结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Comparestatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Comparemsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DetectInfoBestFrame": {
+      "document": "核身最佳帧信息",
+      "members": [
+        {
+          "default": "",
+          "document": "活体比对最佳帧。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrame",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自截帧。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DetectInfoIdCardData": {
+      "document": "核身身份证图片信息",
+      "members": [
+        {
+          "default": "",
+          "document": "OCR正面照片的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrFront",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "OCR反面照片的base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrBack",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "旋转裁边后的正面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProcessedFrontImage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "旋转裁边后的背面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProcessedBackImage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份证正面人像图base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Avatar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DetectInfoText": {
+      "document": "核身文本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "本次流程最终验证结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程最终验证结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次验证使用的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次验证使用的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr识别结果。民族。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrNation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr识别结果。家庭住址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr识别结果。生日。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrBirth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr识别结果。签发机关。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrAuthority",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr识别结果。有效日期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrValidDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr识别结果。姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr识别结果。身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrIdCard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr识别结果。性别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OcrGender",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程最终活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LiveStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程最终活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LiveMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程最终一比一结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Comparestatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程最终一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Comparemsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程活体一比一的分数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Sim",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地理位置经纬度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Auth接口带入额外信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Extra",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程进行的活体一比一流水。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectDetail",
+          "name": "LivenessDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "手机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DetectInfoVideoData": {
+      "document": "核身视频信息",
+      "members": [
+        {
+          "default": "",
+          "document": "活体视频的base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LivenessVideo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetActionSequenceRequest": {
+      "document": "GetActionSequence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "默认不需要使用",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetActionSequenceResponse": {
+      "document": "GetActionSequence返回参数结构体",
+      "members": [
+        {
+          "document": "动作顺序(2,1 or 1,2) 。1代表张嘴，2代表闭眼。",
+          "member": "string",
+          "name": "ActionSequence",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDetectInfoEnhancedRequest": {
+      "document": "GetDetectInfoEnhanced请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸核身流程的标识，调用DetectAuth接口时生成。",
+          "member": "string",
+          "name": "BizToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于细分客户使用场景，由腾讯侧在线下对接时分配。",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：视频最佳截图信息；4：视频信息）。\n如 134表示拉取文本类、视频最佳截图信息、视频信息。\n默认值：0",
+          "member": "string",
+          "name": "InfoType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "从活体视频中截取一定张数的最佳帧。默认为0，最大为10，超出10的最多只给10张。（InfoType需要包含3）",
+          "member": "uint64",
+          "name": "BestFramesCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）",
+          "member": "bool",
+          "name": "IsCutIdCardImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）",
+          "member": "bool",
+          "name": "IsNeedIdCardAvatar",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDetectInfoEnhancedResponse": {
+      "document": "GetDetectInfoEnhanced返回参数结构体",
+      "members": [
+        {
+          "document": "文本类信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectInfoText",
+          "name": "Text",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "身份证照片信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectInfoIdCardData",
+          "name": "IdCardData",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最佳帧信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectInfoBestFrame",
+          "name": "BestFrame",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectInfoVideoData",
+          "name": "VideoData",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDetectInfoRequest": {
+      "document": "GetDetectInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸核身流程的标识，调用DetectAuth接口时生成。",
+          "member": "string",
+          "name": "BizToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证正反面；3：视频最佳截图照片；4：视频）。\n如 134表示拉取文本类、视频最佳截图照片、视频。\n默认值：0",
+          "member": "string",
+          "name": "InfoType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDetectInfoResponse": {
+      "document": "GetDetectInfo返回参数结构体",
+      "members": [
+        {
+          "document": "JSON字符串。\n{\n  // 文本类信息\n  \"Text\": {\n    \"ErrCode\": null,      // 本次核身最终结果。0为成功\n    \"ErrMsg\": null,       // 本次核身最终结果信息描述。\n    \"IdCard\": \"\",         // 本次核身最终获得的身份证号。\n    \"Name\": \"\",           // 本次核身最终获得的姓名。\n    \"OcrNation\": null,    // ocr阶段获取的民族\n    \"OcrAddress\": null,   // ocr阶段获取的地址\n    \"OcrBirth\": null,     // ocr阶段获取的出生信息\n    \"OcrAuthority\": null, // ocr阶段获取的证件签发机关\n    \"OcrValidDate\": null, // ocr阶段获取的证件有效期\n    \"OcrName\": null,      // ocr阶段获取的姓名\n    \"OcrIdCard\": null,    // ocr阶段获取的身份证号\n    \"OcrGender\": null,    // ocr阶段获取的性别\n    \"LiveStatus\": null,   // 活体检测阶段的错误码。0为成功\n    \"LiveMsg\": null,      // 活体检测阶段的错误信息\n    \"Comparestatus\": null,// 一比一阶段的错误码。0为成功\n    \"Comparemsg\": null,   // 一比一阶段的错误信息\n    \"Location\": null, // 地理位置信息\n    \"Extra\": \"\",          // DetectAuth结果传进来的Extra信息\n    \"Detail\": {           // 活体一比一信息详情\n      \"LivenessData\": [\n            {\n              ErrCode: null, // 活体比对验证错误码\n              ErrMsg: null, // 活体比对验证错误描述\n              ReqTime: null, // 活体验证时间戳\n              IdCard: null, // 验证身份证号\n              Name: null // 验证姓名\n            }\n      ]\n    }\n  },\n  // 身份证正反面照片Base64\n  \"IdCardData\": {\n    \"OcrFront\": null,\n    \"OcrBack\": null\n  },\n  // 视频最佳帧截图Base64\n  \"BestFrame\": {\n    \"BestFrame\": null\n  },\n  // 活体视频Base64\n  \"VideoData\": {\n    \"LivenessVideo\": null\n  }\n}",
+          "member": "string",
+          "name": "DetectInfo",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLiveCodeRequest": {
+      "document": "GetLiveCode请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetLiveCodeResponse": {
+      "document": "GetLiveCode返回参数结构体",
+      "members": [
+        {
+          "document": "数字验证码，如：1234",
+          "member": "string",
+          "name": "LiveCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IdCardOCRVerificationRequest": {
+      "document": "IdCardOCRVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号\n姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。",
+          "member": "string",
+          "name": "IdCard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证人像面的 Url 地址\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IdCardOCRVerificationResponse": {
+      "document": "IdCardOCRVerification返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 姓名和身份证号一致\n-1: 姓名和身份证号不一致\n不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）\n-3: 非法姓名（长度、格式等不正确）\n-4: 证件库服务异常\n-5: 证件库中无此身份证记录",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用于验证的姓名",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用于验证的身份证号",
+          "member": "string",
+          "name": "IdCard",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "OCR得到的性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Sex",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "OCR得到的民族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Nation",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "OCR得到的生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Birth",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "OCR得到的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Address",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IdCardVerificationRequest": {
+      "document": "IdCardVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IdCardVerificationResponse": {
+      "document": "IdCardVerification返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 姓名和身份证号一致\n-1: 姓名和身份证号不一致\n不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）\n-3: 非法姓名（长度、格式等不正确）\n-4: 证件库服务异常\n-5: 证件库中无此身份证记录",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageRecognitionRequest": {
+      "document": "ImageRecognition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名。中文请使用UTF-8编码。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本接口不需要传递此参数。",
+          "member": "string",
+          "name": "Optional",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageRecognitionResponse": {
+      "document": "ImageRecognition返回参数结构体",
+      "members": [
+        {
+          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）",
+          "member": "float",
+          "name": "Sim",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LivenessCompareRequest": {
+      "document": "LivenessCompare请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。",
+          "member": "string",
+          "name": "VideoBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
+          "member": "string",
+          "name": "LivenessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：空。",
+          "member": "string",
+          "name": "ValidateData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}",
+          "member": "string",
+          "name": "Optional",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LivenessCompareResponse": {
+      "document": "LivenessCompare返回参数结构体",
+      "members": [
+        {
+          "document": "验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrameBase64",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。",
+          "member": "float",
+          "name": "Sim",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最佳截图列表，仅在配置了返回多张最佳截图时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrameList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LivenessRecognitionRequest": {
+      "document": "LivenessRecognition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名。中文请使用UTF-8编码。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。",
+          "member": "string",
+          "name": "VideoBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
+          "member": "string",
+          "name": "LivenessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：空。",
+          "member": "string",
+          "name": "ValidateData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}",
+          "member": "string",
+          "name": "Optional",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LivenessRecognitionResponse": {
+      "document": "LivenessRecognition返回参数结构体",
+      "members": [
+        {
+          "document": "验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrameBase64",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）",
+          "member": "float",
+          "name": "Sim",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最佳截图列表，仅在配置了返回多张最佳截图时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrameList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LivenessRequest": {
+      "document": "Liveness请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。",
+          "member": "string",
+          "name": "VideoBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
+          "member": "string",
+          "name": "LivenessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：不需要传递此参数。",
+          "member": "string",
+          "name": "ValidateData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}",
+          "member": "string",
+          "name": "Optional",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LivenessResponse": {
+      "document": "Liveness返回参数结构体",
+      "members": [
+        {
+          "document": "验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrameBase64",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最佳最佳截图列表，仅在配置了返回多张最佳截图时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrameList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MinorsVerificationRequest": {
+      "document": "MinorsVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参与校验的参数类型。\n0：使用手机号进行校验；\n1：使用姓名与身份证号进行校验。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号，11位数字，\n特别提示：\n手机号验证只限制在腾讯健康守护可信模型覆盖的数据范围内，与手机号本身在运营商是否实名无关联，不在范围会提示“手机号未实名”，建议客户与传入姓名和身份证号信息组合使用。",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证号码。",
+          "member": "string",
+          "name": "IdCard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MinorsVerificationResponse": {
+      "document": "MinorsVerification返回参数结构体",
+      "members": [
+        {
+          "document": "结果码，收费情况如下。\n收费结果码：\n0: 成年\n-1: 未成年\n-2: 未查询到手机号信息\n-3: 姓名和身份证号不一致\n\n不收费结果码：\n-4: 非法身份证号（长度、校验位等不正确）\n-5: 非法姓名（长度、格式等不正确）\n-6: 权威数据源服务异常\n-7: 未查询到身份信息\n-8: 权威数据源升级中，请稍后再试",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当结果码为0或者-1时，该字段的值为年龄区间。\n格式为[a,b)，表示年龄在a岁以上（包括a岁），b岁以下（不包括b岁）。若b为+时表示没有上限。",
+          "member": "string",
+          "name": "AgeRange",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MobileNetworkTimeVerificationRequest": {
+      "document": "MobileNetworkTimeVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "手机号码",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MobileNetworkTimeVerificationResponse": {
+      "document": "MobileNetworkTimeVerification返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 成功\n-2: 手机号不存在\n-3: 手机号存在，但无法查询到在网时长\n不收费结果码：\n-1: 手机号格式不正确\n-4: 验证中心服务繁忙",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "在网时长区间。\n格式为(a,b]，表示在网时长在a个月以上，b个月以下。若b为+时表示没有上限。",
+          "member": "string",
+          "name": "Range",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MobileStatusRequest": {
+      "document": "MobileStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "手机号码",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MobileStatusResponse": {
+      "document": "MobileStatus返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0：成功\n不收费结果码：\n-1：未查询到结果\n-2：手机号格式不正确\n-3：验证中心服务繁忙",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态码：\n0：正常\n1：停机\n2：销号\n3：空号\n4：不在网\n99：未知状态",
+          "member": "int64",
+          "name": "StatusCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationRequest": {
+      "document": "PhoneVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "有加密需求的用户，接入传入kms的CiphertextBlob",
+          "member": "string",
+          "name": "CiphertextBlob",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的IdCard，Name，Phone中的一个或多个",
+          "member": "string",
+          "name": "EncryptList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationResponse": {
+      "document": "PhoneVerification返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码:\n收费结果码\n0: 认证通过\n-1: 手机号已实名，但是身份证和姓名均与实名信息不一致 \n-2: 手机号已实名，手机号和证件号一致，姓名不一致\n-3: 手机号已实名，手机号和姓名一致，身份证不一致\n-4: 信息不一致\n-5: 手机号未实名\n不收费结果码\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

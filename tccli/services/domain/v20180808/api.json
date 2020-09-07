@@ -1,0 +1,250 @@
+{
+  "actions": {
+    "CheckDomain": {
+      "document": "检查域名是否可以注册。",
+      "input": "CheckDomainRequest",
+      "name": "域名注册检查",
+      "output": "CheckDomainResponse"
+    },
+    "DescribeDomainPriceList": {
+      "document": "按照域名后缀获取对应的价格列表",
+      "input": "DescribeDomainPriceListRequest",
+      "name": "获取域名价格列表",
+      "output": "DescribeDomainPriceListResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-08-08",
+    "api_brief": "介绍如何使用API对域名注册进行操作，包括域名注册检查、获取域名价格列表等。",
+    "serviceNameCN": "域名注册",
+    "serviceShortName": "domain"
+  },
+  "objects": {
+    "CheckDomainRequest": {
+      "document": "CheckDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "所查询域名名称",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "年限",
+          "member": "string",
+          "name": "Period",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDomainResponse": {
+      "document": "CheckDomain返回参数结构体",
+      "members": [
+        {
+          "document": "所查询域名名称",
+          "member": "string",
+          "name": "DomainName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否能够注册",
+          "member": "bool",
+          "name": "Available",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "不能注册原因",
+          "member": "string",
+          "name": "Reason",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否是溢价词",
+          "member": "bool",
+          "name": "Premium",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名价格",
+          "member": "uint64",
+          "name": "Price",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否是敏感词",
+          "member": "bool",
+          "name": "BlackWord",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "溢价词描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Describe",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "溢价词的续费价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "FeeRenew",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "域名真实价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RealPrice",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "溢价词的转入价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "FeeTransfer",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "溢价词的赎回价格",
+          "member": "uint64",
+          "name": "FeeRestore",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "检测年限",
+          "member": "uint64",
+          "name": "Period",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否支持北京备案  true 支持  false 不支持",
+          "member": "bool",
+          "name": "RecordSupport",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainPriceListRequest": {
+      "document": "DescribeDomainPriceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询价格的后缀列表。默认则为全部后缀",
+          "member": "string",
+          "name": "TldList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询购买的年份，默认会列出所有年份的价格",
+          "member": "int64",
+          "name": "Year",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainPriceListResponse": {
+      "document": "DescribeDomainPriceList返回参数结构体",
+      "members": [
+        {
+          "document": "域名价格列表",
+          "member": "PriceInfo",
+          "name": "PriceList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PriceInfo": {
+      "document": "域名价格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名后缀，例如.com",
+          "member": "string",
+          "name": "Tld",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购买年限，范围[1-10]",
+          "member": "uint64",
+          "name": "Year",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名原价",
+          "member": "uint64",
+          "name": "Price",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名现价",
+          "member": "uint64",
+          "name": "RealPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品的购买类型，新购，续费，赎回，转入，续费并转入",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,3932 @@
+{
+  "actions": {
+    "AddUser": {
+      "document": "添加子用户",
+      "input": "AddUserRequest",
+      "name": "添加子用户",
+      "output": "AddUserResponse"
+    },
+    "AddUserToGroup": {
+      "document": "用户加入到用户组",
+      "input": "AddUserToGroupRequest",
+      "name": "用户加入到用户组",
+      "output": "AddUserToGroupResponse"
+    },
+    "AttachGroupPolicy": {
+      "document": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。",
+      "input": "AttachGroupPolicyRequest",
+      "name": "绑定策略到用户组",
+      "output": "AttachGroupPolicyResponse"
+    },
+    "AttachRolePolicy": {
+      "document": "本接口（AttachRolePolicy）用于绑定策略到角色。",
+      "input": "AttachRolePolicyRequest",
+      "name": "绑定权限策略到角色",
+      "output": "AttachRolePolicyResponse"
+    },
+    "AttachUserPolicy": {
+      "document": "本接口（AttachUserPolicy）可用于绑定到用户的策略。",
+      "input": "AttachUserPolicyRequest",
+      "name": "绑定策略到用户",
+      "output": "AttachUserPolicyResponse"
+    },
+    "ConsumeCustomMFAToken": {
+      "document": "验证自定义多因子Token",
+      "input": "ConsumeCustomMFATokenRequest",
+      "name": "验证自定义多因子Token",
+      "output": "ConsumeCustomMFATokenResponse"
+    },
+    "CreateGroup": {
+      "document": "创建用户组",
+      "input": "CreateGroupRequest",
+      "name": "创建用户组",
+      "output": "CreateGroupResponse"
+    },
+    "CreatePolicy": {
+      "document": "本接口（CreatePolicy）可用于创建策略。",
+      "input": "CreatePolicyRequest",
+      "name": "创建策略",
+      "output": "CreatePolicyResponse"
+    },
+    "CreatePolicyVersion": {
+      "document": "该接口（CreatePolicyVersion）用于新增策略版本，用户创建了一个策略版本之后可以方便的通过变更策略版本的方式来变更策略。",
+      "input": "CreatePolicyVersionRequest",
+      "name": "新增策略版本接口",
+      "output": "CreatePolicyVersionResponse"
+    },
+    "CreateRole": {
+      "document": "本接口（CreateRole）用于创建角色。",
+      "input": "CreateRoleRequest",
+      "name": "创建角色",
+      "output": "CreateRoleResponse"
+    },
+    "CreateSAMLProvider": {
+      "document": "创建SAML身份提供商",
+      "input": "CreateSAMLProviderRequest",
+      "name": "创建SAML身份提供商",
+      "output": "CreateSAMLProviderResponse"
+    },
+    "CreateServiceLinkedRole": {
+      "document": "创建服务相关角色",
+      "input": "CreateServiceLinkedRoleRequest",
+      "name": "创建服务相关角色",
+      "output": "CreateServiceLinkedRoleResponse"
+    },
+    "DeleteGroup": {
+      "document": "删除用户组",
+      "input": "DeleteGroupRequest",
+      "name": "删除用户组",
+      "output": "DeleteGroupResponse"
+    },
+    "DeletePolicy": {
+      "document": "本接口（DeletePolicy）可用于删除策略。",
+      "input": "DeletePolicyRequest",
+      "name": "删除策略",
+      "output": "DeletePolicyResponse"
+    },
+    "DeletePolicyVersion": {
+      "document": "本接口（DeletePolicyVersion）可用于删除一个策略的策略版本。",
+      "input": "DeletePolicyVersionRequest",
+      "name": "删除策略的策略版本",
+      "output": "DeletePolicyVersionResponse"
+    },
+    "DeleteRole": {
+      "document": "本接口（DeleteRole）用于删除指定角色。",
+      "input": "DeleteRoleRequest",
+      "name": "删除角色",
+      "output": "DeleteRoleResponse"
+    },
+    "DeleteRolePermissionsBoundary": {
+      "document": "删除角色权限边界",
+      "input": "DeleteRolePermissionsBoundaryRequest",
+      "name": "删除角色权限边界",
+      "output": "DeleteRolePermissionsBoundaryResponse"
+    },
+    "DeleteSAMLProvider": {
+      "document": "删除SAML身份提供商",
+      "input": "DeleteSAMLProviderRequest",
+      "name": "删除SAML身份提供商",
+      "output": "DeleteSAMLProviderResponse"
+    },
+    "DeleteServiceLinkedRole": {
+      "document": "删除服务相关角色",
+      "input": "DeleteServiceLinkedRoleRequest",
+      "name": "删除服务相关角色",
+      "output": "DeleteServiceLinkedRoleResponse"
+    },
+    "DeleteUser": {
+      "document": "删除子用户",
+      "input": "DeleteUserRequest",
+      "name": "删除子用户",
+      "output": "DeleteUserResponse"
+    },
+    "DeleteUserPermissionsBoundary": {
+      "document": "删除用户权限边界",
+      "input": "DeleteUserPermissionsBoundaryRequest",
+      "name": "删除用户权限边界",
+      "output": "DeleteUserPermissionsBoundaryResponse"
+    },
+    "DescribeRoleList": {
+      "document": "本接口（DescribeRoleList）用于获取账号下的角色列表。",
+      "input": "DescribeRoleListRequest",
+      "name": "获取角色列表",
+      "output": "DescribeRoleListResponse"
+    },
+    "DetachGroupPolicy": {
+      "document": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。",
+      "input": "DetachGroupPolicyRequest",
+      "name": "解除绑定到用户组的策略",
+      "output": "DetachGroupPolicyResponse"
+    },
+    "DetachRolePolicy": {
+      "document": "本接口（DetachRolePolicy）用于解除绑定角色的策略。",
+      "input": "DetachRolePolicyRequest",
+      "name": "解绑角色的策略",
+      "output": "DetachRolePolicyResponse"
+    },
+    "DetachUserPolicy": {
+      "document": "本接口（DetachUserPolicy）可用于解除绑定到用户的策略。",
+      "input": "DetachUserPolicyRequest",
+      "name": "解除绑定到用户的策略",
+      "output": "DetachUserPolicyResponse"
+    },
+    "GetCustomMFATokenInfo": {
+      "document": "获取自定义多因子Token关联信息",
+      "input": "GetCustomMFATokenInfoRequest",
+      "name": "获取自定义多因子Token关联信息",
+      "output": "GetCustomMFATokenInfoResponse"
+    },
+    "GetGroup": {
+      "document": "查询用户组详情",
+      "input": "GetGroupRequest",
+      "name": "查询用户组详情",
+      "output": "GetGroupResponse"
+    },
+    "GetPolicy": {
+      "document": "本接口（GetPolicy）可用于查询查看策略详情。",
+      "input": "GetPolicyRequest",
+      "name": "查看策略详情",
+      "output": "GetPolicyResponse"
+    },
+    "GetPolicyVersion": {
+      "document": "该接口（GetPolicyVersion）用于查询策略版本详情",
+      "input": "GetPolicyVersionRequest",
+      "name": "查询策略版本详情",
+      "output": "GetPolicyVersionResponse"
+    },
+    "GetRole": {
+      "document": "本接口（GetRole）用于获取指定角色的详细信息。",
+      "input": "GetRoleRequest",
+      "name": "获取角色详情",
+      "output": "GetRoleResponse"
+    },
+    "GetSAMLProvider": {
+      "document": "查询SAML身份提供商详情",
+      "input": "GetSAMLProviderRequest",
+      "name": "查询SAML身份提供商详情",
+      "output": "GetSAMLProviderResponse"
+    },
+    "GetServiceLinkedRoleDeletionStatus": {
+      "document": "根据删除TaskId获取服务相关角色删除状态",
+      "input": "GetServiceLinkedRoleDeletionStatusRequest",
+      "name": "获取服务相关角色删除状态",
+      "output": "GetServiceLinkedRoleDeletionStatusResponse"
+    },
+    "GetUser": {
+      "document": "查询子用户",
+      "input": "GetUserRequest",
+      "name": "查询子用户",
+      "output": "GetUserResponse"
+    },
+    "ListAccessKeys": {
+      "document": "列出指定CAM用户的访问密钥",
+      "input": "ListAccessKeysRequest",
+      "name": "列出访问密钥",
+      "output": "ListAccessKeysResponse"
+    },
+    "ListAttachedGroupPolicies": {
+      "document": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。",
+      "input": "ListAttachedGroupPoliciesRequest",
+      "name": "查询用户组关联的策略列表",
+      "output": "ListAttachedGroupPoliciesResponse"
+    },
+    "ListAttachedRolePolicies": {
+      "document": "本接口（ListAttachedRolePolicies）用于获取角色绑定的策略列表。",
+      "input": "ListAttachedRolePoliciesRequest",
+      "name": "获取角色绑定的策略列表",
+      "output": "ListAttachedRolePoliciesResponse"
+    },
+    "ListAttachedUserPolicies": {
+      "document": "本接口（ListAttachedUserPolicies）可用于查询子账号关联的策略列表。",
+      "input": "ListAttachedUserPoliciesRequest",
+      "name": "查询子账号关联的策略列表",
+      "output": "ListAttachedUserPoliciesResponse"
+    },
+    "ListCollaborators": {
+      "document": "获取协作者列表",
+      "input": "ListCollaboratorsRequest",
+      "name": "获取协作者列表",
+      "output": "ListCollaboratorsResponse"
+    },
+    "ListEntitiesForPolicy": {
+      "document": "本接口（ListEntitiesForPolicy）可用于查询策略关联的实体列表。",
+      "input": "ListEntitiesForPolicyRequest",
+      "name": "查询策略关联的实体列表",
+      "output": "ListEntitiesForPolicyResponse"
+    },
+    "ListGroups": {
+      "document": "查询用户组列表",
+      "input": "ListGroupsRequest",
+      "name": "查询用户组列表",
+      "output": "ListGroupsResponse"
+    },
+    "ListGroupsForUser": {
+      "document": "列出用户关联的用户组",
+      "input": "ListGroupsForUserRequest",
+      "name": "列出用户关联的用户组",
+      "output": "ListGroupsForUserResponse"
+    },
+    "ListPolicies": {
+      "document": "本接口（ListPolicies）可用于查询策略列表。",
+      "input": "ListPoliciesRequest",
+      "name": "查询策略列表",
+      "output": "ListPoliciesResponse"
+    },
+    "ListPolicyVersions": {
+      "document": "该接口（ListPolicyVersions）用于获取策略版本列表",
+      "input": "ListPolicyVersionsRequest",
+      "name": "获取策略版本列表",
+      "output": "ListPolicyVersionsResponse"
+    },
+    "ListSAMLProviders": {
+      "document": "查询SAML身份提供商列表",
+      "input": "ListSAMLProvidersRequest",
+      "name": "查询SAML身份提供商列表",
+      "output": "ListSAMLProvidersResponse"
+    },
+    "ListUsers": {
+      "document": "拉取子用户",
+      "input": "ListUsersRequest",
+      "name": "拉取子用户",
+      "output": "ListUsersResponse"
+    },
+    "ListUsersForGroup": {
+      "document": "查询用户组关联的用户列表",
+      "input": "ListUsersForGroupRequest",
+      "name": "查询用户组关联的用户列表",
+      "output": "ListUsersForGroupResponse"
+    },
+    "PutRolePermissionsBoundary": {
+      "document": "设置角色权限边界",
+      "input": "PutRolePermissionsBoundaryRequest",
+      "name": "设置角色权限边界",
+      "output": "PutRolePermissionsBoundaryResponse"
+    },
+    "PutUserPermissionsBoundary": {
+      "document": "设置用户权限边界",
+      "input": "PutUserPermissionsBoundaryRequest",
+      "name": "设置用户权限边界",
+      "output": "PutUserPermissionsBoundaryResponse"
+    },
+    "RemoveUserFromGroup": {
+      "document": "从用户组删除用户",
+      "input": "RemoveUserFromGroupRequest",
+      "name": "从用户组删除用户",
+      "output": "RemoveUserFromGroupResponse"
+    },
+    "SetDefaultPolicyVersion": {
+      "document": "本接口（SetDefaultPolicyVersion）可用于设置生效的策略版本。",
+      "input": "SetDefaultPolicyVersionRequest",
+      "name": "设置生效的策略版本",
+      "output": "SetDefaultPolicyVersionResponse"
+    },
+    "SetMfaFlag": {
+      "document": "设置子用户的登录保护和敏感操作校验方式",
+      "input": "SetMfaFlagRequest",
+      "name": "设置子用户的登录保护和敏感操作校验方式",
+      "output": "SetMfaFlagResponse"
+    },
+    "UpdateAssumeRolePolicy": {
+      "document": "本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。",
+      "input": "UpdateAssumeRolePolicyRequest",
+      "name": "修改角色信任策略",
+      "output": "UpdateAssumeRolePolicyResponse"
+    },
+    "UpdateGroup": {
+      "document": "更新用户组",
+      "input": "UpdateGroupRequest",
+      "name": "更新用户组",
+      "output": "UpdateGroupResponse"
+    },
+    "UpdatePolicy": {
+      "document": "本接口（UpdatePolicy ）可用于更新策略。\n如果已存在策略版本，本接口会直接更新策略的默认版本，不会创建新版本，如果不存在任何策略版本，则直接创建一个默认版本。",
+      "input": "UpdatePolicyRequest",
+      "name": "更新策略",
+      "output": "UpdatePolicyResponse"
+    },
+    "UpdateRoleConsoleLogin": {
+      "document": "本接口（UpdateRoleConsoleLogin）用于修改角色是否可登录。",
+      "input": "UpdateRoleConsoleLoginRequest",
+      "name": "修改角色是否可登录",
+      "output": "UpdateRoleConsoleLoginResponse"
+    },
+    "UpdateRoleDescription": {
+      "document": "本接口（UpdateRoleDescription）用于修改角色的描述信息。",
+      "input": "UpdateRoleDescriptionRequest",
+      "name": "修改角色描述信息",
+      "output": "UpdateRoleDescriptionResponse"
+    },
+    "UpdateSAMLProvider": {
+      "document": "更新SAML身份提供商信息",
+      "input": "UpdateSAMLProviderRequest",
+      "name": "更新SAML身份提供商信息",
+      "output": "UpdateSAMLProviderResponse"
+    },
+    "UpdateUser": {
+      "document": "更新子用户",
+      "input": "UpdateUserRequest",
+      "name": "更新子用户",
+      "output": "UpdateUserResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-01-16",
+    "api_brief": "介绍如何使用API对访问管理进行操作，包括管理用户、组、角色及授权策略等。",
+    "serviceNameCN": "访问管理",
+    "serviceShortName": "cam"
+  },
+  "objects": {
+    "AccessKey": {
+      "document": "访问密钥列表",
+      "members": [
+        {
+          "default": "",
+          "document": "访问密钥标识",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥状态，激活（Active）或未激活（Inactive）",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AddUserRequest": {
+      "document": "AddUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户用户名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子用户备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。",
+          "member": "uint64",
+          "name": "ConsoleLogin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。",
+          "member": "uint64",
+          "name": "UseApi",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。",
+          "member": "uint64",
+          "name": "NeedResetPassword",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区号",
+          "member": "string",
+          "name": "CountryCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserResponse": {
+      "document": "AddUser返回参数结构体",
+      "members": [
+        {
+          "document": "子用户 UIN",
+          "member": "uint64",
+          "name": "Uin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户用户名",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "如果输入参数组合为自动生成随机密码，则返回生成的密码",
+          "member": "string",
+          "name": "Password",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户密钥 ID",
+          "member": "string",
+          "name": "SecretId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户密钥 Key",
+          "member": "string",
+          "name": "SecretKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户 UID",
+          "member": "uint64",
+          "name": "Uid",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserToGroupRequest": {
+      "document": "AddUserToGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "添加的子用户 UID 和用户组 ID 关联关系",
+          "member": "GroupIdOfUidInfo",
+          "name": "Info",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserToGroupResponse": {
+      "document": "AddUserToGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachEntityOfPolicy": {
+      "document": "策略关联的实体信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实体ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实体Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联类型。1 用户关联 ； 2 用户组关联",
+          "member": "uint64",
+          "name": "RelatedType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachGroupPolicyRequest": {
+      "document": "AttachGroupPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略 id",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户组 id",
+          "member": "uint64",
+          "name": "AttachGroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachGroupPolicyResponse": {
+      "document": "AttachGroupPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachPolicyInfo": {
+      "document": "关联策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "策略id",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建来源，1 通过控制台创建, 2 通过策略语法创建。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CreateMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "取值为user和QCS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略关联操作者主帐号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OperateOwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OperateUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "OperateUinType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否已下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Deactived",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已下线的产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeactivedDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachRolePolicyRequest": {
+      "document": "AttachRolePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID，入参PolicyId与PolicyName二选一",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "member": "string",
+          "name": "AttachRoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "member": "string",
+          "name": "AttachRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略名，入参PolicyId与PolicyName二选一",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachRolePolicyResponse": {
+      "document": "AttachRolePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachUserPolicyRequest": {
+      "document": "AttachUserPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略 id",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "子账号 uin",
+          "member": "uint64",
+          "name": "AttachUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachUserPolicyResponse": {
+      "document": "AttachUserPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachedPolicyOfRole": {
+      "document": "角色关联的策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定时间",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略类型，User表示自定义策略，QCS表示预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建",
+          "member": "uint64",
+          "name": "CreateMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已下线(0:否 1:是)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Deactived",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已下线的产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeactivedDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumeCustomMFATokenRequest": {
+      "document": "ConsumeCustomMFAToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义多因子验证Token",
+          "member": "string",
+          "name": "MFAToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConsumeCustomMFATokenResponse": {
+      "document": "ConsumeCustomMFAToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupRequest": {
+      "document": "CreateGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组名",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户组描述",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupResponse": {
+      "document": "CreateGroup返回参数结构体",
+      "members": [
+        {
+          "document": "用户组 ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyRequest": {
+      "document": "CreatePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略名",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
+          "member": "string",
+          "name": "PolicyDocument",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyResponse": {
+      "document": "CreatePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "新增策略ID",
+          "member": "uint64",
+          "name": "PolicyId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyVersionRequest": {
+      "document": "CreatePolicyVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略文本信息",
+          "member": "string",
+          "name": "PolicyDocument",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否设置为当前策略的版本",
+          "member": "bool",
+          "name": "SetAsDefault",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyVersionResponse": {
+      "document": "CreatePolicyVersion返回参数结构体",
+      "members": [
+        {
+          "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VersionId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleRequest": {
+      "document": "CreateRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色名称",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
+          "member": "string",
+          "name": "PolicyDocument",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否允许登录 1 为允许 0 为不允许",
+          "member": "uint64",
+          "name": "ConsoleLogin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "申请角色临时密钥的最长有效期限制(范围：0~43200)",
+          "member": "uint64",
+          "name": "SessionDuration",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleResponse": {
+      "document": "CreateRole返回参数结构体",
+      "members": [
+        {
+          "document": "角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RoleId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSAMLProviderRequest": {
+      "document": "CreateSAMLProvider请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SAML身份提供商名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SAML身份提供商描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SAML身份提供商Base64编码的元数据文档",
+          "member": "string",
+          "name": "SAMLMetadataDocument",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSAMLProviderResponse": {
+      "document": "CreateSAMLProvider返回参数结构体",
+      "members": [
+        {
+          "document": "SAML身份提供商资源描述符",
+          "member": "string",
+          "name": "ProviderArn",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceLinkedRoleRequest": {
+      "document": "CreateServiceLinkedRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "授权服务，附加了此角色的腾讯云服务主体。",
+          "member": "string",
+          "name": "QCSServiceName",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自定义后缀，根据您提供的字符串，与服务提供的前缀组合在一起以形成完整的角色名称。",
+          "member": "string",
+          "name": "CustomSuffix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色说明。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceLinkedRoleResponse": {
+      "document": "CreateServiceLinkedRole返回参数结构体",
+      "members": [
+        {
+          "document": "角色ID",
+          "member": "string",
+          "name": "RoleId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupRequest": {
+      "document": "DeleteGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组 ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupResponse": {
+      "document": "DeleteGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyRequest": {
+      "document": "DeletePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数组，数组成员是策略 id，支持批量删除策略",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyResponse": {
+      "document": "DeletePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyVersionRequest": {
+      "document": "DeletePolicyVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略版本号",
+          "member": "uint64",
+          "name": "VersionId",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyVersionResponse": {
+      "document": "DeletePolicyVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRolePermissionsBoundaryRequest": {
+      "document": "DeleteRolePermissionsBoundary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色ID（与角色名至少填一个）",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名（与角色ID至少填一个）",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRolePermissionsBoundaryResponse": {
+      "document": "DeleteRolePermissionsBoundary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleRequest": {
+      "document": "DeleteRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleResponse": {
+      "document": "DeleteRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSAMLProviderRequest": {
+      "document": "DeleteSAMLProvider请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SAML身份提供商名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSAMLProviderResponse": {
+      "document": "DeleteSAMLProvider返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceLinkedRoleRequest": {
+      "document": "DeleteServiceLinkedRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的服务相关角色的名称。",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceLinkedRoleResponse": {
+      "document": "DeleteServiceLinkedRole返回参数结构体",
+      "members": [
+        {
+          "document": "删除任务ID，可用于检查删除服务相关角色状态。",
+          "member": "string",
+          "name": "DeletionTaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserPermissionsBoundaryRequest": {
+      "document": "DeleteUserPermissionsBoundary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子账号Uin",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserPermissionsBoundaryResponse": {
+      "document": "DeleteUserPermissionsBoundary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户用户名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制删除该子用户，默认入参为0。0：若该用户存在未删除API密钥，则不删除用户；1：若该用户存在未删除API密钥，则先删除密钥后删除用户。删除密钥需要您拥有cam:DeleteApiKey权限，您将可以删除该用户下启用或禁用状态的所有密钥，无权限则删除密钥和用户失败",
+          "member": "uint64",
+          "name": "Force",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleListRequest": {
+      "document": "DescribeRoleList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页码，从1开始",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页行数，不能大于200",
+          "member": "uint64",
+          "name": "Rp",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleListResponse": {
+      "document": "DescribeRoleList返回参数结构体",
+      "members": [
+        {
+          "document": "角色详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RoleInfo",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色总数",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachGroupPolicyRequest": {
+      "document": "DetachGroupPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略 id",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户组 id",
+          "member": "uint64",
+          "name": "DetachGroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachGroupPolicyResponse": {
+      "document": "DetachGroupPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachRolePolicyRequest": {
+      "document": "DetachRolePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID，入参PolicyId与PolicyName二选一",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "member": "string",
+          "name": "DetachRoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "member": "string",
+          "name": "DetachRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略名，入参PolicyId与PolicyName二选一",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachRolePolicyResponse": {
+      "document": "DetachRolePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachUserPolicyRequest": {
+      "document": "DetachUserPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略 id",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "子账号 uin",
+          "member": "uint64",
+          "name": "DetachUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachUserPolicyResponse": {
+      "document": "DetachUserPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCustomMFATokenInfoRequest": {
+      "document": "GetCustomMFATokenInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义多因子验证Token",
+          "member": "string",
+          "name": "MFAToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCustomMFATokenInfoResponse": {
+      "document": "GetCustomMFATokenInfo返回参数结构体",
+      "members": [
+        {
+          "document": "自定义多因子验证Token对应的帐号Id",
+          "member": "uint64",
+          "name": "Uin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupRequest": {
+      "document": "GetGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组 ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupResponse": {
+      "document": "GetGroup返回参数结构体",
+      "members": [
+        {
+          "document": "用户组 ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组名称",
+          "member": "string",
+          "name": "GroupName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组成员数量",
+          "member": "uint64",
+          "name": "GroupNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组描述",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组成员信息",
+          "member": "GroupMemberInfo",
+          "name": "UserInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPolicyRequest": {
+      "document": "GetPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略Id",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPolicyResponse": {
+      "document": "GetPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "1 表示自定义策略，2 表示预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Type",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "AddTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyDocument",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PresetAlias",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否服务相关策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "IsServiceLinkedRolePolicy",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPolicyVersionRequest": {
+      "document": "GetPolicyVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略版本号",
+          "member": "uint64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPolicyVersionResponse": {
+      "document": "GetPolicyVersion返回参数结构体",
+      "members": [
+        {
+          "document": "策略版本详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PolicyVersionDetail",
+          "name": "PolicyVersion",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoleRequest": {
+      "document": "GetRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoleResponse": {
+      "document": "GetRole返回参数结构体",
+      "members": [
+        {
+          "document": "角色详情",
+          "member": "RoleInfo",
+          "name": "RoleInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSAMLProviderRequest": {
+      "document": "GetSAMLProvider请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SAML身份提供商名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSAMLProviderResponse": {
+      "document": "GetSAMLProvider返回参数结构体",
+      "members": [
+        {
+          "document": "SAML身份提供商名称",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SAML身份提供商描述",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SAML身份提供商创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SAML身份提供商上次修改时间",
+          "member": "datetime",
+          "name": "ModifyTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SAML身份提供商元数据文档",
+          "member": "string",
+          "name": "SAMLMetadata",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetServiceLinkedRoleDeletionStatusRequest": {
+      "document": "GetServiceLinkedRoleDeletionStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "删除任务ID",
+          "member": "string",
+          "name": "DeletionTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetServiceLinkedRoleDeletionStatusResponse": {
+      "document": "GetServiceLinkedRoleDeletionStatus返回参数结构体",
+      "members": [
+        {
+          "document": "状态：NOT_STARTED，IN_PROGRESS，SUCCEEDED，FAILED",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "失败原因",
+          "member": "string",
+          "name": "Reason",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserRequest": {
+      "document": "GetUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户用户名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserResponse": {
+      "document": "GetUser返回参数结构体",
+      "members": [
+        {
+          "document": "子用户用户 UIN",
+          "member": "uint64",
+          "name": "Uin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户用户名",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户 UID",
+          "member": "uint64",
+          "name": "Uid",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户备注",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户能否登录控制台",
+          "member": "uint64",
+          "name": "ConsoleLogin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "手机号",
+          "member": "string",
+          "name": "PhoneNum",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区号",
+          "member": "string",
+          "name": "CountryCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "邮箱",
+          "member": "string",
+          "name": "Email",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupIdOfUidInfo": {
+      "document": "子用户和用户组关联信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户 UID",
+          "member": "uint64",
+          "name": "Uid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组 ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GroupInfo": {
+      "document": "用户组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组 ID。",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组名称。",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组创建时间。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组描述。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupMemberInfo": {
+      "document": "用户组用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户 Uid。",
+          "member": "uint64",
+          "name": "Uid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户 Uin。",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号。",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机区域代码。",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已验证手机。",
+          "member": "uint64",
+          "name": "PhoneFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱地址。",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已验证邮箱。",
+          "member": "uint64",
+          "name": "EmailFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户类型。",
+          "member": "uint64",
+          "name": "UserType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为主消息接收人。",
+          "member": "uint64",
+          "name": "IsReceiverOwner",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListAccessKeysRequest": {
+      "document": "ListAccessKeys请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定用户Uin，不填默认列出当前用户访问密钥",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAccessKeysResponse": {
+      "document": "ListAccessKeys返回参数结构体",
+      "members": [
+        {
+          "document": "访问密钥列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AccessKey",
+          "name": "AccessKeys",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAttachedGroupPoliciesRequest": {
+      "document": "ListAttachedGroupPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID",
+          "member": "uint64",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码，默认值是 1，从 1 开始",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认值是 20",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAttachedGroupPoliciesResponse": {
+      "document": "ListAttachedGroupPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "策略总数",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "策略列表",
+          "member": "AttachPolicyInfo",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAttachedRolePoliciesRequest": {
+      "document": "ListAttachedRolePolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页码，从 1 开始",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页行数，不能大于200",
+          "member": "uint64",
+          "name": "Rp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "角色 ID。用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名。用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按策略类型过滤，User表示仅查询自定义策略，QCS表示仅查询预设策略",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAttachedRolePoliciesResponse": {
+      "document": "ListAttachedRolePolicies返回参数结构体",
+      "members": [
+        {
+          "document": "角色关联的策略列表",
+          "member": "AttachedPolicyOfRole",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色关联的策略总数",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAttachedUserPoliciesRequest": {
+      "document": "ListAttachedUserPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子账号 uin",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码，默认值是 1，从 1 开始",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认值是 20",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAttachedUserPoliciesResponse": {
+      "document": "ListAttachedUserPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "策略总数",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "策略列表",
+          "member": "AttachPolicyInfo",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCollaboratorsRequest": {
+      "document": "ListCollaborators请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页条数，缺省为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页起始值，缺省为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCollaboratorsResponse": {
+      "document": "ListCollaborators返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "协作者信息",
+          "member": "SubAccountInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEntitiesForPolicyRequest": {
+      "document": "ListEntitiesForPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略 id",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码，默认值是 1，从 1 开始",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认值是 20",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'",
+          "member": "string",
+          "name": "EntityFilter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEntitiesForPolicyResponse": {
+      "document": "ListEntitiesForPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "实体总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AttachEntityOfPolicy",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGroupsForUserRequest": {
+      "document": "ListGroupsForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户 UID",
+          "member": "uint64",
+          "name": "Uid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量。默认为20。",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码。默认为1。",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "子账号UIN",
+          "member": "uint64",
+          "name": "SubUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGroupsForUserResponse": {
+      "document": "ListGroupsForUser返回参数结构体",
+      "members": [
+        {
+          "document": "子用户加入的用户组总数",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组信息",
+          "member": "GroupInfo",
+          "name": "GroupInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGroupsRequest": {
+      "document": "ListGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页码。默认为1。",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量。默认为20。",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按用户组名称匹配。",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGroupsResponse": {
+      "document": "ListGroups返回参数结构体",
+      "members": [
+        {
+          "document": "用户组总数。",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组数组信息。",
+          "member": "GroupInfo",
+          "name": "GroupInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPoliciesRequest": {
+      "document": "ListPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每页数量，默认值是 20，必须大于 0 且小于或等于 200",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码，默认值是 1，从 1开始，不能大于 200",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'",
+          "member": "string",
+          "name": "Scope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按策略名匹配",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPoliciesResponse": {
+      "document": "ListPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "策略总数",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： \npolicyId：策略 id \npolicyName：策略名\naddTime：策略创建时间\ntype：1 表示自定义策略，2 表示预设策略 \ndescription：策略描述 \ncreateMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略\nAttachments: 关联的用户数\nServiceType: 策略关联的产品\nIsAttached: 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略",
+          "member": "StrategyInfo",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceTypeList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPolicyVersionsRequest": {
+      "document": "ListPolicyVersions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPolicyVersionsResponse": {
+      "document": "ListPolicyVersions返回参数结构体",
+      "members": [
+        {
+          "document": "策略版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PolicyVersionItem",
+          "name": "Versions",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSAMLProvidersRequest": {
+      "document": "ListSAMLProviders请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListSAMLProvidersResponse": {
+      "document": "ListSAMLProviders返回参数结构体",
+      "members": [
+        {
+          "document": "SAML身份提供商总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SAML身份提供商列表",
+          "member": "SAMLProviderInfo",
+          "name": "SAMLProviderSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersForGroupRequest": {
+      "document": "ListUsersForGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组 ID。",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码。默认为1。",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量。默认为20。",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersForGroupResponse": {
+      "document": "ListUsersForGroup返回参数结构体",
+      "members": [
+        {
+          "document": "用户组关联的用户总数。",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子用户信息。",
+          "member": "GroupMemberInfo",
+          "name": "UserInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUsersRequest": {
+      "document": "ListUsers请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListUsersResponse": {
+      "document": "ListUsers返回参数结构体",
+      "members": [
+        {
+          "document": "子用户信息",
+          "member": "SubAccountInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginActionMfaFlag": {
+      "document": "登录和敏感操作flag",
+      "members": [
+        {
+          "default": "",
+          "document": "手机",
+          "member": "uint64",
+          "name": "Phone",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "软token",
+          "member": "uint64",
+          "name": "Stoken",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信",
+          "member": "uint64",
+          "name": "Wechat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PolicyVersionDetail": {
+      "document": "策略版本详情",
+      "members": [
+        {
+          "default": "",
+          "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略版本创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是正在生效的版本。0表示不是，1表示是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "IsDefaultVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略语法文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Document",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PolicyVersionItem": {
+      "document": "策略版本列表元素结构",
+      "members": [
+        {
+          "default": "",
+          "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略版本创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是正在生效的版本。0表示不是，1表示是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsDefaultVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PutRolePermissionsBoundaryRequest": {
+      "document": "PutRolePermissionsBoundary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "角色ID（与角色名至少填一个）",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名（与角色ID至少填一个）",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutRolePermissionsBoundaryResponse": {
+      "document": "PutRolePermissionsBoundary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutUserPermissionsBoundaryRequest": {
+      "document": "PutUserPermissionsBoundary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子账号Uin",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "PutUserPermissionsBoundaryResponse": {
+      "document": "PutUserPermissionsBoundary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveUserFromGroupRequest": {
+      "document": "RemoveUserFromGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的用户 UID和用户组 ID对应数组",
+          "member": "GroupIdOfUidInfo",
+          "name": "Info",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveUserFromGroupResponse": {
+      "document": "RemoveUserFromGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RoleInfo": {
+      "document": "角色详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "角色ID",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色名称",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色的策略文档",
+          "member": "string",
+          "name": "PolicyDocument",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色的创建时间",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色的最近一次时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色是否允许登录",
+          "member": "uint64",
+          "name": "ConsoleLogin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色类型，取user、system或service_linked\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RoleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "有效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "SessionDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务相关角色删除TaskId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeletionTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SAMLProviderInfo": {
+      "document": "SAML身份提供商",
+      "members": [
+        {
+          "default": "",
+          "document": "SAML身份提供商名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SAML身份提供商描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SAML身份提供商创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SAML身份提供商上次修改时间",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SetDefaultPolicyVersionRequest": {
+      "document": "SetDefaultPolicyVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略版本号",
+          "member": "uint64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetDefaultPolicyVersionResponse": {
+      "document": "SetDefaultPolicyVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetMfaFlagRequest": {
+      "document": "SetMfaFlag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设置用户的uin",
+          "member": "uint64",
+          "name": "OpUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "登录保护设置",
+          "member": "LoginActionMfaFlag",
+          "name": "LoginFlag",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作保护设置",
+          "member": "LoginActionMfaFlag",
+          "name": "ActionFlag",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SetMfaFlagResponse": {
+      "document": "SetMfaFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StrategyInfo": {
+      "document": "策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID。",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名称。",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略类型。1 表示自定义策略，2 表示预设策略。",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建来源，1 通过控制台创建, 2 通过策略语法创建。",
+          "member": "uint64",
+          "name": "CreateMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的用户数",
+          "member": "uint64",
+          "name": "Attachments",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略关联的产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "IsAttached",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否已下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Deactived",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已下线产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeactivedDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是服务相关角色策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "IsServiceLinkedPolicy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubAccountInfo": {
+      "document": "子用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户用户 ID",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户用户名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户 UID",
+          "member": "uint64",
+          "name": "Uid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户能否登录控制台",
+          "member": "uint64",
+          "name": "ConsoleLogin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区号",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateAssumeRolePolicyRequest": {
+      "document": "UpdateAssumeRolePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
+          "member": "string",
+          "name": "PolicyDocument",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAssumeRolePolicyResponse": {
+      "document": "UpdateAssumeRolePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGroupRequest": {
+      "document": "UpdateGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组 ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户组名",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户组描述",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGroupResponse": {
+      "document": "UpdateGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePolicyRequest": {
+      "document": "UpdatePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID，与PolicyName二选一必填",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略名，与PolicyId二选一必填",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
+          "member": "string",
+          "name": "PolicyDocument",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预设策略备注",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePolicyResponse": {
+      "document": "UpdatePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "策略id，入参是PolicyName时，才会返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "PolicyId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRoleConsoleLoginRequest": {
+      "document": "UpdateRoleConsoleLogin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否可登录，可登录：1，不可登录：0",
+          "member": "int64",
+          "name": "ConsoleLogin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "角色ID",
+          "member": "int64",
+          "name": "RoleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "角色名",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRoleConsoleLoginResponse": {
+      "document": "UpdateRoleConsoleLogin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRoleDescriptionRequest": {
+      "document": "UpdateRoleDescription请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRoleDescriptionResponse": {
+      "document": "UpdateRoleDescription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSAMLProviderRequest": {
+      "document": "UpdateSAMLProvider请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SAML身份提供商名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SAML身份提供商描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SAML身份提供商Base64编码的元数据文档",
+          "member": "string",
+          "name": "SAMLMetadataDocument",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSAMLProviderResponse": {
+      "document": "UpdateSAMLProvider返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserRequest": {
+      "document": "UpdateUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子用户用户名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子用户备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。",
+          "member": "uint64",
+          "name": "ConsoleLogin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。",
+          "member": "uint64",
+          "name": "NeedResetPassword",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区号",
+          "member": "string",
+          "name": "CountryCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserResponse": {
+      "document": "UpdateUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

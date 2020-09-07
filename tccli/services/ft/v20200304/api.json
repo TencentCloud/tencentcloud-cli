@@ -1,0 +1,542 @@
+{
+  "actions": {
+    "CancelFaceMorphJob": {
+      "document": "撤销人像渐变任务请求",
+      "input": "CancelFaceMorphJobRequest",
+      "name": "撤销人像渐变任务",
+      "output": "CancelFaceMorphJobResponse"
+    },
+    "ChangeAgePic": {
+      "document": "用户上传一张人脸图片，基于人脸编辑与生成算法，输出一张人脸变老或变年轻的图片，支持实现人脸不同年龄的变化。",
+      "input": "ChangeAgePicRequest",
+      "name": "人脸年龄变化",
+      "output": "ChangeAgePicResponse"
+    },
+    "FaceCartoonPic": {
+      "document": "输入一张人脸照片，生成个性化的二次元动漫形象，可用于打造个性头像、趣味活动、特效类应用等场景，提升社交娱乐的体验。",
+      "input": "FaceCartoonPicRequest",
+      "name": "人像动漫化",
+      "output": "FaceCartoonPicResponse"
+    },
+    "MorphFace": {
+      "document": "输入2-5张人脸照片，生成一段以人脸为焦点的渐变视频或GIF图，支持自定义图片播放速度、视频每秒传输帧数，可用于短视频、表情包、创意H5等应用场景，丰富静态图片的玩法。",
+      "input": "MorphFaceRequest",
+      "name": "人像渐变",
+      "output": "MorphFaceResponse"
+    },
+    "QueryFaceMorphJob": {
+      "document": "查询人像渐变处理进度",
+      "input": "QueryFaceMorphJobRequest",
+      "name": "查询人像渐变任务",
+      "output": "QueryFaceMorphJobResponse"
+    },
+    "SwapGenderPic": {
+      "document": "用户上传一张人脸图片，基于人脸编辑与生成算法，输出一张人脸性别转换的图片。男变女可实现美颜、淡妆、加刘海和长发的效果；女变男可实现加胡须、变短发的效果。 ",
+      "input": "SwapGenderPicRequest",
+      "name": "人脸性别转换",
+      "output": "SwapGenderPicResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-03-04",
+    "api_brief": "介绍如何使用API对人像变换进行操作，包括人脸性别转换、人脸年龄变化等。",
+    "serviceNameCN": "人像变换",
+    "serviceShortName": "ft"
+  },
+  "objects": {
+    "AgeInfo": {
+      "document": "人脸变年龄信息",
+      "members": [
+        {
+          "default": "",
+          "document": "变化到的人脸年龄 [10,80]。",
+          "member": "int64",
+          "name": "Age",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  \n您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。",
+          "member": "FaceRect",
+          "name": "FaceRect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CancelFaceMorphJobRequest": {
+      "document": "CancelFaceMorphJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "人像渐变任务Job id",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelFaceMorphJobResponse": {
+      "document": "CancelFaceMorphJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeAgePicRequest": {
+      "document": "ChangeAgePic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸变老变年轻信息。 \n您可以输入最多3个 AgeInfo 来实现给一张图中的最多3张人脸变老变年轻。",
+          "member": "AgeInfo",
+          "name": "AgeInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url ，对应图片 base64 编码后大小不可超过5M。 \n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeAgePicResponse": {
+      "document": "ChangeAgePic返回参数结构体",
+      "members": [
+        {
+          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64",
+          "member": "string",
+          "name": "ResultImage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。",
+          "member": "string",
+          "name": "ResultUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceCartoonPicRequest": {
+      "document": "FaceCartoonPic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url ，对应图片 base64 编码后大小不可超过5M。\n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关闭全图动漫化，传入true（不分大小写）即关闭全图动漫化。",
+          "member": "string",
+          "name": "DisableGlobalEffect",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceCartoonPicResponse": {
+      "document": "FaceCartoonPic返回参数结构体",
+      "members": [
+        {
+          "document": "结果图片Base64信息。",
+          "member": "string",
+          "name": "ResultImage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。(默认为base64)",
+          "member": "string",
+          "name": "ResultUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceMorphOutput": {
+      "document": "人像渐变返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "人像渐变输出的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MorphUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人像渐变输出的结果MD5，用于校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MorphMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人像渐变输出的结果封面图base64字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CoverImage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceRect": {
+      "document": "人脸框位置",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸框左上角横坐标。",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框左上角纵坐标。",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框宽度。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框高度。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GenderInfo": {
+      "document": "人脸转换性别信息",
+      "members": [
+        {
+          "default": "",
+          "document": "选择转换方向，0：男变女，1：女变男。",
+          "member": "int64",
+          "name": "Gender",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  \n您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。",
+          "member": "FaceRect",
+          "name": "FaceRect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GradientInfo": {
+      "document": "渐变参数",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。",
+          "member": "float",
+          "name": "Tempo",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。",
+          "member": "float",
+          "name": "MorphTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MorphFaceRequest": {
+      "document": "MorphFace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \n人员人脸总数量至少2张，不可超过5张。 \n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "member": "string",
+          "name": "Images",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \nUrl、Image必须提供一个，如果都提供，只使用 Url。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。 \n人员人脸总数量不可超过5张。 \n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。",
+          "member": "string",
+          "name": "Urls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "人脸渐变参数。可调整每张图片的展示时长、人像渐变的最长时间",
+          "member": "GradientInfo",
+          "name": "GradientInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "视频帧率，取值[1,25]。默认10",
+          "member": "int64",
+          "name": "Fps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "视频类型，取值[0,2]，其中0为MP4，1为GIF，2为MOV。目前仅支持MP4格式，默认为MP4格式",
+          "member": "int64",
+          "name": "OutputType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "视频宽度，取值[128,1280]。默认值720",
+          "member": "int64",
+          "name": "OutputWidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "视频高度，取值[128,1280]。默认值1280",
+          "member": "int64",
+          "name": "OutputHeight",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "MorphFaceResponse": {
+      "document": "MorphFace返回参数结构体",
+      "members": [
+        {
+          "document": "人像渐变任务的Job id",
+          "member": "string",
+          "name": "JobId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预估处理时间，粒度为秒",
+          "member": "int64",
+          "name": "EstimatedProcessTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFaceMorphJobRequest": {
+      "document": "QueryFaceMorphJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "人像渐变任务Job id",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFaceMorphJobResponse": {
+      "document": "QueryFaceMorphJob返回参数结构体",
+      "members": [
+        {
+          "document": "当前任务状态：排队中、处理中、处理失败或者处理完成",
+          "member": "string",
+          "name": "JobStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "人像渐变输出的结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FaceMorphOutput",
+          "name": "FaceMorphOutput",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwapGenderPicRequest": {
+      "document": "SwapGenderPic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸转化性别信息。 \n您可以输入最多3个 GenderInfo 来实现给一张图中的最多3张人脸转换性别。",
+          "member": "GenderInfo",
+          "name": "GenderInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url ，对应图片 base64 编码后大小不可超过5M。 \n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwapGenderPicResponse": {
+      "document": "SwapGenderPic返回参数结构体",
+      "members": [
+        {
+          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64",
+          "member": "string",
+          "name": "ResultImage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。",
+          "member": "string",
+          "name": "ResultUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

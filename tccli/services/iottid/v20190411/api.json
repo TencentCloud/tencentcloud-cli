@@ -1,0 +1,525 @@
+{
+  "actions": {
+    "AuthTestTid": {
+      "document": "单向认证测试TID ",
+      "input": "AuthTestTidRequest",
+      "name": "单向认证测试TID",
+      "output": "AuthTestTidResponse"
+    },
+    "BurnTidNotify": {
+      "document": "安全芯片TID烧录回执 ",
+      "input": "BurnTidNotifyRequest",
+      "name": "安全芯片TID烧录回执",
+      "output": "BurnTidNotifyResponse"
+    },
+    "DeliverTidNotify": {
+      "document": "安全芯片为载体的TID空发回执，绑定TID与订单号。 ",
+      "input": "DeliverTidNotifyRequest",
+      "name": "安全芯片TID空发回执",
+      "output": "DeliverTidNotifyResponse"
+    },
+    "DeliverTids": {
+      "document": "设备服务商请求空发产品订单的TID信息 ",
+      "input": "DeliverTidsRequest",
+      "name": "请求空发TID信息",
+      "output": "DeliverTidsResponse"
+    },
+    "DescribeAvailableLibCount": {
+      "document": "查询指定订单的可空发的白盒密钥数量",
+      "input": "DescribeAvailableLibCountRequest",
+      "name": "查询可空发的白盒密钥数量",
+      "output": "DescribeAvailableLibCountResponse"
+    },
+    "DescribePermission": {
+      "document": "查询企业用户TID平台控制台权限 ",
+      "input": "DescribePermissionRequest",
+      "name": "查询权限",
+      "output": "DescribePermissionResponse"
+    },
+    "DownloadTids": {
+      "document": "下载芯片订单的TID ",
+      "input": "DownloadTidsRequest",
+      "name": "下载芯片订单的TID",
+      "output": "DownloadTidsResponse"
+    },
+    "UploadDeviceUniqueCode": {
+      "document": "上传硬件唯一标识码，是软加固设备身份参数。本接口如遇到错误数据，则所有当次上传数据失效。",
+      "input": "UploadDeviceUniqueCodeRequest",
+      "name": "上传硬件唯一标识码",
+      "output": "UploadDeviceUniqueCodeResponse"
+    },
+    "VerifyChipBurnInfo": {
+      "document": "下载控制台验证芯片烧录信息，保证TID与中心信息一致 ",
+      "input": "VerifyChipBurnInfoRequest",
+      "name": "验证芯片烧录TID信息",
+      "output": "VerifyChipBurnInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-04-11",
+    "api_brief": "介绍如何使用API对物联网设备身份认证操作，包括安全芯片TID空发回执、下载芯片订单的TID等。",
+    "serviceNameCN": "物联网设备身份认证",
+    "serviceShortName": "iottid"
+  },
+  "objects": {
+    "AuthTestTidRequest": {
+      "document": "AuthTestTid请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备端SDK填入测试TID参数后生成的加密数据串",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuthTestTidResponse": {
+      "document": "AuthTestTid返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果",
+          "member": "bool",
+          "name": "Pass",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BurnTidNotifyRequest": {
+      "document": "BurnTidNotify请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "订单编号",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TID编号",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BurnTidNotifyResponse": {
+      "document": "BurnTidNotify返回参数结构体",
+      "members": [
+        {
+          "document": "接收回执成功的TID",
+          "member": "string",
+          "name": "Tid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeliverTidNotifyRequest": {
+      "document": "DeliverTidNotify请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "订单编号",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TID编号",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeliverTidNotifyResponse": {
+      "document": "DeliverTidNotify返回参数结构体",
+      "members": [
+        {
+          "document": "剩余空发数量",
+          "member": "uint64",
+          "name": "RemaindCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已回执的TID编码",
+          "member": "string",
+          "name": "Tid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品公钥",
+          "member": "string",
+          "name": "ProductKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeliverTidsRequest": {
+      "document": "DeliverTids请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "订单ID",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数量，1~100",
+          "member": "uint64",
+          "name": "Quantity",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeliverTidsResponse": {
+      "document": "DeliverTids返回参数结构体",
+      "members": [
+        {
+          "document": "空发的TID信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TidKeysInfo",
+          "name": "TidSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "产品公钥",
+          "member": "string",
+          "name": "ProductKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableLibCountRequest": {
+      "document": "DescribeAvailableLibCount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "订单编号",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableLibCountResponse": {
+      "document": "DescribeAvailableLibCount返回参数结构体",
+      "members": [
+        {
+          "document": "可空发的白盒密钥数量",
+          "member": "uint64",
+          "name": "Quantity",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePermissionRequest": {
+      "document": "DescribePermission请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePermissionResponse": {
+      "document": "DescribePermission返回参数结构体",
+      "members": [
+        {
+          "document": "企业用户",
+          "member": "bool",
+          "name": "EnterpriseUser",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下载控制台权限",
+          "member": "string",
+          "name": "DownloadPermission",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "使用控制台权限",
+          "member": "string",
+          "name": "UsePermission",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadTidsRequest": {
+      "document": "DownloadTids请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "订单编号",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下载数量：1~10",
+          "member": "uint64",
+          "name": "Quantity",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadTidsResponse": {
+      "document": "DownloadTids返回参数结构体",
+      "members": [
+        {
+          "document": "下载的TID信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TidKeysInfo",
+          "name": "TidSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TidKeysInfo": {
+      "document": "系统生成的TID和密钥信息",
+      "members": [
+        {
+          "default": "",
+          "document": "TID号码",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公钥",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私钥",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "共享密钥",
+          "member": "string",
+          "name": "Psk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "软加固白盒密钥下载地址",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "软加固设备标识码",
+          "member": "string",
+          "name": "DeviceCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UploadDeviceUniqueCodeRequest": {
+      "document": "UploadDeviceUniqueCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "硬件唯一标识码",
+          "member": "string",
+          "name": "CodeSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "硬件标识码绑定的申请编号",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadDeviceUniqueCodeResponse": {
+      "document": "UploadDeviceUniqueCode返回参数结构体",
+      "members": [
+        {
+          "document": "本次已上传数量",
+          "member": "uint64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "重复的硬件唯一标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ExistedCodeSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "剩余可上传数量",
+          "member": "uint64",
+          "name": "LeftQuantity",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误的硬件唯一标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IllegalCodeSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyChipBurnInfoRequest": {
+      "document": "VerifyChipBurnInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证数据",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyChipBurnInfoResponse": {
+      "document": "VerifyChipBurnInfo返回参数结构体",
+      "members": [
+        {
+          "document": "验证结果",
+          "member": "bool",
+          "name": "Pass",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已验证次数",
+          "member": "uint64",
+          "name": "VerifiedTimes",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "剩余验证次数",
+          "member": "uint64",
+          "name": "LeftTimes",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

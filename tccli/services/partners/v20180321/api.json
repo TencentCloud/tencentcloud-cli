@@ -1,0 +1,1775 @@
+{
+  "actions": {
+    "AgentPayDeals": {
+      "document": "代理商支付订单接口，支持自付/代付",
+      "input": "AgentPayDealsRequest",
+      "name": "支付订单（合作伙伴使用）",
+      "output": "AgentPayDealsResponse"
+    },
+    "AgentTransferMoney": {
+      "document": "为合作伙伴提供转账给客户能力。仅支持合作伙伴为自己名下客户转账。",
+      "input": "AgentTransferMoneyRequest",
+      "name": "给客户转账",
+      "output": "AgentTransferMoneyResponse"
+    },
+    "AuditApplyClient": {
+      "document": "代理商可以审核其名下申请中代客",
+      "input": "AuditApplyClientRequest",
+      "name": "审核客户",
+      "output": "AuditApplyClientResponse"
+    },
+    "CreatePayRelationForClient": {
+      "document": "合作伙伴为客户创建强代付关系",
+      "input": "CreatePayRelationForClientRequest",
+      "name": "合作伙伴为客户创建强代付关系",
+      "output": "CreatePayRelationForClientResponse"
+    },
+    "DescribeAgentAuditedClients": {
+      "document": "查询已审核客户列表",
+      "input": "DescribeAgentAuditedClientsRequest",
+      "name": "查询已审核客户列表",
+      "output": "DescribeAgentAuditedClientsResponse"
+    },
+    "DescribeAgentBills": {
+      "document": "代理商可查询自己及名下代客所有业务明细",
+      "input": "DescribeAgentBillsRequest",
+      "name": "查询业务明细",
+      "output": "DescribeAgentBillsResponse"
+    },
+    "DescribeAgentClientGrade": {
+      "document": "传入代客uin，查客户级别，客户审核状态，客户实名认证状态",
+      "input": "DescribeAgentClientGradeRequest",
+      "name": "查询客户级别",
+      "output": "DescribeAgentClientGradeResponse"
+    },
+    "DescribeAgentClients": {
+      "document": "代理商可查询自己名下待审核客户列表",
+      "input": "DescribeAgentClientsRequest",
+      "name": "查询待审核客户列表",
+      "output": "DescribeAgentClientsResponse"
+    },
+    "DescribeAgentDealsCache": {
+      "document": "供超大型代理商（代客数量>=3000 ）拉取缓存的全量客户订单。",
+      "input": "DescribeAgentDealsCacheRequest",
+      "name": "代理商缓存订单查询接口",
+      "output": "DescribeAgentDealsCacheResponse"
+    },
+    "DescribeAgentPayDeals": {
+      "document": "可以查询代理商代付的所有订单",
+      "input": "DescribeAgentPayDealsRequest",
+      "name": "代理商代付订单查询接口",
+      "output": "DescribeAgentPayDealsResponse"
+    },
+    "DescribeClientBalance": {
+      "document": "为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额",
+      "input": "DescribeClientBalanceRequest",
+      "name": "查询客户余额",
+      "output": "DescribeClientBalanceResponse"
+    },
+    "DescribeRebateInfos": {
+      "document": "代理商可查询自己名下全部返佣信息",
+      "input": "DescribeRebateInfosRequest",
+      "name": "查询代理商返佣信息",
+      "output": "DescribeRebateInfosResponse"
+    },
+    "DescribeSalesmans": {
+      "document": "代理商查询名下业务员列表信息",
+      "input": "DescribeSalesmansRequest",
+      "name": "代理商业务员查询接口",
+      "output": "DescribeSalesmansResponse"
+    },
+    "ModifyClientRemark": {
+      "document": "代理商可以对名下客户添加备注、修改备注",
+      "input": "ModifyClientRemarkRequest",
+      "name": "修改客户备注",
+      "output": "ModifyClientRemarkResponse"
+    },
+    "RemovePayRelationForClient": {
+      "document": "合作伙伴为客户消除强代付关系",
+      "input": "RemovePayRelationForClientRequest",
+      "name": "合作伙伴为客户消除强代付关系",
+      "output": "RemovePayRelationForClientResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-03-21",
+    "api_brief": "介绍如何使用API对渠道合作伙伴进行操作，包括业务信息、客户操作、订单操作等。",
+    "serviceNameCN": "渠道合作伙伴",
+    "serviceShortName": "partners"
+  },
+  "objects": {
+    "AgentAuditedClient": {
+      "document": "已审核代客信息",
+      "members": [
+        {
+          "default": "",
+          "document": "代理商账号ID",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客审核通过时间戳",
+          "member": "string",
+          "name": "AgentTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客类型，可能值为a/b/c",
+          "member": "string",
+          "name": "ClientFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客备注",
+          "member": "string",
+          "name": "ClientRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客名称（首选实名认证名称）",
+          "member": "string",
+          "name": "ClientName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证类型, 0：个人，1：企业；其他：未认证",
+          "member": "string",
+          "name": "AuthType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客APPID",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上月消费金额",
+          "member": "int64",
+          "name": "LastMonthAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本月消费金额",
+          "member": "int64",
+          "name": "ThisMonthAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否欠费,0：不欠费；1：欠费",
+          "member": "uint64",
+          "name": "HasOverdueBill",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/空",
+          "member": "string",
+          "name": "ClientType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空",
+          "member": "string",
+          "name": "ProjectType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务员ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SalesUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务员姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SalesName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代客邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Mail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentBillElem": {
+      "document": "业务信息定义",
+      "members": [
+        {
+          "default": "",
+          "document": "代理商账号ID",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单号，仅对预付费账单有意义",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客备注名称",
+          "member": "string",
+          "name": "ClientRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付时间",
+          "member": "datetime",
+          "name": "PayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云产品名称",
+          "member": "string",
+          "name": "GoodsType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预付费/后付费",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付月份",
+          "member": "string",
+          "name": "SettleMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付金额，单位分",
+          "member": "int64",
+          "name": "Amt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "agentpay：代付；selfpay：自付",
+          "member": "string",
+          "name": "PayerMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClientType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentClientElem": {
+      "document": "描述待审核代客信息",
+      "members": [
+        {
+          "default": "",
+          "document": "代理商账号ID",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客申请时间戳",
+          "member": "uint64",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客类型，可能值为a/b/c",
+          "member": "string",
+          "name": "ClientFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客邮箱，打码显示",
+          "member": "string",
+          "name": "Mail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代客手机，打码显示",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0表示不欠费，1表示欠费",
+          "member": "uint64",
+          "name": "HasOverdueBill",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1:待代理商审核;2:待腾讯云审核",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务员ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SalesUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务员姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SalesName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentDealElem": {
+      "document": "描述代理商代付的订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "订单自增 ID",
+          "member": "string",
+          "name": "DealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单号",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品类型 ID",
+          "member": "string",
+          "name": "GoodsCategoryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单所有者",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单所有者对应 appId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DealGoodsPriceElem",
+          "name": "GoodsPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下单人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Creater",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下单时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PayEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扣费流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Payer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单状态，中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DealStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GoodsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClientRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单操作类型，purchase（新购），renew（续费），modify（配置变更）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代金券抵扣金额，单位分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VoucherDecline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BigDealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户类型（new：新拓；old：存量；assign：指派）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClientType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目类型（self：自拓；repeat：直销；platform：官网合作）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务员账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SalesUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式，0：自付；1：代付\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PayerMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OverdueTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentPayDealsRequest": {
+      "document": "AgentPayDeals请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "订单所有者uin",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代付标志，1：代付；0：自付",
+          "member": "uint64",
+          "name": "AgentPay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单号数组",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AgentPayDealsResponse": {
+      "document": "AgentPayDeals返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AgentSalesmanElem": {
+      "document": "代理商业务员信息",
+      "members": [
+        {
+          "default": "",
+          "document": "代理商账号ID",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务员ID",
+          "member": "string",
+          "name": "SalesUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务员姓名",
+          "member": "string",
+          "name": "SalesName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务员创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentTransferMoneyRequest": {
+      "document": "AgentTransferMoney请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转账金额，单位分",
+          "member": "uint64",
+          "name": "Amount",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AgentTransferMoneyResponse": {
+      "document": "AgentTransferMoney返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuditApplyClientRequest": {
+      "document": "AuditApplyClient请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待审核客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "审核结果，可能的取值：accept/reject",
+          "member": "string",
+          "name": "AuditResult",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请理由，B类客户审核通过时必须填写申请理由",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuditApplyClientResponse": {
+      "document": "AuditApplyClient返回参数结构体",
+      "members": [
+        {
+          "document": "代理商账号ID",
+          "member": "string",
+          "name": "Uin",
+          "type": "string"
+        },
+        {
+          "document": "客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "type": "string"
+        },
+        {
+          "document": "审核结果，包括accept/reject/qcloudaudit（腾讯云审核）",
+          "member": "string",
+          "name": "AuditResult",
+          "type": "string"
+        },
+        {
+          "document": "关联时间对应的时间戳",
+          "member": "uint64",
+          "name": "AgentTime",
+          "type": "int"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayRelationForClientRequest": {
+      "document": "CreatePayRelationForClient请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayRelationForClientResponse": {
+      "document": "CreatePayRelationForClient返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DealGoodsPriceElem": {
+      "document": "订单价格详情",
+      "members": [
+        {
+          "default": "",
+          "document": "实付金额",
+          "member": "uint64",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAgentAuditedClientsRequest": {
+      "document": "DescribeAgentAuditedClients请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户名称。由于涉及隐私，名称打码显示，故名称仅支持打码后的模糊搜索",
+          "member": "string",
+          "name": "ClientName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户类型，a/b，类型定义参考代理商相关政策文档",
+          "member": "string",
+          "name": "ClientFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ASC/DESC， 不区分大小写，按审核通过时间排序",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户账号ID列表",
+          "member": "string",
+          "name": "ClientUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否欠费。0：不欠费；1：欠费",
+          "member": "uint64",
+          "name": "HasOverdueBill",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户备注",
+          "member": "string",
+          "name": "ClientRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/空",
+          "member": "string",
+          "name": "ClientType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空",
+          "member": "string",
+          "name": "ProjectType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务员ID",
+          "member": "string",
+          "name": "SalesUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务员姓名（模糊查询）",
+          "member": "string",
+          "name": "SalesName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAuditedClientsResponse": {
+      "document": "DescribeAgentAuditedClients返回参数结构体",
+      "members": [
+        {
+          "document": "已审核代客列表",
+          "member": "AgentAuditedClient",
+          "name": "AgentClientSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的代客总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentBillsRequest": {
+      "document": "DescribeAgentBills请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "支付月份，如2018-02",
+          "member": "string",
+          "name": "SettleMonth",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付方式，prepay/postpay",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费订单号",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户备注名称",
+          "member": "string",
+          "name": "ClientRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentBillsResponse": {
+      "document": "DescribeAgentBills返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件列表总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务明细列表",
+          "member": "AgentBillElem",
+          "name": "AgentBillSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentClientGradeRequest": {
+      "document": "DescribeAgentClientGrade请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "代客uin",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentClientGradeResponse": {
+      "document": "DescribeAgentClientGrade返回参数结构体",
+      "members": [
+        {
+          "document": "审核状态：0待审核，1，已审核",
+          "member": "uint64",
+          "name": "AuditStatus",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实名认证状态：0，未实名认证，1实名认证",
+          "member": "uint64",
+          "name": "AuthState",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户级别",
+          "member": "string",
+          "name": "ClientGrade",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户类型：1，个人；2，企业；3，其他",
+          "member": "uint64",
+          "name": "ClientType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentClientsRequest": {
+      "document": "DescribeAgentClients请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户名称。由于涉及隐私，名称打码显示，故名称仅支持打码后的模糊搜索",
+          "member": "string",
+          "name": "ClientName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户类型，a/b，类型定义参考代理商相关政策文档",
+          "member": "string",
+          "name": "ClientFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ASC/DESC， 不区分大小写，按申请时间排序",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务员ID",
+          "member": "string",
+          "name": "SalesUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务员姓名（模糊查询）",
+          "member": "string",
+          "name": "SalesName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentClientsResponse": {
+      "document": "DescribeAgentClients返回参数结构体",
+      "members": [
+        {
+          "document": "待审核代客列表",
+          "member": "AgentClientElem",
+          "name": "AgentClientSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的代客总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDealsCacheRequest": {
+      "document": "DescribeAgentDealsCache请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围起始点",
+          "member": "datetime",
+          "name": "CreatTimeRangeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围终止点",
+          "member": "datetime",
+          "name": "CreatTimeRangeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0:下单时间降序；其他：下单时间升序",
+          "member": "uint64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单人账号ID列表",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "订单号列表",
+          "member": "string",
+          "name": "DealNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "支付方式，0：自付；1：代付",
+          "member": "uint64",
+          "name": "PayerMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDealsCacheResponse": {
+      "document": "DescribeAgentDealsCache返回参数结构体",
+      "members": [
+        {
+          "document": "订单数组",
+          "member": "AgentDealElem",
+          "name": "AgentDealSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的订单总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentPayDealsRequest": {
+      "document": "DescribeAgentPayDeals请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "member": "datetime",
+          "name": "CreatTimeRangeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下单时间范围终止点",
+          "member": "datetime",
+          "name": "CreatTimeRangeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0:下单时间降序；其他：下单时间升序",
+          "member": "uint64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "下单人账号ID列表",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "订单号列表",
+          "member": "string",
+          "name": "DealNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentPayDealsResponse": {
+      "document": "DescribeAgentPayDeals返回参数结构体",
+      "members": [
+        {
+          "document": "订单数组",
+          "member": "AgentDealElem",
+          "name": "AgentPayDealSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的订单总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientBalanceRequest": {
+      "document": "DescribeClientBalance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户(代客)账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientBalanceResponse": {
+      "document": "DescribeClientBalance返回参数结构体",
+      "members": [
+        {
+          "document": "账户余额，单位分",
+          "member": "uint64",
+          "name": "Balance",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRebateInfosRequest": {
+      "document": "DescribeRebateInfos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返佣月份，如2018-02",
+          "member": "string",
+          "name": "RebateMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRebateInfosResponse": {
+      "document": "DescribeRebateInfos返回参数结构体",
+      "members": [
+        {
+          "document": "返佣信息列表",
+          "member": "RebateInfoElem",
+          "name": "RebateInfoSet",
+          "type": "list"
+        },
+        {
+          "document": "符合查询条件返佣信息数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSalesmansRequest": {
+      "document": "DescribeSalesmans请求参数结构体",
+      "members": [
+        {
+          "default": "0",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "10",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务员姓名(模糊查询)",
+          "member": "string",
+          "name": "SalesName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务员ID",
+          "member": "string",
+          "name": "SalesUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ASC/DESC， 不区分大小写，按创建通过时间排序",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSalesmansResponse": {
+      "document": "DescribeSalesmans返回参数结构体",
+      "members": [
+        {
+          "document": "业务员列表",
+          "member": "AgentSalesmanElem",
+          "name": "AgentSalesmanSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的代客总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClientRemarkRequest": {
+      "document": "ModifyClientRemark请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户备注名称",
+          "member": "string",
+          "name": "ClientRemark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClientRemarkResponse": {
+      "document": "ModifyClientRemark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebateInfoElem": {
+      "document": "返佣信息定义",
+      "members": [
+        {
+          "default": "",
+          "document": "代理商账号ID",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返佣月份，如2018-02",
+          "member": "string",
+          "name": "RebateMonth",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返佣金额，单位分",
+          "member": "uint64",
+          "name": "Amt",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "月度业绩，单位分",
+          "member": "uint64",
+          "name": "MonthSales",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "季度业绩，单位分",
+          "member": "uint64",
+          "name": "QuarterSales",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)",
+          "member": "string",
+          "name": "ExceptionFlag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "out"
+    },
+    "RemovePayRelationForClientRequest": {
+      "document": "RemovePayRelationForClient请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户账号ID",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemovePayRelationForClientResponse": {
+      "document": "RemovePayRelationForClient返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

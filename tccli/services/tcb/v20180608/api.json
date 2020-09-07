@@ -1,0 +1,2137 @@
+{
+  "actions": {
+    "CheckTcbService": {
+      "document": "检查是否开通Tcb服务",
+      "input": "CheckTcbServiceRequest",
+      "name": "检查是否开通Tcb服务",
+      "output": "CheckTcbServiceResponse"
+    },
+    "CommonServiceAPI": {
+      "document": "TCB云API统一入口",
+      "input": "CommonServiceAPIRequest",
+      "name": "TCB云API统一入口",
+      "output": "CommonServiceAPIResponse"
+    },
+    "CreateAuthDomain": {
+      "document": "增加安全域名",
+      "input": "CreateAuthDomainRequest",
+      "name": "增加安全域名",
+      "output": "CreateAuthDomainResponse"
+    },
+    "CreateHostingDomain": {
+      "document": "创建托管域名",
+      "input": "CreateHostingDomainRequest",
+      "name": "创建托管域名",
+      "output": "CreateHostingDomainResponse"
+    },
+    "CreatePostpayPackage": {
+      "document": "开通后付费资源",
+      "input": "CreatePostpayPackageRequest",
+      "name": "开通后付费资源",
+      "output": "CreatePostpayPackageResponse"
+    },
+    "CreateStaticStore": {
+      "document": "创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看",
+      "input": "CreateStaticStoreRequest",
+      "name": "创建静态托管资源",
+      "output": "CreateStaticStoreResponse"
+    },
+    "DeleteEndUser": {
+      "document": "删除终端用户",
+      "input": "DeleteEndUserRequest",
+      "name": "删除终端用户",
+      "output": "DeleteEndUserResponse"
+    },
+    "DescribeAuthDomains": {
+      "document": "获取安全域名列表",
+      "input": "DescribeAuthDomainsRequest",
+      "name": "获取安全域名列表",
+      "output": "DescribeAuthDomainsResponse"
+    },
+    "DescribeDatabaseACL": {
+      "document": "获取数据库权限",
+      "input": "DescribeDatabaseACLRequest",
+      "name": "获取数据库权限",
+      "output": "DescribeDatabaseACLResponse"
+    },
+    "DescribeEndUserLoginStatistic": {
+      "document": "获取环境终端用户新增与登录信息",
+      "input": "DescribeEndUserLoginStatisticRequest",
+      "name": "获取终端用户新增与登录信息",
+      "output": "DescribeEndUserLoginStatisticResponse"
+    },
+    "DescribeEndUserStatistic": {
+      "document": "获取终端用户总量与平台分布情况",
+      "input": "DescribeEndUserStatisticRequest",
+      "name": "获取终端用户分布",
+      "output": "DescribeEndUserStatisticResponse"
+    },
+    "DescribeEndUsers": {
+      "document": "获取终端用户列表",
+      "input": "DescribeEndUsersRequest",
+      "name": "获取终端用户列表",
+      "output": "DescribeEndUsersResponse"
+    },
+    "DescribeEnvFreeQuota": {
+      "document": "查询后付费免费配额信息",
+      "input": "DescribeEnvFreeQuotaRequest",
+      "name": "查询后付费免费配额信息",
+      "output": "DescribeEnvFreeQuotaResponse"
+    },
+    "DescribeEnvLimit": {
+      "document": "查询环境个数上限",
+      "input": "DescribeEnvLimitRequest",
+      "name": "查询环境个数上限接口",
+      "output": "DescribeEnvLimitResponse"
+    },
+    "DescribeEnvs": {
+      "document": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数",
+      "input": "DescribeEnvsRequest",
+      "name": "获取环境列表",
+      "output": "DescribeEnvsResponse"
+    },
+    "DescribeExtraPkgBillingInfo": {
+      "document": "获取增值包计费相关信息",
+      "input": "DescribeExtraPkgBillingInfoRequest",
+      "name": "获取增值包计费相关信息",
+      "output": "DescribeExtraPkgBillingInfoResponse"
+    },
+    "DescribePostpayPackageFreeQuotas": {
+      "document": "获取后付费免费额度",
+      "input": "DescribePostpayPackageFreeQuotasRequest",
+      "name": "获取后付费免费额度",
+      "output": "DescribePostpayPackageFreeQuotasResponse"
+    },
+    "DescribeQuotaData": {
+      "document": "查询指定指标的配额使用量",
+      "input": "DescribeQuotaDataRequest",
+      "name": "查询环境的配额使用量",
+      "output": "DescribeQuotaDataResponse"
+    },
+    "DestroyEnv": {
+      "document": "销毁环境",
+      "input": "DestroyEnvRequest",
+      "name": "销毁环境",
+      "output": "DestroyEnvResponse"
+    },
+    "DestroyStaticStore": {
+      "document": "销毁静态托管资源，该接口创建异步销毁任务，资源最终状态可从DestroyStaticStore接口查看",
+      "input": "DestroyStaticStoreRequest",
+      "name": "销毁静态资源",
+      "output": "DestroyStaticStoreResponse"
+    },
+    "ModifyDatabaseACL": {
+      "document": "修改数据库权限",
+      "input": "ModifyDatabaseACLRequest",
+      "name": "修改数据库权限",
+      "output": "ModifyDatabaseACLResponse"
+    },
+    "ModifyEndUser": {
+      "document": "管理终端用户",
+      "input": "ModifyEndUserRequest",
+      "name": "管理终端用户",
+      "output": "ModifyEndUserResponse"
+    },
+    "ModifyEnv": {
+      "document": "更新环境信息",
+      "input": "ModifyEnvRequest",
+      "name": "更新环境信息",
+      "output": "ModifyEnvResponse"
+    },
+    "ReinstateEnv": {
+      "document": "针对已隔离的免费环境，可以通过本接口将其恢复访问。",
+      "input": "ReinstateEnvRequest",
+      "name": "恢复环境，解除隔离状态",
+      "output": "ReinstateEnvResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-06-08",
+    "api_brief": "介绍如何使用API对云开发 CloudBase进行操作，包括更新环境信息、TCB云API统一入口等。",
+    "serviceNameCN": "云开发 CloudBase",
+    "serviceShortName": "tcb"
+  },
+  "objects": {
+    "AuthDomain": {
+      "document": "合法域名",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名类型。包含以下取值：\n<li>SYSTEM</li>\n<li>USER</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态。包含以下取值：\n<li>ENABLE</li>\n<li>DISABLE</li>",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CheckTcbServiceRequest": {
+      "document": "CheckTcbService请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CheckTcbServiceResponse": {
+      "document": "CheckTcbService返回参数结构体",
+      "members": [
+        {
+          "document": "true表示已开通",
+          "member": "bool",
+          "name": "Initialized",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CommonServiceAPIRequest": {
+      "document": "CommonServiceAPI请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Service名，需要转发访问的接口名",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要转发的云API参数，要转成JSON格式",
+          "member": "string",
+          "name": "JSONData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CommonServiceAPIResponse": {
+      "document": "CommonServiceAPI返回参数结构体",
+      "members": [
+        {
+          "document": "json格式response",
+          "member": "string",
+          "name": "JSONResp",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuthDomainRequest": {
+      "document": "CreateAuthDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全域名",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuthDomainResponse": {
+      "document": "CreateAuthDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostingDomainRequest": {
+      "document": "CreateHostingDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书ID",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostingDomainResponse": {
+      "document": "CreateHostingDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePostpayPackageRequest": {
+      "document": "CreatePostpayPackage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID，需要系统自动创建环境时，此字段不传",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信 AppId，微信必传",
+          "member": "string",
+          "name": "WxAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费来源\n<li>miniapp</li>\n<li>qcloud</li>",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
+          "member": "string",
+          "name": "FreeQuota",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境创建来源，取值：\n<li>miniapp</li>\n<li>qcloud</li>\n用法同CreateEnv接口的Source参数\n和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。",
+          "member": "string",
+          "name": "EnvSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework\n和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩展ID",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePostpayPackageResponse": {
+      "document": "CreatePostpayPackage返回参数结构体",
+      "members": [
+        {
+          "document": "后付费订单号",
+          "member": "string",
+          "name": "TranId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnvId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStaticStoreRequest": {
+      "document": "CreateStaticStore请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStaticStoreResponse": {
+      "document": "CreateStaticStore返回参数结构体",
+      "members": [
+        {
+          "document": "创建静态资源结果(succ/fail)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DatabasesInfo": {
+      "document": "数据库资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库唯一标识",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态。包含以下取值：\n<li>INITIALIZING：资源初始化中</li>\n<li>RUNNING：运行中，可正常使用的状态</li>\n<li>UNUSABLE：禁用，不可用</li>\n<li>OVERDUE：资源过期</li>",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属地域。\n当前支持ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteEndUserRequest": {
+      "document": "DeleteEndUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户列表，每一项都是uuid",
+          "member": "string",
+          "name": "UserList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEndUserResponse": {
+      "document": "DeleteEndUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthDomainsRequest": {
+      "document": "DescribeAuthDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthDomainsResponse": {
+      "document": "DescribeAuthDomains返回参数结构体",
+      "members": [
+        {
+          "document": "安全域名列表列表",
+          "member": "AuthDomain",
+          "name": "Domains",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseACLRequest": {
+      "document": "DescribeDatabaseACL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集合名称",
+          "member": "string",
+          "name": "CollectionName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseACLResponse": {
+      "document": "DescribeDatabaseACL返回参数结构体",
+      "members": [
+        {
+          "document": "权限标签。包含以下取值：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>",
+          "member": "string",
+          "name": "AclTag",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEndUserLoginStatisticRequest": {
+      "document": "DescribeEndUserLoginStatistic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端用户来源\n<li> qcloud </li>\n<li>miniapp</li>",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEndUserLoginStatisticResponse": {
+      "document": "DescribeEndUserLoginStatistic返回参数结构体",
+      "members": [
+        {
+          "document": "环境终端用户新增与登录统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LoginStatistic",
+          "name": "LoginStatistics",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEndUserStatisticRequest": {
+      "document": "DescribeEndUserStatistic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEndUserStatisticResponse": {
+      "document": "DescribeEndUserStatistic返回参数结构体",
+      "members": [
+        {
+          "document": "终端用户各平台统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PlatformStatistic",
+          "name": "PlatformStatistics",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "终端用户总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEndUsersRequest": {
+      "document": "DescribeEndUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开发者的环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选参数，偏移量，默认 0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可选参数，拉取数量，默认 20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照 uuid 列表过滤，最大个数为100",
+          "member": "string",
+          "name": "UUIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEndUsersResponse": {
+      "document": "DescribeEndUsers返回参数结构体",
+      "members": [
+        {
+          "document": "用户总数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户列表",
+          "member": "EndUserInfo",
+          "name": "Users",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvFreeQuotaRequest": {
+      "document": "DescribeEnvFreeQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源类型：可选值：CDN, COS, FLEXDB, HOSTING, SCF\n不传则返回全部资源指标",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvFreeQuotaResponse": {
+      "document": "DescribeEnvFreeQuota返回参数结构体",
+      "members": [
+        {
+          "document": "免费抵扣配额详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PostpayEnvQuota",
+          "name": "QuotaItems",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvLimitRequest": {
+      "document": "DescribeEnvLimit请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEnvLimitResponse": {
+      "document": "DescribeEnvLimit返回参数结构体",
+      "members": [
+        {
+          "document": "环境总数上限",
+          "member": "int64",
+          "name": "MaxEnvNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目前环境总数",
+          "member": "int64",
+          "name": "CurrentEnvNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "免费环境数量上限",
+          "member": "int64",
+          "name": "MaxFreeEnvNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目前免费环境数量",
+          "member": "int64",
+          "name": "CurrentFreeEnvNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总计允许销毁环境次数上限",
+          "member": "int64",
+          "name": "MaxDeleteTotal",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目前已销毁环境次数",
+          "member": "int64",
+          "name": "CurrentDeleteTotal",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每月允许销毁环境次数上限",
+          "member": "int64",
+          "name": "MaxDeleteMonthly",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本月已销毁环境次数",
+          "member": "int64",
+          "name": "CurrentDeleteMonthly",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvsRequest": {
+      "document": "DescribeEnvs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
+          "member": "bool",
+          "name": "IsVisible",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
+          "member": "string",
+          "name": "Channels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvsResponse": {
+      "document": "DescribeEnvs返回参数结构体",
+      "members": [
+        {
+          "document": "环境信息列表",
+          "member": "EnvInfo",
+          "name": "EnvList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtraPkgBillingInfoRequest": {
+      "document": "DescribeExtraPkgBillingInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "已购买增值包的环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtraPkgBillingInfoResponse": {
+      "document": "DescribeExtraPkgBillingInfo返回参数结构体",
+      "members": [
+        {
+          "document": "增值包计费信息列表",
+          "member": "EnvBillingInfoItem",
+          "name": "EnvInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "增值包数目",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostpayPackageFreeQuotasRequest": {
+      "document": "DescribePostpayPackageFreeQuotas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "免费额度类型标识",
+          "member": "string",
+          "name": "FreeQuotaType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostpayPackageFreeQuotasResponse": {
+      "document": "DescribePostpayPackageFreeQuotas返回参数结构体",
+      "members": [
+        {
+          "document": "免费量资源信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PackageFreeQuotaInfo",
+          "name": "PackageFreeQuotaInfos",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuotaDataRequest": {
+      "document": "DescribeQuotaData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<li> 指标名: </li>\n<li> StorageSizepkg: 当月存储空间容量, 单位MB </li>\n<li> StorageReadpkg: 当月存储读请求次数 </li>\n<li> StorageWritepkg: 当月存储写请求次数 </li>\n<li> StorageCdnOriginFluxpkg: 当月CDN回源流量, 单位字节 </li>\n<li> StorageCdnOriginFluxpkgDay: 当日CDN回源流量, 单位字节 </li>\n<li> StorageReadpkgDay: 当日存储读请求次数 </li>\n<li> StorageWritepkgDay: 当日写请求次数 </li>\n<li> CDNFluxpkg: 当月CDN流量, 单位为字节 </li>\n<li> CDNFluxpkgDay: 当日CDN流量, 单位为字节 </li>\n<li> FunctionInvocationpkg: 当月云函数调用次数 </li>\n<li> FunctionGBspkg: 当月云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkg: 当月云函数流量, 单位千字节(KB) </li>\n<li> FunctionInvocationpkgDay: 当日云函数调用次数 </li>\n<li> FunctionGBspkgDay: 当日云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkgDay: 当日云函数流量, 单位千字节(KB) </li>\n<li> DbSizepkg: 当月数据库容量大小, 单位MB </li>\n<li> DbReadpkg: 当日数据库读请求数 </li>\n<li> DbWritepkg: 当日数据库写请求数 </li>\n<li> StaticFsFluxPkgDay: 当日静态托管流量 </li>\n<li> StaticFsFluxPkg: 当月静态托管流量</li>\n<li> StaticFsSizePkg: 当月静态托管容量 </li>\n<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核 </li>\n<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB </li>",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)、容器托管（服务名称）。如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传。",
+          "member": "string",
+          "name": "ResourceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuotaDataResponse": {
+      "document": "DescribeQuotaData返回参数结构体",
+      "members": [
+        {
+          "document": "指标名",
+          "member": "string",
+          "name": "MetricName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "指标的值",
+          "member": "int64",
+          "name": "Value",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyEnvRequest": {
+      "document": "DestroyEnv请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境Id",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除",
+          "member": "bool",
+          "name": "IsForce",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。",
+          "member": "bool",
+          "name": "BypassCheck",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyEnvResponse": {
+      "document": "DestroyEnv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyStaticStoreRequest": {
+      "document": "DestroyStaticStore请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cdn域名",
+          "member": "string",
+          "name": "CdnDomain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyStaticStoreResponse": {
+      "document": "DestroyStaticStore返回参数结构体",
+      "members": [
+        {
+          "document": "条件任务结果(succ/fail)",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EndUserInfo": {
+      "document": "终端用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户唯一ID",
+          "member": "string",
+          "name": "UUId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信ID",
+          "member": "string",
+          "name": "WXOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "qq ID",
+          "member": "string",
+          "name": "QQOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "昵称",
+          "member": "string",
+          "name": "NickName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "性别",
+          "member": "string",
+          "name": "Gender",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "头像地址",
+          "member": "string",
+          "name": "AvatarUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为匿名用户",
+          "member": "bool",
+          "name": "IsAnonymous",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否禁用账户",
+          "member": "bool",
+          "name": "IsDisabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否设置过密码",
+          "member": "bool",
+          "name": "HasPassword",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvBillingInfoItem": {
+      "document": "环境计费信息",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标记",
+          "member": "bool",
+          "name": "IsAutoRenew",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态。包含以下取值：\n<li> 空字符串：初始化中</li>\n<li> NORMAL：正常</li>\n<li> ISOLATE：隔离</li>",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付方式。包含以下取值：\n<li> PREPAYMENT：预付费</li>\n<li> POSTPAID：后付费</li>",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隔离时间，最近一次隔离的时间",
+          "member": "string",
+          "name": "IsolatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间，套餐即将到期的时间",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，第一次接入计费方案的时间。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间，计费信息最近一次更新的时间。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "true表示从未升级过付费版。",
+          "member": "bool",
+          "name": "IsAlwaysFree",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费渠道。\n<li> miniapp：小程序</li>\n<li> qcloud：腾讯云</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PaymentChannel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最新的订单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OrderInfo",
+          "name": "OrderInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "免费配额信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FreeQuota",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvInfo": {
+      "document": "环境信息",
+      "members": [
+        {
+          "default": "",
+          "document": "账户下该环境唯一标识",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境来源。包含以下取值：\n<li>miniapp：微信小程序</li>\n<li>qcloud ：腾讯云</li>",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后修改时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境状态。包含以下取值：\n<li>NORMAL：正常可用</li>\n<li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库列表",
+          "member": "DatabasesInfo",
+          "name": "Databases",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储列表",
+          "member": "StorageInfo",
+          "name": "Storages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数列表",
+          "member": "FunctionInfo",
+          "name": "Functions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "套餐中文名称，参考DescribePackages接口的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云日志服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LogServiceInfo",
+          "name": "LogServices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "静态资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StaticStorageInfo",
+          "name": "StaticStorages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否到期自动降为免费版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsAutoDegrade",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnvChannel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FunctionInfo": {
+      "document": "函数的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属地域。\n当前支持ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogServiceInfo": {
+      "document": "云日志服务相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "log名",
+          "member": "string",
+          "name": "LogsetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "log-id",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic名",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic-id",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cls日志所属地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoginStatistic": {
+      "document": "终端用户登录新增统计",
+      "members": [
+        {
+          "default": "",
+          "document": "统计类型 新增NEWUSER 和登录 LOGIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatisticalType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "统计周期：日DAY，周WEEK，月MONTH\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatisticalCycle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "统计总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyDatabaseACLRequest": {
+      "document": "ModifyDatabaseACL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集合名称",
+          "member": "string",
+          "name": "CollectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限标签。包含以下取值：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>",
+          "member": "string",
+          "name": "AclTag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseACLResponse": {
+      "document": "ModifyDatabaseACL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEndUserRequest": {
+      "document": "ModifyEndUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "C端用户端的唯一ID",
+          "member": "string",
+          "name": "UUId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "帐号的状态",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEndUserResponse": {
+      "document": "ModifyEndUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvRequest": {
+      "document": "ModifyEnv请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境备注名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvResponse": {
+      "document": "ModifyEnv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderInfo": {
+      "document": "订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "订单号",
+          "member": "string",
+          "name": "TranId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单要切换的套餐ID",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单类型\n<li>1 购买</li>\n<li>2 续费</li>\n<li>3 变配</li>",
+          "member": "string",
+          "name": "TranType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单状态。\n<li>1未支付</li>\n<li>2 支付中</li>\n<li>3 发货中</li>\n<li>4 发货成功</li>\n<li>5 发货失败</li>\n<li>6 已退款</li>\n<li>7 已取消</li>\n<li>100 已删除</li>",
+          "member": "string",
+          "name": "TranStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式.\n<li>prepayment 预付费</li>\n<li>postpaid 后付费</li>",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单绑定的扩展ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceReady",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PackageFreeQuotaInfo": {
+      "document": "后付费免费额度",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型\n<li>COS</li>\n<li>CDN</li>\n<li>FLEXDB</li>\n<li>SCF</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceMetric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源指标免费量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FreeQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MetricUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "免费量抵扣周期\n<li>sum-month:以月为单位抵扣</li>\n<li>sum-day:以天为单位抵扣</li>\n<li>totalize:总容量抵扣</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeductType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "免费量类型\n<li>basic:通用量抵扣</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FreeQuotaType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PlatformStatistic": {
+      "document": "终端用户平台统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "终端用户从属平台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台终端用户数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PostpayEnvQuota": {
+      "document": "按量付费免费配额信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标名",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配额值",
+          "member": "uint64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配额生效时间\n为空表示没有时间限制",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配额失效时间\n为空表示没有时间限制",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReinstateEnvRequest": {
+      "document": "ReinstateEnv请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReinstateEnvResponse": {
+      "document": "ReinstateEnv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StaticStorageInfo": {
+      "document": "静态CDN资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "静态CDN域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StaticDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "静态CDN默认文件夹，当前为根目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DefaultDirName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源状态(process/online/offline/init)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cos所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "bucket信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StorageInfo": {
+      "document": "StorageInfo 资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源所属地域。\n当前支持ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "桶名，存储资源的唯一标识",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cdn 域名",
+          "member": "string",
+          "name": "CdnDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源所属用户的腾讯云appId",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

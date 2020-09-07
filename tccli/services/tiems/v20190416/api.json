@@ -1,0 +1,3412 @@
+{
+  "actions": {
+    "CreateJob": {
+      "document": "创建任务",
+      "input": "CreateJobRequest",
+      "name": "创建任务",
+      "output": "CreateJobResponse"
+    },
+    "CreateRsgAsGroup": {
+      "document": "创建资源组的伸缩组。当前一个资源组仅允许创建一个伸缩组。",
+      "input": "CreateRsgAsGroupRequest",
+      "name": "创建资源组的伸缩组",
+      "output": "CreateRsgAsGroupResponse"
+    },
+    "CreateRuntime": {
+      "document": "创建运行环境",
+      "input": "CreateRuntimeRequest",
+      "name": "创建运行环境",
+      "output": "CreateRuntimeResponse"
+    },
+    "CreateService": {
+      "document": "创建服务",
+      "input": "CreateServiceRequest",
+      "name": "创建服务",
+      "output": "CreateServiceResponse"
+    },
+    "CreateServiceConfig": {
+      "document": "创建服务配置",
+      "input": "CreateServiceConfigRequest",
+      "name": "创建服务配置",
+      "output": "CreateServiceConfigResponse"
+    },
+    "DeleteInstance": {
+      "document": "删除资源组中的节点。目前仅支持删除已经到期的预付费节点，和按量付费节点。",
+      "input": "DeleteInstanceRequest",
+      "name": "删除节点",
+      "output": "DeleteInstanceResponse"
+    },
+    "DeleteJob": {
+      "document": "删除任务",
+      "input": "DeleteJobRequest",
+      "name": "删除任务",
+      "output": "DeleteJobResponse"
+    },
+    "DeleteResourceGroup": {
+      "document": "删除资源组",
+      "input": "DeleteResourceGroupRequest",
+      "name": "删除资源组",
+      "output": "DeleteResourceGroupResponse"
+    },
+    "DeleteRsgAsGroup": {
+      "document": "伸缩",
+      "input": "DeleteRsgAsGroupRequest",
+      "name": "删除资源组的伸缩组",
+      "output": "DeleteRsgAsGroupResponse"
+    },
+    "DeleteRuntime": {
+      "document": "删除运行环境",
+      "input": "DeleteRuntimeRequest",
+      "name": "删除运行环境",
+      "output": "DeleteRuntimeResponse"
+    },
+    "DeleteService": {
+      "document": "删除服务",
+      "input": "DeleteServiceRequest",
+      "name": "删除服务",
+      "output": "DeleteServiceResponse"
+    },
+    "DeleteServiceConfig": {
+      "document": "删除服务配置",
+      "input": "DeleteServiceConfigRequest",
+      "name": "删除服务配置",
+      "output": "DeleteServiceConfigResponse"
+    },
+    "DescribeInstances": {
+      "document": "获取节点列表",
+      "input": "DescribeInstancesRequest",
+      "name": "获取节点列表",
+      "output": "DescribeInstancesResponse"
+    },
+    "DescribeResourceGroups": {
+      "document": "获取资源组列表",
+      "input": "DescribeResourceGroupsRequest",
+      "name": "获取资源组列表",
+      "output": "DescribeResourceGroupsResponse"
+    },
+    "DescribeRsgAsGroupActivities": {
+      "document": "查询伸缩组活动",
+      "input": "DescribeRsgAsGroupActivitiesRequest",
+      "name": "查询伸缩组活动",
+      "output": "DescribeRsgAsGroupActivitiesResponse"
+    },
+    "DescribeRsgAsGroups": {
+      "document": "查询资源组的伸缩组信息",
+      "input": "DescribeRsgAsGroupsRequest",
+      "name": "查询资源组的伸缩组信息",
+      "output": "DescribeRsgAsGroupsResponse"
+    },
+    "DescribeRuntimes": {
+      "document": "描述服务运行环境",
+      "input": "DescribeRuntimesRequest",
+      "name": "描述服务运行环境",
+      "output": "DescribeRuntimesResponse"
+    },
+    "DescribeServiceConfigs": {
+      "document": "描述服务配置",
+      "input": "DescribeServiceConfigsRequest",
+      "name": "描述服务配置",
+      "output": "DescribeServiceConfigsResponse"
+    },
+    "DescribeServices": {
+      "document": "描述服务",
+      "input": "DescribeServicesRequest",
+      "name": "描述服务",
+      "output": "DescribeServicesResponse"
+    },
+    "DisableRsgAsGroup": {
+      "document": "停用资源组的伸缩组",
+      "input": "DisableRsgAsGroupRequest",
+      "name": "停用资源组的伸缩组",
+      "output": "DisableRsgAsGroupResponse"
+    },
+    "EnableRsgAsGroup": {
+      "document": "启用资源组的伸缩组",
+      "input": "EnableRsgAsGroupRequest",
+      "name": "启用资源组的伸缩组",
+      "output": "EnableRsgAsGroupResponse"
+    },
+    "ExposeService": {
+      "document": "暴露服务",
+      "input": "ExposeServiceRequest",
+      "name": "暴露服务",
+      "output": "ExposeServiceResponse"
+    },
+    "UpdateJob": {
+      "document": "更新任务",
+      "input": "UpdateJobRequest",
+      "name": "更新任务",
+      "output": "UpdateJobResponse"
+    },
+    "UpdateRsgAsGroup": {
+      "document": "更新资源组的伸缩组",
+      "input": "UpdateRsgAsGroupRequest",
+      "name": "更新资源组的伸缩组",
+      "output": "UpdateRsgAsGroupResponse"
+    },
+    "UpdateService": {
+      "document": "更新服务",
+      "input": "UpdateServiceRequest",
+      "name": "更新服务",
+      "output": "UpdateServiceResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-04-16",
+    "api_brief": "介绍如何使用API对智能钛弹性模型服务进行操作，包括资源管理、服务管理、配置管理等。",
+    "serviceNameCN": "智能钛弹性模型服务",
+    "serviceShortName": "tiems"
+  },
+  "objects": {
+    "Conditions": {
+      "document": "状态",
+      "members": [
+        {
+          "default": "",
+          "document": "原因",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "具有相同原因的副本个数",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Config": {
+      "document": "配置",
+      "members": [
+        {
+          "default": "",
+          "document": "Id",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型地址",
+          "member": "string",
+          "name": "ModelUri",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行环境",
+          "member": "string",
+          "name": "Runtime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置版本",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateJobRequest": {
+      "document": "CreateJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用的资源组 Id，默认使用共享资源组",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "处理器配置, 单位为1/1000核；范围[100, 256000]",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "内存配置, 单位为1M；范围[100, 256000]",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "运行集群",
+          "member": "string",
+          "name": "Cluster",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预测输入",
+          "member": "PredictInput",
+          "name": "PredictInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "任务描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "同时处理任务的 Worker 个数",
+          "member": "uint64",
+          "name": "WorkerCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "使用的配置 Id",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "GPU算力配置，单位为1/1000 卡，范围 [0, 256000]",
+          "member": "uint64",
+          "name": "Gpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显存配置, 单位为1M，范围 [0, 256000]",
+          "member": "uint64",
+          "name": "GpuMemory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "GPU类型",
+          "member": "string",
+          "name": "GpuType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "量化输入",
+          "member": "QuantizationInput",
+          "name": "QuantizationInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Cls日志主题ID",
+          "member": "string",
+          "name": "LogTopicId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobResponse": {
+      "document": "CreateJob返回参数结构体",
+      "members": [
+        {
+          "document": "任务",
+          "member": "Job",
+          "name": "Job",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRsgAsGroupRequest": {
+      "document": "CreateRsgAsGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源组 ID",
+          "member": "string",
+          "name": "RsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "伸缩组允许的最大节点数",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "伸缩组允许的最小节点数",
+          "member": "uint64",
+          "name": "MinSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "伸缩组的节点规格",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源组所在的集群名",
+          "member": "string",
+          "name": "Cluster",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "伸缩组名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "伸缩组期望的节点数",
+          "member": "uint64",
+          "name": "DesiredSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRsgAsGroupResponse": {
+      "document": "CreateRsgAsGroup返回参数结构体",
+      "members": [
+        {
+          "document": "所创建的资源组的伸缩组",
+          "member": "RsgAsGroup",
+          "name": "RsgAsGroup",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuntimeRequest": {
+      "document": "CreateRuntime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "全局唯一的运行环境名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运行环境镜像地址",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运行环境框架",
+          "member": "string",
+          "name": "Framework",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运行环境描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否支持健康检查，默认为False",
+          "member": "bool",
+          "name": "HealthCheckOn",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuntimeResponse": {
+      "document": "CreateRuntime返回参数结构体",
+      "members": [
+        {
+          "document": "运行环境",
+          "member": "Runtime",
+          "name": "Runtime",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceConfigRequest": {
+      "document": "CreateServiceConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运行环境",
+          "member": "string",
+          "name": "Runtime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型地址，支持cos路径，格式为 cos://bucket名-appid.cos.region名.myqcloud.com/模型文件夹路径。为模型文件的上一层文件夹地址。",
+          "member": "string",
+          "name": "ModelUri",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceConfigResponse": {
+      "document": "CreateServiceConfig返回参数结构体",
+      "members": [
+        {
+          "document": "服务配置",
+          "member": "Config",
+          "name": "ServiceConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceRequest": {
+      "document": "CreateService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "扩缩容配置",
+          "member": "Scaler",
+          "name": "Scaler",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "服务配置Id",
+          "member": "string",
+          "name": "ServiceConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩缩容方式，支持AUTO, MANUAL，分别表示自动扩缩容和手动扩缩容",
+          "member": "string",
+          "name": "ScaleMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署要使用的资源组Id，默认为共享资源组",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "处理器配置, 单位为1/1000核；范围[100, 256000]",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "内存配置, 单位为1M；范围[100, 256000]",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群，不填则使用默认集群",
+          "member": "string",
+          "name": "Cluster",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认为空，表示不需要鉴权，TOKEN 表示选择 Token 鉴权方式",
+          "member": "string",
+          "name": "Authentication",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "GPU算力配置，单位为1/1000 卡，范围 [0, 256000]",
+          "member": "uint64",
+          "name": "Gpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显存配置, 单位为1M，范围 [0, 256000]",
+          "member": "uint64",
+          "name": "GpuMemory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "GPU类型",
+          "member": "string",
+          "name": "GpuType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Cls日志主题ID",
+          "member": "string",
+          "name": "LogTopicId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceResponse": {
+      "document": "CreateService返回参数结构体",
+      "members": [
+        {
+          "document": "服务",
+          "member": "ModelService",
+          "name": "Service",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRequest": {
+      "document": "DeleteInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的节点 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceResponse": {
+      "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJobRequest": {
+      "document": "DeleteJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 Id",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJobResponse": {
+      "document": "DeleteJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceGroupRequest": {
+      "document": "DeleteResourceGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的资源组 ID",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceGroupResponse": {
+      "document": "DeleteResourceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRsgAsGroupRequest": {
+      "document": "DeleteRsgAsGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组 ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRsgAsGroupResponse": {
+      "document": "DeleteRsgAsGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuntimeRequest": {
+      "document": "DeleteRuntime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的Runtime名",
+          "member": "string",
+          "name": "Runtime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuntimeResponse": {
+      "document": "DeleteRuntime返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceConfigRequest": {
+      "document": "DeleteServiceConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务配置Id",
+          "member": "string",
+          "name": "ServiceConfigId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务配置名称",
+          "member": "string",
+          "name": "ServiceConfigName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceConfigResponse": {
+      "document": "DeleteServiceConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceRequest": {
+      "document": "DeleteService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务Id",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceResponse": {
+      "document": "DeleteService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "筛选选项",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CREATE_TIME\", \"UPDATE_TIME\", \"NAME\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的资源组 ID",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "资源组下节点总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源组下节点列表",
+          "member": "Instance",
+          "name": "Instances",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGroupsRequest": {
+      "document": "DescribeResourceGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "筛选选项",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CREATE_TIME\", \"UPDATE_TIME\", \"NAME\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGroupsResponse": {
+      "document": "DescribeResourceGroups返回参数结构体",
+      "members": [
+        {
+          "document": "资源组总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ResourceGroup",
+          "name": "ResourceGroups",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRsgAsGroupActivitiesRequest": {
+      "document": "DescribeRsgAsGroupActivities请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组 ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询活动的开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询互动的结束时间",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "筛选选项",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：\"ASC\", \"DESC\"",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CREATE_TIME\", \"UPDATE_TIME\", \"NAME\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRsgAsGroupActivitiesResponse": {
+      "document": "DescribeRsgAsGroupActivities返回参数结构体",
+      "members": [
+        {
+          "document": "伸缩组活动数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RsgAsGroupActivity",
+          "name": "RsgAsGroupActivitySet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所查询的伸缩组活动总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRsgAsGroupsRequest": {
+      "document": "DescribeRsgAsGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "筛选选项",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：\"ASC\", \"DESC\"",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CREATE_TIME\", \"UPDATE_TIME\", \"NAME\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRsgAsGroupsResponse": {
+      "document": "DescribeRsgAsGroups返回参数结构体",
+      "members": [
+        {
+          "document": "所查询的伸缩组数组",
+          "member": "RsgAsGroup",
+          "name": "RsgAsGroupSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "伸缩组数组总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuntimesRequest": {
+      "document": "DescribeRuntimes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRuntimesResponse": {
+      "document": "DescribeRuntimes返回参数结构体",
+      "members": [
+        {
+          "document": "TIEMS支持的运行环境列表",
+          "member": "Runtime",
+          "name": "Runtimes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户对runtime对权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "UserAccess",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceConfigsRequest": {
+      "document": "DescribeServiceConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "筛选选项，支持按照name等进行筛选",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为1000",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CREATE_TIME\", \"UPDATE_TIME\", \"NAME\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否按照配置名分页",
+          "member": "bool",
+          "name": "PageByName",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceConfigsResponse": {
+      "document": "DescribeServiceConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "服务配置",
+          "member": "Config",
+          "name": "ServiceConfigs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务配置总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesRequest": {
+      "document": "DescribeServices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "筛选选项，支持筛选的字段：id, region, zone, cluster, status, runtime, rsg_id",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CREATE_TIME\" \"UPDATE_TIME\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesResponse": {
+      "document": "DescribeServices返回参数结构体",
+      "members": [
+        {
+          "document": "服务列表",
+          "member": "ModelService",
+          "name": "Services",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRsgAsGroupRequest": {
+      "document": "DisableRsgAsGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组 ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRsgAsGroupResponse": {
+      "document": "DisableRsgAsGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableRsgAsGroupRequest": {
+      "document": "EnableRsgAsGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组 ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableRsgAsGroupResponse": {
+      "document": "EnableRsgAsGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExposeInfo": {
+      "document": "暴露信息",
+      "members": [
+        {
+          "default": "",
+          "document": "暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）",
+          "member": "string",
+          "name": "ExposeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暴露Ip。暴露方式为 EXTERNAL 为外网 Ip，暴露方式为 VPC 时为指定 Vpc 下的Vip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暴露方式为 VPC 时，打通的私有网络Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "暴露方式为 VPC 时，打通的子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GATEWAY 服务id，ExposeType = GATEWAY 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GateWayServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GATEWAY api id，ExposeType = GATEWAY 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GateWayAPIId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GATEWAY domain，ExposeType = GATEWAY 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GateWayDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExposeServiceRequest": {
+      "document": "ExposeService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务Id",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "暴露方式，支持 EXTERNAL（外网暴露），VPC （VPC内网打通）",
+          "member": "string",
+          "name": "ExposeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "暴露方式为 VPC 时，填写需要打通的私有网络Id",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "暴露方式为 VPC 时，填写需要打通的子网Id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExposeServiceResponse": {
+      "document": "ExposeService返回参数结构体",
+      "members": [
+        {
+          "document": "暴露方式",
+          "member": "ExposeInfo",
+          "name": "Expose",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "筛选项",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Instance": {
+      "document": "节点",
+      "members": [
+        {
+          "default": "",
+          "document": "节点 ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所在地区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点类型",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点充值类型",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cpu 核数",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Gpu 核数",
+          "member": "uint64",
+          "name": "Gpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点状态",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点故障信息",
+          "member": "string",
+          "name": "AbnormalReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "Created",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "Updated",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "member": "string",
+          "name": "DeadlineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属资源组 ID",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标签",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所在地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前 Cpu 申请使用量",
+          "member": "uint64",
+          "name": "CpuRequested",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前 Memory 申请使用量",
+          "member": "uint64",
+          "name": "MemoryRequested",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前 Gpu 申请使用量",
+          "member": "uint64",
+          "name": "GpuRequested",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所在伸缩组 ID",
+          "member": "string",
+          "name": "RsgAsGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Job": {
+      "document": "任务",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 Id",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Cluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Region 名",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Worker 使用的运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Runtime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预测输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PredictInput",
+          "name": "PredictInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "member": "JobStatus",
+          "name": "Status",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务取消时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CancelTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务使用资源组 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处理器配置, 单位为1/1000核；范围[100, 256000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存配置, 单位为1M；范围[100, 256000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU算力配置，单位为1/1000 卡，范围 [0, 256000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Gpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "显存配置, 单位为1M，范围 [0, 256000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "GpuMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务使用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GpuType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Job类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "量化输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QuantizationInput",
+          "name": "QuantizationInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Cls日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogTopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "JobStatus": {
+      "document": "任务状态",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误时为错误描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预期Worker数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "DesiredWorkers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前Worker数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CurrentWorkers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "副本名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Replicas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "副本实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ReplicaInfo",
+          "name": "ReplicaInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelService": {
+      "document": "模型服务",
+      "members": [
+        {
+          "default": "",
+          "document": "服务ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Cluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行环境",
+          "member": "string",
+          "name": "Runtime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型地址",
+          "member": "string",
+          "name": "ModelUri",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理器配置, 单位为1/1000核",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存配置, 单位为1M",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "GPU 配置, 单位为1/1000 卡",
+          "member": "uint64",
+          "name": "Gpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "显存配置, 单位为1M",
+          "member": "uint64",
+          "name": "GpuMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持AUTO, MANUAL",
+          "member": "string",
+          "name": "ScaleMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩配置",
+          "member": "Scaler",
+          "name": "Scaler",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务状态",
+          "member": "ServiceStatus",
+          "name": "Status",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AccessToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务配置Id",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务配置名",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务运行时长",
+          "member": "uint64",
+          "name": "ServeSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务使用资源组 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "暴露方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ExposeInfo",
+          "name": "Exposes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Region 名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务使用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GpuType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Cls日志主题Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogTopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Option": {
+      "document": "配置项",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PredictInput": {
+      "document": "预测输入",
+      "members": [
+        {
+          "default": "",
+          "document": "输入路径，支持 cos 格式路径文件夹或文件",
+          "member": "string",
+          "name": "InputPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出路径，支持 cos 格式路径",
+          "member": "string",
+          "name": "OutputPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入数据格式，目前支持：JSON",
+          "member": "string",
+          "name": "InputDataFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出数据格式，目前支持：JSON",
+          "member": "string",
+          "name": "OutputDataFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预测批大小，默认为 64",
+          "member": "uint64",
+          "name": "BatchSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SignatureName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "QuantizationInput": {
+      "document": "量化输入",
+      "members": [
+        {
+          "default": "",
+          "document": "量化输入路径",
+          "member": "string",
+          "name": "InputPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "量化输出路径",
+          "member": "string",
+          "name": "OutputPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "量化批大小",
+          "member": "uint64",
+          "name": "BatchSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "量化精度，支持：FP32，FP16，INT8",
+          "member": "string",
+          "name": "Precision",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转换类型",
+          "member": "string",
+          "name": "ConvertType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ReplicaInfo": {
+      "document": "实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性网卡模式时，弹性网卡Ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EniIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Normal: 正常运行中; Abnormal: 异常；Waiting：等待中",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 status为 Abnormal 的时候，一些额外的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重启次数",
+          "member": "uint64",
+          "name": "Restarted",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceGroup": {
+      "document": "资源组",
+      "members": [
+        {
+          "default": "",
+          "document": "资源组 Id",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Cluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源组名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "Created",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "Updated",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源组主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "使用资源组的服务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ServiceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "使用资源组的任务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "JobCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源组是否为公共资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Public",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源组状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "显卡总张数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Gpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处理器总核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存总量，单位为G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Gpu类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GpuType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该资源组下是否有预付费资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "HasPrepaid",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源组是否允许预付费或后付费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RsgAsActivityRelatedInstance": {
+      "document": "伸缩组活动关联的节点",
+      "members": [
+        {
+          "default": "",
+          "document": "节点 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点状态",
+          "member": "string",
+          "name": "InstanceStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RsgAsGroup": {
+      "document": "资源组的伸缩组",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组 ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组所在地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组所在可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组所在集群",
+          "member": "string",
+          "name": "Cluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组所在资源组 ID",
+          "member": "string",
+          "name": "RsgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组允许的最大节点个数",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组允许的最小节点个数",
+          "member": "uint64",
+          "name": "MinSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组节点类型",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组内节点个数",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组起始节点数",
+          "member": "uint64",
+          "name": "DesiredSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RsgAsGroupActivity": {
+      "document": "伸缩组活动信息",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组活动 ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的伸缩组 ID",
+          "member": "string",
+          "name": "RsgAsGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动类型",
+          "member": "string",
+          "name": "ActivityType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态的编码",
+          "member": "string",
+          "name": "StatusCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态的消息",
+          "member": "string",
+          "name": "StatusMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动原因",
+          "member": "string",
+          "name": "Cause",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动结束时间",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动相关联的节点",
+          "member": "RsgAsActivityRelatedInstance",
+          "name": "RsgAsActivityRelatedInstance",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "简略的状态消息",
+          "member": "string",
+          "name": "StatusMessageSimplified",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Runtime": {
+      "document": "运行环境",
+      "members": [
+        {
+          "default": "",
+          "document": "运行环境名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行环境框架",
+          "member": "string",
+          "name": "Framework",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行环境描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为公开运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Public",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否打开健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "HealthCheckOn",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Scaler": {
+      "document": "扩缩容配置",
+      "members": [
+        {
+          "default": "",
+          "document": "最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值",
+          "member": "uint64",
+          "name": "MaxReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值",
+          "member": "uint64",
+          "name": "MinReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "起始副本数",
+          "member": "uint64",
+          "name": "StartReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩缩容指标，选择自动扩缩容时至少需要选择一个指标，支持CPU-UTIL、MEMORY-UTIL",
+          "member": "Option",
+          "name": "HpaMetrics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceStatus": {
+      "document": "服务状态",
+      "members": [
+        {
+          "default": "",
+          "document": "预期副本数",
+          "member": "uint64",
+          "name": "DesiredReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前副本数",
+          "member": "uint64",
+          "name": "CurrentReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Normal：正常运行中；Abnormal：服务异常，例如容器启动失败等；Waiting：服务等待中，例如容器下载镜像过程等；Stopped：已停止 Stopping 停止中；Resuming：重启中；Updating：服务更新中",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务处于当前状态的原因集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Conditions",
+          "name": "Conditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "副本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Replicas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行状态对额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "副本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ReplicaInfo",
+          "name": "ReplicaInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateJobRequest": {
+      "document": "UpdateJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 Id",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务更新动作，支持：Cancel",
+          "member": "string",
+          "name": "JobAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateJobResponse": {
+      "document": "UpdateJob返回参数结构体",
+      "members": [
+        {
+          "document": "任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Job",
+          "name": "Job",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRsgAsGroupRequest": {
+      "document": "UpdateRsgAsGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组 ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重命名名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "伸缩组最大节点数",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "伸缩组最小节点数",
+          "member": "uint64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "伸缩组期望的节点数",
+          "member": "uint64",
+          "name": "DesiredSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRsgAsGroupResponse": {
+      "document": "UpdateRsgAsGroup返回参数结构体",
+      "members": [
+        {
+          "document": "资源组的伸缩组",
+          "member": "RsgAsGroup",
+          "name": "RsgAsGroup",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceRequest": {
+      "document": "UpdateService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务Id",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩缩容配置",
+          "member": "Scaler",
+          "name": "Scaler",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "服务配置Id",
+          "member": "string",
+          "name": "ServiceConfigId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持AUTO, MANUAL，分别表示自动扩缩容，手动扩缩容",
+          "member": "string",
+          "name": "ScaleMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持STOP(停止) RESUME(重启)",
+          "member": "string",
+          "name": "ServiceAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "GPU卡类型",
+          "member": "string",
+          "name": "GpuType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "处理器配置，单位为 1/1000 核",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "内存配置，单位为1M",
+          "member": "uint64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显卡配置，单位为 1/1000 卡",
+          "member": "uint64",
+          "name": "Gpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Cls日志主题ID",
+          "member": "string",
+          "name": "LogTopicId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceResponse": {
+      "document": "UpdateService返回参数结构体",
+      "members": [
+        {
+          "document": "服务",
+          "member": "ModelService",
+          "name": "Service",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

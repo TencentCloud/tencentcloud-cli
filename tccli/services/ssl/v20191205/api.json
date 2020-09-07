@@ -1,0 +1,2236 @@
+{
+  "actions": {
+    "ApplyCertificate": {
+      "document": "本接口（ApplyCertificate）用于免费证书申请。",
+      "input": "ApplyCertificateRequest",
+      "name": "免费证书申请",
+      "output": "ApplyCertificateResponse"
+    },
+    "CancelCertificateOrder": {
+      "document": "取消证书订单。",
+      "input": "CancelCertificateOrderRequest",
+      "name": "取消证书订单",
+      "output": "CancelCertificateOrderResponse"
+    },
+    "CommitCertificateInformation": {
+      "document": "提交证书订单。",
+      "input": "CommitCertificateInformationRequest",
+      "name": "提交证书订单",
+      "output": "CommitCertificateInformationResponse"
+    },
+    "DeleteCertificate": {
+      "document": "本接口（DeleteCertificate）用于删除证书。",
+      "input": "DeleteCertificateRequest",
+      "name": "删除证书",
+      "output": "DeleteCertificateResponse"
+    },
+    "DescribeCertificate": {
+      "document": "本接口（DescribeCertificate）用于获取证书信息。",
+      "input": "DescribeCertificateRequest",
+      "name": "获取证书信息",
+      "output": "DescribeCertificateResponse"
+    },
+    "DescribeCertificateDetail": {
+      "document": "获取证书详情。",
+      "input": "DescribeCertificateDetailRequest",
+      "name": "获取证书详情",
+      "output": "DescribeCertificateDetailResponse"
+    },
+    "DescribeCertificateOperateLogs": {
+      "document": "获取用户账号下有关证书的操作日志。",
+      "input": "DescribeCertificateOperateLogsRequest",
+      "name": "获取证书操作日志",
+      "output": "DescribeCertificateOperateLogsResponse"
+    },
+    "DescribeCertificates": {
+      "document": "本接口（DescribeCertificates）用于获取证书列表。",
+      "input": "DescribeCertificatesRequest",
+      "name": "获取证书列表",
+      "output": "DescribeCertificatesResponse"
+    },
+    "DownloadCertificate": {
+      "document": "本接口（DownloadCertificate）用于下载证书。",
+      "input": "DownloadCertificateRequest",
+      "name": "下载证书",
+      "output": "DownloadCertificateResponse"
+    },
+    "ModifyCertificateAlias": {
+      "document": "用户传入证书id和备注来修改证书备注。",
+      "input": "ModifyCertificateAliasRequest",
+      "name": "修改证书备注",
+      "output": "ModifyCertificateAliasResponse"
+    },
+    "ModifyCertificateProject": {
+      "document": "批量修改证书所属项目。",
+      "input": "ModifyCertificateProjectRequest",
+      "name": "修改证书所属项目",
+      "output": "ModifyCertificateProjectResponse"
+    },
+    "ReplaceCertificate": {
+      "document": "本接口（ReplaceCertificate）用于重颁发证书。已申请的免费证书仅支持 RSA 算法、密钥对参数为2048的证书重颁发，并且目前仅支持1次重颁发。",
+      "input": "ReplaceCertificateRequest",
+      "name": "重颁发证书",
+      "output": "ReplaceCertificateResponse"
+    },
+    "SubmitCertificateInformation": {
+      "document": "提交证书资料。",
+      "input": "SubmitCertificateInformationRequest",
+      "name": "提交证书资料",
+      "output": "SubmitCertificateInformationResponse"
+    },
+    "UploadCertificate": {
+      "document": "本接口（UploadCertificate）用于上传证书。",
+      "input": "UploadCertificateRequest",
+      "name": "上传证书",
+      "output": "UploadCertificateResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-12-05",
+    "api_brief": "介绍如何使用API对SSL证书进行操作，包括证书管理等。",
+    "serviceNameCN": "证书",
+    "serviceShortName": "ssl"
+  },
+  "objects": {
+    "ApplyCertificateRequest": {
+      "document": "ApplyCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。",
+          "member": "string",
+          "name": "DvAuthMethod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名。",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 ID。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮箱。",
+          "member": "string",
+          "name": "ContactEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机。",
+          "member": "string",
+          "name": "ContactPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "有效期，默认12个月，目前仅支持12个月。",
+          "member": "string",
+          "name": "ValidityPeriod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加密算法，仅支持 RSA。",
+          "member": "string",
+          "name": "CsrEncryptAlgo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "密钥对参数，仅支持2048。",
+          "member": "string",
+          "name": "CsrKeyParameter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CSR 的加密密码。",
+          "member": "string",
+          "name": "CsrKeyPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注名称。",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原证书 ID，用于重新申请。",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyCertificateResponse": {
+      "document": "ApplyCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelCertificateOrderRequest": {
+      "document": "CancelCertificateOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelCertificateOrderResponse": {
+      "document": "CancelCertificateOrder返回参数结构体",
+      "members": [
+        {
+          "document": "取消订单成功的证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CertificateExtra": {
+      "document": "获取证书列表（DescribeCertificates）返回参数键为 Certificates 数组下，key为CertificateExtra 的内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "证书可配置域名数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DomainNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OriginCertificateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重颁发证书原始 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReplacedBy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重颁发证书新 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReplacedFor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "新订单证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RenewOrder",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Certificates": {
+      "document": "获取证书列表（DescribeCertificates）返回参数键为 Certificates 的内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书套餐类型：1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificateType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "颁发者。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductZhName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态值 0：审核中，1：已通过，2：审核失败，3：已过期，4：已添加 DNS 解析记录，5：OV/EV 证书，待提交资料，6：订单取消中，7：已取消，8：已提交资料， 待上传确认函。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书扩展信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CertificateExtra",
+          "name": "CertificateExtra",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VulnerabilityStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，EMAIL = 邮件验证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VerifyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书有效期，单位（月）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ValidityPeriod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InsertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书包含的多个域名（包含主域名）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubjectAltName",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书类型名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为 VIP 客户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsVip",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为 DV 版证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsDv",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为泛域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsWildcard",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用了漏洞扫描功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsVulnerability",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可重颁发证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "RenewAble",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ProjectInfo",
+          "name": "ProjectInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联的云资源，暂不可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BoundResource",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可部署。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Deployable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CommitCertificateInformationRequest": {
+      "document": "CommitCertificateInformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CommitCertificateInformationResponse": {
+      "document": "CommitCertificateInformation返回参数结构体",
+      "members": [
+        {
+          "document": "亚信订单号。",
+          "member": "string",
+          "name": "OrderId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函。",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCertificateRequest": {
+      "document": "DeleteCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCertificateResponse": {
+      "document": "DeleteCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "删除结果。",
+          "member": "bool",
+          "name": "DeleteResult",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateDetailRequest": {
+      "document": "DescribeCertificateDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateDetailResponse": {
+      "document": "DescribeCertificateDetail返回参数结构体",
+      "members": [
+        {
+          "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OwnerUin",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书来源：trustasia = 亚洲诚信，upload = 用户上传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "From",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificateType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书套餐类型：1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "颁发者。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductZhName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "备注名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Alias",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，EMAIL = 邮件验证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VerifyType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞扫描状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VulnerabilityStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CertBeginTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书失效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CertEndTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书有效期：单位（月）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ValidityPeriod",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "申请时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "InsertTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "订单 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrderId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书扩展信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CertificateExtra",
+          "name": "CertificateExtra",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificatePrivateKey",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书公钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificatePublicKey",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "DV 认证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DvAuthDetail",
+          "name": "DvAuthDetail",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞扫描评估报告。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VulnerabilityReport",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书类型名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TypeName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书包含的多个域名（包含主域名）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubjectAltName",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为 VIP 客户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsVip",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为泛域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsWildcard",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为 DV 版证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsDv",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否启用了漏洞扫描功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsVulnerability",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "提交的资料信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SubmittedData",
+          "name": "SubmittedData",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否可重颁发证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "RenewAble",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否可部署。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Deployable",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateOperateLogsRequest": {
+      "document": "DescribeCertificateOperateLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求日志数量，默认为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间，默认15天前。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，默认现在时间。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateOperateLogsResponse": {
+      "document": "DescribeCertificateOperateLogs返回参数结构体",
+      "members": [
+        {
+          "document": "当前查询条件日志总数。",
+          "member": "uint64",
+          "name": "AllTotal",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本次请求返回的日志数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书操作日志列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OperationLog",
+          "name": "OperateLogs",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateRequest": {
+      "document": "DescribeCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateResponse": {
+      "document": "DescribeCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OwnerUin",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书来源：trustasia = 亚洲诚信，upload = 用户上传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "From",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificateType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书套餐类型：1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书颁发者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductZhName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "备注名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Alias",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，EMAIL = 邮件验证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VerifyType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞扫描状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VulnerabilityStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertBeginTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书失效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertEndTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书有效期：单位(月)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ValidityPeriod",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "申请时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InsertTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "订单 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrderId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书扩展信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CertificateExtra",
+          "name": "CertificateExtra",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "DV 认证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DvAuthDetail",
+          "name": "DvAuthDetail",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞扫描评估报告。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VulnerabilityReport",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书类型名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageTypeName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证书包含的多个域名（包含主域名）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubjectAltName",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为 VIP 客户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsVip",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为泛域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsWildcard",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为 DV 版证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsDv",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否启用了漏洞扫描功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsVulnerability",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否可重颁发证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "RenewAble",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "提交的资料信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SubmittedData",
+          "name": "SubmittedData",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否可部署。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Deployable",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificatesRequest": {
+      "document": "DescribeCertificates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页偏移量，从0开始。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量，默认20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。",
+          "member": "string",
+          "name": "CertificateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 ID。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按到期时间排序：DESC = 降序， ASC = 升序。",
+          "member": "string",
+          "name": "ExpirationSort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书状态。",
+          "member": "uint64",
+          "name": "CertificateStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否可部署，可选值：1 = 可部署，0 =  不可部署。",
+          "member": "uint64",
+          "name": "Deployable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificatesResponse": {
+      "document": "DescribeCertificates返回参数结构体",
+      "members": [
+        {
+          "document": "总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Certificates",
+          "name": "Certificates",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadCertificateRequest": {
+      "document": "DownloadCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadCertificateResponse": {
+      "document": "DownloadCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "ZIP base64 编码内容，base64 解码后可保存为 ZIP 文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Content",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "MIME 类型：application/zip = ZIP 压缩文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContentType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DvAuthDetail": {
+      "document": "获取证书列表（DescribeCertificate）返回参数键为 DvAuthDetail 的内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证子域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthKeySubDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DvAuths",
+          "name": "DvAuths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DvAuths": {
+      "document": "返回参数键为 DvAuths 的内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证子域名，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthSubDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DvAuthVerifyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyCertificateAliasRequest": {
+      "document": "ModifyCertificateAlias请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注名称。",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCertificateAliasResponse": {
+      "document": "ModifyCertificateAlias返回参数结构体",
+      "members": [
+        {
+          "document": "修改成功的证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCertificateProjectRequest": {
+      "document": "ModifyCertificateProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要修改所属项目的证书 ID 集合，最多100个证书。",
+          "member": "string",
+          "name": "CertificateIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "项目 ID。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCertificateProjectResponse": {
+      "document": "ModifyCertificateProject返回参数结构体",
+      "members": [
+        {
+          "document": "修改所属项目成功的证书集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SuccessCertificates",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "修改所属项目失败的证书集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FailCertificates",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OperationLog": {
+      "document": "证书操作日志。",
+      "members": [
+        {
+          "default": "",
+          "document": "操作证书动作。",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作时间。",
+          "member": "datetime",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectInfo": {
+      "document": "获取证书列表（DescribeCertificates）返回参数键为 Certificates 下，key为 ProjectInfo 的内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "项目名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目创建用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ProjectCreatorUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目信息简述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectResume",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ReplaceCertificateRequest": {
+      "document": "ReplaceCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。",
+          "member": "string",
+          "name": "ValidType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。",
+          "member": "string",
+          "name": "CsrType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CSR 内容。",
+          "member": "string",
+          "name": "CsrContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "KEY 密码。",
+          "member": "string",
+          "name": "CsrkeyPassword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceCertificateResponse": {
+      "document": "ReplaceCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitCertificateInformationRequest": {
+      "document": "SubmitCertificateInformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CSR 生成方式：online = 在线生成, parse = 手动上传。",
+          "member": "string",
+          "name": "CsrType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上传的 CSR 内容。",
+          "member": "string",
+          "name": "CsrContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定证书的域名。",
+          "member": "string",
+          "name": "CertificateDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上传的域名数组（多域名证书可以上传）。",
+          "member": "string",
+          "name": "DomainList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私钥密码。",
+          "member": "string",
+          "name": "KeyPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公司名称。",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部门名称。",
+          "member": "string",
+          "name": "OrganizationDivision",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公司详细地址。",
+          "member": "string",
+          "name": "OrganizationAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "国家名称，如中国：CN 。",
+          "member": "string",
+          "name": "OrganizationCountry",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公司所在城市。",
+          "member": "string",
+          "name": "OrganizationCity",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公司所在省份。",
+          "member": "string",
+          "name": "OrganizationRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公司邮编。",
+          "member": "string",
+          "name": "PostalCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公司座机区号。",
+          "member": "string",
+          "name": "PhoneAreaCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公司座机号码。",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书验证方式。",
+          "member": "string",
+          "name": "VerifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理人名。",
+          "member": "string",
+          "name": "AdminFirstName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理人姓。",
+          "member": "string",
+          "name": "AdminLastName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理人手机号码。",
+          "member": "string",
+          "name": "AdminPhoneNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理人邮箱地址。",
+          "member": "string",
+          "name": "AdminEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理人职位。",
+          "member": "string",
+          "name": "AdminPosition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人名。",
+          "member": "string",
+          "name": "ContactFirstName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人姓。",
+          "member": "string",
+          "name": "ContactLastName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人邮箱地址。",
+          "member": "string",
+          "name": "ContactEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人手机号码。",
+          "member": "string",
+          "name": "ContactNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人职位。",
+          "member": "string",
+          "name": "ContactPosition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitCertificateInformationResponse": {
+      "document": "SubmitCertificateInformation返回参数结构体",
+      "members": [
+        {
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmittedData": {
+      "document": "获取证书列表（DescribeCertificate）返回参数键为 SubmittedData 的内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "CSR 类型，（online = 在线生成CSR，parse = 粘贴 CSR）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CsrType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CSR 内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CsrContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertificateDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DNS 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DomainList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "私钥密码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeyPassword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业或单位名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部门。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrganizationDivision",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrganizationAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "国家。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrganizationCountry",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "市。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrganizationCity",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "省。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrganizationRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "邮政编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PostalCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "座机区号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PhoneAreaCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "座机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管理员名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AdminFirstName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管理员姓。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AdminLastName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管理员电话号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AdminPhoneNum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管理员邮箱地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AdminEmail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管理员职位。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AdminPosition",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系人名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContactFirstName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系人姓。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContactLastName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系人电话号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContactNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系人邮箱地址，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContactEmail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系人职位。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContactPosition",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "验证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VerifyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UploadCertificateRequest": {
+      "document": "UploadCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书公钥。",
+          "member": "string",
+          "name": "CertificatePublicKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。",
+          "member": "string",
+          "name": "CertificatePrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。",
+          "member": "string",
+          "name": "CertificateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注名称。",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 ID。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadCertificateResponse": {
+      "document": "UploadCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

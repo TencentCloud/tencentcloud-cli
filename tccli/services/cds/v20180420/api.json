@@ -1,0 +1,551 @@
+{
+  "actions": {
+    "DescribeDasbImageIds": {
+      "document": "获取镜像列表",
+      "input": "DescribeDasbImageIdsRequest",
+      "name": "数盾-DASB-获取镜像列表",
+      "output": "DescribeDasbImageIdsResponse"
+    },
+    "DescribeDbauditInstanceType": {
+      "document": "本接口 (DescribeDbauditInstanceType) 用于查询可售卖的产品规格列表。",
+      "input": "DescribeDbauditInstanceTypeRequest",
+      "name": "获取产品规格信息列表",
+      "output": "DescribeDbauditInstanceTypeResponse"
+    },
+    "DescribeDbauditInstances": {
+      "document": "本接口 (DescribeDbauditInstances) 用于查询数据安全审计实例列表",
+      "input": "DescribeDbauditInstancesRequest",
+      "name": "获取数据安全审计实例列表",
+      "output": "DescribeDbauditInstancesResponse"
+    },
+    "DescribeDbauditUsedRegions": {
+      "document": "本接口 (DescribeDbauditUsedRegions) 用于查询可售卖地域列表。",
+      "input": "DescribeDbauditUsedRegionsRequest",
+      "name": "查询可售卖地域列表",
+      "output": "DescribeDbauditUsedRegionsResponse"
+    },
+    "InquiryPriceDbauditInstance": {
+      "document": "用于查询数据安全审计产品实例价格",
+      "input": "InquiryPriceDbauditInstanceRequest",
+      "name": "数据安全审计产品实例询价",
+      "output": "InquiryPriceDbauditInstanceResponse"
+    },
+    "ModifyDbauditInstancesRenewFlag": {
+      "document": "本接口 (ModifyDbauditInstancesRenewFlag) 用于修改数据安全审计产品实例续费标识",
+      "input": "ModifyDbauditInstancesRenewFlagRequest",
+      "name": "修改实例续费标识",
+      "output": "ModifyDbauditInstancesRenewFlagResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-04-20",
+    "api_brief": "介绍如何使用API对数据安全审计进行操作，包括数据安全审计产品实例询价、获取数据安全审计实例列表等。",
+    "serviceNameCN": "数据安全审计",
+    "serviceShortName": "cds"
+  },
+  "objects": {
+    "CdsAuditInstance": {
+      "document": "数据安全产品实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Uin",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "续费标识",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式（数据安全审计只支持预付费：1）",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss",
+          "member": "string",
+          "name": "IsolatedTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间，格式： yyyy-mm-dd HH:ii:ss",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例过期时间，格式：yyyy-mm-dd HH:ii:ss",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例私网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例类型（版本）",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Pdomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DbauditTypesInfo": {
+      "document": "数据安全审计产品规格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规格描述",
+          "member": "string",
+          "name": "InstanceVersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格名称",
+          "member": "string",
+          "name": "InstanceVersionKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大吞吐量",
+          "member": "uint64",
+          "name": "Qps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大实例数",
+          "member": "uint64",
+          "name": "MaxInstances",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入库速率（每小时）",
+          "member": "uint64",
+          "name": "InsertSpeed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大在线存储量，单位：条",
+          "member": "uint64",
+          "name": "OnlineStorageCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大归档存储量，单位：条",
+          "member": "uint64",
+          "name": "ArchivingStorageCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDasbImageIdsRequest": {
+      "document": "DescribeDasbImageIds请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDasbImageIdsResponse": {
+      "document": "DescribeDasbImageIds返回参数结构体",
+      "members": [
+        {
+          "document": "基础镜像ID",
+          "member": "string",
+          "name": "BaseImageId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "AI镜像ID",
+          "member": "string",
+          "name": "AiImageId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbauditInstanceTypeRequest": {
+      "document": "DescribeDbauditInstanceType请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDbauditInstanceTypeResponse": {
+      "document": "DescribeDbauditInstanceType返回参数结构体",
+      "members": [
+        {
+          "document": "数据安全审计产品规格信息列表",
+          "member": "DbauditTypesInfo",
+          "name": "DbauditTypesSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbauditInstancesRequest": {
+      "document": "DescribeDbauditInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件地域",
+          "member": "string",
+          "name": "SearchRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "限制数目，默认10， 最大50",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbauditInstancesResponse": {
+      "document": "DescribeDbauditInstances返回参数结构体",
+      "members": [
+        {
+          "document": "总实例数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据安全审计实例信息列表",
+          "member": "CdsAuditInstance",
+          "name": "CdsAuditInstanceSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbauditUsedRegionsRequest": {
+      "document": "DescribeDbauditUsedRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDbauditUsedRegionsResponse": {
+      "document": "DescribeDbauditUsedRegions返回参数结构体",
+      "members": [
+        {
+          "document": "可售卖地域信息列表",
+          "member": "RegionInfo",
+          "name": "RegionSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceDbauditInstanceRequest": {
+      "document": "InquiryPriceDbauditInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "询价类型： renew，续费；newbuy，新购",
+          "member": "string",
+          "name": "InquiryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长单位，y：年；m：月",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例所在地域",
+          "member": "string",
+          "name": "ServiceRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceDbauditInstanceResponse": {
+      "document": "InquiryPriceDbauditInstance返回参数结构体",
+      "members": [
+        {
+          "document": "总价，单位：元",
+          "member": "float",
+          "name": "TotalPrice",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "真实价钱，预支费用的折扣价，单位：元",
+          "member": "float",
+          "name": "RealTotalCost",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDbauditInstancesRenewFlagRequest": {
+      "document": "ModifyDbauditInstancesRenewFlag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0，表示默认状态(用户未设置，即初始状态)；1，表示自动续费；2，表示明确不自动续费",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDbauditInstancesRenewFlagResponse": {
+      "document": "ModifyDbauditInstancesRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegionInfo": {
+      "document": "数盾地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域ID",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域描述",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域可用状态",
+          "member": "int64",
+          "name": "RegionState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

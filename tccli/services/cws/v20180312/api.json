@@ -1,0 +1,2095 @@
+{
+  "actions": {
+    "CreateMonitors": {
+      "document": "本接口（CreateMonitors）用于新增一个或多个站点的监测任务。",
+      "input": "CreateMonitorsRequest",
+      "name": "新增监测任务",
+      "output": "CreateMonitorsResponse"
+    },
+    "CreateSites": {
+      "document": "本接口（CreateSites）用于新增一个或多个站点。",
+      "input": "CreateSitesRequest",
+      "name": "新增站点",
+      "output": "CreateSitesResponse"
+    },
+    "CreateSitesScans": {
+      "document": "本接口（CreateSitesScans）用于新增一个或多个站点的单次扫描任务。",
+      "input": "CreateSitesScansRequest",
+      "name": "新增站点扫描任务",
+      "output": "CreateSitesScansResponse"
+    },
+    "CreateVulsMisinformation": {
+      "document": "本接口（CreateVulsMisinformation）可以用于新增一个或多个漏洞误报信息。",
+      "input": "CreateVulsMisinformationRequest",
+      "name": "新增漏洞误报信息",
+      "output": "CreateVulsMisinformationResponse"
+    },
+    "CreateVulsReport": {
+      "document": "本接口 (CreateVulsReport) 用于生成漏洞报告并返回下载链接。",
+      "input": "CreateVulsReportRequest",
+      "name": "生成漏洞报告",
+      "output": "CreateVulsReportResponse"
+    },
+    "DeleteMonitors": {
+      "document": "本接口 (DeleteMonitors) 用于删除用户监控任务。",
+      "input": "DeleteMonitorsRequest",
+      "name": "删除监控任务",
+      "output": "DeleteMonitorsResponse"
+    },
+    "DeleteSites": {
+      "document": "本接口 (DeleteSites) 用于删除站点。",
+      "input": "DeleteSitesRequest",
+      "name": "删除站点",
+      "output": "DeleteSitesResponse"
+    },
+    "DescribeConfig": {
+      "document": "本接口 (DescribeConfig) 用于查询用户配置的详细信息。",
+      "input": "DescribeConfigRequest",
+      "name": "查看用户配置列表",
+      "output": "DescribeConfigResponse"
+    },
+    "DescribeMonitors": {
+      "document": "本接口 (DescribeMonitors) 用于查询一个或多个监控任务的详细信息。",
+      "input": "DescribeMonitorsRequest",
+      "name": "查看监控任务",
+      "output": "DescribeMonitorsResponse"
+    },
+    "DescribeSiteQuota": {
+      "document": "本接口 (DescribeSiteQuota) 用于查询用户购买的扫描次数总数和已使用数。",
+      "input": "DescribeSiteQuotaRequest",
+      "name": "查看站点购买配额",
+      "output": "DescribeSiteQuotaResponse"
+    },
+    "DescribeSites": {
+      "document": "本接口 (DescribeSites) 用于查询一个或多个站点的详细信息。",
+      "input": "DescribeSitesRequest",
+      "name": "查看站点列表",
+      "output": "DescribeSitesResponse"
+    },
+    "DescribeSitesVerification": {
+      "document": "本接口 (DescribeSitesVerification) 用于查询一个或多个待验证站点的验证信息。",
+      "input": "DescribeSitesVerificationRequest",
+      "name": "查看站点列表的验证信息列表",
+      "output": "DescribeSitesVerificationResponse"
+    },
+    "DescribeVuls": {
+      "document": "本接口 (DescribeVuls) 用于查询一个或多个漏洞的详细信息。",
+      "input": "DescribeVulsRequest",
+      "name": "查看漏洞列表",
+      "output": "DescribeVulsResponse"
+    },
+    "DescribeVulsNumber": {
+      "document": "本接口 (DescribeVulsNumber) 用于查询用户网站的漏洞总计数量。",
+      "input": "DescribeVulsNumberRequest",
+      "name": "查看当前漏洞总计数量",
+      "output": "DescribeVulsNumberResponse"
+    },
+    "DescribeVulsNumberTimeline": {
+      "document": "本接口 (DescribeVulsNumberTimeline) 用于查询漏洞数随时间变化统计信息。",
+      "input": "DescribeVulsNumberTimelineRequest",
+      "name": "查看漏洞数随时间变化统计信息",
+      "output": "DescribeVulsNumberTimelineResponse"
+    },
+    "ModifyConfigAttribute": {
+      "document": "本接口 (ModifyConfigAttribute) 用于修改用户配置的属性。",
+      "input": "ModifyConfigAttributeRequest",
+      "name": "修改用户配置的属性",
+      "output": "ModifyConfigAttributeResponse"
+    },
+    "ModifyMonitorAttribute": {
+      "document": "本接口 (ModifyMonitorAttribute) 用于修改监测任务的属性。",
+      "input": "ModifyMonitorAttributeRequest",
+      "name": "修改监测任务的属性",
+      "output": "ModifyMonitorAttributeResponse"
+    },
+    "ModifySiteAttribute": {
+      "document": "本接口 (ModifySiteAttribute) 用于修改站点的属性。",
+      "input": "ModifySiteAttributeRequest",
+      "name": "修改站点的属性",
+      "output": "ModifySiteAttributeResponse"
+    },
+    "VerifySites": {
+      "document": "本接口 (VerifySites) 用于验证一个或多个待验证站点。",
+      "input": "VerifySitesRequest",
+      "name": "验证站点",
+      "output": "VerifySitesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-03-12",
+    "serviceNameCN": "漏洞扫描服务",
+    "serviceShortName": "cws"
+  },
+  "objects": {
+    "CreateMonitorsRequest": {
+      "document": "CreateMonitors请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点的url列表",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扫描模式，normal-正常扫描；deep-深度扫描",
+          "member": "string",
+          "name": "ScannerType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扫描周期，单位小时，每X小时执行一次",
+          "member": "uint64",
+          "name": "Crontab",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扫描速率限制，每秒发送X个HTTP请求",
+          "member": "uint64",
+          "name": "RateLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "首次扫描开始时间",
+          "member": "datetime",
+          "name": "FirstScanStartTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMonitorsResponse": {
+      "document": "CreateMonitors返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSitesRequest": {
+      "document": "CreateSites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点的url列表",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "访问网站的客户端标识",
+          "member": "string",
+          "name": "UserAgent",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSitesResponse": {
+      "document": "CreateSites返回参数结构体",
+      "members": [
+        {
+          "document": "新增站点数。",
+          "member": "uint64",
+          "name": "Number",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点数组",
+          "member": "MiniSite",
+          "name": "Sites",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSitesScansRequest": {
+      "document": "CreateSitesScans请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点的ID列表",
+          "member": "uint64",
+          "name": "SiteIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扫描模式，normal-正常扫描；deep-深度扫描",
+          "member": "string",
+          "name": "ScannerType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扫描速率限制，每秒发送X个HTTP请求",
+          "member": "uint64",
+          "name": "RateLimit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSitesScansResponse": {
+      "document": "CreateSitesScans返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVulsMisinformationRequest": {
+      "document": "CreateVulsMisinformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞ID列表",
+          "member": "uint64",
+          "name": "VulIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVulsMisinformationResponse": {
+      "document": "CreateVulsMisinformation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVulsReportRequest": {
+      "document": "CreateVulsReport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "member": "uint64",
+          "name": "SiteId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监控任务ID",
+          "member": "uint64",
+          "name": "MonitorId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVulsReportResponse": {
+      "document": "CreateVulsReport返回参数结构体",
+      "members": [
+        {
+          "document": "报告下载地址",
+          "member": "string",
+          "name": "ReportFileUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMonitorsRequest": {
+      "document": "DeleteMonitors请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "监控任务ID列表",
+          "member": "uint64",
+          "name": "MonitorIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMonitorsResponse": {
+      "document": "DeleteMonitors返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSitesRequest": {
+      "document": "DeleteSites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID列表",
+          "member": "uint64",
+          "name": "SiteIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSitesResponse": {
+      "document": "DeleteSites返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigRequest": {
+      "document": "DescribeConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeConfigResponse": {
+      "document": "DescribeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "漏洞告警通知等级，4位分别代表：高危、中危、低危、提示。",
+          "member": "string",
+          "name": "NoticeLevel",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "配置ID。",
+          "member": "uint64",
+          "name": "Id",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录创建时间。",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录更新新建。",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云用户appid。",
+          "member": "uint64",
+          "name": "Appid",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内容检测通知等级-1:通知,0-不通知",
+          "member": "uint64",
+          "name": "ContentLevel",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMonitorsRequest": {
+      "document": "DescribeMonitors请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "监控任务ID列表",
+          "member": "uint64",
+          "name": "MonitorIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMonitorsResponse": {
+      "document": "DescribeMonitors返回参数结构体",
+      "members": [
+        {
+          "document": "监控任务列表。",
+          "member": "MonitorsDetail",
+          "name": "Monitors",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "监控任务数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSiteQuotaRequest": {
+      "document": "DescribeSiteQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSiteQuotaResponse": {
+      "document": "DescribeSiteQuota返回参数结构体",
+      "members": [
+        {
+          "document": "已购买的扫描次数。",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已使用的扫描次数。",
+          "member": "uint64",
+          "name": "Used",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "剩余可用的扫描次数。",
+          "member": "uint64",
+          "name": "Available",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSitesRequest": {
+      "document": "DescribeSites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID列表",
+          "member": "uint64",
+          "name": "SiteIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSitesResponse": {
+      "document": "DescribeSites返回参数结构体",
+      "members": [
+        {
+          "document": "站点数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点信息列表。",
+          "member": "Site",
+          "name": "Sites",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSitesVerificationRequest": {
+      "document": "DescribeSitesVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点的url列表",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSitesVerificationResponse": {
+      "document": "DescribeSitesVerification返回参数结构体",
+      "members": [
+        {
+          "document": "验证信息数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证信息列表。",
+          "member": "SitesVerification",
+          "name": "SitesVerification",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulsNumberRequest": {
+      "document": "DescribeVulsNumber请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVulsNumberResponse": {
+      "document": "DescribeVulsNumber返回参数结构体",
+      "members": [
+        {
+          "document": "受影响的网站总数。",
+          "member": "uint64",
+          "name": "ImpactSiteNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已验证的网站总数。",
+          "member": "uint64",
+          "name": "SiteNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高风险漏洞总数。",
+          "member": "uint64",
+          "name": "VulsHighNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "中风险漏洞总数。",
+          "member": "uint64",
+          "name": "VulsMiddleNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "低高风险漏洞总数。",
+          "member": "uint64",
+          "name": "VulsLowNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "风险提示总数。",
+          "member": "uint64",
+          "name": "VulsNoticeNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扫描页面总数。",
+          "member": "uint64",
+          "name": "PageCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已验证的网站列表。",
+          "member": "MonitorMiniSite",
+          "name": "Sites",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "受影响的网站列表。",
+          "member": "MonitorMiniSite",
+          "name": "ImpactSites",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulsNumberTimelineRequest": {
+      "document": "DescribeVulsNumberTimeline请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVulsNumberTimelineResponse": {
+      "document": "DescribeVulsNumberTimeline返回参数结构体",
+      "members": [
+        {
+          "document": "统计数据记录数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户漏洞数随时间变化统计数据。",
+          "member": "VulsTimeline",
+          "name": "VulsTimeline",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulsRequest": {
+      "document": "DescribeVuls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "member": "uint64",
+          "name": "SiteId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监控任务ID",
+          "member": "uint64",
+          "name": "MonitorId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulsResponse": {
+      "document": "DescribeVuls返回参数结构体",
+      "members": [
+        {
+          "document": "漏洞数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "漏洞信息列表。",
+          "member": "Vul",
+          "name": "Vuls",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "MiniSite": {
+      "document": "站点信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID。",
+          "member": "uint64",
+          "name": "SiteId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点Url。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyConfigAttributeRequest": {
+      "document": "ModifyConfigAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞告警通知等级，4位分别代表：高危、中危、低危、提示",
+          "member": "string",
+          "name": "NoticeLevel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigAttributeResponse": {
+      "document": "ModifyConfigAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMonitorAttributeRequest": {
+      "document": "ModifyMonitorAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "监测任务ID",
+          "member": "uint64",
+          "name": "MonitorId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点的url列表",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扫描模式，normal-正常扫描；deep-深度扫描",
+          "member": "string",
+          "name": "ScannerType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扫描周期，单位小时，每X小时执行一次",
+          "member": "uint64",
+          "name": "Crontab",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扫描速率限制，每秒发送X个HTTP请求",
+          "member": "uint64",
+          "name": "RateLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "首次扫描开始时间",
+          "member": "datetime",
+          "name": "FirstScanStartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监测状态：1-监测中；2-暂停监测",
+          "member": "uint64",
+          "name": "MonitorStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMonitorAttributeResponse": {
+      "document": "ModifyMonitorAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySiteAttributeRequest": {
+      "document": "ModifySiteAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "member": "uint64",
+          "name": "SiteId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网站是否需要登录扫描：0-未知；-1-不需要；1-需要",
+          "member": "int64",
+          "name": "NeedLogin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "登录后的cookie",
+          "member": "string",
+          "name": "LoginCookie",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于测试cookie是否有效的URL",
+          "member": "string",
+          "name": "LoginCheckUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于测试cookie是否有效的关键字",
+          "member": "string",
+          "name": "LoginCheckKw",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "禁止扫描器扫描的目录关键字",
+          "member": "string",
+          "name": "ScanDisallow",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySiteAttributeResponse": {
+      "document": "ModifySiteAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Monitor": {
+      "document": "监控任务基础数据",
+      "members": [
+        {
+          "default": "",
+          "document": "监控任务ID。",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控名称。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监测状态：1-监测中；2-暂停监测。",
+          "member": "uint64",
+          "name": "MonitorStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监测模式，normal-正常扫描；deep-深度扫描。",
+          "member": "string",
+          "name": "ScannerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描周期，单位小时，每X小时执行一次。",
+          "member": "uint64",
+          "name": "Crontab",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定扫描类型，3位数每位依次表示：扫描Web漏洞、扫描系统漏洞、扫描系统端口。",
+          "member": "string",
+          "name": "IncludedVulsTypes",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "速率限制，每秒发送X个HTTP请求。",
+          "member": "uint64",
+          "name": "RateLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次扫描开始时间。",
+          "member": "datetime_iso",
+          "name": "FirstScanStartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描状态：0-待扫描（无任何扫描结果）；1-扫描中（正在进行扫描）；2-已扫描（有扫描结果且不正在扫描）；3-扫描完成待同步结果。",
+          "member": "uint64",
+          "name": "ScanStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次扫描完成时间。",
+          "member": "datetime_iso",
+          "name": "LastScanFinishTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前扫描开始时间，如扫描完成则为上一次扫描的开始时间。",
+          "member": "datetime_iso",
+          "name": "CurrentScanStartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CreatedAt。",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "UpdatedAt。",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云用户appid。",
+          "member": "uint64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描状态：0-待检测；1-检测完成",
+          "member": "uint64",
+          "name": "ContentScanStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorMiniSite": {
+      "document": "监控任务中的站点信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID。",
+          "member": "uint64",
+          "name": "SiteId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点Url。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorsDetail": {
+      "document": "监控任务详细数据",
+      "members": [
+        {
+          "default": "",
+          "document": "监控任务基础信息。",
+          "member": "Monitor",
+          "name": "Basic",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控任务包含的站点列表。",
+          "member": "MonitorMiniSite",
+          "name": "Sites",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控任务包含的站点列表数量。",
+          "member": "uint64",
+          "name": "SiteNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控任务包含的受漏洞威胁的站点列表。",
+          "member": "MonitorMiniSite",
+          "name": "ImpactSites",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控任务包含的受漏洞威胁的站点列表数量。",
+          "member": "uint64",
+          "name": "ImpactSiteNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高风险漏洞数量。",
+          "member": "uint64",
+          "name": "VulsHighNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中风险漏洞数量。",
+          "member": "uint64",
+          "name": "VulsMiddleNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "低风险漏洞数量。",
+          "member": "uint64",
+          "name": "VulsLowNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提示数量。",
+          "member": "uint64",
+          "name": "VulsNoticeNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控任务包含的站点列表的平均扫描进度。",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描页面总数。",
+          "member": "uint64",
+          "name": "PageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容检测数量。",
+          "member": "uint64",
+          "name": "ContentNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Site": {
+      "document": "站点数据",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID。",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控任务ID，为0时表示未加入监控任务。",
+          "member": "uint64",
+          "name": "MonitorId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点url。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点名称。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证状态：0-未验证；1-已验证；2-验证失效，待重新验证。",
+          "member": "uint64",
+          "name": "VerifyStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监测状态：0-未监测；1-监测中；2-暂停监测。",
+          "member": "uint64",
+          "name": "MonitorStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描状态：0-待扫描（无任何扫描结果）；1-扫描中（正在进行扫描）；2-已扫描（有扫描结果且不正在扫描）；3-扫描完成待同步结果。",
+          "member": "uint64",
+          "name": "ScanStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次的AIScanner的扫描任务id，注意取消的情况。",
+          "member": "uint64",
+          "name": "LastScanTaskId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描开始时间。",
+          "member": "datetime_iso",
+          "name": "LastScanStartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描完成时间。",
+          "member": "datetime_iso",
+          "name": "LastScanFinishTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次取消时间，取消即使用上一次扫描结果。",
+          "member": "datetime_iso",
+          "name": "LastScanCancelTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描扫描的页面数。",
+          "member": "uint64",
+          "name": "LastScanPageCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "normal-正常扫描；deep-深度扫描。",
+          "member": "string",
+          "name": "LastScanScannerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描高风险漏洞数量。",
+          "member": "uint64",
+          "name": "LastScanVulsHighNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描中风险漏洞数量。",
+          "member": "uint64",
+          "name": "LastScanVulsMiddleNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描低风险漏洞数量。",
+          "member": "uint64",
+          "name": "LastScanVulsLowNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描提示信息数量。",
+          "member": "uint64",
+          "name": "LastScanVulsNoticeNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录添加时间。",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录最近修改时间。",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "速率限制，每秒发送X个HTTP请求。",
+          "member": "uint64",
+          "name": "LastScanRateLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描漏洞总数量。",
+          "member": "uint64",
+          "name": "LastScanVulsNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描提示总数量",
+          "member": "uint64",
+          "name": "LastScanNoticeNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描进度，百分比整数",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云用户appid。",
+          "member": "uint64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云用户标识。",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网站是否需要登录扫描：0-未知；-1-不需要；1-需要。",
+          "member": "int64",
+          "name": "NeedLogin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登录后的cookie。",
+          "member": "string",
+          "name": "LoginCookie",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登录后的cookie是否有效：0-无效；1-有效。",
+          "member": "uint64",
+          "name": "LoginCookieValid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于测试cookie是否有效的URL。",
+          "member": "string",
+          "name": "LoginCheckUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于测试cookie是否有效的关键字。",
+          "member": "string",
+          "name": "LoginCheckKw",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "禁止扫描器扫描的目录关键字。",
+          "member": "string",
+          "name": "ScanDisallow",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问网站的客户端标识。",
+          "member": "string",
+          "name": "UserAgent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容检测状态：0-未检测；1-已检测；",
+          "member": "uint64",
+          "name": "ContentStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次扫描内容检测数量",
+          "member": "uint64",
+          "name": "LastScanContentNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SitesVerification": {
+      "document": "站点验证数据",
+      "members": [
+        {
+          "default": "",
+          "document": "根域名。",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "txt解析域名验证的name。",
+          "member": "string",
+          "name": "TxtName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "txt解析域名验证的text。",
+          "member": "string",
+          "name": "TxtText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证有效期，在此之前有效。",
+          "member": "datetime_iso",
+          "name": "ValidTo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证状态：0-未验证；1-已验证；2-验证失效，待重新验证。",
+          "member": "uint64",
+          "name": "VerifyStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CreatedAt。",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "UpdatedAt。",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ID。",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云用户appid",
+          "member": "uint64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于验证站点的url，即访问该url获取验证数据。",
+          "member": "string",
+          "name": "VerifyUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "获取验证验证文件的url。",
+          "member": "string",
+          "name": "VerifyFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VerifySitesRequest": {
+      "document": "VerifySites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点的url列表",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifySitesResponse": {
+      "document": "VerifySites返回参数结构体",
+      "members": [
+        {
+          "document": "验证成功的根域名数量。",
+          "member": "uint64",
+          "name": "SuccessNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证失败的根域名数量。",
+          "member": "uint64",
+          "name": "FailNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Vul": {
+      "document": "漏洞数据",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞ID。",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点ID。",
+          "member": "uint64",
+          "name": "SiteId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描引擎的扫描任务ID。",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞级别：high、middle、low、notice。",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞名称。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出现漏洞的url。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网址/细节。",
+          "member": "string",
+          "name": "Html",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞类型。",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "危害说明。",
+          "member": "string",
+          "name": "Harm",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞描述。",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解决方案。",
+          "member": "string",
+          "name": "Solution",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞参考。",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞通过该参数攻击。",
+          "member": "string",
+          "name": "Parameter",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CreatedAt。",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "UpdatedAt。",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已经添加误报，0-否，1-是。",
+          "member": "uint64",
+          "name": "IsReported",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云用户appid。",
+          "member": "uint64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云用户标识。",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VulsTimeline": {
+      "document": "用户漏洞数随时间变化统计数据",
+      "members": [
+        {
+          "default": "",
+          "document": "ID。",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云用户appid。",
+          "member": "uint64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日期。",
+          "member": "datetime_iso",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描页面总数量。",
+          "member": "uint64",
+          "name": "PageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已验证网站总数量。",
+          "member": "uint64",
+          "name": "SiteNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "受影响的网站总数量。",
+          "member": "uint64",
+          "name": "ImpactSiteNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高危漏洞总数量。",
+          "member": "uint64",
+          "name": "VulsHighNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中危漏洞总数量。",
+          "member": "uint64",
+          "name": "VulsMiddleNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "低危漏洞总数量。",
+          "member": "uint64",
+          "name": "VulsLowNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险提示总数量",
+          "member": "uint64",
+          "name": "VulsNoticeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录添加时间。",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录最近修改时间。",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

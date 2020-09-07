@@ -1,0 +1,2519 @@
+{
+  "actions": {
+    "CreateCodeRepository": {
+      "document": "创建存储库",
+      "input": "CreateCodeRepositoryRequest",
+      "name": "创建存储库",
+      "output": "CreateCodeRepositoryResponse"
+    },
+    "CreateNotebookInstance": {
+      "document": "创建Notebook实例",
+      "input": "CreateNotebookInstanceRequest",
+      "name": "创建Notebook实例",
+      "output": "CreateNotebookInstanceResponse"
+    },
+    "CreateNotebookLifecycleScript": {
+      "document": "创建Notebook生命周期脚本",
+      "input": "CreateNotebookLifecycleScriptRequest",
+      "name": "创建Notebook生命周期脚本",
+      "output": "CreateNotebookLifecycleScriptResponse"
+    },
+    "CreatePresignedNotebookInstanceUrl": {
+      "document": "创建Notebook授权Url",
+      "input": "CreatePresignedNotebookInstanceUrlRequest",
+      "name": "创建Notebook授权Url",
+      "output": "CreatePresignedNotebookInstanceUrlResponse"
+    },
+    "CreateTrainingJob": {
+      "document": "创建训练任务",
+      "input": "CreateTrainingJobRequest",
+      "name": "创建训练任务",
+      "output": "CreateTrainingJobResponse"
+    },
+    "DeleteCodeRepository": {
+      "document": "删除存储库",
+      "input": "DeleteCodeRepositoryRequest",
+      "name": "删除存储库",
+      "output": "DeleteCodeRepositoryResponse"
+    },
+    "DeleteNotebookInstance": {
+      "document": "删除notebook实例",
+      "input": "DeleteNotebookInstanceRequest",
+      "name": "删除Notebook实例",
+      "output": "DeleteNotebookInstanceResponse"
+    },
+    "DeleteNotebookLifecycleScript": {
+      "document": "删除Notebook生命周期脚本",
+      "input": "DeleteNotebookLifecycleScriptRequest",
+      "name": "删除Notebook生命周期脚本",
+      "output": "DeleteNotebookLifecycleScriptResponse"
+    },
+    "DescribeCodeRepositories": {
+      "document": "查询存储库列表",
+      "input": "DescribeCodeRepositoriesRequest",
+      "name": "查询存储库列表",
+      "output": "DescribeCodeRepositoriesResponse"
+    },
+    "DescribeCodeRepository": {
+      "document": "查询存储库详情",
+      "input": "DescribeCodeRepositoryRequest",
+      "name": "查询存储库详情",
+      "output": "DescribeCodeRepositoryResponse"
+    },
+    "DescribeNotebookInstance": {
+      "document": "查询Notebook实例详情",
+      "input": "DescribeNotebookInstanceRequest",
+      "name": "查询Notebook实例",
+      "output": "DescribeNotebookInstanceResponse"
+    },
+    "DescribeNotebookInstances": {
+      "document": "查询Notebook实例列表",
+      "input": "DescribeNotebookInstancesRequest",
+      "name": "查询Notebook实例列表",
+      "output": "DescribeNotebookInstancesResponse"
+    },
+    "DescribeNotebookLifecycleScript": {
+      "document": "查看notebook生命周期脚本详情",
+      "input": "DescribeNotebookLifecycleScriptRequest",
+      "name": "查看notebook生命周期脚本详情",
+      "output": "DescribeNotebookLifecycleScriptResponse"
+    },
+    "DescribeNotebookLifecycleScripts": {
+      "document": "查看notebook生命周期脚本列表",
+      "input": "DescribeNotebookLifecycleScriptsRequest",
+      "name": "查看notebook生命周期脚本列表",
+      "output": "DescribeNotebookLifecycleScriptsResponse"
+    },
+    "DescribeNotebookSummary": {
+      "document": "查询Notebook概览数据",
+      "input": "DescribeNotebookSummaryRequest",
+      "name": "查询Notebook概览",
+      "output": "DescribeNotebookSummaryResponse"
+    },
+    "DescribeTrainingJob": {
+      "document": "查询训练任务",
+      "input": "DescribeTrainingJobRequest",
+      "name": "查询训练任务",
+      "output": "DescribeTrainingJobResponse"
+    },
+    "DescribeTrainingJobs": {
+      "document": "查询训练任务列表",
+      "input": "DescribeTrainingJobsRequest",
+      "name": "查询训练任务列表",
+      "output": "DescribeTrainingJobsResponse"
+    },
+    "StartNotebookInstance": {
+      "document": "启动Notebook实例",
+      "input": "StartNotebookInstanceRequest",
+      "name": "启动Notebook实例",
+      "output": "StartNotebookInstanceResponse"
+    },
+    "StopNotebookInstance": {
+      "document": "停止Notebook实例",
+      "input": "StopNotebookInstanceRequest",
+      "name": "停止Notebook实例",
+      "output": "StopNotebookInstanceResponse"
+    },
+    "StopTrainingJob": {
+      "document": "停止训练任务",
+      "input": "StopTrainingJobRequest",
+      "name": "停止训练任务",
+      "output": "StopTrainingJobResponse"
+    },
+    "UpdateCodeRepository": {
+      "document": "更新存储库",
+      "input": "UpdateCodeRepositoryRequest",
+      "name": "更新存储库",
+      "output": "UpdateCodeRepositoryResponse"
+    },
+    "UpdateNotebookInstance": {
+      "document": "更新Notebook实例",
+      "input": "UpdateNotebookInstanceRequest",
+      "name": "更新Notebook实例",
+      "output": "UpdateNotebookInstanceResponse"
+    },
+    "UpdateNotebookLifecycleScript": {
+      "document": "更新notebook生命周期脚本",
+      "input": "UpdateNotebookLifecycleScriptRequest",
+      "name": "更新notebook生命周期脚本",
+      "output": "UpdateNotebookLifecycleScriptResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-10-22",
+    "api_brief": "介绍如何使用API对智能钛机器学习平台进行操作，包括存储库、Notebook、任务训练等。",
+    "serviceNameCN": "智能钛机器学习平台",
+    "serviceShortName": "tione"
+  },
+  "objects": {
+    "AlgorithmSpecification": {
+      "document": "算法配置",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TrainingImageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入模式File|Pipe\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TrainingInputMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "算法名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlgorithmName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BillingLabel": {
+      "document": "计费标签",
+      "members": [
+        {
+          "default": "",
+          "document": "计费项标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储大小",
+          "member": "int64",
+          "name": "VolumeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费状态\nNone: 不计费\nStorageOnly: 仅存储计费\nComputing: 计算和存储都计费",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClsConfig": {
+      "document": "接入CLS服务的配置",
+      "members": [
+        {
+          "default": "",
+          "document": "接入类型，可选项为free、customer",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义CLS的日志集ID，只有当Type为customer时生效",
+          "member": "string",
+          "name": "LogSetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义CLS的日志主题ID，只有当Type为customer时生效",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CodeRepoSummary": {
+      "document": "存储库列表",
+      "members": [
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "datetime",
+          "name": "LastModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Git配置",
+          "member": "GitConfig",
+          "name": "GitConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有Git凭证",
+          "member": "bool",
+          "name": "NoSecret",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosDataSource": {
+      "document": "cos路径",
+      "members": [
+        {
+          "default": "",
+          "document": "cos桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cos文件key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeyPrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分布式数据下载方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DataDistributionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DataType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateCodeRepositoryRequest": {
+      "document": "CreateCodeRepository请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Git相关配置",
+          "member": "GitConfig",
+          "name": "GitConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Git凭证",
+          "member": "GitSecret",
+          "name": "GitSecret",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCodeRepositoryResponse": {
+      "document": "CreateCodeRepository返回参数结构体",
+      "members": [
+        {
+          "document": "存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookInstanceRequest": {
+      "document": "CreateNotebookInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Notebook实例名称，不能超过63个字符\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Notebook算力类型\n参考https://cloud.tencent.com/document/product/851/41239",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据卷大小(GB)\n用户持久化Notebook实例的数据",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "外网访问权限，可取值Enabled/Disabled\n开启后，Notebook实例可以具有访问外网80，443端口的权限",
+          "member": "string",
+          "name": "DirectInternetAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Root用户权限，可取值Enabled/Disabled\n开启后，Notebook实例可以切换至root用户执行命令",
+          "member": "string",
+          "name": "RootAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID\n如果需要Notebook实例访问VPC内的资源，则需要选择对应的子网",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生命周期脚本名称\n必须是已存在的生命周期脚本，具体参考https://cloud.tencent.com/document/product/851/43140",
+          "member": "string",
+          "name": "LifecycleScriptsName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认存储库名称\n可以是已创建的存储库名称或者已https://开头的公共git库\n参考https://cloud.tencent.com/document/product/851/43139",
+          "member": "string",
+          "name": "DefaultCodeRepository",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "其他存储库列表\n每个元素可以是已创建的存储库名称或者已https://开头的公共git库\n参考https://cloud.tencent.com/document/product/851/43139",
+          "member": "string",
+          "name": "AdditionalCodeRepositories",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "已弃用，请使用ClsConfig配置。\n是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled\n开启后，Notebook运行的日志会收集到CLS中，CLS会产生费用，请根据需要选择",
+          "member": "string",
+          "name": "ClsAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动停止配置\n选择定时停止Notebook实例",
+          "member": "StoppingCondition",
+          "name": "StoppingCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自动停止，可取值Enabled/Disabled\n取值为Disabled的时候StoppingCondition将被忽略\n取值为Enabled的时候读取StoppingCondition作为自动停止的配置",
+          "member": "string",
+          "name": "AutoStopping",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接入日志的配置，默认接入免费日志",
+          "member": "ClsConfig",
+          "name": "ClsConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookInstanceResponse": {
+      "document": "CreateNotebookInstance返回参数结构体",
+      "members": [
+        {
+          "document": "Notebook实例名字",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookLifecycleScriptRequest": {
+      "document": "CreateNotebookLifecycleScript请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Notebook生命周期脚本名称",
+          "member": "string",
+          "name": "NotebookLifecycleScriptsName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建脚本，base64编码\nbase64后的脚本长度不能超过16384个字符",
+          "member": "string",
+          "name": "CreateScript",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启动脚本，base64编码\nbase64后的脚本长度不能超过16384个字符",
+          "member": "string",
+          "name": "StartScript",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookLifecycleScriptResponse": {
+      "document": "CreateNotebookLifecycleScript返回参数结构体",
+      "members": [
+        {
+          "document": "生命周期脚本名称",
+          "member": "string",
+          "name": "NotebookLifecycleScriptsName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePresignedNotebookInstanceUrlRequest": {
+      "document": "CreatePresignedNotebookInstanceUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "session有效时间，秒，取值范围[1800, 43200]",
+          "member": "int64",
+          "name": "SessionExpirationDurationInSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePresignedNotebookInstanceUrlResponse": {
+      "document": "CreatePresignedNotebookInstanceUrl返回参数结构体",
+      "members": [
+        {
+          "document": "授权url",
+          "member": "string",
+          "name": "AuthorizedUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrainingJobRequest": {
+      "document": "CreateTrainingJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "算法镜像配置",
+          "member": "AlgorithmSpecification",
+          "name": "AlgorithmSpecification",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "输出数据配置",
+          "member": "OutputDataConfig",
+          "name": "OutputDataConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "资源实例配置",
+          "member": "ResourceConfig",
+          "name": "ResourceConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "训练任务名称",
+          "member": "string",
+          "name": "TrainingJobName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入数据配置",
+          "member": "InputDataConfig",
+          "name": "InputDataConfig",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "中止条件",
+          "member": "StoppingCondition",
+          "name": "StoppingCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "私有网络配置",
+          "member": "VpcConfig",
+          "name": "VpcConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "算法超级参数",
+          "member": "string",
+          "name": "HyperParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境变量配置",
+          "member": "EnvConfig",
+          "name": "EnvConfig",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "角色名称",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在资源不足（ResourceInsufficient）时后台不定时尝试重新创建训练任务。可取值Enabled/Disabled\n默认值为Disabled即不重新尝试。设为Enabled时重新尝试有一定的时间期限，定义在 StoppingCondition 中 MaxWaitTimeInSecond中 ，默认值为1天，超过该期限创建失败。",
+          "member": "string",
+          "name": "RetryWhenResourceInsufficient",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrainingJobResponse": {
+      "document": "CreateTrainingJob返回参数结构体",
+      "members": [
+        {
+          "document": "训练任务名称",
+          "member": "string",
+          "name": "TrainingJobName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataSource": {
+      "document": "数据源",
+      "members": [
+        {
+          "default": "",
+          "document": "cos数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CosDataSource",
+          "name": "CosDataSource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统输入源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FileSystemDataSource",
+          "name": "FileSystemDataSource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteCodeRepositoryRequest": {
+      "document": "DeleteCodeRepository请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCodeRepositoryResponse": {
+      "document": "DeleteCodeRepository返回参数结构体",
+      "members": [
+        {
+          "document": "存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookInstanceRequest": {
+      "document": "DeleteNotebookInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Notebook实例名称",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookInstanceResponse": {
+      "document": "DeleteNotebookInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookLifecycleScriptRequest": {
+      "document": "DeleteNotebookLifecycleScript请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "生命周期脚本名称",
+          "member": "string",
+          "name": "NotebookLifecycleScriptsName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否忽略已关联的 notebook 实例强行删除生命周期脚本，默认 false",
+          "member": "bool",
+          "name": "Forcible",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookLifecycleScriptResponse": {
+      "document": "DeleteNotebookLifecycleScript返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeRepositoriesRequest": {
+      "document": "DescribeCodeRepositories请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeRepositoriesResponse": {
+      "document": "DescribeCodeRepositories返回参数结构体",
+      "members": [
+        {
+          "document": "存储库总数目",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CodeRepoSummary",
+          "name": "CodeRepoSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeRepositoryRequest": {
+      "document": "DescribeCodeRepository请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeRepositoryResponse": {
+      "document": "DescribeCodeRepository返回参数结构体",
+      "members": [
+        {
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreationTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间",
+          "member": "datetime",
+          "name": "LastModifiedTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Git存储配置",
+          "member": "GitConfig",
+          "name": "GitConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否有Git凭证",
+          "member": "bool",
+          "name": "NoSecret",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookInstanceRequest": {
+      "document": "DescribeNotebookInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookInstanceResponse": {
+      "document": "DescribeNotebookInstance返回参数结构体",
+      "members": [
+        {
+          "document": "Notebook实例名称",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Notebook算力资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色的资源描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RoleArn",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网访问权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DirectInternetAccess",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Root用户权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RootAccess",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据卷大小(GB)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FailureReason",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Notebook实例创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CreationTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Notebook实例最近修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "LastModifiedTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Notebook实例日志链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Notebook实例状态\n\nPending: 创建中\nInservice: 运行中\nStopping: 停止中\nStopped: 已停止\nFailed: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NotebookInstanceStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Notebook实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "notebook生命周期脚本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LifecycleScriptsName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "默认存储库名称\n可以是已创建的存储库名称或者已https://开头的公共git库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DefaultCodeRepository",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "其他存储库列表\n每个元素可以是已创建的存储库名称或者已https://开头的公共git库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AdditionalCodeRepositories",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开启CLS日志服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClsAccess",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否预付费实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Prepay",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例运行截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "Deadline",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "自动停止配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StoppingCondition",
+          "name": "StoppingCondition",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Cls配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClsConfig",
+          "name": "ClsConfig",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookInstancesRequest": {
+      "document": "DescribeNotebookInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。\nlifecycle-name - String - 是否必填：否 -（过滤条件）按照生命周期脚本名称过滤。\ndefault-code-repo-name - String - 是否必填：否 -（过滤条件）按照默认存储库名称过滤。\nadditional-code-repo-name - String - 是否必填：否 -（过滤条件）按照其他存储库名称过滤。\nbilling-status - String - 是否必填：否 - （过滤条件）按照计费状态过滤，可取以下值\n   StorageOnly：仅存储计费的实例\n   Computing：计算和存储都计费的实例",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "【废弃字段】排序字段",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookInstancesResponse": {
+      "document": "DescribeNotebookInstances返回参数结构体",
+      "members": [
+        {
+          "document": "Notebook实例列表",
+          "member": "NotebookInstanceSummary",
+          "name": "NotebookInstanceSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Notebook实例总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookLifecycleScriptRequest": {
+      "document": "DescribeNotebookLifecycleScript请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "生命周期脚本名称",
+          "member": "string",
+          "name": "NotebookLifecycleScriptsName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookLifecycleScriptResponse": {
+      "document": "DescribeNotebookLifecycleScript返回参数结构体",
+      "members": [
+        {
+          "document": "生命周期脚本名称",
+          "member": "string",
+          "name": "NotebookLifecycleScriptsName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateScript",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "启动脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StartScript",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreationTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最后修改时间",
+          "member": "datetime",
+          "name": "LastModifiedTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookLifecycleScriptsRequest": {
+      "document": "DescribeNotebookLifecycleScripts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookLifecycleScriptsResponse": {
+      "document": "DescribeNotebookLifecycleScripts返回参数结构体",
+      "members": [
+        {
+          "document": "Notebook生命周期脚本列表",
+          "member": "NotebookLifecycleScriptsSummary",
+          "name": "NotebookLifecycleScriptsSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Notebook生命周期脚本总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSummaryRequest": {
+      "document": "DescribeNotebookSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNotebookSummaryResponse": {
+      "document": "DescribeNotebookSummary返回参数结构体",
+      "members": [
+        {
+          "document": "实例总数",
+          "member": "int64",
+          "name": "AllInstanceCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计费实例总数",
+          "member": "int64",
+          "name": "BillingInstanceCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "仅存储计费的实例总数",
+          "member": "int64",
+          "name": "StorageOnlyBillingInstanceCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计算和存储都计费的实例总数",
+          "member": "int64",
+          "name": "ComputingBillingInstanceCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrainingJobRequest": {
+      "document": "DescribeTrainingJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "训练任务名称",
+          "member": "string",
+          "name": "TrainingJobName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrainingJobResponse": {
+      "document": "DescribeTrainingJob返回参数结构体",
+      "members": [
+        {
+          "document": "算法镜像配置",
+          "member": "AlgorithmSpecification",
+          "name": "AlgorithmSpecification",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务名称",
+          "member": "string",
+          "name": "TrainingJobName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "算法超级参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HyperParameters",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "输入数据配置",
+          "member": "InputDataConfig",
+          "name": "InputDataConfig",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "输出数据配置",
+          "member": "OutputDataConfig",
+          "name": "OutputDataConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "中止条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StoppingCondition",
+          "name": "StoppingCondition",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "计算实例配置",
+          "member": "ResourceConfig",
+          "name": "ResourceConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "私有网络配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VpcConfig",
+          "name": "VpcConfig",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FailureReason",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近修改时间",
+          "member": "datetime",
+          "name": "LastModifiedTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "TrainingStartTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "TrainingEndTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模型输出配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ModelArtifacts",
+          "name": "ModelArtifacts",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "详细状态，取值范围\nStarting：启动中\nDownloading: 准备训练数据\nTraining: 正在训练\nUploading: 上传训练结果\nCompleted：已完成\nFailed: 失败\nMaxRuntimeExceeded: 任务超过最大运行时间\nStopping: 停止中\nStopped：已停止",
+          "member": "string",
+          "name": "SecondaryStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "详细状态事件记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SecondaryStatusTransition",
+          "name": "SecondaryStatusTransitions",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RoleName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "训练任务状态，取值范围\nInProgress：运行中\nCompleted: 已完成\nFailed: 失败\nStopping: 停止中\nStopped：已停止",
+          "member": "string",
+          "name": "TrainingJobStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "训练任务日志链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "训练任务实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrainingJobsRequest": {
+      "document": "DescribeTrainingJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建时间晚于",
+          "member": "datetime",
+          "name": "CreationTimeAfter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建时间早于",
+          "member": "datetime",
+          "name": "CreationTimeBefore",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据名称过滤",
+          "member": "string",
+          "name": "NameContains",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据状态过滤",
+          "member": "string",
+          "name": "StatusEquals",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrainingJobsResponse": {
+      "document": "DescribeTrainingJobs返回参数结构体",
+      "members": [
+        {
+          "document": "训练任务列表",
+          "member": "TrainingJobSummary",
+          "name": "TrainingJobSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "训练任务总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnvConfig": {
+      "document": "环境变量",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FileSystemDataSource": {
+      "document": "文件系统输入数据源",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DirectoryPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileSystemType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统访问模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileSystemAccessMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段取值",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GitConfig": {
+      "document": "存储库Git相关配置",
+      "members": [
+        {
+          "default": "",
+          "document": "git地址",
+          "member": "string",
+          "name": "RepositoryUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代码分支\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Branch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GitSecret": {
+      "document": "Git凭证",
+      "members": [
+        {
+          "default": "",
+          "document": "无秘钥，默认选项",
+          "member": "bool",
+          "name": "NoSecret",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Git用户名密码base64编码后的字符串\n编码前的内容应为Json字符串，如\n{\"UserName\": \"用户名\", \"Password\":\"密码\"}",
+          "member": "string",
+          "name": "Secret",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "InputDataConfig": {
+      "document": "输入数据配置",
+      "members": [
+        {
+          "default": "",
+          "document": "通道名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChannelName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DataSource",
+          "name": "DataSource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InputMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelArtifacts": {
+      "document": "模型输出",
+      "members": [
+        {
+          "default": "",
+          "document": "cos输出路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CosModelArtifacts",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookInstanceSummary": {
+      "document": "notebook实例概览",
+      "members": [
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "notebook实例名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "notebook实例状态，取值范围：\nPending: 创建中\nInservice: 运行中\nStopping: 停止中\nStopped: 已停止\nFailed: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NotebookInstanceStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "算力类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "StartupTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "Deadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动停止配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StoppingCondition",
+          "name": "StoppingCondition",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是预付费实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Prepay",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BillingLabel",
+          "name": "BillingLabel",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行时长，秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RuntimeInSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余时长，秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RemainTimeInSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookLifecycleScriptsSummary": {
+      "document": "notebook生命周期脚本实例概览",
+      "members": [
+        {
+          "default": "",
+          "document": "notebook生命周期脚本名称",
+          "member": "string",
+          "name": "NotebookLifecycleScriptsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "member": "datetime",
+          "name": "LastModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDataConfig": {
+      "document": "输出数据配置",
+      "members": [
+        {
+          "default": "",
+          "document": "cos输出桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CosOutputBucket",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cos输出key前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CosOutputKeyPrefix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统输出，如果指定了文件系统，那么Cos输出会被忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FileSystemDataSource",
+          "name": "FileSystemDataSource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceConfig": {
+      "document": "计算资源配置",
+      "members": [
+        {
+          "default": "",
+          "document": "计算实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "挂载CBS大小（GB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SecondaryStatusTransition": {
+      "document": " 二级状态流水",
+      "members": [
+        {
+          "default": "",
+          "document": "状态开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StartNotebookInstanceRequest": {
+      "document": "StartNotebookInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Notebook实例名称",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动停止，可取值Enabled/Disabled\n取值为Disabled的时候StoppingCondition将被忽略\n取值为Enabled的时候读取StoppingCondition作为自动停止的配置",
+          "member": "string",
+          "name": "AutoStopping",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动停止配置，只在AutoStopping为Enabled的时候生效",
+          "member": "StoppingCondition",
+          "name": "StoppingCondition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "StartNotebookInstanceResponse": {
+      "document": "StartNotebookInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopNotebookInstanceRequest": {
+      "document": "StopNotebookInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Notebook实例名称",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopNotebookInstanceResponse": {
+      "document": "StopNotebookInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopTrainingJobRequest": {
+      "document": "StopTrainingJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "训练任务名称",
+          "member": "string",
+          "name": "TrainingJobName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopTrainingJobResponse": {
+      "document": "StopTrainingJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StoppingCondition": {
+      "document": "终止条件",
+      "members": [
+        {
+          "default": "",
+          "document": "最长运行运行时间（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxRuntimeInSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最长等待运行时间（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxWaitTimeInSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TrainingJobSummary": {
+      "document": "训练任务概要",
+      "members": [
+        {
+          "default": "",
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "LastModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "训练任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TrainingJobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "训练任务状态，取值范围\nInProgress：运行中\nCompleted: 已完成\nFailed: 失败\nStopping: 停止中\nStopped：已停止\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TrainingJobStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "TrainingEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "算了实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ResourceConfig",
+          "name": "ResourceConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateCodeRepositoryRequest": {
+      "document": "UpdateCodeRepository请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Git凭证",
+          "member": "GitSecret",
+          "name": "GitSecret",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCodeRepositoryResponse": {
+      "document": "UpdateCodeRepository返回参数结构体",
+      "members": [
+        {
+          "document": "存储库名称",
+          "member": "string",
+          "name": "CodeRepositoryName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNotebookInstanceRequest": {
+      "document": "UpdateNotebookInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”",
+          "member": "string",
+          "name": "NotebookInstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色的资源描述",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Root访问权限",
+          "member": "string",
+          "name": "RootAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据卷大小(GB)",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "算力资源类型",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "notebook生命周期脚本名称",
+          "member": "string",
+          "name": "LifecycleScriptsName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否解绑生命周期脚本，默认 false。\n该值为true时，LifecycleScriptsName将被忽略",
+          "member": "bool",
+          "name": "DisassociateLifecycleScript",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "默认存储库名称\n可以是已创建的存储库名称或者已https://开头的公共git库",
+          "member": "string",
+          "name": "DefaultCodeRepository",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "其他存储库列表\n每个元素可以是已创建的存储库名称或者已https://开头的公共git库",
+          "member": "string",
+          "name": "AdditionalCodeRepositories",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否取消关联默认存储库，默认false\n该值为true时，DefaultCodeRepository将被忽略",
+          "member": "bool",
+          "name": "DisassociateDefaultCodeRepository",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否取消关联其他存储库，默认false\n该值为true时，AdditionalCodeRepositories将被忽略",
+          "member": "bool",
+          "name": "DisassociateAdditionalCodeRepositories",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "已弃用，请使用ClsConfig配置。是否开启CLS日志服务，可取值Enabled/Disabled",
+          "member": "string",
+          "name": "ClsAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动停止，可取值Enabled/Disabled\n取值为Disabled的时候StoppingCondition将被忽略\n取值为Enabled的时候读取StoppingCondition作为自动停止的配置",
+          "member": "string",
+          "name": "AutoStopping",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动停止配置，只在AutoStopping为Enabled的时候生效",
+          "member": "StoppingCondition",
+          "name": "StoppingCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "接入日志的配置，默认使用免费日志服务。",
+          "member": "ClsConfig",
+          "name": "ClsConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNotebookInstanceResponse": {
+      "document": "UpdateNotebookInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNotebookLifecycleScriptRequest": {
+      "document": "UpdateNotebookLifecycleScript请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "notebook生命周期脚本名称",
+          "member": "string",
+          "name": "NotebookLifecycleScriptsName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建脚本，base64编码\nbase64后的脚本长度不能超过16384个字符",
+          "member": "string",
+          "name": "CreateScript",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启动脚本，base64编码\nbase64后的脚本长度不能超过16384个字符",
+          "member": "string",
+          "name": "StartScript",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNotebookLifecycleScriptResponse": {
+      "document": "UpdateNotebookLifecycleScript返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VpcConfig": {
+      "document": "VPC配置",
+      "members": [
+        {
+          "default": "",
+          "document": "安全组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

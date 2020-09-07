@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 import sys
 import json
-from . import text
-from .table import MultiTable
+from tccli import text
+from tccli.table import MultiTable
 import jmespath
 import io
 

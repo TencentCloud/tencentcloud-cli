@@ -1,0 +1,750 @@
+{
+  "actions": {
+    "DescribeApp": {
+      "document": "根据应用id查询物联卡应用详情",
+      "input": "DescribeAppRequest",
+      "name": "查询应用详情",
+      "output": "DescribeAppResponse"
+    },
+    "DescribeCard": {
+      "document": "查询卡片详细信息",
+      "input": "DescribeCardRequest",
+      "name": "查询卡片详情",
+      "output": "DescribeCardResponse"
+    },
+    "DescribeCards": {
+      "document": "查询卡片列表信息",
+      "input": "DescribeCardsRequest",
+      "name": "查询卡片列表",
+      "output": "DescribeCardsResponse"
+    },
+    "RenewCards": {
+      "document": "批量为卡片续费，此接口建议调用至少间隔10s,如果出现返回deal lock failed相关的错误，请过10s再重试。\n续费的必要条件：\n1、单次续费的卡片不可以超过 100张。\n2、接口只支持在控制台购买的卡片进行续费\n3、销户和未激活的卡片不支持续费。\n4、每张物联网卡，续费总周期不能超过24个月",
+      "input": "RenewCardsRequest",
+      "name": "卡片续费",
+      "output": "RenewCardsResponse"
+    },
+    "SendMultiSms": {
+      "document": "群发短信",
+      "input": "SendMultiSmsRequest",
+      "name": "群发短信接口",
+      "output": "SendMultiSmsResponse"
+    },
+    "SendSms": {
+      "document": "发送短信息接口",
+      "input": "SendSmsRequest",
+      "name": "发送短信息接口",
+      "output": "SendSmsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-07",
+    "serviceNameCN": "物联卡",
+    "serviceShortName": "ic"
+  },
+  "objects": {
+    "AppInfo": {
+      "document": "物联网卡应用信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "string",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用key",
+          "member": "string",
+          "name": "Appkey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户appid",
+          "member": "string",
+          "name": "CloudAppid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用类型",
+          "member": "int64",
+          "name": "BizType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Uin",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CardInfo": {
+      "document": "卡片详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "卡片ID",
+          "member": "string",
+          "name": "Iccid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卡电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msisdn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "卡imsi\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Imsi",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "卡imei\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Imei",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "string",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商编号",
+          "member": "int64",
+          "name": "Teleoperator",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卡片状态 1:未激活 2：激活 3：停卡 5：销卡",
+          "member": "int64",
+          "name": "CardStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "NetworkStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActivitedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资费类型，1 单卡，2 流量池",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量池ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PoolId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "周期套餐流量使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "DataUsedInPeriod",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "周期套餐总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "DataTotalInPeriod",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "member": "datetime",
+          "name": "ModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PreorderCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "激活被回调标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsActivated",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0 不需要开通达量不停卡 1 需要开通达量不停卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AllowArrears",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开通短信0:未开短信 1:开通短信",
+          "member": "int64",
+          "name": "NeedSms",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "供应商",
+          "member": "int64",
+          "name": "Provider",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实名认证 0:无 1:未实名 2:已实名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CertificationState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CardList": {
+      "document": "卡片列表数据",
+      "members": [
+        {
+          "default": "",
+          "document": "卡片总数",
+          "member": "string",
+          "name": "Total",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卡片列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CardInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAppRequest": {
+      "document": "DescribeApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物联卡应用ID",
+          "member": "int64",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppResponse": {
+      "document": "DescribeApp返回参数结构体",
+      "members": [
+        {
+          "document": "应用信息详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AppInfo",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCardRequest": {
+      "document": "DescribeCard请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "int64",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "卡片ID",
+          "member": "string",
+          "name": "Iccid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCardResponse": {
+      "document": "DescribeCard返回参数结构体",
+      "members": [
+        {
+          "document": "卡片详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CardInfo",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCardsRequest": {
+      "document": "DescribeCards请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "string",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移值",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "列表限制",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCardsResponse": {
+      "document": "DescribeCards返回参数结构体",
+      "members": [
+        {
+          "document": "卡片列表信息",
+          "member": "CardList",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewCardsRequest": {
+      "document": "RenewCards请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "uint64",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "续费的iccid",
+          "member": "string",
+          "name": "Iccids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费的周期（单位：月）",
+          "member": "uint64",
+          "name": "RenewNum",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewCardsResponse": {
+      "document": "RenewCards返回参数结构体",
+      "members": [
+        {
+          "document": "续费成功的订单id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ResRenew",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResRenew": {
+      "document": "云api 卡片续费",
+      "members": [
+        {
+          "default": "",
+          "document": "每一张续费卡片的订单ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OrderIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SendMultiSmsRequest": {
+      "document": "SendMultiSms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "string",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "卡片列表",
+          "member": "string",
+          "name": "Iccids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "短信内容 长度限制 70",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMultiSmsResponse": {
+      "document": "SendMultiSms返回参数结构体",
+      "members": [
+        {
+          "document": "短信流水数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SmsRet",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSmsRequest": {
+      "document": "SendSms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "int64",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "卡片ID",
+          "member": "string",
+          "name": "Iccid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信内容长度70限制",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSmsResponse": {
+      "document": "SendSms返回参数结构体",
+      "members": [
+        {
+          "document": "短信流水信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SmsSid",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SmsRet": {
+      "document": "短信流水信息",
+      "members": [
+        {
+          "default": "",
+          "document": "该iccid请求状态",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短信发送返回信息",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卡片ID",
+          "member": "string",
+          "name": "Iccid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流水ID",
+          "member": "string",
+          "name": "Sid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsSid": {
+      "document": "短信流水信息",
+      "members": [
+        {
+          "default": "",
+          "document": "卡片ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Iccid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "信息流水ID",
+          "member": "string",
+          "name": "Sid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

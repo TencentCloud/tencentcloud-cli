@@ -1,0 +1,1116 @@
+{
+  "actions": {
+    "DescribeCaptchaAppIdInfo": {
+      "document": "查询安全验证码应用APPId信息",
+      "input": "DescribeCaptchaAppIdInfoRequest",
+      "name": "查询安全验证码应用APPId信息",
+      "output": "DescribeCaptchaAppIdInfoResponse"
+    },
+    "DescribeCaptchaData": {
+      "document": "安全验证码分类查询数据接口，请求量type=0、通过量type=1、验证量type=2、拦截量type=3  分钟级查询",
+      "input": "DescribeCaptchaDataRequest",
+      "name": "安全验证码分类查询数据接口",
+      "output": "DescribeCaptchaDataResponse"
+    },
+    "DescribeCaptchaDataSum": {
+      "document": "安全验证码查询请求数据概况，例如：按照时间段查询数据  昨日请求量、昨日恶意比例、昨日验证量、昨日通过量、昨日恶意拦截量……",
+      "input": "DescribeCaptchaDataSumRequest",
+      "name": "安全验证码查询请求数据概况",
+      "output": "DescribeCaptchaDataSumResponse"
+    },
+    "DescribeCaptchaOperData": {
+      "document": "安全验证码用户操作数据查询，验证码加载耗时type = 1 、拦截情况type = 2、 一周通过平均尝试次数 type = 3、尝试次数分布 type = 4",
+      "input": "DescribeCaptchaOperDataRequest",
+      "name": "安全验证码用户操作数据查询",
+      "output": "DescribeCaptchaOperDataResponse"
+    },
+    "DescribeCaptchaResult": {
+      "document": "核查验证码票据结果",
+      "input": "DescribeCaptchaResultRequest",
+      "name": "核查验证码票据结果",
+      "output": "DescribeCaptchaResultResponse"
+    },
+    "DescribeCaptchaTicketData": {
+      "document": "验证码控制台票据验证信息",
+      "input": "DescribeCaptchaTicketDataRequest",
+      "name": "验证码控制台票据验证信息",
+      "output": "DescribeCaptchaTicketDataResponse"
+    },
+    "DescribeCaptchaUserAllAppId": {
+      "document": "安全验证码获取用户注册所有APPId和应用名称",
+      "input": "DescribeCaptchaUserAllAppIdRequest",
+      "name": "安全验证码获取用户注册所有APPId和应用名称",
+      "output": "DescribeCaptchaUserAllAppIdResponse"
+    },
+    "UpdateCaptchaAppIdInfo": {
+      "document": "更新验证码应用APPId信息",
+      "input": "UpdateCaptchaAppIdInfoRequest",
+      "name": "更新验证码应用APPId信息",
+      "output": "UpdateCaptchaAppIdInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-07-22",
+    "api_brief": "介绍如何使用API对验证码进行操作，包括核查验证码票据结果、安全验证码用户操作数据查询等。",
+    "serviceNameCN": "验证码",
+    "serviceShortName": "captcha"
+  },
+  "objects": {
+    "CaptchaOperDataInterceptUnit": {
+      "document": "DescribeCaptchaOperData方法 拦截情况type = 2 返回的数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "DateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "停止验证数量",
+          "member": "float",
+          "name": "AllStopCnt",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片停止加载数量",
+          "member": "float",
+          "name": "PicStopCnt",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略拦截数量",
+          "member": "float",
+          "name": "StrategyStopCnt",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CaptchaOperDataLoadTimeUnit": {
+      "document": "操作数据查询方法DescribeCaptchaOperData 的返回结果，安全验证码加载耗时type = 1",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "DateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Market加载时间",
+          "member": "float",
+          "name": "MarketLoadTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AppId加载时间",
+          "member": "float",
+          "name": "AppIdLoadTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CaptchaOperDataRes": {
+      "document": "DescribeCaptchaOperData 接口 返回数据类型集合",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码加载耗时数据返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CaptchaOperDataLoadTimeUnit",
+          "name": "OperDataLoadTimeUnitArray",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "验证码拦截情况数据返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CaptchaOperDataInterceptUnit",
+          "name": "OperDataInterceptUnitArray",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "验证码尝试次数数据返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CaptchaOperDataTryTimesUnit",
+          "name": "OperDataTryTimesUnitArray",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "验证码尝试次数分布数据返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CaptchaOperDataTryTimesDistributeUnit",
+          "name": "OperDataTryTimesDistributeUnitArray",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CaptchaOperDataTryTimesDistributeUnit": {
+      "document": "DescribeCaptchaOperData方法 尝试次数分布 type = 4",
+      "members": [
+        {
+          "default": "",
+          "document": "尝试次数",
+          "member": "int64",
+          "name": "TryCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户请求数量",
+          "member": "int64",
+          "name": "UserCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CaptchaOperDataTryTimesUnit": {
+      "document": "DescribeCaptchaOperData操作数据查询尝试次数 type = 3",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "DateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均尝试次数",
+          "member": "float",
+          "name": "CntPerPass",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "market平均尝试次数",
+          "member": "float",
+          "name": "MarketCntPerPass",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CaptchaQueryData": {
+      "document": "该类型为DescribeCaptchaData 方法返回数据类型",
+      "members": [
+        {
+          "default": "",
+          "document": "数量",
+          "member": "int64",
+          "name": "Cnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CaptchaTicketDataRes": {
+      "document": "DescribeCaptchaTicketData 接口 返回数据类型集合",
+      "members": [
+        {
+          "default": "",
+          "document": "票据验证总量返回",
+          "member": "TicketAmountUnit",
+          "name": "TicketAmountArray",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据验证通过量返回",
+          "member": "TicketThroughUnit",
+          "name": "TicketThroughArray",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据验证拦截量返回",
+          "member": "TicketInterceptUnit",
+          "name": "TicketInterceptArray",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CaptchaUserAllAppId": {
+      "document": "用户注册的APPID和应用名称对象",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码应用ID",
+          "member": "int64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册应用名称",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云APPID",
+          "member": "int64",
+          "name": "TcAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCaptchaAppIdInfoRequest": {
+      "document": "DescribeCaptchaAppIdInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码应用注册APPID",
+          "member": "uint64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaAppIdInfoResponse": {
+      "document": "DescribeCaptchaAppIdInfo返回参数结构体",
+      "members": [
+        {
+          "document": "界面风格",
+          "member": "string",
+          "name": "SchemeColor",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "语言",
+          "member": "int64",
+          "name": "Language",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "场景",
+          "member": "int64",
+          "name": "SceneType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "防控风险等级",
+          "member": "int64",
+          "name": "EvilInterceptGrade",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "智能验证",
+          "member": "int64",
+          "name": "SmartVerify",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "智能引擎",
+          "member": "int64",
+          "name": "SmartEngine",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证码类型",
+          "member": "int64",
+          "name": "CapType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用名称",
+          "member": "string",
+          "name": "AppName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名限制",
+          "member": "string",
+          "name": "DomainLimit",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "邮件告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MailAlarm",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "流量控制",
+          "member": "int64",
+          "name": "TrafficThreshold",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "加密key",
+          "member": "string",
+          "name": "EncryptKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否全屏",
+          "member": "int64",
+          "name": "TopFullScreen",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成功返回0 其它失败",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaDataRequest": {
+      "document": "DescribeCaptchaData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码应用ID",
+          "member": "int64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "member": "int64",
+          "name": "Start",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "member": "int64",
+          "name": "End",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询类型",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaDataResponse": {
+      "document": "DescribeCaptchaData返回参数结构体",
+      "members": [
+        {
+          "document": "返回码 0 成功 其它失败",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CaptchaQueryData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回信息描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaDataSumRequest": {
+      "document": "DescribeCaptchaDataSum请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码应用ID",
+          "member": "int64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "member": "int64",
+          "name": "Start",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "member": "int64",
+          "name": "End",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaDataSumResponse": {
+      "document": "DescribeCaptchaDataSum返回参数结构体",
+      "members": [
+        {
+          "document": "请求总量",
+          "member": "int64",
+          "name": "GetSum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请求验证成功量",
+          "member": "int64",
+          "name": "VfySuccSum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请求验证量",
+          "member": "int64",
+          "name": "VfySum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "拦截攻击量",
+          "member": "int64",
+          "name": "AttackSum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成功返回0  其它失败",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "票据校验量",
+          "member": "int64",
+          "name": "CheckTicketSum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaOperDataRequest": {
+      "document": "DescribeCaptchaOperData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码应用ID",
+          "member": "uint64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "member": "uint64",
+          "name": "Start",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询类型",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaOperDataResponse": {
+      "document": "DescribeCaptchaOperData返回参数结构体",
+      "members": [
+        {
+          "document": "成功返回 0 其它失败",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户操作数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CaptchaOperDataRes",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaResultRequest": {
+      "document": "DescribeCaptchaResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定填值：9。可在控制台配置不同验证码类型。",
+          "member": "uint64",
+          "name": "CaptchaType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "前端回调函数返回的用户验证票据",
+          "member": "string",
+          "name": "Ticket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户操作来源的外网 IP",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "前端回调函数返回的随机字符串",
+          "member": "string",
+          "name": "Randstr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证码应用ID",
+          "member": "uint64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方",
+          "member": "string",
+          "name": "AppSecretKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据",
+          "member": "uint64",
+          "name": "BusinessId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据",
+          "member": "uint64",
+          "name": "SceneId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "mac 地址或设备唯一标识",
+          "member": "string",
+          "name": "MacAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机设备号",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否返回前端获取验证码时间，取值1：需要返回",
+          "member": "int64",
+          "name": "NeedGetCaptchaTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaResultResponse": {
+      "document": "DescribeCaptchaResult返回参数结构体",
+      "members": [
+        {
+          "document": "1\tOK\t验证通过\n6\tuser code len error\t验证码长度不匹配\n7\tcaptcha no match\t验证码答案不匹配/Randstr参数不匹配\n8\tverify timeout\t验证码签名超时\n9\tSequnce repeat\t验证码签名重放\n10\tSequnce invalid\t验证码签名序列\n11\tCookie invalid\t验证码cookie信息不合法\n12\tsig len error\t签名长度错误\n13\tverify ip no match\tip不匹配\n15\tdecrypt fail\t验证码签名解密失败\n16\tappid no match\t验证码强校验appid错误\n17\tcmd no much\t验证码系统命令不匹配\n18\tuin no match\t号码不匹配\n19\tseq redirect\t重定向验证\n20\topt no vcode\t操作使用pt免验证码校验错误\n21\tdiff\t差别，验证错误\n22\tcaptcha type not match\t验证码类型与拉取时不一致\n23\tverify type error\t验证类型错误\n24\tinvalid pkg\t非法请求包\n25\tbad visitor\t策略拦截\n26\tsystem busy\t系统内部错误\n100\tparam err\tappsecretkey 参数校验错误",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态描述及验证错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "[0,100]，恶意等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "EvilLevel",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "前端获取验证码时间，时间戳格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "GetCaptchaTime",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaTicketDataRequest": {
+      "document": "DescribeCaptchaTicketData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码应用ID",
+          "member": "int64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "member": "int64",
+          "name": "Start",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaTicketDataResponse": {
+      "document": "DescribeCaptchaTicketData返回参数结构体",
+      "members": [
+        {
+          "document": "成功返回 0 其它失败",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "验证码票据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CaptchaTicketDataRes",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaUserAllAppIdRequest": {
+      "document": "DescribeCaptchaUserAllAppId请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCaptchaUserAllAppIdResponse": {
+      "document": "DescribeCaptchaUserAllAppId返回参数结构体",
+      "members": [
+        {
+          "document": "用户注册的所有Appid和应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CaptchaUserAllAppId",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成功返回 0  其它失败",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TicketAmountUnit": {
+      "document": "DescribeCaptchaTicketData 返回的数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "DateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据验证总量",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TicketInterceptUnit": {
+      "document": "DescribeCaptchaTicketData 返回的数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "DateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据验证拦截量",
+          "member": "int64",
+          "name": "Intercept",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TicketThroughUnit": {
+      "document": "DescribeCaptchaTicketData 返回的数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "DateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据验证的通过量",
+          "member": "int64",
+          "name": "Through",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateCaptchaAppIdInfoRequest": {
+      "document": "UpdateCaptchaAppIdInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码应用ID",
+          "member": "int64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用名",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名限制",
+          "member": "string",
+          "name": "DomainLimit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景类型",
+          "member": "int64",
+          "name": "SceneType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "验证码类型",
+          "member": "int64",
+          "name": "CapType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "风险级别",
+          "member": "int64",
+          "name": "EvilInterceptGrade",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "智能检测",
+          "member": "int64",
+          "name": "SmartVerify",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开启智能引擎",
+          "member": "int64",
+          "name": "SmartEngine",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "web风格",
+          "member": "string",
+          "name": "SchemeColor",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语言",
+          "member": "int64",
+          "name": "CaptchaLanguage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警邮箱",
+          "member": "string",
+          "name": "MailAlarm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否全屏",
+          "member": "int64",
+          "name": "TopFullScreen",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流量限制",
+          "member": "int64",
+          "name": "TrafficThreshold",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCaptchaAppIdInfoResponse": {
+      "document": "UpdateCaptchaAppIdInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回码 0 成功，其它失败",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

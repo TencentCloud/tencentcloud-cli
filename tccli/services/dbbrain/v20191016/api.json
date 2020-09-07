@@ -1,0 +1,1100 @@
+{
+  "actions": {
+    "DescribeDBDiagEvent": {
+      "document": "获取实例异常诊断事件的详情信息。",
+      "input": "DescribeDBDiagEventRequest",
+      "name": "获取诊断事件详情",
+      "output": "DescribeDBDiagEventResponse"
+    },
+    "DescribeDBDiagHistory": {
+      "document": "获取实例诊断事件的列表。",
+      "input": "DescribeDBDiagHistoryRequest",
+      "name": "获取实例诊断历史",
+      "output": "DescribeDBDiagHistoryResponse"
+    },
+    "DescribeDBSpaceStatus": {
+      "document": "获取指定时间段内的实例空间使用概览，包括磁盘增长量(MB)、磁盘剩余(MB)、磁盘总量(MB)及预计可用天数。",
+      "input": "DescribeDBSpaceStatusRequest",
+      "name": "获取指定时间段内的实例空间使用概览",
+      "output": "DescribeDBSpaceStatusResponse"
+    },
+    "DescribeSlowLogTimeSeriesStats": {
+      "document": "获取慢日志统计柱状图",
+      "input": "DescribeSlowLogTimeSeriesStatsRequest",
+      "name": "获取慢日志统计柱状图",
+      "output": "DescribeSlowLogTimeSeriesStatsResponse"
+    },
+    "DescribeSlowLogTopSqls": {
+      "document": "按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。",
+      "input": "DescribeSlowLogTopSqlsRequest",
+      "name": "按照Sql模板查询指定时间段内的慢日志统计结果",
+      "output": "DescribeSlowLogTopSqlsResponse"
+    },
+    "DescribeTopSpaceTableTimeSeries": {
+      "document": "获取实例占用空间最大的前几张表在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。",
+      "input": "DescribeTopSpaceTableTimeSeriesRequest",
+      "name": "获取Top表在指定时间段内的每日空间统计信息",
+      "output": "DescribeTopSpaceTableTimeSeriesResponse"
+    },
+    "DescribeTopSpaceTables": {
+      "document": "获取实例Top表的实时空间统计信息，默认返回按大小排序。",
+      "input": "DescribeTopSpaceTablesRequest",
+      "name": "获取Top表的空间统计信息",
+      "output": "DescribeTopSpaceTablesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-10-16",
+    "api_brief": "介绍如何使用API对数据库智能管家 Dbbrain 进行操作，包括慢日志分析、异常检测等。",
+    "serviceNameCN": "数据库智能管家 DBbrain",
+    "serviceShortName": "dbbrain"
+  },
+  "objects": {
+    "DescribeDBDiagEventRequest": {
+      "document": "DescribeDBDiagEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。",
+          "member": "int64",
+          "name": "EventId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagEventResponse": {
+      "document": "DescribeDBDiagEvent返回参数结构体",
+      "members": [
+        {
+          "document": "诊断项。",
+          "member": "string",
+          "name": "DiagItem",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诊断类型。",
+          "member": "string",
+          "name": "DiagType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件 ID 。",
+          "member": "int64",
+          "name": "EventId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件详情。",
+          "member": "string",
+          "name": "Explanation",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "概要。",
+          "member": "string",
+          "name": "Outline",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诊断出的问题。",
+          "member": "string",
+          "name": "Problem",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。",
+          "member": "int64",
+          "name": "Severity",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开始时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "建议。",
+          "member": "string",
+          "name": "Suggestions",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "保留字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Metric",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结束时间。",
+          "member": "datetime",
+          "name": "EndTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagHistoryRequest": {
+      "document": "DescribeDBDiagHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间。如“2019-09-10 12:13:14”。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间。如“2019-09-11 12:13:14”。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagHistoryResponse": {
+      "document": "DescribeDBDiagHistory返回参数结构体",
+      "members": [
+        {
+          "document": "事件描述。",
+          "member": "DiagHistoryEventItem",
+          "name": "Events",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSpaceStatusRequest": {
+      "document": "DescribeDBSpaceStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间段天数，截止日期为当日，默认为7天。",
+          "member": "int64",
+          "name": "RangeDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSpaceStatusResponse": {
+      "document": "DescribeDBSpaceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "磁盘增长量(MB)。",
+          "member": "int64",
+          "name": "Growth",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "磁盘剩余(MB)。",
+          "member": "int64",
+          "name": "Remain",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "磁盘总量(MB)。",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预计可用天数。",
+          "member": "int64",
+          "name": "AvailableDays",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogTimeSeriesStatsRequest": {
+      "document": "DescribeSlowLogTimeSeriesStats请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogTimeSeriesStatsResponse": {
+      "document": "DescribeSlowLogTimeSeriesStats返回参数结构体",
+      "members": [
+        {
+          "document": "柱间单位时间间隔，单位为秒。",
+          "member": "int64",
+          "name": "Period",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单位时间间隔内慢日志数量统计。",
+          "member": "TimeSlice",
+          "name": "TimeSeries",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单位时间间隔内的实例 cpu 利用率监控数据。",
+          "member": "MonitorMetricSeriesData",
+          "name": "SeriesData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogTopSqlsRequest": {
+      "document": "DescribeSlowLogTopSqls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "截止时间。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，支持ASC（升序）以及DESC（降序）。",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogTopSqlsResponse": {
+      "document": "DescribeSlowLogTopSqls返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢日志 top sql 列表",
+          "member": "SlowLogTopSqlItem",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTableTimeSeriesRequest": {
+      "document": "DescribeTopSpaceTableTimeSeries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的Top表数量，最大值为20，默认为最大值。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize，默认为 PhysicalFileSize。",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始日期，最早为当日的前第6天，默认为截止日期的前第6天。",
+          "member": "date",
+          "name": "StartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "截止日期，最早为当日的前第6天，默认为当日。",
+          "member": "date",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTableTimeSeriesResponse": {
+      "document": "DescribeTopSpaceTableTimeSeries返回参数结构体",
+      "members": [
+        {
+          "document": "返回的Top表空间统计信息的时序数据列表。",
+          "member": "TableSpaceTimeSeries",
+          "name": "TopSpaceTableTimeSeries",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTablesRequest": {
+      "document": "DescribeTopSpaceTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的Top表数量，最大值为20，默认为最大值。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize，默认为 PhysicalFileSize。",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTablesResponse": {
+      "document": "DescribeTopSpaceTables返回参数结构体",
+      "members": [
+        {
+          "document": "返回的Top表空间统计信息列表。",
+          "member": "TableSpaceData",
+          "name": "TopSpaceTables",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiagHistoryEventItem": {
+      "document": "实例诊断历史事件",
+      "members": [
+        {
+          "default": "",
+          "document": "诊断类型。",
+          "member": "string",
+          "name": "DiagType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件 ID 。",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。",
+          "member": "int64",
+          "name": "Severity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "概要。",
+          "member": "string",
+          "name": "Outline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断项。",
+          "member": "string",
+          "name": "DiagItem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorFloatMetric": {
+      "document": "监控数据（浮点型）",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名称。",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标单位。",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorFloatMetricSeriesData": {
+      "document": "单位时间间隔内的监控指标数据（浮点型）",
+      "members": [
+        {
+          "default": "",
+          "document": "监控指标。",
+          "member": "MonitorFloatMetric",
+          "name": "Series",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控指标对应的时间戳。",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorMetric": {
+      "document": "监控数据",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名称。",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标单位。",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorMetricSeriesData": {
+      "document": "单位时间间隔内的监控指标数据",
+      "members": [
+        {
+          "default": "",
+          "document": "监控指标。",
+          "member": "MonitorMetric",
+          "name": "Series",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控指标对应的时间戳。",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowLogTopSqlItem": {
+      "document": "慢日志TopSql",
+      "members": [
+        {
+          "default": "",
+          "document": "sql总锁等待时间",
+          "member": "float",
+          "name": "LockTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大锁等待时间",
+          "member": "float",
+          "name": "LockTimeMax",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小锁等待时间",
+          "member": "float",
+          "name": "LockTimeMin",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总扫描行数",
+          "member": "int64",
+          "name": "RowsExamined",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大扫描行数",
+          "member": "int64",
+          "name": "RowsExaminedMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小扫描行数",
+          "member": "int64",
+          "name": "RowsExaminedMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总耗时",
+          "member": "float",
+          "name": "QueryTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大执行时间",
+          "member": "float",
+          "name": "QueryTimeMax",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小执行时间",
+          "member": "float",
+          "name": "QueryTimeMin",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总返回行数",
+          "member": "int64",
+          "name": "RowsSent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大返回行数",
+          "member": "int64",
+          "name": "RowsSentMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小返回行数",
+          "member": "int64",
+          "name": "RowsSentMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行次数",
+          "member": "int64",
+          "name": "ExecTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "sql模板",
+          "member": "string",
+          "name": "SqlTemplate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带参数SQL（随机）",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "schema",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总耗时占比",
+          "member": "float",
+          "name": "QueryTimeRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "sql总锁等待时间占比",
+          "member": "float",
+          "name": "LockTimeRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总扫描行数占比",
+          "member": "float",
+          "name": "RowsExaminedRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总返回行数占比",
+          "member": "float",
+          "name": "RowsSentRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableSpaceData": {
+      "document": "库表空间统计数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "表名。",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库名。",
+          "member": "string",
+          "name": "TableSchema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库表的存储引擎。",
+          "member": "string",
+          "name": "Engine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据空间（MB）。",
+          "member": "float",
+          "name": "DataLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引空间（MB）。",
+          "member": "float",
+          "name": "IndexLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "碎片空间（MB）。",
+          "member": "float",
+          "name": "DataFree",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总使用空间（MB）。",
+          "member": "float",
+          "name": "TotalLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "碎片率（%）。",
+          "member": "float",
+          "name": "FragRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行数。",
+          "member": "int64",
+          "name": "TableRows",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表对应的独立物理文件大小（MB）。",
+          "member": "float",
+          "name": "PhysicalFileSize",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableSpaceTimeSeries": {
+      "document": "库表空间时序数据",
+      "members": [
+        {
+          "default": "",
+          "document": "表名。",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库名。",
+          "member": "string",
+          "name": "TableSchema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库表的存储引擎。",
+          "member": "string",
+          "name": "Engine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位时间间隔内的空间指标数据。",
+          "member": "MonitorFloatMetricSeriesData",
+          "name": "SeriesData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TimeSlice": {
+      "document": "单位时间间隔内的慢日志统计",
+      "members": [
+        {
+          "default": "",
+          "document": "总数",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -3,1198 +3,834 @@ import os
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
-from tccli.nice_command import NiceCommand
-import tccli.error_msg as ErrorMsg
-import tccli.help_template as HelpTemplate
 from tccli import __version__
 from tccli.utils import Utils
-from tccli.configure import Configure
+from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.mongodb.v20180408 import mongodb_client as mongodb_client_v20180408
-from tencentcloud.mongodb.v20180408 import models as models_v20180408
 from tencentcloud.mongodb.v20190725 import mongodb_client as mongodb_client_v20190725
 from tencentcloud.mongodb.v20190725 import models as models_v20190725
-from tccli.services.mongodb import v20180408
-from tccli.services.mongodb.v20180408 import help as v20180408_help
-from tccli.services.mongodb import v20190725
-from tccli.services.mongodb.v20190725 import help as v20190725_help
+from tencentcloud.mongodb.v20180408 import mongodb_client as mongodb_client_v20180408
+from tencentcloud.mongodb.v20180408 import models as models_v20180408
 
 
-def doAssignProject(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("AssignProject", g_param[OptionsDefine.Version])
-        return
+def doDescribeDBInstanceDeal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AssignProjectRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.AssignProject(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTerminateDBInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("TerminateDBInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.TerminateDBInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateDBInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateDBInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "MongoVersion": argv.get("--MongoVersion"),
-        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Zone": argv.get("--Zone"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "MachineCode": argv.get("--MachineCode"),
-        "ClusterType": argv.get("--ClusterType"),
-        "ReplicateSetNum": Utils.try_to_json(argv, "--ReplicateSetNum"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "VpcId": argv.get("--VpcId"),
-        "SubnetId": argv.get("--SubnetId"),
-        "Password": argv.get("--Password"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
-        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
-        "AutoVoucher": Utils.try_to_json(argv, "--AutoVoucher"),
-        "Clone": Utils.try_to_json(argv, "--Clone"),
-        "Father": argv.get("--Father"),
-        "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateDBInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeClientConnections(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeClientConnections", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClientConnectionsRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeClientConnections(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateDBInstanceHour(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateDBInstanceHour", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "ReplicateSetNum": Utils.try_to_json(argv, "--ReplicateSetNum"),
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "MongoVersion": argv.get("--MongoVersion"),
-        "MachineCode": argv.get("--MachineCode"),
-        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Zone": argv.get("--Zone"),
-        "ClusterType": argv.get("--ClusterType"),
-        "VpcId": argv.get("--VpcId"),
-        "SubnetId": argv.get("--SubnetId"),
-        "Password": argv.get("--Password"),
-        "ProjectId": Utils.try_to_json(argv, "--ProjectId"),
-        "Tags": Utils.try_to_json(argv, "--Tags"),
-        "Clone": Utils.try_to_json(argv, "--Clone"),
-        "Father": argv.get("--Father"),
-        "SecurityGroup": Utils.try_to_json(argv, "--SecurityGroup"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDBInstanceHourRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.CreateDBInstanceHour(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeSlowLog(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeSlowLog", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "SlowMS": Utils.try_to_json(argv, "--SlowMS"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSlowLogRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSlowLog(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doRenameInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("RenameInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "NewName": argv.get("--NewName"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenameInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.RenameInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpgradeDBInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UpgradeDBInstance", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.UpgradeDBInstance(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSetAutoRenew(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SetAutoRenew", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "AutoRenewFlag": Utils.try_to_json(argv, "--AutoRenewFlag"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetAutoRenewRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SetAutoRenew(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeSpecInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeSpecInfo", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "Zone": argv.get("--Zone"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSpecInfoRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeSpecInfo(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSetPassword(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("SetPassword", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "UserName": argv.get("--UserName"),
-        "Password": argv.get("--Password"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetPasswordRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.SetPassword(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpgradeDBInstanceHour(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UpgradeDBInstanceHour", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeDBInstanceHourRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.UpgradeDBInstanceHour(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDBInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDBInstances", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceType": Utils.try_to_json(argv, "--InstanceType"),
-        "ClusterType": Utils.try_to_json(argv, "--ClusterType"),
-        "Status": Utils.try_to_json(argv, "--Status"),
-        "VpcId": argv.get("--VpcId"),
-        "SubnetId": argv.get("--SubnetId"),
-        "PayMode": Utils.try_to_json(argv, "--PayMode"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderBy": argv.get("--OrderBy"),
-        "OrderByType": argv.get("--OrderByType"),
-        "ProjectIds": Utils.try_to_json(argv, "--ProjectIds"),
-        "SearchKey": argv.get("--SearchKey"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDBInstancesRequest()
-    model.from_json_string(json.dumps(param))
-    rsp = client.DescribeDBInstances(model)
-    result = rsp.to_json_string()
-    jsonobj = None
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDBInstanceDeal(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDBInstanceDeal", g_param[OptionsDefine.Version])
-        return
-
-    param = {
-        "DealId": argv.get("--DealId"),
-
-    }
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeDBInstanceDealRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DescribeDBInstanceDeal(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCurrentOp(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeCurrentOp", g_param[OptionsDefine.Version])
-        return
+def doDescribeCurrentOp(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Ns": argv.get("--Ns"),
-        "MillisecondRunning": Utils.try_to_json(argv, "--MillisecondRunning"),
-        "Op": argv.get("--Op"),
-        "ReplicaSetName": argv.get("--ReplicaSetName"),
-        "State": argv.get("--State"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "OrderBy": argv.get("--OrderBy"),
-        "OrderByType": argv.get("--OrderByType"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCurrentOpRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DescribeCurrentOp(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResetDBInstancePassword(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ResetDBInstancePassword", g_param[OptionsDefine.Version])
-        return
+def doDescribeClientConnections(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "UserName": argv.get("--UserName"),
-        "Password": argv.get("--Password"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClientConnectionsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeClientConnections(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetDBInstancePassword(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ResetDBInstancePasswordRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.ResetDBInstancePassword(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doFlushInstanceRouterConfig(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("FlushInstanceRouterConfig", g_param[OptionsDefine.Version])
-        return
+def doFlushInstanceRouterConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.FlushInstanceRouterConfigRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.FlushInstanceRouterConfig(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDBBackups(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeDBBackups", g_param[OptionsDefine.Version])
-        return
+def doSetAutoRenew(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "BackupMethod": Utils.try_to_json(argv, "--BackupMethod"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetAutoRenewRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SetAutoRenew(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDBBackups(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeDBBackupsRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DescribeDBBackups(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doIsolateDBInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("IsolateDBInstance", g_param[OptionsDefine.Version])
-        return
+def doIsolateDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.IsolateDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.IsolateDBInstance(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBackupAccess(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeBackupAccess", g_param[OptionsDefine.Version])
-        return
+def doDescribeBackupAccess(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "BackupName": argv.get("--BackupName"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeBackupAccessRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DescribeBackupAccess(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquirePriceModifyDBInstanceSpec(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("InquirePriceModifyDBInstanceSpec", g_param[OptionsDefine.Version])
-        return
+def doInquirePriceModifyDBInstanceSpec(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.InquirePriceModifyDBInstanceSpecRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.InquirePriceModifyDBInstanceSpec(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAsyncRequestInfo(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeAsyncRequestInfo", g_param[OptionsDefine.Version])
-        return
+def doDescribeAsyncRequestInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "AsyncRequestId": argv.get("--AsyncRequestId"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAsyncRequestInfoRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DescribeAsyncRequestInfo(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRenewDBInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("RenewDBInstances", g_param[OptionsDefine.Version])
-        return
+def doCreateDBInstanceHour(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDBInstanceHourRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateDBInstanceHour(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTerminateDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TerminateDBInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.TerminateDBInstance(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRenewDBInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.RenewDBInstancesRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.RenewDBInstances(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doOfflineIsolatedDBInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("OfflineIsolatedDBInstance", g_param[OptionsDefine.Version])
-        return
+def doUpgradeDBInstanceHour(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeDBInstanceHourRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UpgradeDBInstanceHour(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDBInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDBInstancesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeDBInstances(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doOfflineIsolatedDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.OfflineIsolatedDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.OfflineIsolatedDBInstance(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSlowLogPatterns(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeSlowLogPatterns", g_param[OptionsDefine.Version])
-        return
+def doDescribeSlowLogPatterns(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "SlowMS": Utils.try_to_json(argv, "--SlowMS"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeSlowLogPatternsRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DescribeSlowLogPatterns(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSlowLogs(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeSlowLogs", g_param[OptionsDefine.Version])
-        return
+def doDescribeSlowLogs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "StartTime": argv.get("--StartTime"),
-        "EndTime": argv.get("--EndTime"),
-        "SlowMS": Utils.try_to_json(argv, "--SlowMS"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeSlowLogsRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DescribeSlowLogs(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDBInstanceSpec(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ModifyDBInstanceSpec", g_param[OptionsDefine.Version])
-        return
+def doCreateDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "OplogSize": Utils.try_to_json(argv, "--OplogSize"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDBInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateDBInstance(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDBInstanceSpec(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyDBInstanceSpecRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.ModifyDBInstanceSpec(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquirePriceCreateDBInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("InquirePriceCreateDBInstances", g_param[OptionsDefine.Version])
-        return
+def doDescribeSpecInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "Zone": argv.get("--Zone"),
-        "NodeNum": Utils.try_to_json(argv, "--NodeNum"),
-        "Memory": Utils.try_to_json(argv, "--Memory"),
-        "Volume": Utils.try_to_json(argv, "--Volume"),
-        "MongoVersion": argv.get("--MongoVersion"),
-        "MachineCode": argv.get("--MachineCode"),
-        "GoodsNum": Utils.try_to_json(argv, "--GoodsNum"),
-        "Period": Utils.try_to_json(argv, "--Period"),
-        "ClusterType": argv.get("--ClusterType"),
-        "ReplicateSetNum": Utils.try_to_json(argv, "--ReplicateSetNum"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSpecInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSpecInfo(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSetPassword(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetPasswordRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SetPassword(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquirePriceCreateDBInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.InquirePriceCreateDBInstancesRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.InquirePriceCreateDBInstances(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doKillOps(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("KillOps", g_param[OptionsDefine.Version])
-        return
+def doAssignProject(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "Operations": Utils.try_to_json(argv, "--Operations"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AssignProjectRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.AssignProject(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSlowLog(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSlowLogRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSlowLog(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRenameInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RenameInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RenameInstance(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpgradeDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeDBInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UpgradeDBInstance(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doKillOps(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.KillOpsRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.KillOps(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateBackupDBInstance(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateBackupDBInstance", g_param[OptionsDefine.Version])
-        return
+def doCreateBackupDBInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceId": argv.get("--InstanceId"),
-        "BackupMethod": Utils.try_to_json(argv, "--BackupMethod"),
-        "BackupRemark": argv.get("--BackupRemark"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateBackupDBInstanceRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.CreateBackupDBInstance(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquirePriceRenewDBInstances(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("InquirePriceRenewDBInstances", g_param[OptionsDefine.Version])
-        return
+def doInquirePriceRenewDBInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
-        "InstanceChargePrepaid": Utils.try_to_json(argv, "--InstanceChargePrepaid"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.InquirePriceRenewDBInstancesRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.InquirePriceRenewDBInstances(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
 CLIENT_MAP = {
-    "v20180408": mongodb_client_v20180408,
     "v20190725": mongodb_client_v20190725,
+    "v20180408": mongodb_client_v20180408,
 
 }
 
 MODELS_MAP = {
-    "v20180408": models_v20180408,
     "v20190725": models_v20190725,
+    "v20180408": models_v20180408,
 
 }
 
 ACTION_MAP = {
-    "AssignProject": doAssignProject,
-    "TerminateDBInstance": doTerminateDBInstance,
-    "CreateDBInstance": doCreateDBInstance,
-    "DescribeClientConnections": doDescribeClientConnections,
-    "CreateDBInstanceHour": doCreateDBInstanceHour,
-    "DescribeSlowLog": doDescribeSlowLog,
-    "RenameInstance": doRenameInstance,
-    "UpgradeDBInstance": doUpgradeDBInstance,
-    "SetAutoRenew": doSetAutoRenew,
-    "DescribeSpecInfo": doDescribeSpecInfo,
-    "SetPassword": doSetPassword,
-    "UpgradeDBInstanceHour": doUpgradeDBInstanceHour,
-    "DescribeDBInstances": doDescribeDBInstances,
     "DescribeDBInstanceDeal": doDescribeDBInstanceDeal,
     "DescribeCurrentOp": doDescribeCurrentOp,
+    "DescribeClientConnections": doDescribeClientConnections,
     "ResetDBInstancePassword": doResetDBInstancePassword,
     "FlushInstanceRouterConfig": doFlushInstanceRouterConfig,
+    "SetAutoRenew": doSetAutoRenew,
     "DescribeDBBackups": doDescribeDBBackups,
     "IsolateDBInstance": doIsolateDBInstance,
     "DescribeBackupAccess": doDescribeBackupAccess,
     "InquirePriceModifyDBInstanceSpec": doInquirePriceModifyDBInstanceSpec,
     "DescribeAsyncRequestInfo": doDescribeAsyncRequestInfo,
+    "CreateDBInstanceHour": doCreateDBInstanceHour,
+    "TerminateDBInstance": doTerminateDBInstance,
     "RenewDBInstances": doRenewDBInstances,
+    "UpgradeDBInstanceHour": doUpgradeDBInstanceHour,
+    "DescribeDBInstances": doDescribeDBInstances,
     "OfflineIsolatedDBInstance": doOfflineIsolatedDBInstance,
     "DescribeSlowLogPatterns": doDescribeSlowLogPatterns,
     "DescribeSlowLogs": doDescribeSlowLogs,
+    "CreateDBInstance": doCreateDBInstance,
     "ModifyDBInstanceSpec": doModifyDBInstanceSpec,
+    "DescribeSpecInfo": doDescribeSpecInfo,
+    "SetPassword": doSetPassword,
     "InquirePriceCreateDBInstances": doInquirePriceCreateDBInstances,
+    "AssignProject": doAssignProject,
+    "DescribeSlowLog": doDescribeSlowLog,
+    "RenameInstance": doRenameInstance,
+    "UpgradeDBInstance": doUpgradeDBInstance,
     "KillOps": doKillOps,
     "CreateBackupDBInstance": doCreateBackupDBInstance,
     "InquirePriceRenewDBInstances": doInquirePriceRenewDBInstances,
@@ -1202,154 +838,75 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20180408.version,
-    v20190725.version,
+    "v20190725",
+    "v20180408",
 
 ]
-AVAILABLE_VERSIONS = {
-     'v' + v20180408.version.replace('-', ''): {"help": v20180408_help.INFO,"desc": v20180408_help.DESC},
-     'v' + v20190725.version.replace('-', ''): {"help": v20190725_help.INFO,"desc": v20190725_help.DESC},
-
-}
 
 
-def mongodb_action(argv, arglist):
-    if "help" in argv:
-        versions = sorted(AVAILABLE_VERSIONS.keys())
-        opt_v = "--" + OptionsDefine.Version
-        version = versions[-1]
-        if opt_v in argv:
-            version = 'v' + argv[opt_v].replace('-', '')
-        if version not in versions:
-            print("available versions: %s" % " ".join(AVAILABLE_VERSION_LIST))
-            return
-        action_str = ""
-        docs = AVAILABLE_VERSIONS[version]["help"]
-        desc = AVAILABLE_VERSIONS[version]["desc"]
-        for action, info in docs.items():
-            action_str += "        %s\n" % action
-            action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "mongodb", "desc": desc, "actions": action_str}
-        print(helpstr)
-    else:
-        print(ErrorMsg.FEW_ARG)
+def action_caller():
+    return ACTION_MAP
 
 
-def version_merge():
-    help_merge = {}
-    for v in AVAILABLE_VERSIONS:
-        for action in AVAILABLE_VERSIONS[v]["help"]:
-            if action not in help_merge:
-                help_merge[action] = {}
-            help_merge[action]["cb"] = ACTION_MAP[action]
-            help_merge[action]["params"] = []
-            for param in AVAILABLE_VERSIONS[v]["help"][action]["params"]:
-                if param["name"] not in help_merge[action]["params"]:
-                    help_merge[action]["params"].append(param["name"])
-    return help_merge
+def parse_global_arg(parsed_globals):
+    g_param = parsed_globals
 
+    is_exist_profile = True
+    if not parsed_globals["profile"]:
+        is_exist_profile = False
+        g_param["profile"] = "default"
 
-def register_arg(command):
-    cmd = NiceCommand("mongodb", mongodb_action)
-    command.reg_cmd(cmd)
-    cmd.reg_opt("help", "bool")
-    cmd.reg_opt(OptionsDefine.Version, "string")
-    help_merge = version_merge()
+    configure_path = os.path.join(os.path.expanduser("~"), ".tccli")
+    is_conf_exist, conf_path = Utils.file_existed(configure_path, g_param["profile"] + ".configure")
+    is_cred_exist, cred_path = Utils.file_existed(configure_path, g_param["profile"] + ".credential")
 
-    for actionName, action in help_merge.items():
-        c = NiceCommand(actionName, action["cb"])
-        cmd.reg_cmd(c)
-        c.reg_opt("help", "bool")
-        for param in action["params"]:
-            c.reg_opt("--" + param, "string")
-
-        for opt in OptionsDefine.ACTION_GLOBAL_OPT:
-            stropt = "--" + opt
-            c.reg_opt(stropt, "string")
-
-
-def parse_global_arg(argv):
-    params = {}
-    for opt in OptionsDefine.ACTION_GLOBAL_OPT:
-        stropt = "--" + opt
-        if stropt in argv:
-            params[opt] = argv[stropt]
-        else:
-            params[opt] = None
-    if params[OptionsDefine.Version]:
-        params[OptionsDefine.Version] = "v" + params[OptionsDefine.Version].replace('-', '')
-
-    config_handle = Configure()
-    profile = config_handle.profile
-    if ("--" + OptionsDefine.Profile) in argv:
-        profile = argv[("--" + OptionsDefine.Profile)]
-
-    is_conexist, conf_path = config_handle._profile_existed(profile + "." + config_handle.configure)
-    is_creexist, cred_path = config_handle._profile_existed(profile + "." + config_handle.credential)
-    config = {}
+    conf = {}
     cred = {}
-    if is_conexist:
-        config = config_handle._load_json_msg(conf_path)
-    if is_creexist:
-        cred = config_handle._load_json_msg(cred_path)
-    if os.environ.get(OptionsDefine.ENV_SECRET_ID):
-        cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
-    if os.environ.get(OptionsDefine.ENV_SECRET_KEY):
-        cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
-    if os.environ.get(OptionsDefine.ENV_REGION):
-        config[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
 
-    for param in params.keys():
-        if param == OptionsDefine.Version:
-            continue
-        if params[param] is None:
+    if is_conf_exist:
+        conf = Utils.load_json_msg(conf_path)
+    if is_cred_exist:
+        cred = Utils.load_json_msg(cred_path)
+
+    if not (isinstance(conf, dict) and isinstance(cred, dict)):
+        raise ConfigurationError(
+            "file: %s or %s is not json format"
+            % (g_param["profile"] + ".configure", g_param["profile"] + ".credential"))
+
+    if os.environ.get(OptionsDefine.ENV_SECRET_ID) and not is_exist_profile:
+        cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
+    if os.environ.get(OptionsDefine.ENV_SECRET_KEY) and not is_exist_profile:
+        cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
+    if os.environ.get(OptionsDefine.ENV_REGION) and not is_exist_profile:
+        conf[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
+
+    for param in g_param.keys():
+        if g_param[param] is None:
             if param in [OptionsDefine.SecretKey, OptionsDefine.SecretId]:
                 if param in cred:
-                    params[param] = cred[param]
+                    g_param[param] = cred[param]
                 else:
-                    raise Exception("%s is invalid" % param)
-            else:
-                if param in config:
-                    params[param] = config[param]
-                elif param == OptionsDefine.Region:
-                    raise Exception("%s is invalid" % OptionsDefine.Region)
-    try:
-        if params[OptionsDefine.Version] is None:
-            version = config["mongodb"][OptionsDefine.Version]
-            params[OptionsDefine.Version] = "v" + version.replace('-', '')
+                    raise ConfigurationError("%s is invalid" % param)
+            elif param in [OptionsDefine.Region, OptionsDefine.Output]:
+                if param in conf:
+                    g_param[param] = conf[param]
+                else:
+                    raise ConfigurationError("%s is invalid" % param)
 
-        if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["mongodb"][OptionsDefine.Endpoint]
+    try:
+        if g_param[OptionsDefine.ServiceVersion]:
+            g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
+        else:
+            version = conf["mongodb"][OptionsDefine.Version]
+            g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
+
+        if g_param[OptionsDefine.Endpoint] is None:
+            g_param[OptionsDefine.Endpoint] = conf["mongodb"][OptionsDefine.Endpoint]
     except Exception as err:
-        raise Exception("config file:%s error, %s" % (conf_path, str(err)))
-    versions = sorted(AVAILABLE_VERSIONS.keys())
-    if params[OptionsDefine.Version] not in versions:
+        raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
+
+    if g_param[OptionsDefine.Version] not in AVAILABLE_VERSION_LIST:
         raise Exception("available versions: %s" % " ".join(AVAILABLE_VERSION_LIST))
-    return params
 
+    return g_param
 
-def show_help(action, version):
-    docs = AVAILABLE_VERSIONS[version]["help"][action]
-    desc = AVAILABLE_VERSIONS[version]["desc"]
-    docstr = ""
-    for param in docs["params"]:
-        docstr += "        %s\n" % ("--" + param["name"])
-        docstr += Utils.split_str("        ", param["desc"], 120)
-
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "mongodb", "desc": desc, "params": docstr}
-    print(helpmsg)
-
-
-def get_actions_info():
-    config = Configure()
-    new_version = max(AVAILABLE_VERSIONS.keys())
-    version = new_version
-    try:
-        profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["mongodb"]["version"]
-        version = "v" + version.replace('-', '')
-    except Exception:
-        pass
-    if version not in AVAILABLE_VERSIONS.keys():
-        version = new_version
-    return AVAILABLE_VERSIONS[version]["help"]

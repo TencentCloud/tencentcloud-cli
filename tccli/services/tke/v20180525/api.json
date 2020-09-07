@@ -1,0 +1,3522 @@
+{
+  "actions": {
+    "AddExistedInstances": {
+      "document": "添加已经存在的实例到集群",
+      "input": "AddExistedInstancesRequest",
+      "name": "添加已经存在的实例到集群",
+      "output": "AddExistedInstancesResponse"
+    },
+    "CreateCluster": {
+      "document": "创建集群",
+      "input": "CreateClusterRequest",
+      "name": "创建集群",
+      "output": "CreateClusterResponse"
+    },
+    "CreateClusterAsGroup": {
+      "document": "为已经存在的集群创建伸缩组",
+      "input": "CreateClusterAsGroupRequest",
+      "name": "创建集群的伸缩组",
+      "output": "CreateClusterAsGroupResponse"
+    },
+    "CreateClusterEndpoint": {
+      "document": "创建集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
+      "input": "CreateClusterEndpointRequest",
+      "name": "创建集群访问端口",
+      "output": "CreateClusterEndpointResponse"
+    },
+    "CreateClusterEndpointVip": {
+      "document": "创建托管集群外网访问端口（老的方式，仅支持托管集群外网端口）",
+      "input": "CreateClusterEndpointVipRequest",
+      "name": "创建托管集群外网访问端口",
+      "output": "CreateClusterEndpointVipResponse"
+    },
+    "CreateClusterInstances": {
+      "document": "扩展(新建)集群节点",
+      "input": "CreateClusterInstancesRequest",
+      "name": "扩展集群节点",
+      "output": "CreateClusterInstancesResponse"
+    },
+    "CreateClusterRoute": {
+      "document": "创建集群路由",
+      "input": "CreateClusterRouteRequest",
+      "name": "创建集群路由",
+      "output": "CreateClusterRouteResponse"
+    },
+    "CreateClusterRouteTable": {
+      "document": "创建集群路由表",
+      "input": "CreateClusterRouteTableRequest",
+      "name": "创建集群路由表",
+      "output": "CreateClusterRouteTableResponse"
+    },
+    "DeleteCluster": {
+      "document": "删除集群(YUNAPI V3版本)",
+      "input": "DeleteClusterRequest",
+      "name": "删除集群",
+      "output": "DeleteClusterResponse"
+    },
+    "DeleteClusterAsGroups": {
+      "document": "删除集群伸缩组",
+      "input": "DeleteClusterAsGroupsRequest",
+      "name": "删除集群伸缩组",
+      "output": "DeleteClusterAsGroupsResponse"
+    },
+    "DeleteClusterEndpoint": {
+      "document": "删除集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
+      "input": "DeleteClusterEndpointRequest",
+      "name": "删除集群访问端口",
+      "output": "DeleteClusterEndpointResponse"
+    },
+    "DeleteClusterEndpointVip": {
+      "document": "删除托管集群外网访问端口（老的方式，仅支持托管集群外网端口）",
+      "input": "DeleteClusterEndpointVipRequest",
+      "name": "删除托管集群外网访问端口",
+      "output": "DeleteClusterEndpointVipResponse"
+    },
+    "DeleteClusterInstances": {
+      "document": "删除集群中的实例",
+      "input": "DeleteClusterInstancesRequest",
+      "name": "删除集群中的节点",
+      "output": "DeleteClusterInstancesResponse"
+    },
+    "DeleteClusterRoute": {
+      "document": "删除集群路由",
+      "input": "DeleteClusterRouteRequest",
+      "name": "删除集群路由",
+      "output": "DeleteClusterRouteResponse"
+    },
+    "DeleteClusterRouteTable": {
+      "document": "删除集群路由表",
+      "input": "DeleteClusterRouteTableRequest",
+      "name": "删除集群路由表",
+      "output": "DeleteClusterRouteTableResponse"
+    },
+    "DescribeClusterAsGroupOption": {
+      "document": "集群弹性伸缩配置",
+      "input": "DescribeClusterAsGroupOptionRequest",
+      "name": "集群弹性伸缩配置",
+      "output": "DescribeClusterAsGroupOptionResponse"
+    },
+    "DescribeClusterAsGroups": {
+      "document": "集群关联的伸缩组列表",
+      "input": "DescribeClusterAsGroupsRequest",
+      "name": "集群关联的伸缩组列表",
+      "output": "DescribeClusterAsGroupsResponse"
+    },
+    "DescribeClusterEndpointStatus": {
+      "document": "查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
+      "input": "DescribeClusterEndpointStatusRequest",
+      "name": "查询集群访问端口状态",
+      "output": "DescribeClusterEndpointStatusResponse"
+    },
+    "DescribeClusterEndpointVipStatus": {
+      "document": "查询集群开启端口流程状态(仅支持托管集群外网端口)",
+      "input": "DescribeClusterEndpointVipStatusRequest",
+      "name": "查询托管集群开启外网端口流程状态",
+      "output": "DescribeClusterEndpointVipStatusResponse"
+    },
+    "DescribeClusterInstances": {
+      "document": " 查询集群下节点实例信息 ",
+      "input": "DescribeClusterInstancesRequest",
+      "name": "查询集群节点信息",
+      "output": "DescribeClusterInstancesResponse"
+    },
+    "DescribeClusterRouteTables": {
+      "document": "查询集群路由表",
+      "input": "DescribeClusterRouteTablesRequest",
+      "name": "查询集群路由表",
+      "output": "DescribeClusterRouteTablesResponse"
+    },
+    "DescribeClusterRoutes": {
+      "document": "查询集群路由",
+      "input": "DescribeClusterRoutesRequest",
+      "name": "查询集群路由",
+      "output": "DescribeClusterRoutesResponse"
+    },
+    "DescribeClusterSecurity": {
+      "document": "集群的密钥信息",
+      "input": "DescribeClusterSecurityRequest",
+      "name": "集群的密钥信息",
+      "output": "DescribeClusterSecurityResponse"
+    },
+    "DescribeClusters": {
+      "document": "查询集群列表",
+      "input": "DescribeClustersRequest",
+      "name": "查询集群列表",
+      "output": "DescribeClustersResponse"
+    },
+    "DescribeExistedInstances": {
+      "document": "查询已经存在的节点，判断是否可以加入集群",
+      "input": "DescribeExistedInstancesRequest",
+      "name": "查询已经存在的节点",
+      "output": "DescribeExistedInstancesResponse"
+    },
+    "DescribeImages": {
+      "document": "获取镜像信息",
+      "input": "DescribeImagesRequest",
+      "name": "获取镜像信息",
+      "output": "DescribeImagesResponse"
+    },
+    "DescribeRegions": {
+      "document": "获取容器服务支持的所有地域",
+      "input": "DescribeRegionsRequest",
+      "name": "查询地域列表",
+      "output": "DescribeRegionsResponse"
+    },
+    "DescribeRouteTableConflicts": {
+      "document": "查询路由表冲突列表",
+      "input": "DescribeRouteTableConflictsRequest",
+      "name": "查询路由表冲突列表",
+      "output": "DescribeRouteTableConflictsResponse"
+    },
+    "ModifyClusterAsGroupAttribute": {
+      "document": "修改集群伸缩组属性",
+      "input": "ModifyClusterAsGroupAttributeRequest",
+      "name": "修改集群伸缩组属性",
+      "output": "ModifyClusterAsGroupAttributeResponse"
+    },
+    "ModifyClusterAttribute": {
+      "document": "修改集群属性",
+      "input": "ModifyClusterAttributeRequest",
+      "name": "修改集群属性",
+      "output": "ModifyClusterAttributeResponse"
+    },
+    "ModifyClusterEndpointSP": {
+      "document": "修改托管集群外网端口的安全策略（老的方式，仅支持托管集群外网端口）",
+      "input": "ModifyClusterEndpointSPRequest",
+      "name": "修改托管集群外网端口的安全策略",
+      "output": "ModifyClusterEndpointSPResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-05-25",
+    "api_brief": "介绍如何使用API对容器服务进行相关操作，包括集群、伸缩组、节点等。",
+    "serviceNameCN": "容器服务",
+    "serviceShortName": "tke"
+  },
+  "objects": {
+    "AddExistedInstancesRequest": {
+      "document": "AddExistedInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例额外需要设置参数信息",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "节点登录信息（目前仅支持使用Password或者单个KeyIds）",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddExistedInstancesResponse": {
+      "document": "AddExistedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "失败的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成功的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SuccInstanceIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "超时未返回出来节点的ID(可能失败，也可能成功)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TimeoutInstanceIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AutoScalingGroupRange": {
+      "document": "集群关联的伸缩组最大实例数最小值实例数",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组最小实例数",
+          "member": "int64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组最大实例数",
+          "member": "int64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Cluster": {
+      "document": "集群信息结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群描述",
+          "member": "string",
+          "name": "ClusterDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群版本（默认值为1.10.5）",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64",
+          "member": "string",
+          "name": "ClusterOs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群网络相关参数",
+          "member": "ClusterNetworkSettings",
+          "name": "ClusterNetworkSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群当前node数量",
+          "member": "uint64",
+          "name": "ClusterNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群所属的项目ID",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )",
+          "member": "string",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Property",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群当前master数量",
+          "member": "uint64",
+          "name": "ClusterMaterNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群使用镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "OsCustomizeType 系统定制类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OsCustomizeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群运行环境docker或container\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContainerRuntime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除保护开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterAdvancedSettings": {
+      "document": "集群高级配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否启用IPVS",
+          "member": "bool",
+          "name": "IPVS",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用集群节点自动扩缩容(创建集群流程不支持开启此功能)",
+          "member": "bool",
+          "name": "AsEnabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群使用的runtime类型，包括\"docker\"和\"containerd\"两种类型，默认为\"docker\"",
+          "member": "string",
+          "name": "ContainerRuntime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip。如果开启了hostname模式，创建节点时需要设置HostName参数，并且InstanceName需要和HostName一致）",
+          "member": "string",
+          "name": "NodeNameType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群自定义参数",
+          "member": "ClusterExtraArgs",
+          "name": "ExtraArgs",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群VPC-CNI模式是否为非固定IP，默认: FALSE 固定IP。",
+          "member": "bool",
+          "name": "IsNonStaticIpMode",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用集群删除保护",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群的网络代理模型",
+          "member": "string",
+          "name": "KubeProxyMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启审计开关",
+          "member": "bool",
+          "name": "AuditEnabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计日志上传到的logset日志集",
+          "member": "string",
+          "name": "AuditLogsetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计日志上传到的topic",
+          "member": "string",
+          "name": "AuditLogTopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClusterAsGroup": {
+      "document": "集群关联的伸缩组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组ID",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组状态(开启 enabled 开启中 enabling 关闭 disabled 关闭中 disabling 更新中 updating 删除中 deleting 开启缩容中 scaleDownEnabling 关闭缩容中 scaleDownDisabling)",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点是否设置成不可调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsUnschedulable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "伸缩组的label列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterAsGroupAttribute": {
+      "document": "集群伸缩组属性",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组ID",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启",
+          "member": "bool",
+          "name": "AutoScalingGroupEnabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组最大最小实例数",
+          "member": "AutoScalingGroupRange",
+          "name": "AutoScalingGroupRange",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClusterAsGroupOption": {
+      "document": "集群弹性伸缩配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启缩容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsScaleDownEnabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "多伸缩组情况下扩容选择算法(random 随机选择，most-pods 最多类型的Pod least-waste 最少的资源浪费，默认为random)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Expander",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大并发缩容数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxEmptyBulkDelete",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群扩容后多少分钟开始判断缩容（默认为10分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ScaleDownDelay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点连续空闲多少分钟后被缩容（默认为 10分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ScaleDownUnneededTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点资源使用量低于多少(百分比)时认为空闲(默认: 50(百分比))\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ScaleDownUtilizationThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "含有本地存储Pod的节点是否不缩容(默认： FALSE)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "SkipNodesWithLocalStorage",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "SkipNodesWithSystemPods",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算资源使用量时是否默认忽略DaemonSet的实例(默认值: False，不忽略)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IgnoreDaemonSetsUtilization",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "OkTotalUnreadyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "未就绪节点的最大百分比，此后CA会停止操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxTotalUnreadyPercentage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ScaleDownUnreadyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CA删除未在Kubernetes中注册的节点之前等待的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "UnregisteredNodeRemovalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterBasicSettings": {
+      "document": "描述集群的基本配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64",
+          "member": "string",
+          "name": "ClusterOs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群版本,默认值为1.10.5",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群描述",
+          "member": "string",
+          "name": "ClusterDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，形如vpc-xxx。创建托管空集群时必传。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群内新增资源所属项目ID。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到集群实例。",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器的镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)",
+          "member": "string",
+          "name": "OsCustomizeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启节点的默认安全组(默认: 否，Aphla特性)",
+          "member": "bool",
+          "name": "NeedWorkSecurityGroup",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClusterCIDRSettings": {
+      "document": "集群容器网络相关参数",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。",
+          "member": "string",
+          "name": "ClusterCIDR",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否忽略 ClusterCIDR 冲突错误, 默认不忽略",
+          "member": "bool",
+          "name": "IgnoreClusterCIDRConflict",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。",
+          "member": "uint64",
+          "name": "MaxNodePodNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。",
+          "member": "uint64",
+          "name": "MaxClusterServiceNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于分配集群服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。",
+          "member": "string",
+          "name": "ServiceCIDR",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC-CNI网络模式下，弹性网卡的子网Id。",
+          "member": "string",
+          "name": "EniSubnetIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC-CNI网络模式下，弹性网卡IP的回收时间，取值范围[300,15768000)",
+          "member": "int64",
+          "name": "ClaimExpiredSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClusterExtraArgs": {
+      "document": "集群master自定义参数",
+      "members": [
+        {
+          "default": "",
+          "document": "kube-apiserver自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"max-requests-inflight=500\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KubeAPIServer",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kube-controller-manager自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KubeControllerManager",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kube-scheduler自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KubeScheduler",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ClusterNetworkSettings": {
+      "document": "集群网络相关的参数",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突",
+          "member": "string",
+          "name": "ClusterCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否忽略 ClusterCIDR 冲突错误, 默认不忽略",
+          "member": "bool",
+          "name": "IgnoreClusterCIDRConflict",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群中每个Node上最大的Pod数量(默认为256)",
+          "member": "uint64",
+          "name": "MaxNodePodNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群最大的service数量(默认为256)",
+          "member": "uint64",
+          "name": "MaxClusterServiceNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用IPVS(默认不开启)",
+          "member": "bool",
+          "name": "Ipvs",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群的VPCID（如果创建空集群，为必传值，否则自动设置为和集群的节点保持一致）",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络插件是否启用CNI(默认开启)",
+          "member": "bool",
+          "name": "Cni",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateClusterAsGroupRequest": {
+      "document": "CreateClusterAsGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "伸缩组创建透传参数，json化字符串格式，详见[伸缩组创建实例](https://cloud.tencent.com/document/api/377/20440)接口。LaunchConfigurationId由LaunchConfigurePara参数创建，不支持填写",
+          "member": "string",
+          "name": "AutoScalingGroupPara",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启动配置创建透传参数，json化字符串格式，详见[创建启动配置](https://cloud.tencent.com/document/api/377/20447)接口。另外ImageId参数由于集群维度已经有的ImageId信息，这个字段不需要填写。UserData字段设置通过UserScript设置，这个字段不需要填写。",
+          "member": "string",
+          "name": "LaunchConfigurePara",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点高级配置信息",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "节点Label数组",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterAsGroupResponse": {
+      "document": "CreateClusterAsGroup返回参数结构体",
+      "members": [
+        {
+          "document": "启动配置ID",
+          "member": "string",
+          "name": "LaunchConfigurationId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "伸缩组ID",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterEndpointRequest": {
+      "document": "CreateClusterEndpoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
+          "member": "bool",
+          "name": "IsExtranet",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterEndpointResponse": {
+      "document": "CreateClusterEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterEndpointVipRequest": {
+      "document": "CreateClusterEndpointVip请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
+          "member": "string",
+          "name": "SecurityPolicies",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterEndpointVipResponse": {
+      "document": "CreateClusterEndpointVip返回参数结构体",
+      "members": [
+        {
+          "document": "请求任务的FlowId",
+          "member": "int64",
+          "name": "RequestFlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterInstancesRequest": {
+      "document": "CreateClusterInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。",
+          "member": "string",
+          "name": "RunInstancePara",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例额外需要设置参数信息",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterInstancesResponse": {
+      "document": "CreateClusterInstances返回参数结构体",
+      "members": [
+        {
+          "document": "节点实例ID",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterRequest": {
+      "document": "CreateCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群容器网络配置信息",
+          "member": "ClusterCIDRSettings",
+          "name": "ClusterCIDRSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。",
+          "member": "RunInstancesForNode",
+          "name": "RunInstancesForNode",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群的基本配置信息",
+          "member": "ClusterBasicSettings",
+          "name": "ClusterBasicSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "集群高级配置信息",
+          "member": "ClusterAdvancedSettings",
+          "name": "ClusterAdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "节点高级配置信息",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。",
+          "member": "ExistedInstancesForNode",
+          "name": "ExistedInstancesForNode",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "CVM类型和其对应的数据盘挂载配置信息",
+          "member": "InstanceDataDiskMountSetting",
+          "name": "InstanceDataDiskMountSettings",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要安装的扩展组件信息",
+          "member": "ExtensionAddon",
+          "name": "ExtensionAddons",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterResponse": {
+      "document": "CreateCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterRouteRequest": {
+      "document": "CreateClusterRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表名称。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的端CIDR。",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下一跳地址。",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterRouteResponse": {
+      "document": "CreateClusterRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterRouteTableRequest": {
+      "document": "CreateClusterRouteTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表名称",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表CIDR",
+          "member": "string",
+          "name": "RouteTableCidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表绑定的VPC",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否忽略CIDR冲突",
+          "member": "int64",
+          "name": "IgnoreClusterCidrConflict",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterRouteTableResponse": {
+      "document": "CreateClusterRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataDisk": {
+      "document": "描述了k8s节点数据盘相关配置与信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "云盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统(ext3/ext4/xfs)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileSystem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘大小(G）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自动化格式盘并挂载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "AutoFormatAndMount",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "挂载目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MountTarget",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteClusterAsGroupsRequest": {
+      "document": "DeleteClusterAsGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID，通过[DescribeClusters](https://cloud.tencent.com/document/api/457/31862)接口获取。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群伸缩组ID的列表",
+          "member": "string",
+          "name": "AutoScalingGroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否保留伸缩组中的节点(默认值： false(不保留))",
+          "member": "bool",
+          "name": "KeepInstance",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterAsGroupsResponse": {
+      "document": "DeleteClusterAsGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterEndpointRequest": {
+      "document": "DeleteClusterEndpoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
+          "member": "bool",
+          "name": "IsExtranet",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterEndpointResponse": {
+      "document": "DeleteClusterEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterEndpointVipRequest": {
+      "document": "DeleteClusterEndpointVip请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterEndpointVipResponse": {
+      "document": "DeleteClusterEndpointVip返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterInstancesRequest": {
+      "document": "DeleteClusterInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机InstanceId列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）",
+          "member": "string",
+          "name": "InstanceDeleteMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制删除(当节点在初始化时，可以指定参数为TRUE)",
+          "member": "bool",
+          "name": "ForceDelete",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterInstancesResponse": {
+      "document": "DeleteClusterInstances返回参数结构体",
+      "members": [
+        {
+          "document": "删除成功的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SuccInstanceIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "删除失败的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "未匹配到的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NotFoundInstanceIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterRequest": {
+      "document": "DeleteCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）",
+          "member": "string",
+          "name": "InstanceDeleteMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群删除时资源的删除策略，目前支持CBS（默认保留CBS）",
+          "member": "ResourceDeleteOption",
+          "name": "ResourceDeleteOptions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterResponse": {
+      "document": "DeleteCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterRouteRequest": {
+      "document": "DeleteClusterRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表名称。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下一跳地址。",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的端CIDR。",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterRouteResponse": {
+      "document": "DeleteClusterRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterRouteTableRequest": {
+      "document": "DeleteClusterRouteTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表名称",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterRouteTableResponse": {
+      "document": "DeleteClusterRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAsGroupOptionRequest": {
+      "document": "DescribeClusterAsGroupOption请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAsGroupOptionResponse": {
+      "document": "DescribeClusterAsGroupOption返回参数结构体",
+      "members": [
+        {
+          "document": "集群弹性伸缩属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClusterAsGroupOption",
+          "name": "ClusterAsGroupOption",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAsGroupsRequest": {
+      "document": "DescribeClusterAsGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "伸缩组ID列表，如果为空，表示拉取集群关联的所有伸缩组。",
+          "member": "string",
+          "name": "AutoScalingGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAsGroupsResponse": {
+      "document": "DescribeClusterAsGroups返回参数结构体",
+      "members": [
+        {
+          "document": "集群关联的伸缩组总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群关联的伸缩组列表",
+          "member": "ClusterAsGroup",
+          "name": "ClusterAsGroupSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterEndpointStatusRequest": {
+      "document": "DescribeClusterEndpointStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
+          "member": "bool",
+          "name": "IsExtranet",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterEndpointStatusResponse": {
+      "document": "DescribeClusterEndpointStatus返回参数结构体",
+      "members": [
+        {
+          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中中，NotFound 未开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterEndpointVipStatusRequest": {
+      "document": "DescribeClusterEndpointVipStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterEndpointVipStatusResponse": {
+      "document": "DescribeClusterEndpointVipStatus返回参数结构体",
+      "members": [
+        {
+          "document": "端口操作状态 (Creating 创建中  CreateFailed 创建失败 Created 创建完成 Deleting 删除中 DeletedFailed 删除失败 Deleted 已删除 NotFound 未发现操作 )",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "操作失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrorMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInstancesRequest": {
+      "document": "DescribeClusterInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。",
+          "member": "string",
+          "name": "InstanceRole",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInstancesResponse": {
+      "document": "DescribeClusterInstances返回参数结构体",
+      "members": [
+        {
+          "document": "集群中实例总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群中实例列表",
+          "member": "Instance",
+          "name": "InstanceSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRouteTablesRequest": {
+      "document": "DescribeClusterRouteTables请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeClusterRouteTablesResponse": {
+      "document": "DescribeClusterRouteTables返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群路由表对象。",
+          "member": "RouteTableInfo",
+          "name": "RouteTableSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRoutesRequest": {
+      "document": "DescribeClusterRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表名称。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRoutesResponse": {
+      "document": "DescribeClusterRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群路由对象。",
+          "member": "RouteInfo",
+          "name": "RouteSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterSecurityRequest": {
+      "document": "DescribeClusterSecurity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterSecurityResponse": {
+      "document": "DescribeClusterSecurity返回参数结构体",
+      "members": [
+        {
+          "document": "集群的账号名称",
+          "member": "string",
+          "name": "UserName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的访问密码",
+          "member": "string",
+          "name": "Password",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群访问CA证书",
+          "member": "string",
+          "name": "CertificationAuthority",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群访问的地址",
+          "member": "string",
+          "name": "ClusterExternalEndpoint",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群访问的域名",
+          "member": "string",
+          "name": "Domain",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群Endpoint地址",
+          "member": "string",
+          "name": "PgwEndpoint",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群访问策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecurityPolicy",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群Kubeconfig文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Kubeconfig",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群JnsGw的访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "JnsGwEndpoint",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID列表(为空时，\n表示获取账号下所有集群)",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大输出条数，默认20，最大为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件,当前只支持按照单个条件ClusterName进行过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群总个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群信息列表",
+          "member": "Cluster",
+          "name": "Clusters",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExistedInstancesRequest": {
+      "document": "DescribeExistedInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 ID，请填写查询集群列表 接口中返回的 ClusterId 字段（仅通过ClusterId获取需要过滤条件中的VPCID。节点状态比较时会使用该地域下所有集群中的节点进行比较。参数不支持同时指定InstanceIds和ClusterId。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照一个或者多个实例ID查询。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API简介的id.N一节）。每次请求的实例的上限为100。参数不支持同时指定InstanceIds和Filters。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件,字段和详见[CVM查询实例](https://cloud.tencent.com/document/api/213/15728)如果设置了ClusterId，会附加集群的VPCID作为查询字段，在此情况下如果在Filter中指定了\"vpc-id\"作为过滤字段，指定的VPCID必须与集群的VPCID相同。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例IP进行过滤(同时支持内网IP和外网IP)",
+          "member": "string",
+          "name": "VagueIpAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称进行过滤",
+          "member": "string",
+          "name": "VagueInstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExistedInstancesResponse": {
+      "document": "DescribeExistedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "已经存在的实例信息数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ExistedInstance",
+          "name": "ExistedInstanceSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "符合条件的实例数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesRequest": {
+      "document": "DescribeImages请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeImagesResponse": {
+      "document": "DescribeImages返回参数结构体",
+      "members": [
+        {
+          "document": "镜像数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ImageInstance",
+          "name": "ImageInstanceSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsRequest": {
+      "document": "DescribeRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRegionsResponse": {
+      "document": "DescribeRegions返回参数结构体",
+      "members": [
+        {
+          "document": "地域的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RegionInstance",
+          "name": "RegionInstanceSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTableConflictsRequest": {
+      "document": "DescribeRouteTableConflicts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表CIDR",
+          "member": "string",
+          "name": "RouteTableCidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表绑定的VPC",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTableConflictsResponse": {
+      "document": "DescribeRouteTableConflicts返回参数结构体",
+      "members": [
+        {
+          "document": "路由表是否冲突。",
+          "member": "bool",
+          "name": "HasConflict",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "路由表冲突列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RouteTableConflict",
+          "name": "RouteTableConflictSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnhancedService": {
+      "document": "描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent",
+      "members": [
+        {
+          "default": "",
+          "document": "开启云安全服务。若不指定该参数，则默认开启云安全服务。",
+          "member": "RunSecurityServiceEnabled",
+          "name": "SecurityService",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开启云监控服务。若不指定该参数，则默认开启云监控服务。",
+          "member": "RunMonitorServiceEnabled",
+          "name": "MonitorService",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExistedInstance": {
+      "document": "已经存在的实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例是否支持加入集群(TRUE 可以加入 FALSE 不能加入)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Usable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例不支持加入的原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnusableReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例已经所在的集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlreadyInCluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例ID形如：ins-xxxxxxxx。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例主网卡的内网IP列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例主网卡的公网IP列表。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的CPU核数，单位：核。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CPU",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例内存容量，单位：GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作系统名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "伸缩组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AutoscalingGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围： PREPAID：表示预付费，即包年包月 POSTPAID_BY_HOUR：表示后付费，即按量计费 CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExistedInstancesForNode": {
+      "document": "不同角色的已存在节点配置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD最小配置为4C8G。",
+          "member": "string",
+          "name": "NodeRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已存在实例的重装参数",
+          "member": "ExistedInstancesPara",
+          "name": "ExistedInstancesPara",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点高级设置，会覆盖集群级别设置的InstanceAdvancedSettings（当前只对节点自定义参数ExtraArgs生效）",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettingsOverride",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ExistedInstancesPara": {
+      "document": "已存在实例的重装参数",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例额外需要设置参数信息",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点登录信息（目前仅支持使用Password或者单个KeyIds）",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ExtensionAddon": {
+      "document": "创建集群时，选择安装的扩展组件的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "扩展组件名称",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展组件信息(扩展组件资源对象的json字符串描述)",
+          "member": "string",
+          "name": "AddonParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filter": {
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州一区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
+      "members": [
+        {
+          "default": "无",
+          "document": "需要过滤的字段。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "无",
+          "document": "字段的过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageInstance": {
+      "document": "镜像信息",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作系统名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器的镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OsCustomizeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Instance": {
+      "document": "集群的实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER",
+          "member": "string",
+          "name": "InstanceRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例异常(或者处于初始化中)的原因",
+          "member": "string",
+          "name": "FailedReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的状态（running 运行中，initializing 初始化中，failed 异常）",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例是否封锁状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DrainStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "添加时间",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LanIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源池ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动伸缩组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AutoscalingGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceAdvancedSettings": {
+      "document": "描述了k8s集群相关配置与信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。\n注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MountTarget",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "dockerd --graph 指定值, 默认为 /var/lib/docker\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DockerGraphPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UserScript",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.",
+          "member": "int64",
+          "name": "Unschedulable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点Label数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "多盘数据盘挂载信息，同时请确保购买CVM的参数传递了购买多个数据盘的信息，如添加节点CreateClusterInstances API的RunInstancesPara下的DataDisks也设置了购买多个数据盘, 具体可以参考CreateClusterInstances接口的，添加集群节点(多块数据盘)样例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点相关的自定义参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InstanceExtraArgs",
+          "name": "ExtraArgs",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceDataDiskMountSetting": {
+      "document": "CVM实例数据盘挂载配置",
+      "members": [
+        {
+          "default": "",
+          "document": "CVM实例类型",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据盘挂载信息",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVM实例所属可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "InstanceExtraArgs": {
+      "document": "节点自定义参数",
+      "members": [
+        {
+          "default": "",
+          "document": "kubelet自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"root-dir=/var/lib/kubelet\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Kubelet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Label": {
+      "document": "k8s中标签，一般以数组的方式存在",
+      "members": [
+        {
+          "default": "",
+          "document": "map表中的Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "map表中的Value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LoginSettings": {
+      "document": "描述了实例登录相关配置与信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。当前仅支持购买的时候指定一个密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeyIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：<br><li>TRUE：表示保持镜像的登录设置<br><li>FALSE：表示不保持镜像的登录设置<br><br>默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeepImageLogin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyClusterAsGroupAttributeRequest": {
+      "document": "ModifyClusterAsGroupAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群关联的伸缩组属性",
+          "member": "ClusterAsGroupAttribute",
+          "name": "ClusterAsGroupAttribute",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterAsGroupAttributeResponse": {
+      "document": "ModifyClusterAsGroupAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterAttributeRequest": {
+      "document": "ModifyClusterAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群所属项目",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群描述",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterAttributeResponse": {
+      "document": "ModifyClusterAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "集群所属项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ProjectId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterDesc",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterEndpointSPRequest": {
+      "document": "ModifyClusterEndpointSP请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
+          "member": "string",
+          "name": "SecurityPolicies",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterEndpointSPResponse": {
+      "document": "ModifyClusterEndpointSP返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegionInstance": {
+      "document": "地域属性信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域特性开关(按照JSON的形式返回所有属性)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FeatureGates",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceDeleteOption": {
+      "document": "资源删除选项",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型，例如CBS",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群删除时资源的删除模式：terminate（销毁），retain （保留）",
+          "member": "string",
+          "name": "DeleteMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RouteInfo": {
+      "document": "集群路由对象",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表名称。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的端CIDR。",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳地址。",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RouteTableConflict": {
+      "document": "路由表冲突对象",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表类型。",
+          "member": "string",
+          "name": "RouteTableType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RouteTableCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路由表名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路由表ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RouteTableInfo": {
+      "document": "集群路由表对象",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表名称。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表CIDR。",
+          "member": "string",
+          "name": "RouteTableCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC实例ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunInstancesForNode": {
+      "document": "不同角色的节点配置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD节点最小配置为4C8G。",
+          "member": "string",
+          "name": "NodeRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口，传入公共参数外的其他参数即可，其中ImageId会替换为TKE集群OS对应的镜像。",
+          "member": "string",
+          "name": "RunInstancesPara",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettingsOverrides",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RunMonitorServiceEnabled": {
+      "document": "描述了 “云监控” 服务相关的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "both"
+    },
+    "RunSecurityServiceEnabled": {
+      "document": "描述了 “云安全” 服务相关的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启[云安全](/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Tag": {
+      "document": "标签绑定的资源类型，当前支持类型：\"cluster\"",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagSpecification": {
+      "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云主机实例。",
+      "members": [
+        {
+          "default": "",
+          "document": "标签绑定的资源类型，当前支持类型：\"cluster\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签对列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

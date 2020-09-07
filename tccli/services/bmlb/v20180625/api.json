@@ -1,0 +1,6779 @@
+{
+  "actions": {
+    "BindL4Backends": {
+      "document": "绑定黑石服务器到四层监听器。服务器包括物理服务器、虚拟机以及半托管机器。",
+      "input": "BindL4BackendsRequest",
+      "name": "绑定黑石服务器到四层监听器",
+      "output": "BindL4BackendsResponse"
+    },
+    "BindL7Backends": {
+      "document": "绑定黑石物理服务器或半托管服务器到七层转发路径。",
+      "input": "BindL7BackendsRequest",
+      "name": "绑定黑石物理服务器或半托管服务器到七层转发路径",
+      "output": "BindL7BackendsResponse"
+    },
+    "BindTrafficMirrorListeners": {
+      "document": "绑定黑石服务器七层监听器到流量镜像实例。",
+      "input": "BindTrafficMirrorListenersRequest",
+      "name": "绑定黑石服务器七层监听器到流量镜像实例",
+      "output": "BindTrafficMirrorListenersResponse"
+    },
+    "BindTrafficMirrorReceivers": {
+      "document": "绑定黑石物理服务器成为流量镜像接收机。",
+      "input": "BindTrafficMirrorReceiversRequest",
+      "name": "绑定黑石物理服务器成为流量镜像接收机",
+      "output": "BindTrafficMirrorReceiversResponse"
+    },
+    "CreateL4Listeners": {
+      "document": "创建黑石四层负载均衡监听器功能。黑石负载均衡四层监听器提供了转发用户请求的具体规则，包括端口、协议、会话保持、健康检查等参数。",
+      "input": "CreateL4ListenersRequest",
+      "name": "创建黑石四层负载均衡监听器",
+      "output": "CreateL4ListenersResponse"
+    },
+    "CreateL7Listeners": {
+      "document": "创建黑石负载均衡七层监听器功能。负载均衡七层监听器提供了转发用户请求的具体规则，包括端口、协议等参数。",
+      "input": "CreateL7ListenersRequest",
+      "name": "创建黑石负载均衡七层监听器",
+      "output": "CreateL7ListenersResponse"
+    },
+    "CreateL7Rules": {
+      "document": "创建黑石负载均衡七层转发规则。",
+      "input": "CreateL7RulesRequest",
+      "name": "创建黑石负载均衡七层转发规则",
+      "output": "CreateL7RulesResponse"
+    },
+    "CreateLoadBalancers": {
+      "document": "用来创建黑石负载均衡。为了使用黑石负载均衡服务，您必须要创建一个或者多个负载均衡实例。通过成功调用该接口，会返回负载均衡实例的唯一ID。用户可以购买的黑石负载均衡实例类型分为：公网类型、内网类型。公网类型负载均衡对应一个BGP VIP，可用于快速访问公网负载均衡绑定的物理服务器；内网类型负载均衡对应一个腾讯云内部的VIP，不能通过Internet访问，可快速访问内网负载均衡绑定的物理服务器。",
+      "input": "CreateLoadBalancersRequest",
+      "name": "创建黑石负载均衡实例",
+      "output": "CreateLoadBalancersResponse"
+    },
+    "CreateTrafficMirror": {
+      "document": "创建流量镜像实例。",
+      "input": "CreateTrafficMirrorRequest",
+      "name": "创建流量镜像实例",
+      "output": "CreateTrafficMirrorResponse"
+    },
+    "DeleteL7Domains": {
+      "document": "删除黑石负载均衡七层转发域名。",
+      "input": "DeleteL7DomainsRequest",
+      "name": "删除黑石负载均衡七层转发域名",
+      "output": "DeleteL7DomainsResponse"
+    },
+    "DeleteL7Rules": {
+      "document": "删除黑石负载均衡七层转发规则。",
+      "input": "DeleteL7RulesRequest",
+      "name": "删除黑石负载均衡七层转发规则",
+      "output": "DeleteL7RulesResponse"
+    },
+    "DeleteListeners": {
+      "document": "删除黑石负载均衡监听器。",
+      "input": "DeleteListenersRequest",
+      "name": "删除黑石负载均衡监听器",
+      "output": "DeleteListenersResponse"
+    },
+    "DeleteLoadBalancer": {
+      "document": "删除用户指定的黑石负载均衡实例。",
+      "input": "DeleteLoadBalancerRequest",
+      "name": "删除用户指定的黑石负载均衡实例",
+      "output": "DeleteLoadBalancerResponse"
+    },
+    "DeleteTrafficMirror": {
+      "document": "删除已创建的黑石流量镜像实例，删除过程是异步执行的，因此需要使用查询任务接口获取删除的结果。",
+      "input": "DeleteTrafficMirrorRequest",
+      "name": "删除流量镜像实例",
+      "output": "DeleteTrafficMirrorResponse"
+    },
+    "DescribeCertDetail": {
+      "document": "获取黑石负载均衡证书详情。",
+      "input": "DescribeCertDetailRequest",
+      "name": "获取黑石负载均衡证书详情",
+      "output": "DescribeCertDetailResponse"
+    },
+    "DescribeDevicesBindInfo": {
+      "document": "查询黑石物理机和虚机以及托管服务器绑定的黑石负载均衡详情。",
+      "input": "DescribeDevicesBindInfoRequest",
+      "name": "查询黑石物理机和虚机以及托管服务器绑定的黑石负载均衡详情",
+      "output": "DescribeDevicesBindInfoResponse"
+    },
+    "DescribeL4Backends": {
+      "document": "获取黑石负载均衡四层监听器绑定的主机列表。",
+      "input": "DescribeL4BackendsRequest",
+      "name": "获取黑石负载均衡四层监听器绑定的主机列表",
+      "output": "DescribeL4BackendsResponse"
+    },
+    "DescribeL4ListenerInfo": {
+      "document": "查找绑定了某主机或者指定监听器名称的黑石负载均衡四层监听器。",
+      "input": "DescribeL4ListenerInfoRequest",
+      "name": "查找绑定了某主机或者指定监听器名称的黑石负载均衡四层监听器",
+      "output": "DescribeL4ListenerInfoResponse"
+    },
+    "DescribeL4Listeners": {
+      "document": "获取黑石负载均衡四层监听器。",
+      "input": "DescribeL4ListenersRequest",
+      "name": "获取黑石负载均衡四层监听器",
+      "output": "DescribeL4ListenersResponse"
+    },
+    "DescribeL7Backends": {
+      "document": "获取黑石负载均衡七层监听器绑定的主机列表",
+      "input": "DescribeL7BackendsRequest",
+      "name": "获取黑石负载均衡七层转发路径绑定的主机列表",
+      "output": "DescribeL7BackendsResponse"
+    },
+    "DescribeL7ListenerInfo": {
+      "document": "查找绑定了某主机或者有某转发域名黑石负载均衡七层监听器。",
+      "input": "DescribeL7ListenerInfoRequest",
+      "name": "查找绑定了某主机或者有某转发域名黑石负载均衡七层监听器",
+      "output": "DescribeL7ListenerInfoResponse"
+    },
+    "DescribeL7Listeners": {
+      "document": "获取黑石负载均衡七层监听器列表信息。",
+      "input": "DescribeL7ListenersRequest",
+      "name": "获取黑石负载均衡七层监听器列表信息",
+      "output": "DescribeL7ListenersResponse"
+    },
+    "DescribeL7ListenersEx": {
+      "document": "获取指定VPC下的7层监听器(支持模糊匹配)。",
+      "input": "DescribeL7ListenersExRequest",
+      "name": "获取指定VPC下的7层监听器",
+      "output": "DescribeL7ListenersExResponse"
+    },
+    "DescribeL7Rules": {
+      "document": "获取黑石负载均衡七层转发规则。",
+      "input": "DescribeL7RulesRequest",
+      "name": "获取黑石负载均衡七层转发规则",
+      "output": "DescribeL7RulesResponse"
+    },
+    "DescribeLoadBalancerPortInfo": {
+      "document": "获取黑石负载均衡端口相关信息。",
+      "input": "DescribeLoadBalancerPortInfoRequest",
+      "name": "获取黑石负载均衡端口相关信息",
+      "output": "DescribeLoadBalancerPortInfoResponse"
+    },
+    "DescribeLoadBalancerTaskResult": {
+      "document": "查询负载均衡实例异步任务的执行情况。",
+      "input": "DescribeLoadBalancerTaskResultRequest",
+      "name": "查询负载均衡实例异步任务的执行情况",
+      "output": "DescribeLoadBalancerTaskResultResponse"
+    },
+    "DescribeLoadBalancers": {
+      "document": "获取黑石负载均衡实例列表",
+      "input": "DescribeLoadBalancersRequest",
+      "name": "获取黑石负载均衡实例列表",
+      "output": "DescribeLoadBalancersResponse"
+    },
+    "DescribeTrafficMirrorListeners": {
+      "document": "获取流量镜像的监听器列表信息。",
+      "input": "DescribeTrafficMirrorListenersRequest",
+      "name": "获取流量镜像的监听器列表信息",
+      "output": "DescribeTrafficMirrorListenersResponse"
+    },
+    "DescribeTrafficMirrorReceiverHealthStatus": {
+      "document": "获取流量镜像接收机健康状态。",
+      "input": "DescribeTrafficMirrorReceiverHealthStatusRequest",
+      "name": "获取流量镜像接收机健康状态",
+      "output": "DescribeTrafficMirrorReceiverHealthStatusResponse"
+    },
+    "DescribeTrafficMirrorReceivers": {
+      "document": "获取指定流量镜像实例的接收机信息。",
+      "input": "DescribeTrafficMirrorReceiversRequest",
+      "name": "获取指定流量镜像实例的接收机信息",
+      "output": "DescribeTrafficMirrorReceiversResponse"
+    },
+    "DescribeTrafficMirrors": {
+      "document": "获取流量镜像实例的列表信息。",
+      "input": "DescribeTrafficMirrorsRequest",
+      "name": "获取流量镜像实例的列表信息",
+      "output": "DescribeTrafficMirrorsResponse"
+    },
+    "ModifyL4BackendPort": {
+      "document": "修改黑石负载均衡四层监听器后端实例端口。",
+      "input": "ModifyL4BackendPortRequest",
+      "name": "修改黑石负载均衡四层监听器后端实例端口",
+      "output": "ModifyL4BackendPortResponse"
+    },
+    "ModifyL4BackendProbePort": {
+      "document": "修改黑石负载均衡四层监听器后端探测端口。",
+      "input": "ModifyL4BackendProbePortRequest",
+      "name": "修改黑石负载均衡四层监听器后端探测端口",
+      "output": "ModifyL4BackendProbePortResponse"
+    },
+    "ModifyL4BackendWeight": {
+      "document": "修改黑石负载均衡四层监听器后端实例权重功能。",
+      "input": "ModifyL4BackendWeightRequest",
+      "name": "修改黑石负载均衡四层监听器后端实例权重",
+      "output": "ModifyL4BackendWeightResponse"
+    },
+    "ModifyL4Listener": {
+      "document": "修改黑石负载均衡四层监听器。",
+      "input": "ModifyL4ListenerRequest",
+      "name": "修改黑石负载均衡四层监听器",
+      "output": "ModifyL4ListenerResponse"
+    },
+    "ModifyL7BackendPort": {
+      "document": "修改黑石负载均衡七层转发路径后端实例端口。",
+      "input": "ModifyL7BackendPortRequest",
+      "name": "修改黑石负载均衡七层转发路径后端实例端口",
+      "output": "ModifyL7BackendPortResponse"
+    },
+    "ModifyL7BackendWeight": {
+      "document": "修改黑石负载均衡七层转发路径后端实例权重。",
+      "input": "ModifyL7BackendWeightRequest",
+      "name": "修改黑石负载均衡七层转发路径后端实例权重",
+      "output": "ModifyL7BackendWeightResponse"
+    },
+    "ModifyL7Listener": {
+      "document": "修改黑石负载均衡七层监听器。",
+      "input": "ModifyL7ListenerRequest",
+      "name": "修改黑石负载均衡七层监听器",
+      "output": "ModifyL7ListenerResponse"
+    },
+    "ModifyL7Locations": {
+      "document": "修改黑石负载均衡七层转发路径。",
+      "input": "ModifyL7LocationsRequest",
+      "name": "修改黑石负载均衡七层转发路径",
+      "output": "ModifyL7LocationsResponse"
+    },
+    "ModifyLoadBalancer": {
+      "document": "根据输入参数来修改黑石负载均衡实例的基本配置信息。可能的信息包括负载均衡实例的名称，域名前缀。",
+      "input": "ModifyLoadBalancerRequest",
+      "name": "修改黑石负载均衡实例的基本配置信息",
+      "output": "ModifyLoadBalancerResponse"
+    },
+    "ModifyLoadBalancerChargeMode": {
+      "document": "更改黑石负载均衡的计费方式",
+      "input": "ModifyLoadBalancerChargeModeRequest",
+      "name": "更改黑石负载均衡的计费方式",
+      "output": "ModifyLoadBalancerChargeModeResponse"
+    },
+    "ReplaceCert": {
+      "document": "更新黑石负载均衡证书。",
+      "input": "ReplaceCertRequest",
+      "name": "更新黑石负载均衡证书",
+      "output": "ReplaceCertResponse"
+    },
+    "SetTrafficMirrorAlias": {
+      "document": "设置流量镜像的别名。",
+      "input": "SetTrafficMirrorAliasRequest",
+      "name": "设置流量镜像的别名",
+      "output": "SetTrafficMirrorAliasResponse"
+    },
+    "SetTrafficMirrorHealthSwitch": {
+      "document": "设置流量镜像的健康检查参数。",
+      "input": "SetTrafficMirrorHealthSwitchRequest",
+      "name": "设置流量镜像的健康检查参数",
+      "output": "SetTrafficMirrorHealthSwitchResponse"
+    },
+    "UnbindL4Backends": {
+      "document": "解绑黑石负载均衡四层监听器物理服务器。",
+      "input": "UnbindL4BackendsRequest",
+      "name": "解绑黑石负载均衡四层监听器物理服务器",
+      "output": "UnbindL4BackendsResponse"
+    },
+    "UnbindL7Backends": {
+      "document": "解绑黑石物理服务器或者托管服务器到七层转发路径功能。",
+      "input": "UnbindL7BackendsRequest",
+      "name": "解绑黑石物理服务器或者托管服务器到七层转发路径",
+      "output": "UnbindL7BackendsResponse"
+    },
+    "UnbindTrafficMirrorListeners": {
+      "document": "解绑流量镜像监听器。",
+      "input": "UnbindTrafficMirrorListenersRequest",
+      "name": "解绑流量镜像监听器",
+      "output": "UnbindTrafficMirrorListenersResponse"
+    },
+    "UnbindTrafficMirrorReceivers": {
+      "document": "从流量镜像实例上解绑流量镜像接收机。",
+      "input": "UnbindTrafficMirrorReceiversRequest",
+      "name": "解绑流量镜像接收机",
+      "output": "UnbindTrafficMirrorReceiversResponse"
+    },
+    "UploadCert": {
+      "document": "创建黑石负载均衡证书。",
+      "input": "UploadCertRequest",
+      "name": "创建黑石负载均衡证书",
+      "output": "UploadCertResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-06-25",
+    "api_brief": null,
+    "serviceNameCN": "黑石负载均衡",
+    "serviceShortName": "bmlb"
+  },
+  "objects": {
+    "BindL4Backend": {
+      "document": "待与四层监听器绑定的物理机主机、虚拟机或半托管主机信息。目前一个四层监听器下面最多允许绑定255个主机端口。",
+      "members": [
+        {
+          "default": "",
+          "document": "待绑定的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待绑定的黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待绑定的主机权重，可选值0~100。",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义探测的主机端口，可选值1~65535。（需要监听器开启自定义健康检查）",
+          "member": "int64",
+          "name": "ProbePort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindL4BackendsRequest": {
+      "document": "BindL4Backends请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层监听器实例ID，可通过接口DescribeL4Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的主机信息。可以绑定多个主机端口。目前一个四层监听器下面最多允许绑定255个主机端口。",
+          "member": "BindL4Backend",
+          "name": "BackendSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机 1：虚拟机 2：半托管机器",
+          "member": "int64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BindL4BackendsResponse": {
+      "document": "BindL4Backends返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindL7Backend": {
+      "document": "待与七层监听器转发规则绑定的物理机主机、虚拟机或半托管主机信息。目前一个七层转发路径下面最多允许绑定255个主机端口。",
+      "members": [
+        {
+          "default": "",
+          "document": "待绑定的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待绑定的主机权重，可选值0~100。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindL7BackendsRequest": {
+      "document": "BindL7Backends请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的主机信息。可以绑定多个主机端口。目前一个七层转发路径下面最多允许绑定255个主机端口。",
+          "member": "BindL7Backend",
+          "name": "BackendSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机，1：虚拟机 2：半托管机器。",
+          "member": "uint64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BindL7BackendsResponse": {
+      "document": "BindL7Backends返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindTrafficMirrorListenersRequest": {
+      "document": "BindTrafficMirrorListeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID数组，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindTrafficMirrorListenersResponse": {
+      "document": "BindTrafficMirrorListeners返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindTrafficMirrorReceiver": {
+      "document": "待与流量镜像绑定的接收机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "待绑定的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待绑定的主机实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待绑定的主机权重，可选值0~100。",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindTrafficMirrorReceiversRequest": {
+      "document": "BindTrafficMirrorReceivers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的黑石物理机信息数组。",
+          "member": "BindTrafficMirrorReceiver",
+          "name": "ReceiverSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindTrafficMirrorReceiversResponse": {
+      "document": "BindTrafficMirrorReceivers返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CertDetailLoadBalancer": {
+      "document": "获取证书信息时返回的所用在的负载均衡信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "黑石负载均衡实例ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石负载均衡实例名称。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该黑石负载均衡所在的VpcId。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该黑石负载均衡所在的regionId。",
+          "member": "int64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateL4Listener": {
+      "document": "用于创建四层监听器的监听器信息。目前一个负载均衡下面最多允许创建50个监听器。",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器监听端口，可选值1~65535。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器协议类型，可选值tcp，udp。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的会话保持时间，单位：秒。可选值：900~3600,不传表示不开启会话保持。",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启健康检查：1（开启）、0（关闭）。默认值0，表示关闭。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查的响应超时时间，可选值：2-60，默认值：2，单位:秒。<br><font color=\"red\">响应超时时间要小于检查间隔时间。</font>",
+          "member": "int64",
+          "name": "TimeOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查间隔时间，默认值：5，可选值：5-300，单位：秒。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器最大带宽值，用于计费模式为固定带宽计费，可选值：0-1000，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）",
+          "member": "int64",
+          "name": "CustomHealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。",
+          "member": "int64",
+          "name": "LineSeparatorType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义探测请求内容。",
+          "member": "string",
+          "name": "HealthRequest",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义探测返回内容。",
+          "member": "string",
+          "name": "HealthResponse",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启toa。可选值：0（关闭）、1（开启），默认关闭。（该字段在负载均衡为fullnat类型下才生效）",
+          "member": "int64",
+          "name": "ToaFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateL4ListenersRequest": {
+      "document": "CreateL4Listeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监听器信息数组，可以创建多个监听器。目前一个负载均衡下面最多允许创建50个监听器",
+          "member": "CreateL4Listener",
+          "name": "ListenerSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL4ListenersResponse": {
+      "document": "CreateL4Listeners返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL7Listener": {
+      "document": "用于创建四层监听器的监听器信息。目前一个负载均衡下面最多允许创建50个七层监听器。",
+      "members": [
+        {
+          "default": "",
+          "document": "七层监听器端口，可选值1~65535。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器协议类型，可选值：http,https。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。当创建的是https类型的监听器时，此值必选。",
+          "member": "int64",
+          "name": "SslMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端证书ID。当创建的是https类型的监听器时，此值必选。",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端证书名称。",
+          "member": "string",
+          "name": "CertName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端证书内容。",
+          "member": "string",
+          "name": "CertContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端证书密钥。",
+          "member": "string",
+          "name": "CertKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书ID。",
+          "member": "string",
+          "name": "CertCaId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书名称。",
+          "member": "string",
+          "name": "CertCaName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书内容。",
+          "member": "string",
+          "name": "CertCaContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于计费模式为固定带宽计费，指定监听器最大带宽值，可选值：0-1000，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发协议。当Protocol为https时并且SslMode为1或2时，有意义。可选的值为0：https，1：spdy，2：http2，3：spdy+http2。",
+          "member": "int64",
+          "name": "ForwardProtocol",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateL7ListenersRequest": {
+      "document": "CreateL7Listeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器信息数组，可以创建多个七层监听器。目前一个负载均衡下面最多允许创建50个七层监听器。",
+          "member": "CreateL7Listener",
+          "name": "ListenerSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL7ListenersResponse": {
+      "document": "CreateL7Listeners返回参数结构体",
+      "members": [
+        {
+          "document": "新建的负载均衡七层监听器的唯一ID列表。",
+          "member": "string",
+          "name": "ListenerIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL7Rule": {
+      "document": "用于创建七层监听器的转发规则的信息。目前一个七层监听器下面最多允许创建50个七层转发域名，而每一个转发域名下最多可以创建100个转发规则。",
+      "members": [
+        {
+          "default": "",
+          "document": "七层转发规则的转发域名。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层转发规则的转发路径。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持时间，单位：秒。可选值：30~3600。默认值0，表示不开启会话保持。",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查开关：1（开启）、0（关闭）。默认值0，表示关闭。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查间隔时间，默认值：5，可选值：5-300，单位：秒。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查不健康阈值，默认值：5，表示当连续探测五次不健康则表示该转发不正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查中认为健康的HTTP返回码的组合。可选值为1~5的集合，1表示HTTP返回码为1xx认为健康。2表示HTTP返回码为2xx认为健康。3表示HTTP返回码为3xx认为健康。4表示HTTP返回码为4xx认为健康。5表示HTTP返回码为5xx认为健康。",
+          "member": "uint64",
+          "name": "HttpCodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查路径。",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查域名。如果创建规则的域名使用通配符或正则表达式，则健康检查检查域名可自定义，否则必须跟健康检查检查域名一样。",
+          "member": "string",
+          "name": "HttpCheckDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "均衡方式：ip_hash、wrr。默认值wrr。",
+          "member": "string",
+          "name": "BalanceMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateL7RulesRequest": {
+      "document": "CreateL7Rules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层转发规则信息数组，可以创建多个七层转发规则。目前一个七层监听器下面最多允许创建50个七层转发域名，而每一个转发域名下最多可以创建100个转发规则。目前只能单条创建，不能批量创建。",
+          "member": "CreateL7Rule",
+          "name": "RuleSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL7RulesResponse": {
+      "document": "CreateL7Rules返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancerBzConf": {
+      "document": "用于创建负载均衡的个性化配置。",
+      "members": [
+        {
+          "default": "hourly",
+          "document": "按月/按小时计费。",
+          "member": "string",
+          "name": "BzPayMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "conn",
+          "document": "四层可选按带宽，连接数衡量。",
+          "member": "string",
+          "name": "BzL4Metrics",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "qps",
+          "document": "七层可选按qps衡量。",
+          "member": "string",
+          "name": "BzL7Metrics",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateLoadBalancersRequest": {
+      "document": "CreateLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "黑石负载均衡实例所属的私有网络ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡的类型，取值为open或internal。open表示公网(有日租)，internal表示内网。",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在私有网络内购买内网负载均衡实例的时候需要指定子网ID，内网负载均衡实例的VIP将从这个子网中产生。其他情况不用填写该字段。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡所属项目ID。不填则属于默认项目。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买黑石负载均衡实例的数量。默认值为1, 最大值为20。",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "黑石负载均衡的计费模式，取值为flow和bandwidth，其中flow模式表示流量模式，bandwidth表示带宽模式。默认值为flow。",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡对应的TGW集群类别，取值为tunnel、fullnat或dnat。tunnel表示隧道集群，fullnat表示FULLNAT集群（普通外网负载均衡），dnat表示DNAT集群（增强型外网负载均衡）。默认值为fullnat。如需获取client IP，可以选择 tunnel 模式，fullnat 模式（tcp 通过toa 获取），dnat 模式。",
+          "member": "string",
+          "name": "TgwSetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡的独占类别，取值为0表示非独占，1表示四层独占，2表示七层独占，3表示四层和七层独占，4表示共享容灾。",
+          "member": "int64",
+          "name": "Exclusive",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定的VIP，如果指定，则数量必须与goodsNum一致。如果不指定，则由后台分配随机VIP。",
+          "member": "string",
+          "name": "SpecifiedVips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "（未全地域开放）保障型负载均衡设定参数，如果类别选择保障型则需传入此参数。",
+          "member": "CreateLoadBalancerBzConf",
+          "name": "BzConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "IP协议类型。可取的值为“ipv4”或“ipv6”。",
+          "member": "string",
+          "name": "IpProtocolType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancersResponse": {
+      "document": "CreateLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "创建的黑石负载均衡实例ID。",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建负载均衡的异步任务ID。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrafficMirrorRequest": {
+      "document": "CreateTrafficMirror请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例别名。",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量镜像实例所属的私有网络ID，形如：vpc-xxx。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrafficMirrorResponse": {
+      "document": "CreateTrafficMirror返回参数结构体",
+      "members": [
+        {
+          "document": "流量镜像实例ID",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL7DomainsRequest": {
+      "document": "DeleteL7Domains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID列表，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL7DomainsResponse": {
+      "document": "DeleteL7Domains返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL7RulesRequest": {
+      "document": "DeleteL7Rules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID列表，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "LocationIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL7RulesResponse": {
+      "document": "DeleteL7Rules返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteListenersRequest": {
+      "document": "DeleteListeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待删除的负载均衡四层和七层监听器ID列表，可通过接口DescribeL4Listeners和DescribeL7Listeners查询。目前同时只能删除一种类型的监听器，并且删除七层监听器的数量上限为一个。",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteListenersResponse": {
+      "document": "DeleteListeners返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerRequest": {
+      "document": "DeleteLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerResponse": {
+      "document": "DeleteLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTrafficMirrorRequest": {
+      "document": "DeleteTrafficMirror请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID数组，可以批量删除，每次删除上限为20",
+          "member": "string",
+          "name": "TrafficMirrorIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTrafficMirrorResponse": {
+      "document": "DeleteTrafficMirror返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertDetailRequest": {
+      "document": "DescribeCertDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书ID。",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertDetailResponse": {
+      "document": "DescribeCertDetail返回参数结构体",
+      "members": [
+        {
+          "document": "证书ID。",
+          "member": "string",
+          "name": "CertId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书名称。",
+          "member": "string",
+          "name": "CertName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书类型（SVR=服务器证书，CA=客户端证书）。",
+          "member": "string",
+          "name": "CertType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书内容。",
+          "member": "string",
+          "name": "CertContent",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书主域名。",
+          "member": "string",
+          "name": "CertDomain",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书子域名列表。",
+          "member": "string",
+          "name": "CertSubjectDomain",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书上传时间。",
+          "member": "datetime",
+          "name": "CertUploadTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书生效时间。",
+          "member": "datetime",
+          "name": "CertBeginTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书失效时间。",
+          "member": "datetime",
+          "name": "CertEndTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该证书关联的黑石负载均衡对象列表。",
+          "member": "CertDetailLoadBalancer",
+          "name": "CertLoadBalancerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicesBindInfoRequest": {
+      "document": "DescribeDevicesBindInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "黑石私有网络唯一ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机ID或虚机IP列表，可用于获取绑定了该主机的负载均衡列表。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicesBindInfoResponse": {
+      "document": "DescribeDevicesBindInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的负载均衡绑定信息。",
+          "member": "DevicesBindInfoLoadBalancer",
+          "name": "LoadBalancerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4Backend": {
+      "document": "待查询四层监听器绑定的主机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "待绑定的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机的主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeL4BackendsRequest": {
+      "document": "DescribeL4Backends请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡四层监听器ID，可通过接口DescribeL4Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待查询的主机信息。",
+          "member": "DescribeL4Backend",
+          "name": "BackendSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4BackendsResponse": {
+      "document": "DescribeL4Backends返回参数结构体",
+      "members": [
+        {
+          "document": "返回的绑定关系列表。",
+          "member": "L4Backend",
+          "name": "BackendSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4ListenerInfoRequest": {
+      "document": "DescribeL4ListenerInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查找的键值，可用于模糊查找该名称的监听器。",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机ID或虚机IP列表，可用于获取绑定了该主机的监听器。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4ListenerInfoResponse": {
+      "document": "DescribeL4ListenerInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的四层监听器列表。",
+          "member": "L4ListenerInfo",
+          "name": "ListenerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4ListenersRequest": {
+      "document": "DescribeL4Listeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层监听器实例ID数组，可通过接口DescribeL4Listeners查询。",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4ListenersResponse": {
+      "document": "DescribeL4Listeners返回参数结构体",
+      "members": [
+        {
+          "document": "监听器信息数组。",
+          "member": "L4Listener",
+          "name": "ListenerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7BackendsRequest": {
+      "document": "DescribeL7Backends请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询条件，传'all'则查询所有与规则绑定的主机信息。如果为all时，DomainId和LocationId参数没有意义不必传入，否则DomainId和LocationId参数必须传入。",
+          "member": "string",
+          "name": "QueryType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7BackendsResponse": {
+      "document": "DescribeL7Backends返回参数结构体",
+      "members": [
+        {
+          "document": "返回的绑定关系列表。",
+          "member": "L7Backend",
+          "name": "BackendSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7ListenerInfoRequest": {
+      "document": "DescribeL7ListenerInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查找的键值，可用于模糊查找有该转发域名的监听器。",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机ID或虚机IP列表，可用于获取绑定了该主机的监听器。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否获取转发规则下的主机信息。默认为0，不获取。",
+          "member": "int64",
+          "name": "IfGetBackendInfo",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7ListenerInfoResponse": {
+      "document": "DescribeL7ListenerInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的七层监听器列表。",
+          "member": "L7ListenerInfo",
+          "name": "ListenerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7ListenersExRequest": {
+      "document": "DescribeL7ListenersEx请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回的监听器中标识是否绑定在此流量镜像中。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待获取监听器所在的VPC的ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "此VPC中获取负载均衡的偏移。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "此VPC中获取负载均衡的数量。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\nLoadBalancerId - String - （过滤条件）负载均衡ID。\nLoadBalancerName - String - （过滤条件）负载均衡名称。\nVip - String - （过滤条件）VIP。\nListenerId - String - （过滤条件）监听器ID。\nListenerName -  String - （过滤条件）监听器名称。\nProtocol -  String - （过滤条件）七层协议。\nLoadBalancerPort -  String - （过滤条件）监听器端口。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7ListenersExResponse": {
+      "document": "DescribeL7ListenersEx返回参数结构体",
+      "members": [
+        {
+          "document": "此指定VPC中负载均衡的总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的监听器。",
+          "member": "L7ExListener",
+          "name": "ListenerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7ListenersRequest": {
+      "document": "DescribeL7Listeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID列表，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7ListenersResponse": {
+      "document": "DescribeL7Listeners返回参数结构体",
+      "members": [
+        {
+          "document": "返回的七层监听器列表。",
+          "member": "L7Listener",
+          "name": "ListenerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7RulesRequest": {
+      "document": "DescribeL7Rules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发域名ID列表，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7RulesResponse": {
+      "document": "DescribeL7Rules返回参数结构体",
+      "members": [
+        {
+          "document": "返回的转发规则列表。",
+          "member": "L7Rule",
+          "name": "RuleSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerPortInfoRequest": {
+      "document": "DescribeLoadBalancerPortInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerPortInfoResponse": {
+      "document": "DescribeLoadBalancerPortInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的监听器列表（四层和七层）。",
+          "member": "LoadBalancerPortInfoListener",
+          "name": "ListenerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerTaskResultRequest": {
+      "document": "DescribeLoadBalancerTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID。由具体的异步操作接口提供。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerTaskResultResponse": {
+      "document": "DescribeLoadBalancerTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "任务当前状态。0：成功，1：失败，2：进行中。",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancersRequest": {
+      "document": "DescribeLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡器ID数组",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "负载均衡的类型 : open表示公网LB类型，internal表示内网LB类型",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡器名称",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡域名。规则：1-60个小写英文字母、数字、点号“.”或连接线“-”。内网类型的负载均衡不能配置该字段",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡获得的公网IP地址,支持多个",
+          "member": "string",
+          "name": "LoadBalancerVips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "0",
+          "document": "数据偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "20",
+          "document": "返回数据长度，默认为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模糊查找名称、域名、VIP",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "'createTime'",
+          "document": "排序字段，支持：loadBalancerName,createTime,domain,loadBalancerType",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "1",
+          "document": "1倒序，0顺序，默认顺序",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "0",
+          "document": "项目ID",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "0",
+          "document": "是否筛选独占集群，0表示非独占集群，1表示四层独占集群，2表示七层独占集群，3表示四层和七层独占集群，4表示共享容灾",
+          "member": "uint64",
+          "name": "Exclusive",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "该负载均衡对应的tgw集群（fullnat,tunnel,dnat）",
+          "member": "string",
+          "name": "TgwSetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该负载均衡对应的所在的私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "'CONFLIST' 查询带confId的LB列表，'CONFID' 查询某个confId绑定的LB列表",
+          "member": "string",
+          "name": "QueryType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "个性化配置ID",
+          "member": "string",
+          "name": "ConfId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancersResponse": {
+      "document": "DescribeLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "返回负载均衡信息列表。",
+          "member": "LoadBalancer",
+          "name": "LoadBalancerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的负载均衡总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorListenersRequest": {
+      "document": "DescribeTrafficMirrorListeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，也即从第几条记录开始查询",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单次查询返回的条目数，默认值：500。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "待搜索的负载均衡Id。",
+          "member": "string",
+          "name": "SearchLoadBalancerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待搜索的负载均衡名称。",
+          "member": "string",
+          "name": "SearchLoadBalancerNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待搜索的Vip。",
+          "member": "string",
+          "name": "SearchVips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待搜索的监听器ID。",
+          "member": "string",
+          "name": "SearchListenerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待搜索的监听器名称。",
+          "member": "string",
+          "name": "SearchListenerNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待搜索的协议名称。",
+          "member": "string",
+          "name": "SearchProtocols",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待搜索的端口。",
+          "member": "uint64",
+          "name": "SearchLoadBalancerPorts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorListenersResponse": {
+      "document": "DescribeTrafficMirrorListeners返回参数结构体",
+      "members": [
+        {
+          "document": "监听器列表。",
+          "member": "TrafficMirrorListener",
+          "name": "ListenerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "监听器总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorReceiver": {
+      "document": "流量镜像进行健康检查的接收机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "物理机实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理机绑定的端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeTrafficMirrorReceiverHealthStatusRequest": {
+      "document": "DescribeTrafficMirrorReceiverHealthStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询所在的流量镜像ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量镜像接收机实例ID和端口数组。",
+          "member": "DescribeTrafficMirrorReceiver",
+          "name": "ReceiverSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorReceiverHealthStatusResponse": {
+      "document": "DescribeTrafficMirrorReceiverHealthStatus返回参数结构体",
+      "members": [
+        {
+          "document": "内网IP和端口对应的状态。",
+          "member": "TrafficMirrorReciversStatus",
+          "name": "ReceiversStatusSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorReceiversRequest": {
+      "document": "DescribeTrafficMirrorReceivers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接收机黑石物理机实例ID数组。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "接收机接收端口数组。",
+          "member": "int64",
+          "name": "Ports",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "接收机实例权重数组。",
+          "member": "int64",
+          "name": "Weights",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，也即从第几条记录开始查询",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单次查询返回的条目数，默认值：500。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索instance或者alias",
+          "member": "string",
+          "name": "VagueStr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索IP",
+          "member": "string",
+          "name": "VagueIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorReceiversResponse": {
+      "document": "DescribeTrafficMirrorReceivers返回参数结构体",
+      "members": [
+        {
+          "document": "接收机列表，具体结构描述如data结构所示。",
+          "member": "TrafficMirrorReceiver",
+          "name": "ReceiverSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "接收机总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorsRequest": {
+      "document": "DescribeTrafficMirrors请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID的数组，支持批量查询",
+          "member": "string",
+          "name": "TrafficMirrorIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "流量镜像实例别名数组。",
+          "member": "string",
+          "name": "Aliases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "流量镜像实例所属的私有网络ID数组，形如：vpc-xxx。",
+          "member": "string",
+          "name": "VpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，也即从第几条记录开始查询",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单次查询返回的条目数，默认值：500。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段。trafficMirrorId或者createTime。",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，取值：0:增序(默认)，1:降序",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模糊匹配trafficMirrorId或者alias字段。",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficMirrorsResponse": {
+      "document": "DescribeTrafficMirrors返回参数结构体",
+      "members": [
+        {
+          "document": "流量镜像总数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "对象数组。数组元素为流量镜像信息，具体结构描述如list结构所示。",
+          "member": "TrafficMirror",
+          "name": "TrafficMirrorSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DevicesBindInfoBackend": {
+      "document": "获取设备绑定信息时返回的所绑定的主机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "黑石物理机的主机ID、托管主机ID或虚拟机IP。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DevicesBindInfoL4Listener": {
+      "document": "获取设备绑定信息时返回的四层监听器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "七层监听器实例ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器协议类型，可选值：http,https。",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器的监听端口。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该转发路径所绑定的主机列表。",
+          "member": "DevicesBindInfoBackend",
+          "name": "BackendSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DevicesBindInfoL7Listener": {
+      "document": "获取设备绑定信息时返回的七层监听器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "七层监听器实例ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器协议类型，可选值：http,https。",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器的监听端口。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回的转发规则列表。",
+          "member": "DevicesBindInfoRule",
+          "name": "RuleSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DevicesBindInfoLoadBalancer": {
+      "document": "获取设备绑定信息时返回的设备被绑定所在的负载均衡信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开发商AppId。",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡所属的项目ID。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石私有网络唯一ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的IP地址。",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡对应的TGW集群类别，取值为tunnel或fullnat。tunnel表示隧道集群，fullnat表示FULLNAT集群。",
+          "member": "string",
+          "name": "TgwSetType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否独占TGW集群。",
+          "member": "int64",
+          "name": "Exclusive",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "具有该绑定关系的四层监听器列表。",
+          "member": "DevicesBindInfoL4Listener",
+          "name": "L4ListenerSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "具有该绑定关系的七层监听器列表。",
+          "member": "DevicesBindInfoL7Listener",
+          "name": "L7ListenerSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DevicesBindInfoLocation": {
+      "document": "获取设备绑定信息时返回的设备所绑定的转发路径信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "转发路径。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID。",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该转发路径所绑定的主机列表。",
+          "member": "DevicesBindInfoBackend",
+          "name": "BackendSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DevicesBindInfoRule": {
+      "document": "获取设备绑定信息时返回的设备所绑定的转发规则信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "转发域名。",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发域名ID。",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发路径列表。",
+          "member": "DevicesBindInfoLocation",
+          "name": "LocationSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "L4Backend": {
+      "document": "查询四层监听器返回的与监听器绑定关系的主机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "绑定类别（0代表黑石物理机，1代表虚拟机IP）。",
+          "member": "int64",
+          "name": "BindType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权重。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机的主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机的别名。",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机IP。",
+          "member": "string",
+          "name": "LanIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机当前可以执行的操作。",
+          "member": "string",
+          "name": "Operates",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机探测端口。",
+          "member": "int64",
+          "name": "ProbePort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L4Listener": {
+      "document": "查询四层监听器时返回的四层监听器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义的监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例监听器协议类型，可选值tcp，udp。",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器的监听接口，可选值1~65535。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于计费模式为固定带宽计费，指定监听器最大带宽值，可选值：0-1000，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。",
+          "member": "string",
+          "name": "ListenerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持时间。单位：秒",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启了检查：1（开启）、0（关闭）。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "响应超时时间，单位：秒。",
+          "member": "int64",
+          "name": "TimeOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查间隔，单位：秒。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）",
+          "member": "int64",
+          "name": "CustomHealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。",
+          "member": "int64",
+          "name": "LineSeparatorType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义探测请求内容。",
+          "member": "string",
+          "name": "HealthRequest",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义探测返回内容。",
+          "member": "string",
+          "name": "HealthResponse",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启toa：1（开启）、0（关闭）。",
+          "member": "int64",
+          "name": "ToaFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间戳。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发后端服务器调度类型。",
+          "member": "string",
+          "name": "BalanceMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L4ListenerInfo": {
+      "document": "查询绑定了某主机的四层监听器时返回的四层监听器信息。\n",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义的监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例监听器协议类型，可选值tcp，udp。",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器的监听接口，可选值1~65535。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于计费模式为固定带宽计费，指定监听器最大带宽值，可选值：0-1000，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。",
+          "member": "string",
+          "name": "ListenerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持时间。单位：秒",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启了检查：1（开启）、0（关闭）。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "响应超时时间，单位：秒。",
+          "member": "int64",
+          "name": "TimeOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查间隔，单位：秒。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间戳。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）",
+          "member": "int64",
+          "name": "CustomHealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。",
+          "member": "int64",
+          "name": "LineSeparatorType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义探测请求内容。",
+          "member": "string",
+          "name": "HealthRequest",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义探测返回内容。",
+          "member": "string",
+          "name": "HealthResponse",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启toa：1（开启）、0（关闭）。",
+          "member": "int64",
+          "name": "ToaFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发后端服务器调度类型。",
+          "member": "string",
+          "name": "BalanceMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7Backend": {
+      "document": "获取七层转发路径绑定的主机列表时返回的主机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "绑定类别（0代表黑石物理机，1代表虚拟机IP）。",
+          "member": "int64",
+          "name": "BindType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权重。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机的主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机的别名。",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机IP。",
+          "member": "string",
+          "name": "LanIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机的管理IP。",
+          "member": "string",
+          "name": "MgtIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机当前可以执行的操作。",
+          "member": "string",
+          "name": "Operates",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7ExListener": {
+      "document": "监听器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "绑定的监听器唯一ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器协议类型，可选值：http,https。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的监听端口。",
+          "member": "uint64",
+          "name": "LoadBalancerPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前带宽。",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽上限。",
+          "member": "uint64",
+          "name": "MaxBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器类型。",
+          "member": "string",
+          "name": "ListenerType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。",
+          "member": "int64",
+          "name": "SslMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端证书ID。",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书ID。",
+          "member": "string",
+          "name": "CertCaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加时间。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡名ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络名称。",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络Cidr。",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的VIP。",
+          "member": "string",
+          "name": "LoadBalancerVips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡名称。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡IPV6的VIP。",
+          "member": "string",
+          "name": "LoadBalancerVipv6s",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的IP协议类型。ipv4或者是ipv6。",
+          "member": "string",
+          "name": "IpProtocolType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否绑定在入参指定的流量镜像中。",
+          "member": "bool",
+          "name": "BindTrafficMirror",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "L7Listener": {
+      "document": "获取黑石负载均衡七层监听器时返回的七层监听器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "七层监听器实例ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器协议类型，可选值：http,https。",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器的监听端口。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式为按固定带宽方式时监听器的限速值，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。",
+          "member": "string",
+          "name": "ListenerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器的认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。",
+          "member": "int64",
+          "name": "SslMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器关联的服务端证书ID。",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器关联的客户端证书ID。",
+          "member": "string",
+          "name": "CertCaId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间戳。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。",
+          "member": "int64",
+          "name": "ForwardProtocol",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7ListenerInfo": {
+      "document": "查询绑定了某主机的七层监听器时返回的七层监听器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "七层监听器实例ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器协议类型，可选值：http,https。",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器的监听端口。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式为按固定带宽方式时监听器的限速值，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。",
+          "member": "string",
+          "name": "ListenerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器的认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。",
+          "member": "int64",
+          "name": "SslMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器关联的服务端证书ID。",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器关联的客户端证书ID。",
+          "member": "string",
+          "name": "CertCaId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间戳。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回的转发规则列表。",
+          "member": "L7ListenerInfoRule",
+          "name": "RuleSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。",
+          "member": "int64",
+          "name": "ForwardProtocol",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7ListenerInfoBackend": {
+      "document": "查询绑定了某主机七层监听器时返回的与转发路径所绑定的主机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "绑定类别（0代表黑石物理机，1代表虚拟机IP）。",
+          "member": "int64",
+          "name": "BindType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权重。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机的主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机的别名。",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机IP。",
+          "member": "string",
+          "name": "LanIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7ListenerInfoLocation": {
+      "document": "查询绑定了某主机的七层监听器时返回的转发路径。",
+      "members": [
+        {
+          "default": "",
+          "document": "转发路径。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID。",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持时间。",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启健康检查。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查路径。",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查域名。",
+          "member": "string",
+          "name": "HttpCheckDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查间隔时间。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查健康阈值。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查不健康阈值。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查中认为健康的HTTP返回码的组合。可选值为1~5的集合，1表示HTTP返回码为1xx认为健康。2表示HTTP返回码为2xx认为健康。3表示HTTP返回码为3xx认为健康。4表示HTTP返回码为4xx认为健康。5表示HTTP返回码为5xx认为健康。",
+          "member": "uint64",
+          "name": "HttpCodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "均衡方式。",
+          "member": "string",
+          "name": "BalanceMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间戳。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该转发路径所绑定的主机列表。",
+          "member": "L7ListenerInfoBackend",
+          "name": "BackendSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7ListenerInfoRule": {
+      "document": "查询绑定了某主机的七层监听器时返回的转发规则。",
+      "members": [
+        {
+          "default": "",
+          "document": "转发域名。",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID。",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前绑定关系的健康检查状态（Dead代表不健康，Alive代表健康）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间戳。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该转发域名下面的转发路径列表。",
+          "member": "L7ListenerInfoLocation",
+          "name": "LocationSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7Rule": {
+      "document": "获取七层监听器转发规则时返回的转发规则。",
+      "members": [
+        {
+          "default": "",
+          "document": "转发域名。",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID。",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发路径当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间戳。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该转发域名下面的转发路径列表。",
+          "member": "L7RulesLocation",
+          "name": "LocationSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7RulesLocation": {
+      "document": "获取七层转发规则时返回的转发域名下面的转发路径。",
+      "members": [
+        {
+          "default": "",
+          "document": "转发路径。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID。",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持时间。",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启健康检查。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查路径。",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查域名。",
+          "member": "string",
+          "name": "HttpCheckDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查间隔时间。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查健康阈值。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查不健康阈值。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查中认为健康的HTTP返回码的组合。可选值为1~5的集合，1表示HTTP返回码为1xx认为健康。2表示HTTP返回码为2xx认为健康。3表示HTTP返回码为3xx认为健康。4表示HTTP返回码为4xx认为健康。5表示HTTP返回码为5xx认为健康。",
+          "member": "uint64",
+          "name": "HttpCodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "均衡方式。",
+          "member": "string",
+          "name": "BalanceMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发路径当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间戳。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LoadBalancer": {
+      "document": "获取负载均衡实例列表时返回的负载均衡信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡器ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID，通过v2/DescribeProject 接口获得",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡器名称",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的类型 : open表示公网负载均衡类型，internal表示内网负载均衡类型",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否筛选独占集群，0表示非独占集群，1表示四层独占集群，2表示七层独占集群，3表示四层和七层独占集群，4表示共享容灾",
+          "member": "uint64",
+          "name": "Exclusive",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该负载均衡对应的tgw集群（fullnat,tunnel,dnat）",
+          "member": "string",
+          "name": "TgwSetType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡域名。规则：1-60个小写英文字母、数字、点号“.”或连接线“-”。内网类型的负载均衡不能配置该字段",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该负载均衡对应的所在的VpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该负载均衡对应的所在的SubnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "member": "string",
+          "name": "LatestPayMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "member": "datetime",
+          "name": "StatusTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络名称。",
+          "member": "string",
+          "name": "VpcName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络Cidr。",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的IPV4的VIP。",
+          "member": "string",
+          "name": "LoadBalancerVips",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "member": "string",
+          "name": "SupportListenerTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡个性化配置ID",
+          "member": "string",
+          "name": "ConfId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "member": "string",
+          "name": "ConfName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的IPV6的VIP。",
+          "member": "string",
+          "name": "LoadBalancerVipv6s",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡IP协议类型。ipv4或者ipv6。",
+          "member": "string",
+          "name": "IpProtocolType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保障型网关计费形式",
+          "member": "string",
+          "name": "BzPayMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保障型网关四层计费指标",
+          "member": "string",
+          "name": "BzL4Metrics",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保障型网关七层计费指标",
+          "member": "string",
+          "name": "BzL7Metrics",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该负载均衡对应的所在的整形类型的VpcId",
+          "member": "uint64",
+          "name": "IntVpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的IPV6或者IPV4的VIP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CurVips",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LoadBalancerPortInfoListener": {
+      "document": "获取黑石负载均衡端口相关信息时返回的监听器信息（四层和七层）。",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡监听器ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器协议类型，可选值：http，https，tcp，udp。",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的监听端口。",
+          "member": "int64",
+          "name": "LoadBalancerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式为按固定带宽方式时监听器的限速值，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与监听器绑定的主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyL4BackendPortRequest": {
+      "document": "ModifyL4BackendPort请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡四层监听器ID，可通过接口DescribeL4Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已绑定的主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "NewPort",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机  1：虚拟机 2：半托管机器",
+          "member": "int64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4BackendPortResponse": {
+      "document": "ModifyL4BackendPort返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4BackendProbePortRequest": {
+      "document": "ModifyL4BackendProbePort请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡四层监听器ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已绑定的主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新的探测端口，可选值1~65535。",
+          "member": "int64",
+          "name": "ProbePort",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机 1：虚拟机IP 2：半托管机器",
+          "member": "int64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4BackendProbePortResponse": {
+      "document": "ModifyL4BackendProbePort返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4BackendWeightRequest": {
+      "document": "ModifyL4BackendWeight请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡四层监听器ID，可通过接口DescribeL4Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权重信息，可选值0~100。",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "已绑定的主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机 1：虚拟机 2：半托管机器",
+          "member": "int64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4BackendWeightResponse": {
+      "document": "ModifyL4BackendWeight返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ListenerRequest": {
+      "document": "ModifyL4Listener请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层监听器ID。可通过接口DescribeL4Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话保持时间，单位：秒。可选值：900~3600。",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启健康检查：1（开启）、0（关闭）。默认值0，表示关闭。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康检查的响应超时时间，可选值：2-60，默认值：2，单位:秒。<br><font color=\"red\">响应超时时间要小于检查间隔时间。</font>",
+          "member": "int64",
+          "name": "TimeOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康检查间隔，默认值：5，可选值：5-300，单位：秒。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监听器最大带宽值，用于计费模式为固定带宽计费。可选值：0-1000，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）",
+          "member": "int64",
+          "name": "CustomHealthSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。",
+          "member": "int64",
+          "name": "LineSeparatorType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义探测请求内容。",
+          "member": "string",
+          "name": "HealthRequest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义探测返回内容。",
+          "member": "string",
+          "name": "HealthResponse",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启toa。可选值：0（关闭）、1（开启），默认关闭。（该字段在负载均衡为fullnat类型下才生效）",
+          "member": "int64",
+          "name": "ToaFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "四层调度方式。wrr，wlc。",
+          "member": "string",
+          "name": "BalanceMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ListenerResponse": {
+      "document": "ModifyL4Listener返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7BackendPortRequest": {
+      "document": "ModifyL7BackendPort请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已绑定的主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "NewPort",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机 1：虚拟机 2：半托管机器",
+          "member": "int64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7BackendPortResponse": {
+      "document": "ModifyL7BackendPort返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7BackendWeightRequest": {
+      "document": "ModifyL7BackendWeight请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权重信息，可选值0~100。",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "已绑定的主机端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机 1：虚拟机 2：半托管机器",
+          "member": "int64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7BackendWeightResponse": {
+      "document": "ModifyL7BackendWeight返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7ListenerRequest": {
+      "document": "ModifyL7Listener请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。",
+          "member": "int64",
+          "name": "SslMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务端证书ID。",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务端证书名称。",
+          "member": "string",
+          "name": "CertName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务端证书内容。",
+          "member": "string",
+          "name": "CertContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务端证书密钥。",
+          "member": "string",
+          "name": "CertKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端证书ID。",
+          "member": "string",
+          "name": "CertCaId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端证书名称。",
+          "member": "string",
+          "name": "CertCaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端证书内容。",
+          "member": "string",
+          "name": "CertCaContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计费模式为按固定带宽方式时监听器的限速值，可选值：0-1000，单位：Mbps。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "转发协议。当监听器Protocol为https时并且SslMode为1或2时，有意义。可选的值为0：https，1：spdy，2：http2，3：spdy+http2。",
+          "member": "int64",
+          "name": "ForwardProtocol",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7ListenerResponse": {
+      "document": "ModifyL7Listener返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用[DescribeLoadBalancerTaskResult](/document/product/386/9308)接口来查询任务操作结果",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7LocationRule": {
+      "document": "修改黑石负载均衡七层转发路径时待修改的七层转发规则信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "转发域名实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发路径。",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持时间，单位：秒。可选值：30~3600。默认值0，表示不开启会话保持。",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查开关：1（开启）、0（关闭）。默认值0，表示关闭。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查间隔时间，默认值：5，可选值：5-300，单位：秒。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查不健康阈值，默认值：5，表示当连续探测五次不健康则表示该转发不正常，可选值：2-10，单位：次。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查中认为健康的HTTP返回码的组合。可选值为1~5的集合，1表示HTTP返回码为1xx认为健康。2表示HTTP返回码为2xx认为健康。3表示HTTP返回码为3xx认为健康。4表示HTTP返回码为4xx认为健康。5表示HTTP返回码为5xx认为健康。",
+          "member": "uint64",
+          "name": "HttpCodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查路径。",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查检查域名。如果规则的域名使用通配符或正则表达式，则健康检查检查域名可自定义，否则必须跟健康检查检查域名一样。不填表示不修改。",
+          "member": "string",
+          "name": "HttpCheckDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "均衡方式：ip_hash、wrr。默认值wrr。",
+          "member": "string",
+          "name": "BalanceMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发域名。",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyL7LocationsRequest": {
+      "document": "ModifyL7Locations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待更新的七层转发规则信息数组。",
+          "member": "ModifyL7LocationRule",
+          "name": "RuleSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7LocationsResponse": {
+      "document": "ModifyL7Locations返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerChargeModeListener": {
+      "document": "修改负载均衡计费方式的监听器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议类型。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽。",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyLoadBalancerChargeModeRequest": {
+      "document": "ModifyLoadBalancerChargeMode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计费方式。flow或bandwidth。",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监听器信息，当计费方式选为 bandwidth 且此负载均衡实例下存在监听器时需填入此字段，可以自定义每个监听器带宽上限。",
+          "member": "ModifyLoadBalancerChargeModeListener",
+          "name": "ListenerSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerChargeModeResponse": {
+      "document": "ModifyLoadBalancerChargeMode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerRequest": {
+      "document": "ModifyLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡器名称，规则：1-20个英文、汉字、数字、连接线“-”或下划线“_”。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名前缀，负载均衡的域名由用户输入的域名前缀与配置文件中的域名后缀一起组合而成，保证是唯一的域名。规则：1-20个小写英文字母、数字或连接线“-”。内网类型的负载均衡不能配置该字段。",
+          "member": "string",
+          "name": "DomainPrefix",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerResponse": {
+      "document": "ModifyLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceCertRequest": {
+      "document": "ReplaceCert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要被替换的证书ID",
+          "member": "string",
+          "name": "OldCertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书内容",
+          "member": "string",
+          "name": "NewCert",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书名称",
+          "member": "string",
+          "name": "NewAlias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私钥内容，证书类型为SVR时不需要传递",
+          "member": "string",
+          "name": "NewKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "0",
+          "document": "是否删除旧证书，0 表示不删除，1 表示删除",
+          "member": "uint64",
+          "name": "DeleteOld",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceCertResponse": {
+      "document": "ReplaceCert返回参数结构体",
+      "members": [
+        {
+          "document": "新证书ID。",
+          "member": "string",
+          "name": "NewCertId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "旧证书ID。",
+          "member": "string",
+          "name": "OldCertId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetTrafficMirrorAliasRequest": {
+      "document": "SetTrafficMirrorAlias请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量镜像实例别名。",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetTrafficMirrorAliasResponse": {
+      "document": "SetTrafficMirrorAlias返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetTrafficMirrorHealthSwitchRequest": {
+      "document": "SetTrafficMirrorHealthSwitch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "健康检查开关，0：关闭，1：打开",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康检查判断健康的次数，最小值2，最大值10。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康检查判断不健康的次数，最小值2，最大值10。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康检查间隔，单位：秒，最小值5，最大值300。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检查的域名配置。",
+          "member": "string",
+          "name": "HttpCheckDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "检查的路径配置。",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "健康检查中认为健康的HTTP返回码的组合。可选值为1~5的集合，1表示HTTP返回码为1xx认为健康。2表示HTTP返回码为2xx认为健康。3表示HTTP返回码为3xx认为健康。4表示HTTP返回码为4xx认为健康。5表示HTTP返回码为5xx认为健康。",
+          "member": "int64",
+          "name": "HttpCodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetTrafficMirrorHealthSwitchResponse": {
+      "document": "SetTrafficMirrorHealthSwitch返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TrafficMirror": {
+      "document": "获取流量镜像实例的列表信息时返回的流量镜像信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量镜像名称。",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量镜像所在的私有网络ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机负载均衡方式。wrr，ip_hash，wlc。",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开始对接收机的健康检查。0：关闭，非0：开启。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康阈值。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不健康阈值。",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查间隔。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查域名。",
+          "member": "string",
+          "name": "HttpCheckDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查目录。",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查返回码。 1：1xx，2：2xx，3：3xx，4：4xx，5：5xx。",
+          "member": "int64",
+          "name": "HttpCodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量镜像所在私有网络的Cidr。",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量镜像所在私有网络的名称。",
+          "member": "string",
+          "name": "VpcName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TrafficMirrorListener": {
+      "document": "获取流量镜像的监听器列表信息时返回的与流量镜像绑定的监听器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器名称。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层监听器协议类型，可选值：http,https。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的监听端口。",
+          "member": "uint64",
+          "name": "LoadBalancerPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前带宽。",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽上限。",
+          "member": "uint64",
+          "name": "MaxBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器类型。",
+          "member": "string",
+          "name": "ListenerType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证方式：0（不认证，用于http），1（单向认证，用于https），2（双向认证，用于https）。",
+          "member": "int64",
+          "name": "SslMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端证书ID。",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书ID。",
+          "member": "string",
+          "name": "CertCaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加时间。",
+          "member": "datetime",
+          "name": "AddTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络名称。",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络Cidr。",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的VIP。",
+          "member": "string",
+          "name": "LoadBalancerVips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡名称。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的IPV6的VIP。",
+          "member": "string",
+          "name": "LoadBalancerVipv6s",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的IP协议类型。ipv4或者是ipv6。",
+          "member": "string",
+          "name": "IpProtocolType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficMirrorPortStatus": {
+      "document": "流量镜像健康检查返回的接收机的端口及状态信息。",
+      "members": [
+        {
+          "default": "0",
+          "document": "接收机端口。",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficMirrorReceiver": {
+      "document": "获取与流量镜像绑定的接收机信息时返回的接收机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "接收机实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机接收端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机权重。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量镜像ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机别名。",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机内网IP地址。",
+          "member": "string",
+          "name": "LanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机所在的子网的ID。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机所在的子网的名称。",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机所在的子网的Cidr。",
+          "member": "string",
+          "name": "SubnetCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机所在的私有网络的ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机所在的私有网络的名称。",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机所在的私有网络的Cidr。",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机的健康状态。",
+          "member": "string",
+          "name": "HealthStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收机的可以执行的操作集合。",
+          "member": "string",
+          "name": "Operates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficMirrorReciversStatus": {
+      "document": "流量镜像健康检查返回的接收机状态信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "内网IP。",
+          "member": "string",
+          "name": "LanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口及对应的状态。",
+          "member": "TrafficMirrorPortStatus",
+          "name": "ReceiversPortStatusSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UnbindL4Backend": {
+      "document": "待与四层监听器解绑的物理机主机、虚拟机或半托管主机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "待解绑的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UnbindL4BackendsRequest": {
+      "document": "UnbindL4Backends请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡四层监听器ID，可通过接口DescribeL4Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待解绑的主机信息。可以绑定多个主机端口。目前一个四层监听器下面最多允许绑定255个主机端口。",
+          "member": "UnbindL4Backend",
+          "name": "BackendSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机 1：虚拟机 2：半托管机器",
+          "member": "int64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindL4BackendsResponse": {
+      "document": "UnbindL4Backends返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindL7Backend": {
+      "document": "待与七层监听器转发规则解绑的物理机主机、虚拟机或半托管主机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "待解绑的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机主机ID、虚拟机IP或者是半托管主机ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UnbindL7BackendsRequest": {
+      "document": "UnbindL7Backends请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID，可通过接口DescribeLoadBalancers查询。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发域名实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发路径实例ID，可通过接口DescribeL7Rules查询。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的主机信息。",
+          "member": "UnbindL7Backend",
+          "name": "BackendSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。0：物理机  1：虚拟机 2：半托管机器",
+          "member": "uint64",
+          "name": "BindType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindL7BackendsResponse": {
+      "document": "UnbindL7Backends返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindTrafficMirrorListenersRequest": {
+      "document": "UnbindTrafficMirrorListeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层监听器实例ID数组，可通过接口DescribeL7Listeners查询。",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindTrafficMirrorListenersResponse": {
+      "document": "UnbindTrafficMirrorListeners返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindTrafficMirrorReceiver": {
+      "document": "待与流量镜像解绑的接收机信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "待解绑的主机端口，可选值1~65535。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待解绑的主机实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UnbindTrafficMirrorReceiversRequest": {
+      "document": "UnbindTrafficMirrorReceivers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量镜像实例ID。",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的主机实例ID和端口数组。",
+          "member": "UnbindTrafficMirrorReceiver",
+          "name": "ReceiverSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindTrafficMirrorReceiversResponse": {
+      "document": "UnbindTrafficMirrorReceivers返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。该接口为异步任务，可根据本参数调用DescribeLoadBalancerTaskResult接口来查询任务操作结果。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadCertRequest": {
+      "document": "UploadCert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书类型，可选值：CA，SVR。",
+          "member": "string",
+          "name": "CertType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书内容。",
+          "member": "string",
+          "name": "Cert",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书别名。",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私钥内容，证书类型为SVR时不需要传递。",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadCertResponse": {
+      "document": "UploadCert返回参数结构体",
+      "members": [
+        {
+          "document": "新建的证书ID。",
+          "member": "string",
+          "name": "CertId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

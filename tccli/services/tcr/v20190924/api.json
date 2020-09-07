@@ -1,0 +1,4726 @@
+{
+  "actions": {
+    "BatchDeleteImagePersonal": {
+      "document": "用于在个人版镜像仓库中批量删除Tag",
+      "input": "BatchDeleteImagePersonalRequest",
+      "name": "个人版镜像仓库批量删除Tag",
+      "output": "BatchDeleteImagePersonalResponse"
+    },
+    "BatchDeleteRepositoryPersonal": {
+      "document": "用于个人版镜像仓库中批量删除镜像仓库",
+      "input": "BatchDeleteRepositoryPersonalRequest",
+      "name": "批量删除个人版仓库",
+      "output": "BatchDeleteRepositoryPersonalResponse"
+    },
+    "CreateApplicationTriggerPersonal": {
+      "document": "用于创建应用更新触发器",
+      "input": "CreateApplicationTriggerPersonalRequest",
+      "name": "创建应用更新触发器",
+      "output": "CreateApplicationTriggerPersonalResponse"
+    },
+    "CreateImageLifecyclePersonal": {
+      "document": "用于在个人版中创建清理策略",
+      "input": "CreateImageLifecyclePersonalRequest",
+      "name": "创建个人版镜像版本清理策略",
+      "output": "CreateImageLifecyclePersonalResponse"
+    },
+    "CreateInstance": {
+      "document": "创建实例",
+      "input": "CreateInstanceRequest",
+      "name": "创建实例",
+      "output": "CreateInstanceResponse"
+    },
+    "CreateInstanceToken": {
+      "document": "创建实例的临时或长期访问凭证",
+      "input": "CreateInstanceTokenRequest",
+      "name": "创建实例访问凭证",
+      "output": "CreateInstanceTokenResponse"
+    },
+    "CreateNamespace": {
+      "document": "用于在企业版中创建命名空间",
+      "input": "CreateNamespaceRequest",
+      "name": "创建命名空间",
+      "output": "CreateNamespaceResponse"
+    },
+    "CreateNamespacePersonal": {
+      "document": "创建个人版镜像仓库命名空间，此命名空间全局唯一",
+      "input": "CreateNamespacePersonalRequest",
+      "name": "创建个人版命名空间",
+      "output": "CreateNamespacePersonalResponse"
+    },
+    "CreateRepository": {
+      "document": "用于企业版创建镜像仓库",
+      "input": "CreateRepositoryRequest",
+      "name": "创建镜像仓库",
+      "output": "CreateRepositoryResponse"
+    },
+    "CreateRepositoryPersonal": {
+      "document": "用于在个人版仓库中创建镜像仓库",
+      "input": "CreateRepositoryPersonalRequest",
+      "name": "创建个人版镜像仓库",
+      "output": "CreateRepositoryPersonalResponse"
+    },
+    "CreateUserPersonal": {
+      "document": "创建个人用户",
+      "input": "CreateUserPersonalRequest",
+      "name": "创建个人用户",
+      "output": "CreateUserPersonalResponse"
+    },
+    "CreateWebhookTrigger": {
+      "document": "创建触发器",
+      "input": "CreateWebhookTriggerRequest",
+      "name": "创建触发器",
+      "output": "CreateWebhookTriggerResponse"
+    },
+    "DeleteApplicationTriggerPersonal": {
+      "document": "用于删除应用更新触发器",
+      "input": "DeleteApplicationTriggerPersonalRequest",
+      "name": "删除应用更新触发器",
+      "output": "DeleteApplicationTriggerPersonalResponse"
+    },
+    "DeleteImage": {
+      "document": "删除指定镜像",
+      "input": "DeleteImageRequest",
+      "name": "删除指定镜像",
+      "output": "DeleteImageResponse"
+    },
+    "DeleteImageLifecycleGlobalPersonal": {
+      "document": "用于删除个人版全局镜像版本自动清理策略",
+      "input": "DeleteImageLifecycleGlobalPersonalRequest",
+      "name": "删除个人版全局镜像版本自动清理策略",
+      "output": "DeleteImageLifecycleGlobalPersonalResponse"
+    },
+    "DeleteImageLifecyclePersonal": {
+      "document": "用于在个人版镜像仓库中删除仓库Tag自动清理策略",
+      "input": "DeleteImageLifecyclePersonalRequest",
+      "name": "删除个人版镜像仓库Tag自动清理策略",
+      "output": "DeleteImageLifecyclePersonalResponse"
+    },
+    "DeleteImagePersonal": {
+      "document": "用于在个人版中删除tag",
+      "input": "DeleteImagePersonalRequest",
+      "name": "删除个人版仓库tag",
+      "output": "DeleteImagePersonalResponse"
+    },
+    "DeleteInstanceToken": {
+      "document": "删除长期访问凭证",
+      "input": "DeleteInstanceTokenRequest",
+      "name": "删除长期访问凭证",
+      "output": "DeleteInstanceTokenResponse"
+    },
+    "DeleteNamespace": {
+      "document": "删除命名空间",
+      "input": "DeleteNamespaceRequest",
+      "name": "删除命名空间",
+      "output": "DeleteNamespaceResponse"
+    },
+    "DeleteNamespacePersonal": {
+      "document": "删除共享版命名空间",
+      "input": "DeleteNamespacePersonalRequest",
+      "name": "删除个人版命名空间",
+      "output": "DeleteNamespacePersonalResponse"
+    },
+    "DeleteRepository": {
+      "document": "删除镜像仓库",
+      "input": "DeleteRepositoryRequest",
+      "name": "删除镜像仓库",
+      "output": "DeleteRepositoryResponse"
+    },
+    "DeleteRepositoryPersonal": {
+      "document": "用于个人版镜像仓库中删除",
+      "input": "DeleteRepositoryPersonalRequest",
+      "name": "删除个人版镜像仓库",
+      "output": "DeleteRepositoryPersonalResponse"
+    },
+    "DeleteWebhookTrigger": {
+      "document": "删除触发器",
+      "input": "DeleteWebhookTriggerRequest",
+      "name": "删除触发器",
+      "output": "DeleteWebhookTriggerResponse"
+    },
+    "DescribeApplicationTriggerLogPersonal": {
+      "document": "用于查询应用更新触发器触发日志",
+      "input": "DescribeApplicationTriggerLogPersonalRequest",
+      "name": "查询应用更新触发器触发日志",
+      "output": "DescribeApplicationTriggerLogPersonalResponse"
+    },
+    "DescribeApplicationTriggerPersonal": {
+      "document": "用于查询应用更新触发器",
+      "input": "DescribeApplicationTriggerPersonalRequest",
+      "name": "查询应用更新触发器",
+      "output": "DescribeApplicationTriggerPersonalResponse"
+    },
+    "DescribeFavorRepositoryPersonal": {
+      "document": "查询个人收藏仓库",
+      "input": "DescribeFavorRepositoryPersonalRequest",
+      "name": "查询个人收藏仓库",
+      "output": "DescribeFavorRepositoryPersonalResponse"
+    },
+    "DescribeImageFilterPersonal": {
+      "document": "用于在个人版中查询与指定tag镜像内容相同的tag列表",
+      "input": "DescribeImageFilterPersonalRequest",
+      "name": "查询个人版中与指定tag镜像内容相同的tag列表",
+      "output": "DescribeImageFilterPersonalResponse"
+    },
+    "DescribeImageLifecycleGlobalPersonal": {
+      "document": "用于获取个人版全局镜像版本自动清理策略",
+      "input": "DescribeImageLifecycleGlobalPersonalRequest",
+      "name": "获取个人版全局镜像版本自动清理策略",
+      "output": "DescribeImageLifecycleGlobalPersonalResponse"
+    },
+    "DescribeImageLifecyclePersonal": {
+      "document": "用于获取个人版仓库中自动清理策略",
+      "input": "DescribeImageLifecyclePersonalRequest",
+      "name": "获取个人版仓库自动清理策略",
+      "output": "DescribeImageLifecyclePersonalResponse"
+    },
+    "DescribeImageManifests": {
+      "document": "查询容器镜像Manifest信息",
+      "input": "DescribeImageManifestsRequest",
+      "name": "查询容器镜像Manifest信息",
+      "output": "DescribeImageManifestsResponse"
+    },
+    "DescribeImagePersonal": {
+      "document": "用于获取个人版镜像仓库tag列表",
+      "input": "DescribeImagePersonalRequest",
+      "name": "获取个人版镜像仓库tag列表",
+      "output": "DescribeImagePersonalResponse"
+    },
+    "DescribeImages": {
+      "document": "查询镜像版本列表或指定容器镜像信息",
+      "input": "DescribeImagesRequest",
+      "name": "查询容器镜像信息",
+      "output": "DescribeImagesResponse"
+    },
+    "DescribeInstanceStatus": {
+      "document": "查询实例当前状态以及过程信息",
+      "input": "DescribeInstanceStatusRequest",
+      "name": "查询实例状态",
+      "output": "DescribeInstanceStatusResponse"
+    },
+    "DescribeInstanceToken": {
+      "document": "查询长期访问凭证信息",
+      "input": "DescribeInstanceTokenRequest",
+      "name": "查询长期访问凭证信息",
+      "output": "DescribeInstanceTokenResponse"
+    },
+    "DescribeInstances": {
+      "document": "查询实例信息",
+      "input": "DescribeInstancesRequest",
+      "name": "查询实例信息",
+      "output": "DescribeInstancesResponse"
+    },
+    "DescribeNamespacePersonal": {
+      "document": "查询个人版命名空间信息",
+      "input": "DescribeNamespacePersonalRequest",
+      "name": "查询个人版命名空间信息",
+      "output": "DescribeNamespacePersonalResponse"
+    },
+    "DescribeNamespaces": {
+      "document": "查询命名空间列表或指定命名空间信息",
+      "input": "DescribeNamespacesRequest",
+      "name": "查询命名空间信息",
+      "output": "DescribeNamespacesResponse"
+    },
+    "DescribeRepositories": {
+      "document": "查询镜像仓库列表或指定镜像仓库信息",
+      "input": "DescribeRepositoriesRequest",
+      "name": "查询镜像仓库信息",
+      "output": "DescribeRepositoriesResponse"
+    },
+    "DescribeRepositoryFilterPersonal": {
+      "document": "用于在个人版镜像仓库中，获取满足输入搜索条件的用户镜像仓库",
+      "input": "DescribeRepositoryFilterPersonalRequest",
+      "name": "获取满足输入搜索条件的个人版镜像仓库",
+      "output": "DescribeRepositoryFilterPersonalResponse"
+    },
+    "DescribeRepositoryOwnerPersonal": {
+      "document": "用于在个人版中获取用户全部的镜像仓库列表",
+      "input": "DescribeRepositoryOwnerPersonalRequest",
+      "name": "查询个人版所有仓库",
+      "output": "DescribeRepositoryOwnerPersonalResponse"
+    },
+    "DescribeRepositoryPersonal": {
+      "document": "查询个人版仓库信息",
+      "input": "DescribeRepositoryPersonalRequest",
+      "name": "查询个人版仓库信息",
+      "output": "DescribeRepositoryPersonalResponse"
+    },
+    "DescribeUserQuotaPersonal": {
+      "document": "查询个人用户配额",
+      "input": "DescribeUserQuotaPersonalRequest",
+      "name": "查询个人用户配额",
+      "output": "DescribeUserQuotaPersonalResponse"
+    },
+    "DescribeWebhookTrigger": {
+      "document": "查询触发器",
+      "input": "DescribeWebhookTriggerRequest",
+      "name": "查询触发器",
+      "output": "DescribeWebhookTriggerResponse"
+    },
+    "DescribeWebhookTriggerLog": {
+      "document": "获取触发器日志",
+      "input": "DescribeWebhookTriggerLogRequest",
+      "name": "获取触发器日志",
+      "output": "DescribeWebhookTriggerLogResponse"
+    },
+    "DuplicateImagePersonal": {
+      "document": "用于在个人版镜像仓库中复制镜像版本",
+      "input": "DuplicateImagePersonalRequest",
+      "name": "复制个人版仓库镜像版本",
+      "output": "DuplicateImagePersonalResponse"
+    },
+    "ManageImageLifecycleGlobalPersonal": {
+      "document": "用于设置个人版全局镜像版本自动清理策略",
+      "input": "ManageImageLifecycleGlobalPersonalRequest",
+      "name": "设置个人版全局镜像版本自动清理策略",
+      "output": "ManageImageLifecycleGlobalPersonalResponse"
+    },
+    "ModifyApplicationTriggerPersonal": {
+      "document": "用于修改应用更新触发器",
+      "input": "ModifyApplicationTriggerPersonalRequest",
+      "name": "修改应用更新触发器",
+      "output": "ModifyApplicationTriggerPersonalResponse"
+    },
+    "ModifyInstanceToken": {
+      "document": "更新实例内指定长期访问凭证的启用状态",
+      "input": "ModifyInstanceTokenRequest",
+      "name": "更新实例长期访问凭证",
+      "output": "ModifyInstanceTokenResponse"
+    },
+    "ModifyNamespace": {
+      "document": "更新命名空间信息，当前仅支持修改命名空间访问级别",
+      "input": "ModifyNamespaceRequest",
+      "name": "更新命名空间信息",
+      "output": "ModifyNamespaceResponse"
+    },
+    "ModifyRepository": {
+      "document": "更新镜像仓库信息，可修改仓库描述信息",
+      "input": "ModifyRepositoryRequest",
+      "name": "更新镜像仓库信息",
+      "output": "ModifyRepositoryResponse"
+    },
+    "ModifyRepositoryAccessPersonal": {
+      "document": "用于更新个人版镜像仓库的访问属性",
+      "input": "ModifyRepositoryAccessPersonalRequest",
+      "name": "更新个人版仓库访问属性",
+      "output": "ModifyRepositoryAccessPersonalResponse"
+    },
+    "ModifyRepositoryInfoPersonal": {
+      "document": "用于在个人版镜像仓库中更新容器镜像描述",
+      "input": "ModifyRepositoryInfoPersonalRequest",
+      "name": "更新个人版镜像仓库描述",
+      "output": "ModifyRepositoryInfoPersonalResponse"
+    },
+    "ModifyUserPasswordPersonal": {
+      "document": "修改个人用户登录密码",
+      "input": "ModifyUserPasswordPersonalRequest",
+      "name": "修改个人用户登录密码",
+      "output": "ModifyUserPasswordPersonalResponse"
+    },
+    "ModifyWebhookTrigger": {
+      "document": "更新触发器",
+      "input": "ModifyWebhookTriggerRequest",
+      "name": "更新触发器",
+      "output": "ModifyWebhookTriggerResponse"
+    },
+    "ValidateNamespaceExistPersonal": {
+      "document": "查询个人版用户命名空间是否存在",
+      "input": "ValidateNamespaceExistPersonalRequest",
+      "name": "验证个人版命名空间是否存在",
+      "output": "ValidateNamespaceExistPersonalResponse"
+    },
+    "ValidateRepositoryExistPersonal": {
+      "document": "用于判断个人版仓库是否存在",
+      "input": "ValidateRepositoryExistPersonalRequest",
+      "name": "验证个人版仓库是否存在",
+      "output": "ValidateRepositoryExistPersonalResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-09-24",
+    "api_brief": "介绍如何使用API对容器镜像服务进行相关操作，包括实例管理、镜像仓库等。",
+    "serviceNameCN": "容器镜像服务",
+    "serviceShortName": "tcr"
+  },
+  "objects": {
+    "AutoDelStrategyInfo": {
+      "document": "自动删除策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库名",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略值",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Valid",
+          "member": "int64",
+          "name": "Valid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AutoDelStrategyInfoResp": {
+      "document": "获取自动删除策略",
+      "members": [
+        {
+          "default": "",
+          "document": "总数目",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动删除策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AutoDelStrategyInfo",
+          "name": "StrategyInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchDeleteImagePersonalRequest": {
+      "document": "BatchDeleteImagePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Tag列表",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteImagePersonalResponse": {
+      "document": "BatchDeleteImagePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteRepositoryPersonalRequest": {
+      "document": "BatchDeleteRepositoryPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称数组",
+          "member": "string",
+          "name": "RepoNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteRepositoryPersonalResponse": {
+      "document": "BatchDeleteRepositoryPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationTriggerPersonalRequest": {
+      "document": "CreateApplicationTriggerPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "触发器关联的镜像仓库，library/test格式",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器名称",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发方式，\"all\"全部触发，\"taglist\"指定tag触发，\"regex\"正则触发",
+          "member": "string",
+          "name": "InvokeMethod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群工作负载类型,支持Deployment、StatefulSet、DaemonSet、CronJob、Job。",
+          "member": "string",
+          "name": "WorkloadType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群工作负载名称",
+          "member": "string",
+          "name": "WorkloadName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群工作负载下容器名称",
+          "member": "string",
+          "name": "ContainerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群地域",
+          "member": "int64",
+          "name": "ClusterRegion",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "触发方式对应的表达式",
+          "member": "string",
+          "name": "InvokeExpr",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationTriggerPersonalResponse": {
+      "document": "CreateApplicationTriggerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageLifecyclePersonalRequest": {
+      "document": "CreateImageLifecyclePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "keep_last_days:保留最近几天的数据;keep_last_nums:保留最近多少个",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略值",
+          "member": "int64",
+          "name": "Val",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageLifecyclePersonalResponse": {
+      "document": "CreateImageLifecyclePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业版实例名称",
+          "member": "string",
+          "name": "RegistryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业版实例类型",
+          "member": "string",
+          "name": "RegistryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云标签描述",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "企业版实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceTokenRequest": {
+      "document": "CreateInstanceToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问凭证类型，longterm 为长期访问凭证，temp 为临时访问凭证，默认是临时访问凭证，有效期1小时",
+          "member": "string",
+          "name": "TokenType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "长期访问凭证描述信息",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceTokenResponse": {
+      "document": "CreateInstanceToken返回参数结构体",
+      "members": [
+        {
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Username",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问凭证",
+          "member": "string",
+          "name": "Token",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问凭证过期时间戳",
+          "member": "int64",
+          "name": "ExpTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNamespacePersonalRequest": {
+      "document": "CreateNamespacePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNamespacePersonalResponse": {
+      "document": "CreateNamespacePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNamespaceRequest": {
+      "document": "CreateNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间的名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否公开，true为公开，fale为私有",
+          "member": "bool",
+          "name": "IsPublic",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNamespaceResponse": {
+      "document": "CreateNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRepositoryPersonalRequest": {
+      "document": "CreateRepositoryPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否公共,1:公共,0:私有",
+          "member": "uint64",
+          "name": "Public",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仓库描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRepositoryPersonalResponse": {
+      "document": "CreateRepositoryPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRepositoryRequest": {
+      "document": "CreateRepository请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库简短描述",
+          "member": "string",
+          "name": "BriefDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库详细描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRepositoryResponse": {
+      "document": "CreateRepository返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserPersonalRequest": {
+      "document": "CreateUserPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户密码",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserPersonalResponse": {
+      "document": "CreateUserPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWebhookTriggerRequest": {
+      "document": "CreateWebhookTrigger请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器参数",
+          "member": "WebhookTrigger",
+          "name": "Trigger",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWebhookTriggerResponse": {
+      "document": "CreateWebhookTrigger返回参数结构体",
+      "members": [
+        {
+          "document": "新建的触发器",
+          "member": "WebhookTrigger",
+          "name": "Trigger",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationTriggerPersonalRequest": {
+      "document": "DeleteApplicationTriggerPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "触发器名称",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationTriggerPersonalResponse": {
+      "document": "DeleteApplicationTriggerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageLifecycleGlobalPersonalRequest": {
+      "document": "DeleteImageLifecycleGlobalPersonal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteImageLifecycleGlobalPersonalResponse": {
+      "document": "DeleteImageLifecycleGlobalPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageLifecyclePersonalRequest": {
+      "document": "DeleteImageLifecyclePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageLifecyclePersonalResponse": {
+      "document": "DeleteImageLifecyclePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImagePersonalRequest": {
+      "document": "DeleteImagePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Tag名",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImagePersonalResponse": {
+      "document": "DeleteImagePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageRequest": {
+      "document": "DeleteImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库名称",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像版本",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageResponse": {
+      "document": "DeleteImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceTokenRequest": {
+      "document": "DeleteInstanceToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问凭证 ID",
+          "member": "string",
+          "name": "TokenId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceTokenResponse": {
+      "document": "DeleteInstanceToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNamespacePersonalRequest": {
+      "document": "DeleteNamespacePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNamespacePersonalResponse": {
+      "document": "DeleteNamespacePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNamespaceRequest": {
+      "document": "DeleteNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间的名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNamespaceResponse": {
+      "document": "DeleteNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRepositoryPersonalRequest": {
+      "document": "DeleteRepositoryPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRepositoryPersonalResponse": {
+      "document": "DeleteRepositoryPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRepositoryRequest": {
+      "document": "DeleteRepository请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间的名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库名称的名称",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRepositoryResponse": {
+      "document": "DeleteRepository返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWebhookTriggerRequest": {
+      "document": "DeleteWebhookTrigger请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器 Id",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWebhookTriggerResponse": {
+      "document": "DeleteWebhookTrigger返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationTriggerLogPersonalRequest": {
+      "document": "DescribeApplicationTriggerLogPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回最大数量，默认 20, 最大值 100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升序或降序",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按某列排序",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationTriggerLogPersonalResp": {
+      "document": "查询应用更新触发器触发日志返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "返回总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TriggerLogResp",
+          "name": "LogInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeApplicationTriggerLogPersonalResponse": {
+      "document": "DescribeApplicationTriggerLogPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "触发日志返回值",
+          "member": "DescribeApplicationTriggerLogPersonalResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationTriggerPersonalRequest": {
+      "document": "DescribeApplicationTriggerPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器名称",
+          "member": "string",
+          "name": "TriggerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回最大数量，默认 20, 最大值 100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationTriggerPersonalResp": {
+      "document": "拉取触发器列表返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "返回条目总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器列表",
+          "member": "TriggerResp",
+          "name": "TriggerInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeApplicationTriggerPersonalResponse": {
+      "document": "DescribeApplicationTriggerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "触发器列表返回值",
+          "member": "DescribeApplicationTriggerPersonalResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFavorRepositoryPersonalRequest": {
+      "document": "DescribeFavorRepositoryPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页Limit",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Offset用于分页",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFavorRepositoryPersonalResponse": {
+      "document": "DescribeFavorRepositoryPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "个人收藏仓库列表返回信息",
+          "member": "FavorResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageFilterPersonalRequest": {
+      "document": "DescribeImageFilterPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Tag名",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageFilterPersonalResponse": {
+      "document": "DescribeImageFilterPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "payload",
+          "member": "SameImagesResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageLifecycleGlobalPersonalRequest": {
+      "document": "DescribeImageLifecycleGlobalPersonal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeImageLifecycleGlobalPersonalResponse": {
+      "document": "DescribeImageLifecycleGlobalPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "全局自动删除策略信息",
+          "member": "AutoDelStrategyInfoResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageLifecyclePersonalRequest": {
+      "document": "DescribeImageLifecyclePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageLifecyclePersonalResponse": {
+      "document": "DescribeImageLifecyclePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "自动删除策略信息",
+          "member": "AutoDelStrategyInfoResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageManifestsRequest": {
+      "document": "DescribeImageManifests请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库名称",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像版本",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageManifestsResponse": {
+      "document": "DescribeImageManifests返回参数结构体",
+      "members": [
+        {
+          "document": "镜像的Manifest信息",
+          "member": "string",
+          "name": "Manifest",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "镜像的配置信息",
+          "member": "string",
+          "name": "Config",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagePersonalRequest": {
+      "document": "DescribeImagePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回最大数量，默认 20, 最大值 100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "tag名称，可根据输入搜索",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagePersonalResponse": {
+      "document": "DescribeImagePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "镜像tag信息",
+          "member": "TagInfoResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesRequest": {
+      "document": "DescribeImages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库名称",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页个数，用于分页，默认20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页数，默认值为1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesResponse": {
+      "document": "DescribeImages返回参数结构体",
+      "members": [
+        {
+          "document": "容器镜像信息列表",
+          "member": "TcrImageInfo",
+          "name": "ImageInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "容器镜像总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStatusRequest": {
+      "document": "DescribeInstanceStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID的数组",
+          "member": "string",
+          "name": "RegistryIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStatusResponse": {
+      "document": "DescribeInstanceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "实例的状态列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RegistryStatus",
+          "name": "RegistryStatusSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceTokenRequest": {
+      "document": "DescribeInstanceToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页单页数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceTokenResponse": {
+      "document": "DescribeInstanceToken返回参数结构体",
+      "members": [
+        {
+          "document": "长期访问凭证总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "长期访问凭证列表",
+          "member": "TcrInstanceToken",
+          "name": "Tokens",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表(为空时，\n表示获取账号下所有实例)",
+          "member": "string",
+          "name": "Registryids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大输出条数，默认20，最大为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "获取所有地域的实例，默认为False",
+          "member": "bool",
+          "name": "AllRegion",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "总实例个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Registry",
+          "name": "Registries",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNamespacePersonalRequest": {
+      "document": "DescribeNamespacePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间，支持模糊查询",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单页数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNamespacePersonalResponse": {
+      "document": "DescribeNamespacePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "用户命名空间返回信息",
+          "member": "NamespaceInfoResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNamespacesRequest": {
+      "document": "DescribeNamespaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定命名空间，不填写默认查询所有命名空间",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页个数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页偏移",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNamespacesResponse": {
+      "document": "DescribeNamespaces返回参数结构体",
+      "members": [
+        {
+          "document": "命名空间列表信息",
+          "member": "TcrNamespaceInfo",
+          "name": "NamespaceList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoriesRequest": {
+      "document": "DescribeRepositories请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定命名空间，不填写默认为查询所有命名空间下镜像仓库",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页数，用于分页",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页个数，用于分页",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "基于字段排序，支持的值有-creation_time,-name, -update_time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoriesResponse": {
+      "document": "DescribeRepositories返回参数结构体",
+      "members": [
+        {
+          "document": "仓库信息列表",
+          "member": "TcrRepositoryInfo",
+          "name": "RepositoryList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoryFilterPersonalRequest": {
+      "document": "DescribeRepositoryFilterPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索镜像名",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回最大数量，默认 20，最大100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选条件：1表示public，0表示private",
+          "member": "int64",
+          "name": "Public",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoryFilterPersonalResponse": {
+      "document": "DescribeRepositoryFilterPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "仓库信息",
+          "member": "SearchUserRepositoryResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoryOwnerPersonalRequest": {
+      "document": "DescribeRepositoryOwnerPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回最大数量，默认 20, 最大值 100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoryOwnerPersonalResponse": {
+      "document": "DescribeRepositoryOwnerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "仓库信息",
+          "member": "RepoInfoResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoryPersonalRequest": {
+      "document": "DescribeRepositoryPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名字",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoryPersonalResponse": {
+      "document": "DescribeRepositoryPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "仓库信息",
+          "member": "RepositoryInfoResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserQuotaPersonalRequest": {
+      "document": "DescribeUserQuotaPersonal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserQuotaPersonalResponse": {
+      "document": "DescribeUserQuotaPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "配额返回信息",
+          "member": "RespLimit",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebhookTriggerLogRequest": {
+      "document": "DescribeWebhookTriggerLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器 Id",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebhookTriggerLogResponse": {
+      "document": "DescribeWebhookTriggerLog返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志列表",
+          "member": "WebhookTriggerLog",
+          "name": "Logs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebhookTriggerRequest": {
+      "document": "DescribeWebhookTrigger请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页单页数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebhookTriggerResponse": {
+      "document": "DescribeWebhookTrigger返回参数结构体",
+      "members": [
+        {
+          "document": "触发器总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "触发器列表",
+          "member": "WebhookTrigger",
+          "name": "Triggers",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DupImageTagResp": {
+      "document": "复制镜像tag返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像Digest值",
+          "member": "string",
+          "name": "Digest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DuplicateImagePersonalRequest": {
+      "document": "DuplicateImagePersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "源镜像名称，不包含domain。例如： tencentyun/foo:v1",
+          "member": "string",
+          "name": "SrcImage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的镜像名称，不包含domain。例如： tencentyun/foo:latest",
+          "member": "string",
+          "name": "DestImage",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DuplicateImagePersonalResponse": {
+      "document": "DuplicateImagePersonal返回参数结构体",
+      "members": [
+        {
+          "document": "复制镜像返回值",
+          "member": "DupImageTagResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FavorResp": {
+      "document": "用于获取收藏仓库的响应",
+      "members": [
+        {
+          "default": "",
+          "document": "收藏仓库的总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Favors",
+          "name": "RepoInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Favors": {
+      "document": "仓库收藏",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名字",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库类型",
+          "member": "string",
+          "name": "RepoType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Pull总共的次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PullCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仓库收藏次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FavorCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仓库是否公开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Public",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为官方所有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsQcloudOfficial",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仓库Tag的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TagCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Logo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域的Id",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Header": {
+      "document": "Header KV",
+      "members": [
+        {
+          "default": "",
+          "document": "Header Key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Header Values",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Limit": {
+      "document": "共享镜像仓库用户配额",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配额的类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置的值",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ManageImageLifecycleGlobalPersonalRequest": {
+      "document": "ManageImageLifecycleGlobalPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "global_keep_last_days:全局保留最近几天的数据;global_keep_last_nums:全局保留最近多少个",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略值",
+          "member": "int64",
+          "name": "Val",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageImageLifecycleGlobalPersonalResponse": {
+      "document": "ManageImageLifecycleGlobalPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationTriggerPersonalRequest": {
+      "document": "ModifyApplicationTriggerPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "触发器关联的镜像仓库，library/test格式",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器名称",
+          "member": "string",
+          "name": "TriggerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发方式，\"all\"全部触发，\"taglist\"指定tag触发，\"regex\"正则触发",
+          "member": "string",
+          "name": "InvokeMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发方式对应的表达式",
+          "member": "string",
+          "name": "InvokeExpr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群工作负载类型,支持Deployment、StatefulSet、DaemonSet、CronJob、Job。",
+          "member": "string",
+          "name": "WorkloadType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群工作负载名称",
+          "member": "string",
+          "name": "WorkloadName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群工作负载下容器名称",
+          "member": "string",
+          "name": "ContainerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在TKE集群地域数字ID，如1（广州）、16（成都）",
+          "member": "int64",
+          "name": "ClusterRegion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新触发器名称",
+          "member": "string",
+          "name": "NewTriggerName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationTriggerPersonalResponse": {
+      "document": "ModifyApplicationTriggerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceTokenRequest": {
+      "document": "ModifyInstanceToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例长期访问凭证 ID",
+          "member": "string",
+          "name": "TokenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启用或禁用实例长期访问凭证",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceTokenResponse": {
+      "document": "ModifyInstanceToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNamespaceRequest": {
+      "document": "ModifyNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问级别，True为公开，False为私有",
+          "member": "bool",
+          "name": "IsPublic",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNamespaceResponse": {
+      "document": "ModifyNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRepositoryAccessPersonalRequest": {
+      "document": "ModifyRepositoryAccessPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认值为0",
+          "member": "int64",
+          "name": "Public",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRepositoryAccessPersonalResponse": {
+      "document": "ModifyRepositoryAccessPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRepositoryInfoPersonalRequest": {
+      "document": "ModifyRepositoryInfoPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRepositoryInfoPersonalResponse": {
+      "document": "ModifyRepositoryInfoPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRepositoryRequest": {
+      "document": "ModifyRepository请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库名称",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库简短描述",
+          "member": "string",
+          "name": "BriefDescription",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库详细描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRepositoryResponse": {
+      "document": "ModifyRepository返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserPasswordPersonalRequest": {
+      "document": "ModifyUserPasswordPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "更新后的密码",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserPasswordPersonalResponse": {
+      "document": "ModifyUserPasswordPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWebhookTriggerRequest": {
+      "document": "ModifyWebhookTrigger请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器参数",
+          "member": "WebhookTrigger",
+          "name": "Trigger",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWebhookTriggerResponse": {
+      "document": "ModifyWebhookTrigger返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NamespaceInfo": {
+      "document": "命名空间信息",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间下仓库数量",
+          "member": "int64",
+          "name": "RepoCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NamespaceInfoResp": {
+      "document": "获取命名空间信息返回",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间数量",
+          "member": "int64",
+          "name": "NamespaceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间信息",
+          "member": "NamespaceInfo",
+          "name": "NamespaceInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NamespaceIsExistsResp": {
+      "document": "NamespaceIsExists返回类型",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间是否存在",
+          "member": "bool",
+          "name": "IsExist",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为保留命名空间",
+          "member": "bool",
+          "name": "IsPreserved",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Registry": {
+      "document": "实例信息结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "RegistryName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例规格",
+          "member": "string",
+          "name": "RegistryType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的公共访问地址",
+          "member": "string",
+          "name": "PublicDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域Id",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持匿名",
+          "member": "bool",
+          "name": "EnableAnonymous",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Token有效时间",
+          "member": "uint64",
+          "name": "TokenValidTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内部访问地址",
+          "member": "string",
+          "name": "InternalEndpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例云标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RegistryCondition": {
+      "document": "实例创建过程",
+      "members": [
+        {
+          "default": "",
+          "document": "实例创建过程类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建过程状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转换到该过程的简明原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RegistryStatus": {
+      "document": "实例状态",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "附加状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RegistryCondition",
+          "name": "Conditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RepoInfo": {
+      "document": "仓库的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库类型",
+          "member": "string",
+          "name": "RepoType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Tag数量",
+          "member": "int64",
+          "name": "TagCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为公开",
+          "member": "int64",
+          "name": "Public",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为用户收藏",
+          "member": "bool",
+          "name": "IsUserFavor",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为腾讯云官方仓库",
+          "member": "bool",
+          "name": "IsQcloudOfficial",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被收藏的个数",
+          "member": "int64",
+          "name": "FavorCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拉取的数量",
+          "member": "int64",
+          "name": "PullCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库创建时间",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RepoInfoResp": {
+      "document": "仓库信息的返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库信息列表",
+          "member": "RepoInfo",
+          "name": "RepoInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Server信息",
+          "member": "string",
+          "name": "Server",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RepoIsExistResp": {
+      "document": "仓库是否存在的返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库是否存在",
+          "member": "bool",
+          "name": "IsExist",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RepositoryInfoResp": {
+      "document": "查询共享版仓库信息返回",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像仓库名字",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像仓库类型",
+          "member": "string",
+          "name": "RepoType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像仓库服务地址",
+          "member": "string",
+          "name": "Server",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像仓库描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为公有镜像",
+          "member": "int64",
+          "name": "Public",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载次数",
+          "member": "int64",
+          "name": "PullCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收藏次数",
+          "member": "int64",
+          "name": "FavorCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为用户收藏",
+          "member": "bool",
+          "name": "IsUserFavor",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为腾讯云官方镜像",
+          "member": "bool",
+          "name": "IsQcloudOfficial",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RespLimit": {
+      "document": "用户配额返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "配额信息",
+          "member": "Limit",
+          "name": "LimitInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SameImagesResp": {
+      "document": "指定tag镜像内容相同的tag列表",
+      "members": [
+        {
+          "default": "",
+          "document": "tag列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SameImages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchUserRepositoryResp": {
+      "document": "获取满足输入搜索条件的用户镜像仓库",
+      "members": [
+        {
+          "default": "",
+          "document": "总个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库列表",
+          "member": "RepoInfo",
+          "name": "RepoInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Server",
+          "member": "string",
+          "name": "Server",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PrivilegeFiltered",
+          "member": "bool",
+          "name": "PrivilegeFiltered",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "云标签Tag",
+      "members": [
+        {
+          "default": "",
+          "document": "云标签的key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云标签的值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TagInfo": {
+      "document": "镜像tag信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Tag名称",
+          "member": "string",
+          "name": "TagName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像Id",
+          "member": "string",
+          "name": "TagId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "docker image 可以看到的id",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大小",
+          "member": "string",
+          "name": "Size",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像的创建时间",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像创建至今时间长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DurationDays",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像的作者",
+          "member": "string",
+          "name": "Author",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "次镜像建议运行的系统架构",
+          "member": "string",
+          "name": "Architecture",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此镜像的docker版本",
+          "member": "string",
+          "name": "DockerVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此镜像建议运行系统",
+          "member": "string",
+          "name": "OS",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SizeByte",
+          "member": "int64",
+          "name": "SizeByte",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Id",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像更新时间",
+          "member": "string",
+          "name": "PushTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagInfoResp": {
+      "document": "Tag列表的返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "Tag的总数",
+          "member": "int64",
+          "name": "TagCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TagInfo列表",
+          "member": "TagInfo",
+          "name": "TagInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Server",
+          "member": "string",
+          "name": "Server",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagSpecification": {
+      "document": "云标签",
+      "members": [
+        {
+          "default": "",
+          "document": "默认值为instance\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TcrImageInfo": {
+      "document": "镜像信息",
+      "members": [
+        {
+          "default": "",
+          "document": "哈希值",
+          "member": "string",
+          "name": "Digest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像大小",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Tag名称",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TcrInstanceToken": {
+      "document": "实例登录令牌",
+      "members": [
+        {
+          "default": "",
+          "document": "令牌ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "令牌描述",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "令牌所属实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "令牌启用状态",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "令牌创建时间",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "令牌过期时间戳",
+          "member": "int64",
+          "name": "ExpiredAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TcrNamespaceInfo": {
+      "document": "Tcr 命名空间的描述",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime_iso",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问级别",
+          "member": "bool",
+          "name": "Public",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间的Id",
+          "member": "int64",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TcrRepositoryInfo": {
+      "document": "Tcr镜像仓库信息",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否公开",
+          "member": "bool",
+          "name": "Public",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库详细描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "简单描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BriefDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TriggerInvokeCondition": {
+      "document": "触发器触发条件",
+      "members": [
+        {
+          "default": "",
+          "document": "触发方式",
+          "member": "string",
+          "name": "InvokeMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InvokeExpr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TriggerInvokePara": {
+      "document": "触发器触发参数",
+      "members": [
+        {
+          "default": "",
+          "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TKE集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TKE集群命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TKE集群工作负载名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TKE集群工作负载中容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContainerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TKE集群地域数字ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ClusterRegion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TriggerInvokeResult": {
+      "document": "触发器触发结果",
+      "members": [
+        {
+          "default": "",
+          "document": "请求TKE返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求TKE返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TriggerLogResp": {
+      "document": "触发器日志",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Tag名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InvokeSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InvokeAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InvokeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TriggerInvokeCondition",
+          "name": "InvokeCondition",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TriggerInvokePara",
+          "name": "InvokePara",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TriggerInvokeResult",
+          "name": "InvokeResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TriggerResp": {
+      "document": "触发器返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "触发器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InvokeSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InvokeAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TriggerInvokeCondition",
+          "name": "InvokeCondition",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发器参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TriggerInvokePara",
+          "name": "InvokePara",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ValidateNamespaceExistPersonalRequest": {
+      "document": "ValidateNamespaceExistPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ValidateNamespaceExistPersonalResponse": {
+      "document": "ValidateNamespaceExistPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "命名空间是否存在",
+          "member": "NamespaceIsExistsResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ValidateRepositoryExistPersonalRequest": {
+      "document": "ValidateRepositoryExistPersonal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名称",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ValidateRepositoryExistPersonalResponse": {
+      "document": "ValidateRepositoryExistPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "仓库是否存在",
+          "member": "RepoIsExistResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "WebhookTarget": {
+      "document": "触发器目标",
+      "members": [
+        {
+          "default": "",
+          "document": "目标地址",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义 Headers",
+          "member": "Header",
+          "name": "Headers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WebhookTrigger": {
+      "document": "Webhook 触发器",
+      "members": [
+        {
+          "default": "",
+          "document": "触发器名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器目标",
+          "member": "WebhookTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发动作",
+          "member": "string",
+          "name": "EventTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发规则",
+          "member": "string",
+          "name": "Condition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启用触发器",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器Id",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器所属命名空间 Id",
+          "member": "int64",
+          "name": "NamespaceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WebhookTriggerLog": {
+      "document": "触发器日志",
+      "members": [
+        {
+          "default": "",
+          "document": "日志 Id",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发器 Id",
+          "member": "int64",
+          "name": "TriggerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通知类型",
+          "member": "string",
+          "name": "NotifyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详情",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,2175 @@
+{
+  "actions": {
+    "ApplyUserCert": {
+      "document": "申请用户证书",
+      "input": "ApplyUserCertRequest",
+      "name": "申请用户证书",
+      "output": "ApplyUserCertResponse"
+    },
+    "BlockByNumberHandler": {
+      "document": "Bcos根据块高查询区块信息",
+      "input": "BlockByNumberHandlerRequest",
+      "name": "按块高查询区块信息",
+      "output": "BlockByNumberHandlerResponse"
+    },
+    "DeployDynamicContractHandler": {
+      "document": "动态部署合约",
+      "input": "DeployDynamicContractHandlerRequest",
+      "name": "动态部署合约",
+      "output": "DeployDynamicContractHandlerResponse"
+    },
+    "DownloadUserCert": {
+      "document": "下载用户证书",
+      "input": "DownloadUserCertRequest",
+      "name": "下载用户证书",
+      "output": "DownloadUserCertResponse"
+    },
+    "GetBlockList": {
+      "document": "查看当前网络下的所有区块列表，分页展示",
+      "input": "GetBlockListRequest",
+      "name": "查询区块列表",
+      "output": "GetBlockListResponse"
+    },
+    "GetBlockListHandler": {
+      "document": "Bcos分页查询当前群组下的区块列表",
+      "input": "GetBlockListHandlerRequest",
+      "name": "查询区块列表",
+      "output": "GetBlockListHandlerResponse"
+    },
+    "GetBlockTransactionListForUser": {
+      "document": "获取区块内的交易列表",
+      "input": "GetBlockTransactionListForUserRequest",
+      "name": "获取区块内的交易列表",
+      "output": "GetBlockTransactionListForUserResponse"
+    },
+    "GetClusterSummary": {
+      "document": "获取区块链网络概要",
+      "input": "GetClusterSummaryRequest",
+      "name": "获取区块链网络概要",
+      "output": "GetClusterSummaryResponse"
+    },
+    "GetInvokeTx": {
+      "document": "Invoke异步调用结果查询",
+      "input": "GetInvokeTxRequest",
+      "name": "Invoke异步调用结果查询",
+      "output": "GetInvokeTxResponse"
+    },
+    "GetLatesdTransactionList": {
+      "document": "获取最新交易列表",
+      "input": "GetLatesdTransactionListRequest",
+      "name": "获取最新交易列表",
+      "output": "GetLatesdTransactionListResponse"
+    },
+    "GetTransByHashHandler": {
+      "document": "Bcos根据交易哈希查看交易详细信息",
+      "input": "GetTransByHashHandlerRequest",
+      "name": "根据交易哈希查询交易信息",
+      "output": "GetTransByHashHandlerResponse"
+    },
+    "GetTransListHandler": {
+      "document": "Bcos分页查询当前群组的交易信息列表",
+      "input": "GetTransListHandlerRequest",
+      "name": "查询交易列表",
+      "output": "GetTransListHandlerResponse"
+    },
+    "GetTransactionDetailForUser": {
+      "document": "获取交易详情",
+      "input": "GetTransactionDetailForUserRequest",
+      "name": "获取交易详情",
+      "output": "GetTransactionDetailForUserResponse"
+    },
+    "Invoke": {
+      "document": "新增交易",
+      "input": "InvokeRequest",
+      "name": "新增交易",
+      "output": "InvokeResponse"
+    },
+    "Query": {
+      "document": "查询交易",
+      "input": "QueryRequest",
+      "name": "查询交易",
+      "output": "QueryResponse"
+    },
+    "SendTransactionHandler": {
+      "document": "Bcos发送交易",
+      "input": "SendTransactionHandlerRequest",
+      "name": "发送交易",
+      "output": "SendTransactionHandlerResponse"
+    },
+    "SrvInvoke": {
+      "document": "trustsql服务统一接口",
+      "input": "SrvInvokeRequest",
+      "name": "trustsql服务统一接口",
+      "output": "SrvInvokeResponse"
+    },
+    "TransByDynamicContractHandler": {
+      "document": "根据动态部署的合约发送交易",
+      "input": "TransByDynamicContractHandlerRequest",
+      "name": "根据动态部署的合约发送交易",
+      "output": "TransByDynamicContractHandlerResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-04-16",
+    "api_brief": "介绍如何使用API对TBaaS进行操作，包括TrustSQL服务统一、Hyperledger Fabric链状态等。",
+    "serviceNameCN": "TBaaS",
+    "serviceShortName": "tbaas"
+  },
+  "objects": {
+    "ApplyUserCertRequest": {
+      "document": "ApplyUserCert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：cert_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：cert_apply_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请证书的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证书标识，用于标识用户证书，要求由纯小写字母组成，长度小于10",
+          "member": "string",
+          "name": "UserIdentity",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书申请实体，使用腾讯云账号实名认证的名称",
+          "member": "string",
+          "name": "Applicant",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入“0”；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码",
+          "member": "string",
+          "name": "IdentityNum",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "csr p10证书文件。需要用户根据文档生成证书的CSR文件",
+          "member": "string",
+          "name": "CsrData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书备注信息",
+          "member": "string",
+          "name": "Notes",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyUserCertResponse": {
+      "document": "ApplyUserCert返回参数结构体",
+      "members": [
+        {
+          "document": "证书ID",
+          "member": "uint64",
+          "name": "CertId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书DN",
+          "member": "string",
+          "name": "CertDn",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BcosBlockObj": {
+      "document": "Bcos区块对象",
+      "members": [
+        {
+          "default": "",
+          "document": "区块哈希",
+          "member": "string",
+          "name": "BlockHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区块高度",
+          "member": "int64",
+          "name": "BlockNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区块时间戳",
+          "member": "string",
+          "name": "BlockTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "打包节点ID",
+          "member": "string",
+          "name": "Sealer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "打包节点索引",
+          "member": "int64",
+          "name": "SealerIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录保存时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易数量",
+          "member": "int64",
+          "name": "TransCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录修改时间",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BcosTransInfo": {
+      "document": "Bcos交易信息对象",
+      "members": [
+        {
+          "default": "",
+          "document": "所属区块高度",
+          "member": "int64",
+          "name": "BlockNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区块时间戳",
+          "member": "string",
+          "name": "BlockTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易哈希",
+          "member": "string",
+          "name": "TransHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易发起者",
+          "member": "string",
+          "name": "TransFrom",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易接收者",
+          "member": "string",
+          "name": "TransTo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "落库时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Block": {
+      "document": "区块对象",
+      "members": [
+        {
+          "default": "",
+          "document": "区块编号",
+          "member": "uint64",
+          "name": "BlockNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区块Hash数值",
+          "member": "string",
+          "name": "DataHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区块ID，与区块编号一致",
+          "member": "uint64",
+          "name": "BlockId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "前一个区块Hash（未使用）,与区块Hash数值一致",
+          "member": "string",
+          "name": "PreHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区块内的交易数量",
+          "member": "uint64",
+          "name": "TxCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BlockByNumberHandlerRequest": {
+      "document": "BlockByNumberHandler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：block",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：block_by_number",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块高度",
+          "member": "int64",
+          "name": "BlockNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BlockByNumberHandlerResponse": {
+      "document": "BlockByNumberHandler返回参数结构体",
+      "members": [
+        {
+          "document": "返回区块json字符串",
+          "member": "string",
+          "name": "BlockJson",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployDynamicContractHandlerRequest": {
+      "document": "DeployDynamicContractHandler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：contract",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：deploy_by_dynamic_contract",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约名称",
+          "member": "string",
+          "name": "ContractName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约编译后的abi",
+          "member": "string",
+          "name": "AbiInfo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约编译后的binary",
+          "member": "string",
+          "name": "ByteCodeBin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "构造函数入参",
+          "member": "string",
+          "name": "ConstructorParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployDynamicContractHandlerResponse": {
+      "document": "DeployDynamicContractHandler返回参数结构体",
+      "members": [
+        {
+          "document": "部署成功返回的合约地址",
+          "member": "string",
+          "name": "ContractAddress",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadUserCertRequest": {
+      "document": "DownloadUserCert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：cert_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：cert_download_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书ID，可以在证书详情页面获取",
+          "member": "uint64",
+          "name": "CertId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "证书DN，可以在证书详情页面获取",
+          "member": "string",
+          "name": "CertDn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下载证书的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadUserCertResponse": {
+      "document": "DownloadUserCert返回参数结构体",
+      "members": [
+        {
+          "document": "证书名称",
+          "member": "string",
+          "name": "CertName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书内容",
+          "member": "string",
+          "name": "CertCtx",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EndorserGroup": {
+      "document": "背书组织及其节点列表",
+      "members": [
+        {
+          "default": "",
+          "document": "背书组织名称",
+          "member": "string",
+          "name": "EndorserGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "背书节点列表",
+          "member": "string",
+          "name": "EndorserPeerList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetBlockListHandlerRequest": {
+      "document": "GetBlockListHandler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：block",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：get_block_list",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录偏移数",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块哈希",
+          "member": "string",
+          "name": "BlockHash",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBlockListHandlerResponse": {
+      "document": "GetBlockListHandler返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回数据列表",
+          "member": "BcosBlockObj",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBlockListRequest": {
+      "document": "GetBlockList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名称，固定字段：block",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名称，固定字段：block_list",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道ID，固定字段：0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "组织ID，固定字段：0",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要查询的通道名称，可在通道详情或列表中获取",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用接口的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要获取的起始交易偏移",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要获取的交易数量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBlockListResponse": {
+      "document": "GetBlockList返回参数结构体",
+      "members": [
+        {
+          "document": "区块数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块列表",
+          "member": "Block",
+          "name": "BlockList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBlockTransactionListForUserRequest": {
+      "document": "GetBlockTransactionListForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：block_transaction_list_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参与交易的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属通道名称，可在通道详情或列表中获取",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块ID，通过GetInvokeTx接口可以获取交易所在的区块ID",
+          "member": "uint64",
+          "name": "BlockId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的交易列表起始偏移地址",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的交易列表数量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBlockTransactionListForUserResponse": {
+      "document": "GetBlockTransactionListForUser返回参数结构体",
+      "members": [
+        {
+          "document": "交易总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易列表",
+          "member": "TransactionItem",
+          "name": "TransactionList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetClusterSummaryRequest": {
+      "document": "GetClusterSummary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名称，固定字段：cluster_mng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名称，固定字段：cluster_summary",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织ID，固定字段：0",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "调用接口的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetClusterSummaryResponse": {
+      "document": "GetClusterSummary返回参数结构体",
+      "members": [
+        {
+          "document": "网络通道总数量",
+          "member": "uint64",
+          "name": "TotalChannelCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前组织创建的通道数量",
+          "member": "uint64",
+          "name": "MyChannelCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前组织加入的通道数量",
+          "member": "uint64",
+          "name": "JoinChannelCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络节点总数量",
+          "member": "uint64",
+          "name": "TotalPeerCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前组织创建的节点数量",
+          "member": "uint64",
+          "name": "MyPeerCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "其他组织创建的节点数量",
+          "member": "uint64",
+          "name": "OrderCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络组织总数量",
+          "member": "uint64",
+          "name": "TotalGroupCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前组织创建的组织数量",
+          "member": "uint64",
+          "name": "MyGroupCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络智能合约总数量",
+          "member": "uint64",
+          "name": "TotalChaincodeCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最近7天发起的智能合约数量",
+          "member": "uint64",
+          "name": "RecentChaincodeCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前组织发起的智能合约数量",
+          "member": "uint64",
+          "name": "MyChaincodeCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前组织的证书总数量",
+          "member": "uint64",
+          "name": "TotalCertCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "颁发给当前组织的证书数量",
+          "member": "uint64",
+          "name": "TlsCertCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络背书节点证书数量",
+          "member": "uint64",
+          "name": "PeerCertCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前组织业务证书数量",
+          "member": "uint64",
+          "name": "ClientCertCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInvokeTxRequest": {
+      "document": "GetInvokeTx请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：query_txid",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属通道名称，可在通道详情或列表中获取",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称",
+          "member": "string",
+          "name": "PeerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称",
+          "member": "string",
+          "name": "PeerGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易ID",
+          "member": "string",
+          "name": "TxId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInvokeTxResponse": {
+      "document": "GetInvokeTx返回参数结构体",
+      "members": [
+        {
+          "document": "交易执行状态码",
+          "member": "int64",
+          "name": "TxValidationCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易执行消息",
+          "member": "string",
+          "name": "TxValidationMsg",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易所在区块ID",
+          "member": "int64",
+          "name": "BlockId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLatesdTransactionListRequest": {
+      "document": "GetLatesdTransactionList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名称，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名称，固定字段：latest_transaction_list",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织ID，固定字段：0",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "通道ID，固定字段：0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "获取的最新交易的区块数量，取值范围1~5",
+          "member": "uint64",
+          "name": "LatestBlockNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "调用接口的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要查询的通道名称，可在通道详情或列表中获取",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要获取的起始交易偏移",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要获取的交易数量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLatesdTransactionListResponse": {
+      "document": "GetLatesdTransactionList返回参数结构体",
+      "members": [
+        {
+          "document": "交易总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易列表",
+          "member": "TransactionItem",
+          "name": "TransactionList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTransByHashHandlerRequest": {
+      "document": "GetTransByHashHandler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：get_trans_by_hash",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易哈希",
+          "member": "string",
+          "name": "TransHash",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTransByHashHandlerResponse": {
+      "document": "GetTransByHashHandler返回参数结构体",
+      "members": [
+        {
+          "document": "交易信息json字符串",
+          "member": "string",
+          "name": "TransactionJson",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTransListHandlerRequest": {
+      "document": "GetTransListHandler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：get_trans_list",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易哈希",
+          "member": "string",
+          "name": "TransHash",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTransListHandlerResponse": {
+      "document": "GetTransListHandler返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回数据列表",
+          "member": "BcosTransInfo",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTransactionDetailForUserRequest": {
+      "document": "GetTransactionDetailForUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：transaction_detail_for_user",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参与交易的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属通道名称，可在通道详情或列表中获取",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块ID，通过GetInvokeTx接口可以获取交易所在的区块ID",
+          "member": "uint64",
+          "name": "BlockId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "交易ID，需要查询的详情的交易ID",
+          "member": "string",
+          "name": "TransactionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTransactionDetailForUserResponse": {
+      "document": "GetTransactionDetailForUser返回参数结构体",
+      "members": [
+        {
+          "document": "交易ID",
+          "member": "string",
+          "name": "TransactionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易hash",
+          "member": "string",
+          "name": "TransactionHash",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建交易的组织名",
+          "member": "string",
+          "name": "CreateOrgName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易类型（普通交易和配置交易）",
+          "member": "string",
+          "name": "TransactionType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易状态",
+          "member": "string",
+          "name": "TransactionStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易数据",
+          "member": "string",
+          "name": "TransactionData",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易所在区块号",
+          "member": "uint64",
+          "name": "BlockId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易所在区块哈希",
+          "member": "string",
+          "name": "BlockHash",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易所在区块高度",
+          "member": "uint64",
+          "name": "BlockHeight",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "通道名称",
+          "member": "string",
+          "name": "ChannelName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易所在合约名称",
+          "member": "string",
+          "name": "ContractName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "背书组织列表",
+          "member": "EndorserGroup",
+          "name": "EndorserOrgList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeRequest": {
+      "document": "Invoke请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：invoke",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约名称，可在智能合约详情或列表中获取",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属通道名称，可在通道详情或列表中获取",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对该笔交易进行背书的节点列表（包括节点名称和节点所属组织名称，详见数据结构一节），可以在通道详情中获取该通道上的节点名称极其所属组织名称",
+          "member": "PeerSet",
+          "name": "Peers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "该笔交易需要调用的智能合约中的函数名称",
+          "member": "string",
+          "name": "FuncName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被调用的函数参数列表",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "同步调用标识，可选参数，值为0或者不传表示使用同步方法调用，调用后会等待交易执行后再返回执行结果；值为1时表示使用异步方式调用Invoke，执行后会立即返回交易对应的Txid，后续需要通过GetInvokeTx这个API查询该交易的执行结果。（对于逻辑较为简单的交易，可以使用同步模式；对于逻辑较为复杂的交易，建议使用异步模式，否则容易导致API因等待时间过长，返回等待超时）",
+          "member": "uint64",
+          "name": "AsyncFlag",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeResponse": {
+      "document": "Invoke返回参数结构体",
+      "members": [
+        {
+          "document": "交易ID",
+          "member": "string",
+          "name": "Txid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "交易执行结果",
+          "member": "string",
+          "name": "Events",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PeerSet": {
+      "document": "PeerSet",
+      "members": [
+        {
+          "default": "",
+          "document": "节点名称",
+          "member": "string",
+          "name": "PeerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组织名称",
+          "member": "string",
+          "name": "OrgName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "QueryRequest": {
+      "document": "Query请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：query",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属智能合约名称，可在智能合约详情或列表中获取",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务所属通道名称，可在通道详情或列表中获取",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行该查询交易的节点列表（包括节点名称和节点所属组织名称，详见数据结构一节），可以在通道详情中获取该通道上的节点名称极其所属组织名称",
+          "member": "PeerSet",
+          "name": "Peers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "该笔交易查询需要调用的智能合约中的函数名称",
+          "member": "string",
+          "name": "FuncName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用合约的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被调用的函数参数列表",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryResponse": {
+      "document": "Query返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果数据",
+          "member": "string",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendTransactionHandlerRequest": {
+      "document": "SendTransactionHandler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：send_transaction",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约编号",
+          "member": "int64",
+          "name": "ContractId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "合约方法名",
+          "member": "string",
+          "name": "FuncName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约方法入参",
+          "member": "string",
+          "name": "FuncParam",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SendTransactionHandlerResponse": {
+      "document": "SendTransactionHandler返回参数结构体",
+      "members": [
+        {
+          "document": "交易结果json字符串",
+          "member": "string",
+          "name": "TransactionRsp",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SrvInvokeRequest": {
+      "document": "SrvInvoke请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务类型，iss或者dam",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务接口，要调用的方法函数名",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义json字符串",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SrvInvokeResponse": {
+      "document": "SrvInvoke返回参数结构体",
+      "members": [
+        {
+          "document": "返回码",
+          "member": "int64",
+          "name": "RetCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回消息",
+          "member": "string",
+          "name": "RetMsg",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回数据",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransByDynamicContractHandlerRequest": {
+      "document": "TransByDynamicContractHandler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名，固定字段：transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名，固定字段：trans_by_dynamic_contract",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组编号",
+          "member": "string",
+          "name": "GroupPk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约地址（合约部署成功，可得到合约地址）",
+          "member": "string",
+          "name": "ContractAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约名",
+          "member": "string",
+          "name": "ContractName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约编译后的abi",
+          "member": "string",
+          "name": "AbiInfo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约被调用方法名",
+          "member": "string",
+          "name": "FuncName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合约被调用方法的入参",
+          "member": "string",
+          "name": "FuncParam",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TransByDynamicContractHandlerResponse": {
+      "document": "TransByDynamicContractHandler返回参数结构体",
+      "members": [
+        {
+          "document": "交易结果json字符串",
+          "member": "string",
+          "name": "TransactionRsp",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransactionItem": {
+      "document": "交易列表项信息",
+      "members": [
+        {
+          "default": "",
+          "document": "交易ID",
+          "member": "string",
+          "name": "TransactionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易hash",
+          "member": "string",
+          "name": "TransactionHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建交易的组织名",
+          "member": "string",
+          "name": "CreateOrgName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易所在区块号",
+          "member": "uint64",
+          "name": "BlockId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易类型（普通交易和配置交易）",
+          "member": "string",
+          "name": "TransactionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易所在区块高度",
+          "member": "uint64",
+          "name": "BlockHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易状态",
+          "member": "string",
+          "name": "TransactionStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

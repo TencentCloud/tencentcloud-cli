@@ -1,6 +1,16 @@
 # -*- coding: utf-8 -*-
+
+import _locale
+_locale._getdefaultlocale = (lambda *args: ['zh_CN', 'utf8'])
+
 import io
+import os
 import sys
+import tccli.six as six
+import signal
+import logging
+base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, base)
 try:
     reload(sys)  # Python 2.7
     sys.setdefaultencoding('utf8')
@@ -12,55 +22,61 @@ except NameError:
     except ImportError:
         from imp import reload  # Python 3.0 - 3.3
         reload(sys)
+from tccli.command import CLICommand
 from tencentcloud import __version__ as sdkVersion
 from tccli import __version__
-from tccli.nice_command import NiceCommand
-from tccli.configure import Configure
-import tccli.services as Services
-import tccli.help_template as HelpTemplate
-import tccli.options_define as OptionalsDefine
-import tccli.error_msg as ErrorMsg
+from tccli.exceptions import UnknownArgumentError, ConfigurationError, NoCredentialsError, NoRegionError, ClientError
+from tccli.error_msg import USAGE
 
-
-def tccli_action(argv, arglist):
-    if OptionalsDefine.Help in argv:
-        services = Services.service_get_list()
-        services_help = "      configure\n"
-        for s in services:
-            services_help += "      %s\n" % s
-        print(HelpTemplate.TCCLI_HELP % services_help)
-    elif OptionalsDefine.CliVersion in argv:
-        print(__version__)
-    else:
-        print(ErrorMsg.INVALID_CMD % "too few arguments")
+LOG = logging.getLogger('tccli.main')
+LOG_FORMAT = ('%(asctime)s - %(threadName)s - %(name)s - %(levelname)s - %(message)s')
 
 
 def main():
+    cli_version = __version__.rsplit(".", 1)[0]
+    if sdkVersion < cli_version:
+        sys.stderr.write("Version is inconsistent, python sdk version:%s tccli version:%s" % (sdkVersion, __version__))
+        return
     try:
-        cli_version = __version__.rsplit(".", 1)[0]
-        if sdkVersion < cli_version:
-            print("Version is inconsistent, python sdk version:%s tccli version:%s"
-                  % (sdkVersion, __version__))
-            return
-        if len(sys.argv) < 2:
-            print(ErrorMsg.INVALID_CMD % "too few arguments")
-            return
-        services = Services.service_get_list()
+        LOG.debug("begin cli command")
+        CLICommand()()
+    except UnknownArgumentError as e:
+        sys.stderr.write("usage: %s\n" % USAGE)
+        sys.stderr.write(str(e))
+        sys.stderr.write("\n")
+        return
+    except ConfigurationError as e:
+        sys.stderr.write("usage: %s\n" % USAGE)
+        sys.stderr.write(str(e))
+        sys.stderr.write("\n")
+        return
+    except NoRegionError as e:
+        msg = ('%s You can configure your region by running '
+               '"tccli configure".' % e)
+        sys.stderr.write(msg)
+        sys.stderr.write('\n')
+        return
+    except NoCredentialsError as e:
+        msg = ('%s. You can configure your credentials by running '
+               '"tccli configure".' % e)
+        sys.stderr.write(msg)
+        sys.stderr.write('\n')
+        return
+    except KeyboardInterrupt:
+        sys.stdout.write("\n")
+        return
+    except ClientError as e:
+        sys.stderr.write("\n")
+        sys.stderr.write(six.text_type(e))
+        sys.stderr.write("\n")
+        return
+    except Exception as e:
+        sys.stderr.write("usage: %s\n" % USAGE)
+        sys.stderr.write(str(e))
+        sys.stderr.write("\n")
+        return
 
-        c = Configure(services)
-        c.init_configures()
 
-        command = NiceCommand("tccli", tccli_action)
-        command.reg_opt(OptionalsDefine.Help, "bool")
-        command.reg_opt(OptionalsDefine.CliVersion, "bool")
+if __name__ == "__main__":
+    main()
 
-        if sys.argv[1] == "configure":
-            config = Configure(services)
-            config.register_arg(command)
-        elif sys.argv[1] in services:
-            Services.services_register_arg(command, sys.argv[1])
-
-        command.parse(sys.argv[1:])
-
-    except Exception as err:
-        print("tccli: " + str(err))

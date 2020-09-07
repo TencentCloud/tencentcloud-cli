@@ -1,0 +1,6621 @@
+{
+  "actions": {
+    "AssociateTargetGroups": {
+      "document": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡的监听器（四层协议）或转发规则（七层协议）上。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "AssociateTargetGroupsRequest",
+      "name": "规则关联目标组",
+      "output": "AssociateTargetGroupsResponse"
+    },
+    "AutoRewrite": {
+      "document": "用户需要先创建出一个HTTPS:443监听器，并在其下创建转发规则。通过调用本接口，系统会自动创建出一个HTTP:80监听器（如果之前不存在），并在其下创建转发规则，与HTTPS:443监听器下的Domains（在入参中指定）对应。创建成功后可以通过HTTP:80地址自动跳转为HTTPS:443地址进行访问。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "AutoRewriteRequest",
+      "name": "自动生成负载均衡转发规则的重定向关系",
+      "output": "AutoRewriteResponse"
+    },
+    "BatchDeregisterTargets": {
+      "document": "批量解绑四七层后端服务。",
+      "input": "BatchDeregisterTargetsRequest",
+      "name": "批量解绑四七层后端服务",
+      "output": "BatchDeregisterTargetsResponse"
+    },
+    "BatchModifyTargetWeight": {
+      "document": "本接口(BatchModifyTargetWeight)用于批量修改负载均衡监听器绑定的后端机器的转发权重，支持负载均衡的4层和7层监听器；不支持传统型负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "BatchModifyTargetWeightRequest",
+      "name": "批量修改监听器绑定的后端机器的转发权重",
+      "output": "BatchModifyTargetWeightResponse"
+    },
+    "BatchRegisterTargets": {
+      "document": "批量绑定虚拟主机或弹性网卡，支持跨域绑定，支持四层、七层（TCP、UDP、HTTP、HTTPS）协议绑定。",
+      "input": "BatchRegisterTargetsRequest",
+      "name": "批量绑定虚拟主机或弹性网卡",
+      "output": "BatchRegisterTargetsResponse"
+    },
+    "CreateClsLogSet": {
+      "document": "创建clb专有日志集，此日志集用于存储clb的日志。",
+      "input": "CreateClsLogSetRequest",
+      "name": "创建clb专有日志集",
+      "output": "CreateClsLogSetResponse"
+    },
+    "CreateListener": {
+      "document": "在一个负载均衡实例下创建监听器。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "CreateListenerRequest",
+      "name": "创建负载均衡监听器",
+      "output": "CreateListenerResponse"
+    },
+    "CreateLoadBalancer": {
+      "document": "本接口(CreateLoadBalancer)用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。\n注意：(1)指定可用区申请负载均衡、跨zone容灾(仅香港支持)【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】；(2)目前只有北京、上海、广州支持IPv6；(3)一个账号在每个地域的默认购买配额为：公网100个，内网100个。\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。",
+      "input": "CreateLoadBalancerRequest",
+      "name": "购买负载均衡实例",
+      "output": "CreateLoadBalancerResponse"
+    },
+    "CreateLoadBalancerSnatIps": {
+      "document": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启",
+      "input": "CreateLoadBalancerSnatIpsRequest",
+      "name": "添加SnatIp",
+      "output": "CreateLoadBalancerSnatIpsResponse"
+    },
+    "CreateRule": {
+      "document": "CreateRule 接口用于在一个已存在的负载均衡七层监听器下创建转发规则，七层监听器中，后端服务必须绑定到规则上而非监听器上。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "CreateRuleRequest",
+      "name": "创建负载均衡七层监听器转发规则",
+      "output": "CreateRuleResponse"
+    },
+    "CreateTargetGroup": {
+      "document": "创建目标组。该功能正在内测中，如需使用，请通过[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。",
+      "input": "CreateTargetGroupRequest",
+      "name": "创建目标组",
+      "output": "CreateTargetGroupResponse"
+    },
+    "CreateTopic": {
+      "document": "创建主题，默认开启全文索引和键值索引。如果不存在clb专有日志集，则创建失败。",
+      "input": "CreateTopicRequest",
+      "name": "创建主题",
+      "output": "CreateTopicResponse"
+    },
+    "DeleteListener": {
+      "document": "本接口用来删除负载均衡实例下的监听器（四层和七层）。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DeleteListenerRequest",
+      "name": "删除负载均衡监听器",
+      "output": "DeleteListenerResponse"
+    },
+    "DeleteLoadBalancer": {
+      "document": "DeleteLoadBalancer 接口用以删除指定的一个或多个负载均衡实例。成功删除后，会把负载均衡实例下的监听器、转发规则一起删除，并把后端服务解绑。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DeleteLoadBalancerRequest",
+      "name": "删除负载均衡实例",
+      "output": "DeleteLoadBalancerResponse"
+    },
+    "DeleteLoadBalancerListeners": {
+      "document": "该接口支持删除负载均衡的多个监听器。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DeleteLoadBalancerListenersRequest",
+      "name": "删除负载均衡多个监听器",
+      "output": "DeleteLoadBalancerListenersResponse"
+    },
+    "DeleteLoadBalancerSnatIps": {
+      "document": "对于SnatPro的负载均衡，这个接口用于删除SnatIp",
+      "input": "DeleteLoadBalancerSnatIpsRequest",
+      "name": "删除SnatIp",
+      "output": "DeleteLoadBalancerSnatIpsResponse"
+    },
+    "DeleteRewrite": {
+      "document": "DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "DeleteRewriteRequest",
+      "name": "删除负载均衡转发规则之间的重定向关系",
+      "output": "DeleteRewriteResponse"
+    },
+    "DeleteRule": {
+      "document": "DeleteRule 接口用来删除负载均衡实例七层监听器下的转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "DeleteRuleRequest",
+      "name": "删除负载均衡七层监听器的转发规则",
+      "output": "DeleteRuleResponse"
+    },
+    "DeleteTargetGroups": {
+      "document": "删除目标组",
+      "input": "DeleteTargetGroupsRequest",
+      "name": "删除目标组",
+      "output": "DeleteTargetGroupsResponse"
+    },
+    "DeregisterTargetGroupInstances": {
+      "document": "将服务器从目标组中解绑。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DeregisterTargetGroupInstancesRequest",
+      "name": "解绑目标组服务器",
+      "output": "DeregisterTargetGroupInstancesResponse"
+    },
+    "DeregisterTargets": {
+      "document": "DeregisterTargets 接口用来将一台或多台后端服务从负载均衡的监听器或转发规则上解绑，对于四层监听器，只需指定监听器ID即可，对于七层监听器，还需通过LocationId或Domain+Url指定转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "DeregisterTargetsRequest",
+      "name": "从负载均衡监听器上解绑后端服务",
+      "output": "DeregisterTargetsResponse"
+    },
+    "DeregisterTargetsFromClassicalLB": {
+      "document": "DeregisterTargetsFromClassicalLB 接口用于解绑负载均衡后端服务。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DeregisterTargetsFromClassicalLBRequest",
+      "name": "解绑传统型负载均衡的后端服务器",
+      "output": "DeregisterTargetsFromClassicalLBResponse"
+    },
+    "DescribeBlockIPList": {
+      "document": "查询一个负载均衡所封禁的IP列表（黑名单）。（接口灰度中，如需使用请提工单）",
+      "input": "DescribeBlockIPListRequest",
+      "name": "查询一个负载均衡所封禁的IP列表（黑名单）",
+      "output": "DescribeBlockIPListResponse"
+    },
+    "DescribeBlockIPTask": {
+      "document": "根据 ModifyBlockIPList 接口返回的异步任务的ID，查询封禁IP（黑名单）异步任务的执行状态。（接口灰度中，如需使用请提工单）",
+      "input": "DescribeBlockIPTaskRequest",
+      "name": "查询封禁IP（黑名单）异步任务的执行状态",
+      "output": "DescribeBlockIPTaskResponse"
+    },
+    "DescribeClassicalLBByInstanceId": {
+      "document": "DescribeClassicalLBByInstanceId用于通过后端实例ID获取传统型负载均衡ID列表",
+      "input": "DescribeClassicalLBByInstanceIdRequest",
+      "name": "通过后端主机反向查找其绑定的传统型负载均衡",
+      "output": "DescribeClassicalLBByInstanceIdResponse"
+    },
+    "DescribeClassicalLBHealthStatus": {
+      "document": "DescribeClassicalLBHealthStatus用于获取传统型负载均衡后端的健康状态",
+      "input": "DescribeClassicalLBHealthStatusRequest",
+      "name": "获取传统型负载均衡后端的健康状态",
+      "output": "DescribeClassicalLBHealthStatusResponse"
+    },
+    "DescribeClassicalLBListeners": {
+      "document": "DescribeClassicalLBListeners 接口用于获取传统型负载均衡的监听器信息。",
+      "input": "DescribeClassicalLBListenersRequest",
+      "name": "获取传统型负载均衡监听器列表",
+      "output": "DescribeClassicalLBListenersResponse"
+    },
+    "DescribeClassicalLBTargets": {
+      "document": "DescribeClassicalLBTargets用于获取传统型负载均衡绑定的后端服务",
+      "input": "DescribeClassicalLBTargetsRequest",
+      "name": "获取传统型负载均衡绑定的后端服务器列表",
+      "output": "DescribeClassicalLBTargetsResponse"
+    },
+    "DescribeClsLogSet": {
+      "document": "获取用户的clb专有日志集",
+      "input": "DescribeClsLogSetRequest",
+      "name": "获取用户的clb专有日志集",
+      "output": "DescribeClsLogSetResponse"
+    },
+    "DescribeListeners": {
+      "document": "DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。",
+      "input": "DescribeListenersRequest",
+      "name": "查询负载均衡的监听器列表",
+      "output": "DescribeListenersResponse"
+    },
+    "DescribeLoadBalancerListByCertId": {
+      "document": "根据证书ID查询其在一个地域中所关联到负载均衡实例列表",
+      "input": "DescribeLoadBalancerListByCertIdRequest",
+      "name": "根据证书ID查询负载均衡",
+      "output": "DescribeLoadBalancerListByCertIdResponse"
+    },
+    "DescribeLoadBalancers": {
+      "document": "查询一个地域的负载均衡实例列表\n",
+      "input": "DescribeLoadBalancersRequest",
+      "name": "查询负载均衡实例列表",
+      "output": "DescribeLoadBalancersResponse"
+    },
+    "DescribeLoadBalancersDetail": {
+      "document": "查询负载均衡的详细信息，包括监听器，规则及后端目标。",
+      "input": "DescribeLoadBalancersDetailRequest",
+      "name": "查询负载均衡详细信息",
+      "output": "DescribeLoadBalancersDetailResponse"
+    },
+    "DescribeQuota": {
+      "document": "查询用户当前地域下的各项配额",
+      "input": "DescribeQuotaRequest",
+      "name": "查询配额",
+      "output": "DescribeQuotaResponse"
+    },
+    "DescribeRewrite": {
+      "document": "DescribeRewrite 接口可根据负载均衡实例ID，查询一个负载均衡实例下转发规则的重定向关系。如果不指定监听器ID或转发规则ID，则返回该负载均衡实例下的所有重定向关系。",
+      "input": "DescribeRewriteRequest",
+      "name": "查询负载均衡转发规则的重定向关系",
+      "output": "DescribeRewriteResponse"
+    },
+    "DescribeTargetGroupInstances": {
+      "document": "获取目标组绑定的服务器信息",
+      "input": "DescribeTargetGroupInstancesRequest",
+      "name": "获取目标组绑定的服务器",
+      "output": "DescribeTargetGroupInstancesResponse"
+    },
+    "DescribeTargetGroupList": {
+      "document": "获取目标组列表",
+      "input": "DescribeTargetGroupListRequest",
+      "name": "获取目标组列表",
+      "output": "DescribeTargetGroupListResponse"
+    },
+    "DescribeTargetGroups": {
+      "document": "查询目标组信息",
+      "input": "DescribeTargetGroupsRequest",
+      "name": "查询目标组信息",
+      "output": "DescribeTargetGroupsResponse"
+    },
+    "DescribeTargetHealth": {
+      "document": "DescribeTargetHealth 接口用来获取负载均衡后端服务的健康检查结果，不支持传统型负载均衡。",
+      "input": "DescribeTargetHealthRequest",
+      "name": "获取负载均衡后端服务的健康检查状态",
+      "output": "DescribeTargetHealthResponse"
+    },
+    "DescribeTargets": {
+      "document": "DescribeTargets 接口用来查询负载均衡实例的某些监听器绑定的后端服务列表。",
+      "input": "DescribeTargetsRequest",
+      "name": "查询负载均衡绑定的后端服务列表",
+      "output": "DescribeTargetsResponse"
+    },
+    "DescribeTaskStatus": {
+      "document": "本接口用于查询异步任务的执行状态，对于非查询类的接口（创建/删除负载均衡实例、监听器、规则以及绑定或解绑后端服务等），在接口调用成功后，都需要使用本接口查询任务最终是否执行成功。",
+      "input": "DescribeTaskStatusRequest",
+      "name": "查询异步任务状态",
+      "output": "DescribeTaskStatusResponse"
+    },
+    "DisassociateTargetGroups": {
+      "document": "解除规则的目标组关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "DisassociateTargetGroupsRequest",
+      "name": "解除规则的目标组关联关系",
+      "output": "DisassociateTargetGroupsResponse"
+    },
+    "ManualRewrite": {
+      "document": "用户手动配置原访问地址和重定向地址，系统自动将原访问地址的请求重定向至对应路径的目的地址。同一域名下可以配置多条路径作为重定向策略，实现http/https之间请求的自动跳转。设置重定向时，需满足如下约束条件：若A已经重定向至B，则A不能再重定向至C（除非先删除老的重定向关系，再建立新的重定向关系），B不能重定向至任何其它地址。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "ManualRewriteRequest",
+      "name": "手动添加负载均衡转发规则的重定向关系",
+      "output": "ManualRewriteResponse"
+    },
+    "ModifyBlockIPList": {
+      "document": "修改负载均衡的IP（client IP）封禁黑名单列表，一个转发规则最多支持封禁 2000000 个IP，及黑名单容量为 2000000。\n（接口灰度中，如需使用请提工单）",
+      "input": "ModifyBlockIPListRequest",
+      "name": "修改负载均衡的IP封禁黑名单列表",
+      "output": "ModifyBlockIPListResponse"
+    },
+    "ModifyDomain": {
+      "document": "ModifyDomain接口用来修改负载均衡七层监听器下的域名。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "ModifyDomainRequest",
+      "name": "修改七层转发规则的域名",
+      "output": "ModifyDomainResponse"
+    },
+    "ModifyDomainAttributes": {
+      "document": "ModifyDomainAttributes接口用于修改负载均衡7层监听器转发规则的域名级别属性，如修改域名、修改DefaultServer、开启/关闭Http2、修改证书。\n本接口为异步接口，本接口返回成功后，需以返回的RequestId为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "ModifyDomainAttributesRequest",
+      "name": "修改负载均衡七层监听器转发规则的域名级别属性",
+      "output": "ModifyDomainAttributesResponse"
+    },
+    "ModifyListener": {
+      "document": "ModifyListener接口用来修改负载均衡监听器的属性，包括监听器名称、健康检查参数、证书信息、转发策略等。本接口不支持传统型负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "ModifyListenerRequest",
+      "name": "修改负载均衡监听器属性",
+      "output": "ModifyListenerResponse"
+    },
+    "ModifyLoadBalancerAttributes": {
+      "document": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。",
+      "input": "ModifyLoadBalancerAttributesRequest",
+      "name": "修改负载均衡实例的属性",
+      "output": "ModifyLoadBalancerAttributesResponse"
+    },
+    "ModifyRule": {
+      "document": "ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "ModifyRuleRequest",
+      "name": "修改负载均衡七层监听器的转发规则",
+      "output": "ModifyRuleResponse"
+    },
+    "ModifyTargetGroupAttribute": {
+      "document": "修改目标组的名称或者默认端口属性",
+      "input": "ModifyTargetGroupAttributeRequest",
+      "name": "修改目标组属性",
+      "output": "ModifyTargetGroupAttributeResponse"
+    },
+    "ModifyTargetGroupInstancesPort": {
+      "document": "批量修改目标组服务器端口。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "ModifyTargetGroupInstancesPortRequest",
+      "name": "批量修改目标组服务器端口",
+      "output": "ModifyTargetGroupInstancesPortResponse"
+    },
+    "ModifyTargetGroupInstancesWeight": {
+      "document": "批量修改目标组的服务器权重。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "ModifyTargetGroupInstancesWeightRequest",
+      "name": "批量修改目标组的服务器权重",
+      "output": "ModifyTargetGroupInstancesWeightResponse"
+    },
+    "ModifyTargetPort": {
+      "document": "ModifyTargetPort接口用于修改监听器绑定的后端服务的端口。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "ModifyTargetPortRequest",
+      "name": "修改监听器绑定的后端机器的端口",
+      "output": "ModifyTargetPortResponse"
+    },
+    "ModifyTargetWeight": {
+      "document": "ModifyTargetWeight 接口用于修改负载均衡绑定的后端服务的转发权重。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "ModifyTargetWeightRequest",
+      "name": "修改监听器绑定的后端机器的转发权重",
+      "output": "ModifyTargetWeightResponse"
+    },
+    "RegisterTargetGroupInstances": {
+      "document": "注册服务器到目标组。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "RegisterTargetGroupInstancesRequest",
+      "name": "注册服务器到目标组",
+      "output": "RegisterTargetGroupInstancesResponse"
+    },
+    "RegisterTargets": {
+      "document": "RegisterTargets 接口用来将一台或多台后端服务绑定到负载均衡的监听器（或7层转发规则），在此之前您需要先行创建相关的4层监听器或7层转发规则。对于四层监听器（TCP、UDP），只需指定监听器ID即可，对于七层监听器（HTTP、HTTPS），还需通过LocationId或者Domain+Url指定转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "input": "RegisterTargetsRequest",
+      "name": "绑定后端机器到监听器上",
+      "output": "RegisterTargetsResponse"
+    },
+    "RegisterTargetsWithClassicalLB": {
+      "document": "RegisterTargetsWithClassicalLB 接口用于绑定后端服务到传统型负载均衡。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "input": "RegisterTargetsWithClassicalLBRequest",
+      "name": "绑定后端服务到传统型负载均衡",
+      "output": "RegisterTargetsWithClassicalLBResponse"
+    },
+    "ReplaceCertForLoadBalancers": {
+      "document": "ReplaceCertForLoadBalancers 接口用以替换负载均衡实例所关联的证书，对于各个地域的负载均衡，如果指定的老的证书ID与其有关联关系，则会先解除关联，再建立新证书与该负载均衡的关联关系。\n此接口支持替换服务端证书或客户端证书。\n需要使用的新证书，可以通过传入证书ID来指定，如果不指定证书ID，则必须传入证书内容等相关信息，用以新建证书并绑定至负载均衡。\n注：本接口仅可从广州地域调用。",
+      "input": "ReplaceCertForLoadBalancersRequest",
+      "name": "替换负载均衡实例所关联的证书",
+      "output": "ReplaceCertForLoadBalancersResponse"
+    },
+    "SetLoadBalancerClsLog": {
+      "document": "增加、删除、更新负载均衡的日志服务(CLS)主题",
+      "input": "SetLoadBalancerClsLogRequest",
+      "name": "设置负载均衡的日志服务主题",
+      "output": "SetLoadBalancerClsLogResponse"
+    },
+    "SetLoadBalancerSecurityGroups": {
+      "document": "SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 DescribeLoadBalancers 接口。本接口是set语义，\n绑定操作时，入参需要传入负载均衡实例要绑定的所有安全组（已绑定的+新增绑定的）。\n解绑操作时，入参需要传入负载均衡实例执行解绑后所绑定的所有安全组；如果要解绑所有安全组，可不传此参数，或传入空数组。注意：内网负载均衡不支持绑定安全组。",
+      "input": "SetLoadBalancerSecurityGroupsRequest",
+      "name": "设置负载均衡实例的安全组",
+      "output": "SetLoadBalancerSecurityGroupsResponse"
+    },
+    "SetSecurityGroupForLoadbalancers": {
+      "document": "绑定或解绑一个安全组到多个公网负载均衡实例。注意：内网负载均衡不支持绑定安全组。",
+      "input": "SetSecurityGroupForLoadbalancersRequest",
+      "name": "绑定或解绑一个安全组到多个负载均衡实例",
+      "output": "SetSecurityGroupForLoadbalancersResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-03-17",
+    "api_brief": "介绍如何使用API对负载均衡进行操作，包括创建、查询负载均衡实例、管理监听等。",
+    "serviceNameCN": "负载均衡",
+    "serviceShortName": "clb"
+  },
+  "objects": {
+    "AssociateTargetGroupsRequest": {
+      "document": "AssociateTargetGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "绑定的关系数组",
+          "member": "TargetGroupAssociation",
+          "name": "Associations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateTargetGroupsResponse": {
+      "document": "AssociateTargetGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociationItem": {
+      "document": "目标组关联到的规则",
+      "members": [
+        {
+          "default": "",
+          "document": "关联到的负载均衡ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联到的监听器ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联到的转发规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联到的监听器协议类型，如HTTP,TCP,",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联到的监听器端口",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联到的转发规则域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联到的转发规则URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡名称",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器名称",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AutoRewriteRequest": {
+      "document": "AutoRewrite请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HTTPS:443监听器的ID。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HTTPS:443监听器下需要重定向的域名，若不填，对HTTPS:443监听器下的所有域名都设置重定向。",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AutoRewriteResponse": {
+      "document": "AutoRewrite返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Backend": {
+      "document": "监听器绑定的后端服务的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "后端服务的类型，可取：CVM、ENI（即将支持）",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的唯一 ID，如 ins-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的监听端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的内网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务被绑定的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RegisteredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性网卡唯一ID，如 eni-1234abcd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EniId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BasicTargetGroupInfo": {
+      "document": "监听器或者转发规则绑定的目标组基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组名称",
+          "member": "string",
+          "name": "TargetGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchDeregisterTargetsRequest": {
+      "document": "BatchDeregisterTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解绑目标",
+          "member": "BatchTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeregisterTargetsResponse": {
+      "document": "BatchDeregisterTargets返回参数结构体",
+      "members": [
+        {
+          "document": "解绑失败的监听器ID",
+          "member": "string",
+          "name": "FailListenerIdSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyTargetWeightRequest": {
+      "document": "BatchModifyTargetWeight请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要批量修改权重的列表",
+          "member": "RsWeightRule",
+          "name": "ModifyList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyTargetWeightResponse": {
+      "document": "BatchModifyTargetWeight返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchRegisterTargetsRequest": {
+      "document": "BatchRegisterTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定目标",
+          "member": "BatchTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchRegisterTargetsResponse": {
+      "document": "BatchRegisterTargets返回参数结构体",
+      "members": [
+        {
+          "document": "绑定失败的监听器ID，如为空表示全部绑定成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FailListenerIdSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchTarget": {
+      "document": "批量绑定类型",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性网卡ip",
+          "member": "string",
+          "name": "EniIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "七层规则ID",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BlockedIP": {
+      "document": "加入了12306黑名单的IP",
+      "members": [
+        {
+          "default": "",
+          "document": "黑名单IP",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加入黑名单的时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CertIdRelatedWithLoadBalancers": {
+      "document": "证书ID，以及与该证书ID关联的负载均衡实例列表",
+      "members": [
+        {
+          "default": "",
+          "document": "证书ID",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与证书关联的负载均衡实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LoadBalancer",
+          "name": "LoadBalancers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CertificateInput": {
+      "document": "证书信息",
+      "members": [
+        {
+          "default": "",
+          "document": "认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证",
+          "member": "string",
+          "name": "SSLMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。",
+          "member": "string",
+          "name": "CertCaId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传服务端证书的名称，如果没有 CertId，则此项必传。",
+          "member": "string",
+          "name": "CertName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传服务端证书的 key，如果没有 CertId，则此项必传。",
+          "member": "string",
+          "name": "CertKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传服务端证书的内容，如果没有 CertId，则此项必传。",
+          "member": "string",
+          "name": "CertContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传客户端 CA 证书的名称，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。",
+          "member": "string",
+          "name": "CertCaName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传客户端证书的内容，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。",
+          "member": "string",
+          "name": "CertCaContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CertificateOutput": {
+      "document": "证书相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证",
+          "member": "string",
+          "name": "SSLMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端证书的 ID。",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertCaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassicalHealth": {
+      "document": "传统型负载均衡后端服务的健康状态",
+      "members": [
+        {
+          "default": "",
+          "document": "后端服务的内网 IP",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的监听端口",
+          "member": "int64",
+          "name": "ListenerPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查结果，1 表示健康，0 表示不健康",
+          "member": "int64",
+          "name": "HealthStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassicalListener": {
+      "document": "传统型负载均衡监听器信息",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡监听器ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器端口",
+          "member": "int64",
+          "name": "ListenerPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器后端转发端口",
+          "member": "int64",
+          "name": "InstancePort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器名称",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器协议类型",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持时间",
+          "member": "int64",
+          "name": "SessionExpire",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启了健康检查：1（开启）、0（关闭）",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "响应超时时间",
+          "member": "int64",
+          "name": "TimeOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查间隔",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康阈值",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不健康阈值",
+          "member": "int64",
+          "name": "UnhealthNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传统型公网负载均衡的 HTTP、HTTPS 监听器的请求均衡方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发",
+          "member": "string",
+          "name": "HttpHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释",
+          "member": "int64",
+          "name": "HttpCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查路径",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传统型公网负载均衡的 HTTPS 监听器的认证方式",
+          "member": "string",
+          "name": "SSLMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传统型公网负载均衡的 HTTPS 监听器的服务端证书 ID",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传统型公网负载均衡的 HTTPS 监听器的客户端证书 ID",
+          "member": "string",
+          "name": "CertCaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的状态，0 表示创建中，1 表示运行中",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassicalLoadBalancerInfo": {
+      "document": "负载均衡信息",
+      "members": [
+        {
+          "default": "",
+          "document": "后端实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassicalTarget": {
+      "document": "传统型负载均衡的后端服务相关信息",
+      "members": [
+        {
+          "default": "CVM",
+          "document": "后端服务的类型，可取值：CVM、ENI（即将支持）",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的内网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的状态\n1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RunFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassicalTargetInfo": {
+      "document": "传统型负载均衡的后端信息",
+      "members": [
+        {
+          "default": "",
+          "document": "后端实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权重，取值范围 [0, 100]",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClusterItem": {
+      "document": "独占集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群唯一ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所在可用区，如ap-guangzhou-1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateClsLogSetRequest": {
+      "document": "CreateClsLogSet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志集的保存周期，单位：天，最大 90。",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。",
+          "member": "string",
+          "name": "LogsetName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClsLogSetResponse": {
+      "document": "CreateClsLogSet返回参数结构体",
+      "members": [
+        {
+          "document": "日志集的 ID。",
+          "member": "string",
+          "name": "LogsetId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateListenerRequest": {
+      "document": "CreateListener请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要将监听器创建到哪些端口，每个端口对应一个新的监听器",
+          "member": "int64",
+          "name": "Ports",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数",
+          "member": "string",
+          "name": "ListenerNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器",
+          "member": "HealthCheck",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。",
+          "member": "CertificateInput",
+          "name": "Certificate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。",
+          "member": "int64",
+          "name": "SessionExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL监听器。",
+          "member": "string",
+          "name": "Scheduler",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启SNI特性，此参数仅适用于HTTPS监听器。",
+          "member": "int64",
+          "name": "SniSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。",
+          "member": "string",
+          "name": "SessionType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateListenerResponse": {
+      "document": "CreateListener返回参数结构体",
+      "members": [
+        {
+          "document": "创建的监听器的唯一标识数组",
+          "member": "string",
+          "name": "ListenerIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancerRequest": {
+      "document": "CreateLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1",
+          "member": "int64",
+          "name": "Forward",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（\"0\"）。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。",
+          "member": "string",
+          "name": "AddressIPVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建负载均衡的个数，默认值 1。",
+          "member": "uint64",
+          "name": "Number",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。",
+          "member": "string",
+          "name": "MasterZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。负载均衡的网络计费模式。",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。",
+          "member": "string",
+          "name": "VipIsp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买负载均衡同时，给负载均衡打上标签",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancerResponse": {
+      "document": "CreateLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "由负载均衡实例唯一 ID 组成的数组。",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancerSnatIpsRequest": {
+      "document": "CreateLoadBalancerSnatIps请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡唯一性Id，如lb-12345678",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "添加SnatIp信息，可指定Ip申请，或者指定子网自动申请",
+          "member": "SnatIp",
+          "name": "SnatIps",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancerSnatIpsResponse": {
+      "document": "CreateLoadBalancerSnatIps返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleRequest": {
+      "document": "CreateRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新建转发规则的信息",
+          "member": "RuleInput",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleResponse": {
+      "document": "CreateRule返回参数结构体",
+      "members": [
+        {
+          "document": "创建的转发规则的唯一标识数组",
+          "member": "string",
+          "name": "LocationIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTargetGroupRequest": {
+      "document": "CreateTargetGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组名称，限定50个字符",
+          "member": "string",
+          "name": "TargetGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标组的vpcid属性，不填则使用默认vpc",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "目标组绑定的后端服务器",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTargetGroupResponse": {
+      "document": "CreateTargetGroup返回参数结构体",
+      "members": [
+        {
+          "document": "创建目标组后生成的id",
+          "member": "string",
+          "name": "TargetGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRequest": {
+      "document": "CreateTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题的名字",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题分区 partition个数，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。",
+          "member": "uint64",
+          "name": "PartitionCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicResponse": {
+      "document": "CreateTopic返回参数结构体",
+      "members": [
+        {
+          "document": "日志主题的 ID",
+          "member": "string",
+          "name": "TopicId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteListenerRequest": {
+      "document": "DeleteListener请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteListenerResponse": {
+      "document": "DeleteListener返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerListenersRequest": {
+      "document": "DeleteLoadBalancerListeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定删除的监听器ID数组，若不填则删除负载均衡的所有监听器",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerListenersResponse": {
+      "document": "DeleteLoadBalancerListeners返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerRequest": {
+      "document": "DeleteLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的负载均衡实例 ID数组，数组大小最大支持20",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerResponse": {
+      "document": "DeleteLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerSnatIpsRequest": {
+      "document": "DeleteLoadBalancerSnatIps请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡唯一Id，如lb-12345678",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "删除SnatIp地址数组",
+          "member": "string",
+          "name": "Ips",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancerSnatIpsResponse": {
+      "document": "DeleteLoadBalancerSnatIps返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRewriteRequest": {
+      "document": "DeleteRewrite请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源监听器ID",
+          "member": "string",
+          "name": "SourceListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标监听器ID",
+          "member": "string",
+          "name": "TargetListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发规则之间的重定向关系",
+          "member": "RewriteLocationMap",
+          "name": "RewriteInfos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRewriteResponse": {
+      "document": "DeleteRewrite返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleRequest": {
+      "document": "DeleteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的转发规则的ID组成的数组",
+          "member": "string",
+          "name": "LocationIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要删除的转发规则的域名，已提供LocationIds参数时本参数不生效",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。",
+          "member": "string",
+          "name": "NewDefaultServerDomain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleResponse": {
+      "document": "DeleteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTargetGroupsRequest": {
+      "document": "DeleteTargetGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组的ID数组",
+          "member": "string",
+          "name": "TargetGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTargetGroupsResponse": {
+      "document": "DeleteTargetGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterTargetGroupInstancesRequest": {
+      "document": "DeregisterTargetGroupInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待解绑的服务器信息",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterTargetGroupInstancesResponse": {
+      "document": "DeregisterTargetGroupInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterTargetsFromClassicalLBRequest": {
+      "document": "DeregisterTargetsFromClassicalLB请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "后端服务的实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterTargetsFromClassicalLBResponse": {
+      "document": "DeregisterTargetsFromClassicalLB返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterTargetsRequest": {
+      "document": "DeregisterTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID，格式如 lb-12345678",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监听器 ID，格式如 lbl-12345678",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要解绑的后端服务列表，数组长度最大支持20",
+          "member": "Target",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "转发规则的ID，格式如 loc-12345678，当从七层转发规则解绑机器时，必须提供此参数或Domain+Url两者之一",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标规则的域名，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标规则的URL，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterTargetsResponse": {
+      "document": "DeregisterTargets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockIPListRequest": {
+      "document": "DescribeBlockIPList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回IP的最大个数，默认为 100000。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockIPListResponse": {
+      "document": "DescribeBlockIPList返回参数结构体",
+      "members": [
+        {
+          "document": "返回的IP的数量",
+          "member": "uint64",
+          "name": "BlockedIPCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "获取用户真实IP的字段",
+          "member": "string",
+          "name": "ClientIPField",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "加入了12360黑名单的IP列表",
+          "member": "BlockedIP",
+          "name": "BlockedIPList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockIPTaskRequest": {
+      "document": "DescribeBlockIPTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ModifyBlockIPList 接口返回的异步任务的ID。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockIPTaskResponse": {
+      "document": "DescribeBlockIPTask返回参数结构体",
+      "members": [
+        {
+          "document": "1 running，2 fail，6 succ",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassicalLBByInstanceIdRequest": {
+      "document": "DescribeClassicalLBByInstanceId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "后端实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassicalLBByInstanceIdResponse": {
+      "document": "DescribeClassicalLBByInstanceId返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡相关信息列表",
+          "member": "ClassicalLoadBalancerInfo",
+          "name": "LoadBalancerInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassicalLBHealthStatusRequest": {
+      "document": "DescribeClassicalLBHealthStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassicalLBHealthStatusResponse": {
+      "document": "DescribeClassicalLBHealthStatus返回参数结构体",
+      "members": [
+        {
+          "document": "后端健康状态列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClassicalHealth",
+          "name": "HealthList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassicalLBListenersRequest": {
+      "document": "DescribeClassicalLBListeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器ID列表",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听的协议, 'TCP', 'UDP', 'HTTP', 'HTTPS'",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听端口， 范围[1-65535]",
+          "member": "int64",
+          "name": "ListenerPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监听器的状态，0 表示创建中，1 表示运行中",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassicalLBListenersResponse": {
+      "document": "DescribeClassicalLBListeners返回参数结构体",
+      "members": [
+        {
+          "document": "监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClassicalListener",
+          "name": "Listeners",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassicalLBTargetsRequest": {
+      "document": "DescribeClassicalLBTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassicalLBTargetsResponse": {
+      "document": "DescribeClassicalLBTargets返回参数结构体",
+      "members": [
+        {
+          "document": "后端服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClassicalTarget",
+          "name": "Targets",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClsLogSetRequest": {
+      "document": "DescribeClsLogSet请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeClsLogSetResponse": {
+      "document": "DescribeClsLogSet返回参数结构体",
+      "members": [
+        {
+          "document": "日志集的 ID。",
+          "member": "string",
+          "name": "LogsetId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListenersRequest": {
+      "document": "DescribeListeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的负载均衡监听器 ID数组",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要查询的监听器协议类型，取值 TCP | UDP | HTTP | HTTPS | TCP_SSL",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的监听器的端口",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListenersResponse": {
+      "document": "DescribeListeners返回参数结构体",
+      "members": [
+        {
+          "document": "监听器列表",
+          "member": "Listener",
+          "name": "Listeners",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总的监听器个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerListByCertIdRequest": {
+      "document": "DescribeLoadBalancerListByCertId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务端证书的ID，或客户端证书的ID",
+          "member": "string",
+          "name": "CertIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancerListByCertIdResponse": {
+      "document": "DescribeLoadBalancerListByCertId返回参数结构体",
+      "members": [
+        {
+          "document": "证书ID，以及与该证书ID关联的负载均衡实例列表",
+          "member": "CertIdRelatedWithLoadBalancers",
+          "name": "CertSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancersDetailRequest": {
+      "document": "DescribeLoadBalancersDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回负载均衡列表数目，默认20，最大值100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回负载均衡列表起始偏移量，默认0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "选择返回的Fields列表，默认添加LoadBalancerId和LoadBalancerName。",
+          "member": "string",
+          "name": "Fields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当Fields包含TargetId、TargetAddress、TargetPort、TargetWeight等Fields时，必选选择导出目标组的Target或者非目标组Target，值范围NODE、GROUP。",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询负载均衡详细信息列表条件，详细的过滤条件如下：\n<li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 负载均衡ID 过滤，如：\"lb-12345678\"。</li>\n<li> project-id - String - 是否必填：否 - （过滤条件）按照 项目ID 过滤，如：\"0\",\"123\"。</li>\n<li> network - String - 是否必填：否 - （过滤条件）按照 负载均衡网络类型 过滤，如：\"Public\",\"Private\"。</li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip 过滤，如：\"1.1.1.1\",\"2204::22:3\"。</li>\n<li> target-ip - String - 是否必填：否 - （过滤条件）按照 后端目标内网Ip 过滤，如：\"1.1.1.1\",\"2203::214:4\"。</li>\n<li> vpcid - String - 是否必填：否 - （过滤条件）按照 负载均衡所属vpcId 过滤，如：\"vpc-12345678\"。</li>\n<li> zone - String - 是否必填：否 - （过滤条件）按照 负载均衡所属的可用区 过滤，如：\"ap-guangzhou-1\"。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 负载均衡标签的标签键 过滤，如：\"name\"。</li>\n<li> tag:* - String - 是否必填：否 - （过滤条件）按照 负载均衡的标签 过滤，':' 后面跟的是标签键。如：过滤标签键name，标签值zhangsan,lisi，{\"Name\": \"tag:name\",\"Values\": [\"zhangsan\", \"lisi\"]}。</li>\n<li> fuzzy-search - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip，负载均衡名称 模糊搜索，如：\"1.1\"。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancersDetailResponse": {
+      "document": "DescribeLoadBalancersDetail返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡详情列表总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "负载均衡详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LoadBalancerDetail",
+          "name": "LoadBalancerDetailSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancersRequest": {
+      "document": "DescribeLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID。",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。",
+          "member": "int64",
+          "name": "Forward",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的名称。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的 VIP 地址，支持多个。",
+          "member": "string",
+          "name": "LoadBalancerVips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "负载均衡绑定的后端服务的外网 IP。",
+          "member": "string",
+          "name": "BackendPublicIps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "负载均衡绑定的后端服务的内网 IP。",
+          "member": "string",
+          "name": "BackendPrivateIps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回负载均衡实例的数量，默认为20，最大值为100。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1：倒序，0：顺序，默认按照创建时间倒序。",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索字段，模糊匹配名称、域名、VIP。",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。",
+          "member": "int64",
+          "name": "WithRs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，\n基础网络可传入'0'。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ID，如 sg-m1cc9123",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主可用区ID，如 ：\"100001\" （对应的是广州一区）",
+          "member": "string",
+          "name": "MasterZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：\n<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括\"BANDWIDTH_PREPAID\",\"TRAFFIC_POSTPAID_BY_HOUR\",\"BANDWIDTH_POSTPAID_BY_HOUR\",\"BANDWIDTH_PACKAGE\"。</li>\n<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ：\"100001\" （对应的是广州一区）。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancersResponse": {
+      "document": "DescribeLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的负载均衡实例数组。",
+          "member": "LoadBalancer",
+          "name": "LoadBalancerSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuotaRequest": {
+      "document": "DescribeQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeQuotaResponse": {
+      "document": "DescribeQuota返回参数结构体",
+      "members": [
+        {
+          "document": "配额列表",
+          "member": "Quota",
+          "name": "QuotaSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRewriteRequest": {
+      "document": "DescribeRewrite请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器ID数组",
+          "member": "string",
+          "name": "SourceListenerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "负载均衡转发规则的ID数组",
+          "member": "string",
+          "name": "SourceLocationIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRewriteResponse": {
+      "document": "DescribeRewrite返回参数结构体",
+      "members": [
+        {
+          "document": "重定向转发规则构成的数组，若无重定向规则，则返回空数组",
+          "member": "RuleOutput",
+          "name": "RewriteSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupInstancesRequest": {
+      "document": "DescribeTargetGroupInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "显示数量限制，默认20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显示的偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupInstancesResponse": {
+      "document": "DescribeTargetGroupInstances返回参数结构体",
+      "members": [
+        {
+          "document": "本次查询的结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "绑定的服务器信息",
+          "member": "TargetGroupBackend",
+          "name": "TargetGroupInstanceSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实际统计数量，不受Limit，Offset，CAM的影响",
+          "member": "uint64",
+          "name": "RealCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupListRequest": {
+      "document": "DescribeTargetGroupList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID数组",
+          "member": "string",
+          "name": "TargetGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID，",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "显示的偏移起始量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显示条数限制，默认为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupListResponse": {
+      "document": "DescribeTargetGroupList返回参数结构体",
+      "members": [
+        {
+          "document": "显示的结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "显示的目标组信息集合",
+          "member": "TargetGroupInfo",
+          "name": "TargetGroupSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupsRequest": {
+      "document": "DescribeTargetGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID，与Filters互斥",
+          "member": "string",
+          "name": "TargetGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "显示条数限制，默认为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "显示的偏移起始量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupsResponse": {
+      "document": "DescribeTargetGroups返回参数结构体",
+      "members": [
+        {
+          "document": "显示的结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "显示的目标组信息集合",
+          "member": "TargetGroupInfo",
+          "name": "TargetGroupSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetHealthRequest": {
+      "document": "DescribeTargetHealth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的负载均衡实例 ID列表",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetHealthResponse": {
+      "document": "DescribeTargetHealth返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LoadBalancerHealth",
+          "name": "LoadBalancers",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetsRequest": {
+      "document": "DescribeTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监听器 ID列表",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "监听器协议类型",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监听器端口",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetsResponse": {
+      "document": "DescribeTargets返回参数结构体",
+      "members": [
+        {
+          "document": "监听器后端绑定的机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ListenerBackend",
+          "name": "Listeners",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusRequest": {
+      "document": "DescribeTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "请求ID，即接口返回的 RequestId 参数",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusResponse": {
+      "document": "DescribeTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "任务的当前状态。 0：成功，1：失败，2：进行中。",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateTargetGroupsRequest": {
+      "document": "DisassociateTargetGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待解绑的规则关系数组",
+          "member": "TargetGroupAssociation",
+          "name": "Associations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateTargetGroupsResponse": {
+      "document": "DisassociateTargetGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExclusiveCluster": {
+      "document": "独占集群",
+      "members": [
+        {
+          "default": "",
+          "document": "4层独占集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClusterItem",
+          "name": "L4Clusters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "7层独占集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClusterItem",
+          "name": "L7Clusters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "vpcgw集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClusterItem",
+          "name": "ClassicalCluster",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExtraInfo": {
+      "document": "暂做保留，一般用户无需关注。",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开通VIP直通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "ZhiTong",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TgwGroup名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TgwGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤器条件",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤器的名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤器的值数组",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "HealthCheck": {
+      "document": "健康检查信息。\n注意，自定义探测相关参数 目前只有少量区域灰度支持。",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启健康检查：1（开启）、0（关闭）。",
+          "member": "int64",
+          "name": "HealthSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查的响应超时时间（仅适用于四层监听器），可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TimeOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IntervalTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "HealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "UnHealthNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。\n1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。注意：TCP监听器的HTTP健康检查方式，只支持指定一种健康检查状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "HttpCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HttpCheckPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康检查域名（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HttpCheckDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HttpCheckMethod",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。（仅适用于TCP/UDP监听器）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CheckPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP监听器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContextType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SendContext",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RecvContext",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义探测相关参数。健康检查使用的协议：TCP | HTTP | CUSTOM（仅适用于TCP/UDP监听器，其中UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CheckType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HttpVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InternetAccessible": {
+      "document": "网络计费模式，最大出带宽",
+      "members": [
+        {
+          "default": "",
+          "document": "TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;\nBANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支持此种计费模式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InternetChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带宽包的类型，如SINGLEISP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BandwidthpkgSubType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LBChargePrepaid": {
+      "document": "lb实例包年包月相关配置属性",
+      "members": [
+        {
+          "default": "",
+          "document": "续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买时长，单位：月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Listener": {
+      "document": "监听器的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器绑定的证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CertificateOutput",
+          "name": "Certificate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器的健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HealthCheck",
+          "name": "HealthCheck",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求的调度方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Scheduler",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SessionExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启SNI特性（本参数仅对于HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SniSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器下的全部转发规则（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RuleOutput",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口段结束端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "EndPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BasicTargetGroupInfo",
+          "name": "TargetGroup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SessionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启长连接（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "KeepaliveEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListenerBackend": {
+      "document": "监听器上绑定的后端服务的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器下的规则信息（仅适用于HTTP/HTTPS监听器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RuleTargets",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Backend",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "若支持端口段，则为端口段结束端口；若不支持端口段，则为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "EndPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListenerHealth": {
+      "document": "监听器的健康检查信息",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器的协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器的转发规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RuleHealth",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LoadBalancer": {
+      "document": "负载均衡实例的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的名称。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡类型标识，1：负载均衡，0：传统型负载均衡。",
+          "member": "uint64",
+          "name": "Forward",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的 VIP 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LoadBalancerVips",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的状态，包括\n0：创建中，1：正常运行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的上次状态转换时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所属的项目 ID， 0 表示默认项目。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高防 LB 的标识，1：高防负载均衡 0：非高防负载均衡。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "OpenBgp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Snat",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0：表示未被隔离，1：表示被隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Isolation",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户开启日志的信息，日志只有公网属性创建了 HTTP 、HTTPS 监听器的负载均衡才会有日志。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Log",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所在的子网（仅对内网VPC型LB有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecureGroups",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例绑定的后端设备的基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TargetRegionInfo",
+          "name": "TargetRegionInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "anycast负载均衡的发布域，对于非anycast的负载均衡，此字段返回为空字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AnycastZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP版本，ipv4 | ipv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressIPVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数值形式的私有网络 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "NumericalVpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡IP地址所属的ISP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VipIsp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ZoneInfo",
+          "name": "MasterZone",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ZoneInfo",
+          "name": "BackupZoneSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例被隔离的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IsolatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的过期时间，仅对预付费负载均衡生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的计费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的网络属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InternetAccessible",
+          "name": "NetworkAttributes",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的预付费相关属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LBChargePrepaid",
+          "name": "PrepaidAttributes",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡日志服务(CLS)的日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogSetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡日志服务(CLS)的日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogTopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressIPv6",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "暂做保留，一般用户无需关注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ExtraInfo",
+          "name": "ExtraInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可绑定高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsDDos",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡维度的个性化配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务是否放通来自LB的流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "LoadBalancerPassToTarget",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网独占集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ExclusiveCluster",
+          "name": "ExclusiveCluster",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IPv6Mode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启SnatPro。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "SnatPro",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开启SnatPro负载均衡后，SnatIp列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SnatIp",
+          "name": "SnatIps",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "性能保障规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SlaType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "vip是否被封堵\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsBlock",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "封堵或解封时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IsBlockTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP类型是否是本地BGP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "LocalBgp",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "7层独占标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterTag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开启IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "MixIpTarget",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LoadBalancerDetail": {
+      "document": "负载均衡详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID。",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的名称。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的网络类型：\nPublic：公网属性， Private：内网属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的状态，包括\n0：创建中，1：正常运行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的 VIP 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例 VIP 的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressIPv6",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例IP版本，IPv4 | IPv6。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressIPVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例IPv6地址类型，IPv6Nat64 | IPv6FullChain。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IPv6Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所在可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例IP地址所属的ISP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressIsp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所属私有网络的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所属的项目 ID， 0 表示默认项目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的计费类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的网络属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InternetAccessible",
+          "name": "NetworkAttributes",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的预付费相关属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LBChargePrepaid",
+          "name": "PrepaidAttributes",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "暂做保留，一般用户无需关注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ExtraInfo",
+          "name": "ExtraInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡维度的个性化配置ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端目标ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TargetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端目标的IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TargetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端目标监听端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TargetPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端目标转发权重。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TargetWeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0：表示未被隔离，1：表示被隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Isolation",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LoadBalancerHealth": {
+      "document": "负载均衡实例的健康检查状态",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ListenerHealth",
+          "name": "Listeners",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ManualRewriteRequest": {
+      "document": "ManualRewrite请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源监听器ID",
+          "member": "string",
+          "name": "SourceListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标监听器ID",
+          "member": "string",
+          "name": "TargetListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发规则之间的重定向关系",
+          "member": "RewriteLocationMap",
+          "name": "RewriteInfos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ManualRewriteResponse": {
+      "document": "ManualRewrite返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockIPListRequest": {
+      "document": "ModifyBlockIPList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作类型，可取：\n<li> add_customized_field（首次设置header，开启黑名单功能）</li>\n<li> set_customized_field（修改header）</li>\n<li> del_customized_field（删除header）</li>\n<li> add_blocked（添加黑名单）</li>\n<li> del_blocked（删除黑名单）</li>\n<li> flush_blocked（清空黑名单）</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端真实IP存放的header字段名",
+          "member": "string",
+          "name": "ClientIPField",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "封禁IP列表，单次操作数组最大长度支持200000",
+          "member": "string",
+          "name": "BlockIPList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过期时间，单位秒，默认值3600",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "添加IP的策略，可取：fifo（如果黑名单容量已满，新加入黑名单的IP采用先进先出策略）",
+          "member": "string",
+          "name": "AddStrategy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockIPListResponse": {
+      "document": "ModifyBlockIPList返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务的ID",
+          "member": "string",
+          "name": "JodId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainAttributesRequest": {
+      "document": "ModifyDomainAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名（必须是已经创建的转发规则下的域名）",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的新域名",
+          "member": "string",
+          "name": "NewDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用。",
+          "member": "CertificateInput",
+          "name": "Certificate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启Http2，注意，只有HTTPS域名才能开启Http2。",
+          "member": "bool",
+          "name": "Http2",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否设为默认域名，注意，一个监听器下只能设置一个默认域名。",
+          "member": "bool",
+          "name": "DefaultServer",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。",
+          "member": "string",
+          "name": "NewDefaultServerDomain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainAttributesResponse": {
+      "document": "ModifyDomainAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainRequest": {
+      "document": "ModifyDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监听器下的某个旧域名。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新域名，\t长度限制为：1-120。有三种使用格式：非正则表达式格式，通配符格式，正则表达式格式。非正则表达式格式只能使用字母、数字、‘-’、‘.’。通配符格式的使用 ‘*’ 只能在开头或者结尾。正则表达式以'~'开头。",
+          "member": "string",
+          "name": "NewDomain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainResponse": {
+      "document": "ModifyDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyListenerRequest": {
+      "document": "ModifyListener请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的监听器名称",
+          "member": "string",
+          "name": "ListenerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。",
+          "member": "int64",
+          "name": "SessionExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器",
+          "member": "HealthCheck",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器",
+          "member": "CertificateInput",
+          "name": "Certificate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。",
+          "member": "string",
+          "name": "Scheduler",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI",
+          "member": "int64",
+          "name": "SniSwitch",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyListenerResponse": {
+      "document": "ModifyListener返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerAttributesRequest": {
+      "document": "ModifyLoadBalancerAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡的唯一ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例名称",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡绑定的后端服务的地域信息",
+          "member": "TargetRegionInfo",
+          "name": "TargetRegionInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "网络计费相关参数",
+          "member": "InternetAccessible",
+          "name": "InternetChargeInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。",
+          "member": "bool",
+          "name": "LoadBalancerPassToTarget",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启SnatPro",
+          "member": "bool",
+          "name": "SnatPro",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerAttributesResponse": {
+      "document": "ModifyLoadBalancerAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "切换负载均衡计费方式时，可用此参数查询切换任务是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DealName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleRequest": {
+      "document": "ModifyRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的转发规则的 ID。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发规则的新的转发路径，如不需修改Url，则不需提供此参数",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "健康检查信息",
+          "member": "HealthCheck",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
+          "member": "string",
+          "name": "Scheduler",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话保持时间",
+          "member": "int64",
+          "name": "SessionExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC",
+          "member": "string",
+          "name": "ForwardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填",
+          "member": "string",
+          "name": "TrpcCallee",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TRPC调用服务接口，ForwardType为TRPC时必填",
+          "member": "string",
+          "name": "TrpcFunc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleResponse": {
+      "document": "ModifyRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupAttributeRequest": {
+      "document": "ModifyTargetGroupAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组的ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标组的新名称",
+          "member": "string",
+          "name": "TargetGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标组的新默认端口",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupAttributeResponse": {
+      "document": "ModifyTargetGroupAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupInstancesPortRequest": {
+      "document": "ModifyTargetGroupInstancesPort请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改端口的服务器数组",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupInstancesPortResponse": {
+      "document": "ModifyTargetGroupInstancesPort返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupInstancesWeightRequest": {
+      "document": "ModifyTargetGroupInstancesWeight请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改权重的服务器数组",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetGroupInstancesWeightResponse": {
+      "document": "ModifyTargetGroupInstancesWeight返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetPortRequest": {
+      "document": "ModifyTargetPort请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改端口的后端服务列表",
+          "member": "Target",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "后端服务绑定到监听器或转发规则的新端口",
+          "member": "int64",
+          "name": "NewPort",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标规则的域名，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标规则的URL，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetPortResponse": {
+      "document": "ModifyTargetPort返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetWeightRequest": {
+      "document": "ModifyTargetWeight请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转发规则的ID，当绑定机器到七层转发规则时，必须提供此参数或Domain+Url两者之一",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标规则的域名，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标规则的URL，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改权重的后端服务列表",
+          "member": "Target",
+          "name": "Targets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "后端服务新的转发权重，取值范围：0~100，默认值10。如果设置了 Targets.Weight 参数，则此参数不生效。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTargetWeightResponse": {
+      "document": "ModifyTargetWeight返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Quota": {
+      "document": "描述配额信息，所有配额均指当前地域下的配额。",
+      "members": [
+        {
+          "default": "",
+          "document": "配额名称，取值范围：\n<li> TOTAL_OPEN_CLB_QUOTA: 用户当前地域下的公网LB配额 </li>\n<li> TOTAL_INTERNAL_CLB_QUOTA: 用户当前地域下的内网LB配额 </li>\n<li> TOTAL_LISTENER_QUOTA: 一个CLB下的监听器配额 </li>\n<li> TOTAL_LISTENER_RULE_QUOTA: 一个监听器下的转发规则配额 </li>\n<li> TOTAL_TARGET_BIND_QUOTA: 一条转发规则下绑定设备配额 </li>",
+          "member": "string",
+          "name": "QuotaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前使用数量，为 null 时表示无意义。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "QuotaCurrent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配额数量。",
+          "member": "int64",
+          "name": "QuotaLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegisterTargetGroupInstancesRequest": {
+      "document": "RegisterTargetGroupInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器实例数组",
+          "member": "TargetGroupInstance",
+          "name": "TargetGroupInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterTargetGroupInstancesResponse": {
+      "document": "RegisterTargetGroupInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterTargetsRequest": {
+      "document": "RegisterTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的后端服务列表，数组长度最大支持20",
+          "member": "Target",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标转发规则的域名，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标转发规则的URL，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterTargetsResponse": {
+      "document": "RegisterTargets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterTargetsWithClassicalLBRequest": {
+      "document": "RegisterTargetsWithClassicalLB请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "后端服务信息",
+          "member": "ClassicalTargetInfo",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterTargetsWithClassicalLBResponse": {
+      "document": "RegisterTargetsWithClassicalLB返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceCertForLoadBalancersRequest": {
+      "document": "ReplaceCertForLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要被替换的证书的ID，可以是服务端证书或客户端证书",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新证书的内容等相关信息",
+          "member": "CertificateInput",
+          "name": "Certificate",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceCertForLoadBalancersResponse": {
+      "document": "ReplaceCertForLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RewriteLocationMap": {
+      "document": "转发规则之间的重定向关系",
+      "members": [
+        {
+          "default": "",
+          "document": "源转发规则ID",
+          "member": "string",
+          "name": "SourceLocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重定向至的目标转发规则ID",
+          "member": "string",
+          "name": "TargetLocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RewriteTarget": {
+      "document": "重定向目标的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "重定向目标的监听器ID\n注意：此字段可能返回 null，表示无重定向。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TargetListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重定向目标的转发规则ID\n注意：此字段可能返回 null，表示无重定向。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TargetLocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RsWeightRule": {
+      "document": "修改节点权重的数据类型",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "要修改权重的后端机器列表",
+          "member": "Target",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的ID，七层规则时需要此参数，4层规则不需要",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标规则的域名，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标规则的URL，提供LocationId参数时本参数不生效",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务新的转发权重，取值范围：0~100。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RuleHealth": {
+      "document": "一条转发规则的健康检查状态",
+      "members": [
+        {
+          "default": "",
+          "document": "转发规则ID",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本规则上绑定的后端的健康检查状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TargetHealth",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleInput": {
+      "document": "HTTP/HTTPS转发规则（输入）",
+      "members": [
+        {
+          "default": "",
+          "document": "转发规则的域名。长度限制为：1~80。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的路径。长度限制为：1~200。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。",
+          "member": "int64",
+          "name": "SessionExpireTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)",
+          "member": "HealthCheck",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书信息",
+          "member": "CertificateInput",
+          "name": "Certificate",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
+          "member": "string",
+          "name": "Scheduler",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC",
+          "member": "string",
+          "name": "ForwardType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。",
+          "member": "bool",
+          "name": "DefaultServer",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启Http2，注意，只有HTTPS域名才能开启Http2。",
+          "member": "bool",
+          "name": "Http2",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填",
+          "member": "string",
+          "name": "TrpcCallee",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TRPC调用服务接口，ForwardType为TRPC时必填",
+          "member": "string",
+          "name": "TrpcFunc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启QUIC，注意，只有HTTPS域名才能开启QUIC",
+          "member": "bool",
+          "name": "Quic",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RuleOutput": {
+      "document": "HTTP/HTTPS监听器的转发规则（输出）",
+      "members": [
+        {
+          "default": "",
+          "document": "转发规则的 ID",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "会话保持时间",
+          "member": "int64",
+          "name": "SessionExpireTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HealthCheck",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CertificateOutput",
+          "name": "Certificate",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则的请求转发方式",
+          "member": "string",
+          "name": "Scheduler",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则所属的监听器 ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的重定向目标信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RewriteTarget",
+          "name": "RewriteTarget",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启gzip",
+          "member": "bool",
+          "name": "HttpGzip",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则是否为自动创建",
+          "member": "bool",
+          "name": "BeAutoCreated",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否作为默认域名",
+          "member": "bool",
+          "name": "DefaultServer",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启Http2",
+          "member": "bool",
+          "name": "Http2",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡与后端服务之间的转发协议",
+          "member": "string",
+          "name": "ForwardType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务器类型",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定的目标组基本信息；当规则绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BasicTargetGroupInfo",
+          "name": "TargetGroup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "WAF实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WafDomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TRPC被调服务器路由，ForwardType为TRPC时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TrpcCallee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TRPC调用服务接口，ForwardType为TRPC时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TrpcFunc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "QUIC状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "QuicStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleTargets": {
+      "document": "HTTP/HTTPS监听器下的转发规则绑定的后端服务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "转发规则的 ID",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的路径。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Backend",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SetLoadBalancerClsLogRequest": {
+      "document": "SetLoadBalancerClsLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志服务(CLS)的日志集ID",
+          "member": "string",
+          "name": "LogSetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志服务(CLS)的日志主题ID",
+          "member": "string",
+          "name": "LogTopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetLoadBalancerClsLogResponse": {
+      "document": "SetLoadBalancerClsLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetLoadBalancerSecurityGroupsRequest": {
+      "document": "SetLoadBalancerSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例 ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ID构成的数组，一个负载均衡实例最多可绑定50个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组。",
+          "member": "string",
+          "name": "SecurityGroups",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetLoadBalancerSecurityGroupsResponse": {
+      "document": "SetLoadBalancerSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetSecurityGroupForLoadbalancersRequest": {
+      "document": "SetSecurityGroupForLoadbalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全组ID，如 sg-12345678",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ADD 绑定安全组；\nDEL 解绑安全组",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例ID数组",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetSecurityGroupForLoadbalancersResponse": {
+      "document": "SetSecurityGroupForLoadbalancers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SnatIp": {
+      "document": "SnatIp的信息结构",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络子网的唯一性id，如subnet-12345678",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP地址，如192.168.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagInfo": {
+      "document": "负载均衡的标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签的键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签的值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Target": {
+      "document": "转发目标，即绑定在负载均衡上的后端服务",
+      "members": [
+        {
+          "default": "",
+          "document": "后端服务的监听端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的类型，可取：CVM（云服务器）、ENI（弹性网卡）；作为入参时，目前本参数暂不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定CVM时需要传入此参数，代表CVM的唯一 ID，可通过 DescribeInstances 接口返回字段中的 InstanceId 字段获取。\n注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定弹性网卡时需要传入此参数，代表弹性网卡的IP，弹性网卡必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。注意：绑定弹性网卡需要先提交工单开白名单使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EniIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TargetGroupAssociation": {
+      "document": "规则与目标组的关联关系",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则ID",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TargetGroupBackend": {
+      "document": "目标组绑定的后端服务器",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的类型，可取：CVM、ENI（即将支持）",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的唯一 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的监听端口",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的内网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端服务被绑定的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "RegisteredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性网卡唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EniId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetGroupInfo": {
+      "document": "目标组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组ID",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组的vpcid",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组的名字",
+          "member": "string",
+          "name": "TargetGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组的默认端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目标组的创建时间",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组的修改时间",
+          "member": "datetime",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联到的规则数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AssociationItem",
+          "name": "AssociatedRule",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetGroupInstance": {
+      "document": "目标组实例",
+      "members": [
+        {
+          "default": "",
+          "document": "目标组实例的内网IP",
+          "member": "string",
+          "name": "BindIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组实例的端口",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组实例的权重",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标组实例的新端口",
+          "member": "uint64",
+          "name": "NewPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TargetHealth": {
+      "document": "描述一个Target的健康信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Target的内网IP",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Target绑定的端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前健康状态，true：健康，false：不健康（包括尚未开始探测、探测中、状态异常等几种状态）。只有处于健康状态（且权重大于0），负载均衡才会向其转发流量。",
+          "member": "bool",
+          "name": "HealthStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Target的实例ID，如 ins-12345678",
+          "member": "string",
+          "name": "TargetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。",
+          "member": "string",
+          "name": "HealthStatusDetial",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetRegionInfo": {
+      "document": "负载均衡实例所绑定的后端服务的信息，包括所属地域、所属网络。",
+      "members": [
+        {
+          "default": "",
+          "document": "Target所属地域，如 ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Target所属网络，私有网络格式如 vpc-abcd1234，如果是基础网络，则为\"0\"",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ZoneInfo": {
+      "document": "可用区相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区数值形式的唯一ID，如：100001\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区字符串形式的唯一ID，如：ap-guangzhou-1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区名称，如：广州一区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

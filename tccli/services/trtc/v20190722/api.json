@@ -1,0 +1,1549 @@
+{
+  "actions": {
+    "CreateTroubleInfo": {
+      "document": "创建异常信息",
+      "input": "CreateTroubleInfoRequest",
+      "name": "创建异常信息",
+      "output": "CreateTroubleInfoResponse"
+    },
+    "DescribeAbnormalEvent": {
+      "document": "查询SDKAppID下用户的异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询5天内数据，查询起止时间不超过1个小时。支持跨天查询。异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916",
+      "input": "DescribeAbnormalEventRequest",
+      "name": "查询异常体验事件",
+      "output": "DescribeAbnormalEventResponse"
+    },
+    "DescribeCallDetail": {
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，不填PageSize，PageNumber默认查询6个用户，否则支持每页100内的用户数。",
+      "input": "DescribeCallDetailRequest",
+      "name": "查询用户列表与通话指标",
+      "output": "DescribeCallDetailResponse"
+    },
+    "DescribeDetailEvent": {
+      "document": "查询用户某次通话内的进退房，视频开关等详细事件。可查询14天内数据。",
+      "input": "DescribeDetailEventRequest",
+      "name": "查询详细事件",
+      "output": "DescribeDetailEventResponse"
+    },
+    "DescribeHistoryScale": {
+      "document": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近14天的数据。当天未结束，无法查到当天的房间数与用户数。",
+      "input": "DescribeHistoryScaleRequest",
+      "name": "查询历史房间和用户数",
+      "output": "DescribeHistoryScaleResponse"
+    },
+    "DescribeRealtimeNetwork": {
+      "document": "查询sdkappid维度下实时网络状态，包括上行丢包与下行丢包。可查询24小时内数据，查询起止时间不超过1个小时。",
+      "input": "DescribeRealtimeNetworkRequest",
+      "name": "查询实时网络状态",
+      "output": "DescribeRealtimeNetworkResponse"
+    },
+    "DescribeRealtimeQuality": {
+      "document": "查询sdkappid维度下实时质量数据，包括：进房成功率，首帧秒开率，音频卡顿率，视频卡顿率。可查询24小时内数据，查询起止时间不超过1个小时。",
+      "input": "DescribeRealtimeQualityRequest",
+      "name": "查询实时质量数据",
+      "output": "DescribeRealtimeQualityResponse"
+    },
+    "DescribeRealtimeScale": {
+      "document": "查询sdkappid维度下实时规模，可查询24小时内数据，查询起止时间不超过1个小时。",
+      "input": "DescribeRealtimeScaleRequest",
+      "name": "查询实时规模",
+      "output": "DescribeRealtimeScaleResponse"
+    },
+    "DescribeRoomInformation": {
+      "document": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。",
+      "input": "DescribeRoomInformationRequest",
+      "name": "查询房间列表",
+      "output": "DescribeRoomInformationResponse"
+    },
+    "DismissRoom": {
+      "document": "接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。",
+      "input": "DismissRoomRequest",
+      "name": "解散房间",
+      "output": "DismissRoomResponse"
+    },
+    "RemoveUser": {
+      "document": "接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。",
+      "input": "RemoveUserRequest",
+      "name": "移出用户",
+      "output": "RemoveUserResponse"
+    },
+    "StartMCUMixTranscode": {
+      "document": "接口说明：启动云端混流，并指定混流画面中各路画面的布局位置。\n\nTRTC 的一个房间中可能会同时存在多路音视频流，您可以通过此 API 接口，通知腾讯云服务端将多路视频画面合成一路，并指定每一路画面的位置，同时将多路声音进行混音，最终形成一路音视频流，以便用于录制和直播观看。\n\n您可以通过此接口实现如下目标：\n- 设置最终直播流的画质和音质，包括视频分辨率、视频码率、视频帧率、以及声音质量等。\n- 设置各路画面的位置和布局，您只需要在启动时设置一次，排版引擎会自动完成后续的画面排布。\n- 设置录制文件名，用于二次回放。\n- 设置 CDN 直播流 ID，用于在 CDN 进行直播观看。\n\n目前已经支持了如下几种布局模板：\n- 悬浮模板：第一个进入房间的用户的视频画面会铺满整个屏幕，其他用户的视频画面从左下角依次水平排列，显示为小画面，最多4行，每行4个，小画面悬浮于大画面之上。最多支持1个大画面和15个小画面，如果用户只发送音频，仍然会占用画面位置。\n- 九宫格模板：所有用户的视频画面大小一致，平分整个屏幕，人数越多，每个画面的尺寸越小。最多支持16个画面，如果用户只发送音频，仍然会占用画面位置。\n- 屏幕分享模板：适合视频会议和在线教育场景的布局，屏幕分享（或者主讲的摄像头）始终占据屏幕左侧的大画面位置，其他用户依次垂直排列于右侧，最多两列，每列最多8个小画面。最多支持1个大画面和15个小画面。若上行分辨率宽高比与画面输出宽高比不一致时，左侧大画面为了保持内容的完整性采用缩放方式处理，右侧小画面采用裁剪方式处理。\n- 画中画模板：适用于混合大小两路视频画面和其他用户混音，或者混合一路大画面和其他用户混音的场景。小画面悬浮于大画面之上，可以指定大小画面的用户以及小画面的显示位置。",
+      "input": "StartMCUMixTranscodeRequest",
+      "name": "启动云端混流",
+      "output": "StartMCUMixTranscodeResponse"
+    },
+    "StopMCUMixTranscode": {
+      "document": "接口说明：结束云端混流",
+      "input": "StopMCUMixTranscodeRequest",
+      "name": "结束云端混流",
+      "output": "StopMCUMixTranscodeResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-07-22",
+    "api_brief": "介绍如何使用API对实时音视频进行操作，如房间管理、通话质量监控等。",
+    "serviceNameCN": "实时音视频",
+    "serviceShortName": "trtc"
+  },
+  "objects": {
+    "AbnormalEvent": {
+      "document": "造成异常体验可能的异常事件类型",
+      "members": [
+        {
+          "default": "",
+          "document": "异常事件ID，具体值查看附录：异常体验ID映射表：https://cloud.tencent.com/document/product/647/44916",
+          "member": "uint64",
+          "name": "AbnormalEventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "远端用户ID,\"\"：表示异常事件不是由远端用户产生\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PeerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AbnormalExperience": {
+      "document": "用户的异常体验及可能的原因",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常体验ID",
+          "member": "uint64",
+          "name": "ExperienceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符串房间号",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常事件数组",
+          "member": "AbnormalEvent",
+          "name": "AbnormalEventList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常事件的上报时间",
+          "member": "uint64",
+          "name": "EventTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateTroubleInfoRequest": {
+      "document": "CreateTroubleInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用的ID",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间ID",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "老师用户ID",
+          "member": "string",
+          "name": "TeacherUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "学生用户ID",
+          "member": "string",
+          "name": "StudentUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "体验异常端（老师或学生）的用户 ID。",
+          "member": "string",
+          "name": "TroubleUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异常类型。\n1. 仅视频异常\n2. 仅声音异常\n3. 音视频都异常\n5. 进房异常\n4. 切课\n6. 求助\n7. 问题反馈\n8. 投诉",
+          "member": "uint64",
+          "name": "TroubleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "异常发生的UNIX 时间戳，单位为秒。",
+          "member": "uint64",
+          "name": "TroubleTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "异常详情",
+          "member": "string",
+          "name": "TroubleMsg",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTroubleInfoResponse": {
+      "document": "CreateTroubleInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAbnormalEventRequest": {
+      "document": "DescribeAbnormalEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号，查询房间内任意20条以内异常体验事件",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAbnormalEventResponse": {
+      "document": "DescribeAbnormalEvent返回参数结构体",
+      "members": [
+        {
+          "document": "返回的数据总条数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异常体验列表",
+          "member": "AbnormalExperience",
+          "name": "AbnormalExperienceList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallDetailRequest": {
+      "document": "DescribeCallDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）",
+          "member": "string",
+          "name": "CommId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户sdkappid（1400188366）",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需查询的用户数组，不填默认返回6个用户,最多可填6个用户",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；\naBlock：音频卡顿时长；\nbigvBit：上/下行视频码率；\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；\naLoss：上/下行音频丢包；\nbigvLoss：上/下行视频丢包；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高",
+          "member": "string",
+          "name": "DataType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）",
+          "member": "string",
+          "name": "PageNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,最大不超过100）",
+          "member": "string",
+          "name": "PageSize",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallDetailResponse": {
+      "document": "DescribeCallDetail返回参数结构体",
+      "members": [
+        {
+          "document": "返回的用户总条数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UserInformation",
+          "name": "UserList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "质量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDetailEventRequest": {
+      "document": "DescribeDetailEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）",
+          "member": "string",
+          "name": "CommId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间号",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDetailEventResponse": {
+      "document": "DescribeDetailEvent返回参数结构体",
+      "members": [
+        {
+          "document": "返回的事件列表",
+          "member": "EventList",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHistoryScaleRequest": {
+      "document": "DescribeHistoryScale请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户sdkappid",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHistoryScaleResponse": {
+      "document": "DescribeHistoryScale返回参数结构体",
+      "members": [
+        {
+          "document": "返回的数据条数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ScaleInfomation",
+          "name": "ScaleList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeNetworkRequest": {
+      "document": "DescribeRealtimeNetwork请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，24小时内，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户sdkappid",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需查询的数据类型\nsendLossRateRaw：上行丢包率\nrecvLossRateRaw：下行丢包率",
+          "member": "string",
+          "name": "DataType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeNetworkResponse": {
+      "document": "DescribeRealtimeNetwork返回参数结构体",
+      "members": [
+        {
+          "document": "查询返回的数据",
+          "member": "RealtimeData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeQualityRequest": {
+      "document": "DescribeRealtimeQuality请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，24小时内。本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户sdkappid",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的数据类型\nenterTotalSuccPercent：进房成功率\nfistFreamInSecRate：首帧秒开率\nblockPercent：视频卡顿率\naudioBlockPercent：音频卡顿率",
+          "member": "string",
+          "name": "DataType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeQualityResponse": {
+      "document": "DescribeRealtimeQuality返回参数结构体",
+      "members": [
+        {
+          "document": "返回的数据类型",
+          "member": "RealtimeData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeScaleRequest": {
+      "document": "DescribeRealtimeScale请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，24小时内。本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户sdkappid",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的数据类型\nUserNum：通话人数；\nRoomNum：房间数",
+          "member": "string",
+          "name": "DataType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeScaleResponse": {
+      "document": "DescribeRealtimeScale返回参数结构体",
+      "members": [
+        {
+          "document": "返回的数据数组",
+          "member": "RealtimeData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomInformationRequest": {
+      "document": "DescribeRoomInformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户sdkappid",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数字房间号",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）",
+          "member": "string",
+          "name": "PageNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）",
+          "member": "string",
+          "name": "PageSize",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomInformationResponse": {
+      "document": "DescribeRoomInformation返回参数结构体",
+      "members": [
+        {
+          "document": "返回的数据总条数",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间信息列表",
+          "member": "RoomState",
+          "name": "RoomList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DismissRoomRequest": {
+      "document": "DismissRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的SDKAppId。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DismissRoomResponse": {
+      "document": "DismissRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EncodeParams": {
+      "document": "MCU混流输出流编码参数",
+      "members": [
+        {
+          "default": "",
+          "document": "混流-输出流音频采样率。取值为[48000, 44100, 32000,24000,, 16000, 12000, 8000]。",
+          "member": "uint64",
+          "name": "AudioSampleRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流音频码率。取值范围[8,500]，单位为Kbps。",
+          "member": "uint64",
+          "name": "AudioBitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流音频声道数，取值范围[1,2]。",
+          "member": "uint64",
+          "name": "AudioChannels",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。",
+          "member": "uint64",
+          "name": "VideoWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。",
+          "member": "uint64",
+          "name": "VideoHeight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。",
+          "member": "uint64",
+          "name": "VideoBitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。",
+          "member": "uint64",
+          "name": "VideoFramerate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。",
+          "member": "uint64",
+          "name": "VideoGop",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流背景色。",
+          "member": "uint64",
+          "name": "BackgroundColor",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流-输出流背景图片，取值为实时音视频控制台上传的图片ID。",
+          "member": "uint64",
+          "name": "BackgroundImageId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EventList": {
+      "document": "sdk或webrtc的事件列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "数据内容",
+          "member": "EventMessage",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送端的userId",
+          "member": "string",
+          "name": "PeerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EventMessage": {
+      "document": "事件信息，包括，事件时间戳，事件ID,",
+      "members": [
+        {
+          "default": "",
+          "document": "视频流类型：\n0：与视频无关的事件；\n2：视频为大画面；\n3：视频为小画面；\n7：视频为旁路画面；",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件上报的时间戳，unix时间（1589891188801ms)",
+          "member": "uint64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件Id：分为sdk的事件和webrtc的事件，详情见：附录/事件 ID 映射表：https://cloud.tencent.com/document/product/647/44916",
+          "member": "uint64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件的第一个参数，如视频分辨率宽",
+          "member": "int64",
+          "name": "ParamOne",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件的第二个参数，如视频分辨率高",
+          "member": "int64",
+          "name": "ParamTwo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LayoutParams": {
+      "document": "MCU混流布局参数",
+      "members": [
+        {
+          "default": "",
+          "document": "混流布局模板ID，0为悬浮模板(默认);1为九宫格模板;2为屏幕分享模板;3为画中画模板。",
+          "member": "uint64",
+          "name": "Template",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "屏幕分享模板、悬浮模板、画中画模板中有效，代表大画面对应的用户ID。",
+          "member": "string",
+          "name": "MainVideoUserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "屏幕分享模板、悬浮模板、画中画模板中有效，代表大画面对应的流类型，0为摄像头，1为屏幕分享。左侧大画面为web用户时此值填0。",
+          "member": "uint64",
+          "name": "MainVideoStreamType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "画中画模板中有效，代表小画面的布局参数。",
+          "member": "SmallVideoLayoutParams",
+          "name": "SmallVideoLayoutParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。",
+          "member": "uint64",
+          "name": "MainVideoRightAlign",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "OutputParams": {
+      "document": "MCU混流的输出参数",
+      "members": [
+        {
+          "default": "",
+          "document": "直播流 ID，由用户自定义设置，该流 ID 不能与用户旁路的流 ID 相同。",
+          "member": "string",
+          "name": "StreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值范围[0,1]， 填0：直播流为音视频(默认); 填1：直播流为纯音频",
+          "member": "uint64",
+          "name": "PureAudioStream",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义录制文件名",
+          "member": "string",
+          "name": "RecordId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值范围[0,1]，填0无实际含义; 填1：指定录制文件格式为mp3",
+          "member": "uint64",
+          "name": "RecordAudioOnly",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "QualityData": {
+      "document": "Es返回的质量数据",
+      "members": [
+        {
+          "default": "",
+          "document": "数据内容",
+          "member": "TimeValue",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端Id,为空时表示上行数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PeerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据类型",
+          "member": "string",
+          "name": "DataType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RealtimeData": {
+      "document": "查询秒级监控返回的数据",
+      "members": [
+        {
+          "default": "",
+          "document": "返回的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TimeValue",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据类型字段",
+          "member": "string",
+          "name": "DataType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveUserRequest": {
+      "document": "RemoveUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的SDKAppId。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要移出的用户列表，最多10个。",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveUserResponse": {
+      "document": "RemoveUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RoomState": {
+      "document": "房间信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "通话ID（唯一标识一次通话）",
+          "member": "string",
+          "name": "CommId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间号",
+          "member": "string",
+          "name": "RoomString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间创建时间",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间销毁时间",
+          "member": "uint64",
+          "name": "DestroyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间是否已经结束",
+          "member": "bool",
+          "name": "IsFinished",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间创建者Id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ScaleInfomation": {
+      "document": "历史规模信息",
+      "members": [
+        {
+          "default": "",
+          "document": "每天开始的时间",
+          "member": "uint64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间人数，用户重复进入同一个房间为1次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "UserNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "房间人次，用户每次进入房间为一次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "UserCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "sdkappid下一天内的房间数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RoomNumbers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmallVideoLayoutParams": {
+      "document": "画中画模板中有效，代表小画面的布局参数",
+      "members": [
+        {
+          "default": "",
+          "document": "代表小画面对应的用户ID。",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代表小画面对应的流类型，0为摄像头，1为屏幕分享。小画面为web用户时此值填0。",
+          "member": "uint64",
+          "name": "StreamType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小画面在输出时的宽度，单位为像素值，不填默认为0。",
+          "member": "uint64",
+          "name": "ImageWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小画面在输出时的高度，单位为像素值，不填默认为0。",
+          "member": "uint64",
+          "name": "ImageHeight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小画面在输出时的X偏移，单位为像素值，LocationX与ImageWidth之和不能超过混流输出的总宽度，不填默认为0。",
+          "member": "uint64",
+          "name": "LocationX",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小画面在输出时的Y偏移，单位为像素值，LocationY与ImageHeight之和不能超过混流输出的总高度，不填默认为0。",
+          "member": "uint64",
+          "name": "LocationY",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "StartMCUMixTranscodeRequest": {
+      "document": "StartMCUMixTranscode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的SDKAppId。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "混流输出控制参数。",
+          "member": "OutputParams",
+          "name": "OutputParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "混流输出编码参数。",
+          "member": "EncodeParams",
+          "name": "EncodeParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "混流输出布局参数。",
+          "member": "LayoutParams",
+          "name": "LayoutParams",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMCUMixTranscodeResponse": {
+      "document": "StartMCUMixTranscode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMCUMixTranscodeRequest": {
+      "document": "StopMCUMixTranscode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的SDKAppId。",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMCUMixTranscodeResponse": {
+      "document": "StopMCUMixTranscode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TimeValue": {
+      "document": "返回的质量数据，时间:值",
+      "members": [
+        {
+          "default": "",
+          "document": "时间，unix时间戳（1590065877s)",
+          "member": "uint64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前时间返回参数取值，如（bigvCapFps在1590065877取值为0，则Value：0 ）",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserInformation": {
+      "document": "用户信息，包括用户进房时间，退房时间等",
+      "members": [
+        {
+          "default": "",
+          "document": "房间号",
+          "member": "string",
+          "name": "RoomStr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Id",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户进房时间",
+          "member": "uint64",
+          "name": "JoinTs",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户退房时间，用户没有退房则返回当前时间",
+          "member": "uint64",
+          "name": "LeaveTs",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端类型",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Sdk版本号",
+          "member": "string",
+          "name": "SdkVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端IP地址",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "判断用户是否已经离开房间",
+          "member": "bool",
+          "name": "Finished",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

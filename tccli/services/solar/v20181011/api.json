@@ -1,0 +1,1881 @@
+{
+  "actions": {
+    "CheckStaffChUser": {
+      "document": "员工渠道更改员工状态",
+      "input": "CheckStaffChUserRequest",
+      "name": "员工渠道更改员工状态",
+      "output": "CheckStaffChUserResponse"
+    },
+    "CopyActivityChannel": {
+      "document": "复制活动渠道的策略",
+      "input": "CopyActivityChannelRequest",
+      "name": "复制活动渠道的策略",
+      "output": "CopyActivityChannelResponse"
+    },
+    "CreateProject": {
+      "document": "创建项目",
+      "input": "CreateProjectRequest",
+      "name": "创建项目",
+      "output": "CreateProjectResponse"
+    },
+    "CreateSubProject": {
+      "document": "创建子项目",
+      "input": "CreateSubProjectRequest",
+      "name": "创建子项目",
+      "output": "CreateSubProjectResponse"
+    },
+    "DeleteProject": {
+      "document": "删除项目",
+      "input": "DeleteProjectRequest",
+      "name": "删除项目",
+      "output": "DeleteProjectResponse"
+    },
+    "DescribeCustomer": {
+      "document": "客户档案查询客户详情",
+      "input": "DescribeCustomerRequest",
+      "name": "客户档案查询客户详情",
+      "output": "DescribeCustomerResponse"
+    },
+    "DescribeCustomers": {
+      "document": "查询客户档案列表",
+      "input": "DescribeCustomersRequest",
+      "name": "查询客户档案列表",
+      "output": "DescribeCustomersResponse"
+    },
+    "DescribeProject": {
+      "document": "项目详情展示",
+      "input": "DescribeProjectRequest",
+      "name": "项目详情展示",
+      "output": "DescribeProjectResponse"
+    },
+    "DescribeProjectStock": {
+      "document": "项目库存详情",
+      "input": "DescribeProjectStockRequest",
+      "name": "项目库存详情",
+      "output": "DescribeProjectStockResponse"
+    },
+    "DescribeProjects": {
+      "document": "项目列表展示",
+      "input": "DescribeProjectsRequest",
+      "name": "项目列表展示",
+      "output": "DescribeProjectsResponse"
+    },
+    "DescribeResourceTemplateHeaders": {
+      "document": "素材查询服务号模板的列表（样例）",
+      "input": "DescribeResourceTemplateHeadersRequest",
+      "name": "素材查询服务号模板标题的列表",
+      "output": "DescribeResourceTemplateHeadersResponse"
+    },
+    "DescribeSubProject": {
+      "document": "子项目详情",
+      "input": "DescribeSubProjectRequest",
+      "name": "子项目详情",
+      "output": "DescribeSubProjectResponse"
+    },
+    "ExpireFlow": {
+      "document": "把审批中的工单置为已失效",
+      "input": "ExpireFlowRequest",
+      "name": "工单失效接口",
+      "output": "ExpireFlowResponse"
+    },
+    "ModifyProject": {
+      "document": "修改项目",
+      "input": "ModifyProjectRequest",
+      "name": "修改项目",
+      "output": "ModifyProjectResponse"
+    },
+    "OffLineProject": {
+      "document": "下线项目",
+      "input": "OffLineProjectRequest",
+      "name": "下线项目",
+      "output": "OffLineProjectResponse"
+    },
+    "ReplenishProjectStock": {
+      "document": "补充子项目库存",
+      "input": "ReplenishProjectStockRequest",
+      "name": "补充（子）项目库存",
+      "output": "ReplenishProjectStockResponse"
+    },
+    "SendWxTouchTask": {
+      "document": "发送企业微信触达任务",
+      "input": "SendWxTouchTaskRequest",
+      "name": "发送微信触达任务",
+      "output": "SendWxTouchTaskResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-10-11",
+    "serviceNameCN": "智汇零售",
+    "serviceShortName": "solar"
+  },
+  "objects": {
+    "ActivityInfo": {
+      "document": "活动详情",
+      "members": [
+        {
+          "default": "",
+          "document": "活动使用模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActivityTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActivityDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动封面地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActivityCover",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActivityType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动模板自定义配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PersonalConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CheckStaffChUserRequest": {
+      "document": "CheckStaffChUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "员工ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "渠道状态：checkpass审核通过, checkreject审核拒绝, enableoperate启用, stopoperate停用",
+          "member": "string",
+          "name": "OperateType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckStaffChUserResponse": {
+      "document": "CheckStaffChUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyActivityChannelRequest": {
+      "document": "CopyActivityChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动ID",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道ID",
+          "member": "string",
+          "name": "ChannelFrom",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的渠道id",
+          "member": "string",
+          "name": "ChannelTo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyActivityChannelResponse": {
+      "document": "CopyActivityChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectRequest": {
+      "document": "CreateProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目机构",
+          "member": "string",
+          "name": "ProjectOrg",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目预算",
+          "member": "string",
+          "name": "ProjectBudget",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目简介",
+          "member": "string",
+          "name": "ProjectIntroduction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "所属部门ID",
+          "member": "string",
+          "name": "ProjectOrgId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectResponse": {
+      "document": "CreateProject返回参数结构体",
+      "members": [
+        {
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubProjectRequest": {
+      "document": "CreateSubProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "所属项目id",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子项目名称",
+          "member": "string",
+          "name": "SubProjectName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubProjectResponse": {
+      "document": "CreateSubProject返回参数结构体",
+      "members": [
+        {
+          "document": "子项目id",
+          "member": "string",
+          "name": "SubProjectId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomerInfo": {
+      "document": "客户档案",
+      "members": [
+        {
+          "default": "",
+          "document": "总活跃度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Activity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户ID",
+          "member": "string",
+          "name": "AudienceUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "头像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Avatar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近记录城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最活跃时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastActiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否星标客户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MarkFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "30天活跃度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MonthActive",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "30天推荐度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MonthRecommend",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近记录省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "员工标识 0 未关联 1 已关联\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RelChannelFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "性别 1男 2女\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Sex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "传播力（好友数）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Spread",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "7天活跃度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "WeekActive",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "7天推荐度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "WeekRecommend",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WxCity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信国家或地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WxCountry",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信呢称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WxNickname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WxProvince",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteProjectRequest": {
+      "document": "DeleteProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectResponse": {
+      "document": "DeleteProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerRequest": {
+      "document": "DescribeCustomer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerResponse": {
+      "document": "DescribeCustomer返回参数结构体",
+      "members": [
+        {
+          "document": "地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UserId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "头像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Avatar",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Birthday",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "City",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Device",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "行业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Industrys",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "上次登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastActiveTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否星标 1是 0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MarkFlag",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "手机型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Model",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "微信openid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OpenId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "消费特点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PayFeature",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Phone",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "手机号码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PhoneList",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近记录省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Province",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RealName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "员工标识 0：非员工 1：员工\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RelChannelFlag",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "性别 1男 2女\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Sex",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最初来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SourceAudienceVo",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "关注公众号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubWechats",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "微信unionid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnionId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UserTypes",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WxCity",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WxCountry",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WxNickname",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WxProvince",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomersRequest": {
+      "document": "DescribeCustomers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询类型，0.个人，1负责部门，2.指定部门",
+          "member": "string",
+          "name": "QueryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否星级标记 1是 0否",
+          "member": "int64",
+          "name": "MarkFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户标签，多个标签用逗号隔开",
+          "member": "string",
+          "name": "TagIds",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "员工标识筛选，0：非员工，1：员工",
+          "member": "string",
+          "name": "RelChannelFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "必须存在手机 1是 0否",
+          "member": "int64",
+          "name": "NeedPhoneFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "省份",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "性别 1男 2女",
+          "member": "string",
+          "name": "Sex",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "member": "string",
+          "name": "KeyWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始位置",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页记录条数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "子项目ID",
+          "member": "string",
+          "name": "SubProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomersResponse": {
+      "document": "DescribeCustomers返回参数结构体",
+      "members": [
+        {
+          "document": "总记录条数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CustomerInfo",
+          "name": "UserList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectRequest": {
+      "document": "DescribeProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectResponse": {
+      "document": "DescribeProject返回参数结构体",
+      "members": [
+        {
+          "document": "项目id",
+          "member": "string",
+          "name": "ProjectId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目预算",
+          "member": "float",
+          "name": "ProjectBudget",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目机构",
+          "member": "string",
+          "name": "ProjectOrg",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目简介",
+          "member": "string",
+          "name": "ProjectIntroduction",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子项目列表",
+          "member": "SubProjectInfo",
+          "name": "SubProjectList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目状态",
+          "member": "string",
+          "name": "ProjectStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目机构Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectOrgId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectStockRequest": {
+      "document": "DescribeProjectStock请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子项目id",
+          "member": "string",
+          "name": "SubProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectStockResponse": {
+      "document": "DescribeProjectStock返回参数结构体",
+      "members": [
+        {
+          "document": "项目库存列表",
+          "member": "ProjectStock",
+          "name": "ProjectStocks",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsRequest": {
+      "document": "DescribeProjects请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页码",
+          "member": "uint64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页面大小",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤规则",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部门范围过滤",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "项目状态, 0:编辑中 1:运营中 2:已下线 3:已删除 4:审批中",
+          "member": "int64",
+          "name": "ProjectStatus",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsResponse": {
+      "document": "DescribeProjects返回参数结构体",
+      "members": [
+        {
+          "document": "项目列表",
+          "member": "ProjectInfo",
+          "name": "ProjectList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTemplateHeadersRequest": {
+      "document": "DescribeResourceTemplateHeaders请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "微信公众号appId",
+          "member": "string",
+          "name": "WxAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTemplateHeadersResponse": {
+      "document": "DescribeResourceTemplateHeaders返回参数结构体",
+      "members": [
+        {
+          "document": "记录条数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ResourceTemplateHeader",
+          "name": "TmplList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubProjectRequest": {
+      "document": "DescribeSubProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子项目id",
+          "member": "string",
+          "name": "SubProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubProjectResponse": {
+      "document": "DescribeSubProject返回参数结构体",
+      "members": [
+        {
+          "document": "作品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ProductInfo",
+          "name": "ProductInfo",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "活动信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ActivityInfo",
+          "name": "ActivityInfo",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分享标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ShareTitle",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分享描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ShareDesc",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分享图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ShareImg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否已创建策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "HasStrategy",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子项目状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubProjectStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分享公众号的appId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ShareAppId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分享公众号的wsId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ShareWsId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExpireFlowRequest": {
+      "document": "ExpireFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工单ID",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExpireFlowResponse": {
+      "document": "ExpireFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filters": {
+      "document": "可见范围过滤参数",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤类型, 0: 默认(可见部门+自创) 1: 自创 2: 指定部门(部门在可见范围内)",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定部门Id, 类型2使用",
+          "member": "string",
+          "name": "DeptIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Id列表",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyProjectRequest": {
+      "document": "ModifyProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目预算",
+          "member": "string",
+          "name": "ProjectBudget",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目机构",
+          "member": "string",
+          "name": "ProjectOrg",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目简介",
+          "member": "string",
+          "name": "ProjectIntroduction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目机构Id",
+          "member": "string",
+          "name": "ProjectOrgId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectResponse": {
+      "document": "ModifyProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OffLineProjectRequest": {
+      "document": "OffLineProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OffLineProjectResponse": {
+      "document": "OffLineProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProductInfo": {
+      "document": "内容页结构",
+      "members": [
+        {
+          "default": "",
+          "document": "模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板主题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板封面地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductCover",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内容作品id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作品预览链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectInfo": {
+      "document": "项目基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目所属机构",
+          "member": "string",
+          "name": "ProjectOrg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目预算",
+          "member": "float",
+          "name": "ProjectBudget",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目状态",
+          "member": "string",
+          "name": "ProjectStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目简介",
+          "member": "string",
+          "name": "ProjectIntroduction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目所属机构Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProjectOrgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectStock": {
+      "document": "项目奖品库存",
+      "members": [
+        {
+          "default": "",
+          "document": "奖品id",
+          "member": "string",
+          "name": "PrizeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "奖品批次",
+          "member": "uint64",
+          "name": "PrizeBat",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "奖品名称",
+          "member": "string",
+          "name": "PrizeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已分配奖品数量",
+          "member": "uint64",
+          "name": "UsedStock",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该奖品剩余库存数量",
+          "member": "uint64",
+          "name": "RemainStock",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "奖品所在奖池index",
+          "member": "uint64",
+          "name": "PoolIdx",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "奖品所在奖池名称",
+          "member": "string",
+          "name": "PoolName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReplenishProjectStockRequest": {
+      "document": "ReplenishProjectStock请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目id",
+          "member": "string",
+          "name": "SubProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "奖品id",
+          "member": "string",
+          "name": "PrizeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "奖品数量",
+          "member": "uint64",
+          "name": "PrizeNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "奖池索引",
+          "member": "uint64",
+          "name": "PoolIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "奖池名称",
+          "member": "string",
+          "name": "PoolName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplenishProjectStockResponse": {
+      "document": "ReplenishProjectStock返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourceTemplateHeader": {
+      "document": "素材模板消息标题的样例列表",
+      "members": [
+        {
+          "default": "",
+          "document": "模板预览区内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板预览示例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Example",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板预览区域键数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeyArray",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板id",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SendWxTouchTaskRequest": {
+      "document": "SendWxTouchTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "去除今日已发送的客户",
+          "member": "bool",
+          "name": "DistinctFlag",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否立马发送",
+          "member": "bool",
+          "name": "IsSendNow",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "发送时间，一般为0",
+          "member": "int64",
+          "name": "SendDate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信触达类型，text, news, smallapp, tmplmsg",
+          "member": "string",
+          "name": "WxTouchType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标题",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文本内容",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图文素材ID",
+          "member": "string",
+          "name": "NewsId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "小程序卡片ID",
+          "member": "string",
+          "name": "SmallProgramId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板消息ID",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信公众号appId",
+          "member": "string",
+          "name": "WxAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendWxTouchTaskResponse": {
+      "document": "SendWxTouchTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubProjectInfo": {
+      "document": "子项目信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子项目id",
+          "member": "string",
+          "name": "SubProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子项目名称",
+          "member": "string",
+          "name": "SubProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子项目状态",
+          "member": "string",
+          "name": "SubProjectStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,5363 @@
+{
+  "actions": {
+    "AcceptVpcPeerConnection": {
+      "document": "接受黑石对等连接",
+      "input": "AcceptVpcPeerConnectionRequest",
+      "name": "接受黑石对等连接",
+      "output": "AcceptVpcPeerConnectionResponse"
+    },
+    "AsyncRegisterIps": {
+      "document": "批量注册虚拟IP，异步接口。通过接口来查询任务进度。每次请求最多注册256个IP",
+      "input": "AsyncRegisterIpsRequest",
+      "name": "批量注册虚拟IP",
+      "output": "AsyncRegisterIpsResponse"
+    },
+    "BindEipsToNatGateway": {
+      "document": "NAT网关绑定EIP接口，可将EIP绑定到NAT网关，该EIP作为访问外网的源IP地址，将流量发送到Internet",
+      "input": "BindEipsToNatGatewayRequest",
+      "name": "NAT网关绑定EIP",
+      "output": "BindEipsToNatGatewayResponse"
+    },
+    "BindIpsToNatGateway": {
+      "document": "可用于将子网的部分IP绑定到NAT网关",
+      "input": "BindIpsToNatGatewayRequest",
+      "name": "NAT网关绑定IP",
+      "output": "BindIpsToNatGatewayResponse"
+    },
+    "BindSubnetsToNatGateway": {
+      "document": "NAT网关绑定子网后，该子网内全部IP可出公网",
+      "input": "BindSubnetsToNatGatewayRequest",
+      "name": "NAT网关绑定子网",
+      "output": "BindSubnetsToNatGatewayResponse"
+    },
+    "CreateCustomerGateway": {
+      "document": "本接口（CreateCustomerGateway）用于创建对端网关。",
+      "input": "CreateCustomerGatewayRequest",
+      "name": "创建对端网关",
+      "output": "CreateCustomerGatewayResponse"
+    },
+    "CreateDockerSubnetWithVlan": {
+      "document": "创建黑石Docker子网， 如果不指定VlanId，将会分配2000--2999范围的VlanId; 子网会关闭分布式网关",
+      "input": "CreateDockerSubnetWithVlanRequest",
+      "name": "创建黑石Docker子网",
+      "output": "CreateDockerSubnetWithVlanResponse"
+    },
+    "CreateHostedInterface": {
+      "document": "本接口（CreateHostedInterface）用于黑石托管机器加入带VLANID不为5的子网。\n\n1) 不能加入vlanId 为5的子网，只能加入VLANID范围为2000-2999的子网。\n2) 每台托管机器最多可以加入20个子网。\n3) 每次调用最多能支持传入10台托管机器。",
+      "input": "CreateHostedInterfaceRequest",
+      "name": "黑石托管机器加入子网",
+      "output": "CreateHostedInterfaceResponse"
+    },
+    "CreateInterfaces": {
+      "document": "物理机加入子网",
+      "input": "CreateInterfacesRequest",
+      "name": "物理机加入子网",
+      "output": "CreateInterfacesResponse"
+    },
+    "CreateNatGateway": {
+      "document": "创建NAT网关接口，可针对网段方式、子网全部IP、子网部分IP这三种方式创建NAT网关",
+      "input": "CreateNatGatewayRequest",
+      "name": "创建NAT网关",
+      "output": "CreateNatGatewayResponse"
+    },
+    "CreateRoutePolicies": {
+      "document": "创建黑石路由表的路由规则",
+      "input": "CreateRoutePoliciesRequest",
+      "name": "创建黑石路由表的路由规则",
+      "output": "CreateRoutePoliciesResponse"
+    },
+    "CreateSubnet": {
+      "document": "创建黑石私有网络的子网\n访问管理: 用户可以对VpcId进行授权操作。例如设置资源为[\"qcs::bmvpc:::unVpc/vpc-xxxxx\"]",
+      "input": "CreateSubnetRequest",
+      "name": "创建黑石私有网络的子网",
+      "output": "CreateSubnetResponse"
+    },
+    "CreateVirtualSubnetWithVlan": {
+      "document": "创建黑石虚拟子网， 虚拟子网用于在黑石上创建虚拟网络，与黑石子网要做好规划。虚拟子网会分配2000-2999的VlanId。",
+      "input": "CreateVirtualSubnetWithVlanRequest",
+      "name": "创建黑石虚拟子网",
+      "output": "CreateVirtualSubnetWithVlanResponse"
+    },
+    "CreateVpc": {
+      "document": "创建黑石私有网络",
+      "input": "CreateVpcRequest",
+      "name": "创建黑石私有网络",
+      "output": "CreateVpcResponse"
+    },
+    "CreateVpcPeerConnection": {
+      "document": "创建对等连接",
+      "input": "CreateVpcPeerConnectionRequest",
+      "name": "创建对等连接",
+      "output": "CreateVpcPeerConnectionResponse"
+    },
+    "DeleteCustomerGateway": {
+      "document": "本接口（DeleteCustomerGateway）用于删除对端网关。",
+      "input": "DeleteCustomerGatewayRequest",
+      "name": "删除对端网关",
+      "output": "DeleteCustomerGatewayResponse"
+    },
+    "DeleteHostedInterface": {
+      "document": "本接口用于托管机器从VLANID不为5的子网中移除。\n1) 不能从vlanId 为5的子网中移除。\n2) 每次调用最多能支持传入10台物理机。",
+      "input": "DeleteHostedInterfaceRequest",
+      "name": "黑石托管机器移除子网",
+      "output": "DeleteHostedInterfaceResponse"
+    },
+    "DeleteHostedInterfaces": {
+      "document": "托管机器移除子网批量接口，传入一台托管机器和多个子网，批量移除这些子网。异步接口，接口返回TaskId。",
+      "input": "DeleteHostedInterfacesRequest",
+      "name": "托管机器移除子网(批量接口)",
+      "output": "DeleteHostedInterfacesResponse"
+    },
+    "DeleteInterfaces": {
+      "document": "物理机移除子网批量接口，传入一台物理机和多个子网，批量移除这些子网。异步接口，接口返回TaskId。",
+      "input": "DeleteInterfacesRequest",
+      "name": "物理机移除子网(批量接口)",
+      "output": "DeleteInterfacesResponse"
+    },
+    "DeleteNatGateway": {
+      "document": "删除NAT网关",
+      "input": "DeleteNatGatewayRequest",
+      "name": "删除NAT网关",
+      "output": "DeleteNatGatewayResponse"
+    },
+    "DeleteRoutePolicy": {
+      "document": "删除黑石路由表路由规则",
+      "input": "DeleteRoutePolicyRequest",
+      "name": "删除黑石路由表路由规则",
+      "output": "DeleteRoutePolicyResponse"
+    },
+    "DeleteSubnet": {
+      "document": "本接口（DeleteSubnet）用于删除黑石私有网络子网。\n删除子网前，请清理该子网下所有资源，包括物理机、负载均衡、黑石数据库、弹性IP、NAT网关等资源",
+      "input": "DeleteSubnetRequest",
+      "name": "删除子网",
+      "output": "DeleteSubnetResponse"
+    },
+    "DeleteVirtualIp": {
+      "document": "退还虚拟IP。此接口只能退还虚拟IP，物理机IP不能退还。",
+      "input": "DeleteVirtualIpRequest",
+      "name": "退还虚拟IP",
+      "output": "DeleteVirtualIpResponse"
+    },
+    "DeleteVpc": {
+      "document": "本接口(DeleteVpc)用于删除黑石私有网络(VPC)。\n\n删除私有网络前，请清理该私有网络下所有资源，包括子网、负载均衡、弹性 IP、对等连接、NAT 网关、专线通道、SSLVPN 等资源。",
+      "input": "DeleteVpcRequest",
+      "name": "删除私有网络",
+      "output": "DeleteVpcResponse"
+    },
+    "DeleteVpcPeerConnection": {
+      "document": "删除黑石对等连接",
+      "input": "DeleteVpcPeerConnectionRequest",
+      "name": "删除黑石对等连接",
+      "output": "DeleteVpcPeerConnectionResponse"
+    },
+    "DeleteVpnConnection": {
+      "document": "本接口(DeleteVpnConnection)用于删除VPN通道。",
+      "input": "DeleteVpnConnectionRequest",
+      "name": "删除VPN通道",
+      "output": "DeleteVpnConnectionResponse"
+    },
+    "DeleteVpnGateway": {
+      "document": "本接口（DeleteVpnGateway）用于删除VPN网关。",
+      "input": "DeleteVpnGatewayRequest",
+      "name": "删除VPN网关",
+      "output": "DeleteVpnGatewayResponse"
+    },
+    "DeregisterIps": {
+      "document": "注销私有网络IP为空闲",
+      "input": "DeregisterIpsRequest",
+      "name": "注销私有网络IP",
+      "output": "DeregisterIpsResponse"
+    },
+    "DescribeCustomerGateways": {
+      "document": "本接口（DescribeCustomerGateways）用于查询对端网关列表。",
+      "input": "DescribeCustomerGatewaysRequest",
+      "name": "查询对端网关",
+      "output": "DescribeCustomerGatewaysResponse"
+    },
+    "DescribeNatGateways": {
+      "document": "获取NAT网关信息，包括NAT网关 ID、网关名称、私有网络、网关并发连接上限、绑定EIP列表等",
+      "input": "DescribeNatGatewaysRequest",
+      "name": "获取NAT网关列表",
+      "output": "DescribeNatGatewaysResponse"
+    },
+    "DescribeNatSubnets": {
+      "document": "可获取NAT网关绑定的子网信息",
+      "input": "DescribeNatSubnetsRequest",
+      "name": "获取NAT关联的子网信息",
+      "output": "DescribeNatSubnetsResponse"
+    },
+    "DescribeRoutePolicies": {
+      "document": "本接口（DescribeRoutePolicies）用于查询路由表条目。",
+      "input": "DescribeRoutePoliciesRequest",
+      "name": "查询黑石路由表条目",
+      "output": "DescribeRoutePoliciesResponse"
+    },
+    "DescribeRouteTables": {
+      "document": "本接口（DescribeRouteTables）用于查询路由表。",
+      "input": "DescribeRouteTablesRequest",
+      "name": "查询路由表",
+      "output": "DescribeRouteTablesResponse"
+    },
+    "DescribeSubnetAvailableIps": {
+      "document": "获取子网内可用IP列表",
+      "input": "DescribeSubnetAvailableIpsRequest",
+      "name": "获取子网内可用IP列表",
+      "output": "DescribeSubnetAvailableIpsResponse"
+    },
+    "DescribeSubnetByDevice": {
+      "document": "物理机可以加入物理机子网，虚拟子网，DOCKER子网，通过此接口可以查询物理机加入的子网。",
+      "input": "DescribeSubnetByDeviceRequest",
+      "name": "查询物理机加入的子网列表",
+      "output": "DescribeSubnetByDeviceResponse"
+    },
+    "DescribeSubnetByHostedDevice": {
+      "document": "托管可以加入物理机子网，虚拟子网，DOCKER子网，通过此接口可以查询托管加入的子网。",
+      "input": "DescribeSubnetByHostedDeviceRequest",
+      "name": "查询托管机器加入的子网列表",
+      "output": "DescribeSubnetByHostedDeviceResponse"
+    },
+    "DescribeSubnets": {
+      "document": "本接口（DescribeSubnets）用于查询黑石子网列表。",
+      "input": "DescribeSubnetsRequest",
+      "name": "查询子网列表",
+      "output": "DescribeSubnetsResponse"
+    },
+    "DescribeTaskStatus": {
+      "document": "根据任务ID，获取任务的执行状态",
+      "input": "DescribeTaskStatusRequest",
+      "name": "获取任务状态",
+      "output": "DescribeTaskStatusResponse"
+    },
+    "DescribeVpcPeerConnections": {
+      "document": "获取对等连接列表",
+      "input": "DescribeVpcPeerConnectionsRequest",
+      "name": "获取对等连接列表",
+      "output": "DescribeVpcPeerConnectionsResponse"
+    },
+    "DescribeVpcQuota": {
+      "document": "本接口（DescribeVpcQuota）用于查询用户VPC相关配额限制。",
+      "input": "DescribeVpcQuotaRequest",
+      "name": "获取黑石私有网络的配额",
+      "output": "DescribeVpcQuotaResponse"
+    },
+    "DescribeVpcResource": {
+      "document": "查询黑石私有网络关联资源",
+      "input": "DescribeVpcResourceRequest",
+      "name": "查询黑石私有网络关联资源",
+      "output": "DescribeVpcResourceResponse"
+    },
+    "DescribeVpcView": {
+      "document": "本接口（DescribeVpcView）用于查询VPC网络拓扑视图。",
+      "input": "DescribeVpcViewRequest",
+      "name": "查询黑石VPC视图",
+      "output": "DescribeVpcViewResponse"
+    },
+    "DescribeVpcs": {
+      "document": "本接口（DescribeVpcs）用于查询私有网络列表。\n本接口不传参数时，返回默认排序下的前20条VPC信息。",
+      "input": "DescribeVpcsRequest",
+      "name": "查询VPC列表",
+      "output": "DescribeVpcsResponse"
+    },
+    "DescribeVpnConnections": {
+      "document": " 本接口（DescribeVpnConnections）查询VPN通道列表。",
+      "input": "DescribeVpnConnectionsRequest",
+      "name": "查询VPN通道列表",
+      "output": "DescribeVpnConnectionsResponse"
+    },
+    "DescribeVpnGateways": {
+      "document": "本接口（DescribeVpnGateways）用于查询VPN网关列表。",
+      "input": "DescribeVpnGatewaysRequest",
+      "name": "查询VPN网关",
+      "output": "DescribeVpnGatewaysResponse"
+    },
+    "DownloadCustomerGatewayConfiguration": {
+      "document": "本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。",
+      "input": "DownloadCustomerGatewayConfigurationRequest",
+      "name": "下载VPN通道配置",
+      "output": "DownloadCustomerGatewayConfigurationResponse"
+    },
+    "ModifyCustomerGatewayAttribute": {
+      "document": "本接口（ModifyCustomerGatewayAttribute）用于修改对端网关信息。",
+      "input": "ModifyCustomerGatewayAttributeRequest",
+      "name": "修改对端网关",
+      "output": "ModifyCustomerGatewayAttributeResponse"
+    },
+    "ModifyRoutePolicy": {
+      "document": "修改自定义路由",
+      "input": "ModifyRoutePolicyRequest",
+      "name": "修改自定义路由",
+      "output": "ModifyRoutePolicyResponse"
+    },
+    "ModifyRouteTable": {
+      "document": "修改路由表",
+      "input": "ModifyRouteTableRequest",
+      "name": "修改路由表",
+      "output": "ModifyRouteTableResponse"
+    },
+    "ModifySubnetAttribute": {
+      "document": "修改子网属性",
+      "input": "ModifySubnetAttributeRequest",
+      "name": "修改子网属性",
+      "output": "ModifySubnetAttributeResponse"
+    },
+    "ModifySubnetDHCPRelay": {
+      "document": "修改子网DHCP Relay属性",
+      "input": "ModifySubnetDHCPRelayRequest",
+      "name": "修改子网DHCP Relay属性",
+      "output": "ModifySubnetDHCPRelayResponse"
+    },
+    "ModifyVpcAttribute": {
+      "document": "本接口（ModifyVpcAttribute）用于修改VPC的标识名称和控制VPC的监控起停。",
+      "input": "ModifyVpcAttributeRequest",
+      "name": "修改黑石VPC属性",
+      "output": "ModifyVpcAttributeResponse"
+    },
+    "ModifyVpcPeerConnection": {
+      "document": "修改黑石对等连接",
+      "input": "ModifyVpcPeerConnectionRequest",
+      "name": "修改黑石对等连接",
+      "output": "ModifyVpcPeerConnectionResponse"
+    },
+    "ModifyVpnConnectionAttribute": {
+      "document": "本接口（ModifyVpnConnectionAttribute）用于修改VPN通道。",
+      "input": "ModifyVpnConnectionAttributeRequest",
+      "name": "修改VPN通道",
+      "output": "ModifyVpnConnectionAttributeResponse"
+    },
+    "ModifyVpnGatewayAttribute": {
+      "document": "本接口（ModifyVpnGatewayAttribute）用于修改VPN网关属性。",
+      "input": "ModifyVpnGatewayAttributeRequest",
+      "name": "修改VPN网关属性",
+      "output": "ModifyVpnGatewayAttributeResponse"
+    },
+    "RejectVpcPeerConnection": {
+      "document": "拒绝黑石对等连接申请",
+      "input": "RejectVpcPeerConnectionRequest",
+      "name": "拒绝黑石对等连接申请",
+      "output": "RejectVpcPeerConnectionResponse"
+    },
+    "ResetVpnConnection": {
+      "document": "本接口(ResetVpnConnection)用于重置VPN通道。",
+      "input": "ResetVpnConnectionRequest",
+      "name": "重置VPN通道",
+      "output": "ResetVpnConnectionResponse"
+    },
+    "UnbindEipsFromNatGateway": {
+      "document": "NAT网关解绑该EIP后，NAT网关将不会使用该EIP作为访问外网的源IP地址\n",
+      "input": "UnbindEipsFromNatGatewayRequest",
+      "name": "NAT网关解绑EIP",
+      "output": "UnbindEipsFromNatGatewayResponse"
+    },
+    "UnbindIpsFromNatGateway": {
+      "document": "NAT网关解绑IP接口，可将子网的部分IP从NAT网关中解绑",
+      "input": "UnbindIpsFromNatGatewayRequest",
+      "name": "NAT网关解绑IP",
+      "output": "UnbindIpsFromNatGatewayResponse"
+    },
+    "UnbindSubnetsFromNatGateway": {
+      "document": "NAT网关解绑子网接口，可将子网解绑NAT网关",
+      "input": "UnbindSubnetsFromNatGatewayRequest",
+      "name": "NAT网关解绑子网",
+      "output": "UnbindSubnetsFromNatGatewayResponse"
+    },
+    "UpgradeNatGateway": {
+      "document": "升级NAT网关接口，可NAT网关修改为小型NAT网关、中型NAT网关、以及大型NAT网关\n",
+      "input": "UpgradeNatGatewayRequest",
+      "name": "升级NAT网关",
+      "output": "UpgradeNatGatewayResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-06-25",
+    "api_brief": null,
+    "serviceNameCN": "黑石私有网络",
+    "serviceShortName": "bmvpc"
+  },
+  "objects": {
+    "AcceptVpcPeerConnectionRequest": {
+      "document": "AcceptVpcPeerConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "黑石对等连接实例ID",
+          "member": "string",
+          "name": "VpcPeerConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcceptVpcPeerConnectionResponse": {
+      "document": "AcceptVpcPeerConnection返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AsyncRegisterIpsRequest": {
+      "document": "AsyncRegisterIps请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络的唯一ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网唯一ID。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要注册的IP列表。",
+          "member": "string",
+          "name": "Ips",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AsyncRegisterIpsResponse": {
+      "document": "AsyncRegisterIps返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindEipsToNatGatewayRequest": {
+      "document": "BindEipsToNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个",
+          "member": "string",
+          "name": "AssignedEips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个",
+          "member": "uint64",
+          "name": "AutoAllocEipNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BindEipsToNatGatewayResponse": {
+      "document": "BindEipsToNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindIpsToNatGatewayRequest": {
+      "document": "BindIpsToNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部分IP信息，子网下只有该部分IP将加入NAT，仅当网关转发模式为IP方式有效",
+          "member": "IpInfo",
+          "name": "IpInfoSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindIpsToNatGatewayResponse": {
+      "document": "BindIpsToNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindSubnetsToNatGatewayRequest": {
+      "document": "BindSubnetsToNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindSubnetsToNatGatewayResponse": {
+      "document": "BindSubnetsToNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomerGatewayRequest": {
+      "document": "CreateCustomerGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对端网关名称，可任意命名，但不得超过60个字符。",
+          "member": "string",
+          "name": "CustomerGatewayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对端网关公网IP。",
+          "member": "string",
+          "name": "IpAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可用区ID",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomerGatewayResponse": {
+      "document": "CreateCustomerGateway返回参数结构体",
+      "members": [
+        {
+          "document": "对端网关对象",
+          "member": "CustomerGateway",
+          "name": "CustomerGateway",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDockerSubnetWithVlanRequest": {
+      "document": "CreateDockerSubnetWithVlan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "系统分配的私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网信息",
+          "member": "SubnetCreateInputInfo",
+          "name": "SubnetSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDockerSubnetWithVlanResponse": {
+      "document": "CreateDockerSubnetWithVlan返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostedInterfaceRequest": {
+      "document": "CreateHostedInterface请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "托管机器唯一ID 数组",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID或者私有网络统一ID，建议使用统一ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID或者子网统一ID，建议使用统一ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostedInterfaceResponse": {
+      "document": "CreateHostedInterface返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "黑石托管机器ID",
+          "member": "string",
+          "name": "ResourceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInterfacesRequest": {
+      "document": "CreateInterfaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理机实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInterfacesResponse": {
+      "document": "CreateInterfaces返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatGatewayRequest": {
+      "document": "CreateNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "转发模式，其中0表示IP方式，1表示网段方式；通过cidr方式可支持更多的IP接入到NAT网关",
+          "member": "string",
+          "name": "ForwardMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT名称",
+          "member": "string",
+          "name": "NatName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "并发连接数规格；取值为1000000、3000000、10000000，分别对应小型、中型、大型NAT网关",
+          "member": "uint64",
+          "name": "MaxConcurrent",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "部分IP信息，子网下只有该部分IP将加入NAT，仅当网关转发模式为IP方式有效；IpInfoSet和SubnetIds中的子网ID不能同时存在",
+          "member": "IpInfo",
+          "name": "IpInfoSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "已分配的EIP列表, AssignedEips和AutoAllocEipNum至少输入一个",
+          "member": "string",
+          "name": "AssignedEips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "新建EIP数目，系统将会按您的要求生产该数目个数EIP, AssignedEips和AutoAllocEipNum至少输入一个",
+          "member": "uint64",
+          "name": "AutoAllocEipNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "独占标识，取值为0和1，默认值为0；0和1分别表示创建共享型NAT网关和独占NAT型网关；由于同一个VPC网络内，指向NAT集群的默认路由只有一条，因此VPC内只能创建一种类型NAT网关；创建独占型NAT网关时，需联系对应架构师进行独占NAT集群搭建，否则无法创建独占型NAT网关。",
+          "member": "uint64",
+          "name": "Exclusive",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatGatewayResponse": {
+      "document": "CreateNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutePoliciesRequest": {
+      "document": "CreateRoutePolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表ID",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新增的路由",
+          "member": "RoutePolicy",
+          "name": "RoutePolicySet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutePoliciesResponse": {
+      "document": "CreateRoutePolicies返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubnetRequest": {
+      "document": "CreateSubnet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "系统分配的私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网信息",
+          "member": "SubnetCreateInputInfo",
+          "name": "SubnetSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubnetResponse": {
+      "document": "CreateSubnet返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVirtualSubnetWithVlanRequest": {
+      "document": "CreateVirtualSubnetWithVlan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "系统分配的私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网信息",
+          "member": "SubnetCreateInputInfo",
+          "name": "SubnetSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVirtualSubnetWithVlanResponse": {
+      "document": "CreateVirtualSubnetWithVlan返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcPeerConnectionRequest": {
+      "document": "CreateVpcPeerConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本端VPC唯一ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对端VPC唯一ID",
+          "member": "string",
+          "name": "PeerVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对端地域，取值范围为gz,sh,bj,hk,cd,de,sh_bm,gz_bm,bj_bm,cq_bm等",
+          "member": "string",
+          "name": "PeerRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对等连接名称",
+          "member": "string",
+          "name": "VpcPeerConnectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对端账户OwnerUin（默认值为本端账户）",
+          "member": "string",
+          "name": "PeerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跨地域必传，带宽上限值",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcPeerConnectionResponse": {
+      "document": "CreateVpcPeerConnection返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcRequest": {
+      "document": "CreateVpc请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络的名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络的CIDR",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络的可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网信息",
+          "member": "VpcSubnetCreateInfo",
+          "name": "SubnetSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "False",
+          "document": "是否启用内网监控",
+          "member": "bool",
+          "name": "EnableMonitoring",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcResponse": {
+      "document": "CreateVpc返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomerGateway": {
+      "document": "对端网关",
+      "members": [
+        {
+          "default": "",
+          "document": "用户网关唯一ID",
+          "member": "string",
+          "name": "CustomerGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关名称",
+          "member": "string",
+          "name": "CustomerGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公网地址",
+          "member": "string",
+          "name": "IpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPN通道引用个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VpnConnNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteCustomerGatewayRequest": {
+      "document": "DeleteCustomerGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。",
+          "member": "string",
+          "name": "CustomerGatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomerGatewayResponse": {
+      "document": "DeleteCustomerGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHostedInterfaceRequest": {
+      "document": "DeleteHostedInterface请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "托管机器唯一ID 数组",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID或者私有网络统一ID，建议使用统一ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID或者子网统一ID，建议使用统一ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHostedInterfaceResponse": {
+      "document": "DeleteHostedInterface返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "黑石托管机器ID",
+          "member": "string",
+          "name": "ResourceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHostedInterfacesRequest": {
+      "document": "DeleteHostedInterfaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理机ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理机ID",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHostedInterfacesResponse": {
+      "document": "DeleteHostedInterfaces返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInterfacesRequest": {
+      "document": "DeleteInterfaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理机ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网的唯一ID列表",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInterfacesResponse": {
+      "document": "DeleteInterfaces返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNatGatewayRequest": {
+      "document": "DeleteNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNatGatewayResponse": {
+      "document": "DeleteNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutePolicyRequest": {
+      "document": "DeleteRoutePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表ID",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表策略ID",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutePolicyResponse": {
+      "document": "DeleteRoutePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSubnetRequest": {
+      "document": "DeleteSubnet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSubnetResponse": {
+      "document": "DeleteSubnet返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID。",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVirtualIpRequest": {
+      "document": "DeleteVirtualIp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络唯一ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "退还的IP列表。",
+          "member": "string",
+          "name": "Ips",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVirtualIpResponse": {
+      "document": "DeleteVirtualIp返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID。",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcPeerConnectionRequest": {
+      "document": "DeleteVpcPeerConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "黑石对等连接实例ID",
+          "member": "string",
+          "name": "VpcPeerConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcPeerConnectionResponse": {
+      "document": "DeleteVpcPeerConnection返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcRequest": {
+      "document": "DeleteVpc请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcResponse": {
+      "document": "DeleteVpc返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID。",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpnConnectionRequest": {
+      "document": "DeleteVpnConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。",
+          "member": "string",
+          "name": "VpnConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpnConnectionResponse": {
+      "document": "DeleteVpnConnection返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpnGatewayRequest": {
+      "document": "DeleteVpnGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN网关实例ID。",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpnGatewayResponse": {
+      "document": "DeleteVpnGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterIpsRequest": {
+      "document": "DeregisterIps请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "注销指定IP的列表",
+          "member": "string",
+          "name": "IpSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterIpsResponse": {
+      "document": "DeregisterIps返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerGatewaysRequest": {
+      "document": "DescribeCustomerGateways请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对端网关ID，例如：bmcgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。",
+          "member": "string",
+          "name": "CustomerGatewayIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。\n<li>customergateway-name - String - （过滤条件）对端网关名称。</li>\n<li>ip-address - String - （过滤条件)对端网关地址。</li>\n<li>customergateway-id - String - （过滤条件）对端网关唯一ID。</li>\n<li>zone - String - （过滤条件）对端所在可用区，形如：ap-guangzhou-2。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段, 支持\"CreateTime\"排序",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向, “asc”、“desc”",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerGatewaysResponse": {
+      "document": "DescribeCustomerGateways返回参数结构体",
+      "members": [
+        {
+          "document": "对端网关对象列表",
+          "member": "CustomerGateway",
+          "name": "CustomerGatewaySet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的实例数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewaysRequest": {
+      "document": "DescribeNatGateways请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT名称",
+          "member": "string",
+          "name": "NatName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索字段",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始值",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移值，默认值为 20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "NAT所在可用区，形如：ap-guangzhou-2。",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段, 支持\"CreateTime\"排序",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向, “asc”、“desc”",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewaysResponse": {
+      "document": "DescribeNatGateways返回参数结构体",
+      "members": [
+        {
+          "document": "NAT网关信息列表",
+          "member": "NatGatewayInfo",
+          "name": "NatGatewayInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatSubnetsRequest": {
+      "document": "DescribeNatSubnets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatSubnetsResponse": {
+      "document": "DescribeNatSubnets返回参数结构体",
+      "members": [
+        {
+          "document": "NAT子网信息",
+          "member": "NatSubnetInfo",
+          "name": "NatSubnetInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoutePoliciesRequest": {
+      "document": "DescribeRoutePolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-afg8md3c。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由策略实例ID，例如：rti-azd4dt1c。",
+          "member": "string",
+          "name": "RoutePolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定RoutePolicyIds和Filters。\nroute-table-id - String - （过滤条件）路由表实例ID。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nroute-policy-id - String - （过滤条件）路由策略ID。\nroute-policy-description-like - String -（过滤条件）路由项备注。\nroute-policy-type - String - （过滤条件）路由项策略类型。\ndestination-cidr-like - String - （过滤条件）路由项目的地址。\ngateway-id-like - String - （过滤条件）路由项下一跳网关。\ngateway-type - String - （过滤条件）路由项下一条网关类型。\nenable - Bool - （过滤条件）路由策略是否启用。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "0",
+          "document": "初始行的偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "20",
+          "document": "每页行数，默认为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoutePoliciesResponse": {
+      "document": "DescribeRoutePolicies返回参数结构体",
+      "members": [
+        {
+          "document": "路由策略数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "路由策略列表",
+          "member": "RoutePolicy",
+          "name": "RoutePolicySet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTablesRequest": {
+      "document": "DescribeRouteTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "member": "string",
+          "name": "RouteTableIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\nroute-table-id - String - （过滤条件）路由表实例ID。\nroute-table-name - String - （过滤条件）路由表名称。\nroute-table-id-like - String - （模糊过滤条件）路由表实例ID。\nroute-table-name-like - String - （模糊过滤条件）路由表名称。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nzone - String - （过滤条件）可用区。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "0",
+          "document": "初始行的偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "20",
+          "document": "每页行数，默认为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段, 支持按“RouteTableId”，“VpcId”, \"RouteTableName\", \"CreateTime\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向, “asc”、“desc”",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTablesResponse": {
+      "document": "DescribeRouteTables返回参数结构体",
+      "members": [
+        {
+          "document": "路由表个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "路由表列表",
+          "member": "RouteTable",
+          "name": "RouteTableSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetAvailableIpsRequest": {
+      "document": "DescribeSubnetAvailableIps请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CIDR前缀，例如10.0.1",
+          "member": "string",
+          "name": "Cidr",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetAvailableIpsResponse": {
+      "document": "DescribeSubnetAvailableIps返回参数结构体",
+      "members": [
+        {
+          "document": "可用IP的范围列表",
+          "member": "string",
+          "name": "IpSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetByDeviceRequest": {
+      "document": "DescribeSubnetByDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理机ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网类型。0: 物理机子网; 7: DOCKER子网 8: 虚拟子网",
+          "member": "uint64",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "0",
+          "document": "查询的起始位置。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "0",
+          "document": "查询的个数。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetByDeviceResponse": {
+      "document": "DescribeSubnetByDevice返回参数结构体",
+      "members": [
+        {
+          "document": "子网个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子网列表",
+          "member": "SubnetInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetByHostedDeviceRequest": {
+      "document": "DescribeSubnetByHostedDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "托管机器ID, 如chm-xasdfx2j",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网类型。0: 物理机子网; 7: DOCKER子网 8: 虚拟子网",
+          "member": "uint64",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "0",
+          "document": "查询的起始位置。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "20",
+          "document": "查询的个数。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetByHostedDeviceResponse": {
+      "document": "DescribeSubnetByHostedDevice返回参数结构体",
+      "members": [
+        {
+          "document": "子网个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子网列表",
+          "member": "SubnetInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetsRequest": {
+      "document": "DescribeSubnets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子网实例ID查询。形如：subnet-pxir56ns。参数不支持同时指定SubnetIds和Filters。",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nsubnet-id - String - （过滤条件）Subnet实例名称。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\ncidr-block - String - （过滤条件）vpc的cidr。\nsubnet-name - String - （过滤条件）子网名称。\nzone - String - （过滤条件）可用区。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段, 支持按“CreateTime”，“VlanId”",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向, “asc”、“desc”",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetsResponse": {
+      "document": "DescribeSubnets返回参数结构体",
+      "members": [
+        {
+          "document": "子网列表信息",
+          "member": "SubnetInfo",
+          "name": "SubnetSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的子网总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusRequest": {
+      "document": "DescribeTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusResponse": {
+      "document": "DescribeTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "任务状态，其中0表示任务执行成功，1表示任务执行失败，2表示任务正在执行中",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcPeerConnectionsRequest": {
+      "document": "DescribeVpcPeerConnections请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对等连接实例ID",
+          "member": "string",
+          "name": "VpcPeerConnectionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpcPeerConnectionIds和Filters。\n过滤条件，参数不支持同时指定VpcPeerConnectionIds和Filters。\n<li>peer-name - String - （过滤条件）对等连接名称。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcPeerConnectionsResponse": {
+      "document": "DescribeVpcPeerConnections返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "对等连接实例。",
+          "member": "VpcPeerConnection",
+          "name": "VpcPeerConnectionSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcQuotaRequest": {
+      "document": "DescribeVpcQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "类型",
+          "member": "uint64",
+          "name": "TypeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcQuotaResponse": {
+      "document": "DescribeVpcQuota返回参数结构体",
+      "members": [
+        {
+          "document": "配额信息",
+          "member": "VpcQuota",
+          "name": "VpcQuotaSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcResourceRequest": {
+      "document": "DescribeVpcResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络实例ID",
+          "member": "string",
+          "name": "VpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nvpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。\nvpc-name - String - （过滤条件）私有网络名称。\nzone - String - （过滤条件）可用区。\nstate - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向, “asc”、“desc”",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcResourceResponse": {
+      "document": "DescribeVpcResource返回参数结构体",
+      "members": [
+        {
+          "document": "VPC数据",
+          "member": "VpcResource",
+          "name": "VpcResourceSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "VPC个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcViewRequest": {
+      "document": "DescribeVpcView请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络唯一ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcViewResponse": {
+      "document": "DescribeVpcView返回参数结构体",
+      "members": [
+        {
+          "document": "VPC视图信息",
+          "member": "VpcViewInfo",
+          "name": "VpcView",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcsRequest": {
+      "document": "DescribeVpcs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。",
+          "member": "string",
+          "name": "VpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\nvpc-name - String - （过滤条件）VPC实例名称。\nvpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。\ncidr-block - String - （过滤条件）vpc的cidr。\nstate - String - （过滤条件）VPC状态。(pending | available).\nzone -  String - （过滤条件）VPC的可用区。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "0",
+          "document": "初始行的偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "20",
+          "document": "每页行数，默认为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcsResponse": {
+      "document": "DescribeVpcs返回参数结构体",
+      "members": [
+        {
+          "document": "VPC列表",
+          "member": "VpcInfo",
+          "name": "VpcSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpnConnectionsRequest": {
+      "document": "DescribeVpnConnections请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnConnectionIds和Filters。",
+          "member": "string",
+          "name": "VpnConnectionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>state - String - （过滤条件 VPN状态：creating，available，createfailed，changing，changefailed，deleting，deletefailed。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "VPN网关实例ID",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPN通道名称",
+          "member": "string",
+          "name": "VpnConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段, 支持\"CreateTime\"排序",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向, “asc”、“desc”",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpnConnectionsResponse": {
+      "document": "DescribeVpnConnections返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "VPN通道实例。",
+          "member": "VpnConnection",
+          "name": "VpnConnectionSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpnGatewaysRequest": {
+      "document": "DescribeVpnGateways请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN网关实例ID。形如：bmvpngw-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnGatewayIds和Filters。",
+          "member": "string",
+          "name": "VpnGatewayIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定VpnGatewayIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>state - String - （过滤条件 VPN状态：creating，available，createfailed，changing，changefailed，deleting，deletefailed。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>\n<li>vpngw-name - String - （过滤条件）vpn网关名称。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求对象个数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段, 支持\"CreateTime\"排序",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向, “asc”、“desc”",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpnGatewaysResponse": {
+      "document": "DescribeVpnGateways返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "VPN网关实例详细信息列表。",
+          "member": "VpnGateway",
+          "name": "VpnGatewaySet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadCustomerGatewayConfigurationRequest": {
+      "document": "DownloadCustomerGatewayConfiguration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。",
+          "member": "string",
+          "name": "VpnConnectionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "厂商,取值 h3c，cisco",
+          "member": "string",
+          "name": "VendorName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadCustomerGatewayConfigurationResponse": {
+      "document": "DownloadCustomerGatewayConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "配置信息。",
+          "member": "string",
+          "name": "CustomerGatewayConfiguration",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "IKEOptionsSpecification": {
+      "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议",
+      "members": [
+        {
+          "default": "",
+          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，默认为3DES-CBC",
+          "member": "string",
+          "name": "PropoEncryAlgorithm",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证算法：可选值：'MD5', 'SHA1'，默认为MD5",
+          "member": "string",
+          "name": "PropoAuthenAlgorithm",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN",
+          "member": "string",
+          "name": "ExchangeMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
+          "member": "string",
+          "name": "LocalIdentity",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
+          "member": "string",
+          "name": "RemoteIdentity",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP",
+          "member": "string",
+          "name": "LocalAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填",
+          "member": "string",
+          "name": "RemoteAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填",
+          "member": "string",
+          "name": "LocalFqdnName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填",
+          "member": "string",
+          "name": "RemoteFqdnName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，",
+          "member": "string",
+          "name": "DhGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800",
+          "member": "uint64",
+          "name": "IKESaLifetimeSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IKE版本",
+          "member": "string",
+          "name": "IKEVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "IPSECOptionsSpecification": {
+      "document": "IPSec配置，腾讯云提供IPSec安全会话设置",
+      "members": [
+        {
+          "default": "",
+          "document": "PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL",
+          "member": "string",
+          "name": "PfsDhGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800",
+          "member": "uint64",
+          "name": "IPSECSaLifetimeTraffic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128",
+          "member": "string",
+          "name": "EncryptAlgorithm",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证算法：可选值：'MD5', 'SHA1'，默认为",
+          "member": "string",
+          "name": "IntegrityAlgorith",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IPsec SA lifetime(s)：单位秒，取值范围：180-604800",
+          "member": "uint64",
+          "name": "IPSECSaLifetimeSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全协议，默认为ESP",
+          "member": "string",
+          "name": "SecurityProto",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "报文封装模式:默认为Tunnel",
+          "member": "string",
+          "name": "EncapMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "IpInfo": {
+      "document": "NAT IP信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP列表",
+          "member": "string",
+          "name": "Ips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyCustomerGatewayAttributeRequest": {
+      "document": "ModifyCustomerGatewayAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "无",
+          "document": "对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。",
+          "member": "string",
+          "name": "CustomerGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "无",
+          "document": "对端网关名称，可任意命名，但不得超过60个字符。",
+          "member": "string",
+          "name": "CustomerGatewayName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomerGatewayAttributeResponse": {
+      "document": "ModifyCustomerGatewayAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoutePolicyRequest": {
+      "document": "ModifyRoutePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表ID",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的路由",
+          "member": "RoutePolicy",
+          "name": "RoutePolicy",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoutePolicyResponse": {
+      "document": "ModifyRoutePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRouteTableRequest": {
+      "document": "ModifyRouteTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由表ID",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由表名称",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRouteTableResponse": {
+      "document": "ModifyRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubnetAttributeRequest": {
+      "document": "ModifySubnetAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网名称",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubnetAttributeResponse": {
+      "document": "ModifySubnetAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubnetDHCPRelayRequest": {
+      "document": "ModifySubnetDHCPRelay请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启DHCP Relay",
+          "member": "bool",
+          "name": "EnableDHCP",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "DHCP服务器IP",
+          "member": "string",
+          "name": "ServerIps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "预留IP个数",
+          "member": "uint64",
+          "name": "ReservedIpCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubnetDHCPRelayResponse": {
+      "document": "ModifySubnetDHCPRelay返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcAttributeRequest": {
+      "document": "ModifyVpcAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启内网监控，0为关闭，1为开启",
+          "member": "bool",
+          "name": "EnableMonitor",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcAttributeResponse": {
+      "document": "ModifyVpcAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcPeerConnectionRequest": {
+      "document": "ModifyVpcPeerConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "黑石对等连接唯一ID",
+          "member": "string",
+          "name": "VpcPeerConnectionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对等连接带宽",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "对等连接名称",
+          "member": "string",
+          "name": "VpcPeerConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcPeerConnectionResponse": {
+      "document": "ModifyVpcPeerConnection返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpnConnectionAttributeRequest": {
+      "document": "ModifyVpnConnectionAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。",
+          "member": "string",
+          "name": "VpnConnectionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC实例ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPN通道名称，可任意命名，但不得超过60个字符。",
+          "member": "string",
+          "name": "VpnConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预共享密钥。",
+          "member": "string",
+          "name": "PreShareKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
+          "member": "SecurityPolicyDatabase",
+          "name": "SecurityPolicyDatabases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议。",
+          "member": "IKEOptionsSpecification",
+          "name": "IKEOptionsSpecification",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "IPSec配置，腾讯云提供IPSec安全会话设置。",
+          "member": "IPSECOptionsSpecification",
+          "name": "IPSECOptionsSpecification",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpnConnectionAttributeResponse": {
+      "document": "ModifyVpnConnectionAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpnGatewayAttributeRequest": {
+      "document": "ModifyVpnGatewayAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPN网关实例ID。",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPN网关名称，最大长度不能超过60个字节。",
+          "member": "string",
+          "name": "VpnGatewayName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpnGatewayAttributeResponse": {
+      "document": "ModifyVpnGatewayAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NatGatewayInfo": {
+      "document": "NAT详情",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关名称",
+          "member": "string",
+          "name": "NatName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关创建状态，其中0表示创建中，1表示运行中，2表示创建失败",
+          "member": "uint64",
+          "name": "ProductionStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP列表",
+          "member": "string",
+          "name": "Eips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "并发连接数规格，取值为1000000, 3000000, 10000000",
+          "member": "uint64",
+          "name": "MaxConcurrent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独占标识，其中0表示共享，1表示独占，默认值为0",
+          "member": "uint64",
+          "name": "Exclusive",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发模式，其中0表示IP方式，1表示网段方式",
+          "member": "uint64",
+          "name": "ForwardMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络网段",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关类型，取值为 small，middle，big，分别对应小型、中型、大型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关启用状态，1为禁用，0为启用。",
+          "member": "uint64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络整型ID",
+          "member": "uint64",
+          "name": "IntVpcId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NAT资源ID",
+          "member": "uint64",
+          "name": "NatResourceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NatSubnetInfo": {
+      "document": "NAT子网信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子网名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NAT子网类型，其中0表示绑定部分IP的NAT子网，1表示绑定全部IP的NAT子网，2表示绑定网关方式的NAT子网",
+          "member": "uint64",
+          "name": "SubnetNatType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网网段",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RejectVpcPeerConnectionRequest": {
+      "document": "RejectVpcPeerConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "黑石对等连接实例ID",
+          "member": "string",
+          "name": "VpcPeerConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RejectVpcPeerConnectionResponse": {
+      "document": "RejectVpcPeerConnection返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetVpnConnectionRequest": {
+      "document": "ResetVpnConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC唯一ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。",
+          "member": "string",
+          "name": "VpnConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetVpnConnectionResponse": {
+      "document": "ResetVpnConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RoutePolicy": {
+      "document": "路由条目",
+      "members": [
+        {
+          "default": "",
+          "document": "目的网段",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳类型，目前我们支持的类型有：\nLOCAL：物理机默认路由；\nVPN：VPN网关；\nPEERCONNECTION：对等连接；\nCPM：物理机自定义路由；\nCCN：云联网；\nTGW：公网默认路由；\nSSLVPN : SSH SSL VPN网关。",
+          "member": "string",
+          "name": "GatewayType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。",
+          "member": "string",
+          "name": "GatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由策略描述。",
+          "member": "string",
+          "name": "RouteDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由策略ID",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由类型，目前我们支持的类型有：\nUSER：用户自定义路由；\nNETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；\nCCN：云联网路由，系统默认下发，不可编辑与删除。\n用户只能添加和编辑USER 类型的路由。",
+          "member": "string",
+          "name": "RoutePolicyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "true",
+          "document": "是否启用",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RouteTable": {
+      "document": "路由表对象",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC实例ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC的名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC的CIDR",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表名称。",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityPolicyDatabase": {
+      "document": "SecurityPolicyDatabase策略",
+      "members": [
+        {
+          "default": "",
+          "document": "本端网段",
+          "member": "string",
+          "name": "LocalCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端网段",
+          "member": "string",
+          "name": "RemoteCidrBlock",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SubnetCreateInputInfo": {
+      "document": "创建子网时的子网类型",
+      "members": [
+        {
+          "default": "",
+          "document": "子网名称，可任意命名，但不得超过60个字符",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "是否开启子网分布式网关，默认传1，传0为关闭子网分布式网关。关闭分布式网关子网用于云服务器化子网，此子网中只能有一台物理机，同时此物理机及其上子机只能在此子网中",
+          "member": "uint64",
+          "name": "DistributedFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "是否开启dhcp relay ，关闭为0，开启为1。默认为0",
+          "member": "uint64",
+          "name": "DhcpEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP",
+          "member": "string",
+          "name": "DhcpServerIp",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段",
+          "member": "uint64",
+          "name": "IpReserve",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "子网绑定的vlanId。VlanId取值范围为2000-2999。创建物理机子网，VlanId默认为5; 创建docker子网或者虚拟子网，VlanId默认会分配2000--2999未使用的数值。",
+          "member": "uint64",
+          "name": "VlanId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "黑石子网的可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "是否25G子网，1为是，0为否。",
+          "member": "uint64",
+          "name": "IsSmartNic",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SubnetInfo": {
+      "document": "黑石子网的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络的唯一ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC的名称。",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC的CIDR。",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络的唯一ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网名称。",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网CIDR。",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网类型。0: 黑石物理机子网; 6: ccs子网; 7 Docker子网; 8: 虚拟机子网",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网可用区ID。",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网物理机的个数",
+          "member": "uint64",
+          "name": "CpmNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网的VlanId。",
+          "member": "uint64",
+          "name": "VlanId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启分布式网关 ，关闭为0，开启为1。",
+          "member": "uint64",
+          "name": "DistributedFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启dhcp relay ，关闭为0，开启为1。默认为0。",
+          "member": "uint64",
+          "name": "DhcpEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP。",
+          "member": "string",
+          "name": "DhcpServerIp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段。",
+          "member": "uint64",
+          "name": "IpReserve",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网中可用的IP个数",
+          "member": "uint64",
+          "name": "AvailableIpNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网中总共的IP个数",
+          "member": "uint64",
+          "name": "TotalIpNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网创建时间",
+          "member": "datetime",
+          "name": "SubnetCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "25G子网标识",
+          "member": "uint64",
+          "name": "IsSmartNic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC所在可用区ID",
+          "member": "uint64",
+          "name": "VpcZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC所在可用区",
+          "member": "string",
+          "name": "VpcZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启广播，关闭为0，开启为1。",
+          "member": "uint64",
+          "name": "BroadcastFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UnbindEipsFromNatGatewayRequest": {
+      "document": "UnbindEipsFromNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已分配的EIP列表",
+          "member": "string",
+          "name": "AssignedEips",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindEipsFromNatGatewayResponse": {
+      "document": "UnbindEipsFromNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindIpsFromNatGatewayRequest": {
+      "document": "UnbindIpsFromNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部分IP信息；子网须以部分IP将加入NAT网关",
+          "member": "IpInfo",
+          "name": "IpInfoSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindIpsFromNatGatewayResponse": {
+      "document": "UnbindIpsFromNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindSubnetsFromNatGatewayRequest": {
+      "document": "UnbindSubnetsFromNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID列表，子网不区分加入NAT网关的转发方式",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindSubnetsFromNatGatewayResponse": {
+      "document": "UnbindSubnetsFromNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeNatGatewayRequest": {
+      "document": "UpgradeNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NAT网关ID，例如：nat-kdm476mp",
+          "member": "string",
+          "name": "NatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，例如：vpc-kd7d06of",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "并发连接数规格；取值为1000000、3000000、10000000，分别对应小型、中型、大型NAT网关",
+          "member": "uint64",
+          "name": "MaxConcurrent",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeNatGatewayResponse": {
+      "document": "UpgradeNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VpcInfo": {
+      "document": "VPC信息",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络的唯一ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC的名称。",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC的CIDR。",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC状态",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "整型私有网络ID。",
+          "member": "uint64",
+          "name": "IntVpcId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcPeerConnection": {
+      "document": "对等连接对象",
+      "members": [
+        {
+          "default": "",
+          "document": "本端VPC唯一ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端VPC唯一ID",
+          "member": "string",
+          "name": "PeerVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本端APPID",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端APPID",
+          "member": "string",
+          "name": "PeerAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对等连接唯一ID",
+          "member": "string",
+          "name": "VpcPeerConnectionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对等连接名称",
+          "member": "string",
+          "name": "VpcPeerConnectionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本端VPC所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对端VPC所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PeerVpcZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本端Uin",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端Uin",
+          "member": "uint64",
+          "name": "PeerUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对等连接类型",
+          "member": "uint64",
+          "name": "PeerType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对等连接带宽",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本端VPC地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端VPC地域",
+          "member": "string",
+          "name": "PeerRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "DeleteFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcQuota": {
+      "document": "VPC限额信息",
+      "members": [
+        {
+          "default": "",
+          "document": "配额类型ID",
+          "member": "uint64",
+          "name": "TypeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配额",
+          "member": "uint64",
+          "name": "Quota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcResource": {
+      "document": "VPC占用资源",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络的CIDR",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网个数",
+          "member": "uint64",
+          "name": "SubnetNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NAT个数",
+          "member": "uint64",
+          "name": "NatNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC状态",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启监控",
+          "member": "bool",
+          "name": "MonitorFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理机个数",
+          "member": "uint64",
+          "name": "CpmNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用IP个数",
+          "member": "uint64",
+          "name": "LeaveIpNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡个数",
+          "member": "uint64",
+          "name": "LbNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量镜像网关个数",
+          "member": "uint64",
+          "name": "TrafficMirrorNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性IP个数",
+          "member": "uint64",
+          "name": "EipNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专线网关个数",
+          "member": "uint64",
+          "name": "PlgwNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专线通道个数",
+          "member": "uint64",
+          "name": "PlvpNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ssl vpn网关个数",
+          "member": "uint64",
+          "name": "SslVpnGwNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对等链接个数",
+          "member": "uint64",
+          "name": "VpcPeerNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ipsec vpn网关个数",
+          "member": "uint64",
+          "name": "IpsecVpnGwNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否老专区VPC",
+          "member": "bool",
+          "name": "IsOld",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云联网服务个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CcnServiceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC允许创建的对等连接个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VpcPeerLimitToAllRegion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC允许创建的同地域的对等连接的个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "VpcPeerLimitToSameRegion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "整型私有网络ID",
+          "member": "uint64",
+          "name": "IntVpcId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcSubnetCreateInfo": {
+      "document": "创建VPC下默认子网",
+      "members": [
+        {
+          "default": "",
+          "document": "子网名称",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网的CIDR",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网的可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VpcSubnetViewInfo": {
+      "document": "VPC视图子网信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网名称",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网CIDR",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网下设备个数",
+          "member": "uint64",
+          "name": "CpmNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网负载均衡个数",
+          "member": "uint64",
+          "name": "LbNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网所在可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcViewInfo": {
+      "document": "VPC视图信息",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络CIDR",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络所在可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网负载均衡个数",
+          "member": "uint64",
+          "name": "LbNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性公网IP个数",
+          "member": "uint64",
+          "name": "EipNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NAT网关个数",
+          "member": "uint64",
+          "name": "NatNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网列表",
+          "member": "VpcSubnetViewInfo",
+          "name": "SubnetSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpnConnection": {
+      "document": "VPN通道对象。",
+      "members": [
+        {
+          "default": "",
+          "document": "通道实例ID。",
+          "member": "string",
+          "name": "VpnConnectionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通道名称。",
+          "member": "string",
+          "name": "VpnConnectionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC实例ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPN网关实例ID。",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端网关实例ID。",
+          "member": "string",
+          "name": "CustomerGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预共享密钥。",
+          "member": "string",
+          "name": "PreShareKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通道传输协议。",
+          "member": "string",
+          "name": "VpnProto",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通道的生产状态",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通道连接状态",
+          "member": "string",
+          "name": "NetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SPD。",
+          "member": "SecurityPolicyDatabase",
+          "name": "SecurityPolicyDatabaseSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IKE选项。",
+          "member": "IKEOptionsSpecification",
+          "name": "IKEOptionsSpecification",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IPSEC选项。",
+          "member": "IPSECOptionsSpecification",
+          "name": "IPSECOptionsSpecification",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC网段",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPN网关名称",
+          "member": "string",
+          "name": "VpnGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端网关名称",
+          "member": "string",
+          "name": "CustomerGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IPSEC VPN通道路由策略目的端地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DestinationCidr",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IPSEC VPN通道路由策略源端地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SourceCidr",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VpnGateway": {
+      "document": "VPN网关对象。",
+      "members": [
+        {
+          "default": "",
+          "document": "网关实例ID。",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC实例ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关实例名称。",
+          "member": "string",
+          "name": "VpnGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC网段",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关出带宽。",
+          "member": "uint64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关实例状态",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关公网IP。",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区，如：ap-guangzhou",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPN网关的通道数",
+          "member": "uint64",
+          "name": "VpnConnNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}
