@@ -168,6 +168,7 @@ def doCreateFlowLog(argv, arglist):
         "TrafficType": argv.get("--TrafficType"),
         "CloudLogId": argv.get("--CloudLogId"),
         "FlowLogDescription": argv.get("--FlowLogDescription"),
+        "Tags": Utils.try_to_json(argv, "--Tags"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])

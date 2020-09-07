@@ -1120,6 +1120,7 @@ def doPurchaseReservedInstancesOffering(argv, arglist):
         "ReservedInstancesOfferingId": argv.get("--ReservedInstancesOfferingId"),
         "DryRun": Utils.try_to_json(argv, "--DryRun"),
         "ClientToken": argv.get("--ClientToken"),
+        "ReservedInstanceName": argv.get("--ReservedInstanceName"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1216,13 +1217,14 @@ def doDescribeReservedInstances(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeZones(argv, arglist):
+def doDescribeReservedInstancesConfigInfos(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
-        show_help("DescribeZones", g_param[OptionsDefine.Version])
+        show_help("DescribeReservedInstancesConfigInfos", g_param[OptionsDefine.Version])
         return
 
     param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
 
     }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1236,9 +1238,9 @@ def doDescribeZones(argv, arglist):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeZonesRequest()
+    model = models.DescribeReservedInstancesConfigInfosRequest()
     model.from_json_string(json.dumps(param))
-    rsp = client.DescribeZones(model)
+    rsp = client.DescribeReservedInstancesConfigInfos(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1383,6 +1385,38 @@ def doModifyImageAttribute(argv, arglist):
     model = models.ModifyImageAttributeRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.ModifyImageAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeZones(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeZones", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeZonesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeZones(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -1548,6 +1582,43 @@ def doDescribeImportImageOs(argv, arglist):
     model = models.DescribeImportImageOsRequest()
     model.from_json_string(json.dumps(param))
     rsp = client.DescribeImportImageOs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquirePricePurchaseReservedInstancesOffering(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("InquirePricePurchaseReservedInstancesOffering", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceCount": Utils.try_to_json(argv, "--InstanceCount"),
+        "ReservedInstancesOfferingId": argv.get("--ReservedInstancesOfferingId"),
+        "DryRun": Utils.try_to_json(argv, "--DryRun"),
+        "ClientToken": argv.get("--ClientToken"),
+        "ReservedInstanceName": argv.get("--ReservedInstanceName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquirePricePurchaseReservedInstancesOfferingRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.InquirePricePurchaseReservedInstancesOffering(model)
     result = rsp.to_json_string()
     jsonobj = None
     try:
@@ -2391,16 +2462,18 @@ ACTION_MAP = {
     "PurchaseReservedInstancesOffering": doPurchaseReservedInstancesOffering,
     "ResizeInstanceDisks": doResizeInstanceDisks,
     "DescribeReservedInstances": doDescribeReservedInstances,
-    "DescribeZones": doDescribeZones,
+    "DescribeReservedInstancesConfigInfos": doDescribeReservedInstancesConfigInfos,
     "CreateImage": doCreateImage,
     "AssociateSecurityGroups": doAssociateSecurityGroups,
     "ResetInstancesType": doResetInstancesType,
     "ModifyImageAttribute": doModifyImageAttribute,
+    "DescribeZones": doDescribeZones,
     "DescribeInstancesOperationLimit": doDescribeInstancesOperationLimit,
     "InquiryPriceResetInstancesType": doInquiryPriceResetInstancesType,
     "DescribeInstanceFamilyConfigs": doDescribeInstanceFamilyConfigs,
     "DeleteDisasterRecoverGroups": doDeleteDisasterRecoverGroups,
     "DescribeImportImageOs": doDescribeImportImageOs,
+    "InquirePricePurchaseReservedInstancesOffering": doInquirePricePurchaseReservedInstancesOffering,
     "ModifyInstancesProject": doModifyInstancesProject,
     "ResetInstance": doResetInstance,
     "InquiryPriceRenewInstances": doInquiryPriceRenewInstances,

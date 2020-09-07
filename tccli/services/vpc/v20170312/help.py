@@ -82,6 +82,10 @@ INFO = {
       {
         "name": "FlowLogDescription",
         "desc": "流日志实例描述"
+      },
+      {
+        "name": "Tags",
+        "desc": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]"
       }
     ],
     "desc": "本接口（CreateFlowLog）用于创建流日志"

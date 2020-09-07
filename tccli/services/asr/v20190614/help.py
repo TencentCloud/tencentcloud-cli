@@ -72,7 +72,7 @@ INFO = {
         "desc": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0。"
       }
     ],
-    "desc": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果， HTTP RESTful 形式。\n<br>• 支持中文普通话、英语、粤语、日语和上海话方言\n<br>• 支持通用、音视频领域\n<br>• 支持wav、mp3、m4a的音频格式\n<br>• 支持语音 URL 和本地语音文件两种请求方式\n<br>• 语音 URL 的音频时长不能长于5小时，文件大小不超过512MB\n<br>• 本地语音文件不能大于5MB\n<br>• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。"
+    "desc": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n<br>• 支持中文普通话、英语、粤语、日语和上海话方言\n<br>• 支持通用、音视频领域\n<br>• 支持wav、mp3、m4a的音频格式\n<br>• 支持语音 URL 和本地语音文件两种请求方式\n<br>• 语音 URL 的音频时长不能长于5小时，文件大小不超过512MB\n<br>• 本地语音文件不能大于5MB\n<br>• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。"
   },
   "DescribeTaskStatus": {
     "params": [
@@ -81,7 +81,7 @@ INFO = {
         "desc": "从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。"
       }
     ],
-    "desc": "在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。\n<br>• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://cloud.tencent.com/document/product/1093/37139#callback)。\n<br>• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n"
+    "desc": "在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。\n<br>• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://cloud.tencent.com/document/product/1093/37139#callback)。\n<br>• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n"
   },
   "GetAsrVocab": {
     "params": [
@@ -228,6 +228,6 @@ INFO = {
         "desc": "是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1"
       }
     ],
-    "desc": "本接口用于对60秒之内的短音频文件进行识别。\n<br>•   支持中文普通话、英语、粤语、日语、上海话方言。\n<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s。\n<br>•   音频格式支持wav、mp3；采样率支持8000Hz或者16000Hz；采样精度支持16bits；声道支持单声道。\n<br>•   当音频文件通过请求中body内容上传时，请求大小不能超过3MB。\n<br>•   所有请求参数放在POST请求的body中，编码类型采用x-www-form-urlencoded，参数进行urlencode编码后传输。"
+    "desc": "本接口用于对60秒之内的短音频文件进行识别。\n<br>•   支持中文普通话、英语、粤语、日语、上海话方言。\n<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s。\n<br>•   音频格式支持wav、mp3；采样率支持8000Hz或者16000Hz；采样精度支持16bits；声道支持单声道。\n<br>•   当音频文件通过请求中body内容上传时，请求大小不能超过3MB。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。"
   }
 }
