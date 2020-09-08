@@ -3,788 +3,1084 @@ import os
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
+from tccli.nice_command import NiceCommand
+import tccli.error_msg as ErrorMsg
+import tccli.help_template as HelpTemplate
 from tccli import __version__
 from tccli.utils import Utils
-from tccli.exceptions import ConfigurationError
+from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
 from tencentcloud.batch.v20170312 import batch_client as batch_client_v20170312
 from tencentcloud.batch.v20170312 import models as models_v20170312
+from tccli.services.batch import v20170312
+from tccli.services.batch.v20170312 import help as v20170312_help
 
 
-def doDescribeCvmZoneInstanceConfigInfos(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDescribeComputeEnv(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeComputeEnv", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "EnvId": argv.get("--EnvId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCvmZoneInstanceConfigInfosRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeCvmZoneInstanceConfigInfos(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateTaskTemplate(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTaskTemplateRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateTaskTemplate(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeJobSubmitInfo(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeJobSubmitInfoRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeJobSubmitInfo(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTerminateComputeNode(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateComputeNodeRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.TerminateComputeNode(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteJob(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteJobRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteJob(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeAvailableCvmInstanceTypes(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAvailableCvmInstanceTypesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeAvailableCvmInstanceTypes(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doAttachInstances(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AttachInstancesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.AttachInstances(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateComputeEnv(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateComputeEnvRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateComputeEnv(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeComputeEnvs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeComputeEnvsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeComputeEnvs(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDetachInstances(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetachInstancesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DetachInstances(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTaskLogs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskLogsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTaskLogs(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTerminateJob(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateJobRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.TerminateJob(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTask(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTask(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeComputeEnv(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeComputeEnvRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.DescribeComputeEnv(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeJob(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doCreateTaskTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateTaskTemplate", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "TaskTemplateName": argv.get("--TaskTemplateName"),
+        "TaskTemplateInfo": Utils.try_to_json(argv, "--TaskTemplateInfo"),
+        "TaskTemplateDescription": argv.get("--TaskTemplateDescription"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeJobRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeJob(model)
+    model = models.CreateTaskTemplateRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateTaskTemplate(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeComputeEnvActivities(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doCreateCpmComputeEnv(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateCpmComputeEnv", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "ComputeEnv": Utils.try_to_json(argv, "--ComputeEnv"),
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "ClientToken": argv.get("--ClientToken"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeComputeEnvActivitiesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeComputeEnvActivities(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTerminateComputeNodes(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateComputeNodesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.TerminateComputeNodes(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTaskTemplates(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskTemplatesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTaskTemplates(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeInstanceCategories(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceCategoriesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeInstanceCategories(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteTaskTemplates(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTaskTemplatesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteTaskTemplates(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doTerminateTaskInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TerminateTaskInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.TerminateTaskInstance(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyComputeEnv(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyComputeEnvRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyComputeEnv(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateCpmComputeEnv(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateCpmComputeEnvRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.CreateCpmComputeEnv(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeComputeEnvCreateInfo(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doTerminateComputeNode(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TerminateComputeNode", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "EnvId": argv.get("--EnvId"),
+        "ComputeNodeId": argv.get("--ComputeNodeId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeComputeEnvCreateInfoRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeComputeEnvCreateInfo(model)
+    model = models.TerminateComputeNodeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TerminateComputeNode(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSubmitJob(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDescribeJobs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeJobs", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "JobIds": Utils.try_to_json(argv, "--JobIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SubmitJobRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.SubmitJob(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeComputeEnvCreateInfos(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeComputeEnvCreateInfosRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeComputeEnvCreateInfos(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeJobs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeJobsRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.DescribeJobs(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCpmOsInfo(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDescribeAvailableCvmInstanceTypes(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeAvailableCvmInstanceTypes", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCpmOsInfoRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeCpmOsInfo(model)
+    model = models.DescribeAvailableCvmInstanceTypesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeAvailableCvmInstanceTypes(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteComputeEnv(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doAttachInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AttachInstances", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "EnvId": argv.get("--EnvId"),
+        "Instances": Utils.try_to_json(argv, "--Instances"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AttachInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AttachInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateComputeEnv(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateComputeEnv", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "ComputeEnv": Utils.try_to_json(argv, "--ComputeEnv"),
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "ClientToken": argv.get("--ClientToken"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateComputeEnvRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateComputeEnv(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteComputeEnv(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteComputeEnv", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvId": argv.get("--EnvId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteComputeEnvRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.DeleteComputeEnv(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyTaskTemplate(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDetachInstances(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DetachInstances", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "EnvId": argv.get("--EnvId"),
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DetachInstancesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DetachInstances(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskLogs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskLogs", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+        "TaskName": argv.get("--TaskName"),
+        "TaskInstanceIndexes": Utils.try_to_json(argv, "--TaskInstanceIndexes"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskLogsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskLogs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTerminateJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TerminateJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TerminateJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TerminateJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTask(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTask", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+        "TaskName": argv.get("--TaskName"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTask(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCvmZoneInstanceConfigInfos(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCvmZoneInstanceConfigInfos", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCvmZoneInstanceConfigInfosRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCvmZoneInstanceConfigInfos(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSubmitJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("SubmitJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "Placement": Utils.try_to_json(argv, "--Placement"),
+        "Job": Utils.try_to_json(argv, "--Job"),
+        "ClientToken": argv.get("--ClientToken"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SubmitJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.SubmitJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTerminateComputeNodes(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TerminateComputeNodes", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvId": argv.get("--EnvId"),
+        "ComputeNodeIds": Utils.try_to_json(argv, "--ComputeNodeIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TerminateComputeNodesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TerminateComputeNodes(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskTemplates(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskTemplates", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskTemplateIds": Utils.try_to_json(argv, "--TaskTemplateIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskTemplatesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskTemplates(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstanceCategories(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeInstanceCategories", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceCategoriesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeInstanceCategories(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteTaskTemplates(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteTaskTemplates", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskTemplateIds": Utils.try_to_json(argv, "--TaskTemplateIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteTaskTemplatesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteTaskTemplates(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTerminateTaskInstance(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("TerminateTaskInstance", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+        "TaskName": argv.get("--TaskName"),
+        "TaskInstanceIndex": Utils.try_to_json(argv, "--TaskInstanceIndex"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TerminateTaskInstanceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.TerminateTaskInstance(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyComputeEnv(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyComputeEnv", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvId": argv.get("--EnvId"),
+        "DesiredComputeNodeCount": Utils.try_to_json(argv, "--DesiredComputeNodeCount"),
+        "EnvName": argv.get("--EnvName"),
+        "EnvDescription": argv.get("--EnvDescription"),
+        "EnvData": Utils.try_to_json(argv, "--EnvData"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyComputeEnvRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyComputeEnv(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeJobSubmitInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeJobSubmitInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeJobSubmitInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeJobSubmitInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeComputeEnvCreateInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeComputeEnvCreateInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvId": argv.get("--EnvId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeComputeEnvCreateInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeComputeEnvCreateInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeComputeEnvActivities(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeComputeEnvActivities", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvId": argv.get("--EnvId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeComputeEnvActivitiesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeComputeEnvActivities(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeComputeEnvCreateInfos(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeComputeEnvCreateInfos", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvIds": Utils.try_to_json(argv, "--EnvIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeComputeEnvCreateInfosRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeComputeEnvCreateInfos(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteJob(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteJob", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "JobId": argv.get("--JobId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteJobRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteJob(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCpmOsInfo(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCpmOsInfo", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "DeviceClassCode": argv.get("--DeviceClassCode"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCpmOsInfoRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeCpmOsInfo(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeComputeEnvs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeComputeEnvs", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "EnvIds": Utils.try_to_json(argv, "--EnvIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeComputeEnvsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeComputeEnvs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTaskTemplate(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyTaskTemplate", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskTemplateId": argv.get("--TaskTemplateId"),
+        "TaskTemplateName": argv.get("--TaskTemplateName"),
+        "TaskTemplateDescription": argv.get("--TaskTemplateDescription"),
+        "TaskTemplateInfo": Utils.try_to_json(argv, "--TaskTemplateInfo"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyTaskTemplateRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.ModifyTaskTemplate(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRetryJobs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doRetryJobs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RetryJobs", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "JobIds": Utils.try_to_json(argv, "--JobIds"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BatchClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.RetryJobsRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.RetryJobs(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
@@ -799,109 +1095,187 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeCvmZoneInstanceConfigInfos": doDescribeCvmZoneInstanceConfigInfos,
+    "DescribeComputeEnv": doDescribeComputeEnv,
     "CreateTaskTemplate": doCreateTaskTemplate,
-    "DescribeJobSubmitInfo": doDescribeJobSubmitInfo,
+    "CreateCpmComputeEnv": doCreateCpmComputeEnv,
     "TerminateComputeNode": doTerminateComputeNode,
-    "DeleteJob": doDeleteJob,
+    "DescribeJobs": doDescribeJobs,
     "DescribeAvailableCvmInstanceTypes": doDescribeAvailableCvmInstanceTypes,
     "AttachInstances": doAttachInstances,
     "CreateComputeEnv": doCreateComputeEnv,
-    "DescribeComputeEnvs": doDescribeComputeEnvs,
+    "DeleteComputeEnv": doDeleteComputeEnv,
     "DetachInstances": doDetachInstances,
     "DescribeTaskLogs": doDescribeTaskLogs,
     "TerminateJob": doTerminateJob,
     "DescribeTask": doDescribeTask,
-    "DescribeComputeEnv": doDescribeComputeEnv,
+    "DescribeCvmZoneInstanceConfigInfos": doDescribeCvmZoneInstanceConfigInfos,
     "DescribeJob": doDescribeJob,
-    "DescribeComputeEnvActivities": doDescribeComputeEnvActivities,
+    "SubmitJob": doSubmitJob,
     "TerminateComputeNodes": doTerminateComputeNodes,
     "DescribeTaskTemplates": doDescribeTaskTemplates,
     "DescribeInstanceCategories": doDescribeInstanceCategories,
     "DeleteTaskTemplates": doDeleteTaskTemplates,
     "TerminateTaskInstance": doTerminateTaskInstance,
     "ModifyComputeEnv": doModifyComputeEnv,
-    "CreateCpmComputeEnv": doCreateCpmComputeEnv,
+    "DescribeJobSubmitInfo": doDescribeJobSubmitInfo,
     "DescribeComputeEnvCreateInfo": doDescribeComputeEnvCreateInfo,
-    "SubmitJob": doSubmitJob,
+    "DescribeComputeEnvActivities": doDescribeComputeEnvActivities,
     "DescribeComputeEnvCreateInfos": doDescribeComputeEnvCreateInfos,
-    "DescribeJobs": doDescribeJobs,
+    "DeleteJob": doDeleteJob,
     "DescribeCpmOsInfo": doDescribeCpmOsInfo,
-    "DeleteComputeEnv": doDeleteComputeEnv,
+    "DescribeComputeEnvs": doDescribeComputeEnvs,
     "ModifyTaskTemplate": doModifyTaskTemplate,
     "RetryJobs": doRetryJobs,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20170312",
+    v20170312.version,
 
 ]
+AVAILABLE_VERSIONS = {
+     'v' + v20170312.version.replace('-', ''): {"help": v20170312_help.INFO,"desc": v20170312_help.DESC},
+
+}
 
 
-def action_caller():
-    return ACTION_MAP
+def batch_action(argv, arglist):
+    if "help" in argv:
+        versions = sorted(AVAILABLE_VERSIONS.keys())
+        opt_v = "--" + OptionsDefine.Version
+        version = versions[-1]
+        if opt_v in argv:
+            version = 'v' + argv[opt_v].replace('-', '')
+        if version not in versions:
+            print("available versions: %s" % " ".join(AVAILABLE_VERSION_LIST))
+            return
+        action_str = ""
+        docs = AVAILABLE_VERSIONS[version]["help"]
+        desc = AVAILABLE_VERSIONS[version]["desc"]
+        for action, info in docs.items():
+            action_str += "        %s\n" % action
+            action_str += Utils.split_str("        ", info["desc"], 120)
+        helpstr = HelpTemplate.SERVICE % {"name": "batch", "desc": desc, "actions": action_str}
+        print(helpstr)
+    else:
+        print(ErrorMsg.FEW_ARG)
 
 
-def parse_global_arg(parsed_globals):
-    g_param = parsed_globals
+def version_merge():
+    help_merge = {}
+    for v in AVAILABLE_VERSIONS:
+        for action in AVAILABLE_VERSIONS[v]["help"]:
+            if action not in help_merge:
+                help_merge[action] = {}
+            help_merge[action]["cb"] = ACTION_MAP[action]
+            help_merge[action]["params"] = []
+            for param in AVAILABLE_VERSIONS[v]["help"][action]["params"]:
+                if param["name"] not in help_merge[action]["params"]:
+                    help_merge[action]["params"].append(param["name"])
+    return help_merge
 
-    is_exist_profile = True
-    if not parsed_globals["profile"]:
-        is_exist_profile = False
-        g_param["profile"] = "default"
 
-    configure_path = os.path.join(os.path.expanduser("~"), ".tccli")
-    is_conf_exist, conf_path = Utils.file_existed(configure_path, g_param["profile"] + ".configure")
-    is_cred_exist, cred_path = Utils.file_existed(configure_path, g_param["profile"] + ".credential")
+def register_arg(command):
+    cmd = NiceCommand("batch", batch_action)
+    command.reg_cmd(cmd)
+    cmd.reg_opt("help", "bool")
+    cmd.reg_opt(OptionsDefine.Version, "string")
+    help_merge = version_merge()
 
-    conf = {}
+    for actionName, action in help_merge.items():
+        c = NiceCommand(actionName, action["cb"])
+        cmd.reg_cmd(c)
+        c.reg_opt("help", "bool")
+        for param in action["params"]:
+            c.reg_opt("--" + param, "string")
+
+        for opt in OptionsDefine.ACTION_GLOBAL_OPT:
+            stropt = "--" + opt
+            c.reg_opt(stropt, "string")
+
+
+def parse_global_arg(argv):
+    params = {}
+    for opt in OptionsDefine.ACTION_GLOBAL_OPT:
+        stropt = "--" + opt
+        if stropt in argv:
+            params[opt] = argv[stropt]
+        else:
+            params[opt] = None
+    if params[OptionsDefine.Version]:
+        params[OptionsDefine.Version] = "v" + params[OptionsDefine.Version].replace('-', '')
+
+    config_handle = Configure()
+    profile = config_handle.profile
+    if ("--" + OptionsDefine.Profile) in argv:
+        profile = argv[("--" + OptionsDefine.Profile)]
+
+    is_conexist, conf_path = config_handle._profile_existed(profile + "." + config_handle.configure)
+    is_creexist, cred_path = config_handle._profile_existed(profile + "." + config_handle.credential)
+    config = {}
     cred = {}
-
-    if is_conf_exist:
-        conf = Utils.load_json_msg(conf_path)
-    if is_cred_exist:
-        cred = Utils.load_json_msg(cred_path)
-
-    if not (isinstance(conf, dict) and isinstance(cred, dict)):
-        raise ConfigurationError(
-            "file: %s or %s is not json format"
-            % (g_param["profile"] + ".configure", g_param["profile"] + ".credential"))
-
-    if os.environ.get(OptionsDefine.ENV_SECRET_ID) and not is_exist_profile:
+    if is_conexist:
+        config = config_handle._load_json_msg(conf_path)
+    if is_creexist:
+        cred = config_handle._load_json_msg(cred_path)
+    if os.environ.get(OptionsDefine.ENV_SECRET_ID):
         cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
-    if os.environ.get(OptionsDefine.ENV_SECRET_KEY) and not is_exist_profile:
+    if os.environ.get(OptionsDefine.ENV_SECRET_KEY):
         cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
-    if os.environ.get(OptionsDefine.ENV_REGION) and not is_exist_profile:
-        conf[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
+    if os.environ.get(OptionsDefine.ENV_REGION):
+        config[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
 
-    for param in g_param.keys():
-        if g_param[param] is None:
+    for param in params.keys():
+        if param == OptionsDefine.Version:
+            continue
+        if params[param] is None:
             if param in [OptionsDefine.SecretKey, OptionsDefine.SecretId]:
                 if param in cred:
-                    g_param[param] = cred[param]
+                    params[param] = cred[param]
                 else:
-                    raise ConfigurationError("%s is invalid" % param)
-            elif param in [OptionsDefine.Region, OptionsDefine.Output]:
-                if param in conf:
-                    g_param[param] = conf[param]
-                else:
-                    raise ConfigurationError("%s is invalid" % param)
-
+                    raise Exception("%s is invalid" % param)
+            else:
+                if param in config:
+                    params[param] = config[param]
+                elif param == OptionsDefine.Region:
+                    raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
-        if g_param[OptionsDefine.ServiceVersion]:
-            g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
-        else:
-            version = conf["batch"][OptionsDefine.Version]
-            g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
+        if params[OptionsDefine.Version] is None:
+            version = config["batch"][OptionsDefine.Version]
+            params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
-        if g_param[OptionsDefine.Endpoint] is None:
-            g_param[OptionsDefine.Endpoint] = conf["batch"][OptionsDefine.Endpoint]
+        if params[OptionsDefine.Endpoint] is None:
+            params[OptionsDefine.Endpoint] = config["batch"][OptionsDefine.Endpoint]
     except Exception as err:
-        raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
-
-    if g_param[OptionsDefine.Version] not in AVAILABLE_VERSION_LIST:
+        raise Exception("config file:%s error, %s" % (conf_path, str(err)))
+    versions = sorted(AVAILABLE_VERSIONS.keys())
+    if params[OptionsDefine.Version] not in versions:
         raise Exception("available versions: %s" % " ".join(AVAILABLE_VERSION_LIST))
+    return params
 
-    return g_param
 
+def show_help(action, version):
+    docs = AVAILABLE_VERSIONS[version]["help"][action]
+    desc = AVAILABLE_VERSIONS[version]["desc"]
+    docstr = ""
+    for param in docs["params"]:
+        docstr += "        %s\n" % ("--" + param["name"])
+        docstr += Utils.split_str("        ", param["desc"], 120)
+
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "batch", "desc": desc, "params": docstr}
+    print(helpmsg)
+
+
+def get_actions_info():
+    config = Configure()
+    new_version = max(AVAILABLE_VERSIONS.keys())
+    version = new_version
+    try:
+        profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
+        version = profile["batch"]["version"]
+        version = "v" + version.replace('-', '')
+    except Exception:
+        pass
+    if version not in AVAILABLE_VERSIONS.keys():
+        version = new_version
+    return AVAILABLE_VERSIONS[version]["help"]

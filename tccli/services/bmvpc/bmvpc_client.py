@@ -3,1538 +3,2166 @@ import os
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
+from tccli.nice_command import NiceCommand
+import tccli.error_msg as ErrorMsg
+import tccli.help_template as HelpTemplate
 from tccli import __version__
 from tccli.utils import Utils
-from tccli.exceptions import ConfigurationError
+from tccli.configure import Configure
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
 from tencentcloud.bmvpc.v20180625 import bmvpc_client as bmvpc_client_v20180625
 from tencentcloud.bmvpc.v20180625 import models as models_v20180625
+from tccli.services.bmvpc import v20180625
+from tccli.services.bmvpc.v20180625 import help as v20180625_help
 
 
-def doDownloadCustomerGatewayConfiguration(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDownloadCustomerGatewayConfiguration(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DownloadCustomerGatewayConfiguration", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpnConnectionId": argv.get("--VpnConnectionId"),
+        "VendorName": argv.get("--VendorName"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DownloadCustomerGatewayConfigurationRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.DownloadCustomerGatewayConfiguration(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCustomerGateways(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDescribeCustomerGateways(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeCustomerGateways", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "CustomerGatewayIds": Utils.try_to_json(argv, "--CustomerGatewayIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeCustomerGatewaysRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.DescribeCustomerGateways(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateVpcPeerConnection(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doCreateVpcPeerConnection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateVpcPeerConnection", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "PeerVpcId": argv.get("--PeerVpcId"),
+        "PeerRegion": argv.get("--PeerRegion"),
+        "VpcPeerConnectionName": argv.get("--VpcPeerConnectionName"),
+        "PeerUin": argv.get("--PeerUin"),
+        "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateVpcPeerConnectionRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.CreateVpcPeerConnection(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAsyncRegisterIps(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doAsyncRegisterIps(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AsyncRegisterIps", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+        "Ips": Utils.try_to_json(argv, "--Ips"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.AsyncRegisterIpsRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.AsyncRegisterIps(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRouteTables(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDescribeRouteTables(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRouteTables", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "RouteTableIds": Utils.try_to_json(argv, "--RouteTableIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeRouteTablesRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.DescribeRouteTables(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteHostedInterfaces(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doUnbindEipsFromNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnbindEipsFromNatGateway", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+        "AssignedEips": Utils.try_to_json(argv, "--AssignedEips"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteHostedInterfacesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteHostedInterfaces(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUnbindEipsFromNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.UnbindEipsFromNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.UnbindEipsFromNatGateway(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBindEipsToNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doBindEipsToNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("BindEipsToNatGateway", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+        "AssignedEips": Utils.try_to_json(argv, "--AssignedEips"),
+        "AutoAllocEipNum": Utils.try_to_json(argv, "--AutoAllocEipNum"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.BindEipsToNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.BindEipsToNatGateway(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyVpcPeerConnection(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doModifyVpcPeerConnection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyVpcPeerConnection", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpcPeerConnectionId": argv.get("--VpcPeerConnectionId"),
+        "Bandwidth": Utils.try_to_json(argv, "--Bandwidth"),
+        "VpcPeerConnectionName": argv.get("--VpcPeerConnectionName"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ModifyVpcPeerConnectionRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.ModifyVpcPeerConnection(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateVpc(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doCreateVpc(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateVpc", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpcName": argv.get("--VpcName"),
+        "CidrBlock": argv.get("--CidrBlock"),
+        "Zone": argv.get("--Zone"),
+        "SubnetSet": Utils.try_to_json(argv, "--SubnetSet"),
+        "EnableMonitoring": Utils.try_to_json(argv, "--EnableMonitoring"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateVpcRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.CreateVpc(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doCreateNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateNatGateway", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "ForwardMode": argv.get("--ForwardMode"),
+        "VpcId": argv.get("--VpcId"),
+        "NatName": argv.get("--NatName"),
+        "MaxConcurrent": Utils.try_to_json(argv, "--MaxConcurrent"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "IpInfoSet": Utils.try_to_json(argv, "--IpInfoSet"),
+        "AssignedEips": Utils.try_to_json(argv, "--AssignedEips"),
+        "AutoAllocEipNum": Utils.try_to_json(argv, "--AutoAllocEipNum"),
+        "Exclusive": Utils.try_to_json(argv, "--Exclusive"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.CreateNatGateway(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteVpnGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDescribeSubnetAvailableIps(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSubnetAvailableIps", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "SubnetId": argv.get("--SubnetId"),
+        "Cidr": argv.get("--Cidr"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVpnGatewayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteVpnGateway(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeRoutePolicies(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRoutePoliciesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeRoutePolicies(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteVpc(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVpcRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteVpc(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteHostedInterface(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteHostedInterfaceRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteHostedInterface(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeregisterIps(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeregisterIpsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeregisterIps(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyRoutePolicy(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyRoutePolicyRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyRoutePolicy(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateInterfaces(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateInterfacesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateInterfaces(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyCustomerGatewayAttribute(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCustomerGatewayAttributeRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyCustomerGatewayAttribute(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteRoutePolicy(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteRoutePolicyRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteRoutePolicy(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateVirtualSubnetWithVlan(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateVirtualSubnetWithVlanRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateVirtualSubnetWithVlan(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyVpnConnectionAttribute(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyVpnConnectionAttributeRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyVpnConnectionAttribute(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteVpnConnection(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVpnConnectionRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteVpnConnection(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeSubnetAvailableIps(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeSubnetAvailableIpsRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.DescribeSubnetAvailableIps(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVpcs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDescribeRoutePolicies(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeRoutePolicies", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "RouteTableId": argv.get("--RouteTableId"),
+        "RoutePolicyIds": Utils.try_to_json(argv, "--RoutePolicyIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpcsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeVpcs(model)
+    model = models.DescribeRoutePoliciesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeRoutePolicies(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnbindIpsFromNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDeleteVpc(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteVpc", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpcId": argv.get("--VpcId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnbindIpsFromNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.UnbindIpsFromNatGateway(model)
+    model = models.DeleteVpcRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteVpc(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyVpnGatewayAttribute(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDeleteHostedInterface(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteHostedInterface", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyVpnGatewayAttributeRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyVpnGatewayAttribute(model)
+    model = models.DeleteHostedInterfaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteHostedInterface(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteSubnet(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDeregisterIps(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeregisterIps", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "IpSet": Utils.try_to_json(argv, "--IpSet"),
+        "SubnetId": argv.get("--SubnetId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteSubnetRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteSubnet(model)
+    model = models.DeregisterIpsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeregisterIps(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeNatSubnets(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doModifyRoutePolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyRoutePolicy", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "RouteTableId": argv.get("--RouteTableId"),
+        "RoutePolicy": Utils.try_to_json(argv, "--RoutePolicy"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeNatSubnetsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeNatSubnets(model)
+    model = models.ModifyRoutePolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyRoutePolicy(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRejectVpcPeerConnection(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doCreateInterfaces(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateInterfaces", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RejectVpcPeerConnectionRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.RejectVpcPeerConnection(model)
+    model = models.CreateInterfacesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateInterfaces(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSubnets(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doModifyCustomerGatewayAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyCustomerGatewayAttribute", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "CustomerGatewayId": argv.get("--CustomerGatewayId"),
+        "CustomerGatewayName": argv.get("--CustomerGatewayName"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSubnetsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSubnets(model)
+    model = models.ModifyCustomerGatewayAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyCustomerGatewayAttribute(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCustomerGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDeleteRoutePolicy(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteRoutePolicy", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "RouteTableId": argv.get("--RouteTableId"),
+        "RoutePolicyId": argv.get("--RoutePolicyId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCustomerGatewayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateCustomerGateway(model)
+    model = models.DeleteRoutePolicyRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteRoutePolicy(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doModifyVpnConnectionAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyVpnConnectionAttribute", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpnConnectionId": argv.get("--VpnConnectionId"),
+        "VpcId": argv.get("--VpcId"),
+        "VpnConnectionName": argv.get("--VpnConnectionName"),
+        "PreShareKey": argv.get("--PreShareKey"),
+        "SecurityPolicyDatabases": Utils.try_to_json(argv, "--SecurityPolicyDatabases"),
+        "IKEOptionsSpecification": Utils.try_to_json(argv, "--IKEOptionsSpecification"),
+        "IPSECOptionsSpecification": Utils.try_to_json(argv, "--IPSECOptionsSpecification"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteNatGateway(model)
+    model = models.ModifyVpnConnectionAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyVpnConnectionAttribute(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySubnetDHCPRelay(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDeleteVpnConnection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteVpnConnection", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpnConnectionId": argv.get("--VpnConnectionId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySubnetDHCPRelayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifySubnetDHCPRelay(model)
+    model = models.DeleteVpnConnectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteVpnConnection(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVpcView(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDeleteVpnGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteVpnGateway", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpnGatewayId": argv.get("--VpnGatewayId"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpcViewRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeVpcView(model)
+    model = models.DeleteVpnGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteVpnGateway(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteVirtualIp(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doBindIpsToNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("BindIpsToNatGateway", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+        "IpInfoSet": Utils.try_to_json(argv, "--IpInfoSet"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVirtualIpRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteVirtualIp(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeSubnetByDevice(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSubnetByDeviceRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSubnetByDevice(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeTaskStatus(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTaskStatusRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTaskStatus(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doAcceptVpcPeerConnection(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AcceptVpcPeerConnectionRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.AcceptVpcPeerConnection(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpgradeNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.UpgradeNatGateway(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteCustomerGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteCustomerGatewayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteCustomerGateway(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateRoutePolicies(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateRoutePoliciesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateRoutePolicies(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyRouteTable(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyRouteTableRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyRouteTable(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUnbindSubnetsFromNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnbindSubnetsFromNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.UnbindSubnetsFromNatGateway(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doResetVpnConnection(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetVpnConnectionRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ResetVpnConnection(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeVpnGateways(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpnGatewaysRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeVpnGateways(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifySubnetAttribute(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySubnetAttributeRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifySubnetAttribute(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateDockerSubnetWithVlan(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDockerSubnetWithVlanRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateDockerSubnetWithVlan(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeNatGateways(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeNatGatewaysRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeNatGateways(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doBindSubnetsToNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BindSubnetsToNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.BindSubnetsToNatGateway(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeVpcQuota(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpcQuotaRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeVpcQuota(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateHostedInterface(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateHostedInterfaceRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CreateHostedInterface(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeSubnetByHostedDevice(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSubnetByHostedDeviceRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSubnetByHostedDevice(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeVpcPeerConnections(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpcPeerConnectionsRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeVpcPeerConnections(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeVpcResource(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpcResourceRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeVpcResource(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteVpcPeerConnection(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVpcPeerConnectionRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteVpcPeerConnection(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteInterfaces(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteInterfacesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DeleteInterfaces(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyVpcAttribute(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyVpcAttributeRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.ModifyVpcAttribute(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doBindIpsToNatGateway(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.BindIpsToNatGatewayRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.BindIpsToNatGateway(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVpnConnections(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doModifyVpnGatewayAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyVpnGatewayAttribute", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "VpnGatewayId": argv.get("--VpnGatewayId"),
+        "VpnGatewayName": argv.get("--VpnGatewayName"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyVpnGatewayAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyVpnGatewayAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnbindIpsFromNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnbindIpsFromNatGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+        "IpInfoSet": Utils.try_to_json(argv, "--IpInfoSet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnbindIpsFromNatGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnbindIpsFromNatGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteCustomerGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteCustomerGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CustomerGatewayId": argv.get("--CustomerGatewayId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteCustomerGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteCustomerGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteSubnet(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteSubnet", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteSubnetRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteSubnet(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifySubnetAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySubnetAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+        "SubnetName": argv.get("--SubnetName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySubnetAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySubnetAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeNatSubnets(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeNatSubnets", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeNatSubnetsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeNatSubnets(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRejectVpcPeerConnection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("RejectVpcPeerConnection", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcPeerConnectionId": argv.get("--VpcPeerConnectionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RejectVpcPeerConnectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.RejectVpcPeerConnection(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSubnets(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSubnets", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSubnetsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSubnets(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSubnetByDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSubnetByDevice", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Types": Utils.try_to_json(argv, "--Types"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSubnetByDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSubnetByDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyRouteTable(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyRouteTable", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RouteTableId": argv.get("--RouteTableId"),
+        "RouteTableName": argv.get("--RouteTableName"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyRouteTableRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyRouteTable(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifySubnetDHCPRelay(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifySubnetDHCPRelay", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+        "EnableDHCP": Utils.try_to_json(argv, "--EnableDHCP"),
+        "ServerIps": Utils.try_to_json(argv, "--ServerIps"),
+        "ReservedIpCount": Utils.try_to_json(argv, "--ReservedIpCount"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifySubnetDHCPRelayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifySubnetDHCPRelay(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVpcView(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpcView", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVpcViewRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVpcView(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteVirtualIp(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteVirtualIp", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "Ips": Utils.try_to_json(argv, "--Ips"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteVirtualIpRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteVirtualIp(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCustomerGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateCustomerGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "CustomerGatewayName": argv.get("--CustomerGatewayName"),
+        "IpAddress": argv.get("--IpAddress"),
+        "Zone": argv.get("--Zone"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCustomerGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateCustomerGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskStatus(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeTaskStatus", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TaskId": Utils.try_to_json(argv, "--TaskId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskStatusRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeTaskStatus(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateDockerSubnetWithVlan(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateDockerSubnetWithVlan", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetSet": Utils.try_to_json(argv, "--SubnetSet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDockerSubnetWithVlanRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateDockerSubnetWithVlan(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpgradeNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UpgradeNatGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+        "MaxConcurrent": Utils.try_to_json(argv, "--MaxConcurrent"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeNatGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UpgradeNatGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateRoutePolicies(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateRoutePolicies", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "RouteTableId": argv.get("--RouteTableId"),
+        "RoutePolicySet": Utils.try_to_json(argv, "--RoutePolicySet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRoutePoliciesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateRoutePolicies(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVpcResource(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpcResource", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcIds": Utils.try_to_json(argv, "--VpcIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVpcResourceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVpcResource(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnbindSubnetsFromNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("UnbindSubnetsFromNatGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnbindSubnetsFromNatGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.UnbindSubnetsFromNatGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetVpnConnection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ResetVpnConnection", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "VpnConnectionId": argv.get("--VpnConnectionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetVpnConnectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ResetVpnConnection(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVpnGateways(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpnGateways", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpnGatewayIds": Utils.try_to_json(argv, "--VpnGatewayIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVpnGatewaysRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVpnGateways(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteHostedInterfaces(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteHostedInterfaces", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteHostedInterfacesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteHostedInterfaces(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAcceptVpcPeerConnection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("AcceptVpcPeerConnection", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcPeerConnectionId": argv.get("--VpcPeerConnectionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AcceptVpcPeerConnectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.AcceptVpcPeerConnection(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVpcQuota(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpcQuota", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "TypeIds": Utils.try_to_json(argv, "--TypeIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVpcQuotaRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVpcQuota(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeNatGateways(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeNatGateways", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NatId": argv.get("--NatId"),
+        "NatName": argv.get("--NatName"),
+        "SearchKey": argv.get("--SearchKey"),
+        "VpcId": argv.get("--VpcId"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Zone": argv.get("--Zone"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeNatGatewaysRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeNatGateways(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doBindSubnetsToNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("BindSubnetsToNatGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BindSubnetsToNatGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.BindSubnetsToNatGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteInterfaces(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteInterfaces", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "SubnetIds": Utils.try_to_json(argv, "--SubnetIds"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteInterfacesRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteInterfaces(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateHostedInterface(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateHostedInterface", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "InstanceIds": Utils.try_to_json(argv, "--InstanceIds"),
+        "VpcId": argv.get("--VpcId"),
+        "SubnetId": argv.get("--SubnetId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateHostedInterfaceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateHostedInterface(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVpnConnections(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpnConnections", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpnConnectionIds": Utils.try_to_json(argv, "--VpnConnectionIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "VpnGatewayId": argv.get("--VpnGatewayId"),
+        "VpnConnectionName": argv.get("--VpnConnectionName"),
+        "OrderField": argv.get("--OrderField"),
+        "OrderDirection": argv.get("--OrderDirection"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeVpnConnectionsRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.DescribeVpnConnections(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateSubnet(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
+def doDescribeSubnetByHostedDevice(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeSubnetByHostedDevice", g_param[OptionsDefine.Version])
+        return
 
+    param = {
+        "InstanceId": argv.get("--InstanceId"),
+        "Types": Utils.try_to_json(argv, "--Types"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSubnetByHostedDeviceRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeSubnetByHostedDevice(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVpcPeerConnections(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpcPeerConnections", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcPeerConnectionIds": Utils.try_to_json(argv, "--VpcPeerConnectionIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "VpcId": argv.get("--VpcId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVpcPeerConnectionsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVpcPeerConnections(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeVpcs(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DescribeVpcs", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcIds": Utils.try_to_json(argv, "--VpcIds"),
+        "Filters": Utils.try_to_json(argv, "--Filters"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVpcsRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DescribeVpcs(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteVpcPeerConnection(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteVpcPeerConnection", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcPeerConnectionId": argv.get("--VpcPeerConnectionId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteVpcPeerConnectionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteVpcPeerConnection(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyVpcAttribute(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ModifyVpcAttribute", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "VpcName": argv.get("--VpcName"),
+        "EnableMonitor": Utils.try_to_json(argv, "--EnableMonitor"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyVpcAttributeRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ModifyVpcAttribute(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteNatGateway(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("DeleteNatGateway", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "NatId": argv.get("--NatId"),
+        "VpcId": argv.get("--VpcId"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteNatGatewayRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.DeleteNatGateway(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateVirtualSubnetWithVlan(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateVirtualSubnetWithVlan", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetSet": Utils.try_to_json(argv, "--SubnetSet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateVirtualSubnetWithVlanRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.CreateVirtualSubnetWithVlan(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateSubnet(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("CreateSubnet", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "VpcId": argv.get("--VpcId"),
+        "SubnetSet": Utils.try_to_json(argv, "--SubnetSet"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.BmvpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateSubnetRequest()
-    model.from_json_string(json.dumps(args))
+    model.from_json_string(json.dumps(param))
     rsp = client.CreateSubnet(model)
     result = rsp.to_json_string()
+    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
@@ -1554,13 +2182,12 @@ ACTION_MAP = {
     "CreateVpcPeerConnection": doCreateVpcPeerConnection,
     "AsyncRegisterIps": doAsyncRegisterIps,
     "DescribeRouteTables": doDescribeRouteTables,
-    "DeleteHostedInterfaces": doDeleteHostedInterfaces,
     "UnbindEipsFromNatGateway": doUnbindEipsFromNatGateway,
     "BindEipsToNatGateway": doBindEipsToNatGateway,
     "ModifyVpcPeerConnection": doModifyVpcPeerConnection,
     "CreateVpc": doCreateVpc,
     "CreateNatGateway": doCreateNatGateway,
-    "DeleteVpnGateway": doDeleteVpnGateway,
+    "DescribeSubnetAvailableIps": doDescribeSubnetAvailableIps,
     "DescribeRoutePolicies": doDescribeRoutePolicies,
     "DeleteVpc": doDeleteVpc,
     "DeleteHostedInterface": doDeleteHostedInterface,
@@ -1569,119 +2196,198 @@ ACTION_MAP = {
     "CreateInterfaces": doCreateInterfaces,
     "ModifyCustomerGatewayAttribute": doModifyCustomerGatewayAttribute,
     "DeleteRoutePolicy": doDeleteRoutePolicy,
-    "CreateVirtualSubnetWithVlan": doCreateVirtualSubnetWithVlan,
     "ModifyVpnConnectionAttribute": doModifyVpnConnectionAttribute,
     "DeleteVpnConnection": doDeleteVpnConnection,
-    "DescribeSubnetAvailableIps": doDescribeSubnetAvailableIps,
-    "DescribeVpcs": doDescribeVpcs,
-    "UnbindIpsFromNatGateway": doUnbindIpsFromNatGateway,
+    "DeleteVpnGateway": doDeleteVpnGateway,
+    "BindIpsToNatGateway": doBindIpsToNatGateway,
     "ModifyVpnGatewayAttribute": doModifyVpnGatewayAttribute,
+    "UnbindIpsFromNatGateway": doUnbindIpsFromNatGateway,
+    "DeleteCustomerGateway": doDeleteCustomerGateway,
     "DeleteSubnet": doDeleteSubnet,
+    "ModifySubnetAttribute": doModifySubnetAttribute,
     "DescribeNatSubnets": doDescribeNatSubnets,
     "RejectVpcPeerConnection": doRejectVpcPeerConnection,
     "DescribeSubnets": doDescribeSubnets,
-    "CreateCustomerGateway": doCreateCustomerGateway,
-    "DeleteNatGateway": doDeleteNatGateway,
+    "DescribeSubnetByDevice": doDescribeSubnetByDevice,
+    "ModifyRouteTable": doModifyRouteTable,
     "ModifySubnetDHCPRelay": doModifySubnetDHCPRelay,
     "DescribeVpcView": doDescribeVpcView,
     "DeleteVirtualIp": doDeleteVirtualIp,
-    "DescribeSubnetByDevice": doDescribeSubnetByDevice,
+    "CreateCustomerGateway": doCreateCustomerGateway,
     "DescribeTaskStatus": doDescribeTaskStatus,
-    "AcceptVpcPeerConnection": doAcceptVpcPeerConnection,
+    "CreateDockerSubnetWithVlan": doCreateDockerSubnetWithVlan,
     "UpgradeNatGateway": doUpgradeNatGateway,
-    "DeleteCustomerGateway": doDeleteCustomerGateway,
     "CreateRoutePolicies": doCreateRoutePolicies,
-    "ModifyRouteTable": doModifyRouteTable,
+    "DescribeVpcResource": doDescribeVpcResource,
     "UnbindSubnetsFromNatGateway": doUnbindSubnetsFromNatGateway,
     "ResetVpnConnection": doResetVpnConnection,
     "DescribeVpnGateways": doDescribeVpnGateways,
-    "ModifySubnetAttribute": doModifySubnetAttribute,
-    "CreateDockerSubnetWithVlan": doCreateDockerSubnetWithVlan,
+    "DeleteHostedInterfaces": doDeleteHostedInterfaces,
+    "AcceptVpcPeerConnection": doAcceptVpcPeerConnection,
+    "DescribeVpcQuota": doDescribeVpcQuota,
     "DescribeNatGateways": doDescribeNatGateways,
     "BindSubnetsToNatGateway": doBindSubnetsToNatGateway,
-    "DescribeVpcQuota": doDescribeVpcQuota,
+    "DeleteInterfaces": doDeleteInterfaces,
     "CreateHostedInterface": doCreateHostedInterface,
+    "DescribeVpnConnections": doDescribeVpnConnections,
     "DescribeSubnetByHostedDevice": doDescribeSubnetByHostedDevice,
     "DescribeVpcPeerConnections": doDescribeVpcPeerConnections,
-    "DescribeVpcResource": doDescribeVpcResource,
+    "DescribeVpcs": doDescribeVpcs,
     "DeleteVpcPeerConnection": doDeleteVpcPeerConnection,
-    "DeleteInterfaces": doDeleteInterfaces,
     "ModifyVpcAttribute": doModifyVpcAttribute,
-    "BindIpsToNatGateway": doBindIpsToNatGateway,
-    "DescribeVpnConnections": doDescribeVpnConnections,
+    "DeleteNatGateway": doDeleteNatGateway,
+    "CreateVirtualSubnetWithVlan": doCreateVirtualSubnetWithVlan,
     "CreateSubnet": doCreateSubnet,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20180625",
+    v20180625.version,
 
 ]
+AVAILABLE_VERSIONS = {
+     'v' + v20180625.version.replace('-', ''): {"help": v20180625_help.INFO,"desc": v20180625_help.DESC},
+
+}
 
 
-def action_caller():
-    return ACTION_MAP
+def bmvpc_action(argv, arglist):
+    if "help" in argv:
+        versions = sorted(AVAILABLE_VERSIONS.keys())
+        opt_v = "--" + OptionsDefine.Version
+        version = versions[-1]
+        if opt_v in argv:
+            version = 'v' + argv[opt_v].replace('-', '')
+        if version not in versions:
+            print("available versions: %s" % " ".join(AVAILABLE_VERSION_LIST))
+            return
+        action_str = ""
+        docs = AVAILABLE_VERSIONS[version]["help"]
+        desc = AVAILABLE_VERSIONS[version]["desc"]
+        for action, info in docs.items():
+            action_str += "        %s\n" % action
+            action_str += Utils.split_str("        ", info["desc"], 120)
+        helpstr = HelpTemplate.SERVICE % {"name": "bmvpc", "desc": desc, "actions": action_str}
+        print(helpstr)
+    else:
+        print(ErrorMsg.FEW_ARG)
 
 
-def parse_global_arg(parsed_globals):
-    g_param = parsed_globals
+def version_merge():
+    help_merge = {}
+    for v in AVAILABLE_VERSIONS:
+        for action in AVAILABLE_VERSIONS[v]["help"]:
+            if action not in help_merge:
+                help_merge[action] = {}
+            help_merge[action]["cb"] = ACTION_MAP[action]
+            help_merge[action]["params"] = []
+            for param in AVAILABLE_VERSIONS[v]["help"][action]["params"]:
+                if param["name"] not in help_merge[action]["params"]:
+                    help_merge[action]["params"].append(param["name"])
+    return help_merge
 
-    is_exist_profile = True
-    if not parsed_globals["profile"]:
-        is_exist_profile = False
-        g_param["profile"] = "default"
 
-    configure_path = os.path.join(os.path.expanduser("~"), ".tccli")
-    is_conf_exist, conf_path = Utils.file_existed(configure_path, g_param["profile"] + ".configure")
-    is_cred_exist, cred_path = Utils.file_existed(configure_path, g_param["profile"] + ".credential")
+def register_arg(command):
+    cmd = NiceCommand("bmvpc", bmvpc_action)
+    command.reg_cmd(cmd)
+    cmd.reg_opt("help", "bool")
+    cmd.reg_opt(OptionsDefine.Version, "string")
+    help_merge = version_merge()
 
-    conf = {}
+    for actionName, action in help_merge.items():
+        c = NiceCommand(actionName, action["cb"])
+        cmd.reg_cmd(c)
+        c.reg_opt("help", "bool")
+        for param in action["params"]:
+            c.reg_opt("--" + param, "string")
+
+        for opt in OptionsDefine.ACTION_GLOBAL_OPT:
+            stropt = "--" + opt
+            c.reg_opt(stropt, "string")
+
+
+def parse_global_arg(argv):
+    params = {}
+    for opt in OptionsDefine.ACTION_GLOBAL_OPT:
+        stropt = "--" + opt
+        if stropt in argv:
+            params[opt] = argv[stropt]
+        else:
+            params[opt] = None
+    if params[OptionsDefine.Version]:
+        params[OptionsDefine.Version] = "v" + params[OptionsDefine.Version].replace('-', '')
+
+    config_handle = Configure()
+    profile = config_handle.profile
+    if ("--" + OptionsDefine.Profile) in argv:
+        profile = argv[("--" + OptionsDefine.Profile)]
+
+    is_conexist, conf_path = config_handle._profile_existed(profile + "." + config_handle.configure)
+    is_creexist, cred_path = config_handle._profile_existed(profile + "." + config_handle.credential)
+    config = {}
     cred = {}
-
-    if is_conf_exist:
-        conf = Utils.load_json_msg(conf_path)
-    if is_cred_exist:
-        cred = Utils.load_json_msg(cred_path)
-
-    if not (isinstance(conf, dict) and isinstance(cred, dict)):
-        raise ConfigurationError(
-            "file: %s or %s is not json format"
-            % (g_param["profile"] + ".configure", g_param["profile"] + ".credential"))
-
-    if os.environ.get(OptionsDefine.ENV_SECRET_ID) and not is_exist_profile:
+    if is_conexist:
+        config = config_handle._load_json_msg(conf_path)
+    if is_creexist:
+        cred = config_handle._load_json_msg(cred_path)
+    if os.environ.get(OptionsDefine.ENV_SECRET_ID):
         cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
-    if os.environ.get(OptionsDefine.ENV_SECRET_KEY) and not is_exist_profile:
+    if os.environ.get(OptionsDefine.ENV_SECRET_KEY):
         cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
-    if os.environ.get(OptionsDefine.ENV_REGION) and not is_exist_profile:
-        conf[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
+    if os.environ.get(OptionsDefine.ENV_REGION):
+        config[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
 
-    for param in g_param.keys():
-        if g_param[param] is None:
+    for param in params.keys():
+        if param == OptionsDefine.Version:
+            continue
+        if params[param] is None:
             if param in [OptionsDefine.SecretKey, OptionsDefine.SecretId]:
                 if param in cred:
-                    g_param[param] = cred[param]
+                    params[param] = cred[param]
                 else:
-                    raise ConfigurationError("%s is invalid" % param)
-            elif param in [OptionsDefine.Region, OptionsDefine.Output]:
-                if param in conf:
-                    g_param[param] = conf[param]
-                else:
-                    raise ConfigurationError("%s is invalid" % param)
-
+                    raise Exception("%s is invalid" % param)
+            else:
+                if param in config:
+                    params[param] = config[param]
+                elif param == OptionsDefine.Region:
+                    raise Exception("%s is invalid" % OptionsDefine.Region)
     try:
-        if g_param[OptionsDefine.ServiceVersion]:
-            g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
-        else:
-            version = conf["bmvpc"][OptionsDefine.Version]
-            g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
+        if params[OptionsDefine.Version] is None:
+            version = config["bmvpc"][OptionsDefine.Version]
+            params[OptionsDefine.Version] = "v" + version.replace('-', '')
 
-        if g_param[OptionsDefine.Endpoint] is None:
-            g_param[OptionsDefine.Endpoint] = conf["bmvpc"][OptionsDefine.Endpoint]
+        if params[OptionsDefine.Endpoint] is None:
+            params[OptionsDefine.Endpoint] = config["bmvpc"][OptionsDefine.Endpoint]
     except Exception as err:
-        raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
-
-    if g_param[OptionsDefine.Version] not in AVAILABLE_VERSION_LIST:
+        raise Exception("config file:%s error, %s" % (conf_path, str(err)))
+    versions = sorted(AVAILABLE_VERSIONS.keys())
+    if params[OptionsDefine.Version] not in versions:
         raise Exception("available versions: %s" % " ".join(AVAILABLE_VERSION_LIST))
+    return params
 
-    return g_param
 
+def show_help(action, version):
+    docs = AVAILABLE_VERSIONS[version]["help"][action]
+    desc = AVAILABLE_VERSIONS[version]["desc"]
+    docstr = ""
+    for param in docs["params"]:
+        docstr += "        %s\n" % ("--" + param["name"])
+        docstr += Utils.split_str("        ", param["desc"], 120)
+
+    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "bmvpc", "desc": desc, "params": docstr}
+    print(helpmsg)
+
+
+def get_actions_info():
+    config = Configure()
+    new_version = max(AVAILABLE_VERSIONS.keys())
+    version = new_version
+    try:
+        profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
+        version = profile["bmvpc"]["version"]
+        version = "v" + version.replace('-', '')
+    except Exception:
+        pass
+    if version not in AVAILABLE_VERSIONS.keys():
+        version = new_version
+    return AVAILABLE_VERSIONS[version]["help"]
