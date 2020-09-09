@@ -120,6 +120,12 @@
       "name": "查询集群节点信息",
       "output": "DescribeClusterInstancesResponse"
     },
+    "DescribeClusterKubeconfig": {
+      "document": "获取集群的kubeconfig文件，不同子账户获取自己的kubeconfig文件，该文件中有每个子账户自己的kube-apiserver的客户端证书，默认首次调此接口时候创建客户端证书，时效20年，未授予任何权限，如果是集群所有者或者主账户，则默认是cluster-admin权限。",
+      "input": "DescribeClusterKubeconfigRequest",
+      "name": "获取集群kubeconfig文件",
+      "output": "DescribeClusterKubeconfigResponse"
+    },
     "DescribeClusterRouteTables": {
       "document": "查询集群路由表",
       "input": "DescribeClusterRouteTablesRequest",
@@ -2026,6 +2032,39 @@
           "member": "Instance",
           "name": "InstanceSet",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterKubeconfigRequest": {
+      "document": "DescribeClusterKubeconfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterKubeconfigResponse": {
+      "document": "DescribeClusterKubeconfig返回参数结构体",
+      "members": [
+        {
+          "document": "子账户kubeconfig文件，可用于直接访问集群kube-apiserver",
+          "member": "string",
+          "name": "Kubeconfig",
+          "type": "string",
           "value_allowed_null": false
         },
         {

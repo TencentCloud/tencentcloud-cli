@@ -48,6 +48,12 @@
       "name": "查询云审计支持的cos可用区",
       "output": "ListCosEnableRegionResponse"
     },
+    "ListKeyAliasByRegion": {
+      "document": "根据地域获取KMS密钥别名",
+      "input": "ListKeyAliasByRegionRequest",
+      "name": "根据地域获取KMS密钥别名",
+      "output": "ListKeyAliasByRegionResponse"
+    },
     "LookUpEvents": {
       "document": "用于对操作日志进行检索，便于用户进行查询相关的操作信息。",
       "input": "LookUpEventsRequest",
@@ -677,6 +683,28 @@
       ],
       "type": "object"
     },
+    "KeyMetadata": {
+      "document": "CMK属性",
+      "members": [
+        {
+          "default": "",
+          "document": "作为密钥更容易辨识，更容易被人看懂的别名",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CMK的全局唯一标识",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ListAuditsRequest": {
       "document": "ListAudits请求参数结构体",
       "members": [],
@@ -756,6 +784,63 @@
           "member": "CosRegionInfo",
           "name": "EnableRegions",
           "type": "list"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListKeyAliasByRegionRequest": {
+      "document": "ListKeyAliasByRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Kms地域",
+          "is_public": true,
+          "member": "string",
+          "name": "KmsRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "含义跟 SQL 查询的 Limit 一致，表示本次获最多获取 Limit 个元素。缺省值为10，最大值为200",
+          "is_public": true,
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
+          "is_public": true,
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListKeyAliasByRegionResponse": {
+      "document": "ListKeyAliasByRegion返回参数结构体",
+      "members": [
+        {
+          "document": "密钥别名",
+          "member": "KeyMetadata",
+          "name": "KeyMetadatas",
+          "type": "list"
+        },
+        {
+          "document": "CMK的总数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int"
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

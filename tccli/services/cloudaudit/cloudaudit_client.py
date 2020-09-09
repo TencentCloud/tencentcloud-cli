@@ -3,476 +3,338 @@ import os
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
-from tccli.nice_command import NiceCommand
-import tccli.error_msg as ErrorMsg
-import tccli.help_template as HelpTemplate
 from tccli import __version__
 from tccli.utils import Utils
-from tccli.configure import Configure
+from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
 from tencentcloud.cloudaudit.v20190319 import cloudaudit_client as cloudaudit_client_v20190319
 from tencentcloud.cloudaudit.v20190319 import models as models_v20190319
-from tccli.services.cloudaudit import v20190319
-from tccli.services.cloudaudit.v20190319 import help as v20190319_help
 
 
-def doStartLogging(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("StartLogging", g_param[OptionsDefine.Version])
-        return
+def doStartLogging(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "AuditName": argv.get("--AuditName"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.StartLoggingRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.StartLogging(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetAttributeKey(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("GetAttributeKey", g_param[OptionsDefine.Version])
-        return
+def doGetAttributeKey(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "WebsiteType": argv.get("--WebsiteType"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.GetAttributeKeyRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.GetAttributeKey(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListCmqEnableRegion(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ListCmqEnableRegion", g_param[OptionsDefine.Version])
-        return
+def doListCmqEnableRegion(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "WebsiteType": argv.get("--WebsiteType"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ListCmqEnableRegionRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.ListCmqEnableRegion(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAudit(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DeleteAudit", g_param[OptionsDefine.Version])
-        return
+def doDeleteAudit(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "AuditName": argv.get("--AuditName"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DeleteAuditRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DeleteAudit(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopLogging(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("StopLogging", g_param[OptionsDefine.Version])
-        return
+def doStopLogging(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "AuditName": argv.get("--AuditName"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.StopLoggingRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.StopLogging(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquireAuditCredit(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("InquireAuditCredit", g_param[OptionsDefine.Version])
-        return
+def doInquireAuditCredit(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.InquireAuditCreditRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.InquireAuditCredit(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateAudit(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("UpdateAudit", g_param[OptionsDefine.Version])
-        return
+def doUpdateAudit(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "AuditName": argv.get("--AuditName"),
-        "CmqQueueName": argv.get("--CmqQueueName"),
-        "CmqRegion": argv.get("--CmqRegion"),
-        "CosBucketName": argv.get("--CosBucketName"),
-        "CosRegion": argv.get("--CosRegion"),
-        "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
-        "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
-        "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
-        "IsEnableKmsEncry": Utils.try_to_json(argv, "--IsEnableKmsEncry"),
-        "KeyId": argv.get("--KeyId"),
-        "KmsRegion": argv.get("--KmsRegion"),
-        "LogFilePrefix": argv.get("--LogFilePrefix"),
-        "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.UpdateAuditRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.UpdateAudit(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListKeyAliasByRegion(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ListKeyAliasByRegion", g_param[OptionsDefine.Version])
-        return
+def doListKeyAliasByRegion(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "KmsRegion": argv.get("--KmsRegion"),
-        "Limit": Utils.try_to_json(argv, "--Limit"),
-        "Offset": Utils.try_to_json(argv, "--Offset"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ListKeyAliasByRegionRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.ListKeyAliasByRegion(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAudit(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("DescribeAudit", g_param[OptionsDefine.Version])
-        return
+def doDescribeAudit(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "AuditName": argv.get("--AuditName"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.DescribeAuditRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.DescribeAudit(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAudit(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("CreateAudit", g_param[OptionsDefine.Version])
-        return
+def doCreateAudit(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "AuditName": argv.get("--AuditName"),
-        "CosBucketName": argv.get("--CosBucketName"),
-        "CosRegion": argv.get("--CosRegion"),
-        "IsCreateNewBucket": Utils.try_to_json(argv, "--IsCreateNewBucket"),
-        "IsEnableCmqNotify": Utils.try_to_json(argv, "--IsEnableCmqNotify"),
-        "ReadWriteAttribute": Utils.try_to_json(argv, "--ReadWriteAttribute"),
-        "CmqQueueName": argv.get("--CmqQueueName"),
-        "CmqRegion": argv.get("--CmqRegion"),
-        "IsCreateNewQueue": Utils.try_to_json(argv, "--IsCreateNewQueue"),
-        "IsEnableKmsEncry": Utils.try_to_json(argv, "--IsEnableKmsEncry"),
-        "KeyId": argv.get("--KeyId"),
-        "KmsRegion": argv.get("--KmsRegion"),
-        "LogFilePrefix": argv.get("--LogFilePrefix"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.CreateAuditRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.CreateAudit(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListCosEnableRegion(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ListCosEnableRegion", g_param[OptionsDefine.Version])
-        return
+def doListCosEnableRegion(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "WebsiteType": argv.get("--WebsiteType"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ListCosEnableRegionRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.ListCosEnableRegion(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLookUpEvents(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("LookUpEvents", g_param[OptionsDefine.Version])
-        return
+def doLookUpEvents(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-        "EndTime": Utils.try_to_json(argv, "--EndTime"),
-        "StartTime": Utils.try_to_json(argv, "--StartTime"),
-        "LookupAttributes": Utils.try_to_json(argv, "--LookupAttributes"),
-        "MaxResults": Utils.try_to_json(argv, "--MaxResults"),
-        "Mode": argv.get("--Mode"),
-        "NextToken": argv.get("--NextToken"),
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.LookUpEventsRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.LookUpEvents(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListAudits(argv, arglist):
-    g_param = parse_global_arg(argv)
-    if "help" in argv:
-        show_help("ListAudits", g_param[OptionsDefine.Version])
-        return
+def doListAudits(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
 
-    param = {
-
-    }
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
     http_profile = HttpProfile(
         reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
         reqMethod="POST",
         endpoint=g_param[OptionsDefine.Endpoint]
     )
-    profile = ClientProfile(httpProfile=http_profile)
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.ListAuditsRequest()
-    model.from_json_string(json.dumps(param))
+    model.from_json_string(json.dumps(args))
     rsp = client.ListAudits(model)
     result = rsp.to_json_string()
-    jsonobj = None
     try:
         jsonobj = json.loads(result)
     except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
@@ -504,152 +366,74 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
-    v20190319.version,
+    "v20190319",
 
 ]
-AVAILABLE_VERSIONS = {
-     'v' + v20190319.version.replace('-', ''): {"help": v20190319_help.INFO,"desc": v20190319_help.DESC},
-
-}
 
 
-def cloudaudit_action(argv, arglist):
-    if "help" in argv:
-        versions = sorted(AVAILABLE_VERSIONS.keys())
-        opt_v = "--" + OptionsDefine.Version
-        version = versions[-1]
-        if opt_v in argv:
-            version = 'v' + argv[opt_v].replace('-', '')
-        if version not in versions:
-            print("available versions: %s" % " ".join(AVAILABLE_VERSION_LIST))
-            return
-        action_str = ""
-        docs = AVAILABLE_VERSIONS[version]["help"]
-        desc = AVAILABLE_VERSIONS[version]["desc"]
-        for action, info in docs.items():
-            action_str += "        %s\n" % action
-            action_str += Utils.split_str("        ", info["desc"], 120)
-        helpstr = HelpTemplate.SERVICE % {"name": "cloudaudit", "desc": desc, "actions": action_str}
-        print(helpstr)
-    else:
-        print(ErrorMsg.FEW_ARG)
+def action_caller():
+    return ACTION_MAP
 
 
-def version_merge():
-    help_merge = {}
-    for v in AVAILABLE_VERSIONS:
-        for action in AVAILABLE_VERSIONS[v]["help"]:
-            if action not in help_merge:
-                help_merge[action] = {}
-            help_merge[action]["cb"] = ACTION_MAP[action]
-            help_merge[action]["params"] = []
-            for param in AVAILABLE_VERSIONS[v]["help"][action]["params"]:
-                if param["name"] not in help_merge[action]["params"]:
-                    help_merge[action]["params"].append(param["name"])
-    return help_merge
+def parse_global_arg(parsed_globals):
+    g_param = parsed_globals
 
+    is_exist_profile = True
+    if not parsed_globals["profile"]:
+        is_exist_profile = False
+        g_param["profile"] = "default"
 
-def register_arg(command):
-    cmd = NiceCommand("cloudaudit", cloudaudit_action)
-    command.reg_cmd(cmd)
-    cmd.reg_opt("help", "bool")
-    cmd.reg_opt(OptionsDefine.Version, "string")
-    help_merge = version_merge()
+    configure_path = os.path.join(os.path.expanduser("~"), ".tccli")
+    is_conf_exist, conf_path = Utils.file_existed(configure_path, g_param["profile"] + ".configure")
+    is_cred_exist, cred_path = Utils.file_existed(configure_path, g_param["profile"] + ".credential")
 
-    for actionName, action in help_merge.items():
-        c = NiceCommand(actionName, action["cb"])
-        cmd.reg_cmd(c)
-        c.reg_opt("help", "bool")
-        for param in action["params"]:
-            c.reg_opt("--" + param, "string")
-
-        for opt in OptionsDefine.ACTION_GLOBAL_OPT:
-            stropt = "--" + opt
-            c.reg_opt(stropt, "string")
-
-
-def parse_global_arg(argv):
-    params = {}
-    for opt in OptionsDefine.ACTION_GLOBAL_OPT:
-        stropt = "--" + opt
-        if stropt in argv:
-            params[opt] = argv[stropt]
-        else:
-            params[opt] = None
-    if params[OptionsDefine.Version]:
-        params[OptionsDefine.Version] = "v" + params[OptionsDefine.Version].replace('-', '')
-
-    config_handle = Configure()
-    profile = config_handle.profile
-    if ("--" + OptionsDefine.Profile) in argv:
-        profile = argv[("--" + OptionsDefine.Profile)]
-
-    is_conexist, conf_path = config_handle._profile_existed(profile + "." + config_handle.configure)
-    is_creexist, cred_path = config_handle._profile_existed(profile + "." + config_handle.credential)
-    config = {}
+    conf = {}
     cred = {}
-    if is_conexist:
-        config = config_handle._load_json_msg(conf_path)
-    if is_creexist:
-        cred = config_handle._load_json_msg(cred_path)
-    if os.environ.get(OptionsDefine.ENV_SECRET_ID):
-        cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
-    if os.environ.get(OptionsDefine.ENV_SECRET_KEY):
-        cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
-    if os.environ.get(OptionsDefine.ENV_REGION):
-        config[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
 
-    for param in params.keys():
-        if param == OptionsDefine.Version:
-            continue
-        if params[param] is None:
+    if is_conf_exist:
+        conf = Utils.load_json_msg(conf_path)
+    if is_cred_exist:
+        cred = Utils.load_json_msg(cred_path)
+
+    if not (isinstance(conf, dict) and isinstance(cred, dict)):
+        raise ConfigurationError(
+            "file: %s or %s is not json format"
+            % (g_param["profile"] + ".configure", g_param["profile"] + ".credential"))
+
+    if os.environ.get(OptionsDefine.ENV_SECRET_ID) and not is_exist_profile:
+        cred[OptionsDefine.SecretId] = os.environ.get(OptionsDefine.ENV_SECRET_ID)
+    if os.environ.get(OptionsDefine.ENV_SECRET_KEY) and not is_exist_profile:
+        cred[OptionsDefine.SecretKey] = os.environ.get(OptionsDefine.ENV_SECRET_KEY)
+    if os.environ.get(OptionsDefine.ENV_REGION) and not is_exist_profile:
+        conf[OptionsDefine.Region] = os.environ.get(OptionsDefine.ENV_REGION)
+
+    for param in g_param.keys():
+        if g_param[param] is None:
             if param in [OptionsDefine.SecretKey, OptionsDefine.SecretId]:
                 if param in cred:
-                    params[param] = cred[param]
+                    g_param[param] = cred[param]
                 else:
-                    raise Exception("%s is invalid" % param)
-            else:
-                if param in config:
-                    params[param] = config[param]
-                elif param == OptionsDefine.Region:
-                    raise Exception("%s is invalid" % OptionsDefine.Region)
-    try:
-        if params[OptionsDefine.Version] is None:
-            version = config["cloudaudit"][OptionsDefine.Version]
-            params[OptionsDefine.Version] = "v" + version.replace('-', '')
+                    raise ConfigurationError("%s is invalid" % param)
+            elif param in [OptionsDefine.Region, OptionsDefine.Output]:
+                if param in conf:
+                    g_param[param] = conf[param]
+                else:
+                    raise ConfigurationError("%s is invalid" % param)
 
-        if params[OptionsDefine.Endpoint] is None:
-            params[OptionsDefine.Endpoint] = config["cloudaudit"][OptionsDefine.Endpoint]
+    try:
+        if g_param[OptionsDefine.ServiceVersion]:
+            g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
+        else:
+            version = conf["cloudaudit"][OptionsDefine.Version]
+            g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
+
+        if g_param[OptionsDefine.Endpoint] is None:
+            g_param[OptionsDefine.Endpoint] = conf["cloudaudit"][OptionsDefine.Endpoint]
     except Exception as err:
-        raise Exception("config file:%s error, %s" % (conf_path, str(err)))
-    versions = sorted(AVAILABLE_VERSIONS.keys())
-    if params[OptionsDefine.Version] not in versions:
+        raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
+
+    if g_param[OptionsDefine.Version] not in AVAILABLE_VERSION_LIST:
         raise Exception("available versions: %s" % " ".join(AVAILABLE_VERSION_LIST))
-    return params
 
+    return g_param
 
-def show_help(action, version):
-    docs = AVAILABLE_VERSIONS[version]["help"][action]
-    desc = AVAILABLE_VERSIONS[version]["desc"]
-    docstr = ""
-    for param in docs["params"]:
-        docstr += "        %s\n" % ("--" + param["name"])
-        docstr += Utils.split_str("        ", param["desc"], 120)
-
-    helpmsg = HelpTemplate.ACTION % {"name": action, "service": "cloudaudit", "desc": desc, "params": docstr}
-    print(helpmsg)
-
-
-def get_actions_info():
-    config = Configure()
-    new_version = max(AVAILABLE_VERSIONS.keys())
-    version = new_version
-    try:
-        profile = config._load_json_msg(os.path.join(config.cli_path, "default.configure"))
-        version = profile["cloudaudit"]["version"]
-        version = "v" + version.replace('-', '')
-    except Exception:
-        pass
-    if version not in AVAILABLE_VERSIONS.keys():
-        version = new_version
-    return AVAILABLE_VERSIONS[version]["help"]

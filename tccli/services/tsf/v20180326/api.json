@@ -3830,14 +3830,6 @@
         },
         {
           "default": "",
-          "document": "镜像server",
-          "member": "string",
-          "name": "Server",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "镜像版本名称,如v1",
           "member": "string",
           "name": "TagName",
@@ -3851,6 +3843,14 @@
           "name": "InstanceNum",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "镜像server",
+          "member": "string",
+          "name": "Server",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",

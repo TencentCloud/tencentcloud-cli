@@ -2869,6 +2869,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Features",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

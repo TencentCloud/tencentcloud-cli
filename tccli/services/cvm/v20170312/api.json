@@ -163,7 +163,7 @@
       "output": "DescribeReservedInstancesResponse"
     },
     "DescribeReservedInstancesConfigInfos": {
-      "document": "本接口(DescribeReservedInstancesConfigInfos)供用户列出可购买预留实例机型配置",
+      "document": "本接口(DescribeReservedInstancesConfigInfos)供用户列出可购买预留实例机型配置。预留实例当前只针对国际站白名单用户开放。",
       "input": "DescribeReservedInstancesConfigInfosRequest",
       "name": "查询预留实例机型配置",
       "output": "DescribeReservedInstancesConfigInfosResponse"
@@ -217,7 +217,7 @@
       "output": "ImportKeyPairResponse"
     },
     "InquirePricePurchaseReservedInstancesOffering": {
-      "document": "本接口(InquirePricePurchaseReservedInstancesOffering)用于创建预留实例询价。本接口仅允许针对购买限制范围内的预留实例配置进行询价,",
+      "document": "本接口(InquirePricePurchaseReservedInstancesOffering)用于创建预留实例询价。本接口仅允许针对购买限制范围内的预留实例配置进行询价。预留实例当前只针对国际站白名单用户开放。",
       "input": "InquirePricePurchaseReservedInstancesOfferingRequest",
       "name": "创建预留实例询价",
       "output": "InquirePricePurchaseReservedInstancesOfferingResponse"
@@ -5037,7 +5037,7 @@
       "type": "object"
     },
     "ReservedInstanceConfigInfoItem": {
-      "document": "预留实例静态配置信息。",
+      "document": "预留实例静态配置信息。预留实例当前只针对国际站白名单用户开放。",
       "members": [
         {
           "default": "",
@@ -5079,7 +5079,7 @@
       "usage": "out"
     },
     "ReservedInstanceFamilyItem": {
-      "document": "预留实例相关实例族信息。",
+      "document": "预留实例相关实例族信息。预留实例当前只针对国际站白名单用户开放。",
       "members": [
         {
           "default": "",
@@ -5112,7 +5112,7 @@
       "usage": "out"
     },
     "ReservedInstancePrice": {
-      "document": "预留实例相关价格信息",
+      "document": "预留实例相关价格信息。预留实例当前只针对国际站白名单用户开放。",
       "members": [
         {
           "default": "",
@@ -5154,7 +5154,7 @@
       "usage": "out"
     },
     "ReservedInstancePriceItem": {
-      "document": "基于付费类型的预留实例相关价格信息",
+      "document": "基于付费类型的预留实例相关价格信息。预留实例当前只针对国际站白名单用户开放。",
       "members": [
         {
           "default": "",
@@ -5223,7 +5223,7 @@
       "usage": "out"
     },
     "ReservedInstanceTypeItem": {
-      "document": "预留实例类型信息。",
+      "document": "预留实例类型信息。预留实例当前只针对国际站白名单用户开放。",
       "members": [
         {
           "default": "",
