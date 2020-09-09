@@ -107,6 +107,23 @@ INFO = {
     ],
     "desc": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。\n4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项"
   },
+  "ListKeyAliasByRegion": {
+    "params": [
+      {
+        "name": "KmsRegion",
+        "desc": "Kms地域"
+      },
+      {
+        "name": "Limit",
+        "desc": "含义跟 SQL 查询的 Limit 一致，表示本次获最多获取 Limit 个元素。缺省值为10，最大值为200"
+      },
+      {
+        "name": "Offset",
+        "desc": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0"
+      }
+    ],
+    "desc": "根据地域获取KMS密钥别名"
+  },
   "DescribeAudit": {
     "params": [
       {

@@ -2456,9 +2456,9 @@ def doDeployContainerGroup(argv, arglist):
 
     param = {
         "GroupId": argv.get("--GroupId"),
-        "Server": argv.get("--Server"),
         "TagName": argv.get("--TagName"),
         "InstanceNum": Utils.try_to_json(argv, "--InstanceNum"),
+        "Server": argv.get("--Server"),
         "Reponame": argv.get("--Reponame"),
         "CpuLimit": argv.get("--CpuLimit"),
         "MemLimit": argv.get("--MemLimit"),

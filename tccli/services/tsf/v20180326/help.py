@@ -1479,16 +1479,16 @@ INFO = {
         "desc": "部署组ID，分组唯一标识"
       },
       {
-        "name": "Server",
-        "desc": "镜像server"
-      },
-      {
         "name": "TagName",
         "desc": "镜像版本名称,如v1"
       },
       {
         "name": "InstanceNum",
         "desc": "实例数量"
+      },
+      {
+        "name": "Server",
+        "desc": "镜像server"
       },
       {
         "name": "Reponame",

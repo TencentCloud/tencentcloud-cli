@@ -260,6 +260,41 @@ def doUpdateAudit(argv, arglist):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doListKeyAliasByRegion(argv, arglist):
+    g_param = parse_global_arg(argv)
+    if "help" in argv:
+        show_help("ListKeyAliasByRegion", g_param[OptionsDefine.Version])
+        return
+
+    param = {
+        "KmsRegion": argv.get("--KmsRegion"),
+        "Limit": Utils.try_to_json(argv, "--Limit"),
+        "Offset": Utils.try_to_json(argv, "--Offset"),
+
+    }
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile)
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CloudauditClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ListKeyAliasByRegionRequest()
+    model.from_json_string(json.dumps(param))
+    rsp = client.ListKeyAliasByRegion(model)
+    result = rsp.to_json_string()
+    jsonobj = None
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8')) # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAudit(argv, arglist):
     g_param = parse_global_arg(argv)
     if "help" in argv:
@@ -459,6 +494,7 @@ ACTION_MAP = {
     "StopLogging": doStopLogging,
     "InquireAuditCredit": doInquireAuditCredit,
     "UpdateAudit": doUpdateAudit,
+    "ListKeyAliasByRegion": doListKeyAliasByRegion,
     "DescribeAudit": doDescribeAudit,
     "CreateAudit": doCreateAudit,
     "ListCosEnableRegion": doListCosEnableRegion,
