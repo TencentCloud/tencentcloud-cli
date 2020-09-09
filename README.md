@@ -7,6 +7,11 @@
 ```bash
 pip install tccli
 ```
+注意：如果是从3.0.252.3以下版本升级的需要执行
+```bash
+sudo pip uninstall tccli jmespath
+sudo pip install tccli
+```
 4. 安装完成之后执行tccli --version检测是否安装成功。
 5. 如果您的环境是linux环境，您可以通过以下命令启动自动补全功能：
 ```bash
