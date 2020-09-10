@@ -175,7 +175,7 @@
       "output": "ModifyPersonGroupInfoResponse"
     },
     "RevertGroupFaceModelVersion": {
-      "document": "本接口用于回滚人员库的人脸识别算法模型版本。单个人员库有且仅有一次回滚机会。\n\n回滚操作会在10s内生效，回滚操作中，您对人员库的操作可能会失效。\n\n注：给客户我会写10s内生效，我们实际上越快越好。待讨论。",
+      "document": "本接口用于回滚人员库的人脸识别算法模型版本。单个人员库有且仅有一次回滚机会。\n\n回滚操作会在10s内生效，回滚操作中，您对人员库的操作可能会失效。",
       "input": "RevertGroupFaceModelVersionRequest",
       "name": "人员库版本回滚",
       "output": "RevertGroupFaceModelVersionResponse"

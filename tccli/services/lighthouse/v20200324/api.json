@@ -1,5 +1,17 @@
 {
   "actions": {
+    "CreateFirewallRules": {
+      "document": "本接口（CreateFirewallRules）用于在实例上添加防火墙规则。\n\n* Protocol 字段支持输入 TCP，UDP，或 ALL。\n\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。",
+      "input": "CreateFirewallRulesRequest",
+      "name": "添加防火墙规则",
+      "output": "CreateFirewallRulesResponse"
+    },
+    "DeleteFirewallRules": {
+      "document": "本接口（DeleteFirewallRules）用于删除实例的防火墙规则。\n\n* Protocol 字段支持输入 TCP，UDP，或 ALL。\n\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。",
+      "input": "DeleteFirewallRulesRequest",
+      "name": "删除防火墙规则",
+      "output": "DeleteFirewallRulesResponse"
+    },
     "DescribeBlueprints": {
       "document": "本接口（DescribeBlueprints）用于查询镜像信息。",
       "input": "DescribeBlueprintsRequest",
@@ -11,6 +23,12 @@
       "input": "DescribeBundlesRequest",
       "name": "查询套餐",
       "output": "DescribeBundlesResponse"
+    },
+    "DescribeFirewallRules": {
+      "document": "本接口（DescribeFirewallRules）用于查询实例的防火墙规则。",
+      "input": "DescribeFirewallRulesRequest",
+      "name": "查询防火墙规则",
+      "output": "DescribeFirewallRulesResponse"
     },
     "DescribeInstances": {
       "document": "本接口（DescribeInstances）用于查询一个或多个实例的详细信息。\n\n* 可以根据实例 ID、实例名称或者实例的内网 IP 查询实例的详细信息。\n* 过滤信息详细请见过滤器 [Filters](https://cloud.tencent.com/document/product/1207/47576#Filter) 。\n* 如果参数为空，返回当前用户一定数量（Limit 所指定的数量，默认为 20）的实例。\n* 支持查询实例的最新操作（LatestOperation）以及最新操作状态（LatestOperationState）。",
@@ -251,6 +269,74 @@
       ],
       "usage": "out"
     },
+    "CreateFirewallRulesRequest": {
+      "document": "CreateFirewallRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "防火墙规则列表。",
+          "member": "FirewallRule",
+          "name": "FirewallRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFirewallRulesResponse": {
+      "document": "CreateFirewallRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFirewallRulesRequest": {
+      "document": "DeleteFirewallRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "防火墙规则列表。",
+          "member": "FirewallRule",
+          "name": "FirewallRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFirewallRulesResponse": {
+      "document": "DeleteFirewallRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBlueprintsRequest": {
       "document": "DescribeBlueprints请求参数结构体",
       "members": [
@@ -379,6 +465,62 @@
       ],
       "type": "object"
     },
+    "DescribeFirewallRulesRequest": {
+      "document": "DescribeFirewallRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallRulesResponse": {
+      "document": "DescribeFirewallRules返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的防火墙规则数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "防火墙规则详细信息列表。",
+          "member": "FirewallRuleInfo",
+          "name": "FirewallRuleSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstancesRequest": {
       "document": "DescribeInstances请求参数结构体",
       "members": [
@@ -466,6 +608,63 @@
         }
       ],
       "usage": "in"
+    },
+    "FirewallRule": {
+      "document": "描述防火墙规则信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "协议，取值：TCP，UDP，ALL。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FirewallRuleInfo": {
+      "document": "描述防火墙规则详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，ALL。",
+          "member": "string",
+          "name": "AppType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议，取值：TCP，UDP，ALL。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Instance": {
       "document": "描述了实例信息。",

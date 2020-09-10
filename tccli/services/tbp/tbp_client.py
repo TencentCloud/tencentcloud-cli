@@ -9,10 +9,10 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tbp.v20190311 import tbp_client as tbp_client_v20190311
-from tencentcloud.tbp.v20190311 import models as models_v20190311
 from tencentcloud.tbp.v20190627 import tbp_client as tbp_client_v20190627
 from tencentcloud.tbp.v20190627 import models as models_v20190627
+from tencentcloud.tbp.v20190311 import tbp_client as tbp_client_v20190311
+from tencentcloud.tbp.v20190311 import models as models_v20190311
 
 
 def doReset(args, parsed_globals):
@@ -116,14 +116,14 @@ def doTextProcess(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20190311": tbp_client_v20190311,
     "v20190627": tbp_client_v20190627,
+    "v20190311": tbp_client_v20190311,
 
 }
 
 MODELS_MAP = {
-    "v20190311": models_v20190311,
     "v20190627": models_v20190627,
+    "v20190311": models_v20190311,
 
 }
 
@@ -136,8 +136,8 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20190311",
     "v20190627",
+    "v20190311",
 
 ]
 

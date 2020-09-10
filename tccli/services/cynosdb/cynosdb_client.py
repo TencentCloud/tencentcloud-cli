@@ -238,6 +238,31 @@ def doModifyDBInstanceSecurityGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAccounts(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAccountsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAccounts(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doOfflineCluster(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -313,6 +338,31 @@ def doDescribeInstanceSpecs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doOfflineInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.OfflineInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.OfflineInstance(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAddInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -363,7 +413,7 @@ def doDescribeClusters(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAccounts(args, parsed_globals):
+def doDescribeInstanceDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -377,9 +427,9 @@ def doDescribeAccounts(args, parsed_globals):
     client = mod.CynosdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAccountsRequest()
+    model = models.DescribeInstanceDetailRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeAccounts(model)
+    rsp = client.DescribeInstanceDetail(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -508,12 +558,14 @@ ACTION_MAP = {
     "DescribeBackupConfig": doDescribeBackupConfig,
     "DescribeClusterDetail": doDescribeClusterDetail,
     "ModifyDBInstanceSecurityGroups": doModifyDBInstanceSecurityGroups,
+    "DescribeAccounts": doDescribeAccounts,
     "OfflineCluster": doOfflineCluster,
     "IsolateInstance": doIsolateInstance,
     "DescribeInstanceSpecs": doDescribeInstanceSpecs,
+    "OfflineInstance": doOfflineInstance,
     "AddInstances": doAddInstances,
     "DescribeClusters": doDescribeClusters,
-    "DescribeAccounts": doDescribeAccounts,
+    "DescribeInstanceDetail": doDescribeInstanceDetail,
     "DescribeBackupList": doDescribeBackupList,
     "ModifyMaintainPeriodConfig": doModifyMaintainPeriodConfig,
     "DescribeRollbackTimeRange": doDescribeRollbackTimeRange,
