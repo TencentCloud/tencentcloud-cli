@@ -36,11 +36,23 @@
       "name": "集群详情",
       "output": "DescribeClusterDetailResponse"
     },
+    "DescribeClusterInstanceGrps": {
+      "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组",
+      "input": "DescribeClusterInstanceGrpsRequest",
+      "name": "查询实例组",
+      "output": "DescribeClusterInstanceGrpsResponse"
+    },
     "DescribeClusters": {
       "document": "查询集群列表",
       "input": "DescribeClustersRequest",
       "name": "查询集群列表",
       "output": "DescribeClustersResponse"
+    },
+    "DescribeDBSecurityGroups": {
+      "document": "查询实例安全组信息",
+      "input": "DescribeDBSecurityGroupsRequest",
+      "name": "查询实例安全组信息",
+      "output": "DescribeDBSecurityGroupsResponse"
     },
     "DescribeInstanceDetail": {
       "document": "本接口(DescribeInstanceDetail)用于查询实例详情。",
@@ -59,6 +71,12 @@
       "input": "DescribeMaintainPeriodRequest",
       "name": "查询实例维护时间窗",
       "output": "DescribeMaintainPeriodResponse"
+    },
+    "DescribeProjectSecurityGroups": {
+      "document": "查询项目安全组信息",
+      "input": "DescribeProjectSecurityGroupsRequest",
+      "name": "查询项目安全组信息",
+      "output": "DescribeProjectSecurityGroupsResponse"
     },
     "DescribeRollbackTimeRange": {
       "document": "查询指定集群有效回滚时间范围",
@@ -1220,6 +1238,345 @@
       ],
       "usage": "out"
     },
+    "CynosdbInstance": {
+      "document": "实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Uin",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态中文描述",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库类型",
+          "member": "string",
+          "name": "DbType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库版本",
+          "member": "string",
+          "name": "DbVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cpu，单位：核",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存，单位：GB",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储量，单位：GB",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例当前角色",
+          "member": "string",
+          "name": "InstanceRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC网络ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内网IP",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内网端口",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例过期时间",
+          "member": "datetime",
+          "name": "PeriodEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销毁期限",
+          "member": "string",
+          "name": "DestroyDeadlineText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隔离时间",
+          "member": "datetime",
+          "name": "IsolateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "member": "int64",
+          "name": "NetType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网域名",
+          "member": "string",
+          "name": "WanDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网IP",
+          "member": "string",
+          "name": "WanIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网端口",
+          "member": "int64",
+          "name": "WanPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网状态",
+          "member": "string",
+          "name": "WanStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例销毁时间",
+          "member": "string",
+          "name": "DestroyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cynos内核版本",
+          "member": "string",
+          "name": "CynosVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正在处理的任务",
+          "member": "string",
+          "name": "ProcessingTask",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "续费标志",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CynosdbInstanceDetail": {
       "document": "实例详情",
       "members": [
@@ -1505,6 +1862,147 @@
       ],
       "usage": "out"
     },
+    "CynosdbInstanceGrp": {
+      "document": "实例组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "appId",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "删除时间",
+          "member": "datetime",
+          "name": "DeletedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例组ID",
+          "member": "string",
+          "name": "InstanceGrpId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例组类型。ha-ha组；ro-只读组",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "datetime",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网IP",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网端口",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网域名",
+          "member": "string",
+          "name": "WanDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网ip",
+          "member": "string",
+          "name": "WanIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网端口",
+          "member": "int64",
+          "name": "WanPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网状态",
+          "member": "string",
+          "name": "WanStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例组包含实例信息",
+          "member": "CynosdbInstance",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeAccountsRequest": {
       "document": "DescribeAccounts请求参数结构体",
       "members": [
@@ -1704,6 +2202,46 @@
       ],
       "type": "object"
     },
+    "DescribeClusterInstanceGrpsRequest": {
+      "document": "DescribeClusterInstanceGrps请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInstanceGrpsResponse": {
+      "document": "DescribeClusterInstanceGrps返回参数结构体",
+      "members": [
+        {
+          "document": "实例组个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例组列表",
+          "member": "CynosdbInstanceGrp",
+          "name": "InstanceGrpInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClustersRequest": {
       "document": "DescribeClusters请求参数结构体",
       "members": [
@@ -1772,6 +2310,39 @@
           "document": "集群列表",
           "member": "CynosdbCluster",
           "name": "ClusterSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSecurityGroupsRequest": {
+      "document": "DescribeDBSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例组ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSecurityGroupsResponse": {
+      "document": "DescribeDBSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "安全组信息",
+          "member": "SecurityGroup",
+          "name": "Groups",
           "type": "list",
           "value_allowed_null": false
         },
@@ -1886,6 +2457,39 @@
           "member": "int64",
           "name": "MaintainDuration",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectSecurityGroupsRequest": {
+      "document": "DescribeProjectSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectSecurityGroupsResponse": {
+      "document": "DescribeProjectSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "安全组详情",
+          "member": "SecurityGroup",
+          "name": "Groups",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2436,6 +3040,84 @@
       ],
       "type": "object"
     },
+    "PolicyRule": {
+      "document": "安全组规则",
+      "members": [
+        {
+          "default": "",
+          "document": "策略，ACCEPT或者DROP",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源Ip或Ip段，例如192.168.0.0/16",
+          "member": "string",
+          "name": "CidrIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "member": "string",
+          "name": "PortRange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络协议，支持udp、tcp等",
+          "member": "string",
+          "name": "IpProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议端口ID或者协议端口组ID。",
+          "member": "string",
+          "name": "ServiceModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP地址ID或者ID地址组ID。",
+          "member": "string",
+          "name": "AddressModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "id",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryFilter": {
       "document": "查询过滤器",
       "members": [
@@ -2477,6 +3159,75 @@
         }
       ],
       "usage": "in"
+    },
+    "SecurityGroup": {
+      "document": "安全组详情",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入站规则",
+          "member": "PolicyRule",
+          "name": "Inbound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出站规则",
+          "member": "PolicyRule",
+          "name": "Outbound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组ID",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组名称",
+          "member": "string",
+          "name": "SecurityGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组备注",
+          "member": "string",
+          "name": "SecurityGroupRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SetRenewFlagRequest": {
       "document": "SetRenewFlag请求参数结构体",
