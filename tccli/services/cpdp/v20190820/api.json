@@ -12963,6 +12963,22 @@
           "name": "MidasEnvironment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信商户应用ID",
+          "member": "string",
+          "name": "WxAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信商户子应用ID",
+          "member": "string",
+          "name": "WxSubAppId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

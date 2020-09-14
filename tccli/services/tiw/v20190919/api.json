@@ -7,7 +7,7 @@
       "output": "CreateTranscodeResponse"
     },
     "DescribeOnlineRecord": {
-      "document": "查询实时录制任务状态与结果",
+      "document": "查询录制任务状态与结果",
       "input": "DescribeOnlineRecordRequest",
       "name": "查询实时录制任务",
       "output": "DescribeOnlineRecordResponse"
@@ -379,6 +379,13 @@
           "name": "VideoInfos",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "回放URL，需配合信令播放器使用。此字段仅适用于`视频生成模式`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReplayUrl",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -944,7 +951,7 @@
         },
         {
           "default": "",
-          "document": "用于实时录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。\n该ID必须是一个单独的未在SDK中使用的ID，实时录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。",
+          "document": "用于录制服务进房的用户ID，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。\n该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。",
           "member": "string",
           "name": "RecordUserId",
           "required": true,
@@ -968,7 +975,7 @@
         },
         {
           "default": "",
-          "document": "实时录制视频拼接参数",
+          "document": "录制视频拼接参数",
           "member": "Concat",
           "name": "Concat",
           "required": false,
@@ -976,7 +983,7 @@
         },
         {
           "default": "",
-          "document": "实时录制白板参数，例如白板宽高等",
+          "document": "录制白板参数，例如白板宽高等",
           "member": "Whiteboard",
           "name": "Whiteboard",
           "required": false,
@@ -984,7 +991,7 @@
         },
         {
           "default": "",
-          "document": "实时录制混流参数\n特别说明：\n1. 混流功能需要根据额外开通， 请联系腾讯云互动白板客服人员\n2. 使用混流功能，必须提供 Extras 参数，且 Extras 参数中必须包含 \"MIX_STREAM\"",
+          "document": "录制混流参数\n特别说明：\n1. 混流功能需要根据额外开通， 请联系腾讯云互动白板客服人员\n2. 使用混流功能，必须提供 Extras 参数，且 Extras 参数中必须包含 \"MIX_STREAM\"",
           "member": "MixStream",
           "name": "MixStream",
           "required": false,
@@ -1008,11 +1015,27 @@
         },
         {
           "default": "",
-          "document": "实时录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等",
+          "document": "录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等",
           "member": "RecordControl",
           "name": "RecordControl",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "录制模式\n\nREALTIME_MODE - 实时录制模式（默认）\nVIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通）",
+          "member": "string",
+          "name": "RecordMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聊天群组ID，此字段仅适用于`视频生成模式`\n\n在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。",
+          "member": "string",
+          "name": "ChatGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1021,7 +1044,7 @@
       "document": "StartOnlineRecord返回参数结构体",
       "members": [
         {
-          "document": "实时录制的任务Id",
+          "document": "录制任务Id",
           "member": "string",
           "name": "TaskId",
           "type": "string",
