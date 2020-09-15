@@ -66,6 +66,12 @@
       "name": "查询实例规格",
       "output": "DescribeInstanceSpecsResponse"
     },
+    "DescribeInstances": {
+      "document": "本接口(DescribeInstances)用于查询实例列表。",
+      "input": "DescribeInstancesRequest",
+      "name": "查询实例列表",
+      "output": "DescribeInstancesResponse"
+    },
     "DescribeMaintainPeriod": {
       "document": "查询实例维护时间窗",
       "input": "DescribeMaintainPeriodRequest",
@@ -2409,6 +2415,102 @@
           "document": "规格信息",
           "member": "InstanceSpec",
           "name": "InstanceSpecSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "记录偏移量，默认值为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "member": "QueryFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "引擎类型：目前支持“MYSQL”， “POSTGRESQL”",
+          "member": "string",
+          "name": "DbType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例状态",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例id列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例列表",
+          "member": "CynosdbInstance",
+          "name": "InstanceSet",
           "type": "list",
           "value_allowed_null": false
         },

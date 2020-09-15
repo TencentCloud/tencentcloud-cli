@@ -48,6 +48,12 @@
       "name": "获取安全域名列表",
       "output": "DescribeAuthDomainsResponse"
     },
+    "DescribeCloudBaseBuildService": {
+      "document": "获取云托管代码上传url",
+      "input": "DescribeCloudBaseBuildServiceRequest",
+      "name": "获取云托管代码上传url",
+      "output": "DescribeCloudBaseBuildServiceResponse"
+    },
     "DescribeDatabaseACL": {
       "document": "获取数据库权限",
       "input": "DescribeDatabaseACLRequest",
@@ -571,6 +577,76 @@
           "member": "AuthDomain",
           "name": "Domains",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseBuildServiceRequest": {
+      "document": "DescribeCloudBaseBuildService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "build类型,枚举值有: cloudbaserun, framework-ci",
+          "member": "string",
+          "name": "CIBusiness",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseBuildServiceResponse": {
+      "document": "DescribeCloudBaseBuildService返回参数结构体",
+      "members": [
+        {
+          "document": "上传url",
+          "member": "string",
+          "name": "UploadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "heder",
+          "member": "KVPair",
+          "name": "UploadHeaders",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "包名",
+          "member": "string",
+          "name": "PackageName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "包版本",
+          "member": "string",
+          "name": "PackageVersion",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1570,6 +1646,30 @@
         }
       ],
       "usage": "out"
+    },
+    "KVPair": {
+      "document": "键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "键",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LogServiceInfo": {
       "document": "云日志服务相关信息",
