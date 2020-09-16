@@ -381,7 +381,7 @@
         },
         {
           "default": "",
-          "document": "区块Hash数值",
+          "document": "区块数据Hash数值",
           "member": "string",
           "name": "DataHash",
           "required": true,
@@ -399,7 +399,7 @@
         },
         {
           "default": "",
-          "document": "前一个区块Hash（未使用）,与区块Hash数值一致",
+          "document": "前一个区块Hash",
           "member": "string",
           "name": "PreHash",
           "required": true,
@@ -488,7 +488,7 @@
         },
         {
           "default": "",
-          "document": "操作名，固定字段：deploy_by_dynamic_contract",
+          "document": "操作名，固定字段：deploy_dynamic_contract",
           "member": "string",
           "name": "Operation",
           "required": true,

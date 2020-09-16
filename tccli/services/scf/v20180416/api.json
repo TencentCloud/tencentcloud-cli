@@ -2146,6 +2146,13 @@
           "value_allowed_null": false
         },
         {
+          "document": "函数状态失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StatusReason",
+          "name": "StatusReasons",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3357,6 +3364,30 @@
         }
       ],
       "usage": "both"
+    },
+    "StatusReason": {
+      "document": "状态原因描述",
+      "members": [
+        {
+          "default": "",
+          "document": "错误码",
+          "member": "string",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误描述",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Tag": {
       "document": "函数标签",

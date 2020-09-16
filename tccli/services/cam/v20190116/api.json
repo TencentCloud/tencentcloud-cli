@@ -132,6 +132,12 @@
       "name": "获取角色列表",
       "output": "DescribeRoleListResponse"
     },
+    "DescribeSafeAuthFlag": {
+      "document": "查询安全设置",
+      "input": "DescribeSafeAuthFlagRequest",
+      "name": "查询安全设置",
+      "output": "DescribeSafeAuthFlagResponse"
+    },
     "DetachGroupPolicy": {
       "document": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。",
       "input": "DetachGroupPolicyRequest",
@@ -1528,6 +1534,44 @@
           "member": "uint64",
           "name": "TotalNum",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSafeAuthFlagRequest": {
+      "document": "DescribeSafeAuthFlag请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSafeAuthFlagResponse": {
+      "document": "DescribeSafeAuthFlag返回参数结构体",
+      "members": [
+        {
+          "document": "登录保护设置",
+          "member": "LoginActionFlag",
+          "name": "LoginFlag",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "敏感操作保护设置",
+          "member": "LoginActionFlag",
+          "name": "ActionFlag",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异地登录保护设置",
+          "member": "OffsiteFlag",
+          "name": "OffsiteFlag",
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2954,6 +2998,57 @@
       ],
       "type": "object"
     },
+    "LoginActionFlag": {
+      "document": "登录和敏感操作flag",
+      "members": [
+        {
+          "default": "",
+          "document": "手机",
+          "member": "uint64",
+          "name": "Phone",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬token",
+          "member": "uint64",
+          "name": "Token",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "软token",
+          "member": "uint64",
+          "name": "Stoken",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信",
+          "member": "uint64",
+          "name": "Wechat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义",
+          "member": "uint64",
+          "name": "Custom",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LoginActionMfaFlag": {
       "document": "登录和敏感操作flag",
       "members": [
@@ -2980,6 +3075,57 @@
           "document": "微信",
           "member": "uint64",
           "name": "Wechat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OffsiteFlag": {
+      "document": "异地登录设置",
+      "members": [
+        {
+          "default": "",
+          "document": "验证标识",
+          "member": "uint64",
+          "name": "VerifyFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机通知",
+          "member": "uint64",
+          "name": "NotifyPhone",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱通知",
+          "member": "int64",
+          "name": "NotifyEmail",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信通知",
+          "member": "uint64",
+          "name": "NotifyWechat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提示",
+          "member": "uint64",
+          "name": "Tips",
           "required": false,
           "type": "int",
           "value_allowed_null": false

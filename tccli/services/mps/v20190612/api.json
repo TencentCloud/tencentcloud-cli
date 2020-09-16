@@ -270,6 +270,12 @@
       "name": "启用工作流",
       "output": "EnableWorkflowResponse"
     },
+    "ExecuteFunction": {
+      "document": "本接口仅用于定制开发的特殊场景，除非云视频处理客服人员主动告知您需要使用本接口，其它情况请勿调用。",
+      "input": "ExecuteFunctionRequest",
+      "name": "执行定制 API",
+      "output": "ExecuteFunctionResponse"
+    },
     "ManageTask": {
       "document": "对已发起的任务进行管理。\n> 注意：目前仅支持终止执行中的直播流处理任务。",
       "input": "ManageTaskRequest",
@@ -6623,7 +6629,7 @@
         },
         {
           "default": "",
-          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -6775,6 +6781,47 @@
     "EnableWorkflowResponse": {
       "document": "EnableWorkflow返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteFunctionRequest": {
+      "document": "ExecuteFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用后端接口名称。",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接口参数，具体参数格式调用时与后端协调。",
+          "member": "string",
+          "name": "FunctionArg",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteFunctionResponse": {
+      "document": "ExecuteFunction返回参数结构体",
+      "members": [
+        {
+          "document": "处理结果打包后的字符串，具体与后台一同协调。",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11558,7 +11605,7 @@
         },
         {
           "default": "",
-          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "member": "string",
           "name": "SessionId",
           "required": false,

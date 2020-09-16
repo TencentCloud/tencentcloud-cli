@@ -830,12 +830,21 @@
         },
         {
           "default": "",
-          "document": "文本行在旋转纠正之后的图像中的像素坐标。",
+          "document": "字段在旋转纠正之后的图像中的像素坐标。",
           "member": "Rect",
           "name": "Rect",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段在原图中的中的四点坐标。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Polygon",
+          "name": "Polygon",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2032,6 +2041,14 @@
           "name": "Scene",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启单字的四点定位坐标输出，默认值为false。",
+          "member": "bool",
+          "name": "EnableWordPolygon",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3194,7 +3211,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -3202,7 +3219,7 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -3536,6 +3553,48 @@
         }
       ],
       "type": "object"
+    },
+    "Polygon": {
+      "document": "文本的坐标，以四个顶点坐标表示\n注意：此字段可能返回 null，表示取不到有效值",
+      "members": [
+        {
+          "default": "",
+          "document": "左上顶点坐标",
+          "member": "Coord",
+          "name": "LeftTop",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "右上顶点坐标",
+          "member": "Coord",
+          "name": "RightTop",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "右下顶点坐标",
+          "member": "Coord",
+          "name": "RightBottom",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "左下顶点坐标",
+          "member": "Coord",
+          "name": "LeftBottom",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProductDataRecord": {
       "document": "商品码信息",
@@ -5044,6 +5103,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字的坐标数组，以四个顶点坐标表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Polygon",
+          "name": "WordPolygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5155,6 +5223,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段在原图中的中的四点坐标。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Polygon",
+          "name": "Polygon",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5933,7 +6010,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片/PDF的 Base64 值。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经Base64编码后不超过 3M。文件下载时间不超过 3 秒。\n输入参数 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -5941,11 +6018,27 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片/PDF的 Url 地址。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经 Base64 编码后不超过 3M。文件下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5965,6 +6058,13 @@
           "member": "VatInvoiceItem",
           "name": "Items",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片为PDF时，返回PDF的总页数，默认为0",
+          "member": "int64",
+          "name": "PdfPageSize",
+          "type": "int",
           "value_allowed_null": false
         },
         {
