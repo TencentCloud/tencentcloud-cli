@@ -246,6 +246,12 @@
       "name": "定额发票识别",
       "output": "QuotaInvoiceOCRResponse"
     },
+    "RecognizeThaiIDCardOCR": {
+      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)\n",
+      "input": "RecognizeThaiIDCardOCRRequest",
+      "name": "泰国身份证识别",
+      "output": "RecognizeThaiIDCardOCRResponse"
+    },
     "ResidenceBookletOCR": {
       "document": "本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。",
       "input": "ResidenceBookletOCRRequest",
@@ -4146,6 +4152,96 @@
           "name": "HasStamp",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeThaiIDCardOCRRequest": {
+      "document": "RecognizeThaiIDCardOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeThaiIDCardOCRResponse": {
+      "document": "RecognizeThaiIDCardOCR返回参数结构体",
+      "members": [
+        {
+          "document": "身份证号码",
+          "member": "string",
+          "name": "ID",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "泰文姓名",
+          "member": "string",
+          "name": "ThaiName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "英文姓名",
+          "member": "string",
+          "name": "EnFirstName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地址",
+          "member": "string",
+          "name": "Address",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "出生日期",
+          "member": "string",
+          "name": "Birthday",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "首次领用日期",
+          "member": "string",
+          "name": "IssueDate",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "签发日期",
+          "member": "string",
+          "name": "ExpirationDate",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "英文姓名",
+          "member": "string",
+          "name": "EnLastName",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

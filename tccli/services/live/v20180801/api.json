@@ -210,6 +210,12 @@
       "name": "查询某个时间点所有流的下行播放数据",
       "output": "DescribeAllStreamPlayInfoListResponse"
     },
+    "DescribeAreaBillBandwidthAndFluxList": {
+      "document": "海外分区直播计费带宽和流量数据查询。",
+      "input": "DescribeAreaBillBandwidthAndFluxListRequest",
+      "name": "海外分区直播计费带宽和流量数据查询",
+      "output": "DescribeAreaBillBandwidthAndFluxListResponse"
+    },
     "DescribeBillBandwidthAndFluxList": {
       "document": "直播计费带宽和流量数据查询。",
       "input": "DescribeBillBandwidthAndFluxListRequest",
@@ -846,6 +852,54 @@
           "name": "Bandwidth",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillAreaInfo": {
+      "document": "海外分区直播带宽出参，分区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "大区名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家明细数据",
+          "member": "BillCountryInfo",
+          "name": "Countrys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillCountryInfo": {
+      "document": "海外分区直播带宽出参国家带宽信息",
+      "members": [
+        {
+          "default": "",
+          "document": "国家名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽明细数据信息。",
+          "member": "BillDataInfo",
+          "name": "BandInfoList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3350,6 +3404,55 @@
         {
           "document": "数据信息列表。",
           "member": "MonitorStreamPlayInfo",
+          "name": "DataInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAreaBillBandwidthAndFluxListRequest": {
+      "document": "DescribeAreaBillBandwidthAndFluxList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过1天。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "直播播放域名，若不填，表示总体数据。",
+          "member": "string",
+          "name": "PlayDomains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAreaBillBandwidthAndFluxListResponse": {
+      "document": "DescribeAreaBillBandwidthAndFluxList返回参数结构体",
+      "members": [
+        {
+          "document": "明细数据信息。",
+          "member": "BillAreaInfo",
           "name": "DataInfoList",
           "type": "list",
           "value_allowed_null": false

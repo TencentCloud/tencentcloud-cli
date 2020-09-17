@@ -13,7 +13,7 @@
       "output": "DescribeAbnormalEventResponse"
     },
     "DescribeCallDetail": {
-      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，不填PageSize，PageNumber默认查询6个用户，否则支持每页100内的用户数。",
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。",
       "input": "DescribeCallDetailRequest",
       "name": "查询用户列表与通话指标",
       "output": "DescribeCallDetailResponse"
@@ -360,7 +360,7 @@
         },
         {
           "default": "",
-          "document": "只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）",
+          "document": "只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）",
           "member": "string",
           "name": "PageNumber",
           "required": false,
@@ -368,7 +368,7 @@
         },
         {
           "default": "",
-          "document": "只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,最大不超过100）",
+          "document": "只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）",
           "member": "string",
           "name": "PageSize",
           "required": false,
@@ -1033,6 +1033,15 @@
           "name": "MainVideoRightAlign",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "悬浮模板、九宫格、屏幕分享模板有效。设置此参数后，输出流混合此参数中包含用户的音视频，以及其他用户的纯音频。最多可设置16个用户。",
+          "member": "string",
+          "name": "MixVideoUids",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

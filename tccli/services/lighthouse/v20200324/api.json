@@ -151,6 +151,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像所需系统盘大小",
+          "member": "int64",
+          "name": "RequiredSystemDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
