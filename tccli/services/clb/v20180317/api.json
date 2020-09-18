@@ -1484,6 +1484,14 @@
           "name": "SessionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器",
+          "member": "int64",
+          "name": "KeepaliveEnable",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4884,6 +4892,14 @@
           "document": "是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI",
           "member": "int64",
           "name": "SniSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器",
+          "member": "int64",
+          "name": "KeepaliveEnable",
           "required": false,
           "type": "int"
         }

@@ -42,6 +42,12 @@
       "name": "列举热词表",
       "output": "GetAsrVocabListResponse"
     },
+    "GetCustomizationList": {
+      "document": "查询自学习模型列表",
+      "input": "GetCustomizationListRequest",
+      "name": "查询自学习模型列表",
+      "output": "GetCustomizationListResponse"
+    },
     "SentenceRecognition": {
       "document": "本接口用于对60秒之内的短音频文件进行识别。\n<br>•   支持中文普通话、英语、粤语、日语、上海话方言。\n<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s。\n<br>•   音频格式支持wav、mp3；采样率支持8000Hz或者16000Hz；采样精度支持16bits；声道支持单声道。\n<br>•   当音频文件通过请求中body内容上传时，请求大小不能超过3MB。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。",
       "input": "SentenceRecognitionRequest",
@@ -379,7 +385,32 @@
     },
     "GetAsrVocabListRequest": {
       "document": "GetAsrVocabList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
+          "member": "string",
+          "name": "TagInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页Offset",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Limit",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "GetAsrVocabListResponse": {
@@ -390,6 +421,13 @@
           "member": "Vocab",
           "name": "VocabList",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "热词列表总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -476,6 +514,62 @@
       ],
       "type": "object"
     },
+    "GetCustomizationListRequest": {
+      "document": "GetCustomizationList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
+          "member": "string",
+          "name": "TagInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页offset",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCustomizationListResponse": {
+      "document": "GetCustomizationList返回参数结构体",
+      "members": [
+        {
+          "document": "自学习模型数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Model",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "自学习模型总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "HotWord": {
       "document": "热词的词和权重",
       "members": [
@@ -499,6 +593,84 @@
         }
       ],
       "usage": "in"
+    },
+    "Model": {
+      "document": "自学习模型信息",
+      "members": [
+        {
+          "default": "",
+          "document": "模型名称",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型文件名称",
+          "member": "string",
+          "name": "DictName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型Id",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型类型，“8k”或者”16k“",
+          "member": "string",
+          "name": "ModelType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务类型",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型状态，-1下线状态，1上线状态, 0训练中, -2 训练失败",
+          "member": "int64",
+          "name": "ModelState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "member": "string",
+          "name": "AtUpdated",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SentenceDetail": {
       "document": "单句的详细识别结果，包含单个词的时间偏移，一般用于生成字幕的场景。",
@@ -581,7 +753,7 @@
         },
         {
           "default": "",
-          "document": "引擎模型类型。\n电话场景：\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n•16k_wuu-SH：16k 上海话方言。",
+          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n•16k_wuu-SH：16k 上海话方言。\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n•16k_wuu-SH：16k 上海话方言。",
           "member": "string",
           "name": "EngSerViceType",
           "required": true,
@@ -674,6 +846,14 @@
           "name": "ConvertNumMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎8k_zh，16k_zh，16k_en，16k_ca，16k_ja，16k_wuu-SH",
+          "member": "int64",
+          "name": "WordInfo",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -696,6 +876,20 @@
           "value_allowed_null": false
         },
         {
+          "document": "词时间戳列表的长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "WordSize",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "词时间戳列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SentenceWord",
+          "name": "WordList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -703,6 +897,39 @@
         }
       ],
       "type": "object"
+    },
+    "SentenceWord": {
+      "document": "一句话识别返回的词时间戳",
+      "members": [
+        {
+          "default": "",
+          "document": "词结果",
+          "member": "string",
+          "name": "Word",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "词在音频中的开始时间",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "词在音频中的结束时间",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SentenceWords": {
       "document": "识别结果中词文本，以及对应时间偏移",
@@ -983,6 +1210,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

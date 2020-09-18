@@ -13,7 +13,7 @@
       "output": "DescribeAbnormalEventResponse"
     },
     "DescribeCallDetail": {
-      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。",
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，每次查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。",
       "input": "DescribeCallDetailRequest",
       "name": "查询用户列表与通话指标",
       "output": "DescribeCallDetailResponse"
@@ -336,7 +336,7 @@
         },
         {
           "default": "",
-          "document": "用户sdkappid（1400188366）",
+          "document": "用户SDKAppID（1400188366）",
           "member": "string",
           "name": "SdkAppId",
           "required": true,
@@ -360,7 +360,7 @@
         },
         {
           "default": "",
-          "document": "只查询用户列表时，设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）",
+          "document": "设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）",
           "member": "string",
           "name": "PageNumber",
           "required": false,
@@ -368,7 +368,7 @@
         },
         {
           "default": "",
-          "document": "只查询用户列表时，设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）",
+          "document": "设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）",
           "member": "string",
           "name": "PageSize",
           "required": false,

@@ -36,6 +36,12 @@
       "name": "安全验证码小程序插件用户操作数据查询（内测中）",
       "output": "DescribeCaptchaMiniOperDataResponse"
     },
+    "DescribeCaptchaMiniResult": {
+      "document": "核查验证码小程序插件票据结果（内测中）",
+      "input": "DescribeCaptchaMiniResultRequest",
+      "name": "核查验证码小程序插件票据结果（内测中）",
+      "output": "DescribeCaptchaMiniResultResponse"
+    },
     "DescribeCaptchaOperData": {
       "document": "安全验证码用户操作数据查询，验证码加载耗时type = 1 、拦截情况type = 2、 一周通过平均尝试次数 type = 3、尝试次数分布 type = 4",
       "input": "DescribeCaptchaOperDataRequest",
@@ -868,6 +874,110 @@
           "member": "CaptchaOperDataRes",
           "name": "Data",
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaMiniResultRequest": {
+      "document": "DescribeCaptchaMiniResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码类型，9：滑块验证码",
+          "member": "uint64",
+          "name": "CaptchaType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "验证码返回给用户的票据",
+          "member": "string",
+          "name": "Ticket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户操作来源的外网 IP",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证码应用ID",
+          "member": "uint64",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方",
+          "member": "string",
+          "name": "AppSecretKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据",
+          "member": "uint64",
+          "name": "BusinessId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据",
+          "member": "uint64",
+          "name": "SceneId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "mac 地址或设备唯一标识",
+          "member": "string",
+          "name": "MacAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机设备号",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaMiniResultResponse": {
+      "document": "DescribeCaptchaMiniResult返回参数结构体",
+      "members": [
+        {
+          "document": "1       ticket verification succeeded     票据验证成功\n8       ticket expired     票据超时\n10     ticket format error     票据格式不正确\n15     ticket decryption failed     验证码解密失败\n16     CaptchaAppId wrong format      检查CaptchaAppId错误\n26     system internal error     系统内部错误\n100    param err appsecretkey     参数校验错误\n21      ticket error     差别，票据验证错误",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态描述及验证错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
           "value_allowed_null": true
         },
         {
