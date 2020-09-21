@@ -54,6 +54,12 @@
       "name": "获取云托管代码上传url",
       "output": "DescribeCloudBaseBuildServiceResponse"
     },
+    "DescribeCloudBaseRunVersionSnapshot": {
+      "document": "查询版本历史",
+      "input": "DescribeCloudBaseRunVersionSnapshotRequest",
+      "name": "查询版本历史",
+      "output": "DescribeCloudBaseRunVersionSnapshotResponse"
+    },
     "DescribeDatabaseACL": {
       "document": "获取数据库权限",
       "input": "DescribeDatabaseACLRequest",
@@ -241,6 +247,372 @@
         }
       ],
       "type": "object"
+    },
+    "CloudBaseCodeRepoDetail": {
+      "document": "代码仓库里 Repo的信息描述",
+      "members": [
+        {
+          "default": "",
+          "document": "repo的名字",
+          "member": "CloudBaseCodeRepoName",
+          "name": "Name",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "repo的url",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudBaseCodeRepoName": {
+      "document": "代码仓库 repo的名字",
+      "members": [
+        {
+          "default": "",
+          "document": "repo的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "repo的完整全名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FullName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudBaseRunImageInfo": {
+      "document": "CloudBaseRun 镜像信息",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像仓库名称",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否公有",
+          "member": "bool",
+          "name": "IsPublic",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像tag名称",
+          "member": "string",
+          "name": "TagName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像server",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像拉取地址",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudRunServiceSimpleVersionSnapshot": {
+      "document": "CloudRunServiceSimpleVersionSnapshot 信息",
+      "members": [
+        {
+          "default": "",
+          "document": "版本名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cpu规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Cpu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Mem",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MinNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PolicyThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnvParams",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ContainerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UploadType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "dockerfile路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DockerfilePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "构建路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BuildDir",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "repo类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RepoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Repo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分支\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Branch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "package名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "package版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PackageVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义log路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CustomLogs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延时健康检查时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "snapshot名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CloudBaseRunImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代码仓库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CloudBaseCodeRepoDetail",
+          "name": "CodeDetail",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CommonServiceAPIRequest": {
       "document": "CommonServiceAPI请求参数结构体",
@@ -648,6 +1020,79 @@
           "name": "PackageVersion",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunVersionSnapshotRequest": {
+      "document": "DescribeCloudBaseRunVersionSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务名",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本名",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境id",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本历史名",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制大小",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunVersionSnapshotResponse": {
+      "document": "DescribeCloudBaseRunVersionSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "版本历史\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CloudRunServiceSimpleVersionSnapshot",
+          "name": "Snapshots",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

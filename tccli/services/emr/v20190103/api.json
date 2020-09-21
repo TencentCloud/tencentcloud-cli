@@ -2192,6 +2192,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2812,6 +2821,30 @@
           "name": "PodSpec",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "使用clickhouse集群扩容时，选择的机器分组名称",
+          "member": "string",
+          "name": "ClickHouseClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
+          "member": "string",
+          "name": "ClickHouseClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则扩容指定 yarn node label",
+          "member": "string",
+          "name": "YarnNodeLabel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
