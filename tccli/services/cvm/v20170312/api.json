@@ -5986,6 +5986,14 @@
         },
         {
           "default": "",
+          "document": "CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。",
           "member": "string",
           "name": "HpcClusterId",

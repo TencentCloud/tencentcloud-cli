@@ -113,6 +113,31 @@ def doCreateTranscode(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeVideoGenerationTaskCallback(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVideoGenerationTaskCallbackRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeVideoGenerationTaskCallback(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doStartOnlineRecord(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -130,6 +155,31 @@ def doStartOnlineRecord(args, parsed_globals):
     model = models.StartOnlineRecordRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.StartOnlineRecord(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateVideoGenerationTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateVideoGenerationTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateVideoGenerationTask(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -263,6 +313,31 @@ def doResumeOnlineRecord(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSetVideoGenerationTaskCallbackKey(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetVideoGenerationTaskCallbackKeyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SetVideoGenerationTaskCallbackKey(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeOnlineRecordCallback(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -313,6 +388,56 @@ def doDescribeTranscodeCallback(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeVideoGenerationTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeVideoGenerationTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeVideoGenerationTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSetVideoGenerationTaskCallback(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TiwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetVideoGenerationTaskCallbackRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SetVideoGenerationTaskCallback(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeOnlineRecord(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -353,14 +478,19 @@ ACTION_MAP = {
     "SetTranscodeCallbackKey": doSetTranscodeCallbackKey,
     "DescribeTranscode": doDescribeTranscode,
     "CreateTranscode": doCreateTranscode,
+    "DescribeVideoGenerationTaskCallback": doDescribeVideoGenerationTaskCallback,
     "StartOnlineRecord": doStartOnlineRecord,
+    "CreateVideoGenerationTask": doCreateVideoGenerationTask,
     "StopOnlineRecord": doStopOnlineRecord,
     "PauseOnlineRecord": doPauseOnlineRecord,
     "SetTranscodeCallback": doSetTranscodeCallback,
     "SetOnlineRecordCallbackKey": doSetOnlineRecordCallbackKey,
     "ResumeOnlineRecord": doResumeOnlineRecord,
+    "SetVideoGenerationTaskCallbackKey": doSetVideoGenerationTaskCallbackKey,
     "DescribeOnlineRecordCallback": doDescribeOnlineRecordCallback,
     "DescribeTranscodeCallback": doDescribeTranscodeCallback,
+    "DescribeVideoGenerationTask": doDescribeVideoGenerationTask,
+    "SetVideoGenerationTaskCallback": doSetVideoGenerationTaskCallback,
     "DescribeOnlineRecord": doDescribeOnlineRecord,
 
 }

@@ -1693,7 +1693,7 @@
         },
         {
           "default": "",
-          "document": "IP黑白名单，当没有IP黑白名单时填空数组",
+          "document": "请求源IP黑白名单，当没有IP黑白名单时填空数组",
           "member": "IpBlackWhite",
           "name": "IpAllowDenys",
           "required": false,
