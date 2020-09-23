@@ -758,6 +758,14 @@
           "name": "OrderSource",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群创建需要绑定的tag数组信息",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1036,6 +1044,15 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群绑定的tag数组",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1239,6 +1256,15 @@
           "name": "Zone",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例绑定的tag数组信息",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3371,6 +3397,30 @@
         }
       ],
       "type": "object"
+    },
+    "Tag": {
+      "document": "集群绑定的标签信息，包含标签键TagKey和标签值TagValue",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UpgradeInstanceRequest": {
       "document": "UpgradeInstance请求参数结构体",

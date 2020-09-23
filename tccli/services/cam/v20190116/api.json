@@ -138,6 +138,12 @@
       "name": "查询安全设置",
       "output": "DescribeSafeAuthFlagResponse"
     },
+    "DescribeSafeAuthFlagColl": {
+      "document": "查询安全设置",
+      "input": "DescribeSafeAuthFlagCollRequest",
+      "name": "查询安全设置",
+      "output": "DescribeSafeAuthFlagCollResponse"
+    },
     "DetachGroupPolicy": {
       "document": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。",
       "input": "DetachGroupPolicyRequest",
@@ -1543,6 +1549,53 @@
           "member": "uint64",
           "name": "TotalNum",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSafeAuthFlagCollRequest": {
+      "document": "DescribeSafeAuthFlagColl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子账号",
+          "member": "uint64",
+          "name": "SubUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSafeAuthFlagCollResponse": {
+      "document": "DescribeSafeAuthFlagColl返回参数结构体",
+      "members": [
+        {
+          "document": "登录保护设置",
+          "member": "LoginActionFlag",
+          "name": "LoginFlag",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "敏感操作保护设置",
+          "member": "LoginActionFlag",
+          "name": "ActionFlag",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异地登录保护设置",
+          "member": "OffsiteFlag",
+          "name": "OffsiteFlag",
+          "type": "object",
           "value_allowed_null": false
         },
         {

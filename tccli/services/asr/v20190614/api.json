@@ -6,6 +6,12 @@
       "name": "创建热词表",
       "output": "CreateAsrVocabResponse"
     },
+    "CreateCustomization": {
+      "document": "用户使用该接口可以创建自学习模型，以供识别调用",
+      "input": "CreateCustomizationRequest",
+      "name": "创建自学习模型",
+      "output": "CreateCustomizationResponse"
+    },
     "CreateRecTask": {
       "document": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n<br>• 支持中文普通话、英语、粤语、日语和上海话方言\n<br>• 支持通用、音视频领域\n<br>• 支持wav、mp3、m4a的音频格式\n<br>• 支持语音 URL 和本地语音文件两种请求方式\n<br>• 语音 URL 的音频时长不能长于5小时，文件大小不超过512MB\n<br>• 本地语音文件不能大于5MB\n<br>• 提交录音文件识别请求后，在5小时内完成识别（半小时内发送超过1000小时录音或者2万条识别任务的除外），识别结果在服务端可保存7天\n<br>• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。",
       "input": "CreateRecTaskRequest",
@@ -18,6 +24,12 @@
       "name": "删除热词表",
       "output": "DeleteAsrVocabResponse"
     },
+    "DeleteCustomization": {
+      "document": "用户通过该接口可以删除自学习模型",
+      "input": "DeleteCustomizationRequest",
+      "name": "删除自学习模型",
+      "output": "DeleteCustomizationResponse"
+    },
     "DescribeTaskStatus": {
       "document": "在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。\n<br>• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://cloud.tencent.com/document/product/1093/37139#callback)。\n<br>• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n",
       "input": "DescribeTaskStatusRequest",
@@ -29,6 +41,12 @@
       "input": "DownloadAsrVocabRequest",
       "name": "下载热词表",
       "output": "DownloadAsrVocabResponse"
+    },
+    "DownloadCustomization": {
+      "document": "用户通过该接口可以下载自学习模型的语料",
+      "input": "DownloadCustomizationRequest",
+      "name": "下载自学习模型语料",
+      "output": "DownloadCustomizationResponse"
     },
     "GetAsrVocab": {
       "document": "用户根据词表的ID可以获取对应的热词表信息",
@@ -47,6 +65,18 @@
       "input": "GetCustomizationListRequest",
       "name": "查询自学习模型列表",
       "output": "GetCustomizationListResponse"
+    },
+    "ModifyCustomization": {
+      "document": "用户通过该接口可以更新自学习模型，如模型名称、模型类型、模型语料。",
+      "input": "ModifyCustomizationRequest",
+      "name": "更新自学习模型",
+      "output": "ModifyCustomizationResponse"
+    },
+    "ModifyCustomizationState": {
+      "document": "通过该接口，用户可以修改自学习模型状态，上下线自学习模型",
+      "input": "ModifyCustomizationStateRequest",
+      "name": "修改自学习模型状态",
+      "output": "ModifyCustomizationStateResponse"
     },
     "SentenceRecognition": {
       "document": "本接口用于对60秒之内的短音频文件进行识别。\n<br>•   支持中文普通话、英语、粤语、日语、上海话方言。\n<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s。\n<br>•   音频格式支持wav、mp3；采样率支持8000Hz或者16000Hz；采样精度支持16bits；声道支持单声道。\n<br>•   当音频文件通过请求中body内容上传时，请求大小不能超过3MB。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。",
@@ -119,6 +149,63 @@
           "document": "词表ID，可用于获取词表信息",
           "member": "string",
           "name": "VocabId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomizationRequest": {
+      "document": "CreateCustomization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自学习模型名称，需在1-20字符之间",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文本文件的下载地址，服务会从该地址下载文件， 以训练模型，目前仅支持腾讯云cos",
+          "member": "string",
+          "name": "TextUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自学习模型类型，填写8k或者16k",
+          "member": "string",
+          "name": "ModelType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签信息",
+          "member": "string",
+          "name": "TagInfos",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomizationResponse": {
+      "document": "CreateCustomization返回参数结构体",
+      "members": [
+        {
+          "document": "模型ID",
+          "member": "string",
+          "name": "ModelId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -310,6 +397,32 @@
       ],
       "type": "object"
     },
+    "DeleteCustomizationRequest": {
+      "document": "DeleteCustomization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的模型ID",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomizationResponse": {
+      "document": "DeleteCustomization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskStatusRequest": {
       "document": "DescribeTaskStatus请求参数结构体",
       "members": [
@@ -371,6 +484,39 @@
           "document": "词表权重文件形式的base64值。",
           "member": "string",
           "name": "WordWeightStr",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadCustomizationRequest": {
+      "document": "DownloadCustomization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自学习模型ID",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadCustomizationResponse": {
+      "document": "DownloadCustomization返回参数结构体",
+      "members": [
+        {
+          "document": "下载地址",
+          "member": "string",
+          "name": "DownloadUrl",
           "type": "string",
           "value_allowed_null": false
         },
@@ -671,6 +817,97 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyCustomizationRequest": {
+      "document": "ModifyCustomization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要修改的模型ID",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的模型名称，长度需在1-20个字符之间",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的模型类型，为8k或者16k",
+          "member": "string",
+          "name": "ModelType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的模型语料的下载地址，目前仅支持腾讯云cos",
+          "member": "string",
+          "name": "TextUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizationResponse": {
+      "document": "ModifyCustomization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizationStateRequest": {
+      "document": "ModifyCustomizationState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自学习模型ID",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "想要变换的模型状态，-1代表下线，1代表上线",
+          "member": "int64",
+          "name": "ToState",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizationStateResponse": {
+      "document": "ModifyCustomizationState返回参数结构体",
+      "members": [
+        {
+          "document": "自学习模型ID",
+          "member": "string",
+          "name": "ModelId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SentenceDetail": {
       "document": "单句的详细识别结果，包含单个词的时间偏移，一般用于生成字幕的场景。",

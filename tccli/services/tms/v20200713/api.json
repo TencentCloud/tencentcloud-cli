@@ -115,7 +115,7 @@
         },
         {
           "default": "",
-          "document": "建议值,Block：打击,Review：待复审,Normal：正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建议值,Block：打击,Review：待复审,Pass：正常\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Suggestion",
           "required": true,

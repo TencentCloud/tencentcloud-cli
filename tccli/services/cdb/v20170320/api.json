@@ -10220,7 +10220,7 @@
         },
         {
           "default": "",
-          "document": "实例任务状态，可能的值包括：\n\"UNDEFINED\" - 未定义；\n\"INITIAL\" - 初始化；\n\"RUNNING\" - 运行中；\n\"SUCCEED\" - 执行成功；\n\"FAILED\" - 执行失败；\n\"KILLED\" - 已终止；\n\"REMOVED\" - 已删除；\n\"PAUSED\" - 已暂停。",
+          "document": "实例任务状态，可能的值包括：\n\"UNDEFINED\" - 未定义；\n\"INITIAL\" - 初始化；\n\"RUNNING\" - 运行中；\n\"SUCCEED\" - 执行成功；\n\"FAILED\" - 执行失败；\n\"KILLED\" - 已终止；\n\"REMOVED\" - 已删除；\n\"PAUSED\" - 已暂停。\n\"WAITING\" - 等待中（可撤销）",
           "member": "string",
           "name": "TaskStatus",
           "required": true,
