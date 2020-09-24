@@ -965,6 +965,15 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单句语速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "SpeechSpeed",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

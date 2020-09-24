@@ -776,7 +776,7 @@
         },
         {
           "default": "",
-          "document": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
+          "document": "环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -795,6 +795,14 @@
           "document": "扩展ID",
           "member": "string",
           "name": "ExtensionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单标记。建议使用方统一转大小写之后再判断。\n<li>QuickStart：快速启动来源</li>\n<li>Activity：活动来源</li>",
+          "member": "string",
+          "name": "Flag",
           "required": false,
           "type": "string"
         }

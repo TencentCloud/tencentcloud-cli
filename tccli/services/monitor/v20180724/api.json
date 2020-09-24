@@ -24,6 +24,18 @@
       "name": "获取平台事件列表",
       "output": "DescribeAccidentEventListResponse"
     },
+    "DescribeAlarmHistories": {
+      "document": "告警2.0-告警历史列表",
+      "input": "DescribeAlarmHistoriesRequest",
+      "name": "告警2.0-告警历史列表",
+      "output": "DescribeAlarmHistoriesResponse"
+    },
+    "DescribeAllNamespaces": {
+      "document": "拉取所有名字空间",
+      "input": "DescribeAllNamespacesRequest",
+      "name": "拉取所有名字空间",
+      "output": "DescribeAllNamespacesResponse"
+    },
     "DescribeBaseMetrics": {
       "document": "获取基础指标详情",
       "input": "DescribeBaseMetricsRequest",
@@ -122,6 +134,201 @@
     "serviceShortName": "monitor"
   },
   "objects": {
+    "AlarmHistory": {
+      "document": "告警历史数据",
+      "members": [
+        {
+          "default": "",
+          "document": "告警历史Id",
+          "member": "string",
+          "name": "AlarmId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控类型",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略类型",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警对象",
+          "member": "string",
+          "name": "AlarmObject",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间戳，首次出现时间",
+          "member": "int64",
+          "name": "FirstOccurTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间戳，最后出现时间",
+          "member": "int64",
+          "name": "LastOccurTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警状态，ALARM=未恢复 OK=已恢复 NO_CONF=已失效 NO_DATA=数据不足",
+          "member": "string",
+          "name": "AlarmStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警策略 Id",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "基础产品告警的告警对象所属网络",
+          "member": "string",
+          "name": "VPC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目 Id",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名字",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警对象所属实例组",
+          "member": "InstanceGroups",
+          "name": "InstanceGroup",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收人列表",
+          "member": "int64",
+          "name": "ReceiverUids",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收组列表",
+          "member": "int64",
+          "name": "ReceiverGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警渠道列表 SMS=短信 EMAIL=邮件 CALL=电话 WECHAT=微信",
+          "member": "string",
+          "name": "NoticeWays",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "兼容告警1.0策略组 Id",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警类型",
+          "member": "string",
+          "name": "AlarmType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件Id",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BindingPolicyObjectDimension": {
       "document": "策略绑定实例维度信息",
       "members": [
@@ -213,6 +420,84 @@
         }
       ],
       "type": "object"
+    },
+    "CommonNamespace": {
+      "document": "统一的命名空间信息",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间标示",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置信息",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持地域列表",
+          "member": "string",
+          "name": "AvailableRegions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排序Id",
+          "member": "int64",
+          "name": "SortId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Dashboard中的唯一表示",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreatePolicyGroupCondition": {
       "document": "创建策略传入的阈值告警条件",
@@ -718,6 +1003,246 @@
           "name": "Total",
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmHistoriesRequest": {
+      "document": "DescribeAlarmHistories请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定值，为\"monitor\"",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页数，从 1 开始计数，默认 1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页的数量，取值1~100，默认20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认按首次出现时间倒序排列 \"ASC\"=正序 \"DESC\"=逆序",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间，默认一天前的时间戳",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间，默认当前时间戳",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控 \"MT_CUSTOM\"=自定义监控 \"MT_PROME\"=prometheus监控",
+          "member": "string",
+          "name": "MonitorTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据告警对象过滤 字符串模糊搜索",
+          "member": "string",
+          "name": "AlarmObject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据告警状态过滤 ALARM=未恢复 OK=已恢复 NO_CONF=已失效 NO_DATA=数据不足，不选默认查所有",
+          "member": "string",
+          "name": "AlarmStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据项目ID过滤，-1=“-“项目 0=默认项目",
+          "member": "int64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据实例组ID过滤",
+          "member": "int64",
+          "name": "InstanceGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据策略类型过滤",
+          "member": "MonitorTypeNamespace",
+          "name": "Namespaces",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据指标名过滤",
+          "member": "string",
+          "name": "MetricNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据策略名称模糊搜索",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据告警内容模糊搜索",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据接收人搜索",
+          "member": "int64",
+          "name": "ReceiverUids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据接收组搜索",
+          "member": "int64",
+          "name": "ReceiverGroups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据告警策略 Id 列表搜索",
+          "member": "string",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmHistoriesResponse": {
+      "document": "DescribeAlarmHistories返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警历史列表",
+          "member": "AlarmHistory",
+          "name": "Histories",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllNamespacesRequest": {
+      "document": "DescribeAllNamespaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "根据使用场景过滤 \"ST_DASHBOARD\"=Dashboard类型 或 \"ST_ALARM\"=告警类型",
+          "member": "string",
+          "name": "SceneType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固定值，为\"monitor\"",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据监控类型过滤 不填默认查所有类型 \"MT_QCE\"=云产品监控 \"MT_CUSTOM\"=自定义监控",
+          "member": "string",
+          "name": "MonitorTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据namespace的Id过滤 不填默认查询所有",
+          "member": "string",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllNamespacesResponse": {
+      "document": "DescribeAllNamespaces返回参数结构体",
+      "members": [
+        {
+          "document": "云产品的名字空间",
+          "member": "CommonNamespace",
+          "name": "QceNamespaces",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自定义监控的命名空间",
+          "member": "CommonNamespace",
+          "name": "CustomNamespaces",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3526,6 +4051,30 @@
       ],
       "usage": "out"
     },
+    "InstanceGroups": {
+      "document": "告警对象所属实例组",
+      "members": [
+        {
+          "default": "",
+          "document": "实例组 Id",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例组名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MetricDatum": {
       "document": "指标名称和值的封装",
       "members": [
@@ -3902,6 +4451,30 @@
         }
       ],
       "type": "object"
+    },
+    "MonitorTypeNamespace": {
+      "document": "策略类型",
+      "members": [
+        {
+          "default": "",
+          "document": "监控类型",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略类型值",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "PeriodsSt": {
       "document": "周期内的统计方式",

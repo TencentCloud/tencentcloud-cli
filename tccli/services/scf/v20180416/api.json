@@ -810,6 +810,14 @@
           "name": "InitTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "函数 Tag 参数，以键值对数组形式传入",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

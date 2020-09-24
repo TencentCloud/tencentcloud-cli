@@ -890,7 +890,7 @@
       "members": [
         {
           "default": "",
-          "document": "验证码类型，9：滑块验证码",
+          "document": "固定填值：9（滑块验证码）",
           "member": "uint64",
           "name": "CaptchaType",
           "required": true,
@@ -914,7 +914,7 @@
         },
         {
           "default": "",
-          "document": "验证码应用ID",
+          "document": "验证码应用APPID",
           "member": "uint64",
           "name": "CaptchaAppId",
           "required": true,
@@ -967,7 +967,7 @@
       "document": "DescribeCaptchaMiniResult返回参数结构体",
       "members": [
         {
-          "document": "1       ticket verification succeeded     票据验证成功\n8       ticket expired     票据超时\n10     ticket format error     票据格式不正确\n15     ticket decryption failed     验证码解密失败\n16     CaptchaAppId wrong format      检查CaptchaAppId错误\n26     system internal error     系统内部错误\n100    param err appsecretkey     参数校验错误\n21      ticket error     差别，票据验证错误",
+          "document": "1       ticket verification succeeded     票据验证成功\n7       CaptchaAppId does not match     票据与验证码应用APPID不匹配\n8       ticket expired     票据超时\n10     ticket format error     票据格式不正确\n15     ticket decryption failed     票据解密失败\n16     CaptchaAppId wrong format     检查验证码应用APPID错误\n21     ticket error     票据验证错误\n26     system internal error     系统内部错误\n100   param err     参数校验错误",
           "member": "int64",
           "name": "CaptchaCode",
           "type": "int",
