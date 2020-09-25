@@ -229,7 +229,7 @@
       "output": "PropOwnerCertOCRResponse"
     },
     "QrcodeOCR": {
-      "document": "本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。",
+      "document": "本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。\n\n本接口目前处于公测阶段，2020年10月7日公测结束后，接口价格会进行相应的变更，请留意站内信通知。",
       "input": "QrcodeOCRRequest",
       "name": "二维码和条形码识别",
       "output": "QrcodeOCRResponse"
@@ -295,7 +295,7 @@
       "output": "TaxiInvoiceOCRResponse"
     },
     "TextDetect": {
-      "document": "本接口通过检测图片中的文字信息特征，快速判断图片中有无文字并返回判断结果，帮助用户过滤无文字的图片。",
+      "document": "本接口通过检测图片中的文字信息特征，快速判断图片中有无文字并返回判断结果，帮助用户过滤无文字的图片。\n\n本接口目前处于公测阶段，2020年10月7日公测结束后，接口价格会进行相应的变更，请留意站内信通知。",
       "input": "TextDetectRequest",
       "name": "快速文本检测",
       "output": "TextDetectResponse"

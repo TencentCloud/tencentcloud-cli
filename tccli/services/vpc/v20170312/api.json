@@ -1648,7 +1648,7 @@
       "members": [
         {
           "default": "",
-          "document": "购买实例的时长",
+          "document": "购买实例的时长，单位是月。可支持时长：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -1657,11 +1657,11 @@
         },
         {
           "default": "",
-          "document": "自动续费标志",
-          "member": "string",
-          "name": "RenewFlag",
+          "document": "自动续费标志。0表示手动续费，1表示自动续费，2表示到期不续费。默认缺省为0即手动续费",
+          "member": "int64",
+          "name": "AutoRenewFlag",
           "required": false,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1847,7 +1847,7 @@
         },
         {
           "default": "",
-          "document": "EIP计费方式。\n<ul style=\"margin:0\"><li>已开通带宽上移白名单的用户，可选值：<ul><li>BANDWIDTH_PACKAGE：[共享带宽包](https://cloud.tencent.com/document/product/684/15255)付费（需额外开通共享带宽包白名单）</li>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li></ul>默认值：TRAFFIC_POSTPAID_BY_HOUR。</li>\n<li>未开通带宽上移白名单的用户，EIP计费方式与其绑定的实例的计费方式一致，无需传递此参数。</li></ul>",
+          "document": "EIP计费方式。\n<ul style=\"margin:0\"><li>已开通带宽上移白名单的用户，可选值：<ul><li>BANDWIDTH_PACKAGE：[共享带宽包](https://cloud.tencent.com/document/product/684/15255)付费（需额外开通共享带宽包白名单）</li>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li></ul>默认值：TRAFFIC_POSTPAID_BY_HOUR。</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费</li></ul>默认值：BANDWIDTH_PREPAID_BY_MONTH。</li>\n<li>未开通带宽上移白名单的用户，EIP计费方式与其绑定的实例的计费方式一致，无需传递此参数。</li></ul>",
           "member": "string",
           "name": "InternetChargeType",
           "required": false,
@@ -1855,11 +1855,19 @@
         },
         {
           "default": "",
-          "document": "EIP出带宽上限，单位：Mbps。\n<ul style=\"margin:0\"><li>已开通带宽上移白名单的用户，可选值范围取决于EIP计费方式：<ul><li>BANDWIDTH_PACKAGE：1 Mbps 至 1000 Mbps</li>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li></ul>默认值：1 Mbps。</li>\n<li>未开通带宽上移白名单的用户，EIP出带宽上限取决于与其绑定的实例的公网出带宽上限，无需传递此参数。</li></ul>",
+          "document": "EIP出带宽上限，单位：Mbps。\n<ul style=\"margin:0\"><li>已开通带宽上移白名单的用户，可选值范围取决于EIP计费方式：<ul><li>BANDWIDTH_PACKAGE：1 Mbps 至 1000 Mbps</li>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：1 Mbps 至 200 Mbps</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li></ul>默认值：1 Mbps。</li>\n<li>未开通带宽上移白名单的用户，EIP出带宽上限取决于与其绑定的实例的公网出带宽上限，无需传递此参数。</li></ul>",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递",
+          "member": "AddressChargePrepaid",
+          "name": "AddressChargePrepaid",
+          "required": false,
+          "type": "object"
         },
         {
           "default": "",

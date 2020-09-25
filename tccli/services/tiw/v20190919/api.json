@@ -730,7 +730,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "录制视频生成进度（0-100，100表示视频生成完成 ）",
+          "document": "已废弃",
           "member": "int64",
           "name": "Progress",
           "type": "int",
@@ -751,10 +751,17 @@
           "value_allowed_null": false
         },
         {
-          "document": "录制视频生成列表",
+          "document": "已废弃，请使用`VideoInfoList`参数",
           "member": "VideoInfo",
           "name": "VideoInfos",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "录制视频生成视频列表",
+          "member": "VideoInfo",
+          "name": "VideoInfoList",
+          "type": "list",
           "value_allowed_null": false
         },
         {

@@ -187,13 +187,13 @@
       "output": "RevertGroupFaceModelVersionResponse"
     },
     "SearchFaces": {
-      "document": "用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopK 人员，识别结果按照相似度从大到小排序。\n\n支持一次性识别图片中的最多 10 张人脸，支持一次性跨 100 个人员库（Group）搜索。\n\n单次搜索的人员库人脸总数量和人员库的算法模型版本（FaceModelVersion）相关。算法模型版本为2.0的人员库，单次搜索人员库人脸总数量不得超过 100 万张；算法模型版本为3.0的人员库，单次搜索人员库人脸总数量不得超过 300 万张。\n\n与[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口不同的是，本接口将该人员（Person）下的每个人脸（Face）都作为单独个体进行验证，而人员搜索及人员搜索按库返回接口 会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使搜索更加准确。\n\n\n本接口需与[人员库管理相关接口](https://cloud.tencent.com/document/product/867/45015)结合使用。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": "用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopK 人员，识别结果按照相似度从大到小排序。\n\n支持一次性识别图片中的最多 10 张人脸，支持一次性跨 100 个人员库（Group）搜索。\n\n单次搜索的人员库人脸总数量和人员库的算法模型版本（FaceModelVersion）相关。算法模型版本为2.0的人员库，单次搜索人员库人脸总数量不得超过 100 万张；算法模型版本为3.0的人员库，单次搜索人员库人脸总数量不得超过 300 万张。\n\n与[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口不同的是，本接口将该人员（Person）下的每个人脸（Face）都作为单独个体进行验证，而人员搜索及人员搜索按库返回接口 会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使搜索更加准确。\n\n\n本接口需与[人员库管理相关接口](https://cloud.tencent.com/document/product/867/45015)结合使用。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。\n\n>     \n- 不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。",
       "input": "SearchFacesRequest",
       "name": "人脸搜索",
       "output": "SearchFacesResponse"
     },
     "SearchFacesReturnsByGroup": {
-      "document": "用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopK 人员，按照**人员库的维度**以人员相似度从大到小顺序排列。\n\n支持一次性识别图片中的最多 10 张人脸，支持跨人员库（Group）搜索。\n\n单次搜索的人员库人脸总数量和人员库的算法模型版本（FaceModelVersion）相关。算法模型版本为2.0的人员库，单次搜索人员库人脸总数量不得超过 100 万张；算法模型版本为3.0的人员库，单次搜索人员库人脸总数量不得超过 300 万张。\n\n与[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口不同的是，本接口将该人员（Person）下的每个人脸（Face）都作为单独个体进行验证，而[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口 会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使搜索更加准确。\n\n本接口需与[人员库管理相关接口](https://cloud.tencent.com/document/product/867/45015)结合使用。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。\n\n",
+      "document": "用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopK 人员，按照**人员库的维度**以人员相似度从大到小顺序排列。\n\n支持一次性识别图片中的最多 10 张人脸，支持跨人员库（Group）搜索。\n\n单次搜索的人员库人脸总数量和人员库的算法模型版本（FaceModelVersion）相关。算法模型版本为2.0的人员库，单次搜索人员库人脸总数量不得超过 100 万张；算法模型版本为3.0的人员库，单次搜索人员库人脸总数量不得超过 300 万张。\n\n与[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口不同的是，本接口将该人员（Person）下的每个人脸（Face）都作为单独个体进行验证，而[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口 会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使搜索更加准确。\n\n本接口需与[人员库管理相关接口](https://cloud.tencent.com/document/product/867/45015)结合使用。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。\n\n>     \n- 不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。\n",
       "input": "SearchFacesReturnsByGroupRequest",
       "name": "人脸搜索分库返回",
       "output": "SearchFacesReturnsByGroupResponse"
@@ -3476,7 +3476,7 @@
       "members": [
         {
           "default": "",
-          "document": "希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId",
+          "document": "希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId。\n不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -3595,7 +3595,7 @@
       "members": [
         {
           "default": "",
-          "document": "希望搜索的人员库列表，上限60个。数组元素取值为创建人员库接口中的GroupId",
+          "document": "希望搜索的人员库列表，上限60个。数组元素取值为创建人员库接口中的GroupId。\n不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。",
           "member": "string",
           "name": "GroupIds",
           "required": true,

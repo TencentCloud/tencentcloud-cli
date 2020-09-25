@@ -6,6 +6,12 @@
       "name": "域名注册检查",
       "output": "CheckDomainResponse"
     },
+    "DescribeDomainBaseInfo": {
+      "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。\n\n默认接口请求频率限制：20次/秒。\n",
+      "input": "DescribeDomainBaseInfoRequest",
+      "name": "获取域名基础信息",
+      "output": "DescribeDomainBaseInfoResponse"
+    },
     "DescribeDomainPriceList": {
       "document": "按照域名后缀获取对应的价格列表",
       "input": "DescribeDomainPriceListRequest",
@@ -145,6 +151,39 @@
       ],
       "type": "object"
     },
+    "DescribeDomainBaseInfoRequest": {
+      "document": "DescribeDomainBaseInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainBaseInfoResponse": {
+      "document": "DescribeDomainBaseInfo返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息",
+          "member": "DomainBaseInfo",
+          "name": "DomainInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainPriceListRequest": {
       "document": "DescribeDomainPriceList请求参数结构体",
       "members": [
@@ -193,6 +232,111 @@
         }
       ],
       "type": "object"
+    },
+    "DomainBaseInfo": {
+      "document": "获取域名基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名资源ID。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名名称。",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名实名认证状态。\nNotUpload：未实名认证\nInAudit：实名审核中\nApproved：实名审核通过\nReject：实名审核失败",
+          "member": "string",
+          "name": "RealNameAuditStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名实名认证不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RealNameAuditUnpassReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名命名审核状态。\nNotAudit：命名审核未上传\nPending：命名审核待上传\nAuditing：域名命名审核中\nApproved：域名命名审核通过\nRejected：域名命名审核拒绝",
+          "member": "string",
+          "name": "DomainNameAuditStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名命名审核不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DomainNameAuditUnpassReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "注册时间。",
+          "member": "string",
+          "name": "CreationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "member": "string",
+          "name": "ExpirationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除",
+          "member": "string",
+          "name": "DomainStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名购买状态。\nok：正常\nRegisterPending：待注册\nRegisterDoing：注册中\nRegisterFailed：注册失败\nAboutToExpire: 即将过期\nRenewPending：已进入续费期，需要进行续费\nRenewDoing：续费中\nRedemptionPending：已进入赎回期，需要进行续费\nRedemptionDoing：赎回中\nTransferPending：待转入中\nTransferTransing：转入中\nTransferFailed：转入失败",
+          "member": "string",
+          "name": "BuyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册类型\nepp （腾讯云自有域名）\nxinnet (新网域名)",
+          "member": "string",
+          "name": "RegistrarType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PriceInfo": {
       "document": "域名价格信息",

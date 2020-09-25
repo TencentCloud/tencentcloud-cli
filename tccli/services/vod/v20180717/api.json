@@ -264,6 +264,12 @@
       "name": "获取视频内容审核模板列表",
       "output": "DescribeContentReviewTemplatesResponse"
     },
+    "DescribeEventsState": {
+      "document": "* 该接口用于业务服务器获取 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 事件通知的状态。\n",
+      "input": "DescribeEventsStateRequest",
+      "name": "获取事件通知状态",
+      "output": "DescribeEventsStateResponse"
+    },
     "DescribeImageSpriteTemplates": {
       "document": "查询雪碧图模板，支持根据条件，分页查询。",
       "input": "DescribeImageSpriteTemplatesRequest",
@@ -8082,6 +8088,39 @@
           "member": "ContentReviewTemplateItem",
           "name": "ContentReviewTemplateSet",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventsStateRequest": {
+      "document": "DescribeEventsState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventsStateResponse": {
+      "document": "DescribeEventsState返回参数结构体",
+      "members": [
+        {
+          "document": "待进行拉取的事件通知数，为近似值，约5秒延迟。",
+          "member": "uint64",
+          "name": "CountOfEventsToPull",
+          "type": "int",
           "value_allowed_null": false
         },
         {
