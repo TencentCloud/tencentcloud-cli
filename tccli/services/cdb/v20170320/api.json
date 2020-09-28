@@ -6245,6 +6245,15 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘空间容量，每两个一组，第一个为已使用容量，第二个为磁盘总容量",
+          "member": "int64",
+          "name": "CapacityRatio",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

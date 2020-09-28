@@ -9,11 +9,11 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tsf.v20180326 import tsf_client as tsf_client_v20180326
-from tencentcloud.tsf.v20180326 import models as models_v20180326
+from tencentcloud.cwp.v20180228 import cwp_client as cwp_client_v20180228
+from tencentcloud.cwp.v20180228 import models as models_v20180228
 
 
-def doDeletePublicConfig(args, parsed_globals):
+def doDeleteTags(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -24,12 +24,12 @@ def doDeletePublicConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeletePublicConfigRequest()
+    model = models.DeleteTagsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeletePublicConfig(model)
+    rsp = client.DeleteTags(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -38,7 +38,7 @@ def doDeletePublicConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCluster(args, parsed_globals):
+def doTrustMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -49,12 +49,12 @@ def doCreateCluster(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterRequest()
+    model = models.TrustMalwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateCluster(model)
+    rsp = client.TrustMalwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -63,7 +63,7 @@ def doCreateCluster(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyContainerReplicas(args, parsed_globals):
+def doDescribeComponentStatistics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -74,12 +74,12 @@ def doModifyContainerReplicas(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyContainerReplicasRequest()
+    model = models.DescribeComponentStatisticsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyContainerReplicas(model)
+    rsp = client.DescribeComponentStatistics(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -88,7 +88,7 @@ def doModifyContainerReplicas(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeConfigSummary(args, parsed_globals):
+def doDeleteMachineTag(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -99,12 +99,12 @@ def doDescribeConfigSummary(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigSummaryRequest()
+    model = models.DeleteMachineTagRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeConfigSummary(model)
+    rsp = client.DeleteMachineTag(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -113,7 +113,7 @@ def doDescribeConfigSummary(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePodInstances(args, parsed_globals):
+def doDescribeAttackLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -124,12 +124,12 @@ def doDescribePodInstances(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePodInstancesRequest()
+    model = models.DescribeAttackLogsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePodInstances(model)
+    rsp = client.DescribeAttackLogs(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -138,7 +138,7 @@ def doDescribePodInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRevocationPublicConfig(args, parsed_globals):
+def doOpenProVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -149,12 +149,12 @@ def doRevocationPublicConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RevocationPublicConfigRequest()
+    model = models.OpenProVersionRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RevocationPublicConfig(model)
+    rsp = client.OpenProVersion(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -163,7 +163,7 @@ def doRevocationPublicConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateNamespace(args, parsed_globals):
+def doDescribeWeeklyReportMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -174,12 +174,12 @@ def doCreateNamespace(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateNamespaceRequest()
+    model = models.DescribeWeeklyReportMalwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateNamespace(model)
+    rsp = client.DescribeWeeklyReportMalwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -188,7 +188,7 @@ def doCreateNamespace(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAddClusterInstances(args, parsed_globals):
+def doDescribeVulInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -199,12 +199,12 @@ def doAddClusterInstances(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AddClusterInstancesRequest()
+    model = models.DescribeVulInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.AddClusterInstances(model)
+    rsp = client.DescribeVulInfo(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -213,7 +213,7 @@ def doAddClusterInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicConfigSummary(args, parsed_globals):
+def doEditBashRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -224,12 +224,12 @@ def doDescribePublicConfigSummary(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicConfigSummaryRequest()
+    model = models.EditBashRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePublicConfigSummary(model)
+    rsp = client.EditBashRule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -238,7 +238,7 @@ def doDescribePublicConfigSummary(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateMicroservice(args, parsed_globals):
+def doDeleteUsualLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -249,12 +249,12 @@ def doCreateMicroservice(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateMicroserviceRequest()
+    model = models.DeleteUsualLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateMicroservice(model)
+    rsp = client.DeleteUsualLoginPlaces(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -263,7 +263,7 @@ def doCreateMicroservice(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeConfigs(args, parsed_globals):
+def doDescribeVuls(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -274,12 +274,12 @@ def doDescribeConfigs(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigsRequest()
+    model = models.DescribeVulsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeConfigs(model)
+    rsp = client.DescribeVuls(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -288,7 +288,7 @@ def doDescribeConfigs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeConfig(args, parsed_globals):
+def doMisAlarmNonlocalLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -299,12 +299,12 @@ def doDescribeConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigRequest()
+    model = models.MisAlarmNonlocalLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeConfig(model)
+    rsp = client.MisAlarmNonlocalLoginPlaces(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -313,7 +313,7 @@ def doDescribeConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeContainerGroupDetail(args, parsed_globals):
+def doCreateBaselineStrategy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -324,12 +324,12 @@ def doDescribeContainerGroupDetail(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeContainerGroupDetailRequest()
+    model = models.CreateBaselineStrategyRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeContainerGroupDetail(model)
+    rsp = client.CreateBaselineStrategy(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -338,7 +338,7 @@ def doDescribeContainerGroupDetail(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRollbackConfig(args, parsed_globals):
+def doDescribeBashRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -349,12 +349,12 @@ def doRollbackConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RollbackConfigRequest()
+    model = models.DescribeBashRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RollbackConfig(model)
+    rsp = client.DescribeBashRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -363,7 +363,7 @@ def doRollbackConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeImageTags(args, parsed_globals):
+def doDeletePrivilegeEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -374,12 +374,12 @@ def doDescribeImageTags(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeImageTagsRequest()
+    model = models.DeletePrivilegeEventsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeImageTags(model)
+    rsp = client.DeletePrivilegeEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -388,7 +388,7 @@ def doDescribeImageTags(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyUploadInfo(args, parsed_globals):
+def doRenewProVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -399,12 +399,12 @@ def doModifyUploadInfo(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyUploadInfoRequest()
+    model = models.RenewProVersionRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyUploadInfo(model)
+    rsp = client.RenewProVersion(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -413,7 +413,7 @@ def doModifyUploadInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSimpleClusters(args, parsed_globals):
+def doExportAttackLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -424,12 +424,12 @@ def doDescribeSimpleClusters(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSimpleClustersRequest()
+    model = models.ExportAttackLogsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSimpleClusters(model)
+    rsp = client.ExportAttackLogs(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -438,7 +438,7 @@ def doDescribeSimpleClusters(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeApiDetail(args, parsed_globals):
+def doDescribeUsualLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -449,12 +449,12 @@ def doDescribeApiDetail(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeApiDetailRequest()
+    model = models.DescribeUsualLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeApiDetail(model)
+    rsp = client.DescribeUsualLoginPlaces(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -463,7 +463,7 @@ def doDescribeApiDetail(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeployServerlessGroup(args, parsed_globals):
+def doDeleteBashEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -474,12 +474,12 @@ def doDeployServerlessGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeployServerlessGroupRequest()
+    model = models.DeleteBashEventsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeployServerlessGroup(model)
+    rsp = client.DeleteBashEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -488,7 +488,7 @@ def doDeployServerlessGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateConfig(args, parsed_globals):
+def doDeleteMaliciousRequests(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -499,12 +499,12 @@ def doCreateConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateConfigRequest()
+    model = models.DeleteMaliciousRequestsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateConfig(model)
+    rsp = client.DeleteMaliciousRequests(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -513,7 +513,7 @@ def doCreateConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeContainerGroups(args, parsed_globals):
+def doDescribeReverseShellRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -524,12 +524,12 @@ def doDescribeContainerGroups(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeContainerGroupsRequest()
+    model = models.DescribeReverseShellRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeContainerGroups(model)
+    rsp = client.DescribeReverseShellRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -538,7 +538,7 @@ def doDescribeContainerGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImageTags(args, parsed_globals):
+def doRecoverMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -549,12 +549,12 @@ def doDeleteImageTags(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImageTagsRequest()
+    model = models.RecoverMalwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteImageTags(model)
+    rsp = client.RecoverMalwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -563,7 +563,7 @@ def doDeleteImageTags(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDownloadInfo(args, parsed_globals):
+def doDeleteReverseShellRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -574,12 +574,12 @@ def doDescribeDownloadInfo(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDownloadInfoRequest()
+    model = models.DeleteReverseShellRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDownloadInfo(model)
+    rsp = client.DeleteReverseShellRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -588,7 +588,7 @@ def doDescribeDownloadInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeApplications(args, parsed_globals):
+def doDeleteBruteAttacks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -599,12 +599,12 @@ def doDescribeApplications(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeApplicationsRequest()
+    model = models.DeleteBruteAttacksRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeApplications(model)
+    rsp = client.DeleteBruteAttacks(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -613,7 +613,7 @@ def doDescribeApplications(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateRepository(args, parsed_globals):
+def doExportBashEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -624,12 +624,12 @@ def doUpdateRepository(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateRepositoryRequest()
+    model = models.ExportBashEventsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.UpdateRepository(model)
+    rsp = client.ExportBashEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -638,7 +638,7 @@ def doUpdateRepository(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeApplication(args, parsed_globals):
+def doCreateProcessTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -649,12 +649,12 @@ def doDescribeApplication(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeApplicationRequest()
+    model = models.CreateProcessTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeApplication(model)
+    rsp = client.CreateProcessTask(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -663,7 +663,7 @@ def doDescribeApplication(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSimpleApplications(args, parsed_globals):
+def doEditReverseShellRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -674,12 +674,12 @@ def doDescribeSimpleApplications(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSimpleApplicationsRequest()
+    model = models.EditReverseShellRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSimpleApplications(model)
+    rsp = client.EditReverseShellRule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -688,7 +688,7 @@ def doDescribeSimpleApplications(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLanes(args, parsed_globals):
+def doDescribeProcesses(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -699,12 +699,12 @@ def doDescribeLanes(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLanesRequest()
+    model = models.DescribeProcessesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeLanes(model)
+    rsp = client.DescribeProcesses(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -713,7 +713,7 @@ def doDescribeLanes(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSimpleNamespaces(args, parsed_globals):
+def doDescribeMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -724,12 +724,12 @@ def doDescribeSimpleNamespaces(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSimpleNamespacesRequest()
+    model = models.DescribeMalwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSimpleNamespaces(model)
+    rsp = client.DescribeMalwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -738,7 +738,7 @@ def doDescribeSimpleNamespaces(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteMicroservice(args, parsed_globals):
+def doModifyLoginWhiteList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -749,12 +749,12 @@ def doDeleteMicroservice(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteMicroserviceRequest()
+    model = models.ModifyLoginWhiteListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteMicroservice(model)
+    rsp = client.ModifyLoginWhiteList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -763,7 +763,7 @@ def doDeleteMicroservice(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopContainerGroup(args, parsed_globals):
+def doDescribePrivilegeRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -774,12 +774,12 @@ def doStopContainerGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopContainerGroupRequest()
+    model = models.DescribePrivilegeRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.StopContainerGroup(model)
+    rsp = client.DescribePrivilegeRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -788,7 +788,7 @@ def doStopContainerGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateLaneRule(args, parsed_globals):
+def doUntrustMaliciousRequest(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -799,12 +799,12 @@ def doCreateLaneRule(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateLaneRuleRequest()
+    model = models.UntrustMaliciousRequestRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateLaneRule(model)
+    rsp = client.UntrustMaliciousRequest(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -813,7 +813,7 @@ def doCreateLaneRule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteContainerGroup(args, parsed_globals):
+def doDescribeImpactedHosts(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -824,12 +824,12 @@ def doDeleteContainerGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteContainerGroupRequest()
+    model = models.DescribeImpactedHostsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteContainerGroup(model)
+    rsp = client.DescribeImpactedHosts(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -838,7 +838,7 @@ def doDeleteContainerGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReleaseConfig(args, parsed_globals):
+def doDeleteNonlocalLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -849,12 +849,12 @@ def doReleaseConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReleaseConfigRequest()
+    model = models.DeleteNonlocalLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ReleaseConfig(model)
+    rsp = client.DeleteNonlocalLoginPlaces(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -863,7 +863,7 @@ def doReleaseConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeGroups(args, parsed_globals):
+def doDescribeOpenPorts(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -874,12 +874,12 @@ def doDescribeGroups(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeGroupsRequest()
+    model = models.DescribeOpenPortsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeGroups(model)
+    rsp = client.DescribeOpenPorts(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -888,7 +888,7 @@ def doDescribeGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRepositories(args, parsed_globals):
+def doExportMaliciousRequests(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -899,12 +899,12 @@ def doDescribeRepositories(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRepositoriesRequest()
+    model = models.ExportMaliciousRequestsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeRepositories(model)
+    rsp = client.ExportMaliciousRequests(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -913,7 +913,7 @@ def doDescribeRepositories(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateRepository(args, parsed_globals):
+def doDescribeTagMachines(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -924,12 +924,12 @@ def doCreateRepository(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateRepositoryRequest()
+    model = models.DescribeTagMachinesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateRepository(model)
+    rsp = client.DescribeTagMachines(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -938,7 +938,7 @@ def doCreateRepository(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusterInstances(args, parsed_globals):
+def doDescribeNonlocalLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -949,12 +949,12 @@ def doDescribeClusterInstances(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClusterInstancesRequest()
+    model = models.DescribeNonlocalLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeClusterInstances(model)
+    rsp = client.DescribeNonlocalLoginPlaces(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -963,7 +963,7 @@ def doDescribeClusterInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreatePublicConfig(args, parsed_globals):
+def doExportPrivilegeEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -974,12 +974,12 @@ def doCreatePublicConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreatePublicConfigRequest()
+    model = models.ExportPrivilegeEventsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreatePublicConfig(model)
+    rsp = client.ExportPrivilegeEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -988,7 +988,7 @@ def doCreatePublicConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSimpleGroups(args, parsed_globals):
+def doDescribeOverviewStatistics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -999,12 +999,12 @@ def doDescribeSimpleGroups(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSimpleGroupsRequest()
+    model = models.DescribeOverviewStatisticsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSimpleGroups(model)
+    rsp = client.DescribeOverviewStatistics(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1013,7 +1013,7 @@ def doDescribeSimpleGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAddInstances(args, parsed_globals):
+def doDescribeOpenPortTaskStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1024,12 +1024,12 @@ def doAddInstances(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AddInstancesRequest()
+    model = models.DescribeOpenPortTaskStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.AddInstances(model)
+    rsp = client.DescribeOpenPortTaskStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1038,7 +1038,7 @@ def doAddInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doShrinkInstances(args, parsed_globals):
+def doDescribeSecurityDynamics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1049,12 +1049,12 @@ def doShrinkInstances(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ShrinkInstancesRequest()
+    model = models.DescribeSecurityDynamicsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ShrinkInstances(model)
+    rsp = client.DescribeSecurityDynamics(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1063,7 +1063,7 @@ def doShrinkInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePkgs(args, parsed_globals):
+def doDeleteReverseShellEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1074,12 +1074,12 @@ def doDescribePkgs(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePkgsRequest()
+    model = models.DeleteReverseShellEventsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePkgs(model)
+    rsp = client.DeleteReverseShellEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1088,7 +1088,7 @@ def doDescribePkgs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicConfig(args, parsed_globals):
+def doDeletePrivilegeRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1099,12 +1099,12 @@ def doDescribePublicConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicConfigRequest()
+    model = models.DeletePrivilegeRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePublicConfig(model)
+    rsp = client.DeletePrivilegeRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1113,7 +1113,7 @@ def doDescribePublicConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteGroup(args, parsed_globals):
+def doDeleteMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1124,12 +1124,12 @@ def doDeleteGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteGroupRequest()
+    model = models.DeleteMalwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteGroup(model)
+    rsp = client.DeleteMalwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1138,7 +1138,7 @@ def doDeleteGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeServerlessGroups(args, parsed_globals):
+def doDescribeWeeklyReportNonlocalLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1149,12 +1149,12 @@ def doDescribeServerlessGroups(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessGroupsRequest()
+    model = models.DescribeWeeklyReportNonlocalLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeServerlessGroups(model)
+    rsp = client.DescribeWeeklyReportNonlocalLoginPlaces(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1163,7 +1163,7 @@ def doDescribeServerlessGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateGroup(args, parsed_globals):
+def doDeleteLoginWhiteList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1174,12 +1174,12 @@ def doCreateGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateGroupRequest()
+    model = models.DeleteLoginWhiteListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateGroup(model)
+    rsp = client.DeleteLoginWhiteList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1188,7 +1188,7 @@ def doCreateGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeGroupInstances(args, parsed_globals):
+def doCreateOpenPortTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1199,12 +1199,12 @@ def doDescribeGroupInstances(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeGroupInstancesRequest()
+    model = models.CreateOpenPortTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeGroupInstances(model)
+    rsp = client.CreateOpenPortTask(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1213,7 +1213,7 @@ def doDescribeGroupInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeletePkgs(args, parsed_globals):
+def doCloseProVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1224,12 +1224,12 @@ def doDeletePkgs(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeletePkgsRequest()
+    model = models.CloseProVersionRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeletePkgs(model)
+    rsp = client.CloseProVersion(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1238,7 +1238,7 @@ def doDeletePkgs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicConfigs(args, parsed_globals):
+def doDescribeAccountStatistics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1249,12 +1249,12 @@ def doDescribePublicConfigs(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicConfigsRequest()
+    model = models.DescribeAccountStatisticsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePublicConfigs(model)
+    rsp = client.DescribeAccountStatistics(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1263,7 +1263,7 @@ def doDescribePublicConfigs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStartContainerGroup(args, parsed_globals):
+def doModifyAlarmAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1274,12 +1274,12 @@ def doStartContainerGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartContainerGroupRequest()
+    model = models.ModifyAlarmAttributeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.StartContainerGroup(model)
+    rsp = client.ModifyAlarmAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1288,7 +1288,7 @@ def doStartContainerGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRemoveInstances(args, parsed_globals):
+def doDescribeOpenPortStatistics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1299,12 +1299,12 @@ def doRemoveInstances(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RemoveInstancesRequest()
+    model = models.DescribeOpenPortStatisticsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RemoveInstances(model)
+    rsp = client.DescribeOpenPortStatistics(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1313,7 +1313,7 @@ def doRemoveInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doExpandGroup(args, parsed_globals):
+def doExportBruteAttacks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1324,12 +1324,12 @@ def doExpandGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ExpandGroupRequest()
+    model = models.ExportBruteAttacksRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ExpandGroup(model)
+    rsp = client.ExportBruteAttacks(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1338,7 +1338,7 @@ def doExpandGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTask(args, parsed_globals):
+def doTrustMaliciousRequest(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1349,12 +1349,12 @@ def doDeleteTask(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTaskRequest()
+    model = models.TrustMaliciousRequestRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteTask(model)
+    rsp = client.TrustMaliciousRequest(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1363,7 +1363,7 @@ def doDeleteTask(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteLane(args, parsed_globals):
+def doSwitchBashRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1374,12 +1374,12 @@ def doDeleteLane(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteLaneRequest()
+    model = models.SwitchBashRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteLane(model)
+    rsp = client.SwitchBashRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1388,7 +1388,7 @@ def doDeleteLane(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeConfigReleases(args, parsed_globals):
+def doEditPrivilegeRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1399,12 +1399,12 @@ def doDescribeConfigReleases(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigReleasesRequest()
+    model = models.EditPrivilegeRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeConfigReleases(model)
+    rsp = client.EditPrivilegeRule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1413,7 +1413,7 @@ def doDescribeConfigReleases(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateLane(args, parsed_globals):
+def doExportMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1424,12 +1424,12 @@ def doCreateLane(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateLaneRequest()
+    model = models.ExportMalwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateLane(model)
+    rsp = client.ExportMalwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1438,7 +1438,7 @@ def doCreateLane(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeployGroup(args, parsed_globals):
+def doDescribeBruteAttacks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1449,12 +1449,12 @@ def doDeployGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeployGroupRequest()
+    model = models.DescribeBruteAttacksRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeployGroup(model)
+    rsp = client.DescribeBruteAttacks(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1463,7 +1463,7 @@ def doDeployGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyLane(args, parsed_globals):
+def doOpenProVersionPrepaid(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1474,12 +1474,12 @@ def doModifyLane(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyLaneRequest()
+    model = models.OpenProVersionPrepaidRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyLane(model)
+    rsp = client.OpenProVersionPrepaid(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1488,7 +1488,7 @@ def doModifyLane(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyMicroservice(args, parsed_globals):
+def doAddMachineTag(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1499,12 +1499,12 @@ def doModifyMicroservice(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyMicroserviceRequest()
+    model = models.AddMachineTagRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyMicroservice(model)
+    rsp = client.AddMachineTag(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1513,7 +1513,7 @@ def doModifyMicroservice(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteNamespace(args, parsed_globals):
+def doModifyProVersionRenewFlag(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1524,12 +1524,12 @@ def doDeleteNamespace(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteNamespaceRequest()
+    model = models.ModifyProVersionRenewFlagRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteNamespace(model)
+    rsp = client.ModifyProVersionRenewFlag(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1538,7 +1538,7 @@ def doDeleteNamespace(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMsApiList(args, parsed_globals):
+def doSeparateMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1549,12 +1549,12 @@ def doDescribeMsApiList(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMsApiListRequest()
+    model = models.SeparateMalwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeMsApiList(model)
+    rsp = client.SeparateMalwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1563,7 +1563,7 @@ def doDescribeMsApiList(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateApplication(args, parsed_globals):
+def doAddLoginWhiteList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1574,12 +1574,12 @@ def doCreateApplication(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateApplicationRequest()
+    model = models.AddLoginWhiteListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateApplication(model)
+    rsp = client.AddLoginWhiteList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1588,7 +1588,7 @@ def doCreateApplication(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicConfigReleaseLogs(args, parsed_globals):
+def doDescribeProcessStatistics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1599,12 +1599,12 @@ def doDescribePublicConfigReleaseLogs(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicConfigReleaseLogsRequest()
+    model = models.DescribeProcessStatisticsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePublicConfigReleaseLogs(model)
+    rsp = client.DescribeProcessStatistics(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1613,7 +1613,7 @@ def doDescribePublicConfigReleaseLogs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeConfigReleaseLogs(args, parsed_globals):
+def doDescribeMaliciousRequests(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1624,12 +1624,12 @@ def doDescribeConfigReleaseLogs(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigReleaseLogsRequest()
+    model = models.DescribeMaliciousRequestsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeConfigReleaseLogs(model)
+    rsp = client.DescribeMaliciousRequests(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1638,7 +1638,7 @@ def doDescribeConfigReleaseLogs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMicroservice(args, parsed_globals):
+def doDeleteBashRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1649,12 +1649,12 @@ def doDescribeMicroservice(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMicroserviceRequest()
+    model = models.DeleteBashRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeMicroservice(model)
+    rsp = client.DeleteBashRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1663,7 +1663,7 @@ def doDescribeMicroservice(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteServerlessGroup(args, parsed_globals):
+def doDescribeReverseShellEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1674,12 +1674,12 @@ def doDeleteServerlessGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteServerlessGroupRequest()
+    model = models.DescribeReverseShellEventsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteServerlessGroup(model)
+    rsp = client.DescribeReverseShellEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1688,7 +1688,7 @@ def doDeleteServerlessGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteRepository(args, parsed_globals):
+def doModifyAutoOpenProVersionConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1699,12 +1699,12 @@ def doDeleteRepository(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteRepositoryRequest()
+    model = models.ModifyAutoOpenProVersionConfigRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteRepository(model)
+    rsp = client.ModifyAutoOpenProVersionConfig(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1713,7 +1713,7 @@ def doDeleteRepository(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeployContainerGroup(args, parsed_globals):
+def doDescribeAgentVuls(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1724,12 +1724,12 @@ def doDeployContainerGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeployContainerGroupRequest()
+    model = models.DescribeAgentVulsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeployContainerGroup(model)
+    rsp = client.DescribeAgentVuls(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1738,7 +1738,7 @@ def doDeployContainerGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteApplication(args, parsed_globals):
+def doDescribeAccounts(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1749,12 +1749,12 @@ def doDeleteApplication(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteApplicationRequest()
+    model = models.DescribeAccountsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteApplication(model)
+    rsp = client.DescribeAccounts(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1763,7 +1763,7 @@ def doDeleteApplication(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateServerlessGroup(args, parsed_globals):
+def doDescribeWeeklyReports(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1774,12 +1774,12 @@ def doCreateServerlessGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateServerlessGroupRequest()
+    model = models.DescribeWeeklyReportsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateServerlessGroup(model)
+    rsp = client.DescribeWeeklyReports(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1788,7 +1788,7 @@ def doCreateServerlessGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteConfig(args, parsed_globals):
+def doDescribeProVersionInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1799,12 +1799,12 @@ def doDeleteConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteConfigRequest()
+    model = models.DescribeProVersionInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteConfig(model)
+    rsp = client.DescribeProVersionInfo(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1813,7 +1813,7 @@ def doDeleteConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReleasePublicConfig(args, parsed_globals):
+def doDescribePrivilegeEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1824,12 +1824,12 @@ def doReleasePublicConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReleasePublicConfigRequest()
+    model = models.DescribePrivilegeEventsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ReleasePublicConfig(model)
+    rsp = client.DescribePrivilegeEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1838,7 +1838,7 @@ def doReleasePublicConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMicroservices(args, parsed_globals):
+def doDescribeMachineInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1849,12 +1849,12 @@ def doDescribeMicroservices(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMicroservicesRequest()
+    model = models.DescribeMachineInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeMicroservices(model)
+    rsp = client.DescribeMachineInfo(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1863,7 +1863,7 @@ def doDescribeMicroservices(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeApiVersions(args, parsed_globals):
+def doDescribeAlarmAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1874,12 +1874,12 @@ def doDescribeApiVersions(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeApiVersionsRequest()
+    model = models.DescribeAlarmAttributeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeApiVersions(model)
+    rsp = client.DescribeAlarmAttribute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1888,7 +1888,7 @@ def doDescribeApiVersions(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeGroup(args, parsed_globals):
+def doDescribeComponents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1899,12 +1899,12 @@ def doDescribeGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeGroupRequest()
+    model = models.DescribeComponentsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeGroup(model)
+    rsp = client.DescribeComponents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1913,7 +1913,7 @@ def doDescribeGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateContainGroup(args, parsed_globals):
+def doDescribeLoginWhiteList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1924,12 +1924,12 @@ def doCreateContainGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateContainGroupRequest()
+    model = models.DescribeLoginWhiteListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateContainGroup(model)
+    rsp = client.DescribeLoginWhiteList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1938,7 +1938,7 @@ def doCreateContainGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeServerlessGroup(args, parsed_globals):
+def doDescribeVulScanResult(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1949,12 +1949,12 @@ def doDescribeServerlessGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessGroupRequest()
+    model = models.DescribeVulScanResultRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeServerlessGroup(model)
+    rsp = client.DescribeVulScanResult(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1963,7 +1963,7 @@ def doDescribeServerlessGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRepository(args, parsed_globals):
+def doDescribeHistoryAccounts(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1974,12 +1974,12 @@ def doDescribeRepository(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRepositoryRequest()
+    model = models.DescribeHistoryAccountsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeRepository(model)
+    rsp = client.DescribeHistoryAccounts(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1988,7 +1988,7 @@ def doDescribeRepository(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeApplicationAttribute(args, parsed_globals):
+def doExportNonlocalLoginPlaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1999,12 +1999,12 @@ def doDescribeApplicationAttribute(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeApplicationAttributeRequest()
+    model = models.ExportNonlocalLoginPlacesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeApplicationAttribute(model)
+    rsp = client.ExportNonlocalLoginPlaces(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2013,7 +2013,7 @@ def doDescribeApplicationAttribute(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRevocationConfig(args, parsed_globals):
+def doDescribeWeeklyReportBruteAttacks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2024,12 +2024,12 @@ def doRevocationConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RevocationConfigRequest()
+    model = models.DescribeWeeklyReportBruteAttacksRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RevocationConfig(model)
+    rsp = client.DescribeWeeklyReportBruteAttacks(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2038,7 +2038,7 @@ def doRevocationConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLaneRules(args, parsed_globals):
+def doUntrustMalwares(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2049,12 +2049,12 @@ def doDescribeLaneRules(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLaneRulesRequest()
+    model = models.UntrustMalwaresRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeLaneRules(model)
+    rsp = client.UntrustMalwares(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2063,7 +2063,7 @@ def doDescribeLaneRules(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyLaneRule(args, parsed_globals):
+def doDescribeWeeklyReportVuls(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2074,12 +2074,12 @@ def doModifyLaneRule(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyLaneRuleRequest()
+    model = models.DescribeWeeklyReportVulsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyLaneRule(model)
+    rsp = client.DescribeWeeklyReportVuls(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2088,7 +2088,7 @@ def doModifyLaneRule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeReleasedConfig(args, parsed_globals):
+def doDescribeWeeklyReportInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2099,12 +2099,12 @@ def doDescribeReleasedConfig(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeReleasedConfigRequest()
+    model = models.DescribeWeeklyReportInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeReleasedConfig(model)
+    rsp = client.DescribeWeeklyReportInfo(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2113,7 +2113,7 @@ def doDescribeReleasedConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicConfigReleases(args, parsed_globals):
+def doDescribeComponentInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2124,12 +2124,12 @@ def doDescribePublicConfigReleases(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicConfigReleasesRequest()
+    model = models.DescribeComponentInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePublicConfigReleases(model)
+    rsp = client.DescribeComponentInfo(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2138,7 +2138,7 @@ def doDescribePublicConfigReleases(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeUploadInfo(args, parsed_globals):
+def doDescribeMachines(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2149,12 +2149,12 @@ def doDescribeUploadInfo(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUploadInfoRequest()
+    model = models.DescribeMachinesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeUploadInfo(model)
+    rsp = client.DescribeMachines(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2163,7 +2163,7 @@ def doDescribeUploadInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopGroup(args, parsed_globals):
+def doSetBashEventsStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2174,12 +2174,12 @@ def doStopGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopGroupRequest()
+    model = models.SetBashEventsStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.StopGroup(model)
+    rsp = client.SetBashEventsStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2188,7 +2188,7 @@ def doStopGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doShrinkGroup(args, parsed_globals):
+def doExportReverseShellEvents(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2199,12 +2199,12 @@ def doShrinkGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ShrinkGroupRequest()
+    model = models.ExportReverseShellEventsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ShrinkGroup(model)
+    rsp = client.ExportReverseShellEvents(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2213,7 +2213,7 @@ def doShrinkGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStartGroup(args, parsed_globals):
+def doDeleteAttackLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2224,12 +2224,12 @@ def doStartGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartGroupRequest()
+    model = models.DeleteAttackLogsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.StartGroup(model)
+    rsp = client.DeleteAttackLogs(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2238,7 +2238,7 @@ def doStartGroup(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyContainerGroup(args, parsed_globals):
+def doDeleteMachine(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2249,12 +2249,262 @@ def doModifyContainerGroup(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyContainerGroupRequest()
+    model = models.DeleteMachineRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyContainerGroup(model)
+    rsp = client.DeleteMachine(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeProcessTaskStatus(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeProcessTaskStatusRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeProcessTaskStatus(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRescanImpactedHost(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RescanImpactedHostRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RescanImpactedHost(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTags(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTagsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTags(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSecurityTrends(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityTrendsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSecurityTrends(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeAttackLogInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAttackLogInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAttackLogInfo(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doIgnoreImpactedHosts(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.IgnoreImpactedHostsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.IgnoreImpactedHosts(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBashEvents(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBashEventsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeBashEvents(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doEditTags(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.EditTagsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.EditTags(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateUsualLoginPlaces(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateUsualLoginPlacesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateUsualLoginPlaces(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquiryPriceOpenProVersionPrepaid(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CwpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquiryPriceOpenProVersionPrepaidRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.InquiryPriceOpenProVersionPrepaid(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2264,111 +2514,121 @@ def doModifyContainerGroup(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20180326": tsf_client_v20180326,
+    "v20180228": cwp_client_v20180228,
 
 }
 
 MODELS_MAP = {
-    "v20180326": models_v20180326,
+    "v20180228": models_v20180228,
 
 }
 
 ACTION_MAP = {
-    "DeletePublicConfig": doDeletePublicConfig,
-    "CreateCluster": doCreateCluster,
-    "ModifyContainerReplicas": doModifyContainerReplicas,
-    "DescribeConfigSummary": doDescribeConfigSummary,
-    "DescribePodInstances": doDescribePodInstances,
-    "RevocationPublicConfig": doRevocationPublicConfig,
-    "CreateNamespace": doCreateNamespace,
-    "AddClusterInstances": doAddClusterInstances,
-    "DescribePublicConfigSummary": doDescribePublicConfigSummary,
-    "CreateMicroservice": doCreateMicroservice,
-    "DescribeConfigs": doDescribeConfigs,
-    "DescribeConfig": doDescribeConfig,
-    "DescribeContainerGroupDetail": doDescribeContainerGroupDetail,
-    "RollbackConfig": doRollbackConfig,
-    "DescribeImageTags": doDescribeImageTags,
-    "ModifyUploadInfo": doModifyUploadInfo,
-    "DescribeSimpleClusters": doDescribeSimpleClusters,
-    "DescribeApiDetail": doDescribeApiDetail,
-    "DeployServerlessGroup": doDeployServerlessGroup,
-    "CreateConfig": doCreateConfig,
-    "DescribeContainerGroups": doDescribeContainerGroups,
-    "DeleteImageTags": doDeleteImageTags,
-    "DescribeDownloadInfo": doDescribeDownloadInfo,
-    "DescribeApplications": doDescribeApplications,
-    "UpdateRepository": doUpdateRepository,
-    "DescribeApplication": doDescribeApplication,
-    "DescribeSimpleApplications": doDescribeSimpleApplications,
-    "DescribeLanes": doDescribeLanes,
-    "DescribeSimpleNamespaces": doDescribeSimpleNamespaces,
-    "DeleteMicroservice": doDeleteMicroservice,
-    "StopContainerGroup": doStopContainerGroup,
-    "CreateLaneRule": doCreateLaneRule,
-    "DeleteContainerGroup": doDeleteContainerGroup,
-    "ReleaseConfig": doReleaseConfig,
-    "DescribeGroups": doDescribeGroups,
-    "DescribeRepositories": doDescribeRepositories,
-    "CreateRepository": doCreateRepository,
-    "DescribeClusterInstances": doDescribeClusterInstances,
-    "CreatePublicConfig": doCreatePublicConfig,
-    "DescribeSimpleGroups": doDescribeSimpleGroups,
-    "AddInstances": doAddInstances,
-    "ShrinkInstances": doShrinkInstances,
-    "DescribePkgs": doDescribePkgs,
-    "DescribePublicConfig": doDescribePublicConfig,
-    "DeleteGroup": doDeleteGroup,
-    "DescribeServerlessGroups": doDescribeServerlessGroups,
-    "CreateGroup": doCreateGroup,
-    "DescribeGroupInstances": doDescribeGroupInstances,
-    "DeletePkgs": doDeletePkgs,
-    "DescribePublicConfigs": doDescribePublicConfigs,
-    "StartContainerGroup": doStartContainerGroup,
-    "RemoveInstances": doRemoveInstances,
-    "ExpandGroup": doExpandGroup,
-    "DeleteTask": doDeleteTask,
-    "DeleteLane": doDeleteLane,
-    "DescribeConfigReleases": doDescribeConfigReleases,
-    "CreateLane": doCreateLane,
-    "DeployGroup": doDeployGroup,
-    "ModifyLane": doModifyLane,
-    "ModifyMicroservice": doModifyMicroservice,
-    "DeleteNamespace": doDeleteNamespace,
-    "DescribeMsApiList": doDescribeMsApiList,
-    "CreateApplication": doCreateApplication,
-    "DescribePublicConfigReleaseLogs": doDescribePublicConfigReleaseLogs,
-    "DescribeConfigReleaseLogs": doDescribeConfigReleaseLogs,
-    "DescribeMicroservice": doDescribeMicroservice,
-    "DeleteServerlessGroup": doDeleteServerlessGroup,
-    "DeleteRepository": doDeleteRepository,
-    "DeployContainerGroup": doDeployContainerGroup,
-    "DeleteApplication": doDeleteApplication,
-    "CreateServerlessGroup": doCreateServerlessGroup,
-    "DeleteConfig": doDeleteConfig,
-    "ReleasePublicConfig": doReleasePublicConfig,
-    "DescribeMicroservices": doDescribeMicroservices,
-    "DescribeApiVersions": doDescribeApiVersions,
-    "DescribeGroup": doDescribeGroup,
-    "CreateContainGroup": doCreateContainGroup,
-    "DescribeServerlessGroup": doDescribeServerlessGroup,
-    "DescribeRepository": doDescribeRepository,
-    "DescribeApplicationAttribute": doDescribeApplicationAttribute,
-    "RevocationConfig": doRevocationConfig,
-    "DescribeLaneRules": doDescribeLaneRules,
-    "ModifyLaneRule": doModifyLaneRule,
-    "DescribeReleasedConfig": doDescribeReleasedConfig,
-    "DescribePublicConfigReleases": doDescribePublicConfigReleases,
-    "DescribeUploadInfo": doDescribeUploadInfo,
-    "StopGroup": doStopGroup,
-    "ShrinkGroup": doShrinkGroup,
-    "StartGroup": doStartGroup,
-    "ModifyContainerGroup": doModifyContainerGroup,
+    "DeleteTags": doDeleteTags,
+    "TrustMalwares": doTrustMalwares,
+    "DescribeComponentStatistics": doDescribeComponentStatistics,
+    "DeleteMachineTag": doDeleteMachineTag,
+    "DescribeAttackLogs": doDescribeAttackLogs,
+    "OpenProVersion": doOpenProVersion,
+    "DescribeWeeklyReportMalwares": doDescribeWeeklyReportMalwares,
+    "DescribeVulInfo": doDescribeVulInfo,
+    "EditBashRule": doEditBashRule,
+    "DeleteUsualLoginPlaces": doDeleteUsualLoginPlaces,
+    "DescribeVuls": doDescribeVuls,
+    "MisAlarmNonlocalLoginPlaces": doMisAlarmNonlocalLoginPlaces,
+    "CreateBaselineStrategy": doCreateBaselineStrategy,
+    "DescribeBashRules": doDescribeBashRules,
+    "DeletePrivilegeEvents": doDeletePrivilegeEvents,
+    "RenewProVersion": doRenewProVersion,
+    "ExportAttackLogs": doExportAttackLogs,
+    "DescribeUsualLoginPlaces": doDescribeUsualLoginPlaces,
+    "DeleteBashEvents": doDeleteBashEvents,
+    "DeleteMaliciousRequests": doDeleteMaliciousRequests,
+    "DescribeReverseShellRules": doDescribeReverseShellRules,
+    "RecoverMalwares": doRecoverMalwares,
+    "DeleteReverseShellRules": doDeleteReverseShellRules,
+    "DeleteBruteAttacks": doDeleteBruteAttacks,
+    "ExportBashEvents": doExportBashEvents,
+    "CreateProcessTask": doCreateProcessTask,
+    "EditReverseShellRule": doEditReverseShellRule,
+    "DescribeProcesses": doDescribeProcesses,
+    "DescribeMalwares": doDescribeMalwares,
+    "ModifyLoginWhiteList": doModifyLoginWhiteList,
+    "DescribePrivilegeRules": doDescribePrivilegeRules,
+    "UntrustMaliciousRequest": doUntrustMaliciousRequest,
+    "DescribeImpactedHosts": doDescribeImpactedHosts,
+    "DeleteNonlocalLoginPlaces": doDeleteNonlocalLoginPlaces,
+    "DescribeOpenPorts": doDescribeOpenPorts,
+    "ExportMaliciousRequests": doExportMaliciousRequests,
+    "DescribeTagMachines": doDescribeTagMachines,
+    "DescribeNonlocalLoginPlaces": doDescribeNonlocalLoginPlaces,
+    "ExportPrivilegeEvents": doExportPrivilegeEvents,
+    "DescribeOverviewStatistics": doDescribeOverviewStatistics,
+    "DescribeOpenPortTaskStatus": doDescribeOpenPortTaskStatus,
+    "DescribeSecurityDynamics": doDescribeSecurityDynamics,
+    "DeleteReverseShellEvents": doDeleteReverseShellEvents,
+    "DeletePrivilegeRules": doDeletePrivilegeRules,
+    "DeleteMalwares": doDeleteMalwares,
+    "DescribeWeeklyReportNonlocalLoginPlaces": doDescribeWeeklyReportNonlocalLoginPlaces,
+    "DeleteLoginWhiteList": doDeleteLoginWhiteList,
+    "CreateOpenPortTask": doCreateOpenPortTask,
+    "CloseProVersion": doCloseProVersion,
+    "DescribeAccountStatistics": doDescribeAccountStatistics,
+    "ModifyAlarmAttribute": doModifyAlarmAttribute,
+    "DescribeOpenPortStatistics": doDescribeOpenPortStatistics,
+    "ExportBruteAttacks": doExportBruteAttacks,
+    "TrustMaliciousRequest": doTrustMaliciousRequest,
+    "SwitchBashRules": doSwitchBashRules,
+    "EditPrivilegeRule": doEditPrivilegeRule,
+    "ExportMalwares": doExportMalwares,
+    "DescribeBruteAttacks": doDescribeBruteAttacks,
+    "OpenProVersionPrepaid": doOpenProVersionPrepaid,
+    "AddMachineTag": doAddMachineTag,
+    "ModifyProVersionRenewFlag": doModifyProVersionRenewFlag,
+    "SeparateMalwares": doSeparateMalwares,
+    "AddLoginWhiteList": doAddLoginWhiteList,
+    "DescribeProcessStatistics": doDescribeProcessStatistics,
+    "DescribeMaliciousRequests": doDescribeMaliciousRequests,
+    "DeleteBashRules": doDeleteBashRules,
+    "DescribeReverseShellEvents": doDescribeReverseShellEvents,
+    "ModifyAutoOpenProVersionConfig": doModifyAutoOpenProVersionConfig,
+    "DescribeAgentVuls": doDescribeAgentVuls,
+    "DescribeAccounts": doDescribeAccounts,
+    "DescribeWeeklyReports": doDescribeWeeklyReports,
+    "DescribeProVersionInfo": doDescribeProVersionInfo,
+    "DescribePrivilegeEvents": doDescribePrivilegeEvents,
+    "DescribeMachineInfo": doDescribeMachineInfo,
+    "DescribeAlarmAttribute": doDescribeAlarmAttribute,
+    "DescribeComponents": doDescribeComponents,
+    "DescribeLoginWhiteList": doDescribeLoginWhiteList,
+    "DescribeVulScanResult": doDescribeVulScanResult,
+    "DescribeHistoryAccounts": doDescribeHistoryAccounts,
+    "ExportNonlocalLoginPlaces": doExportNonlocalLoginPlaces,
+    "DescribeWeeklyReportBruteAttacks": doDescribeWeeklyReportBruteAttacks,
+    "UntrustMalwares": doUntrustMalwares,
+    "DescribeWeeklyReportVuls": doDescribeWeeklyReportVuls,
+    "DescribeWeeklyReportInfo": doDescribeWeeklyReportInfo,
+    "DescribeComponentInfo": doDescribeComponentInfo,
+    "DescribeMachines": doDescribeMachines,
+    "SetBashEventsStatus": doSetBashEventsStatus,
+    "ExportReverseShellEvents": doExportReverseShellEvents,
+    "DeleteAttackLogs": doDeleteAttackLogs,
+    "DeleteMachine": doDeleteMachine,
+    "DescribeProcessTaskStatus": doDescribeProcessTaskStatus,
+    "RescanImpactedHost": doRescanImpactedHost,
+    "DescribeTags": doDescribeTags,
+    "DescribeSecurityTrends": doDescribeSecurityTrends,
+    "DescribeAttackLogInfo": doDescribeAttackLogInfo,
+    "IgnoreImpactedHosts": doIgnoreImpactedHosts,
+    "DescribeBashEvents": doDescribeBashEvents,
+    "EditTags": doEditTags,
+    "CreateUsualLoginPlaces": doCreateUsualLoginPlaces,
+    "InquiryPriceOpenProVersionPrepaid": doInquiryPriceOpenProVersionPrepaid,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20180326",
+    "v20180228",
 
 ]
 
@@ -2426,11 +2686,11 @@ def parse_global_arg(parsed_globals):
         if g_param[OptionsDefine.ServiceVersion]:
             g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
         else:
-            version = conf["tsf"][OptionsDefine.Version]
+            version = conf["cwp"][OptionsDefine.Version]
             g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if g_param[OptionsDefine.Endpoint] is None:
-            g_param[OptionsDefine.Endpoint] = conf["tsf"][OptionsDefine.Endpoint]
+            g_param[OptionsDefine.Endpoint] = conf["cwp"][OptionsDefine.Endpoint]
     except Exception as err:
         raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
 

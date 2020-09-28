@@ -4073,7 +4073,7 @@
           "document": "域名。",
           "member": "string",
           "name": "DomainName",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -4083,11 +4083,11 @@
       "document": "DescribeLiveDomain返回参数结构体",
       "members": [
         {
-          "document": "域名信息。",
+          "document": "域名信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "DomainInfo",
           "name": "DomainInfo",
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

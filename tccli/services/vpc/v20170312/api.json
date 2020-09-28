@@ -985,7 +985,7 @@
       "output": "ModifyAddressTemplateGroupAttributeResponse"
     },
     "ModifyAddressesBandwidth": {
-      "document": "本接口（ModifyAddressesBandwidth）用于调整[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)(简称EIP)带宽，包括后付费EIP, 预付费EIP和带宽包EIP",
+      "document": "本接口（ModifyAddressesBandwidth）用于调整[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)(简称EIP)带宽，支持后付费EIP, 预付费EIP和带宽包EIP",
       "input": "ModifyAddressesBandwidthRequest",
       "name": "调整弹性公网IP带宽",
       "output": "ModifyAddressesBandwidthResponse"
@@ -1847,7 +1847,7 @@
         },
         {
           "default": "",
-          "document": "EIP计费方式。\n<ul style=\"margin:0\"><li>已开通带宽上移白名单的用户，可选值：<ul><li>BANDWIDTH_PACKAGE：[共享带宽包](https://cloud.tencent.com/document/product/684/15255)付费（需额外开通共享带宽包白名单）</li>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li></ul>默认值：TRAFFIC_POSTPAID_BY_HOUR。</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费</li></ul>默认值：BANDWIDTH_PREPAID_BY_MONTH。</li>\n<li>未开通带宽上移白名单的用户，EIP计费方式与其绑定的实例的计费方式一致，无需传递此参数。</li></ul>",
+          "document": "EIP计费方式。\n<ul style=\"margin:0\"><li>已开通带宽上移白名单的用户，可选值：<ul><li>BANDWIDTH_PACKAGE：[共享带宽包](https://cloud.tencent.com/document/product/684/15255)付费（需额外开通共享带宽包白名单）</li>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li></ul>默认值：TRAFFIC_POSTPAID_BY_HOUR。</li>\n<li>未开通带宽上移白名单的用户，EIP计费方式与其绑定的实例的计费方式一致，无需传递此参数。</li></ul>",
           "member": "string",
           "name": "InternetChargeType",
           "required": false,
@@ -11932,7 +11932,7 @@
         },
         {
           "default": "",
-          "document": "包月带宽起始时间",
+          "document": "包月带宽起始时间(已废弃，输入无效)",
           "member": "datetime",
           "name": "StartTime",
           "required": false,
@@ -11940,7 +11940,7 @@
         },
         {
           "default": "",
-          "document": "包月带宽结束时间",
+          "document": "包月带宽结束时间(已废弃，输入无效)",
           "member": "datetime",
           "name": "EndTime",
           "required": false,

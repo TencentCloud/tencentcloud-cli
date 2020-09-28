@@ -1224,6 +1224,33 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DCN标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DcnFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DCN状态，0-无，1-创建中，2-同步中，3-已断开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DcnStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DCN灾备实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DcnDstNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2062,6 +2089,14 @@
           "name": "TagKeys",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例类型过滤，1-独享实例，2-主实例，3-灾备实例，多个按逗号分隔",
+          "member": "string",
+          "name": "FilterInstanceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2330,6 +2365,13 @@
           "name": "Shards",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "灾备标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DcnFlag",
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

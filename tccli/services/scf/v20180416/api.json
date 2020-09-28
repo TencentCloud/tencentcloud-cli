@@ -1797,7 +1797,7 @@
         },
         {
           "default": "",
-          "document": "服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写",
+          "document": "该字段已下线",
           "member": "LogSearchContext",
           "name": "SearchContext",
           "required": false,
@@ -1824,7 +1824,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "日志服务分页参数",
+          "document": "该字段已下线",
           "member": "LogSearchContext",
           "name": "SearchContext",
           "type": "object",

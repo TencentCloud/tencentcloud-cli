@@ -156,6 +156,12 @@
       "name": "删除部署组",
       "output": "DeleteServerlessGroupResponse"
     },
+    "DeleteTask": {
+      "document": "删除任务",
+      "input": "DeleteTaskRequest",
+      "name": "删除任务",
+      "output": "DeleteTaskResponse"
+    },
     "DeployContainerGroup": {
       "document": "部署容器应用",
       "input": "DeployContainerGroupRequest",
@@ -3803,6 +3809,39 @@
       "members": [
         {
           "document": "结果true：成功；false：失败。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskRequest": {
+      "document": "DeleteTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskResponse": {
+      "document": "DeleteTask返回参数结构体",
+      "members": [
+        {
+          "document": "删除成功or失败",
           "member": "bool",
           "name": "Result",
           "type": "bool",

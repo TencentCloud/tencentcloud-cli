@@ -39,6 +39,7 @@ include tccli/services/cms/v20190321/api.json
 include tccli/services/cpdp/v20190820/api.json
 include tccli/services/cr/v20180321/api.json
 include tccli/services/cvm/v20170312/api.json
+include tccli/services/cwp/v20180228/api.json
 include tccli/services/cws/v20180312/api.json
 include tccli/services/cynosdb/v20190107/api.json
 include tccli/services/dayu/v20180709/api.json
