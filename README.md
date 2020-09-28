@@ -17,6 +17,7 @@ sudo pip install tccli
 ```bash
 complete -C 'tccli_completer' tccli
 ```
+可以将命令``complete -C 'tccli_completer' tccli``加入环境变量(/etc/profile)中，使自动补全功能一直有效。
 
 # 配置TCCLI
 要使用腾讯云命令行工具，您还需要进行一些初始化配置，使其完成使用 云 API的必要前提条件。
@@ -198,7 +199,7 @@ tccli cvm DescribeZones --endpoint cvm.ap-guangzhou.tencentcloudapi.com
 ```
 ## 输出入参骨架到json文件
 ```bash
-[root@VM_180_248_centos ~]# tccli cvm RunInstances  --generate-cli-skeleton > /tmp/RunIntances.json
+[root@VM_180_248_centos ~]# tccli cvm RunInstances  --generate-cli-skeleton > /tmp/RunInstances.json
 ```
 ## 从json文件读取参数，--cli-input-json后接file://+文件路径
 ```bash
