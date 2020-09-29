@@ -60,6 +60,12 @@
       "name": "创建视频内容审核模板",
       "output": "CreateContentReviewTemplateResponse"
     },
+    "CreateImageProcessingTemplate": {
+      "document": "创建一个用户自定义的图片处理模板，数量上限：16。最多支持三次操作，例如：裁剪-缩略-裁剪。",
+      "input": "CreateImageProcessingTemplateRequest",
+      "name": "创建图片处理模板",
+      "output": "CreateImageProcessingTemplateResponse"
+    },
     "CreateImageSpriteTemplate": {
       "document": "创建用户自定义雪碧图模板，数量上限：16。",
       "input": "CreateImageSpriteTemplateRequest",
@@ -155,6 +161,12 @@
       "input": "DeleteContentReviewTemplateRequest",
       "name": "删除视频内容审核模板",
       "output": "DeleteContentReviewTemplateResponse"
+    },
+    "DeleteImageProcessingTemplate": {
+      "document": "删除用户自定义图片处理模板。",
+      "input": "DeleteImageProcessingTemplateRequest",
+      "name": "删除图片处理模板",
+      "output": "DeleteImageProcessingTemplateResponse"
     },
     "DeleteImageSpriteTemplate": {
       "document": "删除雪碧图模板。",
@@ -269,6 +281,12 @@
       "input": "DescribeEventsStateRequest",
       "name": "获取事件通知状态",
       "output": "DescribeEventsStateResponse"
+    },
+    "DescribeImageProcessingTemplates": {
+      "document": "获取图片处理模板列表，支持根据条件，分页查询。",
+      "input": "DescribeImageProcessingTemplatesRequest",
+      "name": "获取图片处理模板列表",
+      "output": "DescribeImageProcessingTemplatesResponse"
     },
     "DescribeImageSpriteTemplates": {
       "document": "查询雪碧图模板，支持根据条件，分页查询。",
@@ -6105,6 +6123,63 @@
       ],
       "type": "object"
     },
+    "CreateImageProcessingTemplateRequest": {
+      "document": "CreateImageProcessingTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片处理操作数组，操作将以其在数组中的顺序执行。\n<li>长度限制：3。</li>",
+          "member": "ImageOperation",
+          "name": "Operations",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "图片处理模板名称，长度限制：64 个字符。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板描述信息，长度限制：256 个字符。",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageProcessingTemplateResponse": {
+      "document": "CreateImageProcessingTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "图片处理模板唯一标识。",
+          "member": "uint64",
+          "name": "Definition",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateImageSpriteTask2017": {
       "document": "视频截取雪碧图任务，该结构仅用于对 2017 版[截取雪碧图](https://cloud.tencent.com/document/product/266/8101)接口发起的任务。",
       "members": [
@@ -7238,6 +7313,40 @@
       ],
       "type": "object"
     },
+    "DeleteImageProcessingTemplateRequest": {
+      "document": "DeleteImageProcessingTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片处理模板唯一标识。",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageProcessingTemplateResponse": {
+      "document": "DeleteImageProcessingTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteImageSpriteTemplateRequest": {
       "document": "DeleteImageSpriteTemplate请求参数结构体",
       "members": [
@@ -8121,6 +8230,78 @@
           "member": "uint64",
           "name": "CountOfEventsToPull",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageProcessingTemplatesRequest": {
+      "document": "DescribeImageProcessingTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片处理模板标识列表。长度限制：100。",
+          "member": "uint64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageProcessingTemplatesResponse": {
+      "document": "DescribeImageProcessingTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "符合过滤条件的记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片处理模板详情列表。",
+          "member": "ImageProcessingTemplate",
+          "name": "ImageProcessingTemplateSet",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -10361,6 +10542,183 @@
           "name": "Switch",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageCenterCut": {
+      "document": "图片中心裁剪处理。",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的裁剪模式，可选 Circle 和 Rectangle。\n<li>Circle ： 内切圆裁剪，输出图片半径为 Radius。</li>\n<li>Rectangle ： 矩形裁剪，输出图片宽为 Width ， 高为 Height。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出图片的宽度，单位为像素，当 Type 取值为 Rectangle 时有效。",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出图片的高度，单位为像素，当 Type 取值为 Rectangle 时有效。",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出图片的半径，单位为像素，当 Type 取值为 Circle 时有效。",
+          "member": "int64",
+          "name": "Radius",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageOperation": {
+      "document": "单个图片处理操作。",
+      "members": [
+        {
+          "default": "",
+          "document": "图片处理类型。可选类型有：\n<li>Scale : 图片缩略处理。</li>\n<li>CenterCut : 图片裁剪处理。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片缩略处理，仅当 Type 为 Scale 时有效。",
+          "member": "ImageScale",
+          "name": "Scale",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片裁剪处理，仅当 Type 为 CenterCut 时有效。",
+          "member": "ImageCenterCut",
+          "name": "CenterCut",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageProcessingTemplate": {
+      "document": "图片处理模板， 最多支持三次操作。例如：裁剪-缩略-裁剪。",
+      "members": [
+        {
+          "default": "",
+          "document": "图片处理模板唯一标识。",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片处理模板名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述信息。",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片处理操作数组，操作将以数组顺序执行。\n<li>长度限制：3。</li>",
+          "member": "ImageOperation",
+          "name": "Operations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageScale": {
+      "document": "图片缩放处理。",
+      "members": [
+        {
+          "default": "",
+          "document": "图片缩放的操作类型。可选模式有：\n<li>WidthFirst : 指定图片的宽为 Width ，高度等比缩放。</li>\n<li>HeightFirst : 指定图片的高为 Height ，宽度等比缩放。</li>\n<li>LongEdgeFirst : 指定图片的长边为 LongEdge ，短边等比缩放。</li>\n<li>ShortEdgeFirst : 指定图片的短边为 ShortEdge ，长边等比缩放。</li>\n<li>Force : 忽略原图宽高比例，指定图片宽度为 Width，高度为 Height ，强行缩放图片，可能导致目标图片变形。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出图片的高度，单位为像素。当 Type 取值为 HeightFirst 或 Force 时此字段有效。",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出图片的宽度，单位为像素。当 Type 取值为 WidthFirst 或 Force 时此字段有效。",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出图片的长边长度，单位为像素。当 Type 取值为 LongEdgeFirst 时此字段有效。",
+          "member": "uint64",
+          "name": "LongEdge",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出图片的短边长度，单位为像素。当 Type 取值为 ShortEdgeFirst 时此字段有效。",
+          "member": "uint64",
+          "name": "ShortEdge",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

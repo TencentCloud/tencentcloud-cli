@@ -13,6 +13,31 @@ from tencentcloud.tsf.v20180326 import tsf_client as tsf_client_v20180326
 from tencentcloud.tsf.v20180326 import models as models_v20180326
 
 
+def doCreateTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeletePublicConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -38,7 +63,7 @@ def doDeletePublicConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCluster(args, parsed_globals):
+def doDescribeConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -52,9 +77,34 @@ def doCreateCluster(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterRequest()
+    model = models.DescribeConfigRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateCluster(model)
+    rsp = client.DescribeConfig(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStopTaskBatch(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopTaskBatchRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.StopTaskBatch(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -213,6 +263,31 @@ def doAddClusterInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRedoTaskFlowBatch(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RedoTaskFlowBatchRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RedoTaskFlowBatch(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePublicConfigSummary(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -238,7 +313,7 @@ def doDescribePublicConfigSummary(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateMicroservice(args, parsed_globals):
+def doDescribeRepositories(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,9 +327,9 @@ def doCreateMicroservice(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateMicroserviceRequest()
+    model = models.DescribeRepositoriesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateMicroservice(model)
+    rsp = client.DescribeRepositories(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -288,7 +363,7 @@ def doDescribeConfigs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeConfig(args, parsed_globals):
+def doDisableTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -302,9 +377,84 @@ def doDescribeConfig(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigRequest()
+    model = models.DisableTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeConfig(model)
+    rsp = client.DisableTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteImageTags(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteImageTagsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteImageTags(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCluster(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClusterRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateCluster(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStopTaskExecute(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopTaskExecuteRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.StopTaskExecute(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -513,7 +663,7 @@ def doCreateConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeContainerGroups(args, parsed_globals):
+def doCreateMicroservice(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -527,9 +677,9 @@ def doDescribeContainerGroups(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeContainerGroupsRequest()
+    model = models.CreateMicroserviceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeContainerGroups(model)
+    rsp = client.CreateMicroservice(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -538,7 +688,7 @@ def doDescribeContainerGroups(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteImageTags(args, parsed_globals):
+def doDisableTaskFlow(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -552,9 +702,9 @@ def doDeleteImageTags(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteImageTagsRequest()
+    model = models.DisableTaskFlowRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteImageTags(model)
+    rsp = client.DisableTaskFlow(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -713,6 +863,31 @@ def doDescribeLanes(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doExecuteTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ExecuteTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ExecuteTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSimpleNamespaces(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -738,7 +913,7 @@ def doDescribeSimpleNamespaces(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteMicroservice(args, parsed_globals):
+def doCreateServerlessGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -752,9 +927,9 @@ def doDeleteMicroservice(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteMicroserviceRequest()
+    model = models.CreateServerlessGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteMicroservice(model)
+    rsp = client.CreateServerlessGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -863,6 +1038,31 @@ def doReleaseConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePublicConfigReleases(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePublicConfigReleasesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePublicConfigReleases(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeGroups(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -880,31 +1080,6 @@ def doDescribeGroups(args, parsed_globals):
     model = models.DescribeGroupsRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeGroups(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeRepositories(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRepositoriesRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeRepositories(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1063,6 +1238,31 @@ def doShrinkInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRedoTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RedoTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RedoTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePkgs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1113,7 +1313,7 @@ def doDescribePublicConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteGroup(args, parsed_globals):
+def doStartContainerGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1127,9 +1327,9 @@ def doDeleteGroup(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteGroupRequest()
+    model = models.StartContainerGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteGroup(model)
+    rsp = client.StartContainerGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1180,6 +1380,31 @@ def doCreateGroup(args, parsed_globals):
     model = models.CreateGroupRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateGroup(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTaskLastStatus(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTaskLastStatusRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTaskLastStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1263,7 +1488,7 @@ def doDescribePublicConfigs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStartContainerGroup(args, parsed_globals):
+def doEnableTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1277,9 +1502,34 @@ def doStartContainerGroup(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartContainerGroupRequest()
+    model = models.EnableTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.StartContainerGroup(model)
+    rsp = client.EnableTask(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteGroup(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteGroupRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteGroup(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1513,7 +1763,7 @@ def doModifyMicroservice(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteNamespace(args, parsed_globals):
+def doEnableTaskFlow(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1527,9 +1777,34 @@ def doDeleteNamespace(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteNamespaceRequest()
+    model = models.EnableTaskFlowRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteNamespace(model)
+    rsp = client.EnableTaskFlow(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeMicroservices(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMicroservicesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeMicroservices(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1588,6 +1863,31 @@ def doCreateApplication(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRedoTaskBatch(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RedoTaskBatchRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RedoTaskBatch(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePublicConfigReleaseLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1638,6 +1938,56 @@ def doDescribeConfigReleaseLogs(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeContainerGroups(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeContainerGroupsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeContainerGroups(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doExecuteTaskFlow(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ExecuteTaskFlowRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ExecuteTaskFlow(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeMicroservice(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1680,6 +2030,31 @@ def doDeleteServerlessGroup(args, parsed_globals):
     model = models.DeleteServerlessGroupRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DeleteServerlessGroup(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeFlowLastBatchState(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeFlowLastBatchStateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeFlowLastBatchState(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1763,7 +2138,7 @@ def doDeleteApplication(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateServerlessGroup(args, parsed_globals):
+def doDescribeGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1777,9 +2152,34 @@ def doCreateServerlessGroup(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateServerlessGroupRequest()
+    model = models.DescribeGroupRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateServerlessGroup(model)
+    rsp = client.DescribeGroup(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBasicResourceUsage(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBasicResourceUsageRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeBasicResourceUsage(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1838,7 +2238,7 @@ def doReleasePublicConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMicroservices(args, parsed_globals):
+def doContinueRunFailedTaskBatch(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1852,9 +2252,9 @@ def doDescribeMicroservices(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMicroservicesRequest()
+    model = models.ContinueRunFailedTaskBatchRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeMicroservices(model)
+    rsp = client.ContinueRunFailedTaskBatch(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1888,7 +2288,7 @@ def doDescribeApiVersions(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeGroup(args, parsed_globals):
+def doDeleteNamespace(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1902,9 +2302,9 @@ def doDescribeGroup(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeGroupRequest()
+    model = models.DeleteNamespaceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeGroup(model)
+    rsp = client.DeleteNamespace(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1955,6 +2355,31 @@ def doDescribeServerlessGroup(args, parsed_globals):
     model = models.DescribeServerlessGroupRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeServerlessGroup(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteMicroservice(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteMicroserviceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteMicroservice(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2113,7 +2538,7 @@ def doDescribeReleasedConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicConfigReleases(args, parsed_globals):
+def doTerminateTaskFlowBatch(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -2127,9 +2552,9 @@ def doDescribePublicConfigReleases(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicConfigReleasesRequest()
+    model = models.TerminateTaskFlowBatchRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribePublicConfigReleases(model)
+    rsp = client.TerminateTaskFlowBatch(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -2274,18 +2699,24 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "CreateTask": doCreateTask,
     "DeletePublicConfig": doDeletePublicConfig,
-    "CreateCluster": doCreateCluster,
+    "DescribeConfig": doDescribeConfig,
+    "StopTaskBatch": doStopTaskBatch,
     "ModifyContainerReplicas": doModifyContainerReplicas,
     "DescribeConfigSummary": doDescribeConfigSummary,
     "DescribePodInstances": doDescribePodInstances,
     "RevocationPublicConfig": doRevocationPublicConfig,
     "CreateNamespace": doCreateNamespace,
     "AddClusterInstances": doAddClusterInstances,
+    "RedoTaskFlowBatch": doRedoTaskFlowBatch,
     "DescribePublicConfigSummary": doDescribePublicConfigSummary,
-    "CreateMicroservice": doCreateMicroservice,
+    "DescribeRepositories": doDescribeRepositories,
     "DescribeConfigs": doDescribeConfigs,
-    "DescribeConfig": doDescribeConfig,
+    "DisableTask": doDisableTask,
+    "DeleteImageTags": doDeleteImageTags,
+    "CreateCluster": doCreateCluster,
+    "StopTaskExecute": doStopTaskExecute,
     "DescribeContainerGroupDetail": doDescribeContainerGroupDetail,
     "RollbackConfig": doRollbackConfig,
     "DescribeImageTags": doDescribeImageTags,
@@ -2294,37 +2725,41 @@ ACTION_MAP = {
     "DescribeApiDetail": doDescribeApiDetail,
     "DeployServerlessGroup": doDeployServerlessGroup,
     "CreateConfig": doCreateConfig,
-    "DescribeContainerGroups": doDescribeContainerGroups,
-    "DeleteImageTags": doDeleteImageTags,
+    "CreateMicroservice": doCreateMicroservice,
+    "DisableTaskFlow": doDisableTaskFlow,
     "DescribeDownloadInfo": doDescribeDownloadInfo,
     "DescribeApplications": doDescribeApplications,
     "UpdateRepository": doUpdateRepository,
     "DescribeApplication": doDescribeApplication,
     "DescribeSimpleApplications": doDescribeSimpleApplications,
     "DescribeLanes": doDescribeLanes,
+    "ExecuteTask": doExecuteTask,
     "DescribeSimpleNamespaces": doDescribeSimpleNamespaces,
-    "DeleteMicroservice": doDeleteMicroservice,
+    "CreateServerlessGroup": doCreateServerlessGroup,
     "StopContainerGroup": doStopContainerGroup,
     "CreateLaneRule": doCreateLaneRule,
     "DeleteContainerGroup": doDeleteContainerGroup,
     "ReleaseConfig": doReleaseConfig,
+    "DescribePublicConfigReleases": doDescribePublicConfigReleases,
     "DescribeGroups": doDescribeGroups,
-    "DescribeRepositories": doDescribeRepositories,
     "CreateRepository": doCreateRepository,
     "DescribeClusterInstances": doDescribeClusterInstances,
     "CreatePublicConfig": doCreatePublicConfig,
     "DescribeSimpleGroups": doDescribeSimpleGroups,
     "AddInstances": doAddInstances,
     "ShrinkInstances": doShrinkInstances,
+    "RedoTask": doRedoTask,
     "DescribePkgs": doDescribePkgs,
     "DescribePublicConfig": doDescribePublicConfig,
-    "DeleteGroup": doDeleteGroup,
+    "StartContainerGroup": doStartContainerGroup,
     "DescribeServerlessGroups": doDescribeServerlessGroups,
     "CreateGroup": doCreateGroup,
+    "DescribeTaskLastStatus": doDescribeTaskLastStatus,
     "DescribeGroupInstances": doDescribeGroupInstances,
     "DeletePkgs": doDeletePkgs,
     "DescribePublicConfigs": doDescribePublicConfigs,
-    "StartContainerGroup": doStartContainerGroup,
+    "EnableTask": doEnableTask,
+    "DeleteGroup": doDeleteGroup,
     "RemoveInstances": doRemoveInstances,
     "ExpandGroup": doExpandGroup,
     "DeleteTask": doDeleteTask,
@@ -2334,31 +2769,38 @@ ACTION_MAP = {
     "DeployGroup": doDeployGroup,
     "ModifyLane": doModifyLane,
     "ModifyMicroservice": doModifyMicroservice,
-    "DeleteNamespace": doDeleteNamespace,
+    "EnableTaskFlow": doEnableTaskFlow,
+    "DescribeMicroservices": doDescribeMicroservices,
     "DescribeMsApiList": doDescribeMsApiList,
     "CreateApplication": doCreateApplication,
+    "RedoTaskBatch": doRedoTaskBatch,
     "DescribePublicConfigReleaseLogs": doDescribePublicConfigReleaseLogs,
     "DescribeConfigReleaseLogs": doDescribeConfigReleaseLogs,
+    "DescribeContainerGroups": doDescribeContainerGroups,
+    "ExecuteTaskFlow": doExecuteTaskFlow,
     "DescribeMicroservice": doDescribeMicroservice,
     "DeleteServerlessGroup": doDeleteServerlessGroup,
+    "DescribeFlowLastBatchState": doDescribeFlowLastBatchState,
     "DeleteRepository": doDeleteRepository,
     "DeployContainerGroup": doDeployContainerGroup,
     "DeleteApplication": doDeleteApplication,
-    "CreateServerlessGroup": doCreateServerlessGroup,
+    "DescribeGroup": doDescribeGroup,
+    "DescribeBasicResourceUsage": doDescribeBasicResourceUsage,
     "DeleteConfig": doDeleteConfig,
     "ReleasePublicConfig": doReleasePublicConfig,
-    "DescribeMicroservices": doDescribeMicroservices,
+    "ContinueRunFailedTaskBatch": doContinueRunFailedTaskBatch,
     "DescribeApiVersions": doDescribeApiVersions,
-    "DescribeGroup": doDescribeGroup,
+    "DeleteNamespace": doDeleteNamespace,
     "CreateContainGroup": doCreateContainGroup,
     "DescribeServerlessGroup": doDescribeServerlessGroup,
+    "DeleteMicroservice": doDeleteMicroservice,
     "DescribeRepository": doDescribeRepository,
     "DescribeApplicationAttribute": doDescribeApplicationAttribute,
     "RevocationConfig": doRevocationConfig,
     "DescribeLaneRules": doDescribeLaneRules,
     "ModifyLaneRule": doModifyLaneRule,
     "DescribeReleasedConfig": doDescribeReleasedConfig,
-    "DescribePublicConfigReleases": doDescribePublicConfigReleases,
+    "TerminateTaskFlowBatch": doTerminateTaskFlowBatch,
     "DescribeUploadInfo": doDescribeUploadInfo,
     "StopGroup": doStopGroup,
     "ShrinkGroup": doShrinkGroup,
