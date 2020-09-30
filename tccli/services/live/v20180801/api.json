@@ -4375,7 +4375,7 @@
       "members": [
         {
           "default": "",
-          "document": "DescribeRecordTemplates接口获取到的模板 ID。",
+          "document": "[DescribeLiveRecordTemplates](/document/product/267/32609)接口获取到的模板 ID。",
           "member": "int64",
           "name": "TemplateId",
           "required": true,

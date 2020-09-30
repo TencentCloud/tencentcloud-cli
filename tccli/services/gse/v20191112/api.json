@@ -18,11 +18,23 @@
       "name": "创建生成包",
       "output": "CreateAssetResponse"
     },
+    "CreateFleet": {
+      "document": "本接口（CreateFleet）用于创建服务器舰队",
+      "input": "CreateFleetRequest",
+      "name": "创建服务器舰队",
+      "output": "CreateFleetResponse"
+    },
     "CreateGameServerSession": {
       "document": "本接口（CreateGameServerSession）用于创建游戏服务会话",
       "input": "CreateGameServerSessionRequest",
       "name": "创建游戏服务器会话",
       "output": "CreateGameServerSessionResponse"
+    },
+    "CreateGameServerSessionQueue": {
+      "document": "本接口（CreateGameServerSessionQueue）用于创建游戏服务器会话队列",
+      "input": "CreateGameServerSessionQueueRequest",
+      "name": "创建游戏服务器会话队列",
+      "output": "CreateGameServerSessionQueueResponse"
     },
     "DeleteAlias": {
       "document": "本接口（DeleteAlias）用于删除别名",
@@ -41,6 +53,12 @@
       "input": "DeleteFleetRequest",
       "name": "删除服务器舰队",
       "output": "DeleteFleetResponse"
+    },
+    "DeleteGameServerSessionQueue": {
+      "document": "本接口（DeleteGameServerSessionQueue）用于删除游戏服务器会话队列",
+      "input": "DeleteGameServerSessionQueueRequest",
+      "name": "删除游戏服务器会话队列",
+      "output": "DeleteGameServerSessionQueueResponse"
     },
     "DeleteScalingPolicy": {
       "document": "本接口（DeleteScalingPolicy）用于删除扩缩容配置",
@@ -78,6 +96,12 @@
       "name": "获取服务器舰队属性",
       "output": "DescribeFleetAttributesResponse"
     },
+    "DescribeFleetCapacity": {
+      "document": "用于查询服务部署容量配置",
+      "input": "DescribeFleetCapacityRequest",
+      "name": "查询服务部署容量配置",
+      "output": "DescribeFleetCapacityResponse"
+    },
     "DescribeFleetEvents": {
       "document": "本接口（DescribeFleetEvents）用于查询部署服务器舰队相关的事件列表",
       "input": "DescribeFleetEventsRequest",
@@ -89,6 +113,24 @@
       "input": "DescribeFleetPortSettingsRequest",
       "name": "服务器舰队安全组信息查询",
       "output": "DescribeFleetPortSettingsResponse"
+    },
+    "DescribeFleetStatisticDetails": {
+      "document": "本接口（DescribeFleetStatisticDetails）用于查询服务部署统计详情",
+      "input": "DescribeFleetStatisticDetailsRequest",
+      "name": "查询服务部署统计详情",
+      "output": "DescribeFleetStatisticDetailsResponse"
+    },
+    "DescribeFleetStatisticFlows": {
+      "document": "本接口（DescribeFleetStatisticFlows）用于查询服务部署统计用量",
+      "input": "DescribeFleetStatisticFlowsRequest",
+      "name": "查询服务部署统计用量",
+      "output": "DescribeFleetStatisticFlowsResponse"
+    },
+    "DescribeFleetStatisticSummary": {
+      "document": "本接口（DescribeFleetStatisticSummary）用于查询服务部署统计汇总信息",
+      "input": "DescribeFleetStatisticSummaryRequest",
+      "name": "查询服务部署统计汇总信息",
+      "output": "DescribeFleetStatisticSummaryResponse"
     },
     "DescribeFleetUtilization": {
       "document": "本接口（DescribeFleetUtilization）用于查询服务器舰队的利用率信息",
@@ -120,6 +162,12 @@
       "name": "查询游戏服务器会话列表",
       "output": "DescribeGameServerSessionsResponse"
     },
+    "DescribeInstanceLimit": {
+      "document": "查询用户实例数限额",
+      "input": "DescribeInstanceLimitRequest",
+      "name": "查询用户实例数限额",
+      "output": "DescribeInstanceLimitResponse"
+    },
     "DescribeInstanceTypes": {
       "document": "本接口（DescribeInstanceTypes）用于获取服务器实例类型列表",
       "input": "DescribeInstanceTypesRequest",
@@ -131,6 +179,12 @@
       "input": "DescribeInstancesRequest",
       "name": "查询服务器实例列表",
       "output": "DescribeInstancesResponse"
+    },
+    "DescribeInstancesExtend": {
+      "document": "本接口（DescribeInstances）用于查询实例扩展信息列表",
+      "input": "DescribeInstancesExtendRequest",
+      "name": "查询实例扩展信息列表",
+      "output": "DescribeInstancesExtendResponse"
     },
     "DescribePlayerSessions": {
       "document": "本接口（DescribePlayerSessions）用于获取玩家会话列表",
@@ -198,6 +252,12 @@
       "name": "加入游戏服务器会话",
       "output": "JoinGameServerSessionResponse"
     },
+    "JoinGameServerSessionBatch": {
+      "document": "本接口（JoinGameServerSessionBatch）用于加入游戏服务器会话",
+      "input": "JoinGameServerSessionBatchRequest",
+      "name": "加入游戏服务器会话",
+      "output": "JoinGameServerSessionBatchResponse"
+    },
     "ListAliases": {
       "document": "本接口（ListAliases）用于检索帐户下的所有别名",
       "input": "ListAliasesRequest",
@@ -246,12 +306,6 @@
       "name": "开始放置游戏服务器会话",
       "output": "StartGameServerSessionPlacementResponse"
     },
-    "StartMatchPlacement": {
-      "document": "本接口（StartMatchPlacement）用于开始匹配放置游戏服务器会话",
-      "input": "StartMatchPlacementRequest",
-      "name": "开始匹配放置游戏服务器会话",
-      "output": "StartMatchPlacementResponse"
-    },
     "StopFleetActions": {
       "document": "本接口（StopFleetActions）用于停止服务器舰队自动扩缩容，改为手动扩缩容",
       "input": "StopFleetActionsRequest",
@@ -282,6 +336,12 @@
       "name": "更新服务器舰队属性",
       "output": "UpdateFleetAttributesResponse"
     },
+    "UpdateFleetCapacity": {
+      "document": "用于更新服务部署容量配置",
+      "input": "UpdateFleetCapacityRequest",
+      "name": "更新服务部署容量配置",
+      "output": "UpdateFleetCapacityResponse"
+    },
     "UpdateFleetPortSettings": {
       "document": "本接口（UpdateFleetPortSettings）用于更新服务器舰队安全组",
       "input": "UpdateFleetPortSettingsRequest",
@@ -293,6 +353,12 @@
       "input": "UpdateGameServerSessionRequest",
       "name": "更新游戏服务器会话",
       "output": "UpdateGameServerSessionResponse"
+    },
+    "UpdateGameServerSessionQueue": {
+      "document": "本接口（UpdateGameServerSessionQueue）用于修改游戏服务器会话队列",
+      "input": "UpdateGameServerSessionQueueRequest",
+      "name": "修改游戏服务器会话队列",
+      "output": "UpdateGameServerSessionQueueResponse"
     },
     "UpdateRuntimeConfiguration": {
       "document": "本接口（UpdateRuntimeConfiguration）用于更新服务器舰队配置",
@@ -695,6 +761,184 @@
       ],
       "type": "object"
     },
+    "CreateFleetRequest": {
+      "document": "CreateFleet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "生成包 Id",
+          "member": "string",
+          "name": "AssetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述，最小长度0，最大长度100",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络配置",
+          "member": "InboundPermission",
+          "name": "InboundPermissions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务器类型，例如S5.LARGE8",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器舰队类型，目前只支持ON_DEMAND类型",
+          "member": "string",
+          "name": "FleetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器舰队名称，最小长度1，最大长度50",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection",
+          "member": "string",
+          "name": "NewGameServerSessionProtectionPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC 网络 Id，弃用，对等链接已不再使用",
+          "member": "string",
+          "name": "PeerVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源创建限制策略",
+          "member": "ResourceCreationLimitPolicy",
+          "name": "ResourceCreationLimitPolicy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "进程配置",
+          "member": "RuntimeConfiguration",
+          "name": "RuntimeConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "VPC 子网，弃用，对等链接已不再使用",
+          "member": "string",
+          "name": "SubNetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440",
+          "member": "int64",
+          "name": "GameServerSessionProtectionTimeLimit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFleetResponse": {
+      "document": "CreateFleet返回参数结构体",
+      "members": [
+        {
+          "document": "服务器舰队属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FleetAttributes",
+          "name": "FleetAttributes",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGameServerSessionQueueRequest": {
+      "document": "CreateGameServerSessionQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏服务器会话队列名称，长度1~128",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的服务部署（可为别名）列表",
+          "member": "GameServerSessionQueueDestination",
+          "name": "Destinations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "延迟策略集合",
+          "member": "PlayerLatencyPolicy",
+          "name": "PlayerLatencyPolicies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "超时时间（单位秒，默认值为600秒）",
+          "member": "uint64",
+          "name": "TimeoutInSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGameServerSessionQueueResponse": {
+      "document": "CreateGameServerSessionQueue返回参数结构体",
+      "members": [
+        {
+          "document": "游戏服务器会话队列",
+          "member": "GameServerSessionQueue",
+          "name": "GameServerSessionQueue",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateGameServerSessionRequest": {
       "document": "CreateGameServerSession请求参数结构体",
       "members": [
@@ -884,6 +1128,32 @@
     },
     "DeleteFleetResponse": {
       "document": "DeleteFleet返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGameServerSessionQueueRequest": {
+      "document": "DeleteGameServerSessionQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏服务器会话队列名字，长度1~128",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGameServerSessionQueueResponse": {
+      "document": "DeleteGameServerSessionQueue返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1154,6 +1424,62 @@
       ],
       "type": "object"
     },
+    "DescribeFleetCapacityRequest": {
+      "document": "DescribeFleetCapacity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务部署 Id列表",
+          "member": "string",
+          "name": "FleetIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "结果返回最大数量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回结果偏移",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetCapacityResponse": {
+      "document": "DescribeFleetCapacity返回参数结构体",
+      "members": [
+        {
+          "document": "服务部署容量配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FleetCapacity",
+          "name": "FleetCapacity",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结果返回最大数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFleetEventsRequest": {
       "document": "DescribeFleetEvents请求参数结构体",
       "members": [
@@ -1232,6 +1558,227 @@
           "member": "InboundPermission",
           "name": "InboundPermissions",
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetStatisticDetailsRequest": {
+      "document": "DescribeFleetStatisticDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务部署ID",
+          "member": "string",
+          "name": "FleetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "member": "datetime",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结果返回最大数量，最小值0，最大值100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回结果偏移，最小值0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetStatisticDetailsResponse": {
+      "document": "DescribeFleetStatisticDetails返回参数结构体",
+      "members": [
+        {
+          "document": "服务部署统计详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FleetStatisticDetail",
+          "name": "DetailList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "统计时间类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TimeType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetStatisticFlowsRequest": {
+      "document": "DescribeFleetStatisticFlows请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务部署ID",
+          "member": "string",
+          "name": "FleetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "member": "datetime",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结果返回最大数量，最小值0，最大值100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回结果偏移，最小值0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetStatisticFlowsResponse": {
+      "document": "DescribeFleetStatisticFlows返回参数结构体",
+      "members": [
+        {
+          "document": "流量统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FleetStatisticFlows",
+          "name": "UsedFlowList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "时长统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FleetStatisticTimes",
+          "name": "UsedTimeList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "统计时间类型，取值：小时和天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TimeType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetStatisticSummaryRequest": {
+      "document": "DescribeFleetStatisticSummary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务部署 Id",
+          "member": "string",
+          "name": "FleetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "member": "datetime",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFleetStatisticSummaryResponse": {
+      "document": "DescribeFleetStatisticSummary返回参数结构体",
+      "members": [
+        {
+          "document": "总时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TotalUsedTimeSeconds",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总流量，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "TotalUsedFlowMegaBytes",
+          "type": "float",
           "value_allowed_null": true
         },
         {
@@ -1532,6 +2079,37 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceLimitRequest": {
+      "document": "DescribeInstanceLimit请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstanceLimitResponse": {
+      "document": "DescribeInstanceLimit返回参数结构体",
+      "members": [
+        {
+          "document": "限额",
+          "member": "int64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "详细信息",
+          "member": "ExtraInfos",
+          "name": "ExtraInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceTypesRequest": {
       "document": "DescribeInstanceTypes请求参数结构体",
       "members": [],
@@ -1546,6 +2124,62 @@
           "name": "InstanceTypeList",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesExtendRequest": {
+      "document": "DescribeInstancesExtend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务部署ID",
+          "member": "string",
+          "name": "FleetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回结果偏移，最小值0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结果返回最大数量，最小值0，最大值100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesExtendResponse": {
+      "document": "DescribeInstancesExtend返回参数结构体",
+      "members": [
+        {
+          "document": "实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InstanceExtend",
+          "name": "Instances",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "梳理信息总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1971,6 +2605,30 @@
       ],
       "usage": "out"
     },
+    "ExtraInfos": {
+      "document": "实例类型限额配置额外信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例类型，例如S5.LARGE8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例限额数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalInstances",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FleetAttributes": {
       "document": "服务部署属性",
       "members": [
@@ -2102,7 +2760,7 @@
         },
         {
           "default": "",
-          "document": "时限保护时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "GameServerSessionProtectionTimeLimit",
           "required": true,
@@ -2111,9 +2769,168 @@
         },
         {
           "default": "",
-          "document": "计费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费状态：未开通、已开通、异常、欠费隔离、销毁、解冻\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "BillingStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FleetCapacity": {
+      "document": "服务部署组容量配置",
+      "members": [
+        {
+          "default": "",
+          "document": "服务部署 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FleetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器实例统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InstanceCounts",
+          "name": "InstanceCounts",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器伸缩容间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ScalingInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FleetStatisticDetail": {
+      "document": "舰队统计详情",
+      "members": [
+        {
+          "default": "",
+          "document": "舰队ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FleetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TotalUsedTimeSeconds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总流量，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "TotalUsedFlowMegaBytes",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FleetStatisticFlows": {
+      "document": "舰队统计流量",
+      "members": [
+        {
+          "default": "",
+          "document": "总流量，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "TotalUsedFlowMegaBytes",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "统计开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FleetStatisticTimes": {
+      "document": "舰队统计总时长",
+      "members": [
+        {
+          "default": "",
+          "document": "统计开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "统计总时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TotalUsedTimeSeconds",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3073,6 +3890,153 @@
       ],
       "usage": "out"
     },
+    "InstanceCounts": {
+      "document": "服务器实例统计数据",
+      "members": [
+        {
+          "default": "",
+          "document": "活跃的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Active",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "期望的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Desired",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "空闲的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Idle",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器实例数最大限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxiNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器实例数最小限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MiniNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已开始创建，但未激活的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Pending",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束中的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Terminating",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceExtend": {
+      "document": "实例扩展信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Instance",
+          "name": "Instance",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康进程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "HealthyProcessCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活跃进程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ActiveProcessCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前游戏会话总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "GameSessionCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大游戏会话数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxGameSessionCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前玩家会话数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PlayerSessionCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大玩家会话数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxPlayerSessionCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceTypeInfo": {
       "document": "服务器实例类型信息",
       "members": [
@@ -3123,6 +4087,55 @@
         }
       ],
       "usage": "out"
+    },
+    "JoinGameServerSessionBatchRequest": {
+      "document": "JoinGameServerSessionBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符",
+          "member": "string",
+          "name": "GameServerSessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家ID列表，最小1组，最大25组",
+          "member": "string",
+          "name": "PlayerIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "玩家自定义数据",
+          "member": "PlayerDataMap",
+          "name": "PlayerDataMap",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "JoinGameServerSessionBatchResponse": {
+      "document": "JoinGameServerSessionBatch返回参数结构体",
+      "members": [
+        {
+          "document": "玩家会话列表，最大25组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PlayerSession",
+          "name": "PlayerSessions",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "JoinGameServerSessionRequest": {
       "document": "JoinGameServerSession请求参数结构体",
@@ -3332,6 +4345,30 @@
         }
       ],
       "usage": "out"
+    },
+    "PlayerDataMap": {
+      "document": "玩家自定义数据",
+      "members": [
+        {
+          "default": "",
+          "document": "玩家自定义数据键，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "玩家自定义数据值，最小长度不小于1个ASCII字符，最大长度不超过2048个ASCII字符",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "PlayerLatency": {
       "document": "玩家延迟信息",
@@ -4155,103 +5192,6 @@
       ],
       "type": "object"
     },
-    "StartMatchPlacementRequest": {
-      "document": "StartMatchPlacement请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "开始部署游戏服务器会话的唯一标识符",
-          "member": "string",
-          "name": "PlacementId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "游戏服务器会话队列名称",
-          "member": "string",
-          "name": "GameServerSessionQueueName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "游戏服务器允许同时连接到游戏会话的最大玩家数量",
-          "member": "uint64",
-          "name": "MaximumPlayerSessionCount",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "玩家游戏会话信息",
-          "member": "DesiredPlayerSession",
-          "name": "DesiredPlayerSessions",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "玩家游戏会话属性",
-          "member": "GameProperty",
-          "name": "GameProperties",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "游戏服务器会话数据",
-          "member": "string",
-          "name": "GameServerSessionData",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "游戏服务器会话名称",
-          "member": "string",
-          "name": "GameServerSessionName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "玩家延迟",
-          "member": "PlayerLatency",
-          "name": "PlayerLatencies",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "游戏匹配数据",
-          "member": "string",
-          "name": "MatchmakerData",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StartMatchPlacementResponse": {
-      "document": "StartMatchPlacement返回参数结构体",
-      "members": [
-        {
-          "document": "游戏服务器会话放置",
-          "member": "GameServerSessionPlacement",
-          "name": "GameServerSessionPlacement",
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "StopFleetActionsRequest": {
       "document": "StopFleetActions请求参数结构体",
       "members": [
@@ -4513,6 +5453,71 @@
       ],
       "type": "object"
     },
+    "UpdateFleetCapacityRequest": {
+      "document": "UpdateFleetCapacity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务部署ID",
+          "member": "string",
+          "name": "FleetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "期望的服务器实例数",
+          "member": "uint64",
+          "name": "DesiredInstances",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务器实例数最小限制",
+          "member": "uint64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务器实例数最大限制",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务器伸缩容间隔",
+          "member": "uint64",
+          "name": "ScalingInterval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFleetCapacityResponse": {
+      "document": "UpdateFleetCapacity返回参数结构体",
+      "members": [
+        {
+          "document": "服务部署ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FleetId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateFleetPortSettingsRequest": {
       "document": "UpdateFleetPortSettings请求参数结构体",
       "members": [
@@ -4552,6 +5557,63 @@
           "name": "FleetId",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGameServerSessionQueueRequest": {
+      "document": "UpdateGameServerSessionQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏服务器会话队列名字，长度1~128",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的服务部署（可为别名）列表",
+          "member": "GameServerSessionQueueDestination",
+          "name": "Destinations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "延迟策略集合",
+          "member": "PlayerLatencyPolicy",
+          "name": "PlayerLatencyPolicies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "超时时间",
+          "member": "uint64",
+          "name": "TimeoutInSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGameServerSessionQueueResponse": {
+      "document": "UpdateGameServerSessionQueue返回参数结构体",
+      "members": [
+        {
+          "document": "部署服务组对象",
+          "member": "GameServerSessionQueue",
+          "name": "GameServerSessionQueue",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

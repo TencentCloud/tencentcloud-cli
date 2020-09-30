@@ -1,10 +1,22 @@
 {
   "actions": {
+    "CheckBatchStatus": {
+      "document": "本接口 ( CheckBatchStatus ) 用于检查批量任务状态 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "CheckBatchStatusRequest",
+      "name": "检查批量任务状态",
+      "output": "CheckBatchStatusResponse"
+    },
     "CheckDomain": {
       "document": "检查域名是否可以注册。",
       "input": "CheckDomainRequest",
       "name": "域名注册检查",
       "output": "CheckDomainResponse"
+    },
+    "CreateDomainBatch": {
+      "document": "本接口 ( CreateDomainBatch ) 用于批量注册域名 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "CreateDomainBatchRequest",
+      "name": "批量注册域名",
+      "output": "CreateDomainBatchResponse"
     },
     "DescribeDomainBaseInfo": {
       "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。\n\n默认接口请求频率限制：20次/秒。\n",
@@ -12,11 +24,23 @@
       "name": "获取域名基础信息",
       "output": "DescribeDomainBaseInfoResponse"
     },
+    "DescribeDomainNameList": {
+      "document": "本接口 (  DescribeDomainNameList ) 获取域名列表。\n\n默认接口请求频率限制：20次/秒。\n",
+      "input": "DescribeDomainNameListRequest",
+      "name": "获取域名列表",
+      "output": "DescribeDomainNameListResponse"
+    },
     "DescribeDomainPriceList": {
       "document": "按照域名后缀获取对应的价格列表",
       "input": "DescribeDomainPriceListRequest",
       "name": "获取域名价格列表",
       "output": "DescribeDomainPriceListResponse"
+    },
+    "DescribeTemplateList": {
+      "document": "本接口 (DescribeTemplateList) 用于获取模板列表。\n\n默认接口请求频率限制：20次/秒。\n",
+      "input": "DescribeTemplateListRequest",
+      "name": "获取模板列表",
+      "output": "DescribeTemplateListResponse"
     }
   },
   "metadata": {
@@ -26,6 +50,105 @@
     "serviceShortName": "domain"
   },
   "objects": {
+    "BatchStatus": {
+      "document": "批量任务状态",
+      "members": [
+        {
+          "default": "",
+          "document": "批量任务id",
+          "member": "uint64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批量任务类型",
+          "member": "string",
+          "name": "BatchAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CertificateInfo": {
+      "document": "认证资料信息",
+      "members": [
+        {
+          "default": "",
+          "document": "证件号码。",
+          "member": "string",
+          "name": "CertificateCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证件类型。",
+          "member": "string",
+          "name": "CertificateType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证件照片地址。",
+          "member": "string",
+          "name": "ImgUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CheckBatchStatusRequest": {
+      "document": "CheckBatchStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量任务id数组，最多 200 个",
+          "member": "uint64",
+          "name": "LogIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBatchStatusResponse": {
+      "document": "CheckBatchStatus返回参数结构体",
+      "members": [
+        {
+          "document": "批量任务状态集",
+          "member": "BatchStatus",
+          "name": "StatusSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CheckDomainRequest": {
       "document": "CheckDomain请求参数结构体",
       "members": [
@@ -151,6 +274,213 @@
       ],
       "type": "object"
     },
+    "ContactInfo": {
+      "document": "域名联系人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "注册人（中文）",
+          "member": "string",
+          "name": "OrganizationNameCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册人（英文）",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人（中文）",
+          "member": "string",
+          "name": "RegistrantNameCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人（英文）",
+          "member": "string",
+          "name": "RegistrantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份（中文）",
+          "member": "string",
+          "name": "ProvinceCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市（中文）",
+          "member": "string",
+          "name": "CityCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "街道（中文）",
+          "member": "string",
+          "name": "StreetCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "街道（英文）",
+          "member": "string",
+          "name": "Street",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家（中文）",
+          "member": "string",
+          "name": "CountryCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人手机号",
+          "member": "string",
+          "name": "Telephone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人邮箱",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮编",
+          "member": "string",
+          "name": "ZipCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户类型 E:组织， I:个人",
+          "member": "string",
+          "name": "RegistrantType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份（英文）。作为入参时可以不填",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市（英文）。作为入参时可以不填",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家（英文）。作为入参时可以不填",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateDomainBatchRequest": {
+      "document": "CreateDomainBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买域名的年限，可选值：[1-10]",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "批量购买的域名,最多为4000个",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "付费模式 0手动在线付费，1使用余额付费",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainBatchResponse": {
+      "document": "CreateDomainBatch返回参数结构体",
+      "members": [
+        {
+          "document": "批量日志ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LogId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainBaseInfoRequest": {
       "document": "DescribeDomainBaseInfo请求参数结构体",
       "members": [
@@ -173,6 +503,54 @@
           "member": "DomainBaseInfo",
           "name": "DomainInfo",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainNameListRequest": {
+      "document": "DescribeDomainNameList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，取值范围[1,100]",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainNameListResponse": {
+      "document": "DescribeDomainNameList返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DomainList",
+          "name": "DomainSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "域名总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -221,6 +599,70 @@
           "document": "域名价格列表",
           "member": "PriceInfo",
           "name": "PriceList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateListRequest": {
+      "document": "DescribeTemplateList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户注册类型，默认:all , 个人：I ,企业: E",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateListResponse": {
+      "document": "DescribeTemplateList返回参数结构体",
+      "members": [
+        {
+          "document": "模板数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板详细信息列表。",
+          "member": "TemplateInfo",
+          "name": "TemplateSet",
           "type": "list",
           "value_allowed_null": false
         },
@@ -338,6 +780,93 @@
       ],
       "usage": "out"
     },
+    "DomainList": {
+      "document": "域名列表",
+      "members": [
+        {
+          "default": "",
+          "document": "是否是溢价域名：\nture 是    \nfalse 不是",
+          "member": "bool",
+          "name": "IsPremium",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名资源ID。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名名称。",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已设置自动续费 。\n0：未设置 \n1：已设置",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册时间。",
+          "member": "string",
+          "name": "CreationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间。",
+          "member": "string",
+          "name": "ExpirationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名后缀",
+          "member": "string",
+          "name": "Tld",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编码后的后缀（中文会进行编码）",
+          "member": "string",
+          "name": "CodeTld",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名购买状态。\nok：正常\nAboutToExpire: 即将到期\nRegisterPending：注册中\nRegisterDoing：注册中\nRegisterFailed：注册失败\nRenewPending：续费期\nRenewDoing：续费中\nRedemptionPending：赎回期\nRedemptionDoing：赎回中\nTransferPending：转入中\nTransferTransing：转入中\nTransferFailed：转入失败",
+          "member": "string",
+          "name": "BuyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PriceInfo": {
       "document": "域名价格信息",
       "members": [
@@ -382,6 +911,111 @@
           "document": "商品的购买类型，新购，续费，赎回，转入，续费并转入",
           "member": "string",
           "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TemplateInfo": {
+      "document": "Template数据",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证状态",
+          "member": "string",
+          "name": "AuditStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户UIN",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是默认模板",
+          "member": "string",
+          "name": "IsDefault",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证失败原因",
+          "member": "string",
+          "name": "AuditReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证信息",
+          "member": "CertificateInfo",
+          "name": "CertificateInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人信息",
+          "member": "ContactInfo",
+          "name": "ContactInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板是否符合规范， 1是 0 否",
+          "member": "int64",
+          "name": "IsValidTemplate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不符合规范原因",
+          "member": "string",
+          "name": "InvalidReason",
           "required": true,
           "type": "string",
           "value_allowed_null": false

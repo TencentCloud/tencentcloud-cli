@@ -522,11 +522,23 @@
       "name": "查询辅助CIDR列表",
       "output": "DescribeAssistantCidrResponse"
     },
+    "DescribeBandwidthPackageBillUsage": {
+      "document": "本接口 (DescribeBandwidthPackageBillUsage) 用于查询后付费共享带宽包当前的计费用量.",
+      "input": "DescribeBandwidthPackageBillUsageRequest",
+      "name": "查询后付费共享带宽包当前的用量",
+      "output": "DescribeBandwidthPackageBillUsageResponse"
+    },
     "DescribeBandwidthPackageQuota": {
       "document": "接口用于查询账户在当前地域的带宽包上限数量以及使用数量",
       "input": "DescribeBandwidthPackageQuotaRequest",
       "name": "查询带宽包配额",
       "output": "DescribeBandwidthPackageQuotaResponse"
+    },
+    "DescribeBandwidthPackageResources": {
+      "document": "本接口 (DescribeBandwidthPackageResources) 用于根据共享带宽包唯一ID查询共享带宽包内的资源列表，支持按条件过滤查询结果和分页查询。\n",
+      "input": "DescribeBandwidthPackageResourcesRequest",
+      "name": "查询共享带宽包内的资源",
+      "output": "DescribeBandwidthPackageResourcesResponse"
     },
     "DescribeBandwidthPackages": {
       "document": "接口用于查询带宽包详细信息，包括带宽包唯一标识ID，类型，计费模式，名称，资源信息等",
@@ -2682,6 +2694,21 @@
           "document": "带宽包限速大小。单位：Mbps，-1表示不限速。",
           "member": "int64",
           "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BandwidthPackageBillBandwidth": {
+      "document": "后付费共享带宽包的当前计费用量",
+      "members": [
+        {
+          "default": "",
+          "document": "当前计费用量，单位为 Mbps",
+          "member": "uint64",
+          "name": "BandwidthUsage",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6759,6 +6786,39 @@
       ],
       "type": "object"
     },
+    "DescribeBandwidthPackageBillUsageRequest": {
+      "document": "DescribeBandwidthPackageBillUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "后付费共享带宽包的唯一ID",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBandwidthPackageBillUsageResponse": {
+      "document": "DescribeBandwidthPackageBillUsage返回参数结构体",
+      "members": [
+        {
+          "document": "当前计费用量",
+          "member": "BandwidthPackageBillBandwidth",
+          "name": "BandwidthPackageBillBandwidthSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBandwidthPackageQuotaRequest": {
       "document": "DescribeBandwidthPackageQuota请求参数结构体",
       "members": [],
@@ -6771,6 +6831,70 @@
           "document": "带宽包配额详细信息",
           "member": "Quota",
           "name": "QuotaSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBandwidthPackageResourcesRequest": {
+      "document": "DescribeBandwidthPackageResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标识 共享带宽包 的唯一 ID 列表。共享带宽包 唯一 ID 形如：`bwp-11112222`。",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> resource-id - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 的唯一 ID 过滤。共享带宽包内资源 唯一 ID 形如：eip-11112222。</li>\n<li> resource-type - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 类型过滤，目前仅支持 弹性IP 和 负载均衡 两种类型，可选值为 Address 和 LoadBalance。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBandwidthPackageResourcesResponse": {
+      "document": "DescribeBandwidthPackageResources返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的 共享带宽包内资源 数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "共享带宽包内资源 详细信息列表。",
+          "member": "Resource",
+          "name": "ResourceSet",
           "type": "list",
           "value_allowed_null": false
         },
