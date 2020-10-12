@@ -36,6 +36,12 @@
       "name": "删除日志主题",
       "output": "DeleteClsLogTopicResponse"
     },
+    "DeleteScdnDomain": {
+      "document": "删除SCDN域名",
+      "input": "DeleteScdnDomainRequest",
+      "name": "删除SCDN域名",
+      "output": "DeleteScdnDomainResponse"
+    },
     "DescribeBillingData": {
       "document": "DescribeBillingData 用于查询实际计费数据明细。",
       "input": "DescribeBillingDataRequest",
@@ -55,7 +61,7 @@
       "output": "DescribeCdnDomainLogsResponse"
     },
     "DescribeCdnIp": {
-      "document": "DescribeCdnIp 用于查询 CDN IP 归属。\n（注意：此接口请求频率限制以 CDN 侧限制为准：200次/10分钟）",
+      "document": "DescribeCdnIp 用于查询 CDN IP 归属。\n（注意：此接口请求频率限制以 CDN 侧限制为准：200次/10分钟）  ",
       "input": "DescribeCdnIpRequest",
       "name": "IP 归属查询",
       "output": "DescribeCdnIpResponse"
@@ -209,6 +215,12 @@
       "input": "ListClsTopicDomainsRequest",
       "name": "获取日志主题下绑定的域名",
       "output": "ListClsTopicDomainsResponse"
+    },
+    "ListScdnLogTasks": {
+      "document": "ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息",
+      "input": "ListScdnLogTasksRequest",
+      "name": "查询SCDN日志下载任务列表",
+      "output": "ListScdnLogTasksResponse"
     },
     "ListTopData": {
       "document": "ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 URL 排序，从大至小返回 TOP 1000 URL\n+ 依据总流量、总请求数对客户端省份排序，从大至小返回省份列表\n+ 依据总流量、总请求数对客户端运营商排序，从大至小返回运营商列表\n+ 依据总流量、峰值带宽、总请求数、平均命中率、2XX/3XX/4XX/5XX 状态码对域名排序，从大至小返回域名列表\n+ 依据总回源流量、回源峰值带宽、总回源请求数、平均回源失败率、2XX/3XX/4XX/5XX 回源状态码对域名排序，从大至小返回域名列表\n\n注意：仅支持 90 天内数据查询",
@@ -1860,7 +1872,7 @@
       "members": [
         {
           "default": "",
-          "document": "防护类型\nMode 映射如下：\n  waf = \"Web攻击\"\n  cc = \"CC攻击\"",
+          "document": "防护类型\nMode 映射如下：\n  waf = \"Web攻击\"\n  cc = \"CC攻击\"\n  bot = \"Bot攻击\"",
           "member": "string",
           "name": "Mode",
           "required": true,
@@ -1892,7 +1904,7 @@
         },
         {
           "default": "",
-          "document": "指定攻击类型, 不填默认查询全部攻击类型\nAttackType 映射如下:\n  other = '未知类型'\n  malicious_scan = \"恶意扫描\"\n  sql_inject = \"SQL注入攻击\"\n  xss = \"XSS攻击\"\n  cmd_inject = \"命令注入攻击\"\n  ldap_inject = \"LDAP注入攻击\"\n  ssi_inject = \"SSI注入攻击\"\n  xml_inject = \"XML注入攻击\"\n  web_service = \"WEB服务漏洞攻击\"\n  web_app = \"WEB应用漏洞攻击\"\n  path_traversal = \"路径跨越攻击\"\n  illegal_access_core_file = \"核心文件非法访问\"\n  trojan_horse = \"木马后门攻击\"\n  csrf = \"CSRF攻击\"\n  malicious_file_upload= '恶意文件上传'",
+          "document": "指定攻击类型, 不填默认查询全部攻击类型\nAttackType 映射如下:\n  other = '未知类型'\n  malicious_scan = \"恶意扫描\"\n  sql_inject = \"SQL注入攻击\"\n  xss = \"XSS攻击\"\n  cmd_inject = \"命令注入攻击\"\n  ldap_inject = \"LDAP注入攻击\"\n  ssi_inject = \"SSI注入攻击\"\n  xml_inject = \"XML注入攻击\"\n  web_service = \"WEB服务漏洞攻击\"\n  web_app = \"WEB应用漏洞攻击\"\n  path_traversal = \"路径跨越攻击\"\n  illegal_access_core_file = \"核心文件非法访问\"\n  trojan_horse = \"木马后门攻击\"\n  csrf = \"CSRF攻击\"\n  malicious_file_upload= '恶意文件上传'\n  js = \"JS主动探测\"\n  cookie = \"Cookie指纹\"",
           "member": "string",
           "name": "AttackType",
           "required": false,
@@ -1900,7 +1912,7 @@
         },
         {
           "default": "",
-          "document": "指定执行动作, 不填默认查询全部执行动作\nDefenceMode 映射如下：\n  observe = '观察模式'\n  intercept = '拦截模式'",
+          "document": "指定执行动作, 不填默认查询全部执行动作\nDefenceMode 映射如下：\n  observe = '观察模式'\n  intercept = '拦截模式'\n  captcha = \"验证码\"\n  redirect = \"重定向\"",
           "member": "string",
           "name": "DefenceMode",
           "required": false,
@@ -2050,6 +2062,39 @@
     "DeleteClsLogTopicResponse": {
       "document": "DeleteClsLogTopic返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScdnDomainRequest": {
+      "document": "DeleteScdnDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScdnDomainResponse": {
+      "document": "DeleteScdnDomain返回参数结构体",
+      "members": [
+        {
+          "document": "创建结果，Success表示成功",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5246,6 +5291,37 @@
       ],
       "type": "object"
     },
+    "ListScdnLogTasksRequest": {
+      "document": "ListScdnLogTasks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListScdnLogTasksResponse": {
+      "document": "ListScdnLogTasks返回参数结构体",
+      "members": [
+        {
+          "document": "日志下载任务详情",
+          "member": "ScdnLogTaskDetail",
+          "name": "TaskList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询到的下载任务的总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTopDataRequest": {
       "document": "ListTopData请求参数结构体",
       "members": [
@@ -6922,6 +6998,102 @@
         }
       ],
       "usage": "both"
+    },
+    "ScdnLogTaskDetail": {
+      "document": "SCDN日志事件详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "scdn域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护类型",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询任务开始时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询任务结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志包下载链接\n成功返回下载链接，其他情况返回'-'\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态\ncreated->任务已经创建\nprocessing->任务正在执行\ndone->任务执行成功\nfailed->任务执行失败\nno-log->没有日志产生",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志任务唯一id",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击类型, 可以为\"all\"\nAttackType映射如下:\n  other = '未知类型'\n  malicious_scan = \"恶意扫描\"\n  sql_inject = \"SQL注入攻击\"\n  xss = \"XSS攻击\"\n  cmd_inject = \"命令注入攻击\"\n  ldap_inject = \"LDAP注入攻击\"\n  ssi_inject = \"SSI注入攻击\"\n  xml_inject = \"XML注入攻击\"\n  web_service = \"WEB服务漏洞攻击\"\n  web_app = \"WEB应用漏洞攻击\"\n  path_traversal = \"路径跨越攻击\"\n  illegal_access_core_file = \"核心文件非法访问\"\n  file_upload = \"文件上传攻击\"\n  trojan_horse = \"木马后门攻击\"\n  csrf = \"CSRF攻击\"\n  custom_policy = \"自定义策略\"\n  ai_engine= 'AI引擎检出'\n  malicious_file_upload= '恶意文件上传'",
+          "member": "string",
+          "name": "AttackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防御模式,可以为\"all\"\nDefenceMode映射如下：\n  observe = '观察模式'\n  intercept = '防御模式'",
+          "member": "string",
+          "name": "DefenceMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ScdnTopData": {
       "document": "SCDN攻击数据Top展示",

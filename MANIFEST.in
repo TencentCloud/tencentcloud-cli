@@ -115,6 +115,7 @@ include tccli/services/tbp/v20190627/api.json
 include tccli/services/tbp/v20190311/api.json
 include tccli/services/tcaplusdb/v20190823/api.json
 include tccli/services/tcb/v20180608/api.json
+include tccli/services/tcex/v20200727/api.json
 include tccli/services/tci/v20190318/api.json
 include tccli/services/tcr/v20190924/api.json
 include tccli/services/tdmq/v20200217/api.json

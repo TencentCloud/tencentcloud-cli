@@ -8934,7 +8934,7 @@
           "document": "程序包MD5",
           "member": "string",
           "name": "Md5",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {

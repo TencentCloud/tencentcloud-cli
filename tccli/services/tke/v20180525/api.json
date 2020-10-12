@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AcquireClusterAdminRole": {
+      "document": "通过此接口，可以获取集群的tke:admin的ClusterRole，即管理员角色，可以用于CAM侧高权限的用户，通过CAM策略给予子账户此接口权限，进而可以通过此接口直接获取到kubernetes集群内的管理员角色。",
+      "input": "AcquireClusterAdminRoleRequest",
+      "name": "获取集群RBAC管理员角色",
+      "output": "AcquireClusterAdminRoleResponse"
+    },
     "AddExistedInstances": {
       "document": "添加已经存在的实例到集群",
       "input": "AddExistedInstancesRequest",
@@ -200,6 +206,32 @@
     "serviceShortName": "tke"
   },
   "objects": {
+    "AcquireClusterAdminRoleRequest": {
+      "document": "AcquireClusterAdminRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcquireClusterAdminRoleResponse": {
+      "document": "AcquireClusterAdminRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddExistedInstancesRequest": {
       "document": "AddExistedInstances请求参数结构体",
       "members": [

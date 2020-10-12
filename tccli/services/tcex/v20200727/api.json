@@ -1,0 +1,166 @@
+{
+  "actions": {
+    "DescribeInvocationResult": {
+      "document": "获取服务调用结果。和InvokeService接口配置合适，其InvokeId参数为InvokeService接口返回的RequestId。",
+      "input": "DescribeInvocationResultRequest",
+      "name": "查询服务调用结果",
+      "output": "DescribeInvocationResultResponse"
+    },
+    "InvokeService": {
+      "document": "通过传入文档url，测试服务算法。此接口需要和DescribeInvocationResult接口配置使用，该接口使用InvokeService返回的RequestId作为InvokeId参数，用于查询调用结果。",
+      "input": "InvokeServiceRequest",
+      "name": "调用服务",
+      "output": "InvokeServiceResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-07-27",
+    "api_brief": null,
+    "serviceNameCN": "腾讯云释义",
+    "serviceShortName": "tcex"
+  },
+  "objects": {
+    "AlgorithmResult": {
+      "document": "每个算法的返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "算法ID",
+          "member": "string",
+          "name": "AlgoId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算法名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlgoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "算法返回的结果。\n- 当算法类型为“OCR（1）”时，结果为文本字符串\n- 当算法类型为“文本分类（2）”时，结果字符串为json对象数组：\n  Class：分类结果\n  Confidence：置信度\n- 算法类型为“情感分析（3）”时，结果字符串为json对象：\n  Positive：正面情感概率\n  Negative：负面情感概率\n  Neutral：中性情感概率\n- 当算法类型为“合同要素抽取（4）”时，结果字符串为json对象数组：\n  NodeName：一级要素名称\n  ItemName：二级要素名称\n  Content：要素文本内容\n- 当算法类型为“实体识别（5）”时，结果字符串为json对象数组：\n  - Entity：实体类型\n  - Content：实体文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "算法调用错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Error",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "算法类型：\n1：OCR算法\n2：文本分类算法\n3：情感分析算法\n4：合同要素抽取算法\n5、实体识别算法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AlgoType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInvocationResultRequest": {
+      "document": "DescribeInvocationResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用id，为调用InvokeService接口返回的RequestId",
+          "member": "string",
+          "name": "InvokeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationResultResponse": {
+      "document": "DescribeInvocationResult返回参数结构体",
+      "members": [
+        {
+          "document": "服务的调用结果",
+          "member": "AlgorithmResult",
+          "name": "Results",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0:获取结果失败\n1：结果还没有生成，继续轮询\n2：获取结果成功",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeServiceRequest": {
+      "document": "InvokeService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待调用的服务ID。",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要调用服务的状态：0表示调试版本，1表示上线版本",
+          "member": "int64",
+          "name": "ServiceStatus",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于测试的文档的URL。",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于测试的文本，当此值不为空时，调用内容以此参数的值为准。",
+          "member": "string",
+          "name": "Input",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeServiceResponse": {
+      "document": "InvokeService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

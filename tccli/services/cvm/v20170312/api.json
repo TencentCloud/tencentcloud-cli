@@ -1727,7 +1727,7 @@
       "members": [
         {
           "default": "",
-          "document": "zone\n按照预留实例计费可购买的可用区进行过滤。形如：ap-guangzhou-1。\n类型：String\n必选：否\n可选项：各地域可用区列表\n\nproduct-description\n按照预留实例计费的平台描述（即操作系统）进行过滤。形如：linux。\n类型：String\n必选：否\n可选项：linux\n\nduration\n按照预留实例计费有效期，即预留实例计费购买时长进行过滤。形如：31536000。\n类型：Integer\n计量单位：秒\n必选：否\n可选项：31536000 (1年) | 94608000（3年）",
+          "document": "zone\n按照预留实例计费可购买的可用区进行过滤。形如：ap-guangzhou-1。\n类型：String\n必选：否\n可选项：各地域可用区列表\n\nproduct-description\n按照预留实例计费的平台描述（即操作系统）进行过滤。形如：linux。\n类型：String\n必选：否\n可选项：linux\n\nduration\n按照预留实例计费有效期，即预留实例计费购买时长进行过滤。形如：31536000。\n类型：Integer\n计量单位：秒\n必选：否\n可选项：31536000 (1年)",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5254,7 +5254,7 @@
         },
         {
           "default": "",
-          "document": "GPU核数。",
+          "document": "GPU数量。",
           "member": "uint64",
           "name": "Gpu",
           "required": true,
@@ -5263,7 +5263,7 @@
         },
         {
           "default": "",
-          "document": "FPGA核数。",
+          "document": "FPGA数量。",
           "member": "uint64",
           "name": "Fpga",
           "required": true,
@@ -5272,7 +5272,7 @@
         },
         {
           "default": "",
-          "document": "存储块数。",
+          "document": "本地存储块数量。",
           "member": "uint64",
           "name": "StorageBlock",
           "required": true,

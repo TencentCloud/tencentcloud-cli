@@ -55,7 +55,7 @@
       "output": "AssignPrivateIpAddressesResponse"
     },
     "AssociateAddress": {
-      "document": "本接口 (AssociateAddress) 用于将[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）绑定到实例或弹性网卡的指定内网 IP 上。\n* 将 EIP 绑定到实例（CVM）上，其本质是将 EIP 绑定到实例上主网卡的主内网 IP 上。\n* 将 EIP 绑定到主网卡的主内网IP上，绑定过程会把其上绑定的普通公网 IP 自动解绑并释放。\n* 将 EIP 绑定到指定网卡的内网 IP上（非主网卡的主内网IP），则必须先解绑该 EIP，才能再绑定新的。\n* 将 EIP 绑定到NAT网关，请使用接口[EipBindNatGateway](https://cloud.tencent.com/document/product/215/4093)\n* EIP 如果欠费或被封堵，则不能被绑定。\n* 只有状态为 UNBIND 的 EIP 才能够被绑定。",
+      "document": "本接口 (AssociateAddress) 用于将[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）绑定到实例或弹性网卡的指定内网 IP 上。\n* 将 EIP 绑定到实例（CVM）上，其本质是将 EIP 绑定到实例上主网卡的主内网 IP 上。\n* 将 EIP 绑定到主网卡的主内网IP上，绑定过程会把其上绑定的普通公网 IP 自动解绑并释放。\n* 将 EIP 绑定到指定网卡的内网 IP上（非主网卡的主内网IP），则必须先解绑该 EIP，才能再绑定新的。\n* 将 EIP 绑定到NAT网关，请使用接口[AssociateNatGatewayAddress](https://cloud.tencent.com/document/product/215/36722)\n* EIP 如果欠费或被封堵，则不能被绑定。\n* 只有状态为 UNBIND 的 EIP 才能够被绑定。",
       "input": "AssociateAddressRequest",
       "name": "绑定弹性公网IP",
       "output": "AssociateAddressResponse"
@@ -865,7 +865,7 @@
       "output": "DisableRoutesResponse"
     },
     "DisassociateAddress": {
-      "document": "本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 支持CVM实例，弹性网卡上的EIP解绑\n* 不支持NAT上的EIP解绑。NAT上的EIP解绑请参考[EipUnBindNatGateway](https://cloud.tencent.com/document/product/215/4092)\n* 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\n* EIP 如果被封堵，则不能进行解绑定操作。",
+      "document": "本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 支持CVM实例，弹性网卡上的EIP解绑\n* 不支持NAT上的EIP解绑。NAT上的EIP解绑请参考[DisassociateNatGatewayAddress](https://cloud.tencent.com/document/api/215/36716)\n* 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\n* EIP 如果被封堵，则不能进行解绑定操作。",
       "input": "DisassociateAddressRequest",
       "name": "解绑定弹性公网IP",
       "output": "DisassociateAddressResponse"
@@ -1217,6 +1217,12 @@
       "input": "RemoveIp6RulesRequest",
       "name": "删除IPV6转换规则",
       "output": "RemoveIp6RulesResponse"
+    },
+    "RenewAddresses": {
+      "document": "该接口用于续费包月带宽计费模式的弹性公网IP",
+      "input": "RenewAddressesRequest",
+      "name": "续费包月带宽弹性公网IP",
+      "output": "RenewAddressesResponse"
     },
     "RenewVpnGateway": {
       "document": "本接口（RenewVpnGateway）用于预付费（包年包月）VPN网关续费。目前只支持IPSEC网关。",
@@ -12040,7 +12046,7 @@
       "members": [
         {
           "default": "",
-          "document": "EIP唯一标识ID，形如'eip-xxxx'",
+          "document": "EIP唯一标识ID列表，形如'eip-xxxx'",
           "member": "string",
           "name": "AddressIds",
           "required": true,
@@ -14526,6 +14532,40 @@
     },
     "RemoveIp6RulesResponse": {
       "document": "RemoveIp6Rules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewAddressesRequest": {
+      "document": "RenewAddresses请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EIP唯一标识ID列表，形如'eip-xxxx'",
+          "member": "string",
+          "name": "AddressIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费参数",
+          "member": "AddressChargePrepaid",
+          "name": "AddressChargePrepaid",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewAddressesResponse": {
+      "document": "RenewAddresses返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
