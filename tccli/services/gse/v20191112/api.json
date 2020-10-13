@@ -13,7 +13,7 @@
       "output": "CreateAliasResponse"
     },
     "CreateAsset": {
-      "document": "本接口（CreateAsset）用于创建生成包。\n通过获取上传cos的临时秘钥，将文件上传至cos，然后将生成包的zip名称下发给[CreateAsset](https://cloud.tencent.com/document/product/1165/48731)完成接口创建。上传文件至 cos支持俩种方式：\n\n- 获取预签名方式，COS 简单上传\n    1. [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) 获取预签名信息\n    2. 使用 COS API 进行上传\n-  临时密钥方式，COS 简单上传或者分块上传方式\n    1. [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727)（获取上传 bucket  第一次调用需要，后续可以不用调用）\n    2. [GetUploadFederationToken](https://cloud.tencent.com/document/product/1165/48742) 获取临时密钥\n    3. 使用 COS API 进行上传\n\n具体使用场景可以参考 [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) ,  [GetUploadFederationToken](https://cloud.tencent.com/document/product/1165/48742)和下面 CreateAsset 示例。  ",
+      "document": "本接口（CreateAsset）用于创建生成包。\n通过获取上传cos的临时密钥，将文件上传至cos，然后将生成包的zip名称下发给[CreateAsset](https://cloud.tencent.com/document/product/1165/48731)完成接口创建。上传文件至 cos支持俩种方式：\n\n- 获取预签名方式，COS 简单上传\n    1. [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) 获取预签名信息\n    2. 使用 COS API 进行上传\n-  临时密钥方式，COS 简单上传或者分块上传方式\n    1. [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727)（获取上传 bucket  第一次调用需要，后续可以不用调用）\n    2. [GetUploadFederationToken](https://cloud.tencent.com/document/product/1165/48742) 获取临时密钥\n    3. 使用 COS API 进行上传\n\n具体使用场景可以参考 [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) ,  [GetUploadFederationToken](https://cloud.tencent.com/document/product/1165/48742)和下面 CreateAsset 示例。  ",
       "input": "CreateAssetRequest",
       "name": "创建生成包",
       "output": "CreateAssetResponse"
@@ -517,6 +517,33 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成包的全局唯一资源标识符",
+          "member": "string",
+          "name": "AssetArn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成包支持的操作系统镜像id",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成包支持的操作系统类型",
+          "member": "string",
+          "name": "OsType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -738,6 +765,14 @@
           "name": "OperateSystem",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生成包支持的操作系统镜像id",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -749,6 +784,13 @@
           "document": "生成包ID",
           "member": "string",
           "name": "AssetId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生成包的全局唯一资源标识符",
+          "member": "string",
+          "name": "AssetArn",
           "type": "string",
           "value_allowed_null": false
         },
@@ -1293,7 +1335,7 @@
         },
         {
           "default": "",
-          "document": "搜索条件，支持包ID或包名字过滤",
+          "document": "搜索条件，支持包ID或包名字过滤，该字段会逐步废弃，建议使用 Filters 字段",
           "member": "string",
           "name": "Filter",
           "required": false,

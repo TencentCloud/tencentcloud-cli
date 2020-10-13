@@ -1263,7 +1263,7 @@
         },
         {
           "default": "",
-          "document": "证书类型:\n0：腾讯云托管证书。\n1：用户添加证书。",
+          "document": "证书类型。\n0：用户添加证书，\n1：腾讯云托管证书。",
           "member": "int64",
           "name": "CertType",
           "required": true,

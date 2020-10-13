@@ -9,11 +9,11 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.tdmq.v20200217 import tdmq_client as tdmq_client_v20200217
-from tencentcloud.tdmq.v20200217 import models as models_v20200217
+from tencentcloud.cfw.v20190904 import cfw_client as cfw_client_v20190904
+from tencentcloud.cfw.v20190904 import models as models_v20190904
 
 
-def doCreateTopic(args, parsed_globals):
+def doDescribeNatRuleOverview(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -24,12 +24,12 @@ def doCreateTopic(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTopicRequest()
+    model = models.DescribeNatRuleOverviewRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateTopic(model)
+    rsp = client.DescribeNatRuleOverview(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -38,7 +38,7 @@ def doCreateTopic(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteEnvironments(args, parsed_globals):
+def doModifySequenceRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -49,12 +49,12 @@ def doDeleteEnvironments(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteEnvironmentsRequest()
+    model = models.ModifySequenceRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteEnvironments(model)
+    rsp = client.ModifySequenceRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -63,7 +63,7 @@ def doDeleteEnvironments(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeEnvironments(args, parsed_globals):
+def doCreateAcRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -74,12 +74,12 @@ def doDescribeEnvironments(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeEnvironmentsRequest()
+    model = models.CreateAcRulesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeEnvironments(model)
+    rsp = client.CreateAcRules(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -88,7 +88,7 @@ def doDescribeEnvironments(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyTopic(args, parsed_globals):
+def doModifyTableStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -99,12 +99,12 @@ def doModifyTopic(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyTopicRequest()
+    model = models.ModifyTableStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyTopic(model)
+    rsp = client.ModifyTableStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -113,7 +113,7 @@ def doModifyTopic(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTopics(args, parsed_globals):
+def doRunSyncAsset(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -124,12 +124,12 @@ def doDeleteTopics(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTopicsRequest()
+    model = models.RunSyncAssetRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteTopics(model)
+    rsp = client.RunSyncAsset(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -138,7 +138,7 @@ def doDeleteTopics(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateSubscription(args, parsed_globals):
+def doDescribeAcLists(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -149,12 +149,12 @@ def doCreateSubscription(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateSubscriptionRequest()
+    model = models.DescribeAcListsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateSubscription(model)
+    rsp = client.DescribeAcLists(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -163,7 +163,7 @@ def doCreateSubscription(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSubscriptions(args, parsed_globals):
+def doModifyAcRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -174,12 +174,12 @@ def doDescribeSubscriptions(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSubscriptionsRequest()
+    model = models.ModifyAcRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeSubscriptions(model)
+    rsp = client.ModifyAcRule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -188,7 +188,7 @@ def doDescribeSubscriptions(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeEnvironmentRoles(args, parsed_globals):
+def doDescribeRuleOverview(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -199,12 +199,12 @@ def doDescribeEnvironmentRoles(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeEnvironmentRolesRequest()
+    model = models.DescribeRuleOverviewRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeEnvironmentRoles(model)
+    rsp = client.DescribeRuleOverview(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -213,7 +213,7 @@ def doDescribeEnvironmentRoles(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeEnvironmentAttributes(args, parsed_globals):
+def doDescribeVpcRuleOverview(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -224,12 +224,12 @@ def doDescribeEnvironmentAttributes(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeEnvironmentAttributesRequest()
+    model = models.DescribeVpcRuleOverviewRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeEnvironmentAttributes(model)
+    rsp = client.DescribeVpcRuleOverview(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -238,7 +238,7 @@ def doDescribeEnvironmentAttributes(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateEnvironment(args, parsed_globals):
+def doModifyAllRuleStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -249,12 +249,12 @@ def doCreateEnvironment(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateEnvironmentRequest()
+    model = models.ModifyAllRuleStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateEnvironment(model)
+    rsp = client.ModifyAllRuleStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -263,7 +263,7 @@ def doCreateEnvironment(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyEnvironmentAttributes(args, parsed_globals):
+def doDeleteAcRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -274,12 +274,12 @@ def doModifyEnvironmentAttributes(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyEnvironmentAttributesRequest()
+    model = models.DeleteAcRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyEnvironmentAttributes(model)
+    rsp = client.DeleteAcRule(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -288,7 +288,7 @@ def doModifyEnvironmentAttributes(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doResetMsgSubOffsetByTimestamp(args, parsed_globals):
+def doModifyAllSwitchStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -299,12 +299,12 @@ def doResetMsgSubOffsetByTimestamp(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetMsgSubOffsetByTimestampRequest()
+    model = models.ModifyAllSwitchStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ResetMsgSubOffsetByTimestamp(model)
+    rsp = client.ModifyAllSwitchStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -313,7 +313,7 @@ def doResetMsgSubOffsetByTimestamp(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeProducers(args, parsed_globals):
+def doDescribeSwitchLists(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -324,12 +324,12 @@ def doDescribeProducers(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeProducersRequest()
+    model = models.DescribeSwitchListsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeProducers(model)
+    rsp = client.DescribeSwitchLists(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -338,7 +338,7 @@ def doDescribeProducers(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTopics(args, parsed_globals):
+def doDescribeSyncAssetStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -349,12 +349,12 @@ def doDescribeTopics(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTopicsRequest()
+    model = models.DescribeSyncAssetStatusRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTopics(model)
+    rsp = client.DescribeSyncAssetStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -363,7 +363,7 @@ def doDescribeTopics(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteSubscriptions(args, parsed_globals):
+def doDeleteAllAccessControlRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -374,12 +374,62 @@ def doDeleteSubscriptions(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteSubscriptionsRequest()
+    model = models.DeleteAllAccessControlRuleRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteSubscriptions(model)
+    rsp = client.DeleteAllAccessControlRule(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyItemSwitchStatus(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyItemSwitchStatusRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyItemSwitchStatus(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTableStatus(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CfwClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTableStatusRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeTableStatus(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -389,36 +439,38 @@ def doDeleteSubscriptions(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20200217": tdmq_client_v20200217,
+    "v20190904": cfw_client_v20190904,
 
 }
 
 MODELS_MAP = {
-    "v20200217": models_v20200217,
+    "v20190904": models_v20190904,
 
 }
 
 ACTION_MAP = {
-    "CreateTopic": doCreateTopic,
-    "DeleteEnvironments": doDeleteEnvironments,
-    "DescribeEnvironments": doDescribeEnvironments,
-    "ModifyTopic": doModifyTopic,
-    "DeleteTopics": doDeleteTopics,
-    "CreateSubscription": doCreateSubscription,
-    "DescribeSubscriptions": doDescribeSubscriptions,
-    "DescribeEnvironmentRoles": doDescribeEnvironmentRoles,
-    "DescribeEnvironmentAttributes": doDescribeEnvironmentAttributes,
-    "CreateEnvironment": doCreateEnvironment,
-    "ModifyEnvironmentAttributes": doModifyEnvironmentAttributes,
-    "ResetMsgSubOffsetByTimestamp": doResetMsgSubOffsetByTimestamp,
-    "DescribeProducers": doDescribeProducers,
-    "DescribeTopics": doDescribeTopics,
-    "DeleteSubscriptions": doDeleteSubscriptions,
+    "DescribeNatRuleOverview": doDescribeNatRuleOverview,
+    "ModifySequenceRules": doModifySequenceRules,
+    "CreateAcRules": doCreateAcRules,
+    "ModifyTableStatus": doModifyTableStatus,
+    "RunSyncAsset": doRunSyncAsset,
+    "DescribeAcLists": doDescribeAcLists,
+    "ModifyAcRule": doModifyAcRule,
+    "DescribeRuleOverview": doDescribeRuleOverview,
+    "DescribeVpcRuleOverview": doDescribeVpcRuleOverview,
+    "ModifyAllRuleStatus": doModifyAllRuleStatus,
+    "DeleteAcRule": doDeleteAcRule,
+    "ModifyAllSwitchStatus": doModifyAllSwitchStatus,
+    "DescribeSwitchLists": doDescribeSwitchLists,
+    "DescribeSyncAssetStatus": doDescribeSyncAssetStatus,
+    "DeleteAllAccessControlRule": doDeleteAllAccessControlRule,
+    "ModifyItemSwitchStatus": doModifyItemSwitchStatus,
+    "DescribeTableStatus": doDescribeTableStatus,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20200217",
+    "v20190904",
 
 ]
 
@@ -476,11 +528,11 @@ def parse_global_arg(parsed_globals):
         if g_param[OptionsDefine.ServiceVersion]:
             g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
         else:
-            version = conf["tdmq"][OptionsDefine.Version]
+            version = conf["cfw"][OptionsDefine.Version]
             g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if g_param[OptionsDefine.Endpoint] is None:
-            g_param[OptionsDefine.Endpoint] = conf["tdmq"][OptionsDefine.Endpoint]
+            g_param[OptionsDefine.Endpoint] = conf["cfw"][OptionsDefine.Endpoint]
     except Exception as err:
         raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
 

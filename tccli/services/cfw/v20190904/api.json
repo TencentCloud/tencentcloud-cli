@@ -1,0 +1,1657 @@
+{
+  "actions": {
+    "CreateAcRules": {
+      "document": "创建规则",
+      "input": "CreateAcRulesRequest",
+      "name": "创建规则",
+      "output": "CreateAcRulesResponse"
+    },
+    "DeleteAcRule": {
+      "document": "删除规则",
+      "input": "DeleteAcRuleRequest",
+      "name": "删除规则",
+      "output": "DeleteAcRuleResponse"
+    },
+    "DeleteAllAccessControlRule": {
+      "document": "全部删除规则",
+      "input": "DeleteAllAccessControlRuleRequest",
+      "name": "全部删除规则",
+      "output": "DeleteAllAccessControlRuleResponse"
+    },
+    "DescribeAcLists": {
+      "document": "访问控制列表",
+      "input": "DescribeAcListsRequest",
+      "name": "访问控制列表",
+      "output": "DescribeAcListsResponse"
+    },
+    "DescribeNatRuleOverview": {
+      "document": "nat规则列表概况",
+      "input": "DescribeNatRuleOverviewRequest",
+      "name": "nat规则列表概况",
+      "output": "DescribeNatRuleOverviewResponse"
+    },
+    "DescribeRuleOverview": {
+      "document": "查询规则列表概况",
+      "input": "DescribeRuleOverviewRequest",
+      "name": "查询规则列表概况",
+      "output": "DescribeRuleOverviewResponse"
+    },
+    "DescribeSwitchLists": {
+      "document": "防火墙开关列表",
+      "input": "DescribeSwitchListsRequest",
+      "name": "防火墙开关列表",
+      "output": "DescribeSwitchListsResponse"
+    },
+    "DescribeSyncAssetStatus": {
+      "document": "同步资产状态查询-互联网&VPC",
+      "input": "DescribeSyncAssetStatusRequest",
+      "name": "同步资产状态查询-互联网&VPC",
+      "output": "DescribeSyncAssetStatusResponse"
+    },
+    "DescribeTableStatus": {
+      "document": "查询规则表状态",
+      "input": "DescribeTableStatusRequest",
+      "name": "查询规则表状态",
+      "output": "DescribeTableStatusResponse"
+    },
+    "DescribeVpcRuleOverview": {
+      "document": "vpc规则列表概况",
+      "input": "DescribeVpcRuleOverviewRequest",
+      "name": "vpc规则列表概况",
+      "output": "DescribeVpcRuleOverviewResponse"
+    },
+    "ModifyAcRule": {
+      "document": "修改规则",
+      "input": "ModifyAcRuleRequest",
+      "name": "修改规则",
+      "output": "ModifyAcRuleResponse"
+    },
+    "ModifyAllRuleStatus": {
+      "document": "启用停用全部规则",
+      "input": "ModifyAllRuleStatusRequest",
+      "name": "启用停用全部规则",
+      "output": "ModifyAllRuleStatusResponse"
+    },
+    "ModifyAllSwitchStatus": {
+      "document": "一键开启和关闭",
+      "input": "ModifyAllSwitchStatusRequest",
+      "name": "一键开启和关闭",
+      "output": "ModifyAllSwitchStatusResponse"
+    },
+    "ModifyItemSwitchStatus": {
+      "document": "修改单个防火墙开关",
+      "input": "ModifyItemSwitchStatusRequest",
+      "name": "修改单个防火墙开关",
+      "output": "ModifyItemSwitchStatusResponse"
+    },
+    "ModifySequenceRules": {
+      "document": "修改规则执行顺序",
+      "input": "ModifySequenceRulesRequest",
+      "name": "修改规则执行顺序",
+      "output": "ModifySequenceRulesResponse"
+    },
+    "ModifyTableStatus": {
+      "document": "修改规则表状态",
+      "input": "ModifyTableStatusRequest",
+      "name": "修改规则表状态",
+      "output": "ModifyTableStatusResponse"
+    },
+    "RunSyncAsset": {
+      "document": "同步资产-互联网&VPC",
+      "input": "RunSyncAssetRequest",
+      "name": "同步资产-互联网&VPC",
+      "output": "RunSyncAssetResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-09-04",
+    "api_brief": "防火墙开放API接口可实现自动化创建、修改、删除访问控制规则；查询、开启或关闭互联网边界防火墙开关等",
+    "serviceNameCN": "云防火墙",
+    "serviceShortName": "cfw"
+  },
+  "objects": {
+    "AcListsData": {
+      "document": "访问控制列表对象",
+      "members": [
+        {
+          "default": "",
+          "document": "规则id",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "访问目的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TargetIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Strategy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命中次数",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行顺序",
+          "member": "uint64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警规则id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateAcRulesRequest": {
+      "document": "CreateAcRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建规则数据",
+          "member": "RuleInfoData",
+          "name": "Data",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "0：添加，1：插入",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "边id",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制规则状态",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0：添加，1：覆盖",
+          "member": "uint64",
+          "name": "Overwrite",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "NAT实例ID, Area存在的时候这个必传",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "portScan: 来自于端口扫描, patchImport: 来自于批量导入",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAcRulesResponse": {
+      "document": "CreateAcRules返回参数结构体",
+      "members": [
+        {
+          "document": "状态值",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回多余的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Info",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAcRuleRequest": {
+      "document": "DeleteAcRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "id值",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "出站还是入站",
+          "member": "uint64",
+          "name": "Direction",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "EdgeId值",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAcRuleResponse": {
+      "document": "DeleteAcRule返回参数结构体",
+      "members": [
+        {
+          "document": "状态值",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回多余的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Info",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAllAccessControlRuleRequest": {
+      "document": "DeleteAllAccessControlRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "方向，0：出站，1：入站",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "边ID",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "nat地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAllAccessControlRuleResponse": {
+      "document": "DeleteAllAccessControlRule返回参数结构体",
+      "members": [
+        {
+          "document": "状态值",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回多余信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Info",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAcListsRequest": {
+      "document": "DescribeAcLists请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略",
+          "member": "string",
+          "name": "Strategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索值",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页条数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移值",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "出站还是入站，0：入站，1：出站",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "EdgeId值",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则是否开启，'0': 未开启，'1': 开启, 默认为'0'",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAcListsResponse": {
+      "document": "DescribeAcLists返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问控制列表数据",
+          "member": "AcListsData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "不算筛选条数的总条数",
+          "member": "uint64",
+          "name": "AllTotal",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问控制规则全部启用/全部停用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Enable",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatRuleOverviewRequest": {
+      "document": "DescribeNatRuleOverview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "方向，0：出站，1：入站",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "NAT地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatRuleOverviewResponse": {
+      "document": "DescribeNatRuleOverview返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "弹性IP列表",
+          "member": "string",
+          "name": "EipList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "端口转发规则数量",
+          "member": "int64",
+          "name": "DnatNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问控制规则总数",
+          "member": "int64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问规则剩余条数",
+          "member": "int64",
+          "name": "RemainNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "阻断规则条数",
+          "member": "int64",
+          "name": "BlockNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "启用规则条数",
+          "member": "int64",
+          "name": "EnableNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleOverviewRequest": {
+      "document": "DescribeRuleOverview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "方向，0：出站，1：入站",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleOverviewResponse": {
+      "document": "DescribeRuleOverview返回参数结构体",
+      "members": [
+        {
+          "document": "规则总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "AllTotal",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "阻断策略规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "StrategyNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "启用规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "StartRuleNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "停用规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "StopRuleNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "剩余配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RemainingNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSwitchListsRequest": {
+      "document": "DescribeSwitchLists请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "防火墙状态",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资产类型",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索值",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移值",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序，desc：降序，asc：升序",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSwitchListsResponse": {
+      "document": "DescribeSwitchLists返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表数据",
+          "member": "SwitchListsData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区域列表",
+          "member": "string",
+          "name": "AreaLists",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "打开个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "OnNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "关闭个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "OffNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncAssetStatusRequest": {
+      "document": "DescribeSyncAssetStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "0: 互联网防火墙开关，1：vpc 防火墙开关",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncAssetStatusResponse": {
+      "document": "DescribeSyncAssetStatus返回参数结构体",
+      "members": [
+        {
+          "document": "0：同步成功，1：资产更新中，2：后台同步调用失败",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableStatusRequest": {
+      "document": "DescribeTableStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EdgeId值",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态值，0：检查表的状态",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Nat所在地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "方向，0：出站，1：入站",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableStatusResponse": {
+      "document": "DescribeTableStatus返回参数结构体",
+      "members": [
+        {
+          "document": "0：正常，其它：不正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcRuleOverviewRequest": {
+      "document": "DescribeVpcRuleOverview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边id",
+          "member": "string",
+          "name": "EdgeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcRuleOverviewResponse": {
+      "document": "DescribeVpcRuleOverview返回参数结构体",
+      "members": [
+        {
+          "document": "阻断策略规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "StrategyNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "启用规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "StartRuleNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAcRuleRequest": {
+      "document": "ModifyAcRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则数组",
+          "member": "RuleInfoData",
+          "name": "Data",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "EdgeId值",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问规则状态",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "NAT地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAcRuleResponse": {
+      "document": "ModifyAcRule返回参数结构体",
+      "members": [
+        {
+          "document": "装填值",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回多余的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Info",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAllRuleStatusRequest": {
+      "document": "ModifyAllRuleStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "状态，0：全部停用，1：全部启用",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "方向，0：出站，1：入站",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Edge ID值",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAllRuleStatusResponse": {
+      "document": "ModifyAllRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "0: 修改成功, !0: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAllSwitchStatusRequest": {
+      "document": "ModifyAllSwitchStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "状态，0：关闭，1：开启",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0: 边界防火墙开关，1：vpc防火墙开关",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "选中的防火墙开关Id",
+          "member": "string",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "NAT开关切换类型，1,单个子网，2，同开同关，3，全部",
+          "member": "int64",
+          "name": "ChangeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "NAT实例所在地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAllSwitchStatusResponse": {
+      "document": "ModifyAllSwitchStatus返回参数结构体",
+      "members": [
+        {
+          "document": "修改成功与否状态值",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyItemSwitchStatusRequest": {
+      "document": "ModifyItemSwitchStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "id值",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "状态值",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0: 边界防火墙开关，1：vpc防火墙开关",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyItemSwitchStatusResponse": {
+      "document": "ModifyItemSwitchStatus返回参数结构体",
+      "members": [
+        {
+          "document": "修改成功与否状态值",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySequenceRulesRequest": {
+      "document": "ModifySequenceRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边Id值",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改数据",
+          "member": "SequenceData",
+          "name": "Data",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "NAT地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0：出向，1：入向",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySequenceRulesResponse": {
+      "document": "ModifySequenceRules返回参数结构体",
+      "members": [
+        {
+          "document": "0: 修改成功, !0: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableStatusRequest": {
+      "document": "ModifyTableStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EdgeId值",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态值，1：锁表，2：解锁表",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Nat所在地域",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0： 出向，1：入向",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableStatusResponse": {
+      "document": "ModifyTableStatus返回参数结构体",
+      "members": [
+        {
+          "document": "0：正常，-1：不正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RuleInfoData": {
+      "document": "规则输入对象",
+      "members": [
+        {
+          "default": "",
+          "document": "执行顺序",
+          "member": "uint64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问源",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问目的",
+          "member": "string",
+          "name": "TargetIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略",
+          "member": "string",
+          "name": "Strategy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "方向，0：出站，1：入站",
+          "member": "uint64",
+          "name": "Direction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿",
+          "member": "uint64",
+          "name": "SourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的类型,1是ip,2是域名,3是ip地址簿，4是ip组地址簿",
+          "member": "uint64",
+          "name": "TargetType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "id值",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "log",
+          "member": "string",
+          "name": "LogId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市Code",
+          "member": "uint64",
+          "name": "City",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家Code",
+          "member": "uint64",
+          "name": "Country",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云厂商，支持多个，以逗号分隔， 1:腾讯云（仅海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云",
+          "member": "string",
+          "name": "CloudCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为地域",
+          "member": "uint64",
+          "name": "IsRegion",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名",
+          "member": "string",
+          "name": "CityName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名",
+          "member": "string",
+          "name": "CountryName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RunSyncAssetRequest": {
+      "document": "RunSyncAsset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "0: 互联网防火墙开关，1：vpc 防火墙开关",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RunSyncAssetResponse": {
+      "document": "RunSyncAsset返回参数结构体",
+      "members": [
+        {
+          "document": "0：同步成功，1：资产更新中，2：后台同步调用失败",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SequenceData": {
+      "document": "执行顺序对象",
+      "members": [
+        {
+          "default": "",
+          "document": "规则Id值",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改前执行顺序",
+          "member": "uint64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改后执行顺序",
+          "member": "uint64",
+          "name": "NewOrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SwitchListsData": {
+      "document": "防火墙开关列表对象",
+      "members": [
+        {
+          "default": "",
+          "document": "公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IntranetIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产类型",
+          "member": "string",
+          "name": "AssetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "防火墙开关",
+          "member": "int64",
+          "name": "Switch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "id值",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公网 IP 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "PublicIpType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险端口数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "PortTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扫描深度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ScanMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ScanStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

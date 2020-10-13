@@ -319,7 +319,7 @@
       "output": "DescribeProcedureTemplatesResponse"
     },
     "DescribeReviewDetails": {
-      "document": "该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。\n\n1. 可以查询最近365天内的视频内容审核时长统计数据。\n2. 查询时间跨度不超过90天。",
+      "document": "<b>本接口已不推荐使用，用 [DescribeMediaProcessUsageData](/document/product/266/41464) 替代</b>\n\n该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。\n\n1. 可以查询最近365天内的视频内容审核时长统计数据。\n2. 查询时间跨度不超过90天。",
       "input": "DescribeReviewDetailsRequest",
       "name": "查询内容审核详情",
       "output": "DescribeReviewDetailsResponse"
@@ -8462,7 +8462,7 @@
         },
         {
           "default": "",
-          "document": "查询视频处理任务类型，默认查询转码。目前只支持转码类型数据查询。\n<li>Transcode: 转码</li>",
+          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -18126,7 +18126,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务类型。\n<li>Transcode: 转码</li>\n<li>Snapshot: 截图</li>",
+          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
           "member": "string",
           "name": "TaskType",
           "required": true,
@@ -18135,7 +18135,7 @@
         },
         {
           "default": "",
-          "document": "任务数统计数据概览。\n<li>Transcode: 用量单位为秒</li>",
+          "document": "任务数统计数据概览，用量单位为秒。",
           "member": "TaskStatDataItem",
           "name": "Summary",
           "required": true,

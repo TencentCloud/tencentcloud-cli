@@ -66,6 +66,12 @@
       "name": "获取数据库权限",
       "output": "DescribeDatabaseACLResponse"
     },
+    "DescribeDownloadFile": {
+      "document": "获取下载文件信息",
+      "input": "DescribeDownloadFileRequest",
+      "name": "获取下载文件信息",
+      "output": "DescribeDownloadFileResponse"
+    },
     "DescribeEndUserLoginStatistic": {
       "document": "获取环境终端用户新增与登录信息",
       "input": "DescribeEndUserLoginStatisticRequest",
@@ -1142,6 +1148,53 @@
           "name": "AclTag",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDownloadFileRequest": {
+      "document": "DescribeDownloadFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "代码uri",
+          "member": "string",
+          "name": "CodeUri",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDownloadFileResponse": {
+      "document": "DescribeDownloadFile返回参数结构体",
+      "members": [
+        {
+          "document": "文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FilePath",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "加密key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CustomKey",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DownloadUrl",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

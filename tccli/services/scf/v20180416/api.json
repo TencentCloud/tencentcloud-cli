@@ -926,6 +926,14 @@
           "name": "Enable",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义参数，仅支持timer触发器",
+          "member": "string",
+          "name": "CustomArgument",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

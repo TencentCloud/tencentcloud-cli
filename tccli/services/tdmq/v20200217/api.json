@@ -42,6 +42,12 @@
       "name": "获取环境属性",
       "output": "DescribeEnvironmentAttributesResponse"
     },
+    "DescribeEnvironmentRoles": {
+      "document": "获取环境角色列表",
+      "input": "DescribeEnvironmentRolesRequest",
+      "name": "获取环境角色列表",
+      "output": "DescribeEnvironmentRolesResponse"
+    },
     "DescribeEnvironments": {
       "document": "获取租户下环境列表",
       "input": "DescribeEnvironmentsRequest",
@@ -665,6 +671,62 @@
       ],
       "type": "object"
     },
+    "DescribeEnvironmentRolesRequest": {
+      "document": "DescribeEnvironmentRoles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始下标，不填默认为0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentRolesResponse": {
+      "document": "DescribeEnvironmentRoles返回参数结构体",
+      "members": [
+        {
+          "document": "记录数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境角色集合。",
+          "member": "EnvironmentRole",
+          "name": "EnvironmentRoleSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEnvironmentsRequest": {
       "document": "DescribeEnvironments请求参数结构体",
       "members": [
@@ -987,6 +1049,66 @@
         {
           "default": "",
           "document": "最近修改时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvironmentRole": {
+      "document": "环境角色集合",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）。",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色名称。",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权项，最多只能包含produce、consume两项的非空字符串数组。",
+          "member": "string",
+          "name": "Permissions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色描述。",
+          "member": "string",
+          "name": "RoleDescribe",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间。",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
