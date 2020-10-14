@@ -968,7 +968,7 @@
         },
         {
           "default": "",
-          "document": "单句语速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单句语速，单位：字数/秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "SpeechSpeed",
           "required": true,

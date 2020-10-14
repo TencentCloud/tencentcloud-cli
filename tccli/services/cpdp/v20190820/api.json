@@ -1659,7 +1659,7 @@
         },
         {
           "default": "",
-          "document": "用于提现\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "用于提现\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "SettleAcctNo",
           "required": true,
@@ -1667,7 +1667,7 @@
         },
         {
           "default": "",
-          "document": "结算账户户名\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "结算账户户名\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "SettleAcctName",
           "required": true,
@@ -1715,7 +1715,7 @@
         },
         {
           "default": "",
-          "document": "会员证件号码\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "会员证件号码\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "IdCode",
           "required": true,
@@ -1918,7 +1918,7 @@
         },
         {
           "default": "",
-          "document": "用于提现\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "用于提现\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "SettleAcctNo",
           "required": true,
@@ -1926,7 +1926,7 @@
         },
         {
           "default": "",
-          "document": "结算账户户名\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "结算账户户名\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "SettleAcctName",
           "required": true,
@@ -1950,7 +1950,7 @@
         },
         {
           "default": "",
-          "document": "证件号码\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "证件号码\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "IdCode",
           "required": true,
@@ -1982,7 +1982,7 @@
         },
         {
           "default": "",
-          "document": "用于短信验证\nBindType==2时必填\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "用于短信验证\nBindType==2时必填\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -2465,7 +2465,7 @@
         },
         {
           "default": "",
-          "document": "结算账户账号\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "结算账户账号\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "SettleAcctNo",
           "required": true,
@@ -2846,7 +2846,7 @@
         },
         {
           "default": "",
-          "document": "子商户联系人\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "子商户联系人\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "Contact",
           "required": true,
@@ -2854,7 +2854,7 @@
         },
         {
           "default": "",
-          "document": "联系人手机号\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "联系人手机号\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "Mobile",
           "required": true,
@@ -2862,7 +2862,7 @@
         },
         {
           "default": "",
-          "document": "邮箱 \n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "邮箱 \n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -2910,7 +2910,7 @@
         },
         {
           "default": "",
-          "document": "子商户密钥\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "子商户密钥\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "SubMerchantKey",
           "required": false,
@@ -2918,7 +2918,7 @@
         },
         {
           "default": "",
-          "document": "子商户私钥\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "子商户私钥\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "SubMerchantPrivateKey",
           "required": false,
@@ -12536,7 +12536,7 @@
         },
         {
           "default": "",
-          "document": "用于提现\n<敏感信息>加密详见《商户端接口敏感信息加密说明》",
+          "document": "用于提现\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
           "member": "string",
           "name": "SettleAcctNo",
           "required": true,

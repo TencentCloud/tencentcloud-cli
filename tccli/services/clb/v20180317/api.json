@@ -1624,9 +1624,25 @@
         },
         {
           "default": "",
+          "document": "独占集群信息",
+          "member": "ExclusiveCluster",
+          "name": "ExclusiveCluster",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "member": "string",
           "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Stgw独占集群的标签。",
+          "member": "string",
+          "name": "ClusterTag",
           "required": false,
           "type": "string"
         }

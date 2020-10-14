@@ -36,6 +36,12 @@
       "name": "查询物理专线接入点",
       "output": "DescribeAccessPointsResponse"
     },
+    "DescribeDirectConnectTunnelExtra": {
+      "document": "本接口（DescribeDirectConnectTunnelExtra）用于查询专用通道扩展信息",
+      "input": "DescribeDirectConnectTunnelExtraRequest",
+      "name": "查询专用通道扩展信息",
+      "output": "DescribeDirectConnectTunnelExtraResponse"
+    },
     "DescribeDirectConnectTunnels": {
       "document": "用于查询专用通道列表。",
       "input": "DescribeDirectConnectTunnelsRequest",
@@ -48,6 +54,12 @@
       "name": "查询物理专线列表",
       "output": "DescribeDirectConnectsResponse"
     },
+    "DescribePublicDirectConnectTunnelRoutes": {
+      "document": "本接口（DescribePublicDirectConnectTunnelRoutes）用于查询互联网通道路由列表",
+      "input": "DescribePublicDirectConnectTunnelRoutesRequest",
+      "name": "查询互联网通道路由列表",
+      "output": "DescribePublicDirectConnectTunnelRoutesResponse"
+    },
     "ModifyDirectConnectAttribute": {
       "document": "修改物理专线的属性。",
       "input": "ModifyDirectConnectAttributeRequest",
@@ -59,6 +71,12 @@
       "input": "ModifyDirectConnectTunnelAttributeRequest",
       "name": "修改专用通道属性",
       "output": "ModifyDirectConnectTunnelAttributeResponse"
+    },
+    "ModifyDirectConnectTunnelExtra": {
+      "document": "本接口（ModifyDirectConnectTunnelExtra）用于修改专用通道扩展信息",
+      "input": "ModifyDirectConnectTunnelExtraRequest",
+      "name": "修改专用通道扩展信息",
+      "output": "ModifyDirectConnectTunnelExtraResponse"
     },
     "RejectDirectConnectTunnel": {
       "document": "拒绝专用通道申请",
@@ -165,6 +183,54 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BFDInfo": {
+      "document": "BFD配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "健康检查次数",
+          "member": "int64",
+          "name": "ProbeFailedTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查间隔",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BGPStatus": {
+      "document": "bgp状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "腾讯侧主互联IP BGP状态",
+          "member": "string",
+          "name": "TencentAddressBgpState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备互联IP BGP状态",
+          "member": "string",
+          "name": "TencentBackupAddressBgpState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -607,6 +673,39 @@
       ],
       "type": "object"
     },
+    "DescribeDirectConnectTunnelExtraRequest": {
+      "document": "DescribeDirectConnectTunnelExtra请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDirectConnectTunnelExtraResponse": {
+      "document": "DescribeDirectConnectTunnelExtra返回参数结构体",
+      "members": [
+        {
+          "document": "专用通道扩展信息",
+          "member": "DirectConnectTunnelExtra",
+          "name": "DirectConnectTunnelExtra",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDirectConnectTunnelsRequest": {
       "document": "DescribeDirectConnectTunnels请求参数结构体",
       "members": [
@@ -732,6 +831,70 @@
           "name": "AllSignLaw",
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicDirectConnectTunnelRoutesRequest": {
+      "document": "DescribePublicDirectConnectTunnelRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件：\nroute-type：路由类型，取值：BGP/STATIC\nroute-subnet：路由cidr，取值如：192.68.1.0/24",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicDirectConnectTunnelRoutesResponse": {
+      "document": "DescribePublicDirectConnectTunnelRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "互联网通道路由列表",
+          "member": "DirectConnectTunnelRoute",
+          "name": "Routes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1267,6 +1430,369 @@
       ],
       "usage": "out"
     },
+    "DirectConnectTunnelExtra": {
+      "document": "专用通道扩展信息",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线ID",
+          "member": "string",
+          "name": "DirectConnectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道状态\nAVAILABLE:就绪或者已连接\nPENDING:申请中\nALLOCATING:配置中\nALLOCATED:配置完成\nALTERING:修改中\nDELETING:删除中\nDELETED:删除完成\nCOMFIRMING:待接受\nREJECTED:拒绝",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线的拥有者，开发商账号 ID",
+          "member": "string",
+          "name": "DirectConnectOwnerAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道的拥有者，开发商账号 ID",
+          "member": "string",
+          "name": "OwnerAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型，分别为VPC、BMVPC、CCN\n VPC：私有网络 ，BMVPC：黑石网络，CCN：云联网",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC地域对应的网络名，如ap-guangzhou",
+          "member": "string",
+          "name": "NetworkRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络统一 ID 或者黑石网络统一 ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专线网关 ID",
+          "member": "string",
+          "name": "DirectConnectGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BGP ：BGP路由 STATIC：静态 默认为 BGP 路由",
+          "member": "string",
+          "name": "RouteType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧BGP，Asn，AuthKey",
+          "member": "BgpPeer",
+          "name": "BgpPeer",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧网段地址",
+          "member": "RouteFilterPrefix",
+          "name": "RouteFilterPrefixes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "互联网通道公网网段地址",
+          "member": "RouteFilterPrefix",
+          "name": "PublicAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道的Vlan",
+          "member": "int64",
+          "name": "Vlan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯侧互联 IP",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备用互联IP",
+          "member": "string",
+          "name": "TencentBackupAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧互联 IP",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道名称",
+          "member": "string",
+          "name": "DirectConnectTunnelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道创建时间",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道带宽值",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的网络自定义探测ID",
+          "member": "string",
+          "name": "NetDetectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BGP community开关",
+          "member": "bool",
+          "name": "EnableBGPCommunity",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为Nat通道",
+          "member": "int64",
+          "name": "NatType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC地域简码，如gz、cd",
+          "member": "string",
+          "name": "VpcRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启BFD",
+          "member": "int64",
+          "name": "BfdEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启NQA",
+          "member": "int64",
+          "name": "NqaEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道接入点类型",
+          "member": "string",
+          "name": "AccessPointType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专线网关名称",
+          "member": "string",
+          "name": "DirectConnectGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道关联的物理专线是否签署了用户协议",
+          "member": "bool",
+          "name": "SignLaw",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BFD配置信息",
+          "member": "BFDInfo",
+          "name": "BfdInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NQA配置信息",
+          "member": "NQAInfo",
+          "name": "NqaInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BGP状态",
+          "member": "BGPStatus",
+          "name": "BgpStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DirectConnectTunnelRoute": {
+      "document": "专线通道路由",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道路由ID",
+          "member": "string",
+          "name": "RouteId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网段CIDR",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由类型：BGP/STATIC路由",
+          "member": "string",
+          "name": "RouteType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ENABLE：路由启用，DISABLE：路由禁用",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ASPath信息",
+          "member": "string",
+          "name": "ASPath",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由下一跳IP",
+          "member": "string",
+          "name": "NextHop",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "用于条件过滤查询",
       "members": [
@@ -1486,6 +2012,161 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyDirectConnectTunnelExtraRequest": {
+      "document": "ModifyDirectConnectTunnelExtra请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用通道的Vlan",
+          "member": "int64",
+          "name": "Vlan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户侧BGP，Asn，AuthKey",
+          "member": "BgpPeer",
+          "name": "BgpPeer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户侧网段地址",
+          "member": "RouteFilterPrefix",
+          "name": "RouteFilterPrefixes",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "腾讯侧互联IP",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备用互联IP",
+          "member": "string",
+          "name": "TencentBackupAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户侧互联IP",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用通道带宽值",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "BGP community开关",
+          "member": "bool",
+          "name": "EnableBGPCommunity",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启BFD",
+          "member": "int64",
+          "name": "BfdEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启NQA",
+          "member": "int64",
+          "name": "NqaEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "BFD配置信息",
+          "member": "BFDInfo",
+          "name": "BfdInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "NQA配置信息",
+          "member": "NQAInfo",
+          "name": "NqaInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDirectConnectTunnelExtraResponse": {
+      "document": "ModifyDirectConnectTunnelExtra返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NQAInfo": {
+      "document": "nqa配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "健康检查次数",
+          "member": "int64",
+          "name": "ProbeFailedTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查间隔",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查地址",
+          "member": "string",
+          "name": "DestinationIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RejectDirectConnectTunnelRequest": {
       "document": "RejectDirectConnectTunnel请求参数结构体",

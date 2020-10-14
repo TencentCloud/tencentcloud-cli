@@ -13,6 +13,56 @@ from tencentcloud.dc.v20180410 import dc_client as dc_client_v20180410
 from tencentcloud.dc.v20180410 import models as models_v20180410
 
 
+def doDescribePublicDirectConnectTunnelRoutes(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePublicDirectConnectTunnelRoutesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePublicDirectConnectTunnelRoutes(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDirectConnectTunnelExtra(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDirectConnectTunnelExtraRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyDirectConnectTunnelExtra(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyDirectConnectAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -55,6 +105,31 @@ def doCreateDirectConnectTunnel(args, parsed_globals):
     model = models.CreateDirectConnectTunnelRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateDirectConnectTunnel(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDirectConnectTunnelExtra(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDirectConnectTunnelExtraRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeDirectConnectTunnelExtra(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -299,8 +374,11 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribePublicDirectConnectTunnelRoutes": doDescribePublicDirectConnectTunnelRoutes,
+    "ModifyDirectConnectTunnelExtra": doModifyDirectConnectTunnelExtra,
     "ModifyDirectConnectAttribute": doModifyDirectConnectAttribute,
     "CreateDirectConnectTunnel": doCreateDirectConnectTunnel,
+    "DescribeDirectConnectTunnelExtra": doDescribeDirectConnectTunnelExtra,
     "DeleteDirectConnect": doDeleteDirectConnect,
     "AcceptDirectConnectTunnel": doAcceptDirectConnectTunnel,
     "DeleteDirectConnectTunnel": doDeleteDirectConnectTunnel,
