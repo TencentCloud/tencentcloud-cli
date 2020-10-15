@@ -4806,6 +4806,39 @@
       ],
       "usage": "both"
     },
+    "HttpHeaderRule": {
+      "document": "http头部设置规则。",
+      "members": [
+        {
+          "default": "",
+          "document": "http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。",
+          "member": "string",
+          "name": "HeaderMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http头部名称。",
+          "member": "string",
+          "name": "HeaderName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http头部值。",
+          "member": "string",
+          "name": "HeaderValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Https": {
       "document": "域名 https 加速配置，默认为关闭状态",
       "members": [
@@ -5941,6 +5974,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分路径回源配置规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PathRule",
+          "name": "PathRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6210,6 +6252,75 @@
           "name": "VideoSeek",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PathRule": {
+      "document": "分路径回源配置规则。",
+      "members": [
+        {
+          "default": "",
+          "document": "是否是正则匹配。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Regex",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "URL路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路径匹配时的回源源站。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Origin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路径匹配时的回源Host头部。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站所属区域，支持CN，OV。分别表示国内或海外。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OriginArea",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路径匹配时的回源URI路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ForwardUri",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路径匹配时的回源头部设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HttpHeaderRule",
+          "name": "RequestHeaders",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

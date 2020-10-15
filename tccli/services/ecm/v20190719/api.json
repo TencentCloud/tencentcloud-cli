@@ -728,6 +728,30 @@
       ],
       "usage": "out"
     },
+    "AddressInfo": {
+      "document": "ip地址相关信息结构体。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的外网ip相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PublicIPAddressInfo",
+          "name": "PublicIPAddressInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的内网ip相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrivateIPAddressInfo",
+          "name": "PrivateIPAddressInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AddressTemplateSpecification": {
       "document": "IP地址模版",
       "members": [
@@ -3248,14 +3272,6 @@
       "members": [
         {
           "default": "",
-          "document": "ECM 地域",
-          "member": "string",
-          "name": "EcmRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。",
           "member": "string",
           "name": "NetworkInterfaceIds",
@@ -3285,6 +3301,14 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ECM 地域",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4928,6 +4952,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例运营商字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ISP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4975,6 +5008,48 @@
           "name": "InstanceFamilyTypeName",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceNetworkInfo": {
+      "document": "实例网卡ip网络信息数组",
+      "members": [
+        {
+          "default": "",
+          "document": "实例内外网ip相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AddressInfo",
+          "name": "AddressInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网卡ID。",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网卡名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NetworkInterfaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主网卡属性。true为主网卡，false为辅助网卡。",
+          "member": "bool",
+          "name": "Primary",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -5123,6 +5198,15 @@
           "document": "实例的公网相关信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PublicIPAddressInfo",
           "name": "PublicIPAddressSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例网络相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InstanceNetworkInfo",
+          "name": "InstanceNetworkInfoSet",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -6820,6 +6904,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EcmRegion ecm区域",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7498,7 +7591,7 @@
         },
         {
           "default": "",
-          "document": "实例的最大出带宽上限。",
+          "document": "实例的最大出带宽上限，单位为Mbps。",
           "member": "int64",
           "name": "MaxBandwidthOut",
           "required": true,
