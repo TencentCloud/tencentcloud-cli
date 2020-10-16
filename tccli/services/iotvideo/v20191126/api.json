@@ -1,5 +1,17 @@
 {
   "actions": {
+    "ClearDeviceActiveCode": {
+      "document": "清除设备激活码",
+      "input": "ClearDeviceActiveCodeRequest",
+      "name": "清除设备激活码",
+      "output": "ClearDeviceActiveCodeResponse"
+    },
+    "CreateAnonymousAccessToken": {
+      "document": "创建匿名访问Token",
+      "input": "CreateAnonymousAccessTokenRequest",
+      "name": "创建匿名访问Token",
+      "output": "CreateAnonymousAccessTokenResponse"
+    },
     "CreateAppUsr": {
       "document": "本接口（CreateAppUsr）用于接收由厂商云发送过来的注册请求,建立厂商云终端用户与IoT Video终端用户的映射关系。",
       "input": "CreateAppUsrRequest",
@@ -53,6 +65,12 @@
       "input": "CreateStorageRequest",
       "name": "购买云存套餐",
       "output": "CreateStorageResponse"
+    },
+    "CreateStorageService": {
+      "document": "购买云存服务",
+      "input": "CreateStorageServiceRequest",
+      "name": "购买云存服务",
+      "output": "CreateStorageServiceResponse"
     },
     "CreateTraceIds": {
       "document": "本接口（CreateTraceIds）用于将设备加到日志跟踪白名单。",
@@ -119,6 +137,12 @@
       "input": "DeleteTraceIdsRequest",
       "name": "将设备从白名单删除",
       "output": "DeleteTraceIdsResponse"
+    },
+    "DeliverStorageService": {
+      "document": "将已购买的云存服务转移到另一设备",
+      "input": "DeliverStorageServiceRequest",
+      "name": "将已购买的云存服务转移到另一设备",
+      "output": "DeliverStorageServiceResponse"
     },
     "DescribeBindDev": {
       "document": "本接口（DescribeBindDev）用于查询终端用户绑定的设备列表。",
@@ -222,6 +246,12 @@
       "name": "获取设备运行日志",
       "output": "DescribeRunLogResponse"
     },
+    "DescribeStorageService": {
+      "document": "查询云存服务",
+      "input": "DescribeStorageServiceRequest",
+      "name": "查询云存服务",
+      "output": "DescribeStorageServiceResponse"
+    },
     "DescribeTraceIds": {
       "document": "本接口（DescribeTraceIds）用于查询设备日志跟踪白名单。",
       "input": "DescribeTraceIdsRequest",
@@ -269,6 +299,12 @@
       "input": "ModifyProductRequest",
       "name": "编辑产品信息",
       "output": "ModifyProductResponse"
+    },
+    "RefundStorageService": {
+      "document": "退订已购买的云存服务",
+      "input": "RefundStorageServiceRequest",
+      "name": "退订已购买的云存服务",
+      "output": "RefundStorageServiceResponse"
     },
     "RunDevice": {
       "document": "本接口（RunDevice）用于启用设备，可进行批量操作，每次操作最多100台设备。",
@@ -397,6 +433,95 @@
         }
       ],
       "usage": "out"
+    },
+    "ClearDeviceActiveCodeRequest": {
+      "document": "ClearDeviceActiveCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备TID列表，0<元素数量<=100",
+          "member": "string",
+          "name": "Tids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ClearDeviceActiveCodeResponse": {
+      "document": "ClearDeviceActiveCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAnonymousAccessTokenRequest": {
+      "document": "CreateAnonymousAccessToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Token的TTL(time to alive)分钟数,最大值1440(即24小时)",
+          "member": "int64",
+          "name": "TtlMinutes",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备ID。创建Token时, 此参数为必须项",
+          "member": "string",
+          "name": "Tid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "旧的AccessToken。续期Token时，此参数为必须",
+          "member": "string",
+          "name": "OldAccessToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAnonymousAccessTokenResponse": {
+      "document": "CreateAnonymousAccessToken返回参数结构体",
+      "members": [
+        {
+          "document": "终端用户在IoT Video上的唯一标识ID",
+          "member": "string",
+          "name": "AccessId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "IoT Video平台的AccessToken",
+          "member": "string",
+          "name": "AccessToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Token的过期时间，单位秒(UTC时间)",
+          "member": "int64",
+          "name": "ExpireTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAppUsrRequest": {
       "document": "CreateAppUsr请求参数结构体",
@@ -621,7 +746,7 @@
         },
         {
           "default": "",
-          "document": "物模型发布版本号，-1代表最新编辑（未发布）的版本",
+          "document": "物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。",
           "member": "int64",
           "name": "Revision",
           "required": true,
@@ -831,6 +956,150 @@
     "CreateStorageResponse": {
       "document": "CreateStorage返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStorageServiceRequest": {
+      "document": "CreateStorageService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云存套餐ID",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备TID",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单数量,可一次性创建多个订单",
+          "member": "int64",
+          "name": "OrderCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云存服务所在的区域,如ap-guangzhou,ap-singapore",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "member": "int64",
+          "name": "ChnNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致",
+          "member": "string",
+          "name": "AccessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务生效时间,若不指定此参数，服务立即生效",
+          "member": "int64",
+          "name": "EnableTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStorageServiceResponse": {
+      "document": "CreateStorageService返回参数结构体",
+      "members": [
+        {
+          "document": "标志是否为续订",
+          "member": "bool",
+          "name": "IsRenew",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存服务ID",
+          "member": "string",
+          "name": "ServiceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存服务所在的区域",
+          "member": "string",
+          "name": "StorageRegion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备TID",
+          "member": "string",
+          "name": "Tid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "member": "int64",
+          "name": "ChnNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "终端用户在IoT Video平台的注册ID",
+          "member": "string",
+          "name": "AccessId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务开始时间",
+          "member": "int64",
+          "name": "StartTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务失效时间",
+          "member": "int64",
+          "name": "EndTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务状态",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "新增的云存定单列表",
+          "member": "StorageOrder",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1208,6 +1477,126 @@
     "DeleteTraceIdsResponse": {
       "document": "DeleteTraceIds返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeliverStorageServiceRequest": {
+      "document": "DeliverStorageService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待转移的源云存服务ID",
+          "member": "string",
+          "name": "SrcServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备TID",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "member": "int64",
+          "name": "ChnNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致",
+          "member": "string",
+          "name": "AccessId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeliverStorageServiceResponse": {
+      "document": "DeliverStorageService返回参数结构体",
+      "members": [
+        {
+          "document": "被转出的云存服务ID",
+          "member": "string",
+          "name": "SrcServiceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被转入的云存服务ID",
+          "member": "string",
+          "name": "ServiceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存服务所在的区域",
+          "member": "string",
+          "name": "StorageRegion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备TID",
+          "member": "string",
+          "name": "Tid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "member": "int64",
+          "name": "ChnNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "终端用户在IoT Video平台的注册ID",
+          "member": "string",
+          "name": "AccessId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务开始时间",
+          "member": "int64",
+          "name": "StartTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务失效时间",
+          "member": "int64",
+          "name": "EndTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务状态",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "新增的云存定单列表",
+          "member": "StorageOrder",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1972,6 +2361,103 @@
           "name": "Data",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStorageServiceRequest": {
+      "document": "DescribeStorageService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云存服务ID",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否返回已结束的订单信息(已过期/已退订/已转移)",
+          "member": "bool",
+          "name": "GetFinishedOrder",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStorageServiceResponse": {
+      "document": "DescribeStorageService返回参数结构体",
+      "members": [
+        {
+          "document": "云存服务ID",
+          "member": "string",
+          "name": "ServiceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存服务所在的区域",
+          "member": "string",
+          "name": "StorageRegion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备TID",
+          "member": "string",
+          "name": "Tid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "member": "int64",
+          "name": "ChnNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "终端用户在IoT Video平台的注册ID",
+          "member": "string",
+          "name": "AccessId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务开始时间",
+          "member": "int64",
+          "name": "StartTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务失效时间",
+          "member": "int64",
+          "name": "EndTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务状态",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存定单列表",
+          "member": "StorageOrder",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2999,6 +3485,103 @@
       ],
       "usage": "out"
     },
+    "RefundStorageServiceRequest": {
+      "document": "RefundStorageService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云存服务ID",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云存子订单ID。如果指定子订单ID,则仅退订该子订单，如果未指定子定单ID，则退订所有子订单",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefundStorageServiceResponse": {
+      "document": "RefundStorageService返回参数结构体",
+      "members": [
+        {
+          "document": "云存服务ID",
+          "member": "string",
+          "name": "ServiceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云存服务所在的区域",
+          "member": "string",
+          "name": "StorageRegion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备TID",
+          "member": "string",
+          "name": "Tid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
+          "member": "int64",
+          "name": "ChnNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "终端用户在IoT Video平台的注册ID",
+          "member": "string",
+          "name": "AccessId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务开始时间",
+          "member": "int64",
+          "name": "StartTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务失效时间",
+          "member": "int64",
+          "name": "EndTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务状态",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有效云存定单列表",
+          "member": "StorageOrder",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegisteredStatus": {
       "document": "终端用户注册状态",
       "members": [
@@ -3354,6 +3937,57 @@
         }
       ],
       "type": "object"
+    },
+    "StorageOrder": {
+      "document": "云存订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "定单唯一性ID",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云存套餐ID",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定单服务状态",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定单服务生效时间",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定单服务失效时间",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TraceStatus": {
       "document": "布尔值，标识指定设备是否在白名单中",

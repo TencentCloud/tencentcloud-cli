@@ -63,7 +63,7 @@ def doDisableOtaVersion(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBindDev(args, parsed_globals):
+def doClearDeviceActiveCode(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -77,9 +77,9 @@ def doDescribeBindDev(args, parsed_globals):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBindDevRequest()
+    model = models.ClearDeviceActiveCodeRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeBindDev(model)
+    rsp = client.ClearDeviceActiveCode(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -363,6 +363,31 @@ def doCreateIotDataType(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateAnonymousAccessToken(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateAnonymousAccessTokenRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateAnonymousAccessToken(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateDevices(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -380,6 +405,31 @@ def doCreateDevices(args, parsed_globals):
     model = models.CreateDevicesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateDevices(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateGencode(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateGencodeRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateGencode(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -638,6 +688,31 @@ def doCreateBinding(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeStorageService(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeStorageServiceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeStorageService(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateDevToken(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -738,6 +813,31 @@ def doModifyProduct(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateStorageService(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateStorageServiceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateStorageService(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteProduct(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -805,6 +905,31 @@ def doDeleteDevice(args, parsed_globals):
     model = models.DeleteDeviceRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DeleteDevice(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeliverStorageService(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeliverStorageServiceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeliverStorageService(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1038,6 +1163,31 @@ def doRunDeviceStream(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRefundStorageService(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RefundStorageServiceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RefundStorageService(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDevices(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1063,7 +1213,7 @@ def doDescribeDevices(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateGencode(args, parsed_globals):
+def doDescribeBindDev(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1077,9 +1227,9 @@ def doCreateGencode(args, parsed_globals):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateGencodeRequest()
+    model = models.DescribeBindDevRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateGencode(model)
+    rsp = client.DescribeBindDev(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1376,7 +1526,7 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DescribeOtaVersions": doDescribeOtaVersions,
     "DisableOtaVersion": doDisableOtaVersion,
-    "DescribeBindDev": doDescribeBindDev,
+    "ClearDeviceActiveCode": doClearDeviceActiveCode,
     "DescribeIotDataType": doDescribeIotDataType,
     "DisableDevice": doDisableDevice,
     "DeleteTraceIds": doDeleteTraceIds,
@@ -1388,7 +1538,9 @@ ACTION_MAP = {
     "DescribeBindUsr": doDescribeBindUsr,
     "ModifyDeviceAction": doModifyDeviceAction,
     "CreateIotDataType": doCreateIotDataType,
+    "CreateAnonymousAccessToken": doCreateAnonymousAccessToken,
     "CreateDevices": doCreateDevices,
+    "CreateGencode": doCreateGencode,
     "CreateProduct": doCreateProduct,
     "CreateIotModel": doCreateIotModel,
     "DeleteIotDataType": doDeleteIotDataType,
@@ -1399,13 +1551,16 @@ ACTION_MAP = {
     "RunIotModel": doRunIotModel,
     "DescribeMessageQueue": doDescribeMessageQueue,
     "CreateBinding": doCreateBinding,
+    "DescribeStorageService": doDescribeStorageService,
     "CreateDevToken": doCreateDevToken,
     "DeleteOtaVersion": doDeleteOtaVersion,
     "DeleteAppUsr": doDeleteAppUsr,
     "ModifyProduct": doModifyProduct,
+    "CreateStorageService": doCreateStorageService,
     "DeleteProduct": doDeleteProduct,
     "DescribeLogs": doDescribeLogs,
     "DeleteDevice": doDeleteDevice,
+    "DeliverStorageService": doDeliverStorageService,
     "DescribeTraceStatus": doDescribeTraceStatus,
     "RunOtaVersion": doRunOtaVersion,
     "DescribeRunLog": doDescribeRunLog,
@@ -1415,8 +1570,9 @@ ACTION_MAP = {
     "DescribeModelDataRet": doDescribeModelDataRet,
     "DescribePubVersions": doDescribePubVersions,
     "RunDeviceStream": doRunDeviceStream,
+    "RefundStorageService": doRefundStorageService,
     "DescribeDevices": doDescribeDevices,
-    "CreateGencode": doCreateGencode,
+    "DescribeBindDev": doDescribeBindDev,
     "DescribeDeviceModel": doDescribeDeviceModel,
     "DescribeIotModels": doDescribeIotModels,
     "DeleteBinding": doDeleteBinding,

@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BatchModifyDomainInfo": {
+      "document": "本接口 ( BatchModifyDomainInfo ) 用于批量域名信息修改 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "BatchModifyDomainInfoRequest",
+      "name": "批量域名信息修改",
+      "output": "BatchModifyDomainInfoResponse"
+    },
     "CheckBatchStatus": {
       "document": "本接口 ( CheckBatchStatus ) 用于检查批量任务状态 。\n\n默认接口请求频率限制：20次/秒。",
       "input": "CheckBatchStatusRequest",
@@ -41,6 +47,30 @@
       "input": "DescribeTemplateListRequest",
       "name": "获取模板列表",
       "output": "DescribeTemplateListResponse"
+    },
+    "ModifyDomainOwnerBatch": {
+      "document": "本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "ModifyDomainOwnerBatchRequest",
+      "name": "域名批量账号间转移",
+      "output": "ModifyDomainOwnerBatchResponse"
+    },
+    "TransferInDomainBatch": {
+      "document": "本接口 ( TransferInDomainBatch ) 用于批量转入域名 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "TransferInDomainBatchRequest",
+      "name": "批量转入域名",
+      "output": "TransferInDomainBatchResponse"
+    },
+    "TransferProhibitionBatch": {
+      "document": "本接口 ( TransferInDomainBatch ) 用于批量禁止域名转移 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "TransferProhibitionBatchRequest",
+      "name": "批量禁止域名转移",
+      "output": "TransferProhibitionBatchResponse"
+    },
+    "UpdateProhibitionBatch": {
+      "document": "本接口 ( UpdateProhibitionBatch ) 用于批量设置禁止域名更新 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "UpdateProhibitionBatchRequest",
+      "name": "批量禁止域名更新",
+      "output": "UpdateProhibitionBatchResponse"
     }
   },
   "metadata": {
@@ -50,6 +80,47 @@
     "serviceShortName": "domain"
   },
   "objects": {
+    "BatchModifyDomainInfoRequest": {
+      "document": "BatchModifyDomainInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量修改的域名。",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板ID。",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyDomainInfoResponse": {
+      "document": "BatchModifyDomainInfo返回参数结构体",
+      "members": [
+        {
+          "document": "日志ID",
+          "member": "int64",
+          "name": "LogId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchStatus": {
       "document": "批量任务状态",
       "members": [
@@ -867,6 +938,47 @@
       ],
       "usage": "out"
     },
+    "ModifyDomainOwnerBatchRequest": {
+      "document": "ModifyDomainOwnerBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要过户的域名。",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "转入账户的uin。",
+          "member": "string",
+          "name": "NewOwnerUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainOwnerBatchResponse": {
+      "document": "ModifyDomainOwnerBatch返回参数结构体",
+      "members": [
+        {
+          "document": "日志id",
+          "member": "uint64",
+          "name": "LogId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PriceInfo": {
       "document": "域名价格信息",
       "members": [
@@ -1022,6 +1134,145 @@
         }
       ],
       "usage": "out"
+    },
+    "TransferInDomainBatchRequest": {
+      "document": "TransferInDomainBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "转入的域名名称数组。",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名转移码数组。",
+          "member": "string",
+          "name": "PassWords",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板ID。",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式 0手动在线付费，1使用余额付费。",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferInDomainBatchResponse": {
+      "document": "TransferInDomainBatch返回参数结构体",
+      "members": [
+        {
+          "document": "日志ID",
+          "member": "uint64",
+          "name": "LogId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferProhibitionBatchRequest": {
+      "document": "TransferProhibitionBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量操作的域名。",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启禁止域名转移。\nTrue: 开启禁止域名转移状态。\nFalse：关闭禁止域名转移状态。",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferProhibitionBatchResponse": {
+      "document": "TransferProhibitionBatch返回参数结构体",
+      "members": [
+        {
+          "document": "日志ID",
+          "member": "uint64",
+          "name": "LogId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProhibitionBatchRequest": {
+      "document": "UpdateProhibitionBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量操作的域名。",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启禁止域名更新。\nTrue:开启禁止域名更新状态。\nFalse：关闭禁止域名更新状态。",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProhibitionBatchResponse": {
+      "document": "UpdateProhibitionBatch返回参数结构体",
+      "members": [
+        {
+          "document": "日志ID",
+          "member": "uint64",
+          "name": "LogId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

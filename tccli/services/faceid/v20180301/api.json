@@ -54,6 +54,18 @@
       "name": "获取实名核身结果信息增强版",
       "output": "GetDetectInfoEnhancedResponse"
     },
+    "GetFaceIdResult": {
+      "document": "完成验证后，用FaceIdToken调用本接口获取结果信息，FaceIdToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
+      "input": "GetFaceIdResultRequest",
+      "name": "获取SDK核验结果",
+      "output": "GetFaceIdResultResponse"
+    },
+    "GetFaceIdToken": {
+      "document": "每次调用人脸核身SaaS化服务前，需先调用本接口获取FaceIdToken，用来串联核身流程，在验证完成后，用于获取验证结果信息，该token仅能核身一次。",
+      "input": "GetFaceIdTokenRequest",
+      "name": "获取FaceIdToken",
+      "output": "GetFaceIdTokenResponse"
+    },
     "GetLiveCode": {
       "document": "使用数字活体检测模式前，需调用本接口获取数字验证码。",
       "input": "GetLiveCodeRequest",
@@ -1143,6 +1155,177 @@
           "document": "JSON字符串。\n{\n  // 文本类信息\n  \"Text\": {\n    \"ErrCode\": null,      // 本次核身最终结果。0为成功\n    \"ErrMsg\": null,       // 本次核身最终结果信息描述。\n    \"IdCard\": \"\",         // 本次核身最终获得的身份证号。\n    \"Name\": \"\",           // 本次核身最终获得的姓名。\n    \"OcrNation\": null,    // ocr阶段获取的民族\n    \"OcrAddress\": null,   // ocr阶段获取的地址\n    \"OcrBirth\": null,     // ocr阶段获取的出生信息\n    \"OcrAuthority\": null, // ocr阶段获取的证件签发机关\n    \"OcrValidDate\": null, // ocr阶段获取的证件有效期\n    \"OcrName\": null,      // ocr阶段获取的姓名\n    \"OcrIdCard\": null,    // ocr阶段获取的身份证号\n    \"OcrGender\": null,    // ocr阶段获取的性别\n    \"LiveStatus\": null,   // 活体检测阶段的错误码。0为成功\n    \"LiveMsg\": null,      // 活体检测阶段的错误信息\n    \"Comparestatus\": null,// 一比一阶段的错误码。0为成功\n    \"Comparemsg\": null,   // 一比一阶段的错误信息\n    \"Sim\": null, // 比对相似度\n    \"Location\": null, // 地理位置信息\n    \"Extra\": \"\",          // DetectAuth结果传进来的Extra信息\n    \"Detail\": {           // 活体一比一信息详情\n      \"LivenessData\": [\n            {\n              ErrCode: null, // 活体比对验证错误码\n              ErrMsg: null, // 活体比对验证错误描述\n              ReqTime: null, // 活体验证时间戳\n              IdCard: null, // 验证身份证号\n              Name: null // 验证姓名\n            }\n      ]\n    }\n  },\n  // 身份证正反面照片Base64\n  \"IdCardData\": {\n    \"OcrFront\": null,\n    \"OcrBack\": null\n  },\n  // 视频最佳帧截图Base64\n  \"BestFrame\": {\n    \"BestFrame\": null\n  },\n  // 活体视频Base64\n  \"VideoData\": {\n    \"LivenessVideo\": null\n  }\n}",
           "member": "string",
           "name": "DetectInfo",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceIdResultRequest": {
+      "document": "GetFaceIdResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。",
+          "member": "string",
+          "name": "FaceIdToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要拉取视频，默认false不需要",
+          "member": "bool",
+          "name": "IsNeedVideo",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否需要拉取截帧，默认false不需要",
+          "member": "bool",
+          "name": "IsNeedBestFrame",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceIdResultResponse": {
+      "document": "GetFaceIdResult返回参数结构体",
+      "members": [
+        {
+          "document": "身份证",
+          "member": "string",
+          "name": "IdCard",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务核验结果，如下几个结果码会计费",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务核验描述",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "相似度，0-100，数值越大相似度越高",
+          "member": "float",
+          "name": "Similarity",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户核验的视频\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VideoBase64",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户核验视频的截帧\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BestFrameBase64",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "获取token时透传的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Extra",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceIdTokenRequest": {
+      "document": "GetFaceIdToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本地上传照片(LOCAL)、商业库(BUSINESS)",
+          "member": "string",
+          "name": "CompareLib",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CompareLib为商业库时必传。",
+          "member": "string",
+          "name": "IdCard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CompareLib为商业库库时必传。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CompareLib为上传照片比对时必传，base64后图片最大8MB。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SDK中生成的Meta字符串",
+          "member": "string",
+          "name": "Meta",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传参数 1000长度字符串",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceIdTokenResponse": {
+      "document": "GetFaceIdToken返回参数结构体",
+      "members": [
+        {
+          "document": "有效期 10分钟。只能完成1次核身。",
+          "member": "string",
+          "name": "FaceIdToken",
           "type": "string",
           "value_allowed_null": false
         },

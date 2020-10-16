@@ -88,6 +88,31 @@ def doCreateImageLifecyclePersonal(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doBatchDeleteImagePersonal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BatchDeleteImagePersonalRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.BatchDeleteImagePersonal(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeImagePersonal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -738,7 +763,7 @@ def doCreateInstance(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBatchDeleteImagePersonal(args, parsed_globals):
+def doDescribeReplicationInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -752,9 +777,9 @@ def doBatchDeleteImagePersonal(args, parsed_globals):
     client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BatchDeleteImagePersonalRequest()
+    model = models.DescribeReplicationInstancesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.BatchDeleteImagePersonal(model)
+    rsp = client.DescribeReplicationInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -905,6 +930,31 @@ def doDeleteWebhookTrigger(args, parsed_globals):
     model = models.DeleteWebhookTriggerRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DeleteWebhookTrigger(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeReplicationInstanceCreateTasks(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeReplicationInstanceCreateTasksRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeReplicationInstanceCreateTasks(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1427,6 +1477,7 @@ ACTION_MAP = {
     "ModifyNamespace": doModifyNamespace,
     "DescribeImageFilterPersonal": doDescribeImageFilterPersonal,
     "CreateImageLifecyclePersonal": doCreateImageLifecyclePersonal,
+    "BatchDeleteImagePersonal": doBatchDeleteImagePersonal,
     "DescribeImagePersonal": doDescribeImagePersonal,
     "DescribeImageLifecyclePersonal": doDescribeImageLifecyclePersonal,
     "DescribeImages": doDescribeImages,
@@ -1453,13 +1504,14 @@ ACTION_MAP = {
     "ModifyWebhookTrigger": doModifyWebhookTrigger,
     "ModifyInstanceToken": doModifyInstanceToken,
     "CreateInstance": doCreateInstance,
-    "BatchDeleteImagePersonal": doBatchDeleteImagePersonal,
+    "DescribeReplicationInstances": doDescribeReplicationInstances,
     "CreateWebhookTrigger": doCreateWebhookTrigger,
     "CreateApplicationTriggerPersonal": doCreateApplicationTriggerPersonal,
     "DescribeImageLifecycleGlobalPersonal": doDescribeImageLifecycleGlobalPersonal,
     "CreateInstanceToken": doCreateInstanceToken,
     "DescribeUserQuotaPersonal": doDescribeUserQuotaPersonal,
     "DeleteWebhookTrigger": doDeleteWebhookTrigger,
+    "DescribeReplicationInstanceCreateTasks": doDescribeReplicationInstanceCreateTasks,
     "ModifyApplicationTriggerPersonal": doModifyApplicationTriggerPersonal,
     "DescribeFavorRepositoryPersonal": doDescribeFavorRepositoryPersonal,
     "DescribeRepositoryOwnerPersonal": doDescribeRepositoryOwnerPersonal,

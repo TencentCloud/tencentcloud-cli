@@ -42,6 +42,12 @@
       "name": "访问数据查询",
       "output": "DescribeEcdnStatisticsResponse"
     },
+    "DescribeIpStatus": {
+      "document": "DescribeIpStatus 用于查询域名所在加速平台的所有节点明细。",
+      "input": "DescribeIpStatusRequest",
+      "name": "查询域名节点状态",
+      "output": "DescribeIpStatusResponse"
+    },
     "DescribePurgeQuota": {
       "document": "查询刷新接口的用量配额。",
       "input": "DescribePurgeQuotaRequest",
@@ -680,6 +686,54 @@
           "member": "ResourceData",
           "name": "Data",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpStatusRequest": {
+      "document": "DescribeIpStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "加速域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询区域：\nmainland: 国内节点\noverseas: 海外节点\nglobal: 全球节点",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpStatusResponse": {
+      "document": "DescribeIpStatus返回参数结构体",
+      "members": [
+        {
+          "document": "节点列表",
+          "member": "IpStatus",
+          "name": "Ips",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点总个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1507,6 +1561,57 @@
         }
       ],
       "usage": "both"
+    },
+    "IpStatus": {
+      "document": "节点 IP 信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点 IP",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所属区域",
+          "member": "string",
+          "name": "District",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所属运营商",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所在城市",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点状态\nonline：上线状态，正常调度服务中\noffline：下线状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Origin": {
       "document": "源站配置。",

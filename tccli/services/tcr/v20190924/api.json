@@ -222,6 +222,18 @@
       "name": "查询命名空间信息",
       "output": "DescribeNamespacesResponse"
     },
+    "DescribeReplicationInstanceCreateTasks": {
+      "document": "查询创建从实例任务状态",
+      "input": "DescribeReplicationInstanceCreateTasksRequest",
+      "name": "查询创建从实例任务状态",
+      "output": "DescribeReplicationInstanceCreateTasksResponse"
+    },
+    "DescribeReplicationInstances": {
+      "document": "查询从实例列表",
+      "input": "DescribeReplicationInstancesRequest",
+      "name": "查询从实例列表",
+      "output": "DescribeReplicationInstancesResponse"
+    },
     "DescribeRepositories": {
       "document": "查询镜像仓库列表或指定镜像仓库信息",
       "input": "DescribeRepositoriesRequest",
@@ -2132,6 +2144,110 @@
       ],
       "type": "object"
     },
+    "DescribeReplicationInstanceCreateTasksRequest": {
+      "document": "DescribeReplicationInstanceCreateTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "同步实例Id",
+          "member": "string",
+          "name": "ReplicationRegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "同步实例的地域ID",
+          "member": "uint64",
+          "name": "ReplicationRegionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationInstanceCreateTasksResponse": {
+      "document": "DescribeReplicationInstanceCreateTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务详情",
+          "member": "TaskDetail",
+          "name": "TaskDetail",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "整体任务状态",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationInstancesRequest": {
+      "document": "DescribeReplicationInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大输出条数，默认20，最大为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationInstancesResponse": {
+      "document": "DescribeReplicationInstances返回参数结构体",
+      "members": [
+        {
+          "document": "总实例个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "同步实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ReplicationRegistry",
+          "name": "ReplicationRegistries",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRepositoriesRequest": {
       "document": "DescribeRepositories请求参数结构体",
       "members": [
@@ -3455,6 +3571,66 @@
       ],
       "usage": "out"
     },
+    "ReplicationRegistry": {
+      "document": "企业版复制实例",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例ID",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制实例ID",
+          "member": "string",
+          "name": "ReplicationRegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制实例的地域ID",
+          "member": "uint64",
+          "name": "ReplicationRegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制实例的地域名称",
+          "member": "string",
+          "name": "ReplicationRegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制实例的状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RepoInfo": {
       "document": "仓库的信息",
       "members": [
@@ -3997,6 +4173,66 @@
         }
       ],
       "usage": "both"
+    },
+    "TaskDetail": {
+      "document": "任务详情",
+      "members": [
+        {
+          "default": "",
+          "document": "任务",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务UUID",
+          "member": "string",
+          "name": "TaskUUID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务的状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务开始时间",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FinishedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TcrImageInfo": {
       "document": "镜像信息",

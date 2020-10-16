@@ -37,9 +37,9 @@
       "output": "DescribeResourceTagsResponse"
     },
     "DescribeResourceTagsByResourceIds": {
-      "document": "用于查询已有资源标签键值对",
+      "document": "用于批量查询已有资源关联的标签键值对",
       "input": "DescribeResourceTagsByResourceIdsRequest",
-      "name": "查看资源关联的标签",
+      "name": "批量查看资源关联的标签",
       "output": "DescribeResourceTagsByResourceIdsResponse"
     },
     "DescribeResourceTagsByResourceIdsSeq": {
@@ -359,7 +359,7 @@
         },
         {
           "default": "",
-          "document": "资源唯一标记",
+          "document": "资源ID数组，大小不超过50",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -689,7 +689,7 @@
         },
         {
           "default": "",
-          "document": "是否是Cos的资源id",
+          "document": "是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填",
           "member": "uint64",
           "name": "CosResourceId",
           "required": false,
