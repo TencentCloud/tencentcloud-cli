@@ -195,8 +195,8 @@ class ActionDocumentHandler(BaseDocumentHandler):
 
     def _param_type(self, param):
         if param["type"] == "Array":
-            return "Array of %s" % PARAM_TYPE_MAP.get(param["type_name"], param["type_name"])
-        return PARAM_TYPE_MAP.get(param["type_name"], param["type_name"])
+            return "Array of %s" % param["type_name"]
+        return param["type_name"]
 
     def _recur_complex_object_doc(self, param_info):
         if param_info["members"] in BASE_TYPE:

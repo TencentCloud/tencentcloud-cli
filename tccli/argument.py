@@ -1,6 +1,7 @@
 
+import json
 from tccli.exceptions import ParamError
-from tccli.loaders import *
+from tccli.loaders import CLI_BASE_TYPE
 
 
 class BaseArgument(object):
@@ -75,7 +76,7 @@ class CustomArgument(BaseArgument):
     def __init__(self, name, help_text='', dest=None, default=None,
                  action=None, required=None, choices=None, nargs=None,
                  cli_type_name=None, group_name=None, positional_arg=False,
-                 no_paramfile=False, argument_model=None, synopsis='',
+                 no_paramfile=False, synopsis='',
                  const=None):
         self._name = name
         self._help = help_text
@@ -201,11 +202,11 @@ class CLIArgument(BaseArgument):
 
     @property
     def cli_type_name(self):
-        return self.argument_model.type_name
+        return ""
 
     @property
     def cli_type(self):
-        return self.TYPE_MAP.get(self.argument_model["type"], str)
+        return self.TYPE_MAP.get(self.argument_model["type_name"], str)
 
     def add_to_parser(self, parser):
         cli_name = self.cli_name

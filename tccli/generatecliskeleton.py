@@ -14,21 +14,7 @@ def json_encoder(obj):
         return obj
 
 
-class OverrideRequiredArgsArgument(CustomArgument):
-
-    ARG_DATA = {'name': 'no-required-args'}
-
-    def __init__(self):
-        super(OverrideRequiredArgsArgument, self).__init__(**self.ARG_DATA)
-
-    def override_required_args(self, argument_map, args, **kwargs):
-        name_in_cmdline = '--' + self.name
-        if name_in_cmdline in args:
-            for arg_name in argument_map.keys():
-                argument_map[arg_name].required = False
-
-
-class GenerateCliSkeletonArgument(OverrideRequiredArgsArgument):
+class GenerateCliSkeletonArgument(CustomArgument):
     ARG_DATA = {
         'name': 'generate-cli-skeleton',
         'help_text': (
@@ -43,36 +29,22 @@ class GenerateCliSkeletonArgument(OverrideRequiredArgsArgument):
     }
 
     def __init__(self, service_name, version, action_name):
-        super(GenerateCliSkeletonArgument, self).__init__()
+        super(GenerateCliSkeletonArgument, self).__init__(**self.ARG_DATA)
         self._service_name = service_name
         self._version = version
         self._action_name = action_name
 
-    def override_required_args(self, argument_map, args, **kwargs):
-        arg_name = '--' + self.name
-        if arg_name in args:
-            arg_location = args.index(arg_name)
-            try:
-                if args[arg_location + 1] == 'output':
-                    return
-            except IndexError:
-                pass
-            super(GenerateCliSkeletonArgument, self).override_required_args(argument_map, args, **kwargs)
-
-    def generate_skeleton(self, call_parameters, parsed_args,
-                          parsed_globals, **kwargs):
+    def generate_skeleton(self, parsed_args, **kwargs):
         if not getattr(parsed_args, 'generate_cli_skeleton', None):
             return
         arg_value = parsed_args.generate_cli_skeleton
         return getattr(
-            self, '_generate_%s_skeleton' % arg_value.replace('-', '_'))(
-                call_parameters=call_parameters, parsed_globals=parsed_globals
-        )
+            self, '_generate_%s_skeleton' % arg_value.replace('-', '_'))()
 
     def _generate_input_skeleton(self, **kwargs):
         cli_data = Loader()
         outfile = sys.stdout
-        skeleton = cli_data.generate_param_skeleton(self._service_name, self._version,  self._action_name)
+        skeleton = cli_data.generate_param_skeleton(self._service_name, self._version, self._action_name)
         json.dump(skeleton, outfile, indent=4, default=json_encoder)
         outfile.write('\n')
         return 0

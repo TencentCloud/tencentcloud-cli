@@ -6,24 +6,10 @@ from tccli.exceptions import ParamError, ParamSyntaxError
 from tccli.argument import CustomArgument
 
 
-class OverrideRequiredArgsArgument(CustomArgument):
+class CliInputArgument(CustomArgument):
 
-    ARG_DATA = {'name': 'no-required-args'}
-
-    def __init__(self):
-        super(OverrideRequiredArgsArgument, self).__init__(**self.ARG_DATA)
-
-    def override_required_args(self, argument_map, args, **kwargs):
-        name_in_cmdline = '--' + self.name
-        if name_in_cmdline in args:
-            for arg_name in argument_map.keys():
-                argument_map[arg_name].required = False
-
-
-class CliInputArgument(OverrideRequiredArgsArgument):
-
-    def add_to_call_parameters(self, call_parameters, parsed_args, **kwargs):
-        # 从文件读取读取参数
+    def add_to_call_parameters(self, parsed_args, **kwargs):
+        call_parameters = {}
         arg_value = self._get_arg_value(parsed_args)
         if arg_value is None:
             return
@@ -36,6 +22,7 @@ class CliInputArgument(OverrideRequiredArgsArgument):
                 "received %s" % type(loaded_params)
             )
         self._update_call_parameters(call_parameters, loaded_params)
+        return call_parameters
 
     def _get_arg_value(self, parsed_args):
         arg_value = getattr(parsed_args, self.py_name, None)
@@ -50,7 +37,6 @@ class CliInputArgument(OverrideRequiredArgsArgument):
             raise ParamSyntaxError(
                 'Only one --cli-input- parameter may be specified.'
             )
-        # get_paramfile 读取文件内容
         paramfile_data = self._get_paramfile(arg_value, 'file://')
         if paramfile_data is not None:
             return paramfile_data
@@ -90,6 +76,9 @@ class CliInputJSONArgument(CliInputArgument):
             'follows the format provided by ``--generate-cli-skeleton``. '
         )
     }
+
+    def __init__(self):
+        super(CliInputJSONArgument, self).__init__(**self.ARG_DATA)
 
     def _load_parameters(self, arg_value):
         try:

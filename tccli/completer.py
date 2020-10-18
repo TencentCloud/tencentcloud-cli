@@ -1,7 +1,9 @@
 #! /usr/bin/env python
 
 import os
+import re
 import tccli.options_define as OptionsDefine
+from tccli.utils import Utils
 from tccli.loaders import Loader
 loader = Loader()
 services = sorted(loader.get_available_services().keys())
@@ -12,11 +14,17 @@ if os.environ.get('LC_CTYPE', '') == 'UTF-8':
 
 def pre_print(result, cur):
     if cur:
-        result = [x for x in result if x.startswith(cur)]
+        mathch_list = [x for x in result if x.startswith(cur)]
+        if not mathch_list:
+            mathch_list = [x for x in result if re.match(cur, x, re.I)]
+        print(' \n'.join(mathch_list))
+        return
     print(' \n'.join(result))
 
+
 def comp_one_arg():
-        pre_print(services, None)
+    pre_print(services, None)
+
 
 def comp_two_arg(arg):
     if arg not in services:
@@ -25,10 +33,9 @@ def comp_two_arg(arg):
     if arg == "configure":
         pre_print(["get", "list", "set"], None)
     else:
-        action_list = []
         actions = loader.get_service_all_action_param(arg)
-        action_list.extend([x for x in actions.keys()])
-        pre_print(action_list, None)
+        pre_print(actions.keys(), None)
+
 
 def comp_three_arg(arg_service, arg_cur):
     if arg_service not in services:
@@ -47,19 +54,23 @@ def comp_three_arg(arg_service, arg_cur):
         else:
             pre_print(action_list, arg_cur)
 
+
 def comp_more_arg(arg_service, arg_action, arg_parma):
     if arg_service not in services:
         return
     if arg_service == "configure":
         return
 
-    actions = loader.get_service_all_action_param(arg_service)
+    mode = Utils.get_call_mode()
+    actions = loader.get_service_all_action_param(arg_service, mode)
+
     if arg_action in actions.keys():
         loc_params = ["--" + x for x in sorted(actions[arg_action])]
         glo_params = ["--" + x for x in OptionsDefine.ACTION_GLOBAL_OPT]
         params = loc_params + glo_params
         if arg_parma.startswith("-") and arg_parma not in params:
             pre_print(params, arg_parma)
+
 
 def complete():
     try:

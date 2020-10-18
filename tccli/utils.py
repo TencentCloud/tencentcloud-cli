@@ -3,6 +3,7 @@ import sys
 import json
 import time
 import os
+import tccli.options_define as options_define
 
 
 PY2 = sys.version_info[0] == 2
@@ -94,4 +95,22 @@ class Utils(object):
                       separators=(',', ': '),
                       ensure_ascii=False,
                       sort_keys=True)
+
+    @staticmethod
+    def get_call_mode():
+        cli_line = os.environ.get('COMP_LINE') or os.environ.get('COMMAND_LINE') or ''
+        cli_param = cli_line.split()
+        size = len(cli_param)
+
+        if size > 3:
+            if cli_param[3] == "--" + options_define.GenerateCliSkeleton:
+                mode = options_define.GenerateCliSkeleton
+                return mode
+            if cli_param[3] == "--" + options_define.CliInputJson:
+                mode = options_define.CliInputJson
+                return mode
+            if cli_param[3] == "--" + options_define.CliUnfoldArgument:
+                mode = options_define.CliUnfoldArgument
+                return mode
+        return None
 
