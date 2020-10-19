@@ -1,7 +1,7 @@
 {
   "actions": {
     "DescribeBRI": {
-      "document": "输入业务名 (bri_num, bri_dev, bri_ip, bri_apk, bri_url 五种之一)  及其 相应字段, 获取业务风险分数和标签。\n\n当业务名为bri_num时，必须填PhoneNumber字段.\n\n当业务名为bri_dev时, 必须填Imei字段.\n\n当业务名为bri_ip时，必须填IP字段.\n\n当业务名为bri_apk时，必须填 (PackageName,CertMd5,FileSize) 三个字段 或者 FileMd5一个字段.\n\n当业务名为bri_url时，必须填Url字段.\n\n当业务名为bri_social时，必须填QQ和Wechat字段两者其中一个或者两个.",
+      "document": "输入业务名 (bri_num, bri_dev, bri_ip, bri_apk, bri_url, bri_social 六种之一)  及其 相应字段, 获取业务风险分数和标签。\n\n当业务名为bri_num时，必须填PhoneNumber字段.\n\n当业务名为bri_dev时, 必须填Imei字段.\n\n当业务名为bri_ip时，必须填IP字段.\n\n当业务名为bri_apk时，必须填 (PackageName,CertMd5,FileSize) 三个字段 或者 FileMd5一个字段.\n\n当业务名为bri_url时，必须填Url字段.\n\n当业务名为bri_social时，必须填QQ和Wechat字段两者其中一个或者两个.",
       "input": "DescribeBRIRequest",
       "name": "获取业务风险情报",
       "output": "DescribeBRIResponse"
@@ -23,63 +23,8 @@
           "member": "string",
           "name": "Service",
           "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)",
-          "member": "string",
-          "name": "CertMd5",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)",
-          "member": "string",
-          "name": "FileMd5",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)",
-          "member": "int64",
-          "name": "FileSize",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "安卓设备的Imei (业务名为bri_dev时必填)",
-          "member": "string",
-          "name": "Imei",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点分格式的IP (业务名为bri_ip时必填)",
-          "member": "string",
-          "name": "Ip",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)",
-          "member": "string",
-          "name": "PackageName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "电话号码 (业务名为bri_num时必填)",
-          "member": "string",
-          "name": "PhoneNumber",
-          "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -87,7 +32,8 @@
           "member": "string",
           "name": "QQ",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -95,15 +41,8 @@
           "member": "string",
           "name": "QQTag",
           "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "业务场景 (1-注册, 2-登录, 3-发消息)",
-          "member": "string",
-          "name": "Scene",
-          "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -111,7 +50,80 @@
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)",
+          "member": "string",
+          "name": "CertMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务场景 (1-注册, 2-登录, 3-发消息)",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话号码 (业务名为bri_num时必填)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)",
+          "member": "int64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点分格式的IP (业务名为bri_ip时必填)",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安卓设备的Imei (业务名为bri_dev时必填)",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -119,7 +131,8 @@
           "member": "string",
           "name": "Wechat",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -127,7 +140,8 @@
           "member": "string",
           "name": "WechatTag",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -141,7 +155,8 @@
           "member": "float",
           "name": "Score",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -149,7 +164,8 @@
           "member": "string",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -160,19 +176,17 @@
         {
           "default": "",
           "document": "业务风险情报请求体",
-          "is_public": true,
           "member": "BRIRequest",
           "name": "RequestData",
-          "required": false,
+          "required": true,
           "type": "object"
         },
         {
           "default": "",
           "document": "客户用于计费的资源ID",
-          "is_public": true,
           "member": "string",
           "name": "ResourceId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -185,7 +199,8 @@
           "document": "业务风险情报响应体",
           "member": "BRIResponse",
           "name": "ResponseData",
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

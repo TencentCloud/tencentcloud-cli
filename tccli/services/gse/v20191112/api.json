@@ -1,211 +1,217 @@
 {
   "actions": {
     "AttachCcnInstances": {
-      "document": "本接口（AttachCcnInstances）用于关联云联网实例",
+      "document": "本接口（AttachCcnInstances）用于关联云联网实例。",
       "input": "AttachCcnInstancesRequest",
       "name": "关联云联网实例",
       "output": "AttachCcnInstancesResponse"
     },
     "CreateAlias": {
-      "document": "本接口（CreateAlias）用于创建别名",
+      "document": "本接口（CreateAlias）用于创建别名。",
       "input": "CreateAliasRequest",
       "name": "创建别名",
       "output": "CreateAliasResponse"
     },
     "CreateAsset": {
-      "document": "本接口（CreateAsset）用于创建生成包。\n通过获取上传cos的临时密钥，将文件上传至cos，然后将生成包的zip名称下发给[CreateAsset](https://cloud.tencent.com/document/product/1165/48731)完成接口创建。上传文件至 cos支持俩种方式：\n\n- 获取预签名方式，COS 简单上传\n    1. [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) 获取预签名信息\n    2. 使用 COS API 进行上传\n-  临时密钥方式，COS 简单上传或者分块上传方式\n    1. [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727)（获取上传 bucket  第一次调用需要，后续可以不用调用）\n    2. [GetUploadFederationToken](https://cloud.tencent.com/document/product/1165/48742) 获取临时密钥\n    3. 使用 COS API 进行上传\n\n具体使用场景可以参考 [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) ,  [GetUploadFederationToken](https://cloud.tencent.com/document/product/1165/48742)和下面 CreateAsset 示例。  ",
+      "document": "本接口（CreateAsset）用于创建生成包。\n通过获取上传cos的临时密钥，将文件上传至cos，然后将生成包的zip名称下发给本接口完成资源创建。  \n\n上传文件至 cos支持俩种方式：\n\n- 获取预签名方式，COS 简单上传\n    1. [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) 获取预签名信息\n    2. 使用 COS API 进行上传([参考文档](https://cloud.tencent.com/document/product/436/7749))\n-  临时密钥方式，COS 简单上传或者分块上传方式\n    1. [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727)（获取上传 bucket  第一次调用需要，后续可以不用调用）\n    2. [GetUploadFederationToken](https://cloud.tencent.com/document/product/1165/48742) 获取临时密钥\n    3. 使用 COS API 进行上传([参考文档](https://cloud.tencent.com/document/product/436/7742))\n\n具体使用场景可以参考 [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) ,  [GetUploadFederationToken](https://cloud.tencent.com/document/product/1165/48742)和下面 CreateAsset 示例。  ",
       "input": "CreateAssetRequest",
       "name": "创建生成包",
       "output": "CreateAssetResponse"
     },
     "CreateFleet": {
-      "document": "本接口（CreateFleet）用于创建服务器舰队",
+      "document": "本接口（CreateFleet）用于创建服务器舰队。",
       "input": "CreateFleetRequest",
       "name": "创建服务器舰队",
       "output": "CreateFleetResponse"
     },
     "CreateGameServerSession": {
-      "document": "本接口（CreateGameServerSession）用于创建游戏服务会话",
+      "document": "本接口（CreateGameServerSession）用于创建游戏服务会话。",
       "input": "CreateGameServerSessionRequest",
       "name": "创建游戏服务器会话",
       "output": "CreateGameServerSessionResponse"
     },
     "CreateGameServerSessionQueue": {
-      "document": "本接口（CreateGameServerSessionQueue）用于创建游戏服务器会话队列",
+      "document": "本接口（CreateGameServerSessionQueue）用于创建游戏服务器会话队列。",
       "input": "CreateGameServerSessionQueueRequest",
       "name": "创建游戏服务器会话队列",
       "output": "CreateGameServerSessionQueueResponse"
     },
     "DeleteAlias": {
-      "document": "本接口（DeleteAlias）用于删除别名",
+      "document": "本接口（DeleteAlias）用于删除别名。",
       "input": "DeleteAliasRequest",
       "name": "删除别名",
       "output": "DeleteAliasResponse"
     },
     "DeleteAsset": {
-      "document": "本接口（DeleteAsset）用于删除生成包",
+      "document": "本接口（DeleteAsset）用于删除生成包。",
       "input": "DeleteAssetRequest",
       "name": "删除生成包",
       "output": "DeleteAssetResponse"
     },
     "DeleteFleet": {
-      "document": "本接口（DeleteFleet）用于删除服务器舰队",
+      "document": "本接口（DeleteFleet）用于删除服务器舰队。",
       "input": "DeleteFleetRequest",
       "name": "删除服务器舰队",
       "output": "DeleteFleetResponse"
     },
     "DeleteGameServerSessionQueue": {
-      "document": "本接口（DeleteGameServerSessionQueue）用于删除游戏服务器会话队列",
+      "document": "本接口（DeleteGameServerSessionQueue）用于删除游戏服务器会话队列。",
       "input": "DeleteGameServerSessionQueueRequest",
       "name": "删除游戏服务器会话队列",
       "output": "DeleteGameServerSessionQueueResponse"
     },
     "DeleteScalingPolicy": {
-      "document": "本接口（DeleteScalingPolicy）用于删除扩缩容配置",
+      "document": "本接口（DeleteScalingPolicy）用于删除服务器舰队的扩缩容策略。\n通过服务器舰队ID和策略名称删除服务器舰队的扩缩容策略，只传递服务器舰队ID时，会将这个服务器舰队下的所有策略都删除。\n传递策略名称时，单独删除策略名称对应的策略。",
       "input": "DeleteScalingPolicyRequest",
       "name": "删除扩缩容配置",
       "output": "DeleteScalingPolicyResponse"
     },
     "DescribeAlias": {
-      "document": "本接口（DescribeAlias）用于获取别名详情",
+      "document": "本接口（DescribeAlias）用于获取别名详情。",
       "input": "DescribeAliasRequest",
       "name": "获取别名详情",
       "output": "DescribeAliasResponse"
     },
     "DescribeAsset": {
-      "document": "本接口（DescribeAsset）获取生成包信息",
+      "document": "本接口（DescribeAsset）获取生成包信息。",
       "input": "DescribeAssetRequest",
       "name": "获取生成包信息",
       "output": "DescribeAssetResponse"
     },
+    "DescribeAssetSystems": {
+      "document": "本接口（DescribeAssetSystems）用于获取生成包支持的操作系统。",
+      "input": "DescribeAssetSystemsRequest",
+      "name": "获取生成包支持的操作系统列表",
+      "output": "DescribeAssetSystemsResponse"
+    },
     "DescribeAssets": {
-      "document": "本接口（DescribeAssets）用于获取生成包列表",
+      "document": "本接口（DescribeAssets）用于获取生成包列表。",
       "input": "DescribeAssetsRequest",
       "name": "拉取生成包列表",
       "output": "DescribeAssetsResponse"
     },
     "DescribeCcnInstances": {
-      "document": "本接口（DescribeCcnInstances）用于查询云联网实例",
+      "document": "本接口（DescribeCcnInstances）用于查询云联网实例。",
       "input": "DescribeCcnInstancesRequest",
       "name": "查询云联网实例",
       "output": "DescribeCcnInstancesResponse"
     },
     "DescribeFleetAttributes": {
-      "document": "本接口（DescribeFleetAttributes）用于查询服务器舰队属性",
+      "document": "本接口（DescribeFleetAttributes）用于查询服务器舰队属性。",
       "input": "DescribeFleetAttributesRequest",
       "name": "获取服务器舰队属性",
       "output": "DescribeFleetAttributesResponse"
     },
     "DescribeFleetCapacity": {
-      "document": "用于查询服务部署容量配置",
+      "document": "本接口（DescribeFleetCapacity）用于查询服务部署容量配置。",
       "input": "DescribeFleetCapacityRequest",
-      "name": "查询服务部署容量配置",
+      "name": "查询游戏服务器舰队容量配置",
       "output": "DescribeFleetCapacityResponse"
     },
     "DescribeFleetEvents": {
-      "document": "本接口（DescribeFleetEvents）用于查询部署服务器舰队相关的事件列表",
+      "document": "本接口（DescribeFleetEvents）用于查询服务器舰队相关的事件列表。",
       "input": "DescribeFleetEventsRequest",
       "name": "查询服务器舰队的事件列表",
       "output": "DescribeFleetEventsResponse"
     },
     "DescribeFleetPortSettings": {
-      "document": "本接口（DescribeFleetPortSettings）用于获取服务器舰队安全组信息",
+      "document": "本接口（DescribeFleetPortSettings）用于获取服务器舰队安全组信息。",
       "input": "DescribeFleetPortSettingsRequest",
       "name": "服务器舰队安全组信息查询",
       "output": "DescribeFleetPortSettingsResponse"
     },
     "DescribeFleetStatisticDetails": {
-      "document": "本接口（DescribeFleetStatisticDetails）用于查询服务部署统计详情",
+      "document": "本接口（DescribeFleetStatisticDetails）用于查询服务部署统计详情。",
       "input": "DescribeFleetStatisticDetailsRequest",
       "name": "查询服务部署统计详情",
       "output": "DescribeFleetStatisticDetailsResponse"
     },
     "DescribeFleetStatisticFlows": {
-      "document": "本接口（DescribeFleetStatisticFlows）用于查询服务部署统计用量",
+      "document": "本接口（DescribeFleetStatisticFlows）用于查询服务部署统计用量。",
       "input": "DescribeFleetStatisticFlowsRequest",
       "name": "查询服务部署统计用量",
       "output": "DescribeFleetStatisticFlowsResponse"
     },
     "DescribeFleetStatisticSummary": {
-      "document": "本接口（DescribeFleetStatisticSummary）用于查询服务部署统计汇总信息",
+      "document": "本接口（DescribeFleetStatisticSummary）用于查询服务部署统计汇总信息。",
       "input": "DescribeFleetStatisticSummaryRequest",
       "name": "查询服务部署统计汇总信息",
       "output": "DescribeFleetStatisticSummaryResponse"
     },
     "DescribeFleetUtilization": {
-      "document": "本接口（DescribeFleetUtilization）用于查询服务器舰队的利用率信息",
+      "document": "本接口（DescribeFleetUtilization）用于查询服务器舰队的利用率信息。",
       "input": "DescribeFleetUtilizationRequest",
       "name": "查询服务器舰队的利用率信息",
       "output": "DescribeFleetUtilizationResponse"
     },
     "DescribeGameServerSessionDetails": {
-      "document": "本接口（DescribeGameServerSessionDetails）用于查询游戏服务器会话详情列表",
+      "document": "本接口（DescribeGameServerSessionDetails）用于查询游戏服务器会话详情列表。",
       "input": "DescribeGameServerSessionDetailsRequest",
       "name": "查询游戏服务器会话详情列表",
       "output": "DescribeGameServerSessionDetailsResponse"
     },
     "DescribeGameServerSessionPlacement": {
-      "document": "本接口（DescribeGameServerSessionPlacement）用于查询游戏服务器会话的放置",
+      "document": "本接口（DescribeGameServerSessionPlacement）用于查询游戏服务器会话的放置。",
       "input": "DescribeGameServerSessionPlacementRequest",
       "name": "查询游戏服务器会话的放置",
       "output": "DescribeGameServerSessionPlacementResponse"
     },
     "DescribeGameServerSessionQueues": {
-      "document": "本接口（DescribeGameServerSessionQueues）用于查询游戏服务器会话队列",
+      "document": "本接口（DescribeGameServerSessionQueues）用于查询游戏服务器会话队列。",
       "input": "DescribeGameServerSessionQueuesRequest",
       "name": "查询游戏服务器会话队列",
       "output": "DescribeGameServerSessionQueuesResponse"
     },
     "DescribeGameServerSessions": {
-      "document": "本接口（DescribeGameServerSessions）用于查询游戏服务器会话列表",
+      "document": "本接口（DescribeGameServerSessions）用于查询游戏服务器会话列表。",
       "input": "DescribeGameServerSessionsRequest",
       "name": "查询游戏服务器会话列表",
       "output": "DescribeGameServerSessionsResponse"
     },
     "DescribeInstanceLimit": {
-      "document": "查询用户实例数限额",
+      "document": "本接口（DescribeInstanceLimit）用于查询用户实例数限额。",
       "input": "DescribeInstanceLimitRequest",
       "name": "查询用户实例数限额",
       "output": "DescribeInstanceLimitResponse"
     },
     "DescribeInstanceTypes": {
-      "document": "本接口（DescribeInstanceTypes）用于获取服务器实例类型列表",
+      "document": "本接口（DescribeInstanceTypes）用于获取服务器实例类型列表。",
       "input": "DescribeInstanceTypesRequest",
       "name": "获取服务器实例类型列表",
       "output": "DescribeInstanceTypesResponse"
     },
     "DescribeInstances": {
-      "document": "本接口（DescribeInstances）用于查询服务器实例列表",
+      "document": "本接口（DescribeInstances）用于查询服务器实例列表。",
       "input": "DescribeInstancesRequest",
       "name": "查询服务器实例列表",
       "output": "DescribeInstancesResponse"
     },
     "DescribeInstancesExtend": {
-      "document": "本接口（DescribeInstances）用于查询实例扩展信息列表",
+      "document": "本接口（DescribeInstancesExtend）用于查询实例扩展信息列表。",
       "input": "DescribeInstancesExtendRequest",
       "name": "查询实例扩展信息列表",
       "output": "DescribeInstancesExtendResponse"
     },
     "DescribePlayerSessions": {
-      "document": "本接口（DescribePlayerSessions）用于获取玩家会话列表",
+      "document": "本接口（DescribePlayerSessions）用于获取玩家会话列表。",
       "input": "DescribePlayerSessionsRequest",
       "name": "查询玩家会话列表",
       "output": "DescribePlayerSessionsResponse"
     },
     "DescribeRuntimeConfiguration": {
-      "document": "本接口（DescribeRuntimeConfiguration）用于获取服务器舰队运行配置",
+      "document": "本接口（DescribeRuntimeConfiguration）用于获取服务器舰队运行配置。",
       "input": "DescribeRuntimeConfigurationRequest",
       "name": "获取服务器舰队运行配置",
       "output": "DescribeRuntimeConfigurationResponse"
     },
     "DescribeScalingPolicies": {
-      "document": "本接口（DescribeScalingPolicies）用于查询服务部署的动态扩缩容配置",
+      "document": "本接口（DescribeScalingPolicies）用于查询服务器舰队的动态扩缩容策略列表。",
       "input": "DescribeScalingPoliciesRequest",
       "name": "查询扩缩容配置",
       "output": "DescribeScalingPoliciesResponse"
     },
     "DescribeUserQuota": {
-      "document": "本接口（DescribeUserQuota）获取用户单个模块配额",
+      "document": "本接口（DescribeUserQuota）获取用户单个模块配额。",
       "input": "DescribeUserQuotaRequest",
       "name": "获取用户单个模块配额",
       "output": "DescribeUserQuotaResponse"
@@ -217,19 +223,19 @@
       "output": "DescribeUserQuotasResponse"
     },
     "DetachCcnInstances": {
-      "document": "本接口（DetachCcnInstances）用于解关联云联网实例",
+      "document": "本接口（DetachCcnInstances）用于解关联云联网实例。",
       "input": "DetachCcnInstancesRequest",
       "name": "解关联云联网实例",
       "output": "DetachCcnInstancesResponse"
     },
     "GetGameServerSessionLogUrl": {
-      "document": "本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL",
+      "document": "本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL。",
       "input": "GetGameServerSessionLogUrlRequest",
       "name": "获取游戏服务器会话的日志URL",
       "output": "GetGameServerSessionLogUrlResponse"
     },
     "GetInstanceAccess": {
-      "document": "本接口（GetInstanceAccess）用于获取实例登录所需要的凭据",
+      "document": "本接口（GetInstanceAccess）用于获取实例登录所需要的凭据。",
       "input": "GetInstanceAccessRequest",
       "name": "获取实例登录所需要的凭据",
       "output": "GetInstanceAccessResponse"
@@ -241,127 +247,133 @@
       "output": "GetUploadCredentialsResponse"
     },
     "GetUploadFederationToken": {
-      "document": "本接口（GetUploadFederationToken）用于 获取生成包上传所需要的临时密钥",
+      "document": "本接口（GetUploadFederationToken）用于 获取生成包上传所需要的临时密钥。",
       "input": "GetUploadFederationTokenRequest",
       "name": "获取上传的临时密钥",
       "output": "GetUploadFederationTokenResponse"
     },
     "JoinGameServerSession": {
-      "document": "本接口（JoinGameServerSession）用于加入游戏服务器会话",
+      "document": "本接口（JoinGameServerSession）用于加入游戏服务器会话。",
       "input": "JoinGameServerSessionRequest",
       "name": "加入游戏服务器会话",
       "output": "JoinGameServerSessionResponse"
     },
     "JoinGameServerSessionBatch": {
-      "document": "本接口（JoinGameServerSessionBatch）用于加入游戏服务器会话",
+      "document": "本接口（JoinGameServerSessionBatch）用于批量加入游戏服务器会话。",
       "input": "JoinGameServerSessionBatchRequest",
-      "name": "加入游戏服务器会话",
+      "name": "批量加入游戏服务器会话",
       "output": "JoinGameServerSessionBatchResponse"
     },
     "ListAliases": {
-      "document": "本接口（ListAliases）用于检索帐户下的所有别名",
+      "document": "本接口（ListAliases）用于检索帐户下的所有别名。",
       "input": "ListAliasesRequest",
       "name": "检索帐户下的所有别名",
       "output": "ListAliasesResponse"
     },
     "ListFleets": {
-      "document": "本接口（ListFleets）用于获取服务器舰队列表",
+      "document": "本接口（ListFleets）用于获取服务器舰队列表。",
       "input": "ListFleetsRequest",
-      "name": "服务器舰队列表",
+      "name": "获取服务器舰队列表",
       "output": "ListFleetsResponse"
     },
     "PutScalingPolicy": {
-      "document": "本接口（PutScalingPolicy）用于设置动态扩缩容配置",
+      "document": "本接口（PutScalingPolicy）用于设置服务器舰队的动态扩缩容策略。\n\n通过此接口可以增加或者更新服务器舰队的扩缩容策略。\n服务器舰队可以有多个扩缩容策略，但是只有一个TargetBased基于目标的策略。\n\n## TargetBased基于目标的策略\n\nTargetBased策略计算的指标是PercentAvailableGameSessions，这个策略用于计算当前服务器舰队应该有多少个CVM实例来支撑和分配游戏会话。\nPercentAvailableGameSessions表示服务器舰队的缓冲值；用来计算服务器舰队在当前容量下可以处理的额外玩家会话数量。\n如果使用基于目标的策略，可以按照业务需求设置一个期望的缓冲区大小，GSE的会按照配置的策略来扩容和缩容到这个目标要求的CVM实例数。\n\n例如：客户可以设置同时承载100个游戏会话的服务器舰队预留10%的缓冲区。GSE会按照这个策略执行时，若服务器舰队的可用容量低于或高于10%的游戏服务器会话时，执行扩缩容动作。\nGSE按照策略期望，扩容新CVM实例或缩容未使用的实例，保持在10%左右的缓冲区。\n\n#### 请求参数取值说明\n\n```\nName取值策略名称，\nFleetId取值为选择的服务器舰队ID，\nPolicyType取值TargetBased，\nMetricName取值PercentAvailableGameSessions，\nTargetConfiguration取值为所需的缓冲区值对象，\n其他参数不用传递。\n请求成功时，将返回策略名称。扩缩容策略在成功创建立即自动生效。\n```\n\n\n\n## RuleBased基于规则的策略\n\n####  请求参数取值说明\n\n```\nName取值策略名称，\nFleetId取值为选择的服务器舰队ID，\nPolicyType取值RuleBased，\nMetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）说明见备注1，\n其他参数不用传递。\nComparisonOperator取值为 >,>=,<,<=这4个比较符号中的一个，\nThreshold取值为指标MetricName达到的阈值是多少，\nEvaluationPeriods取值为指标MetricName达到的阈值持续了多少时间，单位是分钟，\nScalingAdjustmentType取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）说明见备注2\nScalingAdjustment取值为指标MetricName达到的阈值的条件后，扩缩容多少个CVM实例。\n请求成功时，将返回策略名称。扩缩容策略在成功创建立即自动生效。\n```\n\n规则执行的条件表达式如下所示：\n\n```\n若 [MetricName] 是 [ComparisonOperator] [Threshold] 持续 [EvaluationPeriods] 分钟, 则 [ScalingAdjustmentType] 调整 [ScalingAdjustment]个实例。\n```\n```\nif [MetricName] ComparisonOperator [Threshold] for [EvaluationPeriods] minutes, then scaling up by/to  [ScalingAdjustment]\n```\n例如1：如果当前AvailableCustomCount值大于等于10，持续5分钟，扩容1台CVM实例。\n```\nScalingAdjustmentType = ChangeInCapacity\nif [AvailableGameServerSessions] >= [10] for [5] minutes, then scaling up [1]\n```\n例如2：如果当前AvailableGameServerSessions值大于等于200，持续5分钟，扩容到2台CVM实例。\n```\nScalingAdjustmentType = ExactCapacity\nif [AvailableGameServerSessions] >= [200] for [5] minutes, then scaling to [2]\n```\n例如3：如果当前AvailableCustomCount值大于等于400，持续5分钟，扩容20%台CVM实例。\n当前CVM实例数为10台。扩容20%台CVM实例就是增加 10*20%等于2台\n```\nScalingAdjustmentType = PercentChangeInCapacity\nif [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [currentCVMCount * 20 %]\n```\n**备注1**\n\n- | 策略名称（MetricName）                                       | 计算公式                                   | 场景                                        | 场景使用举例                                                 |\n  | :----------------------------------------------------------- | :----------------------------------------- | :------------------------------------------ | :----------------------------------------------------------- |\n  | CurrentPlayerSessions<br>当前玩家数指标                      | = 当前在线的玩家数                         | CVM随着玩家会话数变化做扩缩容。             | 例如：<br>MetricName: CurrentPlayerSessions<br>ComparisonOperator: '<=' <br>Threshold: 300<br/>EvaluationPeriods: 1<br/>ScalingAdjustment: 2<br/>ScalingAdjustment: ChangeInCapacity<br>说明：若当前CurrentPlayerSessions小于等于300，持续1分钟，则扩容2台CVM。 |\n  | AvailableGameServerSessions<br>可用游戏服务器会话数          | = 可用游戏服务会话数                       | CVM随着可用游戏会话数变化做扩缩容。         | 例如：<br/>MetricName: AvailableGameServerSessions<br/>ComparisonOperator: '<' <br/>Threshold: 50<br/>EvaluationPeriods: 5<br/>ScalingAdjustment: 2<br/>ScalingAdjustment: ExactCapacity<br/>说明：若当前AvailableGameServerSessions小于50，持续5分钟，则扩容到2台CVM。 |\n  | PercentAvailableGameServerSessions<br>可用游戏服务器会话百分比 | = 空闲游戏会话数 / 所有的游戏会话数 * 100% | CVM随着可用游戏会话数百分比变化做扩缩容。   | 例如：<br/>MetricName: PercentAvailableGameServerSessions<br/>ComparisonOperator: '<' <br/>Threshold: 50<br/>EvaluationPeriods: 1<br/>ScalingAdjustment: -30<br/>ScalingAdjustment: PercentChangeInCapacity<br/>说明：若当前PercentAvailableGameServerSessions小于50%，持续1分钟，则缩容当前实例数30%台CVM。 |\n  | AvailableCustomCount<br>可用客户自定义数指标                 | = 客户自定义的数                           | CVM随着可用客户自定义数变化做扩缩容。       | 例如：<br/>MetricName: AvailableCustomCount<br/>ComparisonOperator: '>=' <br/>Threshold: 6<br/>EvaluationPeriods: 3<br/>ScalingAdjustment: -1<br/>ScalingAdjustment: ExactCapacity<br/>说明：若当前AvailableCustomCount大于等于6，持续3分钟，则缩容到1台CVM。 |\n  | PercentAvailableCustomCount<br>可用客户自定义数百分比        | = 客户自定义数 / 客户最大自定义数* 100%    | CVM随着可用客户自定义数百分比变化做扩缩容。 | 例如：<br/>MetricName: PercentAvailableCustomCount<br/>ComparisonOperator: '<' <br/>Threshold: 15<br/>EvaluationPeriods: 3<br/>ScalingAdjustment: 1<br/>ScalingAdjustment: ChangeInCapacity<br/>说明：若当前PercentAvailableCustomCount小于15%，持续3分钟，则扩容1台CVM。 |\n  | ActiveInstances<br>活跃实例数指标                            | = 总实例数 - 缩容中的实例数                | CVM随着活跃实例数变化做扩缩容。             | 例如：<br/>MetricName: ActiveInstances<br/>ComparisonOperator: '<' <br/>Threshold: 3<br/>EvaluationPeriods: 1<br/>ScalingAdjustment: 3<br/>ScalingAdjustment: ExactCapacity<br/>说明：若当前ActiveInstances小于3台，持续1分钟，则扩容保留到3台CVM。 |\n  | IdleInstances<br>空闲实例数指标                              | = 未使用的进程数 / 每实例进程数            | CVM随着空闲实例数变化做扩缩容。             | 例如：<br/>MetricName: IdleInstances<br/>ComparisonOperator: '<' <br/>Threshold: 2<br/>EvaluationPeriods: 3<br/>ScalingAdjustment: 1<br/>ScalingAdjustment: ChangeInCapacity<br/>说明：若当前IdleInstances小于2台，持续3分钟，则扩容1台CVM。 |\n  | PercentIdleInstances<br>空闲实例百分比                       | = IdleInstances / ActiveInstances * 100%   | CVM随着空闲实例百分比变化做扩缩容。         | 例如：<br/>MetricName: PercentIdleInstances<br/>ComparisonOperator: '<' <br/>Threshold: 50<br/>EvaluationPeriods: 3<br/>ScalingAdjustment: 1<br/>ScalingAdjustment: ChangeInCapacity<br/>说明：若当前PercentIdleInstances小于50%，持续3分钟，则扩容1台CVM。 |\n\n\n\n**备注2**\n\n**ChangeInCapacity**\n\n    当前CVM实例个数的扩容或缩容的调整值。正值按值扩容，负值按值缩容。\n\n**ExactCapacity**\n\n    把当前CVM实例个数调整为ScalingAdjustment设置的CVM实例数。\n\n**PercentChangeInCapacity**\n\n    按比例增加或减少的百分比。正值按比例扩容，负值按比例缩容；例如，值“-10”将按10%的比例缩容CVM实例。",
       "input": "PutScalingPolicyRequest",
       "name": "设置扩缩容策略",
       "output": "PutScalingPolicyResponse"
     },
     "ResolveAlias": {
-      "document": "本接口（ResolveAlias）用于获取别名当前指向的fleetId",
+      "document": "本接口（ResolveAlias）用于获取别名当前指向的fleetId。",
       "input": "ResolveAliasRequest",
       "name": "获取别名当前指向的fleetId",
       "output": "ResolveAliasResponse"
     },
     "SearchGameServerSessions": {
-      "document": "本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表",
+      "document": "本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表。",
       "input": "SearchGameServerSessionsRequest",
       "name": "搜索游戏服务器会话列表",
       "output": "SearchGameServerSessionsResponse"
     },
     "SetServerWeight": {
-      "document": "设置服务器权重",
+      "document": "本接口（SetServerWeight）用于设置服务器权重。",
       "input": "SetServerWeightRequest",
       "name": "设置服务器权重",
       "output": "SetServerWeightResponse"
     },
     "StartFleetActions": {
-      "document": "本接口（StartFleetActions）用于启用服务器舰队自动扩缩容",
+      "document": "本接口（StartFleetActions）用于启用服务器舰队自动扩缩容。",
       "input": "StartFleetActionsRequest",
       "name": "启用服务器舰队自动扩缩容",
       "output": "StartFleetActionsResponse"
     },
     "StartGameServerSessionPlacement": {
-      "document": "本接口（StartGameServerSessionPlacement）用于开始放置游戏服务器会话",
+      "document": "本接口（StartGameServerSessionPlacement）用于开始放置游戏服务器会话。",
       "input": "StartGameServerSessionPlacementRequest",
       "name": "开始放置游戏服务器会话",
       "output": "StartGameServerSessionPlacementResponse"
     },
     "StopFleetActions": {
-      "document": "本接口（StopFleetActions）用于停止服务器舰队自动扩缩容，改为手动扩缩容",
+      "document": "本接口（StopFleetActions）用于停止服务器舰队自动扩缩容，改为手动扩缩容。",
       "input": "StopFleetActionsRequest",
       "name": "停止服务器舰队自动扩缩容",
       "output": "StopFleetActionsResponse"
     },
     "StopGameServerSessionPlacement": {
-      "document": "本接口（StopGameServerSessionPlacement）用于停止放置游戏服务器会话",
+      "document": "本接口（StopGameServerSessionPlacement）用于停止放置游戏服务器会话。",
       "input": "StopGameServerSessionPlacementRequest",
       "name": "停止放置游戏服务器会话",
       "output": "StopGameServerSessionPlacementResponse"
     },
     "UpdateAlias": {
-      "document": "本接口（UpdateAlias）用于更新别名的属性",
+      "document": "本接口（UpdateAlias）用于更新别名的属性。",
       "input": "UpdateAliasRequest",
       "name": "更新别名的属性",
       "output": "UpdateAliasResponse"
     },
     "UpdateAsset": {
-      "document": "本接口（UpdateAsset）用于修改生成包信息",
+      "document": "本接口（UpdateAsset）用于修改生成包信息。",
       "input": "UpdateAssetRequest",
       "name": "修改生成包信息",
       "output": "UpdateAssetResponse"
     },
     "UpdateFleetAttributes": {
-      "document": "本接口（UpdateFleetAttributes）用于更新服务器舰队属性",
+      "document": "本接口（UpdateFleetAttributes）用于更新服务器舰队属性。",
       "input": "UpdateFleetAttributesRequest",
       "name": "更新服务器舰队属性",
       "output": "UpdateFleetAttributesResponse"
     },
     "UpdateFleetCapacity": {
-      "document": "用于更新服务部署容量配置",
+      "document": "本接口（UpdateFleetCapacity）用于更新服务器舰队容量配置。",
       "input": "UpdateFleetCapacityRequest",
-      "name": "更新服务部署容量配置",
+      "name": "更新服务器舰队容量配置",
       "output": "UpdateFleetCapacityResponse"
     },
+    "UpdateFleetName": {
+      "document": "本接口（UpdateFleetName）用于更新服务器舰队名称。",
+      "input": "UpdateFleetNameRequest",
+      "name": "更新服务器舰队名称",
+      "output": "UpdateFleetNameResponse"
+    },
     "UpdateFleetPortSettings": {
-      "document": "本接口（UpdateFleetPortSettings）用于更新服务器舰队安全组",
+      "document": "本接口（UpdateFleetPortSettings）用于更新服务器舰队安全组。",
       "input": "UpdateFleetPortSettingsRequest",
       "name": "更新服务器舰队安全组",
       "output": "UpdateFleetPortSettingsResponse"
     },
     "UpdateGameServerSession": {
-      "document": "本接口（UpdateGameServerSession）用于更新游戏服务器会话",
+      "document": "本接口（UpdateGameServerSession）用于更新游戏服务器会话。",
       "input": "UpdateGameServerSessionRequest",
       "name": "更新游戏服务器会话",
       "output": "UpdateGameServerSessionResponse"
     },
     "UpdateGameServerSessionQueue": {
-      "document": "本接口（UpdateGameServerSessionQueue）用于修改游戏服务器会话队列",
+      "document": "本接口（UpdateGameServerSessionQueue）用于修改游戏服务器会话队列。",
       "input": "UpdateGameServerSessionQueueRequest",
       "name": "修改游戏服务器会话队列",
       "output": "UpdateGameServerSessionQueueResponse"
     },
     "UpdateRuntimeConfiguration": {
-      "document": "本接口（UpdateRuntimeConfiguration）用于更新服务器舰队配置",
+      "document": "本接口（UpdateRuntimeConfiguration）用于更新服务器舰队配置。",
       "input": "UpdateRuntimeConfigurationRequest",
       "name": "更新服务器舰队配置",
       "output": "UpdateRuntimeConfigurationResponse"
@@ -581,6 +593,48 @@
       ],
       "usage": "out"
     },
+    "AssetSupportSys": {
+      "document": "生成包支持操作系统详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "生成包操作系统的镜像Id",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成包操作系统的类型",
+          "member": "string",
+          "name": "OsType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成包操作系统的位数",
+          "member": "int64",
+          "name": "OsBit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成包操作系统的版本",
+          "member": "string",
+          "name": "OsVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AttachCcnInstancesRequest": {
       "document": "AttachCcnInstances请求参数结构体",
       "members": [
@@ -760,7 +814,7 @@
         },
         {
           "default": "",
-          "document": "生成包可运行的操作系统，暂时只有CentOS7.16",
+          "document": "生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）",
           "member": "string",
           "name": "OperateSystem",
           "required": true,
@@ -768,7 +822,7 @@
         },
         {
           "default": "",
-          "document": "生成包支持的操作系统镜像id",
+          "document": "生成包支持的操作系统镜像id，若传入OperateSystem字段的值是CentOS7.16，则不需要传入该值；如果不是，则需要通过DescribeAssetSystems接口获取asset支持的操作系统ImageId进行传入",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -832,7 +886,7 @@
         },
         {
           "default": "",
-          "document": "服务器类型，例如S5.LARGE8",
+          "document": "服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -864,7 +918,7 @@
         },
         {
           "default": "",
-          "document": "VPC 网络 Id，弃用，对等链接已不再使用",
+          "document": "VPC 网络 Id，对等连接已不再使用",
           "member": "string",
           "name": "PeerVpcId",
           "required": false,
@@ -888,7 +942,7 @@
         },
         {
           "default": "",
-          "document": "VPC 子网，弃用，对等链接已不再使用",
+          "document": "VPC 子网，对等连接已不再使用",
           "member": "string",
           "name": "SubNetId",
           "required": false,
@@ -896,7 +950,7 @@
         },
         {
           "default": "",
-          "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440",
+          "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效",
           "member": "int64",
           "name": "GameServerSessionProtectionTimeLimit",
           "required": false,
@@ -937,7 +991,7 @@
         },
         {
           "default": "",
-          "document": "目的服务部署（可为别名）列表",
+          "document": "目的服务器舰队（可为别名）列表",
           "member": "GameServerSessionQueueDestination",
           "name": "Destinations",
           "required": false,
@@ -1211,7 +1265,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署ID",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -1219,7 +1273,7 @@
         },
         {
           "default": "",
-          "document": "策略名称",
+          "document": "扩缩容策略名称，最小长度为0，最大长度为1024",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1306,12 +1360,53 @@
       ],
       "type": "object"
     },
+    "DescribeAssetSystemsRequest": {
+      "document": "DescribeAssetSystems请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "生成包支持的操作系统类型",
+          "member": "string",
+          "name": "OsType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生成包支持的操作系统位数",
+          "member": "int64",
+          "name": "OsBit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetSystemsResponse": {
+      "document": "DescribeAssetSystems返回参数结构体",
+      "members": [
+        {
+          "document": "生成包支持的操作系统类型列表",
+          "member": "AssetSupportSys",
+          "name": "AssetSupportSys",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAssetsRequest": {
       "document": "DescribeAssets请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "生成包可部署地域",
+          "document": "生成包支持的可部署 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
           "member": "string",
           "name": "AssetRegion",
           "required": true,
@@ -1423,7 +1518,7 @@
         },
         {
           "default": "",
-          "document": "结果返回最大数量，最小值0，最大值1000",
+          "document": "结果返回最大数量，默认值20，最大值100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1471,7 +1566,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署 Id列表",
+          "document": "服务器舰队ID列表",
           "member": "string",
           "name": "FleetIds",
           "required": true,
@@ -1479,7 +1574,7 @@
         },
         {
           "default": "",
-          "document": "结果返回最大数量",
+          "document": "结果返回最大数量，最大值 100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1487,7 +1582,7 @@
         },
         {
           "default": "",
-          "document": "返回结果偏移",
+          "document": "返回结果偏移，最小值 0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1500,7 +1595,7 @@
       "document": "DescribeFleetCapacity返回参数结构体",
       "members": [
         {
-          "document": "服务部署容量配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器舰队的容量配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "FleetCapacity",
           "name": "FleetCapacity",
           "type": "list",
@@ -1535,7 +1630,7 @@
         },
         {
           "default": "",
-          "document": "分页时返回服务部署事件的数量，默认为20，最大值为100",
+          "document": "分页时返回服务器舰队事件的数量，默认为20，最大值为100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1616,7 +1711,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署ID",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -1624,7 +1719,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间",
+          "document": "查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss",
           "member": "datetime",
           "name": "BeginTime",
           "required": false,
@@ -1632,7 +1727,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间",
+          "document": "查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -1695,7 +1790,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署ID",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -1703,7 +1798,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间",
+          "document": "查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss",
           "member": "datetime",
           "name": "BeginTime",
           "required": false,
@@ -1711,7 +1806,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间",
+          "document": "查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -1781,7 +1876,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署 Id",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -1789,7 +1884,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间",
+          "document": "查询开始时间，时间格式: YYYY-MM-DD hh:mm:ss",
           "member": "datetime",
           "name": "BeginTime",
           "required": false,
@@ -1797,7 +1892,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间",
+          "document": "查询结束时间，时间格式: YYYY-MM-DD hh:mm:ss",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -2181,7 +2276,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署ID",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -2237,7 +2332,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署ID",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -2394,7 +2489,7 @@
       "document": "DescribeRuntimeConfiguration返回参数结构体",
       "members": [
         {
-          "document": "服务部署运行配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器舰队运行配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "RuntimeConfiguration",
           "name": "RuntimeConfiguration",
           "type": "object",
@@ -2414,7 +2509,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署ID",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": false,
@@ -2784,7 +2879,7 @@
         },
         {
           "default": "",
-          "document": "服务器舰队停止状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器舰队停止状态，为空时表示自动扩缩容\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "StoppedActions",
           "required": true,
@@ -2835,7 +2930,7 @@
         },
         {
           "default": "",
-          "document": "服务器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -2853,7 +2948,7 @@
         },
         {
           "default": "",
-          "document": "服务器伸缩容间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ScalingInterval",
           "required": true,
@@ -3369,7 +3464,7 @@
         },
         {
           "default": "",
-          "document": "最大玩家数量",
+          "document": "游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额",
           "member": "uint64",
           "name": "MaximumPlayerSessionCount",
           "required": true,
@@ -3555,7 +3650,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署Id",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -4241,7 +4336,7 @@
         },
         {
           "default": "",
-          "document": "路由策略类型，有效值SIMPLE|TERMINAL",
+          "document": "路由策略类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)",
           "member": "string",
           "name": "RoutingStrategyType",
           "required": false,
@@ -4321,7 +4416,7 @@
         },
         {
           "default": "",
-          "document": "结果返回最大值，最小值0，最大值1000",
+          "document": "结果返回最大值，暂未使用",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4329,7 +4424,7 @@
         },
         {
           "default": "",
-          "document": "结果返回偏移，最小值0",
+          "document": "结果返回偏移，暂未使用",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4342,14 +4437,14 @@
       "document": "ListFleets返回参数结构体",
       "members": [
         {
-          "document": "服务部署 Id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器舰队 Id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetIds",
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "document": "服务部署 Id 总数，最小值0",
+          "document": "服务器舰队 Id 总数，最小值0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -4579,7 +4674,7 @@
       "members": [
         {
           "default": "",
-          "document": "基于规则的扩缩容配置服务部署ID",
+          "document": "扩缩容配置服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -4587,7 +4682,7 @@
         },
         {
           "default": "",
-          "document": "策略名称",
+          "document": "扩缩容策略名称，最小长度为1，最大长度为1024",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4595,7 +4690,7 @@
         },
         {
           "default": "",
-          "document": "扩缩容调整值",
+          "document": "扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99\nScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额",
           "member": "int64",
           "name": "ScalingAdjustment",
           "required": false,
@@ -4603,7 +4698,7 @@
         },
         {
           "default": "",
-          "document": "扩缩容调整类型",
+          "document": "扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）",
           "member": "string",
           "name": "ScalingAdjustmentType",
           "required": false,
@@ -4619,7 +4714,7 @@
         },
         {
           "default": "",
-          "document": "策略比较符，取值：>,>=,<,<=",
+          "document": "扩缩容策略比较符，取值：>,>=,<,<=",
           "member": "string",
           "name": "ComparisonOperator",
           "required": false,
@@ -4627,7 +4722,7 @@
         },
         {
           "default": "",
-          "document": "持续时间长度（分钟）",
+          "document": "单个策略持续时间长度（分钟）",
           "member": "int64",
           "name": "EvaluationPeriods",
           "required": false,
@@ -4635,7 +4730,7 @@
         },
         {
           "default": "",
-          "document": "指标名称",
+          "document": "扩缩容参与计算的指标名称，PolicyType取值RuleBased，\nMetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；\nPolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -4651,7 +4746,7 @@
         },
         {
           "default": "",
-          "document": "扩缩容配置类型",
+          "document": "扩缩容目标值配置，只有TargetBased类型的策略生效",
           "member": "TargetConfiguration",
           "name": "TargetConfiguration",
           "required": false,
@@ -4768,7 +4863,7 @@
         },
         {
           "default": "",
-          "document": "单位时间，最小值1，默认3",
+          "document": "单位时间，最小值1，默认3，单位分钟",
           "member": "uint64",
           "name": "PolicyPeriodInMinutes",
           "required": false,
@@ -4783,7 +4878,7 @@
       "members": [
         {
           "default": "",
-          "document": "别名的路由策略的类型SIMPLE/TERMINAL",
+          "document": "别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -4801,7 +4896,7 @@
         },
         {
           "default": "",
-          "document": "与终端路由策略一起使用的消息文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Message",
           "required": false,
@@ -4816,7 +4911,7 @@
       "members": [
         {
           "default": "",
-          "document": "游戏会话进程超时",
+          "document": "游戏会话进程超时，最小值1，最大值600，单位秒",
           "member": "uint64",
           "name": "GameServerSessionActivationTimeoutSeconds",
           "required": false,
@@ -4825,7 +4920,7 @@
         },
         {
           "default": "",
-          "document": "最大游戏会话数",
+          "document": "最大游戏会话数，最小值1，最大值2147483647",
           "member": "uint64",
           "name": "MaxConcurrentGameServerSessionActivations",
           "required": false,
@@ -4834,7 +4929,7 @@
         },
         {
           "default": "",
-          "document": "服务进程配置",
+          "document": "服务进程配置，至少有一个进程配置",
           "member": "ServerProcesse",
           "name": "ServerProcesses",
           "required": false,
@@ -4978,7 +5073,7 @@
         },
         {
           "default": "",
-          "document": "页偏移，用于查询下一页",
+          "document": "页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "NextToken",
           "required": false,
@@ -4986,7 +5081,7 @@
         },
         {
           "default": "",
-          "document": "搜索条件表达式，支持如下变量\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number\nhasAvailablePlayerSessions 是否有可用玩家数 String 取值true或false\ngameServerSessionProperties 游戏会话属性 String\n\n表达式String类型 等于=，不等于<>判断\n表示Number类型支持 =,<>,>,>=,<,<=",
+          "document": "搜索条件表达式，支持如下变量\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number\nhasAvailablePlayerSessions 是否有可用玩家数 String 取值true或false\ngameServerSessionProperties 游戏会话属性 String\n\n表达式String类型 等于=，不等于<>判断\n表示Number类型支持 =,<>,>,>=,<,<=\n\n例如：\nFilterExpression取值\nplayerSessionCount>=2 AND hasAvailablePlayerSessions=true\"\n表示查找至少有两个玩家，而且有可用玩家会话的游戏会话。\nFilterExpression取值\ngameServerSessionProperties.K1 = 'V1' AND gameServerSessionProperties.K2 = 'V2' OR gameServerSessionProperties.K3 = 'V3'\n\n表示\n查询满足如下游戏服务器会话属性的游戏会话\n{\n    \"GameProperties\":[\n        {\n            \"Key\":\"K1\",\n            \"Value\":\"V1\"\n        },\n        {\n            \"Key\":\"K2\",\n            \"Value\":\"V2\"\n        },\n        {\n            \"Key\":\"K3\",\n            \"Value\":\"V3\"\n        }\n    ]\n}",
           "member": "string",
           "name": "FilterExpression",
           "required": false,
@@ -5014,7 +5109,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "页偏移，用于查询下一页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "NextToken",
           "type": "string",
@@ -5034,7 +5129,7 @@
       "members": [
         {
           "default": "",
-          "document": "并发执行数量",
+          "document": "并发执行数量，所有进程并发执行总数最小值1，最大值50",
           "member": "uint64",
           "name": "ConcurrentExecutions",
           "required": false,
@@ -5043,7 +5138,7 @@
         },
         {
           "default": "",
-          "document": "启动路径：/local/game/ 或 C:\\game\\",
+          "document": "启动路径：Linux路径/local/game/ 或WIndows路径C:\\game\\，最小长度1，最大长度1024",
           "member": "string",
           "name": "LaunchPath",
           "required": false,
@@ -5052,7 +5147,7 @@
         },
         {
           "default": "",
-          "document": "启动参数",
+          "document": "启动参数，最小长度0，最大长度1024",
           "member": "string",
           "name": "Parameters",
           "required": false,
@@ -5067,7 +5162,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务舰队ID",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -5083,7 +5178,7 @@
         },
         {
           "default": "",
-          "document": "权重",
+          "document": "权重，最小值0，最大值10，默认值5",
           "member": "int64",
           "name": "Weight",
           "required": true,
@@ -5117,7 +5212,7 @@
         },
         {
           "default": "",
-          "document": "扩展策略，为空或者AUTO_SCALING",
+          "document": "服务器舰队扩展策略，值为[\"AUTO_SCALING\"]",
           "member": "string",
           "name": "Actions",
           "required": false,
@@ -5150,7 +5245,7 @@
       "members": [
         {
           "default": "",
-          "document": "开始部署游戏服务器会话的唯一标识符",
+          "document": "开始部署游戏服务器会话的唯一标识符，最大值48个ASCII字符，模式：[a-zA-Z0-9-]+",
           "member": "string",
           "name": "PlacementId",
           "required": true,
@@ -5166,7 +5261,7 @@
         },
         {
           "default": "",
-          "document": "游戏服务器允许同时连接到游戏会话的最大玩家数量",
+          "document": "游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额",
           "member": "uint64",
           "name": "MaximumPlayerSessionCount",
           "required": true,
@@ -5190,7 +5285,7 @@
         },
         {
           "default": "",
-          "document": "游戏服务器会话数据",
+          "document": "游戏服务器会话数据，最大长度不超过4096个ASCII字符",
           "member": "string",
           "name": "GameServerSessionData",
           "required": false,
@@ -5198,7 +5293,7 @@
         },
         {
           "default": "",
-          "document": "游戏服务器会话名称",
+          "document": "游戏服务器会话名称，最大长度不超过4096个ASCII字符",
           "member": "string",
           "name": "GameServerSessionName",
           "required": false,
@@ -5247,7 +5342,7 @@
         },
         {
           "default": "",
-          "document": "服务器舰队扩展策略，为空或者AUTO_SCALING",
+          "document": "服务器舰队扩展策略，值为[\"AUTO_SCALING\"]",
           "member": "string",
           "name": "Actions",
           "required": false,
@@ -5435,7 +5530,7 @@
         },
         {
           "default": "",
-          "document": "服务器舰队描述",
+          "document": "服务器舰队描述，最小长度0，最大长度100",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -5443,7 +5538,7 @@
         },
         {
           "default": "",
-          "document": "服务器舰队名称",
+          "document": "服务器舰队名称，最小长度1，最大长度50",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5451,7 +5546,7 @@
         },
         {
           "default": "",
-          "document": "新建游戏会话保护策略",
+          "document": "保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection",
           "member": "string",
           "name": "NewGameSessionProtectionPolicy",
           "required": false,
@@ -5467,7 +5562,7 @@
         },
         {
           "default": "",
-          "document": "时限保护超时时间，默认60分钟",
+          "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效",
           "member": "int64",
           "name": "GameServerSessionProtectionTimeLimit",
           "required": false,
@@ -5480,7 +5575,7 @@
       "document": "UpdateFleetAttributes返回参数结构体",
       "members": [
         {
-          "document": "服务部署Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器舰队Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetId",
           "type": "string",
@@ -5500,7 +5595,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务部署ID",
+          "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
           "required": true,
@@ -5516,7 +5611,7 @@
         },
         {
           "default": "",
-          "document": "服务器实例数最小限制",
+          "document": "服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1",
           "member": "uint64",
           "name": "MinSize",
           "required": false,
@@ -5524,7 +5619,7 @@
         },
         {
           "default": "",
-          "document": "服务器实例数最大限制",
+          "document": "服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额",
           "member": "uint64",
           "name": "MaxSize",
           "required": false,
@@ -5532,7 +5627,7 @@
         },
         {
           "default": "",
-          "document": "服务器伸缩容间隔",
+          "document": "服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10",
           "member": "uint64",
           "name": "ScalingInterval",
           "required": false,
@@ -5545,12 +5640,46 @@
       "document": "UpdateFleetCapacity返回参数结构体",
       "members": [
         {
-          "document": "服务部署ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器舰队ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetId",
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFleetNameRequest": {
+      "document": "UpdateFleetName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器舰队 Id",
+          "member": "string",
+          "name": "FleetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器舰队名称，最小长度1，最大长度50",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFleetNameResponse": {
+      "document": "UpdateFleetName返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5622,7 +5751,7 @@
         },
         {
           "default": "",
-          "document": "目的服务部署（可为别名）列表",
+          "document": "目的服务器舰队（可为别名）列表",
           "member": "GameServerSessionQueueDestination",
           "name": "Destinations",
           "required": false,
@@ -5695,7 +5824,7 @@
         },
         {
           "default": "",
-          "document": "玩家会话创建策略（ACCEPT_ALL,DENY_ALL）",
+          "document": "玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）",
           "member": "string",
           "name": "PlayerSessionCreationPolicy",
           "required": false,
@@ -5703,7 +5832,7 @@
         },
         {
           "default": "",
-          "document": "保护策略(NoProtection,TimeLimitProtection,FullProtection)",
+          "document": "保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)",
           "member": "string",
           "name": "ProtectionPolicy",
           "required": false,

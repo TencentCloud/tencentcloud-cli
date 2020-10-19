@@ -7,9 +7,9 @@
       "output": "BatchModifyDomainInfoResponse"
     },
     "CheckBatchStatus": {
-      "document": "本接口 ( CheckBatchStatus ) 用于检查批量任务状态 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。\n\n默认接口请求频率限制：20次/秒。",
       "input": "CheckBatchStatusRequest",
-      "name": "检查批量任务状态",
+      "name": "查询批量操作日志状态",
       "output": "CheckBatchStatusResponse"
     },
     "CheckDomain": {
@@ -23,6 +23,18 @@
       "input": "CreateDomainBatchRequest",
       "name": "批量注册域名",
       "output": "CreateDomainBatchResponse"
+    },
+    "CreateTemplate": {
+      "document": "本接口 ( CreateTemplate ) 用于添加域名信息模板 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "CreateTemplateRequest",
+      "name": "添加域名信息模板",
+      "output": "CreateTemplateResponse"
+    },
+    "DeleteTemplate": {
+      "document": "本接口 ( DeleteTemplate ) 用于删除域名信息模板。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "DeleteTemplateRequest",
+      "name": "删除域名信息模板",
+      "output": "DeleteTemplateResponse"
     },
     "DescribeDomainBaseInfo": {
       "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。\n\n默认接口请求频率限制：20次/秒。\n",
@@ -48,11 +60,29 @@
       "name": "获取模板列表",
       "output": "DescribeTemplateListResponse"
     },
+    "ModifyDomainDNSBatch": {
+      "document": "本接口 ( ModifyDomainDNSBatch) 用于批量修改域名DNS信息 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "ModifyDomainDNSBatchRequest",
+      "name": "批量修改域名DNS信息",
+      "output": "ModifyDomainDNSBatchResponse"
+    },
     "ModifyDomainOwnerBatch": {
       "document": "本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。\n\n默认接口请求频率限制：20次/秒。",
       "input": "ModifyDomainOwnerBatchRequest",
       "name": "域名批量账号间转移",
       "output": "ModifyDomainOwnerBatchResponse"
+    },
+    "RenewDomainBatch": {
+      "document": "本接口 ( RenewDomainBatch ) 用于批量续费域名 。\n\n默认接口请求频率限制：20次/秒。\n",
+      "input": "RenewDomainBatchRequest",
+      "name": "批量域名续费",
+      "output": "RenewDomainBatchResponse"
+    },
+    "SetDomainAutoRenew": {
+      "document": "本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "SetDomainAutoRenewRequest",
+      "name": "设置域名自动续费",
+      "output": "SetDomainAutoRenewResponse"
     },
     "TransferInDomainBatch": {
       "document": "本接口 ( TransferInDomainBatch ) 用于批量转入域名 。\n\n默认接口请求频率限制：20次/秒。",
@@ -71,6 +101,12 @@
       "input": "UpdateProhibitionBatchRequest",
       "name": "批量禁止域名更新",
       "output": "UpdateProhibitionBatchResponse"
+    },
+    "UploadImage": {
+      "document": "本接口 ( UploadImage ) 用于上传资质照片 。\n\n默认接口请求频率限制：20次/秒。",
+      "input": "UploadImageRequest",
+      "name": "上传资质照片",
+      "output": "UploadImageResponse"
     }
   },
   "metadata": {
@@ -168,7 +204,7 @@
         },
         {
           "default": "",
-          "document": "证件类型。",
+          "document": "证件类型。\nSFZ: 身份证。\nHZ: 护照。\nTXZ: 港澳居民来往内地通行证。\nTWSFZ: 台湾居民来往大陆通行证。\nGWSFZ: 外国人永久居留身份证。\nORG: 组织机构代码证\nYYZZ: 工商营业执照。\nTYDMZ: 统一社会信用代码证书。\nBDDH: 部队代号\nJDXKZ: 军队单位对外有偿服务许可证。\nSYZS: 事业单位法人证书。\nGWCZDJZ: 外国企业常驻代表机构登记证。\nSTDJZ: 社会团体法人登记证书。\nZJDJZ: 宗教活动场所登记证。\nMBDJZ: 民办非企业单位登记证书。\nJJDJZ: 基金会法人登记证书。\nLSXKZ: 律师事务所执业许可证。\nGWZHDJZ: 外国在华文化中心登记证。\nGWLYDJZ: 外国政府旅游部门常驻代表机构批准登记证。\nSFXKZ: 司法鉴定许可证\nGWJGZJ: 外国机构证件。\nSHFWJGZ: 社会服务机构登记证书。\nMBXXXKZ: 民办学校办学许可证。\nYLJGXKZ: 医疗机构执业许可证。\nGAJZZ: 港澳居住证\nTWJZZ: 台湾居住证。\nQTTYDM: 其他-统一社会信用代码证书。\nGZJGZY: 公证机构执业证。",
           "member": "string",
           "name": "CertificateType",
           "required": true,
@@ -192,7 +228,7 @@
       "members": [
         {
           "default": "",
-          "document": "批量任务id数组，最多 200 个",
+          "document": "操作日志 ID数组，最多 200 个",
           "member": "uint64",
           "name": "LogIds",
           "required": true,
@@ -543,6 +579,73 @@
           "type": "int",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTemplateRequest": {
+      "document": "CreateTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "联系人信息",
+          "member": "ContactInfo",
+          "name": "ContactInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "证件信息",
+          "member": "CertificateInfo",
+          "name": "CertificateInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTemplateResponse": {
+      "document": "CreateTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "模板信息",
+          "member": "TemplateInfo",
+          "name": "Template",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTemplateRequest": {
+      "document": "DeleteTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTemplateResponse": {
+      "document": "DeleteTemplate返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -938,6 +1041,47 @@
       ],
       "usage": "out"
     },
+    "ModifyDomainDNSBatchRequest": {
+      "document": "ModifyDomainDNSBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量操作的域名。",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名DNS 数组。",
+          "member": "string",
+          "name": "Dns",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainDNSBatchResponse": {
+      "document": "ModifyDomainDNSBatch返回参数结构体",
+      "members": [
+        {
+          "document": "日志ID。",
+          "member": "uint64",
+          "name": "LogId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDomainOwnerBatchRequest": {
       "document": "ModifyDomainOwnerBatch请求参数结构体",
       "members": [
@@ -1029,6 +1173,89 @@
         }
       ],
       "usage": "out"
+    },
+    "RenewDomainBatchRequest": {
+      "document": "RenewDomainBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名续费的年限。",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "批量续费的域名。",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "付费模式 0手动在线付费，1使用余额付费。",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewDomainBatchResponse": {
+      "document": "RenewDomainBatch返回参数结构体",
+      "members": [
+        {
+          "document": "操作日志ID。",
+          "member": "int64",
+          "name": "LogId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetDomainAutoRenewRequest": {
+      "document": "SetDomainAutoRenew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID。",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "AutoRenew 有三个可选值：\n 0：不设置自动续费\n1：设置自动续费\n2：设置到期后不续费",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetDomainAutoRenewResponse": {
+      "document": "SetDomainAutoRenew返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TemplateInfo": {
       "document": "Template数据",
@@ -1263,6 +1490,39 @@
           "member": "uint64",
           "name": "LogId",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadImageRequest": {
+      "document": "UploadImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资质照片，照片的base64编码。",
+          "member": "string",
+          "name": "ImageFile",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadImageResponse": {
+      "document": "UploadImage返回参数结构体",
+      "members": [
+        {
+          "document": "资质照片地址。",
+          "member": "string",
+          "name": "AccessUrl",
+          "type": "string",
           "value_allowed_null": false
         },
         {

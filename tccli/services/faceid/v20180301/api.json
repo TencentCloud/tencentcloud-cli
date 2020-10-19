@@ -383,7 +383,7 @@
       "members": [
         {
           "default": "",
-          "document": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\nImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按照ImageUrl>ImageBase64的优先级使用参数。",
+          "document": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。\nImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按照ImageUrl>ImageBase64的优先级使用参数。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -557,7 +557,7 @@
         },
         {
           "default": "",
-          "document": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。",
+          "document": "用于人脸比对的照片，图片的Base64值；\nBase64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1215,7 +1215,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "业务核验结果，如下几个结果码会计费",
+          "document": "业务核验结果，参考https://cloud.tencent.com/document/product/1007/47912",
           "member": "string",
           "name": "Result",
           "type": "string",
@@ -1294,7 +1294,7 @@
         },
         {
           "default": "",
-          "document": "CompareLib为上传照片比对时必传，base64后图片最大8MB。",
+          "document": "CompareLib为上传照片比对时必传，Base64后图片最大8MB。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1383,7 +1383,7 @@
         },
         {
           "default": "",
-          "document": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。",
+          "document": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1537,7 +1537,7 @@
         },
         {
           "default": "",
-          "document": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。",
+          "document": "用于人脸比对的照片，图片的Base64值；\nBase64编码后的图片数据大小不超过3M，仅支持jpg、png格式。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
           "member": "string",
           "name": "ImageBase64",
           "required": true,
@@ -1592,7 +1592,7 @@
       "members": [
         {
           "default": "",
-          "document": "用于人脸比对的照片，图片的BASE64值；\nBASE64编码后的图片数据大小不超过3M，仅支持jpg、png格式。",
+          "document": "用于人脸比对的照片，图片的Base64值；\nBase64编码后的图片数据大小不超过3M，仅支持jpg、png格式。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
           "member": "string",
           "name": "ImageBase64",
           "required": true,
@@ -1600,7 +1600,7 @@
         },
         {
           "default": "",
-          "document": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。",
+          "document": "用于活体检测的视频，视频的Base64值；\nBase64编码后的大小不超过8M，支持mp4、avi、flv格式。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
           "member": "string",
           "name": "VideoBase64",
           "required": true,

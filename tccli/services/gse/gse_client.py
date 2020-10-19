@@ -788,7 +788,7 @@ def doAttachCcnInstances(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDetachCcnInstances(args, parsed_globals):
+def doGetUploadCredentials(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -802,9 +802,9 @@ def doDetachCcnInstances(args, parsed_globals):
     client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DetachCcnInstancesRequest()
+    model = models.GetUploadCredentialsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DetachCcnInstances(model)
+    rsp = client.GetUploadCredentials(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -938,6 +938,31 @@ def doDescribeAsset(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAssetSystems(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAssetSystemsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAssetSystems(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateFleet(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1063,7 +1088,7 @@ def doUpdateFleetAttributes(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetUploadCredentials(args, parsed_globals):
+def doDetachCcnInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1077,9 +1102,9 @@ def doGetUploadCredentials(args, parsed_globals):
     client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetUploadCredentialsRequest()
+    model = models.DetachCcnInstancesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetUploadCredentials(model)
+    rsp = client.DetachCcnInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1463,6 +1488,31 @@ def doSetServerWeight(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpdateFleetName(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.GseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateFleetNameRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UpdateFleetName(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeFleetUtilization(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1580,18 +1630,19 @@ ACTION_MAP = {
     "StartGameServerSessionPlacement": doStartGameServerSessionPlacement,
     "DescribeInstanceLimit": doDescribeInstanceLimit,
     "AttachCcnInstances": doAttachCcnInstances,
-    "DetachCcnInstances": doDetachCcnInstances,
+    "GetUploadCredentials": doGetUploadCredentials,
     "DeleteScalingPolicy": doDeleteScalingPolicy,
     "CreateAlias": doCreateAlias,
     "CreateGameServerSession": doCreateGameServerSession,
     "DescribePlayerSessions": doDescribePlayerSessions,
     "DescribeAsset": doDescribeAsset,
+    "DescribeAssetSystems": doDescribeAssetSystems,
     "CreateFleet": doCreateFleet,
     "StopGameServerSessionPlacement": doStopGameServerSessionPlacement,
     "UpdateGameServerSessionQueue": doUpdateGameServerSessionQueue,
     "GetInstanceAccess": doGetInstanceAccess,
     "UpdateFleetAttributes": doUpdateFleetAttributes,
-    "GetUploadCredentials": doGetUploadCredentials,
+    "DetachCcnInstances": doDetachCcnInstances,
     "DescribeFleetAttributes": doDescribeFleetAttributes,
     "GetUploadFederationToken": doGetUploadFederationToken,
     "ResolveAlias": doResolveAlias,
@@ -1607,6 +1658,7 @@ ACTION_MAP = {
     "PutScalingPolicy": doPutScalingPolicy,
     "ListAliases": doListAliases,
     "SetServerWeight": doSetServerWeight,
+    "UpdateFleetName": doUpdateFleetName,
     "DescribeFleetUtilization": doDescribeFleetUtilization,
     "UpdateGameServerSession": doUpdateGameServerSession,
     "UpdateFleetPortSettings": doUpdateFleetPortSettings,

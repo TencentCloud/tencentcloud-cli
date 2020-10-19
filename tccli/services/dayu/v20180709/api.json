@@ -192,6 +192,12 @@
       "name": "获取基础防护黑洞阈值",
       "output": "DescribeBasicDeviceThresholdResponse"
     },
+    "DescribeBizTrend": {
+      "document": "获取业务流量曲线",
+      "input": "DescribeBizTrendRequest",
+      "name": "获取业务流量曲线",
+      "output": "DescribeBizTrendResponse"
+    },
     "DescribeCCAlarmThreshold": {
       "document": "获取高防包、高防IP、高防IP专业版、棋牌盾产品设置CC攻击的告警通知阈值",
       "input": "DescribeCCAlarmThresholdRequest",
@@ -3847,6 +3853,110 @@
           "member": "uint64",
           "name": "Threshold",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizTrendRequest": {
+      "document": "DescribeBizTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计周期，可取值300，1800，3600，21600，86400，单位秒",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计方式，可取值max, min, avg, sum, 如统计纬度是流量速率或包量速率，仅可取值max",
+          "member": "string",
+          "name": "Statistics",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计纬度，可取值connum, new_conn, inactive_conn, intraffic, outtraffic, inpkg, outpkg, qps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
+          "member": "ProtocolPort",
+          "name": "ProtoInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "统计纬度为qps时，可选特定域名查询",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizTrendResponse": {
+      "document": "DescribeBizTrend返回参数结构体",
+      "members": [
+        {
+          "document": "曲线图各个时间点的值",
+          "member": "float",
+          "name": "DataList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计纬度",
+          "member": "string",
+          "name": "MetricName",
+          "type": "string",
           "value_allowed_null": false
         },
         {
