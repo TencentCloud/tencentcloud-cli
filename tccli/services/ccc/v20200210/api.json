@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateSDKLoginToken": {
+      "document": "创建 SDK 登录 Token。",
+      "input": "CreateSDKLoginTokenRequest",
+      "name": "创建 SDK 登录 Token",
+      "output": "CreateSDKLoginTokenResponse"
+    },
     "DescribeTelCdr": {
       "document": "获取电话服务记录与录音",
       "input": "DescribeTelCdrRequest",
@@ -14,6 +20,54 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "CreateSDKLoginTokenRequest": {
+      "document": "CreateSDKLoginToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "坐席账号。",
+          "member": "string",
+          "name": "SeatUserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSDKLoginTokenResponse": {
+      "document": "CreateSDKLoginToken返回参数结构体",
+      "members": [
+        {
+          "document": "SDK 登录 Token。",
+          "member": "string",
+          "name": "Token",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "过期时间戳，Unix 时间戳。",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTelCdrRequest": {
       "document": "DescribeTelCdr请求参数结构体",
       "members": [

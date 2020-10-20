@@ -348,6 +348,12 @@
       "name": "查询迁移校验任务进度",
       "output": "QueryMigrationCheckProcessResponse"
     },
+    "RecycleDBInstance": {
+      "document": "本接口（RecycleDBInstance）用于主动回收已下线的SQLSERVER实例",
+      "input": "RecycleDBInstanceRequest",
+      "name": "主动回收实例",
+      "output": "RecycleDBInstanceResponse"
+    },
     "RemoveBackups": {
       "document": "本接口（RemoveBackups）可以删除用户手动创建的备份文件。待删除的备份策略可以是实例备份，也可以是多库备份。",
       "input": "RemoveBackupsRequest",
@@ -5798,6 +5804,39 @@
         }
       ],
       "usage": "in"
+    },
+    "RecycleDBInstanceRequest": {
+      "document": "RecycleDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecycleDBInstanceResponse": {
+      "document": "RecycleDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "流程id",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RegionInfo": {
       "document": "地域信息",

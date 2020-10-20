@@ -1837,7 +1837,7 @@
         },
         {
           "document": "任务实例统计指标",
-          "member": "TaskInstanceView",
+          "member": "TaskInstanceMetrics",
           "name": "TaskInstanceMetrics",
           "type": "object",
           "value_allowed_null": false
@@ -1854,6 +1854,13 @@
           "member": "Tag",
           "name": "Tags",
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "下一步动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NextAction",
+          "type": "string",
           "value_allowed_null": true
         },
         {
