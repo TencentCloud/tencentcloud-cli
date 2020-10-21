@@ -288,6 +288,31 @@ def doCreateRule(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeExclusiveClusters(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeExclusiveClustersRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeExclusiveClusters(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAutoRewrite(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -913,6 +938,31 @@ def doDescribeTaskStatus(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeregisterTargets(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeregisterTargetsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeregisterTargets(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeTargetGroups(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1263,7 +1313,7 @@ def doDescribeClassicalLBHealthStatus(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeregisterTargets(args, parsed_globals):
+def doDescribeClusterResources(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1277,9 +1327,9 @@ def doDeregisterTargets(args, parsed_globals):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeregisterTargetsRequest()
+    model = models.DescribeClusterResourcesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeregisterTargets(model)
+    rsp = client.DescribeClusterResources(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1560,6 +1610,7 @@ ACTION_MAP = {
     "BatchDeregisterTargets": doBatchDeregisterTargets,
     "RegisterTargetGroupInstances": doRegisterTargetGroupInstances,
     "CreateRule": doCreateRule,
+    "DescribeExclusiveClusters": doDescribeExclusiveClusters,
     "AutoRewrite": doAutoRewrite,
     "ModifyDomain": doModifyDomain,
     "DeleteLoadBalancerListeners": doDeleteLoadBalancerListeners,
@@ -1585,6 +1636,7 @@ ACTION_MAP = {
     "DeleteRewrite": doDeleteRewrite,
     "ModifyTargetWeight": doModifyTargetWeight,
     "DescribeTaskStatus": doDescribeTaskStatus,
+    "DeregisterTargets": doDeregisterTargets,
     "DescribeTargetGroups": doDescribeTargetGroups,
     "ModifyRule": doModifyRule,
     "DeleteRule": doDeleteRule,
@@ -1599,7 +1651,7 @@ ACTION_MAP = {
     "ModifyTargetPort": doModifyTargetPort,
     "ModifyTargetGroupAttribute": doModifyTargetGroupAttribute,
     "DescribeClassicalLBHealthStatus": doDescribeClassicalLBHealthStatus,
-    "DeregisterTargets": doDeregisterTargets,
+    "DescribeClusterResources": doDescribeClusterResources,
     "ModifyLoadBalancerAttributes": doModifyLoadBalancerAttributes,
     "CreateClsLogSet": doCreateClsLogSet,
     "DescribeClassicalLBByInstanceId": doDescribeClassicalLBByInstanceId,

@@ -3481,6 +3481,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AccessMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -38,6 +38,31 @@ def doCreateCluster(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreatePrometheusDashboard(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreatePrometheusDashboardRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreatePrometheusDashboard(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeImages(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -113,7 +138,7 @@ def doDeleteClusterEndpoint(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateClusterInstances(args, parsed_globals):
+def doDeleteCluster(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -127,9 +152,9 @@ def doCreateClusterInstances(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterInstancesRequest()
+    model = models.DeleteClusterRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateClusterInstances(model)
+    rsp = client.DeleteCluster(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -238,7 +263,7 @@ def doDescribeClusterEndpointVipStatus(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteCluster(args, parsed_globals):
+def doCreateClusterInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -252,9 +277,9 @@ def doDeleteCluster(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterRequest()
+    model = models.CreateClusterInstancesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteCluster(model)
+    rsp = client.CreateClusterInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -505,6 +530,31 @@ def doCreateClusterEndpoint(args, parsed_globals):
     model = models.CreateClusterEndpointRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateClusterEndpoint(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePrometheusAgentInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePrometheusAgentInstancesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePrometheusAgentInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -850,15 +900,16 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateCluster": doCreateCluster,
+    "CreatePrometheusDashboard": doCreatePrometheusDashboard,
     "DescribeImages": doDescribeImages,
     "ModifyClusterAsGroupAttribute": doModifyClusterAsGroupAttribute,
     "DeleteClusterEndpoint": doDeleteClusterEndpoint,
-    "CreateClusterInstances": doCreateClusterInstances,
+    "DeleteCluster": doDeleteCluster,
     "ModifyClusterAttribute": doModifyClusterAttribute,
     "DeleteClusterAsGroups": doDeleteClusterAsGroups,
     "DeleteClusterRoute": doDeleteClusterRoute,
     "DescribeClusterEndpointVipStatus": doDescribeClusterEndpointVipStatus,
-    "DeleteCluster": doDeleteCluster,
+    "CreateClusterInstances": doCreateClusterInstances,
     "CreateClusterAsGroup": doCreateClusterAsGroup,
     "AcquireClusterAdminRole": doAcquireClusterAdminRole,
     "DescribeExistedInstances": doDescribeExistedInstances,
@@ -869,6 +920,7 @@ ACTION_MAP = {
     "DescribeClusterEndpointStatus": doDescribeClusterEndpointStatus,
     "DescribeClusterAsGroups": doDescribeClusterAsGroups,
     "CreateClusterEndpoint": doCreateClusterEndpoint,
+    "DescribePrometheusAgentInstances": doDescribePrometheusAgentInstances,
     "DescribeClusterRouteTables": doDescribeClusterRouteTables,
     "DescribeRegions": doDescribeRegions,
     "AddExistedInstances": doAddExistedInstances,

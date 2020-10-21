@@ -54,6 +54,12 @@
       "name": "创建集群路由表",
       "output": "CreateClusterRouteTableResponse"
     },
+    "CreatePrometheusDashboard": {
+      "document": "创建grafana监控面板",
+      "input": "CreatePrometheusDashboardRequest",
+      "name": "创建grafana监控面板",
+      "output": "CreatePrometheusDashboardResponse"
+    },
     "DeleteCluster": {
       "document": "删除集群(YUNAPI V3版本)",
       "input": "DeleteClusterRequest",
@@ -167,6 +173,12 @@
       "input": "DescribeImagesRequest",
       "name": "获取镜像信息",
       "output": "DescribeImagesResponse"
+    },
+    "DescribePrometheusAgentInstances": {
+      "document": "获取关联目标集群的实例列表",
+      "input": "DescribePrometheusAgentInstancesRequest",
+      "name": "获取关联目标集群的实例列表",
+      "output": "DescribePrometheusAgentInstancesResponse"
     },
     "DescribeRegions": {
       "document": "获取容器服务支持的所有地域",
@@ -626,6 +638,15 @@
           "document": "审计日志上传到的topic",
           "member": "string",
           "name": "AuditLogTopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区分单网卡多IP模式和独立网卡模式",
+          "member": "string",
+          "name": "VpcCniType",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1481,6 +1502,48 @@
     },
     "CreateClusterRouteTableResponse": {
       "document": "CreateClusterRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusDashboardRequest": {
+      "document": "CreatePrometheusDashboard请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "面板组名称",
+          "member": "string",
+          "name": "DashboardName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "面板列表\n每一项是一个grafana dashboard的json定义",
+          "member": "string",
+          "name": "Contents",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusDashboardResponse": {
+      "document": "CreatePrometheusDashboard返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2447,6 +2510,39 @@
           "document": "镜像信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ImageInstance",
           "name": "ImageInstanceSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAgentInstancesRequest": {
+      "document": "DescribePrometheusAgentInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id\n可以是tke, eks, edge的集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAgentInstancesResponse": {
+      "document": "DescribePrometheusAgentInstances返回参数结构体",
+      "members": [
+        {
+          "document": "关联该集群的实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Instances",
           "type": "list",
           "value_allowed_null": true
         },

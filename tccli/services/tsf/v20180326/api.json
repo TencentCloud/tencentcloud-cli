@@ -1477,6 +1477,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3302,6 +3311,14 @@
           "name": "NamespaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启高可用",
+          "member": "string",
+          "name": "IsHaEnable",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4377,6 +4394,14 @@
           "name": "DeployAgent",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "节点调度策略。若不指定改参数，则默认不使用节点调度策略。",
+          "member": "SchedulingStrategy",
+          "name": "SchedulingStrategy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4434,6 +4459,14 @@
           "name": "DeployDesc",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否允许强制启动",
+          "member": "bool",
+          "name": "ForceStart",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5906,6 +5939,14 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "状态过滤，online、offline、single_online",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9368,6 +9409,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启高可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IsHaEnable",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10189,6 +10239,21 @@
         }
       ],
       "type": "object"
+    },
+    "SchedulingStrategy": {
+      "document": "tsf 容器集群节点调度策略",
+      "members": [
+        {
+          "default": "",
+          "document": "NONE：不使用调度策略；CROSS_AZ：跨可用区部署\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ServerlessGroup": {
       "document": "Serverless部署组信息",
