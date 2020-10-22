@@ -3490,6 +3490,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "linux,android,liteos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

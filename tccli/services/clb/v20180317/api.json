@@ -1906,6 +1906,14 @@
         },
         {
           "default": "",
+          "document": "指定Vip申请负载均衡",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "独占集群信息",
           "member": "ExclusiveCluster",
           "name": "ExclusiveCluster",
