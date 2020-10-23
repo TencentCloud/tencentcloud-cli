@@ -104,20 +104,6 @@
       "document": "TextToVoice返回参数结构体",
       "members": [
         {
-          "document": "base64编码的wav/mp3音频数据",
-          "member": "string",
-          "name": "Audio",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "一次请求对应一个SessionId",
-          "member": "string",
-          "name": "SessionId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

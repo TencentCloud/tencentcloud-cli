@@ -900,6 +900,22 @@
           "name": "ProductCate",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入",
+          "member": "int64",
+          "name": "AccessMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "linux,android,liteos",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

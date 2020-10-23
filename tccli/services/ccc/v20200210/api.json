@@ -145,15 +145,6 @@
       "members": [
         {
           "default": "",
-          "document": "坐席电话号码",
-          "member": "string",
-          "name": "Phone",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "坐席名称",
           "member": "string",
           "name": "Name",
@@ -166,6 +157,15 @@
           "document": "坐席邮箱",
           "member": "string",
           "name": "Mail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席电话号码",
+          "member": "string",
+          "name": "Phone",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -195,6 +195,15 @@
           "name": "SkillGroupNameList",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StaffNumber",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
