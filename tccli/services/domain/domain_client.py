@@ -188,6 +188,31 @@ def doCheckDomain(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeBatchOperationLogDetails(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DomainClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBatchOperationLogDetailsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeBatchOperationLogDetails(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -213,7 +238,7 @@ def doDeleteTemplate(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSetDomainAutoRenew(args, parsed_globals):
+def doDescribeTemplateList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -227,9 +252,9 @@ def doSetDomainAutoRenew(args, parsed_globals):
     client = mod.DomainClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SetDomainAutoRenewRequest()
+    model = models.DescribeTemplateListRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.SetDomainAutoRenew(model)
+    rsp = client.DescribeTemplateList(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -363,7 +388,7 @@ def doTransferProhibitionBatch(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTemplateList(args, parsed_globals):
+def doDescribeBatchOperationLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -377,9 +402,9 @@ def doDescribeTemplateList(args, parsed_globals):
     client = mod.DomainClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTemplateListRequest()
+    model = models.DescribeBatchOperationLogsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeTemplateList(model)
+    rsp = client.DescribeBatchOperationLogs(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -463,6 +488,31 @@ def doRenewDomainBatch(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doSetDomainAutoRenew(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DomainClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetDomainAutoRenewRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.SetDomainAutoRenew(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 CLIENT_MAP = {
     "v20180808": domain_client_v20180808,
 
@@ -481,17 +531,19 @@ ACTION_MAP = {
     "CreateDomainBatch": doCreateDomainBatch,
     "DescribeDomainBaseInfo": doDescribeDomainBaseInfo,
     "CheckDomain": doCheckDomain,
+    "DescribeBatchOperationLogDetails": doDescribeBatchOperationLogDetails,
     "DeleteTemplate": doDeleteTemplate,
-    "SetDomainAutoRenew": doSetDomainAutoRenew,
+    "DescribeTemplateList": doDescribeTemplateList,
     "ModifyDomainDNSBatch": doModifyDomainDNSBatch,
     "TransferInDomainBatch": doTransferInDomainBatch,
     "BatchModifyDomainInfo": doBatchModifyDomainInfo,
     "DescribeDomainPriceList": doDescribeDomainPriceList,
     "TransferProhibitionBatch": doTransferProhibitionBatch,
-    "DescribeTemplateList": doDescribeTemplateList,
+    "DescribeBatchOperationLogs": doDescribeBatchOperationLogs,
     "UploadImage": doUploadImage,
     "UpdateProhibitionBatch": doUpdateProhibitionBatch,
     "RenewDomainBatch": doRenewDomainBatch,
+    "SetDomainAutoRenew": doSetDomainAutoRenew,
 
 }
 

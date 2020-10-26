@@ -106,6 +106,7 @@ include tccli/services/soe/v20180724/api.json
 include tccli/services/solar/v20181011/api.json
 include tccli/services/sqlserver/v20180328/api.json
 include tccli/services/ssl/v20191205/api.json
+include tccli/services/sslpod/v20190605/api.json
 include tccli/services/ssm/v20190923/api.json
 include tccli/services/sts/v20180813/api.json
 include tccli/services/taf/v20200210/api.json

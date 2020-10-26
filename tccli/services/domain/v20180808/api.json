@@ -36,6 +36,18 @@
       "name": "删除域名信息模板",
       "output": "DeleteTemplateResponse"
     },
+    "DescribeBatchOperationLogDetails": {
+      "document": "本接口 ( DescribeBatchOperationLogDetails ) 用于获取批量操作日志详情。",
+      "input": "DescribeBatchOperationLogDetailsRequest",
+      "name": "批量操作日志详情",
+      "output": "DescribeBatchOperationLogDetailsResponse"
+    },
+    "DescribeBatchOperationLogs": {
+      "document": "本接口 ( DescribeBatchOperationLogs ) 用于获取批量操作日志 。",
+      "input": "DescribeBatchOperationLogsRequest",
+      "name": "批量操作日志",
+      "output": "DescribeBatchOperationLogsResponse"
+    },
     "DescribeDomainBaseInfo": {
       "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。\n\n默认接口请求频率限制：20次/秒。\n",
       "input": "DescribeDomainBaseInfoRequest",
@@ -97,7 +109,7 @@
       "output": "TransferProhibitionBatchResponse"
     },
     "UpdateProhibitionBatch": {
-      "document": "本接口 ( UpdateProhibitionBatch ) 用于批量设置禁止域名更新 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( UpdateProhibitionBatch ) 用于批量设置禁止域名更新 。",
       "input": "UpdateProhibitionBatchRequest",
       "name": "批量禁止域名更新",
       "output": "UpdateProhibitionBatchResponse"
@@ -204,7 +216,7 @@
         },
         {
           "default": "",
-          "document": "证件类型。\nSFZ: 身份证。\nHZ: 护照。\nTXZ: 港澳居民来往内地通行证。\nTWSFZ: 中国台湾居民来往大陆通行证。\nGWSFZ: 外国人永久居留身份证。\nORG: 组织机构代码证\nYYZZ: 工商营业执照。\nTYDMZ: 统一社会信用代码证书。\nBDDH: 部队代号\nJDXKZ: 军队单位对外有偿服务许可证。\nSYZS: 事业单位法定代表人证书。\nGWCZDJZ: 外国企业常驻代表机构登记证。\nSTDJZ: 社会团体法定代表人登记证书。\nZJDJZ: 宗教活动场所登记证。\nMBDJZ: 民办非企业单位登记证书。\nJJDJZ: 基金会法定代表人登记证书。\nLSXKZ: 律师事务所执业许可证。\nGWZHDJZ: 外国在华文化中心登记证。\nGWLYDJZ: 外国政府旅游部门常驻代表机构批准登记证。\nSFXKZ: 司法鉴定许可证\nGWJGZJ: 外国机构证件。\nSHFWJGZ: 社会服务机构登记证书。\nMBXXXKZ: 民办学校办学许可证。\nYLJGXKZ: 医疗机构执业许可证。\nGAJZZ: 港澳居住证\nTWJZZ: 中国台湾居住证。\nQTTYDM: 其他-统一社会信用代码证书。\nGZJGZY: 公证机构执业证。",
+          "document": "证件类型。\nSFZ: 身份证。\nHZ: 护照。\nTXZ: 中国港澳居民来往内地通行证。\nTWSFZ: 中国台湾居民来往大陆通行证。\nGWSFZ: 外国人永久居留身份证。\nORG: 组织机构代码证\nYYZZ: 工商营业执照。\nTYDMZ: 统一社会信用代码证书。\nBDDH: 部队代号\nJDXKZ: 军队单位对外有偿服务许可证。\nSYZS: 事业单位法定代表人证书。\nGWCZDJZ: 外国企业常驻代表机构登记证。\nSTDJZ: 社会团体法定代表人登记证书。\nZJDJZ: 宗教活动场所登记证。\nMBDJZ: 民办非企业单位登记证书。\nJJDJZ: 基金会法定代表人登记证书。\nLSXKZ: 律师事务所执业许可证。\nGWZHDJZ: 外国在华文化中心登记证。\nGWLYDJZ: 外国政府旅游部门常驻代表机构批准登记证。\nSFXKZ: 司法鉴定许可证\nGWJGZJ: 外国机构证件。\nSHFWJGZ: 社会服务机构登记证书。\nMBXXXKZ: 民办学校办学许可证。\nYLJGXKZ: 医疗机构执业许可证。\nGAJZZ: 中国港澳居住证。\nTWJZZ: 中国台湾居住证。\nQTTYDM: 其他-统一社会信用代码证书。\nGZJGZY: 公证机构执业证。",
           "member": "string",
           "name": "CertificateType",
           "required": true,
@@ -655,6 +667,110 @@
       ],
       "type": "object"
     },
+    "DescribeBatchOperationLogDetailsRequest": {
+      "document": "DescribeBatchOperationLogDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志ID。",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为200。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchOperationLogDetailsResponse": {
+      "document": "DescribeBatchOperationLogDetails返回参数结构体",
+      "members": [
+        {
+          "document": "总数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DomainBatchDetailSet",
+          "name": "DomainBatchDetailSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchOperationLogsRequest": {
+      "document": "DescribeBatchOperationLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为200。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchOperationLogsResponse": {
+      "document": "DescribeBatchOperationLogs返回参数结构体",
+      "members": [
+        {
+          "document": "总数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DomainBatchLogSet",
+          "name": "DomainBatchLogSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainBaseInfoRequest": {
       "document": "DescribeDomainBaseInfo请求参数结构体",
       "members": [
@@ -947,6 +1063,108 @@
           "document": "注册类型\nepp （腾讯云自有域名）\nxinnet (新网域名)",
           "member": "string",
           "name": "RegistrarType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DomainBatchDetailSet": {
+      "document": "批量操作日志详情",
+      "members": [
+        {
+          "default": "",
+          "document": "详情ID",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行状态：\ndoing 执行中。\nfailed 操作失败。\nsuccess  操作成功。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "string",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DomainBatchLogSet": {
+      "document": "批量操作记录",
+      "members": [
+        {
+          "default": "",
+          "document": "日志ID",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数量",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行状态：\ndoing 执行中。\ndone 执行完成。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交时间",
+          "member": "string",
+          "name": "CreatedOn",
           "required": true,
           "type": "string",
           "value_allowed_null": false
