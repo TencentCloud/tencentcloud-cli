@@ -48,6 +48,12 @@
       "name": "查询备份Rdb下载地址",
       "output": "DescribeBackupUrlResponse"
     },
+    "DescribeCommonDBInstances": {
+      "document": "查询Redis实例列表信息",
+      "input": "DescribeCommonDBInstancesRequest",
+      "name": "查询Redis实例列表信息",
+      "output": "DescribeCommonDBInstancesResponse"
+    },
     "DescribeDBSecurityGroups": {
       "document": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。",
       "input": "DescribeDBSecurityGroupsRequest",
@@ -749,7 +755,7 @@
         },
         {
           "default": "",
-          "document": "实例容量，单位MB， 数值需为1024的整数倍，取值大小以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。",
+          "document": "内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。\nTypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。",
           "member": "uint64",
           "name": "MemSize",
           "required": true,
@@ -781,7 +787,7 @@
         },
         {
           "default": "",
-          "document": "实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。",
+          "document": "实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填。\n密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1061,6 +1067,142 @@
           "document": "内网下载地址（6小时）",
           "member": "string",
           "name": "InnerDownloadUrl",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCommonDBInstancesRequest": {
+      "document": "DescribeCommonDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Vip信息列表",
+          "member": "int64",
+          "name": "VpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "子网id信息列表",
+          "member": "int64",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "计费类型过滤列表；0表示包年包月，1表示按量计费",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例id过滤信息列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例名称过滤信息列表",
+          "member": "string",
+          "name": "InstanceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例状态信息过滤列表",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例vip信息列表",
+          "member": "string",
+          "name": "Vips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "vpc网络统一Id列表",
+          "member": "string",
+          "name": "UniqVpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "子网统一id列表",
+          "member": "string",
+          "name": "UniqSubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数量限制，默认推荐100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCommonDBInstancesResponse": {
+      "document": "DescribeCommonDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例信息",
+          "member": "RedisCommonInstanceList",
+          "name": "InstanceDetails",
           "type": "list",
           "value_allowed_null": false
         },
@@ -5268,6 +5410,138 @@
           "document": "备份是否被锁定，0：未被锁定；1：已被锁定",
           "member": "int64",
           "name": "Locked",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RedisCommonInstanceList": {
+      "document": "单个实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户id",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属项目id",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例接入区域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例接入zone",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例网络id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态信息，0-创建中，1-运行中",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例网络ip",
+          "member": "string",
+          "name": "Vips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例网络端口",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间",
+          "member": "string",
+          "name": "Createtime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费类型，0-按量计费，1-包年包月",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型，0-基础网络，1-VPC网络",
+          "member": "int64",
+          "name": "NetType",
           "required": true,
           "type": "int",
           "value_allowed_null": false

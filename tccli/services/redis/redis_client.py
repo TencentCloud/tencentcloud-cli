@@ -338,7 +338,7 @@ def doDescribeInstanceMonitorTopNCmdTook(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyNetworkConfig(args, parsed_globals):
+def doModifyAutoBackupConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -352,9 +352,9 @@ def doModifyNetworkConfig(args, parsed_globals):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyNetworkConfigRequest()
+    model = models.ModifyAutoBackupConfigRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyNetworkConfig(model)
+    rsp = client.ModifyAutoBackupConfig(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -563,7 +563,7 @@ def doDescribeAutoBackupConfig(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAutoBackupConfig(args, parsed_globals):
+def doModifyNetworkConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -577,9 +577,9 @@ def doModifyAutoBackupConfig(args, parsed_globals):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAutoBackupConfigRequest()
+    model = models.ModifyNetworkConfigRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyAutoBackupConfig(model)
+    rsp = client.ModifyNetworkConfig(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -655,6 +655,31 @@ def doUpgradeInstanceVersion(args, parsed_globals):
     model = models.UpgradeInstanceVersionRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.UpgradeInstanceVersion(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeProductInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeProductInfoRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeProductInfo(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1038,7 +1063,7 @@ def doDescribeInstanceMonitorBigKeyTypeDist(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeProductInfo(args, parsed_globals):
+def doDescribeCommonDBInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1052,9 +1077,9 @@ def doDescribeProductInfo(args, parsed_globals):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeProductInfoRequest()
+    model = models.DescribeCommonDBInstancesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeProductInfo(model)
+    rsp = client.DescribeCommonDBInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1512,7 +1537,7 @@ ACTION_MAP = {
     "DescribeInstanceAccount": doDescribeInstanceAccount,
     "DescribeInstanceDTSInfo": doDescribeInstanceDTSInfo,
     "DescribeInstanceMonitorTopNCmdTook": doDescribeInstanceMonitorTopNCmdTook,
-    "ModifyNetworkConfig": doModifyNetworkConfig,
+    "ModifyAutoBackupConfig": doModifyAutoBackupConfig,
     "ResetPassword": doResetPassword,
     "DestroyPrepaidInstance": doDestroyPrepaidInstance,
     "DescribeInstances": doDescribeInstances,
@@ -1521,10 +1546,11 @@ ACTION_MAP = {
     "DescribeInstanceParamRecords": doDescribeInstanceParamRecords,
     "DisableReplicaReadonly": doDisableReplicaReadonly,
     "DescribeAutoBackupConfig": doDescribeAutoBackupConfig,
-    "ModifyAutoBackupConfig": doModifyAutoBackupConfig,
+    "ModifyNetworkConfig": doModifyNetworkConfig,
     "DescribeInstanceMonitorSIP": doDescribeInstanceMonitorSIP,
     "DescribeInstanceParams": doDescribeInstanceParams,
     "UpgradeInstanceVersion": doUpgradeInstanceVersion,
+    "DescribeProductInfo": doDescribeProductInfo,
     "InquiryPriceRenewInstance": doInquiryPriceRenewInstance,
     "InquiryPriceUpgradeInstance": doInquiryPriceUpgradeInstance,
     "DescribeProjectSecurityGroup": doDescribeProjectSecurityGroup,
@@ -1540,7 +1566,7 @@ ACTION_MAP = {
     "DescribeInstanceMonitorBigKey": doDescribeInstanceMonitorBigKey,
     "DescribeInstanceSecurityGroup": doDescribeInstanceSecurityGroup,
     "DescribeInstanceMonitorBigKeyTypeDist": doDescribeInstanceMonitorBigKeyTypeDist,
-    "DescribeProductInfo": doDescribeProductInfo,
+    "DescribeCommonDBInstances": doDescribeCommonDBInstances,
     "UpgradeInstance": doUpgradeInstance,
     "DescribeInstanceMonitorHotKey": doDescribeInstanceMonitorHotKey,
     "ManualBackupInstance": doManualBackupInstance,

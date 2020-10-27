@@ -1435,6 +1435,14 @@
           "name": "Filter",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源过滤字段，可以按照资源名称、资源ID和标签进行过滤- 资源名称过滤    - Key: 固定字符串 \"resource:name\"    - Values: 资源名称数组（生成包当前仅支持单个名称的过滤）- 资源ID过滤    - Key: 固定字符串 \"resource:resourceId\"    - Values: 生成包ID数组（生成包当前仅支持单个生成包ID的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 \"tag:key\"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 \"tag:key-value\"        - Values: 标签键值对数组，例如 [\"key1:value1\", \"key1:value2\", \"key2:value2\"]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2106,6 +2114,14 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源过滤字段，可以按照资源名称、资源ID和标签进行过滤- 资源名称过滤    - Key: 固定字符串 \"resource:name\"    - Values: 资源名称数组（游戏服务器会话队列支持多个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 \"tag:key\"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 \"tag:key-value\"        - Values: 标签键值对数组，例如 [\"key1:value1\", \"key1:value2\", \"key2:value2\"]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2765,6 +2781,30 @@
         }
       ],
       "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤字段内容",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤属性的 key",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤属性的 values 值",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "FleetAttributes": {
       "document": "服务部署属性",
@@ -4373,6 +4413,14 @@
           "name": "OrderWay",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 \"resource:name\"    - Values: 资源名称数组（舰队当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 \"tag:key\"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 \"tag:key-value\"        - Values: 标签键值对数组，例如 [\"key1:value1\", \"key1:value2\", \"key2:value2\"]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4429,6 +4477,14 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 \"resource:name\"    - Values: 资源名称数组（当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 \"tag:key\"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 \"tag:key-value\"        - Values: 标签键值对数组，例如 [\"key1:value1\", \"key1:value2\", \"key2:value2\"]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

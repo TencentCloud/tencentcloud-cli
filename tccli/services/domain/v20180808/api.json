@@ -1,7 +1,7 @@
 {
   "actions": {
     "BatchModifyDomainInfo": {
-      "document": "本接口 ( BatchModifyDomainInfo ) 用于批量域名信息修改 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( BatchModifyDomainInfo ) 用于批量域名信息修改 。",
       "input": "BatchModifyDomainInfoRequest",
       "name": "批量域名信息修改",
       "output": "BatchModifyDomainInfoResponse"
@@ -25,13 +25,13 @@
       "output": "CreateDomainBatchResponse"
     },
     "CreateTemplate": {
-      "document": "本接口 ( CreateTemplate ) 用于添加域名信息模板 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( CreateTemplate ) 用于添加域名信息模板 。",
       "input": "CreateTemplateRequest",
       "name": "添加域名信息模板",
       "output": "CreateTemplateResponse"
     },
     "DeleteTemplate": {
-      "document": "本接口 ( DeleteTemplate ) 用于删除域名信息模板。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( DeleteTemplate ) 用于删除域名信息模板。",
       "input": "DeleteTemplateRequest",
       "name": "删除域名信息模板",
       "output": "DeleteTemplateResponse"
@@ -55,7 +55,7 @@
       "output": "DescribeDomainBaseInfoResponse"
     },
     "DescribeDomainNameList": {
-      "document": "本接口 (  DescribeDomainNameList ) 获取域名列表。\n\n默认接口请求频率限制：20次/秒。\n",
+      "document": "本接口 (  DescribeDomainNameList ) 获取域名列表。\n",
       "input": "DescribeDomainNameListRequest",
       "name": "获取域名列表",
       "output": "DescribeDomainNameListResponse"
@@ -67,7 +67,7 @@
       "output": "DescribeDomainPriceListResponse"
     },
     "DescribeTemplateList": {
-      "document": "本接口 (DescribeTemplateList) 用于获取模板列表。\n\n默认接口请求频率限制：20次/秒。\n",
+      "document": "本接口 (DescribeTemplateList) 用于获取模板列表。\n",
       "input": "DescribeTemplateListRequest",
       "name": "获取模板列表",
       "output": "DescribeTemplateListResponse"
@@ -79,7 +79,7 @@
       "output": "ModifyDomainDNSBatchResponse"
     },
     "ModifyDomainOwnerBatch": {
-      "document": "本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。",
       "input": "ModifyDomainOwnerBatchRequest",
       "name": "域名批量账号间转移",
       "output": "ModifyDomainOwnerBatchResponse"
@@ -115,7 +115,7 @@
       "output": "UpdateProhibitionBatchResponse"
     },
     "UploadImage": {
-      "document": "本接口 ( UploadImage ) 用于上传资质照片 。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "本接口 ( UploadImage ) 用于上传资质照片 。",
       "input": "UploadImageRequest",
       "name": "上传资质照片",
       "output": "UploadImageResponse"

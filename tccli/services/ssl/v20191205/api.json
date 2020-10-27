@@ -30,6 +30,12 @@
       "name": "主动触发证书验证",
       "output": "CompleteCertificateResponse"
     },
+    "CreateCertificate": {
+      "document": "本接口（CreateCertificate）用于创建付费证书。",
+      "input": "CreateCertificateRequest",
+      "name": "创建付费证书",
+      "output": "CreateCertificateResponse"
+    },
     "DeleteCertificate": {
       "document": "本接口（DeleteCertificate）用于删除证书。",
       "input": "DeleteCertificateRequest",
@@ -84,6 +90,12 @@
       "name": "重颁发证书",
       "output": "ReplaceCertificateResponse"
     },
+    "RevokeCertificate": {
+      "document": "本接口（RevokeCertificate）用于吊销证书。",
+      "input": "RevokeCertificateRequest",
+      "name": "吊销证书",
+      "output": "RevokeCertificateResponse"
+    },
     "SubmitCertificateInformation": {
       "document": "提交证书资料。",
       "input": "SubmitCertificateInformationRequest",
@@ -95,6 +107,18 @@
       "input": "UploadCertificateRequest",
       "name": "上传证书",
       "output": "UploadCertificateResponse"
+    },
+    "UploadConfirmLetter": {
+      "document": "本接口（UploadConfirmLetter）用于上传证书确认函。",
+      "input": "UploadConfirmLetterRequest",
+      "name": "上传证书确认函",
+      "output": "UploadConfirmLetterResponse"
+    },
+    "UploadRevokeLetter": {
+      "document": "本接口（UploadRevokeLetter）用于上传证书吊销确认函。",
+      "input": "UploadRevokeLetterRequest",
+      "name": "上传证书吊销确认函",
+      "output": "UploadRevokeLetterResponse"
     }
   },
   "metadata": {
@@ -685,6 +709,62 @@
           "member": "string",
           "name": "CertificateId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCertificateRequest": {
+      "document": "CreateCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书商品ID",
+          "member": "int64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "证书包含的域名数量",
+          "member": "int64",
+          "name": "DomainNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "证书年限，当前只支持 1 年证书的购买",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCertificateResponse": {
+      "document": "CreateCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "证书ID列表",
+          "member": "string",
+          "name": "CertificateIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子订单ID",
+          "member": "string",
+          "name": "DealIds",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1771,6 +1851,14 @@
           "name": "CsrkeyPassword",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重颁发原因。",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1793,6 +1881,89 @@
         }
       ],
       "type": "object"
+    },
+    "RevokeCertificateRequest": {
+      "document": "RevokeCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "吊销证书原因。",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeCertificateResponse": {
+      "document": "RevokeCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "吊销证书域名验证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RevokeDomainValidateAuths",
+          "name": "RevokeDomainValidateAuths",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeDomainValidateAuths": {
+      "document": "返回参数键为 RevokeDomainValidateAuths 的内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DomainValidateAuthPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证 KEY。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DomainValidateAuthKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DomainValidateAuthValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DV 认证域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DomainValidateAuthDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SubmitCertificateInformationRequest": {
       "document": "SubmitCertificateInformation请求参数结构体",
@@ -2312,6 +2483,102 @@
           "member": "string",
           "name": "CertificateId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadConfirmLetterRequest": {
+      "document": "UploadConfirmLetter请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书ID",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。",
+          "member": "string",
+          "name": "ConfirmLetter",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadConfirmLetterResponse": {
+      "document": "UploadConfirmLetter返回参数结构体",
+      "members": [
+        {
+          "document": "证书ID",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否成功",
+          "member": "bool",
+          "name": "IsSuccess",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadRevokeLetterRequest": {
+      "document": "UploadRevokeLetter请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。",
+          "member": "string",
+          "name": "RevokeLetter",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadRevokeLetterResponse": {
+      "document": "UploadRevokeLetter返回参数结构体",
+      "members": [
+        {
+          "document": "证书 ID。",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否成功。",
+          "member": "bool",
+          "name": "IsSuccess",
+          "type": "bool",
           "value_allowed_null": false
         },
         {

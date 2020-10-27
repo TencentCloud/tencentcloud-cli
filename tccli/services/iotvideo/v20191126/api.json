@@ -460,6 +460,39 @@
       ],
       "type": "object"
     },
+    "Contents": {
+      "document": "版本发布的描述信息，需要国际化，可以为空",
+      "members": [
+        {
+          "default": "",
+          "document": "英文，长度不超过300个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "En",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "中文简体，长度不超过300个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Cn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "中文繁体(Traditional Chinese)，长度不超过300个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Tc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAnonymousAccessTokenRequest": {
       "document": "CreateAnonymousAccessToken请求参数结构体",
       "members": [
@@ -3768,6 +3801,22 @@
           "name": "Operator",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本发布的描述信息，需要国际化，可以为空",
+          "member": "Contents",
+          "name": "Contents",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3816,6 +3865,14 @@
           "document": "操作人",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "member": "string",
+          "name": "Remark",
           "required": false,
           "type": "string"
         }
@@ -4298,6 +4355,24 @@
           "name": "ModifyTimes",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本发布的描述信息，需要国际化，可以为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Contents",
+          "name": "Contents",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

@@ -12,6 +12,12 @@
       "name": "添加已经存在的实例到集群",
       "output": "AddExistedInstancesResponse"
     },
+    "AddNodeToNodePool": {
+      "document": "将集群内节点移入节点池",
+      "input": "AddNodeToNodePoolRequest",
+      "name": "将集群内节点移入节点池",
+      "output": "AddNodeToNodePoolResponse"
+    },
     "CreateCluster": {
       "document": "创建集群",
       "input": "CreateClusterRequest",
@@ -41,6 +47,18 @@
       "input": "CreateClusterInstancesRequest",
       "name": "扩展集群节点",
       "output": "CreateClusterInstancesResponse"
+    },
+    "CreateClusterNodePool": {
+      "document": "创建节点池",
+      "input": "CreateClusterNodePoolRequest",
+      "name": "创建节点池",
+      "output": "CreateClusterNodePoolResponse"
+    },
+    "CreateClusterNodePoolFromExistingAsg": {
+      "document": "从伸缩组创建节点池",
+      "input": "CreateClusterNodePoolFromExistingAsgRequest",
+      "name": "从伸缩组创建节点池",
+      "output": "CreateClusterNodePoolFromExistingAsgResponse"
     },
     "CreateClusterRoute": {
       "document": "创建集群路由",
@@ -90,6 +108,12 @@
       "name": "删除集群中的节点",
       "output": "DeleteClusterInstancesResponse"
     },
+    "DeleteClusterNodePool": {
+      "document": "删除节点池",
+      "input": "DeleteClusterNodePoolRequest",
+      "name": "删除节点池",
+      "output": "DeleteClusterNodePoolResponse"
+    },
     "DeleteClusterRoute": {
       "document": "删除集群路由",
       "input": "DeleteClusterRouteRequest",
@@ -137,6 +161,18 @@
       "input": "DescribeClusterKubeconfigRequest",
       "name": "获取集群kubeconfig文件",
       "output": "DescribeClusterKubeconfigResponse"
+    },
+    "DescribeClusterNodePoolDetail": {
+      "document": "查询节点池详情",
+      "input": "DescribeClusterNodePoolDetailRequest",
+      "name": "查询节点池详情",
+      "output": "DescribeClusterNodePoolDetailResponse"
+    },
+    "DescribeClusterNodePools": {
+      "document": "查询节点池列表",
+      "input": "DescribeClusterNodePoolsRequest",
+      "name": "查询节点池列表",
+      "output": "DescribeClusterNodePoolsResponse"
     },
     "DescribeClusterRouteTables": {
       "document": "查询集群路由表",
@@ -209,6 +245,18 @@
       "input": "ModifyClusterEndpointSPRequest",
       "name": "修改托管集群外网端口的安全策略",
       "output": "ModifyClusterEndpointSPResponse"
+    },
+    "ModifyClusterNodePool": {
+      "document": "编辑节点池",
+      "input": "ModifyClusterNodePoolRequest",
+      "name": "编辑节点池",
+      "output": "ModifyClusterNodePoolResponse"
+    },
+    "RemoveNodeFromNodePool": {
+      "document": "移出节点池节点，但保留在集群内",
+      "input": "RemoveNodeFromNodePoolRequest",
+      "name": "移出节点池节点",
+      "output": "RemoveNodeFromNodePoolResponse"
     }
   },
   "metadata": {
@@ -337,6 +385,48 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddNodeToNodePoolRequest": {
+      "document": "AddNodeToNodePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池id",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点id",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddNodeToNodePoolResponse": {
+      "document": "AddNodeToNodePool返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1330,6 +1420,136 @@
       ],
       "type": "object"
     },
+    "CreateClusterNodePoolFromExistingAsgRequest": {
+      "document": "CreateClusterNodePoolFromExistingAsg请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "伸缩组ID",
+          "member": "string",
+          "name": "AutoscalingGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterNodePoolFromExistingAsgResponse": {
+      "document": "CreateClusterNodePoolFromExistingAsg返回参数结构体",
+      "members": [
+        {
+          "document": "节点池ID",
+          "member": "string",
+          "name": "NodePoolId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterNodePoolRequest": {
+      "document": "CreateClusterNodePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "cluster id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "AutoScalingGroupPara AS组参数",
+          "member": "string",
+          "name": "AutoScalingGroupPara",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "LaunchConfigurePara 运行参数",
+          "member": "string",
+          "name": "LaunchConfigurePara",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "InstanceAdvancedSettings 示例参数",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否启用自动伸缩",
+          "member": "bool",
+          "name": "EnableAutoscale",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "节点池名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Labels标签",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Taints互斥",
+          "member": "Taint",
+          "name": "Taints",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterNodePoolResponse": {
+      "document": "CreateClusterNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "节点池id",
+          "member": "string",
+          "name": "NodePoolId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateClusterRequest": {
       "document": "CreateCluster请求参数结构体",
       "members": [
@@ -1785,6 +2005,48 @@
       ],
       "type": "object"
     },
+    "DeleteClusterNodePoolRequest": {
+      "document": "DeleteClusterNodePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "节点池对应的 ClusterId",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要删除的节点池 Id 列表",
+          "member": "string",
+          "name": "NodePoolIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "删除节点池时是否保留节点池内节点(节点仍然会被移出集群，但对应的实例不会被销毁)",
+          "member": "bool",
+          "name": "KeepInstance",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterNodePoolResponse": {
+      "document": "DeleteClusterNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClusterRequest": {
       "document": "DeleteCluster请求参数结构体",
       "members": [
@@ -2169,6 +2431,66 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodePoolDetailRequest": {
+      "document": "DescribeClusterNodePoolDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池id",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodePoolDetailResponse": {
+      "document": "DescribeClusterNodePoolDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodePoolsRequest": {
+      "document": "DescribeClusterNodePools请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ClusterId（集群id）",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodePoolsResponse": {
+      "document": "DescribeClusterNodePools返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3389,6 +3711,88 @@
       ],
       "type": "object"
     },
+    "ModifyClusterNodePoolRequest": {
+      "document": "ModifyClusterNodePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池ID",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大节点数",
+          "member": "int64",
+          "name": "MaxNodesNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最小节点数",
+          "member": "int64",
+          "name": "MinNodesNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "污点",
+          "member": "Taint",
+          "name": "Taints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启伸缩",
+          "member": "bool",
+          "name": "EnableAutoscale",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterNodePoolResponse": {
+      "document": "ModifyClusterNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegionInstance": {
       "document": "地域属性信息",
       "members": [
@@ -3448,6 +3852,48 @@
         }
       ],
       "usage": "out"
+    },
+    "RemoveNodeFromNodePoolRequest": {
+      "document": "RemoveNodeFromNodePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池id",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点id列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveNodeFromNodePoolResponse": {
+      "document": "RemoveNodeFromNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResourceDeleteOption": {
       "document": "资源删除选项",
@@ -3690,6 +4136,39 @@
         }
       ],
       "usage": "both"
+    },
+    "Taint": {
+      "document": "kubernetes Taint",
+      "members": [
+        {
+          "default": "",
+          "document": "Key",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Value",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Effect",
+          "member": "string",
+          "name": "Effect",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"
