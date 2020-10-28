@@ -229,13 +229,13 @@
       "output": "PropOwnerCertOCRResponse"
     },
     "QrcodeOCR": {
-      "document": "本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。\n\n本接口目前处于公测阶段，2020年10月7日公测结束后，接口价格会进行相应的变更，请留意站内信通知。",
+      "document": "本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。",
       "input": "QrcodeOCRRequest",
       "name": "二维码和条形码识别",
       "output": "QrcodeOCRResponse"
     },
     "QueryBarCode": {
-      "document": "本接口支持条形码备案信息查询，返回条形码查询结果的相关信息，包括产品名称、产品英文名称、品牌名称、规格型号、宽度、高度、深度、关键字、产品描述、厂家名称、厂家地址、企业社会信用代码13个字段信息。\n\n产品优势：直联中国物品编码中心，查询结果更加准确、可靠。\n\n本接口目前为内测阶段，如需使用服务，请<a href=\"https://cloud.tencent.com/act/event/connect-service\" target=\"_blank\">联系商务</a>开通。",
+      "document": "本接口支持条形码备案信息查询，返回条形码查询结果的相关信息，包括产品名称、产品英文名称、品牌名称、规格型号、宽度、高度、深度、关键字、产品描述、厂家名称、厂家地址、企业社会信用代码13个字段信息。\n\n产品优势：直联中国物品编码中心，查询结果更加准确、可靠。",
       "input": "QueryBarCodeRequest",
       "name": "条码信息查询",
       "output": "QueryBarCodeResponse"
@@ -295,7 +295,7 @@
       "output": "TaxiInvoiceOCRResponse"
     },
     "TextDetect": {
-      "document": "本接口通过检测图片中的文字信息特征，快速判断图片中有无文字并返回判断结果，帮助用户过滤无文字的图片。\n\n本接口目前处于公测阶段，2020年10月7日公测结束后，接口价格会进行相应的变更，请留意站内信通知。",
+      "document": "本接口通过检测图片中的文字信息特征，快速判断图片中有无文字并返回判断结果，帮助用户过滤无文字的图片。",
       "input": "TextDetectRequest",
       "name": "快速文本检测",
       "output": "TextDetectResponse"
@@ -3602,147 +3602,6 @@
       ],
       "usage": "out"
     },
-    "ProductDataRecord": {
-      "document": "商品码信息",
-      "members": [
-        {
-          "default": "",
-          "document": "产品名称",
-          "member": "string",
-          "name": "ProductName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "产品名称(英文)",
-          "member": "string",
-          "name": "EnName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "品牌名称",
-          "member": "string",
-          "name": "BrandName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "规格型号",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "宽度，单位毫米",
-          "member": "string",
-          "name": "Width",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "高度，单位毫米",
-          "member": "string",
-          "name": "Height",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "深度，单位毫米",
-          "member": "string",
-          "name": "Depth",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "关键字",
-          "member": "string",
-          "name": "KeyWord",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "简短描述",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "图片链接",
-          "member": "string",
-          "name": "ImageLink",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "厂家名称",
-          "member": "string",
-          "name": "ManufacturerName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "厂家地址",
-          "member": "string",
-          "name": "ManufacturerAddress",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "企业社会信用代码",
-          "member": "string",
-          "name": "FirmCode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "表示数据查询状态\ncheckResult\t状态说明\n1\t 经查，该商品条码已在中国物品编码中心注册\n2\t经查，该厂商识别代码已在中国物品编码中心注册，但编码信息未按规定通报。\n3\t经查，该厂商识别代码已于xxxxx注销，请关注产品生产日期。\n4\t经查，该企业以及条码未经条码中心注册，属于违法使用\n-1\t经查，该商品条码被冒用\n-2\t经查，该厂商识别代码已在中国物品编码中心注册，但该产品已经下市\nS001                未找到该厂商识别代码的注册信息。\nS002\t\t该厂商识别代码已经在GS1注册，但编码信息未通报\nS003\t\t该商品条码已在GS1通报\nS004\t\t该商品条码已注销\nS005\t\t数字不正确。GS1前缀（3位国家/地区代码）用于特殊用途。\nE001\t\t完整性失败：此GTIN的长度无效。\nE002\t\t完整性失败：校验位不正确。\nE003\t\t完整性失败：字符串包含字母数字字符。\nE004\t\t数字不正确。GS1前缀（3位国家/地区代码）不存在。\nE005\t\t数字不正确。GS1前缀（3位国家/地区代码）用于特殊用途。\nE006\t\t数字不正确。尚未分配该GS1公司前缀。\nE008\t        经查，该企业厂商识别代码以及条码尚未通报",
-          "member": "string",
-          "name": "CheckResult",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "UNSPSC分类码",
-          "member": "string",
-          "name": "CategoryCode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "PropOwnerCertOCRRequest": {
       "document": "PropOwnerCertOCR请求参数结构体",
       "members": [
@@ -3983,20 +3842,6 @@
     "QueryBarCodeResponse": {
       "document": "QueryBarCode返回参数结构体",
       "members": [
-        {
-          "document": "条码",
-          "member": "string",
-          "name": "BarCode",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "条码信息数组",
-          "member": "ProductDataRecord",
-          "name": "ProductDataRecords",
-          "type": "list",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

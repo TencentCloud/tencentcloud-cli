@@ -749,7 +749,7 @@
         },
         {
           "default": "",
-          "document": "创建Windows镜像时是否启用Sysprep",
+          "document": "创建Windows镜像时是否启用Sysprep，关于Sysprep的详情请参考[链接](https://cloud.tencent.com/document/product/213/43498)",
           "member": "string",
           "name": "Sysprep",
           "required": false,
@@ -785,13 +785,6 @@
     "CreateImageResponse": {
       "document": "CreateImage返回参数结构体",
       "members": [
-        {
-          "document": "镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "ImageId",
-          "type": "string",
-          "value_allowed_null": true
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -460,6 +460,48 @@
       ],
       "usage": "in"
     },
+    "AutoscalingAdded": {
+      "document": "自动扩所容的节点",
+      "members": [
+        {
+          "default": "",
+          "document": "正在加入中的节点数量",
+          "member": "int64",
+          "name": "Joining",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初始化中的节点数量",
+          "member": "int64",
+          "name": "Initializing",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正常的节点数量",
+          "member": "int64",
+          "name": "Normal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点总数",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Cluster": {
       "document": "集群信息结构体",
       "members": [
@@ -2466,6 +2508,13 @@
       "document": "DescribeClusterNodePoolDetail返回参数结构体",
       "members": [
         {
+          "document": "节点池详情",
+          "member": "NodePool",
+          "name": "NodePool",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2491,6 +2540,20 @@
     "DescribeClusterNodePoolsResponse": {
       "document": "DescribeClusterNodePools返回参数结构体",
       "members": [
+        {
+          "document": "NodePools（节点池列表）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "NodePool",
+          "name": "NodePoolSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3572,6 +3635,48 @@
       ],
       "usage": "both"
     },
+    "ManuallyAdded": {
+      "document": "手动加入的节点",
+      "members": [
+        {
+          "default": "",
+          "document": "加入中节的点数量",
+          "member": "int64",
+          "name": "Joining",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初始化中的节点数量",
+          "member": "int64",
+          "name": "Initializing",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正常的节点数量",
+          "member": "int64",
+          "name": "Normal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点总数",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyClusterAsGroupAttributeRequest": {
       "document": "ModifyClusterAsGroupAttribute请求参数结构体",
       "members": [
@@ -3792,6 +3897,153 @@
         }
       ],
       "type": "object"
+    },
+    "NodeCountSummary": {
+      "document": "节点统计列表",
+      "members": [
+        {
+          "default": "",
+          "document": "手动管理的节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ManuallyAdded",
+          "name": "ManuallyAdded",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动管理的节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AutoscalingAdded",
+          "name": "AutoscalingAdded",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NodePool": {
+      "document": "节点池描述",
+      "members": [
+        {
+          "default": "",
+          "document": "NodePoolId 资源池id",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Name 资源池名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClusterInstanceId 集群实例id",
+          "member": "string",
+          "name": "ClusterInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "LifeState 状态",
+          "member": "string",
+          "name": "LifeState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "LaunchConfigurationId 配置",
+          "member": "string",
+          "name": "LaunchConfigurationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AutoscalingGroupId 分组id",
+          "member": "string",
+          "name": "AutoscalingGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Labels 标签",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Taints 污点标记",
+          "member": "Taint",
+          "name": "Taints",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NodeCountSummary 节点列表",
+          "member": "NodeCountSummary",
+          "name": "NodeCountSummary",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AutoscalingGroupStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxNodesNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MinNodesNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "期望的节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DesiredNodesNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RegionInstance": {
       "document": "地域属性信息",

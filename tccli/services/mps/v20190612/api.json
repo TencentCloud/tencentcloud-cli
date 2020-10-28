@@ -367,7 +367,7 @@
       "output": "ParseNotificationResponse"
     },
     "ProcessLiveStream": {
-      "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、鉴政、鉴暴、声音鉴黄）。\n\n直播流处理事件通知实时写入用户指定的消息队列 CMQ 中，用户需要从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
+      "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、鉴政、鉴暴、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。\n\n直播流处理事件通知实时写入用户指定的消息队列 CMQ 中，用户需要从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
       "input": "ProcessLiveStreamRequest",
       "name": "对直播流发起处理",
       "output": "ProcessLiveStreamResponse"
@@ -8703,7 +8703,7 @@
       "members": [
         {
           "default": "",
-          "document": "输入来源对象的类型，可以支持 COS 和 URL 两种。",
+          "document": "输入来源对象的类型，目前仅支持 COS。",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -8721,7 +8721,7 @@
         },
         {
           "default": "",
-          "document": "当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。\n\n目前尚不支持 URL 输入，该能力将于近期支持。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "UrlInputInfo",
           "name": "UrlInputInfo",
           "required": false,

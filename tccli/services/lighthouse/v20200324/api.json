@@ -289,6 +289,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐类型。\n取值范围：\n<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>",
+          "member": "string",
+          "name": "BundleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
