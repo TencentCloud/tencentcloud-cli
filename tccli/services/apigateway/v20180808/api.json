@@ -2228,6 +2228,14 @@
           "name": "AppIdType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2235,62 +2243,6 @@
     "CreateServiceResponse": {
       "document": "CreateService返回参数结构体",
       "members": [
-        {
-          "document": "服务唯一ID。",
-          "member": "string",
-          "name": "ServiceId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "用户自定义服务名称。",
-          "member": "string",
-          "name": "ServiceName",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "用户自定义服务描述。",
-          "member": "string",
-          "name": "ServiceDesc",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "外网默认域名。",
-          "member": "string",
-          "name": "OuterSubDomain",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "vpc内网默认域名。",
-          "member": "string",
-          "name": "InnerSubDomain",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "服务创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
-          "member": "datetime_iso",
-          "name": "CreatedTime",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "网络类型列表，INNER为内网访问，OUTER为外网访问。",
-          "member": "string",
-          "name": "NetTypes",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "IP版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "IpVersion",
-          "type": "string",
-          "value_allowed_null": true
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

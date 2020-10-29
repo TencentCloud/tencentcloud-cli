@@ -513,6 +513,31 @@ def doPropOwnerCertOCR(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRecognizeThaiIDCardOCR(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RecognizeThaiIDCardOCRRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RecognizeThaiIDCardOCR(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doBizLicenseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -555,6 +580,31 @@ def doGeneralHandwritingOCR(args, parsed_globals):
     model = models.GeneralHandwritingOCRRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.GeneralHandwritingOCR(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doAdvertiseOCR(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AdvertiseOCRRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.AdvertiseOCR(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -713,7 +763,7 @@ def doPermitOCR(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doOrgCodeCertOCR(args, parsed_globals):
+def doRecognizeTableOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -727,9 +777,9 @@ def doOrgCodeCertOCR(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.OrgCodeCertOCRRequest()
+    model = models.RecognizeTableOCRRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.OrgCodeCertOCR(model)
+    rsp = client.RecognizeTableOCR(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1488,7 +1538,7 @@ def doRideHailingTransportLicenseOCR(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRecognizeThaiIDCardOCR(args, parsed_globals):
+def doOrgCodeCertOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -1502,9 +1552,9 @@ def doRecognizeThaiIDCardOCR(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RecognizeThaiIDCardOCRRequest()
+    model = models.OrgCodeCertOCRRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RecognizeThaiIDCardOCR(model)
+    rsp = client.OrgCodeCertOCR(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -1569,15 +1619,17 @@ ACTION_MAP = {
     "GeneralFastOCR": doGeneralFastOCR,
     "ResidenceBookletOCR": doResidenceBookletOCR,
     "PropOwnerCertOCR": doPropOwnerCertOCR,
+    "RecognizeThaiIDCardOCR": doRecognizeThaiIDCardOCR,
     "BizLicenseOCR": doBizLicenseOCR,
     "GeneralHandwritingOCR": doGeneralHandwritingOCR,
+    "AdvertiseOCR": doAdvertiseOCR,
     "InvoiceGeneralOCR": doInvoiceGeneralOCR,
     "HKIDCardOCR": doHKIDCardOCR,
     "VatInvoiceOCR": doVatInvoiceOCR,
     "WaybillOCR": doWaybillOCR,
     "FlightInvoiceOCR": doFlightInvoiceOCR,
     "PermitOCR": doPermitOCR,
-    "OrgCodeCertOCR": doOrgCodeCertOCR,
+    "RecognizeTableOCR": doRecognizeTableOCR,
     "FinanBillSliceOCR": doFinanBillSliceOCR,
     "BusInvoiceOCR": doBusInvoiceOCR,
     "TableOCR": doTableOCR,
@@ -1608,7 +1660,7 @@ ACTION_MAP = {
     "DriverLicenseOCR": doDriverLicenseOCR,
     "EduPaperOCR": doEduPaperOCR,
     "RideHailingTransportLicenseOCR": doRideHailingTransportLicenseOCR,
-    "RecognizeThaiIDCardOCR": doRecognizeThaiIDCardOCR,
+    "OrgCodeCertOCR": doOrgCodeCertOCR,
     "VehicleLicenseOCR": doVehicleLicenseOCR,
 
 }

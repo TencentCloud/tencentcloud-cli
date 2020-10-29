@@ -62,6 +62,7 @@ include tccli/services/fmu/v20191213/api.json
 include tccli/services/ft/v20200304/api.json
 include tccli/services/gaap/v20180529/api.json
 include tccli/services/gme/v20180711/api.json
+include tccli/services/gpm/v20200820/api.json
 include tccli/services/gs/v20191118/api.json
 include tccli/services/gse/v20191112/api.json
 include tccli/services/habo/v20181203/api.json

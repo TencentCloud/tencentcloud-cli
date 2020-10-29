@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AdvertiseOCR": {
+      "document": "本接口支持广告商品图片内文字的检测和识别，返回文本框位置与文字内容。\n\n产品优势：针对广告商品图片普遍存在较多繁体字、艺术字的特点，进行了识别能力的增强。支持中英文、横排、竖排以及倾斜场景文字识别。文字识别的召回率和准确率能达到96%以上。",
+      "input": "AdvertiseOCRRequest",
+      "name": "广告文字识别",
+      "output": "AdvertiseOCRResponse"
+    },
     "ArithmeticOCR": {
       "document": "本接口支持作业算式题目的自动识别，目前覆盖 K12 学力范围内的 14 种题型，包括加减乘除四则运算、分数四则运算、竖式四则运算、脱式计算等。",
       "input": "ArithmeticOCRRequest",
@@ -246,6 +252,12 @@
       "name": "定额发票识别",
       "output": "QuotaInvoiceOCRResponse"
     },
+    "RecognizeTableOCR": {
+      "document": "本接口支持图片/ PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持对0度至180度旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
+      "input": "RecognizeTableOCRRequest",
+      "name": "表格识别（V2)",
+      "output": "RecognizeTableOCRResponse"
+    },
     "RecognizeThaiIDCardOCR": {
       "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)\n",
       "input": "RecognizeThaiIDCardOCRRequest",
@@ -374,6 +386,89 @@
     "serviceShortName": "ocr"
   },
   "objects": {
+    "AdvertiseOCRRequest": {
+      "document": "AdvertiseOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AdvertiseOCRResponse": {
+      "document": "AdvertiseOCR返回参数结构体",
+      "members": [
+        {
+          "document": "检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。",
+          "member": "AdvertiseTextDetection",
+          "name": "TextDetections",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AdvertiseTextDetection": {
+      "document": "广告文字识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "识别出的文本行内容",
+          "member": "string",
+          "name": "DetectedText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度 0 ~100",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本行坐标，以四个顶点坐标表示",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此字段为扩展字段。\nGeneralBasicOcr接口返回段落信息Parag，包含ParagNo。",
+          "member": "string",
+          "name": "AdvancedInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ArithmeticOCRRequest": {
       "document": "ArithmeticOCR请求参数结构体",
       "members": [
@@ -895,6 +990,30 @@
         }
       ],
       "type": "object"
+    },
+    "CellContent": {
+      "document": "单元格识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "段落编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ParagNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字体大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "WordSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ClassifyDetectInfo": {
       "document": "卡证智能分类结果",
@@ -4007,6 +4126,77 @@
       ],
       "type": "object"
     },
+    "RecognizeTableOCRRequest": {
+      "document": "RecognizeTableOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeTableOCRResponse": {
+      "document": "RecognizeTableOCR返回参数结构体",
+      "members": [
+        {
+          "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "member": "TableDetectInfo",
+          "name": "TableDetections",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Base64 编码后的 Excel 数据。",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片为PDF时，返回PDF的总页数，默认为0",
+          "member": "int64",
+          "name": "PdfPageSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RecognizeThaiIDCardOCRRequest": {
       "document": "RecognizeThaiIDCardOCR请求参数结构体",
       "members": [
@@ -4562,6 +4752,126 @@
       ],
       "usage": "out"
     },
+    "TableCell": {
+      "document": "单元格数据",
+      "members": [
+        {
+          "default": "",
+          "document": "单元格左上角的列索引",
+          "member": "int64",
+          "name": "ColTl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格左上角的行索引",
+          "member": "int64",
+          "name": "RowTl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格右下角的列索引",
+          "member": "int64",
+          "name": "ColBr",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格右下角的行索引",
+          "member": "int64",
+          "name": "RowBr",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格内识别出的字符串文本，若文本存在多行，以换行符\"\\n\"隔开",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格置信度",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格在图像中的四点坐标",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此字段为扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AdvancedInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单元格文本属性",
+          "member": "CellContent",
+          "name": "Contents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableDetectInfo": {
+      "document": "表格内容检测",
+      "members": [
+        {
+          "default": "",
+          "document": "单元格内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TableCell",
+          "name": "Cells",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TableTitle",
+          "name": "Titles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TableOCRRequest": {
       "document": "TableOCR请求参数结构体",
       "members": [
@@ -4609,6 +4919,21 @@
         }
       ],
       "type": "object"
+    },
+    "TableTitle": {
+      "document": "表格标题",
+      "members": [
+        {
+          "default": "",
+          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TaxiInvoiceOCRRequest": {
       "document": "TaxiInvoiceOCR请求参数结构体",

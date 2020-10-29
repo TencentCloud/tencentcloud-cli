@@ -210,6 +210,12 @@
       "name": "获取物模型操作结果",
       "output": "DescribeModelDataRetResponse"
     },
+    "DescribeOsList": {
+      "document": "查看操作系统支持的芯片列表",
+      "input": "DescribeOsListRequest",
+      "name": "查看操作系统支持的芯片列表",
+      "output": "DescribeOsListResponse"
+    },
     "DescribeOtaVersions": {
       "document": "本接口（DescribeOtaVersions）用于查询固件版本信息列表。",
       "input": "DescribeOtaVersionsRequest",
@@ -299,6 +305,12 @@
       "input": "ModifyProductRequest",
       "name": "编辑产品信息",
       "output": "ModifyProductResponse"
+    },
+    "ModifyVerContent": {
+      "document": "编辑版本描述信息",
+      "input": "ModifyVerContentRequest",
+      "name": "编辑版本描述信息",
+      "output": "ModifyVerContentResponse"
     },
     "RefundStorageService": {
       "document": "退订已购买的云存服务",
@@ -2144,6 +2156,30 @@
       ],
       "type": "object"
     },
+    "DescribeOsListRequest": {
+      "document": "DescribeOsList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOsListResponse": {
+      "document": "DescribeOsList返回参数结构体",
+      "members": [
+        {
+          "document": "系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SystemType",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOtaVersionsRequest": {
       "document": "DescribeOtaVersions请求参数结构体",
       "members": [
@@ -3249,6 +3285,64 @@
       ],
       "type": "object"
     },
+    "ModifyVerContentRequest": {
+      "document": "ModifyVerContent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品id,大于0的有符号长整型",
+          "member": "int64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要修改的版本号",
+          "member": "string",
+          "name": "OtaVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作人,字符长度<=64",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本发布的描述信息，需要国际化，可以为空",
+          "member": "Contents",
+          "name": "Contents",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVerContentResponse": {
+      "document": "ModifyVerContent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MsgQueueData": {
       "document": "产品转发消息队列配置",
       "members": [
@@ -3296,6 +3390,30 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OsData": {
+      "document": "操作系统信息",
+      "members": [
+        {
+          "default": "",
+          "document": "芯片型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChipId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "芯片厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChipManufacture",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4076,6 +4194,39 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SystemType": {
+      "document": "系统类型",
+      "members": [
+        {
+          "default": "",
+          "document": "安卓系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OsData",
+          "name": "Android",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "linux系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OsData",
+          "name": "Linux",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "LiteOs系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OsData",
+          "name": "LiteOs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

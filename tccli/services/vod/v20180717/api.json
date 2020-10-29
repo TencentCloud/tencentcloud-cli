@@ -8995,7 +8995,16 @@
     },
     "DescribeSubAppIdsRequest": {
       "document": "DescribeSubAppIds请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "标签信息，查询指定标签的子应用列表。",
+          "member": "ResourceTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeSubAppIdsResponse": {
@@ -14579,7 +14588,7 @@
         },
         {
           "default": "",
-          "document": "子应用状态，取值范围：\n<li>On：启用</li>\n<li>Off：停用</li>",
+          "document": "子应用状态，取值范围：\n<li>On：启用。</li>\n<li>Off：停用。</li>\n<li>Destroyed：销毁。</li>\n当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -17045,6 +17054,30 @@
       ],
       "usage": "both"
     },
+    "ResourceTag": {
+      "document": "标签键值。参考[标签](https://cloud.tencent.com/document/product/651)。",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键。",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值。",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SampleSnapshotTaskInput": {
       "document": "对视频做采样截图任务输入参数类型",
       "members": [
@@ -17916,7 +17949,7 @@
         },
         {
           "default": "",
-          "document": "子应用状态，有效值：\n<li>On：启用；</li>\n<li>Off：停用。</li>",
+          "document": "子应用状态，有效值：\n<li>On：启用；</li>\n<li>Off：停用。</li>\n<li>Destroying：销毁中。</li>\n<li>Destroyed：销毁完成。</li>",
           "member": "string",
           "name": "Status",
           "required": true,
