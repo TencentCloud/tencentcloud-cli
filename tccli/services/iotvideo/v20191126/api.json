@@ -578,6 +578,14 @@
           "name": "CunionId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于小程序关联手机号",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

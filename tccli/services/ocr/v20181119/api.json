@@ -3476,111 +3476,6 @@
       "document": "PassportOCR返回参数结构体",
       "members": [
         {
-          "document": "国家码",
-          "member": "string",
-          "name": "Country",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "护照号",
-          "member": "string",
-          "name": "PassportNo",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "性别",
-          "member": "string",
-          "name": "Sex",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "国籍",
-          "member": "string",
-          "name": "Nationality",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "出生日期",
-          "member": "string",
-          "name": "BirthDate",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "出生地点",
-          "member": "string",
-          "name": "BirthPlace",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "签发日期",
-          "member": "string",
-          "name": "IssueDate",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "签发地点",
-          "member": "string",
-          "name": "IssuePlace",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "有效期",
-          "member": "string",
-          "name": "ExpiryDate",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "持证人签名",
-          "member": "string",
-          "name": "Signature",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "最下方第一行 MRZ Code 序列",
-          "member": "string",
-          "name": "CodeSet",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "最下方第二行 MRZ Code 序列",
-          "member": "string",
-          "name": "CodeCrc",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "姓名",
-          "member": "string",
-          "name": "Name",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "姓",
-          "member": "string",
-          "name": "FamilyName",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "名",
-          "member": "string",
-          "name": "FirstName",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7171,6 +7066,14 @@
           "name": "ImageUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预检测开关，当待识别运单占整个输入图像的比例较小时，建议打开预检测开关。默认值为false。",
+          "member": "bool",
+          "name": "EnablePreDetect",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

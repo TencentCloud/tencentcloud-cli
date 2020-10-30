@@ -83,6 +83,7 @@ include tccli/services/live/v20180801/api.json
 include tccli/services/lp/v20200224/api.json
 include tccli/services/mariadb/v20170312/api.json
 include tccli/services/memcached/v20190318/api.json
+include tccli/services/mgobe/v20201014/api.json
 include tccli/services/mgobe/v20190929/api.json
 include tccli/services/mongodb/v20180408/api.json
 include tccli/services/mongodb/v20190725/api.json

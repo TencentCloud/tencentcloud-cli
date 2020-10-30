@@ -9,6 +9,8 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.mgobe.v20201014 import mgobe_client as mgobe_client_v20201014
+from tencentcloud.mgobe.v20201014 import models as models_v20201014
 from tencentcloud.mgobe.v20190929 import mgobe_client as mgobe_client_v20190929
 from tencentcloud.mgobe.v20190929 import models as models_v20190929
 
@@ -39,11 +41,13 @@ def doDismissRoom(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20201014": mgobe_client_v20201014,
     "v20190929": mgobe_client_v20190929,
 
 }
 
 MODELS_MAP = {
+    "v20201014": models_v20201014,
     "v20190929": models_v20190929,
 
 }
@@ -54,6 +58,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20201014",
     "v20190929",
 
 ]

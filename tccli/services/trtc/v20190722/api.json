@@ -54,6 +54,12 @@
       "name": "查询房间列表",
       "output": "DescribeRoomInformationResponse"
     },
+    "DescribeUserInformation": {
+      "document": "查询指定时间内的用户列表，可查询14天内数据。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。",
+      "input": "DescribeUserInformationRequest",
+      "name": "查询用户列表",
+      "output": "DescribeUserInformationResponse"
+    },
     "DismissRoom": {
       "document": "接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。",
       "input": "DismissRoomRequest",
@@ -772,6 +778,94 @@
           "name": "RoomList",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInformationRequest": {
+      "document": "DescribeUserInformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）",
+          "member": "string",
+          "name": "CommId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户SDKAppID（1400188366）",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需查询的用户数组，不填默认返回6个用户,最多可填6个用户",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）",
+          "member": "string",
+          "name": "PageNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）",
+          "member": "string",
+          "name": "PageSize",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInformationResponse": {
+      "document": "DescribeUserInformation返回参数结构体",
+      "members": [
+        {
+          "document": "返回的用户总条数",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UserInformation",
+          "name": "UserList",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

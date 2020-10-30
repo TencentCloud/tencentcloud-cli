@@ -391,6 +391,48 @@
       ],
       "usage": "out"
     },
+    "AudioTrackItem": {
+      "document": "音频轨道上的音频片段信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "音频素材来源类型。取值有：\n<ul>\n<li>VOD ：素材来源 VOD 。</li>\n<li>CME ：视频来源 CME 。</li>\n</ul>",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频片段的媒体素材来源，可以是：\n<li>VOD 的媒体文件 ID 。</li>\n<li>CME 的素材 ID 。</li>",
+          "member": "string",
+          "name": "SourceMedia",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频片段取自素材文件的起始时间，单位为秒。0 表示从素材开始位置截取。默认为0。",
+          "member": "float",
+          "name": "SourceMediaStartTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频片段的时长，单位为秒。默认和素材本身长度一致，表示截取全部素材。",
+          "member": "float",
+          "name": "Duration",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "AuthorizationInfo": {
       "document": "资源权限信息",
       "members": [
@@ -709,6 +751,22 @@
           "document": "导播台信息，仅当项目类型为 SWITCHER 时有效。",
           "member": "SwitcherProjectInput",
           "name": "SwitcherProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "直播剪辑信息，暂未开放，请勿使用。",
+          "member": "LiveStreamClipProjectInput",
+          "name": "LiveStreamClipProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "视频编辑信息。",
+          "member": "VideoEditProjectInput",
+          "name": "VideoEditProjectInput",
           "required": false,
           "type": "object"
         }
@@ -1762,6 +1820,21 @@
       ],
       "type": "object"
     },
+    "EmptyTrackItem": {
+      "document": "空的轨道片段，用来进行时间轴的占位。如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。",
+      "members": [
+        {
+          "default": "",
+          "document": "持续时间，单位为秒。",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Entity": {
       "document": "用于描述资源的归属实体。",
       "members": [
@@ -2543,6 +2616,30 @@
       ],
       "type": "object"
     },
+    "LiveStreamClipProjectInput": {
+      "document": "直播剪辑项目输入参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "直播流播放地址，目前仅支持 HLS 和 FLV 格式。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "直播流录制时长，单位为秒，最大值为 7200。",
+          "member": "uint64",
+          "name": "StreamRecordDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "LoginStatusInfo": {
       "document": "登录态信息",
       "members": [
@@ -2890,6 +2987,72 @@
         }
       ],
       "usage": "out"
+    },
+    "MediaTrack": {
+      "document": "轨道信息",
+      "members": [
+        {
+          "default": "",
+          "document": "轨道类型，取值有：\n<ul>\n<li>Video ：视频轨道。视频轨道由以下 Item 组成：<ul><li>VideoTrackItem</li><li>EmptyTrackItem</li></ul> </li>\n<li>Audio ：音频轨道。音频轨道由以下 Item 组成：<ul><li>AudioTrackItem</li><li>EmptyTrackItem</li></ul> </li>\n</ul>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "轨道上的媒体片段列表。",
+          "member": "MediaTrackItem",
+          "name": "TrackItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaTrackItem": {
+      "document": "媒体轨道的片段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "片段类型。取值有：\n<li>Video：视频片段。</li>\n<li>Audio：音频片段。</li>\n<li>Empty：空白片段。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段，当 Type = Video 时有效。",
+          "member": "VideoTrackItem",
+          "name": "VideoItem",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频片段，当 Type = Audio 时有效。",
+          "member": "AudioTrackItem",
+          "name": "AudioItem",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>\n<li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>",
+          "member": "EmptyTrackItem",
+          "name": "EmptyItem",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ModifyMaterialRequest": {
       "document": "ModifyMaterial请求参数结构体",
@@ -3809,6 +3972,21 @@
       ],
       "usage": "in"
     },
+    "VideoEditProjectInput": {
+      "document": "视频编辑项目输入参数",
+      "members": [
+        {
+          "default": "",
+          "document": "输入的媒体轨道列表，包括视频、音频，等素材组成的多个轨道信息，其中：<li>输入的多个轨道在时间轴上和输出媒体文件的时间轴对齐；</li><li>时间轴上相同时间点的各个轨道的素材进行重叠，视频或者图片按轨道顺序进行图像的叠加，轨道顺序高的素材叠加在上面，音频素材进行混音；</li><li>视频、音频，每一种类型的轨道最多支持10个。</li>",
+          "member": "MediaTrack",
+          "name": "InitTracks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "VideoEditProjectOutput": {
       "document": "项目导出信息。",
       "members": [
@@ -3979,6 +4157,93 @@
         }
       ],
       "usage": "out"
+    },
+    "VideoTrackItem": {
+      "document": "视频轨的视频片段信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频素材来源类型。取值有：\n<ul>\n<li>VOD ：素材来源 VOD 。</li>\n<li>CME ：视频来源 CME 。</li>\n</ul>",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段的媒体素材来源，可以是：\n<li>VOD 的媒体文件 ID 。</li>\n<li>CME 的素材 ID 。</li>",
+          "member": "string",
+          "name": "SourceMedia",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段取自素材文件的起始时间，单位为秒。默认为0。",
+          "member": "float",
+          "name": "SourceMediaStartTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段时长，单位为秒。默认取视频素材本身长度，表示截取全部素材。如果源文件是图片，Duration需要大于0。",
+          "member": "float",
+          "name": "Duration",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段原点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布口宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认值：0px。",
+          "member": "string",
+          "name": "XPos",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段原点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认值：0px。",
+          "member": "string",
+          "name": "YPos",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频原点位置，取值有：\n<li>Center：坐标原点为中心位置，如画布中心。</li>\n默认值 ：Center。",
+          "member": "string",
+          "name": "CoordinateOrigin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%；\n</li><li>当字符串以 px 结尾，表示视频片段 Height 单位为像素，如 100px 表示 Height 为100像素。</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "member": "string",
+          "name": "Height",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 Width 单位为像素，如 100px 表示 Width 为100像素。</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "member": "string",
+          "name": "Width",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

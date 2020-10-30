@@ -5709,6 +5709,13 @@
       "document": "DescribeImageRepository返回参数结构体",
       "members": [
         {
+          "document": "查询的权限数据对象",
+          "member": "ImageRepositoryResult",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7727,6 +7734,144 @@
         }
       ],
       "usage": "both"
+    },
+    "ImageRepository": {
+      "document": "镜像仓库",
+      "members": [
+        {
+          "default": "",
+          "document": "仓库名,含命名空间,如tsf/nginx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Reponame",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Repotype",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像版本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TagCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否公共,1:公有,0:私有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsPublic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否被用户收藏。true：是，false：否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsUserFavor",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是腾讯云官方仓库。 是否是腾讯云官方仓库。true：是，false：否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsQcloudOfficial",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "被所有用户收藏次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FavorCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "拉取次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PullCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageRepositoryResult": {
+      "document": "镜像仓库列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Server",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ImageRepository",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ImageTag": {
       "document": "列表信息",
