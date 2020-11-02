@@ -295,9 +295,9 @@
       "output": "ShipInvoiceOCRResponse"
     },
     "TableOCR": {
-      "document": "本接口支持图片内表格文档的检测和识别，返回每个单元格的文字内容，支持将识别结果保存为 Excel 格式。",
+      "document": "<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"\">新版表格识别</a>。</b>\n\n本接口支持图片内表格文档的检测和识别，返回每个单元格的文字内容，支持将识别结果保存为 Excel 格式。\n\n",
       "input": "TableOCRRequest",
-      "name": "表格识别",
+      "name": "表格识别（V1)",
       "output": "TableOCRResponse"
     },
     "TaxiInvoiceOCR": {
@@ -4793,7 +4793,7 @@
       "document": "TableOCR返回参数结构体",
       "members": [
         {
-          "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "document": "检测到的文本信息，具体内容请点击左侧链接",
           "member": "TextTable",
           "name": "TextDetections",
           "type": "list",

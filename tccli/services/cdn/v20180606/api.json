@@ -198,6 +198,12 @@
       "name": "停止日志主题投递",
       "output": "DisableClsLogTopicResponse"
     },
+    "DuplicateDomainConfig": {
+      "document": "拷贝参考域名的配置至新域名。暂不支持自有证书以及定制化配置",
+      "input": "DuplicateDomainConfigRequest",
+      "name": "拷贝域名",
+      "output": "DuplicateDomainConfigResponse"
+    },
     "EnableCaches": {
       "document": "EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。（接口尚在内测中，暂未全量开放使用）",
       "input": "EnableCachesRequest",
@@ -4690,6 +4696,40 @@
         }
       ],
       "usage": "both"
+    },
+    "DuplicateDomainConfigRequest": {
+      "document": "DuplicateDomainConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "新增域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被拷贝配置的域名",
+          "member": "string",
+          "name": "ReferenceDomain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DuplicateDomainConfigResponse": {
+      "document": "DuplicateDomainConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EnableCachesRequest": {
       "document": "EnableCaches请求参数结构体",

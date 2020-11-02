@@ -964,7 +964,7 @@
         },
         {
           "default": "",
-          "document": "linux,android,liteos",
+          "document": "Linux,Android,Liteos等系统",
           "member": "string",
           "name": "Os",
           "required": false,

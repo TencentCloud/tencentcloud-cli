@@ -4132,6 +4132,14 @@
       "members": [
         {
           "default": "",
+          "document": "待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "图片 base64 数据。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "member": "string",
           "name": "Image",
@@ -4143,14 +4151,6 @@
           "document": "图片的 Url \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。。\n 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "member": "string",
           "name": "Url",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。",
-          "member": "string",
-          "name": "PersonId",
           "required": false,
           "type": "string"
         },
@@ -4176,27 +4176,6 @@
     "VerifyPersonResponse": {
       "document": "VerifyPerson返回参数结构体",
       "members": [
-        {
-          "document": "给定的人脸照片与 PersonId 对应的相似度。若 PersonId 下有多张人脸（Face），会融合多张人脸信息进行验证。",
-          "member": "float",
-          "name": "Score",
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "是否为同一人的判断。",
-          "member": "bool",
-          "name": "IsMatch",
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "人脸识别所用的算法模型版本，是该 Person 所在的人员库的算法模型版本。在创建人员库时设置，详情可参考[算法模型版本](https://cloud.tencent.com/document/product/867/40042)",
-          "member": "string",
-          "name": "FaceModelVersion",
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

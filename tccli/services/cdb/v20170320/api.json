@@ -2254,6 +2254,22 @@
           "name": "DeviceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数模板id。",
+          "member": "int64",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警策略id数组。",
+          "member": "int64",
+          "name": "AlarmPolicyList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2502,6 +2518,22 @@
           "name": "DeviceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数模板id。",
+          "member": "int64",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警策略id数组。",
+          "member": "int64",
+          "name": "AlarmPolicyList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5372,7 +5404,7 @@
           "document": "项目ID。",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "required": false,
           "type": "int"
         }
       ],
