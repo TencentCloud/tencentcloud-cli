@@ -222,13 +222,6 @@
       "document": "CreateTranscode返回参数结构体",
       "members": [
         {
-          "document": "文档转码任务的唯一标识Id，用于查询该任务的进度以及转码结果",
-          "member": "string",
-          "name": "TaskId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -351,20 +344,6 @@
     "DescribeOnlineRecordCallbackResponse": {
       "document": "DescribeOnlineRecordCallback返回参数结构体",
       "members": [
-        {
-          "document": "实时录制事件回调地址，如果未设置回调地址，该字段为空字符串",
-          "member": "string",
-          "name": "Callback",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "实时录制回调鉴权密钥",
-          "member": "string",
-          "name": "CallbackKey",
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -517,20 +496,6 @@
       "document": "DescribeTranscodeCallback返回参数结构体",
       "members": [
         {
-          "document": "文档转码回调地址",
-          "member": "string",
-          "name": "Callback",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "文档转码回调鉴权密钥",
-          "member": "string",
-          "name": "CallbackKey",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -564,76 +529,6 @@
     "DescribeTranscodeResponse": {
       "document": "DescribeTranscode返回参数结构体",
       "members": [
-        {
-          "document": "文档的总页数",
-          "member": "int64",
-          "name": "Pages",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "转码的当前进度,取值范围为0~100",
-          "member": "int64",
-          "name": "Progress",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "文档的分辨率",
-          "member": "string",
-          "name": "Resolution",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "转码完成后结果的URL\n动态转码：PPT转动态H5的链接\n静态转码：文档每一页的图片URL前缀，比如，该URL前缀为`http://example.com/g0jb42ps49vtebjshilb/`，那么文档第1页的图片URL为\n`http://example.com/g0jb42ps49vtebjshilb/1.jpg`，其它页以此类推",
-          "member": "string",
-          "name": "ResultUrl",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "任务的当前状态\n- QUEUED: 正在排队等待转换\n- PROCESSING: 转换中\n- FINISHED: 转换完成",
-          "member": "string",
-          "name": "Status",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "转码任务的唯一标识Id",
-          "member": "string",
-          "name": "TaskId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "文档的文件名",
-          "member": "string",
-          "name": "Title",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "缩略图URL前缀，比如，该URL前缀为`http://example.com/g0jb42ps49vtebjshilb/ `，那么动态PPT第1页的缩略图URL为\n`http://example.com/g0jb42ps49vtebjshilb/1.jpg`，其它页以此类推\n\n如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串",
-          "member": "string",
-          "name": "ThumbnailUrl",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "动态转码缩略图生成分辨率",
-          "member": "string",
-          "name": "ThumbnailResolution",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "转码压缩文件下载的URL，如果发起文档转码请求参数中`CompressFileType`为空或者不是支持的压缩格式，该参数为空字符串",
-          "member": "string",
-          "name": "CompressFileUrl",
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

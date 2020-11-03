@@ -67,7 +67,7 @@
       "output": "CreateTopicPolicyResponse"
     },
     "CreateTopicRule": {
-      "document": "本接口（CreateTopicRule）用于创建一个规则",
+      "document": "本接口（CreateTopicRule）用于创建一个规则 ",
       "input": "CreateTopicRuleRequest",
       "name": "创建规则",
       "output": "CreateTopicRuleResponse"
@@ -259,7 +259,7 @@
       "output": "PublishToDeviceResponse"
     },
     "ReplaceTopicRule": {
-      "document": "本接口（ReplaceTopicRule）用于修改替换规则",
+      "document": "本接口（ReplaceTopicRule）用于修改替换规则 ",
       "input": "ReplaceTopicRuleRequest",
       "name": "替换规则",
       "output": "ReplaceTopicRuleResponse"

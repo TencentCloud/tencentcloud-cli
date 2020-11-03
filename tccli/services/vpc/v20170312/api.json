@@ -702,6 +702,12 @@
       "name": "查询弹性网卡列表",
       "output": "DescribeNetworkInterfacesResponse"
     },
+    "DescribeProductQuota": {
+      "document": "本接口用于查询网络产品的配额信息",
+      "input": "DescribeProductQuotaRequest",
+      "name": "查询网络产品配额信息",
+      "output": "DescribeProductQuotaResponse"
+    },
     "DescribeRouteConflicts": {
       "document": "本接口（DescribeRouteConflicts）用于查询自定义路由策略与云联网路由策略冲突列表",
       "input": "DescribeRouteConflictsRequest",
@@ -8731,6 +8737,46 @@
       ],
       "type": "object"
     },
+    "DescribeProductQuotaRequest": {
+      "document": "DescribeProductQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的网络产品名称，如vpc、ccn等",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductQuotaResponse": {
+      "document": "DescribeProductQuota返回参数结构体",
+      "members": [
+        {
+          "document": "ProductQuota对象数组",
+          "member": "ProductQuota",
+          "name": "ProductQuotaSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的产品类型个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRouteConflictsRequest": {
       "document": "DescribeRouteConflicts请求参数结构体",
       "members": [
@@ -14300,6 +14346,57 @@
         }
       ],
       "usage": "both"
+    },
+    "ProductQuota": {
+      "document": "描述网络中心每个产品的配额信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品配额ID",
+          "member": "string",
+          "name": "QuotaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品配额名称",
+          "member": "string",
+          "name": "QuotaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品当前配额",
+          "member": "int64",
+          "name": "QuotaCurrent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品配额上限",
+          "member": "int64",
+          "name": "QuotaLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品配额是否有地域属性",
+          "member": "bool",
+          "name": "QuotaRegion",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Quota": {
       "document": "描述配额信息",

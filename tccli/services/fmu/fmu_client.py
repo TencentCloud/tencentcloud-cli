@@ -38,7 +38,7 @@ def doCreateModel(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doTryLipstickPic(args, parsed_globals):
+def doStyleImage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -52,9 +52,34 @@ def doTryLipstickPic(args, parsed_globals):
     client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.TryLipstickPicRequest()
+    model = models.StyleImageRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.TryLipstickPic(model)
+    rsp = client.StyleImage(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doBeautifyPic(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BeautifyPicRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.BeautifyPic(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -138,7 +163,7 @@ def doDeleteModel(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBeautifyPic(args, parsed_globals):
+def doStyleImagePro(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -152,9 +177,34 @@ def doBeautifyPic(args, parsed_globals):
     client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BeautifyPicRequest()
+    model = models.StyleImageProRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.BeautifyPic(model)
+    rsp = client.StyleImagePro(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doTryLipstickPic(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.FmuClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.TryLipstickPicRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.TryLipstickPic(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -225,11 +275,13 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateModel": doCreateModel,
-    "TryLipstickPic": doTryLipstickPic,
+    "StyleImage": doStyleImage,
+    "BeautifyPic": doBeautifyPic,
     "BeautifyVideo": doBeautifyVideo,
     "QueryBeautifyVideoJob": doQueryBeautifyVideoJob,
     "DeleteModel": doDeleteModel,
-    "BeautifyPic": doBeautifyPic,
+    "StyleImagePro": doStyleImagePro,
+    "TryLipstickPic": doTryLipstickPic,
     "GetModelList": doGetModelList,
     "CancelBeautifyVideoJob": doCancelBeautifyVideoJob,
 
