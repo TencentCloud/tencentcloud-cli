@@ -206,7 +206,7 @@ class CLIArgument(BaseArgument):
 
     @property
     def cli_type(self):
-        return self.TYPE_MAP.get(self.argument_model["type_name"], str)
+        return self.TYPE_MAP.get(self.argument_model["type"], str)
 
     def add_to_parser(self, parser):
         cli_name = self.cli_name
@@ -254,6 +254,10 @@ class ListArgument(CLIArgument):
     @property
     def nargs(self):
         return '*'
+
+    @property
+    def cli_type(self):
+        return self.TYPE_MAP.get(self.argument_model["type_name"], str)
 
     def add_to_parser(self, parser):
         cli_name = self.cli_name
