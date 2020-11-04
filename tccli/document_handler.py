@@ -260,7 +260,7 @@ class ActionDocumentHandler(BaseDocumentHandler):
         self.doc.doc_description("tccli %s %s --cli-unfold-argument " % (self._service, self._action))
         self.doc.style.indent()
         if input_param:
-            self.doc.write("\\")
+            self.doc.write(" \\")
             for param in input_param[:-1]:
                 self.doc.style.new_line()
                 self.doc.doc_description(param + " \\")
