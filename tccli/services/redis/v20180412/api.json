@@ -282,6 +282,12 @@
       "name": "设置自动备份时间",
       "output": "ModifyAutoBackupConfigResponse"
     },
+    "ModifyConnectionConfig": {
+      "document": "修改实例的连接配置，包括带宽和最大连接数",
+      "input": "ModifyConnectionConfigRequest",
+      "name": "修改实例连接配置",
+      "output": "ModifyConnectionConfigResponse"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
@@ -880,6 +886,14 @@
           "name": "NoAuth",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "实例的节点信息，目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。",
+          "member": "RedisNodeInfo",
+          "name": "NodeSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4753,6 +4767,55 @@
       ],
       "type": "object"
     },
+    "ModifyConnectionConfigRequest": {
+      "document": "ModifyConnectionConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的ID，长度在12-36之间。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "附加带宽，大于0，单位MB。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单分片的总连接数。\n未开启副本只读时，下限为10000，上限为40000；\n开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。",
+          "member": "int64",
+          "name": "ClientLimit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConnectionConfigResponse": {
+      "document": "ModifyConnectionConfig返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceSecurityGroupsRequest": {
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
@@ -5548,6 +5611,39 @@
         }
       ],
       "usage": "out"
+    },
+    "RedisNodeInfo": {
+      "document": "描述Redis实例的主节点或者副本节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点类型，0 为主节点，1 为副本节点",
+          "member": "int64",
+          "name": "NodeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主节点或者副本节点的可用区ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主节点或者副本节点的ID，创建时不需要传递此参数。",
+          "member": "int64",
+          "name": "NodeId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RedisNodes": {
       "document": "Redis节点信息",

@@ -10748,6 +10748,66 @@
       ],
       "usage": "in"
     },
+    "OverrideTranscodeParameter": {
+      "document": "自定义转码的规格参数。用于覆盖模板中对应参数值。",
+      "members": [
+        {
+          "default": "",
+          "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除视频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
+          "member": "uint64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除音频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
+          "member": "uint64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流配置参数。",
+          "member": "VideoTemplateInfoForUpdate",
+          "name": "VideoTemplate",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流配置参数。",
+          "member": "AudioTemplateInfoForUpdate",
+          "name": "AudioTemplate",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "极速高清转码参数。",
+          "member": "TEHDConfigForUpdate",
+          "name": "TEHDConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ParseLiveStreamProcessNotificationRequest": {
       "document": "ParseLiveStreamProcessNotification请求参数结构体",
       "members": [
@@ -12979,6 +13039,15 @@
           "document": "视频转码自定义参数，当 Definition 填 0 时有效。\n该参数用于高度定制场景，建议您优先使用 Definition 指定转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "RawTranscodeParameter",
           "name": "RawParameter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频转码自定义参数，当 Definition 不填 0 时有效。\n当填写了该结构中的部分转码参数时，将使用填写的参数覆盖转码模板中的参数。\n该参数用于高度定制场景，建议您仅使用 Definition 指定转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OverrideTranscodeParameter",
+          "name": "OverrideParameter",
           "required": false,
           "type": "object",
           "value_allowed_null": true

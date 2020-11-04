@@ -1252,7 +1252,7 @@
       "type": "object"
     },
     "Task": {
-      "document": "录音文件识别请求的返回数据",
+      "document": "录音文件识别、实时语音异步识别请求的返回数据",
       "members": [
         {
           "default": "",

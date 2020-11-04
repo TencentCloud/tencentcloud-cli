@@ -103,9 +103,9 @@
       "output": "AttachClassicLinkVpcResponse"
     },
     "AttachNetworkInterface": {
-      "document": "本接口（AttachNetworkInterface）用于弹性网卡绑定云主机。\n* 一个云主机可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href=\"https://cloud.tencent.com/document/product/576/18527\">弹性网卡使用限制</a>。\n* 一个弹性网卡只能同时绑定一个云主机。\n* 只有运行中或者已关机状态的云主机才能绑定弹性网卡，查看云主机状态详见<a href=\"https://cloud.tencent.com/document/api/213/9452#InstanceStatus\">腾讯云主机信息</a>。\n* 弹性网卡绑定的云主机必须是私有网络的，而且云主机所在可用区必须和弹性网卡子网的可用区相同。",
+      "document": "本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。\n* 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href=\"https://cloud.tencent.com/document/product/576/18527\">弹性网卡使用限制</a>。\n* 一个弹性网卡只能同时绑定一个云服务器。\n* 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href=\"https://cloud.tencent.com/document/api/213/9452#InstanceStatus\">腾讯云服务器信息</a>。\n* 弹性网卡绑定的云服务器必须是私有网络的，而且云服务器所在可用区必须和弹性网卡子网的可用区相同。",
       "input": "AttachNetworkInterfaceRequest",
-      "name": "弹性网卡绑定云主机",
+      "name": "弹性网卡绑定云服务器",
       "output": "AttachNetworkInterfaceResponse"
     },
     "AuditCrossBorderCompliance": {
@@ -145,9 +145,9 @@
       "output": "CreateAddressTemplateGroupResponse"
     },
     "CreateAndAttachNetworkInterface": {
-      "document": "本接口（CreateAndAttachNetworkInterface）用于创建弹性网卡并绑定云主机。\n* 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。\n* 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 创建弹性网卡同时可以绑定已有安全组。\n* 创建弹性网卡同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
+      "document": "本接口（CreateAndAttachNetworkInterface）用于创建弹性网卡并绑定云服务器。\n* 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。\n* 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 创建弹性网卡同时可以绑定已有安全组。\n* 创建弹性网卡同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
       "input": "CreateAndAttachNetworkInterfaceRequest",
-      "name": "创建弹性网卡并绑定云主机",
+      "name": "创建弹性网卡并绑定云服务器",
       "output": "CreateAndAttachNetworkInterfaceResponse"
     },
     "CreateAssistantCidr": {
@@ -847,9 +847,9 @@
       "output": "DetachClassicLinkVpcResponse"
     },
     "DetachNetworkInterface": {
-      "document": "本接口（DetachNetworkInterface）用于弹性网卡解绑云主机。",
+      "document": "本接口（DetachNetworkInterface）用于弹性网卡解绑云服务器。",
       "input": "DetachNetworkInterfaceRequest",
-      "name": "弹性网卡解绑云主机",
+      "name": "弹性网卡解绑云服务器",
       "output": "DetachNetworkInterfaceResponse"
     },
     "DisableCcnRoutes": {
@@ -3558,7 +3558,7 @@
         },
         {
           "default": "",
-          "document": "云主机实例ID。",
+          "document": "云服务器实例ID。",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3610,13 +3610,6 @@
     "CreateAndAttachNetworkInterfaceResponse": {
       "document": "CreateAndAttachNetworkInterface返回参数结构体",
       "members": [
-        {
-          "document": "弹性网卡实例。",
-          "member": "NetworkInterface",
-          "name": "NetworkInterface",
-          "type": "object",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10851,7 +10844,7 @@
         },
         {
           "default": "",
-          "document": "入带宽，单位：`Byte`。",
+          "document": "入流量，单位：`Byte`。",
           "member": "uint64",
           "name": "InTraffic",
           "required": true,
@@ -10860,7 +10853,7 @@
         },
         {
           "default": "",
-          "document": "出带宽，单位：`Byte`。",
+          "document": "出流量，单位：`Byte`。",
           "member": "uint64",
           "name": "OutTraffic",
           "required": true,

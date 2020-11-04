@@ -5579,6 +5579,14 @@
           "name": "KeyWords",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx",
+          "member": "string",
+          "name": "DiagnoseLink",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

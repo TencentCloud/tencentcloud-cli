@@ -188,6 +188,14 @@
           "name": "ForceRedirect",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "域名绑定的标签",
+          "member": "Tag",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1207,6 +1215,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2032,6 +2049,30 @@
         }
       ],
       "type": "object"
+    },
+    "Tag": {
+      "document": "标签键和标签值",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TimestampData": {
       "document": "时间戳与其对应的数值",
