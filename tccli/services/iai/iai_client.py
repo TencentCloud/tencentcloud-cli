@@ -9,10 +9,10 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.iai.v20180301 import iai_client as iai_client_v20180301
-from tencentcloud.iai.v20180301 import models as models_v20180301
 from tencentcloud.iai.v20200303 import iai_client as iai_client_v20200303
 from tencentcloud.iai.v20200303 import models as models_v20200303
+from tencentcloud.iai.v20180301 import iai_client as iai_client_v20180301
+from tencentcloud.iai.v20180301 import models as models_v20180301
 
 
 def doDeletePersonFromGroup(args, parsed_globals):
@@ -966,14 +966,14 @@ def doDeleteFace(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20180301": iai_client_v20180301,
     "v20200303": iai_client_v20200303,
+    "v20180301": iai_client_v20180301,
 
 }
 
 MODELS_MAP = {
-    "v20180301": models_v20180301,
     "v20200303": models_v20200303,
+    "v20180301": models_v20180301,
 
 }
 
@@ -1020,8 +1020,8 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20180301",
     "v20200303",
+    "v20180301",
 
 ]
 

@@ -9,10 +9,10 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.mongodb.v20190725 import mongodb_client as mongodb_client_v20190725
-from tencentcloud.mongodb.v20190725 import models as models_v20190725
 from tencentcloud.mongodb.v20180408 import mongodb_client as mongodb_client_v20180408
 from tencentcloud.mongodb.v20180408 import models as models_v20180408
+from tencentcloud.mongodb.v20190725 import mongodb_client as mongodb_client_v20190725
+from tencentcloud.mongodb.v20190725 import models as models_v20190725
 
 
 def doDescribeDBInstanceDeal(args, parsed_globals):
@@ -340,7 +340,7 @@ def doTerminateDBInstance(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRenewDBInstances(args, parsed_globals):
+def doKillOps(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -354,34 +354,9 @@ def doRenewDBInstances(args, parsed_globals):
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RenewDBInstancesRequest()
+    model = models.KillOpsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.RenewDBInstances(model)
-    result = rsp.to_json_string()
-    try:
-        jsonobj = json.loads(result)
-    except TypeError as e:
-        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpgradeDBInstanceHour(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeDBInstanceHourRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.UpgradeDBInstanceHour(model)
+    rsp = client.KillOps(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -565,6 +540,31 @@ def doDescribeSpecInfo(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doInquirePriceRenewDBInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquirePriceRenewDBInstancesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.InquirePriceRenewDBInstances(model)
+    result = rsp.to_json_string()
+    try:
+        jsonobj = json.loads(result)
+    except TypeError as e:
+        jsonobj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doSetPassword(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -715,7 +715,7 @@ def doUpgradeDBInstance(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doKillOps(args, parsed_globals):
+def doRenewDBInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -729,9 +729,9 @@ def doKillOps(args, parsed_globals):
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.KillOpsRequest()
+    model = models.RenewDBInstancesRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.KillOps(model)
+    rsp = client.RenewDBInstances(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -765,7 +765,7 @@ def doCreateBackupDBInstance(args, parsed_globals):
     FormatOutput.output("action", jsonobj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquirePriceRenewDBInstances(args, parsed_globals):
+def doUpgradeDBInstanceHour(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey])
@@ -779,9 +779,9 @@ def doInquirePriceRenewDBInstances(args, parsed_globals):
     client = mod.MongodbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InquirePriceRenewDBInstancesRequest()
+    model = models.UpgradeDBInstanceHourRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.InquirePriceRenewDBInstances(model)
+    rsp = client.UpgradeDBInstanceHour(model)
     result = rsp.to_json_string()
     try:
         jsonobj = json.loads(result)
@@ -791,14 +791,14 @@ def doInquirePriceRenewDBInstances(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20190725": mongodb_client_v20190725,
     "v20180408": mongodb_client_v20180408,
+    "v20190725": mongodb_client_v20190725,
 
 }
 
 MODELS_MAP = {
-    "v20190725": models_v20190725,
     "v20180408": models_v20180408,
+    "v20190725": models_v20190725,
 
 }
 
@@ -816,8 +816,7 @@ ACTION_MAP = {
     "DescribeAsyncRequestInfo": doDescribeAsyncRequestInfo,
     "CreateDBInstanceHour": doCreateDBInstanceHour,
     "TerminateDBInstance": doTerminateDBInstance,
-    "RenewDBInstances": doRenewDBInstances,
-    "UpgradeDBInstanceHour": doUpgradeDBInstanceHour,
+    "KillOps": doKillOps,
     "DescribeDBInstances": doDescribeDBInstances,
     "OfflineIsolatedDBInstance": doOfflineIsolatedDBInstance,
     "DescribeSlowLogPatterns": doDescribeSlowLogPatterns,
@@ -825,21 +824,22 @@ ACTION_MAP = {
     "CreateDBInstance": doCreateDBInstance,
     "ModifyDBInstanceSpec": doModifyDBInstanceSpec,
     "DescribeSpecInfo": doDescribeSpecInfo,
+    "InquirePriceRenewDBInstances": doInquirePriceRenewDBInstances,
     "SetPassword": doSetPassword,
     "InquirePriceCreateDBInstances": doInquirePriceCreateDBInstances,
     "AssignProject": doAssignProject,
     "DescribeSlowLog": doDescribeSlowLog,
     "RenameInstance": doRenameInstance,
     "UpgradeDBInstance": doUpgradeDBInstance,
-    "KillOps": doKillOps,
+    "RenewDBInstances": doRenewDBInstances,
     "CreateBackupDBInstance": doCreateBackupDBInstance,
-    "InquirePriceRenewDBInstances": doInquirePriceRenewDBInstances,
+    "UpgradeDBInstanceHour": doUpgradeDBInstanceHour,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20190725",
     "v20180408",
+    "v20190725",
 
 ]
 

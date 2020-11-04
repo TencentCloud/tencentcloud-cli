@@ -67,8 +67,8 @@ include tccli/services/gs/v20191118/api.json
 include tccli/services/gse/v20191112/api.json
 include tccli/services/habo/v20181203/api.json
 include tccli/services/hcm/v20181106/api.json
-include tccli/services/iai/v20180301/api.json
 include tccli/services/iai/v20200303/api.json
+include tccli/services/iai/v20180301/api.json
 include tccli/services/ic/v20190307/api.json
 include tccli/services/ie/v20200304/api.json
 include tccli/services/iir/v20200417/api.json
@@ -85,8 +85,8 @@ include tccli/services/mariadb/v20170312/api.json
 include tccli/services/memcached/v20190318/api.json
 include tccli/services/mgobe/v20201014/api.json
 include tccli/services/mgobe/v20190929/api.json
-include tccli/services/mongodb/v20190725/api.json
 include tccli/services/mongodb/v20180408/api.json
+include tccli/services/mongodb/v20190725/api.json
 include tccli/services/monitor/v20180724/api.json
 include tccli/services/mps/v20190612/api.json
 include tccli/services/ms/v20180408/api.json
@@ -116,8 +116,8 @@ include tccli/services/tag/v20180813/api.json
 include tccli/services/tav/v20190118/api.json
 include tccli/services/tbaas/v20180416/api.json
 include tccli/services/tbm/v20180129/api.json
-include tccli/services/tbp/v20190311/api.json
 include tccli/services/tbp/v20190627/api.json
+include tccli/services/tbp/v20190311/api.json
 include tccli/services/tcaplusdb/v20190823/api.json
 include tccli/services/tcb/v20180608/api.json
 include tccli/services/tcex/v20200727/api.json
@@ -143,5 +143,5 @@ include tccli/services/vpc/v20170312/api.json
 include tccli/services/wss/v20180426/api.json
 include tccli/services/youmall/v20180228/api.json
 include tccli/services/yunjing/v20180228/api.json
-include tccli/services/yunsou/v20180504/api.json
 include tccli/services/yunsou/v20191115/api.json
+include tccli/services/yunsou/v20180504/api.json
